@@ -19,9 +19,6 @@ pub struct GarbagesResponse {
 
 impl GarbagesResponse {
     pub fn new(garbages: Vec<String>) -> GarbagesResponse {
-        GarbagesResponse {
-            garbages,
-        }
+        GarbagesResponse { garbages }
     }
 }
-

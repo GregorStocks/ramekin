@@ -39,6 +39,7 @@ async fn main() {
     tracing::info!("Server listening on {}", listener.local_addr().unwrap());
     tracing::info!("Swagger UI available at http://localhost:3000/swagger-ui/");
     tracing::info!("OpenAPI spec available at http://localhost:3000/api-docs/openapi.json");
+    tracing::info!("Hot reload is enabled!");
 
     axum::serve(listener, app).await.unwrap();
 }
