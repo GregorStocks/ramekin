@@ -22,7 +22,7 @@ build: ## Build all packages
 	cargo build --all
 
 docker-up: ## Start docker containers
-	docker compose up -d
+	docker compose up --build -d
 
 docker-down: ## Stop docker containers
 	docker compose down
