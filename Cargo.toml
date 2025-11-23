@@ -1,7 +1,6 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/ramekin-lib",
     "crates/ramekin-server",
     "crates/ramekin-cli",
 ]
@@ -28,6 +27,9 @@ diesel_migrations = "2.3"
 axum = "0.8"
 tower = "0.5"
 tower-http = { version = "0.6", features = ["cors", "trace"] }
+utoipa = { version = "5.3", features = ["axum_extras"] }
+utoipa-axum = "0.2"
+utoipa-swagger-ui = { version = "9.0", features = ["axum"] }
 
 # CLI
 clap = { version = "4.5", features = ["derive"] }

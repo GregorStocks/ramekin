@@ -6,8 +6,6 @@ authors.workspace = true
 license.workspace = true
 
 [dependencies]
-ramekin-lib = { path = "../ramekin-lib" }
-
 # CLI
 clap = { workspace = true }
 
