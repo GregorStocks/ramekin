@@ -1,6 +1,7 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
-use serde::Deserialize;
+use ramekin_client::apis::configuration::Configuration;
+use ramekin_client::apis::default_api;
 
 #[derive(Parser)]
 #[command(name = "ramekin")]
@@ -20,12 +21,6 @@ enum Commands {
     },
 }
 
-// Temporary types - will be replaced with generated client
-#[derive(Debug, Deserialize)]
-struct GarbagesResponse {
-    garbages: Vec<String>,
-}
-
 #[tokio::main]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
@@ -40,17 +35,13 @@ async fn main() -> Result<()> {
 }
 
 async fn list_garbages(server: &str) -> Result<()> {
-    let url = format!("{}/api/garbages", server);
-    let response = reqwest::get(&url).await?;
+    let mut config = Configuration::new();
+    config.base_path = server.to_string();
 
-    if !response.status().is_success() {
-        anyhow::bail!("Failed to fetch garbages: {}", response.status());
-    }
-
-    let garbages_response: GarbagesResponse = response.json().await?;
+    let response = default_api::get_garbages(&config).await?;
 
     println!("Garbages:");
-    for garbage in garbages_response.garbages {
+    for garbage in response.garbages {
         println!("  - {}", garbage);
     }
 

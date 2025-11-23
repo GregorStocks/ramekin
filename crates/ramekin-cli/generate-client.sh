@@ -21,11 +21,11 @@ curl -s http://localhost:3000/api-docs/openapi.json > openapi.json
 npx @openapitools/openapi-generator-cli generate \
     -i openapi.json \
     -g rust \
-    -o src/generated \
+    -o ../ramekin-client \
     --additional-properties=packageName=ramekin_client,supportAsync=true
 
 # Clean up
 rm openapi.json
 
-echo "Client generated successfully in src/generated/"
-echo "You may need to add dependencies to Cargo.toml based on the generated client"
+echo "Client generated successfully in ../ramekin-client/"
+echo "The generated client is a separate crate that the CLI depends on"

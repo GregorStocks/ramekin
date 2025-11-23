@@ -3,6 +3,7 @@ resolver = "2"
 members = [
     "crates/ramekin-server",
     "crates/ramekin-cli",
+    "crates/ramekin-client",
 ]
 
 [workspace.package]
