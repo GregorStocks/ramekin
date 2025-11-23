@@ -38,39 +38,13 @@ ramekin/
 
 ## Getting Started
 
-### 1. Set up the database
-
-Start PostgreSQL using Docker Compose:
+### 1. Run the backend
 
 ```bash
 docker-compose up -d
 ```
 
-Create a `.env` file in the project root:
-
-```bash
-cp .env.example .env
-```
-
-Run migrations:
-
-```bash
-diesel migration run
-```
-
-### 2. Build the Rust workspace
-
-```bash
-cargo build
-```
-
-### 3. Run the server
-
-```bash
-cargo run --bin ramekin-server
-```
-
-### 4. Run the frontend
+### 2. Run the frontend
 
 In a separate terminal:
 
@@ -82,7 +56,7 @@ npm run dev
 
 The frontend will be available at http://localhost:5173
 
-### 5. Use the CLI
+### 3. Use the CLI
 
 ```bash
 cargo run --bin ramekin-cli -- --help

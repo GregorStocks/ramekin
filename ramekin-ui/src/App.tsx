@@ -1,34 +1,63 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
+import { createSignal, For } from 'solid-js'
 import './App.css'
 
+interface GarbagesResponse {
+  garbages: string[]
+}
+
 function App() {
-  const [count, setCount] = createSignal(0)
+  const [garbageLists, setGarbageLists] = createSignal<string[][]>([])
+  const [loading, setLoading] = createSignal(false)
+
+  const fetchGarbages = async () => {
+    setLoading(true)
+    try {
+      const response = await fetch('/api/garbages')
+      const data: GarbagesResponse = await response.json()
+      setGarbageLists([...garbageLists(), data.garbages])
+    } catch (error) {
+      console.error('Failed to fetch garbages:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
+    <div style={{ padding: '2rem' }}>
+      <h1>Ramekin Garbages</h1>
+
+      <button
+        onClick={fetchGarbages}
+        disabled={loading()}
+        style={{
+          padding: '0.5rem 1rem',
+          'font-size': '1rem',
+          cursor: loading() ? 'not-allowed' : 'pointer'
+        }}
+      >
+        {loading() ? 'Loading...' : 'Fetch Garbages'}
+      </button>
+
+      <div style={{ 'margin-top': '2rem' }}>
+        <For each={garbageLists()}>
+          {(garbages, index) => (
+            <div style={{
+              border: '1px solid #ccc',
+              padding: '1rem',
+              'margin-bottom': '1rem',
+              'border-radius': '4px'
+            }}>
+              <h3>Fetch #{index() + 1}</h3>
+              <ul>
+                <For each={garbages}>
+                  {(garbage) => <li>{garbage}</li>}
+                </For>
+              </ul>
+            </div>
+          )}
+        </For>
       </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
