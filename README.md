@@ -70,7 +70,8 @@ ramekin/
 ├── crates/
 │   ├── ramekin-server/   # API server with OpenAPI spec
 │   ├── ramekin-cli/      # CLI that uses generated client
-│   └── ramekin-client/   # Auto-generated Rust client
+│   └── generated/
+│       └── ramekin-client/  # Auto-generated Rust client
 ├── ramekin-ui/           # SolidJS frontend
 │   └── src/generated/    # Auto-generated TypeScript client
 ├── docker-compose.yml    # Docker config with hot-reload

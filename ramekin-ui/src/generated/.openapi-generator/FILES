@@ -1,12 +1,12 @@
-apis/AuthApi.ts
+.openapi-generator-ignore
+apis/AuthhandlersApi.ts
 apis/DefaultApi.ts
 apis/index.ts
 index.ts
 models/ErrorResponse.ts
-models/GarbagesResponse.ts
-models/HelloResponse.ts
 models/LoginRequest.ts
 models/LoginResponse.ts
+models/PingResponse.ts
 models/SignupRequest.ts
 models/SignupResponse.ts
 models/index.ts

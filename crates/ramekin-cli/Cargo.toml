@@ -6,7 +6,7 @@ authors.workspace = true
 license.workspace = true
 
 [dependencies]
-ramekin_client = { path = "../ramekin-client" }
+ramekin_client = { path = "../generated/ramekin-client" }
 
 # CLI
 clap = { workspace = true }

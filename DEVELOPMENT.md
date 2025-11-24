@@ -53,7 +53,7 @@ make generate-clients
 make generate-rust-client
 
 # Commit the generated code
-git add crates/ramekin-client
+git add crates/generated/ramekin-client
 git commit -m "Regenerate API client"
 ```
 

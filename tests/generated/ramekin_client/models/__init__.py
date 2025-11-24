@@ -14,9 +14,8 @@ Do not edit the class manually.
 
 # import models into model package
 from ramekin_client.models.error_response import ErrorResponse
-from ramekin_client.models.garbages_response import GarbagesResponse
-from ramekin_client.models.hello_response import HelloResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse

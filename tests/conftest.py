@@ -7,7 +7,7 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "generated"))
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, DefaultApi
+from ramekin_client.api import AuthhandlersApi, DefaultApi
 
 
 @pytest.fixture
@@ -28,7 +28,7 @@ def default_api(api_client):
 
 @pytest.fixture
 def auth_api(api_client):
-    return AuthApi(api_client)
+    return AuthhandlersApi(api_client)
 
 
 @pytest.fixture

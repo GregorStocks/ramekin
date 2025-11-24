@@ -40,28 +40,20 @@ configuration = ramekin_client.Configuration(
     host = "http://localhost"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer_auth
-configuration = ramekin_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 
 # Enter a context with an instance of the API client
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ramekin_client.AuthApi(api_client)
+    api_instance = ramekin_client.AuthhandlersApi(api_client)
+    login_request = ramekin_client.LoginRequest() # LoginRequest | 
 
     try:
-        api_response = api_instance.hello()
-        print("The response of AuthApi->hello:\n")
+        api_response = api_instance.login(login_request)
+        print("The response of AuthhandlersApi->login:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthApi->hello: %s\n" % e)
+        print("Exception when calling AuthhandlersApi->login: %s\n" % e)
 
 ```
 
@@ -71,19 +63,18 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthApi* | [**hello**](ramekin_client/docs/AuthApi.md#hello) | **GET** /api/auth/hello | 
-*AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
-*AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
-*DefaultApi* | [**get_garbages**](ramekin_client/docs/DefaultApi.md#get_garbages) | **GET** /api/garbages | 
+*AuthhandlersApi* | [**login**](ramekin_client/docs/AuthhandlersApi.md#login) | **POST** /api/auth/login | 
+*AuthhandlersApi* | [**ping**](ramekin_client/docs/AuthhandlersApi.md#ping) | **GET** /api/test/ping | 
+*AuthhandlersApi* | [**signup**](ramekin_client/docs/AuthhandlersApi.md#signup) | **POST** /api/auth/signup | 
+*DefaultApi* | [**unauthed_ping**](ramekin_client/docs/DefaultApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
 
 ## Documentation For Models
 
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
- - [GarbagesResponse](ramekin_client/docs/GarbagesResponse.md)
- - [HelloResponse](ramekin_client/docs/HelloResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
+ - [PingResponse](ramekin_client/docs/PingResponse.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
 

@@ -13,8 +13,8 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// List all garbages
-    Garbages {
+    /// Ping the server (unauthenticated)
+    Ping {
         /// Server URL (default: http://localhost:3000)
         #[arg(long, default_value = "http://localhost:3000")]
         server: String,
@@ -26,24 +26,21 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Garbages { server } => {
-            list_garbages(&server).await?;
+        Commands::Ping { server } => {
+            ping(&server).await?;
         }
     }
 
     Ok(())
 }
 
-async fn list_garbages(server: &str) -> Result<()> {
+async fn ping(server: &str) -> Result<()> {
     let mut config = Configuration::new();
     config.base_path = server.to_string();
 
-    let response = default_api::get_garbages(&config).await?;
+    let response = default_api::unauthed_ping(&config).await?;
 
-    println!("Garbages:");
-    for garbage in response.garbages {
-        println!("  - {}", garbage);
-    }
+    println!("{}", response.message);
 
     Ok(())
 }

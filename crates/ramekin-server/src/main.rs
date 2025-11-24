@@ -5,17 +5,10 @@ mod models;
 mod schema;
 
 use api::{
-    paths, ErrorResponse, GarbagesResponse, HelloResponse, LoginRequest, LoginResponse,
-    SignupRequest, SignupResponse,
+    paths, ErrorResponse, LoginRequest, LoginResponse, PingResponse, SignupRequest, SignupResponse,
 };
-use axum::{
-    extract::State,
-    routing::{get, post},
-    Json,
-};
-use diesel::prelude::*;
-use models::Garbage;
-use schema::garbage;
+use axum::routing::{get, post};
+use axum::Json;
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_axum::router::OpenApiRouter;
@@ -23,14 +16,13 @@ use utoipa_swagger_ui::SwaggerUi;
 
 #[derive(OpenApi)]
 #[openapi(
-    paths(get_garbages, auth::signup, auth::login, auth::hello),
+    paths(unauthed_ping, auth::handlers::signup, auth::handlers::login, auth::handlers::ping),
     components(schemas(
-        GarbagesResponse,
+        PingResponse,
         SignupRequest,
         SignupResponse,
         LoginRequest,
         LoginResponse,
-        HelloResponse,
         ErrorResponse
     )),
     modifiers(&SecurityAddon)
@@ -63,13 +55,12 @@ async fn main() {
     let pool = db::create_pool(&database_url);
 
     let (router, api) = OpenApiRouter::with_openapi(ApiDoc::openapi())
-        .route(paths::GARBAGES, get(get_garbages))
+        .route(paths::UNAUTHED_PING, get(unauthed_ping))
         .route(paths::SIGNUP, post(auth::signup))
         .route(paths::LOGIN, post(auth::login))
-        .route(paths::HELLO, get(auth::hello))
+        .route(paths::PING, get(auth::ping))
         .split_for_parts();
 
-    // Serve OpenAPI spec as JSON and Swagger UI
     let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", api);
 
     let app = router.merge(swagger_ui).with_state(Arc::new(pool));
@@ -86,20 +77,13 @@ async fn main() {
 
 #[utoipa::path(
     get,
-    path = "/api/garbages",
+    path = "/api/test/unauthed-ping",
     responses(
-        (status = 200, description = "List of all garbages", body = GarbagesResponse)
+        (status = 200, description = "Unauthed ping response", body = PingResponse)
     )
 )]
-async fn get_garbages(State(pool): State<Arc<db::DbPool>>) -> Json<GarbagesResponse> {
-    let mut conn = pool.get().expect("Failed to get DB connection");
-
-    let results = garbage::table
-        .select(Garbage::as_select())
-        .load(&mut conn)
-        .expect("Error loading garbages");
-
-    let garbages: Vec<String> = results.into_iter().map(|g| g.garbage_name).collect();
-
-    Json(GarbagesResponse { garbages })
+async fn unauthed_ping() -> Json<PingResponse> {
+    Json(PingResponse {
+        message: "unauthed-ping".to_string(),
+    })
 }

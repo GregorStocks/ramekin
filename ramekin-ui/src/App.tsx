@@ -1,25 +1,25 @@
-import { createSignal, For } from "solid-js";
+import { createSignal } from "solid-js";
 import "./App.css";
-import { DefaultApi, Configuration } from "./generated/api";
+import { DefaultApi, Configuration } from "./generated";
 
-// Create a configured API client
 const api = new DefaultApi(
   new Configuration({
-    basePath: "", // Empty because we're using the proxy
+    basePath: "",
   }),
 );
 
 function App() {
-  const [garbageLists, setGarbageLists] = createSignal<string[][]>([]);
+  const [message, setMessage] = createSignal<string | null>(null);
   const [loading, setLoading] = createSignal(false);
 
-  const fetchGarbages = async () => {
+  const pingServer = async () => {
     setLoading(true);
     try {
-      const data = await api.getGarbages();
-      setGarbageLists([...garbageLists(), data.garbages]);
+      const data = await api.unauthedPing();
+      setMessage(data.message);
     } catch (error) {
-      console.error("Failed to fetch garbages:", error);
+      console.error("Failed to ping server:", error);
+      setMessage("Error: Failed to ping server");
     } finally {
       setLoading(false);
     }
@@ -27,10 +27,10 @@ function App() {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>Ramekin Garbages</h1>
+      <h1>Ramekin</h1>
 
       <button
-        onClick={fetchGarbages}
+        onClick={pingServer}
         disabled={loading()}
         style={{
           padding: "0.5rem 1rem",
@@ -38,28 +38,21 @@ function App() {
           cursor: loading() ? "not-allowed" : "pointer",
         }}
       >
-        {loading() ? "Loading..." : "Fetch Garbages"}
+        {loading() ? "Loading..." : "Ping Server"}
       </button>
 
-      <div style={{ "margin-top": "2rem" }}>
-        <For each={garbageLists()}>
-          {(garbages, index) => (
-            <div
-              style={{
-                border: "1px solid #ccc",
-                padding: "1rem",
-                "margin-bottom": "1rem",
-                "border-radius": "4px",
-              }}
-            >
-              <h3>Fetch #{index() + 1}</h3>
-              <ul>
-                <For each={garbages}>{(garbage) => <li>{garbage}</li>}</For>
-              </ul>
-            </div>
-          )}
-        </For>
-      </div>
+      {message() && (
+        <div
+          style={{
+            "margin-top": "1rem",
+            padding: "1rem",
+            border: "1px solid #ccc",
+            "border-radius": "4px",
+          }}
+        >
+          Response: {message()}
+        </div>
+      )}
     </div>
   );
 }

@@ -37,7 +37,7 @@ services:
       postgres:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/garbages"]
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/test/unauthed-ping"]
       interval: 5s
       timeout: 5s
       retries: 30

@@ -1,13 +1,6 @@
 // @generated automatically by Diesel CLI.
 
 diesel::table! {
-    garbage (id) {
-        id -> Int4,
-        garbage_name -> Varchar,
-    }
-}
-
-diesel::table! {
     sessions (id) {
         id -> Uuid,
         user_id -> Uuid,
@@ -33,4 +26,4 @@ diesel::table! {
 
 diesel::joinable!(sessions -> users (user_id));
 
-diesel::allow_tables_to_appear_in_same_query!(garbage, sessions, users,);
+diesel::allow_tables_to_appear_in_same_query!(sessions, users,);

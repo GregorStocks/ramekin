@@ -1,15 +1,6 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
-use serde::{Deserialize, Serialize};
 use uuid::Uuid;
-
-#[derive(Queryable, Selectable, Serialize, Deserialize, Debug)]
-#[diesel(table_name = crate::schema::garbage)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
-pub struct Garbage {
-    pub id: i32,
-    pub garbage_name: String,
-}
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::users)]

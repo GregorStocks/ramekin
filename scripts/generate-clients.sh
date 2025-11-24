@@ -34,6 +34,9 @@ generate() {
 
     echo "Generating $generator client -> $output"
 
+    # Clean existing generated files
+    rm -rf "$PROJECT_ROOT/$output"
+
     docker run --rm \
         -v "$PROJECT_ROOT:/project" \
         -v "$TMPDIR:/spec:ro" \
@@ -42,11 +45,12 @@ generate() {
         -i /spec/openapi.json \
         -g "$generator" \
         -o "/project/$output" \
-        --additional-properties="$extra_props"
+        --additional-properties="$extra_props" \
+        2>&1 | grep -v "^\[main\] INFO"
 }
 
 # Generate Rust client (for CLI)
-generate "rust" "crates/ramekin-client" "packageName=ramekin_client,supportAsync=true"
+generate "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
 
 # Generate TypeScript client (for UI)
 generate "typescript-fetch" "ramekin-ui/src/generated" "supportsES6=true,typescriptThreePlus=true"
@@ -56,6 +60,6 @@ generate "python" "tests/generated" "packageName=ramekin_client,generateSourceCo
 
 echo ""
 echo "All clients generated successfully:"
-echo "  - Rust:       crates/ramekin-client/"
+echo "  - Rust:       crates/generated/ramekin-client/"
 echo "  - TypeScript: ramekin-ui/src/generated/"
 echo "  - Python:     tests/generated/"

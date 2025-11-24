@@ -4,11 +4,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_garbages**](DefaultApi.md#get_garbages) | **GET** /api/garbages | 
+[**unauthed_ping**](DefaultApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
 
-# **get_garbages**
-> GarbagesResponse get_garbages()
+# **unauthed_ping**
+> PingResponse unauthed_ping()
 
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ```python
 import ramekin_client
-from ramekin_client.models.garbages_response import GarbagesResponse
+from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.rest import ApiException
 from pprint import pprint
 
@@ -34,11 +34,11 @@ with ramekin_client.ApiClient(configuration) as api_client:
     api_instance = ramekin_client.DefaultApi(api_client)
 
     try:
-        api_response = api_instance.get_garbages()
-        print("The response of DefaultApi->get_garbages:\n")
+        api_response = api_instance.unauthed_ping()
+        print("The response of DefaultApi->unauthed_ping:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DefaultApi->get_garbages: %s\n" % e)
+        print("Exception when calling DefaultApi->unauthed_ping: %s\n" % e)
 ```
 
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**GarbagesResponse**](GarbagesResponse.md)
+[**PingResponse**](PingResponse.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ No authorization required
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | List of all garbages |  -  |
+**200** | Unauthed ping response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

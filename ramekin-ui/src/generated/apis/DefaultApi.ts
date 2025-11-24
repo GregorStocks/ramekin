@@ -13,11 +13,8 @@
  */
 
 import * as runtime from "../runtime";
-import type { GarbagesResponse } from "../models/index";
-import {
-  GarbagesResponseFromJSON,
-  GarbagesResponseToJSON,
-} from "../models/index";
+import type { PingResponse } from "../models/index";
+import { PingResponseFromJSON, PingResponseToJSON } from "../models/index";
 
 /**
  *
@@ -25,16 +22,16 @@ import {
 export class DefaultApi extends runtime.BaseAPI {
   /**
    */
-  async getGarbagesRaw(
+  async unauthedPingRaw(
     initOverrides?: RequestInit | runtime.InitOverrideFunction,
-  ): Promise<runtime.ApiResponse<GarbagesResponse>> {
+  ): Promise<runtime.ApiResponse<PingResponse>> {
     const queryParameters: any = {};
 
     const headerParameters: runtime.HTTPHeaders = {};
 
     const response = await this.request(
       {
-        path: `/api/garbages`,
+        path: `/api/test/unauthed-ping`,
         method: "GET",
         headers: headerParameters,
         query: queryParameters,
@@ -43,16 +40,16 @@ export class DefaultApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      GarbagesResponseFromJSON(jsonValue),
+      PingResponseFromJSON(jsonValue),
     );
   }
 
   /**
    */
-  async getGarbages(
+  async unauthedPing(
     initOverrides?: RequestInit | runtime.InitOverrideFunction,
-  ): Promise<GarbagesResponse> {
-    const response = await this.getGarbagesRaw(initOverrides);
+  ): Promise<PingResponse> {
+    const response = await this.unauthedPingRaw(initOverrides);
     return await response.value();
   }
 }
