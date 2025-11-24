@@ -7,15 +7,15 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 dev: ## Start dev environment (with hot-reload)
-	docker compose up
+	docker compose up --build -d
 
 up: dev ## Alias for dev
 
 down: ## Stop all services
 	docker compose down
 
-restart: ## Restart services
-	docker compose restart
+restart: ## Force restart services
+	docker compose up --build -d --force-recreate
 
 logs: ## Show all logs
 	docker compose logs -f
