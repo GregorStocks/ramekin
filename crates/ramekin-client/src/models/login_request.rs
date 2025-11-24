@@ -21,10 +21,6 @@ pub struct LoginRequest {
 
 impl LoginRequest {
     pub fn new(password: String, username: String) -> LoginRequest {
-        LoginRequest {
-            password,
-            username,
-        }
+        LoginRequest { password, username }
     }
 }
-

@@ -19,9 +19,6 @@ pub struct HelloResponse {
 
 impl HelloResponse {
     pub fn new(message: String) -> HelloResponse {
-        HelloResponse {
-            message,
-        }
+        HelloResponse { message }
     }
 }
-

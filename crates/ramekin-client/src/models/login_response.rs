@@ -19,9 +19,6 @@ pub struct LoginResponse {
 
 impl LoginResponse {
     pub fn new(token: String) -> LoginResponse {
-        LoginResponse {
-            token,
-        }
+        LoginResponse { token }
     }
 }
-

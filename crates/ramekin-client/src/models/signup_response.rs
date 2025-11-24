@@ -21,10 +21,6 @@ pub struct SignupResponse {
 
 impl SignupResponse {
     pub fn new(token: String, user_id: uuid::Uuid) -> SignupResponse {
-        SignupResponse {
-            token,
-            user_id,
-        }
+        SignupResponse { token, user_id }
     }
 }
-
