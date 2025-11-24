@@ -28,7 +28,7 @@ logs-db: ## Show database logs
 
 generate-clients: _generate-clients-run lint ## Regenerate all API clients (Rust, TypeScript, Python)
 
-_generate-clients-run:
+_generate-clients-run: up
 	./scripts/generate-clients.sh
 
 lint: ## Run all linters (Rust, TypeScript, Python)
@@ -41,7 +41,9 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 clean: ## Stop services and clean volumes
 	docker compose down -v
 
-generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
+generate-schema: _generate-schema-run lint ## Regenerate schema.rs from database (runs migrations first)
+
+_generate-schema-run: restart
 	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
 	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
 
