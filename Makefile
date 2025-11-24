@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients _generate-clients-run lint clean generate-schema test test-up test-run test-down test-clean test-logs
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -26,10 +26,9 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: _generate-clients-run lint ## Regenerate all API clients (Rust, TypeScript, Python)
-
-_generate-clients-run: up
+generate-clients: up ## Regenerate all API clients (Rust, TypeScript, Python)
 	./scripts/generate-clients.sh
+	$(MAKE) lint
 
 lint: ## Run all linters (Rust, TypeScript, Python)
 	cargo fmt --all
@@ -41,11 +40,10 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 clean: ## Stop services and clean volumes
 	docker compose down -v
 
-generate-schema: _generate-schema-run lint ## Regenerate schema.rs from database (runs migrations first)
-
-_generate-schema-run: restart
+generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
 	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
+	$(MAKE) lint
 
 test: test-clean test-up ## Run tests (tears down on success, leaves up on failure for debugging)
 	@docker compose -f docker-compose.test.yml run --build --rm tests && docker compose -f docker-compose.test.yml down -v || (echo "Tests failed - leaving environment up for debugging" && exit 1)
