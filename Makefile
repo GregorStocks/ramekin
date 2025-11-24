@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-rust-client generate-ts-client lint clean generate-schema test test-up test-run test-down test-clean test-logs
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -26,13 +26,8 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: generate-rust-client generate-ts-client ## Regenerate both API clients
-
-generate-rust-client: ## Regenerate Rust CLI client
-	cd crates/ramekin-cli && ./generate-client.sh
-
-generate-ts-client: ## Regenerate TypeScript UI client
-	cd ramekin-ui && ./generate-client.sh
+generate-clients: ## Regenerate all API clients (Rust, TypeScript, Python)
+	./scripts/generate-clients.sh
 
 lint: ## Run clippy linter
 	cargo fmt --all
