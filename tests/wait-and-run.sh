@@ -20,5 +20,4 @@ echo "Server is ready!"
 
 # Run the tests
 echo "Running tests..."
-cd /app/tests
-python3 run_tests.py
+pytest /app/tests -v

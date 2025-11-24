@@ -12,64 +12,67 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from "../runtime";
 /**
- * 
+ *
  * @export
  * @interface SignupRequest
  */
 export interface SignupRequest {
-    /**
-     * 
-     * @type {string}
-     * @memberof SignupRequest
-     */
-    password: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof SignupRequest
-     */
-    username: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SignupRequest
+   */
+  password: string;
+  /**
+   *
+   * @type {string}
+   * @memberof SignupRequest
+   */
+  username: string;
 }
 
 /**
  * Check if a given object implements the SignupRequest interface.
  */
 export function instanceOfSignupRequest(value: object): value is SignupRequest {
-    if (!('password' in value) || value['password'] === undefined) return false;
-    if (!('username' in value) || value['username'] === undefined) return false;
-    return true;
+  if (!("password" in value) || value["password"] === undefined) return false;
+  if (!("username" in value) || value["username"] === undefined) return false;
+  return true;
 }
 
 export function SignupRequestFromJSON(json: any): SignupRequest {
-    return SignupRequestFromJSONTyped(json, false);
+  return SignupRequestFromJSONTyped(json, false);
 }
 
-export function SignupRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): SignupRequest {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'password': json['password'],
-        'username': json['username'],
-    };
+export function SignupRequestFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean,
+): SignupRequest {
+  if (json == null) {
+    return json;
+  }
+  return {
+    password: json["password"],
+    username: json["username"],
+  };
 }
 
 export function SignupRequestToJSON(json: any): SignupRequest {
-    return SignupRequestToJSONTyped(json, false);
+  return SignupRequestToJSONTyped(json, false);
 }
 
-export function SignupRequestToJSONTyped(value?: SignupRequest | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function SignupRequestToJSONTyped(
+  value?: SignupRequest | null,
+  ignoreDiscriminator: boolean = false,
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'password': value['password'],
-        'username': value['username'],
-    };
+  return {
+    password: value["password"],
+    username: value["username"],
+  };
 }
-

@@ -27,6 +27,6 @@ RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
 # Install Python dependencies that the generated client will need
-RUN pip install urllib3 python-dateutil pydantic typing-extensions
+RUN pip install urllib3 python-dateutil pydantic typing-extensions pytest
 
 # The source and tests will be mounted as volumes

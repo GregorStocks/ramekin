@@ -12,55 +12,60 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from "../runtime";
 /**
- * 
+ *
  * @export
  * @interface GarbagesResponse
  */
 export interface GarbagesResponse {
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof GarbagesResponse
-     */
-    garbages: Array<string>;
+  /**
+   *
+   * @type {Array<string>}
+   * @memberof GarbagesResponse
+   */
+  garbages: Array<string>;
 }
 
 /**
  * Check if a given object implements the GarbagesResponse interface.
  */
-export function instanceOfGarbagesResponse(value: object): value is GarbagesResponse {
-    if (!('garbages' in value) || value['garbages'] === undefined) return false;
-    return true;
+export function instanceOfGarbagesResponse(
+  value: object,
+): value is GarbagesResponse {
+  if (!("garbages" in value) || value["garbages"] === undefined) return false;
+  return true;
 }
 
 export function GarbagesResponseFromJSON(json: any): GarbagesResponse {
-    return GarbagesResponseFromJSONTyped(json, false);
+  return GarbagesResponseFromJSONTyped(json, false);
 }
 
-export function GarbagesResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): GarbagesResponse {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'garbages': json['garbages'],
-    };
+export function GarbagesResponseFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean,
+): GarbagesResponse {
+  if (json == null) {
+    return json;
+  }
+  return {
+    garbages: json["garbages"],
+  };
 }
 
 export function GarbagesResponseToJSON(json: any): GarbagesResponse {
-    return GarbagesResponseToJSONTyped(json, false);
+  return GarbagesResponseToJSONTyped(json, false);
 }
 
-export function GarbagesResponseToJSONTyped(value?: GarbagesResponse | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function GarbagesResponseToJSONTyped(
+  value?: GarbagesResponse | null,
+  ignoreDiscriminator: boolean = false,
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'garbages': value['garbages'],
-    };
+  return {
+    garbages: value["garbages"],
+  };
 }
-

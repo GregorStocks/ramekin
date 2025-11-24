@@ -12,55 +12,58 @@
  * Do not edit the class manually.
  */
 
-import { mapValues } from '../runtime';
+import { mapValues } from "../runtime";
 /**
- * 
+ *
  * @export
  * @interface HelloResponse
  */
 export interface HelloResponse {
-    /**
-     * 
-     * @type {string}
-     * @memberof HelloResponse
-     */
-    message: string;
+  /**
+   *
+   * @type {string}
+   * @memberof HelloResponse
+   */
+  message: string;
 }
 
 /**
  * Check if a given object implements the HelloResponse interface.
  */
 export function instanceOfHelloResponse(value: object): value is HelloResponse {
-    if (!('message' in value) || value['message'] === undefined) return false;
-    return true;
+  if (!("message" in value) || value["message"] === undefined) return false;
+  return true;
 }
 
 export function HelloResponseFromJSON(json: any): HelloResponse {
-    return HelloResponseFromJSONTyped(json, false);
+  return HelloResponseFromJSONTyped(json, false);
 }
 
-export function HelloResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): HelloResponse {
-    if (json == null) {
-        return json;
-    }
-    return {
-        
-        'message': json['message'],
-    };
+export function HelloResponseFromJSONTyped(
+  json: any,
+  ignoreDiscriminator: boolean,
+): HelloResponse {
+  if (json == null) {
+    return json;
+  }
+  return {
+    message: json["message"],
+  };
 }
 
 export function HelloResponseToJSON(json: any): HelloResponse {
-    return HelloResponseToJSONTyped(json, false);
+  return HelloResponseToJSONTyped(json, false);
 }
 
-export function HelloResponseToJSONTyped(value?: HelloResponse | null, ignoreDiscriminator: boolean = false): any {
-    if (value == null) {
-        return value;
-    }
+export function HelloResponseToJSONTyped(
+  value?: HelloResponse | null,
+  ignoreDiscriminator: boolean = false,
+): any {
+  if (value == null) {
+    return value;
+  }
 
-    return {
-        
-        'message': value['message'],
-    };
+  return {
+    message: value["message"],
+  };
 }
-

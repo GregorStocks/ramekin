@@ -1,27 +1,20 @@
 # DefaultApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to _http://localhost_
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**getGarbages**](DefaultApi.md#getgarbages) | **GET** /api/garbages |  |
-
-
+| Method                                       | HTTP request          | Description |
+| -------------------------------------------- | --------------------- | ----------- |
+| [**getGarbages**](DefaultApi.md#getgarbages) | **GET** /api/garbages |             |
 
 ## getGarbages
 
 > GarbagesResponse getGarbages()
 
-
-
 ### Example
 
 ```ts
-import {
-  Configuration,
-  DefaultApi,
-} from '';
-import type { GetGarbagesRequest } from '';
+import { Configuration, DefaultApi } from "";
+import type { GetGarbagesRequest } from "";
 
 async function example() {
   console.log("🚀 Testing  SDK...");
@@ -56,11 +49,10 @@ No authorization required
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-
 ### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | List of all garbages |  -  |
+
+| Status code | Description          | Response headers |
+| ----------- | -------------------- | ---------------- |
+| **200**     | List of all garbages | -                |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-

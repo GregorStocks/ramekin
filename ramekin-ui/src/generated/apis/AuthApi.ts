@@ -12,8 +12,7 @@
  * Do not edit the class manually.
  */
 
-
-import * as runtime from '../runtime';
+import * as runtime from "../runtime";
 import type {
   ErrorResponse,
   HelloResponse,
@@ -21,133 +20,162 @@ import type {
   LoginResponse,
   SignupRequest,
   SignupResponse,
-} from '../models/index';
+} from "../models/index";
 import {
-    ErrorResponseFromJSON,
-    ErrorResponseToJSON,
-    HelloResponseFromJSON,
-    HelloResponseToJSON,
-    LoginRequestFromJSON,
-    LoginRequestToJSON,
-    LoginResponseFromJSON,
-    LoginResponseToJSON,
-    SignupRequestFromJSON,
-    SignupRequestToJSON,
-    SignupResponseFromJSON,
-    SignupResponseToJSON,
-} from '../models/index';
+  ErrorResponseFromJSON,
+  ErrorResponseToJSON,
+  HelloResponseFromJSON,
+  HelloResponseToJSON,
+  LoginRequestFromJSON,
+  LoginRequestToJSON,
+  LoginResponseFromJSON,
+  LoginResponseToJSON,
+  SignupRequestFromJSON,
+  SignupRequestToJSON,
+  SignupResponseFromJSON,
+  SignupResponseToJSON,
+} from "../models/index";
 
 export interface LoginOperationRequest {
-    loginRequest: LoginRequest;
+  loginRequest: LoginRequest;
 }
 
 export interface SignupOperationRequest {
-    signupRequest: SignupRequest;
+  signupRequest: SignupRequest;
 }
 
 /**
- * 
+ *
  */
 export class AuthApi extends runtime.BaseAPI {
+  /**
+   */
+  async helloRaw(
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<runtime.ApiResponse<HelloResponse>> {
+    const queryParameters: any = {};
 
-    /**
-     */
-    async helloRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<HelloResponse>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    if (this.configuration && this.configuration.accessToken) {
+      const token = this.configuration.accessToken;
+      const tokenString = await token("bearer_auth", []);
 
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
+      if (tokenString) {
+        headerParameters["Authorization"] = `Bearer ${tokenString}`;
+      }
+    }
+    const response = await this.request(
+      {
+        path: `/api/auth/hello`,
+        method: "GET",
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides,
+    );
 
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        const response = await this.request({
-            path: `/api/auth/hello`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      HelloResponseFromJSON(jsonValue),
+    );
+  }
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => HelloResponseFromJSON(jsonValue));
+  /**
+   */
+  async hello(
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<HelloResponse> {
+    const response = await this.helloRaw(initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
+  async loginRaw(
+    requestParameters: LoginOperationRequest,
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<runtime.ApiResponse<LoginResponse>> {
+    if (requestParameters["loginRequest"] == null) {
+      throw new runtime.RequiredError(
+        "loginRequest",
+        'Required parameter "loginRequest" was null or undefined when calling login().',
+      );
     }
 
-    /**
-     */
-    async hello(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<HelloResponse> {
-        const response = await this.helloRaw(initOverrides);
-        return await response.value();
+    const queryParameters: any = {};
+
+    const headerParameters: runtime.HTTPHeaders = {};
+
+    headerParameters["Content-Type"] = "application/json";
+
+    const response = await this.request(
+      {
+        path: `/api/auth/login`,
+        method: "POST",
+        headers: headerParameters,
+        query: queryParameters,
+        body: LoginRequestToJSON(requestParameters["loginRequest"]),
+      },
+      initOverrides,
+    );
+
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      LoginResponseFromJSON(jsonValue),
+    );
+  }
+
+  /**
+   */
+  async login(
+    requestParameters: LoginOperationRequest,
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<LoginResponse> {
+    const response = await this.loginRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
+
+  /**
+   */
+  async signupRaw(
+    requestParameters: SignupOperationRequest,
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<runtime.ApiResponse<SignupResponse>> {
+    if (requestParameters["signupRequest"] == null) {
+      throw new runtime.RequiredError(
+        "signupRequest",
+        'Required parameter "signupRequest" was null or undefined when calling signup().',
+      );
     }
 
-    /**
-     */
-    async loginRaw(requestParameters: LoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<LoginResponse>> {
-        if (requestParameters['loginRequest'] == null) {
-            throw new runtime.RequiredError(
-                'loginRequest',
-                'Required parameter "loginRequest" was null or undefined when calling login().'
-            );
-        }
+    const queryParameters: any = {};
 
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    headerParameters["Content-Type"] = "application/json";
 
-        headerParameters['Content-Type'] = 'application/json';
+    const response = await this.request(
+      {
+        path: `/api/auth/signup`,
+        method: "POST",
+        headers: headerParameters,
+        query: queryParameters,
+        body: SignupRequestToJSON(requestParameters["signupRequest"]),
+      },
+      initOverrides,
+    );
 
-        const response = await this.request({
-            path: `/api/auth/login`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: LoginRequestToJSON(requestParameters['loginRequest']),
-        }, initOverrides);
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      SignupResponseFromJSON(jsonValue),
+    );
+  }
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => LoginResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async login(requestParameters: LoginOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<LoginResponse> {
-        const response = await this.loginRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     */
-    async signupRaw(requestParameters: SignupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SignupResponse>> {
-        if (requestParameters['signupRequest'] == null) {
-            throw new runtime.RequiredError(
-                'signupRequest',
-                'Required parameter "signupRequest" was null or undefined when calling signup().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        const response = await this.request({
-            path: `/api/auth/signup`,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: SignupRequestToJSON(requestParameters['signupRequest']),
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => SignupResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async signup(requestParameters: SignupOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SignupResponse> {
-        const response = await this.signupRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
+  /**
+   */
+  async signup(
+    requestParameters: SignupOperationRequest,
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<SignupResponse> {
+    const response = await this.signupRaw(requestParameters, initOverrides);
+    return await response.value();
+  }
 }

@@ -12,43 +12,47 @@
  * Do not edit the class manually.
  */
 
-
-import * as runtime from '../runtime';
-import type {
-  GarbagesResponse,
-} from '../models/index';
+import * as runtime from "../runtime";
+import type { GarbagesResponse } from "../models/index";
 import {
-    GarbagesResponseFromJSON,
-    GarbagesResponseToJSON,
-} from '../models/index';
+  GarbagesResponseFromJSON,
+  GarbagesResponseToJSON,
+} from "../models/index";
 
 /**
- * 
+ *
  */
 export class DefaultApi extends runtime.BaseAPI {
+  /**
+   */
+  async getGarbagesRaw(
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<runtime.ApiResponse<GarbagesResponse>> {
+    const queryParameters: any = {};
 
-    /**
-     */
-    async getGarbagesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GarbagesResponse>> {
-        const queryParameters: any = {};
+    const headerParameters: runtime.HTTPHeaders = {};
 
-        const headerParameters: runtime.HTTPHeaders = {};
+    const response = await this.request(
+      {
+        path: `/api/garbages`,
+        method: "GET",
+        headers: headerParameters,
+        query: queryParameters,
+      },
+      initOverrides,
+    );
 
-        const response = await this.request({
-            path: `/api/garbages`,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
+    return new runtime.JSONApiResponse(response, (jsonValue) =>
+      GarbagesResponseFromJSON(jsonValue),
+    );
+  }
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => GarbagesResponseFromJSON(jsonValue));
-    }
-
-    /**
-     */
-    async getGarbages(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GarbagesResponse> {
-        const response = await this.getGarbagesRaw(initOverrides);
-        return await response.value();
-    }
-
+  /**
+   */
+  async getGarbages(
+    initOverrides?: RequestInit | runtime.InitOverrideFunction,
+  ): Promise<GarbagesResponse> {
+    const response = await this.getGarbagesRaw(initOverrides);
+    return await response.value();
+  }
 }
