@@ -5,8 +5,9 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install cargo-watch for hot reload
-RUN cargo install cargo-watch
+# Install cargo-watch for hot reload and diesel-cli for migrations
+RUN cargo install cargo-watch && \
+    cargo install diesel_cli --no-default-features --features postgres
 
 WORKDIR /app
 

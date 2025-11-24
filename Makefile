@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-rust-client generate-ts-client lint clean
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-rust-client generate-ts-client lint clean generate-schema
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -40,3 +40,9 @@ lint: ## Run clippy linter
 
 clean: ## Stop services and clean volumes
 	docker compose down -v
+
+generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
+	@echo "Waiting for server to run migrations..."
+	@sleep 30
+	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
+	@echo "Schema generated at crates/ramekin-server/src/schema.rs"

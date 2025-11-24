@@ -1,10 +1,18 @@
 mod api;
+mod auth;
 mod db;
 mod models;
 mod schema;
 
-use api::{paths, GarbagesResponse};
-use axum::{extract::State, routing::get, Json};
+use api::{
+    paths, ErrorResponse, GarbagesResponse, HelloResponse, LoginRequest, LoginResponse,
+    SignupRequest, SignupResponse,
+};
+use axum::{
+    extract::State,
+    routing::{get, post},
+    Json,
+};
 use diesel::prelude::*;
 use models::Garbage;
 use schema::garbage;
@@ -14,8 +22,37 @@ use utoipa_axum::router::OpenApiRouter;
 use utoipa_swagger_ui::SwaggerUi;
 
 #[derive(OpenApi)]
-#[openapi(paths(get_garbages), components(schemas(GarbagesResponse)))]
+#[openapi(
+    paths(get_garbages, auth::signup, auth::login, auth::hello),
+    components(schemas(
+        GarbagesResponse,
+        SignupRequest,
+        SignupResponse,
+        LoginRequest,
+        LoginResponse,
+        HelloResponse,
+        ErrorResponse
+    )),
+    modifiers(&SecurityAddon)
+)]
 struct ApiDoc;
+
+struct SecurityAddon;
+
+impl utoipa::Modify for SecurityAddon {
+    fn modify(&self, openapi: &mut utoipa::openapi::OpenApi) {
+        if let Some(components) = openapi.components.as_mut() {
+            components.add_security_scheme(
+                "bearer_auth",
+                utoipa::openapi::security::SecurityScheme::Http(
+                    utoipa::openapi::security::Http::new(
+                        utoipa::openapi::security::HttpAuthScheme::Bearer,
+                    ),
+                ),
+            );
+        }
+    }
+}
 
 #[tokio::main]
 async fn main() {
@@ -27,6 +64,9 @@ async fn main() {
 
     let (router, api) = OpenApiRouter::with_openapi(ApiDoc::openapi())
         .route(paths::GARBAGES, get(get_garbages))
+        .route(paths::SIGNUP, post(auth::signup))
+        .route(paths::LOGIN, post(auth::login))
+        .route(paths::HELLO, get(auth::hello))
         .split_for_parts();
 
     // Serve OpenAPI spec as JSON and Swagger UI

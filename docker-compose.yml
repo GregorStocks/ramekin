@@ -29,6 +29,7 @@ services:
     volumes:
       # Mount source code for hot-reload
       - ./crates:/app/crates:cached
+      - ./migrations:/app/migrations:cached
       - ./Cargo.toml:/app/Cargo.toml:cached
       - ./Cargo.lock:/app/Cargo.lock:cached
       # Use a volume for target dir to avoid slow cross-platform builds
