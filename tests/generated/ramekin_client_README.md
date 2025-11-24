@@ -101,6 +101,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-your.email@example.com
+
 
 

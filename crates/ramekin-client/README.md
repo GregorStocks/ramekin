@@ -51,5 +51,5 @@ cargo doc --open
 
 ## Author
 
-your.email@example.com
+
 
