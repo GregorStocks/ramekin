@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-# Generate Rust client from OpenAPI spec
+# Generate TypeScript client from OpenAPI spec
 # The server must be running at localhost:3000
 
-echo "Generating Rust client from OpenAPI spec..."
+echo "Generating TypeScript client from OpenAPI spec..."
 
 # Check if server is running
 if ! curl -s http://localhost:3000/api-docs/openapi.json > /dev/null; then
@@ -16,16 +16,15 @@ fi
 # Download the OpenAPI spec
 curl -s http://localhost:3000/api-docs/openapi.json > openapi.json
 
-# Generate the Rust client using openapi-generator
-# Install with: npm install -g @openapitools/openapi-generator-cli
+# Generate the TypeScript client using openapi-generator
 npx @openapitools/openapi-generator-cli generate \
     -i openapi.json \
-    -g rust \
-    -o ../ramekin-client \
-    --additional-properties=packageName=ramekin_client,supportAsync=true
+    -g typescript-fetch \
+    -o src/generated/api \
+    --additional-properties=supportsES6=true,typescriptThreePlus=true
 
 # Clean up
 rm openapi.json
 
-echo "Client generated successfully in ../ramekin-client/"
-echo "The generated client is a separate crate that the CLI depends on"
+echo "Client generated successfully in src/generated/api/"
+echo "The generated client is checked into git for easy building"

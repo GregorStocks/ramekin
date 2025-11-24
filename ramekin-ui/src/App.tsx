@@ -1,9 +1,11 @@
 import { createSignal, For } from 'solid-js'
 import './App.css'
+import { DefaultApi, Configuration } from './generated/api'
 
-interface GarbagesResponse {
-  garbages: string[]
-}
+// Create a configured API client
+const api = new DefaultApi(new Configuration({
+  basePath: '', // Empty because we're using the proxy
+}))
 
 function App() {
   const [garbageLists, setGarbageLists] = createSignal<string[][]>([])
@@ -12,8 +14,7 @@ function App() {
   const fetchGarbages = async () => {
     setLoading(true)
     try {
-      const response = await fetch('/api/garbages')
-      const data: GarbagesResponse = await response.json()
+      const data = await api.getGarbages()
       setGarbageLists([...garbageLists(), data.garbages])
     } catch (error) {
       console.error('Failed to fetch garbages:', error)

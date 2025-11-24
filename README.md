@@ -1,112 +1,79 @@
 # Ramekin
 
-A web-based recipe application with a Rust backend and Solid frontend.
+A web application with a Rust backend and SolidJS frontend.
 
 ## Architecture
 
-Ramekin consists of five main components:
+- **ramekin-server** - REST API server (Rust + Axum)
+- **ramekin-ui** - Web frontend (SolidJS)
+- **ramekin-cli** - Command-line client (Rust)
+- **ramekin-client** - Auto-generated Rust API client (from OpenAPI spec)
+- **PostgreSQL** - Database
 
-1. **ramekin-ui** - Web frontend built with SolidJS
-2. **ramekin-server** - REST API server built with Axum
-3. **ramekin-lib** - Shared library for common types and logic
-4. **ramekin-cli** - Command-line interface for interacting with the server or running local operations
-5. **PostgreSQL** - Database for persistent storage
+The API is defined once in the server using OpenAPI annotations, then clients (both Rust CLI and TypeScript UI) are auto-generated to stay in sync.
+
+## Quick Start
+
+```bash
+# Start development environment (backend + database with hot-reload)
+make dev
+
+# In another terminal, start the UI
+cd ramekin-ui
+npm install
+npm run dev
+```
+
+Visit:
+- Frontend: http://localhost:5173
+- API: http://localhost:3000
+- API Docs: http://localhost:3000/swagger-ui/
+
+## Common Commands
+
+Run `make help` to see all available commands:
+
+```bash
+make dev              # Start dev environment (with hot-reload)
+make down             # Stop all services
+make logs             # Show all logs
+make logs-server      # Show server logs only
+make logs-db          # Show database logs only
+make generate-clients # Regenerate both API clients
+make lint             # Run linter
+make clean            # Stop services and clean volumes
+```
+
+## Development Workflow
+
+### Making API Changes
+
+1. Edit the server code in `crates/ramekin-server/`
+2. The server auto-recompiles (~1-2 seconds)
+3. Regenerate clients: `make generate-clients`
+4. Commit the generated client code
+
+The generated clients provide type-safe API access:
+- **CLI**: Uses `ramekin-client` crate (Rust)
+- **UI**: Uses `src/generated/api` (TypeScript)
+
+### Running the CLI
+
+```bash
+cargo run -p ramekin-cli -- garbages
+```
 
 ## Project Structure
 
 ```
 ramekin/
 ├── crates/
-│   ├── ramekin-lib/      # Shared types, models, and utilities
-│   ├── ramekin-server/   # Axum web server
-│   └── ramekin-cli/      # CLI tool
+│   ├── ramekin-server/   # API server with OpenAPI spec
+│   ├── ramekin-cli/      # CLI that uses generated client
+│   └── ramekin-client/   # Auto-generated Rust client
 ├── ramekin-ui/           # SolidJS frontend
-├── migrations/           # Diesel database migrations
-├── docker-compose.yml    # PostgreSQL container configuration
-└── Cargo.toml           # Rust workspace configuration
+│   └── src/generated/    # Auto-generated TypeScript client
+├── docker-compose.yml    # Docker config with hot-reload
+└── Makefile             # All common commands
 ```
 
-## Prerequisites
-
-- [Rust](https://rustup.rs/) (latest stable)
-- [Node.js](https://nodejs.org/) (v18 or later)
-- [Docker](https://www.docker.com/) and Docker Compose
-- [Diesel CLI](https://diesel.rs/guides/getting-started) - Install with:
-  ```bash
-  cargo install diesel_cli --no-default-features --features postgres
-  ```
-
-## Getting Started
-
-### 1. Run the backend
-
-```bash
-docker-compose up -d
-```
-
-### 2. Run the frontend
-
-In a separate terminal:
-
-```bash
-cd ramekin-ui
-npm install
-npm run dev
-```
-
-The frontend will be available at http://localhost:5173
-
-### 3. Use the CLI
-
-```bash
-cargo run --bin ramekin-cli -- --help
-```
-
-## Development
-
-### Running tests
-
-```bash
-cargo test
-```
-
-### Creating a new migration
-
-```bash
-diesel migration generate <migration_name>
-```
-
-### Frontend development
-
-The frontend uses Vite for hot module replacement. Changes will automatically reload in the browser.
-
-### Checking code
-
-```bash
-# Check Rust code
-cargo check
-
-# Format Rust code
-cargo fmt
-
-# Lint Rust code
-cargo clippy
-
-# Check frontend
-cd ramekin-ui
-npm run build
-```
-
-## Database
-
-The application uses PostgreSQL with Diesel ORM. The database schema is defined in migrations and automatically generates Rust types in `crates/ramekin-lib/src/schema.rs`.
-
-Connection details:
-- Host: localhost:5432
-- Database: ramekin
-- Username: ramekin
-- Password: ramekin
-
-## License
-
-MIT OR Apache-2.0

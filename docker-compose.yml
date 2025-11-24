@@ -19,15 +19,25 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: ramekin-server
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
+      RUST_LOG: debug
     ports:
       - "3000:3000"
+    volumes:
+      # Mount source code for hot-reload
+      - ./crates:/app/crates:cached
+      - ./Cargo.toml:/app/Cargo.toml:cached
+      - ./Cargo.lock:/app/Cargo.lock:cached
+      # Use a volume for target dir to avoid slow cross-platform builds
+      - cargo-target:/app/target
+    command: cargo watch -x 'run --package ramekin-server'
     depends_on:
       postgres:
         condition: service_healthy
 
 volumes:
   postgres_data:
+  cargo-target:
