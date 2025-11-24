@@ -7,7 +7,7 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 dev: ## Start dev environment (with hot-reload)
-	docker compose up --build -d
+	docker compose up --build -d --wait
 
 up: dev ## Alias for dev
 
@@ -15,7 +15,7 @@ down: ## Stop all services
 	docker compose down
 
 restart: ## Force restart services
-	docker compose up --build -d --force-recreate
+	docker compose up --build -d --force-recreate --wait
 
 logs: ## Show all logs
 	docker compose logs -f
@@ -42,8 +42,6 @@ clean: ## Stop services and clean volumes
 	docker compose down -v
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
-	@echo "Waiting for server to run migrations..."
-	@sleep 30
 	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
 	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
 
@@ -51,7 +49,7 @@ test: test-clean test-up ## Run tests (tears down on success, leaves up on failu
 	@docker compose -f docker-compose.test.yml run --build --rm tests && docker compose -f docker-compose.test.yml down -v || (echo "Tests failed - leaving environment up for debugging" && exit 1)
 
 test-up: ## Start test environment
-	docker compose -f docker-compose.test.yml up --build -d postgres server
+	docker compose -f docker-compose.test.yml up --build -d --wait postgres server
 
 test-run: ## Run tests against running test environment
 	docker compose -f docker-compose.test.yml run --build --rm tests

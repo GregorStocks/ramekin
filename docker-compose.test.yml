@@ -36,6 +36,12 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/garbages"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
 
   tests:
     build:
@@ -53,8 +59,9 @@ services:
       - ./Cargo.lock:/app/Cargo.lock:cached
       - test_cargo_target:/app/target
     depends_on:
-      - server
-    command: /app/tests/wait-and-run.sh
+      server:
+        condition: service_healthy
+    command: pytest /app/tests -v
 
 volumes:
   test_postgres_data:
