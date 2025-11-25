@@ -1,11 +1,13 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::schema::recipes;
+use crate::schema::{photos, recipes};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
+use base64::Engine;
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::Serialize;
+use std::collections::HashMap;
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
@@ -18,6 +20,8 @@ pub struct RecipeSummary {
     pub title: String,
     pub description: Option<String>,
     pub tags: Vec<String>,
+    /// Base64-encoded JPEG thumbnail of the first photo, if any
+    pub thumbnail: Option<String>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }
@@ -34,6 +38,7 @@ struct RecipeForList {
     title: String,
     description: Option<String>,
     tags: Vec<Option<String>>,
+    photo_ids: Vec<Option<Uuid>>,
     created_at: DateTime<Utc>,
     updated_at: DateTime<Utc>,
 }
@@ -86,15 +91,46 @@ pub async fn list_recipes(
         }
     };
 
+    // Collect all first photo IDs to fetch thumbnails in one query
+    let first_photo_ids: Vec<Uuid> = results
+        .iter()
+        .filter_map(|r| r.photo_ids.first().and_then(|id| *id))
+        .collect();
+
+    // Fetch thumbnails for all first photos
+    let thumbnails: HashMap<Uuid, Vec<u8>> = if first_photo_ids.is_empty() {
+        HashMap::new()
+    } else {
+        match photos::table
+            .filter(photos::id.eq_any(&first_photo_ids))
+            .filter(photos::deleted_at.is_null())
+            .select((photos::id, photos::thumbnail))
+            .load::<(Uuid, Vec<u8>)>(&mut conn)
+        {
+            Ok(rows) => rows.into_iter().collect(),
+            Err(_) => HashMap::new(), // Fail gracefully - just don't show thumbnails
+        }
+    };
+
     let recipes = results
         .into_iter()
-        .map(|r| RecipeSummary {
-            id: r.id,
-            title: r.title,
-            description: r.description,
-            tags: r.tags.into_iter().flatten().collect(),
-            created_at: r.created_at,
-            updated_at: r.updated_at,
+        .map(|r| {
+            let thumbnail = r
+                .photo_ids
+                .first()
+                .and_then(|id| *id)
+                .and_then(|id| thumbnails.get(&id))
+                .map(|bytes| base64::engine::general_purpose::STANDARD.encode(bytes));
+
+            RecipeSummary {
+                id: r.id,
+                title: r.title,
+                description: r.description,
+                tags: r.tags.into_iter().flatten().collect(),
+                thumbnail,
+                created_at: r.created_at,
+                updated_at: r.updated_at,
+            }
         })
         .collect();
 

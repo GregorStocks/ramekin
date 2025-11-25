@@ -874,6 +874,13 @@
               "type": "string"
             }
           },
+          "thumbnail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Base64-encoded JPEG thumbnail of the first photo, if any"
+          },
           "title": {
             "type": "string"
           },

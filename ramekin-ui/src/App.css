@@ -249,7 +249,6 @@
 
 .recipe-card {
   display: block;
-  padding: 1.25rem;
   background: #1a1a1a;
   border: 1px solid #333;
   border-radius: 8px;
@@ -258,11 +257,23 @@
   transition:
     border-color 0.2s,
     transform 0.2s;
+  overflow: hidden;
 }
 
 .recipe-card:hover {
   border-color: #646cff;
   transform: translateY(-2px);
+}
+
+.recipe-card-thumbnail {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-card-content {
+  padding: 1.25rem;
 }
 
 .recipe-card h3 {

@@ -57,20 +57,29 @@ export default function CookbookPage() {
         <For each={recipes()}>
           {(recipe) => (
             <A href={`/recipes/${recipe.id}`} class="recipe-card">
-              <h3>{recipe.title}</h3>
-              <Show when={recipe.description}>
-                <p class="recipe-description">{recipe.description}</p>
+              <Show when={recipe.thumbnail}>
+                <img
+                  src={`data:image/jpeg;base64,${recipe.thumbnail}`}
+                  alt=""
+                  class="recipe-card-thumbnail"
+                />
               </Show>
-              <Show when={recipe.tags && recipe.tags.length > 0}>
-                <div class="recipe-tags">
-                  <For each={recipe.tags}>
-                    {(tag) => <span class="tag">{tag}</span>}
-                  </For>
-                </div>
-              </Show>
-              <p class="recipe-date">
-                Updated {new Date(recipe.updatedAt).toLocaleDateString()}
-              </p>
+              <div class="recipe-card-content">
+                <h3>{recipe.title}</h3>
+                <Show when={recipe.description}>
+                  <p class="recipe-description">{recipe.description}</p>
+                </Show>
+                <Show when={recipe.tags && recipe.tags.length > 0}>
+                  <div class="recipe-tags">
+                    <For each={recipe.tags}>
+                      {(tag) => <span class="tag">{tag}</span>}
+                    </For>
+                  </div>
+                </Show>
+                <p class="recipe-date">
+                  Updated {new Date(recipe.updatedAt).toLocaleDateString()}
+                </p>
+              </div>
             </A>
           )}
         </For>
