@@ -1,30 +1,21 @@
 #!/bin/bash
 set -e
 
-# Generate all API clients from OpenAPI spec
-# Requires the dev server to be running at localhost:3000
+# Generate all API clients from saved OpenAPI spec
+# Run ./scripts/fetch-openapi.sh first to update the spec
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
-SERVER_URL="${API_URL:-http://localhost:3000}"
+SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
 
-# Create temp directory for spec file (cleaned up on exit)
-TMPDIR=$(mktemp -d)
-trap "rm -rf $TMPDIR" EXIT
-SPEC_FILE="$TMPDIR/openapi.json"
+echo "Generating API clients from $SPEC_FILE..."
 
-echo "Generating API clients from $SERVER_URL..."
-
-# Check if server is running
-if ! curl -s "$SERVER_URL/api-docs/openapi.json" > /dev/null 2>&1; then
-    echo "Error: Server is not running at $SERVER_URL"
-    echo "Please start the server first: make dev"
+# Check if spec file exists
+if [ ! -f "$SPEC_FILE" ]; then
+    echo "Error: OpenAPI spec not found at $SPEC_FILE"
+    echo "Please run: make fetch-openapi"
     exit 1
 fi
-
-# Download the OpenAPI spec
-curl -s "$SERVER_URL/api-docs/openapi.json" > "$SPEC_FILE"
-echo "Downloaded OpenAPI spec"
 
 # Function to run openapi-generator via Docker
 generate() {
@@ -39,10 +30,9 @@ generate() {
 
     docker run --rm \
         -v "$PROJECT_ROOT:/project" \
-        -v "$TMPDIR:/spec:ro" \
         -w /project \
         openapitools/openapi-generator-cli:v7.10.0 generate \
-        -i /spec/openapi.json \
+        -i "/project/api/openapi.json" \
         -g "$generator" \
         -o "/project/$output" \
         --additional-properties="$extra_props" \

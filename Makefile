@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs
+.PHONY: help dev up down restart logs logs-server logs-db fetch-openapi generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -26,7 +26,10 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: up ## Regenerate all API clients (Rust, TypeScript, Python)
+fetch-openapi: up ## Download OpenAPI spec from server and save to api/openapi.json
+	./scripts/fetch-openapi.sh
+
+generate-clients: ## Regenerate all API clients from api/openapi.json
 	./scripts/generate-clients.sh
 	$(MAKE) lint
 
