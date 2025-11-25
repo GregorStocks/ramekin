@@ -22,6 +22,7 @@ use axum::middleware;
 use axum::routing::{get, post};
 use axum::Router;
 use models::Ingredient;
+use std::env;
 use std::sync::Arc;
 use tower_http::trace::TraceLayer;
 use tracing::Span;
@@ -88,9 +89,16 @@ impl utoipa::Modify for SecurityAddon {
 
 #[tokio::main]
 async fn main() {
+    // Check for --openapi flag to dump spec and exit
+    if env::args().any(|arg| arg == "--openapi") {
+        let spec = ApiDoc::openapi().to_pretty_json().unwrap();
+        println!("{}", spec);
+        return;
+    }
+
     tracing_subscriber::fmt::init();
 
-    let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+    let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let pool = Arc::new(db::create_pool(&database_url));
 
