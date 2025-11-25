@@ -1,31 +1,35 @@
-import { createSignal, createEffect, Show } from "solid-js";
+import { createSignal, createEffect, createRoot, Show } from "solid-js";
 import "./App.css";
 import { AuthApi, TestApi, Configuration } from "ramekin-client";
 
 const publicApi = new TestApi(new Configuration({ basePath: "" }));
 
-// Auth state - token stored in localStorage
-const [token, setToken] = createSignal<string | null>(
-  localStorage.getItem("token"),
-);
+// Auth state - wrapped in createRoot since it's at module level
+const { token, setToken, getTestApi } = createRoot(() => {
+  const [token, setToken] = createSignal<string | null>(
+    localStorage.getItem("token"),
+  );
 
-// Update localStorage when token changes
-createEffect(() => {
-  const t = token();
-  if (t) {
-    localStorage.setItem("token", t);
-  } else {
-    localStorage.removeItem("token");
-  }
-});
-
-const getAuthedConfig = () =>
-  new Configuration({
-    basePath: "",
-    accessToken: () => token() ?? "",
+  // Update localStorage when token changes
+  createEffect(() => {
+    const t = token();
+    if (t) {
+      localStorage.setItem("token", t);
+    } else {
+      localStorage.removeItem("token");
+    }
   });
 
-const getTestApi = () => new TestApi(getAuthedConfig());
+  const getAuthedConfig = () =>
+    new Configuration({
+      basePath: "",
+      accessToken: () => token() ?? "",
+    });
+
+  const getTestApi = () => new TestApi(getAuthedConfig());
+
+  return { token, setToken, getTestApi };
+});
 
 function AuthForm() {
   const [isLogin, setIsLogin] = createSignal(true);
