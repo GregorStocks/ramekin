@@ -45,8 +45,8 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
 	$(MAKE) lint
 
-test: test-clean test-up ## Run tests (tears down on success, leaves up on failure for debugging)
-	@docker compose -f docker-compose.test.yml run --build --rm tests && docker compose -f docker-compose.test.yml down -v || (echo "Tests failed - leaving environment up for debugging" && exit 1)
+test: test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)
+	@docker compose -f docker-compose.test.yml run --build --rm tests && docker compose -f docker-compose.test.yml down || (echo "Tests failed - leaving environment up for debugging" && exit 1)
 
 test-up: ## Start test environment
 	docker compose -f docker-compose.test.yml up --build -d --wait postgres server
