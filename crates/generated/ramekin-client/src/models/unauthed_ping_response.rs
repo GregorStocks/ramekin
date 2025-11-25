@@ -11,16 +11,14 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ErrorResponse : Shared error response used by all endpoints
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ErrorResponse {
-    #[serde(rename = "error")]
-    pub error: String,
+pub struct UnauthedPingResponse {
+    #[serde(rename = "message")]
+    pub message: String,
 }
 
-impl ErrorResponse {
-    /// Shared error response used by all endpoints
-    pub fn new(error: String) -> ErrorResponse {
-        ErrorResponse { error }
+impl UnauthedPingResponse {
+    pub fn new(message: String) -> UnauthedPingResponse {
+        UnauthedPingResponse { message }
     }
 }

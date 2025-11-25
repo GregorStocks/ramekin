@@ -21,7 +21,7 @@ anyhow = "1.0"
 thiserror = "2.0"
 
 # Database
-diesel = { version = "2.3", features = ["postgres", "r2d2", "chrono", "uuid"] }
+diesel = { version = "2.3", features = ["postgres", "r2d2", "chrono", "uuid", "serde_json"] }
 diesel_migrations = "2.3"
 
 # Auth
@@ -33,7 +33,7 @@ uuid = { version = "1.18", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
 
 # Server
-axum = "0.8"
+axum = { version = "0.8", features = ["multipart"] }
 tower = "0.5"
 tower-http = { version = "0.6", features = ["cors", "trace"] }
 utoipa = { version = "5.3", features = ["axum_extras", "uuid"] }

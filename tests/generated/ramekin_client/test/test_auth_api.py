@@ -13,20 +13,24 @@ Do not edit the class manually.
 
 import unittest
 
-from ramekin_client.api.default_api import DefaultApi
+from ramekin_client.api.auth_api import AuthApi
 
 
-class TestDefaultApi(unittest.TestCase):
-    """DefaultApi unit test stubs"""
+class TestAuthApi(unittest.TestCase):
+    """AuthApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DefaultApi()
+        self.api = AuthApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_unauthed_ping(self) -> None:
-        """Test case for unauthed_ping"""
+    def test_login(self) -> None:
+        """Test case for login"""
+        pass
+
+    def test_signup(self) -> None:
+        """Test case for signup"""
         pass
 
 

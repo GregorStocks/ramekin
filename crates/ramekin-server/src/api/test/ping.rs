@@ -7,15 +7,16 @@ use utoipa::ToSchema;
 pub const PATH: &str = "/api/test/ping";
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
-pub struct Response {
+pub struct PingResponse {
     pub message: String,
 }
 
 #[utoipa::path(
     get,
     path = "/api/test/ping",
+    tag = "test",
     responses(
-        (status = 200, description = "Authenticated ping response", body = Response),
+        (status = 200, description = "Authenticated ping response", body = PingResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(
@@ -23,7 +24,7 @@ pub struct Response {
     )
 )]
 pub async fn ping(AuthUser(_user): AuthUser) -> impl IntoResponse {
-    Json(Response {
+    Json(PingResponse {
         message: "ping".to_string(),
     })
 }

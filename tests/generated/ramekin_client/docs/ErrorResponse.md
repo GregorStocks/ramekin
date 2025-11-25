@@ -1,5 +1,6 @@
 # ErrorResponse
 
+Shared error response used by all endpoints
 
 ## Properties
 

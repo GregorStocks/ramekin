@@ -22,13 +22,13 @@ from typing import Optional, Set
 from typing_extensions import Self
 
 
-class ErrorResponse(BaseModel):
+class UploadPhotoResponse(BaseModel):
     """
-    Shared error response used by all endpoints
+    UploadPhotoResponse
     """  # noqa: E501
 
-    error: StrictStr
-    __properties: ClassVar[List[str]] = ["error"]
+    id: StrictStr
+    __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -47,7 +47,7 @@ class ErrorResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ErrorResponse from a JSON string"""
+        """Create an instance of UploadPhotoResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,12 +71,12 @@ class ErrorResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ErrorResponse from a dict"""
+        """Create an instance of UploadPhotoResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({"error": obj.get("error")})
+        _obj = cls.model_validate({"id": obj.get("id")})
         return _obj

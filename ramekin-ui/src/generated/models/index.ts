@@ -6,3 +6,5 @@ export * from "./LoginResponse";
 export * from "./PingResponse";
 export * from "./SignupRequest";
 export * from "./SignupResponse";
+export * from "./UnauthedPingResponse";
+export * from "./UploadPhotoResponse";

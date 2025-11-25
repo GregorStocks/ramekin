@@ -10,3 +10,7 @@ pub mod signup_request;
 pub use self::signup_request::SignupRequest;
 pub mod signup_response;
 pub use self::signup_response::SignupResponse;
+pub mod unauthed_ping_response;
+pub use self::unauthed_ping_response::UnauthedPingResponse;
+pub mod upload_photo_response;
+pub use self::upload_photo_response::UploadPhotoResponse;

@@ -13,28 +13,20 @@ Do not edit the class manually.
 
 import unittest
 
-from ramekin_client.api.authhandlers_api import AuthhandlersApi
+from ramekin_client.api.photos_api import PhotosApi
 
 
-class TestAuthhandlersApi(unittest.TestCase):
-    """AuthhandlersApi unit test stubs"""
+class TestPhotosApi(unittest.TestCase):
+    """PhotosApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = AuthhandlersApi()
+        self.api = PhotosApi()
 
     def tearDown(self) -> None:
         pass
 
-    def test_login(self) -> None:
-        """Test case for login"""
-        pass
-
-    def test_ping(self) -> None:
-        """Test case for ping"""
-        pass
-
-    def test_signup(self) -> None:
-        """Test case for signup"""
+    def test_upload(self) -> None:
+        """Test case for upload"""
         pass
 
 

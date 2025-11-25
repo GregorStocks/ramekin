@@ -1,12 +1,11 @@
-# \AuthhandlersApi
+# \AuthApi
 
 All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**login**](AuthhandlersApi.md#login) | **POST** /api/auth/login | 
-[**ping**](AuthhandlersApi.md#ping) | **GET** /api/test/ping | 
-[**signup**](AuthhandlersApi.md#signup) | **POST** /api/auth/signup | 
+[**login**](AuthApi.md#login) | **POST** /api/auth/login | 
+[**signup**](AuthApi.md#signup) | **POST** /api/auth/signup | 
 
 
 
@@ -33,31 +32,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-
-## ping
-
-> models::PingResponse ping()
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**models::PingResponse**](PingResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

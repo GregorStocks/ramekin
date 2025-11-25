@@ -4,6 +4,7 @@ mod db;
 mod models;
 mod schema;
 
+use api::photos::upload;
 use api::public::auth::{login, signup};
 use api::public::test::unauthed_ping;
 use api::test::ping;
@@ -22,15 +23,17 @@ use utoipa_swagger_ui::SwaggerUi;
         unauthed_ping::unauthed_ping,
         signup::signup,
         login::login,
-        ping::ping
+        ping::ping,
+        upload::upload
     ),
     components(schemas(
-        unauthed_ping::Response,
-        signup::Request,
-        signup::Response,
-        login::Request,
-        login::Response,
-        ping::Response,
+        unauthed_ping::UnauthedPingResponse,
+        signup::SignupRequest,
+        signup::SignupResponse,
+        login::LoginRequest,
+        login::LoginResponse,
+        ping::PingResponse,
+        upload::UploadPhotoResponse,
         ErrorResponse
     )),
     modifiers(&SecurityAddon)
@@ -72,13 +75,13 @@ async fn main() {
 
     // Protected routes - authentication required by default
     // ADD NEW ROUTES HERE - they will automatically require auth
-    let protected_router =
-        Router::new()
-            .route(ping::PATH, get(ping::ping))
-            .layer(middleware::from_fn_with_state(
-                pool.clone(),
-                auth::require_auth,
-            ));
+    let protected_router = Router::new()
+        .route(ping::PATH, get(ping::ping))
+        .route(upload::PATH, post(upload::upload))
+        .layer(middleware::from_fn_with_state(
+            pool.clone(),
+            auth::require_auth,
+        ));
 
     let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", openapi);
 

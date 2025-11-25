@@ -19,3 +19,5 @@ from ramekin_client.models.login_response import LoginResponse
 from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse
+from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
+from ramekin_client.models.upload_photo_response import UploadPhotoResponse

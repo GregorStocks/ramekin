@@ -1,7 +1,7 @@
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use ramekin_client::apis::configuration::Configuration;
-use ramekin_client::apis::default_api;
+use ramekin_client::apis::test_api;
 
 #[derive(Parser)]
 #[command(name = "ramekin")]
@@ -38,7 +38,7 @@ async fn ping(server: &str) -> Result<()> {
     let mut config = Configuration::new();
     config.base_path = server.to_string();
 
-    let response = default_api::unauthed_ping(&config).await?;
+    let response = test_api::unauthed_ping(&config).await?;
 
     println!("{}", response.message);
 

@@ -7,7 +7,7 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "generated"))
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthhandlersApi, DefaultApi
+from ramekin_client.api import AuthApi, PhotosApi, TestApi
 
 
 @pytest.fixture
@@ -22,13 +22,24 @@ def api_client(api_config):
 
 
 @pytest.fixture
-def default_api(api_client):
-    return DefaultApi(api_client)
+def auth_api(api_client):
+    return AuthApi(api_client)
 
 
 @pytest.fixture
-def auth_api(api_client):
-    return AuthhandlersApi(api_client)
+def test_api(api_client):
+    return TestApi(api_client)
+
+
+@pytest.fixture
+def default_api(api_client):
+    """Alias for test_api for backwards compatibility."""
+    return TestApi(api_client)
+
+
+@pytest.fixture
+def photos_api(api_client):
+    return PhotosApi(api_client)
 
 
 @pytest.fixture

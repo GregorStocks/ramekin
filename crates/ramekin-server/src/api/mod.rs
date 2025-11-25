@@ -1,3 +1,4 @@
+pub mod photos;
 pub mod public;
 pub mod test;
 

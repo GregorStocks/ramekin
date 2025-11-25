@@ -16,8 +16,9 @@ Do not edit the class manually.
 __version__ = "1.0.0"
 
 # import apis into sdk package
-from ramekin_client.api.authhandlers_api import AuthhandlersApi
-from ramekin_client.api.default_api import DefaultApi
+from ramekin_client.api.auth_api import AuthApi
+from ramekin_client.api.photos_api import PhotosApi
+from ramekin_client.api.test_api import TestApi
 
 # import ApiClient
 from ramekin_client.api_response import ApiResponse
@@ -37,3 +38,5 @@ from ramekin_client.models.login_response import LoginResponse
 from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse
+from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
+from ramekin_client.models.upload_photo_response import UploadPhotoResponse

@@ -13,14 +13,6 @@ use crate::{apis::ResponseContent, models};
 use reqwest;
 use serde::{Deserialize, Serialize};
 
-/// struct for typed errors of method [`login`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum LoginError {
-    Status401(models::ErrorResponse),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`ping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -29,50 +21,11 @@ pub enum PingError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`signup`]
+/// struct for typed errors of method [`unauthed_ping`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
-pub enum SignupError {
-    Status400(models::ErrorResponse),
-    Status409(models::ErrorResponse),
+pub enum UnauthedPingError {
     UnknownValue(serde_json::Value),
-}
-
-pub async fn login(
-    configuration: &configuration::Configuration,
-    login_request: models::LoginRequest,
-) -> Result<models::LoginResponse, Error<LoginError>> {
-    let local_var_configuration = configuration;
-
-    let local_var_client = &local_var_configuration.client;
-
-    let local_var_uri_str = format!("{}/api/auth/login", local_var_configuration.base_path);
-    let mut local_var_req_builder =
-        local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
-
-    if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
-        local_var_req_builder =
-            local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
-    }
-    local_var_req_builder = local_var_req_builder.json(&login_request);
-
-    let local_var_req = local_var_req_builder.build()?;
-    let local_var_resp = local_var_client.execute(local_var_req).await?;
-
-    let local_var_status = local_var_resp.status();
-    let local_var_content = local_var_resp.text().await?;
-
-    if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
-        serde_json::from_str(&local_var_content).map_err(Error::from)
-    } else {
-        let local_var_entity: Option<LoginError> = serde_json::from_str(&local_var_content).ok();
-        let local_var_error = ResponseContent {
-            status: local_var_status,
-            content: local_var_content,
-            entity: local_var_entity,
-        };
-        Err(Error::ResponseError(local_var_error))
-    }
 }
 
 pub async fn ping(
@@ -113,23 +66,24 @@ pub async fn ping(
     }
 }
 
-pub async fn signup(
+pub async fn unauthed_ping(
     configuration: &configuration::Configuration,
-    signup_request: models::SignupRequest,
-) -> Result<models::SignupResponse, Error<SignupError>> {
+) -> Result<models::UnauthedPingResponse, Error<UnauthedPingError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;
 
-    let local_var_uri_str = format!("{}/api/auth/signup", local_var_configuration.base_path);
+    let local_var_uri_str = format!(
+        "{}/api/test/unauthed-ping",
+        local_var_configuration.base_path
+    );
     let mut local_var_req_builder =
-        local_var_client.request(reqwest::Method::POST, local_var_uri_str.as_str());
+        local_var_client.request(reqwest::Method::GET, local_var_uri_str.as_str());
 
     if let Some(ref local_var_user_agent) = local_var_configuration.user_agent {
         local_var_req_builder =
             local_var_req_builder.header(reqwest::header::USER_AGENT, local_var_user_agent.clone());
     }
-    local_var_req_builder = local_var_req_builder.json(&signup_request);
 
     let local_var_req = local_var_req_builder.build()?;
     let local_var_resp = local_var_client.execute(local_var_req).await?;
@@ -140,7 +94,8 @@ pub async fn signup(
     if !local_var_status.is_client_error() && !local_var_status.is_server_error() {
         serde_json::from_str(&local_var_content).map_err(Error::from)
     } else {
-        let local_var_entity: Option<SignupError> = serde_json::from_str(&local_var_content).ok();
+        let local_var_entity: Option<UnauthedPingError> =
+            serde_json::from_str(&local_var_content).ok();
         let local_var_error = ResponseContent {
             status: local_var_status,
             content: local_var_content,

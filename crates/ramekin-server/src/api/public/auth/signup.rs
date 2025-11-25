@@ -13,13 +13,13 @@ use uuid::Uuid;
 pub const PATH: &str = "/api/auth/signup";
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
-pub struct Request {
+pub struct SignupRequest {
     pub username: String,
     pub password: String,
 }
 
 #[derive(Debug, Clone, serde::Serialize, ToSchema)]
-pub struct Response {
+pub struct SignupResponse {
     pub user_id: Uuid,
     pub token: String,
 }
@@ -27,16 +27,17 @@ pub struct Response {
 #[utoipa::path(
     post,
     path = "/api/auth/signup",
-    request_body(content = Request, example = json!({"username": "user", "password": "password"})),
+    tag = "auth",
+    request_body(content = SignupRequest, example = json!({"username": "user", "password": "password"})),
     responses(
-        (status = 201, description = "User created successfully", body = Response),
+        (status = 201, description = "User created successfully", body = SignupResponse),
         (status = 400, description = "Invalid request", body = ErrorResponse),
         (status = 409, description = "Username already exists", body = ErrorResponse)
     )
 )]
 pub async fn signup(
     State(pool): State<Arc<DbPool>>,
-    Json(req): Json<Request>,
+    Json(req): Json<SignupRequest>,
 ) -> impl IntoResponse {
     let mut conn = match pool.get() {
         Ok(c) => c,
@@ -113,7 +114,7 @@ pub async fn signup(
 
     (
         StatusCode::CREATED,
-        Json(Response {
+        Json(SignupResponse {
             user_id: user.id,
             token,
         }),

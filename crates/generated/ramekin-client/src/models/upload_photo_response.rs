@@ -11,16 +11,14 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ErrorResponse : Shared error response used by all endpoints
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct ErrorResponse {
-    #[serde(rename = "error")]
-    pub error: String,
+pub struct UploadPhotoResponse {
+    #[serde(rename = "id")]
+    pub id: uuid::Uuid,
 }
 
-impl ErrorResponse {
-    /// Shared error response used by all endpoints
-    pub fn new(error: String) -> ErrorResponse {
-        ErrorResponse { error }
+impl UploadPhotoResponse {
+    pub fn new(id: uuid::Uuid) -> UploadPhotoResponse {
+        UploadPhotoResponse { id }
     }
 }

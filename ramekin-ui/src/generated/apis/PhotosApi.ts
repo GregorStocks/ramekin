@@ -13,26 +13,39 @@
  */
 
 import * as runtime from "../runtime";
-import type { PingResponse } from "../models/index";
-import { PingResponseFromJSON, PingResponseToJSON } from "../models/index";
+import type { ErrorResponse, UploadPhotoResponse } from "../models/index";
+import {
+  ErrorResponseFromJSON,
+  ErrorResponseToJSON,
+  UploadPhotoResponseFromJSON,
+  UploadPhotoResponseToJSON,
+} from "../models/index";
 
 /**
  *
  */
-export class DefaultApi extends runtime.BaseAPI {
+export class PhotosApi extends runtime.BaseAPI {
   /**
    */
-  async unauthedPingRaw(
+  async uploadRaw(
     initOverrides?: RequestInit | runtime.InitOverrideFunction,
-  ): Promise<runtime.ApiResponse<PingResponse>> {
+  ): Promise<runtime.ApiResponse<UploadPhotoResponse>> {
     const queryParameters: any = {};
 
     const headerParameters: runtime.HTTPHeaders = {};
 
+    if (this.configuration && this.configuration.accessToken) {
+      const token = this.configuration.accessToken;
+      const tokenString = await token("bearer_auth", []);
+
+      if (tokenString) {
+        headerParameters["Authorization"] = `Bearer ${tokenString}`;
+      }
+    }
     const response = await this.request(
       {
-        path: `/api/test/unauthed-ping`,
-        method: "GET",
+        path: `/api/photos`,
+        method: "POST",
         headers: headerParameters,
         query: queryParameters,
       },
@@ -40,16 +53,16 @@ export class DefaultApi extends runtime.BaseAPI {
     );
 
     return new runtime.JSONApiResponse(response, (jsonValue) =>
-      PingResponseFromJSON(jsonValue),
+      UploadPhotoResponseFromJSON(jsonValue),
     );
   }
 
   /**
    */
-  async unauthedPing(
+  async upload(
     initOverrides?: RequestInit | runtime.InitOverrideFunction,
-  ): Promise<PingResponse> {
-    const response = await this.unauthedPingRaw(initOverrides);
+  ): Promise<UploadPhotoResponse> {
+    const response = await this.uploadRaw(initOverrides);
     return await response.value();
   }
 }

@@ -12,26 +12,30 @@ use utoipa::ToSchema;
 pub const PATH: &str = "/api/auth/login";
 
 #[derive(Debug, Clone, Deserialize, ToSchema)]
-pub struct Request {
+pub struct LoginRequest {
     pub username: String,
     pub password: String,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
-pub struct Response {
+pub struct LoginResponse {
     pub token: String,
 }
 
 #[utoipa::path(
     post,
     path = "/api/auth/login",
-    request_body(content = Request, example = json!({"username": "user", "password": "password"})),
+    tag = "auth",
+    request_body(content = LoginRequest, example = json!({"username": "user", "password": "password"})),
     responses(
-        (status = 200, description = "Login successful", body = Response),
+        (status = 200, description = "Login successful", body = LoginResponse),
         (status = 401, description = "Invalid credentials", body = ErrorResponse)
     )
 )]
-pub async fn login(State(pool): State<Arc<DbPool>>, Json(req): Json<Request>) -> impl IntoResponse {
+pub async fn login(
+    State(pool): State<Arc<DbPool>>,
+    Json(req): Json<LoginRequest>,
+) -> impl IntoResponse {
     let mut conn = match pool.get() {
         Ok(c) => c,
         Err(_) => {
@@ -90,5 +94,5 @@ pub async fn login(State(pool): State<Arc<DbPool>>, Json(req): Json<Request>) ->
         }
     };
 
-    (StatusCode::OK, Json(Response { token })).into_response()
+    (StatusCode::OK, Json(LoginResponse { token })).into_response()
 }

@@ -14,7 +14,7 @@
 
 import { mapValues } from "../runtime";
 /**
- *
+ * Shared error response used by all endpoints
  * @export
  * @interface ErrorResponse
  */

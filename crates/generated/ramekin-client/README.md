@@ -26,10 +26,11 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthhandlersApi* | [**login**](docs/AuthhandlersApi.md#login) | **POST** /api/auth/login | 
-*AuthhandlersApi* | [**ping**](docs/AuthhandlersApi.md#ping) | **GET** /api/test/ping | 
-*AuthhandlersApi* | [**signup**](docs/AuthhandlersApi.md#signup) | **POST** /api/auth/signup | 
-*DefaultApi* | [**unauthed_ping**](docs/DefaultApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
+*AuthApi* | [**login**](docs/AuthApi.md#login) | **POST** /api/auth/login | 
+*AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
+*PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
+*TestApi* | [**ping**](docs/TestApi.md#ping) | **GET** /api/test/ping | 
+*TestApi* | [**unauthed_ping**](docs/TestApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
 
 ## Documentation For Models
@@ -40,6 +41,8 @@ Class | Method | HTTP request | Description
  - [PingResponse](docs/PingResponse.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
+ - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
+ - [UploadPhotoResponse](docs/UploadPhotoResponse.md)
 
 
 To get access to the crate's generated documentation, use:

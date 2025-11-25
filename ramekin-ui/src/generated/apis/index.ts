@@ -1,4 +1,5 @@
 /* tslint:disable */
 /* eslint-disable */
-export * from "./AuthhandlersApi";
-export * from "./DefaultApi";
+export * from "./AuthApi";
+export * from "./PhotosApi";
+export * from "./TestApi";

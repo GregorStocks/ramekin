@@ -45,15 +45,15 @@ configuration = ramekin_client.Configuration(
 # Enter a context with an instance of the API client
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = ramekin_client.AuthhandlersApi(api_client)
-    login_request = ramekin_client.LoginRequest() # LoginRequest | 
+    api_instance = ramekin_client.AuthApi(api_client)
+    login_request = {"password":"password","username":"user"} # LoginRequest | 
 
     try:
         api_response = api_instance.login(login_request)
-        print("The response of AuthhandlersApi->login:\n")
+        print("The response of AuthApi->login:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthhandlersApi->login: %s\n" % e)
+        print("Exception when calling AuthApi->login: %s\n" % e)
 
 ```
 
@@ -63,10 +63,11 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AuthhandlersApi* | [**login**](ramekin_client/docs/AuthhandlersApi.md#login) | **POST** /api/auth/login | 
-*AuthhandlersApi* | [**ping**](ramekin_client/docs/AuthhandlersApi.md#ping) | **GET** /api/test/ping | 
-*AuthhandlersApi* | [**signup**](ramekin_client/docs/AuthhandlersApi.md#signup) | **POST** /api/auth/signup | 
-*DefaultApi* | [**unauthed_ping**](ramekin_client/docs/DefaultApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
+*AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
+*AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
+*PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
+*TestApi* | [**ping**](ramekin_client/docs/TestApi.md#ping) | **GET** /api/test/ping | 
+*TestApi* | [**unauthed_ping**](ramekin_client/docs/TestApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
 
 ## Documentation For Models
@@ -77,6 +78,8 @@ Class | Method | HTTP request | Description
  - [PingResponse](ramekin_client/docs/PingResponse.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
+ - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
+ - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)
 
 
 <a id="documentation-for-authorization"></a>
