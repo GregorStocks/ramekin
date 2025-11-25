@@ -4,14 +4,22 @@ mod db;
 mod models;
 mod schema;
 
-use api::photos::{get, list, upload};
+use api::photos::get as photos_get;
+use api::photos::list as photos_list;
+use api::photos::upload;
 use api::public::auth::{login, signup};
 use api::public::testing::unauthed_ping;
+use api::recipes::create as recipes_create;
+use api::recipes::delete as recipes_delete;
+use api::recipes::get as recipes_get;
+use api::recipes::list as recipes_list;
+use api::recipes::update as recipes_update;
 use api::testing::ping;
 use api::ErrorResponse;
 use axum::middleware;
 use axum::routing::{get, post};
 use axum::Router;
+use models::Ingredient;
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_axum::router::OpenApiRouter;
@@ -25,8 +33,13 @@ use utoipa_swagger_ui::SwaggerUi;
         login::login,
         ping::ping,
         upload::upload,
-        get::get_photo,
-        list::list_photos
+        photos_get::get_photo,
+        photos_list::list_photos,
+        recipes_create::create_recipe,
+        recipes_list::list_recipes,
+        recipes_get::get_recipe,
+        recipes_update::update_recipe,
+        recipes_delete::delete_recipe
     ),
     components(schemas(
         unauthed_ping::UnauthedPingResponse,
@@ -37,8 +50,15 @@ use utoipa_swagger_ui::SwaggerUi;
         ping::PingResponse,
         upload::UploadPhotoRequest,
         upload::UploadPhotoResponse,
-        list::ListPhotosResponse,
-        list::PhotoSummary,
+        photos_list::ListPhotosResponse,
+        photos_list::PhotoSummary,
+        recipes_create::CreateRecipeRequest,
+        recipes_create::CreateRecipeResponse,
+        recipes_list::ListRecipesResponse,
+        recipes_list::RecipeSummary,
+        recipes_get::RecipeResponse,
+        recipes_update::UpdateRecipeRequest,
+        Ingredient,
         ErrorResponse
     )),
     modifiers(&SecurityAddon)
@@ -82,8 +102,21 @@ async fn main() {
     // ADD NEW ROUTES HERE - they will automatically require auth
     let protected_router = Router::new()
         .route(ping::PATH, get(ping::ping))
-        .route(list::PATH, get(list::list_photos).post(upload::upload))
-        .route(get::PATH, get(get::get_photo))
+        .route(
+            photos_list::PATH,
+            get(photos_list::list_photos).post(upload::upload),
+        )
+        .route(photos_get::PATH, get(photos_get::get_photo))
+        .route(
+            recipes_list::PATH,
+            get(recipes_list::list_recipes).post(recipes_create::create_recipe),
+        )
+        .route(
+            recipes_get::PATH,
+            get(recipes_get::get_recipe)
+                .put(recipes_update::update_recipe)
+                .delete(recipes_delete::delete_recipe),
+        )
         .layer(middleware::from_fn_with_state(
             pool.clone(),
             auth::require_auth,

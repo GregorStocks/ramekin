@@ -44,7 +44,7 @@ pub struct NewSession<'a> {
 }
 
 // Ingredient structure for JSONB storage
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
 pub struct Ingredient {
     pub item: String,
     pub amount: Option<String>,

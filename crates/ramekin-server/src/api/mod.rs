@@ -1,5 +1,6 @@
 pub mod photos;
 pub mod public;
+pub mod recipes;
 pub mod testing;
 
 use serde::Serialize;
