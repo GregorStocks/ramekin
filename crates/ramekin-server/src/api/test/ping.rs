@@ -22,7 +22,7 @@ pub struct Response {
         ("bearer_auth" = [])
     )
 )]
-pub async fn handler(AuthUser(_user): AuthUser) -> impl IntoResponse {
+pub async fn ping(AuthUser(_user): AuthUser) -> impl IntoResponse {
     Json(Response {
         message: "ping".to_string(),
     })

@@ -27,14 +27,14 @@ pub struct Response {
 #[utoipa::path(
     post,
     path = "/api/auth/signup",
-    request_body = Request,
+    request_body(content = Request, example = json!({"username": "user", "password": "password"})),
     responses(
         (status = 201, description = "User created successfully", body = Response),
         (status = 400, description = "Invalid request", body = ErrorResponse),
         (status = 409, description = "Username already exists", body = ErrorResponse)
     )
 )]
-pub async fn handler(
+pub async fn signup(
     State(pool): State<Arc<DbPool>>,
     Json(req): Json<Request>,
 ) -> impl IntoResponse {

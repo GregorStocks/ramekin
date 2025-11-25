@@ -16,7 +16,7 @@ pub struct Response {
         (status = 200, description = "Unauthed ping response", body = Response)
     )
 )]
-pub async fn handler() -> Json<Response> {
+pub async fn unauthed_ping() -> Json<Response> {
     Json(Response {
         message: "unauthed-ping".to_string(),
     })

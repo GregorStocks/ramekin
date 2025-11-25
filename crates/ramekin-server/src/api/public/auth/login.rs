@@ -25,16 +25,13 @@ pub struct Response {
 #[utoipa::path(
     post,
     path = "/api/auth/login",
-    request_body = Request,
+    request_body(content = Request, example = json!({"username": "user", "password": "password"})),
     responses(
         (status = 200, description = "Login successful", body = Response),
         (status = 401, description = "Invalid credentials", body = ErrorResponse)
     )
 )]
-pub async fn handler(
-    State(pool): State<Arc<DbPool>>,
-    Json(req): Json<Request>,
-) -> impl IntoResponse {
+pub async fn login(State(pool): State<Arc<DbPool>>, Json(req): Json<Request>) -> impl IntoResponse {
     let mut conn = match pool.get() {
         Ok(c) => c,
         Err(_) => {

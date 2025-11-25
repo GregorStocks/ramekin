@@ -19,10 +19,10 @@ use utoipa_swagger_ui::SwaggerUi;
 #[derive(OpenApi)]
 #[openapi(
     paths(
-        unauthed_ping::handler,
-        signup::handler,
-        login::handler,
-        ping::handler
+        unauthed_ping::unauthed_ping,
+        signup::signup,
+        login::login,
+        ping::ping
     ),
     components(schemas(
         unauthed_ping::Response,
@@ -65,16 +65,16 @@ async fn main() {
     // Public routes - no authentication required
     // Add new public routes here (health checks, login, signup, etc.)
     let (public_router, openapi) = OpenApiRouter::with_openapi(ApiDoc::openapi())
-        .route(unauthed_ping::PATH, get(unauthed_ping::handler))
-        .route(signup::PATH, post(signup::handler))
-        .route(login::PATH, post(login::handler))
+        .route(unauthed_ping::PATH, get(unauthed_ping::unauthed_ping))
+        .route(signup::PATH, post(signup::signup))
+        .route(login::PATH, post(login::login))
         .split_for_parts();
 
     // Protected routes - authentication required by default
     // ADD NEW ROUTES HERE - they will automatically require auth
     let protected_router =
         Router::new()
-            .route(ping::PATH, get(ping::handler))
+            .route(ping::PATH, get(ping::ping))
             .layer(middleware::from_fn_with_state(
                 pool.clone(),
                 auth::require_auth,
