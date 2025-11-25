@@ -1,11 +1,12 @@
-import { createSignal, createEffect, createRoot, Show } from "solid-js";
+import { createSignal, createEffect, createRoot, Show, For } from "solid-js";
 import "./App.css";
-import { AuthApi, TestApi, Configuration } from "ramekin-client";
+import { AuthApi, TestApi, PhotosApi, Configuration } from "ramekin-client";
+import type { PhotoSummary } from "ramekin-client";
 
 const publicApi = new TestApi(new Configuration({ basePath: "" }));
 
 // Auth state - wrapped in createRoot since it's at module level
-const { token, setToken, getTestApi } = createRoot(() => {
+const { token, setToken, getPhotosApi } = createRoot(() => {
   const [token, setToken] = createSignal<string | null>(
     localStorage.getItem("token"),
   );
@@ -27,8 +28,9 @@ const { token, setToken, getTestApi } = createRoot(() => {
     });
 
   const getTestApi = () => new TestApi(getAuthedConfig());
+  const getPhotosApi = () => new PhotosApi(getAuthedConfig());
 
-  return { token, setToken, getTestApi };
+  return { token, setToken, getTestApi, getPhotosApi };
 });
 
 function AuthForm() {
@@ -114,23 +116,123 @@ function AuthForm() {
   );
 }
 
-function Dashboard() {
-  const [message, setMessage] = createSignal<string | null>(null);
-  const [loading, setLoading] = createSignal(false);
+function PhotoUpload(props: { onUploadComplete: () => void }) {
+  const [uploading, setUploading] = createSignal(false);
+  const [error, setError] = createSignal<string | null>(null);
+  const [success, setSuccess] = createSignal(false);
 
-  const pingServer = async () => {
-    setLoading(true);
+  const handleFileSelect = async (e: Event) => {
+    const input = e.currentTarget as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError(null);
+    setSuccess(false);
+
     try {
-      const data = await getTestApi().ping();
-      setMessage(data.message);
-    } catch (error) {
-      console.error("Failed to ping server:", error);
-      setMessage("Error: Failed to ping server");
+      await getPhotosApi().upload({ file });
+      setSuccess(true);
+      input.value = "";
+      props.onUploadComplete();
+    } catch (err) {
+      if (err instanceof Response) {
+        const body = await err.json();
+        setError(body.error || "Upload failed");
+      } else {
+        setError("Upload failed");
+      }
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  return (
+    <div class="photo-upload">
+      <h3>Upload Photo</h3>
+      <input
+        type="file"
+        accept="image/jpeg,image/png,image/gif,image/webp"
+        onChange={handleFileSelect}
+        disabled={uploading()}
+      />
+      <Show when={uploading()}>
+        <p>Uploading...</p>
+      </Show>
+      <Show when={error()}>
+        <p class="error">{error()}</p>
+      </Show>
+      <Show when={success()}>
+        <p class="success">Photo uploaded successfully!</p>
+      </Show>
+    </div>
+  );
+}
+
+function PhotoGallery() {
+  const [photos, setPhotos] = createSignal<PhotoSummary[]>([]);
+  const [loading, setLoading] = createSignal(true);
+  const [error, setError] = createSignal<string | null>(null);
+
+  const loadPhotos = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await getPhotosApi().listPhotos();
+      setPhotos(response.photos);
+    } catch (err) {
+      setError("Failed to load photos");
     } finally {
       setLoading(false);
     }
   };
 
+  // Load photos on mount
+  loadPhotos();
+
+  return (
+    <div class="photo-gallery">
+      <div class="gallery-header">
+        <h3>Your Photos</h3>
+        <button onClick={loadPhotos} disabled={loading()}>
+          Refresh
+        </button>
+      </div>
+
+      <PhotoUpload onUploadComplete={loadPhotos} />
+
+      <Show when={loading()}>
+        <p>Loading photos...</p>
+      </Show>
+
+      <Show when={error()}>
+        <p class="error">{error()}</p>
+      </Show>
+
+      <Show when={!loading() && photos().length === 0}>
+        <p>No photos yet. Upload your first photo!</p>
+      </Show>
+
+      <div class="photo-grid">
+        <For each={photos()}>
+          {(photo) => (
+            <div class="photo-card">
+              <img
+                src={`data:image/jpeg;base64,${photo.thumbnail}`}
+                alt="Photo thumbnail"
+              />
+              <p class="photo-date">
+                {new Date(photo.createdAt).toLocaleDateString()}
+              </p>
+            </div>
+          )}
+        </For>
+      </div>
+    </div>
+  );
+}
+
+function Dashboard() {
   const logout = () => {
     setToken(null);
   };
@@ -144,13 +246,7 @@ function Dashboard() {
         </button>
       </div>
 
-      <button onClick={pingServer} disabled={loading()}>
-        {loading() ? "Loading..." : "Ping Server (Authenticated)"}
-      </button>
-
-      <Show when={message()}>
-        <div class="response">Response: {message()}</div>
-      </Show>
+      <PhotoGallery />
     </div>
   );
 }
