@@ -1,21 +1,164 @@
-import { createSignal } from "solid-js";
+import { createSignal, createEffect, Show } from "solid-js";
 import "./App.css";
-import { DefaultApi, Configuration } from "./generated";
+import { AuthhandlersApi, DefaultApi, Configuration } from "./generated";
 
-const api = new DefaultApi(
-  new Configuration({
-    basePath: "",
-  }),
+const publicApi = new DefaultApi(new Configuration({ basePath: "" }));
+
+// Auth state - token stored in localStorage
+const [token, setToken] = createSignal<string | null>(
+  localStorage.getItem("token"),
 );
 
-function App() {
+// Update localStorage when token changes
+createEffect(() => {
+  const t = token();
+  if (t) {
+    localStorage.setItem("token", t);
+  } else {
+    localStorage.removeItem("token");
+  }
+});
+
+const getAuthApi = () =>
+  new AuthhandlersApi(
+    new Configuration({
+      basePath: "",
+      accessToken: () => token() ?? "",
+    }),
+  );
+
+function AuthForm() {
+  const [isLogin, setIsLogin] = createSignal(true);
+  const [username, setUsername] = createSignal("");
+  const [password, setPassword] = createSignal("");
+  const [error, setError] = createSignal<string | null>(null);
+  const [loading, setLoading] = createSignal(false);
+
+  const handleSubmit = async (e: Event) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    try {
+      const api = new AuthhandlersApi(new Configuration({ basePath: "" }));
+
+      if (isLogin()) {
+        const response = await api.login({
+          loginRequest: { username: username(), password: password() },
+        });
+        setToken(response.token);
+      } else {
+        const response = await api.signup({
+          signupRequest: { username: username(), password: password() },
+        });
+        setToken(response.token);
+      }
+    } catch (err) {
+      if (err instanceof Response) {
+        const body = await err.json();
+        setError(body.error || "Request failed");
+      } else {
+        setError("Request failed");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div class="auth-form">
+      <h2>{isLogin() ? "Login" : "Sign Up"}</h2>
+      <form onSubmit={handleSubmit}>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            value={username()}
+            onInput={(e) => setUsername(e.currentTarget.value)}
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            value={password()}
+            onInput={(e) => setPassword(e.currentTarget.value)}
+            required
+          />
+        </div>
+        <Show when={error()}>
+          <div class="error">{error()}</div>
+        </Show>
+        <button type="submit" disabled={loading()}>
+          {loading() ? "Loading..." : isLogin() ? "Login" : "Sign Up"}
+        </button>
+      </form>
+      <p class="toggle-auth">
+        {isLogin() ? "Don't have an account? " : "Already have an account? "}
+        <button
+          type="button"
+          class="link-button"
+          onClick={() => setIsLogin(!isLogin())}
+        >
+          {isLogin() ? "Sign Up" : "Login"}
+        </button>
+      </p>
+    </div>
+  );
+}
+
+function Dashboard() {
   const [message, setMessage] = createSignal<string | null>(null);
   const [loading, setLoading] = createSignal(false);
 
   const pingServer = async () => {
     setLoading(true);
     try {
-      const data = await api.unauthedPing();
+      const data = await getAuthApi().ping();
+      setMessage(data.message);
+    } catch (error) {
+      console.error("Failed to ping server:", error);
+      setMessage("Error: Failed to ping server");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const logout = () => {
+    setToken(null);
+  };
+
+  return (
+    <div class="dashboard">
+      <div class="header">
+        <h2>Dashboard</h2>
+        <button onClick={logout} class="logout-button">
+          Logout
+        </button>
+      </div>
+
+      <button onClick={pingServer} disabled={loading()}>
+        {loading() ? "Loading..." : "Ping Server (Authenticated)"}
+      </button>
+
+      <Show when={message()}>
+        <div class="response">Response: {message()}</div>
+      </Show>
+    </div>
+  );
+}
+
+function UnauthedPing() {
+  const [message, setMessage] = createSignal<string | null>(null);
+  const [loading, setLoading] = createSignal(false);
+
+  const pingServer = async () => {
+    setLoading(true);
+    try {
+      const data = await publicApi.unauthedPing();
       setMessage(data.message);
     } catch (error) {
       console.error("Failed to ping server:", error);
@@ -26,33 +169,26 @@ function App() {
   };
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Ramekin</h1>
-
-      <button
-        onClick={pingServer}
-        disabled={loading()}
-        style={{
-          padding: "0.5rem 1rem",
-          "font-size": "1rem",
-          cursor: loading() ? "not-allowed" : "pointer",
-        }}
-      >
-        {loading() ? "Loading..." : "Ping Server"}
+    <div class="unauthed-ping">
+      <button onClick={pingServer} disabled={loading()}>
+        {loading() ? "Loading..." : "Ping Server (Unauthenticated)"}
       </button>
+      <Show when={message()}>
+        <div class="response">Response: {message()}</div>
+      </Show>
+    </div>
+  );
+}
 
-      {message() && (
-        <div
-          style={{
-            "margin-top": "1rem",
-            padding: "1rem",
-            border: "1px solid #ccc",
-            "border-radius": "4px",
-          }}
-        >
-          Response: {message()}
-        </div>
-      )}
+function App() {
+  return (
+    <div class="app">
+      <h1>Ramekin</h1>
+      <Show when={token()} fallback={<AuthForm />}>
+        <Dashboard />
+      </Show>
+      <hr />
+      <UnauthedPing />
     </div>
   );
 }
