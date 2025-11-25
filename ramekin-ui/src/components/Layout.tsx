@@ -1,0 +1,31 @@
+import { A } from "@solidjs/router";
+import { useAuth } from "../context/AuthContext";
+import type { ParentComponent } from "solid-js";
+
+const Layout: ParentComponent = (props) => {
+  const { setToken } = useAuth();
+
+  const logout = () => {
+    setToken(null);
+  };
+
+  return (
+    <div class="app-layout">
+      <header class="app-header">
+        <A href="/" class="app-title">
+          Ramekin
+        </A>
+        <nav class="app-nav">
+          <A href="/">My Cookbook</A>
+          <A href="/recipes/new">New Recipe</A>
+          <button onClick={logout} class="logout-button">
+            Logout
+          </button>
+        </nav>
+      </header>
+      <main class="app-main">{props.children}</main>
+    </div>
+  );
+};
+
+export default Layout;

@@ -10,6 +10,7 @@
     "generate-client": "./generate-client.sh"
   },
   "dependencies": {
+    "@solidjs/router": "^0.15.4",
     "ramekin-client": "file:./generated-client",
     "solid-js": "^1.9.10"
   },
