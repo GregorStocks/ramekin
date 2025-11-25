@@ -8,24 +8,13 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
 
-echo "Generating API clients from $SPEC_FILE..."
-
-# Check if spec file exists
-if [ ! -f "$SPEC_FILE" ]; then
-    echo "Error: OpenAPI spec not found at $SPEC_FILE"
-    echo "Please run: make fetch-openapi"
-    exit 1
-fi
-
-# Function to run openapi-generator via Docker
-generate() {
+generate_client() {
     local generator=$1
     local output=$2
     local extra_props=$3
 
     echo "Generating $generator client -> $output"
 
-    # Clean existing generated files
     rm -rf "$PROJECT_ROOT/$output"
 
     docker run --rm \
@@ -39,22 +28,31 @@ generate() {
         2>&1 | grep -v "^\[main\] INFO"
 }
 
-# Generate Rust client (for CLI)
-generate "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
+main() {
+    if [ ! -f "$SPEC_FILE" ]; then
+        echo "Error: OpenAPI spec not found at $SPEC_FILE" >&2
+        echo "Please run: make fetch-openapi" >&2
+        exit 1
+    fi
 
-# Add lint exceptions for generated Rust code
-cat >> "$PROJECT_ROOT/crates/generated/ramekin-client/Cargo.toml" << 'EOF'
+    echo "Generating API clients from $SPEC_FILE..."
+
+    # Generate Rust client (for CLI)
+    generate_client "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
+
+    # Add lint exceptions for generated Rust code
+    cat >> "$PROJECT_ROOT/crates/generated/ramekin-client/Cargo.toml" << 'EOF'
 
 [lints.rust]
 unused_variables = "allow"
 unused_mut = "allow"
 EOF
 
-# Generate TypeScript client (for UI)
-generate "typescript-fetch" "ramekin-ui/generated-client" "supportsES6=true,typescriptThreePlus=true"
+    # Generate TypeScript client (for UI)
+    generate_client "typescript-fetch" "ramekin-ui/generated-client" "supportsES6=true,typescriptThreePlus=true"
 
-# Create package.json for generated client (pointing to dist)
-cat > "$PROJECT_ROOT/ramekin-ui/generated-client/package.json" << 'EOF'
+    # Create package.json for generated client (pointing to dist)
+    cat > "$PROJECT_ROOT/ramekin-ui/generated-client/package.json" << 'EOF'
 {
   "name": "ramekin-client",
   "version": "0.0.0",
@@ -63,15 +61,20 @@ cat > "$PROJECT_ROOT/ramekin-ui/generated-client/package.json" << 'EOF'
 }
 EOF
 
-# Compile TypeScript client to JS + .d.ts
-echo "Compiling TypeScript client..."
-(cd "$PROJECT_ROOT/ramekin-ui" && npx tsc -p tsconfig.generated-client.json)
+    # Compile TypeScript client to JS + .d.ts
+    echo "Compiling TypeScript client..."
+    (cd "$PROJECT_ROOT/ramekin-ui" && npx tsc -p tsconfig.generated-client.json)
 
-# Generate Python client (for tests)
-generate "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
+    # Generate Python client (for tests)
+    generate_client "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
 
-echo ""
-echo "All clients generated successfully:"
-echo "  - Rust:       crates/generated/ramekin-client/"
-echo "  - TypeScript: ramekin-ui/generated-client/"
-echo "  - Python:     tests/generated/"
+    echo ""
+    echo "All clients generated successfully:"
+    echo "  - Rust:       crates/generated/ramekin-client/"
+    echo "  - TypeScript: ramekin-ui/generated-client/"
+    echo "  - Python:     tests/generated/"
+}
+
+LOG_FILE=$(mktemp /tmp/generate-clients.XXXXXX)
+main > "$LOG_FILE" 2>&1
+echo "Generated clients, log at $LOG_FILE"

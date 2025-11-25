@@ -6,7 +6,7 @@ help: ## Show this help message
 	@echo 'Available targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: ## Start dev environment (with hot-reload)
+dev: generate-clients ## Start dev environment (with hot-reload)
 	docker compose up --build -d --wait
 
 up: dev ## Alias for dev
@@ -14,7 +14,7 @@ up: dev ## Alias for dev
 down: ## Stop all services
 	docker compose down
 
-restart: ## Force restart services
+restart: generate-clients ## Force restart services
 	docker compose up --build -d --force-recreate --wait
 
 logs: ## Show all logs
@@ -41,15 +41,16 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 	uvx ruff format --quiet --exclude tests/generated tests/
 	uvx ruff check --fix --quiet --exclude tests/generated tests/
 
-clean: ## Stop services and clean volumes
+clean: ## Stop services, clean volumes, and remove generated clients
 	docker compose down -v
+	rm -rf crates/generated/ ramekin-ui/generated-client/ tests/generated/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
 	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
 	$(MAKE) lint
 
-test: test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)
+test: generate-clients test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)
 	@docker compose -f docker-compose.test.yml run --build --rm tests && docker compose -f docker-compose.test.yml down || (echo "Tests failed - leaving environment up for debugging" && exit 1)
 
 test-up: ## Start test environment
