@@ -40,3 +40,9 @@ chrono = { workspace = true }
 # Logging
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+
+# Image processing
+image = { workspace = true }
+
+# Encoding
+base64 = { workspace = true }

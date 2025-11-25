@@ -139,3 +139,247 @@ def test_photo_download_requires_auth(api_client):
         photos_api.get_photo(id="00000000-0000-0000-0000-000000000000")
 
     assert exc_info.value.status == 401
+
+
+def test_list_photos_empty(authed_api_client):
+    """Test listing photos when user has no photos."""
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    response = photos_api.list_photos()
+    assert response.photos == []
+
+
+def test_list_photos_returns_uploaded_photos(authed_api_client):
+    """Test that list_photos returns photos the user has uploaded."""
+    import base64
+
+    client, user_id = authed_api_client
+    photos_api = PhotosApi(client)
+
+    # Create test image data (a simple 1x1 PNG)
+    test_image_data = bytes(
+        [
+            0x89,
+            0x50,
+            0x4E,
+            0x47,
+            0x0D,
+            0x0A,
+            0x1A,
+            0x0A,
+            0x00,
+            0x00,
+            0x00,
+            0x0D,
+            0x49,
+            0x48,
+            0x44,
+            0x52,
+            0x00,
+            0x00,
+            0x00,
+            0x01,
+            0x00,
+            0x00,
+            0x00,
+            0x01,
+            0x08,
+            0x02,
+            0x00,
+            0x00,
+            0x00,
+            0x90,
+            0x77,
+            0x53,
+            0xDE,
+            0x00,
+            0x00,
+            0x00,
+            0x0C,
+            0x49,
+            0x44,
+            0x41,
+            0x54,
+            0x08,
+            0xD7,
+            0x63,
+            0xF8,
+            0xFF,
+            0xFF,
+            0x3F,
+            0x00,
+            0x05,
+            0xFE,
+            0x02,
+            0xFE,
+            0xDC,
+            0xCC,
+            0x59,
+            0xE7,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x49,
+            0x45,
+            0x4E,
+            0x44,
+            0xAE,
+            0x42,
+            0x60,
+            0x82,
+        ]
+    )
+
+    # Upload two photos
+    upload1 = photos_api.upload(file=("test1.png", test_image_data))
+    upload2 = photos_api.upload(file=("test2.png", test_image_data))
+
+    # List photos
+    response = photos_api.list_photos()
+    assert len(response.photos) == 2
+
+    # Check that both uploaded photos are in the list
+    photo_ids = {str(p.id) for p in response.photos}
+    assert str(upload1.id) in photo_ids
+    assert str(upload2.id) in photo_ids
+
+    # Verify each photo has required fields
+    for photo in response.photos:
+        assert photo.id is not None
+        assert photo.content_type == "image/png"
+        assert photo.created_at is not None
+        assert photo.thumbnail is not None
+        # Thumbnail should be valid base64
+        thumbnail_bytes = base64.b64decode(photo.thumbnail)
+        assert len(thumbnail_bytes) > 0
+        # Thumbnail should be a JPEG (starts with FFD8FF)
+        assert thumbnail_bytes[:3] == b"\xff\xd8\xff"
+
+
+def test_list_photos_requires_auth(api_client):
+    """Test that listing photos requires authentication."""
+    from ramekin_client.exceptions import ApiException
+
+    import pytest
+
+    photos_api = PhotosApi(api_client)
+
+    with pytest.raises(ApiException) as exc_info:
+        photos_api.list_photos()
+
+    assert exc_info.value.status == 401
+
+
+def test_list_photos_only_returns_own_photos(authed_api_client, api_config, auth_api):
+    """Test that users can only see their own photos."""
+    from ramekin_client import ApiClient, Configuration
+    from ramekin_client.models import SignupRequest
+
+    import uuid
+
+    client1, user1_id = authed_api_client
+    photos_api1 = PhotosApi(client1)
+
+    # Create a second user with a separate config (don't modify shared api_config)
+    username2 = f"testuser2_{uuid.uuid4().hex[:8]}"
+    response2 = auth_api.signup(
+        SignupRequest(username=username2, password="testpass123")
+    )
+    config2 = Configuration(host=api_config.host)
+    config2.access_token = response2.token
+    with ApiClient(config2) as client2:
+        photos_api2 = PhotosApi(client2)
+
+        # Create test image
+        test_image_data = bytes(
+            [
+                0x89,
+                0x50,
+                0x4E,
+                0x47,
+                0x0D,
+                0x0A,
+                0x1A,
+                0x0A,
+                0x00,
+                0x00,
+                0x00,
+                0x0D,
+                0x49,
+                0x48,
+                0x44,
+                0x52,
+                0x00,
+                0x00,
+                0x00,
+                0x01,
+                0x00,
+                0x00,
+                0x00,
+                0x01,
+                0x08,
+                0x02,
+                0x00,
+                0x00,
+                0x00,
+                0x90,
+                0x77,
+                0x53,
+                0xDE,
+                0x00,
+                0x00,
+                0x00,
+                0x0C,
+                0x49,
+                0x44,
+                0x41,
+                0x54,
+                0x08,
+                0xD7,
+                0x63,
+                0xF8,
+                0xFF,
+                0xFF,
+                0x3F,
+                0x00,
+                0x05,
+                0xFE,
+                0x02,
+                0xFE,
+                0xDC,
+                0xCC,
+                0x59,
+                0xE7,
+                0x00,
+                0x00,
+                0x00,
+                0x00,
+                0x49,
+                0x45,
+                0x4E,
+                0x44,
+                0xAE,
+                0x42,
+                0x60,
+                0x82,
+            ]
+        )
+
+        # User 1 uploads a photo
+        photos_api1.upload(file=("user1.png", test_image_data))
+
+        # User 2 uploads a photo
+        photos_api2.upload(file=("user2.png", test_image_data))
+
+        # User 1 should only see their own photo
+        user1_photos = photos_api1.list_photos()
+        assert len(user1_photos.photos) == 1
+
+        # User 2 should only see their own photo
+        user2_photos = photos_api2.list_photos()
+        assert len(user2_photos.photos) == 1
+
+        # The photos should be different
+        assert user1_photos.photos[0].id != user2_photos.photos[0].id

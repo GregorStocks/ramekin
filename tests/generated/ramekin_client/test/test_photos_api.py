@@ -29,6 +29,10 @@ class TestPhotosApi(unittest.TestCase):
         """Test case for get_photo"""
         pass
 
+    def test_list_photos(self) -> None:
+        """Test case for list_photos"""
+        pass
+
     def test_upload(self) -> None:
         """Test case for upload"""
         pass

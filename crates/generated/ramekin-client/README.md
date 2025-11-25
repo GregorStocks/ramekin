@@ -29,6 +29,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *PhotosApi* | [**get_photo**](docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
+*PhotosApi* | [**list_photos**](docs/PhotosApi.md#list_photos) | **GET** /api/photos | 
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *TestApi* | [**ping**](docs/TestApi.md#ping) | **GET** /api/test/ping | 
 *TestApi* | [**unauthed_ping**](docs/TestApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
@@ -37,8 +38,10 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [ListPhotosResponse](docs/ListPhotosResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
+ - [PhotoSummary](docs/PhotoSummary.md)
  - [PingResponse](docs/PingResponse.md)
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)

@@ -35,8 +35,8 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 	cargo clippy --all-targets --all-features -q -- -D warnings
 	npx prettier --write --log-level warn ramekin-ui/src/
 	cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
-	uvx ruff format --quiet tests/
-	uvx ruff check --fix --quiet tests/
+	uvx ruff format --quiet --exclude tests/generated tests/
+	uvx ruff check --fix --quiet --exclude tests/generated tests/
 
 clean: ## Stop services and clean volumes
 	docker compose down -v

@@ -63,6 +63,7 @@ pub struct Photo {
     pub data: Vec<u8>,
     pub created_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
+    pub thumbnail: Vec<u8>,
 }
 
 #[derive(Insertable)]
@@ -71,6 +72,7 @@ pub struct NewPhoto<'a> {
     pub user_id: Uuid,
     pub content_type: &'a str,
     pub data: &'a [u8],
+    pub thumbnail: &'a [u8],
 }
 
 #[derive(Queryable, Selectable, Debug)]

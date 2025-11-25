@@ -10,15 +10,22 @@ use axum::{
     Json,
 };
 use diesel::prelude::*;
+use image::ImageFormat;
+use image::ImageReader;
 use serde::Serialize;
+use std::io::Cursor;
 use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
-pub const PATH: &str = "/api/photos";
-
-const ALLOWED_CONTENT_TYPES: &[&str] = &["image/jpeg", "image/png", "image/gif", "image/webp"];
+const ALLOWED_FORMATS: &[ImageFormat] = &[
+    ImageFormat::Jpeg,
+    ImageFormat::Png,
+    ImageFormat::Gif,
+    ImageFormat::WebP,
+];
 const MAX_FILE_SIZE: usize = 10 * 1024 * 1024; // 10MB
+const THUMBNAIL_SIZE: u32 = 200;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct UploadPhotoResponse {
@@ -74,26 +81,6 @@ pub async fn upload(
         }
     };
 
-    // Validate content type
-    let content_type = field
-        .content_type()
-        .unwrap_or("application/octet-stream")
-        .to_string();
-
-    if !ALLOWED_CONTENT_TYPES.contains(&content_type.as_str()) {
-        return (
-            StatusCode::BAD_REQUEST,
-            Json(ErrorResponse {
-                error: format!(
-                    "Invalid content type '{}'. Allowed: {}",
-                    content_type,
-                    ALLOWED_CONTENT_TYPES.join(", ")
-                ),
-            }),
-        )
-            .into_response();
-    }
-
     // Read file data
     let data = match field.bytes().await {
         Ok(bytes) => bytes,
@@ -119,6 +106,14 @@ pub async fn upload(
             .into_response();
     }
 
+    // Process image: detect format from bytes, validate, and generate thumbnail
+    let (content_type, thumbnail) = match process_image(&data) {
+        Ok(result) => result,
+        Err(e) => {
+            return (StatusCode::BAD_REQUEST, Json(ErrorResponse { error: e })).into_response()
+        }
+    };
+
     // Get database connection
     let mut conn = match pool.get() {
         Ok(c) => c,
@@ -138,6 +133,7 @@ pub async fn upload(
         user_id: user.id,
         content_type: &content_type,
         data: &data,
+        thumbnail: &thumbnail,
     };
 
     let photo_id: Uuid = match diesel::insert_into(photos::table)
@@ -162,4 +158,39 @@ pub async fn upload(
         Json(UploadPhotoResponse { id: photo_id }),
     )
         .into_response()
+}
+
+/// Process an image: detect format from magic bytes, validate it's allowed, and generate thumbnail.
+/// Returns (content_type, thumbnail_bytes) on success.
+fn process_image(data: &[u8]) -> Result<(String, Vec<u8>), String> {
+    let reader = ImageReader::new(Cursor::new(data))
+        .with_guessed_format()
+        .map_err(|e| format!("Failed to read image: {}", e))?;
+
+    let format = reader
+        .format()
+        .ok_or_else(|| "Could not detect image format".to_string())?;
+
+    if !ALLOWED_FORMATS.contains(&format) {
+        return Err(format!(
+            "Unsupported image format: {:?}. Allowed: JPEG, PNG, GIF, WebP",
+            format
+        ));
+    }
+
+    let content_type = format.to_mime_type().to_string();
+
+    let img = reader
+        .decode()
+        .map_err(|e| format!("Failed to decode image: {}", e))?;
+
+    // thumbnail() preserves aspect ratio, fitting within the given dimensions
+    let thumbnail_img = img.thumbnail(THUMBNAIL_SIZE, THUMBNAIL_SIZE);
+
+    let mut thumbnail_buf = Cursor::new(Vec::new());
+    thumbnail_img
+        .write_to(&mut thumbnail_buf, ImageFormat::Jpeg)
+        .map_err(|e| format!("Failed to encode thumbnail: {}", e))?;
+
+    Ok((content_type, thumbnail_buf.into_inner()))
 }

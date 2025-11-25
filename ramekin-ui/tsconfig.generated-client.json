@@ -7,13 +7,13 @@
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "declaration": true,
-    "outDir": "./dist",
-    "rootDir": ".",
+    "outDir": "./generated-client/dist",
+    "rootDir": "./generated-client",
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "erasableSyntaxOnly": false
   },
-  "include": ["."],
-  "exclude": ["dist"]
+  "include": ["./generated-client"],
+  "exclude": ["./generated-client/dist"]
 }

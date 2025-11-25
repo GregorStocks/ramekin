@@ -52,12 +52,30 @@ generate() {
 # Generate Rust client (for CLI)
 generate "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
 
+# Add lint exceptions for generated Rust code
+cat >> "$PROJECT_ROOT/crates/generated/ramekin-client/Cargo.toml" << 'EOF'
+
+[lints.rust]
+unused_variables = "allow"
+unused_mut = "allow"
+EOF
+
 # Generate TypeScript client (for UI)
 generate "typescript-fetch" "ramekin-ui/generated-client" "supportsES6=true,typescriptThreePlus=true"
 
+# Create package.json for generated client (pointing to dist)
+cat > "$PROJECT_ROOT/ramekin-ui/generated-client/package.json" << 'EOF'
+{
+  "name": "ramekin-client",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts"
+}
+EOF
+
 # Compile TypeScript client to JS + .d.ts
 echo "Compiling TypeScript client..."
-(cd "$PROJECT_ROOT/ramekin-ui/generated-client" && npx tsc)
+(cd "$PROJECT_ROOT/ramekin-ui" && npx tsc -p tsconfig.generated-client.json)
 
 # Generate Python client (for tests)
 generate "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"

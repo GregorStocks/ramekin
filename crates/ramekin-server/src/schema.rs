@@ -8,6 +8,7 @@ diesel::table! {
         data -> Bytea,
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
+        thumbnail -> Bytea,
     }
 }
 

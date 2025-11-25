@@ -36,7 +36,7 @@ chrono = { version = "0.4", features = ["serde"] }
 axum = { version = "0.8", features = ["multipart"] }
 tower = "0.5"
 tower-http = { version = "0.6", features = ["cors", "trace"] }
-utoipa = { version = "5.3", features = ["axum_extras", "uuid"] }
+utoipa = { version = "5.3", features = ["axum_extras", "uuid", "chrono"] }
 utoipa-axum = "0.2"
 utoipa-swagger-ui = { version = "9.0", features = ["axum"] }
 
@@ -46,3 +46,9 @@ clap = { version = "4.5", features = ["derive"] }
 # Logging
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Image processing
+image = "0.25"
+
+# Encoding
+base64 = "0.22"

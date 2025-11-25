@@ -5,8 +5,10 @@ Cargo.toml
 README.md
 docs/AuthApi.md
 docs/ErrorResponse.md
+docs/ListPhotosResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/PhotoSummary.md
 docs/PhotosApi.md
 docs/PingResponse.md
 docs/SignupRequest.md
@@ -22,9 +24,11 @@ src/apis/photos_api.rs
 src/apis/test_api.rs
 src/lib.rs
 src/models/error_response.rs
+src/models/list_photos_response.rs
 src/models/login_request.rs
 src/models/login_response.rs
 src/models/mod.rs
+src/models/photo_summary.rs
 src/models/ping_response.rs
 src/models/signup_request.rs
 src/models/signup_response.rs

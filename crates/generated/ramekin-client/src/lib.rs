@@ -1,6 +1,4 @@
 #![allow(unused_imports)]
-#![allow(unused_mut)]
-#![allow(unused_variables)]
 #![allow(clippy::too_many_arguments)]
 
 extern crate reqwest;

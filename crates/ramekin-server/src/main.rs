@@ -4,7 +4,7 @@ mod db;
 mod models;
 mod schema;
 
-use api::photos::{get, upload};
+use api::photos::{get, list, upload};
 use api::public::auth::{login, signup};
 use api::public::test::unauthed_ping;
 use api::test::ping;
@@ -25,7 +25,8 @@ use utoipa_swagger_ui::SwaggerUi;
         login::login,
         ping::ping,
         upload::upload,
-        get::get_photo
+        get::get_photo,
+        list::list_photos
     ),
     components(schemas(
         unauthed_ping::UnauthedPingResponse,
@@ -36,6 +37,8 @@ use utoipa_swagger_ui::SwaggerUi;
         ping::PingResponse,
         upload::UploadPhotoRequest,
         upload::UploadPhotoResponse,
+        list::ListPhotosResponse,
+        list::PhotoSummary,
         ErrorResponse
     )),
     modifiers(&SecurityAddon)
@@ -79,7 +82,7 @@ async fn main() {
     // ADD NEW ROUTES HERE - they will automatically require auth
     let protected_router = Router::new()
         .route(ping::PATH, get(ping::ping))
-        .route(upload::PATH, post(upload::upload))
+        .route(list::PATH, get(list::list_photos).post(upload::upload))
         .route(get::PATH, get(get::get_photo))
         .layer(middleware::from_fn_with_state(
             pool.clone(),
