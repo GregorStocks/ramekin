@@ -4,12 +4,13 @@ mod db;
 mod models;
 mod schema;
 
-use api::{
-    paths, ErrorResponse, LoginRequest, LoginResponse, PingResponse, SignupRequest, SignupResponse,
-};
+use api::public::auth::{login, signup};
+use api::public::test::unauthed_ping;
+use api::test::ping;
+use api::ErrorResponse;
 use axum::middleware;
 use axum::routing::{get, post};
-use axum::{Json, Router};
+use axum::Router;
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_axum::router::OpenApiRouter;
@@ -17,13 +18,19 @@ use utoipa_swagger_ui::SwaggerUi;
 
 #[derive(OpenApi)]
 #[openapi(
-    paths(unauthed_ping, auth::handlers::signup, auth::handlers::login, auth::handlers::ping),
+    paths(
+        unauthed_ping::handler,
+        signup::handler,
+        login::handler,
+        ping::handler
+    ),
     components(schemas(
-        PingResponse,
-        SignupRequest,
-        SignupResponse,
-        LoginRequest,
-        LoginResponse,
+        unauthed_ping::Response,
+        signup::Request,
+        signup::Response,
+        login::Request,
+        login::Response,
+        ping::Response,
         ErrorResponse
     )),
     modifiers(&SecurityAddon)
@@ -57,23 +64,23 @@ async fn main() {
 
     // Public routes - no authentication required
     // Add new public routes here (health checks, login, signup, etc.)
-    let (public_router, api) = OpenApiRouter::with_openapi(ApiDoc::openapi())
-        .route(paths::UNAUTHED_PING, get(unauthed_ping))
-        .route(paths::SIGNUP, post(auth::signup))
-        .route(paths::LOGIN, post(auth::login))
+    let (public_router, openapi) = OpenApiRouter::with_openapi(ApiDoc::openapi())
+        .route(unauthed_ping::PATH, get(unauthed_ping::handler))
+        .route(signup::PATH, post(signup::handler))
+        .route(login::PATH, post(login::handler))
         .split_for_parts();
 
     // Protected routes - authentication required by default
     // ADD NEW ROUTES HERE - they will automatically require auth
     let protected_router =
         Router::new()
-            .route(paths::PING, get(auth::ping))
+            .route(ping::PATH, get(ping::handler))
             .layer(middleware::from_fn_with_state(
                 pool.clone(),
                 auth::require_auth,
             ));
 
-    let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", api);
+    let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", openapi);
 
     let app = public_router
         .merge(protected_router)
@@ -88,17 +95,4 @@ async fn main() {
     tracing::info!("Hot reload is enabled!");
 
     axum::serve(listener, app).await.unwrap();
-}
-
-#[utoipa::path(
-    get,
-    path = "/api/test/unauthed-ping",
-    responses(
-        (status = 200, description = "Unauthed ping response", body = PingResponse)
-    )
-)]
-async fn unauthed_ping() -> Json<PingResponse> {
-    Json(PingResponse {
-        message: "unauthed-ping".to_string(),
-    })
 }
