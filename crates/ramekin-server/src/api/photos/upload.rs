@@ -70,28 +70,28 @@ pub async fn upload(
             )
                 .into_response()
         }
-        Err(_) => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Failed to read multipart data".to_string(),
-                }),
-            )
-                .into_response()
+        Err(e) => {
+            tracing::warn!("Multipart read error: {}", e);
+            let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
+                "File too large. Maximum size is 2MB".to_string()
+            } else {
+                format!("Failed to read multipart data: {}", e.body_text())
+            };
+            return (e.status(), Json(ErrorResponse { error: error_msg })).into_response();
         }
     };
 
     // Read file data
     let data = match field.bytes().await {
         Ok(bytes) => bytes,
-        Err(_) => {
-            return (
-                StatusCode::BAD_REQUEST,
-                Json(ErrorResponse {
-                    error: "Failed to read file data".to_string(),
-                }),
-            )
-                .into_response()
+        Err(e) => {
+            tracing::warn!("Field read error: {}", e);
+            let error_msg = if e.status() == StatusCode::PAYLOAD_TOO_LARGE {
+                "File too large. Maximum size is 2MB".to_string()
+            } else {
+                format!("Failed to read file data: {}", e.body_text())
+            };
+            return (e.status(), Json(ErrorResponse { error: error_msg })).into_response();
         }
     };
 

@@ -16,11 +16,15 @@ use api::recipes::list as recipes_list;
 use api::recipes::update as recipes_update;
 use api::testing::ping;
 use api::ErrorResponse;
+use axum::extract::MatchedPath;
+use axum::http::Request;
 use axum::middleware;
 use axum::routing::{get, post};
 use axum::Router;
 use models::Ingredient;
 use std::sync::Arc;
+use tower_http::trace::TraceLayer;
+use tracing::Span;
 use utoipa::OpenApi;
 use utoipa_axum::router::OpenApiRouter;
 use utoipa_swagger_ui::SwaggerUi;
@@ -127,7 +131,45 @@ async fn main() {
     let app = public_router
         .merge(protected_router)
         .merge(swagger_ui)
-        .with_state(pool);
+        .with_state(pool)
+        .layer(
+            TraceLayer::new_for_http()
+                .make_span_with(|request: &Request<_>| {
+                    let matched_path = request
+                        .extensions()
+                        .get::<MatchedPath>()
+                        .map(MatchedPath::as_str)
+                        .unwrap_or(request.uri().path());
+                    tracing::info_span!(
+                        "http_request",
+                        method = %request.method(),
+                        path = %matched_path,
+                    )
+                })
+                .on_request(|_request: &Request<_>, _span: &Span| {})
+                .on_response(
+                    |response: &axum::http::Response<_>,
+                     latency: std::time::Duration,
+                     _span: &Span| {
+                        tracing::info!(
+                            status = %response.status().as_u16(),
+                            latency_ms = %latency.as_millis(),
+                            "request completed"
+                        );
+                    },
+                )
+                .on_failure(
+                    |error: tower_http::classify::ServerErrorsFailureClass,
+                     latency: std::time::Duration,
+                     _span: &Span| {
+                        tracing::error!(
+                            error = %error,
+                            latency_ms = %latency.as_millis(),
+                            "request failed"
+                        );
+                    },
+                ),
+        );
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
 

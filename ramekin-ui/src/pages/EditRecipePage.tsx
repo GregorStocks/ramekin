@@ -119,8 +119,28 @@ export default function EditRecipePage() {
     try {
       const response = await getPhotosApi().upload({ file });
       setPhotoIds([...photoIds(), response.id]);
-    } catch {
-      setError("Failed to upload photo");
+    } catch (err) {
+      // The generated client throws ResponseError with a response property
+      const response =
+        err instanceof Response
+          ? err
+          : err &&
+              typeof err === "object" &&
+              "response" in err &&
+              err.response instanceof Response
+            ? err.response
+            : null;
+
+      if (response) {
+        try {
+          const body = await response.json();
+          setError(body.error || "Failed to upload photo");
+        } catch {
+          setError(`Failed to upload photo (${response.status})`);
+        }
+      } else {
+        setError("Failed to upload photo");
+      }
     } finally {
       setUploading(false);
       input.value = "";
