@@ -7,8 +7,9 @@ mod schema;
 use api::{
     paths, ErrorResponse, LoginRequest, LoginResponse, PingResponse, SignupRequest, SignupResponse,
 };
+use axum::middleware;
 use axum::routing::{get, post};
-use axum::Json;
+use axum::{Json, Router};
 use std::sync::Arc;
 use utoipa::OpenApi;
 use utoipa_axum::router::OpenApiRouter;
@@ -52,18 +53,32 @@ async fn main() {
 
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
-    let pool = db::create_pool(&database_url);
+    let pool = Arc::new(db::create_pool(&database_url));
 
-    let (router, api) = OpenApiRouter::with_openapi(ApiDoc::openapi())
+    // Public routes - no authentication required
+    // Add new public routes here (health checks, login, signup, etc.)
+    let (public_router, api) = OpenApiRouter::with_openapi(ApiDoc::openapi())
         .route(paths::UNAUTHED_PING, get(unauthed_ping))
         .route(paths::SIGNUP, post(auth::signup))
         .route(paths::LOGIN, post(auth::login))
-        .route(paths::PING, get(auth::ping))
         .split_for_parts();
+
+    // Protected routes - authentication required by default
+    // ADD NEW ROUTES HERE - they will automatically require auth
+    let protected_router =
+        Router::new()
+            .route(paths::PING, get(auth::ping))
+            .layer(middleware::from_fn_with_state(
+                pool.clone(),
+                auth::require_auth,
+            ));
 
     let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", api);
 
-    let app = router.merge(swagger_ui).with_state(Arc::new(pool));
+    let app = public_router
+        .merge(protected_router)
+        .merge(swagger_ui)
+        .with_state(pool);
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
 

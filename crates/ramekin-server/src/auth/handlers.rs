@@ -4,17 +4,13 @@ use crate::api::{
 use crate::db::DbPool;
 use crate::models::{NewUser, User};
 use crate::schema::users;
-use axum::{
-    extract::State,
-    http::{header, StatusCode},
-    response::IntoResponse,
-    Json,
-};
+use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use std::sync::Arc;
 
 use super::crypto::{hash_password, verify_password};
-use super::db::{create_session, get_user_from_token};
+use super::db::create_session;
+use super::extractor::AuthUser;
 
 #[utoipa::path(
     post,
@@ -198,67 +194,8 @@ pub async fn login(
         ("bearer_auth" = [])
     )
 )]
-pub async fn ping(
-    State(pool): State<Arc<DbPool>>,
-    headers: header::HeaderMap,
-) -> impl IntoResponse {
-    let auth_header = match headers.get(header::AUTHORIZATION) {
-        Some(h) => h,
-        None => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Missing Authorization header".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    let auth_str = match auth_header.to_str() {
-        Ok(s) => s,
-        Err(_) => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid Authorization header".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    let token = match auth_str.strip_prefix("Bearer ") {
-        Some(t) => t,
-        None => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid Authorization header format".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    let _user = match get_user_from_token(&pool, token).await {
-        Some(u) => u,
-        None => {
-            return (
-                StatusCode::UNAUTHORIZED,
-                Json(ErrorResponse {
-                    error: "Invalid or expired token".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    (
-        StatusCode::OK,
-        Json(PingResponse {
-            message: "ping".to_string(),
-        }),
-    )
-        .into_response()
+pub async fn ping(AuthUser(_user): AuthUser) -> impl IntoResponse {
+    Json(PingResponse {
+        message: "ping".to_string(),
+    })
 }
