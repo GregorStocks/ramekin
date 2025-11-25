@@ -53,7 +53,11 @@ generate() {
 generate "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
 
 # Generate TypeScript client (for UI)
-generate "typescript-fetch" "ramekin-ui/src/generated" "supportsES6=true,typescriptThreePlus=true"
+generate "typescript-fetch" "ramekin-ui/generated-client" "supportsES6=true,typescriptThreePlus=true"
+
+# Compile TypeScript client to JS + .d.ts
+echo "Compiling TypeScript client..."
+(cd "$PROJECT_ROOT/ramekin-ui/generated-client" && npx tsc)
 
 # Generate Python client (for tests)
 generate "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
@@ -61,5 +65,5 @@ generate "python" "tests/generated" "packageName=ramekin_client,generateSourceCo
 echo ""
 echo "All clients generated successfully:"
 echo "  - Rust:       crates/generated/ramekin-client/"
-echo "  - TypeScript: ramekin-ui/src/generated/"
+echo "  - TypeScript: ramekin-ui/generated-client/"
 echo "  - Python:     tests/generated/"

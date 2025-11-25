@@ -60,8 +60,7 @@ pub struct Photo {
     pub id: Uuid,
     pub user_id: Uuid,
     pub content_type: String,
-    pub data: Option<Vec<u8>>,
-    pub url: Option<String>,
+    pub data: Vec<u8>,
     pub created_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
 }
@@ -71,8 +70,7 @@ pub struct Photo {
 pub struct NewPhoto<'a> {
     pub user_id: Uuid,
     pub content_type: &'a str,
-    pub data: Option<&'a [u8]>,
-    pub url: Option<&'a str>,
+    pub data: &'a [u8],
 }
 
 #[derive(Queryable, Selectable, Debug)]

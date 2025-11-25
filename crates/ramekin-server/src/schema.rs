@@ -5,8 +5,7 @@ diesel::table! {
         id -> Uuid,
         user_id -> Uuid,
         content_type -> Varchar,
-        data -> Nullable<Bytea>,
-        url -> Nullable<Varchar>,
+        data -> Bytea,
         created_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
     }

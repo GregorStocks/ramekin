@@ -25,11 +25,18 @@ pub struct UploadPhotoResponse {
     pub id: Uuid,
 }
 
+#[derive(ToSchema)]
+#[allow(dead_code)]
+pub struct UploadPhotoRequest {
+    #[schema(value_type = String, format = Binary)]
+    pub file: Vec<u8>,
+}
+
 #[utoipa::path(
     post,
     path = "/api/photos",
     tag = "photos",
-    request_body(content_type = "multipart/form-data", content = Vec<u8>, description = "Image file"),
+    request_body(content_type = "multipart/form-data", content = UploadPhotoRequest),
     responses(
         (status = 201, description = "Photo uploaded successfully", body = UploadPhotoResponse),
         (status = 400, description = "Invalid request", body = ErrorResponse),
@@ -130,8 +137,7 @@ pub async fn upload(
     let new_photo = NewPhoto {
         user_id: user.id,
         content_type: &content_type,
-        data: Some(&data),
-        url: None,
+        data: &data,
     };
 
     let photo_id: Uuid = match diesel::insert_into(photos::table)

@@ -10,6 +10,7 @@
     "generate-client": "./generate-client.sh"
   },
   "dependencies": {
+    "ramekin-client": "file:./generated-client",
     "solid-js": "^1.9.10"
   },
   "devDependencies": {

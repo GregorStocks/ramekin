@@ -1,8 +1,8 @@
 import { createSignal, createEffect, Show } from "solid-js";
 import "./App.css";
-import { AuthhandlersApi, DefaultApi, Configuration } from "./generated";
+import { AuthApi, TestApi, Configuration } from "ramekin-client";
 
-const publicApi = new DefaultApi(new Configuration({ basePath: "" }));
+const publicApi = new TestApi(new Configuration({ basePath: "" }));
 
 // Auth state - token stored in localStorage
 const [token, setToken] = createSignal<string | null>(
@@ -19,13 +19,13 @@ createEffect(() => {
   }
 });
 
-const getAuthApi = () =>
-  new AuthhandlersApi(
-    new Configuration({
-      basePath: "",
-      accessToken: () => token() ?? "",
-    }),
-  );
+const getAuthedConfig = () =>
+  new Configuration({
+    basePath: "",
+    accessToken: () => token() ?? "",
+  });
+
+const getTestApi = () => new TestApi(getAuthedConfig());
 
 function AuthForm() {
   const [isLogin, setIsLogin] = createSignal(true);
@@ -40,7 +40,7 @@ function AuthForm() {
     setLoading(true);
 
     try {
-      const api = new AuthhandlersApi(new Configuration({ basePath: "" }));
+      const api = new AuthApi(new Configuration({ basePath: "" }));
 
       if (isLogin()) {
         const response = await api.login({
@@ -117,7 +117,7 @@ function Dashboard() {
   const pingServer = async () => {
     setLoading(true);
     try {
-      const data = await getAuthApi().ping();
+      const data = await getTestApi().ping();
       setMessage(data.message);
     } catch (error) {
       console.error("Failed to ping server:", error);

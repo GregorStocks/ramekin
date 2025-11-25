@@ -4,18 +4,50 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**get_photo**](PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 [**upload**](PhotosApi.md#upload) | **POST** /api/photos | 
 
 
 
-## upload
+## get_photo
 
-> models::UploadPhotoResponse upload()
+> get_photo(id)
 
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Photo ID | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## upload
+
+> models::UploadPhotoResponse upload(file)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**file** | **std::path::PathBuf** |  | [required] |
 
 ### Return type
 

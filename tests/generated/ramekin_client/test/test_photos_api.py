@@ -25,6 +25,10 @@ class TestPhotosApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_get_photo(self) -> None:
+        """Test case for get_photo"""
+        pass
+
     def test_upload(self) -> None:
         """Test case for upload"""
         pass

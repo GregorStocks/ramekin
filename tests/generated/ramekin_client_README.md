@@ -65,6 +65,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
+*PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *TestApi* | [**ping**](ramekin_client/docs/TestApi.md#ping) | **GET** /api/test/ping | 
 *TestApi* | [**unauthed_ping**](ramekin_client/docs/TestApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
