@@ -1,6 +1,6 @@
 pub mod photos;
 pub mod public;
-pub mod test;
+pub mod testing;
 
 use serde::Serialize;
 use utoipa::ToSchema;

@@ -14,7 +14,7 @@ pub struct PingResponse {
 #[utoipa::path(
     get,
     path = "/api/test/ping",
-    tag = "test",
+    tag = "testing",
     responses(
         (status = 200, description = "Authenticated ping response", body = PingResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)

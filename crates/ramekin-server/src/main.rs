@@ -6,8 +6,8 @@ mod schema;
 
 use api::photos::{get, list, upload};
 use api::public::auth::{login, signup};
-use api::public::test::unauthed_ping;
-use api::test::ping;
+use api::public::testing::unauthed_ping;
+use api::testing::ping;
 use api::ErrorResponse;
 use axum::middleware;
 use axum::routing::{get, post};

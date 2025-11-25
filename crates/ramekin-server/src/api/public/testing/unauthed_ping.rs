@@ -12,7 +12,7 @@ pub struct UnauthedPingResponse {
 #[utoipa::path(
     get,
     path = "/api/test/unauthed-ping",
-    tag = "test",
+    tag = "testing",
     responses(
         (status = 200, description = "Unauthed ping response", body = UnauthedPingResponse)
     )

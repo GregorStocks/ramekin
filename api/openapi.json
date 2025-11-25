@@ -255,7 +255,7 @@
     "/api/test/ping": {
       "get": {
         "tags": [
-          "test"
+          "testing"
         ],
         "operationId": "ping",
         "responses": {
@@ -290,7 +290,7 @@
     "/api/test/unauthed-ping": {
       "get": {
         "tags": [
-          "test"
+          "testing"
         ],
         "operationId": "unauthed_ping",
         "responses": {

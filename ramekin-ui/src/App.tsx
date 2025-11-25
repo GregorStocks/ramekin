@@ -1,9 +1,9 @@
 import { createSignal, createEffect, createRoot, Show, For } from "solid-js";
 import "./App.css";
-import { AuthApi, TestApi, PhotosApi, Configuration } from "ramekin-client";
+import { AuthApi, TestingApi, PhotosApi, Configuration } from "ramekin-client";
 import type { PhotoSummary } from "ramekin-client";
 
-const publicApi = new TestApi(new Configuration({ basePath: "" }));
+const publicApi = new TestingApi(new Configuration({ basePath: "" }));
 
 // Auth state - wrapped in createRoot since it's at module level
 const { token, setToken, getPhotosApi } = createRoot(() => {
@@ -27,10 +27,10 @@ const { token, setToken, getPhotosApi } = createRoot(() => {
       accessToken: () => token() ?? "",
     });
 
-  const getTestApi = () => new TestApi(getAuthedConfig());
+  const getTestingApi = () => new TestingApi(getAuthedConfig());
   const getPhotosApi = () => new PhotosApi(getAuthedConfig());
 
-  return { token, setToken, getTestApi, getPhotosApi };
+  return { token, setToken, getTestingApi, getPhotosApi };
 });
 
 function AuthForm() {
