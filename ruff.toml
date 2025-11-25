@@ -1,5 +1,5 @@
 [lint]
-select = ["E", "F", "W"]
+select = ["E", "F", "W", "PLC0415"]
 
 [lint.per-file-ignores]
 "tests/generated/**" = ["E501", "E721"]
