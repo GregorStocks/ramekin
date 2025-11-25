@@ -2,7 +2,7 @@
 set -e
 
 # Generate all API clients from saved OpenAPI spec
-# Run ./scripts/fetch-openapi.sh first to update the spec
+# Called by `make generate-clients` after generating api/openapi.json
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
@@ -75,6 +75,8 @@ EOF
     echo "  - Python:     tests/generated/"
 }
 
-LOG_FILE=$(mktemp /tmp/generate-clients.XXXXXX)
+LOG_DIR="$PROJECT_ROOT/logs"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/generate-clients.log"
 main > "$LOG_FILE" 2>&1
 echo "Generated clients, log at $LOG_FILE"
