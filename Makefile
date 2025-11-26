@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -75,3 +75,6 @@ test-clean: ## Stop test environment and clean volumes
 
 test-logs: ## Show test environment logs
 	docker compose -f docker-compose.test.yml logs -f
+
+seed: ## Create test user with sample recipes (requires dev server running)
+	@uv run scripts/seed_data.py
