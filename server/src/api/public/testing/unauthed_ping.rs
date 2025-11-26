@@ -2,8 +2,6 @@ use axum::Json;
 use serde::Serialize;
 use utoipa::ToSchema;
 
-pub const PATH: &str = "/api/test/unauthed-ping";
-
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct UnauthedPingResponse {
     pub message: String,

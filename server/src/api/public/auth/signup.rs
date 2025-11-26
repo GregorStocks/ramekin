@@ -10,8 +10,6 @@ use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
-pub const PATH: &str = "/api/auth/signup";
-
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct SignupRequest {
     pub username: String,

@@ -14,8 +14,6 @@ use diesel::prelude::*;
 use std::sync::Arc;
 use uuid::Uuid;
 
-pub const PATH: &str = "/api/photos/{id}";
-
 #[utoipa::path(
     get,
     path = "/api/photos/{id}",

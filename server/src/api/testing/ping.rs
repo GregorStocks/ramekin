@@ -4,8 +4,6 @@ use axum::{response::IntoResponse, Json};
 use serde::Serialize;
 use utoipa::ToSchema;
 
-pub const PATH: &str = "/api/test/ping";
-
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct PingResponse {
     pub message: String,

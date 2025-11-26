@@ -16,8 +16,6 @@ use std::sync::Arc;
 use utoipa::ToSchema;
 use uuid::Uuid;
 
-pub const PATH: &str = "/api/recipes/{id}";
-
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct RecipeResponse {
     pub id: Uuid,

@@ -9,8 +9,6 @@ use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
 
-pub const PATH: &str = "/api/auth/login";
-
 #[derive(Debug, Clone, Deserialize, ToSchema)]
 pub struct LoginRequest {
     pub username: String,
