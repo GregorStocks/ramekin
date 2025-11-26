@@ -6,7 +6,7 @@ authors = ["Gregor Stocks"]
 license = "LicenseRef-Proprietary"
 
 [dependencies]
-ramekin_client = { path = "../generated/ramekin-client" }
+ramekin_client = { path = "generated/ramekin-client" }
 
 # CLI
 clap = { version = "4.5", features = ["derive"] }

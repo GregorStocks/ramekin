@@ -31,17 +31,17 @@ generate_client() {
 main() {
     if [ ! -f "$SPEC_FILE" ]; then
         echo "Error: OpenAPI spec not found at $SPEC_FILE" >&2
-        echo "Please run: make fetch-openapi" >&2
+        echo "Please run: make generate-clients" >&2
         exit 1
     fi
 
     echo "Generating API clients from $SPEC_FILE..."
 
     # Generate Rust client (for CLI)
-    generate_client "rust" "crates/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
+    generate_client "rust" "cli/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
 
     # Add lint exceptions for generated Rust code
-    cat >> "$PROJECT_ROOT/crates/generated/ramekin-client/Cargo.toml" << 'EOF'
+    cat >> "$PROJECT_ROOT/cli/generated/ramekin-client/Cargo.toml" << 'EOF'
 
 [lints.rust]
 unused_variables = "allow"
@@ -70,7 +70,7 @@ EOF
 
     echo ""
     echo "All clients generated successfully:"
-    echo "  - Rust:       crates/generated/ramekin-client/"
+    echo "  - Rust:       cli/generated/ramekin-client/"
     echo "  - TypeScript: ramekin-ui/generated-client/"
     echo "  - Python:     tests/generated/"
 }

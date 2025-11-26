@@ -21,16 +21,16 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: ramekin-test-server
-    working_dir: /app/crates/ramekin-server
+    working_dir: /app/server
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       RUST_LOG: debug
     ports:
       - "13000:3000"
     volumes:
-      - ./crates/ramekin-server:/app/crates/ramekin-server:cached
+      - ./server:/app/server:cached
       - ./migrations:/app/migrations:cached
-      - test_cargo_target:/app/crates/ramekin-server/target
+      - test_cargo_target:/app/server/target
     command: cargo run
     depends_on:
       postgres:
@@ -46,15 +46,14 @@ services:
       context: .
       dockerfile: Dockerfile.test
     container_name: ramekin-test-runner
-    working_dir: /app/crates/ramekin-cli
+    working_dir: /app/cli
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       API_BASE_URL: http://server:3000
     volumes:
       - ./tests:/app/tests:cached
-      - ./crates/ramekin-cli:/app/crates/ramekin-cli:cached
-      - ./crates/generated:/app/crates/generated:cached
-      - test_cli_target:/app/crates/ramekin-cli/target
+      - ./cli:/app/cli:cached
+      - test_cli_target:/app/cli/target
     depends_on:
       server:
         condition: service_healthy

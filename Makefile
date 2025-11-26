@@ -30,7 +30,7 @@ generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	mkdir -p api
 	docker run --rm \
 		-v $(PWD):/app \
-		-w /app/crates/ramekin-server \
+		-w /app/server \
 		rust:latest \
 		sh -c "cargo build --release -q 2>/dev/null && target/release/ramekin-server --openapi" \
 		> api/openapi.json
@@ -39,8 +39,8 @@ generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	$(MAKE) lint
 
 lint: ## Run all linters (Rust, TypeScript, Python)
-	cd crates/ramekin-server && cargo fmt --all
-	cd crates/ramekin-server && cargo clippy --all-targets --all-features -q -- -D warnings
+	cd server && cargo fmt --all
+	cd server && cargo clippy --all-targets --all-features -q -- -D warnings
 	npx prettier --write --log-level warn ramekin-ui/src/
 	cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
 	uvx ruff format --quiet --exclude tests/generated tests/
@@ -48,11 +48,11 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 
 clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	docker compose down -v
-	rm -rf crates/generated/ ramekin-ui/generated-client/ tests/generated/
+	rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
-	@docker compose exec server diesel print-schema > crates/ramekin-server/src/schema.rs
-	@echo "Schema generated at crates/ramekin-server/src/schema.rs"
+	@docker compose exec server diesel print-schema > server/src/schema.rs
+	@echo "Schema generated at server/src/schema.rs"
 	$(MAKE) lint
 
 test: generate-clients test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)

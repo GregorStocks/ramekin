@@ -8,7 +8,7 @@ def test_cli_ping():
 
     result = subprocess.run(
         [
-            "/app/crates/ramekin-cli/target/debug/ramekin-cli",
+            "/app/cli/target/debug/ramekin-cli",
             "ping",
             "--server",
             server_url,

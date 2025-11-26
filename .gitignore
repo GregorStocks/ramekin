@@ -64,7 +64,7 @@ venv/
 .venv/
 
 # Generated API clients (regenerate with: make generate-clients)
-crates/generated/
+cli/generated/
 ramekin-ui/generated-client/
 tests/generated/
 
