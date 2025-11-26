@@ -59,9 +59,6 @@ export default function CookbookPage() {
             <span class="recipe-count">{recipeCount()}</span>
           </Show>
         </h2>
-        <A href="/recipes/new" class="btn btn-primary">
-          + New Recipe
-        </A>
       </div>
 
       <Show when={loading()}>
