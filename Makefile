@@ -9,6 +9,7 @@ help: ## Show this help message
 dev: generate-clients ## Start dev environment (with hot-reload)
 	@BUILDKIT_PROGRESS=plain docker compose up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
 	@echo "Dev environment ready"
+	@$(MAKE) seed
 
 up: dev ## Alias for dev
 

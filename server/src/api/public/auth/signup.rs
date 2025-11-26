@@ -1,5 +1,5 @@
 use crate::api::ErrorResponse;
-use crate::auth::{create_session, hash_password};
+use crate::auth::{create_session_with_token, hash_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::models::NewUser;
 use crate::schema::users;
@@ -97,7 +97,13 @@ pub async fn signup(
         }
     };
 
-    let token = match create_session(&mut conn, user.id) {
+    // Use fixed token for test user "t" so session persists across DB resets
+    let fixed_token = if req.username.to_lowercase() == "t" {
+        Some(DEV_TEST_TOKEN)
+    } else {
+        None
+    };
+    let token = match create_session_with_token(&mut conn, user.id, fixed_token) {
         Ok(t) => t,
         Err(_) => {
             return (

@@ -6,11 +6,17 @@ use diesel::prelude::*;
 
 use super::crypto::{generate_token, hash_token};
 
-pub fn create_session(
+/// Fixed token for the test user "t" - allows persistent sessions across database resets
+pub const DEV_TEST_TOKEN: &str = "tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt";
+
+pub fn create_session_with_token(
     conn: &mut PgConnection,
     user_id: uuid::Uuid,
+    fixed_token: Option<&str>,
 ) -> Result<String, diesel::result::Error> {
-    let token = generate_token();
+    let token = fixed_token
+        .map(|t| t.to_string())
+        .unwrap_or_else(generate_token);
     let token_hash = hash_token(&token);
     let expires_at = Utc::now() + Duration::days(30);
 

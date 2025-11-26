@@ -1,5 +1,5 @@
 use crate::api::ErrorResponse;
-use crate::auth::{create_session, verify_password};
+use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
 use crate::models::User;
 use crate::schema::users;
@@ -79,16 +79,21 @@ pub async fn login(
             .into_response();
     }
 
-    let token = match create_session(&mut conn, user.id) {
-        Ok(t) => t,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to create session".to_string(),
-                }),
-            )
-                .into_response()
+    // For test user "t", return the fixed token (session already exists from signup)
+    let token = if user.username.to_lowercase() == "t" {
+        DEV_TEST_TOKEN.to_string()
+    } else {
+        match create_session_with_token(&mut conn, user.id, None) {
+            Ok(t) => t,
+            Err(_) => {
+                return (
+                    StatusCode::INTERNAL_SERVER_ERROR,
+                    Json(ErrorResponse {
+                        error: "Failed to create session".to_string(),
+                    }),
+                )
+                    .into_response()
+            }
         }
     };
 

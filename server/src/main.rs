@@ -60,22 +60,41 @@ async fn main() {
                         .get::<MatchedPath>()
                         .map(MatchedPath::as_str)
                         .unwrap_or(request.uri().path());
-                    tracing::info_span!(
-                        "http_request",
-                        method = %request.method(),
-                        path = %matched_path,
-                    )
+
+                    // Don't create a span at all for noisy endpoints
+                    if matched_path == "/api/test/unauthed-ping" {
+                        tracing::trace_span!("http_request")
+                    } else {
+                        tracing::info_span!(
+                            "http_request",
+                            method = %request.method(),
+                            path = %matched_path,
+                        )
+                    }
                 })
                 .on_request(|_request: &Request<_>, _span: &Span| {})
                 .on_response(
                     |response: &axum::http::Response<_>,
                      latency: std::time::Duration,
-                     _span: &Span| {
-                        tracing::info!(
-                            status = %response.status().as_u16(),
-                            latency_ms = %latency.as_millis(),
-                            "request completed"
-                        );
+                     span: &Span| {
+                        // Skip logging for noisy endpoints (trace-level spans)
+                        if span.metadata().map(|m| m.level()) == Some(&tracing::Level::TRACE) {
+                            return;
+                        }
+                        let status = response.status().as_u16();
+                        if status >= 500 {
+                            tracing::error!(
+                                status = %status,
+                                latency_ms = %latency.as_millis(),
+                                "request failed with server error"
+                            );
+                        } else {
+                            tracing::info!(
+                                status = %status,
+                                latency_ms = %latency.as_millis(),
+                                "request completed"
+                            );
+                        }
                     },
                 )
                 .on_failure(

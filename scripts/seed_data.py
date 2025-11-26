@@ -274,8 +274,8 @@ SAMPLE_RECIPES = [
     },
 ]
 
-TEST_USERNAME = "testuser"
-TEST_PASSWORD = "testpass123"
+TEST_USERNAME = "t"
+TEST_PASSWORD = "t"
 
 
 def create_ingredient(data: dict) -> Ingredient:
