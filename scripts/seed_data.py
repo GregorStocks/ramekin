@@ -6,6 +6,7 @@
 #     "python-dateutil",
 #     "pydantic",
 #     "typing-extensions",
+#     "cairosvg",
 # ]
 # ///
 """
@@ -26,13 +27,14 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tests", "generated"))
 
 from ramekin_client import ApiClient, Configuration
-from ramekin_client.api import AuthApi, RecipesApi
+from ramekin_client.api import AuthApi, PhotosApi, RecipesApi
 from ramekin_client.models import (
     CreateRecipeRequest,
     Ingredient,
     LoginRequest,
     SignupRequest,
 )
+import cairosvg
 
 # Sample recipes with realistic data
 SAMPLE_RECIPES = [
@@ -57,6 +59,7 @@ SAMPLE_RECIPES = [
         ],
         "tags": ["italian", "pasta", "dinner", "quick"],
         "source_name": "Serious Eats",
+        "image": "pasta.svg",
     },
     {
         "title": "Chicken Tikka Masala",
@@ -81,6 +84,7 @@ SAMPLE_RECIPES = [
             {"item": "cilantro", "amount": "", "unit": "", "note": "for garnish"},
         ],
         "tags": ["indian", "chicken", "dinner", "spicy"],
+        "image": "chicken.svg",
     },
     {
         "title": "Banana Bread",
@@ -104,6 +108,7 @@ SAMPLE_RECIPES = [
         ],
         "tags": ["baking", "breakfast", "dessert", "easy"],
         "source_name": "Grandma's Recipe Box",
+        "image": "bread.svg",
     },
     {
         "title": "Thai Green Curry",
@@ -128,6 +133,7 @@ SAMPLE_RECIPES = [
             {"item": "lime", "amount": "1", "unit": "", "note": "juiced"},
         ],
         "tags": ["thai", "curry", "dinner", "spicy", "gluten-free"],
+        "image": "curry.svg",
     },
     {
         "title": "Classic Beef Tacos",
@@ -150,6 +156,7 @@ SAMPLE_RECIPES = [
             {"item": "lime", "amount": "1", "unit": ""},
         ],
         "tags": ["mexican", "dinner", "quick", "family-friendly"],
+        "image": "tacos.svg",
     },
     {
         "title": "Mushroom Risotto",
@@ -173,6 +180,7 @@ SAMPLE_RECIPES = [
             {"item": "olive oil", "amount": "2", "unit": "tbsp"},
         ],
         "tags": ["italian", "vegetarian", "dinner", "comfort-food"],
+        "image": "risotto.svg",
     },
     {
         "title": "Greek Salad",
@@ -195,6 +203,7 @@ SAMPLE_RECIPES = [
             {"item": "dried oregano", "amount": "1", "unit": "tsp"},
         ],
         "tags": ["greek", "salad", "vegetarian", "healthy", "quick"],
+        "image": "salad.svg",
     },
     {
         "title": "Homemade Pizza Dough",
@@ -217,6 +226,7 @@ SAMPLE_RECIPES = [
         ],
         "tags": ["pizza", "baking", "italian", "basics"],
         "source_name": "King Arthur Flour",
+        "image": "pizza.svg",
     },
     {
         "title": "Overnight Oats",
@@ -236,6 +246,7 @@ SAMPLE_RECIPES = [
             {"item": "fresh berries", "amount": "1/2", "unit": "cup", "note": "for topping"},
         ],
         "tags": ["breakfast", "healthy", "meal-prep", "no-cook", "vegetarian"],
+        "image": "oats.svg",
     },
     {
         "title": "Garlic Butter Shrimp",
@@ -259,6 +270,7 @@ SAMPLE_RECIPES = [
             {"item": "fresh parsley", "amount": "2", "unit": "tbsp", "note": "chopped"},
         ],
         "tags": ["seafood", "dinner", "quick", "date-night", "low-carb"],
+        "image": "shrimp.svg",
     },
 ]
 
@@ -274,6 +286,13 @@ def create_ingredient(data: dict) -> Ingredient:
         unit=data.get("unit", ""),
         note=data.get("note"),
     )
+
+
+def load_image(image_name: str) -> bytes:
+    """Load an SVG image and convert to PNG bytes."""
+    script_dir = os.path.dirname(__file__)
+    svg_path = os.path.join(script_dir, "seed_images", image_name)
+    return cairosvg.svg2png(url=svg_path, output_width=400, output_height=400)
 
 
 def seed_data(base_url: str) -> dict:
@@ -310,9 +329,20 @@ def seed_data(base_url: str) -> dict:
     config.access_token = token
     with ApiClient(config) as client:
         recipes_api = RecipesApi(client)
+        photos_api = PhotosApi(client)
 
         print(f"Creating {len(SAMPLE_RECIPES)} sample recipes...")
         for recipe_data in SAMPLE_RECIPES:
+            # Upload image if present
+            photo_ids = []
+            if "image" in recipe_data:
+                try:
+                    image_bytes = load_image(recipe_data["image"])
+                    upload_response = photos_api.upload(file=image_bytes)
+                    photo_ids = [str(upload_response.id)]
+                except Exception as e:
+                    print(f"  Warning: Failed to upload image for {recipe_data['title']}: {e}")
+
             request = CreateRecipeRequest(
                 title=recipe_data["title"],
                 description=recipe_data.get("description"),
@@ -321,6 +351,7 @@ def seed_data(base_url: str) -> dict:
                 tags=recipe_data.get("tags"),
                 source_name=recipe_data.get("source_name"),
                 source_url=recipe_data.get("source_url"),
+                photo_ids=photo_ids if photo_ids else None,
             )
             recipes_api.create_recipe(request)
             print(f"  Created: {recipe_data['title']}")
