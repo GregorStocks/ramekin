@@ -79,5 +79,5 @@ test-logs: ## Show test environment logs
 seed: ## Create test user with sample recipes (requires dev server running)
 	@uv run scripts/seed_data.py
 
-screenshot: up seed ## Take a screenshot of the app
-	@uv run scripts/screenshot.py
+screenshot: up seed ## Take a screenshot of the app (use ARGS for options)
+	@uv run scripts/screenshot.py $(ARGS)
