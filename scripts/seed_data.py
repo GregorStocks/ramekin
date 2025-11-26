@@ -278,7 +278,7 @@ def create_ingredient(data: dict) -> Ingredient:
 
 def seed_data(base_url: str) -> dict:
     """
-    Create a test user with sample recipes.
+    Create a test user with sample recipes (idempotent).
     Returns dict with user credentials and info.
     """
     config = Configuration(host=base_url)
@@ -286,14 +286,17 @@ def seed_data(base_url: str) -> dict:
     with ApiClient(config) as client:
         auth_api = AuthApi(client)
 
-        # Try to login first (user might already exist)
+        # Try to login first - if user exists, we're done
         try:
-            response = auth_api.login(
+            auth_api.login(
                 LoginRequest(username=TEST_USERNAME, password=TEST_PASSWORD)
             )
-            print(f"Logged in as existing user: {TEST_USERNAME}")
-            token = response.token
-            user_id = response.user_id
+            print(f"Test user '{TEST_USERNAME}' already exists, skipping seed")
+            return {
+                "username": TEST_USERNAME,
+                "password": TEST_PASSWORD,
+                "base_url": base_url,
+            }
         except Exception:
             # User doesn't exist, create them
             response = auth_api.signup(
@@ -303,33 +306,24 @@ def seed_data(base_url: str) -> dict:
             token = response.token
             user_id = response.user_id
 
-    # Now create recipes with the authenticated user
+    # Create recipes for new user
     config.access_token = token
     with ApiClient(config) as client:
         recipes_api = RecipesApi(client)
 
-        # Check how many recipes already exist
-        existing = recipes_api.list_recipes()
-        existing_count = len(existing.recipes)
-
-        if existing_count >= 10:
-            print(f"User already has {existing_count} recipes, skipping seed data")
-        else:
-            recipes_to_create = 10 - existing_count
-            print(f"Creating {recipes_to_create} sample recipes...")
-
-            for i, recipe_data in enumerate(SAMPLE_RECIPES[:recipes_to_create]):
-                request = CreateRecipeRequest(
-                    title=recipe_data["title"],
-                    description=recipe_data.get("description"),
-                    instructions=recipe_data["instructions"],
-                    ingredients=[create_ingredient(ing) for ing in recipe_data["ingredients"]],
-                    tags=recipe_data.get("tags"),
-                    source_name=recipe_data.get("source_name"),
-                    source_url=recipe_data.get("source_url"),
-                )
-                recipes_api.create_recipe(request)
-                print(f"  Created: {recipe_data['title']}")
+        print(f"Creating {len(SAMPLE_RECIPES)} sample recipes...")
+        for recipe_data in SAMPLE_RECIPES:
+            request = CreateRecipeRequest(
+                title=recipe_data["title"],
+                description=recipe_data.get("description"),
+                instructions=recipe_data["instructions"],
+                ingredients=[create_ingredient(ing) for ing in recipe_data["ingredients"]],
+                tags=recipe_data.get("tags"),
+                source_name=recipe_data.get("source_name"),
+                source_url=recipe_data.get("source_url"),
+            )
+            recipes_api.create_recipe(request)
+            print(f"  Created: {recipe_data['title']}")
 
     print()
     print("=" * 50)
