@@ -27,26 +27,26 @@ logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
-	@mkdir -p api
-	@docker run --rm \
+	mkdir -p api
+	docker run --rm \
 		-v $(PWD):/app \
-		-w /app \
+		-w /app/crates/ramekin-server \
 		rust:latest \
-		sh -c "cargo build --release -p ramekin-server -q 2>/dev/null && ./target/release/ramekin-server --openapi" \
+		sh -c "cargo build --release -q 2>/dev/null && target/release/ramekin-server --openapi" \
 		> api/openapi.json
-	@echo "Generated api/openapi.json"
+	echo "Generated api/openapi.json"
 	./scripts/generate-clients.sh
 	$(MAKE) lint
 
 lint: ## Run all linters (Rust, TypeScript, Python)
-	cargo fmt --all
-	cargo clippy --all-targets --all-features -q -- -D warnings
+	cd crates/ramekin-server && cargo fmt --all
+	cd crates/ramekin-server && cargo clippy --all-targets --all-features -q -- -D warnings
 	npx prettier --write --log-level warn ramekin-ui/src/
 	cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
 	uvx ruff format --quiet --exclude tests/generated tests/
 	uvx ruff check --fix --quiet --exclude tests/generated tests/
 
-clean: ## Stop services, clean volumes, and remove generated clients
+clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	docker compose down -v
 	rm -rf crates/generated/ ramekin-ui/generated-client/ tests/generated/
 

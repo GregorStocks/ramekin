@@ -7,7 +7,12 @@ def test_cli_ping():
     server_url = os.environ.get("API_BASE_URL", "http://server:3000")
 
     result = subprocess.run(
-        ["/app/target/debug/ramekin-cli", "ping", "--server", server_url],
+        [
+            "/app/crates/ramekin-cli/target/debug/ramekin-cli",
+            "ping",
+            "--server",
+            server_url,
+        ],
         capture_output=True,
         text=True,
     )

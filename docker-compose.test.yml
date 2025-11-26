@@ -21,18 +21,17 @@ services:
       context: .
       dockerfile: Dockerfile.dev
     container_name: ramekin-test-server
+    working_dir: /app/crates/ramekin-server
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       RUST_LOG: debug
     ports:
       - "13000:3000"
     volumes:
-      - ./crates:/app/crates:cached
+      - ./crates/ramekin-server:/app/crates/ramekin-server:cached
       - ./migrations:/app/migrations:cached
-      - ./Cargo.toml:/app/Cargo.toml:cached
-      - ./Cargo.lock:/app/Cargo.lock:cached
-      - test_cargo_target:/app/target
-    command: cargo run --package ramekin-server
+      - test_cargo_target:/app/crates/ramekin-server/target
+    command: cargo run
     depends_on:
       postgres:
         condition: service_healthy
@@ -47,21 +46,21 @@ services:
       context: .
       dockerfile: Dockerfile.test
     container_name: ramekin-test-runner
+    working_dir: /app/crates/ramekin-cli
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       API_BASE_URL: http://server:3000
     volumes:
       - ./tests:/app/tests:cached
-      - ./crates:/app/crates:cached
-      - ./migrations:/app/migrations:cached
-      - ./Cargo.toml:/app/Cargo.toml:cached
-      - ./Cargo.lock:/app/Cargo.lock:cached
-      - test_cargo_target:/app/target
+      - ./crates/ramekin-cli:/app/crates/ramekin-cli:cached
+      - ./crates/generated:/app/crates/generated:cached
+      - test_cli_target:/app/crates/ramekin-cli/target
     depends_on:
       server:
         condition: service_healthy
-    command: bash -c "cargo build --package ramekin-cli && pytest /app/tests -v"
+    command: bash -c "cargo build -q && pytest /app/tests -v"
 
 volumes:
   test_postgres_data:
   test_cargo_target:
+  test_cli_target:
