@@ -1,12 +1,46 @@
-import { createSignal, Show, Index } from "solid-js";
+import { createSignal, Show, Index, For, onCleanup } from "solid-js";
 import { createStore } from "solid-js/store";
 import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { Ingredient } from "ramekin-client";
 
+function PhotoThumbnail(props: {
+  photoId: string;
+  token: string;
+  onRemove: () => void;
+}) {
+  const [src, setSrc] = createSignal<string | null>(null);
+
+  (async () => {
+    const response = await fetch(`/api/photos/${props.photoId}`, {
+      headers: { Authorization: `Bearer ${props.token}` },
+    });
+    if (response.ok) {
+      const blob = await response.blob();
+      setSrc(URL.createObjectURL(blob));
+    }
+  })();
+
+  onCleanup(() => {
+    const url = src();
+    if (url) URL.revokeObjectURL(url);
+  });
+
+  return (
+    <div class="photo-thumbnail">
+      <Show when={src()} fallback={<div class="photo-loading">Loading...</div>}>
+        <img src={src()!} alt="Recipe photo" />
+      </Show>
+      <button type="button" class="photo-remove" onClick={props.onRemove}>
+        &times;
+      </button>
+    </div>
+  );
+}
+
 export default function CreateRecipePage() {
   const navigate = useNavigate();
-  const { getRecipesApi } = useAuth();
+  const { getRecipesApi, getPhotosApi, token } = useAuth();
 
   const [title, setTitle] = createSignal("");
   const [description, setDescription] = createSignal("");
@@ -14,6 +48,8 @@ export default function CreateRecipePage() {
   const [sourceUrl, setSourceUrl] = createSignal("");
   const [sourceName, setSourceName] = createSignal("");
   const [tagsInput, setTagsInput] = createSignal("");
+  const [photoIds, setPhotoIds] = createSignal<string[]>([]);
+  const [uploading, setUploading] = createSignal(false);
   const [ingredients, setIngredients] = createStore<Ingredient[]>([
     { item: "", amount: "", unit: "" },
   ]);
@@ -35,6 +71,48 @@ export default function CreateRecipePage() {
     value: string,
   ) => {
     setIngredients(index, field, value);
+  };
+
+  const handlePhotoUpload = async (e: Event) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError(null);
+    try {
+      const response = await getPhotosApi().upload({ file });
+      setPhotoIds([...photoIds(), response.id]);
+    } catch (err) {
+      // The generated client throws ResponseError with a response property
+      const response =
+        err instanceof Response
+          ? err
+          : err &&
+              typeof err === "object" &&
+              "response" in err &&
+              err.response instanceof Response
+            ? err.response
+            : null;
+
+      if (response) {
+        try {
+          const body = await response.json();
+          setError(body.error || "Failed to upload photo");
+        } catch {
+          setError(`Failed to upload photo (${response.status})`);
+        }
+      } else {
+        setError("Failed to upload photo");
+      }
+    } finally {
+      setUploading(false);
+      input.value = "";
+    }
+  };
+
+  const removePhoto = (photoId: string) => {
+    setPhotoIds(photoIds().filter((id) => id !== photoId));
   };
 
   const handleSubmit = async (e: Event) => {
@@ -60,6 +138,7 @@ export default function CreateRecipePage() {
           sourceUrl: sourceUrl() || undefined,
           sourceName: sourceName() || undefined,
           tags: tags.length > 0 ? tags : undefined,
+          photoIds: photoIds().length > 0 ? photoIds() : undefined,
         },
       });
 
@@ -203,6 +282,38 @@ export default function CreateRecipePage() {
             onInput={(e) => setTagsInput(e.currentTarget.value)}
             placeholder="e.g., dinner, easy, vegetarian"
           />
+        </div>
+
+        <div class="form-section">
+          <div class="section-header">
+            <label>Photos</label>
+            <label class="btn btn-small">
+              {uploading() ? "Uploading..." : "+ Add Photo"}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handlePhotoUpload}
+                disabled={uploading()}
+                style={{ display: "none" }}
+              />
+            </label>
+          </div>
+          <Show when={photoIds().length > 0}>
+            <div class="photo-grid">
+              <For each={photoIds()}>
+                {(photoId) => (
+                  <PhotoThumbnail
+                    photoId={photoId}
+                    token={token() ?? ""}
+                    onRemove={() => removePhoto(photoId)}
+                  />
+                )}
+              </For>
+            </div>
+          </Show>
+          <Show when={photoIds().length === 0}>
+            <p class="empty-photos">No photos yet</p>
+          </Show>
         </div>
 
         <Show when={error()}>
