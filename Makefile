@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed screenshot
 
 help: ## Show this help message
 	@echo 'Usage: make [target]'
@@ -78,3 +78,6 @@ test-logs: ## Show test environment logs
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@uv run scripts/seed_data.py
+
+screenshot: ## Take a screenshot of the app (requires dev server running)
+	@uv run scripts/screenshot.py
