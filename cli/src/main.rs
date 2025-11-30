@@ -1,3 +1,5 @@
+mod seed;
+
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use ramekin_client::apis::configuration::Configuration;
@@ -19,6 +21,18 @@ enum Commands {
         #[arg(long, default_value = "http://localhost:3000")]
         server: String,
     },
+    /// Seed the database with a user and sample recipes
+    Seed {
+        /// Server URL (default: http://localhost:3000)
+        #[arg(long, default_value = "http://localhost:3000")]
+        server: String,
+        /// Username for the seed user
+        #[arg(long)]
+        username: String,
+        /// Password for the seed user
+        #[arg(long)]
+        password: String,
+    },
 }
 
 #[tokio::main]
@@ -28,6 +42,13 @@ async fn main() -> Result<()> {
     match cli.command {
         Commands::Ping { server } => {
             ping(&server).await?;
+        }
+        Commands::Seed {
+            server,
+            username,
+            password,
+        } => {
+            seed::seed(&server, &username, &password).await?;
         }
     }
 

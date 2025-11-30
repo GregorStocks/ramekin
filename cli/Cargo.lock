@@ -992,6 +992,7 @@ dependencies = [
  "serde_repr",
  "tokio",
  "url",
+ "uuid",
 ]
 
 [[package]]

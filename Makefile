@@ -44,6 +44,8 @@ generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 lint: ## Run all linters (Rust, TypeScript, Python)
 	@cd server && cargo fmt --all
 	@cd server && cargo clippy --all-targets --all-features -q -- -D warnings
+	@cd cli && cargo fmt --all
+	@cd cli && cargo clippy --all-targets --all-features -q -- -D warnings
 	@npx prettier --write --log-level warn ramekin-ui/src/
 	@cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
 	@uvx ruff format --quiet --exclude tests/generated tests/
@@ -78,7 +80,7 @@ test-logs: ## Show test environment logs
 	docker compose -f docker-compose.test.yml logs -f
 
 seed: ## Create test user with sample recipes (requires dev server running)
-	@uv run scripts/seed_data.py
+	@cd cli && cargo run -q -- seed --username t --password t
 
 screenshot: up seed ## Take a screenshot of the app (use ARGS for options)
 	@uv run scripts/screenshot.py $(ARGS)
