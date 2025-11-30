@@ -1,5 +1,9 @@
 .PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed screenshot
 
+# Project names to keep dev and test environments isolated
+DEV_PROJECT := ramekin
+TEST_PROJECT := ramekin-test
+
 help: ## Show this help message
 	@echo 'Usage: make [target]'
 	@echo ''
@@ -7,21 +11,21 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 dev: generate-clients ## Start dev environment (with hot-reload)
-	@BUILDKIT_PROGRESS=plain docker compose up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	@BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
 	@echo "Dev environment ready"
 	@$(MAKE) seed
 
 up: dev ## Alias for dev
 
 down: ## Stop all services
-	@docker compose down 2>/dev/null
+	@docker compose -p $(DEV_PROJECT) down 2>/dev/null
 
 restart: generate-clients ## Force restart services
-	@BUILDKIT_PROGRESS=plain docker compose up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	@BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
 	@echo "Services restarted"
 
 logs: ## Show all logs
-	docker compose logs -f
+	docker compose -p $(DEV_PROJECT) logs -f
 
 logs-server: ## Show server logs
 	docker logs ramekin-server -f
@@ -53,31 +57,31 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 	@echo "Linted"
 
 clean: test-clean ## Stop services, clean volumes, and remove generated clients
-	@docker compose down -v 2>/dev/null
+	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
-	@docker compose exec server diesel print-schema > server/src/schema.rs
+	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
 	@echo "Schema generated at server/src/schema.rs"
 	$(MAKE) lint
 
 test: generate-clients test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)
-	@BUILDKIT_PROGRESS=plain docker compose -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" && docker compose -f docker-compose.test.yml down 2>/dev/null || (echo "Tests failed - leaving environment up for debugging" && exit 1)
+	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" && docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null || (echo "Tests failed - leaving environment up for debugging" && exit 1)
 
 test-up: ## Start test environment
-	@BUILDKIT_PROGRESS=plain docker compose -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
 
 test-run: ## Run tests against running test environment
-	@BUILDKIT_PROGRESS=plain docker compose -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
+	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
 
 test-down: ## Stop test environment
-	@docker compose -f docker-compose.test.yml down 2>/dev/null
+	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null
 
 test-clean: ## Stop test environment and clean volumes
-	@docker compose -f docker-compose.test.yml down -v 2>/dev/null
+	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down -v 2>/dev/null
 
 test-logs: ## Show test environment logs
-	docker compose -f docker-compose.test.yml logs -f
+	docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml logs -f
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t
