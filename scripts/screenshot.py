@@ -23,9 +23,9 @@ import argparse
 import os
 import sys
 
-# Default test user credentials (from seed_data.py)
-TEST_USERNAME = "testuser"
-TEST_PASSWORD = "testpass123"
+# Default test user credentials (from seed command)
+TEST_USERNAME = "t"
+TEST_PASSWORD = "t"
 
 
 def take_screenshot(

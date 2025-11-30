@@ -1,9 +1,11 @@
+mod import;
 mod seed;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
+use std::path::PathBuf;
 
 #[derive(Parser)]
 #[command(name = "ramekin")]
@@ -33,6 +35,21 @@ enum Commands {
         #[arg(long)]
         password: String,
     },
+    /// Import recipes from a Paprika .paprikarecipes file
+    Import {
+        /// Server URL (default: http://localhost:3000)
+        #[arg(long, default_value = "http://localhost:3000")]
+        server: String,
+        /// Username to authenticate as
+        #[arg(long)]
+        username: String,
+        /// Password for authentication
+        #[arg(long)]
+        password: String,
+        /// Path to the .paprikarecipes file
+        #[arg(value_name = "FILE")]
+        file: PathBuf,
+    },
 }
 
 #[tokio::main]
@@ -49,6 +66,14 @@ async fn main() -> Result<()> {
             password,
         } => {
             seed::seed(&server, &username, &password).await?;
+        }
+        Commands::Import {
+            server,
+            username,
+            password,
+            file,
+        } => {
+            import::import(&server, &username, &password, &file).await?;
         }
     }
 
