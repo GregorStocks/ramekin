@@ -13,3 +13,5 @@ When adding new API endpoints, remember to add end-to-end tests before you start
 Don't run git checkout unless you're confident you know what's happened since the last commit.
 
 Never modify generated code (except for temporary testing), since your changes will get blown away.
+
+Never bypass the linter with #noqa or equivalent. Never put a Python import anywhere other than the top of the file.

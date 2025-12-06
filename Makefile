@@ -52,8 +52,8 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 	@cd cli && cargo clippy --all-targets --all-features -q -- -D warnings
 	@npx prettier --write --log-level warn ramekin-ui/src/
 	@cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
-	@uvx ruff format --quiet --exclude tests/generated tests/
-	@uvx ruff check --fix --quiet --exclude tests/generated tests/
+	@uvx ruff format --quiet --exclude tests/generated tests/ scripts/
+	@uvx ruff check --fix --quiet --exclude tests/generated tests/ scripts/
 	@echo "Linted"
 
 clean: test-clean ## Stop services, clean volumes, and remove generated clients

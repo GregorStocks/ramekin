@@ -15,13 +15,15 @@ Pages:
     cookbook (default) - The main cookbook/recipe list page
     login - The login page (before auth)
     new - The create recipe page
+    recipe - View the alphabetically first recipe by title
 
 Requires the dev server to be running and seed data to exist.
 """
 
 import argparse
 import os
-import sys
+
+from playwright.sync_api import sync_playwright
 
 # Default test user credentials (from seed command)
 TEST_USERNAME = "t"
@@ -36,8 +38,6 @@ def take_screenshot(
     height: int = 800,
 ):
     """Take a screenshot of the specified page."""
-    # Import here so the script fails fast if playwright isn't installed
-    from playwright.sync_api import sync_playwright
 
     # Ensure output directory exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
@@ -75,6 +75,24 @@ def take_screenshot(
             elif page_name == "new":
                 page.goto(f"{base_url}/recipes/new")
                 page.wait_for_load_state("networkidle")
+            elif page_name == "recipe":
+                # Find the alphabetically first recipe by title and click it
+                cards = page.locator(".recipe-card")
+                count = cards.count()
+                if count == 0:
+                    print("Warning: No recipes found")
+                else:
+                    # Get all recipe titles and find the alphabetically first one
+                    titles_with_index = []
+                    for i in range(count):
+                        title = cards.nth(i).locator("h3").inner_text()
+                        titles_with_index.append((title, i))
+                    # Sort alphabetically by title
+                    titles_with_index.sort(key=lambda x: x[0].lower())
+                    first_title, first_index = titles_with_index[0]
+                    print(f"Clicking recipe: {first_title}")
+                    cards.nth(first_index).click()
+                    page.wait_for_load_state("networkidle")
             elif page_name.startswith("recipe:"):
                 # View a specific recipe by index (0-based)
                 recipe_index = int(page_name.split(":")[1])
@@ -84,7 +102,7 @@ def take_screenshot(
                     cards.nth(recipe_index).click()
                     page.wait_for_load_state("networkidle")
                 else:
-                    print(f"Warning: Only {cards.count()} recipes found, index {recipe_index} out of range")
+                    print(f"Warning: Only {cards.count()} recipes found")
 
         # Take the screenshot
         page.screenshot(path=output_path)
@@ -101,14 +119,16 @@ def main():
         help="App URL (default: http://localhost:5173)",
     )
     parser.add_argument(
-        "--output", "-o",
+        "--output",
+        "-o",
         default="logs/screenshot.png",
         help="Output path (default: logs/screenshot.png)",
     )
     parser.add_argument(
-        "--page", "-p",
+        "--page",
+        "-p",
         default="cookbook",
-        choices=["login", "cookbook", "new"],
+        choices=["login", "cookbook", "new", "recipe"],
         help="Page to screenshot (default: cookbook)",
     )
     parser.add_argument(
