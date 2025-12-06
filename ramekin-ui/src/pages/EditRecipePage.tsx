@@ -284,7 +284,7 @@ export default function EditRecipePage() {
                   />
                   <button
                     type="button"
-                    class="btn btn-small btn-danger"
+                    class="btn btn-small btn-remove"
                     onClick={() => removeIngredient(index)}
                   >
                     &times;

@@ -99,6 +99,16 @@
   border-color: #c82333;
 }
 
+.btn-danger-outline {
+  background: transparent;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-danger-outline:hover {
+  background: rgba(220, 53, 69, 0.1);
+}
+
 .btn-small {
   padding: 0.25rem 0.5rem;
   font-size: 0.8rem;
@@ -165,18 +175,24 @@
 
 .form-group input,
 .form-group textarea {
-  padding: 0.5rem;
+  padding: 0.5rem 0.625rem;
   font-size: 1rem;
-  border: 1px solid #444;
+  border: 1px solid #555;
   border-radius: 4px;
-  background: #1a1a1a;
+  background: #252525;
   color: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #646cff;
+  background: #2a2a2a;
 }
 
 .form-row {
@@ -396,6 +412,20 @@
   text-align: left;
 }
 
+.recipe-back-link {
+  margin-bottom: 1.5rem;
+}
+
+.recipe-back-link a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.recipe-back-link a:hover {
+  color: #646cff;
+}
+
 .recipe-header {
   display: flex;
   justify-content: space-between;
@@ -444,11 +474,60 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  gap: 0.25rem;
 }
 
 .ingredients-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #222;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background: #1a1a1a;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+}
+
+.ingredients-list li:hover {
+  border-color: #333;
+}
+
+.ingredient-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.ingredient-checkbox:hover {
+  border-color: #646cff;
+}
+
+.ingredient-checkbox.checked {
+  background: #646cff;
+  border-color: #646cff;
+}
+
+.ingredient-checkbox.checked::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.ingredient-text {
+  flex: 1;
+}
+
+.ingredient-text.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .ingredients-list .amount {
@@ -523,62 +602,88 @@
   align-items: center;
 }
 
-.ingredient-row .input-amount {
-  width: 80px;
-  flex-shrink: 0;
-}
-
+.ingredient-row .input-amount,
 .ingredient-row .input-unit {
-  width: 80px;
+  width: 70px;
   flex-shrink: 0;
 }
 
 .ingredient-row .input-item {
   flex: 1;
-  min-width: 120px;
+  min-width: 150px;
 }
 
 .ingredient-row .input-note {
-  width: 120px;
+  width: 100px;
   flex-shrink: 0;
 }
 
 .ingredient-row input {
-  padding: 0.4rem;
+  padding: 0.5rem 0.625rem;
   font-size: 0.9rem;
-  border: 1px solid #444;
+  border: 1px solid #555;
   border-radius: 4px;
-  background: #1a1a1a;
+  background: #252525;
   color: #fff;
+}
+
+.ingredient-row input::placeholder {
+  color: #666;
 }
 
 .ingredient-row input:focus {
   outline: none;
   border-color: #646cff;
+  background: #2a2a2a;
+}
+
+.ingredient-row .btn-remove {
+  padding: 0.4rem 0.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0.5;
+  transition: all 0.15s;
+}
+
+.ingredient-row:hover .btn-remove {
+  opacity: 1;
+}
+
+.ingredient-row .btn-remove:hover {
+  color: #dc3545;
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
 }
 
 .form-actions {
+  position: sticky;
+  bottom: 0;
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
   margin-top: 2rem;
-  padding-top: 1.5rem;
+  padding: 1rem 0;
+  background: linear-gradient(to top, #242424 80%, transparent);
   border-top: 1px solid #333;
 }
 
 /* Recipe Photos */
 .recipe-photos {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
   margin: 1.5rem 0;
 }
 
 .recipe-photo {
-  max-width: 100%;
-  max-height: 400px;
+  width: 100%;
+  max-height: 500px;
   border-radius: 8px;
-  object-fit: contain;
+  object-fit: cover;
+  border: 1px solid #333;
 }
 
 /* Photo Grid (Edit Page) */

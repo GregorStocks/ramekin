@@ -115,8 +115,8 @@ def main():
     parser.add_argument(
         "--height",
         type=int,
-        default=800,
-        help="Viewport height (default: 800)",
+        default=1200,
+        help="Viewport height (default: 1200)",
     )
     args = parser.parse_args()
 

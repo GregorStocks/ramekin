@@ -37,6 +37,21 @@ export default function ViewRecipePage() {
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deleting, setDeleting] = createSignal(false);
+  const [checkedIngredients, setCheckedIngredients] = createSignal<Set<number>>(
+    new Set(),
+  );
+
+  const toggleIngredient = (index: number) => {
+    setCheckedIngredients((prev) => {
+      const next = new Set(prev);
+      if (next.has(index)) {
+        next.delete(index);
+      } else {
+        next.add(index);
+      }
+      return next;
+    });
+  };
 
   const loadRecipe = async () => {
     setLoading(true);
@@ -92,6 +107,9 @@ export default function ViewRecipePage() {
       <Show when={recipe()}>
         {(r) => (
           <>
+            <div class="recipe-back-link">
+              <A href="/">&larr; Back to Cookbook</A>
+            </div>
             <div class="recipe-header">
               <div class="recipe-title-section">
                 <h2>{r().title}</h2>
@@ -100,11 +118,11 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
               <div class="recipe-actions">
-                <A href={`/recipes/${params.id}/edit`} class="btn">
+                <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
                 </A>
                 <button
-                  class="btn btn-danger"
+                  class="btn btn-danger-outline"
                   onClick={handleDelete}
                   disabled={deleting()}
                 >
@@ -158,18 +176,25 @@ export default function ViewRecipePage() {
                 <h3>Ingredients</h3>
                 <ul class="ingredients-list">
                   <For each={r().ingredients}>
-                    {(ing) => (
-                      <li>
-                        <Show when={ing.amount}>
-                          <span class="amount">{ing.amount}</span>{" "}
-                        </Show>
-                        <Show when={ing.unit}>
-                          <span class="unit">{ing.unit}</span>{" "}
-                        </Show>
-                        <span class="item">{ing.item}</span>
-                        <Show when={ing.note}>
-                          <span class="note"> ({ing.note})</span>
-                        </Show>
+                    {(ing, index) => (
+                      <li onClick={() => toggleIngredient(index())}>
+                        <div
+                          class={`ingredient-checkbox ${checkedIngredients().has(index()) ? "checked" : ""}`}
+                        />
+                        <span
+                          class={`ingredient-text ${checkedIngredients().has(index()) ? "checked" : ""}`}
+                        >
+                          <Show when={ing.amount}>
+                            <span class="amount">{ing.amount}</span>{" "}
+                          </Show>
+                          <Show when={ing.unit}>
+                            <span class="unit">{ing.unit}</span>{" "}
+                          </Show>
+                          <span class="item">{ing.item}</span>
+                          <Show when={ing.note}>
+                            <span class="note"> ({ing.note})</span>
+                          </Show>
+                        </span>
                       </li>
                     )}
                   </For>
