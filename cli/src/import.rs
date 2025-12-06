@@ -22,9 +22,11 @@ struct PaprikaRecipe {
     source: Option<String>,
     source_url: Option<String>,
     categories: Option<Vec<String>>,
-    photo_data: Option<String>,
+    /// Full resolution photos array (preferred)
     #[serde(default)]
     photos: Vec<PaprikaPhoto>,
+    /// Thumbnail/fallback photo (used when photos array is empty)
+    photo_data: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -84,7 +86,7 @@ fn parse_ingredients(ingredients_str: &str) -> Vec<Ingredient> {
 }
 
 /// Convert a Paprika recipe to our API format
-fn convert_recipe(recipe: &PaprikaRecipe, photo_id: Option<uuid::Uuid>) -> CreateRecipeRequest {
+fn convert_recipe(recipe: &PaprikaRecipe, photo_ids: Vec<uuid::Uuid>) -> CreateRecipeRequest {
     let ingredients = recipe
         .ingredients
         .as_ref()
@@ -102,7 +104,11 @@ fn convert_recipe(recipe: &PaprikaRecipe, photo_id: Option<uuid::Uuid>) -> Creat
         tags: recipe.categories.clone().map(Some),
         source_name: recipe.source.clone().map(Some),
         source_url: recipe.source_url.clone().map(Some),
-        photo_ids: photo_id.map(|id| Some(vec![id])),
+        photo_ids: if photo_ids.is_empty() {
+            None
+        } else {
+            Some(Some(photo_ids))
+        },
     }
 }
 
@@ -161,18 +167,48 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
 
         let recipe_name = recipe.name.clone();
 
-        // Try to upload the photo if present
-        let photo_id = if let Some(ref photo_data) = recipe.photo_data {
-            if !photo_data.is_empty() {
-                match base64::engine::general_purpose::STANDARD.decode(photo_data) {
+        // Upload all photos from the photos array (these are full resolution)
+        // Fall back to photo_data if photos array is empty
+        let mut photo_ids = Vec::new();
+        if !recipe.photos.is_empty() {
+            for (i, photo) in recipe.photos.iter().enumerate() {
+                if let Some(ref data) = photo.data {
+                    if !data.is_empty() {
+                        match base64::engine::general_purpose::STANDARD.decode(data) {
+                            Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
+                                Ok(id) => photo_ids.push(id),
+                                Err(e) => {
+                                    println!(
+                                        "  Warning: Failed to upload photo {} for '{}': {}",
+                                        i + 1,
+                                        recipe_name,
+                                        e
+                                    );
+                                }
+                            },
+                            Err(e) => {
+                                println!(
+                                    "  Warning: Failed to decode photo {} for '{}': {}",
+                                    i + 1,
+                                    recipe_name,
+                                    e
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        } else if let Some(ref data) = recipe.photo_data {
+            // Fall back to photo_data (may be a thumbnail, but better than nothing)
+            if !data.is_empty() {
+                match base64::engine::general_purpose::STANDARD.decode(data) {
                     Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
-                        Ok(id) => Some(id),
+                        Ok(id) => photo_ids.push(id),
                         Err(e) => {
                             println!(
                                 "  Warning: Failed to upload photo for '{}': {}",
                                 recipe_name, e
                             );
-                            None
                         }
                     },
                     Err(e) => {
@@ -180,47 +216,13 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
                             "  Warning: Failed to decode photo for '{}': {}",
                             recipe_name, e
                         );
-                        None
                     }
                 }
-            } else {
-                None
             }
-        } else if let Some(photo) = recipe.photos.first() {
-            // Try photos array as fallback
-            if let Some(ref data) = photo.data {
-                if !data.is_empty() {
-                    match base64::engine::general_purpose::STANDARD.decode(data) {
-                        Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
-                            Ok(id) => Some(id),
-                            Err(e) => {
-                                println!(
-                                    "  Warning: Failed to upload photo for '{}': {}",
-                                    recipe_name, e
-                                );
-                                None
-                            }
-                        },
-                        Err(e) => {
-                            println!(
-                                "  Warning: Failed to decode photo for '{}': {}",
-                                recipe_name, e
-                            );
-                            None
-                        }
-                    }
-                } else {
-                    None
-                }
-            } else {
-                None
-            }
-        } else {
-            None
-        };
+        }
 
         // Convert and create the recipe
-        let request = convert_recipe(&recipe, photo_id);
+        let request = convert_recipe(&recipe, photo_ids);
 
         match recipes_api::create_recipe(&config, request).await {
             Ok(_) => {
