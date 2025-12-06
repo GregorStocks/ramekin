@@ -6,16 +6,15 @@
 # ]
 # ///
 """
-Take a screenshot of the app as the test user.
+Take screenshots of the app as the test user.
 
 Usage:
-    uv run scripts/screenshot.py [--url URL] [--output PATH] [--page PAGE]
+    uv run scripts/screenshot.py [--url URL] [--output-dir DIR]
 
-Pages:
-    cookbook (default) - The main cookbook/recipe list page
-    login - The login page (before auth)
-    new - The create recipe page
-    recipe - View the alphabetically first recipe by title
+Takes three screenshots:
+    - cookbook.png: The main cookbook/recipe list page
+    - recipe.png: The alphabetically first recipe by title
+    - edit.png: The edit page for that recipe
 
 Requires the dev server to be running and seed data to exist.
 """
@@ -30,17 +29,14 @@ TEST_USERNAME = "t"
 TEST_PASSWORD = "t"
 
 
-def take_screenshot(
+def take_screenshots(
     base_url: str = "http://localhost:5173",
-    output_path: str = "logs/screenshot.png",
-    page_name: str = "cookbook",
+    output_dir: str = "logs",
     width: int = 1280,
     height: int = 800,
 ):
-    """Take a screenshot of the specified page."""
-
-    # Ensure output directory exists
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    """Take screenshots of cookbook, recipe, and edit pages."""
+    os.makedirs(output_dir, exist_ok=True)
 
     with sync_playwright() as p:
         # Use system Chrome to avoid macOS permission issues with bundled Chromium
@@ -48,65 +44,51 @@ def take_screenshot(
         context = browser.new_context(viewport={"width": width, "height": height})
         page = context.new_page()
 
-        if page_name == "login":
-            # Just show the login page without logging in
-            page.goto(base_url)
-            page.wait_for_load_state("networkidle")
-        else:
-            # Log in first
-            page.goto(base_url)
-            page.wait_for_load_state("networkidle")
+        # Log in
+        page.goto(base_url)
+        page.wait_for_load_state("networkidle")
+        page.fill('input[type="text"]', TEST_USERNAME)
+        page.fill('input[type="password"]', TEST_PASSWORD)
+        page.click('button[type="submit"]')
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(500)
 
-            # Fill in login form
-            page.fill('input[type="text"]', TEST_USERNAME)
-            page.fill('input[type="password"]', TEST_PASSWORD)
-            page.click('button[type="submit"]')
+        # Screenshot 1: Cookbook page
+        cookbook_path = os.path.join(output_dir, "cookbook.png")
+        page.screenshot(path=cookbook_path)
+        print(f"Screenshot saved to {cookbook_path}")
 
-            # Wait for navigation to complete
-            page.wait_for_load_state("networkidle")
+        # Find the alphabetically first recipe by title
+        cards = page.locator(".recipe-card")
+        count = cards.count()
+        if count == 0:
+            print("Warning: No recipes found, skipping recipe and edit screenshots")
+            browser.close()
+            return
 
-            # Small delay to ensure any animations complete
-            page.wait_for_timeout(500)
+        titles_with_index = []
+        for i in range(count):
+            title = cards.nth(i).locator("h3").inner_text()
+            titles_with_index.append((title, i))
+        titles_with_index.sort(key=lambda x: x[0].lower())
+        first_title, first_index = titles_with_index[0]
+        print(f"Selected recipe: {first_title}")
 
-            # Navigate to the requested page
-            if page_name == "cookbook":
-                # Already on cookbook after login
-                pass
-            elif page_name == "new":
-                page.goto(f"{base_url}/recipes/new")
-                page.wait_for_load_state("networkidle")
-            elif page_name == "recipe":
-                # Find the alphabetically first recipe by title and click it
-                cards = page.locator(".recipe-card")
-                count = cards.count()
-                if count == 0:
-                    print("Warning: No recipes found")
-                else:
-                    # Get all recipe titles and find the alphabetically first one
-                    titles_with_index = []
-                    for i in range(count):
-                        title = cards.nth(i).locator("h3").inner_text()
-                        titles_with_index.append((title, i))
-                    # Sort alphabetically by title
-                    titles_with_index.sort(key=lambda x: x[0].lower())
-                    first_title, first_index = titles_with_index[0]
-                    print(f"Clicking recipe: {first_title}")
-                    cards.nth(first_index).click()
-                    page.wait_for_load_state("networkidle")
-            elif page_name.startswith("recipe:"):
-                # View a specific recipe by index (0-based)
-                recipe_index = int(page_name.split(":")[1])
-                # Click on the nth recipe card
-                cards = page.locator(".recipe-card")
-                if cards.count() > recipe_index:
-                    cards.nth(recipe_index).click()
-                    page.wait_for_load_state("networkidle")
-                else:
-                    print(f"Warning: Only {cards.count()} recipes found")
+        # Screenshot 2: Recipe page
+        cards.nth(first_index).click()
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(300)
+        recipe_path = os.path.join(output_dir, "recipe.png")
+        page.screenshot(path=recipe_path)
+        print(f"Screenshot saved to {recipe_path}")
 
-        # Take the screenshot
-        page.screenshot(path=output_path)
-        print(f"Screenshot saved to {output_path}")
+        # Screenshot 3: Edit page
+        page.click("a:has-text('Edit')")
+        page.wait_for_load_state("networkidle")
+        page.wait_for_timeout(300)
+        edit_path = os.path.join(output_dir, "edit.png")
+        page.screenshot(path=edit_path)
+        print(f"Screenshot saved to {edit_path}")
 
         browser.close()
 
@@ -119,17 +101,10 @@ def main():
         help="App URL (default: http://localhost:5173)",
     )
     parser.add_argument(
-        "--output",
+        "--output-dir",
         "-o",
-        default="logs/screenshot.png",
-        help="Output path (default: logs/screenshot.png)",
-    )
-    parser.add_argument(
-        "--page",
-        "-p",
-        default="cookbook",
-        choices=["login", "cookbook", "new", "recipe"],
-        help="Page to screenshot (default: cookbook)",
+        default="logs",
+        help="Output directory (default: logs)",
     )
     parser.add_argument(
         "--width",
@@ -145,10 +120,9 @@ def main():
     )
     args = parser.parse_args()
 
-    take_screenshot(
+    take_screenshots(
         base_url=args.url,
-        output_path=args.output,
-        page_name=args.page,
+        output_dir=args.output_dir,
         width=args.width,
         height=args.height,
     )

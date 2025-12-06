@@ -86,5 +86,5 @@ test-logs: ## Show test environment logs
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t
 
-screenshot: up seed ## Take a screenshot of the app (use ARGS for options)
-	@uv run scripts/screenshot.py $(ARGS)
+screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
+	@uv run scripts/screenshot.py
