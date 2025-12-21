@@ -84,7 +84,7 @@ test-logs: ## Show test environment logs
 	docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml logs -f
 
 seed: ## Create test user with sample recipes (requires dev server running)
-	@cd cli && cargo run -q -- seed --username t --password t
+	@cd cli && cargo run -q -- import --username t --password t data/dev/seed.paprikarecipes
 
 screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
 	@uv run scripts/screenshot.py
