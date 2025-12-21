@@ -1,4 +1,5 @@
 mod import;
+mod seed;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand};
@@ -21,6 +22,21 @@ enum Commands {
         /// Server URL (default: http://localhost:3000)
         #[arg(long, default_value = "http://localhost:3000")]
         server: String,
+    },
+    /// Seed the database with a user and import recipes from file
+    Seed {
+        /// Server URL (default: http://localhost:3000)
+        #[arg(long, default_value = "http://localhost:3000")]
+        server: String,
+        /// Username for the seed user
+        #[arg(long)]
+        username: String,
+        /// Password for the seed user
+        #[arg(long)]
+        password: String,
+        /// Path to the .paprikarecipes file
+        #[arg(value_name = "FILE")]
+        file: PathBuf,
     },
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
@@ -46,6 +62,14 @@ async fn main() -> Result<()> {
     match cli.command {
         Commands::Ping { server } => {
             ping(&server).await?;
+        }
+        Commands::Seed {
+            server,
+            username,
+            password,
+            file,
+        } => {
+            seed::seed(&server, &username, &password, &file).await?;
         }
         Commands::Import {
             server,
