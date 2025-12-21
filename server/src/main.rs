@@ -9,7 +9,9 @@ use axum::http::Request;
 use axum::middleware;
 use axum::Router;
 use opentelemetry::trace::TracerProvider;
+use opentelemetry_appender_tracing::layer::OpenTelemetryTracingBridge;
 use opentelemetry_otlp::WithExportConfig;
+use opentelemetry_sdk::logs::SdkLoggerProvider;
 use opentelemetry_sdk::trace::SdkTracerProvider;
 use std::env;
 use std::net::{TcpStream, ToSocketAddrs};
@@ -52,34 +54,50 @@ fn init_telemetry() {
             let service_name =
                 env::var("OTEL_SERVICE_NAME").unwrap_or_else(|_| "ramekin-server".to_string());
 
-            let exporter = opentelemetry_otlp::SpanExporter::builder()
+            let resource = opentelemetry_sdk::Resource::builder()
+                .with_service_name(service_name.clone())
+                .build();
+
+            // Set up trace exporter
+            let trace_exporter = opentelemetry_otlp::SpanExporter::builder()
                 .with_tonic()
                 .with_endpoint(&endpoint)
                 .build()
-                .expect("Failed to create OTLP exporter");
+                .expect("Failed to create OTLP trace exporter");
 
-            let provider = SdkTracerProvider::builder()
-                .with_batch_exporter(exporter)
-                .with_resource(
-                    opentelemetry_sdk::Resource::builder()
-                        .with_service_name(service_name.clone())
-                        .build(),
-                )
+            let trace_provider = SdkTracerProvider::builder()
+                .with_batch_exporter(trace_exporter)
+                .with_resource(resource.clone())
                 .build();
 
-            let tracer = provider.tracer("ramekin-server");
-            opentelemetry::global::set_tracer_provider(provider);
+            let tracer = trace_provider.tracer("ramekin-server");
+            opentelemetry::global::set_tracer_provider(trace_provider);
 
-            let otel_layer = tracing_opentelemetry::layer().with_tracer(tracer);
+            let otel_trace_layer = tracing_opentelemetry::layer().with_tracer(tracer);
+
+            // Set up log exporter
+            let log_exporter = opentelemetry_otlp::LogExporter::builder()
+                .with_tonic()
+                .with_endpoint(&endpoint)
+                .build()
+                .expect("Failed to create OTLP log exporter");
+
+            let log_provider = SdkLoggerProvider::builder()
+                .with_batch_exporter(log_exporter)
+                .with_resource(resource)
+                .build();
+
+            let otel_log_layer = OpenTelemetryTracingBridge::new(&log_provider);
 
             tracing_subscriber::registry()
                 .with(env_filter)
                 .with(fmt_layer)
-                .with(otel_layer)
+                .with(otel_trace_layer)
+                .with(otel_log_layer)
                 .init();
 
             tracing::info!(
-                "OpenTelemetry enabled, exporting traces to {} as {}",
+                "OpenTelemetry enabled, exporting traces and logs to {} as {}",
                 endpoint,
                 service_name
             );
