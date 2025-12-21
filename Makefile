@@ -59,6 +59,7 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
+	@rm -rf server/target/ cli/target/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs

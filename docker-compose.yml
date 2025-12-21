@@ -38,6 +38,9 @@ services:
       dockerfile: Dockerfile.dev
     container_name: ramekin-server
     working_dir: /app/server
+    env_file:
+      - path: dev.env
+        required: false
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       RUST_LOG: debug

@@ -32,9 +32,10 @@ pnpm-debug.log*
 .pnpm-store/
 
 # Environment variables
-*.env
 *.env.local
 *.env.*.local
+dev.env
+test.env
 
 # OS
 .DS_Store

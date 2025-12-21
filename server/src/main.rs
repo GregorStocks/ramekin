@@ -8,14 +8,101 @@ use axum::extract::MatchedPath;
 use axum::http::Request;
 use axum::middleware;
 use axum::Router;
+use opentelemetry::trace::TracerProvider;
+use opentelemetry_otlp::WithExportConfig;
+use opentelemetry_sdk::trace::SdkTracerProvider;
 use std::env;
+use std::net::{TcpStream, ToSocketAddrs};
 use std::sync::Arc;
+use std::time::Duration;
 use tower_http::trace::TraceLayer;
 use tracing::Span;
+use tracing_subscriber::layer::SubscriberExt;
+use tracing_subscriber::util::SubscriberInitExt;
 use utoipa_swagger_ui::SwaggerUi;
 
 /// Application state shared across all handlers
 pub type AppState = Arc<db::DbPool>;
+
+/// Initialize telemetry with optional OpenTelemetry export.
+/// If OTEL_EXPORTER_OTLP_ENDPOINT is set and reachable, traces are sent to the collector.
+/// Otherwise, only console logging is used.
+fn init_telemetry() {
+    let fmt_layer = tracing_subscriber::fmt::layer();
+    let env_filter = tracing_subscriber::EnvFilter::from_default_env();
+
+    // Check if OTLP endpoint is configured
+    let otel_endpoint = env::var("OTEL_EXPORTER_OTLP_ENDPOINT").ok();
+
+    if let Some(endpoint) = otel_endpoint {
+        // Parse the endpoint to check if it's reachable
+        let host_port = endpoint
+            .trim_start_matches("http://")
+            .trim_start_matches("https://");
+
+        // Quick TCP check to see if the collector is up (resolve hostname first)
+        let is_reachable = host_port
+            .to_socket_addrs()
+            .ok()
+            .and_then(|mut addrs| addrs.next())
+            .map(|addr| TcpStream::connect_timeout(&addr, Duration::from_millis(100)).is_ok())
+            .unwrap_or(false);
+
+        if is_reachable {
+            let service_name =
+                env::var("OTEL_SERVICE_NAME").unwrap_or_else(|_| "ramekin-server".to_string());
+
+            let exporter = opentelemetry_otlp::SpanExporter::builder()
+                .with_tonic()
+                .with_endpoint(&endpoint)
+                .build()
+                .expect("Failed to create OTLP exporter");
+
+            let provider = SdkTracerProvider::builder()
+                .with_batch_exporter(exporter)
+                .with_resource(
+                    opentelemetry_sdk::Resource::builder()
+                        .with_service_name(service_name.clone())
+                        .build(),
+                )
+                .build();
+
+            let tracer = provider.tracer("ramekin-server");
+            opentelemetry::global::set_tracer_provider(provider);
+
+            let otel_layer = tracing_opentelemetry::layer().with_tracer(tracer);
+
+            tracing_subscriber::registry()
+                .with(env_filter)
+                .with(fmt_layer)
+                .with(otel_layer)
+                .init();
+
+            tracing::info!(
+                "OpenTelemetry enabled, exporting traces to {} as {}",
+                endpoint,
+                service_name
+            );
+        } else {
+            tracing_subscriber::registry()
+                .with(env_filter)
+                .with(fmt_layer)
+                .init();
+
+            tracing::info!(
+                "OpenTelemetry endpoint {} not reachable, using console logging only",
+                endpoint
+            );
+        }
+    } else {
+        tracing_subscriber::registry()
+            .with(env_filter)
+            .with(fmt_layer)
+            .init();
+
+        tracing::debug!("OTEL_EXPORTER_OTLP_ENDPOINT not set, using console logging only");
+    }
+}
 
 #[tokio::main]
 async fn main() {
@@ -26,7 +113,7 @@ async fn main() {
         return;
     }
 
-    tracing_subscriber::fmt::init();
+    init_telemetry();
 
     let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
