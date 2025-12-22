@@ -11,6 +11,9 @@ RUN cargo install cargo-watch && \
 
 WORKDIR /app
 
+# Create target directories with world-writable permissions for non-root users
+RUN mkdir -p /app/server/target /app/cli/target && chmod -R 777 /app
+
 # The source will be mounted as a volume
 # No need to copy or build here - cargo-watch will handle it
 

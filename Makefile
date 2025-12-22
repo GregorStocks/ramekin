@@ -67,6 +67,7 @@ clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@rm -rf server/target/ cli/target/
 	@rm -rf ramekin-ui/node_modules/
+	@rm -rf tests/__pycache__/ scripts/__pycache__/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs

@@ -22,11 +22,14 @@ RUN curl -L https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cl
 
 WORKDIR /app
 
-# Create a virtual environment for Python
+# Create a virtual environment
 RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
-# Install Python dependencies that the generated client will need
-RUN pip install urllib3 python-dateutil pydantic typing-extensions pytest requests
+# Install Python dependencies
+RUN /app/venv/bin/pip install urllib3 python-dateutil pydantic typing-extensions pytest requests
+
+# Make everything writable by non-root users
+RUN mkdir -p /app/server/target /app/cli/target && chmod -R 777 /app
 
 # The source and tests will be mounted as volumes
