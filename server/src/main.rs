@@ -160,20 +160,25 @@ async fn main() {
         .layer(
             TraceLayer::new_for_http()
                 .make_span_with(|request: &Request<_>| {
-                    let matched_path = request
+                    let method = request.method().as_str();
+                    let route = request
                         .extensions()
                         .get::<MatchedPath>()
                         .map(MatchedPath::as_str)
                         .unwrap_or(request.uri().path());
 
+                    // Use "METHOD /route" as span name per OTel semantic conventions
+                    let span_name = format!("{} {}", method, route);
+
                     // Don't create a span at all for noisy endpoints
-                    if matched_path == "/api/test/unauthed-ping" {
+                    if route == "/api/test/unauthed-ping" {
                         tracing::trace_span!("http_request")
                     } else {
                         tracing::info_span!(
                             "http_request",
-                            method = %request.method(),
-                            path = %matched_path,
+                            otel.name = %span_name,
+                            http.request.method = %method,
+                            http.route = %route,
                         )
                     }
                 })
