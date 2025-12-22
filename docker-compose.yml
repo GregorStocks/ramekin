@@ -17,7 +17,9 @@ services:
       retries: 30
 
   ui:
-    image: node:22-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
     container_name: ramekin-ui
     user: "${UID:-1000}:${GID:-1000}"
     working_dir: /app
@@ -27,8 +29,7 @@ services:
       - "5173:5173"
     volumes:
       - ./ramekin-ui:/app:z,cached
-      - ui-node-modules:/app/node_modules
-    command: sh -c "npm install && npm run dev"
+    command: npm run dev
     depends_on:
       server:
         condition: service_healthy
@@ -53,8 +54,6 @@ services:
       # Mount source code for hot-reload
       - ./server:/app/server:z,cached
       - ./migrations:/app/migrations:z,cached
-      # Use a volume for target dir to avoid slow cross-platform builds
-      - cargo-target:/app/server/target
     command: cargo watch -x run
     depends_on:
       postgres:
@@ -67,5 +66,3 @@ services:
 
 volumes:
   postgres_data:
-  cargo-target:
-  ui-node-modules:

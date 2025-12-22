@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
 RUN cargo install cargo-watch && \
     cargo install diesel_cli --no-default-features --features postgres
 
+# Make cargo directories writable by non-root users
+RUN chmod -R 777 /usr/local/cargo
+
 WORKDIR /app
 
 # Create target directories with world-writable permissions for non-root users

@@ -4,6 +4,7 @@ import solid from 'vite-plugin-solid'
 export default defineConfig({
   plugins: [solid()],
   server: {
+    allowedHosts: ['media.noodles'],
     host: '0.0.0.0',
     proxy: {
       '/api': {

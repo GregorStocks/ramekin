@@ -14,6 +14,9 @@ RUN apt-get update && apt-get install -y \
 # Install diesel CLI
 RUN cargo install diesel_cli --no-default-features --features postgres
 
+# Make cargo directories writable by non-root users
+RUN chmod -R 777 /usr/local/cargo
+
 # Install openapi-generator-cli
 RUN curl -L https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.10.0/openapi-generator-cli-7.10.0.jar \
     -o /usr/local/bin/openapi-generator-cli.jar && \
