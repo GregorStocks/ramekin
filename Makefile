@@ -4,6 +4,10 @@
 DEV_PROJECT := ramekin
 TEST_PROJECT := ramekin-test
 
+# Export UID/GID for docker-compose to run containers as current user (Linux compatibility)
+export UID := $(shell id -u)
+export GID := $(shell id -g)
+
 help: ## Show this help message
 	@echo 'Usage: make [target]'
 	@echo ''
@@ -36,6 +40,7 @@ logs-db: ## Show database logs
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	@mkdir -p api
 	@docker run --rm \
+		-u "$(shell id -u):$(shell id -g)" \
 		-v $(PWD):/app:z \
 		-w /app/server \
 		rust:latest \
@@ -51,6 +56,7 @@ lint: ## Run all linters (Rust, TypeScript, Python)
 	@cd cli && cargo fmt --all
 	@cd cli && cargo clippy --all-targets --all-features -q -- -D warnings
 	@npx prettier --write --log-level warn ramekin-ui/src/
+	@cd ramekin-ui && [ -d node_modules ] || npm install --silent
 	@cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
 	@uvx ruff format --quiet --exclude tests/generated tests/ scripts/
 	@uvx ruff check --fix --quiet --exclude tests/generated tests/ scripts/
@@ -60,6 +66,7 @@ clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@rm -rf server/target/ cli/target/
+	@rm -rf ramekin-ui/node_modules/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs

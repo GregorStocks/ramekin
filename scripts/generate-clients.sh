@@ -18,6 +18,7 @@ generate_client() {
     rm -rf "$PROJECT_ROOT/$output"
 
     docker run --rm \
+        -u "$(id -u):$(id -g)" \
         -v "$PROJECT_ROOT:/project:z" \
         -w /project \
         openapitools/openapi-generator-cli:v7.10.0 generate \
@@ -63,7 +64,7 @@ EOF
 
     # Compile TypeScript client to JS + .d.ts
     echo "Compiling TypeScript client..."
-    (cd "$PROJECT_ROOT/ramekin-ui" && npx tsc -p tsconfig.generated-client.json)
+    (cd "$PROJECT_ROOT/ramekin-ui" && npx -p typescript tsc -p tsconfig.generated-client.json)
 
     # Generate Python client (for tests)
     generate_client "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
