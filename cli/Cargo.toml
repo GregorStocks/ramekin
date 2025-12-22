@@ -33,3 +33,7 @@ anyhow = "1.0"
 zip = "2.2"
 flate2 = "1.0"
 base64 = "0.22"
+
+# Load testing
+rand = "0.8"
+rand_chacha = "0.3"

@@ -1,4 +1,5 @@
 mod import;
+mod load_test;
 mod seed;
 
 use anyhow::Result;
@@ -53,6 +54,18 @@ enum Commands {
         #[arg(value_name = "FILE")]
         file: PathBuf,
     },
+    /// Run a load test creating many users with recipes and photos
+    LoadTest {
+        /// Server URL (default: http://localhost:3000)
+        #[arg(long, default_value = "http://localhost:3000")]
+        server: String,
+        /// Number of users to create (default: 10)
+        #[arg(long, default_value = "10")]
+        users: usize,
+        /// Number of concurrent workers (default: 5)
+        #[arg(long, default_value = "5")]
+        concurrency: usize,
+    },
 }
 
 #[tokio::main]
@@ -78,6 +91,13 @@ async fn main() -> Result<()> {
             file,
         } => {
             import::import(&server, &username, &password, &file).await?;
+        }
+        Commands::LoadTest {
+            server,
+            users,
+            concurrency,
+        } => {
+            load_test::load_test(&server, users, concurrency).await?;
         }
     }
 

@@ -35,9 +35,16 @@ struct PaprikaPhoto {
 }
 
 /// Upload a photo via multipart form and return its UUID
-async fn upload_photo(config: &Configuration, image_data: &[u8]) -> Result<uuid::Uuid> {
-    let client = reqwest::Client::new();
+pub async fn upload_photo(config: &Configuration, image_data: &[u8]) -> Result<uuid::Uuid> {
+    upload_photo_with_client(config, image_data, &reqwest::Client::new()).await
+}
 
+/// Upload a photo via multipart form using a provided client and return its UUID
+pub async fn upload_photo_with_client(
+    config: &Configuration,
+    image_data: &[u8],
+    client: &reqwest::Client,
+) -> Result<uuid::Uuid> {
     let part = reqwest::multipart::Part::bytes(image_data.to_vec())
         .file_name("image.jpg")
         .mime_str("image/jpeg")?;
@@ -52,12 +59,20 @@ async fn upload_photo(config: &Configuration, image_data: &[u8]) -> Result<uuid:
         request = request.bearer_auth(token);
     }
 
-    let response = request.send().await?;
+    let response = request
+        .send()
+        .await
+        .context("Failed to send photo upload request")?;
 
-    if !response.status().is_success() {
-        let status = response.status();
+    let status = response.status();
+    if !status.is_success() {
         let body = response.text().await.unwrap_or_default();
-        anyhow::bail!("Photo upload failed with status {}: {}", status, body);
+        anyhow::bail!(
+            "Photo upload failed with status {} ({}): {}",
+            status.as_u16(),
+            status.canonical_reason().unwrap_or("Unknown"),
+            body
+        );
     }
 
     #[derive(Deserialize)]
@@ -65,7 +80,19 @@ async fn upload_photo(config: &Configuration, image_data: &[u8]) -> Result<uuid:
         id: uuid::Uuid,
     }
 
-    let upload_response: UploadResponse = response.json().await?;
+    let response_text = response
+        .text()
+        .await
+        .context("Failed to read photo upload response body")?;
+
+    let upload_response: UploadResponse =
+        serde_json::from_str(&response_text).with_context(|| {
+            format!(
+                "Failed to parse photo upload response as JSON: {}",
+                response_text
+            )
+        })?;
+
     Ok(upload_response.id)
 }
 

@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed screenshot
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot
 
 # Project names to keep dev and test environments isolated
 DEV_PROJECT := ramekin
@@ -94,6 +94,9 @@ test-logs: ## Show test environment logs
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
+
+load-test: ## Run load test creating 1000 users with recipes and photos (for performance testing)
+	@cd cli && cargo run -q -- load-test
 
 screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
 	@uv run scripts/screenshot.py
