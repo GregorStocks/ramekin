@@ -39,13 +39,19 @@ logs-db: ## Show database logs
 
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	@mkdir -p api
-	@docker run --rm \
+	@TEMP_LOG=$$(mktemp); \
+	if ! docker run --rm \
 		-u "$(shell id -u):$(shell id -g)" \
 		-v $(PWD):/app:z \
 		-w /app/server \
 		rust:latest \
-		sh -c "cargo build --release -q 2>/dev/null && target/release/ramekin-server --openapi" \
-		> api/openapi.json
+		sh -c "cargo build --release -q && target/release/ramekin-server --openapi" \
+		> api/openapi.json 2>$$TEMP_LOG; then \
+		cat $$TEMP_LOG; \
+		rm -f $$TEMP_LOG; \
+		exit 1; \
+	fi; \
+	rm -f $$TEMP_LOG
 	@echo "Generated api/openapi.json"
 	@./scripts/generate-clients.sh
 	@$(MAKE) lint
