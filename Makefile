@@ -36,7 +36,7 @@ logs-db: ## Show database logs
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	@mkdir -p api
 	@docker run --rm \
-		-v $(PWD):/app \
+		-v $(PWD):/app:z \
 		-w /app/server \
 		rust:latest \
 		sh -c "cargo build --release -q 2>/dev/null && target/release/ramekin-server --openapi" \

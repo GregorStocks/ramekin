@@ -18,14 +18,14 @@ generate_client() {
     rm -rf "$PROJECT_ROOT/$output"
 
     docker run --rm \
-        -v "$PROJECT_ROOT:/project" \
+        -v "$PROJECT_ROOT:/project:z" \
         -w /project \
         openapitools/openapi-generator-cli:v7.10.0 generate \
         -i "/project/api/openapi.json" \
         -g "$generator" \
         -o "/project/$output" \
         --additional-properties="$extra_props" \
-        2>&1 | grep -v "^\[main\] INFO"
+        2>&1 | grep -v "^\[main\] INFO" || true
 }
 
 main() {
