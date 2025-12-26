@@ -252,6 +252,59 @@
         ]
       }
     },
+    "/api/photos/{id}/thumbnail": {
+      "get": {
+        "tags": [
+          "photos"
+        ],
+        "operationId": "get_photo_thumbnail",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Photo ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Photo thumbnail data",
+            "content": {
+              "image/jpeg": {}
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Photo not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes": {
       "get": {
         "tags": [
@@ -742,8 +795,7 @@
         "required": [
           "id",
           "content_type",
-          "created_at",
-          "thumbnail"
+          "created_at"
         ],
         "properties": {
           "content_type": {
@@ -756,10 +808,6 @@
           "id": {
             "type": "string",
             "format": "uuid"
-          },
-          "thumbnail": {
-            "type": "string",
-            "description": "Base64-encoded JPEG thumbnail"
           }
         }
       },
@@ -874,12 +922,13 @@
               "type": "string"
             }
           },
-          "thumbnail": {
+          "thumbnail_photo_id": {
             "type": [
               "string",
               "null"
             ],
-            "description": "Base64-encoded JPEG thumbnail of the first photo, if any"
+            "format": "uuid",
+            "description": "Photo ID of the first photo (thumbnail), if any"
           },
           "title": {
             "type": "string"

@@ -1,7 +1,36 @@
-import { createSignal, Show, For, onMount } from "solid-js";
+import { createSignal, Show, For, onMount, onCleanup } from "solid-js";
 import { A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { RecipeSummary } from "ramekin-client";
+
+function PhotoThumbnail(props: {
+  photoId: string;
+  token: string;
+  alt: string;
+}) {
+  const [src, setSrc] = createSignal<string | null>(null);
+
+  onMount(async () => {
+    const response = await fetch(`/api/photos/${props.photoId}/thumbnail`, {
+      headers: { Authorization: `Bearer ${props.token}` },
+    });
+    if (response.ok) {
+      const blob = await response.blob();
+      setSrc(URL.createObjectURL(blob));
+    }
+  });
+
+  onCleanup(() => {
+    const url = src();
+    if (url) URL.revokeObjectURL(url);
+  });
+
+  return (
+    <Show when={src()} fallback={<div class="recipe-card-placeholder">🍽️</div>}>
+      <img src={src()!} alt={props.alt} class="recipe-card-thumbnail" />
+    </Show>
+  );
+}
 
 function formatRelativeDate(date: Date): string {
   const now = new Date();
@@ -20,7 +49,7 @@ function formatRelativeDate(date: Date): string {
 }
 
 export default function CookbookPage() {
-  const { getRecipesApi } = useAuth();
+  const { getRecipesApi, token } = useAuth();
 
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [loading, setLoading] = createSignal(true);
@@ -86,13 +115,13 @@ export default function CookbookPage() {
             {(recipe) => (
               <A href={`/recipes/${recipe.id}`} class="recipe-card">
                 <Show
-                  when={recipe.thumbnail}
+                  when={recipe.thumbnailPhotoId}
                   fallback={<div class="recipe-card-placeholder">🍽️</div>}
                 >
-                  <img
-                    src={`data:image/jpeg;base64,${recipe.thumbnail}`}
+                  <PhotoThumbnail
+                    photoId={recipe.thumbnailPhotoId!}
+                    token={token()!}
                     alt=""
-                    class="recipe-card-thumbnail"
                   />
                 </Show>
                 <div class="recipe-card-content">

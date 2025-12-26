@@ -16,13 +16,13 @@ use uuid::Uuid;
 
 #[utoipa::path(
     get,
-    path = "/api/photos/{id}",
+    path = "/api/photos/{id}/thumbnail",
     tag = "photos",
     params(
         ("id" = Uuid, Path, description = "Photo ID")
     ),
     responses(
-        (status = 200, description = "Photo data", content_type = "application/octet-stream"),
+        (status = 200, description = "Photo thumbnail data", content_type = "image/jpeg"),
         (status = 404, description = "Photo not found", body = ErrorResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
@@ -30,7 +30,7 @@ use uuid::Uuid;
         ("bearer_auth" = [])
     )
 )]
-pub async fn get_photo(
+pub async fn get_photo_thumbnail(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
@@ -78,9 +78,9 @@ pub async fn get_photo(
 
     Response::builder()
         .status(StatusCode::OK)
-        .header(header::CONTENT_TYPE, photo.content_type)
+        .header(header::CONTENT_TYPE, "image/jpeg")
         .header(header::CACHE_CONTROL, "public, max-age=31536000, immutable")
-        .body(Body::from(photo.data))
+        .body(Body::from(photo.thumbnail))
         .unwrap()
         .into_response()
 }

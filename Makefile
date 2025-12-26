@@ -105,4 +105,5 @@ load-test: ## Run load test creating 1000 users with recipes and photos (for per
 	@cd cli && cargo run -q -- load-test
 
 screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
+	@uv run --with playwright -- playwright install chromium >/dev/null
 	@uv run scripts/screenshot.py

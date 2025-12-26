@@ -61,3 +61,13 @@ def second_authed_api_client(api_config, auth_api):
     config.access_token = response.token
     with ApiClient(config) as client:
         yield client, response.user_id
+
+
+@pytest.fixture
+def test_image():
+    """Load a test image from the seed images directory."""
+    image_path = os.path.join(
+        os.path.dirname(__file__), "..", "cli", "src", "seed_images", "bread.png"
+    )
+    with open(image_path, "rb") as f:
+        return f.read()

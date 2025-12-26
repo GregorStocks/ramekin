@@ -15,8 +15,6 @@ pub struct PhotoSummary {
     pub id: Uuid,
     pub content_type: String,
     pub created_at: DateTime<Utc>,
-    /// Base64-encoded JPEG thumbnail
-    pub thumbnail: String,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -30,7 +28,6 @@ struct PhotoForList {
     id: Uuid,
     content_type: String,
     created_at: DateTime<Utc>,
-    thumbnail: Vec<u8>,
 }
 
 #[utoipa::path(
@@ -81,15 +78,12 @@ pub async fn list_photos(
         }
     };
 
-    use base64::{engine::general_purpose::STANDARD, Engine};
-
     let photos = results
         .into_iter()
         .map(|p| PhotoSummary {
             id: p.id,
             content_type: p.content_type,
             created_at: p.created_at,
-            thumbnail: STANDARD.encode(&p.thumbnail),
         })
         .collect();
 

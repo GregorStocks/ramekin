@@ -39,8 +39,10 @@ def take_screenshots(
     os.makedirs(output_dir, exist_ok=True)
 
     with sync_playwright() as p:
-        # Use system Chrome to avoid macOS permission issues with bundled Chromium
-        browser = p.chromium.launch(headless=True, channel="chrome")
+        # Use bundled Chromium (works across platforms)
+        # Note: Requires playwright browsers to be installed first
+        # Run: uv run --with playwright -- playwright install chromium
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context(viewport={"width": width, "height": height})
         page = context.new_page()
 
