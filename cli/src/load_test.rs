@@ -12,46 +12,16 @@ use crate::import::upload_photo_with_client;
 
 // Test images from scripts/seed_images/
 const TEST_IMAGES: &[(&str, &[u8])] = &[
-    (
-        "bread.png",
-        include_bytes!("../../scripts/seed_images/bread.png"),
-    ),
-    (
-        "chicken.png",
-        include_bytes!("../../scripts/seed_images/chicken.png"),
-    ),
-    (
-        "curry.png",
-        include_bytes!("../../scripts/seed_images/curry.png"),
-    ),
-    (
-        "oats.png",
-        include_bytes!("../../scripts/seed_images/oats.png"),
-    ),
-    (
-        "pasta.png",
-        include_bytes!("../../scripts/seed_images/pasta.png"),
-    ),
-    (
-        "pizza.png",
-        include_bytes!("../../scripts/seed_images/pizza.png"),
-    ),
-    (
-        "risotto.png",
-        include_bytes!("../../scripts/seed_images/risotto.png"),
-    ),
-    (
-        "salad.png",
-        include_bytes!("../../scripts/seed_images/salad.png"),
-    ),
-    (
-        "shrimp.png",
-        include_bytes!("../../scripts/seed_images/shrimp.png"),
-    ),
-    (
-        "tacos.png",
-        include_bytes!("../../scripts/seed_images/tacos.png"),
-    ),
+    ("bread.png", include_bytes!("seed_images/bread.png")),
+    ("chicken.png", include_bytes!("seed_images/chicken.png")),
+    ("curry.png", include_bytes!("seed_images/curry.png")),
+    ("oats.png", include_bytes!("seed_images/oats.png")),
+    ("pasta.png", include_bytes!("seed_images/pasta.png")),
+    ("pizza.png", include_bytes!("seed_images/pizza.png")),
+    ("risotto.png", include_bytes!("seed_images/risotto.png")),
+    ("salad.png", include_bytes!("seed_images/salad.png")),
+    ("shrimp.png", include_bytes!("seed_images/shrimp.png")),
+    ("tacos.png", include_bytes!("seed_images/tacos.png")),
 ];
 
 struct RecipeTemplate {
