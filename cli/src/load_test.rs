@@ -1,6 +1,7 @@
 use anyhow::{Context, Result};
+use headless_chrome::Browser;
 use ramekin_client::apis::configuration::Configuration;
-use ramekin_client::apis::{auth_api, photos_api, recipes_api};
+use ramekin_client::apis::{auth_api, recipes_api};
 use ramekin_client::models::{CreateRecipeRequest, Ingredient, SignupRequest, UpdateRecipeRequest};
 use rand::{Rng, SeedableRng};
 use rand_chacha::ChaCha8Rng;
@@ -224,28 +225,69 @@ async fn create_user_and_recipes(
     }
 
     println!(
-        "  User {}: Finished creating {} recipes, now listing all recipes...",
+        "  User {}: Finished creating {} recipes, now loading pages in browser...",
         user_num, num_recipes
     );
 
-    // List all recipes (simulating page load) - this is what we're testing for performance
+    // Load pages in headless browser to simulate real usage and test frontend performance
+    let ui_url = server.replace(":3000", ":5173"); // Assuming UI is on port 5173
     let start = std::time::Instant::now();
-    recipes_api::list_recipes(&config)
-        .await
-        .context("Failed to list recipes")?;
-    let list_duration = start.elapsed();
+
+    let browser = Browser::default().context("Failed to launch browser")?;
+    let tab = browser.new_tab().context("Failed to create tab")?;
+
+    // Navigate to login page
+    tab.navigate_to(&ui_url)
+        .context("Failed to navigate to UI")?;
+    tab.wait_for_element("input[type='text']")
+        .context("Failed to find username input")?;
+
+    // Log in
+    tab.wait_for_element("input[type='text']")
+        .context("Failed to find username input")?
+        .click()
+        .context("Failed to click username input")?
+        .type_into(&username)
+        .context("Failed to type username")?;
+    tab.wait_for_element("input[type='password']")
+        .context("Failed to find password input")?
+        .click()
+        .context("Failed to click password input")?
+        .type_into(&password)
+        .context("Failed to type password")?;
+    tab.wait_for_element("button[type='submit']")
+        .context("Failed to find submit button")?
+        .click()
+        .context("Failed to click submit")?;
+
+    // Wait for cookbook page to load
+    std::thread::sleep(std::time::Duration::from_secs(2));
+    tab.wait_for_element(".recipe-card")
+        .context("Failed to wait for recipe cards")?;
+
+    let cookbook_duration = start.elapsed();
+
+    // Click on first recipe
+    let recipe_start = std::time::Instant::now();
+    tab.wait_for_element(".recipe-card")
+        .context("Failed to find recipe card")?
+        .click()
+        .context("Failed to click recipe card")?;
+
+    // Wait for recipe page to load
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    tab.wait_for_element(".recipe-photo")
+        .context("Failed to wait for recipe photo")?;
+
+    let recipe_duration = recipe_start.elapsed();
 
     println!(
-        "  User {}: Listed {} recipes in {:.2}s",
+        "  User {}: Loaded cookbook ({} recipes) in {:.2}s, recipe page in {:.2}s",
         user_num,
         num_recipes,
-        list_duration.as_secs_f64()
+        cookbook_duration.as_secs_f64(),
+        recipe_duration.as_secs_f64()
     );
-
-    // List all photos
-    photos_api::list_photos(&config)
-        .await
-        .context("Failed to list photos")?;
 
     Ok((username, password, num_recipes))
 }

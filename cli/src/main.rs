@@ -1,5 +1,6 @@
 mod import;
 mod load_test;
+mod screenshot;
 mod seed;
 
 use anyhow::Result;
@@ -66,6 +67,27 @@ enum Commands {
         #[arg(long, default_value = "5")]
         concurrency: usize,
     },
+    /// Take screenshots of the app as the test user
+    Screenshot {
+        /// UI URL (default: http://localhost:5173)
+        #[arg(long, default_value = "http://localhost:5173")]
+        ui_url: String,
+        /// Username for authentication
+        #[arg(long, default_value = "t")]
+        username: String,
+        /// Password for authentication
+        #[arg(long, default_value = "t")]
+        password: String,
+        /// Output directory for screenshots (default: logs)
+        #[arg(long, default_value = "logs")]
+        output_dir: PathBuf,
+        /// Viewport width (default: 1280)
+        #[arg(long, default_value = "1280")]
+        width: u32,
+        /// Viewport height (default: 720)
+        #[arg(long, default_value = "720")]
+        height: u32,
+    },
 }
 
 #[tokio::main]
@@ -98,6 +120,16 @@ async fn main() -> Result<()> {
             concurrency,
         } => {
             load_test::load_test(&server, users, concurrency).await?;
+        }
+        Commands::Screenshot {
+            ui_url,
+            username,
+            password,
+            output_dir,
+            width,
+            height,
+        } => {
+            screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
         }
     }
 
