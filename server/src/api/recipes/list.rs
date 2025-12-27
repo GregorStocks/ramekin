@@ -2,13 +2,36 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::schema::recipes;
-use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
+use axum::{
+    extract::{Query, State},
+    http::StatusCode,
+    response::IntoResponse,
+    Json,
+};
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 use std::sync::Arc;
-use utoipa::ToSchema;
+use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
+
+#[derive(Debug, Deserialize, IntoParams)]
+pub struct PaginationParams {
+    /// Number of items to return (default: 20, max: 1000)
+    pub limit: Option<i64>,
+    /// Number of items to skip (default: 0)
+    pub offset: Option<i64>,
+}
+
+#[derive(Debug, Clone, Serialize, ToSchema)]
+pub struct PaginationMetadata {
+    /// Total number of items available
+    pub total: i64,
+    /// Number of items requested (limit)
+    pub limit: i64,
+    /// Number of items skipped (offset)
+    pub offset: i64,
+}
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct RecipeSummary {
@@ -25,6 +48,7 @@ pub struct RecipeSummary {
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct ListRecipesResponse {
     pub recipes: Vec<RecipeSummary>,
+    pub pagination: PaginationMetadata,
 }
 
 #[derive(Queryable, Selectable)]
@@ -43,8 +67,10 @@ struct RecipeForList {
     get,
     path = "/api/recipes",
     tag = "recipes",
+    params(PaginationParams),
     responses(
         (status = 200, description = "List of user's recipes", body = ListRecipesResponse),
+        (status = 400, description = "Invalid pagination parameters", body = ErrorResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(
@@ -54,7 +80,12 @@ struct RecipeForList {
 pub async fn list_recipes(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
+    Query(params): Query<PaginationParams>,
 ) -> impl IntoResponse {
+    // Validate and set defaults for pagination
+    let limit = params.limit.unwrap_or(20).clamp(1, 1000);
+    let offset = params.offset.unwrap_or(0).max(0);
+
     let mut conn = match pool.get() {
         Ok(c) => c,
         Err(_) => {
@@ -68,11 +99,33 @@ pub async fn list_recipes(
         }
     };
 
+    // Get total count
+    let total: i64 = match recipes::table
+        .filter(recipes::user_id.eq(user.id))
+        .filter(recipes::deleted_at.is_null())
+        .count()
+        .get_result(&mut conn)
+    {
+        Ok(c) => c,
+        Err(_) => {
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to count recipes".to_string(),
+                }),
+            )
+                .into_response()
+        }
+    };
+
+    // Get paginated results
     let results: Vec<RecipeForList> = match recipes::table
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
         .select(RecipeForList::as_select())
         .order(recipes::updated_at.desc())
+        .limit(limit)
+        .offset(offset)
         .load(&mut conn)
     {
         Ok(r) => r,
@@ -104,5 +157,16 @@ pub async fn list_recipes(
         })
         .collect();
 
-    (StatusCode::OK, Json(ListRecipesResponse { recipes })).into_response()
+    (
+        StatusCode::OK,
+        Json(ListRecipesResponse {
+            recipes,
+            pagination: PaginationMetadata {
+                total,
+                limit,
+                offset,
+            },
+        }),
+    )
+        .into_response()
 }

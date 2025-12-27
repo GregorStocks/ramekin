@@ -112,39 +112,6 @@
       }
     },
     "/api/photos": {
-      "get": {
-        "tags": [
-          "photos"
-        ],
-        "operationId": "list_photos",
-        "responses": {
-          "200": {
-            "description": "List of user's photos",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ListPhotosResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      },
       "post": {
         "tags": [
           "photos"
@@ -311,6 +278,34 @@
           "recipes"
         ],
         "operationId": "list_recipes",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Number of items to return (default: 20, max: 1000)",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of items to skip (default: 0)",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "List of user's recipes",
@@ -318,6 +313,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListRecipesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid pagination parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -736,26 +741,16 @@
           }
         }
       },
-      "ListPhotosResponse": {
-        "type": "object",
-        "required": [
-          "photos"
-        ],
-        "properties": {
-          "photos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/PhotoSummary"
-            }
-          }
-        }
-      },
       "ListRecipesResponse": {
         "type": "object",
         "required": [
-          "recipes"
+          "recipes",
+          "pagination"
         ],
         "properties": {
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMetadata"
+          },
           "recipes": {
             "type": "array",
             "items": {
@@ -790,24 +785,28 @@
           }
         }
       },
-      "PhotoSummary": {
+      "PaginationMetadata": {
         "type": "object",
         "required": [
-          "id",
-          "content_type",
-          "created_at"
+          "total",
+          "limit",
+          "offset"
         ],
         "properties": {
-          "content_type": {
-            "type": "string"
+          "limit": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Number of items requested (limit)"
           },
-          "created_at": {
-            "type": "string",
-            "format": "date-time"
+          "offset": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Number of items skipped (offset)"
           },
-          "id": {
-            "type": "string",
-            "format": "uuid"
+          "total": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Total number of items available"
           }
         }
       },

@@ -441,3 +441,127 @@ def test_cannot_access_other_users_recipe(authed_api_client, second_authed_api_c
     # Verify it still exists for user 1
     recipe = recipes_api1.get_recipe(id=recipe_id)
     assert recipe.title == "User 1 Private Recipe"
+
+
+def test_list_recipes_pagination_defaults(authed_api_client):
+    """Test that pagination defaults work (limit=20, offset=0)."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 30 recipes
+    for i in range(30):
+        recipes_api.create_recipe(
+            create_recipe_request=CreateRecipeRequest(
+                title=f"Recipe {i:02d}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # List without pagination params
+    response = recipes_api.list_recipes()
+
+    # Should return only 20 (default limit)
+    assert len(response.recipes) == 20
+    assert response.pagination.total == 30
+    assert response.pagination.limit == 20
+    assert response.pagination.offset == 0
+
+
+def test_list_recipes_pagination_custom(authed_api_client):
+    """Test custom limit and offset."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 50 recipes
+    for i in range(50):
+        recipes_api.create_recipe(
+            create_recipe_request=CreateRecipeRequest(
+                title=f"Recipe {i:02d}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # Get second page with limit=10
+    response = recipes_api.list_recipes(limit=10, offset=10)
+
+    assert len(response.recipes) == 10
+    assert response.pagination.total == 50
+    assert response.pagination.limit == 10
+    assert response.pagination.offset == 10
+
+
+def test_list_recipes_pagination_max_limit(authed_api_client):
+    """Test that limit is clamped to 1000."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 10 recipes
+    for i in range(10):
+        recipes_api.create_recipe(
+            create_recipe_request=CreateRecipeRequest(
+                title=f"Recipe {i}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # Request limit=9999
+    response = recipes_api.list_recipes(limit=9999)
+
+    # Actual limit should be clamped to 1000
+    assert response.pagination.limit == 1000
+    assert response.pagination.total == 10
+    assert len(response.recipes) == 10  # Only 10 exist
+
+
+def test_list_recipes_pagination_total_count(authed_api_client):
+    """Test that total count is accurate across pages."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 25 recipes
+    for i in range(25):
+        recipes_api.create_recipe(
+            create_recipe_request=CreateRecipeRequest(
+                title=f"Recipe {i:02d}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # Request page 1
+    page1 = recipes_api.list_recipes(limit=20, offset=0)
+    assert page1.pagination.total == 25
+    assert len(page1.recipes) == 20
+
+    # Request page 2
+    page2 = recipes_api.list_recipes(limit=20, offset=20)
+    assert page2.pagination.total == 25  # Same total
+    assert len(page2.recipes) == 5  # Only 5 remaining
+
+
+def test_list_recipes_pagination_ordering(authed_api_client):
+    """Test that pagination preserves order (updated_at DESC)."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes sequentially
+    recipe_ids = []
+    for i in range(5):
+        result = recipes_api.create_recipe(
+            create_recipe_request=CreateRecipeRequest(
+                title=f"Recipe {i}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+        recipe_ids.append(result.id)
+
+    # List all recipes
+    response = recipes_api.list_recipes(limit=10)
+
+    # Most recently created should be first (updated_at DESC)
+    assert response.recipes[0].id == recipe_ids[4]
+    assert response.recipes[4].id == recipe_ids[0]

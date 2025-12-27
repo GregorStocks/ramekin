@@ -81,8 +81,11 @@ pub fn screenshot(
         .context("Failed to find recipe card")?
         .click()
         .context("Failed to click recipe card")?;
-    tab.wait_for_element(".recipe-photo")
-        .context("Failed to wait for recipe photo")?;
+    // Wait for recipe page to load (instructions section is always present)
+    tab.wait_for_element(".instructions")
+        .context("Failed to wait for recipe page")?;
+    // Give photos time to load if they exist
+    std::thread::sleep(std::time::Duration::from_millis(500));
 
     let recipe_path = output_dir.join("recipe.png");
     let recipe_png = tab
