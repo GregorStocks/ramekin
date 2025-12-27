@@ -1,0 +1,30 @@
+# Compiled artifacts (mounted as volumes)
+target/
+**/target/
+
+# Generated clients
+cli/generated/
+ramekin-ui/generated-client/
+tests/generated/
+
+# Node modules
+node_modules/
+**/node_modules/
+
+# Cache and logs
+.cache/
+logs/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Build outputs
+dist/
+build/

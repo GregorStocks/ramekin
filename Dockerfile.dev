@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install cargo-watch for hot reload and diesel-cli for migrations
-RUN cargo install cargo-watch && \
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    cargo install cargo-watch && \
     cargo install diesel_cli --no-default-features --features postgres
 
 # Make cargo directories writable by non-root users

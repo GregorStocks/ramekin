@@ -12,7 +12,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install diesel CLI
-RUN cargo install diesel_cli --no-default-features --features postgres
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    cargo install diesel_cli --no-default-features --features postgres
 
 # Make cargo directories writable by non-root users
 RUN chmod -R 777 /usr/local/cargo
@@ -30,7 +32,8 @@ RUN python3 -m venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
 # Install Python dependencies
-RUN /app/venv/bin/pip install urllib3 python-dateutil pydantic typing-extensions pytest requests
+RUN --mount=type=cache,target=/root/.cache/pip \
+    /app/venv/bin/pip install urllib3 python-dateutil pydantic typing-extensions pytest requests
 
 # Make everything writable by non-root users
 RUN mkdir -p /app/server/target /app/cli/target && chmod -R 777 /app

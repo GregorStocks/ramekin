@@ -38,35 +38,14 @@ logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
-	@mkdir -p api
-	@TEMP_LOG=$$(mktemp); \
-	if ! docker run --rm \
-		-u "$(shell id -u):$(shell id -g)" \
-		-v $(PWD):/app:z \
-		-w /app/server \
-		rust:latest \
-		sh -c "cargo build --release -q && target/release/ramekin-server --openapi" \
-		> api/openapi.json 2>$$TEMP_LOG; then \
-		cat $$TEMP_LOG; \
-		rm -f $$TEMP_LOG; \
-		exit 1; \
-	fi; \
-	rm -f $$TEMP_LOG
-	@echo "Generated api/openapi.json"
-	@./scripts/generate-clients.sh
-	@$(MAKE) lint
+	@./scripts/generate-openapi.py
+
+generate-clients-force: ## Force regeneration of API clients (bypass cache)
+	@rm -f .cache/openapi-hash
+	@$(MAKE) generate-clients
 
 lint: ## Run all linters (Rust, TypeScript, Python)
-	@cd server && cargo fmt --all
-	@cd server && cargo clippy --all-targets --all-features -q -- -D warnings
-	@cd cli && cargo fmt --all
-	@cd cli && cargo clippy --all-targets --all-features -q -- -D warnings
-	@npx prettier --write --log-level warn ramekin-ui/src/
-	@cd ramekin-ui && [ -d node_modules ] || npm install --silent
-	@cd ramekin-ui && npx tsc -p tsconfig.app.json --noEmit
-	@uvx ruff format --quiet --exclude tests/generated tests/ scripts/
-	@uvx ruff check --fix --quiet --exclude tests/generated tests/ scripts/
-	@echo "Linted"
+	@./scripts/lint.py
 
 clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
@@ -80,11 +59,15 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at server/src/schema.rs"
 	$(MAKE) lint
 
-test: generate-clients test-down test-up ## Run tests (tears down on success, leaves up on failure for debugging)
-	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" && docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null || (echo "Tests failed - leaving environment up for debugging" && exit 1)
+test: generate-clients ## Run tests (reuses running containers if available)
+	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
+		echo "Test environment not running, starting..."; \
+		$(MAKE) test-up; \
+	fi
+	@$(MAKE) test-run
 
 test-up: ## Start test environment
-	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
 
 test-run: ## Run tests against running test environment
 	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
@@ -98,10 +81,12 @@ test-clean: ## Stop test environment and clean volumes
 test-logs: ## Show test environment logs
 	docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml logs -f
 
+test-rebuild: test-clean test-up ## Force rebuild test environment from scratch
+
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
 
-load-test: ## Run load test creating 1000 users with recipes and photos (for performance testing)
+load-test: ## Run load test creating users with recipes and photos (for performance testing)
 	@cd cli && cargo run -q -- load-test
 
 screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)

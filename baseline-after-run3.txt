@@ -1,0 +1,36 @@
+=== Build Performance Benchmark ===
+Date: Sat Dec 27 12:20:06 PM PST 2025
+Git commit: 7a18000
+
+## Scenario 1: Cold Cache
+Cleaning everything...
+Total reclaimed space: 290.5MB
+
+[make test (cold cache)]
+✓ Completed in 319s
+
+## Scenario 2: No Changes (Incremental)
+
+[make test (no changes, 1st run)]
+✓ Completed in 25s
+
+[make test (no changes, 2nd run)]
+✓ Completed in 24s
+
+[make test (no changes, 3rd run)]
+✓ Completed in 25s
+
+## Scenario 3: Trivial Change
+Making trivial change to server/src/main.rs...
+
+[make test (after trivial change)]
+✓ Completed in 26s
+
+## Scenario 4: OpenAPI Change
+Making change to API endpoint...
+
+[make test (after API change)]
+✓ Completed in 208s
+
+=== Benchmark Complete ===
+Results saved to: baseline-after-run3.txt
