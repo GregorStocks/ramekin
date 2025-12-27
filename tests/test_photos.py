@@ -4,88 +4,13 @@ from ramekin_client.api import PhotosApi
 from ramekin_client.exceptions import ApiException
 
 
-def test_photo_upload_and_download_roundtrip(authed_api_client):
+def test_photo_upload_and_download_roundtrip(authed_api_client, test_image):
     """Test that uploading a photo and downloading it returns the same data."""
     client, user_id = authed_api_client
     photos_api = PhotosApi(client)
 
-    # Create test image data (a simple 1x1 PNG)
-    test_image_data = bytes(
-        [
-            0x89,
-            0x50,
-            0x4E,
-            0x47,
-            0x0D,
-            0x0A,
-            0x1A,
-            0x0A,  # PNG signature
-            0x00,
-            0x00,
-            0x00,
-            0x0D,
-            0x49,
-            0x48,
-            0x44,
-            0x52,  # IHDR chunk
-            0x00,
-            0x00,
-            0x00,
-            0x01,
-            0x00,
-            0x00,
-            0x00,
-            0x01,  # 1x1
-            0x08,
-            0x02,
-            0x00,
-            0x00,
-            0x00,
-            0x90,
-            0x77,
-            0x53,
-            0xDE,  # 8-bit RGB
-            0x00,
-            0x00,
-            0x00,
-            0x0C,
-            0x49,
-            0x44,
-            0x41,
-            0x54,  # IDAT chunk
-            0x08,
-            0xD7,
-            0x63,
-            0xF8,
-            0xFF,
-            0xFF,
-            0x3F,
-            0x00,
-            0x05,
-            0xFE,
-            0x02,
-            0xFE,
-            0xDC,
-            0xCC,
-            0x59,
-            0xE7,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x49,
-            0x45,
-            0x4E,
-            0x44,  # IEND chunk
-            0xAE,
-            0x42,
-            0x60,
-            0x82,
-        ]
-    )
-
     # Upload the photo using tuple format (filename, data)
-    upload_response = photos_api.upload(file=("test.png", test_image_data))
+    upload_response = photos_api.upload(file=("test.png", test_image))
     assert upload_response.id is not None
     photo_id = str(upload_response.id)
 
@@ -96,7 +21,7 @@ def test_photo_upload_and_download_roundtrip(authed_api_client):
 
     # Verify roundtrip - read the data from the response
     downloaded_data = download_response.data
-    assert downloaded_data == test_image_data
+    assert downloaded_data == test_image
 
 
 def test_photo_not_found(authed_api_client):
