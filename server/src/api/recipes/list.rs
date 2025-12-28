@@ -262,11 +262,18 @@ pub async fn list_recipes(
     }
 
     // Apply tag filter (AND logic - must have ALL tags)
-    // citext column handles case-insensitivity at the database level
+    // Cast search term to citext for case-insensitive comparison with citext[] column
     for tag in &parsed.tags {
-        count_query = count_query.filter(sql::<Bool>("").bind::<Text, _>(tag).sql(" = ANY(tags)"));
-        select_query =
-            select_query.filter(sql::<Bool>("").bind::<Text, _>(tag).sql(" = ANY(tags)"));
+        count_query = count_query.filter(
+            sql::<Bool>("")
+                .bind::<Text, _>(tag)
+                .sql("::citext = ANY(tags)"),
+        );
+        select_query = select_query.filter(
+            sql::<Bool>("")
+                .bind::<Text, _>(tag)
+                .sql("::citext = ANY(tags)"),
+        );
     }
 
     // Apply source filter (case-insensitive substring)

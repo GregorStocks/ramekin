@@ -10,6 +10,135 @@ import { A, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { RecipeSummary } from "ramekin-client";
 
+interface FilterState {
+  tags: string[];
+  source: string;
+  photos: "any" | "has" | "no";
+  createdAfter: string;
+  createdBefore: string;
+}
+
+function parseQueryToFilters(query: string): {
+  textTerms: string[];
+  filters: FilterState;
+} {
+  const filters: FilterState = {
+    tags: [],
+    source: "",
+    photos: "any",
+    createdAfter: "",
+    createdBefore: "",
+  };
+  const textTerms: string[] = [];
+
+  // Simple tokenizer - split on whitespace, but respect quotes
+  const tokens: string[] = [];
+  let current = "";
+  let inQuotes = false;
+  for (const c of query) {
+    if (c === '"') {
+      inQuotes = !inQuotes;
+    } else if ((c === " " || c === "\t") && !inQuotes) {
+      if (current) {
+        tokens.push(current);
+        current = "";
+      }
+    } else {
+      current += c;
+    }
+  }
+  if (current) tokens.push(current);
+
+  for (const token of tokens) {
+    if (token.startsWith("tag:")) {
+      const tag = token.slice(4);
+      if (tag) filters.tags.push(tag);
+    } else if (token.startsWith("source:")) {
+      const source = token.slice(7);
+      if (source) filters.source = source;
+    } else if (token === "has:photos" || token === "has:photo") {
+      filters.photos = "has";
+    } else if (token === "no:photos" || token === "no:photo") {
+      filters.photos = "no";
+    } else if (token.startsWith("created:")) {
+      const expr = token.slice(8);
+      if (expr.includes("..")) {
+        const [start, end] = expr.split("..");
+        if (start) filters.createdAfter = start;
+        if (end) filters.createdBefore = end;
+      } else if (expr.startsWith(">")) {
+        filters.createdAfter = expr.slice(1);
+      } else if (expr.startsWith("<")) {
+        filters.createdBefore = expr.slice(1);
+      } else {
+        // Exact date - treat as range for same day
+        filters.createdAfter = expr;
+        filters.createdBefore = expr;
+      }
+    } else if (token) {
+      textTerms.push(token);
+    }
+  }
+
+  return { textTerms, filters };
+}
+
+function buildQueryFromFilters(
+  textTerms: string[],
+  filters: FilterState,
+): string {
+  const parts: string[] = [];
+
+  // Add text terms (quote if contains spaces)
+  for (const term of textTerms) {
+    if (term.includes(" ")) {
+      parts.push(`"${term}"`);
+    } else {
+      parts.push(term);
+    }
+  }
+
+  // Add tags (quote if contains spaces)
+  for (const tag of filters.tags) {
+    if (tag.includes(" ")) {
+      parts.push(`tag:"${tag}"`);
+    } else {
+      parts.push(`tag:${tag}`);
+    }
+  }
+
+  // Add source (quote if contains spaces)
+  if (filters.source) {
+    if (filters.source.includes(" ")) {
+      parts.push(`source:"${filters.source}"`);
+    } else {
+      parts.push(`source:${filters.source}`);
+    }
+  }
+
+  // Add photos filter
+  if (filters.photos === "has") {
+    parts.push("has:photos");
+  } else if (filters.photos === "no") {
+    parts.push("no:photos");
+  }
+
+  // Add date filters
+  if (filters.createdAfter && filters.createdBefore) {
+    if (filters.createdAfter === filters.createdBefore) {
+      parts.push(`created:${filters.createdAfter}`);
+    } else {
+      parts.push(`created:${filters.createdAfter}..${filters.createdBefore}`);
+    }
+  } else if (filters.createdAfter) {
+    parts.push(`created:>${filters.createdAfter}`);
+  } else if (filters.createdBefore) {
+    parts.push(`created:<${filters.createdBefore}`);
+  }
+
+  return parts.join(" ");
+}
+
 function PhotoThumbnail(props: {
   photoId: string;
   token: string;
@@ -77,7 +206,31 @@ export default function CookbookPage() {
     getQueryParam(searchParams.q),
   );
 
+  // Filter panel state
+  const [showFilters, setShowFilters] = createSignal(false);
+  const [availableTags, setAvailableTags] = createSignal<string[]>([]);
+  const [filterTags, setFilterTags] = createSignal<string[]>([]);
+  const [filterSource, setFilterSource] = createSignal("");
+  const [filterPhotos, setFilterPhotos] = createSignal<"any" | "has" | "no">(
+    "any",
+  );
+  const [filterCreatedAfter, setFilterCreatedAfter] = createSignal("");
+  const [filterCreatedBefore, setFilterCreatedBefore] = createSignal("");
+
+  // Track text terms from search (non-filter parts)
+  const [textTerms, setTextTerms] = createSignal<string[]>([]);
+
   const PAGE_SIZE = 20;
+
+  // Load available tags on mount
+  onMount(async () => {
+    try {
+      const response = await getRecipesApi().listTags();
+      setAvailableTags(response.tags);
+    } catch {
+      // Ignore errors loading tags
+    }
+  });
 
   // Get current search query from URL
   const searchQuery = () => getQueryParam(searchParams.q);
@@ -179,6 +332,61 @@ export default function CookbookPage() {
     setSearchParams({ q: undefined });
   };
 
+  // Count active filters for button badge
+  const activeFilterCount = () => {
+    let count = 0;
+    if (filterTags().length > 0) count += filterTags().length;
+    if (filterSource()) count++;
+    if (filterPhotos() !== "any") count++;
+    if (filterCreatedAfter() || filterCreatedBefore()) count++;
+    return count;
+  };
+
+  // Open filter panel and sync from current query
+  const openFilters = () => {
+    const { textTerms: terms, filters } = parseQueryToFilters(searchQuery());
+    setTextTerms(terms);
+    setFilterTags(filters.tags);
+    setFilterSource(filters.source);
+    setFilterPhotos(filters.photos);
+    setFilterCreatedAfter(filters.createdAfter);
+    setFilterCreatedBefore(filters.createdBefore);
+    setShowFilters(true);
+  };
+
+  // Apply filters and close panel
+  const applyFilters = () => {
+    const newQuery = buildQueryFromFilters(textTerms(), {
+      tags: filterTags(),
+      source: filterSource(),
+      photos: filterPhotos(),
+      createdAfter: filterCreatedAfter(),
+      createdBefore: filterCreatedBefore(),
+    });
+    setSearchInput(newQuery);
+    setSearchParams({ q: newQuery || undefined });
+    setShowFilters(false);
+  };
+
+  // Clear all filters
+  const clearFilters = () => {
+    setFilterTags([]);
+    setFilterSource("");
+    setFilterPhotos("any");
+    setFilterCreatedAfter("");
+    setFilterCreatedBefore("");
+  };
+
+  // Toggle a tag in the filter
+  const toggleTag = (tag: string) => {
+    const current = filterTags();
+    if (current.includes(tag)) {
+      setFilterTags(current.filter((t) => t !== tag));
+    } else {
+      setFilterTags([...current, tag]);
+    }
+  };
+
   return (
     <div class="cookbook-page">
       <div class="page-header">
@@ -190,21 +398,144 @@ export default function CookbookPage() {
         </h2>
       </div>
 
-      <form class="search-bar" onSubmit={handleSearch}>
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Search recipes... (tag:dinner source:NYT has:photos)"
-          value={searchInput()}
-          onInput={(e) => setSearchInput(e.currentTarget.value)}
-          onBlur={() => handleSearch()}
-        />
-        <Show when={searchInput()}>
-          <button type="button" class="search-clear" onClick={clearSearch}>
-            &times;
-          </button>
-        </Show>
-      </form>
+      <div class="search-container">
+        <form class="search-bar" onSubmit={handleSearch}>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search recipes..."
+            value={searchInput()}
+            onInput={(e) => setSearchInput(e.currentTarget.value)}
+            onBlur={() => handleSearch()}
+          />
+          <Show when={searchInput()}>
+            <button type="button" class="search-clear" onClick={clearSearch}>
+              &times;
+            </button>
+          </Show>
+        </form>
+        <button
+          type="button"
+          class="filter-button"
+          onClick={openFilters}
+          classList={{ active: activeFilterCount() > 0 }}
+        >
+          Filters
+          <Show when={activeFilterCount() > 0}>
+            <span class="filter-badge">{activeFilterCount()}</span>
+          </Show>
+        </button>
+      </div>
+
+      <Show when={showFilters()}>
+        <div class="filter-panel">
+          <div class="filter-section">
+            <label class="filter-label">Tags</label>
+            <div class="filter-tags">
+              <Show
+                when={availableTags().length > 0}
+                fallback={<span class="filter-empty">No tags yet</span>}
+              >
+                <For each={availableTags()}>
+                  {(tag) => (
+                    <label class="filter-tag-option">
+                      <input
+                        type="checkbox"
+                        checked={filterTags().includes(tag)}
+                        onChange={() => toggleTag(tag)}
+                      />
+                      {tag}
+                    </label>
+                  )}
+                </For>
+              </Show>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <label class="filter-label">Source</label>
+            <input
+              type="text"
+              class="filter-input"
+              placeholder="e.g. NYTimes"
+              value={filterSource()}
+              onInput={(e) => setFilterSource(e.currentTarget.value)}
+            />
+          </div>
+
+          <div class="filter-section">
+            <label class="filter-label">Photos</label>
+            <div class="filter-radio-group">
+              <label class="filter-radio">
+                <input
+                  type="radio"
+                  name="photos"
+                  checked={filterPhotos() === "any"}
+                  onChange={() => setFilterPhotos("any")}
+                />
+                Any
+              </label>
+              <label class="filter-radio">
+                <input
+                  type="radio"
+                  name="photos"
+                  checked={filterPhotos() === "has"}
+                  onChange={() => setFilterPhotos("has")}
+                />
+                Has photos
+              </label>
+              <label class="filter-radio">
+                <input
+                  type="radio"
+                  name="photos"
+                  checked={filterPhotos() === "no"}
+                  onChange={() => setFilterPhotos("no")}
+                />
+                No photos
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-section">
+            <label class="filter-label">Created</label>
+            <div class="filter-date-range">
+              <input
+                type="date"
+                class="filter-input"
+                value={filterCreatedAfter()}
+                onInput={(e) => setFilterCreatedAfter(e.currentTarget.value)}
+              />
+              <span>to</span>
+              <input
+                type="date"
+                class="filter-input"
+                value={filterCreatedBefore()}
+                onInput={(e) => setFilterCreatedBefore(e.currentTarget.value)}
+              />
+            </div>
+          </div>
+
+          <div class="filter-actions">
+            <button type="button" class="btn btn-small" onClick={clearFilters}>
+              Clear
+            </button>
+            <button
+              type="button"
+              class="btn btn-small"
+              onClick={() => setShowFilters(false)}
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-small btn-primary"
+              onClick={applyFilters}
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </Show>
 
       <Show when={loading()}>
         <p class="loading">Loading recipes...</p>

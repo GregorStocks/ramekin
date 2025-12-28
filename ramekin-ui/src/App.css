@@ -297,9 +297,15 @@
 }
 
 /* Search Bar */
+.search-container {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
 .search-bar {
   position: relative;
-  margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .search-input {
@@ -339,6 +345,172 @@
 
 .search-clear:hover {
   color: #fff;
+}
+
+/* Filter Button & Panel */
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #ccc;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.filter-button:hover {
+  border-color: #646cff;
+  background: #222;
+}
+
+.filter-button.active {
+  border-color: #646cff;
+  color: #fff;
+}
+
+.filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #646cff;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.filter-panel {
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-section {
+  margin-bottom: 1rem;
+}
+
+.filter-section:last-of-type {
+  margin-bottom: 1rem;
+}
+
+.filter-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-tag-option {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.85rem;
+  background: rgba(100, 108, 255, 0.1);
+  border: 1px solid rgba(100, 108, 255, 0.2);
+  border-radius: 4px;
+  color: #a8aeff;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.filter-tag-option:hover {
+  background: rgba(100, 108, 255, 0.2);
+  border-color: rgba(100, 108, 255, 0.4);
+}
+
+.filter-tag-option input[type="checkbox"] {
+  accent-color: #646cff;
+}
+
+.filter-empty {
+  color: #666;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.filter-input {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #242424;
+  color: #fff;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.filter-input::placeholder {
+  color: #666;
+}
+
+.filter-radio-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.filter-radio input[type="radio"] {
+  accent-color: #646cff;
+}
+
+.filter-date-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-date-range span {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.filter-date-range .filter-input {
+  max-width: 150px;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #333;
 }
 
 .recipe-grid {

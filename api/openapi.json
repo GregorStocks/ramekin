@@ -410,6 +410,41 @@
         ]
       }
     },
+    "/api/recipes/tags": {
+      "get": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "list_tags",
+        "responses": {
+          "200": {
+            "description": "List of distinct tags",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TagsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}": {
       "get": {
         "tags": [
@@ -978,6 +1013,21 @@
           "user_id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "TagsResponse": {
+        "type": "object",
+        "required": [
+          "tags"
+        ],
+        "properties": {
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of distinct tags used across user's recipes, sorted alphabetically"
           }
         }
       },

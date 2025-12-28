@@ -59,18 +59,14 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at server/src/schema.rs"
 	$(MAKE) lint
 
-test: generate-clients ## Run tests (reuses running containers if available)
-	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
-		echo "Test environment not running, starting..."; \
-		$(MAKE) test-up; \
-	fi
-	@$(MAKE) test-run
+test: generate-clients test-up ## Run tests (reuses running containers if available)
+	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
 
 test-up: ## Start test environment
-	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
-
-test-run: ## Run tests against running test environment
-	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
+	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
+		echo "Test environment not running, starting..."; \
+		@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	fi
 
 test-down: ## Stop test environment
 	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null

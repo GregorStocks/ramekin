@@ -2,6 +2,7 @@ pub mod create;
 pub mod delete;
 pub mod get;
 pub mod list;
+pub mod tags;
 pub mod update;
 
 use crate::AppState;
@@ -13,6 +14,7 @@ use utoipa::OpenApi;
 pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", get(list::list_recipes).post(create::create_recipe))
+        .route("/tags", get(tags::list_tags))
         .route(
             "/{id}",
             get(get::get_recipe)
@@ -29,6 +31,7 @@ pub fn router() -> Router<AppState> {
         get::get_recipe,
         update::update_recipe,
         delete::delete_recipe,
+        tags::list_tags,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -37,6 +40,7 @@ pub fn router() -> Router<AppState> {
         list::RecipeSummary,
         get::RecipeResponse,
         update::UpdateRecipeRequest,
+        tags::TagsResponse,
     ))
 )]
 pub struct ApiDoc;

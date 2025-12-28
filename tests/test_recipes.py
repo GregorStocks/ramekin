@@ -905,3 +905,112 @@ def test_empty_search_returns_all(authed_api_client):
     # No q should return all
     response = recipes_api.list_recipes()
     assert len(response.recipes) == 3
+
+
+# Tags endpoint tests
+
+
+def test_list_tags_empty(authed_api_client):
+    """Test listing tags when user has no recipes."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    response = recipes_api.list_tags()
+    assert response.tags == []
+
+
+def test_list_tags_returns_distinct_tags(authed_api_client):
+    """Test that tags endpoint returns distinct tags from all recipes."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes with overlapping tags
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe 1",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["dinner", "quick", "vegetarian"],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe 2",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["dinner", "slow", "meat"],
+        )
+    )
+
+    response = recipes_api.list_tags()
+
+    # Should have 5 unique tags, sorted alphabetically
+    assert response.tags == ["dinner", "meat", "quick", "slow", "vegetarian"]
+
+
+def test_list_tags_sorted_alphabetically(authed_api_client):
+    """Test that tags are returned in alphabetical order."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["zebra", "apple", "mango"],
+        )
+    )
+
+    response = recipes_api.list_tags()
+    assert response.tags == ["apple", "mango", "zebra"]
+
+
+def test_list_tags_requires_auth(unauthed_api_client):
+    """Test that listing tags requires authentication."""
+    recipes_api = RecipesApi(unauthed_api_client)
+
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api.list_tags()
+
+    assert exc_info.value.status == 401
+
+
+def test_list_tags_only_from_own_recipes(authed_api_client, second_authed_api_client):
+    """Test that tags endpoint only returns tags from user's own recipes."""
+    client1, user1_id = authed_api_client
+    client2, user2_id = second_authed_api_client
+    recipes_api1 = RecipesApi(client1)
+    recipes_api2 = RecipesApi(client2)
+
+    # User 1 creates recipe with tags
+    recipes_api1.create_recipe(
+        CreateRecipeRequest(
+            title="User 1 Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["user1-tag", "shared-tag"],
+        )
+    )
+
+    # User 2 creates recipe with different tags
+    recipes_api2.create_recipe(
+        CreateRecipeRequest(
+            title="User 2 Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["user2-tag", "shared-tag"],
+        )
+    )
+
+    # User 1 should only see their tags
+    response1 = recipes_api1.list_tags()
+    assert "user1-tag" in response1.tags
+    assert "shared-tag" in response1.tags
+    assert "user2-tag" not in response1.tags
+
+    # User 2 should only see their tags
+    response2 = recipes_api2.list_tags()
+    assert "user2-tag" in response2.tags
+    assert "shared-tag" in response2.tags
+    assert "user1-tag" not in response2.tags
