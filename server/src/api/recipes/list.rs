@@ -8,19 +8,137 @@ use axum::{
     response::IntoResponse,
     Json,
 };
-use chrono::{DateTime, Utc};
+use chrono::{DateTime, NaiveDate, Utc};
+use diesel::dsl::sql;
 use diesel::prelude::*;
+use diesel::sql_types::{Bool, Text};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
 
 #[derive(Debug, Deserialize, IntoParams)]
-pub struct PaginationParams {
+pub struct ListRecipesParams {
     /// Number of items to return (default: 20, max: 1000)
     pub limit: Option<i64>,
     /// Number of items to skip (default: 0)
     pub offset: Option<i64>,
+    /// Search query with optional filters. Supports:
+    /// - Plain text: searches title and description
+    /// - tag:value: filter by tag (can use multiple)
+    /// - source:value: filter by source name
+    /// - has:photos / no:photos: filter by photo presence
+    /// - created:>2024-01-01: created after date
+    /// - created:<2024-12-31: created before date
+    /// - created:2024-01-01..2024-12-31: created in date range
+    ///
+    /// Example: "chicken tag:dinner tag:quick has:photos"
+    pub q: Option<String>,
+}
+
+/// Parsed search query components
+#[derive(Debug, Default)]
+struct ParsedQuery {
+    text: Vec<String>,
+    tags: Vec<String>,
+    source: Option<String>,
+    has_photos: Option<bool>,
+    created_after: Option<NaiveDate>,
+    created_before: Option<NaiveDate>,
+}
+
+fn parse_query(q: &str) -> ParsedQuery {
+    let mut result = ParsedQuery::default();
+
+    // Simple tokenizer: split on whitespace, but respect quotes
+    let tokens = tokenize(q);
+
+    for token in tokens {
+        if let Some(tag) = token.strip_prefix("tag:") {
+            if !tag.is_empty() {
+                result.tags.push(tag.to_string());
+            }
+        } else if let Some(source) = token.strip_prefix("source:") {
+            if !source.is_empty() {
+                result.source = Some(source.to_string());
+            }
+        } else if token == "has:photos" || token == "has:photo" {
+            result.has_photos = Some(true);
+        } else if token == "no:photos" || token == "no:photo" {
+            result.has_photos = Some(false);
+        } else if let Some(date_expr) = token.strip_prefix("created:") {
+            parse_date_filter(date_expr, &mut result);
+        } else if !token.is_empty() {
+            // Plain text search term
+            result.text.push(token.to_string());
+        }
+    }
+
+    result
+}
+
+fn tokenize(input: &str) -> Vec<String> {
+    let mut tokens = Vec::new();
+    let mut current = String::new();
+    let mut in_quotes = false;
+
+    for c in input.chars() {
+        match c {
+            '"' => {
+                in_quotes = !in_quotes;
+            }
+            ' ' | '\t' if !in_quotes => {
+                if !current.is_empty() {
+                    tokens.push(current.clone());
+                    current.clear();
+                }
+            }
+            _ => {
+                current.push(c);
+            }
+        }
+    }
+
+    if !current.is_empty() {
+        tokens.push(current);
+    }
+
+    tokens
+}
+
+fn parse_date_filter(expr: &str, result: &mut ParsedQuery) {
+    // Handle range: 2024-01-01..2024-12-31
+    if let Some((start, end)) = expr.split_once("..") {
+        if let Ok(date) = NaiveDate::parse_from_str(start, "%Y-%m-%d") {
+            result.created_after = Some(date);
+        }
+        if let Ok(date) = NaiveDate::parse_from_str(end, "%Y-%m-%d") {
+            result.created_before = Some(date);
+        }
+        return;
+    }
+
+    // Handle >date (after)
+    if let Some(date_str) = expr.strip_prefix('>') {
+        if let Ok(date) = NaiveDate::parse_from_str(date_str, "%Y-%m-%d") {
+            result.created_after = Some(date);
+        }
+        return;
+    }
+
+    // Handle <date (before)
+    if let Some(date_str) = expr.strip_prefix('<') {
+        if let Ok(date) = NaiveDate::parse_from_str(date_str, "%Y-%m-%d") {
+            result.created_before = Some(date);
+        }
+        return;
+    }
+
+    // Handle exact date (treat as single day range)
+    if let Ok(date) = NaiveDate::parse_from_str(expr, "%Y-%m-%d") {
+        result.created_after = Some(date);
+        result.created_before = Some(date);
+    }
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -67,10 +185,10 @@ struct RecipeForList {
     get,
     path = "/api/recipes",
     tag = "recipes",
-    params(PaginationParams),
+    params(ListRecipesParams),
     responses(
         (status = 200, description = "List of user's recipes", body = ListRecipesResponse),
-        (status = 400, description = "Invalid pagination parameters", body = ErrorResponse),
+        (status = 400, description = "Invalid parameters", body = ErrorResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(
@@ -80,11 +198,30 @@ struct RecipeForList {
 pub async fn list_recipes(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
-    Query(params): Query<PaginationParams>,
+    Query(params): Query<ListRecipesParams>,
 ) -> impl IntoResponse {
     // Validate and set defaults for pagination
     let limit = params.limit.unwrap_or(20).clamp(1, 1000);
     let offset = params.offset.unwrap_or(0).max(0);
+
+    // Parse the query string
+    let parsed = params.q.as_deref().map(parse_query).unwrap_or_default();
+
+    // Pre-compute patterns so they live long enough for the boxed queries
+    let text_pattern = if !parsed.text.is_empty() {
+        let search_text = parsed.text.join(" ");
+        Some(format!(
+            "%{}%",
+            search_text.replace('%', "\\%").replace('_', "\\_")
+        ))
+    } else {
+        None
+    };
+
+    let source_pattern = parsed
+        .source
+        .as_ref()
+        .map(|s| format!("%{}%", s.replace('%', "\\%").replace('_', "\\_")));
 
     let mut conn = match pool.get() {
         Ok(c) => c,
@@ -99,13 +236,70 @@ pub async fn list_recipes(
         }
     };
 
-    // Get total count
-    let total: i64 = match recipes::table
+    // Build base query with filters
+    let mut count_query = recipes::table
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
-        .count()
-        .get_result(&mut conn)
-    {
+        .into_boxed();
+
+    let mut select_query = recipes::table
+        .filter(recipes::user_id.eq(user.id))
+        .filter(recipes::deleted_at.is_null())
+        .into_boxed();
+
+    // Apply text search (ILIKE on title OR description)
+    if let Some(ref pattern) = text_pattern {
+        count_query = count_query.filter(
+            recipes::title
+                .ilike(pattern)
+                .or(recipes::description.ilike(pattern)),
+        );
+        select_query = select_query.filter(
+            recipes::title
+                .ilike(pattern)
+                .or(recipes::description.ilike(pattern)),
+        );
+    }
+
+    // Apply tag filter (AND logic - must have ALL tags)
+    // citext column handles case-insensitivity at the database level
+    for tag in &parsed.tags {
+        count_query = count_query.filter(sql::<Bool>("").bind::<Text, _>(tag).sql(" = ANY(tags)"));
+        select_query =
+            select_query.filter(sql::<Bool>("").bind::<Text, _>(tag).sql(" = ANY(tags)"));
+    }
+
+    // Apply source filter (case-insensitive substring)
+    if let Some(ref pattern) = source_pattern {
+        count_query = count_query.filter(recipes::source_name.ilike(pattern));
+        select_query = select_query.filter(recipes::source_name.ilike(pattern));
+    }
+
+    // Apply has_photos filter
+    if let Some(has_photos) = parsed.has_photos {
+        if has_photos {
+            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
+            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
+        } else {
+            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
+            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
+        }
+    }
+
+    // Apply date range filters
+    if let Some(after) = parsed.created_after {
+        let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
+        count_query = count_query.filter(recipes::created_at.ge(after_datetime));
+        select_query = select_query.filter(recipes::created_at.ge(after_datetime));
+    }
+    if let Some(before) = parsed.created_before {
+        let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
+        count_query = count_query.filter(recipes::created_at.le(before_datetime));
+        select_query = select_query.filter(recipes::created_at.le(before_datetime));
+    }
+
+    // Get total count
+    let total: i64 = match count_query.count().get_result(&mut conn) {
         Ok(c) => c,
         Err(_) => {
             return (
@@ -119,9 +313,7 @@ pub async fn list_recipes(
     };
 
     // Get paginated results
-    let results: Vec<RecipeForList> = match recipes::table
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
+    let results: Vec<RecipeForList> = match select_query
         .select(RecipeForList::as_select())
         .order(recipes::updated_at.desc())
         .limit(limit)
@@ -169,4 +361,98 @@ pub async fn list_recipes(
         }),
     )
         .into_response()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_parse_empty_query() {
+        let parsed = parse_query("");
+        assert!(parsed.text.is_empty());
+        assert!(parsed.tags.is_empty());
+        assert!(parsed.source.is_none());
+        assert!(parsed.has_photos.is_none());
+    }
+
+    #[test]
+    fn test_parse_plain_text() {
+        let parsed = parse_query("chicken soup");
+        assert_eq!(parsed.text, vec!["chicken", "soup"]);
+    }
+
+    #[test]
+    fn test_parse_tags() {
+        let parsed = parse_query("tag:dinner tag:quick");
+        assert_eq!(parsed.tags, vec!["dinner", "quick"]);
+    }
+
+    #[test]
+    fn test_parse_mixed() {
+        let parsed = parse_query("chicken tag:dinner source:NYTimes has:photos");
+        assert_eq!(parsed.text, vec!["chicken"]);
+        assert_eq!(parsed.tags, vec!["dinner"]);
+        assert_eq!(parsed.source, Some("NYTimes".to_string()));
+        assert_eq!(parsed.has_photos, Some(true));
+    }
+
+    #[test]
+    fn test_parse_no_photos() {
+        let parsed = parse_query("no:photos");
+        assert_eq!(parsed.has_photos, Some(false));
+    }
+
+    #[test]
+    fn test_parse_date_after() {
+        let parsed = parse_query("created:>2024-01-15");
+        assert_eq!(
+            parsed.created_after,
+            Some(NaiveDate::from_ymd_opt(2024, 1, 15).unwrap())
+        );
+        assert!(parsed.created_before.is_none());
+    }
+
+    #[test]
+    fn test_parse_date_before() {
+        let parsed = parse_query("created:<2024-12-31");
+        assert!(parsed.created_after.is_none());
+        assert_eq!(
+            parsed.created_before,
+            Some(NaiveDate::from_ymd_opt(2024, 12, 31).unwrap())
+        );
+    }
+
+    #[test]
+    fn test_parse_date_range() {
+        let parsed = parse_query("created:2024-01-01..2024-06-30");
+        assert_eq!(
+            parsed.created_after,
+            Some(NaiveDate::from_ymd_opt(2024, 1, 1).unwrap())
+        );
+        assert_eq!(
+            parsed.created_before,
+            Some(NaiveDate::from_ymd_opt(2024, 6, 30).unwrap())
+        );
+    }
+
+    #[test]
+    fn test_parse_exact_date() {
+        let parsed = parse_query("created:2024-03-15");
+        assert_eq!(
+            parsed.created_after,
+            Some(NaiveDate::from_ymd_opt(2024, 3, 15).unwrap())
+        );
+        assert_eq!(
+            parsed.created_before,
+            Some(NaiveDate::from_ymd_opt(2024, 3, 15).unwrap())
+        );
+    }
+
+    #[test]
+    fn test_parse_quoted_text() {
+        let parsed = parse_query("\"green beans\" tag:side");
+        assert_eq!(parsed.text, vec!["green beans"]);
+        assert_eq!(parsed.tags, vec!["side"]);
+    }
 }

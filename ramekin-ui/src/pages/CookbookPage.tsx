@@ -1,5 +1,12 @@
-import { createSignal, Show, For, onMount, onCleanup } from "solid-js";
-import { A } from "@solidjs/router";
+import {
+  createSignal,
+  createEffect,
+  Show,
+  For,
+  onMount,
+  onCleanup,
+} from "solid-js";
+import { A, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { RecipeSummary } from "ramekin-client";
 
@@ -50,6 +57,7 @@ function formatRelativeDate(date: Date): string {
 
 export default function CookbookPage() {
   const { getRecipesApi, token } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
   const [loading, setLoading] = createSignal(false);
@@ -59,9 +67,22 @@ export default function CookbookPage() {
   const [total, setTotal] = createSignal(0);
   const [hasMore, setHasMore] = createSignal(true);
 
+  // Search input state (local, updates URL on submit/blur)
+  const getQueryParam = (param: string | string[] | undefined): string => {
+    if (Array.isArray(param)) return param[0] || "";
+    return param || "";
+  };
+
+  const [searchInput, setSearchInput] = createSignal(
+    getQueryParam(searchParams.q),
+  );
+
   const PAGE_SIZE = 20;
 
-  const loadRecipes = async (appendMode = false) => {
+  // Get current search query from URL
+  const searchQuery = () => getQueryParam(searchParams.q);
+
+  const loadRecipes = async (appendMode = false, currentOffset = 0) => {
     if (appendMode) {
       setLoadingMore(true);
     } else {
@@ -70,9 +91,11 @@ export default function CookbookPage() {
     setError(null);
 
     try {
+      const q = searchQuery();
       const response = await getRecipesApi().listRecipes({
         limit: PAGE_SIZE,
-        offset: offset(),
+        offset: currentOffset,
+        q: q || undefined,
       });
 
       if (appendMode) {
@@ -82,9 +105,9 @@ export default function CookbookPage() {
       }
 
       setTotal(response.pagination.total);
-      setOffset(offset() + response.recipes.length);
+      setOffset(currentOffset + response.recipes.length);
       setHasMore(
-        offset() + response.recipes.length < response.pagination.total,
+        currentOffset + response.recipes.length < response.pagination.total,
       );
     } catch (err) {
       setError("Failed to load recipes");
@@ -96,9 +119,29 @@ export default function CookbookPage() {
 
   const loadMore = () => {
     if (!loadingMore() && hasMore()) {
-      loadRecipes(true);
+      loadRecipes(true, offset());
     }
   };
+
+  // Handle search submission
+  const handleSearch = (e?: Event) => {
+    e?.preventDefault();
+    const q = searchInput().trim();
+    if (q !== searchQuery()) {
+      setSearchParams({ q: q || undefined });
+    }
+  };
+
+  // Reload when search query changes in URL
+  createEffect(() => {
+    const q = searchQuery();
+    // Sync input with URL
+    setSearchInput(q);
+    // Reset and reload
+    setOffset(0);
+    setRecipes([]);
+    loadRecipes(false, 0);
+  });
 
   // Scroll listener for infinite scroll
   const handleScroll = () => {
@@ -113,7 +156,6 @@ export default function CookbookPage() {
   };
 
   onMount(() => {
-    loadRecipes();
     window.addEventListener("scroll", handleScroll);
   });
 
@@ -132,16 +174,37 @@ export default function CookbookPage() {
     return `(${count} recipes)`;
   };
 
+  const clearSearch = () => {
+    setSearchInput("");
+    setSearchParams({ q: undefined });
+  };
+
   return (
     <div class="cookbook-page">
       <div class="page-header">
         <h2>
           My Cookbook{" "}
-          <Show when={!loading() && recipes().length > 0}>
+          <Show when={!loading() && total() > 0}>
             <span class="recipe-count">{recipeCount()}</span>
           </Show>
         </h2>
       </div>
+
+      <form class="search-bar" onSubmit={handleSearch}>
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search recipes... (tag:dinner source:NYT has:photos)"
+          value={searchInput()}
+          onInput={(e) => setSearchInput(e.currentTarget.value)}
+          onBlur={() => handleSearch()}
+        />
+        <Show when={searchInput()}>
+          <button type="button" class="search-clear" onClick={clearSearch}>
+            &times;
+          </button>
+        </Show>
+      </form>
 
       <Show when={loading()}>
         <p class="loading">Loading recipes...</p>
@@ -151,7 +214,7 @@ export default function CookbookPage() {
         <p class="error">{error()}</p>
       </Show>
 
-      <Show when={!loading() && recipes().length === 0}>
+      <Show when={!loading() && recipes().length === 0 && !searchQuery()}>
         <div class="empty-state">
           <div class="empty-state-icon">📖</div>
           <h3>Your cookbook is empty</h3>
@@ -159,6 +222,17 @@ export default function CookbookPage() {
           <A href="/recipes/new" class="btn btn-primary">
             + Add Your First Recipe
           </A>
+        </div>
+      </Show>
+
+      <Show when={!loading() && recipes().length === 0 && searchQuery()}>
+        <div class="empty-state">
+          <div class="empty-state-icon">🔍</div>
+          <h3>No recipes found</h3>
+          <p>Try a different search term or clear the search.</p>
+          <button class="btn btn-primary" onClick={clearSearch}>
+            Clear Search
+          </button>
         </div>
       </Show>
 

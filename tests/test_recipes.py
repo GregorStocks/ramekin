@@ -565,3 +565,343 @@ def test_list_recipes_pagination_ordering(authed_api_client):
     # Most recently created should be first (updated_at DESC)
     assert response.recipes[0].id == recipe_ids[4]
     assert response.recipes[4].id == recipe_ids[0]
+
+
+# Search query tests
+
+
+def test_search_by_title(authed_api_client):
+    """Test searching recipes by title."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes with different titles
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Chicken Parmesan",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Beef Stew",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Grilled Chicken Salad",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    # Search for chicken
+    response = recipes_api.list_recipes(q="chicken")
+    assert len(response.recipes) == 2
+    titles = {r.title for r in response.recipes}
+    assert "Chicken Parmesan" in titles
+    assert "Grilled Chicken Salad" in titles
+
+
+def test_search_by_description(authed_api_client):
+    """Test searching recipes by description."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Mystery Dish",
+            description="A delicious vegetarian meal",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Another Dish",
+            description="A meaty feast",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="vegetarian")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Mystery Dish"
+
+
+def test_search_case_insensitive(authed_api_client):
+    """Test that search is case-insensitive."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="UPPERCASE RECIPE",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="uppercase")
+    assert len(response.recipes) == 1
+
+    response = recipes_api.list_recipes(q="UPPERCASE")
+    assert len(response.recipes) == 1
+
+
+def test_filter_by_single_tag(authed_api_client):
+    """Test filtering by a single tag."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Quick Breakfast",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["breakfast", "quick"],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Slow Dinner",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["dinner", "slow"],
+        )
+    )
+
+    response = recipes_api.list_recipes(q="tag:breakfast")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Quick Breakfast"
+
+
+def test_filter_by_multiple_tags_and_logic(authed_api_client):
+    """Test filtering by multiple tags uses AND logic."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Quick Breakfast",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["breakfast", "quick"],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Slow Breakfast",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["breakfast", "slow"],
+        )
+    )
+
+    # Both tags must match
+    response = recipes_api.list_recipes(q="tag:breakfast tag:quick")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Quick Breakfast"
+
+
+def test_filter_by_tag_case_insensitive(authed_api_client):
+    """Test that tag filtering is case-insensitive."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Mixed Case Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["Breakfast", "QUICK", "Vegetarian"],
+        )
+    )
+
+    # Search with different cases should all match
+    response = recipes_api.list_recipes(q="tag:breakfast")
+    assert len(response.recipes) == 1
+
+    response = recipes_api.list_recipes(q="tag:BREAKFAST")
+    assert len(response.recipes) == 1
+
+    response = recipes_api.list_recipes(q="tag:quick")
+    assert len(response.recipes) == 1
+
+    response = recipes_api.list_recipes(q="tag:vegetarian")
+    assert len(response.recipes) == 1
+
+
+def test_filter_by_source(authed_api_client):
+    """Test filtering by source name."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="NYT Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            source_name="New York Times",
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Other Recipe",
+            instructions="Cook it",
+            ingredients=[],
+            source_name="AllRecipes",
+        )
+    )
+
+    response = recipes_api.list_recipes(q="source:York")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "NYT Recipe"
+
+
+def test_filter_has_photos(authed_api_client):
+    """Test filtering by presence of photos."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipe without photos
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="No Photos Recipe",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    # Note: We can't easily add photos in this test, so just test no:photos
+    response = recipes_api.list_recipes(q="no:photos")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "No Photos Recipe"
+
+    response = recipes_api.list_recipes(q="has:photos")
+    assert len(response.recipes) == 0
+
+
+def test_combined_search_and_filters(authed_api_client):
+    """Test combining text search with filters."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Chicken Dinner",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["dinner"],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Chicken Breakfast",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["breakfast"],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Beef Dinner",
+            instructions="Cook it",
+            ingredients=[],
+            tags=["dinner"],
+        )
+    )
+
+    # Search for chicken with dinner tag
+    response = recipes_api.list_recipes(q="chicken tag:dinner")
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Chicken Dinner"
+
+
+def test_quoted_search_phrase(authed_api_client):
+    """Test searching with quoted phrases."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Green Bean Casserole",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+    recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Green Salad with Beans",
+            instructions="Cook it",
+            ingredients=[],
+        )
+    )
+
+    # Search for exact phrase "green bean"
+    response = recipes_api.list_recipes(q='"green bean"')
+    assert len(response.recipes) == 1
+    assert response.recipes[0].title == "Green Bean Casserole"
+
+
+def test_search_with_pagination(authed_api_client):
+    """Test that search works with pagination."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 5 chicken recipes
+    for i in range(5):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Chicken Recipe {i}",
+                instructions="Cook it",
+                ingredients=[],
+            )
+        )
+
+    # Create 3 beef recipes
+    for i in range(3):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Beef Recipe {i}",
+                instructions="Cook it",
+                ingredients=[],
+            )
+        )
+
+    # Search for chicken with limit
+    response = recipes_api.list_recipes(q="chicken", limit=2)
+    assert len(response.recipes) == 2
+    assert response.pagination.total == 5
+
+    # Get next page
+    response = recipes_api.list_recipes(q="chicken", limit=2, offset=2)
+    assert len(response.recipes) == 2
+    assert response.pagination.total == 5
+
+
+def test_empty_search_returns_all(authed_api_client):
+    """Test that empty search returns all recipes."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    for i in range(3):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Recipe {i}",
+                instructions="Cook it",
+                ingredients=[],
+            )
+        )
+
+    # Empty q should return all
+    response = recipes_api.list_recipes(q="")
+    assert len(response.recipes) == 3
+
+    # No q should return all
+    response = recipes_api.list_recipes()
+    assert len(response.recipes) == 3
