@@ -35,7 +35,6 @@ services:
     volumes:
       - ./server:/app/server:z,cached
       - ./migrations:/app/migrations:z,cached
-      - ./server/target:/app/server/target:z,cached
     command: cargo run
     depends_on:
       postgres:
@@ -61,7 +60,6 @@ services:
     volumes:
       - ./tests:/app/tests:z,cached
       - ./cli:/app/cli:z,cached
-      - ./cli/target:/app/cli/target:z,cached
     depends_on:
       server:
         condition: service_healthy

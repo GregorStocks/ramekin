@@ -53,6 +53,7 @@ clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@rm -rf server/target/ cli/target/
 	@rm -rf ramekin-ui/node_modules/
 	@rm -rf tests/__pycache__/ scripts/__pycache__/
+	@rm -rf .cache/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
@@ -64,8 +65,8 @@ test: generate-clients test-up ## Run tests (reuses running containers if availa
 
 test-up: ## Start test environment
 	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
-		echo "Test environment not running, starting..."; \
-		@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
+	  echo "Test environment not running, starting..."; \
+	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; \
 	fi
 
 test-down: ## Stop test environment

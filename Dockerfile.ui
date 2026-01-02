@@ -5,7 +5,9 @@ COPY ramekin-ui/package.json ramekin-ui/package-lock.json /deps/
 RUN cd /deps && npm install
 
 # Set NODE_PATH so node can find modules in /deps/node_modules
+# Add /deps/node_modules/.bin to PATH so npm scripts can find binaries like vite
 ENV NODE_PATH=/deps/node_modules
+ENV PATH="/deps/node_modules/.bin:$PATH"
 
 WORKDIR /app
 
