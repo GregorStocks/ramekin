@@ -35,7 +35,7 @@ services:
     volumes:
       - ./server:/app/server:z,cached
       - ./migrations:/app/migrations:z,cached
-    command: cargo run
+    command: cargo watch -x run
     depends_on:
       postgres:
         condition: service_healthy
