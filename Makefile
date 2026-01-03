@@ -4,6 +4,9 @@
 DEV_PROJECT := ramekin
 TEST_PROJECT := ramekin-test
 
+# Timestamp wrapper for log output
+TS := ./scripts/ts
+
 # Export UID/GID for docker-compose to run containers as current user (Linux compatibility)
 export UID := $(shell id -u)
 export GID := $(shell id -g)
@@ -15,8 +18,7 @@ help: ## Show this help message
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 dev: generate-clients ## Start dev environment (with hot-reload)
-	@BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
-	@echo "Dev environment ready"
+	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Dev environment ready"; } | $(TS)
 	@$(MAKE) seed
 
 up: dev ## Alias for dev
@@ -25,8 +27,7 @@ down: ## Stop all services
 	@docker compose -p $(DEV_PROJECT) down 2>/dev/null
 
 restart: generate-clients ## Force restart services
-	@BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true
-	@echo "Services restarted"
+	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Services restarted"; } | $(TS)
 
 logs: ## Show all logs
 	docker compose -p $(DEV_PROJECT) logs -f
@@ -38,14 +39,14 @@ logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
 generate-clients: ## Generate OpenAPI spec and regenerate all API clients
-	@./scripts/generate-openapi.py
+	@./scripts/generate-openapi.py 2>&1 | $(TS)
 
 generate-clients-force: ## Force regeneration of API clients (bypass cache)
 	@rm -f .cache/openapi-hash
 	@$(MAKE) generate-clients
 
 lint: ## Run all linters (Rust, TypeScript, Python)
-	@./scripts/lint.py
+	@./scripts/lint.py 2>&1 | $(TS)
 
 clean: test-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
@@ -57,7 +58,7 @@ clean: test-clean ## Stop services, clean volumes, and remove generated clients
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
-	@echo "Schema generated at server/src/schema.rs"
+	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
 test: generate-clients test-up ## Run tests (reuses running containers if available)
@@ -65,8 +66,8 @@ test: generate-clients test-up ## Run tests (reuses running containers if availa
 
 test-up: ## Start test environment
 	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
-	  echo "Test environment not running, starting..."; \
-	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; \
+	  { echo "Test environment not running, starting..."; \
+	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; } | $(TS); \
 	fi
 
 test-down: ## Stop test environment

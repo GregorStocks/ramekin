@@ -149,9 +149,10 @@ def main() -> None:
     # Update cached hash
     hash_file.write_text(current_hash)
 
-    # Run linters
+    # Run linters (call directly to avoid double-timestamping via make)
     print("Running linters...")
-    subprocess.run(["make", "lint"], cwd=project_root, check=True, timeout=300)
+    lint_script = project_root / "scripts/lint.py"
+    subprocess.run([str(lint_script)], check=True, timeout=300)
 
 
 if __name__ == "__main__":
