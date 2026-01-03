@@ -4,7 +4,9 @@ from ramekin_client.api import RecipesApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
+    Direction,
     Ingredient,
+    OrderBy,
     UpdateRecipeRequest,
 )
 
@@ -1014,3 +1016,69 @@ def test_list_tags_only_from_own_recipes(authed_api_client, second_authed_api_cl
     assert "user2-tag" in response2.tags
     assert "shared-tag" in response2.tags
     assert "user1-tag" not in response2.tags
+
+
+def test_list_recipes_random_order(authed_api_client):
+    """Test that order=random returns recipes in random order."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create 10 recipes
+    for i in range(10):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Recipe {i:02d}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # Get recipes with random order multiple times
+    # and check that we get valid results (just verifying it works, not randomness)
+    response = recipes_api.list_recipes(order="random", limit=1)
+    assert len(response.recipes) == 1
+    assert response.pagination.total == 10
+
+    # Get another random recipe
+    response2 = recipes_api.list_recipes(order="random", limit=1)
+    assert len(response2.recipes) == 1
+    assert response2.pagination.total == 10
+
+
+def test_list_recipes_direction_asc_vs_desc(authed_api_client):
+    """Test that dir=asc and dir=desc return opposite orders."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipes
+    for i in range(5):
+        recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title=f"Recipe {i}",
+                instructions="Test instructions",
+                ingredients=[],
+            )
+        )
+
+    # Get recipes in ascending and descending order (explicitly set order=updated_at)
+    asc_response = recipes_api.list_recipes(
+        order=OrderBy.UPDATED_AT, dir=Direction.ASC, limit=10
+    )
+    desc_response = recipes_api.list_recipes(
+        order=OrderBy.UPDATED_AT, dir=Direction.DESC, limit=10
+    )
+
+    # Both should return all recipes
+    assert len(asc_response.recipes) == 5
+    assert len(desc_response.recipes) == 5
+
+    # Check that timestamps are actually different and in order
+    asc_times = [r.updated_at for r in asc_response.recipes]
+    desc_times = [r.updated_at for r in desc_response.recipes]
+
+    # ASC should have oldest first (times increasing)
+    assert asc_times == sorted(asc_times), f"ASC not sorted: {asc_times}"
+    # DESC should have newest first (times decreasing)
+    assert desc_times == sorted(desc_times, reverse=True), (
+        f"DESC not sorted: {desc_times}"
+    )

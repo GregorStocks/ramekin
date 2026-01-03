@@ -6,7 +6,7 @@ import {
   onMount,
   onCleanup,
 } from "solid-js";
-import { A, useSearchParams } from "@solidjs/router";
+import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { RecipeSummary } from "ramekin-client";
 
@@ -186,6 +186,7 @@ function formatRelativeDate(date: Date): string {
 
 export default function CookbookPage() {
   const { getRecipesApi, token } = useAuth();
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [recipes, setRecipes] = createSignal<RecipeSummary[]>([]);
@@ -387,6 +388,23 @@ export default function CookbookPage() {
     }
   };
 
+  // Navigate to a random recipe from current filter
+  const goToRandomRecipe = async () => {
+    try {
+      const q = searchQuery();
+      const response = await getRecipesApi().listRecipes({
+        q: q || undefined,
+        limit: 1,
+        order: "random",
+      });
+      if (response.recipes.length > 0) {
+        navigate(`/recipes/${response.recipes[0].id}`);
+      }
+    } catch {
+      // Ignore errors
+    }
+  };
+
   return (
     <div class="cookbook-page">
       <div class="page-header">
@@ -424,6 +442,14 @@ export default function CookbookPage() {
           <Show when={activeFilterCount() > 0}>
             <span class="filter-badge">{activeFilterCount()}</span>
           </Show>
+        </button>
+        <button
+          type="button"
+          class="filter-button"
+          onClick={goToRandomRecipe}
+          disabled={total() === 0}
+        >
+          Random
         </button>
       </div>
 

@@ -316,6 +316,24 @@
                 "null"
               ]
             }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Sort order (default: updated_at)",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/OrderBy"
+            }
+          },
+          {
+            "name": "dir",
+            "in": "query",
+            "description": "Sort direction (default: desc). Ignored when order=random.",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Direction"
+            }
           }
         ],
         "responses": {
@@ -747,6 +765,14 @@
           }
         }
       },
+      "Direction": {
+        "type": "string",
+        "description": "Sort direction",
+        "enum": [
+          "desc",
+          "asc"
+        ]
+      },
       "ErrorResponse": {
         "type": "object",
         "description": "Shared error response used by all endpoints",
@@ -831,6 +857,14 @@
             "type": "string"
           }
         }
+      },
+      "OrderBy": {
+        "type": "string",
+        "description": "Sort order for recipe list",
+        "enum": [
+          "updated_at",
+          "random"
+        ]
       },
       "PaginationMetadata": {
         "type": "object",
