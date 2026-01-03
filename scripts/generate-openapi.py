@@ -76,29 +76,41 @@ def generate_openapi_spec(openapi_spec: Path) -> None:
         temp_log_path = temp_log.name
 
     try:
-        # Run docker to build server and generate spec
-        result = subprocess.run(
-            [
-                "docker",
-                "run",
-                "--rm",
-                "-u",
-                f"{os.getuid()}:{os.getgid()}",
-                "-v",
-                f"{project_root}:/app:z",
-                "-v",
-                f"{server_target}:/app/server/target:z",
-                "-w",
-                "/app/server",
-                "rust:latest",
-                "sh",
-                "-c",
-                "cargo build --release -q && target/release/ramekin-server --openapi",
-            ],
-            stdout=subprocess.PIPE,
-            stderr=open(temp_log_path, "w"),
-            check=False,
-        )
+        # Run docker to build server and generate spec (5 minute timeout)
+        try:
+            result = subprocess.run(
+                [
+                    "docker",
+                    "run",
+                    "--rm",
+                    "-u",
+                    f"{os.getuid()}:{os.getgid()}",
+                    "-v",
+                    f"{project_root}:/app:z",
+                    "-v",
+                    f"{server_target}:/app/server/target:z",
+                    "-w",
+                    "/app/server",
+                    "rust:latest",
+                    "sh",
+                    "-c",
+                    "cargo build --release -q && "
+                    "target/release/ramekin-server --openapi",
+                ],
+                stdout=subprocess.PIPE,
+                stderr=open(temp_log_path, "w"),
+                check=False,
+                timeout=300,
+            )
+        except subprocess.TimeoutExpired:
+            print(
+                "Error: OpenAPI generation timed out after 5 minutes", file=sys.stderr
+            )
+            print(
+                "The Docker container may still be running. Check with: docker ps",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
         if result.returncode != 0:
             print("Error: Failed to generate OpenAPI spec", file=sys.stderr)
