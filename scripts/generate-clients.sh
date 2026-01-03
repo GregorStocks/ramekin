@@ -64,7 +64,7 @@ EOF
 
     # Compile TypeScript client to JS + .d.ts
     echo "Compiling TypeScript client..."
-    (cd "$PROJECT_ROOT/ramekin-ui" && npx -p typescript tsc -p tsconfig.generated-client.json)
+    (cd "$PROJECT_ROOT/ramekin-ui" && npx --yes -p typescript tsc -p tsconfig.generated-client.json)
 
     # Generate Python client (for tests)
     generate_client "python" "tests/generated" "packageName=ramekin_client,generateSourceCodeOnly=true"
