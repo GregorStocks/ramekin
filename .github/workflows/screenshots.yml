@@ -1,0 +1,43 @@
+name: Screenshots
+
+on:
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  screenshot:
+    name: Take Screenshots
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Take screenshots
+        run: make screenshot
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: cli/logs/*.png
+          if-no-files-found: error
+
+      - name: Add screenshots to workflow summary
+        run: |
+          echo "## 📸 Screenshots" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          for img in cli/logs/*.png; do
+            name=$(basename "$img" .png)
+            echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Download the screenshots from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
