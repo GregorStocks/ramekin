@@ -11,7 +11,7 @@ use axum::{
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{Bool, Text};
+use diesel::sql_types::{BigInt, Bool, Text};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -197,8 +197,7 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
-#[derive(Queryable, Selectable)]
-#[diesel(table_name = recipes)]
+#[derive(Queryable)]
 struct RecipeForList {
     id: Uuid,
     title: String,
@@ -207,6 +206,8 @@ struct RecipeForList {
     photo_ids: Vec<Option<Uuid>>,
     created_at: DateTime<Utc>,
     updated_at: DateTime<Utc>,
+    /// Total count of all matching rows (from window function)
+    total_count: i64,
 }
 
 #[utoipa::path(
@@ -265,24 +266,14 @@ pub async fn list_recipes(
     };
 
     // Build base query with filters
-    let mut count_query = recipes::table
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .into_boxed();
-
-    let mut select_query = recipes::table
+    let mut query = recipes::table
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
         .into_boxed();
 
     // Apply text search (ILIKE on title OR description)
     if let Some(ref pattern) = text_pattern {
-        count_query = count_query.filter(
-            recipes::title
-                .ilike(pattern)
-                .or(recipes::description.ilike(pattern)),
-        );
-        select_query = select_query.filter(
+        query = query.filter(
             recipes::title
                 .ilike(pattern)
                 .or(recipes::description.ilike(pattern)),
@@ -292,12 +283,7 @@ pub async fn list_recipes(
     // Apply tag filter (AND logic - must have ALL tags)
     // Cast search term to citext for case-insensitive comparison with citext[] column
     for tag in &parsed.tags {
-        count_query = count_query.filter(
-            sql::<Bool>("")
-                .bind::<Text, _>(tag)
-                .sql("::citext = ANY(tags)"),
-        );
-        select_query = select_query.filter(
+        query = query.filter(
             sql::<Bool>("")
                 .bind::<Text, _>(tag)
                 .sql("::citext = ANY(tags)"),
@@ -306,57 +292,48 @@ pub async fn list_recipes(
 
     // Apply source filter (case-insensitive substring)
     if let Some(ref pattern) = source_pattern {
-        count_query = count_query.filter(recipes::source_name.ilike(pattern));
-        select_query = select_query.filter(recipes::source_name.ilike(pattern));
+        query = query.filter(recipes::source_name.ilike(pattern));
     }
 
     // Apply has_photos filter
     if let Some(has_photos) = parsed.has_photos {
         if has_photos {
-            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
-            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
+            query = query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
         } else {
-            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
-            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
+            query = query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
         }
     }
 
     // Apply date range filters
     if let Some(after) = parsed.created_after {
         let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.ge(after_datetime));
-        select_query = select_query.filter(recipes::created_at.ge(after_datetime));
+        query = query.filter(recipes::created_at.ge(after_datetime));
     }
     if let Some(before) = parsed.created_before {
         let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.le(before_datetime));
-        select_query = select_query.filter(recipes::created_at.le(before_datetime));
+        query = query.filter(recipes::created_at.le(before_datetime));
     }
 
-    // Get total count
-    let total: i64 = match count_query.count().get_result(&mut conn) {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to count recipes".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
     // Apply ordering
-    let select_query = match (params.sort_by, params.sort_dir) {
-        (SortBy::Random, _) => select_query.order(sql::<Text>("RANDOM()")),
-        (SortBy::UpdatedAt, Direction::Desc) => select_query.order(recipes::updated_at.desc()),
-        (SortBy::UpdatedAt, Direction::Asc) => select_query.order(recipes::updated_at.asc()),
+    let query = match (params.sort_by, params.sort_dir) {
+        (SortBy::Random, _) => query.order(sql::<Text>("RANDOM()")),
+        (SortBy::UpdatedAt, Direction::Desc) => query.order(recipes::updated_at.desc()),
+        (SortBy::UpdatedAt, Direction::Asc) => query.order(recipes::updated_at.asc()),
     };
 
-    // Get paginated results
-    let results: Vec<RecipeForList> = match select_query
-        .select(RecipeForList::as_select())
+    // Get paginated results with total count using window function
+    // COUNT(*) OVER() computes the total count across all matching rows
+    let results: Vec<RecipeForList> = match query
+        .select((
+            recipes::id,
+            recipes::title,
+            recipes::description,
+            recipes::tags,
+            recipes::photo_ids,
+            recipes::created_at,
+            recipes::updated_at,
+            sql::<BigInt>("COUNT(*) OVER()"),
+        ))
         .limit(limit)
         .offset(offset)
         .load(&mut conn)
@@ -372,6 +349,9 @@ pub async fn list_recipes(
                 .into_response()
         }
     };
+
+    // Extract total from first result, or 0 if no results
+    let total = results.first().map(|r| r.total_count).unwrap_or(0);
 
     let recipes = results
         .into_iter()
