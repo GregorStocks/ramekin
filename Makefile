@@ -1,5 +1,9 @@
 .PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot install-hooks
 
+# Use bash with pipefail so piped commands propagate exit codes
+SHELL := /bin/bash
+.SHELLFLAGS := -o pipefail -c
+
 # Project names to keep dev and test environments isolated
 DEV_PROJECT := ramekin
 TEST_PROJECT := ramekin-test
