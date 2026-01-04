@@ -395,7 +395,7 @@ export default function CookbookPage() {
       const response = await getRecipesApi().listRecipes({
         q: q || undefined,
         limit: 1,
-        order: "random",
+        sortBy: "random",
       });
       if (response.recipes.length > 0) {
         navigate(`/recipes/${response.recipes[0].id}`);

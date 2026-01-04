@@ -6,7 +6,7 @@ from ramekin_client.models import (
     CreateRecipeRequest,
     Direction,
     Ingredient,
-    OrderBy,
+    SortBy,
     UpdateRecipeRequest,
 )
 
@@ -1035,12 +1035,12 @@ def test_list_recipes_random_order(authed_api_client):
 
     # Get recipes with random order multiple times
     # and check that we get valid results (just verifying it works, not randomness)
-    response = recipes_api.list_recipes(order="random", limit=1)
+    response = recipes_api.list_recipes(sort_by="random", limit=1)
     assert len(response.recipes) == 1
     assert response.pagination.total == 10
 
     # Get another random recipe
-    response2 = recipes_api.list_recipes(order="random", limit=1)
+    response2 = recipes_api.list_recipes(sort_by="random", limit=1)
     assert len(response2.recipes) == 1
     assert response2.pagination.total == 10
 
@@ -1060,12 +1060,12 @@ def test_list_recipes_direction_asc_vs_desc(authed_api_client):
             )
         )
 
-    # Get recipes in ascending and descending order (explicitly set order=updated_at)
+    # Get recipes in ascending and descending order (explicitly set sort_by=updated_at)
     asc_response = recipes_api.list_recipes(
-        order=OrderBy.UPDATED_AT, dir=Direction.ASC, limit=10
+        sort_by=SortBy.UPDATED_AT, sort_dir=Direction.ASC, limit=10
     )
     desc_response = recipes_api.list_recipes(
-        order=OrderBy.UPDATED_AT, dir=Direction.DESC, limit=10
+        sort_by=SortBy.UPDATED_AT, sort_dir=Direction.DESC, limit=10
     )
 
     # Both should return all recipes

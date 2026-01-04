@@ -17,10 +17,10 @@ use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
 
-/// Sort order for recipe list
+/// Sort field for recipe list
 #[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
-pub enum OrderBy {
+pub enum SortBy {
     /// Sort by update time
     #[default]
     UpdatedAt,
@@ -56,12 +56,12 @@ pub struct ListRecipesParams {
     ///
     /// Example: "chicken tag:dinner tag:quick has:photos"
     pub q: Option<String>,
-    /// Sort order (default: updated_at)
+    /// Sort field (default: updated_at)
     #[serde(default)]
-    pub order: OrderBy,
-    /// Sort direction (default: desc). Ignored when order=random.
+    pub sort_by: SortBy,
+    /// Sort direction (default: desc). Ignored when sort_by=random.
     #[serde(default)]
-    pub dir: Direction,
+    pub sort_dir: Direction,
 }
 
 /// Parsed search query components
@@ -348,10 +348,10 @@ pub async fn list_recipes(
     };
 
     // Apply ordering
-    let select_query = match (params.order, params.dir) {
-        (OrderBy::Random, _) => select_query.order(sql::<Text>("RANDOM()")),
-        (OrderBy::UpdatedAt, Direction::Desc) => select_query.order(recipes::updated_at.desc()),
-        (OrderBy::UpdatedAt, Direction::Asc) => select_query.order(recipes::updated_at.asc()),
+    let select_query = match (params.sort_by, params.sort_dir) {
+        (SortBy::Random, _) => select_query.order(sql::<Text>("RANDOM()")),
+        (SortBy::UpdatedAt, Direction::Desc) => select_query.order(recipes::updated_at.desc()),
+        (SortBy::UpdatedAt, Direction::Asc) => select_query.order(recipes::updated_at.asc()),
     };
 
     // Get paginated results

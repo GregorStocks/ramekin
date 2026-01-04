@@ -318,18 +318,18 @@
             }
           },
           {
-            "name": "order",
+            "name": "sort_by",
             "in": "query",
-            "description": "Sort order (default: updated_at)",
+            "description": "Sort field (default: updated_at)",
             "required": false,
             "schema": {
-              "$ref": "#/components/schemas/OrderBy"
+              "$ref": "#/components/schemas/SortBy"
             }
           },
           {
-            "name": "dir",
+            "name": "sort_dir",
             "in": "query",
-            "description": "Sort direction (default: desc). Ignored when order=random.",
+            "description": "Sort direction (default: desc). Ignored when sort_by=random.",
             "required": false,
             "schema": {
               "$ref": "#/components/schemas/Direction"
@@ -858,14 +858,6 @@
           }
         }
       },
-      "OrderBy": {
-        "type": "string",
-        "description": "Sort order for recipe list",
-        "enum": [
-          "updated_at",
-          "random"
-        ]
-      },
       "PaginationMetadata": {
         "type": "object",
         "required": [
@@ -1049,6 +1041,14 @@
             "format": "uuid"
           }
         }
+      },
+      "SortBy": {
+        "type": "string",
+        "description": "Sort field for recipe list",
+        "enum": [
+          "updated_at",
+          "random"
+        ]
       },
       "TagsResponse": {
         "type": "object",

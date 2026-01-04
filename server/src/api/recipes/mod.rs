@@ -38,7 +38,7 @@ pub fn router() -> Router<AppState> {
         create::CreateRecipeResponse,
         list::ListRecipesResponse,
         list::RecipeSummary,
-        list::OrderBy,
+        list::SortBy,
         list::Direction,
         get::RecipeResponse,
         update::UpdateRecipeRequest,
