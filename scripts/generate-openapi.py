@@ -5,16 +5,14 @@ Generate OpenAPI spec with smart caching.
 This script:
 - Calculates a hash of API source files
 - Skips generation if API hasn't changed (smart caching)
-- Generates OpenAPI spec by building the server in Docker
+- Generates OpenAPI spec by building the server locally
 - Regenerates all API clients (Rust, TypeScript, Python)
 - Runs linters on success
 """
 
 import hashlib
-import os
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 
@@ -68,51 +66,41 @@ def generate_openapi_spec(openapi_spec: Path) -> None:
     print("Building server and generating OpenAPI spec...")
 
     project_root = get_project_root()
-    server_target = project_root / "server/target"
-    server_target.mkdir(parents=True, exist_ok=True)
+    server_dir = project_root / "server"
 
-    # Create temp file for error logs
-    with tempfile.NamedTemporaryFile(mode="w+", delete=False) as temp_log:
-        temp_log_path = temp_log.name
+    # Build the server
+    build_result = subprocess.run(
+        ["cargo", "build", "--release", "-q"],
+        cwd=server_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=300,
+    )
 
-    try:
-        # Run docker to build server and generate spec
-        result = subprocess.run(
-            [
-                "docker",
-                "run",
-                "--rm",
-                "-u",
-                f"{os.getuid()}:{os.getgid()}",
-                "-v",
-                f"{project_root}:/app:z",
-                "-v",
-                f"{server_target}:/app/server/target:z",
-                "-w",
-                "/app/server",
-                "rust:latest",
-                "sh",
-                "-c",
-                "cargo build --release -q && target/release/ramekin-server --openapi",
-            ],
-            stdout=subprocess.PIPE,
-            stderr=open(temp_log_path, "w"),
-            check=False,
-            timeout=300,
-        )
+    if build_result.returncode != 0:
+        print("Error: Failed to build server", file=sys.stderr)
+        print(build_result.stderr, file=sys.stderr)
+        sys.exit(1)
 
-        if result.returncode != 0:
-            print("Error: Failed to generate OpenAPI spec", file=sys.stderr)
-            with open(temp_log_path) as f:
-                print(f.read(), file=sys.stderr)
-            sys.exit(1)
+    # Generate OpenAPI spec
+    result = subprocess.run(
+        ["./target/release/ramekin-server", "--openapi"],
+        cwd=server_dir,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        timeout=60,
+    )
 
-        # Write spec to file
-        openapi_spec.write_bytes(result.stdout)
-        print(f"Generated {openapi_spec}")
+    if result.returncode != 0:
+        print("Error: Failed to generate OpenAPI spec", file=sys.stderr)
+        print(result.stderr.decode(), file=sys.stderr)
+        sys.exit(1)
 
-    finally:
-        Path(temp_log_path).unlink(missing_ok=True)
+    # Write spec to file
+    openapi_spec.write_bytes(result.stdout)
+    print(f"Generated {openapi_spec}")
 
 
 def main() -> None:

@@ -13,7 +13,7 @@ from ramekin_client.models import SignupRequest
 
 @pytest.fixture
 def api_config():
-    return Configuration(host=os.environ.get("API_BASE_URL", "http://server:3000"))
+    return Configuration(host=os.environ.get("API_BASE_URL", "http://localhost:3000"))
 
 
 @pytest.fixture

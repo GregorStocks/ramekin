@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot install-hooks
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-docker test-docker-up test-docker-down test-docker-clean test-docker-logs test-docker-rebuild seed load-test screenshot install-hooks
 
 # Project names to keep dev and test environments isolated
 DEV_PROJECT := ramekin
@@ -51,7 +51,7 @@ generate-clients-force: ## Force regeneration of API clients (bypass cache)
 lint: ## Run all linters (Rust, TypeScript, Python)
 	@./scripts/lint.py 2>&1 | $(TS)
 
-clean: test-clean ## Stop services, clean volumes, and remove generated clients
+clean: test-docker-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@rm -rf server/target/ cli/target/
@@ -64,25 +64,28 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
-test: generate-clients test-up ## Run tests (reuses running containers if available)
+test: generate-clients ## Run tests locally (without Docker)
+	@./scripts/run-tests.py 2>&1 | $(TS)
+
+test-docker: generate-clients test-docker-up ## Run tests in Docker (legacy)
 	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
 
-test-up: ## Start test environment
+test-docker-up: ## Start Docker test environment
 	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
 	  { echo "Test environment not running, starting..."; \
 	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; } | $(TS); \
 	fi
 
-test-down: ## Stop test environment
+test-docker-down: ## Stop Docker test environment
 	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null
 
-test-clean: ## Stop test environment and clean volumes
+test-docker-clean: ## Stop Docker test environment and clean volumes
 	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down -v 2>/dev/null
 
-test-logs: ## Show test environment logs
+test-docker-logs: ## Show Docker test environment logs
 	docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml logs -f
 
-test-rebuild: test-clean test-up ## Force rebuild test environment from scratch
+test-docker-rebuild: test-docker-clean test-docker-up ## Force rebuild Docker test environment from scratch
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes

@@ -73,6 +73,7 @@ services:
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       API_BASE_URL: http://server:3000
+      FIXTURE_BASE_URL: http://fixture-server:8888
     volumes:
       - ./tests:/app/tests:z,cached
       - ./cli:/app/cli:z,cached
