@@ -1,4 +1,4 @@
-Read through the makefile first. Strongly prefer to do things via existing makefile commands rather than by manually running docker, cargo, etc. If there isn't a makefile command for the thing that you want to do, consider making one.
+Read through the makefile first. Always do things via existing makefile commands. Never manually run docker or cargo. If there isn't a makefile command for the thing that you want to do, ask if you should make one.
 
 The only dependencies to bring up the server should be docker and make. But we can also use uv and npx in the linter. Never use system Python or NPM because those are presumably always broken.
 
@@ -10,8 +10,12 @@ When adding new dependencies, make sure you're getting the latest version - you 
 
 When adding new API endpoints, remember to add end-to-end tests before you start using them in the UI.
 
-Don't run git checkout unless you're confident you know what's happened since the last commit.
+Never run git commands.
 
 Never modify generated code (except for temporary testing), since your changes will get blown away.
 
 Never bypass the linter with #noqa or equivalent. Never put a Python import anywhere other than the top of the file.
+
+We do not need backwards compatibility. This does not exist in production. Do not keep unneeded code around for "backwards compatibility".
+
+If a test is failing, you aren't done. There is no such thing as an unrelated test failure. Your extremely strong prior should be that you broke the test. Even if you didn't, you should fix it.
