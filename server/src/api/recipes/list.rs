@@ -312,7 +312,11 @@ pub async fn list_recipes(
 
     // Apply photo presence filter
     if let Some(has_photos) = parsed.has_photos {
-        let expr = if has_photos { "cardinality(photo_ids) > 0" } else { "cardinality(photo_ids) = 0" };
+        let expr = if has_photos {
+            "cardinality(photo_ids) > 0"
+        } else {
+            "cardinality(photo_ids) = 0"
+        };
         count_query = count_query.filter(sql::<Bool>(expr));
         select_query = select_query.filter(sql::<Bool>(expr));
     }
