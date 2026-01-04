@@ -1,6 +1,7 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
+use serde_json::Value as JsonValue;
 use uuid::Uuid;
 
 #[derive(Queryable, Selectable, Debug)]
@@ -107,4 +108,50 @@ pub struct NewRecipe<'a> {
     pub source_name: Option<&'a str>,
     pub photo_ids: &'a [Option<Uuid>],
     pub tags: &'a [Option<String>],
+}
+
+// URL Cache for scraped content
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::url_cache)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct UrlCache {
+    pub url: String,
+    pub content: Vec<u8>,
+    pub content_type: Option<String>,
+    pub fetched_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::url_cache)]
+pub struct NewUrlCache<'a> {
+    pub url: &'a str,
+    pub content: &'a [u8],
+    pub content_type: Option<&'a str>,
+}
+
+// Scrape job for async URL scraping
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::scrape_jobs)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct ScrapeJob {
+    pub id: Uuid,
+    pub user_id: Uuid,
+    pub url: String,
+    pub status: String,
+    pub failed_at_step: Option<String>,
+    pub parsed_data: Option<JsonValue>,
+    pub recipe_id: Option<Uuid>,
+    pub error_message: Option<String>,
+    pub retry_count: i32,
+    pub created_at: DateTime<Utc>,
+    pub updated_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::scrape_jobs)]
+pub struct NewScrapeJob<'a> {
+    pub user_id: Uuid,
+    pub url: &'a str,
 }

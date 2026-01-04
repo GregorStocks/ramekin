@@ -42,6 +42,9 @@ generate-clients: ## Generate OpenAPI spec and regenerate all API clients
 	@./scripts/generate-openapi.py 2>&1 | $(TS)
 
 generate-clients-force: ## Force regeneration of API clients (bypass cache)
+	@# NOTE: You should never need to run this. If clients aren't regenerating,
+	@# it means the OpenAPI spec hasn't changed. Check that the server is
+	@# running with your latest code changes.
 	@rm -f .cache/openapi-hash
 	@$(MAKE) generate-clients
 

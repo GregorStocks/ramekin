@@ -14,6 +14,19 @@ services:
       timeout: 2s
       retries: 30
 
+  fixture-server:
+    image: python:3.12-slim
+    container_name: ramekin-test-fixtures
+    working_dir: /fixtures
+    volumes:
+      - ./tests/scrape_fixtures:/fixtures:ro
+    command: python -m http.server 8888
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8888/')"]
+      interval: 1s
+      timeout: 2s
+      retries: 10
+
   server:
     build:
       context: .
@@ -30,6 +43,7 @@ services:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
       RUST_LOG: debug
       INSECURE_PASSWORD_HASHING: "1"
+      SCRAPE_ALLOWED_HOSTS: fixture-server:8888
     ports:
       - "13000:3000"
     volumes:
@@ -38,6 +52,8 @@ services:
     command: cargo watch -x run
     depends_on:
       postgres:
+        condition: service_healthy
+      fixture-server:
         condition: service_healthy
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/test/unauthed-ping"]

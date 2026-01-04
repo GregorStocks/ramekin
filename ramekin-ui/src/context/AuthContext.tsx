@@ -5,7 +5,12 @@ import {
   useContext,
 } from "solid-js";
 import type { ParentComponent } from "solid-js";
-import { Configuration, RecipesApi, PhotosApi } from "ramekin-client";
+import {
+  Configuration,
+  RecipesApi,
+  PhotosApi,
+  ScrapeApi,
+} from "ramekin-client";
 
 interface AuthContextValue {
   token: () => string | null;
@@ -13,6 +18,7 @@ interface AuthContextValue {
   isAuthenticated: () => boolean;
   getRecipesApi: () => RecipesApi;
   getPhotosApi: () => PhotosApi;
+  getScrapeApi: () => ScrapeApi;
 }
 
 const AuthContext = createContext<AuthContextValue>();
@@ -43,6 +49,7 @@ export const AuthProvider: ParentComponent = (props) => {
 
   const getRecipesApi = () => new RecipesApi(getAuthedConfig());
   const getPhotosApi = () => new PhotosApi(getAuthedConfig());
+  const getScrapeApi = () => new ScrapeApi(getAuthedConfig());
 
   const value: AuthContextValue = {
     token,
@@ -50,6 +57,7 @@ export const AuthProvider: ParentComponent = (props) => {
     isAuthenticated: () => !!token(),
     getRecipesApi,
     getPhotosApi,
+    getScrapeApi,
   };
 
   return (

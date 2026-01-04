@@ -3,6 +3,7 @@ mod auth;
 mod db;
 mod models;
 mod schema;
+mod scraping;
 
 use axum::extract::MatchedPath;
 use axum::http::Request;
@@ -145,6 +146,7 @@ async fn main() {
         .nest("/api/test", api::testing::router())
         .nest("/api/photos", api::photos::router())
         .nest("/api/recipes", api::recipes::router())
+        .nest("/api/scrape", api::scrape::router())
         .layer(middleware::from_fn_with_state(
             pool.clone(),
             auth::require_auth,

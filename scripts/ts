@@ -1,0 +1,5 @@
+#!/bin/bash
+# Timestamp wrapper - prefixes each stdin line with [HH:MM:SS.mmm]
+while IFS= read -r line; do
+    echo "[$(date '+%H:%M:%S.%3N')] $line"
+done

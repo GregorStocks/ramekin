@@ -636,6 +636,185 @@
         ]
       }
     },
+    "/api/scrape": {
+      "post": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "create_scrape",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateScrapeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Scrape job created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateScrapeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/scrape/{id}": {
+      "get": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "get_scrape",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Scrape job ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Scrape job status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScrapeJobResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/scrape/{id}/retry": {
+      "post": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "retry_scrape",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Scrape job ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retry initiated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetryScrapeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Cannot retry job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/test/ping": {
       "get": {
         "tags": [
@@ -762,6 +941,36 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "CreateScrapeRequest": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL to scrape for recipe data"
+          }
+        }
+      },
+      "CreateScrapeResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The scrape job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status"
           }
         }
       },
@@ -1008,6 +1217,80 @@
           "updated_at": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "RetryScrapeResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The scrape job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "New job status after retry"
+          }
+        }
+      },
+      "ScrapeJobResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "status",
+          "url",
+          "can_retry",
+          "retry_count"
+        ],
+        "properties": {
+          "can_retry": {
+            "type": "boolean",
+            "description": "Whether this job can be retried"
+          },
+          "error": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Error message if failed"
+          },
+          "failed_at_step": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Which step failed (for retry logic)"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The scrape job ID"
+          },
+          "recipe_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid",
+            "description": "Recipe ID if completed successfully"
+          },
+          "retry_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of retry attempts"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status (pending, scraping, parsing, completed, failed)"
+          },
+          "url": {
+            "type": "string",
+            "description": "URL being scraped"
           }
         }
       },
