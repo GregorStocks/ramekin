@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot install-hooks
 
 # Project names to keep dev and test environments isolated
 DEV_PROJECT := ramekin
@@ -92,3 +92,8 @@ load-test: ## Run load test creating users with recipes and photos (for performa
 
 screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
 	@cd cli && cargo run -q -- screenshot
+
+install-hooks: ## Install git hooks for local development
+	@cp scripts/pre-push .git/hooks/pre-push
+	@chmod +x .git/hooks/pre-push
+	@echo "Git hooks installed successfully"

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Pre-push hook: runs lint and test before pushing
+# Install with: make install-hooks
+
+set -e
+
+echo "Running pre-push checks..."
+
+echo "Running linters..."
+make lint
+
+echo "Running tests..."
+make test
+
+echo "All checks passed!"
