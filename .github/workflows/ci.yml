@@ -15,7 +15,7 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Generate API clients
-        run: make generate-clients-from-spec
+        run: make generate-clients
 
       - name: Run linters
         run: make lint

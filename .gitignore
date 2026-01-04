@@ -71,6 +71,7 @@ tests/generated/
 
 # Build/script logs
 logs/
-.cache/
+.cache/*
+!.cache/openapi-hash
 
 reference-recipe/

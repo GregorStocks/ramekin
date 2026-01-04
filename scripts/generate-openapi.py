@@ -51,6 +51,16 @@ def calculate_api_hash() -> str:
     return hashlib.md5(combined.encode()).hexdigest()
 
 
+def clients_exist(project_root: Path) -> bool:
+    """Check if all generated clients exist."""
+    client_markers = [
+        project_root / "cli/generated/ramekin-client/Cargo.toml",
+        project_root / "ramekin-ui/generated-client/dist/index.js",
+        project_root / "tests/generated/ramekin_client/__init__.py",
+    ]
+    return all(marker.exists() for marker in client_markers)
+
+
 def needs_regeneration(cache_file: Path, openapi_spec: Path, current_hash: str) -> bool:
     """Check if OpenAPI spec needs to be regenerated."""
     if not cache_file.exists():
@@ -131,25 +141,25 @@ def main() -> None:
 
     # Calculate current API hash
     current_hash = calculate_api_hash()
+    needs_spec = needs_regeneration(hash_file, openapi_spec, current_hash)
+    has_clients = clients_exist(project_root)
 
-    # Check if we need to regenerate
-    if not needs_regeneration(hash_file, openapi_spec, current_hash):
+    if not needs_spec and has_clients:
         print(f"API unchanged ({current_hash}), skipping generation")
         return
 
-    print(f"API changed or missing, regenerating ({current_hash})...")
+    if needs_spec:
+        print(f"API changed or missing, regenerating ({current_hash})...")
+        generate_openapi_spec(openapi_spec)
+    else:
+        print("Clients missing, regenerating from existing spec...")
 
-    # Generate OpenAPI spec
-    generate_openapi_spec(openapi_spec)
-
-    # Generate all clients (Rust, TypeScript, Python)
     generate_clients_script = project_root / "scripts/generate-clients.sh"
     subprocess.run([str(generate_clients_script)], check=True, timeout=300)
 
-    # Update cached hash
-    hash_file.write_text(current_hash)
+    if needs_spec:
+        hash_file.write_text(current_hash)
 
-    # Run linters (call directly to avoid double-timestamping via make)
     print("Running linters...")
     lint_script = project_root / "scripts/lint.py"
     subprocess.run([str(lint_script)], check=True, timeout=300)
