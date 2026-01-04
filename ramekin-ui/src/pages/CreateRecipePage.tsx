@@ -2,6 +2,7 @@ import { createSignal, Show, Index, For, onCleanup } from "solid-js";
 import { createStore } from "solid-js/store";
 import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
+import TagInput from "../components/TagInput";
 import type { Ingredient } from "ramekin-client";
 
 function PhotoThumbnail(props: {
@@ -47,7 +48,7 @@ export default function CreateRecipePage() {
   const [instructions, setInstructions] = createSignal("");
   const [sourceUrl, setSourceUrl] = createSignal("");
   const [sourceName, setSourceName] = createSignal("");
-  const [tagsInput, setTagsInput] = createSignal("");
+  const [tags, setTags] = createSignal<string[]>([]);
   const [photoIds, setPhotoIds] = createSignal<string[]>([]);
   const [uploading, setUploading] = createSignal(false);
   const [ingredients, setIngredients] = createStore<Ingredient[]>([
@@ -124,10 +125,6 @@ export default function CreateRecipePage() {
       const validIngredients = ingredients.filter(
         (ing) => ing.item.trim() !== "",
       );
-      const tags = tagsInput()
-        .split(",")
-        .map((t) => t.trim())
-        .filter((t) => t !== "");
 
       const response = await getRecipesApi().createRecipe({
         createRecipeRequest: {
@@ -137,7 +134,7 @@ export default function CreateRecipePage() {
           ingredients: validIngredients,
           sourceUrl: sourceUrl() || undefined,
           sourceName: sourceName() || undefined,
-          tags: tags.length > 0 ? tags : undefined,
+          tags: tags().length > 0 ? tags() : undefined,
           photoIds: photoIds().length > 0 ? photoIds() : undefined,
         },
       });
@@ -274,12 +271,11 @@ export default function CreateRecipePage() {
         </div>
 
         <div class="form-group">
-          <label for="tags">Tags (comma-separated)</label>
-          <input
+          <label for="tags">Tags</label>
+          <TagInput
             id="tags"
-            type="text"
-            value={tagsInput()}
-            onInput={(e) => setTagsInput(e.currentTarget.value)}
+            tags={tags}
+            onTagsChange={setTags}
             placeholder="e.g., dinner, easy, vegetarian"
           />
         </div>

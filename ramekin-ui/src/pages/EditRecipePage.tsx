@@ -2,6 +2,7 @@ import { createSignal, Show, Index, For, onMount, onCleanup } from "solid-js";
 import { createStore, reconcile } from "solid-js/store";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
+import TagInput from "../components/TagInput";
 import type { Ingredient, RecipeResponse } from "ramekin-client";
 
 function PhotoThumbnail(props: {
@@ -51,7 +52,7 @@ export default function EditRecipePage() {
   const [instructions, setInstructions] = createSignal("");
   const [sourceUrl, setSourceUrl] = createSignal("");
   const [sourceName, setSourceName] = createSignal("");
-  const [tagsInput, setTagsInput] = createSignal("");
+  const [tags, setTags] = createSignal<string[]>([]);
   const [ingredients, setIngredients] = createStore<Ingredient[]>([]);
 
   const [saving, setSaving] = createSignal(false);
@@ -69,7 +70,7 @@ export default function EditRecipePage() {
       setInstructions(response.instructions);
       setSourceUrl(response.sourceUrl || "");
       setSourceName(response.sourceName || "");
-      setTagsInput(response.tags?.join(", ") || "");
+      setTags(response.tags || []);
       setPhotoIds(response.photoIds || []);
       setIngredients(
         reconcile(
@@ -160,10 +161,6 @@ export default function EditRecipePage() {
       const validIngredients = ingredients.filter(
         (ing) => ing.item.trim() !== "",
       );
-      const tags = tagsInput()
-        .split(",")
-        .map((t) => t.trim())
-        .filter((t) => t !== "");
 
       await getRecipesApi().updateRecipe({
         id: params.id,
@@ -174,7 +171,7 @@ export default function EditRecipePage() {
           ingredients: validIngredients,
           sourceUrl: sourceUrl() || undefined,
           sourceName: sourceName() || undefined,
-          tags: tags.length > 0 ? tags : undefined,
+          tags: tags().length > 0 ? tags() : undefined,
           photoIds: photoIds(),
         },
       });
@@ -329,12 +326,11 @@ export default function EditRecipePage() {
           </div>
 
           <div class="form-group">
-            <label for="tags">Tags (comma-separated)</label>
-            <input
+            <label for="tags">Tags</label>
+            <TagInput
               id="tags"
-              type="text"
-              value={tagsInput()}
-              onInput={(e) => setTagsInput(e.currentTarget.value)}
+              tags={tags}
+              onTagsChange={setTags}
               placeholder="e.g., dinner, easy, vegetarian"
             />
           </div>
