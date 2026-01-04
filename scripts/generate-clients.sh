@@ -3,23 +3,15 @@ set -e
 
 # Generate all API clients from saved OpenAPI spec
 # Called by `make generate-clients` after generating api/openapi.json
+# Requires: java, openapi-generator-cli.jar (run `make check-deps` to verify)
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
 
-# OpenAPI Generator configuration
+# OpenAPI Generator configuration - jar must be installed via `make install-deps`
 OPENAPI_GENERATOR_VERSION="7.10.0"
 OPENAPI_GENERATOR_JAR="$PROJECT_ROOT/.cache/openapi-generator-cli-$OPENAPI_GENERATOR_VERSION.jar"
-OPENAPI_GENERATOR_URL="https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/$OPENAPI_GENERATOR_VERSION/openapi-generator-cli-$OPENAPI_GENERATOR_VERSION.jar"
-
-ensure_openapi_generator() {
-    if [ ! -f "$OPENAPI_GENERATOR_JAR" ]; then
-        echo "Downloading OpenAPI Generator CLI..."
-        mkdir -p "$(dirname "$OPENAPI_GENERATOR_JAR")"
-        curl -L -o "$OPENAPI_GENERATOR_JAR" "$OPENAPI_GENERATOR_URL"
-    fi
-}
 
 generate_client() {
     local generator=$1
@@ -45,7 +37,11 @@ main() {
         exit 1
     fi
 
-    ensure_openapi_generator
+    if [ ! -f "$OPENAPI_GENERATOR_JAR" ]; then
+        echo "Error: OpenAPI Generator CLI not found at $OPENAPI_GENERATOR_JAR" >&2
+        echo "Run 'make install-deps' to install it" >&2
+        exit 1
+    fi
 
     echo "Generating API clients from $SPEC_FILE..."
 
