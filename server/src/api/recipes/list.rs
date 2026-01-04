@@ -5,7 +5,7 @@ use crate::schema::recipes;
 use axum::{
     extract::{Query, State},
     http::StatusCode,
-    response::IntoResponse,
+    response::{IntoResponse, Response},
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
@@ -16,6 +16,17 @@ use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
+
+/// Helper to create error responses
+fn error_response(status: StatusCode, message: &str) -> Response {
+    (
+        status,
+        Json(ErrorResponse {
+            error: message.to_string(),
+        }),
+    )
+        .into_response()
+}
 
 /// Sort field for recipe list
 #[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
@@ -209,6 +220,20 @@ struct RecipeForList {
     updated_at: DateTime<Utc>,
 }
 
+impl From<RecipeForList> for RecipeSummary {
+    fn from(r: RecipeForList) -> Self {
+        RecipeSummary {
+            id: r.id,
+            title: r.title,
+            description: r.description,
+            tags: r.tags.into_iter().flatten().collect(),
+            thumbnail_photo_id: r.photo_ids.first().and_then(|id| *id),
+            created_at: r.created_at,
+            updated_at: r.updated_at,
+        }
+    }
+}
+
 #[utoipa::path(
     get,
     path = "/api/recipes",
@@ -228,43 +253,25 @@ pub async fn list_recipes(
     State(pool): State<Arc<DbPool>>,
     Query(params): Query<ListRecipesParams>,
 ) -> impl IntoResponse {
-    // Validate and set defaults for pagination
     let limit = params.limit.unwrap_or(20).clamp(1, 1000);
     let offset = params.offset.unwrap_or(0).max(0);
-
-    // Parse the query string
     let parsed = params.q.as_deref().map(parse_query).unwrap_or_default();
 
-    // Pre-compute patterns so they live long enough for the boxed queries
-    let text_pattern = if !parsed.text.is_empty() {
-        let search_text = parsed.text.join(" ");
-        Some(format!(
-            "%{}%",
-            search_text.replace('%', "\\%").replace('_', "\\_")
-        ))
-    } else {
-        None
-    };
-
-    let source_pattern = parsed
-        .source
-        .as_ref()
-        .map(|s| format!("%{}%", s.replace('%', "\\%").replace('_', "\\_")));
+    // Pre-compute filter patterns
+    let text_pattern = prepare_text_pattern(&parsed.text);
+    let source_pattern = prepare_like_pattern(parsed.source.as_deref());
 
     let mut conn = match pool.get() {
         Ok(c) => c,
         Err(_) => {
-            return (
+            return error_response(
                 StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
+                "Database connection failed",
             )
-                .into_response()
         }
     };
 
-    // Build base query with filters
+    // Build base queries for user's non-deleted recipes
     let mut count_query = recipes::table
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
@@ -275,75 +282,56 @@ pub async fn list_recipes(
         .filter(recipes::deleted_at.is_null())
         .into_boxed();
 
-    // Apply text search (ILIKE on title OR description)
+    // Macro to apply a filter to both count and select queries simultaneously.
+    // This eliminates code duplication while working within Diesel's type system.
+    macro_rules! apply_filter {
+        ($filter_expr:expr) => {{
+            count_query = count_query.filter($filter_expr);
+            select_query = select_query.filter($filter_expr);
+        }};
+    }
+
+    // Apply text search filter (searches title and description)
     if let Some(ref pattern) = text_pattern {
-        count_query = count_query.filter(
-            recipes::title
-                .ilike(pattern)
-                .or(recipes::description.ilike(pattern)),
-        );
-        select_query = select_query.filter(
-            recipes::title
-                .ilike(pattern)
-                .or(recipes::description.ilike(pattern)),
-        );
+        apply_filter!(recipes::title
+            .ilike(pattern)
+            .or(recipes::description.ilike(pattern)));
     }
 
-    // Apply tag filter (AND logic - must have ALL tags)
-    // Cast search term to citext for case-insensitive comparison with citext[] column
+    // Apply tag filters (AND logic - recipe must have ALL specified tags)
     for tag in &parsed.tags {
-        count_query = count_query.filter(
-            sql::<Bool>("")
-                .bind::<Text, _>(tag)
-                .sql("::citext = ANY(tags)"),
-        );
-        select_query = select_query.filter(
-            sql::<Bool>("")
-                .bind::<Text, _>(tag)
-                .sql("::citext = ANY(tags)"),
-        );
+        apply_filter!(sql::<Bool>("")
+            .bind::<Text, _>(tag)
+            .sql("::citext = ANY(tags)"));
     }
 
-    // Apply source filter (case-insensitive substring)
+    // Apply source filter
     if let Some(ref pattern) = source_pattern {
-        count_query = count_query.filter(recipes::source_name.ilike(pattern));
-        select_query = select_query.filter(recipes::source_name.ilike(pattern));
+        apply_filter!(recipes::source_name.ilike(pattern));
     }
 
-    // Apply has_photos filter
+    // Apply photo presence filter
     if let Some(has_photos) = parsed.has_photos {
-        if has_photos {
-            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
-            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
-        } else {
-            count_query = count_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
-            select_query = select_query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
-        }
+        let expr = if has_photos { "cardinality(photo_ids) > 0" } else { "cardinality(photo_ids) = 0" };
+        count_query = count_query.filter(sql::<Bool>(expr));
+        select_query = select_query.filter(sql::<Bool>(expr));
     }
 
     // Apply date range filters
     if let Some(after) = parsed.created_after {
         let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.ge(after_datetime));
-        select_query = select_query.filter(recipes::created_at.ge(after_datetime));
+        apply_filter!(recipes::created_at.ge(after_datetime));
     }
     if let Some(before) = parsed.created_before {
         let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.le(before_datetime));
-        select_query = select_query.filter(recipes::created_at.le(before_datetime));
+        apply_filter!(recipes::created_at.le(before_datetime));
     }
 
-    // Get total count
+    // Execute count query
     let total: i64 = match count_query.count().get_result(&mut conn) {
         Ok(c) => c,
         Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to count recipes".to_string(),
-                }),
-            )
-                .into_response()
+            return error_response(StatusCode::INTERNAL_SERVER_ERROR, "Failed to count recipes")
         }
     };
 
@@ -354,7 +342,7 @@ pub async fn list_recipes(
         (SortBy::UpdatedAt, Direction::Asc) => select_query.order(recipes::updated_at.asc()),
     };
 
-    // Get paginated results
+    // Execute select query with pagination
     let results: Vec<RecipeForList> = match select_query
         .select(RecipeForList::as_select())
         .limit(limit)
@@ -363,37 +351,14 @@ pub async fn list_recipes(
     {
         Ok(r) => r,
         Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipes".to_string(),
-                }),
-            )
-                .into_response()
+            return error_response(StatusCode::INTERNAL_SERVER_ERROR, "Failed to fetch recipes")
         }
     };
-
-    let recipes = results
-        .into_iter()
-        .map(|r| {
-            let thumbnail_photo_id = r.photo_ids.first().and_then(|id| *id);
-
-            RecipeSummary {
-                id: r.id,
-                title: r.title,
-                description: r.description,
-                tags: r.tags.into_iter().flatten().collect(),
-                thumbnail_photo_id,
-                created_at: r.created_at,
-                updated_at: r.updated_at,
-            }
-        })
-        .collect();
 
     (
         StatusCode::OK,
         Json(ListRecipesResponse {
-            recipes,
+            recipes: results.into_iter().map(RecipeSummary::from).collect(),
             pagination: PaginationMetadata {
                 total,
                 limit,
@@ -402,6 +367,26 @@ pub async fn list_recipes(
         }),
     )
         .into_response()
+}
+
+/// Prepares a LIKE pattern for text search across multiple terms
+fn prepare_text_pattern(terms: &[String]) -> Option<String> {
+    if terms.is_empty() {
+        None
+    } else {
+        let search_text = terms.join(" ");
+        Some(format!("%{}%", escape_like_pattern(&search_text)))
+    }
+}
+
+/// Prepares a LIKE pattern from an optional string
+fn prepare_like_pattern(value: Option<&str>) -> Option<String> {
+    value.map(|s| format!("%{}%", escape_like_pattern(s)))
+}
+
+/// Escapes special characters in LIKE patterns
+fn escape_like_pattern(s: &str) -> String {
+    s.replace('%', "\\%").replace('_', "\\_")
 }
 
 #[cfg(test)]
