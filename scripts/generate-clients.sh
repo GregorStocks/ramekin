@@ -24,7 +24,7 @@ generate_client_docker() {
         -u "$(id -u):$(id -g)" \
         -v "$PROJECT_ROOT:/project:z" \
         -w /project \
-        openapitools/openapi-generator-cli:v7.10.0 generate \
+        openapitools/openapi-generator-cli:v7.18.0 generate \
         -i "/project/api/openapi.json" \
         -g "$generator" \
         -o "/project/$output" \
@@ -67,7 +67,7 @@ main() {
     echo "Generating API clients from $SPEC_FILE..."
 
     # Generate Rust client (for CLI)
-    generate_client "rust" "cli/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true"
+    generate_client "rust" "cli/generated/ramekin-client" "packageName=ramekin_client,supportAsync=true,useAsyncFileStream=true"
 
     # Add lint exceptions for generated Rust code
     cat >> "$PROJECT_ROOT/cli/generated/ramekin-client/Cargo.toml" << 'EOF'
