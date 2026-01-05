@@ -25,7 +25,7 @@ fi
 # Install process-compose if not present
 if ! command -v process-compose >/dev/null 2>&1; then
     echo "Installing process-compose..."
-    curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.51.0/process-compose_linux_amd64.tar.gz | tar -xzf - -C /usr/local/bin process-compose
+    curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_amd64.tar.gz | tar -xzf - -C /usr/local/bin process-compose
     chmod +x /usr/local/bin/process-compose
 fi
 

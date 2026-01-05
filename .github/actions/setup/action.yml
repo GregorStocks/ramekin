@@ -32,5 +32,5 @@ runs:
     - name: Install process-compose
       shell: bash
       run: |
-        curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.51.0/process-compose_linux_amd64.tar.gz | sudo tar -xzf - -C /usr/local/bin process-compose
+        curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_amd64.tar.gz | sudo tar -xzf - -C /usr/local/bin process-compose
         sudo chmod +x /usr/local/bin/process-compose
