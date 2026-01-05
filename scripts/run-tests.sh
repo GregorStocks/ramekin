@@ -13,6 +13,7 @@ else
     # Source test.env when running natively
     if [ -f "$PROJECT_ROOT/test.env" ]; then
         set -a  # auto-export all variables
+        # shellcheck source=/dev/null
         source "$PROJECT_ROOT/test.env"
         set +a
     fi
@@ -29,15 +30,19 @@ SERVER_PID=""
 
 cleanup() {
     echo "Cleaning up..."
-    [ -n "$FIXTURE_PID" ] && kill $FIXTURE_PID 2>/dev/null || true
-    [ -n "$SERVER_PID" ] && kill $SERVER_PID 2>/dev/null || true
+    if [ -n "$FIXTURE_PID" ]; then
+        kill "$FIXTURE_PID" 2>/dev/null || true
+    fi
+    if [ -n "$SERVER_PID" ]; then
+        kill "$SERVER_PID" 2>/dev/null || true
+    fi
 }
 trap cleanup EXIT
 
 # Start fixture server on random port
 start_fixture_server() {
     cd "$FIXTURE_DIR"
-    for i in {1..100}; do
+    for _ in {1..100}; do
         FIXTURE_PORT=$((RANDOM % 50000 + 10000))
         python3 -m http.server $FIXTURE_PORT > /dev/null 2>&1 &
         FIXTURE_PID=$!
@@ -58,7 +63,7 @@ start_server() {
     # Set SCRAPE_ALLOWED_HOSTS before server starts
     export SCRAPE_ALLOWED_HOSTS="localhost:$FIXTURE_PORT"
 
-    for i in {1..100}; do
+    for _ in {1..100}; do
         SERVER_PORT=$((RANDOM % 50000 + 10000))
         PORT=$SERVER_PORT cargo run --release -q &
         SERVER_PID=$!

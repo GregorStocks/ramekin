@@ -12,9 +12,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
 
-      - name: Generate API clients
-        run: make generate-clients
-
       - name: Run linters
         run: make lint
 

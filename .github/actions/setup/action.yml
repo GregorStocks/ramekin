@@ -6,7 +6,7 @@ runs:
   steps:
     - name: Install system dependencies
       shell: bash
-      run: sudo apt-get update && sudo apt-get install -y libpq-dev
+      run: sudo apt-get update && sudo apt-get install -y libpq-dev shellcheck
 
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -32,5 +32,8 @@ runs:
     - name: Install process-compose
       shell: bash
       run: |
-        curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_amd64.tar.gz | sudo tar -xzf - -C /usr/local/bin process-compose
+        PC_VERSION=v1.87.0
+        PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
+        curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
+          | sudo tar -xzf - -C /usr/local/bin process-compose
         sudo chmod +x /usr/local/bin/process-compose
