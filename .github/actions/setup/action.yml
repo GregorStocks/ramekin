@@ -1,5 +1,5 @@
 name: Setup
-description: Install Rust, uv, and configure caching
+description: Install Rust, Node.js, uv, process-compose, and configure caching
 
 runs:
   using: composite
@@ -23,3 +23,14 @@ runs:
 
     - name: Install uv
       uses: astral-sh/setup-uv@v5
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+
+    - name: Install process-compose
+      shell: bash
+      run: |
+        curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.51.0/process-compose_linux_amd64.tar.gz | sudo tar -xzf - -C /usr/local/bin process-compose
+        sudo chmod +x /usr/local/bin/process-compose

@@ -8,19 +8,38 @@ jobs:
   screenshot:
     name: Take Screenshots
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: ramekin
+          POSTGRES_PASSWORD: ramekin
+          POSTGRES_DB: ramekin
+        ports:
+          - 54321:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - name: Install UI dependencies
+        run: npm ci
+        working-directory: ramekin-ui
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
 
+      - name: Generate API clients
+        run: make generate-clients
+
       - name: Take screenshots
-        run: make screenshot
+        run: process-compose up -e dev.env -t=false --exit-on-end=screenshot
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
@@ -31,7 +50,7 @@ jobs:
 
       - name: Add screenshots to workflow summary
         run: |
-          echo "## 📸 Screenshots" >> $GITHUB_STEP_SUMMARY
+          echo "## Screenshots" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
