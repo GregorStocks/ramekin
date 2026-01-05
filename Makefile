@@ -57,7 +57,7 @@ api/openapi.json: check-deps $(API_SOURCES)
 $(CLIENT_MARKER): api/openapi.json
 	@./scripts/generate-clients.sh
 
-lint: venv ## Run all linters (Rust, TypeScript, Python)
+lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
 
 clean: test-docker-clean ## Stop services, clean volumes, and remove generated clients

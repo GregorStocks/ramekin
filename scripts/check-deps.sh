@@ -32,14 +32,14 @@ command -v python3 >/dev/null 2>&1 || MISSING+=("python3")
 python3 -c "import pytest" 2>/dev/null || MISSING+=("pytest (uv pip install pytest)")
 python3 -c "import requests" 2>/dev/null || MISSING+=("requests (uv pip install requests)")
 
-# Check env files (dev.env not needed in CI)
+# Check env files (not needed in CI, created explicitly there)
 if [ -z "$CI" ]; then
     if [ ! -f "$PROJECT_ROOT/dev.env" ]; then
         MISSING+=("dev.env file (copy from dev.env.example)")
     fi
-fi
-if [ ! -f "$PROJECT_ROOT/test.env" ]; then
-    MISSING+=("test.env file (copy from test.env.example)")
+    if [ ! -f "$PROJECT_ROOT/test.env" ]; then
+        MISSING+=("test.env file (copy from test.env.example)")
+    fi
 fi
 
 # Check postgres connection using test.env

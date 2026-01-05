@@ -6,6 +6,8 @@ This script runs:
 - Rust formatters and linters (server and cli)
 - TypeScript formatter and type checker
 - Python formatter and linter
+- YAML linter
+- Shell script linter
 """
 
 import subprocess
@@ -223,6 +225,71 @@ def lint_python(project_root: Path) -> tuple[str, bool]:
     return ("Python", success)
 
 
+def lint_yaml(project_root: Path) -> tuple[str, bool]:
+    """Lint YAML files."""
+    yaml_files = [
+        "docker-compose.yml",
+        "docker-compose.test.yml",
+        "process-compose.yaml",
+        ".github/actions/setup/action.yml",
+        ".github/workflows/ci.yml",
+        ".github/workflows/screenshots.yml",
+    ]
+
+    result = subprocess.run(
+        [
+            "uvx",
+            "yamllint",
+            "--strict",
+            "-d",
+            "{extends: relaxed, rules: {line-length: {max: 120}}}",
+            *yaml_files,
+        ],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
+
+    return ("YAML", result.returncode == 0)
+
+
+def lint_shell(project_root: Path) -> tuple[str, bool]:
+    """Lint shell scripts with shellcheck."""
+    # Check if shellcheck is installed
+    which_result = subprocess.run(
+        ["which", "shellcheck"],
+        capture_output=True,
+        check=False,
+    )
+    if which_result.returncode != 0:
+        print("shellcheck not installed (apt install shellcheck)", file=sys.stderr)
+        return ("Shell", False)
+
+    scripts_dir = project_root / "scripts"
+    shell_scripts = list(scripts_dir.glob("*.sh")) + [scripts_dir / "pre-push"]
+
+    result = subprocess.run(
+        ["shellcheck", *[str(s) for s in shell_scripts]],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
+
+    return ("Shell", result.returncode == 0)
+
+
 def main() -> None:
     """Main execution."""
     project_root = get_project_root()
@@ -233,11 +300,13 @@ def main() -> None:
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
         ("TypeScript", lambda: lint_typescript(project_root)),
         ("Python", lambda: lint_python(project_root)),
+        ("YAML", lambda: lint_yaml(project_root)),
+        ("Shell", lambda: lint_shell(project_root)),
     ]
 
     # Run all linters in parallel
     results = {}
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=6) as executor:
         futures = {executor.submit(func): name for name, func in linters}
 
         for future in as_completed(futures):
