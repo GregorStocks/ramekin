@@ -1,19 +1,11 @@
-.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test install-hooks setup-claude-web
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
 .SHELLFLAGS := -o pipefail -c
 
-# Project names to keep dev and test environments isolated
-DEV_PROJECT := ramekin
-TEST_PROJECT := ramekin-test
-
 # Timestamp wrapper for log output
 TS := ./scripts/ts
-
-# Export UID/GID for docker-compose to run containers as current user (Linux compatibility)
-export UID := $(shell id -u)
-export GID := $(shell id -g)
 
 # Source files that affect the OpenAPI spec
 API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) server/src/models.rs server/src/schema.rs
@@ -37,11 +29,7 @@ dev-headless: check-deps $(CLIENT_MARKER) ## Start local dev environment without
 	@mkdir -p logs
 	@process-compose up -e dev.env -t=false
 
-dev-docker: check-deps $(CLIENT_MARKER) ## Start Docker dev environment
-	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Dev environment ready"; } | $(TS)
-	@$(MAKE) seed
-
-dev-docker-down: ## Stop dev processes (not database)
+dev-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
 	@pkill -f "cargo watch" 2>/dev/null || true
 
@@ -60,8 +48,7 @@ $(CLIENT_MARKER): api/openapi.json
 lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
 
-clean: test-docker-clean ## Stop services, clean volumes, and remove generated clients
-	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
+clean: ## Clean generated files and build artifacts
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@rm -rf server/target/ cli/target/
 	@rm -rf ramekin-ui/node_modules/
@@ -72,8 +59,8 @@ clean-api: ## Force regeneration of OpenAPI spec and clients on next build
 	@rm -f api/openapi.json
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
-generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
-	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
+generate-schema: ## Regenerate schema.rs from database (requires db-up and migrations run)
+	@cd server && diesel print-schema > src/schema.rs
 	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
@@ -117,25 +104,6 @@ db-down: ## Stop postgres container
 	@docker rm ramekin-db >/dev/null 2>&1 || true
 
 db-clean: db-down ## Stop postgres and remove data
-
-test-docker: check-deps $(CLIENT_MARKER) test-docker-up ## Run tests in Docker
-	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml exec tests /usr/local/bin/run-tests.sh
-
-test-docker-shell: test-docker-up ## Start interactive shell in Docker test container
-	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml exec tests bash
-
-test-docker-up: ## Start Docker test environment (postgres + test container)
-	@if ! docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml ps --status running tests 2>/dev/null | grep -q tests; then \
-	  echo "Starting test environment..."; \
-	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; \
-	  echo "Test environment ready"; \
-	fi
-
-test-docker-down: ## Stop Docker test environment
-	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null
-
-test-docker-clean: ## Stop and remove Docker test environment with volumes
-	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down -v 2>/dev/null || true
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes

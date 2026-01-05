@@ -1,6 +1,6 @@
 Read through the makefile first. Always do things via existing makefile commands. Never manually run docker or cargo. If there isn't a makefile command for the thing that you want to do, ask if you should make one.
 
-The only dependencies to bring up the server should be docker and make. But we can also use uv and npx in the linter. Never use system Python or NPM because those are presumably always broken.
+The only dependencies to bring up the server should be docker (for postgres), make, and cargo. We also use uv and npx for the linter and code generation. Never use system Python or NPM because those are presumably always broken.
 
 We plan to never actually delete any data from the DB - everything will be soft-deletes.
 

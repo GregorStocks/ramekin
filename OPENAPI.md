@@ -6,10 +6,10 @@ The Ramekin server now exposes an OpenAPI 3.0 specification that can be used to 
 
 ## Starting the Server
 
-Start the server using Docker Compose:
+Start the server:
 
 ```bash
-docker compose up
+make dev
 ```
 
 The server will be available at http://localhost:3000

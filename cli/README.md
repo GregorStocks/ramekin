@@ -16,7 +16,7 @@ The CLI is designed as "just another client" - it uses an auto-generated client 
 ### 1. Start the server
 
 ```bash
-docker compose up
+make dev
 ```
 
 ### 2. Generate the client (when API changes)

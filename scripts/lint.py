@@ -228,8 +228,6 @@ def lint_python(project_root: Path) -> tuple[str, bool]:
 def lint_yaml(project_root: Path) -> tuple[str, bool]:
     """Lint YAML files."""
     yaml_files = [
-        "docker-compose.yml",
-        "docker-compose.test.yml",
         "process-compose.yaml",
         ".github/actions/setup/action.yml",
         ".github/workflows/ci.yml",
