@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker lint clean generate-schema test setup-claude-web venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker check-test-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -42,7 +42,7 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: ## Generate OpenAPI spec and clients (local, no Docker)
+generate-clients: check-test-deps ## Generate OpenAPI spec and clients (local, no Docker)
 	@./scripts/generate-openapi.py 2>&1 | $(TS)
 
 generate-clients-docker: ## Generate OpenAPI spec and clients (using Docker)
@@ -74,8 +74,7 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: setup-claude-web generate-clients venv ## Run tests natively (requires test.env, postgres, rust, python)
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-test-deps.sh
+test: setup-claude-web venv check-test-deps generate-clients ## Run tests natively
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 .venv/.installed: requirements-test.txt
@@ -84,6 +83,9 @@ test: setup-claude-web generate-clients venv ## Run tests natively (requires tes
 	@touch .venv/.installed
 
 venv: .venv/.installed ## Create Python venv with test dependencies
+
+check-test-deps: venv ## Check that test dependencies are installed
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-test-deps.sh
 
 venv-clean: ## Remove Python venv
 	@rm -rf .venv
