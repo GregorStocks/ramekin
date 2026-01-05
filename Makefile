@@ -15,6 +15,12 @@ TS := ./scripts/ts
 export UID := $(shell id -u)
 export GID := $(shell id -g)
 
+# Source files that affect the OpenAPI spec
+API_SOURCES := $(shell find server/src/api -type f -name '*.rs' 2>/dev/null) server/src/models.rs server/src/schema.rs
+
+# Marker file for generated clients
+CLIENT_MARKER := cli/generated/ramekin-client/Cargo.toml
+
 help: ## Show this help message
 	@echo 'Usage: make [target]'
 	@echo ''
@@ -39,17 +45,38 @@ dev-docker-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
 	@pkill -f "cargo watch" 2>/dev/null || true
 
-generate-clients: venv ## Generate OpenAPI spec and clients (local, no Docker)
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/generate-openapi.py 2>&1 | $(TS)
+# Generate OpenAPI spec from Rust source (local build)
+api/openapi.json: $(API_SOURCES)
+	@echo "Building server and generating OpenAPI spec..." | $(TS)
+	@mkdir -p api
+	@cd server && cargo build --release -q
+	@server/target/release/ramekin-server --openapi > api/openapi.json
+	@echo "Generated api/openapi.json" | $(TS)
+
+# Generate clients from OpenAPI spec
+$(CLIENT_MARKER): api/openapi.json
+	@./scripts/generate-clients.sh
+
+generate-clients: venv $(CLIENT_MARKER) ## Generate OpenAPI spec and clients (local)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
 
 generate-clients-docker: venv ## Generate OpenAPI spec and clients (using Docker)
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/generate-openapi.py --docker 2>&1 | $(TS)
+	@echo "Building server in Docker and generating OpenAPI spec..." | $(TS)
+	@mkdir -p api server/target
+	@docker run --rm \
+		-u "$(UID):$(GID)" \
+		-v "$(CURDIR):/app:z" \
+		-v "$(CURDIR)/server/target:/app/server/target:z" \
+		-w /app/server \
+		rust:latest \
+		sh -c "cargo build --release -q && target/release/ramekin-server --openapi" > api/openapi.json
+	@echo "Generated api/openapi.json" | $(TS)
+	@DOCKER=1 ./scripts/generate-clients.sh
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
 
-generate-clients-force: ## Force regeneration of API clients (bypass cache)
-	@# NOTE: You should never need to run this. If clients aren't regenerating,
-	@# it means the OpenAPI spec hasn't changed. Check that the server is
-	@# running with your latest code changes.
-	@rm -f api/openapi-hash
+generate-clients-force: ## Force regeneration of API clients
+	@rm -f api/openapi.json
+	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@$(MAKE) generate-clients
 
 lint: venv ## Run all linters (Rust, TypeScript, Python)
