@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker lint clean generate-schema test setup-claude-web venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -71,7 +71,10 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
-test: generate-clients venv ## Run tests natively (requires test.env, postgres, rust, python)
+setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
+	@./scripts/setup-claude-web.sh
+
+test: setup-claude-web generate-clients venv ## Run tests natively (requires test.env, postgres, rust, python)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-test-deps.sh
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
