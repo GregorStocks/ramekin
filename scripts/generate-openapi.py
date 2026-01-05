@@ -83,12 +83,12 @@ def generate_openapi_spec_local(openapi_spec: Path) -> None:
     project_root = get_project_root()
     server_dir = project_root / "server"
 
-    # Build the server
+    # Build the server (10 min timeout for uncached CI builds)
     build_result = subprocess.run(
         ["cargo", "build", "--release", "-q"],
         cwd=server_dir,
         check=False,
-        timeout=300,
+        timeout=600,
     )
 
     if build_result.returncode != 0:
@@ -125,7 +125,7 @@ def generate_openapi_spec_docker(openapi_spec: Path) -> None:
         temp_log_path = temp_log.name
 
     try:
-        # Run docker to build server and generate spec
+        # Run docker to build server and generate spec (10 min timeout)
         result = subprocess.run(
             [
                 "docker",
@@ -147,7 +147,7 @@ def generate_openapi_spec_docker(openapi_spec: Path) -> None:
             stdout=subprocess.PIPE,
             stderr=open(temp_log_path, "w"),
             check=False,
-            timeout=300,
+            timeout=600,
         )
 
         if result.returncode != 0:

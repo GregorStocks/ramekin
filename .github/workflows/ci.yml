@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - uses: ./.github/actions/setup
 
       - name: Generate API clients
         run: make generate-clients
@@ -23,11 +21,26 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: ramekin
+          POSTGRES_PASSWORD: ramekin
+          POSTGRES_DB: ramekin_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - name: Create test.env
+        run: echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
 
       - name: Run tests
         run: make test

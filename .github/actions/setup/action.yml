@@ -1,0 +1,16 @@
+name: Setup
+description: Install Rust, uv, and configure caching
+
+runs:
+  using: composite
+  steps:
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+
+    - name: Cache Rust
+      uses: Swatinem/rust-cache@v2
+      with:
+        workspaces: server -> target
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
