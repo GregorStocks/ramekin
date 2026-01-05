@@ -14,8 +14,11 @@ runs:
     - name: Cache Rust
       uses: Swatinem/rust-cache@v2
       with:
-        workspaces: server -> target
+        workspaces: |
+          server -> target
+          cli -> target
         cache-on-failure: true
+        cache-all-crates: true
 
     - name: Install diesel CLI
       shell: bash
