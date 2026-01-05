@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -21,7 +21,7 @@ help: ## Show this help message
 	@echo 'Available targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: generate-clients ## Start dev environment (with hot-reload)
+dev: generate-clients-docker ## Start dev environment (with hot-reload)
 	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Dev environment ready"; } | $(TS)
 	@$(MAKE) seed
 
@@ -30,7 +30,7 @@ up: dev ## Alias for dev
 down: ## Stop all services
 	@docker compose -p $(DEV_PROJECT) down 2>/dev/null
 
-restart: generate-clients ## Force restart services
+restart: generate-clients-docker ## Force restart services
 	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Services restarted"; } | $(TS)
 
 logs: ## Show all logs
@@ -42,8 +42,11 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: ## Generate OpenAPI spec and regenerate all API clients
+generate-clients: ## Generate OpenAPI spec and clients (local, no Docker)
 	@./scripts/generate-openapi.py 2>&1 | $(TS)
+
+generate-clients-docker: ## Generate OpenAPI spec and clients (using Docker)
+	@./scripts/generate-openapi.py --docker 2>&1 | $(TS)
 
 generate-clients-force: ## Force regeneration of API clients (bypass cache)
 	@# NOTE: You should never need to run this. If clients aren't regenerating,
@@ -102,7 +105,7 @@ db-down: ## Stop postgres container
 
 db-clean: db-down ## Stop postgres and remove data
 
-test-docker: generate-clients test-docker-up ## Run tests in Docker
+test-docker: generate-clients-docker test-docker-up ## Run tests in Docker
 	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml exec tests /usr/local/bin/run-tests.sh
 
 test-docker-shell: test-docker-up ## Start interactive shell in Docker test container

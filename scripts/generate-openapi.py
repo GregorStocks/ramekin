@@ -5,11 +5,14 @@ Generate OpenAPI spec with smart caching.
 This script:
 - Calculates a hash of API source files
 - Skips generation if API hasn't changed (smart caching)
-- Generates OpenAPI spec by building the server in Docker
+- Generates OpenAPI spec by building the server (locally or in Docker)
 - Regenerates all API clients (Rust, TypeScript, Python)
 - Runs linters on success
+
+By default, builds locally. Use --docker to build in Docker instead.
 """
 
+import argparse
 import hashlib
 import os
 import subprocess
@@ -73,9 +76,45 @@ def needs_regeneration(cache_file: Path, openapi_spec: Path, current_hash: str) 
     return cached_hash != current_hash
 
 
-def generate_openapi_spec(openapi_spec: Path) -> None:
-    """Generate OpenAPI spec by building server and running --openapi flag."""
-    print("Building server and generating OpenAPI spec...")
+def generate_openapi_spec_local(openapi_spec: Path) -> None:
+    """Generate OpenAPI spec by building server locally."""
+    print("Building server locally and generating OpenAPI spec...")
+
+    project_root = get_project_root()
+    server_dir = project_root / "server"
+
+    # Build the server
+    build_result = subprocess.run(
+        ["cargo", "build", "--release", "-q"],
+        cwd=server_dir,
+        check=False,
+        timeout=300,
+    )
+
+    if build_result.returncode != 0:
+        print("Error: Failed to build server", file=sys.stderr)
+        sys.exit(1)
+
+    # Generate OpenAPI spec
+    result = subprocess.run(
+        ["target/release/ramekin-server", "--openapi"],
+        cwd=server_dir,
+        stdout=subprocess.PIPE,
+        check=False,
+        timeout=30,
+    )
+
+    if result.returncode != 0:
+        print("Error: Failed to generate OpenAPI spec", file=sys.stderr)
+        sys.exit(1)
+
+    openapi_spec.write_bytes(result.stdout)
+    print(f"Generated {openapi_spec}")
+
+
+def generate_openapi_spec_docker(openapi_spec: Path) -> None:
+    """Generate OpenAPI spec by building server in Docker."""
+    print("Building server in Docker and generating OpenAPI spec...")
 
     project_root = get_project_root()
     server_target = project_root / "server/target"
@@ -127,6 +166,15 @@ def generate_openapi_spec(openapi_spec: Path) -> None:
 
 def main() -> None:
     """Main execution."""
+
+    parser = argparse.ArgumentParser(description="Generate OpenAPI spec and clients")
+    parser.add_argument(
+        "--docker",
+        action="store_true",
+        help="Build server in Docker instead of locally",
+    )
+    args = parser.parse_args()
+
     project_root = get_project_root()
 
     # Paths
@@ -150,12 +198,20 @@ def main() -> None:
 
     if needs_spec:
         print(f"API changed or missing, regenerating ({current_hash})...")
-        generate_openapi_spec(openapi_spec)
+        if args.docker:
+            generate_openapi_spec_docker(openapi_spec)
+        else:
+            generate_openapi_spec_local(openapi_spec)
     else:
         print("Clients missing, regenerating from existing spec...")
 
+    # Pass docker flag to generate-clients.sh via environment
+    env = os.environ.copy()
+    if args.docker:
+        env["DOCKER"] = "1"
+
     generate_clients_script = project_root / "scripts/generate-clients.sh"
-    subprocess.run([str(generate_clients_script)], check=True, timeout=300)
+    subprocess.run([str(generate_clients_script)], check=True, timeout=300, env=env)
 
     if needs_spec:
         hash_file.write_text(current_hash)

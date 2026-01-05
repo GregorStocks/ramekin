@@ -3,17 +3,20 @@ set -e
 
 # Generate all API clients from saved OpenAPI spec
 # Called by `make generate-clients` after generating api/openapi.json
+#
+# By default, uses npx to run openapi-generator-cli locally.
+# Set DOCKER=1 to use Docker instead.
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 SPEC_FILE="$PROJECT_ROOT/api/openapi.json"
 
-generate_client() {
+generate_client_docker() {
     local generator=$1
     local output=$2
     local extra_props=$3
 
-    echo "Generating $generator client -> $output"
+    echo "Generating $generator client -> $output (Docker)"
 
     rm -rf "$PROJECT_ROOT/$output"
 
@@ -27,6 +30,31 @@ generate_client() {
         -o "/project/$output" \
         --additional-properties="$extra_props" \
         2>&1 | grep -v "^\[main\] INFO" || true
+}
+
+generate_client_local() {
+    local generator=$1
+    local output=$2
+    local extra_props=$3
+
+    echo "Generating $generator client -> $output (local)"
+
+    rm -rf "$PROJECT_ROOT/$output"
+
+    npx --yes @openapitools/openapi-generator-cli@2.27.0 generate \
+        -i "$SPEC_FILE" \
+        -g "$generator" \
+        -o "$PROJECT_ROOT/$output" \
+        --additional-properties="$extra_props" \
+        2>&1 | grep -v "^\[main\] INFO" || true
+}
+
+generate_client() {
+    if [ "${DOCKER:-}" = "1" ]; then
+        generate_client_docker "$@"
+    else
+        generate_client_local "$@"
+    fi
 }
 
 main() {
