@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db generate-clients generate-clients-docker check-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks setup-claude-web
+.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db generate-clients generate-clients-docker check-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -61,7 +61,7 @@ clean: test-docker-clean ## Stop services, clean volumes, and remove generated c
 	@rm -rf server/target/ cli/target/
 	@rm -rf ramekin-ui/node_modules/
 	@rm -rf tests/__pycache__/ scripts/__pycache__/
-	@rm -rf .cache/
+	@rm -rf .cache/ logs/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
@@ -133,9 +133,6 @@ seed: ## Create test user with sample recipes (requires dev server running)
 
 load-test: ## Run load test creating users with recipes and photos (for performance testing)
 	@cd cli && cargo run -q -- load-test
-
-screenshot: up seed ## Take screenshots of the app (cookbook, recipe, edit)
-	@cd cli && cargo run -q -- screenshot
 
 install-hooks: ## Install git hooks for local development
 	@cp scripts/pre-push .git/hooks/pre-push

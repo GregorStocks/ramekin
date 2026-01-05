@@ -31,3 +31,14 @@ processes:
         condition: process_healthy
     availability:
       restart: "no"
+
+  screenshot:
+    command: cargo run -q -- screenshot
+    working_dir: ./cli
+    depends_on:
+      seed:
+        condition: process_completed_successfully
+      ui:
+        condition: process_started
+    availability:
+      restart: "no"
