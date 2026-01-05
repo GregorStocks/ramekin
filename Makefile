@@ -35,24 +35,9 @@ dev-docker: generate-clients-docker ## Start Docker dev environment
 	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Dev environment ready"; } | $(TS)
 	@$(MAKE) seed
 
-dev-down: ## Stop dev processes (not database)
+dev-docker-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
 	@pkill -f "cargo watch" 2>/dev/null || true
-
-up: dev ## Alias for dev
-
-down: dev-down ## Stop dev processes
-
-restart: dev-down dev ## Restart local dev environment
-
-logs: ## Show all logs
-	docker compose -p $(DEV_PROJECT) logs -f
-
-logs-server: ## Show server logs
-	docker logs ramekin-server -f
-
-logs-db: ## Show database logs
-	docker logs ramekin-postgres -f
 
 generate-clients: venv ## Generate OpenAPI spec and clients (local, no Docker)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/generate-openapi.py 2>&1 | $(TS)
