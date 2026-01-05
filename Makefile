@@ -49,7 +49,7 @@ generate-clients-force: ## Force regeneration of API clients (bypass cache)
 	@# NOTE: You should never need to run this. If clients aren't regenerating,
 	@# it means the OpenAPI spec hasn't changed. Check that the server is
 	@# running with your latest code changes.
-	@rm -f .cache/openapi-hash
+	@rm -f api/openapi-hash
 	@$(MAKE) generate-clients
 
 lint: venv ## Run all linters (Rust, TypeScript, Python)

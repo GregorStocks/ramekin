@@ -71,8 +71,7 @@ tests/generated/
 
 # Build/script logs
 logs/
-.cache/*
-!.cache/openapi-hash
+.cache/
 
 reference-recipe/
 crates/
