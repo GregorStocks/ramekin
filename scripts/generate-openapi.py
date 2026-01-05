@@ -181,7 +181,7 @@ def main() -> None:
     cache_dir = project_root / ".cache"
     api_dir = project_root / "api"
     openapi_spec = api_dir / "openapi.json"
-    hash_file = cache_dir / "openapi-hash"
+    hash_file = api_dir / "openapi-hash"
 
     # Ensure directories exist
     cache_dir.mkdir(exist_ok=True)
