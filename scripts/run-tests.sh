@@ -1,22 +1,16 @@
 #!/bin/bash
 set -e
 
-# Detect if running in Docker (script is in /usr/local/bin) or natively
-if [ -d "/app/server" ]; then
-    # Running in Docker
-    PROJECT_ROOT="/app"
-else
-    # Running natively - use script location to find project root
-    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-    PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+# Find project root from script location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-    # Source test.env when running natively
-    if [ -f "$PROJECT_ROOT/test.env" ]; then
-        set -a  # auto-export all variables
-        # shellcheck source=/dev/null
-        source "$PROJECT_ROOT/test.env"
-        set +a
-    fi
+# Source test.env if present
+if [ -f "$PROJECT_ROOT/test.env" ]; then
+    set -a  # auto-export all variables
+    # shellcheck source=/dev/null
+    source "$PROJECT_ROOT/test.env"
+    set +a
 fi
 
 # Configuration with defaults
@@ -101,14 +95,8 @@ export API_BASE_URL="http://localhost:$SERVER_PORT"
 
 # Build CLI and set path
 cd "$PROJECT_ROOT/cli"
-if [ "$PROJECT_ROOT" = "/app" ]; then
-    # In Docker: use separate target dir to avoid arch conflicts with mounted host target
-    CARGO_TARGET_DIR=/tmp/cli-target cargo build -q
-    export CLI_PATH="/tmp/cli-target/debug/ramekin-cli"
-else
-    cargo build -q
-    export CLI_PATH="$PROJECT_ROOT/cli/target/debug/ramekin-cli"
-fi
+cargo build -q
+export CLI_PATH="$PROJECT_ROOT/cli/target/debug/ramekin-cli"
 
 cd "$PROJECT_ROOT"
 pytest tests -v

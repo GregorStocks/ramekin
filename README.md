@@ -35,13 +35,12 @@ Run `make help` to see all available commands:
 
 ```bash
 make dev              # Start dev environment (with hot-reload)
-make down             # Stop all services
-make logs             # Show all logs
-make logs-server      # Show server logs only
-make logs-db          # Show database logs only
-make generate-clients # Regenerate both API clients
+make dev-down         # Stop dev processes
+make db-up            # Start postgres container
+make db-down          # Stop postgres container
+make test             # Run tests
 make lint             # Run linter
-make clean            # Stop services and clean volumes
+make clean            # Clean generated files and build artifacts
 ```
 
 ## Development Workflow
@@ -74,7 +73,6 @@ ramekin/
 │       └── ramekin-client/  # Auto-generated Rust client
 ├── ramekin-ui/           # SolidJS frontend
 │   └── src/generated/    # Auto-generated TypeScript client
-├── docker-compose.yml    # Docker config with hot-reload
-└── Makefile             # All common commands
+└── Makefile              # All common commands
 ```
 
