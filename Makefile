@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db check-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test install-hooks setup-claude-web
+.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -62,12 +62,15 @@ lint: venv ## Run all linters (Rust, TypeScript, Python)
 
 clean: test-docker-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
-	@rm -f api/openapi.json
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 	@rm -rf server/target/ cli/target/
 	@rm -rf ramekin-ui/node_modules/
 	@rm -rf tests/__pycache__/ scripts/__pycache__/
 	@rm -rf .cache/ logs/
+
+clean-api: ## Force regeneration of OpenAPI spec and clients on next build
+	@rm -f api/openapi.json
+	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
 
 generate-schema: restart ## Regenerate schema.rs from database (runs migrations first)
 	@docker compose -p $(DEV_PROJECT) exec server diesel print-schema > server/src/schema.rs
