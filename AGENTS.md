@@ -10,7 +10,7 @@ When adding new dependencies, make sure you're getting the latest version - you 
 
 When adding new API endpoints, remember to add end-to-end tests before you start using them in the UI.
 
-Never run git commands.
+Never run git commands unless `CLAUDE_CODE_REMOTE=true` (web/CI environment).
 
 Never modify generated code (except for temporary testing), since your changes will get blown away.
 
