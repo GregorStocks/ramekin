@@ -44,6 +44,7 @@ fi
 
 # Check postgres connection using test.env
 if [ -f "$PROJECT_ROOT/test.env" ]; then
+    # shellcheck source=/dev/null
     source "$PROJECT_ROOT/test.env"
     if [ -n "$DATABASE_URL" ]; then
         if ! pg_isready -d "$DATABASE_URL" >/dev/null 2>&1; then

@@ -80,7 +80,7 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: setup-claude-web check-deps $(CLIENT_MARKER) ## Run tests natively
+test: check-deps $(CLIENT_MARKER) ## Run tests natively
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 .venv/.installed: requirements-test.txt
@@ -90,7 +90,7 @@ test: setup-claude-web check-deps $(CLIENT_MARKER) ## Run tests natively
 
 venv: .venv/.installed ## Create Python venv with test dependencies
 
-check-deps: venv ## Check that all dependencies are installed
+check-deps: venv setup-claude-web ## Check that all dependencies are installed
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-deps.sh
 
 venv-clean: ## Remove Python venv

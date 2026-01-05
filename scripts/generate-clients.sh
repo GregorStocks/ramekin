@@ -18,7 +18,7 @@ generate_client_docker() {
 
     echo "Generating $generator client -> $output (Docker)"
 
-    rm -rf "$PROJECT_ROOT/$output"
+    rm -rf "${PROJECT_ROOT:?}/${output:?}"
 
     docker run --rm \
         -u "$(id -u):$(id -g)" \
@@ -39,7 +39,7 @@ generate_client_local() {
 
     echo "Generating $generator client -> $output (local)"
 
-    rm -rf "$PROJECT_ROOT/$output"
+    rm -rf "${PROJECT_ROOT:?}/${output:?}"
 
     npx --yes @openapitools/openapi-generator-cli@2.27.0 generate \
         -i "$SPEC_FILE" \
