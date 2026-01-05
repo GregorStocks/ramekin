@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ramekin
+      POSTGRES_PASSWORD: ramekin
+      POSTGRES_DB: ramekin
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ramekin"]
+      interval: 1s
+      timeout: 2s
+      retries: 30
+
+  devbox:
+    build:
+      context: .
+      dockerfile: Dockerfile.devbox
+    user: "${UID:-1000}:${GID:-1000}"
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    environment:
+      DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
+      TEST_DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin_test
+      RUST_LOG: debug
+      INSECURE_PASSWORD_HASHING: "1"
+      # Tell check-deps.sh we're in a container environment
+      DEVBOX: "1"
+      # Set HOME/USER for tools that need it (avoid /app to not pollute project dir)
+      HOME: /home/devbox
+      USER: devbox
+    ports:
+      - "3000:3000"   # API server
+      - "5173:5173"   # UI dev server
+    volumes:
+      - .:/app:z,cached
+      # Use named volumes for build artifacts to avoid permission issues
+      - server_target:/app/server/target
+      - cli_target:/app/cli/target
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  server_target:
+  cli_target:

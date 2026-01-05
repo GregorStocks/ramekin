@@ -5,19 +5,14 @@ Generate OpenAPI spec with smart caching.
 This script:
 - Calculates a hash of API source files
 - Skips generation if API hasn't changed (smart caching)
-- Generates OpenAPI spec by building the server (locally or in Docker)
+- Generates OpenAPI spec by building the server
 - Regenerates all API clients (Rust, TypeScript, Python)
 - Runs linters on success
-
-By default, builds locally. Use --docker to build in Docker instead.
 """
 
-import argparse
 import hashlib
-import os
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 
@@ -76,9 +71,9 @@ def needs_regeneration(cache_file: Path, openapi_spec: Path, current_hash: str) 
     return cached_hash != current_hash
 
 
-def generate_openapi_spec_local(openapi_spec: Path) -> None:
-    """Generate OpenAPI spec by building server locally."""
-    print("Building server locally and generating OpenAPI spec...")
+def generate_openapi_spec(openapi_spec: Path) -> None:
+    """Generate OpenAPI spec by building server."""
+    print("Building server and generating OpenAPI spec...")
 
     project_root = get_project_root()
     server_dir = project_root / "server"
@@ -112,69 +107,8 @@ def generate_openapi_spec_local(openapi_spec: Path) -> None:
     print(f"Generated {openapi_spec}")
 
 
-def generate_openapi_spec_docker(openapi_spec: Path) -> None:
-    """Generate OpenAPI spec by building server in Docker."""
-    print("Building server in Docker and generating OpenAPI spec...")
-
-    project_root = get_project_root()
-    server_target = project_root / "server/target"
-    server_target.mkdir(parents=True, exist_ok=True)
-
-    # Create temp file for error logs
-    with tempfile.NamedTemporaryFile(mode="w+", delete=False) as temp_log:
-        temp_log_path = temp_log.name
-
-    try:
-        # Run docker to build server and generate spec (10 min timeout)
-        result = subprocess.run(
-            [
-                "docker",
-                "run",
-                "--rm",
-                "-u",
-                f"{os.getuid()}:{os.getgid()}",
-                "-v",
-                f"{project_root}:/app:z",
-                "-v",
-                f"{server_target}:/app/server/target:z",
-                "-w",
-                "/app/server",
-                "rust:latest",
-                "sh",
-                "-c",
-                "cargo build --release -q && target/release/ramekin-server --openapi",
-            ],
-            stdout=subprocess.PIPE,
-            stderr=open(temp_log_path, "w"),
-            check=False,
-            timeout=600,
-        )
-
-        if result.returncode != 0:
-            print("Error: Failed to generate OpenAPI spec", file=sys.stderr)
-            with open(temp_log_path) as f:
-                print(f.read(), file=sys.stderr)
-            sys.exit(1)
-
-        # Write spec to file
-        openapi_spec.write_bytes(result.stdout)
-        print(f"Generated {openapi_spec}")
-
-    finally:
-        Path(temp_log_path).unlink(missing_ok=True)
-
-
 def main() -> None:
     """Main execution."""
-
-    parser = argparse.ArgumentParser(description="Generate OpenAPI spec and clients")
-    parser.add_argument(
-        "--docker",
-        action="store_true",
-        help="Build server in Docker instead of locally",
-    )
-    args = parser.parse_args()
-
     project_root = get_project_root()
 
     # Paths
@@ -198,20 +132,12 @@ def main() -> None:
 
     if needs_spec:
         print(f"API changed or missing, regenerating ({current_hash})...")
-        if args.docker:
-            generate_openapi_spec_docker(openapi_spec)
-        else:
-            generate_openapi_spec_local(openapi_spec)
+        generate_openapi_spec(openapi_spec)
     else:
         print("Clients missing, regenerating from existing spec...")
 
-    # Pass docker flag to generate-clients.sh via environment
-    env = os.environ.copy()
-    if args.docker:
-        env["DOCKER"] = "1"
-
     generate_clients_script = project_root / "scripts/generate-clients.sh"
-    subprocess.run([str(generate_clients_script)], check=True, timeout=300, env=env)
+    subprocess.run([str(generate_clients_script)], check=True, timeout=300)
 
     if needs_spec:
         hash_file.write_text(current_hash)

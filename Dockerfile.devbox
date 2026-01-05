@@ -1,0 +1,43 @@
+FROM rust:latest
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    postgresql-client \
+    curl \
+    openjdk-21-jre-headless \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js 22
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install uv for Python
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+
+# Install process-compose (detect architecture)
+RUN ARCH=$(dpkg --print-architecture) && \
+    curl -L "https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_${ARCH}.tar.gz" \
+    | tar -xzf - -C /usr/local/bin process-compose
+
+# Install Rust components
+RUN rustup component add clippy rustfmt
+
+# Install Rust tools
+RUN --mount=type=cache,target=/usr/local/cargo/registry \
+    --mount=type=cache,target=/usr/local/cargo/git \
+    cargo install cargo-watch && \
+    cargo install diesel_cli --no-default-features --features postgres
+
+# Make cargo directories writable by non-root users
+RUN chmod -R 777 /usr/local/cargo
+
+WORKDIR /app
+
+# Create directories with proper permissions for non-root users
+RUN mkdir -p /app/server/target /app/cli/target /app/.venv /app/logs /home/devbox \
+    && chmod -R 777 /app /home/devbox
+
+# Keep container running - user will exec in and run make commands
+CMD ["sleep", "infinity"]

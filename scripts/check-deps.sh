@@ -20,8 +20,8 @@ fi
 # Check Node.js
 command -v npm >/dev/null 2>&1 || MISSING+=("npm (install Node.js)")
 
-# Check process-compose for process management (not needed in CI)
-if [ -z "$CI" ]; then
+# Check process-compose for process management (not needed in CI or devbox)
+if [ -z "$CI" ] && [ -z "$DEVBOX" ]; then
     command -v process-compose >/dev/null 2>&1 || MISSING+=("process-compose (brew install process-compose or see https://github.com/F1bonacc1/process-compose)")
 fi
 
@@ -32,23 +32,25 @@ command -v python3 >/dev/null 2>&1 || MISSING+=("python3")
 python3 -c "import pytest" 2>/dev/null || MISSING+=("pytest (uv pip install pytest)")
 python3 -c "import requests" 2>/dev/null || MISSING+=("requests (uv pip install requests)")
 
-# Check env files (dev.env not needed in CI)
-if [ -z "$CI" ]; then
+# Check env files (not needed in CI or devbox - they get env from docker-compose)
+if [ -z "$CI" ] && [ -z "$DEVBOX" ]; then
     if [ ! -f "$PROJECT_ROOT/dev.env" ]; then
         MISSING+=("dev.env file (copy from dev.env.example)")
     fi
-fi
-if [ ! -f "$PROJECT_ROOT/test.env" ]; then
-    MISSING+=("test.env file (copy from test.env.example)")
+    if [ ! -f "$PROJECT_ROOT/test.env" ]; then
+        MISSING+=("test.env file (copy from test.env.example)")
+    fi
 fi
 
-# Check postgres connection using test.env
-if [ -f "$PROJECT_ROOT/test.env" ]; then
+# Check postgres connection
+# In devbox/CI, use DATABASE_URL from environment; otherwise load from test.env
+if [ -z "$DATABASE_URL" ] && [ -f "$PROJECT_ROOT/test.env" ]; then
     source "$PROJECT_ROOT/test.env"
-    if [ -n "$DATABASE_URL" ]; then
-        if ! pg_isready -d "$DATABASE_URL" >/dev/null 2>&1; then
-            MISSING+=("postgres not reachable (run: make db-up)")
-        fi
+fi
+
+if [ -n "$DATABASE_URL" ]; then
+    if ! pg_isready -d "$DATABASE_URL" >/dev/null 2>&1; then
+        MISSING+=("postgres not reachable (run: make db-up)")
     fi
 fi
 
