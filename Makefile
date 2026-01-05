@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients generate-clients-docker check-test-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks setup-claude-web
+.PHONY: help dev dev-headless dev-docker dev-down up down restart logs logs-server logs-db generate-clients generate-clients-docker check-deps lint clean generate-schema test venv venv-clean db-up db-down db-clean test-docker test-docker-shell test-docker-up test-docker-down test-docker-clean seed load-test screenshot install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -21,17 +21,29 @@ help: ## Show this help message
 	@echo 'Available targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: generate-clients-docker ## Start dev environment (with hot-reload)
+dev: check-deps generate-clients ## Start local dev environment (server + UI via process-compose)
+	@echo "Starting dev environment (Ctrl+C to stop)..."
+	@mkdir -p logs
+	@process-compose up -e dev.env
+
+dev-headless: check-deps generate-clients ## Start local dev environment without TUI
+	@echo "Starting dev environment (headless)..."
+	@mkdir -p logs
+	@process-compose up -e dev.env -t=false
+
+dev-docker: generate-clients-docker ## Start Docker dev environment
 	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Dev environment ready"; } | $(TS)
 	@$(MAKE) seed
 
+dev-down: ## Stop dev processes (not database)
+	@process-compose down 2>/dev/null || true
+	@pkill -f "cargo watch" 2>/dev/null || true
+
 up: dev ## Alias for dev
 
-down: ## Stop all services
-	@docker compose -p $(DEV_PROJECT) down 2>/dev/null
+down: dev-down ## Stop dev processes
 
-restart: generate-clients-docker ## Force restart services
-	@{ BUILDKIT_PROGRESS=plain docker compose -p $(DEV_PROJECT) up --build -d --force-recreate --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; echo "Services restarted"; } | $(TS)
+restart: dev-down dev ## Restart local dev environment
 
 logs: ## Show all logs
 	docker compose -p $(DEV_PROJECT) logs -f
@@ -74,7 +86,7 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: setup-claude-web venv check-test-deps generate-clients ## Run tests natively
+test: setup-claude-web check-deps generate-clients ## Run tests natively
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 .venv/.installed: requirements-test.txt
@@ -84,29 +96,31 @@ test: setup-claude-web venv check-test-deps generate-clients ## Run tests native
 
 venv: .venv/.installed ## Create Python venv with test dependencies
 
-check-test-deps: venv ## Check that test dependencies are installed
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-test-deps.sh
+check-deps: venv ## Check that all dependencies are installed
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/check-deps.sh
 
 venv-clean: ## Remove Python venv
 	@rm -rf .venv
 
-db-up: ## Start postgres container for local testing
-	@if ! docker ps --format '{{.Names}}' | grep -q '^ramekin-test-db$$'; then \
+db-up: ## Start postgres container with dev and test databases
+	@if ! docker ps --format '{{.Names}}' | grep -q '^ramekin-db$$'; then \
 	  echo "Starting postgres..."; \
-	  docker run -d --name ramekin-test-db \
+	  docker run -d --name ramekin-db \
 	    -e POSTGRES_USER=ramekin \
 	    -e POSTGRES_PASSWORD=ramekin \
-	    -e POSTGRES_DB=ramekin_test \
+	    -e POSTGRES_DB=ramekin \
 	    -p 54321:5432 \
 	    postgres:16-alpine >/dev/null; \
 	  echo "Waiting for postgres..."; \
-	  until docker exec ramekin-test-db pg_isready -U ramekin >/dev/null 2>&1; do sleep 0.2; done; \
-	  echo "Postgres ready on localhost:54321"; \
+	  until docker exec ramekin-db pg_isready -U ramekin >/dev/null 2>&1; do sleep 0.2; done; \
+	  echo "Creating test database..."; \
+	  docker exec ramekin-db createdb -U ramekin ramekin_test 2>/dev/null || true; \
+	  echo "Postgres ready on localhost:54321 (databases: ramekin, ramekin_test)"; \
 	fi
 
 db-down: ## Stop postgres container
-	@docker stop ramekin-test-db >/dev/null 2>&1 || true
-	@docker rm ramekin-test-db >/dev/null 2>&1 || true
+	@docker stop ramekin-db >/dev/null 2>&1 || true
+	@docker rm ramekin-db >/dev/null 2>&1 || true
 
 db-clean: db-down ## Stop postgres and remove data
 

@@ -1,0 +1,33 @@
+version: "0.5"
+
+log_location: ./logs/dev.log
+log_configuration:
+  disable_json: true
+  no_color: true
+  add_timestamp: true
+  flush_each_line: true
+
+processes:
+  server:
+    command: cargo watch -x run
+    working_dir: ./server
+    availability:
+      restart: on_failure
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: 3000
+        path: /api/test/unauthed-ping
+
+  ui:
+    command: npm run dev
+    working_dir: ./ramekin-ui
+
+  seed:
+    command: cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
+    working_dir: ./cli
+    depends_on:
+      server:
+        condition: process_healthy
+    availability:
+      restart: "no"

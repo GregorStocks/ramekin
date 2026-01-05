@@ -226,9 +226,11 @@ async fn main() {
         .unwrap_or_else(|_| "3000".to_string())
         .parse()
         .expect("PORT must be a valid port number");
-    let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", port))
+    let bind_addr = format!("0.0.0.0:{}", port);
+    tracing::debug!("Attempting to bind to {}", bind_addr);
+    let listener = tokio::net::TcpListener::bind(&bind_addr)
         .await
-        .unwrap();
+        .unwrap_or_else(|e| panic!("Failed to bind to {}: {}", bind_addr, e));
     let addr = listener.local_addr().unwrap();
 
     tracing::info!("Server listening on {}", addr);
