@@ -222,11 +222,24 @@ async fn main() {
                 ),
         );
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
+    let port: u16 = env::var("PORT")
+        .unwrap_or_else(|_| "3000".to_string())
+        .parse()
+        .expect("PORT must be a valid port number");
+    let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{}", port))
+        .await
+        .unwrap();
+    let addr = listener.local_addr().unwrap();
 
-    tracing::info!("Server listening on {}", listener.local_addr().unwrap());
-    tracing::info!("Swagger UI available at http://localhost:3000/swagger-ui/");
-    tracing::info!("OpenAPI spec available at http://localhost:3000/api-docs/openapi.json");
+    tracing::info!("Server listening on {}", addr);
+    tracing::info!(
+        "Swagger UI available at http://localhost:{}/swagger-ui/",
+        addr.port()
+    );
+    tracing::info!(
+        "OpenAPI spec available at http://localhost:{}/api-docs/openapi.json",
+        addr.port()
+    );
     tracing::info!("Hot reload is enabled!");
 
     axum::serve(listener, app).await.unwrap();

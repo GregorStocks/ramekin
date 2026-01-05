@@ -1,4 +1,4 @@
-.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-up test-run test-down test-clean test-logs seed load-test screenshot install-hooks
+.PHONY: help dev up down restart logs logs-server logs-db generate-clients lint clean generate-schema test test-shell test-up test-down test-clean seed load-test screenshot install-hooks
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -68,25 +68,24 @@ generate-schema: restart ## Regenerate schema.rs from database (runs migrations 
 	@echo "Schema generated at server/src/schema.rs" | $(TS)
 	$(MAKE) lint
 
-test: generate-clients test-up ## Run tests (reuses running containers if available)
-	@BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml run --build --rm --quiet-pull tests 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$"
+test: generate-clients test-up ## Run tests (starts environment if needed)
+	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml exec tests /usr/local/bin/run-tests.sh
 
-test-up: ## Start test environment
-	@if ! docker ps --filter "name=ramekin-test-server" --filter "status=running" -q | grep -q .; then \
-	  { echo "Test environment not running, starting..."; \
-	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull postgres server 2>&1 | grep -vE "^#|^$$|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; } | $(TS); \
+test-shell: test-up ## Start interactive shell in test container
+	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml exec tests bash
+
+test-up: ## Start test environment (postgres + servers)
+	@if ! docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml ps --status running tests 2>/dev/null | grep -q tests; then \
+	  echo "Starting test environment..."; \
+	  BUILDKIT_PROGRESS=plain docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml up --build -d --wait --quiet-pull 2>&1 | grep -vE "^#|Container|Network|level=warning|Built" | grep -v "^\s*$$" || true; \
+	  echo "Test environment ready"; \
 	fi
 
 test-down: ## Stop test environment
 	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down 2>/dev/null
 
-test-clean: ## Stop test environment and clean volumes
-	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down -v 2>/dev/null
-
-test-logs: ## Show test environment logs
-	docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml logs -f
-
-test-rebuild: test-clean test-up ## Force rebuild test environment from scratch
+test-clean: ## Stop and remove test environment with volumes
+	@docker compose -p $(TEST_PROJECT) -f docker-compose.test.yml down -v 2>/dev/null || true
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes

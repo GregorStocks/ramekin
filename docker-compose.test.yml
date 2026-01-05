@@ -1,82 +1,32 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: ramekin-test-postgres
     environment:
       POSTGRES_USER: ramekin
       POSTGRES_PASSWORD: ramekin
       POSTGRES_DB: ramekin
-    ports:
-      - "15432:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ramekin"]
       interval: 1s
       timeout: 2s
       retries: 30
 
-  fixture-server:
-    image: python:3.12-slim
-    container_name: ramekin-test-fixtures
-    working_dir: /fixtures
-    volumes:
-      - ./tests/scrape_fixtures:/fixtures:ro
-    command: python -m http.server 8888
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8888/')"]
-      interval: 1s
-      timeout: 2s
-      retries: 10
-
-  server:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    container_name: ramekin-test-server
-    user: "${UID:-1000}:${GID:-1000}"
-    working_dir: /app/server
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    env_file:
-      - path: test.env
-        required: false
-    environment:
-      DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
-      RUST_LOG: debug
-      INSECURE_PASSWORD_HASHING: "1"
-      SCRAPE_ALLOWED_HOSTS: fixture-server:8888
-    ports:
-      - "13000:3000"
-    volumes:
-      - ./server:/app/server:z,cached
-      - ./migrations:/app/migrations:z,cached
-    command: cargo watch -x run
-    depends_on:
-      postgres:
-        condition: service_healthy
-      fixture-server:
-        condition: service_healthy
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/api/test/unauthed-ping"]
-      interval: 1s
-      timeout: 2s
-      retries: 60
-
   tests:
     build:
       context: .
       dockerfile: Dockerfile.test
-    container_name: ramekin-test-runner
     user: "${UID:-1000}:${GID:-1000}"
-    working_dir: /app/cli
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+    working_dir: /app
     environment:
       DATABASE_URL: postgres://ramekin:ramekin@postgres:5432/ramekin
-      API_BASE_URL: http://server:3000
+      RUST_LOG: error
+      INSECURE_PASSWORD_HASHING: "1"
+      FIXTURE_DIR: /app/tests/scrape_fixtures
     volumes:
+      - ./server:/app/server:z,cached
+      - ./migrations:/app/migrations:z,cached
       - ./tests:/app/tests:z,cached
       - ./cli:/app/cli:z,cached
     depends_on:
-      server:
+      postgres:
         condition: service_healthy
-    command: bash -c "cargo build -q && pytest /app/tests -v"

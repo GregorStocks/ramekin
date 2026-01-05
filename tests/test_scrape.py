@@ -1,3 +1,4 @@
+import os
 import time
 
 import pytest
@@ -7,7 +8,7 @@ from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateScrapeRequest
 
 
-FIXTURE_BASE_URL = "http://fixture-server:8888"
+FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL", "http://localhost:8888")
 
 
 def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
