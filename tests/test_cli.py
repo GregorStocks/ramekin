@@ -5,10 +5,11 @@ import subprocess
 def test_cli_ping():
     """Test CLI ping command against the server."""
     server_url = os.environ.get("API_BASE_URL", "http://server:3000")
+    cli_path = os.environ.get("CLI_PATH", "/app/cli/target/debug/ramekin-cli")
 
     result = subprocess.run(
         [
-            "/app/cli/target/debug/ramekin-cli",
+            cli_path,
             "ping",
             "--server",
             server_url,
