@@ -42,11 +42,11 @@ logs-server: ## Show server logs
 logs-db: ## Show database logs
 	docker logs ramekin-postgres -f
 
-generate-clients: check-test-deps ## Generate OpenAPI spec and clients (local, no Docker)
-	@./scripts/generate-openapi.py 2>&1 | $(TS)
+generate-clients: venv ## Generate OpenAPI spec and clients (local, no Docker)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/generate-openapi.py 2>&1 | $(TS)
 
-generate-clients-docker: ## Generate OpenAPI spec and clients (using Docker)
-	@./scripts/generate-openapi.py --docker 2>&1 | $(TS)
+generate-clients-docker: venv ## Generate OpenAPI spec and clients (using Docker)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/generate-openapi.py --docker 2>&1 | $(TS)
 
 generate-clients-force: ## Force regeneration of API clients (bypass cache)
 	@# NOTE: You should never need to run this. If clients aren't regenerating,
@@ -55,8 +55,8 @@ generate-clients-force: ## Force regeneration of API clients (bypass cache)
 	@rm -f .cache/openapi-hash
 	@$(MAKE) generate-clients
 
-lint: ## Run all linters (Rust, TypeScript, Python)
-	@./scripts/lint.py 2>&1 | $(TS)
+lint: venv ## Run all linters (Rust, TypeScript, Python)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
 
 clean: test-docker-clean ## Stop services, clean volumes, and remove generated clients
 	@docker compose -p $(DEV_PROJECT) down -v 2>/dev/null
