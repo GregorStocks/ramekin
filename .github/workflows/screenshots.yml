@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: screenshots
-          path: cli/logs/*.png
+          path: logs/*.png
           if-no-files-found: error
 
       - name: Add screenshots to workflow summary
@@ -54,7 +54,7 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          for img in cli/logs/*.png; do
+          for img in logs/*.png; do
             name=$(basename "$img" .png)
             echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
           done
