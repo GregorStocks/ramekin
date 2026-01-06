@@ -25,11 +25,19 @@ if ! command -v diesel >/dev/null 2>&1; then
     cargo install diesel_cli --no-default-features --features postgres
 fi
 
+# Install cargo-watch if not present
+if ! command -v cargo-watch >/dev/null 2>&1; then
+    echo "Installing cargo-watch..."
+    cargo install cargo-watch
+fi
+
 # Install process-compose if not present
 if ! command -v process-compose >/dev/null 2>&1; then
     echo "Installing process-compose..."
-    curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_amd64.tar.gz | tar -xzf - -C /usr/local/bin process-compose
-    chmod +x /usr/local/bin/process-compose
+    # Use go install to get process-compose (downloads through Go proxy which is allowed)
+    go install github.com/f1bonacc1/process-compose@v1.87.0
+    # Link from GOPATH/bin to /usr/local/bin so it's in PATH
+    ln -sf "$(go env GOPATH)/bin/process-compose" /usr/local/bin/process-compose
 fi
 
 # Create test.env from example if it doesn't exist
@@ -38,6 +46,14 @@ if [ ! -f test.env ]; then
     cp test.env.example test.env
     # Use port 5432 (system postgres) instead of 54321 (docker)
     sed -i 's/:54321/:5432/' test.env
+fi
+
+# Create dev.env from example if it doesn't exist
+if [ ! -f dev.env ]; then
+    echo "Creating dev.env from dev.env.example..."
+    cp dev.env.example dev.env
+    # Use port 5432 (system postgres) instead of 54321 (docker)
+    sed -i 's/:54321/:5432/' dev.env
 fi
 
 # Start postgres if not running
