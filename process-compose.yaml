@@ -9,10 +9,10 @@ log_configuration:
 
 processes:
   server:
-    command: cargo watch -x run
+    command: ${SERVER_CMD:-cargo watch -x run}
     working_dir: ./server
     availability:
-      restart: on_failure
+      restart: ${SERVER_RESTART:-on_failure}
     readiness_probe:
       http_get:
         host: localhost
@@ -42,3 +42,4 @@ processes:
         condition: process_started
     availability:
       restart: "no"
+      exit_on_end: ${PC_EXIT_ON_END:-false}

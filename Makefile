@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -116,3 +116,7 @@ install-hooks: ## Install git hooks for local development
 	@cp scripts/pre-push .git/hooks/pre-push
 	@chmod +x .git/hooks/pre-push
 	@echo "Git hooks installed successfully"
+
+screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
+	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false || true
+	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
