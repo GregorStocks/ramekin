@@ -9,7 +9,7 @@ log_configuration:
 
 processes:
   server:
-    command: cargo watch -x run
+    command: ${SERVER_CMD:-cargo watch -x run}
     working_dir: ./server
     availability:
       restart: on_failure
