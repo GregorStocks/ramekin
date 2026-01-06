@@ -49,7 +49,7 @@ do_setup() {
 DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/${DEV_DB}
 PORT=${DEV_PORT}
 UI_PORT=${DEV_UI_PORT}
-RUST_LOG=debug
+RUST_LOG=info
 INSECURE_PASSWORD_HASHING=1
 EOF
     echo "Created dev.env"
