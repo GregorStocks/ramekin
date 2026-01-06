@@ -12,13 +12,13 @@ ramekin_client = { path = "generated/ramekin-client" }
 clap = { version = "4.5", features = ["derive"] }
 
 # Async runtime
-tokio = { version = "1.43", features = ["full"] }
+tokio = { version = "1.49", features = ["full"] }
 
 # HTTP client for RPC
-reqwest = { version = "0.12", features = ["json", "multipart"] }
+reqwest = { version = "0.13", features = ["json", "multipart"] }
 
 # UUIDs for photo IDs
-uuid = { version = "1.11", features = ["v4", "serde"] }
+uuid = { version = "1.19", features = ["v4", "serde"] }
 
 # Serialization
 serde = { version = "1.0", features = ["derive"] }
@@ -30,13 +30,13 @@ url = "2.5"
 anyhow = "1.0"
 
 # Paprika import
-zip = "2.2"
+zip = "7.0"
 flate2 = "1.0"
 base64 = "0.22"
 
 # Load testing
-rand = "0.8"
-rand_chacha = "0.3"
+rand = "0.9"
+rand_chacha = "0.9"
 
 # Headless browser
 headless_chrome = "1.0"
