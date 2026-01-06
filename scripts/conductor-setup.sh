@@ -5,6 +5,8 @@
 set -e
 set -o pipefail
 
+TIMEOUT_SECONDS=300  # 5 minutes
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
@@ -65,8 +67,8 @@ EOF
     # Create databases (requires postgres running on port 54321)
     echo ""
     echo "Creating databases..."
-    createdb -h localhost -p 54321 -U ramekin "$DEV_DB"
-    createdb -h localhost -p 54321 -U ramekin "$TEST_DB"
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$DEV_DB"
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$TEST_DB"
 
     # Install npm dependencies
     echo ""
@@ -84,6 +86,21 @@ EOF
     echo "Workspace setup complete!"
 }
 
-# Run setup, piping all output through timestamp wrapper and to log file
+# Run setup with timeout, piping all output through timestamp wrapper and to log file
 mkdir -p "$PROJECT_ROOT/logs"
+
+# Capture this script's PID for the watchdog to use
+MAIN_PID=$$
+
+# Start a background watchdog that kills the entire process group after timeout
+(
+    sleep "$TIMEOUT_SECONDS"
+    echo "ERROR: Setup timed out after $TIMEOUT_SECONDS seconds" >&2
+    kill -TERM 0  # Kill all processes in the current process group
+) &
+WATCHDOG_PID=$!
+
+# Ensure watchdog is killed when we exit (success or failure)
+trap "kill $WATCHDOG_PID 2>/dev/null" EXIT
+
 do_setup 2>&1 | "$SCRIPT_DIR/ts" | tee -a "$PROJECT_ROOT/logs/conductor-setup.log"
