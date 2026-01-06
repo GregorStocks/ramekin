@@ -13,7 +13,13 @@ from ramekin_client.models import SignupRequest
 
 @pytest.fixture
 def api_config():
-    return Configuration(host=os.environ.get("API_BASE_URL", "http://server:3000"))
+    api_base_url = os.environ.get("API_BASE_URL")
+    if not api_base_url:
+        port = os.environ.get("PORT")
+        if not port:
+            raise ValueError("API_BASE_URL or PORT environment variable required")
+        api_base_url = f"http://localhost:{port}"
+    return Configuration(host=api_base_url)
 
 
 @pytest.fixture

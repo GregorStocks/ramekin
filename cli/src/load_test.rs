@@ -102,6 +102,7 @@ const RECIPE_TEMPLATES: &[RecipeTemplate] = &[
 async fn create_user_and_recipes(
     user_num: usize,
     server: &str,
+    ui_url: &str,
     run_id: u64,
 ) -> Result<(String, String, usize)> {
     // Use deterministic random seed for this user
@@ -230,14 +231,13 @@ async fn create_user_and_recipes(
     );
 
     // Load pages in headless browser to simulate real usage and test frontend performance
-    let ui_url = server.replace(":3000", ":5173"); // Assuming UI is on port 5173
     let start = std::time::Instant::now();
 
     let browser = Browser::default().context("Failed to launch browser")?;
     let tab = browser.new_tab().context("Failed to create tab")?;
 
     // Navigate to login page
-    tab.navigate_to(&ui_url)
+    tab.navigate_to(ui_url)
         .context("Failed to navigate to UI")?;
     tab.wait_for_element("input[type='text']")
         .context("Failed to find username input")?;
@@ -292,7 +292,12 @@ async fn create_user_and_recipes(
     Ok((username, password, num_recipes))
 }
 
-pub async fn load_test(server: &str, num_users: usize, concurrency: usize) -> Result<()> {
+pub async fn load_test(
+    server: &str,
+    ui_url: &str,
+    num_users: usize,
+    concurrency: usize,
+) -> Result<()> {
     // Generate unique run ID from current timestamp
     let run_id = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -301,6 +306,7 @@ pub async fn load_test(server: &str, num_users: usize, concurrency: usize) -> Re
 
     println!("Starting load test:");
     println!("  Server: {}", server);
+    println!("  UI URL: {}", ui_url);
     println!("  Users: {}", num_users);
     println!("  Concurrency: {}", concurrency);
     println!("  Run ID: {}", run_id);
@@ -318,12 +324,13 @@ pub async fn load_test(server: &str, num_users: usize, concurrency: usize) -> Re
 
     for user_num in 0..num_users {
         let server = server.to_string();
+        let ui_url = ui_url.to_string();
         let successes = successes.clone();
         let failures = failures.clone();
         let user_with_most_recipes = user_with_most_recipes.clone();
 
         tasks.spawn(async move {
-            match create_user_and_recipes(user_num, &server, run_id).await {
+            match create_user_and_recipes(user_num, &server, &ui_url, run_id).await {
                 Ok((username, password, num_recipes)) => {
                     let count = successes.fetch_add(1, Ordering::Relaxed) + 1;
 

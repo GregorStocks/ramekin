@@ -21,15 +21,15 @@ struct Cli {
 enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL (or set PORT env var)
+        #[arg(long, env = "API_BASE_URL")]
+        server: Option<String>,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL (or set PORT env var)
+        #[arg(long, env = "API_BASE_URL")]
+        server: Option<String>,
         /// Username for the seed user
         #[arg(long)]
         username: String,
@@ -42,9 +42,9 @@ enum Commands {
     },
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL (or set PORT env var)
+        #[arg(long, env = "API_BASE_URL")]
+        server: Option<String>,
         /// Username to authenticate as
         #[arg(long)]
         username: String,
@@ -57,9 +57,12 @@ enum Commands {
     },
     /// Run a load test creating many users with recipes and photos
     LoadTest {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL (or set PORT env var)
+        #[arg(long, env = "API_BASE_URL")]
+        server: Option<String>,
+        /// UI URL for browser tests (or set UI_PORT env var)
+        #[arg(long, env = "UI_BASE_URL")]
+        ui_url: Option<String>,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
         users: usize,
@@ -69,9 +72,9 @@ enum Commands {
     },
     /// Take screenshots of the app as the test user
     Screenshot {
-        /// UI URL (default: http://localhost:5173)
-        #[arg(long, default_value = "http://localhost:5173")]
-        ui_url: String,
+        /// UI URL (or set UI_PORT env var)
+        #[arg(long, env = "UI_BASE_URL")]
+        ui_url: Option<String>,
         /// Username for authentication
         #[arg(long, default_value = "t")]
         username: String,
@@ -90,12 +93,33 @@ enum Commands {
     },
 }
 
+fn require_server_url(server: Option<String>) -> Result<String> {
+    server
+        .or_else(|| {
+            std::env::var("PORT")
+                .ok()
+                .map(|p| format!("http://localhost:{}", p))
+        })
+        .ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set PORT env var"))
+}
+
+fn require_ui_url(ui_url: Option<String>) -> Result<String> {
+    ui_url
+        .or_else(|| {
+            std::env::var("UI_PORT")
+                .ok()
+                .map(|p| format!("http://localhost:{}", p))
+        })
+        .ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui-url or set UI_PORT env var"))
+}
+
 #[tokio::main]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
         Commands::Ping { server } => {
+            let server = require_server_url(server)?;
             ping(&server).await?;
         }
         Commands::Seed {
@@ -104,6 +128,7 @@ async fn main() -> Result<()> {
             password,
             file,
         } => {
+            let server = require_server_url(server)?;
             seed::seed(&server, &username, &password, &file).await?;
         }
         Commands::Import {
@@ -112,14 +137,18 @@ async fn main() -> Result<()> {
             password,
             file,
         } => {
+            let server = require_server_url(server)?;
             import::import(&server, &username, &password, &file).await?;
         }
         Commands::LoadTest {
             server,
+            ui_url,
             users,
             concurrency,
         } => {
-            load_test::load_test(&server, users, concurrency).await?;
+            let server = require_server_url(server)?;
+            let ui_url = require_ui_url(ui_url)?;
+            load_test::load_test(&server, &ui_url, users, concurrency).await?;
         }
         Commands::Screenshot {
             ui_url,
@@ -129,6 +158,7 @@ async fn main() -> Result<()> {
             width,
             height,
         } => {
+            let ui_url = require_ui_url(ui_url)?;
             screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
         }
     }
