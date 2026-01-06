@@ -64,11 +64,6 @@ __pycache__/
 venv/
 .venv/
 
-# Generated API clients (regenerate with: make generate-clients)
-cli/generated/
-ramekin-ui/generated-client/
-tests/generated/
-
 # Build/script logs
 logs/
 .cache/
