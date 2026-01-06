@@ -98,6 +98,7 @@ mkdir -p "$PROJECT_ROOT/logs"
 WATCHDOG_PID=$!
 
 # Ensure watchdog is killed when we exit (success or failure)
+# Note: We intentionally expand WATCHDOG_PID now (not at signal time)
 trap 'kill '"$WATCHDOG_PID"' 2>/dev/null' EXIT
 
 do_setup 2>&1 | "$SCRIPT_DIR/ts" | tee -a "$PROJECT_ROOT/logs/conductor-setup.log"

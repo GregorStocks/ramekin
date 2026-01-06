@@ -36,10 +36,27 @@ jobs:
           chrome-version: stable
 
       - name: Create dev.env
-        run: echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/ramekin" > dev.env
+        run: |
+          cat > dev.env << 'EOF'
+          DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/ramekin
+          PORT=3000
+          UI_PORT=5173
+          RUST_LOG=debug
+          INSECURE_PASSWORD_HASHING=1
+          EOF
+          # Remove leading whitespace from each line
+          sed -i 's/^[[:space:]]*//' dev.env
 
       - name: Take screenshots
         run: make screenshots
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-logs
+          path: logs/
+          if-no-files-found: warn
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
