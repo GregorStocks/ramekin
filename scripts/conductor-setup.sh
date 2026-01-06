@@ -65,8 +65,8 @@ EOF
     # Create databases (requires postgres running on port 54321)
     echo ""
     echo "Creating databases..."
-    createdb -h localhost -p 54321 -U ramekin "$DEV_DB"
-    createdb -h localhost -p 54321 -U ramekin "$TEST_DB"
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$DEV_DB" 2>/dev/null || echo "Database $DEV_DB already exists or could not be created"
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$TEST_DB" 2>/dev/null || echo "Database $TEST_DB already exists or could not be created"
 
     # Install npm dependencies
     echo ""
