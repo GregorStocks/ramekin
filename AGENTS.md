@@ -10,8 +10,6 @@ When adding new dependencies, make sure you're getting the latest version - you 
 
 When adding new API endpoints, remember to add end-to-end tests before you start using them in the UI.
 
-Never run git commands unless `CLAUDE_CODE_REMOTE=true` (web/CI environment). We use master, not main.
-
 Never modify generated code (except for temporary testing), since your changes will get blown away.
 
 Never bypass the linter with #noqa or equivalent. Never put a Python import anywhere other than the top of the file.
@@ -20,3 +18,10 @@ We do not need backwards compatibility. This does not exist in production. Do no
 
 If a test is failing, you aren't done. There is no such thing as an unrelated test failure. Your extremely strong prior should be that you broke the test. Even if you didn't, you should fix it.
 
+# Git
+
+We use master, not main.
+
+Only use commands like `git checkout` when you're in a workspace that you own (a Conductor workspace or Claude Code for Web). If you're in ~/code/ramekin, don't run git commands except read-only ones like status - I've probably made manual changes that you don't know about, and you've historically been overconfident about this kind of thing.
+
+Never force-push without asking for permission. Merge master into your branch rather than rebasing so you don't need to force-push. Make new commits rather than amending. We want an honest Git history, not a clean one.
