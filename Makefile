@@ -22,12 +22,12 @@ help: ## Show this help message
 dev: check-deps $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
 	@echo "Starting dev environment (Ctrl+C to stop)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env server ui seed
+	@process-compose up -e dev.env
 
 dev-headless: check-deps $(CLIENT_MARKER) ## Start local dev environment without TUI
 	@echo "Starting dev environment (headless)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env -t=false server ui seed
+	@process-compose up -e dev.env -t=false
 
 dev-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
@@ -118,4 +118,4 @@ install-hooks: ## Install git hooks for local development
 	@echo "Git hooks installed successfully"
 
 screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
-	@process-compose up -e dev.env -t=false
+	@PC_EXIT_ON_END=true process-compose up -e dev.env -t=false

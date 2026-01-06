@@ -42,4 +42,4 @@ processes:
         condition: process_started
     availability:
       restart: "no"
-      exit_on_end: true
+      exit_on_end: ${PC_EXIT_ON_END:-false}
