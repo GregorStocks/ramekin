@@ -35,6 +35,9 @@ jobs:
         with:
           chrome-version: stable
 
+      - name: Create dev.env
+        run: echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/ramekin" > dev.env
+
       - name: Take screenshots
         run: make screenshots
 
