@@ -3,6 +3,7 @@
 # This script runs when a new Conductor workspace is created.
 # It generates workspace-specific env files, creates databases, and installs dependencies.
 set -e
+set -o pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
@@ -77,7 +78,7 @@ EOF
     echo ""
     echo "Building server (this may take a while if not cached)..."
     cd "$PROJECT_ROOT/server"
-    cargo build 2>&1
+    cargo build
 
     echo ""
     echo "Workspace setup complete!"
