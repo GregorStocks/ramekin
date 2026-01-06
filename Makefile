@@ -105,9 +105,9 @@ db-up: ## Start postgres container with dev and test databases
 
 db-down: ## Stop postgres container
 	@docker stop ramekin-db >/dev/null 2>&1 || true
-	@docker rm ramekin-db >/dev/null 2>&1 || true
 
 db-clean: db-down ## Stop postgres and remove data
+	@docker rm ramekin-db >/dev/null 2>&1 || true
 
 seed: ## Create test user with sample recipes (requires dev server running)
 	@cd cli && cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
