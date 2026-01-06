@@ -5,18 +5,8 @@ on:
     branches: ["*"]
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
-
-      - name: Run linters
-        run: make lint
-
-  test:
-    name: Test
+  ci:
+    name: Lint, Test, and Screenshots
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -24,7 +14,7 @@ jobs:
         env:
           POSTGRES_USER: ramekin
           POSTGRES_PASSWORD: ramekin
-          POSTGRES_DB: ramekin_test
+          POSTGRES_DB: ramekin
         ports:
           - 5432:5432
         options: >-
@@ -36,8 +26,79 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
 
+      - name: Create test database
+        run: PGPASSWORD=ramekin psql -h localhost -U ramekin -d ramekin -c "CREATE DATABASE ramekin_test;"
+
+      - name: Run linters
+        run: make lint
+
       - name: Create test.env
         run: echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
 
       - name: Run tests
         run: make test
+
+      - name: Install UI dependencies
+        run: npm ci
+        working-directory: ramekin-ui
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Create dev.env
+        run: |
+          cat > dev.env << 'EOF'
+          DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin
+          PORT=3000
+          UI_PORT=5173
+          RUST_LOG=debug
+          INSECURE_PASSWORD_HASHING=1
+          EOF
+          sed -i 's/^[[:space:]]*//' dev.env
+
+      - name: Take screenshots
+        run: make screenshots
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-logs
+          path: logs/
+          if-no-files-found: warn
+
+      - name: Upload cookbook screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-cookbook
+          path: logs/cookbook.png
+          if-no-files-found: error
+
+      - name: Upload edit screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-edit
+          path: logs/edit.png
+          if-no-files-found: error
+
+      - name: Upload recipe screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-recipe
+          path: logs/recipe.png
+          if-no-files-found: error
+
+      - name: Add screenshots to workflow summary
+        run: |
+          echo "## Screenshots" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          for img in logs/*.png; do
+            name=$(basename "$img" .png)
+            echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Download each screenshot from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
