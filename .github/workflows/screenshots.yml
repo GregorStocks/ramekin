@@ -58,11 +58,25 @@ jobs:
           path: logs/
           if-no-files-found: warn
 
-      - name: Upload screenshots
+      - name: Upload cookbook screenshot
         uses: actions/upload-artifact@v4
         with:
-          name: screenshots
-          path: logs/*.png
+          name: screenshot-cookbook
+          path: logs/cookbook.png
+          if-no-files-found: error
+
+      - name: Upload edit screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-edit
+          path: logs/edit.png
+          if-no-files-found: error
+
+      - name: Upload recipe screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-recipe
+          path: logs/recipe.png
           if-no-files-found: error
 
       - name: Add screenshots to workflow summary
@@ -76,4 +90,4 @@ jobs:
             echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
           done
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Download the screenshots from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
+          echo "Download each screenshot from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
