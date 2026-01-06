@@ -84,8 +84,8 @@ enum Commands {
         /// Viewport width (default: 1280)
         #[arg(long, default_value = "1280")]
         width: u32,
-        /// Viewport height (default: 720)
-        #[arg(long, default_value = "720")]
+        /// Viewport height (default: 900)
+        #[arg(long, default_value = "900")]
         height: u32,
     },
 }
