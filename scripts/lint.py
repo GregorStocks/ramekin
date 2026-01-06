@@ -231,7 +231,6 @@ def lint_yaml(project_root: Path) -> tuple[str, bool]:
         "process-compose.yaml",
         ".github/actions/setup/action.yml",
         ".github/workflows/ci.yml",
-        ".github/workflows/screenshots.yml",
     ]
 
     result = subprocess.run(
