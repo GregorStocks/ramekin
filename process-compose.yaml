@@ -24,7 +24,7 @@ processes:
     working_dir: ./ramekin-ui
 
   seed:
-    command: cargo run -q -- seed --username t --password t ../data/dev/seed.paprikarecipes
+    command: cargo run -q -- seed --server http://localhost:${PORT} --username t --password t ../data/dev/seed.paprikarecipes
     working_dir: ./cli
     depends_on:
       server:
@@ -32,8 +32,16 @@ processes:
     availability:
       restart: "no"
 
+  ready:
+    command: echo "UI ready at http://localhost:${UI_PORT}"
+    depends_on:
+      screenshot:
+        condition: process_completed_successfully
+    availability:
+      restart: "no"
+
   screenshot:
-    command: cargo run -q -- screenshot --output-dir ../logs
+    command: cargo run -q -- screenshot --ui-url http://localhost:${UI_PORT} --output-dir ../logs
     working_dir: ./cli
     depends_on:
       seed:
