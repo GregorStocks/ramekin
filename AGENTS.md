@@ -25,3 +25,5 @@ We use master, not main.
 Only use commands like `git checkout` when you're in a workspace that you own (a Conductor workspace or Claude Code for Web). If you're in ~/code/ramekin, don't run git commands except read-only ones like status - I've probably made manual changes that you don't know about, and you've historically been overconfident about this kind of thing.
 
 Never force-push without asking for permission. Merge master into your branch rather than rebasing so you don't need to force-push. Make new commits rather than amending. We want an honest Git history, not a clean one.
+
+Always run `make lint` before creating a PR, and fix any lint errors it finds.
