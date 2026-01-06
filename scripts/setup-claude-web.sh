@@ -28,8 +28,10 @@ fi
 # Install process-compose if not present
 if ! command -v process-compose >/dev/null 2>&1; then
     echo "Installing process-compose..."
-    curl -fsSL https://github.com/F1bonacc1/process-compose/releases/download/v1.87.0/process-compose_linux_amd64.tar.gz | tar -xzf - -C /usr/local/bin process-compose
-    chmod +x /usr/local/bin/process-compose
+    # Use go install to get process-compose (downloads through Go proxy which is allowed)
+    go install github.com/f1bonacc1/process-compose@v1.87.0
+    # Link from GOPATH/bin to /usr/local/bin so it's in PATH
+    ln -sf "$(go env GOPATH)/bin/process-compose" /usr/local/bin/process-compose
 fi
 
 # Create test.env from example if it doesn't exist
