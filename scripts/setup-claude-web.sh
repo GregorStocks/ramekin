@@ -1,8 +1,11 @@
 #!/bin/bash
 set -e
 
-# Setup script for Claude Code for Web environment
+# Setup script for Claude Code for Web environment (Anthropic's VMs)
 # This script is a no-op unless CLAUDE_CODE_REMOTE=true
+#
+# NOTE: This is NOT the Conductor setup script. For local multi-workspace
+# development with Conductor on Mac, see conductor-setup.sh instead.
 
 if [ "$CLAUDE_CODE_REMOTE" != "true" ]; then
     exit 0

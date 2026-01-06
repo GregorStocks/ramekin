@@ -6,9 +6,10 @@ export default defineConfig({
   server: {
     allowedHosts: ['media.noodles'],
     host: '0.0.0.0',
+    port: parseInt(process.env.UI_PORT!),
     proxy: {
       '/api': {
-        target: process.env.API_URL || 'http://localhost:3000',
+        target: `http://localhost:${process.env.PORT}`,
         changeOrigin: true,
       },
     },

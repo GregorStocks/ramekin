@@ -16,7 +16,7 @@ processes:
     readiness_probe:
       http_get:
         host: localhost
-        port: 3000
+        port: ${PORT}
         path: /api/test/unauthed-ping
 
   ui:
