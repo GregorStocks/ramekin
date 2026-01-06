@@ -89,9 +89,6 @@ EOF
 # Run setup with timeout, piping all output through timestamp wrapper and to log file
 mkdir -p "$PROJECT_ROOT/logs"
 
-# Capture this script's PID for the watchdog to use
-MAIN_PID=$$
-
 # Start a background watchdog that kills the entire process group after timeout
 (
     sleep "$TIMEOUT_SECONDS"
@@ -101,6 +98,7 @@ MAIN_PID=$$
 WATCHDOG_PID=$!
 
 # Ensure watchdog is killed when we exit (success or failure)
-trap "kill $WATCHDOG_PID 2>/dev/null" EXIT
+# Note: We intentionally expand WATCHDOG_PID now (not at signal time)
+trap 'kill '"$WATCHDOG_PID"' 2>/dev/null' EXIT
 
 do_setup 2>&1 | "$SCRIPT_DIR/ts" | tee -a "$PROJECT_ROOT/logs/conductor-setup.log"
