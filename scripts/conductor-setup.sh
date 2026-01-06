@@ -67,24 +67,8 @@ EOF
     # Create databases (requires postgres running on port 54321)
     echo ""
     echo "Creating databases..."
-    if ! PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$DEV_DB" 2>&1; then
-        # Check if database already exists (this is fine, not an error)
-        if PGPASSWORD=ramekin psql -h localhost -p 54321 -U ramekin -lqt 2>/dev/null | grep -q "$DEV_DB"; then
-            echo "Database $DEV_DB already exists"
-        else
-            echo "ERROR: Failed to create database $DEV_DB" >&2
-            exit 1
-        fi
-    fi
-    if ! PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$TEST_DB" 2>&1; then
-        # Check if database already exists (this is fine, not an error)
-        if PGPASSWORD=ramekin psql -h localhost -p 54321 -U ramekin -lqt 2>/dev/null | grep -q "$TEST_DB"; then
-            echo "Database $TEST_DB already exists"
-        else
-            echo "ERROR: Failed to create database $TEST_DB" >&2
-            exit 1
-        fi
-    fi
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$DEV_DB"
+    PGPASSWORD=ramekin createdb -h localhost -p 54321 -U ramekin --no-password "$TEST_DB"
 
     # Install npm dependencies
     echo ""
