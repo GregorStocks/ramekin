@@ -5,6 +5,8 @@
 set -e
 set -o pipefail
 
+TIMEOUT_SECONDS=300  # 5 minutes
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
@@ -84,6 +86,18 @@ EOF
     echo "Workspace setup complete!"
 }
 
-# Run setup, piping all output through timestamp wrapper and to log file
+# Run setup with timeout, piping all output through timestamp wrapper and to log file
 mkdir -p "$PROJECT_ROOT/logs"
+
+# Start a background watchdog that kills the entire process group after timeout
+(
+    sleep "$TIMEOUT_SECONDS"
+    echo "ERROR: Setup timed out after $TIMEOUT_SECONDS seconds" >&2
+    kill -TERM -$$  # Kill the entire process group
+) &
+WATCHDOG_PID=$!
+
+# Ensure watchdog is killed when we exit (success or failure)
+trap "kill $WATCHDOG_PID 2>/dev/null" EXIT
+
 do_setup 2>&1 | "$SCRIPT_DIR/ts" | tee -a "$PROJECT_ROOT/logs/conductor-setup.log"
