@@ -22,12 +22,12 @@ help: ## Show this help message
 dev: check-deps $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
 	@echo "Starting dev environment (Ctrl+C to stop)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env
+	@process-compose up -e dev.env server ui seed
 
 dev-headless: check-deps $(CLIENT_MARKER) ## Start local dev environment without TUI
 	@echo "Starting dev environment (headless)..."
 	@mkdir -p logs
-	@process-compose up -e dev.env -t=false
+	@process-compose up -e dev.env -t=false server ui seed
 
 dev-down: ## Stop dev processes (not database)
 	@process-compose down 2>/dev/null || true
