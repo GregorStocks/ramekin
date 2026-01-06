@@ -12,7 +12,7 @@ processes:
     command: ${SERVER_CMD:-cargo watch -x run}
     working_dir: ./server
     availability:
-      restart: on_failure
+      restart: ${SERVER_RESTART:-on_failure}
     readiness_probe:
       http_get:
         host: localhost
