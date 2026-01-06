@@ -39,7 +39,7 @@ impl Instrumentation for TracingInstrumentation {
                     if let Some((span, _entered)) = cell.borrow_mut().take() {
                         if let Some(err) = error {
                             span.record("error", tracing::field::display(err));
-                            tracing::error!(parent: &span, error = %err, "query failed");
+                            tracing::warn!(parent: &span, error = %err, "query failed");
                         }
                         // _entered is dropped here, exiting the span
                     }

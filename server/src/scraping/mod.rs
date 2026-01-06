@@ -159,7 +159,7 @@ fn create_recipe_from_parsed(
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
     if let Err(e) = run_scrape_job_inner(&pool, job_id).await {
-        tracing::error!("Scrape job {} failed: {}", job_id, e);
+        tracing::warn!("Scrape job {} failed: {}", job_id, e);
     }
 }
 
@@ -182,7 +182,7 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     Box::pin(run_scrape_job_inner(pool, job_id)).await
                 }
                 Err(e) => {
-                    tracing::error!("Job {} fetch failed: {}", job_id, e);
+                    tracing::warn!("Job {} fetch failed: {}", job_id, e);
                     mark_failed(pool, job_id, STATUS_SCRAPING, &e.to_string())?;
                     Ok(())
                 }
@@ -219,7 +219,7 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     }
                 }
                 Err(e) => {
-                    tracing::error!("Job {} parse failed: {}", job_id, e);
+                    tracing::warn!("Job {} parse failed: {}", job_id, e);
                     mark_failed(pool, job_id, STATUS_PARSING, &e.to_string())?;
                     Ok(())
                 }
