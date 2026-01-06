@@ -33,62 +33,60 @@ cleanup() {
 }
 trap cleanup EXIT
 
-# Start fixture server on random port
-start_fixture_server() {
-    cd "$FIXTURE_DIR"
-    for _ in {1..100}; do
-        FIXTURE_PORT=$((RANDOM % 50000 + 10000))
-        python3 -m http.server $FIXTURE_PORT > /dev/null 2>&1 &
-        FIXTURE_PID=$!
-        sleep 0.2
-        if kill -0 $FIXTURE_PID 2>/dev/null; then
-            echo "Fixture server on port $FIXTURE_PORT"
-            return 0
-        fi
-    done
-    echo "Failed to start fixture server"
-    return 1
-}
-
-# Start rust server on random port
-start_server() {
-    cd "$SERVER_DIR"
-
-    # Set SCRAPE_ALLOWED_HOSTS before server starts
-    export SCRAPE_ALLOWED_HOSTS="localhost:$FIXTURE_PORT"
-
-    for _ in {1..100}; do
-        SERVER_PORT=$((RANDOM % 50000 + 10000))
-        PORT=$SERVER_PORT cargo run --release -q &
-        SERVER_PID=$!
-        sleep 0.3
-        if kill -0 $SERVER_PID 2>/dev/null; then
-            # Wait for health check
-            RETRIES=60
-            while ! curl -sf "http://localhost:$SERVER_PORT/api/test/unauthed-ping" > /dev/null 2>&1; do
-                RETRIES=$((RETRIES - 1))
-                if [ $RETRIES -le 0 ]; then
-                    kill $SERVER_PID 2>/dev/null || true
-                    break
-                fi
-                if ! kill -0 $SERVER_PID 2>/dev/null; then
-                    break
-                fi
-                sleep 0.3
-            done
-            if kill -0 $SERVER_PID 2>/dev/null; then
-                echo "Server on port $SERVER_PORT"
+# Get a port - use provided value or find a random available one
+get_port() {
+    local provided="$1"
+    if [ -n "$provided" ]; then
+        echo "$provided"
+    else
+        # Find a random port that's not currently in use
+        local port
+        for _ in {1..100}; do
+            port=$((RANDOM % 50000 + 10000))
+            if ! lsof -i :"$port" > /dev/null 2>&1; then
+                echo "$port"
                 return 0
             fi
-        fi
-    done
-    echo "Failed to start server"
-    return 1
+        done
+        echo "Could not find available port" >&2
+        exit 1
+    fi
 }
 
-# Main
-start_fixture_server
-start_server
+# Start fixture server
+FIXTURE_PORT=$(get_port "$FIXTURE_PORT")
+cd "$FIXTURE_DIR"
+python3 -m http.server "$FIXTURE_PORT" > /dev/null 2>&1 &
+FIXTURE_PID=$!
+sleep 0.2
+if ! kill -0 "$FIXTURE_PID" 2>/dev/null; then
+    echo "Failed to start fixture server on port $FIXTURE_PORT"
+    exit 1
+fi
+echo "Fixture server on port $FIXTURE_PORT"
+
+# Start rust server (PORT comes from test.env if set)
+SERVER_PORT=$(get_port "${PORT:-}")
+cd "$SERVER_DIR"
+export SCRAPE_ALLOWED_HOSTS="localhost:$FIXTURE_PORT"
+PORT="$SERVER_PORT" cargo run --release -q &
+SERVER_PID=$!
+
+# Wait for health check
+RETRIES=60
+while ! curl -sf "http://localhost:$SERVER_PORT/api/test/unauthed-ping" > /dev/null 2>&1; do
+    RETRIES=$((RETRIES - 1))
+    if [ $RETRIES -le 0 ]; then
+        echo "Failed to start server on port $SERVER_PORT (health check timeout)"
+        exit 1
+    fi
+    if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+        echo "Failed to start server on port $SERVER_PORT (process died)"
+        exit 1
+    fi
+    sleep 0.3
+done
+echo "Server on port $SERVER_PORT"
 
 export FIXTURE_BASE_URL="http://localhost:$FIXTURE_PORT"
 export API_BASE_URL="http://localhost:$SERVER_PORT"
