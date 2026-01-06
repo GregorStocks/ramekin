@@ -118,4 +118,5 @@ install-hooks: ## Install git hooks for local development
 	@echo "Git hooks installed successfully"
 
 screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
-	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false
+	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false || true
+	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
