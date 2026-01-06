@@ -33,7 +33,7 @@ processes:
       restart: "no"
 
   screenshot:
-    command: cargo run -q -- screenshot
+    command: cargo run -q -- screenshot --output-dir ../logs
     working_dir: ./cli
     depends_on:
       seed:
