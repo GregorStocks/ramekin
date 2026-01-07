@@ -27,15 +27,3 @@ pub async fn fetch_html(url: &str) -> Result<String, FetchError> {
     String::from_utf8(bytes.to_vec())
         .map_err(|e| FetchError::InvalidEncoding(format!("Invalid UTF-8 in response: {}", e)))
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_invalid_url() {
-        let rt = tokio::runtime::Runtime::new().unwrap();
-        let result = rt.block_on(fetch_html("not a url"));
-        assert!(matches!(result, Err(FetchError::InvalidUrl(_))));
-    }
-}

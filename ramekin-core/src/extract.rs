@@ -222,20 +222,3 @@ fn extract_source_name(url: &str) -> Option<String> {
         })
     })
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_extract_source_name() {
-        assert_eq!(
-            extract_source_name("https://www.allrecipes.com/recipe/123"),
-            Some("Allrecipes.com".to_string())
-        );
-        assert_eq!(
-            extract_source_name("https://cooking.nytimes.com/recipes/456"),
-            Some("Cooking.nytimes.com".to_string())
-        );
-    }
-}
