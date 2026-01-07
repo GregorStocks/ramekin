@@ -10,7 +10,7 @@ use std::io::Read;
 use std::path::Path;
 use zip::ZipArchive;
 
-/// Paprika recipe format - all fields for lossless roundtrip
+/// Paprika recipe format
 #[derive(Debug, Deserialize)]
 struct PaprikaRecipe {
     name: String,
@@ -26,7 +26,6 @@ struct PaprikaRecipe {
     photos: Vec<PaprikaPhoto>,
     /// Thumbnail/fallback photo (used when photos array is empty)
     photo_data: Option<String>,
-    // Paprika-specific metadata fields
     servings: Option<String>,
     prep_time: Option<String>,
     cook_time: Option<String>,
