@@ -22,14 +22,14 @@ enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
         /// Server URL
-        #[arg(long, env = "API_BASE_URL")]
-        server: Option<String>,
+        #[arg(long = "server", env = "API_BASE_URL")]
+        server_url: Option<String>,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
         /// Server URL
-        #[arg(long, env = "API_BASE_URL")]
-        server: Option<String>,
+        #[arg(long = "server", env = "API_BASE_URL")]
+        server_url: Option<String>,
         /// Username for the seed user
         #[arg(long)]
         username: String,
@@ -43,8 +43,8 @@ enum Commands {
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
         /// Server URL
-        #[arg(long, env = "API_BASE_URL")]
-        server: Option<String>,
+        #[arg(long = "server", env = "API_BASE_URL")]
+        server_url: Option<String>,
         /// Username to authenticate as
         #[arg(long)]
         username: String,
@@ -58,11 +58,11 @@ enum Commands {
     /// Run a load test creating many users with recipes and photos
     LoadTest {
         /// Server URL
-        #[arg(long, env = "API_BASE_URL")]
-        server: Option<String>,
+        #[arg(long = "server", env = "API_BASE_URL")]
+        server_url: Option<String>,
         /// UI URL for browser tests
-        #[arg(long, env = "UI_BASE_URL")]
-        ui: Option<String>,
+        #[arg(long = "ui", env = "UI_BASE_URL")]
+        ui_url: Option<String>,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
         users: usize,
@@ -73,8 +73,8 @@ enum Commands {
     /// Take screenshots of the app as the test user
     Screenshot {
         /// UI URL
-        #[arg(long, env = "UI_BASE_URL")]
-        ui: Option<String>,
+        #[arg(long = "ui", env = "UI_BASE_URL")]
+        ui_url: Option<String>,
         /// Username for authentication
         #[arg(long, default_value = "t")]
         username: String,
@@ -93,12 +93,13 @@ enum Commands {
     },
 }
 
-fn require_server_url(server: Option<String>) -> Result<String> {
-    server.ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set API_BASE_URL"))
+fn require_server_url(server_url: Option<String>) -> Result<String> {
+    server_url
+        .ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set API_BASE_URL"))
 }
 
-fn require_ui_url(ui: Option<String>) -> Result<String> {
-    ui.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui or set UI_BASE_URL"))
+fn require_ui_url(ui_url: Option<String>) -> Result<String> {
+    ui_url.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui or set UI_BASE_URL"))
 }
 
 #[tokio::main]
@@ -106,48 +107,48 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Ping { server } => {
-            let server = require_server_url(server)?;
-            ping(&server).await?;
+        Commands::Ping { server_url } => {
+            let server_url = require_server_url(server_url)?;
+            ping(&server_url).await?;
         }
         Commands::Seed {
-            server,
+            server_url,
             username,
             password,
             file,
         } => {
-            let server = require_server_url(server)?;
-            seed::seed(&server, &username, &password, &file).await?;
+            let server_url = require_server_url(server_url)?;
+            seed::seed(&server_url, &username, &password, &file).await?;
         }
         Commands::Import {
-            server,
+            server_url,
             username,
             password,
             file,
         } => {
-            let server = require_server_url(server)?;
-            import::import(&server, &username, &password, &file).await?;
+            let server_url = require_server_url(server_url)?;
+            import::import(&server_url, &username, &password, &file).await?;
         }
         Commands::LoadTest {
-            server,
-            ui,
+            server_url,
+            ui_url,
             users,
             concurrency,
         } => {
-            let server = require_server_url(server)?;
-            let ui = require_ui_url(ui)?;
-            load_test::load_test(&server, &ui, users, concurrency).await?;
+            let server_url = require_server_url(server_url)?;
+            let ui_url = require_ui_url(ui_url)?;
+            load_test::load_test(&server_url, &ui_url, users, concurrency).await?;
         }
         Commands::Screenshot {
-            ui,
+            ui_url,
             username,
             password,
             output_dir,
             width,
             height,
         } => {
-            let ui = require_ui_url(ui)?;
-            screenshot::screenshot(&ui, &username, &password, &output_dir, width, height)?;
+            let ui_url = require_ui_url(ui_url)?;
+            screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
         }
     }
 
