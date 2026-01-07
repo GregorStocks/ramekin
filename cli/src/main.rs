@@ -21,15 +21,15 @@ struct Cli {
 enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
         /// Username for the seed user
         #[arg(long)]
         username: String,
@@ -42,9 +42,9 @@ enum Commands {
     },
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
         /// Username to authenticate as
         #[arg(long)]
         username: String,
@@ -57,9 +57,12 @@ enum Commands {
     },
     /// Run a load test creating many users with recipes and photos
     LoadTest {
-        /// Server URL (default: http://localhost:3000)
-        #[arg(long, default_value = "http://localhost:3000")]
-        server: String,
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
+        /// UI URL for browser tests
+        #[arg(long, env = "UI_BASE_URL")]
+        ui_url: String,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
         users: usize,
@@ -69,8 +72,8 @@ enum Commands {
     },
     /// Take screenshots of the app as the test user
     Screenshot {
-        /// UI URL (default: http://localhost:5173)
-        #[arg(long, default_value = "http://localhost:5173")]
+        /// UI URL
+        #[arg(long, env = "UI_BASE_URL")]
         ui_url: String,
         /// Username for authentication
         #[arg(long, default_value = "t")]
@@ -95,31 +98,32 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Ping { server } => {
-            ping(&server).await?;
+        Commands::Ping { server_url } => {
+            ping(&server_url).await?;
         }
         Commands::Seed {
-            server,
+            server_url,
             username,
             password,
             file,
         } => {
-            seed::seed(&server, &username, &password, &file).await?;
+            seed::seed(&server_url, &username, &password, &file).await?;
         }
         Commands::Import {
-            server,
+            server_url,
             username,
             password,
             file,
         } => {
-            import::import(&server, &username, &password, &file).await?;
+            import::import(&server_url, &username, &password, &file).await?;
         }
         Commands::LoadTest {
-            server,
+            server_url,
+            ui_url,
             users,
             concurrency,
         } => {
-            load_test::load_test(&server, users, concurrency).await?;
+            load_test::load_test(&server_url, &ui_url, users, concurrency).await?;
         }
         Commands::Screenshot {
             ui_url,

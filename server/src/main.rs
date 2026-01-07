@@ -223,7 +223,7 @@ async fn main() {
         );
 
     let port: u16 = env::var("PORT")
-        .unwrap_or_else(|_| "3000".to_string())
+        .expect("PORT environment variable required")
         .parse()
         .expect("PORT must be a valid port number");
     let bind_addr = format!("0.0.0.0:{}", port);

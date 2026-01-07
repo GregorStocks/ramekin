@@ -9,7 +9,7 @@ license = "LicenseRef-Proprietary"
 ramekin_client = { path = "generated/ramekin-client" }
 
 # CLI
-clap = { version = "4.5", features = ["derive"] }
+clap = { version = "4.5", features = ["derive", "env"] }
 
 # Async runtime
 tokio = { version = "1.49", features = ["full"] }
