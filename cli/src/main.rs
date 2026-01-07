@@ -21,13 +21,13 @@ struct Cli {
 enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
-        /// Server URL (or set API_BASE_URL env var)
+        /// Server URL
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
-        /// Server URL (or set API_BASE_URL env var)
+        /// Server URL
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
         /// Username for the seed user
@@ -42,7 +42,7 @@ enum Commands {
     },
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
-        /// Server URL (or set API_BASE_URL env var)
+        /// Server URL
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
         /// Username to authenticate as
@@ -57,10 +57,10 @@ enum Commands {
     },
     /// Run a load test creating many users with recipes and photos
     LoadTest {
-        /// Server URL (or set API_BASE_URL env var)
+        /// Server URL
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
-        /// UI URL for browser tests (or set UI_BASE_URL env var)
+        /// UI URL for browser tests
         #[arg(long, env = "UI_BASE_URL")]
         ui_url: Option<String>,
         /// Number of users to create (default: 10)
@@ -72,7 +72,7 @@ enum Commands {
     },
     /// Take screenshots of the app as the test user
     Screenshot {
-        /// UI URL (or set UI_BASE_URL env var)
+        /// UI URL
         #[arg(long, env = "UI_BASE_URL")]
         ui_url: Option<String>,
         /// Username for authentication
