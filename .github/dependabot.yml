@@ -1,23 +1,10 @@
 version: 2
 updates:
   - package-ecosystem: "cargo"
-    directory: "/server"
-    schedule:
-      interval: "weekly"
-    groups:
-      rust-deps:
-        patterns: ["*"]
-
-  - package-ecosystem: "cargo"
-    directory: "/cli"
-    schedule:
-      interval: "weekly"
-    groups:
-      rust-deps:
-        patterns: ["*"]
-
-  - package-ecosystem: "cargo"
-    directory: "/ramekin-core"
+    directories:
+      - "/server"
+      - "/cli"
+      - "/ramekin-core"
     schedule:
       interval: "weekly"
     groups:
