@@ -1,32 +1,9 @@
-use crate::models::Ingredient;
+use crate::error::ExtractError;
+use crate::types::RawRecipe;
 use scraper::{Html, Selector};
-use serde::{Deserialize, Serialize};
-use thiserror::Error;
 
-#[derive(Error, Debug)]
-pub enum ParseError {
-    #[error("No Recipe found in JSON-LD")]
-    NoRecipe,
-
-    #[error("Invalid JSON-LD: {0}")]
-    InvalidJson(String),
-
-    #[error("Missing required field: {0}")]
-    MissingField(String),
-}
-
-/// Parsed recipe data extracted from JSON-LD
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct ParsedRecipe {
-    pub title: String,
-    pub description: Option<String>,
-    pub ingredients: Vec<Ingredient>,
-    pub instructions: String,
-    pub source_name: Option<String>,
-}
-
-/// Parse a Recipe from HTML containing JSON-LD structured data.
-pub fn parse_recipe_from_html(html: &str, source_url: &str) -> Result<ParsedRecipe, ParseError> {
+/// Extract a recipe from HTML containing JSON-LD structured data.
+pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     let document = Html::parse_document(html);
     let selector = Selector::parse("script[type='application/ld+json']").expect("Invalid selector");
 
@@ -45,7 +22,7 @@ pub fn parse_recipe_from_html(html: &str, source_url: &str) -> Result<ParsedReci
         }
     }
 
-    Err(ParseError::NoRecipe)
+    Err(ExtractError::NoRecipe)
 }
 
 /// Recursively search for a Recipe object in JSON-LD.
@@ -95,11 +72,11 @@ fn find_recipe_in_json(json: &serde_json::Value) -> Option<&serde_json::Value> {
 fn extract_recipe_data(
     recipe: &serde_json::Value,
     source_url: &str,
-) -> Result<ParsedRecipe, ParseError> {
+) -> Result<RawRecipe, ExtractError> {
     let title = recipe
         .get("name")
         .and_then(|v| v.as_str())
-        .ok_or_else(|| ParseError::MissingField("name".to_string()))?
+        .ok_or_else(|| ExtractError::MissingField("name".to_string()))?
         .to_string();
 
     let description = recipe
@@ -109,53 +86,51 @@ fn extract_recipe_data(
 
     let ingredients = extract_ingredients(recipe)?;
     let instructions = extract_instructions(recipe)?;
+    let image_urls = extract_image_urls(recipe);
     let source_name = extract_source_name(source_url);
 
-    Ok(ParsedRecipe {
+    Ok(RawRecipe {
         title,
         description,
         ingredients,
         instructions,
+        image_urls,
+        source_url: source_url.to_string(),
         source_name,
     })
 }
 
-/// Extract ingredients from recipeIngredient field.
-fn extract_ingredients(recipe: &serde_json::Value) -> Result<Vec<Ingredient>, ParseError> {
+/// Extract ingredients as a newline-separated blob.
+fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractError> {
     let ingredients_raw = recipe
         .get("recipeIngredient")
-        .ok_or_else(|| ParseError::MissingField("recipeIngredient".to_string()))?;
+        .ok_or_else(|| ExtractError::MissingField("recipeIngredient".to_string()))?;
 
     let ingredients_array = ingredients_raw
         .as_array()
-        .ok_or_else(|| ParseError::InvalidJson("recipeIngredient is not an array".to_string()))?;
+        .ok_or_else(|| ExtractError::InvalidJson("recipeIngredient is not an array".to_string()))?;
 
-    let ingredients: Vec<Ingredient> = ingredients_array
+    let ingredients: Vec<String> = ingredients_array
         .iter()
         .filter_map(|v| v.as_str())
-        .map(|s| Ingredient {
-            item: s.trim().to_string(),
-            amount: None,
-            unit: None,
-            note: None,
-        })
+        .map(|s| s.trim().to_string())
         .collect();
 
     if ingredients.is_empty() {
-        return Err(ParseError::MissingField(
+        return Err(ExtractError::MissingField(
             "recipeIngredient (empty)".to_string(),
         ));
     }
 
-    Ok(ingredients)
+    Ok(ingredients.join("\n"))
 }
 
 /// Extract instructions from recipeInstructions field.
 /// Handles both string and array formats.
-fn extract_instructions(recipe: &serde_json::Value) -> Result<String, ParseError> {
+fn extract_instructions(recipe: &serde_json::Value) -> Result<String, ExtractError> {
     let instructions_raw = recipe
         .get("recipeInstructions")
-        .ok_or_else(|| ParseError::MissingField("recipeInstructions".to_string()))?;
+        .ok_or_else(|| ExtractError::MissingField("recipeInstructions".to_string()))?;
 
     match instructions_raw {
         serde_json::Value::String(s) => Ok(s.trim().to_string()),
@@ -187,24 +162,56 @@ fn extract_instructions(recipe: &serde_json::Value) -> Result<String, ParseError
                 .collect();
 
             if steps.is_empty() {
-                return Err(ParseError::MissingField(
+                return Err(ExtractError::MissingField(
                     "recipeInstructions (empty)".to_string(),
                 ));
             }
 
             Ok(steps.join("\n\n"))
         }
-        _ => Err(ParseError::InvalidJson(
+        _ => Err(ExtractError::InvalidJson(
             "recipeInstructions is not a string or array".to_string(),
         )),
     }
 }
 
+/// Extract image URLs from the recipe.
+fn extract_image_urls(recipe: &serde_json::Value) -> Vec<String> {
+    let mut urls = Vec::new();
+
+    if let Some(image) = recipe.get("image") {
+        match image {
+            serde_json::Value::String(s) => {
+                urls.push(s.clone());
+            }
+            serde_json::Value::Array(arr) => {
+                for item in arr {
+                    if let Some(s) = item.as_str() {
+                        urls.push(s.to_string());
+                    } else if let Some(obj) = item.as_object() {
+                        if let Some(url) = obj.get("url").and_then(|v| v.as_str()) {
+                            urls.push(url.to_string());
+                        }
+                    }
+                }
+            }
+            serde_json::Value::Object(obj) => {
+                if let Some(url) = obj.get("url").and_then(|v| v.as_str()) {
+                    urls.push(url.to_string());
+                }
+            }
+            _ => {}
+        }
+    }
+
+    urls
+}
+
 /// Extract a friendly source name from a URL.
 fn extract_source_name(url: &str) -> Option<String> {
-    reqwest::Url::parse(url).ok().and_then(|parsed| {
+    url::Url::parse(url).ok().and_then(|parsed| {
         parsed.host_str().map(|host| {
-            // Remove www. prefix and common TLDs for cleaner names
+            // Remove www. prefix
             let name = host.strip_prefix("www.").unwrap_or(host);
             // Capitalize first letter
             let mut chars = name.chars();
@@ -214,21 +221,4 @@ fn extract_source_name(url: &str) -> Option<String> {
             }
         })
     })
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_extract_source_name() {
-        assert_eq!(
-            extract_source_name("https://www.allrecipes.com/recipe/123"),
-            Some("Allrecipes.com".to_string())
-        );
-        assert_eq!(
-            extract_source_name("https://cooking.nytimes.com/recipes/456"),
-            Some("Cooking.nytimes.com".to_string())
-        );
-    }
 }

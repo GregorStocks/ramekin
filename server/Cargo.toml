@@ -57,3 +57,4 @@ base64 = "0.22"
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls"] }
 scraper = "0.25"
+ramekin-core = { path = "../ramekin-core" }

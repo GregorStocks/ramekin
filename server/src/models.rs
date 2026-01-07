@@ -110,26 +110,6 @@ pub struct NewRecipe<'a> {
     pub tags: &'a [Option<String>],
 }
 
-// URL Cache for scraped content
-#[derive(Queryable, Selectable, Debug, Clone)]
-#[diesel(table_name = crate::schema::url_cache)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
-#[allow(dead_code)]
-pub struct UrlCache {
-    pub url: String,
-    pub content: Vec<u8>,
-    pub content_type: Option<String>,
-    pub fetched_at: DateTime<Utc>,
-}
-
-#[derive(Insertable)]
-#[diesel(table_name = crate::schema::url_cache)]
-pub struct NewUrlCache<'a> {
-    pub url: &'a str,
-    pub content: &'a [u8],
-    pub content_type: Option<&'a str>,
-}
-
 // Scrape job for async URL scraping
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::scrape_jobs)]
@@ -141,12 +121,12 @@ pub struct ScrapeJob {
     pub url: String,
     pub status: String,
     pub failed_at_step: Option<String>,
-    pub parsed_data: Option<JsonValue>,
     pub recipe_id: Option<Uuid>,
     pub error_message: Option<String>,
     pub retry_count: i32,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
+    pub current_step: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -154,4 +134,27 @@ pub struct ScrapeJob {
 pub struct NewScrapeJob<'a> {
     pub user_id: Uuid,
     pub url: &'a str,
+}
+
+// Step output for pipeline step results (append-only log)
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::step_outputs)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct StepOutput {
+    pub id: Uuid,
+    pub scrape_job_id: Uuid,
+    pub step_name: String,
+    pub build_id: String,
+    pub output: JsonValue,
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::step_outputs)]
+pub struct NewStepOutput {
+    pub scrape_job_id: Uuid,
+    pub step_name: String,
+    pub build_id: String,
+    pub output: JsonValue,
 }

@@ -37,12 +37,23 @@ diesel::table! {
         url -> Varchar,
         status -> Varchar,
         failed_at_step -> Nullable<Varchar>,
-        parsed_data -> Nullable<Jsonb>,
         recipe_id -> Nullable<Uuid>,
         error_message -> Nullable<Text>,
         retry_count -> Int4,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
+        current_step -> Nullable<Varchar>,
+    }
+}
+
+diesel::table! {
+    step_outputs (id) {
+        id -> Uuid,
+        scrape_job_id -> Uuid,
+        step_name -> Varchar,
+        build_id -> Varchar,
+        output -> Jsonb,
+        created_at -> Timestamptz,
     }
 }
 
@@ -54,15 +65,6 @@ diesel::table! {
         token_hash -> Varchar,
         expires_at -> Timestamptz,
         created_at -> Timestamptz,
-    }
-}
-
-diesel::table! {
-    url_cache (url) {
-        url -> Varchar,
-        content -> Bytea,
-        content_type -> Nullable<Varchar>,
-        fetched_at -> Timestamptz,
     }
 }
 
@@ -84,12 +86,13 @@ diesel::joinable!(recipes -> users (user_id));
 diesel::joinable!(scrape_jobs -> recipes (recipe_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
+diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     photos,
     recipes,
     scrape_jobs,
     sessions,
-    url_cache,
+    step_outputs,
     users,
 );

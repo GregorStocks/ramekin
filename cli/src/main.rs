@@ -1,5 +1,6 @@
 mod import;
 mod load_test;
+mod parse_html;
 mod screenshot;
 mod seed;
 
@@ -91,6 +92,15 @@ enum Commands {
         #[arg(long, default_value = "900")]
         height: u32,
     },
+    /// Parse a recipe from an HTML file (offline, no server required)
+    ParseHtml {
+        /// Path to the HTML file
+        #[arg(value_name = "FILE")]
+        file: PathBuf,
+        /// Source URL for the recipe (used for source_name extraction)
+        #[arg(long)]
+        source_url: String,
+    },
 }
 
 #[tokio::main]
@@ -134,6 +144,9 @@ async fn main() -> Result<()> {
             height,
         } => {
             screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
+        }
+        Commands::ParseHtml { file, source_url } => {
+            parse_html::parse_html(&file, &source_url)?;
         }
     }
 
