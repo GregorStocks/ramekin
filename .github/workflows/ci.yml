@@ -69,36 +69,15 @@ jobs:
           path: logs/
           if-no-files-found: warn
 
-      - name: Upload cookbook screenshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot-cookbook
-          path: logs/cookbook.png
-          if-no-files-found: error
-
-      - name: Upload edit screenshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot-edit
-          path: logs/edit.png
-          if-no-files-found: error
-
-      - name: Upload recipe screenshot
-        uses: actions/upload-artifact@v4
-        with:
-          name: screenshot-recipe
-          path: logs/recipe.png
-          if-no-files-found: error
-
       - name: Add screenshots to workflow summary
         run: |
           echo "## Screenshots" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
           for img in logs/*.png; do
             name=$(basename "$img" .png)
-            echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
+            echo "### ${name}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            base64_img=$(base64 -w 0 "$img")
+            echo "![${name}](data:image/png;base64,${base64_img})" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
           done
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Download each screenshot from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
