@@ -2197,6 +2197,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "ramekin-core"
+version = "0.1.0"
+dependencies = [
+ "reqwest 0.13.1",
+ "scraper",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.17",
+ "url",
+ "uuid",
+]
+
+[[package]]
 name = "ramekin-server"
 version = "0.1.0"
 dependencies = [
@@ -2213,6 +2226,7 @@ dependencies = [
  "opentelemetry-appender-tracing",
  "opentelemetry-otlp",
  "opentelemetry_sdk",
+ "ramekin-core",
  "rand",
  "reqwest 0.13.1",
  "scraper",

@@ -53,7 +53,7 @@ pub async fn create_scrape(
     }
 
     // Check if host is allowed (for early failure)
-    if let Err(e) = scraping::fetch::is_host_allowed(&request.url) {
+    if let Err(e) = scraping::is_host_allowed(&request.url) {
         return (
             StatusCode::BAD_REQUEST,
             Json(ErrorResponse {
