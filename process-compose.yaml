@@ -25,7 +25,7 @@ processes:
 
   seed:
     command: >-
-      cargo run -q -- seed --server http://localhost:${PORT}
+      cargo run -q -- seed --server-url http://localhost:${PORT}
       --username t --password t ../data/dev/seed.paprikarecipes
     working_dir: ./cli
     depends_on:
