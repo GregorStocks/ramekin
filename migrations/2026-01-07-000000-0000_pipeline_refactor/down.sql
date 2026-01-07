@@ -9,5 +9,8 @@ CREATE TABLE url_cache (
 -- Re-add parsed_data column
 ALTER TABLE scrape_jobs ADD COLUMN parsed_data JSONB;
 
+-- Drop current_step column
+ALTER TABLE scrape_jobs DROP COLUMN current_step;
+
 -- Drop step_outputs table
 DROP TABLE step_outputs;

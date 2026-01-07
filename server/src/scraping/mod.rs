@@ -110,8 +110,13 @@ pub fn get_job(pool: &DbPool, job_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
         .ok_or(ScrapeError::JobNotFound)
 }
 
-/// Update job status.
-fn update_status(pool: &DbPool, job_id: Uuid, status: &str) -> Result<(), ScrapeError> {
+/// Update job status and current_step.
+fn update_status_and_step(
+    pool: &DbPool,
+    job_id: Uuid,
+    status: &str,
+    current_step: Option<&str>,
+) -> Result<(), ScrapeError> {
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
@@ -119,6 +124,7 @@ fn update_status(pool: &DbPool, job_id: Uuid, status: &str) -> Result<(), Scrape
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(status),
+            scrape_jobs::current_step.eq(current_step),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .execute(&mut conn)
@@ -127,13 +133,12 @@ fn update_status(pool: &DbPool, job_id: Uuid, status: &str) -> Result<(), Scrape
     Ok(())
 }
 
-/// Save a step output to the database.
+/// Save a step output to the database (append-only).
 fn save_step_output(
     pool: &DbPool,
     job_id: Uuid,
     step_name: &str,
     output: serde_json::Value,
-    next_step: Option<&str>,
 ) -> Result<(), ScrapeError> {
     let mut conn = pool
         .get()
@@ -144,30 +149,18 @@ fn save_step_output(
         step_name: step_name.to_string(),
         build_id: BUILD_ID.to_string(),
         output,
-        next_step: next_step.map(|s| s.to_string()),
     };
 
-    // Use ON CONFLICT to upsert (replace if same job/step/build exists)
     diesel::insert_into(step_outputs::table)
         .values(&new_output)
-        .on_conflict((
-            step_outputs::scrape_job_id,
-            step_outputs::step_name,
-            step_outputs::build_id,
-        ))
-        .do_update()
-        .set((
-            step_outputs::output.eq(&new_output.output),
-            step_outputs::next_step.eq(&new_output.next_step),
-        ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     Ok(())
 }
 
-/// Get step output for a job by step name (with current build_id).
-fn get_step_output(
+/// Get the most recent step output for a job by step name.
+fn get_latest_step_output(
     pool: &DbPool,
     job_id: Uuid,
     step_name: &str,
@@ -179,25 +172,10 @@ fn get_step_output(
     step_outputs::table
         .filter(step_outputs::scrape_job_id.eq(job_id))
         .filter(step_outputs::step_name.eq(step_name))
-        .filter(step_outputs::build_id.eq(BUILD_ID))
+        .order(step_outputs::created_at.desc())
         .first::<StepOutput>(&mut conn)
         .optional()
         .map_err(|e| ScrapeError::Database(e.to_string()))
-}
-
-/// Check if any step outputs exist for this job (regardless of build_id).
-fn has_any_step_outputs(pool: &DbPool, job_id: Uuid) -> Result<bool, ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-    let count: i64 = step_outputs::table
-        .filter(step_outputs::scrape_job_id.eq(job_id))
-        .count()
-        .get_result(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-    Ok(count > 0)
 }
 
 /// Mark job as failed.
@@ -229,30 +207,13 @@ fn mark_completed(pool: &DbPool, job_id: Uuid, recipe_id: Uuid) -> Result<(), Sc
         .set((
             scrape_jobs::status.eq(STATUS_COMPLETED),
             scrape_jobs::recipe_id.eq(Some(recipe_id)),
+            scrape_jobs::current_step.eq::<Option<String>>(None),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     Ok(())
-}
-
-/// Increment retry count and check if max exceeded.
-fn increment_retry(pool: &DbPool, job_id: Uuid) -> Result<i32, ScrapeError> {
-    let mut conn = pool
-        .get()
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-    let new_count: i32 = diesel::update(scrape_jobs::table.find(job_id))
-        .set((
-            scrape_jobs::retry_count.eq(scrape_jobs::retry_count + 1),
-            scrape_jobs::updated_at.eq(Utc::now()),
-        ))
-        .returning(scrape_jobs::retry_count)
-        .get_result(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
-
-    Ok(new_count)
 }
 
 /// Create a recipe from RawRecipe.
@@ -302,25 +263,6 @@ fn create_recipe_from_raw(
     Ok(recipe_id)
 }
 
-/// Determine the next step to run based on completed step outputs.
-fn get_next_step(pool: &DbPool, job_id: Uuid) -> Result<&'static str, ScrapeError> {
-    // Check steps in order - if a step with current build exists, use its next_step
-    if let Some(extract_output) = get_step_output(pool, job_id, STEP_EXTRACT_RECIPE)? {
-        if extract_output.next_step.as_deref() == Some(STEP_SAVE_RECIPE) {
-            return Ok(STEP_SAVE_RECIPE);
-        }
-    }
-
-    if let Some(fetch_output) = get_step_output(pool, job_id, STEP_FETCH_HTML)? {
-        if fetch_output.next_step.as_deref() == Some(STEP_EXTRACT_RECIPE) {
-            return Ok(STEP_EXTRACT_RECIPE);
-        }
-    }
-
-    // Default: start from fetch
-    Ok(STEP_FETCH_HTML)
-}
-
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
@@ -335,32 +277,14 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
     match job.status.as_str() {
         STATUS_PENDING => {
             tracing::info!("Job {} transitioning from pending to scraping", job_id);
-            update_status(pool, job_id, STATUS_SCRAPING)?;
+            update_status_and_step(pool, job_id, STATUS_SCRAPING, Some(STEP_FETCH_HTML))?;
             Box::pin(run_scrape_job_inner(pool, job_id)).await
         }
 
         STATUS_SCRAPING => {
-            // Check for stale step outputs from previous build
-            let has_current_build_fetch = get_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
-            let has_any_outputs = has_any_step_outputs(pool, job_id)?;
+            let current_step = job.current_step.as_deref().unwrap_or(STEP_FETCH_HTML);
 
-            if !has_current_build_fetch && has_any_outputs {
-                // Stale data detected (outputs exist but not for current build), increment retry
-                tracing::info!(
-                    "Job {} has stale step_outputs (build mismatch), restarting",
-                    job_id
-                );
-                let retry_count = increment_retry(pool, job_id)?;
-                if retry_count >= MAX_RETRIES {
-                    mark_failed(pool, job_id, STATUS_SCRAPING, "Max retries exceeded")?;
-                    return Err(ScrapeError::MaxRetriesExceeded);
-                }
-                // Continue with fresh execution
-            }
-
-            let next_step = get_next_step(pool, job_id)?;
-
-            if next_step == STEP_FETCH_HTML {
+            if current_step == STEP_FETCH_HTML {
                 tracing::info!("Job {} fetching URL: {}", job_id, job.url);
 
                 // Check host allowlist
@@ -372,16 +296,15 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         let fetch_output = FetchHtmlOutput { html };
                         let output_json = serde_json::to_value(&fetch_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        save_step_output(
-                            pool,
-                            job_id,
-                            STEP_FETCH_HTML,
-                            output_json,
-                            Some(STEP_EXTRACT_RECIPE),
-                        )?;
+                        save_step_output(pool, job_id, STEP_FETCH_HTML, output_json)?;
 
                         tracing::info!("Job {} fetch successful, transitioning to parsing", job_id);
-                        update_status(pool, job_id, STATUS_PARSING)?;
+                        update_status_and_step(
+                            pool,
+                            job_id,
+                            STATUS_PARSING,
+                            Some(STEP_EXTRACT_RECIPE),
+                        )?;
                         Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
                     Err(e) => {
@@ -391,21 +314,21 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     }
                 }
             } else {
-                // We have valid fetch data, move to parsing
-                update_status(pool, job_id, STATUS_PARSING)?;
-                Box::pin(run_scrape_job_inner(pool, job_id)).await
+                Err(ScrapeError::InvalidState(format!(
+                    "Unexpected step in scraping status: {}",
+                    current_step
+                )))
             }
         }
 
         STATUS_PARSING => {
-            tracing::info!("Job {} parsing HTML", job_id);
+            let current_step = job.current_step.as_deref().unwrap_or(STEP_EXTRACT_RECIPE);
+            tracing::info!("Job {} parsing, current_step: {}", job_id, current_step);
 
-            let next_step = get_next_step(pool, job_id)?;
-
-            if next_step == STEP_EXTRACT_RECIPE {
-                // Get HTML from step_outputs
-                let fetch_output =
-                    get_step_output(pool, job_id, STEP_FETCH_HTML)?.ok_or_else(|| {
+            if current_step == STEP_EXTRACT_RECIPE {
+                // Get HTML from most recent step_output
+                let fetch_output = get_latest_step_output(pool, job_id, STEP_FETCH_HTML)?
+                    .ok_or_else(|| {
                         ScrapeError::InvalidState("No fetch output found".to_string())
                     })?;
 
@@ -423,16 +346,17 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         let extract_output = ExtractRecipeOutput { raw_recipe };
                         let output_json = serde_json::to_value(&extract_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        save_step_output(
+                        save_step_output(pool, job_id, STEP_EXTRACT_RECIPE, output_json)?;
+
+                        // Update current_step and continue
+                        update_status_and_step(
                             pool,
                             job_id,
-                            STEP_EXTRACT_RECIPE,
-                            output_json,
+                            STATUS_PARSING,
                             Some(STEP_SAVE_RECIPE),
                         )?;
 
                         tracing::info!("Job {} extracted recipe, saving", job_id);
-                        // Continue to save step
                         Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
                     Err(e) => {
@@ -441,9 +365,9 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         Ok(())
                     }
                 }
-            } else if next_step == STEP_SAVE_RECIPE {
-                // Get raw_recipe from step_outputs
-                let extract_output = get_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
+            } else if current_step == STEP_SAVE_RECIPE {
+                // Get raw_recipe from most recent step_output
+                let extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
                     .ok_or_else(|| {
                         ScrapeError::InvalidState("No extract output found".to_string())
                     })?;
@@ -478,8 +402,8 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                 }
             } else {
                 Err(ScrapeError::InvalidState(format!(
-                    "Unexpected next step: {}",
-                    next_step
+                    "Unexpected step in parsing status: {}",
+                    current_step
                 )))
             }
         }
@@ -505,15 +429,36 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         )));
     }
 
-    // Check if we have valid step outputs to resume from
-    let has_valid_fetch = get_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
-    let resume_status = match (job.failed_at_step.as_deref(), has_valid_fetch) {
-        (Some(STATUS_SCRAPING), true) => {
-            // We have valid fetch data, can skip to parsing
-            STATUS_PARSING
+    // Check retry count
+    if job.retry_count >= MAX_RETRIES {
+        return Err(ScrapeError::MaxRetriesExceeded);
+    }
+
+    // Determine where to resume based on failed_at_step and available outputs
+    let has_fetch_output = get_latest_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
+    let has_extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?.is_some();
+
+    let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
+        Some(STATUS_SCRAPING) => {
+            // Failed during fetch - restart from fetch
+            (STATUS_SCRAPING, STEP_FETCH_HTML)
         }
-        (Some(STATUS_PARSING), _) => STATUS_PARSING,
-        _ => STATUS_PENDING,
+        Some(STATUS_PARSING) => {
+            if has_extract_output {
+                // Have extract output, try save again
+                (STATUS_PARSING, STEP_SAVE_RECIPE)
+            } else if has_fetch_output {
+                // Have fetch output, try extract again
+                (STATUS_PARSING, STEP_EXTRACT_RECIPE)
+            } else {
+                // No outputs, start from beginning
+                (STATUS_SCRAPING, STEP_FETCH_HTML)
+            }
+        }
+        _ => {
+            // Unknown failure point, start from beginning
+            (STATUS_PENDING, STEP_FETCH_HTML)
+        }
     };
 
     let mut conn = pool
@@ -523,6 +468,7 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::status.eq(resume_status),
+            scrape_jobs::current_step.eq(Some(resume_step)),
             scrape_jobs::failed_at_step.eq::<Option<String>>(None),
             scrape_jobs::error_message.eq::<Option<String>>(None),
             scrape_jobs::retry_count.eq(job.retry_count + 1),

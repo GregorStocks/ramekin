@@ -42,6 +42,7 @@ diesel::table! {
         retry_count -> Int4,
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
+        current_step -> Nullable<Varchar>,
     }
 }
 
@@ -52,7 +53,6 @@ diesel::table! {
         step_name -> Varchar,
         build_id -> Varchar,
         output -> Jsonb,
-        next_step -> Nullable<Varchar>,
         created_at -> Timestamptz,
     }
 }

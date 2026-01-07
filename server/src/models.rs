@@ -126,6 +126,7 @@ pub struct ScrapeJob {
     pub retry_count: i32,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
+    pub current_step: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -135,7 +136,7 @@ pub struct NewScrapeJob<'a> {
     pub url: &'a str,
 }
 
-// Step output for pipeline step results
+// Step output for pipeline step results (append-only log)
 #[derive(Queryable, Selectable, Debug, Clone)]
 #[diesel(table_name = crate::schema::step_outputs)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -146,7 +147,6 @@ pub struct StepOutput {
     pub step_name: String,
     pub build_id: String,
     pub output: JsonValue,
-    pub next_step: Option<String>,
     pub created_at: DateTime<Utc>,
 }
 
@@ -157,5 +157,4 @@ pub struct NewStepOutput {
     pub step_name: String,
     pub build_id: String,
     pub output: JsonValue,
-    pub next_step: Option<String>,
 }
