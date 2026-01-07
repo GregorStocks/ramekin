@@ -29,6 +29,15 @@ pub struct RecipeResponse {
     pub tags: Vec<String>,
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
+    // Paprika-compatible fields
+    pub servings: Option<String>,
+    pub prep_time: Option<String>,
+    pub cook_time: Option<String>,
+    pub total_time: Option<String>,
+    pub rating: Option<i32>,
+    pub difficulty: Option<String>,
+    pub nutritional_info: Option<String>,
+    pub notes: Option<String>,
 }
 
 #[derive(Queryable, Selectable)]
@@ -45,6 +54,15 @@ struct RecipeFull {
     tags: Vec<Option<String>>,
     created_at: DateTime<Utc>,
     updated_at: DateTime<Utc>,
+    // Paprika-compatible fields
+    servings: Option<String>,
+    prep_time: Option<String>,
+    cook_time: Option<String>,
+    total_time: Option<String>,
+    rating: Option<i32>,
+    difficulty: Option<String>,
+    nutritional_info: Option<String>,
+    notes: Option<String>,
 }
 
 #[utoipa::path(
@@ -124,6 +142,14 @@ pub async fn get_recipe(
         tags: recipe.tags.into_iter().flatten().collect(),
         created_at: recipe.created_at,
         updated_at: recipe.updated_at,
+        servings: recipe.servings,
+        prep_time: recipe.prep_time,
+        cook_time: recipe.cook_time,
+        total_time: recipe.total_time,
+        rating: recipe.rating,
+        difficulty: recipe.difficulty,
+        nutritional_info: recipe.nutritional_info,
+        notes: recipe.notes,
     };
 
     (StatusCode::OK, Json(response)).into_response()

@@ -14,12 +14,26 @@ use serde::{Deserialize, Serialize};
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct UpdateRecipeRequest {
     #[serde(
+        rename = "cook_time",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub cook_time: Option<Option<String>>,
+    #[serde(
         rename = "description",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
     pub description: Option<Option<String>>,
+    #[serde(
+        rename = "difficulty",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub difficulty: Option<Option<String>>,
     #[serde(
         rename = "ingredients",
         default,
@@ -35,12 +49,47 @@ pub struct UpdateRecipeRequest {
     )]
     pub instructions: Option<Option<String>>,
     #[serde(
+        rename = "notes",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub notes: Option<Option<String>>,
+    #[serde(
+        rename = "nutritional_info",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub nutritional_info: Option<Option<String>>,
+    #[serde(
         rename = "photo_ids",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
     pub photo_ids: Option<Option<Vec<uuid::Uuid>>>,
+    #[serde(
+        rename = "prep_time",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub prep_time: Option<Option<String>>,
+    #[serde(
+        rename = "rating",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub rating: Option<Option<i32>>,
+    #[serde(
+        rename = "servings",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub servings: Option<Option<String>>,
     #[serde(
         rename = "source_name",
         default,
@@ -69,19 +118,34 @@ pub struct UpdateRecipeRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub title: Option<Option<String>>,
+    #[serde(
+        rename = "total_time",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub total_time: Option<Option<String>>,
 }
 
 impl UpdateRecipeRequest {
     pub fn new() -> UpdateRecipeRequest {
         UpdateRecipeRequest {
+            cook_time: None,
             description: None,
+            difficulty: None,
             ingredients: None,
             instructions: None,
+            notes: None,
+            nutritional_info: None,
             photo_ids: None,
+            prep_time: None,
+            rating: None,
+            servings: None,
             source_name: None,
             source_url: None,
             tags: None,
             title: None,
+            total_time: None,
         }
     }
 }

@@ -428,6 +428,37 @@
         ]
       }
     },
+    "/api/recipes/export": {
+      "get": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "export_all_recipes",
+        "responses": {
+          "200": {
+            "description": "Paprika recipes archive (.paprikarecipes)",
+            "content": {
+              "application/zip": {}
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/tags": {
       "get": {
         "tags": [
@@ -607,6 +638,59 @@
         "responses": {
           "204": {
             "description": "Recipe deleted successfully"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/{id}/export": {
+      "get": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "export_recipe",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paprika recipe file (.paprikarecipe)",
+            "content": {
+              "application/gzip": {}
+            }
           },
           "401": {
             "description": "Unauthorized",
@@ -881,7 +965,19 @@
           "instructions"
         ],
         "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
             "type": [
               "string",
               "null"
@@ -896,6 +992,18 @@
           "instructions": {
             "type": "string"
           },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "photo_ids": {
             "type": [
               "array",
@@ -905,6 +1013,25 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "source_name": {
             "type": [
@@ -929,6 +1056,12 @@
           },
           "title": {
             "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },
@@ -1116,11 +1249,23 @@
           "updated_at"
         ],
         "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "created_at": {
             "type": "string",
             "format": "date-time"
           },
           "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
             "type": [
               "string",
               "null"
@@ -1139,12 +1284,43 @@
           "instructions": {
             "type": "string"
           },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "photo_ids": {
             "type": "array",
             "items": {
               "type": "string",
               "format": "uuid"
             }
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "source_name": {
             "type": [
@@ -1166,6 +1342,12 @@
           },
           "title": {
             "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "updated_at": {
             "type": "string",
@@ -1362,7 +1544,19 @@
       "UpdateRecipeRequest": {
         "type": "object",
         "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
             "type": [
               "string",
               "null"
@@ -1383,6 +1577,18 @@
               "null"
             ]
           },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
           "photo_ids": {
             "type": [
               "array",
@@ -1392,6 +1598,25 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
           },
           "source_name": {
             "type": [
@@ -1415,6 +1640,12 @@
             }
           },
           "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "total_time": {
             "type": [
               "string",
               "null"

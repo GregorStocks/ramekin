@@ -10,14 +10,13 @@ use std::io::Read;
 use std::path::Path;
 use zip::ZipArchive;
 
-/// Paprika recipe format (subset of fields we care about)
+/// Paprika recipe format - all fields for lossless roundtrip
 #[derive(Debug, Deserialize)]
 struct PaprikaRecipe {
     name: String,
     ingredients: Option<String>,
     directions: Option<String>,
     description: Option<String>,
-    #[allow(dead_code)]
     notes: Option<String>,
     source: Option<String>,
     source_url: Option<String>,
@@ -27,6 +26,14 @@ struct PaprikaRecipe {
     photos: Vec<PaprikaPhoto>,
     /// Thumbnail/fallback photo (used when photos array is empty)
     photo_data: Option<String>,
+    // Paprika-specific metadata fields
+    servings: Option<String>,
+    prep_time: Option<String>,
+    cook_time: Option<String>,
+    total_time: Option<String>,
+    rating: Option<i32>,
+    difficulty: Option<String>,
+    nutritional_info: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -136,6 +143,15 @@ fn convert_recipe(recipe: &PaprikaRecipe, photo_ids: Vec<uuid::Uuid>) -> CreateR
         } else {
             Some(Some(photo_ids))
         },
+        // Paprika-specific metadata fields
+        servings: recipe.servings.clone().map(Some),
+        prep_time: recipe.prep_time.clone().map(Some),
+        cook_time: recipe.cook_time.clone().map(Some),
+        total_time: recipe.total_time.clone().map(Some),
+        rating: recipe.rating.map(Some),
+        difficulty: recipe.difficulty.clone().map(Some),
+        nutritional_info: recipe.nutritional_info.clone().map(Some),
+        notes: recipe.notes.clone().map(Some),
     }
 }
 

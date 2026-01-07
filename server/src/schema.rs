@@ -27,6 +27,14 @@ diesel::table! {
         created_at -> Timestamptz,
         updated_at -> Timestamptz,
         deleted_at -> Nullable<Timestamptz>,
+        servings -> Nullable<Varchar>,
+        prep_time -> Nullable<Varchar>,
+        cook_time -> Nullable<Varchar>,
+        total_time -> Nullable<Varchar>,
+        rating -> Nullable<Int4>,
+        difficulty -> Nullable<Varchar>,
+        nutritional_info -> Nullable<Text>,
+        notes -> Nullable<Text>,
     }
 }
 
@@ -47,23 +55,23 @@ diesel::table! {
 }
 
 diesel::table! {
-    step_outputs (id) {
-        id -> Uuid,
-        scrape_job_id -> Uuid,
-        step_name -> Varchar,
-        build_id -> Varchar,
-        output -> Jsonb,
-        created_at -> Timestamptz,
-    }
-}
-
-diesel::table! {
     sessions (id) {
         id -> Uuid,
         user_id -> Uuid,
         #[max_length = 255]
         token_hash -> Varchar,
         expires_at -> Timestamptz,
+        created_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
+    step_outputs (id) {
+        id -> Uuid,
+        scrape_job_id -> Uuid,
+        step_name -> Varchar,
+        build_id -> Varchar,
+        output -> Jsonb,
         created_at -> Timestamptz,
     }
 }

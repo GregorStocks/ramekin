@@ -20,6 +20,15 @@ pub struct CreateRecipeRequest {
     pub source_name: Option<String>,
     pub photo_ids: Option<Vec<Uuid>>,
     pub tags: Option<Vec<String>>,
+    // Paprika-compatible fields
+    pub servings: Option<String>,
+    pub prep_time: Option<String>,
+    pub cook_time: Option<String>,
+    pub total_time: Option<String>,
+    pub rating: Option<i32>,
+    pub difficulty: Option<String>,
+    pub nutritional_info: Option<String>,
+    pub notes: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
@@ -116,6 +125,14 @@ pub async fn create_recipe(
         source_name: request.source_name.as_deref(),
         photo_ids: &photo_ids,
         tags: &tags,
+        servings: request.servings.as_deref(),
+        prep_time: request.prep_time.as_deref(),
+        cook_time: request.cook_time.as_deref(),
+        total_time: request.total_time.as_deref(),
+        rating: request.rating,
+        difficulty: request.difficulty.as_deref(),
+        nutritional_info: request.nutritional_info.as_deref(),
+        notes: request.notes.as_deref(),
     };
 
     let recipe_id: Uuid = match diesel::insert_into(recipes::table)

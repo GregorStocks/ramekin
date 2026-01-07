@@ -26,6 +26,15 @@ pub struct UpdateRecipeRequest {
     pub source_name: Option<String>,
     pub photo_ids: Option<Vec<Uuid>>,
     pub tags: Option<Vec<String>>,
+    // Paprika-compatible fields
+    pub servings: Option<String>,
+    pub prep_time: Option<String>,
+    pub cook_time: Option<String>,
+    pub total_time: Option<String>,
+    pub rating: Option<i32>,
+    pub difficulty: Option<String>,
+    pub nutritional_info: Option<String>,
+    pub notes: Option<String>,
 }
 
 #[derive(AsChangeset)]
@@ -40,6 +49,15 @@ struct RecipeUpdate {
     photo_ids: Option<Vec<Option<Uuid>>>,
     tags: Option<Vec<Option<String>>>,
     updated_at: chrono::DateTime<Utc>,
+    // Paprika-compatible fields
+    servings: Option<Option<String>>,
+    prep_time: Option<Option<String>>,
+    cook_time: Option<Option<String>>,
+    total_time: Option<Option<String>>,
+    rating: Option<Option<i32>>,
+    difficulty: Option<Option<String>>,
+    nutritional_info: Option<Option<String>>,
+    notes: Option<Option<String>>,
 }
 
 #[utoipa::path(
@@ -163,6 +181,14 @@ pub async fn update_recipe(
             .tags
             .map(|tags| tags.into_iter().map(Some).collect()),
         updated_at: Utc::now(),
+        servings: request.servings.map(Some),
+        prep_time: request.prep_time.map(Some),
+        cook_time: request.cook_time.map(Some),
+        total_time: request.total_time.map(Some),
+        rating: request.rating.map(Some),
+        difficulty: request.difficulty.map(Some),
+        nutritional_info: request.nutritional_info.map(Some),
+        notes: request.notes.map(Some),
     };
 
     match diesel::update(recipes::table.filter(recipes::id.eq(id)))

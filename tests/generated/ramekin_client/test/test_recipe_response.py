@@ -35,8 +35,10 @@ class TestRecipeResponse(unittest.TestCase):
         model = RecipeResponse()
         if include_optional:
             return RecipeResponse(
+                cook_time = '',
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 description = '',
+                difficulty = '',
                 id = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
@@ -46,15 +48,21 @@ class TestRecipeResponse(unittest.TestCase):
                         unit = '', )
                     ],
                 instructions = '',
+                notes = '',
+                nutritional_info = '',
                 photo_ids = [
                     ''
                     ],
+                prep_time = '',
+                rating = 56,
+                servings = '',
                 source_name = '',
                 source_url = '',
                 tags = [
                     ''
                     ],
                 title = '',
+                total_time = '',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:

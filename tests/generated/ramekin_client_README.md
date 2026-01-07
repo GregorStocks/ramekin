@@ -70,6 +70,8 @@ Class | Method | HTTP request | Description
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *RecipesApi* | [**create_recipe**](ramekin_client/docs/RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 *RecipesApi* | [**delete_recipe**](ramekin_client/docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+*RecipesApi* | [**export_all_recipes**](ramekin_client/docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
+*RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_tags**](ramekin_client/docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 

@@ -252,6 +252,15 @@ fn create_recipe_from_raw(
         source_name: raw.source_name.as_deref(),
         photo_ids: &[],
         tags: &[],
+        // Paprika-compatible fields - not populated from web scraping
+        servings: None,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
     };
 
     let recipe_id: Uuid = diesel::insert_into(recipes::table)

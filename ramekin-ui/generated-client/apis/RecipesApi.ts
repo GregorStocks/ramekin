@@ -54,6 +54,10 @@ export interface DeleteRecipeRequest {
     id: string;
 }
 
+export interface ExportRecipeRequest {
+    id: string;
+}
+
 export interface GetRecipeRequest {
     id: string;
 }
@@ -161,6 +165,82 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async deleteRecipe(requestParameters: DeleteRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.deleteRecipeRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     */
+    async exportAllRecipesRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/export`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async exportAllRecipes(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.exportAllRecipesRaw(initOverrides);
+    }
+
+    /**
+     */
+    async exportRecipeRaw(requestParameters: ExportRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling exportRecipe().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/export`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async exportRecipe(requestParameters: ExportRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.exportRecipeRaw(requestParameters, initOverrides);
     }
 
     /**

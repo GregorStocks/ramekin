@@ -94,6 +94,15 @@ pub struct Recipe {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
     pub deleted_at: Option<DateTime<Utc>>,
+    // Paprika-compatible fields for lossless roundtrip
+    pub servings: Option<String>,
+    pub prep_time: Option<String>,
+    pub cook_time: Option<String>,
+    pub total_time: Option<String>,
+    pub rating: Option<i32>,
+    pub difficulty: Option<String>,
+    pub nutritional_info: Option<String>,
+    pub notes: Option<String>,
 }
 
 #[derive(Insertable)]
@@ -108,6 +117,15 @@ pub struct NewRecipe<'a> {
     pub source_name: Option<&'a str>,
     pub photo_ids: &'a [Option<Uuid>],
     pub tags: &'a [Option<String>],
+    // Paprika-compatible fields for lossless roundtrip
+    pub servings: Option<&'a str>,
+    pub prep_time: Option<&'a str>,
+    pub cook_time: Option<&'a str>,
+    pub total_time: Option<&'a str>,
+    pub rating: Option<i32>,
+    pub difficulty: Option<&'a str>,
+    pub nutritional_info: Option<&'a str>,
+    pub notes: Option<&'a str>,
 }
 
 // Scrape job for async URL scraping

@@ -33,6 +33,8 @@ Class | Method | HTTP request | Description
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
 *RecipesApi* | [**create_recipe**](docs/RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 *RecipesApi* | [**delete_recipe**](docs/RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+*RecipesApi* | [**export_all_recipes**](docs/RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
+*RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_tags**](docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 

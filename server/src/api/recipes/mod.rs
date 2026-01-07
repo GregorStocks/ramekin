@@ -1,5 +1,6 @@
 pub mod create;
 pub mod delete;
+pub mod export;
 pub mod get;
 pub mod list;
 pub mod tags;
@@ -15,12 +16,14 @@ pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", get(list::list_recipes).post(create::create_recipe))
         .route("/tags", get(tags::list_tags))
+        .route("/export", get(export::export_all_recipes))
         .route(
             "/{id}",
             get(get::get_recipe)
                 .put(update::update_recipe)
                 .delete(delete::delete_recipe),
         )
+        .route("/{id}/export", get(export::export_recipe))
 }
 
 #[derive(OpenApi)]
@@ -32,6 +35,8 @@ pub fn router() -> Router<AppState> {
         update::update_recipe,
         delete::delete_recipe,
         tags::list_tags,
+        export::export_recipe,
+        export::export_all_recipes,
     ),
     components(schemas(
         create::CreateRecipeRequest,

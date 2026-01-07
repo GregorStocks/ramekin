@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
@@ -29,18 +29,26 @@ class RecipeResponse(BaseModel):
     """
     RecipeResponse
     """ # noqa: E501
+    cook_time: Optional[StrictStr] = None
     created_at: datetime
     description: Optional[StrictStr] = None
+    difficulty: Optional[StrictStr] = None
     id: UUID
     ingredients: List[Ingredient]
     instructions: StrictStr
+    notes: Optional[StrictStr] = None
+    nutritional_info: Optional[StrictStr] = None
     photo_ids: List[UUID]
+    prep_time: Optional[StrictStr] = None
+    rating: Optional[StrictInt] = None
+    servings: Optional[StrictStr] = None
     source_name: Optional[StrictStr] = None
     source_url: Optional[StrictStr] = None
     tags: List[StrictStr]
     title: StrictStr
+    total_time: Optional[StrictStr] = None
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["created_at", "description", "id", "ingredients", "instructions", "photo_ids", "source_name", "source_url", "tags", "title", "updated_at"]
+    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,10 +96,45 @@ class RecipeResponse(BaseModel):
                 if _item_ingredients:
                     _items.append(_item_ingredients.to_dict())
             _dict['ingredients'] = _items
+        # set to None if cook_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.cook_time is None and "cook_time" in self.model_fields_set:
+            _dict['cook_time'] = None
+
         # set to None if description (nullable) is None
         # and model_fields_set contains the field
         if self.description is None and "description" in self.model_fields_set:
             _dict['description'] = None
+
+        # set to None if difficulty (nullable) is None
+        # and model_fields_set contains the field
+        if self.difficulty is None and "difficulty" in self.model_fields_set:
+            _dict['difficulty'] = None
+
+        # set to None if notes (nullable) is None
+        # and model_fields_set contains the field
+        if self.notes is None and "notes" in self.model_fields_set:
+            _dict['notes'] = None
+
+        # set to None if nutritional_info (nullable) is None
+        # and model_fields_set contains the field
+        if self.nutritional_info is None and "nutritional_info" in self.model_fields_set:
+            _dict['nutritional_info'] = None
+
+        # set to None if prep_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.prep_time is None and "prep_time" in self.model_fields_set:
+            _dict['prep_time'] = None
+
+        # set to None if rating (nullable) is None
+        # and model_fields_set contains the field
+        if self.rating is None and "rating" in self.model_fields_set:
+            _dict['rating'] = None
+
+        # set to None if servings (nullable) is None
+        # and model_fields_set contains the field
+        if self.servings is None and "servings" in self.model_fields_set:
+            _dict['servings'] = None
 
         # set to None if source_name (nullable) is None
         # and model_fields_set contains the field
@@ -102,6 +145,11 @@ class RecipeResponse(BaseModel):
         # and model_fields_set contains the field
         if self.source_url is None and "source_url" in self.model_fields_set:
             _dict['source_url'] = None
+
+        # set to None if total_time (nullable) is None
+        # and model_fields_set contains the field
+        if self.total_time is None and "total_time" in self.model_fields_set:
+            _dict['total_time'] = None
 
         return _dict
 
@@ -115,16 +163,24 @@ class RecipeResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "cook_time": obj.get("cook_time"),
             "created_at": obj.get("created_at"),
             "description": obj.get("description"),
+            "difficulty": obj.get("difficulty"),
             "id": obj.get("id"),
             "ingredients": [Ingredient.from_dict(_item) for _item in obj["ingredients"]] if obj.get("ingredients") is not None else None,
             "instructions": obj.get("instructions"),
+            "notes": obj.get("notes"),
+            "nutritional_info": obj.get("nutritional_info"),
             "photo_ids": obj.get("photo_ids"),
+            "prep_time": obj.get("prep_time"),
+            "rating": obj.get("rating"),
+            "servings": obj.get("servings"),
             "source_name": obj.get("source_name"),
             "source_url": obj.get("source_url"),
             "tags": obj.get("tags"),
             "title": obj.get("title"),
+            "total_time": obj.get("total_time"),
             "updated_at": obj.get("updated_at")
         })
         return _obj

@@ -6,14 +6,22 @@
 
 Name | Type
 ------------ | -------------
+`cookTime` | string
 `description` | string
+`difficulty` | string
 `ingredients` | [Array&lt;Ingredient&gt;](Ingredient.md)
 `instructions` | string
+`notes` | string
+`nutritionalInfo` | string
 `photoIds` | Array&lt;string&gt;
+`prepTime` | string
+`rating` | number
+`servings` | string
 `sourceName` | string
 `sourceUrl` | string
 `tags` | Array&lt;string&gt;
 `title` | string
+`totalTime` | string
 
 ## Example
 
@@ -22,14 +30,22 @@ import type { UpdateRecipeRequest } from ''
 
 // TODO: Update the object below with actual values
 const example = {
+  "cookTime": null,
   "description": null,
+  "difficulty": null,
   "ingredients": null,
   "instructions": null,
+  "notes": null,
+  "nutritionalInfo": null,
   "photoIds": null,
+  "prepTime": null,
+  "rating": null,
+  "servings": null,
   "sourceName": null,
   "sourceUrl": null,
   "tags": null,
   "title": null,
+  "totalTime": null,
 } satisfies UpdateRecipeRequest
 
 console.log(example)
