@@ -21,13 +21,13 @@ struct Cli {
 enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
-        /// Server URL (or set PORT env var)
+        /// Server URL (or set API_BASE_URL env var)
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
-        /// Server URL (or set PORT env var)
+        /// Server URL (or set API_BASE_URL env var)
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
         /// Username for the seed user
@@ -42,7 +42,7 @@ enum Commands {
     },
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
-        /// Server URL (or set PORT env var)
+        /// Server URL (or set API_BASE_URL env var)
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
         /// Username to authenticate as
@@ -57,10 +57,10 @@ enum Commands {
     },
     /// Run a load test creating many users with recipes and photos
     LoadTest {
-        /// Server URL (or set PORT env var)
+        /// Server URL (or set API_BASE_URL env var)
         #[arg(long, env = "API_BASE_URL")]
         server: Option<String>,
-        /// UI URL for browser tests (or set UI_PORT env var)
+        /// UI URL for browser tests (or set UI_BASE_URL env var)
         #[arg(long, env = "UI_BASE_URL")]
         ui_url: Option<String>,
         /// Number of users to create (default: 10)
@@ -72,7 +72,7 @@ enum Commands {
     },
     /// Take screenshots of the app as the test user
     Screenshot {
-        /// UI URL (or set UI_PORT env var)
+        /// UI URL (or set UI_BASE_URL env var)
         #[arg(long, env = "UI_BASE_URL")]
         ui_url: Option<String>,
         /// Username for authentication
@@ -94,23 +94,11 @@ enum Commands {
 }
 
 fn require_server_url(server: Option<String>) -> Result<String> {
-    server
-        .or_else(|| {
-            std::env::var("PORT")
-                .ok()
-                .map(|p| format!("http://localhost:{}", p))
-        })
-        .ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set PORT env var"))
+    server.ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set API_BASE_URL"))
 }
 
 fn require_ui_url(ui_url: Option<String>) -> Result<String> {
-    ui_url
-        .or_else(|| {
-            std::env::var("UI_PORT")
-                .ok()
-                .map(|p| format!("http://localhost:{}", p))
-        })
-        .ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui-url or set UI_PORT env var"))
+    ui_url.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui-url or set UI_BASE_URL"))
 }
 
 #[tokio::main]

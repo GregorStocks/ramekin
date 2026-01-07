@@ -6,10 +6,7 @@ def test_cli_ping():
     """Test CLI ping command against the server."""
     server_url = os.environ.get("API_BASE_URL")
     if not server_url:
-        port = os.environ.get("PORT")
-        if not port:
-            raise ValueError("API_BASE_URL or PORT environment variable required")
-        server_url = f"http://localhost:{port}"
+        raise ValueError("API_BASE_URL environment variable required")
     cli_path = os.environ.get("CLI_PATH", "/app/cli/target/debug/ramekin-cli")
 
     result = subprocess.run(

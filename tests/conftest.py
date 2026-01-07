@@ -15,10 +15,7 @@ from ramekin_client.models import SignupRequest
 def api_config():
     api_base_url = os.environ.get("API_BASE_URL")
     if not api_base_url:
-        port = os.environ.get("PORT")
-        if not port:
-            raise ValueError("API_BASE_URL or PORT environment variable required")
-        api_base_url = f"http://localhost:{port}"
+        raise ValueError("API_BASE_URL environment variable required")
     return Configuration(host=api_base_url)
 
 
