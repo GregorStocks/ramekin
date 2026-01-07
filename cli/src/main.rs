@@ -62,7 +62,7 @@ enum Commands {
         server: Option<String>,
         /// UI URL for browser tests
         #[arg(long, env = "UI_BASE_URL")]
-        ui_url: Option<String>,
+        ui: Option<String>,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
         users: usize,
@@ -74,7 +74,7 @@ enum Commands {
     Screenshot {
         /// UI URL
         #[arg(long, env = "UI_BASE_URL")]
-        ui_url: Option<String>,
+        ui: Option<String>,
         /// Username for authentication
         #[arg(long, default_value = "t")]
         username: String,
@@ -97,8 +97,8 @@ fn require_server_url(server: Option<String>) -> Result<String> {
     server.ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set API_BASE_URL"))
 }
 
-fn require_ui_url(ui_url: Option<String>) -> Result<String> {
-    ui_url.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui-url or set UI_BASE_URL"))
+fn require_ui_url(ui: Option<String>) -> Result<String> {
+    ui.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui or set UI_BASE_URL"))
 }
 
 #[tokio::main]
@@ -130,24 +130,24 @@ async fn main() -> Result<()> {
         }
         Commands::LoadTest {
             server,
-            ui_url,
+            ui,
             users,
             concurrency,
         } => {
             let server = require_server_url(server)?;
-            let ui_url = require_ui_url(ui_url)?;
-            load_test::load_test(&server, &ui_url, users, concurrency).await?;
+            let ui = require_ui_url(ui)?;
+            load_test::load_test(&server, &ui, users, concurrency).await?;
         }
         Commands::Screenshot {
-            ui_url,
+            ui,
             username,
             password,
             output_dir,
             width,
             height,
         } => {
-            let ui_url = require_ui_url(ui_url)?;
-            screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
+            let ui = require_ui_url(ui)?;
+            screenshot::screenshot(&ui, &username, &password, &output_dir, width, height)?;
         }
     }
 
