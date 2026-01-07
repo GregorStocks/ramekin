@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::schema::recipes;
 use axum::{
     extract::{Path, State},
@@ -34,18 +35,7 @@ pub async fn delete_recipe(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
 ) -> impl IntoResponse {
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     // Soft delete - set deleted_at timestamp
     let updated = match diesel::update(

@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::{create_session_with_token, verify_password, DEV_TEST_TOKEN};
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::models::User;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -34,18 +35,7 @@ pub async fn login(
     State(pool): State<Arc<DbPool>>,
     Json(req): Json<LoginRequest>,
 ) -> impl IntoResponse {
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     let user: User = match users::table
         .filter(

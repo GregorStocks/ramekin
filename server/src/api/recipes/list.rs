@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::schema::recipes;
 use axum::{
     extract::{Query, State},
@@ -252,18 +253,7 @@ pub async fn list_recipes(
         .as_ref()
         .map(|s| format!("%{}%", s.replace('%', "\\%").replace('_', "\\_")));
 
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     // Build base query with filters
     let mut query = recipes::table

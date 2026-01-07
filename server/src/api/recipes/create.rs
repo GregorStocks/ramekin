@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::models::{Ingredient, NewRecipe};
 use crate::schema::recipes;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
@@ -75,18 +76,7 @@ pub async fn create_recipe(
             .into_response();
     }
 
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     let ingredients_json = match serde_json::to_value(&request.ingredients) {
         Ok(v) => v,

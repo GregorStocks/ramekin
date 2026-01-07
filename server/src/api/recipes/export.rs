@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
-use crate::db::DbPool;
+use crate::db::{DbConn, DbPool};
+use crate::get_conn;
 use crate::models::{Ingredient, Recipe};
 use crate::schema::{photos, recipes};
 use axum::{
@@ -157,6 +158,39 @@ fn fetch_recipe_photos(
         .unwrap_or_default()
 }
 
+/// Exported single recipe data (gzipped .paprikarecipe content)
+pub struct ExportedRecipe {
+    pub filename: String,
+    pub data: Vec<u8>,
+}
+
+/// Export a single recipe to .paprikarecipe format (gzipped JSON)
+/// This is the core export function used by both single-recipe and bulk export.
+pub fn export_recipe_to_paprikarecipe(
+    conn: &mut DbConn,
+    user_id: Uuid,
+    recipe: &Recipe,
+) -> Result<ExportedRecipe, String> {
+    // Fetch photos for this recipe
+    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.photo_ids);
+
+    // Convert to Paprika format
+    let paprika_recipe = convert_to_paprika(recipe, photos_data);
+
+    // Gzip compress
+    let data = gzip_recipe(&paprika_recipe)?;
+
+    // Sanitize filename
+    let filename = paprika_recipe
+        .name
+        .chars()
+        .filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_')
+        .collect::<String>();
+    let filename = format!("{}.paprikarecipe", filename);
+
+    Ok(ExportedRecipe { filename, data })
+}
+
 #[utoipa::path(
     get,
     path = "/api/recipes/{id}/export",
@@ -178,18 +212,7 @@ pub async fn export_recipe(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
 ) -> impl IntoResponse {
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     // Fetch the recipe
     let recipe: Recipe = match recipes::table
@@ -220,17 +243,11 @@ pub async fn export_recipe(
         }
     };
 
-    // Fetch photos
-    let photos_data = fetch_recipe_photos(&mut conn, user.id, &recipe.photo_ids);
-
-    // Convert to Paprika format
-    let paprika_recipe = convert_to_paprika(&recipe, photos_data);
-
-    // Gzip compress
-    let gzipped = match gzip_recipe(&paprika_recipe) {
-        Ok(data) => data,
+    // Export to .paprikarecipe format (gzipped JSON)
+    let exported = match export_recipe_to_paprikarecipe(&mut conn, user.id, &recipe) {
+        Ok(e) => e,
         Err(e) => {
-            tracing::error!("Failed to compress recipe: {}", e);
+            tracing::error!("Failed to export recipe: {}", e);
             return (
                 StatusCode::INTERNAL_SERVER_ERROR,
                 Json(ErrorResponse {
@@ -241,22 +258,14 @@ pub async fn export_recipe(
         }
     };
 
-    // Sanitize filename
-    let filename = paprika_recipe
-        .name
-        .chars()
-        .filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_')
-        .collect::<String>();
-    let filename = format!("{}.paprikarecipe", filename);
-
     Response::builder()
         .status(StatusCode::OK)
         .header(header::CONTENT_TYPE, "application/gzip")
         .header(
             header::CONTENT_DISPOSITION,
-            format!("attachment; filename=\"{}\"", filename),
+            format!("attachment; filename=\"{}\"", exported.filename),
         )
-        .body(Body::from(gzipped))
+        .body(Body::from(exported.data))
         .unwrap()
         .into_response()
 }
@@ -277,18 +286,7 @@ pub async fn export_all_recipes(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
 ) -> impl IntoResponse {
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     // Fetch all user's recipes
     let all_recipes: Vec<Recipe> = match recipes::table
@@ -310,42 +308,30 @@ pub async fn export_all_recipes(
     };
 
     // Create ZIP archive in memory
+    // A .paprikarecipes file is a ZIP containing .paprikarecipe files (each is gzipped JSON)
     let mut zip_buffer = Vec::new();
     {
         let mut zip = ZipWriter::new(std::io::Cursor::new(&mut zip_buffer));
+        // Store without additional compression since each .paprikarecipe is already gzipped
         let options =
-            SimpleFileOptions::default().compression_method(zip::CompressionMethod::Deflated);
+            SimpleFileOptions::default().compression_method(zip::CompressionMethod::Stored);
 
         for recipe in &all_recipes {
-            // Fetch photos for this recipe
-            let photos_data = fetch_recipe_photos(&mut conn, user.id, &recipe.photo_ids);
-
-            // Convert to Paprika format
-            let paprika_recipe = convert_to_paprika(recipe, photos_data);
-
-            // Gzip compress
-            let gzipped = match gzip_recipe(&paprika_recipe) {
-                Ok(data) => data,
+            // Export each recipe to .paprikarecipe format
+            let exported = match export_recipe_to_paprikarecipe(&mut conn, user.id, recipe) {
+                Ok(e) => e,
                 Err(e) => {
-                    tracing::warn!("Failed to compress recipe {}: {}", recipe.title, e);
+                    tracing::warn!("Failed to export recipe {}: {}", recipe.title, e);
                     continue;
                 }
             };
 
-            // Sanitize filename
-            let filename = paprika_recipe
-                .name
-                .chars()
-                .filter(|c| c.is_alphanumeric() || *c == ' ' || *c == '-' || *c == '_')
-                .collect::<String>();
-            let filename = format!("{}.paprikarecipe", filename);
-
-            // Add to ZIP
-            if let Err(e) = zip.start_file(&filename, options) {
+            // Add gzipped .paprikarecipe to ZIP
+            if let Err(e) = zip.start_file(&exported.filename, options) {
                 tracing::warn!("Failed to start ZIP entry for {}: {}", recipe.title, e);
                 continue;
             }
-            if let Err(e) = zip.write_all(&gzipped) {
+            if let Err(e) = zip.write_all(&exported.data) {
                 tracing::warn!("Failed to write ZIP entry for {}: {}", recipe.title, e);
                 continue;
             }
