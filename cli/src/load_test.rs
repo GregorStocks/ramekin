@@ -131,7 +131,7 @@ async fn create_user_and_recipes(
     config.bearer_access_token = Some(signup_response.token);
 
     // Create 50-5000 recipes to test endpoint efficiency with large lists
-    let num_recipes = rng.gen_range(50..=5000);
+    let num_recipes = rng.random_range(50..=5000);
     let mut recipe_ids = Vec::new();
 
     println!(

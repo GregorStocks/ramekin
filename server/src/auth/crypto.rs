@@ -1,9 +1,9 @@
 use argon2::{
-    password_hash::{PasswordHash, PasswordHasher, PasswordVerifier, SaltString},
+    password_hash::{phc::PasswordHash, PasswordHasher, PasswordVerifier},
     Argon2, Params,
 };
 use rand::rngs::OsRng;
-use rand::RngCore;
+use rand::TryRngCore;
 use sha2::{Digest, Sha256};
 use std::sync::LazyLock;
 
@@ -13,7 +13,9 @@ static INSECURE_HASHING: LazyLock<bool> =
 
 pub fn generate_token() -> String {
     let mut bytes = [0u8; 32];
-    OsRng.fill_bytes(&mut bytes);
+    OsRng
+        .try_fill_bytes(&mut bytes)
+        .expect("Failed to generate random bytes");
     hex::encode(bytes)
 }
 
@@ -34,9 +36,8 @@ fn get_argon2() -> Argon2<'static> {
 }
 
 pub fn hash_password(password: &str) -> Result<String, argon2::password_hash::Error> {
-    let salt = SaltString::generate(&mut OsRng);
     let argon2 = get_argon2();
-    let hash = argon2.hash_password(password.as_bytes(), &salt)?;
+    let hash = argon2.hash_password(password.as_bytes())?;
     Ok(hash.to_string())
 }
 
