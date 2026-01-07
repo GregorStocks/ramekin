@@ -142,7 +142,6 @@ fn convert_recipe(recipe: &PaprikaRecipe, photo_ids: Vec<uuid::Uuid>) -> CreateR
         } else {
             Some(Some(photo_ids))
         },
-        // Paprika-specific metadata fields
         servings: recipe.servings.clone().map(Some),
         prep_time: recipe.prep_time.clone().map(Some),
         cook_time: recipe.cook_time.clone().map(Some),
