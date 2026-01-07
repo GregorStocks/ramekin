@@ -22,13 +22,13 @@ enum Commands {
     /// Ping the server (unauthenticated)
     Ping {
         /// Server URL
-        #[arg(long = "server", env = "API_BASE_URL")]
+        #[arg(long, env = "API_BASE_URL")]
         server_url: String,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
         /// Server URL
-        #[arg(long = "server", env = "API_BASE_URL")]
+        #[arg(long, env = "API_BASE_URL")]
         server_url: String,
         /// Username for the seed user
         #[arg(long)]
@@ -43,7 +43,7 @@ enum Commands {
     /// Import recipes from a Paprika .paprikarecipes file
     Import {
         /// Server URL
-        #[arg(long = "server", env = "API_BASE_URL")]
+        #[arg(long, env = "API_BASE_URL")]
         server_url: String,
         /// Username to authenticate as
         #[arg(long)]
@@ -58,10 +58,10 @@ enum Commands {
     /// Run a load test creating many users with recipes and photos
     LoadTest {
         /// Server URL
-        #[arg(long = "server", env = "API_BASE_URL")]
+        #[arg(long, env = "API_BASE_URL")]
         server_url: String,
         /// UI URL for browser tests
-        #[arg(long = "ui", env = "UI_BASE_URL")]
+        #[arg(long, env = "UI_BASE_URL")]
         ui_url: String,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
@@ -73,7 +73,7 @@ enum Commands {
     /// Take screenshots of the app as the test user
     Screenshot {
         /// UI URL
-        #[arg(long = "ui", env = "UI_BASE_URL")]
+        #[arg(long, env = "UI_BASE_URL")]
         ui_url: String,
         /// Username for authentication
         #[arg(long, default_value = "t")]

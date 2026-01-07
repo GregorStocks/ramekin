@@ -13,7 +13,7 @@ def test_cli_ping():
         [
             cli_path,
             "ping",
-            "--server",
+            "--server-url",
             server_url,
         ],
         capture_output=True,
