@@ -69,15 +69,39 @@ jobs:
           path: logs/
           if-no-files-found: warn
 
+      - name: Upload cookbook screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-cookbook
+          path: logs/cookbook.png
+          if-no-files-found: error
+
+      - name: Upload edit screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-edit
+          path: logs/edit.png
+          if-no-files-found: error
+
+      - name: Upload recipe screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot-recipe
+          path: logs/recipe.png
+          if-no-files-found: error
+
       - name: Add screenshots to workflow summary
         run: |
+          sudo apt-get install -y pngquant
           echo "## Screenshots" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           for img in logs/*.png; do
             name=$(basename "$img" .png)
             echo "### ${name}" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            base64_img=$(base64 -w 0 "$img")
+            # Compress to reduce size for embedding
+            pngquant --quality=50-80 --output /tmp/compressed.png --force "$img"
+            base64_img=$(base64 -w 0 /tmp/compressed.png)
             echo "![${name}](data:image/png;base64,${base64_img})" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
           done
