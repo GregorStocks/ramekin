@@ -23,13 +23,13 @@ enum Commands {
     Ping {
         /// Server URL
         #[arg(long = "server", env = "API_BASE_URL")]
-        server_url: Option<String>,
+        server_url: String,
     },
     /// Seed the database with a user and import recipes from file
     Seed {
         /// Server URL
         #[arg(long = "server", env = "API_BASE_URL")]
-        server_url: Option<String>,
+        server_url: String,
         /// Username for the seed user
         #[arg(long)]
         username: String,
@@ -44,7 +44,7 @@ enum Commands {
     Import {
         /// Server URL
         #[arg(long = "server", env = "API_BASE_URL")]
-        server_url: Option<String>,
+        server_url: String,
         /// Username to authenticate as
         #[arg(long)]
         username: String,
@@ -59,10 +59,10 @@ enum Commands {
     LoadTest {
         /// Server URL
         #[arg(long = "server", env = "API_BASE_URL")]
-        server_url: Option<String>,
+        server_url: String,
         /// UI URL for browser tests
         #[arg(long = "ui", env = "UI_BASE_URL")]
-        ui_url: Option<String>,
+        ui_url: String,
         /// Number of users to create (default: 10)
         #[arg(long, default_value = "10")]
         users: usize,
@@ -74,7 +74,7 @@ enum Commands {
     Screenshot {
         /// UI URL
         #[arg(long = "ui", env = "UI_BASE_URL")]
-        ui_url: Option<String>,
+        ui_url: String,
         /// Username for authentication
         #[arg(long, default_value = "t")]
         username: String,
@@ -93,22 +93,12 @@ enum Commands {
     },
 }
 
-fn require_server_url(server_url: Option<String>) -> Result<String> {
-    server_url
-        .ok_or_else(|| anyhow::anyhow!("Server URL required: use --server or set API_BASE_URL"))
-}
-
-fn require_ui_url(ui_url: Option<String>) -> Result<String> {
-    ui_url.ok_or_else(|| anyhow::anyhow!("UI URL required: use --ui or set UI_BASE_URL"))
-}
-
 #[tokio::main]
 async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
         Commands::Ping { server_url } => {
-            let server_url = require_server_url(server_url)?;
             ping(&server_url).await?;
         }
         Commands::Seed {
@@ -117,7 +107,6 @@ async fn main() -> Result<()> {
             password,
             file,
         } => {
-            let server_url = require_server_url(server_url)?;
             seed::seed(&server_url, &username, &password, &file).await?;
         }
         Commands::Import {
@@ -126,7 +115,6 @@ async fn main() -> Result<()> {
             password,
             file,
         } => {
-            let server_url = require_server_url(server_url)?;
             import::import(&server_url, &username, &password, &file).await?;
         }
         Commands::LoadTest {
@@ -135,8 +123,6 @@ async fn main() -> Result<()> {
             users,
             concurrency,
         } => {
-            let server_url = require_server_url(server_url)?;
-            let ui_url = require_ui_url(ui_url)?;
             load_test::load_test(&server_url, &ui_url, users, concurrency).await?;
         }
         Commands::Screenshot {
@@ -147,7 +133,6 @@ async fn main() -> Result<()> {
             width,
             height,
         } => {
-            let ui_url = require_ui_url(ui_url)?;
             screenshot::screenshot(&ui_url, &username, &password, &output_dir, width, height)?;
         }
     }
