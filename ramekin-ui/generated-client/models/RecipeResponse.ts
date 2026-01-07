@@ -29,6 +29,12 @@ import {
 export interface RecipeResponse {
     /**
      * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    cookTime?: string | null;
+    /**
+     * 
      * @type {Date}
      * @memberof RecipeResponse
      */
@@ -39,6 +45,12 @@ export interface RecipeResponse {
      * @memberof RecipeResponse
      */
     description?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    difficulty?: string | null;
     /**
      * 
      * @type {string}
@@ -59,10 +71,40 @@ export interface RecipeResponse {
     instructions: string;
     /**
      * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    notes?: string | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    nutritionalInfo?: string | null;
+    /**
+     * 
      * @type {Array<string>}
      * @memberof RecipeResponse
      */
     photoIds: Array<string>;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    prepTime?: string | null;
+    /**
+     * 
+     * @type {number}
+     * @memberof RecipeResponse
+     */
+    rating?: number | null;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    servings?: string | null;
     /**
      * 
      * @type {string}
@@ -87,6 +129,12 @@ export interface RecipeResponse {
      * @memberof RecipeResponse
      */
     title: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    totalTime?: string | null;
     /**
      * 
      * @type {Date}
@@ -120,16 +168,24 @@ export function RecipeResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
     }
     return {
         
+        'cookTime': json['cook_time'] == null ? undefined : json['cook_time'],
         'createdAt': (new Date(json['created_at'])),
         'description': json['description'] == null ? undefined : json['description'],
+        'difficulty': json['difficulty'] == null ? undefined : json['difficulty'],
         'id': json['id'],
         'ingredients': ((json['ingredients'] as Array<any>).map(IngredientFromJSON)),
         'instructions': json['instructions'],
+        'notes': json['notes'] == null ? undefined : json['notes'],
+        'nutritionalInfo': json['nutritional_info'] == null ? undefined : json['nutritional_info'],
         'photoIds': json['photo_ids'],
+        'prepTime': json['prep_time'] == null ? undefined : json['prep_time'],
+        'rating': json['rating'] == null ? undefined : json['rating'],
+        'servings': json['servings'] == null ? undefined : json['servings'],
         'sourceName': json['source_name'] == null ? undefined : json['source_name'],
         'sourceUrl': json['source_url'] == null ? undefined : json['source_url'],
         'tags': json['tags'],
         'title': json['title'],
+        'totalTime': json['total_time'] == null ? undefined : json['total_time'],
         'updatedAt': (new Date(json['updated_at'])),
     };
 }
@@ -145,16 +201,24 @@ export function RecipeResponseToJSONTyped(value?: RecipeResponse | null, ignoreD
 
     return {
         
+        'cook_time': value['cookTime'],
         'created_at': value['createdAt'].toISOString(),
         'description': value['description'],
+        'difficulty': value['difficulty'],
         'id': value['id'],
         'ingredients': ((value['ingredients'] as Array<any>).map(IngredientToJSON)),
         'instructions': value['instructions'],
+        'notes': value['notes'],
+        'nutritional_info': value['nutritionalInfo'],
         'photo_ids': value['photoIds'],
+        'prep_time': value['prepTime'],
+        'rating': value['rating'],
+        'servings': value['servings'],
         'source_name': value['sourceName'],
         'source_url': value['sourceUrl'],
         'tags': value['tags'],
         'title': value['title'],
+        'total_time': value['totalTime'],
         'updated_at': value['updatedAt'].toISOString(),
     };
 }

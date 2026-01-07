@@ -35,7 +35,9 @@ class TestCreateRecipeRequest(unittest.TestCase):
         model = CreateRecipeRequest()
         if include_optional:
             return CreateRecipeRequest(
+                cook_time = '',
                 description = '',
+                difficulty = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
                         amount = '', 
@@ -44,15 +46,21 @@ class TestCreateRecipeRequest(unittest.TestCase):
                         unit = '', )
                     ],
                 instructions = '',
+                notes = '',
+                nutritional_info = '',
                 photo_ids = [
                     ''
                     ],
+                prep_time = '',
+                rating = 56,
+                servings = '',
                 source_name = '',
                 source_url = '',
                 tags = [
                     ''
                     ],
-                title = ''
+                title = '',
+                total_time = ''
             )
         else:
             return CreateRecipeRequest(

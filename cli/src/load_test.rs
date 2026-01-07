@@ -172,6 +172,14 @@ async fn create_user_and_recipes(
             photo_ids: None,
             source_name: None,
             source_url: None,
+            servings: None,
+            prep_time: None,
+            cook_time: None,
+            total_time: None,
+            rating: None,
+            difficulty: None,
+            nutritional_info: None,
+            notes: None,
         };
 
         let recipe_response = recipes_api::create_recipe(&config, recipe_request)
@@ -199,6 +207,14 @@ async fn create_user_and_recipes(
                 photo_ids: Some(Some(vec![photo_id])),
                 source_name: None,
                 source_url: None,
+                servings: None,
+                prep_time: None,
+                cook_time: None,
+                total_time: None,
+                rating: None,
+                difficulty: None,
+                nutritional_info: None,
+                notes: None,
             },
         )
         .await
@@ -219,6 +235,14 @@ async fn create_user_and_recipes(
                 photo_ids: None,
                 source_name: None,
                 source_url: None,
+                servings: None,
+                prep_time: None,
+                cook_time: None,
+                total_time: None,
+                rating: None,
+                difficulty: None,
+                nutritional_info: None,
+                notes: None,
             },
         )
         .await

@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::models::NewPhoto;
 use crate::schema::photos;
 use axum::{
@@ -115,18 +116,7 @@ pub async fn upload(
     };
 
     // Get database connection
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     // Insert photo
     let new_photo = NewPhoto {

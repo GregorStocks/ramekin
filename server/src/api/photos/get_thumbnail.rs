@@ -1,6 +1,7 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::get_conn;
 use crate::models::Photo;
 use crate::schema::photos;
 use axum::{
@@ -35,18 +36,7 @@ pub async fn get_photo_thumbnail(
     State(pool): State<Arc<DbPool>>,
     Path(id): Path<Uuid>,
 ) -> impl IntoResponse {
-    let mut conn = match pool.get() {
-        Ok(c) => c,
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Database connection failed".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let mut conn = get_conn!(pool);
 
     let photo: Photo = match photos::table
         .filter(photos::id.eq(id))

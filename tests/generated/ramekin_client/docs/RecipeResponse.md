@@ -5,16 +5,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**cook_time** | **str** |  | [optional] 
 **created_at** | **datetime** |  | 
 **description** | **str** |  | [optional] 
+**difficulty** | **str** |  | [optional] 
 **id** | **UUID** |  | 
 **ingredients** | [**List[Ingredient]**](Ingredient.md) |  | 
 **instructions** | **str** |  | 
+**notes** | **str** |  | [optional] 
+**nutritional_info** | **str** |  | [optional] 
 **photo_ids** | **List[UUID]** |  | 
+**prep_time** | **str** |  | [optional] 
+**rating** | **int** |  | [optional] 
+**servings** | **str** |  | [optional] 
 **source_name** | **str** |  | [optional] 
 **source_url** | **str** |  | [optional] 
 **tags** | **List[str]** |  | 
 **title** | **str** |  | 
+**total_time** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | 
 
 ## Example

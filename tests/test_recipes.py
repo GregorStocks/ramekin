@@ -1082,3 +1082,95 @@ def test_list_recipes_direction_asc_vs_desc(authed_api_client):
     assert desc_times == sorted(desc_times, reverse=True), (
         f"DESC not sorted: {desc_times}"
     )
+
+
+def test_create_recipe_with_paprika_fields(authed_api_client):
+    """Test creating a recipe with Paprika-compatible fields."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    request = CreateRecipeRequest(
+        title="Paprika Test Recipe",
+        instructions="Cook the thing.",
+        ingredients=[Ingredient(item="chicken", amount="1", unit="lb")],
+        servings="4 servings",
+        prep_time="15 mins",
+        cook_time="30 mins",
+        total_time="45 mins",
+        rating=4,
+        difficulty="Medium",
+        nutritional_info="200 calories per serving",
+        notes="Chef's tip: use fresh herbs.",
+    )
+
+    response = recipes_api.create_recipe(request)
+    assert response.id is not None
+
+    # Fetch the recipe and verify fields
+    recipe = recipes_api.get_recipe(str(response.id))
+    assert recipe.title == "Paprika Test Recipe"
+    assert recipe.servings == "4 servings"
+    assert recipe.prep_time == "15 mins"
+    assert recipe.cook_time == "30 mins"
+    assert recipe.total_time == "45 mins"
+    assert recipe.rating == 4
+    assert recipe.difficulty == "Medium"
+    assert recipe.nutritional_info == "200 calories per serving"
+    assert recipe.notes == "Chef's tip: use fresh herbs."
+
+
+def test_update_recipe_paprika_fields(authed_api_client):
+    """Test updating Paprika-compatible fields on a recipe."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create recipe without paprika fields
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Update Test",
+            instructions="Original instructions",
+            ingredients=[],
+        )
+    )
+
+    # Update with paprika fields
+    recipes_api.update_recipe(
+        str(create_response.id),
+        UpdateRecipeRequest(
+            servings="2 servings",
+            rating=5,
+            notes="Updated notes",
+        ),
+    )
+
+    # Verify updates
+    recipe = recipes_api.get_recipe(str(create_response.id))
+    assert recipe.servings == "2 servings"
+    assert recipe.rating == 5
+    assert recipe.notes == "Updated notes"
+
+
+def test_recipe_paprika_fields_optional(authed_api_client):
+    """Test that Paprika fields are optional and default to None."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create minimal recipe
+    response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Minimal Recipe",
+            instructions="Just cook it.",
+            ingredients=[],
+        )
+    )
+
+    # Verify optional fields are None
+    recipe = recipes_api.get_recipe(str(response.id))
+    assert recipe.servings is None
+    assert recipe.prep_time is None
+    assert recipe.cook_time is None
+    assert recipe.total_time is None
+    assert recipe.rating is None
+    assert recipe.difficulty is None
+    assert recipe.nutritional_info is None
+    assert recipe.notes is None

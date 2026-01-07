@@ -8,6 +8,32 @@ use tracing::Span;
 pub const MIGRATIONS: EmbeddedMigrations = embed_migrations!("../migrations");
 
 pub type DbPool = r2d2::Pool<ConnectionManager<PgConnection>>;
+pub type DbConn = r2d2::PooledConnection<ConnectionManager<PgConnection>>;
+
+/// Helper macro to get a database connection from a pool.
+/// Returns early with a 500 error response if the connection fails.
+///
+/// Usage:
+/// ```ignore
+/// let mut conn = get_conn!(pool);
+/// ```
+#[macro_export]
+macro_rules! get_conn {
+    ($pool:expr) => {
+        match $pool.get() {
+            Ok(c) => c,
+            Err(_) => {
+                return (
+                    axum::http::StatusCode::INTERNAL_SERVER_ERROR,
+                    axum::Json($crate::api::ErrorResponse {
+                        error: "Database connection failed".to_string(),
+                    }),
+                )
+                    .into_response()
+            }
+        }
+    };
+}
 
 // Thread-local storage for tracking active database spans.
 // This allows us to properly close spans when queries complete.

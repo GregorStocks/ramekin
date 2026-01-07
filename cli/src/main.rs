@@ -1,3 +1,4 @@
+mod export;
 mod import;
 mod load_test;
 mod parse_html;
@@ -101,6 +102,39 @@ enum Commands {
         #[arg(long)]
         source_url: String,
     },
+    /// Export a single recipe to a Paprika .paprikarecipe file
+    ExportRecipe {
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
+        /// Username to authenticate as
+        #[arg(long)]
+        username: String,
+        /// Password for authentication
+        #[arg(long)]
+        password: String,
+        /// Recipe ID to export
+        #[arg(long)]
+        id: String,
+        /// Output file path
+        #[arg(short, long, value_name = "FILE")]
+        output: PathBuf,
+    },
+    /// Export all recipes to a Paprika .paprikarecipes archive
+    ExportAll {
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
+        /// Username to authenticate as
+        #[arg(long)]
+        username: String,
+        /// Password for authentication
+        #[arg(long)]
+        password: String,
+        /// Output file path
+        #[arg(short, long, value_name = "FILE")]
+        output: PathBuf,
+    },
 }
 
 #[tokio::main]
@@ -147,6 +181,23 @@ async fn main() -> Result<()> {
         }
         Commands::ParseHtml { file, source_url } => {
             parse_html::parse_html(&file, &source_url)?;
+        }
+        Commands::ExportRecipe {
+            server_url,
+            username,
+            password,
+            id,
+            output,
+        } => {
+            export::export_recipe(&server_url, &username, &password, &id, &output).await?;
+        }
+        Commands::ExportAll {
+            server_url,
+            username,
+            password,
+            output,
+        } => {
+            export::export_all(&server_url, &username, &password, &output).await?;
         }
     }
 

@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_recipe**](RecipesApi.md#create_recipe) | **POST** /api/recipes | 
 [**delete_recipe**](RecipesApi.md#delete_recipe) | **DELETE** /api/recipes/{id} | 
+[**export_all_recipes**](RecipesApi.md#export_all_recipes) | **GET** /api/recipes/export | 
+[**export_recipe**](RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_tags**](RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
@@ -65,6 +67,59 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## export_all_recipes
+
+> export_all_recipes()
+
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/zip, application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## export_recipe
+
+> export_recipe(id)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Recipe ID | [required] |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/gzip, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
