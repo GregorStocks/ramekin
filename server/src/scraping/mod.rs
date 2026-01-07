@@ -1,10 +1,9 @@
 use crate::db::DbPool;
-use crate::models::{NewRecipe, NewScrapeJob, ScrapeJob};
-use crate::schema::{recipes, scrape_jobs};
+use crate::models::{NewRecipe, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
+use crate::schema::{recipes, scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, StepOutput, BUILD_ID};
-use serde_json::json;
+use ramekin_core::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, BUILD_ID};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
@@ -128,25 +127,77 @@ fn update_status(pool: &DbPool, job_id: Uuid, status: &str) -> Result<(), Scrape
     Ok(())
 }
 
-/// Update job step_data.
-fn update_step_data(
+/// Save a step output to the database.
+fn save_step_output(
     pool: &DbPool,
     job_id: Uuid,
-    step_data: serde_json::Value,
+    step_name: &str,
+    output: serde_json::Value,
+    next_step: Option<&str>,
 ) -> Result<(), ScrapeError> {
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    diesel::update(scrape_jobs::table.find(job_id))
+    let new_output = NewStepOutput {
+        scrape_job_id: job_id,
+        step_name: step_name.to_string(),
+        build_id: BUILD_ID.to_string(),
+        output,
+        next_step: next_step.map(|s| s.to_string()),
+    };
+
+    // Use ON CONFLICT to upsert (replace if same job/step/build exists)
+    diesel::insert_into(step_outputs::table)
+        .values(&new_output)
+        .on_conflict((
+            step_outputs::scrape_job_id,
+            step_outputs::step_name,
+            step_outputs::build_id,
+        ))
+        .do_update()
         .set((
-            scrape_jobs::step_data.eq(step_data),
-            scrape_jobs::updated_at.eq(Utc::now()),
+            step_outputs::output.eq(&new_output.output),
+            step_outputs::next_step.eq(&new_output.next_step),
         ))
         .execute(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     Ok(())
+}
+
+/// Get step output for a job by step name (with current build_id).
+fn get_step_output(
+    pool: &DbPool,
+    job_id: Uuid,
+    step_name: &str,
+) -> Result<Option<StepOutput>, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    step_outputs::table
+        .filter(step_outputs::scrape_job_id.eq(job_id))
+        .filter(step_outputs::step_name.eq(step_name))
+        .filter(step_outputs::build_id.eq(BUILD_ID))
+        .first::<StepOutput>(&mut conn)
+        .optional()
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+}
+
+/// Check if any step outputs exist for this job (regardless of build_id).
+fn has_any_step_outputs(pool: &DbPool, job_id: Uuid) -> Result<bool, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let count: i64 = step_outputs::table
+        .filter(step_outputs::scrape_job_id.eq(job_id))
+        .count()
+        .get_result(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    Ok(count > 0)
 }
 
 /// Mark job as failed.
@@ -195,7 +246,6 @@ fn increment_retry(pool: &DbPool, job_id: Uuid) -> Result<i32, ScrapeError> {
     let new_count: i32 = diesel::update(scrape_jobs::table.find(job_id))
         .set((
             scrape_jobs::retry_count.eq(scrape_jobs::retry_count + 1),
-            scrape_jobs::step_data.eq(json!({})),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .returning(scrape_jobs::retry_count)
@@ -252,48 +302,23 @@ fn create_recipe_from_raw(
     Ok(recipe_id)
 }
 
-/// Get the last completed step from step_data, checking build_id.
-/// Returns None if no steps completed or build_id mismatch.
-fn get_last_valid_step(step_data: &Option<serde_json::Value>) -> Option<&'static str> {
-    let step_data = step_data.as_ref()?;
-    // Check steps in reverse order of the pipeline
-    for step_name in [STEP_EXTRACT_RECIPE, STEP_FETCH_HTML] {
-        if let Some(step) = step_data.get(step_name) {
-            if let Some(build_id) = step.get("build_id").and_then(|v| v.as_str()) {
-                if build_id == BUILD_ID {
-                    return Some(step_name);
-                }
-            }
-        }
-    }
-    None
-}
-
-/// Get the next step to run based on step_data.
-fn get_next_step(step_data: &Option<serde_json::Value>) -> &'static str {
-    let Some(step_data) = step_data.as_ref() else {
-        return STEP_FETCH_HTML;
-    };
-
-    // Check what the last completed step says is next
-    if let Some(extract_step) = step_data.get(STEP_EXTRACT_RECIPE) {
-        if let Some(next) = extract_step.get("next_step").and_then(|v| v.as_str()) {
-            if next == STEP_SAVE_RECIPE {
-                return STEP_SAVE_RECIPE;
-            }
+/// Determine the next step to run based on completed step outputs.
+fn get_next_step(pool: &DbPool, job_id: Uuid) -> Result<&'static str, ScrapeError> {
+    // Check steps in order - if a step with current build exists, use its next_step
+    if let Some(extract_output) = get_step_output(pool, job_id, STEP_EXTRACT_RECIPE)? {
+        if extract_output.next_step.as_deref() == Some(STEP_SAVE_RECIPE) {
+            return Ok(STEP_SAVE_RECIPE);
         }
     }
 
-    if let Some(fetch_step) = step_data.get(STEP_FETCH_HTML) {
-        if let Some(next) = fetch_step.get("next_step").and_then(|v| v.as_str()) {
-            if next == STEP_EXTRACT_RECIPE {
-                return STEP_EXTRACT_RECIPE;
-            }
+    if let Some(fetch_output) = get_step_output(pool, job_id, STEP_FETCH_HTML)? {
+        if fetch_output.next_step.as_deref() == Some(STEP_EXTRACT_RECIPE) {
+            return Ok(STEP_EXTRACT_RECIPE);
         }
     }
 
     // Default: start from fetch
-    STEP_FETCH_HTML
+    Ok(STEP_FETCH_HTML)
 }
 
 /// Run the scrape job state machine.
@@ -315,17 +340,14 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
         }
 
         STATUS_SCRAPING => {
-            // Check for stale step_data from previous build
-            let last_valid = get_last_valid_step(&job.step_data);
-            let has_step_data = job
-                .step_data
-                .as_ref()
-                .map(|v| v != &json!({}))
-                .unwrap_or(false);
-            if last_valid.is_none() && has_step_data {
-                // Stale data detected, restart
+            // Check for stale step outputs from previous build
+            let has_current_build_fetch = get_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
+            let has_any_outputs = has_any_step_outputs(pool, job_id)?;
+
+            if !has_current_build_fetch && has_any_outputs {
+                // Stale data detected (outputs exist but not for current build), increment retry
                 tracing::info!(
-                    "Job {} has stale step_data (build mismatch), restarting",
+                    "Job {} has stale step_outputs (build mismatch), restarting",
                     job_id
                 );
                 let retry_count = increment_retry(pool, job_id)?;
@@ -333,10 +355,10 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     mark_failed(pool, job_id, STATUS_SCRAPING, "Max retries exceeded")?;
                     return Err(ScrapeError::MaxRetriesExceeded);
                 }
-                // Continue with fresh step_data
+                // Continue with fresh execution
             }
 
-            let next_step = get_next_step(&job.step_data);
+            let next_step = get_next_step(pool, job_id)?;
 
             if next_step == STEP_FETCH_HTML {
                 tracing::info!("Job {} fetching URL: {}", job_id, job.url);
@@ -346,17 +368,17 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
 
                 match ramekin_core::fetch_html(&job.url).await {
                     Ok(html) => {
-                        // Store fetch output in step_data
-                        let fetch_output: StepOutput<FetchHtmlOutput> = StepOutput {
-                            build_id: BUILD_ID.to_string(),
-                            output: FetchHtmlOutput { html },
-                            next_step: Some(STEP_EXTRACT_RECIPE.to_string()),
-                        };
-
-                        let mut step_data = job.step_data.clone().unwrap_or_else(|| json!({}));
-                        step_data[STEP_FETCH_HTML] = serde_json::to_value(&fetch_output)
+                        // Store fetch output
+                        let fetch_output = FetchHtmlOutput { html };
+                        let output_json = serde_json::to_value(&fetch_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        update_step_data(pool, job_id, step_data)?;
+                        save_step_output(
+                            pool,
+                            job_id,
+                            STEP_FETCH_HTML,
+                            output_json,
+                            Some(STEP_EXTRACT_RECIPE),
+                        )?;
 
                         tracing::info!("Job {} fetch successful, transitioning to parsing", job_id);
                         update_status(pool, job_id, STATUS_PARSING)?;
@@ -378,31 +400,36 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
         STATUS_PARSING => {
             tracing::info!("Job {} parsing HTML", job_id);
 
-            let next_step = get_next_step(&job.step_data);
-            let step_data_ref = job.step_data.as_ref();
+            let next_step = get_next_step(pool, job_id)?;
 
             if next_step == STEP_EXTRACT_RECIPE {
-                // Get HTML from step_data
-                let html = step_data_ref
-                    .and_then(|sd| sd.get(STEP_FETCH_HTML))
-                    .and_then(|v| v.get("output"))
-                    .and_then(|v| v.get("html"))
+                // Get HTML from step_outputs
+                let fetch_output =
+                    get_step_output(pool, job_id, STEP_FETCH_HTML)?.ok_or_else(|| {
+                        ScrapeError::InvalidState("No fetch output found".to_string())
+                    })?;
+
+                let html = fetch_output
+                    .output
+                    .get("html")
                     .and_then(|v| v.as_str())
-                    .ok_or_else(|| ScrapeError::InvalidState("No HTML in step_data".to_string()))?;
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No HTML in fetch output".to_string())
+                    })?;
 
                 match ramekin_core::extract_recipe(html, &job.url) {
                     Ok(raw_recipe) => {
-                        // Store extract output in step_data
-                        let extract_output: StepOutput<ExtractRecipeOutput> = StepOutput {
-                            build_id: BUILD_ID.to_string(),
-                            output: ExtractRecipeOutput { raw_recipe },
-                            next_step: Some(STEP_SAVE_RECIPE.to_string()),
-                        };
-
-                        let mut step_data = job.step_data.clone().unwrap_or_else(|| json!({}));
-                        step_data[STEP_EXTRACT_RECIPE] = serde_json::to_value(&extract_output)
+                        // Store extract output
+                        let extract_output = ExtractRecipeOutput { raw_recipe };
+                        let output_json = serde_json::to_value(&extract_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        update_step_data(pool, job_id, step_data)?;
+                        save_step_output(
+                            pool,
+                            job_id,
+                            STEP_EXTRACT_RECIPE,
+                            output_json,
+                            Some(STEP_SAVE_RECIPE),
+                        )?;
 
                         tracing::info!("Job {} extracted recipe, saving", job_id);
                         // Continue to save step
@@ -415,13 +442,17 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     }
                 }
             } else if next_step == STEP_SAVE_RECIPE {
-                // Get raw_recipe from step_data
-                let raw_recipe: RawRecipe = step_data_ref
-                    .and_then(|sd| sd.get(STEP_EXTRACT_RECIPE))
-                    .and_then(|v| v.get("output"))
-                    .and_then(|v| v.get("raw_recipe"))
+                // Get raw_recipe from step_outputs
+                let extract_output = get_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
                     .ok_or_else(|| {
-                        ScrapeError::InvalidState("No raw_recipe in step_data".to_string())
+                        ScrapeError::InvalidState("No extract output found".to_string())
+                    })?;
+
+                let raw_recipe: RawRecipe = extract_output
+                    .output
+                    .get("raw_recipe")
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No raw_recipe in extract output".to_string())
                     })
                     .and_then(|v| {
                         serde_json::from_value(v.clone())
@@ -474,10 +505,10 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         )));
     }
 
-    // Check if we have valid step_data to resume from
-    let last_valid = get_last_valid_step(&job.step_data);
-    let resume_status = match (job.failed_at_step.as_deref(), last_valid) {
-        (Some(STATUS_SCRAPING), Some(STEP_FETCH_HTML)) => {
+    // Check if we have valid step outputs to resume from
+    let has_valid_fetch = get_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
+    let resume_status = match (job.failed_at_step.as_deref(), has_valid_fetch) {
+        (Some(STATUS_SCRAPING), true) => {
             // We have valid fetch data, can skip to parsing
             STATUS_PARSING
         }

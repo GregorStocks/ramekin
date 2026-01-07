@@ -121,7 +121,6 @@ pub struct ScrapeJob {
     pub url: String,
     pub status: String,
     pub failed_at_step: Option<String>,
-    pub step_data: Option<JsonValue>,
     pub recipe_id: Option<Uuid>,
     pub error_message: Option<String>,
     pub retry_count: i32,
@@ -134,4 +133,29 @@ pub struct ScrapeJob {
 pub struct NewScrapeJob<'a> {
     pub user_id: Uuid,
     pub url: &'a str,
+}
+
+// Step output for pipeline step results
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::step_outputs)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct StepOutput {
+    pub id: Uuid,
+    pub scrape_job_id: Uuid,
+    pub step_name: String,
+    pub build_id: String,
+    pub output: JsonValue,
+    pub next_step: Option<String>,
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::step_outputs)]
+pub struct NewStepOutput {
+    pub scrape_job_id: Uuid,
+    pub step_name: String,
+    pub build_id: String,
+    pub output: JsonValue,
+    pub next_step: Option<String>,
 }

@@ -16,6 +16,14 @@ updates:
       rust-deps:
         patterns: ["*"]
 
+  - package-ecosystem: "cargo"
+    directory: "/ramekin-core"
+    schedule:
+      interval: "weekly"
+    groups:
+      rust-deps:
+        patterns: ["*"]
+
   - package-ecosystem: "npm"
     directory: "/ramekin-ui"
     schedule:

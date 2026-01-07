@@ -6,8 +6,8 @@ CREATE TABLE url_cache (
     fetched_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
--- Remove default from step_data
-ALTER TABLE scrape_jobs ALTER COLUMN step_data DROP DEFAULT;
+-- Re-add parsed_data column
+ALTER TABLE scrape_jobs ADD COLUMN parsed_data JSONB;
 
--- Rename step_data back to parsed_data
-ALTER TABLE scrape_jobs RENAME COLUMN step_data TO parsed_data;
+-- Drop step_outputs table
+DROP TABLE step_outputs;
