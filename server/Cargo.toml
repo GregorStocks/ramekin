@@ -7,7 +7,7 @@ license = "LicenseRef-Proprietary"
 
 [dependencies]
 # Async runtime
-tokio = { version = "1.43", features = ["full"] }
+tokio = { version = "1.49", features = ["full"] }
 
 # Web framework
 axum = { version = "0.8", features = ["multipart"] }
