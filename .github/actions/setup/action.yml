@@ -17,6 +17,7 @@ runs:
         workspaces: |
           server -> target
           cli -> target
+          ramekin-core -> target
         cache-on-failure: true
         cache-all-crates: true
 
@@ -35,6 +36,8 @@ runs:
       uses: actions/setup-node@v4
       with:
         node-version: "22"
+        cache: 'npm'
+        cache-dependency-path: 'ramekin-ui/package-lock.json'
 
     - name: Install process-compose
       shell: bash
