@@ -1,11 +1,7 @@
 version: "0.5"
+extends: compose/base.yaml
 
 log_location: ./logs/test.log
-log_configuration:
-  disable_json: true
-  no_color: true
-  add_timestamp: true
-  flush_each_line: true
 
 processes:
   fixture:
@@ -18,15 +14,9 @@ processes:
         path: /
 
   server:
-    command: cargo run --release -q
     working_dir: ./server
     environment:
       - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
-    readiness_probe:
-      http_get:
-        host: localhost
-        port: ${PORT}
-        path: /api/test/unauthed-ping
     depends_on:
       fixture:
         condition: process_healthy

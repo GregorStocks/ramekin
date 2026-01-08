@@ -1,21 +1,11 @@
 version: "0.5"
+extends: compose/base.yaml
 
 log_location: ./logs/test-ui.log
-log_configuration:
-  disable_json: true
-  no_color: true
-  add_timestamp: true
-  flush_each_line: true
 
 processes:
   server:
-    command: cargo run --release -q
     working_dir: ./server
-    readiness_probe:
-      http_get:
-        host: localhost
-        port: ${PORT}
-        path: /api/test/unauthed-ping
 
   ui:
     command: npm run dev -- --port ${UI_PORT}
