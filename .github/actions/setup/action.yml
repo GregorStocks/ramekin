@@ -25,10 +25,6 @@ runs:
       shell: bash
       run: cargo install diesel_cli --no-default-features --features postgres
 
-    - name: Install cargo-watch
-      shell: bash
-      run: cargo install cargo-watch
-
     - name: Install uv
       uses: astral-sh/setup-uv@v5
 

@@ -29,6 +29,13 @@ jobs:
       - name: Create test database
         run: PGPASSWORD=ramekin psql -h localhost -U ramekin -d ramekin -c "CREATE DATABASE ramekin_test;"
 
+      - name: Install UI dependencies
+        run: npm ci
+        working-directory: ramekin-ui
+
+      - name: Install Playwright browsers
+        run: .venv/bin/playwright install chromium --with-deps
+
       - name: Run linters
         run: make lint
 
@@ -43,13 +50,6 @@ jobs:
 
       - name: Run tests
         run: make test
-
-      - name: Install UI dependencies
-        run: npm ci
-        working-directory: ramekin-ui
-
-      - name: Install Playwright browsers
-        run: .venv/bin/playwright install chromium --with-deps
 
       - name: Run UI tests
         run: make test-ui
