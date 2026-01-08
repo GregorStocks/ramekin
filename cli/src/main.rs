@@ -1,4 +1,5 @@
 mod export;
+mod generate_test_urls;
 mod import;
 mod load_test;
 mod parse_html;
@@ -135,6 +136,21 @@ enum Commands {
         #[arg(short, long, value_name = "FILE")]
         output: PathBuf,
     },
+    /// Generate a list of test URLs from top recipe sites
+    GenerateTestUrls {
+        /// Output file path
+        #[arg(short, long, default_value = "data/test-urls.json")]
+        output: PathBuf,
+        /// Number of sites to include
+        #[arg(long, default_value = "50")]
+        num_sites: usize,
+        /// Number of URLs per site
+        #[arg(long, default_value = "10")]
+        urls_per_site: usize,
+        /// Merge with existing file instead of replacing
+        #[arg(long)]
+        merge: bool,
+    },
 }
 
 #[tokio::main]
@@ -198,6 +214,15 @@ async fn main() -> Result<()> {
             output,
         } => {
             export::export_all(&server_url, &username, &password, &output).await?;
+        }
+        Commands::GenerateTestUrls {
+            output,
+            num_sites,
+            urls_per_site,
+            merge,
+        } => {
+            generate_test_urls::generate_test_urls(&output, num_sites, urls_per_site, merge)
+                .await?;
         }
     }
 

@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -124,3 +124,5 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false --port 8180 || true
 	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
 
+generate-test-urls: ## Generate test URL list from top recipe sites
+	@cd cli && cargo run -q -- generate-test-urls
