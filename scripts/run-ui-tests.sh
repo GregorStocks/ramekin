@@ -69,10 +69,10 @@ echo "Server on port $SERVER_PORT"
 
 export API_BASE_URL="http://localhost:$SERVER_PORT"
 
-# Start UI dev server
+# Start UI dev server (PORT tells vite where to proxy /api requests)
 UI_PORT=$(get_port "${UI_PORT:-}")
 cd "$PROJECT_ROOT/ramekin-ui"
-npm run dev -- --port "$UI_PORT" > /dev/null 2>&1 &
+PORT="$SERVER_PORT" npm run dev -- --port "$UI_PORT" > /dev/null 2>&1 &
 UI_PID=$!
 
 # Wait for UI to be ready
