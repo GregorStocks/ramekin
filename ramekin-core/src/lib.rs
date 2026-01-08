@@ -6,7 +6,7 @@ pub mod types;
 pub use error::{ExtractError, FetchError};
 pub use extract::extract_recipe;
 pub use fetch::fetch_html;
-pub use types::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, StepOutput};
+pub use types::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, SaveRecipeOutput, StepOutput};
 
 /// Unique identifier for this build, generated at compile time.
 /// Used to detect stale pipeline step outputs.
