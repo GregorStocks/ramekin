@@ -1,0 +1,44 @@
+version: "0.5"
+extends: compose/base.yaml
+
+log_location: ./logs/test.log
+
+processes:
+  fixture:
+    command: python3 -m http.server ${FIXTURE_PORT}
+    working_dir: ./tests/scrape_fixtures
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${FIXTURE_PORT}
+        path: /
+
+  server:
+    working_dir: ./server
+    environment:
+      - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
+    depends_on:
+      fixture:
+        condition: process_healthy
+
+  cli-build:
+    command: cargo build -q
+    working_dir: ./cli
+    availability:
+      restart: "no"
+    depends_on:
+      server:
+        condition: process_healthy
+
+  api-tests:
+    command: pytest tests -v --ignore=tests/ui
+    environment:
+      - FIXTURE_BASE_URL=http://localhost:${FIXTURE_PORT}
+      - API_BASE_URL=http://localhost:${PORT}
+      - CLI_PATH=./cli/target/debug/ramekin-cli
+    availability:
+      restart: "no"
+      exit_on_end: true
+    depends_on:
+      cli-build:
+        condition: process_completed_successfully
