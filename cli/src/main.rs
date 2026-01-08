@@ -191,15 +191,15 @@ enum Commands {
     },
     /// Show HTML cache statistics
     PipelineCacheStats {
-        /// Cache directory
-        #[arg(long, default_value = "data/pipeline-cache/html")]
-        cache_dir: PathBuf,
+        /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
     },
     /// Clear HTML cache
     PipelineCacheClear {
-        /// Cache directory
-        #[arg(long, default_value = "data/pipeline-cache/html")]
-        cache_dir: PathBuf,
+        /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
     },
 }
 
@@ -302,9 +302,11 @@ async fn main() -> Result<()> {
             pipeline_orchestrator::run_pipeline_test(config).await?;
         }
         Commands::PipelineCacheStats { cache_dir } => {
+            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
             pipeline_orchestrator::print_cache_stats(&cache_dir);
         }
         Commands::PipelineCacheClear { cache_dir } => {
+            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
         }
     }

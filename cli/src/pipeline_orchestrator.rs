@@ -27,7 +27,7 @@ impl Default for OrchestratorConfig {
         Self {
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
-            cache_dir: PathBuf::from("data/pipeline-cache/html"),
+            cache_dir: crate::pipeline::HtmlCache::default_cache_dir(),
             limit: None,
             site_filter: None,
             delay_ms: 1000,

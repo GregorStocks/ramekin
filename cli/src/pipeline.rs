@@ -131,7 +131,10 @@ impl HtmlCache {
     }
 
     pub fn default_cache_dir() -> PathBuf {
-        PathBuf::from("data/pipeline-cache/html")
+        // Use ~/.ramekin/pipeline-cache/html to share cache across workspaces
+        dirs::home_dir()
+            .map(|h| h.join(".ramekin").join("pipeline-cache").join("html"))
+            .unwrap_or_else(|| PathBuf::from("data/pipeline-cache/html"))
     }
 
     fn url_dir(&self, url: &str) -> PathBuf {
