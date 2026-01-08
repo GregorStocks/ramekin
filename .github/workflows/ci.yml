@@ -33,11 +33,11 @@ jobs:
         run: npm ci
         working-directory: ramekin-ui
 
-      - name: Install Playwright browsers
-        run: .venv/bin/playwright install chromium --with-deps
-
       - name: Run linters
         run: make lint
+
+      - name: Install Playwright browsers
+        run: .venv/bin/playwright install chromium --with-deps
 
       - name: Create test.env
         run: |
