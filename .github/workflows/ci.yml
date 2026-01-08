@@ -92,29 +92,13 @@ jobs:
 
       - name: Add screenshots to workflow summary
         run: |
-          sudo apt-get install -y pngquant
           echo "## Screenshots" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          max_size=900000  # Stay under 1MB limit with some buffer
-          current_size=0
-          skipped=""
+          echo "The following screenshots were captured:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           for img in logs/*.png; do
             name=$(basename "$img" .png)
-            # Compress to reduce size for embedding
-            pngquant --quality=50-80 --output /tmp/compressed.png --force "$img"
-            base64_img=$(base64 -w 0 /tmp/compressed.png)
-            img_size=${#base64_img}
-            if [ $((current_size + img_size + 100)) -gt $max_size ]; then
-              skipped="$skipped $name"
-              continue
-            fi
-            current_size=$((current_size + img_size + 100))
-            echo "### ${name}" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "![${name}](data:image/png;base64,${base64_img})" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "- **${name}**" >> $GITHUB_STEP_SUMMARY
           done
-          if [ -n "$skipped" ]; then
-            echo "---" >> $GITHUB_STEP_SUMMARY
-            echo "*Skipped due to size limit:$skipped. Download from Artifacts.*" >> $GITHUB_STEP_SUMMARY
-          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Download each screenshot from the **Artifacts** section below." >> $GITHUB_STEP_SUMMARY
