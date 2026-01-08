@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -68,8 +68,11 @@ generate-schema: ## Regenerate schema.rs from database (requires db-up and migra
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: check-deps $(CLIENT_MARKER) ## Run tests natively
+test: check-deps $(CLIENT_MARKER) ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
+
+test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 
 .venv/.installed: requirements-test.txt
 	@uv venv
