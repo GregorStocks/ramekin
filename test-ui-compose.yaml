@@ -1,0 +1,55 @@
+version: "0.5"
+
+log_location: ./logs/test-ui.log
+log_configuration:
+  disable_json: true
+  no_color: true
+  add_timestamp: true
+  flush_each_line: true
+
+processes:
+  server:
+    command: cargo run --release -q
+    working_dir: ./server
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${PORT}
+        path: /api/test/unauthed-ping
+
+  ui:
+    command: npm run dev -- --port ${UI_PORT}
+    working_dir: ./ramekin-ui
+    environment:
+      - PORT=${PORT}
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${UI_PORT}
+        path: /
+    depends_on:
+      server:
+        condition: process_healthy
+
+  seed:
+    command: cargo run -q -- seed --server-url http://localhost:${PORT} --username t --password t ../data/dev/seed.paprikarecipes
+    working_dir: ./cli
+    availability:
+      restart: "no"
+    depends_on:
+      server:
+        condition: process_healthy
+
+  ui-tests:
+    command: pytest tests/ui -v
+    environment:
+      - API_BASE_URL=http://localhost:${PORT}
+      - UI_BASE_URL=http://localhost:${UI_PORT}
+    availability:
+      restart: "no"
+      exit_on_end: true
+    depends_on:
+      seed:
+        condition: process_completed_successfully
+      ui:
+        condition: process_healthy
