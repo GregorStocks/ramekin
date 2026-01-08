@@ -27,6 +27,15 @@ serde_json = "1.0"
 serde_repr = "0.1"
 url = "2.5"
 
+# XML parsing (for sitemaps)
+quick-xml = { version = "0.38", features = ["serialize"] }
+
+# Date/time
+chrono = { version = "0.4", features = ["serde"] }
+
+# HTML parsing
+scraper = "0.25"
+
 # Error handling
 anyhow = "1.0"
 
