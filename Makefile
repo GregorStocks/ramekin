@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -68,8 +68,11 @@ generate-schema: ## Regenerate schema.rs from database (requires db-up and migra
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: check-deps $(CLIENT_MARKER) ## Run tests natively
+test: check-deps $(CLIENT_MARKER) ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
+
+test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
+	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-ui-tests.sh
 
 .venv/.installed: requirements-test.txt
 	@uv venv
@@ -117,6 +120,3 @@ install-hooks: ## Install git hooks for local development
 	@chmod +x .git/hooks/pre-push
 	@echo "Git hooks installed successfully"
 
-screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
-	@PC_EXIT_ON_END=true SERVER_CMD="./target/release/ramekin-server" SERVER_RESTART=exit_on_failure process-compose up -e dev.env -t=false --port 8180 || true
-	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
