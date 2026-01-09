@@ -10,6 +10,7 @@ ramekin_client/api_client.py
 ramekin_client/api_response.py
 ramekin_client/configuration.py
 ramekin_client/docs/AuthApi.md
+ramekin_client/docs/CaptureRequest.md
 ramekin_client/docs/CreateRecipeRequest.md
 ramekin_client/docs/CreateRecipeResponse.md
 ramekin_client/docs/CreateScrapeRequest.md
@@ -39,6 +40,7 @@ ramekin_client/docs/UpdateRecipeRequest.md
 ramekin_client/docs/UploadPhotoResponse.md
 ramekin_client/exceptions.py
 ramekin_client/models/__init__.py
+ramekin_client/models/capture_request.py
 ramekin_client/models/create_recipe_request.py
 ramekin_client/models/create_recipe_response.py
 ramekin_client/models/create_scrape_request.py
@@ -65,6 +67,7 @@ ramekin_client/models/upload_photo_response.py
 ramekin_client/rest.py
 ramekin_client/test/__init__.py
 ramekin_client/test/test_auth_api.py
+ramekin_client/test/test_capture_request.py
 ramekin_client/test/test_create_recipe_request.py
 ramekin_client/test/test_create_recipe_response.py
 ramekin_client/test/test_create_scrape_request.py

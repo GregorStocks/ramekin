@@ -15,6 +15,7 @@
 
 import * as runtime from '../runtime';
 import type {
+  CaptureRequest,
   CreateScrapeRequest,
   CreateScrapeResponse,
   ErrorResponse,
@@ -22,6 +23,8 @@ import type {
   ScrapeJobResponse,
 } from '../models/index';
 import {
+    CaptureRequestFromJSON,
+    CaptureRequestToJSON,
     CreateScrapeRequestFromJSON,
     CreateScrapeRequestToJSON,
     CreateScrapeResponseFromJSON,
@@ -33,6 +36,10 @@ import {
     ScrapeJobResponseFromJSON,
     ScrapeJobResponseToJSON,
 } from '../models/index';
+
+export interface CaptureOperationRequest {
+    captureRequest: CaptureRequest;
+}
 
 export interface CreateScrapeOperationRequest {
     createScrapeRequest: CreateScrapeRequest;
@@ -50,6 +57,51 @@ export interface RetryScrapeRequest {
  * 
  */
 export class ScrapeApi extends runtime.BaseAPI {
+
+    /**
+     */
+    async captureRaw(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateScrapeResponse>> {
+        if (requestParameters['captureRequest'] == null) {
+            throw new runtime.RequiredError(
+                'captureRequest',
+                'Required parameter "captureRequest" was null or undefined when calling capture().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/scrape/capture`;
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CaptureRequestToJSON(requestParameters['captureRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateScrapeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async capture(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateScrapeResponse> {
+        const response = await this.captureRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      */

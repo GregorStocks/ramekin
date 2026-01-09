@@ -1,4 +1,11 @@
-import { createSignal, Show, Index, For, onCleanup } from "solid-js";
+import {
+  createSignal,
+  createMemo,
+  Show,
+  Index,
+  For,
+  onCleanup,
+} from "solid-js";
 import { createStore } from "solid-js/store";
 import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
@@ -70,6 +77,12 @@ export default function CreateRecipePage() {
 
   const [saving, setSaving] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
+  const [showBookmarklet, setShowBookmarklet] = createSignal(false);
+
+  const bookmarkletCode = createMemo(() => {
+    const origin = window.location.origin;
+    return `javascript:(function(){var h=document.documentElement.outerHTML;var u=location.href;var p=window.open('${origin}/capture','ramekin','width=400,height=300');window.addEventListener('message',function f(e){if(e.source===p&&e.data==='ready'){p.postMessage({type:'html',html:h,url:u},'${origin}');window.removeEventListener('message',f);}});})();`;
+  });
 
   const startScrape = async () => {
     const url = importUrl().trim();
@@ -361,6 +374,31 @@ export default function CreateRecipePage() {
             Import a recipe from a website. Works with sites that use structured
             recipe data.
           </p>
+        </Show>
+      </div>
+
+      {/* Bookmarklet Section */}
+      <div class="bookmarklet-section">
+        <button
+          type="button"
+          class="bookmarklet-toggle"
+          onClick={() => setShowBookmarklet(!showBookmarklet())}
+        >
+          {showBookmarklet() ? "Hide" : "Show"} Bookmarklet
+        </button>
+        <Show when={showBookmarklet()}>
+          <div class="bookmarklet-content">
+            <p>
+              Drag this link to your bookmarks bar to capture recipes from any
+              page:
+            </p>
+            <a href={bookmarkletCode()} class="bookmarklet-link">
+              Save to Ramekin
+            </a>
+            <p class="bookmarklet-hint">
+              This works even on paywalled sites when you're logged in.
+            </p>
+          </div>
         </Show>
       </div>
 

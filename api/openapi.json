@@ -775,6 +775,61 @@
         ]
       }
     },
+    "/api/scrape/capture": {
+      "post": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "capture",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CaptureRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Scrape job created from captured HTML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateScrapeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/scrape/{id}": {
       "get": {
         "tags": [
@@ -957,6 +1012,23 @@
   },
   "components": {
     "schemas": {
+      "CaptureRequest": {
+        "type": "object",
+        "required": [
+          "html",
+          "source_url"
+        ],
+        "properties": {
+          "html": {
+            "type": "string",
+            "description": "The HTML content of the page to extract a recipe from"
+          },
+          "source_url": {
+            "type": "string",
+            "description": "The URL the HTML came from (used for source attribution)"
+          }
+        }
+      },
       "CreateRecipeRequest": {
         "type": "object",
         "required": [

@@ -1,5 +1,6 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './CaptureRequest';
 export * from './CreateRecipeRequest';
 export * from './CreateRecipeResponse';
 export * from './CreateScrapeRequest';

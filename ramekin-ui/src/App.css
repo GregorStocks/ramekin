@@ -1217,3 +1217,139 @@
 .section-divider span {
   padding: 0 1rem;
 }
+
+/* Bookmarklet Section */
+.bookmarklet-section {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.bookmarklet-toggle {
+  background: none;
+  border: none;
+  color: #646cff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.bookmarklet-toggle:hover {
+  text-decoration: underline;
+}
+
+.bookmarklet-content {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #333;
+}
+
+.bookmarklet-content p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.bookmarklet-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #646cff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: grab;
+}
+
+.bookmarklet-link:hover {
+  background: #535bf2;
+}
+
+.bookmarklet-hint {
+  margin-top: 0.75rem !important;
+  font-size: 0.8rem !important;
+  color: #666 !important;
+}
+
+/* Capture Page (popup) */
+.capture-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: #242424;
+}
+
+.capture-status {
+  text-align: center;
+  padding: 2rem;
+}
+
+.capture-status p {
+  margin: 1rem 0;
+  font-size: 1rem;
+}
+
+.capture-success p {
+  color: #51cf66;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.capture-error p {
+  color: #ff6b6b;
+}
+
+.capture-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.capture-actions a,
+.capture-actions button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.capture-actions a:hover,
+.capture-actions button:hover {
+  background: #3a3a3a;
+  border-color: #555;
+}
+
+.capture-actions a {
+  background: #646cff;
+  border-color: #646cff;
+}
+
+.capture-actions a:hover {
+  background: #535bf2;
+  border-color: #535bf2;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #333;
+  border-top-color: #646cff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

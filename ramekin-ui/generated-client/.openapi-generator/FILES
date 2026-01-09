@@ -6,6 +6,7 @@ apis/ScrapeApi.ts
 apis/TestingApi.ts
 apis/index.ts
 docs/AuthApi.md
+docs/CaptureRequest.md
 docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
@@ -34,6 +35,7 @@ docs/UnauthedPingResponse.md
 docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
 index.ts
+models/CaptureRequest.ts
 models/CreateRecipeRequest.ts
 models/CreateRecipeResponse.ts
 models/CreateScrapeRequest.ts
