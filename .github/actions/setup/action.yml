@@ -43,3 +43,14 @@ runs:
         curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
           | sudo tar -xzf - -C /usr/local/bin process-compose
         sudo chmod +x /usr/local/bin/process-compose
+
+    - name: Install mkcert
+      shell: bash
+      run: |
+        MKCERT_VERSION=v1.4.4
+        MKCERT_URL="https://github.com/FiloSottile/mkcert/releases/download"
+        curl -fsSL "${MKCERT_URL}/${MKCERT_VERSION}/mkcert-${MKCERT_VERSION}-linux-amd64" \
+          -o /tmp/mkcert
+        sudo mv /tmp/mkcert /usr/local/bin/mkcert
+        sudo chmod +x /usr/local/bin/mkcert
+        mkcert -install

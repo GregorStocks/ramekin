@@ -26,6 +26,7 @@ pub fn screenshot(
             .args(vec![
                 std::ffi::OsStr::new("--no-sandbox"),
                 std::ffi::OsStr::new("--disable-dev-shm-usage"),
+                std::ffi::OsStr::new("--ignore-certificate-errors"),
             ])
             .build()
             .expect("Failed to build launch options"),

@@ -20,6 +20,9 @@ fi
 # Check Node.js
 command -v npm >/dev/null 2>&1 || MISSING+=("npm (install Node.js)")
 
+# Check mkcert for HTTPS certs
+command -v mkcert >/dev/null 2>&1 || MISSING+=("mkcert (brew install mkcert && mkcert -install)")
+
 # Check process-compose for process management (not needed in CI)
 if [ -z "$CI" ]; then
     command -v process-compose >/dev/null 2>&1 || MISSING+=("process-compose (brew install process-compose or see https://github.com/F1bonacc1/process-compose)")

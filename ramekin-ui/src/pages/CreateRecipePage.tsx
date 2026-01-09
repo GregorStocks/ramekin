@@ -82,7 +82,14 @@ export default function CreateRecipePage() {
 
   const bookmarkletCode = createMemo(() => {
     const origin = window.location.origin;
-    const code = bookmarkletSource.replace("__ORIGIN__", origin);
+    // API server is on port 3000 (HTTP for now)
+    const apiOrigin = `http://${window.location.hostname}:3000`;
+    const userToken = token();
+    if (!userToken) return "";
+    const code = bookmarkletSource
+      .replace("__ORIGIN__", origin)
+      .replace("__TOKEN__", userToken)
+      .replace("__API__", encodeURIComponent(apiOrigin));
     // Minify: remove newlines, collapse whitespace
     const minified = code
       .replace(/\n\s*/g, "")
