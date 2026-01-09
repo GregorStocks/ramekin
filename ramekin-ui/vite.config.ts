@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 export default defineConfig({
-  plugins: [solid()],
+  plugins: [solid(), basicSsl()],
   server: {
     allowedHosts: ['media.noodles'],
     host: '0.0.0.0',
