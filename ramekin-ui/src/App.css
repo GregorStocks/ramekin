@@ -1333,9 +1333,41 @@
   border-color: #646cff;
 }
 
-.capture-actions a:hover {
+.capture-actions .btn-view {
+  background: #646cff;
+  border-color: #646cff;
+}
+
+.capture-actions .btn-view:hover {
   background: #535bf2;
   border-color: #535bf2;
+}
+
+/* Compact mode for iframe */
+@media (max-height: 300px) {
+  .capture-page {
+    min-height: auto;
+    padding: 0.5rem;
+  }
+
+  .capture-status {
+    padding: 1rem;
+  }
+
+  .capture-status p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .capture-actions {
+    margin-top: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .capture-actions button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
 }
 
 .spinner {
