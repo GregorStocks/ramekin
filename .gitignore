@@ -68,5 +68,9 @@ venv/
 logs/
 .cache/
 
+# Pipeline test artifacts
+data/pipeline-cache/
+data/pipeline-runs/
+
 reference-recipe/
 crates/
