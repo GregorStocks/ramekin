@@ -8,7 +8,7 @@ import {
 } from "solid-js";
 import { A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
-import type { RecipeSummary } from "ramekin-client";
+import type { RecipeSummary, SortBy, Direction } from "ramekin-client";
 
 interface FilterState {
   tags: string[];
@@ -16,6 +16,23 @@ interface FilterState {
   photos: "any" | "has" | "no";
   createdAfter: string;
   createdBefore: string;
+}
+
+type SortOption = "newest" | "oldest" | "random";
+
+function getSortParams(sort: SortOption): {
+  sortBy: SortBy;
+  sortDir?: Direction;
+} {
+  switch (sort) {
+    case "oldest":
+      return { sortBy: "updated_at", sortDir: "asc" };
+    case "random":
+      return { sortBy: "random" };
+    case "newest":
+    default:
+      return { sortBy: "updated_at", sortDir: "desc" };
+  }
 }
 
 function parseQueryToFilters(query: string): {
@@ -236,6 +253,18 @@ export default function CookbookPage() {
   // Get current search query from URL
   const searchQuery = () => getQueryParam(searchParams.q);
 
+  // Get current sort from URL (default to "newest")
+  const sortOption = (): SortOption => {
+    const sort = getQueryParam(searchParams.sort);
+    if (sort === "oldest" || sort === "random") return sort;
+    return "newest";
+  };
+
+  const handleSortChange = (e: Event) => {
+    const value = (e.target as HTMLSelectElement).value as SortOption;
+    setSearchParams({ sort: value === "newest" ? undefined : value });
+  };
+
   const loadRecipes = async (appendMode = false, currentOffset = 0) => {
     if (appendMode) {
       setLoadingMore(true);
@@ -246,10 +275,13 @@ export default function CookbookPage() {
 
     try {
       const q = searchQuery();
+      const { sortBy, sortDir } = getSortParams(sortOption());
       const response = await getRecipesApi().listRecipes({
         limit: PAGE_SIZE,
         offset: currentOffset,
         q: q || undefined,
+        sortBy,
+        sortDir,
       });
 
       if (appendMode) {
@@ -286,9 +318,10 @@ export default function CookbookPage() {
     }
   };
 
-  // Reload when search query changes in URL
+  // Reload when search query or sort changes in URL
   createEffect(() => {
     const q = searchQuery();
+    sortOption(); // Track sort changes
     // Sync input with URL
     setSearchInput(q);
     // Reset and reload
@@ -398,7 +431,9 @@ export default function CookbookPage() {
         sortBy: "random",
       });
       if (response.recipes.length > 0) {
-        navigate(`/recipes/${response.recipes[0].id}`);
+        navigate(
+          `/recipes/${response.recipes[0].id}?randomQ=${encodeURIComponent(q || "")}`,
+        );
       }
     } catch {
       // Ignore errors
@@ -443,6 +478,15 @@ export default function CookbookPage() {
             <span class="filter-badge">{activeFilterCount()}</span>
           </Show>
         </button>
+        <select
+          class="sort-select"
+          value={sortOption()}
+          onChange={handleSortChange}
+        >
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="random">Random order</option>
+        </select>
         <button
           type="button"
           class="filter-button"

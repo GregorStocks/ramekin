@@ -389,6 +389,29 @@
   border-radius: 10px;
 }
 
+.sort-select {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #ccc;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.sort-select:hover {
+  border-color: #646cff;
+  background: #222;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
 .filter-panel {
   background: #1a1a1a;
   border: 1px solid #444;
@@ -650,6 +673,12 @@
 
 .recipe-top-bar .back-link:hover {
   color: #646cff;
+}
+
+.recipe-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .recipe-actions {
