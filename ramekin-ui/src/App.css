@@ -798,6 +798,12 @@
   font-size: 0.95rem;
 }
 
+.recipe-notes {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
 /* Recipe Photos */
 .recipe-photos {
   display: flex;

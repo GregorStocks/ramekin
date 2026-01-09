@@ -255,13 +255,13 @@ export default function ViewRecipePage() {
                 <Show when={r().notes}>
                   <section class="recipe-section">
                     <h3>Notes</h3>
-                    <div class="instructions">{r().notes}</div>
+                    <div class="recipe-notes">{r().notes}</div>
                   </section>
                 </Show>
                 <Show when={r().nutritionalInfo}>
                   <section class="recipe-section">
                     <h3>Nutritional Info</h3>
-                    <div class="instructions">{r().nutritionalInfo}</div>
+                    <div class="recipe-notes">{r().nutritionalInfo}</div>
                   </section>
                 </Show>
               </div>
