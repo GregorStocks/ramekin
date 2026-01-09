@@ -39,6 +39,9 @@ scraper = "0.25"
 # Error handling
 anyhow = "1.0"
 
+# Home directory detection
+dirs = "6.0"
+
 # Paprika import
 zip = "7.0"
 flate2 = "1.0"

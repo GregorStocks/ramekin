@@ -34,3 +34,10 @@ pub struct FetchHtmlOutput {
 pub struct ExtractRecipeOutput {
     pub raw_recipe: RawRecipe,
 }
+
+/// Output from the save_recipe step (for disk-based pipeline testing)
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SaveRecipeOutput {
+    pub raw_recipe: RawRecipe,
+    pub saved_at: String,
+}

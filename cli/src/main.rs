@@ -3,6 +3,8 @@ mod generate_test_urls;
 mod import;
 mod load_test;
 mod parse_html;
+mod pipeline;
+mod pipeline_orchestrator;
 mod screenshot;
 mod seed;
 
@@ -10,7 +12,7 @@ use anyhow::Result;
 use clap::{Parser, Subcommand};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 #[derive(Parser)]
 #[command(name = "ramekin")]
@@ -151,6 +153,54 @@ enum Commands {
         #[arg(long)]
         merge: bool,
     },
+    /// Run a single pipeline step for a URL
+    PipelineStep {
+        /// The step to run: fetch_html, extract_recipe, or save_recipe
+        #[arg(long)]
+        step: String,
+        /// URL to process
+        #[arg(long)]
+        url: String,
+        /// Run directory for artifacts
+        #[arg(long, default_value = "data/pipeline-runs/adhoc")]
+        run_dir: PathBuf,
+        /// Re-fetch HTML even if cached
+        #[arg(long)]
+        force_fetch: bool,
+    },
+    /// Run the full pipeline for all test URLs
+    PipelineTest {
+        /// Path to test-urls.json
+        #[arg(long, default_value = "data/test-urls.json")]
+        test_urls: PathBuf,
+        /// Output directory for runs
+        #[arg(long, default_value = "data/pipeline-runs")]
+        output_dir: PathBuf,
+        /// Limit number of URLs to process
+        #[arg(long)]
+        limit: Option<usize>,
+        /// Filter to URLs from a specific site (domain)
+        #[arg(long)]
+        site: Option<String>,
+        /// Delay in milliseconds between URL fetches
+        #[arg(long, default_value = "1000")]
+        delay_ms: u64,
+        /// Re-fetch all HTML even if cached
+        #[arg(long)]
+        force_fetch: bool,
+    },
+    /// Show HTML cache statistics
+    PipelineCacheStats {
+        /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
+    },
+    /// Clear HTML cache
+    PipelineCacheClear {
+        /// Cache directory (defaults to ~/.ramekin/pipeline-cache/html)
+        #[arg(long)]
+        cache_dir: Option<PathBuf>,
+    },
 }
 
 #[tokio::main]
@@ -224,6 +274,41 @@ async fn main() -> Result<()> {
             generate_test_urls::generate_test_urls(&output, num_sites, urls_per_site, merge)
                 .await?;
         }
+        Commands::PipelineStep {
+            step,
+            url,
+            run_dir,
+            force_fetch,
+        } => {
+            run_pipeline_step(&step, &url, &run_dir, force_fetch).await?;
+        }
+        Commands::PipelineTest {
+            test_urls,
+            output_dir,
+            limit,
+            site,
+            delay_ms,
+            force_fetch,
+        } => {
+            let config = pipeline_orchestrator::OrchestratorConfig {
+                test_urls_file: test_urls,
+                output_dir,
+                cache_dir: PathBuf::from("data/pipeline-cache/html"),
+                limit,
+                site_filter: site,
+                delay_ms,
+                force_fetch,
+            };
+            pipeline_orchestrator::run_pipeline_test(config).await?;
+        }
+        Commands::PipelineCacheStats { cache_dir } => {
+            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
+            pipeline_orchestrator::print_cache_stats(&cache_dir);
+        }
+        Commands::PipelineCacheClear { cache_dir } => {
+            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
+            pipeline_orchestrator::clear_cache(&cache_dir)?;
+        }
     }
 
     Ok(())
@@ -236,6 +321,64 @@ async fn ping(server: &str) -> Result<()> {
     let response = testing_api::unauthed_ping(&config).await?;
 
     println!("{}", response.message);
+
+    Ok(())
+}
+
+async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: bool) -> Result<()> {
+    use pipeline::{HtmlCache, PipelineStep};
+
+    let step = PipelineStep::from_str(step)?;
+    let cache = HtmlCache::new(HtmlCache::default_cache_dir());
+
+    // Create run directory
+    std::fs::create_dir_all(run_dir)?;
+
+    let result = match step {
+        PipelineStep::FetchHtml => pipeline::run_fetch_html(url, &cache, force_fetch).await,
+        PipelineStep::ExtractRecipe => {
+            // Ensure HTML is fetched first
+            if !cache.is_cached(url) && !force_fetch {
+                println!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &cache, false).await;
+                if !fetch_result.success {
+                    println!("Fetch failed: {:?}", fetch_result.error);
+                    return Ok(());
+                }
+            }
+            pipeline::run_extract_recipe(url, &cache, run_dir)
+        }
+        PipelineStep::SaveRecipe => {
+            // Ensure previous steps are done
+            if !cache.is_cached(url) {
+                println!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &cache, false).await;
+                if !fetch_result.success {
+                    println!("Fetch failed: {:?}", fetch_result.error);
+                    return Ok(());
+                }
+            }
+            let extract_result = pipeline::run_extract_recipe(url, &cache, run_dir);
+            if !extract_result.success {
+                println!("Extract failed: {:?}", extract_result.error);
+                return Ok(());
+            }
+            pipeline::run_save_recipe(url, run_dir)
+        }
+    };
+
+    if result.success {
+        println!(
+            "Step {} succeeded in {}ms",
+            step.as_str(),
+            result.duration_ms
+        );
+        if result.cached {
+            println!("(used cached HTML)");
+        }
+    } else {
+        println!("Step {} failed: {:?}", step.as_str(), result.error);
+    }
 
     Ok(())
 }
