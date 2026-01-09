@@ -78,13 +78,8 @@ pub async fn create_scrape(
         }
     };
 
-    let job_id = job.id;
-
-    // Spawn background task
-    let pool_clone = pool.clone();
-    tokio::spawn(async move {
-        scraping::run_scrape_job(pool_clone, job_id).await;
-    });
+    // Spawn background task with instrumentation
+    scraping::spawn_scrape_job(pool.clone(), job.id, &request.url, "create");
 
     (
         StatusCode::CREATED,

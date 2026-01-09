@@ -7,6 +7,7 @@ use ramekin_core::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, BUILD_ID};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
+use tracing::Instrument;
 use uuid::Uuid;
 
 #[derive(Error, Debug)]
@@ -314,11 +315,52 @@ pub fn create_recipe_from_raw(
     Ok(recipe_id)
 }
 
+/// Spawn a scrape job with proper OpenTelemetry context propagation.
+///
+/// This creates a span that:
+/// - Links to the current (HTTP request) span as parent
+/// - Contains job metadata (job_id, url, operation type)
+/// - Wraps the entire job execution
+pub fn spawn_scrape_job(pool: Arc<DbPool>, job_id: Uuid, url: &str, operation: &str) {
+    let domain = reqwest::Url::parse(url)
+        .ok()
+        .and_then(|u| u.host_str().map(String::from))
+        .unwrap_or_else(|| "unknown".to_string());
+
+    let span = tracing::info_span!(
+        "scrape_job",
+        otel.name = %format!("scrape_job {}", operation),
+        job.id = %job_id,
+        job.operation = %operation,
+        url.full = %url,
+        url.domain = %domain,
+        job.status = tracing::field::Empty,
+        job.error = tracing::field::Empty,
+    );
+
+    tokio::spawn(
+        async move {
+            run_scrape_job(pool, job_id).await;
+        }
+        .instrument(span),
+    );
+}
+
 /// Run the scrape job state machine.
 /// This processes the job through its states: pending -> scraping -> parsing -> completed
 pub async fn run_scrape_job(pool: Arc<DbPool>, job_id: Uuid) {
-    if let Err(e) = run_scrape_job_inner(&pool, job_id).await {
-        tracing::warn!("Scrape job {} failed: {}", job_id, e);
+    let result = run_scrape_job_inner(&pool, job_id).await;
+    let current_span = tracing::Span::current();
+
+    match &result {
+        Ok(()) => {
+            current_span.record("job.status", "completed");
+        }
+        Err(e) => {
+            current_span.record("job.status", "failed");
+            current_span.record("job.error", tracing::field::display(e));
+            tracing::warn!("Scrape job {} failed: {}", job_id, e);
+        }
     }
 }
 
@@ -336,13 +378,25 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
             let current_step = job.current_step.as_deref().unwrap_or(STEP_FETCH_HTML);
 
             if current_step == STEP_FETCH_HTML {
-                tracing::info!("Job {} fetching URL: {}", job_id, job.url);
-
                 // Check host allowlist
                 is_host_allowed(&job.url)?;
 
-                match ramekin_core::fetch_html(&job.url).await {
+                let fetch_span = tracing::info_span!(
+                    "scrape_step",
+                    otel.name = "fetch_html",
+                    step.name = "fetch_html",
+                    http.url = %job.url,
+                    http.response_content_length = tracing::field::Empty,
+                );
+
+                let fetch_result = async { ramekin_core::fetch_html(&job.url).await }
+                    .instrument(fetch_span.clone())
+                    .await;
+
+                match fetch_result {
                     Ok(html) => {
+                        fetch_span.record("http.response_content_length", html.len());
+
                         // Store fetch output
                         let fetch_output = FetchHtmlOutput { html };
                         let output_json = serde_json::to_value(&fetch_output)
@@ -374,7 +428,6 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
 
         STATUS_PARSING => {
             let current_step = job.current_step.as_deref().unwrap_or(STEP_EXTRACT_RECIPE);
-            tracing::info!("Job {} parsing, current_step: {}", job_id, current_step);
 
             if current_step == STEP_EXTRACT_RECIPE {
                 // Get HTML from most recent step_output
@@ -391,8 +444,20 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         ScrapeError::InvalidState("No HTML in fetch output".to_string())
                     })?;
 
-                match ramekin_core::extract_recipe(html, &job.url) {
+                let extract_span = tracing::info_span!(
+                    "scrape_step",
+                    otel.name = "extract_recipe",
+                    step.name = "extract_recipe",
+                    recipe.title = tracing::field::Empty,
+                );
+
+                let extract_result =
+                    extract_span.in_scope(|| ramekin_core::extract_recipe(html, &job.url));
+
+                match extract_result {
                     Ok(raw_recipe) => {
+                        extract_span.record("recipe.title", raw_recipe.title.as_str());
+
                         // Store extract output
                         let extract_output = ExtractRecipeOutput { raw_recipe };
                         let output_json = serde_json::to_value(&extract_output)
@@ -434,9 +499,20 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                             .map_err(|e| ScrapeError::Database(e.to_string()))
                     })?;
 
-                tracing::info!("Job {} saving recipe: {}", job_id, raw_recipe.title);
-                match create_recipe_from_raw(pool, job.user_id, &raw_recipe) {
+                let save_span = tracing::info_span!(
+                    "scrape_step",
+                    otel.name = "save_recipe",
+                    step.name = "save_recipe",
+                    recipe.title = %raw_recipe.title,
+                    recipe.id = tracing::field::Empty,
+                );
+
+                let save_result =
+                    save_span.in_scope(|| create_recipe_from_raw(pool, job.user_id, &raw_recipe));
+
+                match save_result {
                     Ok(recipe_id) => {
+                        save_span.record("recipe.id", tracing::field::display(recipe_id));
                         tracing::info!(
                             "Job {} created recipe {}, marking completed",
                             job_id,

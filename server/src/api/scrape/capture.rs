@@ -62,19 +62,14 @@ pub async fn capture(
             }
         };
 
-    let job_id = job.id;
-
-    // Spawn background task to process from extract_recipe step
-    let pool_clone = pool.clone();
-    tokio::spawn(async move {
-        scraping::run_scrape_job(pool_clone, job_id).await;
-    });
-
     tracing::info!(
         "Created capture job {} for URL {}",
         job.id,
         request.source_url
     );
+
+    // Spawn background task with instrumentation
+    scraping::spawn_scrape_job(pool.clone(), job.id, &request.source_url, "capture");
 
     (
         StatusCode::CREATED,
