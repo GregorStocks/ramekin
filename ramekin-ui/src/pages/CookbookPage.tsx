@@ -398,7 +398,9 @@ export default function CookbookPage() {
         sortBy: "random",
       });
       if (response.recipes.length > 0) {
-        navigate(`/recipes/${response.recipes[0].id}`);
+        navigate(
+          `/recipes/${response.recipes[0].id}?randomQ=${encodeURIComponent(q || "")}`,
+        );
       }
     } catch {
       // Ignore errors

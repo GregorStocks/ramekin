@@ -1,5 +1,5 @@
 import { createSignal, Show, For, onMount, onCleanup } from "solid-js";
-import { useParams, A, useNavigate } from "@solidjs/router";
+import { useParams, A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import type { RecipeResponse } from "ramekin-client";
 
@@ -31,7 +31,13 @@ function PhotoImage(props: { photoId: string; token: string; alt: string }) {
 export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const { getRecipesApi, token } = useAuth();
+
+  // Check if we're in "random browsing" mode
+  const randomQuery = () =>
+    typeof searchParams.randomQ === "string" ? searchParams.randomQ : null;
+  const isRandomMode = () => randomQuery() !== null;
 
   const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
   const [loading, setLoading] = createSignal(true);
@@ -85,6 +91,25 @@ export default function ViewRecipePage() {
     }
   };
 
+  const goToNextRandom = async () => {
+    const q = randomQuery();
+    if (q === null) return;
+    try {
+      const response = await getRecipesApi().listRecipes({
+        q: q || undefined,
+        limit: 1,
+        sortBy: "random",
+      });
+      if (response.recipes.length > 0) {
+        navigate(
+          `/recipes/${response.recipes[0].id}?randomQ=${encodeURIComponent(q)}`,
+        );
+      }
+    } catch {
+      // Ignore errors
+    }
+  };
+
   onMount(() => {
     loadRecipe();
   });
@@ -108,9 +133,20 @@ export default function ViewRecipePage() {
         {(r) => (
           <>
             <div class="recipe-top-bar">
-              <A href="/" class="back-link">
-                &larr; Back
-              </A>
+              <div class="recipe-nav-links">
+                <A href="/" class="back-link">
+                  &larr; Back
+                </A>
+                <Show when={isRandomMode()}>
+                  <button
+                    type="button"
+                    class="btn btn-small"
+                    onClick={goToNextRandom}
+                  >
+                    Next Random &rarr;
+                  </button>
+                </Show>
+              </div>
               <div class="recipe-actions">
                 <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
