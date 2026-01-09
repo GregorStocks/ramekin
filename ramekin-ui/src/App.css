@@ -675,6 +675,12 @@
   color: #646cff;
 }
 
+.recipe-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .recipe-actions {
   display: flex;
   gap: 0.5rem;
