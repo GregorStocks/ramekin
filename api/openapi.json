@@ -775,6 +775,61 @@
         ]
       }
     },
+    "/api/scrape/capture": {
+      "post": {
+        "tags": [
+          "scrape"
+        ],
+        "operationId": "capture",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CaptureRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Recipe created from captured HTML",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CaptureResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid URL or no recipe found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/scrape/{id}": {
       "get": {
         "tags": [
@@ -957,6 +1012,41 @@
   },
   "components": {
     "schemas": {
+      "CaptureRequest": {
+        "type": "object",
+        "required": [
+          "html",
+          "source_url"
+        ],
+        "properties": {
+          "html": {
+            "type": "string",
+            "description": "The HTML content of the page to extract a recipe from"
+          },
+          "source_url": {
+            "type": "string",
+            "description": "The URL the HTML came from (used for source attribution)"
+          }
+        }
+      },
+      "CaptureResponse": {
+        "type": "object",
+        "required": [
+          "recipe_id",
+          "title"
+        ],
+        "properties": {
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The created recipe ID"
+          },
+          "title": {
+            "type": "string",
+            "description": "The extracted recipe title"
+          }
+        }
+      },
       "CreateRecipeRequest": {
         "type": "object",
         "required": [

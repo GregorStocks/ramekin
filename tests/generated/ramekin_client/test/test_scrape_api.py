@@ -26,6 +26,12 @@ class TestScrapeApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_capture(self) -> None:
+        """Test case for capture
+
+        """
+        pass
+
     def test_create_scrape(self) -> None:
         """Test case for create_scrape
 

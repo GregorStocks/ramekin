@@ -217,7 +217,7 @@ fn mark_completed(pool: &DbPool, job_id: Uuid, recipe_id: Uuid) -> Result<(), Sc
 }
 
 /// Create a recipe from RawRecipe.
-fn create_recipe_from_raw(
+pub fn create_recipe_from_raw(
     pool: &DbPool,
     user_id: Uuid,
     raw: &RawRecipe,

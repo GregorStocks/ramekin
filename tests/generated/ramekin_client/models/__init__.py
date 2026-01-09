@@ -13,6 +13,8 @@
 """  # noqa: E501
 
 # import models into model package
+from ramekin_client.models.capture_request import CaptureRequest
+from ramekin_client.models.capture_response import CaptureResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest

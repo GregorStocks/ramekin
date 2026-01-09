@@ -8,6 +8,7 @@ import CookbookPage from "./pages/CookbookPage";
 import CreateRecipePage from "./pages/CreateRecipePage";
 import ViewRecipePage from "./pages/ViewRecipePage";
 import EditRecipePage from "./pages/EditRecipePage";
+import CapturePage from "./pages/CapturePage";
 import type { ParentComponent } from "solid-js";
 
 const ProtectedRoute: ParentComponent = (props) => {
@@ -74,6 +75,7 @@ function App() {
             </ProtectedRoute>
           )}
         />
+        <Route path="/capture" component={CapturePage} />
       </Router>
     </AuthProvider>
   );

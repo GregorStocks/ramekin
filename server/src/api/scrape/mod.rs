@@ -1,8 +1,10 @@
+pub mod capture;
 pub mod create;
 pub mod get;
 pub mod retry;
 
 use crate::AppState;
+use axum::extract::DefaultBodyLimit;
 use axum::routing::{get, post};
 use axum::Router;
 use utoipa::OpenApi;
@@ -13,12 +15,23 @@ pub fn router() -> Router<AppState> {
         .route("/", post(create::create_scrape))
         .route("/{id}", get(get::get_scrape))
         .route("/{id}/retry", post(retry::retry_scrape))
+        .route(
+            "/capture",
+            post(capture::capture).layer(DefaultBodyLimit::max(5 * 1024 * 1024)), // 5MB limit for HTML
+        )
 }
 
 #[derive(OpenApi)]
 #[openapi(
-    paths(create::create_scrape, get::get_scrape, retry::retry_scrape,),
+    paths(
+        capture::capture,
+        create::create_scrape,
+        get::get_scrape,
+        retry::retry_scrape,
+    ),
     components(schemas(
+        capture::CaptureRequest,
+        capture::CaptureResponse,
         create::CreateScrapeRequest,
         create::CreateScrapeResponse,
         get::ScrapeJobResponse,
