@@ -10,6 +10,7 @@ import { createStore } from "solid-js/store";
 import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import TagInput from "../components/TagInput";
+import StarRating from "../components/StarRating";
 import type { Ingredient, ScrapeJobResponse } from "ramekin-client";
 
 function PhotoThumbnail(props: {
@@ -74,6 +75,14 @@ export default function CreateRecipePage() {
   const [ingredients, setIngredients] = createStore<Ingredient[]>([
     { item: "", amount: "", unit: "" },
   ]);
+  const [servings, setServings] = createSignal("");
+  const [prepTime, setPrepTime] = createSignal("");
+  const [cookTime, setCookTime] = createSignal("");
+  const [totalTime, setTotalTime] = createSignal("");
+  const [rating, setRating] = createSignal<number | null>(null);
+  const [difficulty, setDifficulty] = createSignal("");
+  const [nutritionalInfo, setNutritionalInfo] = createSignal("");
+  const [notes, setNotes] = createSignal("");
 
   const [saving, setSaving] = createSignal(false);
   const [error, setError] = createSignal<string | null>(null);
@@ -289,6 +298,14 @@ export default function CreateRecipePage() {
           sourceName: sourceName() || undefined,
           tags: tags().length > 0 ? tags() : undefined,
           photoIds: photoIds().length > 0 ? photoIds() : undefined,
+          servings: servings() || undefined,
+          prepTime: prepTime() || undefined,
+          cookTime: cookTime() || undefined,
+          totalTime: totalTime() || undefined,
+          rating: rating() ?? undefined,
+          difficulty: difficulty() || undefined,
+          nutritionalInfo: nutritionalInfo() || undefined,
+          notes: notes() || undefined,
         },
       });
 
@@ -428,6 +445,77 @@ export default function CreateRecipePage() {
           />
         </div>
 
+        <div class="form-row-4">
+          <div class="form-group">
+            <label for="servings">Servings</label>
+            <input
+              id="servings"
+              type="text"
+              value={servings()}
+              onInput={(e) => setServings(e.currentTarget.value)}
+              placeholder="e.g., 4"
+            />
+          </div>
+          <div class="form-group">
+            <label for="prepTime">Prep Time</label>
+            <input
+              id="prepTime"
+              type="text"
+              value={prepTime()}
+              onInput={(e) => setPrepTime(e.currentTarget.value)}
+              placeholder="e.g., 15 min"
+            />
+          </div>
+          <div class="form-group">
+            <label for="cookTime">Cook Time</label>
+            <input
+              id="cookTime"
+              type="text"
+              value={cookTime()}
+              onInput={(e) => setCookTime(e.currentTarget.value)}
+              placeholder="e.g., 30 min"
+            />
+          </div>
+          <div class="form-group">
+            <label for="totalTime">Total Time</label>
+            <input
+              id="totalTime"
+              type="text"
+              value={totalTime()}
+              onInput={(e) => setTotalTime(e.currentTarget.value)}
+              placeholder="e.g., 45 min"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group-rating">
+            <label>Rating</label>
+            <div class="rating-input-wrapper">
+              <StarRating rating={rating()} onRate={setRating} />
+              <Show when={rating() !== null}>
+                <button
+                  type="button"
+                  class="rating-clear"
+                  onClick={() => setRating(null)}
+                >
+                  Clear
+                </button>
+              </Show>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="difficulty">Difficulty</label>
+            <input
+              id="difficulty"
+              type="text"
+              value={difficulty()}
+              onInput={(e) => setDifficulty(e.currentTarget.value)}
+              placeholder="e.g., Easy, Medium, Hard"
+            />
+          </div>
+        </div>
+
         <div class="form-section">
           <div class="section-header">
             <label>Ingredients</label>
@@ -527,6 +615,28 @@ export default function CreateRecipePage() {
             tags={tags}
             onTagsChange={setTags}
             placeholder="e.g., dinner, easy, vegetarian"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Notes</label>
+          <textarea
+            id="notes"
+            value={notes()}
+            onInput={(e) => setNotes(e.currentTarget.value)}
+            rows={3}
+            placeholder="Additional notes, tips, or variations..."
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="nutritionalInfo">Nutritional Info</label>
+          <textarea
+            id="nutritionalInfo"
+            value={nutritionalInfo()}
+            onInput={(e) => setNutritionalInfo(e.currentTarget.value)}
+            rows={2}
+            placeholder="Calories, protein, carbs, etc."
           />
         </div>
 

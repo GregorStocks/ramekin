@@ -1,6 +1,7 @@
 import { createSignal, Show, For, onMount, onCleanup } from "solid-js";
 import { useParams, A, useNavigate } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
+import StarRating from "../components/StarRating";
 import type { RecipeResponse } from "ramekin-client";
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
@@ -150,6 +151,53 @@ export default function ViewRecipePage() {
                   </Show>
                 </div>
               </Show>
+              <Show
+                when={
+                  r().servings ||
+                  r().prepTime ||
+                  r().cookTime ||
+                  r().totalTime ||
+                  r().rating ||
+                  r().difficulty
+                }
+              >
+                <div class="recipe-metadata">
+                  <Show when={r().servings}>
+                    <div class="recipe-metadata-item">
+                      <span class="label">Serves:</span>
+                      <span class="value">{r().servings}</span>
+                    </div>
+                  </Show>
+                  <Show when={r().prepTime}>
+                    <div class="recipe-metadata-item">
+                      <span class="label">Prep:</span>
+                      <span class="value">{r().prepTime}</span>
+                    </div>
+                  </Show>
+                  <Show when={r().cookTime}>
+                    <div class="recipe-metadata-item">
+                      <span class="label">Cook:</span>
+                      <span class="value">{r().cookTime}</span>
+                    </div>
+                  </Show>
+                  <Show when={r().totalTime}>
+                    <div class="recipe-metadata-item">
+                      <span class="label">Total:</span>
+                      <span class="value">{r().totalTime}</span>
+                    </div>
+                  </Show>
+                  <Show when={r().rating}>
+                    <div class="recipe-metadata-item">
+                      <StarRating rating={r().rating ?? null} readonly />
+                    </div>
+                  </Show>
+                  <Show when={r().difficulty}>
+                    <div class="recipe-metadata-item">
+                      <span class="difficulty-badge">{r().difficulty}</span>
+                    </div>
+                  </Show>
+                </div>
+              </Show>
             </div>
 
             <div class="recipe-layout">
@@ -204,6 +252,18 @@ export default function ViewRecipePage() {
                   <h3>Instructions</h3>
                   <div class="instructions">{r().instructions}</div>
                 </section>
+                <Show when={r().notes}>
+                  <section class="recipe-section">
+                    <h3>Notes</h3>
+                    <div class="instructions">{r().notes}</div>
+                  </section>
+                </Show>
+                <Show when={r().nutritionalInfo}>
+                  <section class="recipe-section">
+                    <h3>Nutritional Info</h3>
+                    <div class="instructions">{r().nutritionalInfo}</div>
+                  </section>
+                </Show>
               </div>
             </div>
           </>
