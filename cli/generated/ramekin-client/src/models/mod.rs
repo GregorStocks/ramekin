@@ -1,7 +1,5 @@
 pub mod capture_request;
 pub use self::capture_request::CaptureRequest;
-pub mod capture_response;
-pub use self::capture_response::CaptureResponse;
 pub mod create_recipe_request;
 pub use self::create_recipe_request::CreateRecipeRequest;
 pub mod create_recipe_response;

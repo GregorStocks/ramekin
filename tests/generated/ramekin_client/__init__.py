@@ -33,7 +33,6 @@ __all__ = [
     "ApiAttributeError",
     "ApiException",
     "CaptureRequest",
-    "CaptureResponse",
     "CreateRecipeRequest",
     "CreateRecipeResponse",
     "CreateScrapeRequest",
@@ -79,7 +78,6 @@ from ramekin_client.exceptions import ApiException as ApiException
 
 # import models into sdk package
 from ramekin_client.models.capture_request import CaptureRequest as CaptureRequest
-from ramekin_client.models.capture_response import CaptureResponse as CaptureResponse
 from ramekin_client.models.create_recipe_request import CreateRecipeRequest as CreateRecipeRequest
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse as CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest

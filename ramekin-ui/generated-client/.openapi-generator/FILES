@@ -7,7 +7,6 @@ apis/TestingApi.ts
 apis/index.ts
 docs/AuthApi.md
 docs/CaptureRequest.md
-docs/CaptureResponse.md
 docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
@@ -37,7 +36,6 @@ docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
 index.ts
 models/CaptureRequest.ts
-models/CaptureResponse.ts
 models/CreateRecipeRequest.ts
 models/CreateRecipeResponse.ts
 models/CreateScrapeRequest.ts

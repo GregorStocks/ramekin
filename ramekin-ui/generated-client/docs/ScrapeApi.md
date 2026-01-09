@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 
 ## capture
 
-> CaptureResponse capture(captureRequest)
+> CreateScrapeResponse capture(captureRequest)
 
 
 
@@ -60,7 +60,7 @@ example().catch(console.error);
 
 ### Return type
 
-[**CaptureResponse**](CaptureResponse.md)
+[**CreateScrapeResponse**](CreateScrapeResponse.md)
 
 ### Authorization
 
@@ -75,8 +75,8 @@ example().catch(console.error);
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **201** | Recipe created from captured HTML |  -  |
-| **400** | Invalid URL or no recipe found |  -  |
+| **201** | Scrape job created from captured HTML |  -  |
+| **400** | Invalid URL |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

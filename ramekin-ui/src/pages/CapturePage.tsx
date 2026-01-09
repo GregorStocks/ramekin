@@ -6,9 +6,16 @@ interface CaptureMessage {
   url: string;
 }
 
-interface CaptureResponse {
-  recipe_id: string;
-  title: string;
+interface CreateScrapeResponse {
+  id: string;
+  status: string;
+}
+
+interface ScrapeJobResponse {
+  id: string;
+  status: string;
+  recipe_id?: string;
+  error?: string;
 }
 
 interface ErrorResponse {
@@ -17,12 +24,65 @@ interface ErrorResponse {
 
 type Status =
   | { type: "waiting" }
-  | { type: "capturing" }
-  | { type: "success"; recipeId: string; title: string }
+  | { type: "capturing"; jobId?: string; jobStatus?: string }
+  | { type: "success"; recipeId: string }
   | { type: "error"; message: string };
 
 export default function CapturePage() {
   const [status, setStatus] = createSignal<Status>({ type: "waiting" });
+  let pollInterval: ReturnType<typeof setInterval> | null = null;
+
+  const pollJobStatus = async (jobId: string, token: string) => {
+    try {
+      const response = await fetch(`/api/scrape/${jobId}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to get job status: ${response.status}`);
+      }
+
+      const job: ScrapeJobResponse = await response.json();
+
+      if (job.status === "completed" && job.recipe_id) {
+        if (pollInterval) {
+          clearInterval(pollInterval);
+          pollInterval = null;
+        }
+        setStatus({
+          type: "success",
+          recipeId: job.recipe_id,
+        });
+      } else if (job.status === "failed") {
+        if (pollInterval) {
+          clearInterval(pollInterval);
+          pollInterval = null;
+        }
+        setStatus({
+          type: "error",
+          message: job.error || "Failed to extract recipe",
+        });
+      } else {
+        // Still processing - update status display
+        setStatus({
+          type: "capturing",
+          jobId: job.id,
+          jobStatus: job.status,
+        });
+      }
+    } catch (err) {
+      if (pollInterval) {
+        clearInterval(pollInterval);
+        pollInterval = null;
+      }
+      setStatus({
+        type: "error",
+        message: err instanceof Error ? err.message : "Failed to check status",
+      });
+    }
+  };
 
   const handleMessage = async (event: MessageEvent) => {
     // Only accept messages from the page that opened us
@@ -53,12 +113,17 @@ export default function CapturePage() {
       });
 
       if (response.ok) {
-        const result: CaptureResponse = await response.json();
+        const result: CreateScrapeResponse = await response.json();
         setStatus({
-          type: "success",
-          recipeId: result.recipe_id,
-          title: result.title,
+          type: "capturing",
+          jobId: result.id,
+          jobStatus: result.status,
         });
+
+        // Start polling for completion
+        pollInterval = setInterval(() => {
+          pollJobStatus(result.id, token);
+        }, 500);
       } else {
         const error: ErrorResponse = await response.json();
         setStatus({ type: "error", message: error.error });
@@ -94,7 +159,24 @@ export default function CapturePage() {
 
   onCleanup(() => {
     window.removeEventListener("message", handleMessage);
+    if (pollInterval) {
+      clearInterval(pollInterval);
+    }
   });
+
+  const getStatusText = () => {
+    const s = status();
+    if (s.type !== "capturing") return "Saving recipe...";
+
+    switch (s.jobStatus) {
+      case "pending":
+        return "Starting...";
+      case "parsing":
+        return "Extracting recipe...";
+      default:
+        return "Processing...";
+    }
+  };
 
   return (
     <div class="capture-page">
@@ -108,7 +190,7 @@ export default function CapturePage() {
       <Show when={status().type === "capturing"}>
         <div class="capture-status">
           <div class="spinner" />
-          <p>Saving recipe...</p>
+          <p>{getStatusText()}</p>
         </div>
       </Show>
 
@@ -118,7 +200,7 @@ export default function CapturePage() {
           if (s.type !== "success") return null;
           return (
             <div class="capture-status capture-success">
-              <p>Saved: {s.title}</p>
+              <p>Recipe saved!</p>
               <div class="capture-actions">
                 <a
                   href={`/recipes/${s.recipeId}`}

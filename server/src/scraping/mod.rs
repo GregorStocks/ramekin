@@ -96,6 +96,48 @@ pub fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, 
         .map_err(|e| ScrapeError::Database(e.to_string()))
 }
 
+/// Create a new scrape job with pre-existing HTML (for bookmarklet capture).
+/// This creates the job, stores the HTML as the fetch_html output,
+/// and sets the job to start from the extract_recipe step.
+pub fn create_job_with_html(
+    pool: &DbPool,
+    user_id: Uuid,
+    url: &str,
+    html: &str,
+) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Create the job
+    let new_job = NewScrapeJob { user_id, url };
+    let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
+        .values(&new_job)
+        .get_result(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Store the HTML as the fetch_html step output
+    let fetch_output = FetchHtmlOutput {
+        html: html.to_string(),
+    };
+    let output_json =
+        serde_json::to_value(&fetch_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
+    save_step_output(pool, job.id, STEP_FETCH_HTML, output_json)?;
+
+    // Update the job to start from parsing (skip fetch step)
+    diesel::update(scrape_jobs::table.find(job.id))
+        .set((
+            scrape_jobs::status.eq(STATUS_PARSING),
+            scrape_jobs::current_step.eq(Some(STEP_EXTRACT_RECIPE)),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Return the updated job
+    get_job(pool, job.id)
+}
+
 /// Get a scrape job by ID.
 pub fn get_job(pool: &DbPool, job_id: Uuid) -> Result<ScrapeJob, ScrapeError> {
     let mut conn = pool

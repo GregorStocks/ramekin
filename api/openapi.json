@@ -793,17 +793,17 @@
         },
         "responses": {
           "201": {
-            "description": "Recipe created from captured HTML",
+            "description": "Scrape job created from captured HTML",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CaptureResponse"
+                  "$ref": "#/components/schemas/CreateScrapeResponse"
                 }
               }
             }
           },
           "400": {
-            "description": "Invalid URL or no recipe found",
+            "description": "Invalid URL",
             "content": {
               "application/json": {
                 "schema": {
@@ -1026,24 +1026,6 @@
           "source_url": {
             "type": "string",
             "description": "The URL the HTML came from (used for source attribution)"
-          }
-        }
-      },
-      "CaptureResponse": {
-        "type": "object",
-        "required": [
-          "recipe_id",
-          "title"
-        ],
-        "properties": {
-          "recipe_id": {
-            "type": "string",
-            "format": "uuid",
-            "description": "The created recipe ID"
-          },
-          "title": {
-            "type": "string",
-            "description": "The extracted recipe title"
           }
         }
       },

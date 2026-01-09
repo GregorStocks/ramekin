@@ -87,7 +87,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](ramekin_client/docs/CaptureRequest.md)
- - [CaptureResponse](ramekin_client/docs/CaptureResponse.md)
  - [CreateRecipeRequest](ramekin_client/docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](ramekin_client/docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)

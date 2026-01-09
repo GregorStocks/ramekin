@@ -50,7 +50,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [CaptureRequest](docs/CaptureRequest.md)
- - [CaptureResponse](docs/CaptureResponse.md)
  - [CreateRecipeRequest](docs/CreateRecipeRequest.md)
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)

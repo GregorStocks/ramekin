@@ -31,7 +31,6 @@ pub fn router() -> Router<AppState> {
     ),
     components(schemas(
         capture::CaptureRequest,
-        capture::CaptureResponse,
         create::CreateScrapeRequest,
         create::CreateScrapeResponse,
         get::ScrapeJobResponse,

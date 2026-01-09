@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## capture
 
-> models::CaptureResponse capture(capture_request)
+> models::CreateScrapeResponse capture(capture_request)
 
 
 ### Parameters
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**models::CaptureResponse**](CaptureResponse.md)
+[**models::CreateScrapeResponse**](CreateScrapeResponse.md)
 
 ### Authorization
 

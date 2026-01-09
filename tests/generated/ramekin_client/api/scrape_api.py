@@ -20,7 +20,6 @@ from pydantic import Field
 from typing_extensions import Annotated
 from uuid import UUID
 from ramekin_client.models.capture_request import CaptureRequest
-from ramekin_client.models.capture_response import CaptureResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse
@@ -60,7 +59,7 @@ class ScrapeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> CaptureResponse:
+    ) -> CreateScrapeResponse:
         """capture
 
 
@@ -97,7 +96,7 @@ class ScrapeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CaptureResponse",
+            '201': "CreateScrapeResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
         }
@@ -128,7 +127,7 @@ class ScrapeApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[CaptureResponse]:
+    ) -> ApiResponse[CreateScrapeResponse]:
         """capture
 
 
@@ -165,7 +164,7 @@ class ScrapeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CaptureResponse",
+            '201': "CreateScrapeResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
         }
@@ -233,7 +232,7 @@ class ScrapeApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "CaptureResponse",
+            '201': "CreateScrapeResponse",
             '400': "ErrorResponse",
             '401': "ErrorResponse",
         }

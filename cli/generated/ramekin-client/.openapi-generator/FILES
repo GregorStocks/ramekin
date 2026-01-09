@@ -5,7 +5,6 @@ Cargo.toml
 README.md
 docs/AuthApi.md
 docs/CaptureRequest.md
-docs/CaptureResponse.md
 docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
@@ -43,7 +42,6 @@ src/apis/scrape_api.rs
 src/apis/testing_api.rs
 src/lib.rs
 src/models/capture_request.rs
-src/models/capture_response.rs
 src/models/create_recipe_request.rs
 src/models/create_recipe_response.rs
 src/models/create_scrape_request.rs

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **capture**
-> CaptureResponse capture(capture_request)
+> CreateScrapeResponse capture(capture_request)
 
 ### Example
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ```python
 import ramekin_client
 from ramekin_client.models.capture_request import CaptureRequest
-from ramekin_client.models.capture_response import CaptureResponse
+from ramekin_client.models.create_scrape_response import CreateScrapeResponse
 from ramekin_client.rest import ApiException
 from pprint import pprint
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CaptureResponse**](CaptureResponse.md)
+[**CreateScrapeResponse**](CreateScrapeResponse.md)
 
 ### Authorization
 
@@ -80,8 +80,8 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Recipe created from captured HTML |  -  |
-**400** | Invalid URL or no recipe found |  -  |
+**201** | Scrape job created from captured HTML |  -  |
+**400** | Invalid URL |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

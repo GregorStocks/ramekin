@@ -53,7 +53,7 @@ pub enum RetryScrapeError {
 pub async fn capture(
     configuration: &configuration::Configuration,
     capture_request: models::CaptureRequest,
-) -> Result<models::CaptureResponse, Error<CaptureError>> {
+) -> Result<models::CreateScrapeResponse, Error<CaptureError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_capture_request = capture_request;
 
@@ -85,8 +85,8 @@ pub async fn capture(
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::CaptureResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::CaptureResponse`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::CreateScrapeResponse`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::CreateScrapeResponse`")))),
         }
     } else {
         let content = resp.text().await?;

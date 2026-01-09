@@ -16,7 +16,6 @@
 import * as runtime from '../runtime';
 import type {
   CaptureRequest,
-  CaptureResponse,
   CreateScrapeRequest,
   CreateScrapeResponse,
   ErrorResponse,
@@ -26,8 +25,6 @@ import type {
 import {
     CaptureRequestFromJSON,
     CaptureRequestToJSON,
-    CaptureResponseFromJSON,
-    CaptureResponseToJSON,
     CreateScrapeRequestFromJSON,
     CreateScrapeRequestToJSON,
     CreateScrapeResponseFromJSON,
@@ -63,7 +60,7 @@ export class ScrapeApi extends runtime.BaseAPI {
 
     /**
      */
-    async captureRaw(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CaptureResponse>> {
+    async captureRaw(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateScrapeResponse>> {
         if (requestParameters['captureRequest'] == null) {
             throw new runtime.RequiredError(
                 'captureRequest',
@@ -96,12 +93,12 @@ export class ScrapeApi extends runtime.BaseAPI {
             body: CaptureRequestToJSON(requestParameters['captureRequest']),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => CaptureResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateScrapeResponseFromJSON(jsonValue));
     }
 
     /**
      */
-    async capture(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CaptureResponse> {
+    async capture(requestParameters: CaptureOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateScrapeResponse> {
         const response = await this.captureRaw(requestParameters, initOverrides);
         return await response.value();
     }
