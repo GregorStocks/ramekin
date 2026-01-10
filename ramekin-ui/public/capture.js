@@ -8,6 +8,10 @@
   var origin = new URL(src).origin;
   var apiOrigin = decodeURIComponent(params.get("api") || origin);
 
+  console.log("[Ramekin] Bookmarklet loaded");
+  console.log("[Ramekin] Script origin:", origin);
+  console.log("[Ramekin] API origin:", apiOrigin);
+
   if (!token) {
     console.error("[Ramekin] No token in bookmarklet URL");
     alert("Ramekin: Invalid bookmarklet. Please get a new one from your Ramekin account.");
@@ -102,6 +106,9 @@
       }
     })
     .catch(function(err) {
+      console.error("[Ramekin] Poll error:", err);
+      console.error("[Ramekin] API origin:", apiOrigin);
+      console.error("[Ramekin] This may be a CORS issue - check network tab");
       setStatus("Error checking status", true);
       showCloseButton();
     });
@@ -128,6 +135,9 @@
     pollJob(result.id);
   })
   .catch(function(err) {
+    console.error("[Ramekin] Capture error:", err);
+    console.error("[Ramekin] API origin:", apiOrigin);
+    console.error("[Ramekin] This may be a CORS issue - check network tab");
     setStatus(err.message || "Failed to save recipe", true);
     showCloseButton();
   });

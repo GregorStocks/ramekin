@@ -91,8 +91,8 @@ export default function CreateRecipePage() {
 
   const bookmarkletCode = createMemo(() => {
     const origin = window.location.origin;
-    // API server is on port 3000 (HTTP for now)
-    const apiOrigin = `http://${window.location.hostname}:3000`;
+    // Use UI origin for API calls - Vite proxy forwards /api/* to the API server
+    const apiOrigin = origin;
     const userToken = token();
     if (!userToken) return "";
     const code = bookmarkletSource

@@ -27,7 +27,31 @@ export default defineConfig({
       '/api': {
         target: `http://localhost:${process.env.PORT}`,
         changeOrigin: true,
+        configure: (proxy) => {
+          proxy.on('proxyReq', (_proxyReq, req) => {
+            console.log('[Vite Proxy] Request:', req.method, req.url);
+            console.log('[Vite Proxy] Origin header:', req.headers.origin);
+          });
+          proxy.on('proxyRes', (proxyRes, req, res) => {
+            console.log('[Vite Proxy] Response:', proxyRes.statusCode, req.url);
+            // Add CORS headers to response for cross-origin bookmarklet requests
+            const origin = req.headers.origin;
+            if (origin) {
+              res.setHeader('Access-Control-Allow-Origin', origin);
+              res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+              res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+              res.setHeader('Access-Control-Allow-Credentials', 'true');
+            }
+          });
+        },
       },
+    },
+    // Handle CORS preflight for /api routes
+    cors: {
+      origin: true,
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true,
     },
   },
 })
