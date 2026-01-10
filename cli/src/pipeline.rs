@@ -1,4 +1,4 @@
-use anyhow::{anyhow, Result};
+use anyhow::{anyhow, Context, Result};
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
 use std::fs;
@@ -259,6 +259,83 @@ impl HtmlCache {
     pub fn clear(&self) -> Result<()> {
         if self.cache_dir.exists() {
             fs::remove_dir_all(&self.cache_dir)?;
+        }
+        Ok(())
+    }
+
+    /// Get the staging directory path for manual HTML saves
+    pub fn staging_dir() -> PathBuf {
+        dirs::home_dir()
+            .map(|h| h.join(".ramekin").join("cache-staging"))
+            .unwrap_or_else(|| PathBuf::from("data/cache-staging"))
+    }
+
+    /// Ensure staging directory exists and return its path
+    pub fn ensure_staging_dir() -> Result<PathBuf> {
+        let staging = Self::staging_dir();
+        fs::create_dir_all(&staging)?;
+        Ok(staging)
+    }
+
+    /// Find the newest .html file in staging directory
+    pub fn find_staged_html() -> Option<PathBuf> {
+        let staging = Self::staging_dir();
+        if !staging.exists() {
+            return None;
+        }
+
+        fs::read_dir(&staging)
+            .ok()?
+            .filter_map(|e| e.ok())
+            .filter(|e| {
+                e.path()
+                    .extension()
+                    .map(|ext| ext == "html")
+                    .unwrap_or(false)
+                    || e.path()
+                        .extension()
+                        .map(|ext| ext == "htm")
+                        .unwrap_or(false)
+            })
+            .max_by_key(|e| e.metadata().ok().and_then(|m| m.modified().ok()))
+            .map(|e| e.path())
+    }
+
+    /// Import a staged HTML file into the cache for a URL
+    pub fn import_staged_file(&self, staged_path: &Path, url: &str) -> Result<()> {
+        let html = fs::read_to_string(staged_path)
+            .with_context(|| format!("Failed to read staged file: {}", staged_path.display()))?;
+
+        // Save to cache
+        let dir = self.url_dir(url);
+        fs::create_dir_all(&dir)?;
+        fs::write(dir.join("url.txt"), url)?;
+        fs::write(dir.join("output.html"), &html)?;
+        fs::write(dir.join("fetched_at.txt"), Utc::now().to_rfc3339())?;
+
+        // Remove any cached error
+        let error_path = dir.join("error.txt");
+        if error_path.exists() {
+            let _ = fs::remove_file(error_path);
+        }
+
+        // Remove the staged file
+        let _ = fs::remove_file(staged_path);
+
+        Ok(())
+    }
+
+    /// Clear any existing files in staging directory
+    pub fn clear_staging() -> Result<()> {
+        let staging = Self::staging_dir();
+        if staging.exists() {
+            for entry in fs::read_dir(&staging)? {
+                let entry = entry?;
+                let path = entry.path();
+                if path.is_file() {
+                    fs::remove_file(&path)?;
+                }
+            }
         }
         Ok(())
     }
