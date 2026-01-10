@@ -1,0 +1,797 @@
+{
+  "generated_at": "2026-01-10T18:11:02.339922+00:00",
+  "config": {
+    "num_sites": 50,
+    "urls_per_site": 10
+  },
+  "sites": [
+    {
+      "domain": "thekitchn.com",
+      "rank": 1,
+      "urls": [
+        "https://thekitchn.com/most-popular-dinner-recipes-23749145",
+        "https://thekitchn.com/collection/pasta-noodles/20-minute-recipes",
+        "https://thekitchn.com/collection/dinner/30-minute-recipes",
+        "https://thekitchn.com/best-slow-cooker-chicken-recipes-23746316",
+        "https://thekitchn.com/hot-honey-fried-egg-recipe-review-23764398",
+        "https://thekitchn.com/trisha-yearwood-cowboy-lasagna-recipe-review-2-23764049",
+        "https://thekitchn.com/protein-cinnamon-toast-recipe-review-23763830",
+        "https://thekitchn.com/king-arthur-flour-flaky-puff-crust-pizza-recipe-review-23763440"
+      ],
+      "source": "homepage"
+    },
+    {
+      "domain": "food52.com",
+      "rank": 2,
+      "urls": [],
+      "error": "Could not find recipe URLs from sitemap or homepage",
+      "source": "failed"
+    },
+    {
+      "domain": "seriouseats.com",
+      "rank": 3,
+      "urls": [
+        "https://www.seriouseats.com/italian-barley-cranberry-bean-soup-recipe-11882571",
+        "https://www.seriouseats.com/grilling-pork-souvlaki-with-pita-and-tzatziki-recipe-greek",
+        "https://www.seriouseats.com/less-meat-meatloaf-recipe-11881799",
+        "https://www.seriouseats.com/chicken-francese-recipe-11881928",
+        "https://www.seriouseats.com/binakol-na-manok-filipino-chicken-and-coconut-soup-recipe-11878784",
+        "https://www.seriouseats.com/lentil-sausage-stew-recipe-11880797",
+        "https://www.seriouseats.com/smash-falafel-pitas-recipe-11878687",
+        "https://www.seriouseats.com/hot-milk-cake-recipe-11878680",
+        "https://www.seriouseats.com/chickpea-cabbage-soup-recipe-11880044",
+        "https://www.seriouseats.com/scottish-style-oatmeal-recipe-11878312"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "therecipecritic.com",
+      "rank": 4,
+      "urls": [
+        "https://therecipecritic.com/avocado-toast-recipe/",
+        "https://therecipecritic.com/hummus-recipe/",
+        "https://therecipecritic.com/gumbo-recipe/",
+        "https://therecipecritic.com/tzatziki-recipe/",
+        "https://therecipecritic.com/poke-bowl-recipe/",
+        "https://therecipecritic.com/easy-tiramisu-recipe/",
+        "https://therecipecritic.com/buttermilk-biscuits-recipe/",
+        "https://therecipecritic.com/best-ever-soup-recipes/",
+        "https://therecipecritic.com/healthy-dinner-recipes/",
+        "https://therecipecritic.com/shrimp-ceviche-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "thepioneerwoman.com",
+      "rank": 5,
+      "urls": [
+        "https://www.thepioneerwoman.com/food-cooking/recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "simplyrecipes.com",
+      "rank": 6,
+      "urls": [
+        "https://www.simplyrecipes.com/five-minute-chutney-cheese-appetizer-recipe-11872870",
+        "https://www.simplyrecipes.com/hot-water-cornbread-recipe-11872525",
+        "https://www.simplyrecipes.com/cheesy-potato-recipes-11880023",
+        "https://www.simplyrecipes.com/roasted-caesar-broccoli-recipe-11875667",
+        "https://www.simplyrecipes.com/chicken-piccata-noodle-casserole-recipe-11879610",
+        "https://www.simplyrecipes.com/quick-skillet-meals-recipes-11880208",
+        "https://www.simplyrecipes.com/quick-tortellini-soup-recipe-11872563",
+        "https://www.simplyrecipes.com/three-can-chili-recipe-11879150",
+        "https://www.simplyrecipes.com/slow-cooker-italian-chicken-recipe-11879112",
+        "https://www.simplyrecipes.com/pizza-mushrooms-recipe-11872571"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "onmykidsplate.com",
+      "rank": 7,
+      "urls": [
+        "https://onmykidsplate.com/sidewalk-chalk-paint-recipe/",
+        "https://onmykidsplate.com/homemade-trail-mix-recipe/",
+        "https://onmykidsplate.com/cosmic-brownies-copycat-recipe/",
+        "https://onmykidsplate.com/oven-baked-meatballs-pork-recipe/",
+        "https://onmykidsplate.com/how-to-make-pork-gravy-homemade-recipe/",
+        "https://onmykidsplate.com/turtle-candy-recipe/",
+        "https://onmykidsplate.com/buckeyes-recipe/",
+        "https://onmykidsplate.com/healthy-ground-turkey-chili-recipe/",
+        "https://onmykidsplate.com/healthy-halloween-party-food-recipes-kids/",
+        "https://onmykidsplate.com/banana-popsicles-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "gimmesomeoven.com",
+      "rank": 8,
+      "urls": [
+        "https://www.gimmesomeoven.com/all-recipes/",
+        "https://www.gimmesomeoven.com/15-margarita-recipes/",
+        "https://www.gimmesomeoven.com/15-strawberry-recipes/",
+        "https://www.gimmesomeoven.com/my-16-favorite-recipes-of-2016/",
+        "https://www.gimmesomeoven.com/your-16-favorite-recipes-of-2016/",
+        "https://www.gimmesomeoven.com/super-bowl-dip-recipes/",
+        "https://www.gimmesomeoven.com/favorite-recipes-of-2015/",
+        "https://www.gimmesomeoven.com/my-favorite-15-recipes-of-2015/",
+        "https://www.gimmesomeoven.com/taco-recipes/",
+        "https://www.gimmesomeoven.com/15-broccoli-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "skinnytaste.com",
+      "rank": 9,
+      "urls": [
+        "https://www.skinnytaste.com/top-25-most-popular-skinnytaste-recipes-2016/",
+        "https://www.skinnytaste.com/top-25-skinny-recipes-2012/",
+        "https://www.skinnytaste.com/skinnytaste-one-and-done-get-a-free-40-page-bonus-pack-including-a-4-week-dinner-plan-plus-3-new-bonus-recipes-with-pre-order/",
+        "https://www.skinnytaste.com/top-20-skinny-recipes-for-2011/",
+        "https://www.skinnytaste.com/my-personal-top-12-recipes-from-2011/",
+        "https://www.skinnytaste.com/easy-trail-mix-recipe-tips-on-making/",
+        "https://www.skinnytaste.com/top-25-most-popular-skinnytaste-recipes-2019/",
+        "https://www.skinnytaste.com/top-25-most-popular-skinnytaste-recipes/",
+        "https://www.skinnytaste.com/15-light-and-healthy-chili-recipes/",
+        "https://www.skinnytaste.com/50-light-and-healthy-soup-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "smittenkitchen.com",
+      "rank": 10,
+      "urls": [
+        "https://smittenkitchen.com/2010/01/tomato-sauce-with-butter-and-onions/",
+        "https://smittenkitchen.com/2009/03/crispy-chewy-chocolate-chip-cookies/",
+        "https://smittenkitchen.com/2025/10/opera-cake/",
+        "https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/",
+        "https://smittenkitchen.com/2015/01/my-ultimate-chicken-noodle-soup/",
+        "https://smittenkitchen.com/2007/12/iceberg-wedge-salad-with-blue-cheese/",
+        "https://smittenkitchen.com/2007/01/grapefruit-yogurt-cake/",
+        "https://smittenkitchen.com/2015/02/spaghetti-pangrattato-with-fried-eggs/",
+        "https://smittenkitchen.com/2007/05/my-bacon-is-always-crisp/",
+        "https://smittenkitchen.com/2007/01/really-simple-homemade-pizza/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "loveandlemons.com",
+      "rank": 11,
+      "urls": [
+        "https://www.loveandlemons.com/egg-citing-recipes/",
+        "https://www.loveandlemons.com/springy-spring-roll-recipe-links/",
+        "https://www.loveandlemons.com/peach-salsa-recipe-with-mint/",
+        "https://www.loveandlemons.com/loveandlemons-recipe-browser/",
+        "https://www.loveandlemons.com/veggie-thanksgiving-recipe-guide/",
+        "https://www.loveandlemons.com/christmas-morning-recipe-roundup/",
+        "https://www.loveandlemons.com/veggie-valentines-recipes/",
+        "https://www.loveandlemons.com/cinco-de-mayo-recipes/",
+        "https://www.loveandlemons.com/frozen-yogurt-recipe/",
+        "https://www.loveandlemons.com/red-pepper-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "giangiskitchen.com",
+      "rank": 12,
+      "urls": [
+        "https://www.giangiskitchen.com/10-top-fall-soup-recipes/",
+        "https://www.giangiskitchen.com/top-10-quick-easy-salads-recipes/",
+        "https://www.giangiskitchen.com/top-10-fish-recipes/",
+        "https://www.giangiskitchen.com/top-10-quick-easy-pasta-recipes/",
+        "https://www.giangiskitchen.com/15-minutes-dinner-recipes/",
+        "https://www.giangiskitchen.com/10-easy-pork-recipes/",
+        "https://www.giangiskitchen.com/15-chicken-recipes/",
+        "https://www.giangiskitchen.com/pork-roundup-recipes/",
+        "https://www.giangiskitchen.com/winter-recipes/",
+        "https://www.giangiskitchen.com/100-easy-pantry-friendly-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "cookieandkate.com",
+      "rank": 13,
+      "urls": [
+        "https://cookieandkate.com/veggie-stir-fry-recipe/",
+        "https://cookieandkate.com/pumpkin-spice-blend-recipe/",
+        "https://cookieandkate.com/gluten-free-apple-tart-recipe/",
+        "https://cookieandkate.com/fresh-spring-rolls-recipe/",
+        "https://cookieandkate.com/healthy-pumpkin-bread-recipe/",
+        "https://cookieandkate.com/vegetarian-sushi-bowl-recipe/",
+        "https://cookieandkate.com/lemon-posset-recipe/",
+        "https://cookieandkate.com/15-healthy-pumpkin-recipes/",
+        "https://cookieandkate.com/29-vegan-dinner-recipes/",
+        "https://cookieandkate.com/29-epic-salad-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "twopeasandtheirpod.com",
+      "rank": 14,
+      "urls": [
+        "https://www.twopeasandtheirpod.com/top-10-recipes-of-2010/",
+        "https://www.twopeasandtheirpod.com/our-favorite-recipes-of-2010/",
+        "https://www.twopeasandtheirpod.com/new-years-eve-recipes/",
+        "https://www.twopeasandtheirpod.com/fall-recipes/",
+        "https://www.twopeasandtheirpod.com/valentines-day-recipes/",
+        "https://www.twopeasandtheirpod.com/favorite-recipes-of-2009/",
+        "https://www.twopeasandtheirpod.com/mixed-berry-cobbler-recipe/",
+        "https://www.twopeasandtheirpod.com/coconut-lime-cake-recipe/",
+        "https://www.twopeasandtheirpod.com/cinco-de-mayo-recipes/",
+        "https://www.twopeasandtheirpod.com/easter-and-spring-dessert-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "seasonalcravings.com",
+      "rank": 15,
+      "urls": [
+        "https://www.seasonalcravings.com/30-easy-whole30-recipes-to-get-you-started-on-your-january-reset/",
+        "https://www.seasonalcravings.com/leftover-turkey-recipes-that-are-even-better/",
+        "https://www.seasonalcravings.com/delicious-christmas-candy-recipes/",
+        "https://www.seasonalcravings.com/holiday-main-course-recipes/",
+        "https://www.seasonalcravings.com/20-keto-meal-prep-recipes-for-busy-weeks/",
+        "https://www.seasonalcravings.com/casserole-recipes-2/",
+        "https://www.seasonalcravings.com/14-family-dinner-recipes/",
+        "https://www.seasonalcravings.com/15-pork-tenderloin-recipes/",
+        "https://www.seasonalcravings.com/28-copycat-starbucks-drink-recipes/",
+        "https://www.seasonalcravings.com/no-bake-dessert-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "budgetbytes.com",
+      "rank": 16,
+      "urls": [
+        "https://www.budgetbytes.com/make-ahead-breakfast-recipes/",
+        "https://www.budgetbytes.com/egg-free-recipes/",
+        "https://www.budgetbytes.com/pantry-recipes/",
+        "https://www.budgetbytes.com/flexible-recipes-that-feed-vegetarians-and-meat-eaters/",
+        "https://www.budgetbytes.com/15-single-recipe-meal-prep-ideas/",
+        "https://www.budgetbytes.com/45-budget-friendly-low-carb-recipes/",
+        "https://www.budgetbytes.com/15-friendsgiving-recipe-ideas/",
+        "https://www.budgetbytes.com/25-recipe-ideas-summer-bbqs-potlucks/",
+        "https://www.budgetbytes.com/easy-chickpea-recipes/",
+        "https://www.budgetbytes.com/top-10-recipes-for-college-students/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "minimalistbaker.com",
+      "rank": 17,
+      "urls": [
+        "https://minimalistbaker.com/vegan-thanksgiving-recipe-roundup/",
+        "https://minimalistbaker.com/20-minute-pumpkin-butter/",
+        "https://minimalistbaker.com/christmas-recipe-roundup/",
+        "https://minimalistbaker.com/best-bourbon-old-fashioned-recipe-video/",
+        "https://minimalistbaker.com/20-minute-tofu-stir-fry/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "howsweeteats.com",
+      "rank": 18,
+      "urls": [
+        "https://www.howsweeteats.com/2009/09/how-sweet-it-is-whats-in-a-name/",
+        "https://www.howsweeteats.com/2009/09/in-the-know/",
+        "https://www.howsweeteats.com/2009/09/it-had-to-be-you/",
+        "https://www.howsweeteats.com/2009/09/big-girls-dont-cry/",
+        "https://www.howsweeteats.com/2009/09/trader-joes-how-i-love-thee/",
+        "https://www.howsweeteats.com/2009/09/simple-savory-sweet/",
+        "https://www.howsweeteats.com/2009/09/this-makes-me-panic/",
+        "https://www.howsweeteats.com/2009/09/random-thoughts-from-25-35-year-olds/",
+        "https://www.howsweeteats.com/2009/09/camera-concerns/",
+        "https://www.howsweeteats.com/2009/09/fulfilled/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "sallysbakingaddiction.com",
+      "rank": 19,
+      "urls": [
+        "https://sallysbakingaddiction.com/8-ingredient-less-recipes/",
+        "https://sallysbakingaddiction.com/toffee-recipe/",
+        "https://sallysbakingaddiction.com/quiche-recipe/",
+        "https://sallysbakingaddiction.com/kid-friendly-baking-recipes/",
+        "https://sallysbakingaddiction.com/snowball-cookies-recipe/",
+        "https://sallysbakingaddiction.com/6-inch-cake-recipes/",
+        "https://sallysbakingaddiction.com/gingerbread-cake-recipe/",
+        "https://sallysbakingaddiction.com/lemon-bars-recipe/",
+        "https://sallysbakingaddiction.com/peach-pie-recipe/",
+        "https://sallysbakingaddiction.com/cornbread-muffins-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "tastesbetterfromscratch.com",
+      "rank": 20,
+      "urls": [
+        "https://tastesbetterfromscratch.com/25-leftover-ham-recipes/",
+        "https://tastesbetterfromscratch.com/healthy-dinner-recipes/",
+        "https://tastesbetterfromscratch.com/hamburger-recipe/",
+        "https://tastesbetterfromscratch.com/chocolate-chocolate-chip-nothing-bundt-cake-copycat-recipe-and-tutorial/",
+        "https://tastesbetterfromscratch.com/pumpkin-dessert-recipes/",
+        "https://tastesbetterfromscratch.com/bread-recipe/",
+        "https://tastesbetterfromscratch.com/osso-buco-recipe-braised-veal-shanks/",
+        "https://tastesbetterfromscratch.com/25-leftover-turkey-recipes/",
+        "https://tastesbetterfromscratch.com/hot-honey-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "acouplecooks.com",
+      "rank": 21,
+      "urls": [
+        "https://www.acouplecooks.com/how-to-make-vegan-parmesan-cheese-recipe/",
+        "https://www.acouplecooks.com/best-smoked-paprika-recipes/",
+        "https://www.acouplecooks.com/peach-heirloom-tomato-and-burrata-salad-summer-recipe/",
+        "https://www.acouplecooks.com/vegan-pasta-recipes/",
+        "https://www.acouplecooks.com/pesto-quinoa-recipe/",
+        "https://www.acouplecooks.com/swiss-chard-recipes/",
+        "https://www.acouplecooks.com/almond-butter-toast-with-strawberries-recipe/",
+        "https://www.acouplecooks.com/cucumber-lemon-water-recipe/",
+        "https://www.acouplecooks.com/green-onion-recipes/",
+        "https://www.acouplecooks.com/easy-spaghetti-squash-recipe-with-pesto/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "cookingclassy.com",
+      "rank": 22,
+      "urls": [
+        "https://www.cookingclassy.com/zuppa-toscana-soup-olive-garden-copycat-recipe/",
+        "https://www.cookingclassy.com/neiman-marcus-chocolate-chip-cookie-recipe/",
+        "https://www.cookingclassy.com/caesar-salad-recipe-homemade-caesar-salad-dressing/",
+        "https://www.cookingclassy.com/cake-batter-milkshakes-3-ingredient-recipe/",
+        "https://www.cookingclassy.com/brownie-recipe/",
+        "https://www.cookingclassy.com/green-smoothie-recipe/",
+        "https://www.cookingclassy.com/stuffing-recipe/",
+        "https://www.cookingclassy.com/biscuits-recipe/",
+        "https://www.cookingclassy.com/baked-mac-and-cheese-recipe/",
+        "https://www.cookingclassy.com/olive-garden-breadsticks-copycat-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "thestayathomechef.com",
+      "rank": 23,
+      "urls": [
+        "https://thestayathomechef.com/all-recipes/",
+        "https://thestayathomechef.com/lobster-bisque-recipe/",
+        "https://thestayathomechef.com/tips-for-successful-thanksgiving-recipes/",
+        "https://thestayathomechef.com/homemade-lemonade-recipe/",
+        "https://thestayathomechef.com/grilled-chicken-recipe/",
+        "https://thestayathomechef.com/egg-yolk-recipes/",
+        "https://thestayathomechef.com/german-schnitzel-recipe/",
+        "https://thestayathomechef.com/pie-crust-recipe/",
+        "https://thestayathomechef.com/pancake-recipe/",
+        "https://thestayathomechef.com/sugar-cookie-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "101cookbooks.com",
+      "rank": 24,
+      "urls": [
+        "https://www.101cookbooks.com/archives/spicy-polentacheese-crackers-recipe.html",
+        "https://www.101cookbooks.com/archives/baked-eggs-recipe.html",
+        "https://www.101cookbooks.com/archives/letter-setting-up-your-first-kitchen-recipe.html",
+        "https://www.101cookbooks.com/archives/a-beautiful-bulgar-and-spinach-pilaf-recipe.html",
+        "https://www.101cookbooks.com/archives/iphone-recipes-recipe.html",
+        "https://www.101cookbooks.com/archives/my-favorite-grilled-kabob-recipe.html",
+        "https://www.101cookbooks.com/archives/plum-and-peach-crisp-recipe.html",
+        "https://www.101cookbooks.com/archives/challah-bread-recipe.html",
+        "https://www.101cookbooks.com/archives/potato-crouton-recipe.html",
+        "https://www.101cookbooks.com/archives/vegetarian-lentil-burgers-recipe.html"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "bakingbites.com",
+      "rank": 25,
+      "urls": [
+        "https://bakingbites.com/2004/11/what-is-divinity/",
+        "https://bakingbites.com/2004/12/sour-cream-tea-bread/",
+        "https://bakingbites.com/2004/12/triple-chocolate-layer-cake/",
+        "https://bakingbites.com/2004/12/croatian-chocolate/",
+        "https://bakingbites.com/2004/12/new-adventures/",
+        "https://bakingbites.com/2004/12/festive-cookies/",
+        "https://bakingbites.com/2004/12/cinnamon-babka/",
+        "https://bakingbites.com/2005/01/low-fat-lemon-squares-with-walnut-crust/",
+        "https://bakingbites.com/2005/01/low-fat-orange-oatmeal-crisps/",
+        "https://bakingbites.com/2005/01/clotildes-broccoli-cornmeal-upside-down-cake/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "browneyedbaker.com",
+      "rank": 26,
+      "urls": [
+        "https://www.browneyedbaker.com/10-best-soup-stew-chili-recipes/",
+        "https://www.browneyedbaker.com/top-10-list-chocolate-and-peanut-butter-recipes/",
+        "https://www.browneyedbaker.com/thanksgiving-recipes-2017/",
+        "https://www.browneyedbaker.com/chicken-parmesan-recipe/",
+        "https://www.browneyedbaker.com/white-chicken-chili-recipe/",
+        "https://www.browneyedbaker.com/beef-stroganoff-recipe/",
+        "https://www.browneyedbaker.com/classic-apple-pie-recipe/",
+        "https://www.browneyedbaker.com/rice-pudding-recipe/",
+        "https://www.browneyedbaker.com/favorite-best-chili-recipe/",
+        "https://www.browneyedbaker.com/blueberry-crumb-bars-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "sprinklebakes.com",
+      "rank": 27,
+      "urls": [
+        "https://www.sprinklebakes.com/2019/12/candy-apple-snowmen.html",
+        "https://www.sprinklebakes.com/2019/12/chocolate-hazelnut-cheesecake.html",
+        "https://www.sprinklebakes.com/2019/07/hot-dog-snack-cakes.html",
+        "https://www.sprinklebakes.com/2019/06/zucchini-olive-oil-muffins-with.html",
+        "https://www.sprinklebakes.com/2019/05/easy-patriotic-petit-fours.html",
+        "https://www.sprinklebakes.com/2019/05/breakfast-pizza-with-biscuit-crust.html",
+        "https://www.sprinklebakes.com/2019/04/carrot-cake-swirl-cheesecake.html",
+        "https://www.sprinklebakes.com/2019/04/limoncello-almond-cake-roll.html",
+        "https://www.sprinklebakes.com/2019/03/ruby-chocolate-cheesecake.html",
+        "https://www.sprinklebakes.com/2019/02/classic-mont-blanc-dessert.html"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "saltysidedish.com",
+      "rank": 28,
+      "urls": [
+        "https://www.saltysidedish.com/latest-recipes/",
+        "https://www.saltysidedish.com/tiktok-dr-pepper-recipe/",
+        "https://www.saltysidedish.com/spinach-mashed-potatoes-recipe/",
+        "https://www.saltysidedish.com/mini-smashed-potatoes-recipe-with-crispy-skins/",
+        "https://www.saltysidedish.com/ninja-foodi-whole-cauliflower-recipe/",
+        "https://www.saltysidedish.com/funnel-cake-recipe/",
+        "https://www.saltysidedish.com/balsamic-vinegar-reduction-recipe/",
+        "https://www.saltysidedish.com/caprese-croissant-recipe-with-melty-cheese-and-tomatoes/",
+        "https://www.saltysidedish.com/classic-macaroni-salad-recipe/",
+        "https://www.saltysidedish.com/easy-peanut-butter-fudge-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "mybakingaddiction.com",
+      "rank": 29,
+      "urls": [
+        "https://www.mybakingaddiction.com/blog-aid-recipes-for-haiti/",
+        "https://www.mybakingaddiction.com/4th-of-july-recipes/",
+        "https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/",
+        "https://www.mybakingaddiction.com/halloween-recipe-roundup/",
+        "https://www.mybakingaddiction.com/breakstones-recipe-contest-menu/",
+        "https://www.mybakingaddiction.com/barbecue-chicken-pizza-recipe/",
+        "https://www.mybakingaddiction.com/spicy-chicken-and-pepper-jack-pizza-recipe/",
+        "https://www.mybakingaddiction.com/hot-cocoa-recipe/",
+        "https://www.mybakingaddiction.com/fruit-and-cheese-kabobs-recipe/",
+        "https://www.mybakingaddiction.com/lime-coconut-sour-cream-bundt-cake-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "pinchofyum.com",
+      "rank": 30,
+      "urls": [
+        "https://pinchofyum.com/clean-eating-recipes-happy-spring",
+        "https://pinchofyum.com/15-recipes-summer-vacation",
+        "https://pinchofyum.com/favorite-mexican-crockpot-recipes",
+        "https://pinchofyum.com/favorite-lentil-recipes",
+        "https://pinchofyum.com/the-failed-recipes-2013",
+        "https://pinchofyum.com/save-date-free-one-day-recipe-video-bootcamp",
+        "https://pinchofyum.com/pantry-recipes",
+        "https://pinchofyum.com/14-must-bake-holiday-cookie-recipes",
+        "https://pinchofyum.com/10-easy-recipes-you-can-make-in-a-dutch-oven",
+        "https://pinchofyum.com/12-fresh-recipes-for-your-summer-vacation"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "loveandoliveoil.com",
+      "rank": 31,
+      "urls": [
+        "https://www.loveandoliveoil.com/2018/07/mini-blueberry-mousse-cakes-with-mirror-glaze.html",
+        "https://www.loveandoliveoil.com/2019/05/strawberry-cake-roll.html",
+        "https://www.loveandoliveoil.com/2016/03/greek-yogurt-meyer-lemon-bundt-cake.html",
+        "https://www.loveandoliveoil.com/2023/03/pistachio-meyer-lemon-mousse-cakes.html",
+        "https://www.loveandoliveoil.com/2023/01/creamy-garlic-chicken-pasta.html",
+        "https://www.loveandoliveoil.com/2022/12/persimmon-pie.html",
+        "https://www.loveandoliveoil.com/2022/12/glazed-matcha-sugar-cookies.html",
+        "https://www.loveandoliveoil.com/2022/12/gingerbread-amaretti-cookies.html",
+        "https://www.loveandoliveoil.com/2022/11/caramel-apple-entremet-tart.html",
+        "https://www.loveandoliveoil.com/2022/11/ultimate-foodie-holiday-gift-guide.html"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "downshiftology.com",
+      "rank": 32,
+      "urls": [
+        "https://downshiftology.com/smoothie-bowl-recipes-to-make/",
+        "https://downshiftology.com/2016-reader-survey-results/",
+        "https://downshiftology.com/11-tasty-cassava-flour-recipes/",
+        "https://downshiftology.com/2018-holiday-gift-guide/",
+        "https://downshiftology.com/easy-healthy-spiralizer-recipes/",
+        "https://downshiftology.com/what-i-eat-in-a-day-whole30-recipes/",
+        "https://downshiftology.com/meal-prep-recipes-fall/",
+        "https://downshiftology.com/meal-prep-winter-recipes/",
+        "https://downshiftology.com/meal-prep-summer-light-fresh-meal-prep-recipes/",
+        "https://downshiftology.com/hard-boiled-eggs-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "yeprecipes.com",
+      "rank": 33,
+      "urls": [
+        "https://www.yeprecipes.com/cat-recipe-roundups-81.htm",
+        "https://www.yeprecipes.com/img---delicious-recipes-using-chicken-thighs-2173.htm",
+        "https://www.yeprecipes.com/img---summer-pasta-salad-recipes-2174.htm",
+        "https://www.yeprecipes.com/img---different-chili-recipes-2175.htm",
+        "https://www.yeprecipes.com/img---spicy-dinner-recipes-2177.htm",
+        "https://www.yeprecipes.com/img---healthy-breakfast-recipes-2178.htm",
+        "https://www.yeprecipes.com/img---unique-deviled-egg-recipes-2179.htm",
+        "https://www.yeprecipes.com/img---best-slow-cooker-pot-roast-recipes-2180.htm",
+        "https://www.yeprecipes.com/img-better-than-takeout------chinese-recipes-to-make-at-home-2182.htm",
+        "https://www.yeprecipes.com/img----authentic-german-recipes-2183.htm"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "sugarfreelondoner.com",
+      "rank": 34,
+      "urls": [
+        "https://sugarfreelondoner.com/keto-broccoli-cheese-muffins-recipe/",
+        "https://sugarfreelondoner.com/50-keto-dairy-free-recipes/",
+        "https://sugarfreelondoner.com/sugar-free-cookie-recipes/",
+        "https://sugarfreelondoner.com/low-carb-peanut-butter-cookies-recipe-flourless/",
+        "https://sugarfreelondoner.com/cauliflower-tabbouleh-recipe/",
+        "https://sugarfreelondoner.com/low-carb-chocolate-mousse-recipe-sugar-free/",
+        "https://sugarfreelondoner.com/cheesecake-keto-fat-bomb-recipe/",
+        "https://sugarfreelondoner.com/keto-egg-loaf-recipe/",
+        "https://sugarfreelondoner.com/low-carb-keto-taco-seasoning-recipe/",
+        "https://sugarfreelondoner.com/keto-christmas-cookies-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "davidlebovitz.com",
+      "rank": 35,
+      "urls": [
+        "https://www.davidlebovitz.com/category/recipes/",
+        "https://www.davidlebovitz.com/category/recipes/breads/",
+        "https://www.davidlebovitz.com/category/recipes/cakes-recipes/",
+        "https://www.davidlebovitz.com/category/recipes/candies/",
+        "https://www.davidlebovitz.com/category/recipes/beverages-recipes/",
+        "https://www.davidlebovitz.com/category/recipes/cookies-bars-brownies/",
+        "https://www.davidlebovitz.com/category/recipes/custards/",
+        "https://www.davidlebovitz.com/category/recipes/drinks/",
+        "https://www.davidlebovitz.com/category/recipes/extras/",
+        "https://www.davidlebovitz.com/category/recipes/frenchcookingcuisine/"
+      ],
+      "source": "homepage"
+    },
+    {
+      "domain": "mypureplants.com",
+      "rank": 36,
+      "urls": [
+        "https://mypureplants.com/sweet-vegan-breakfast-recipes/",
+        "https://mypureplants.com/savory-vegan-breakfast-recipes/",
+        "https://mypureplants.com/casarecce-pasta-recipe/",
+        "https://mypureplants.com/rice-paper-wrappers-rolls-recipes/",
+        "https://mypureplants.com/vegan-thanksgiving-recipes/",
+        "https://mypureplants.com/cashew-milk-recipe/",
+        "https://mypureplants.com/vegan-baileys-almond-milk-recipe/",
+        "https://mypureplants.com/oyster-mushroom-recipes/",
+        "https://mypureplants.com/coconut-cream-recipes/",
+        "https://mypureplants.com/vegan-pizza-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "slenderkitchen.com",
+      "rank": 37,
+      "urls": [
+        "https://www.slenderkitchen.com/recipe/tofu-fajitas",
+        "https://www.slenderkitchen.com/recipe/salmon-burgers",
+        "https://www.slenderkitchen.com/recipe/the-best-coleslaw-with-greek-yogurt",
+        "https://www.slenderkitchen.com/recipe/slow-cooker-turkey-meatballs",
+        "https://www.slenderkitchen.com/recipe/easy-cinnamon-rolls-with-two-ingredient-dough",
+        "https://www.slenderkitchen.com/article/best-stir-fry-recipes",
+        "https://www.slenderkitchen.com/recipe/basil-chicken-stir-fry-with-broccoli",
+        "https://www.slenderkitchen.com/recipe/blackened-fish-tacos",
+        "https://www.slenderkitchen.com/recipe/baked-oatmeal-muffins",
+        "https://www.slenderkitchen.com/recipe/pesto-ground-turkey-with-zucchini"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "alexandracooks.com",
+      "rank": 38,
+      "urls": [
+        "https://alexandracooks.com/2007/08/19/peach-and-beet-salad/",
+        "https://alexandracooks.com/2016/06/29/chickpeas-basil-pine-nuts/",
+        "https://alexandracooks.com/2007/07/22/best-granola-ever/",
+        "https://alexandracooks.com/2006/12/31/vasilopita/",
+        "https://alexandracooks.com/2006/11/20/quince-paste/",
+        "https://alexandracooks.com/2019/06/26/strawberries-cream-sugar-heaven/",
+        "https://alexandracooks.com/2019/06/21/fish-en-papillote/",
+        "https://alexandracooks.com/2019/01/25/what-to-do-with-leftover-roast-chicken-make-a-salad/",
+        "https://alexandracooks.com/2016/03/23/chickpeas-with-cilantro-lime-dressing/",
+        "https://alexandracooks.com/2012/03/23/spanakopita-strudels/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "ohmyveggies.com",
+      "rank": 39,
+      "urls": [
+        "https://ohmyveggies.com/16-refreshing-margarita-recipes/",
+        "https://ohmyveggies.com/of-the-best-easy-vegetarian-recipes/",
+        "https://ohmyveggies.com/barbecue-sauce-recipes-to-up-your-grilling-game/",
+        "https://ohmyveggies.com/zucchini-bread-recipes-everyone-will-love/",
+        "https://ohmyveggies.com/mind-blowing-grilled-cheese-sandwich-recipes/",
+        "https://ohmyveggies.com/millet-recipes/",
+        "https://ohmyveggies.com/fluffy-pancake-recipes-everyone-will-love/",
+        "https://ohmyveggies.com/oatmeal-recipes/",
+        "https://ohmyveggies.com/best-vegetarian-chili-recipes/",
+        "https://ohmyveggies.com/creative-and-delicious-banana-bread-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "altonbrown.com",
+      "rank": 40,
+      "urls": [
+        "https://altonbrown.com/everydaycook-recipe-corrections-clarifications/",
+        "https://altonbrown.com/6-alton-brown-apple-recipes-for-autumn/",
+        "https://altonbrown.com/how-to-read-a-recipe/",
+        "https://altonbrown.com/alton-brown-pumpkin-recipes/",
+        "https://altonbrown.com/recipes/beef-carpaccio/",
+        "https://altonbrown.com/recipes/sauerbraten/",
+        "https://altonbrown.com/recipes/sinigang-filipino-sour-soup/",
+        "https://altonbrown.com/recipes/lumpia-shanghai-filipino-springrolls/",
+        "https://altonbrown.com/recipes/tocino-and-sinangag-filipino-bacon-and-garlic-fried-rice-with-fried-eggs/",
+        "https://altonbrown.com/recipes/serious-vanilla-ice-cream-reloaded/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "ohsheglows.com",
+      "rank": 41,
+      "urls": [
+        "https://ohsheglows.com/ask-angela-osg-recipes-with-5-to-7-ingredients-my-favourite-popsicle-molds-freezer-friendly-summer-recipes-and-more/",
+        "https://ohsheglows.com/vegan-recipes-and-snack-ideas-for-camp-and-travel/",
+        "https://ohsheglows.com/vegan-mothers-day-brunch-recipes/",
+        "https://ohsheglows.com/my-make-ahead-vegan-holiday-recipes-plus-handy-tips-and-tricks/",
+        "https://ohsheglows.com/oh-she-glows-15-best-vegan-cookie-recipes/",
+        "https://ohsheglows.com/my-bonus-recipe-bundle-is-here/",
+        "https://ohsheglows.com/friday-faqs-recipes-using-cacao-powder-storing-tofu-subs-for-my-jumbo-chocolate-chunk-cookies-and-more/",
+        "https://ohsheglows.com/friday-faqs-edible-teacher-gifts-festive-canada-day-recipes-large-flake-coconut-whereabouts-and-more/",
+        "https://ohsheglows.com/friday-faqs-high-protein-recipes-sunflower-seed-butter-troubleshooting-freezing-aquafaba-and-more/",
+        "https://ohsheglows.com/friday-faqs-the-recipesfoods-i-packed-for-the-hospital-veggie-heavy-summer-recipes-canned-coconut-cream-and-more/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "spoonforkbacon.com",
+      "rank": 42,
+      "urls": [
+        "https://www.spoonforkbacon.com/dairy-free-creamy-butternut-squash-pasta-recipe/",
+        "https://www.spoonforkbacon.com/quiche-recipe/",
+        "https://www.spoonforkbacon.com/sesame-chicken-recipe/",
+        "https://www.spoonforkbacon.com/the-best-shrimp-recipes/",
+        "https://www.spoonforkbacon.com/carne-asada-recipe/",
+        "https://www.spoonforkbacon.com/creamed-corn-recipe/",
+        "https://www.spoonforkbacon.com/cauliflower-recipes/",
+        "https://www.spoonforkbacon.com/best-soup-recipes/",
+        "https://www.spoonforkbacon.com/buffalo-chicken-dip-recipe/",
+        "https://www.spoonforkbacon.com/favorite-summer-bbq-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "sweetandsavorymeals.com",
+      "rank": 43,
+      "urls": [
+        "https://sweetandsavorymeals.com/creamed-corn-recipe/",
+        "https://sweetandsavorymeals.com/easter-paska-bread-recipe/",
+        "https://sweetandsavorymeals.com/chicken-stew-recipe/",
+        "https://sweetandsavorymeals.com/beet-salad-recipe/",
+        "https://sweetandsavorymeals.com/french-crepes-recipe/",
+        "https://sweetandsavorymeals.com/shrimp-ceviche-recipe/",
+        "https://sweetandsavorymeals.com/classic-potato-salad-recipe/",
+        "https://sweetandsavorymeals.com/chicken-divan-recipe/",
+        "https://sweetandsavorymeals.com/ranch-dressing-recipe/",
+        "https://sweetandsavorymeals.com/homemade-salsa-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "thepetitecook.com",
+      "rank": 44,
+      "urls": [
+        "https://www.thepetitecook.com/top-10-favorite-recipes-of-2015/",
+        "https://www.thepetitecook.com/top-10-recipes-2016/",
+        "https://www.thepetitecook.com/10-authentic-sicilian-recipes/",
+        "https://www.thepetitecook.com/20-minute-italian-cookbook/",
+        "https://www.thepetitecook.com/deviled-quail-eggs-appetizer-a-traditional-easter-recipe-with-a-twist/",
+        "https://www.thepetitecook.com/easy-chickpea-recipes/",
+        "https://www.thepetitecook.com/30-easy-vegetarian-eggplant-recipes/",
+        "https://www.thepetitecook.com/easy-christmas-cookie-recipes/",
+        "https://www.thepetitecook.com/masterchef-luca-manfe-recipe-for-the-best-meatballs-in-the-world/",
+        "https://www.thepetitecook.com/20-vegan-pasta-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "myquietkitchen.com",
+      "rank": 45,
+      "urls": [
+        "https://myquietkitchen.com/rotkohl-recipe/",
+        "https://myquietkitchen.com/vegan-ice-cream-recipes/",
+        "https://myquietkitchen.com/oat-milk-recipe/",
+        "https://myquietkitchen.com/pan-fried-tofu-recipe-with-creamy-corn/",
+        "https://myquietkitchen.com/soy-curls-recipes/",
+        "https://myquietkitchen.com/25-creative-vegan-recipes-featuring-fresh-herbs/",
+        "https://myquietkitchen.com/poultry-seasoning-recipe/",
+        "https://myquietkitchen.com/silken-tofu-recipes/",
+        "https://myquietkitchen.com/healthy-comfort-food-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "slowlivingkitchen.com",
+      "rank": 46,
+      "urls": [
+        "https://slowlivingkitchen.com/rhubarb-shrub-recipe/",
+        "https://slowlivingkitchen.com/trending-recipe-searches-on-google/",
+        "https://slowlivingkitchen.com/blackberry-rhubarb-crisp-recipe/",
+        "https://slowlivingkitchen.com/sourdough-crackers-recipe/",
+        "https://slowlivingkitchen.com/beyond-the-recipe-crock-pot-cooking-techniques/",
+        "https://slowlivingkitchen.com/7-cookbooks-that-are-fit-for-foodies-not-just-for-recipes/",
+        "https://slowlivingkitchen.com/20-ways-to-save-on-groceries-according-to-an-expert/",
+        "https://slowlivingkitchen.com/quick-pancake-recipe/",
+        "https://slowlivingkitchen.com/semolina-pasta-recipe/",
+        "https://slowlivingkitchen.com/lavender-simple-syrup-recipe/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "dinnerthendessert.com",
+      "rank": 47,
+      "urls": [
+        "https://dinnerthendessert.com/top-10-most-popular-recipes-of-2015/",
+        "https://dinnerthendessert.com/10-passover-recipes/",
+        "https://dinnerthendessert.com/panda-express-recipes/",
+        "https://dinnerthendessert.com/easy-calzone-recipe/",
+        "https://dinnerthendessert.com/bacon-fruit-brunch-kabobs-the-easiest-no-recipe-tricks/",
+        "https://dinnerthendessert.com/blt-dip-grilled-cheese-gameday-leftovers-recipe/",
+        "https://dinnerthendessert.com/quinoa-recipe/",
+        "https://dinnerthendessert.com/potato-skins-recipe/",
+        "https://dinnerthendessert.com/easy-summer-dessert-recipes/",
+        "https://dinnerthendessert.com/easy-oreo-dessert-recipes/"
+      ],
+      "source": "sitemap"
+    },
+    {
+      "domain": "chefspencil.com",
+      "rank": 48,
+      "urls": [
+        "https://www.chefspencil.com/best-roasted-lamb-recipes/",
+        "https://www.chefspencil.com/colorful-radicchio-recipes/",
+        "https://www.chefspencil.com/dijon-mustard-substitute-suggestions-recipes/",
+        "https://www.chefspencil.com/crunchy-goodness-try-these-hazelnut-substitutes-in-your-recipes/",
+        "https://www.chefspencil.com/best-halibut-recipes/",
+        "https://www.chefspencil.com/mediterranean-salad-recipes-perfect-for-summer/",
+        "https://www.chefspencil.com/mexican-style-salted-cod-recipe/",
+        "https://www.chefspencil.com/traditional-irish-breakfast-recipe-ideas/",
+        "https://www.chefspencil.com/20-best-indonesian-street-foods/",
+        "https://www.chefspencil.com/20-most-popular-foods-in-bali/"
+      ],
+      "source": "sitemap"
+    }
+  ]
+}

@@ -642,7 +642,7 @@ mod tests {
 
         assert_eq!(
             slugify_url("https://thekitchn.com/recipe/soup"),
-            "thekitchn-com_recipe_soup"
+            "thekitchn-com_recipe-soup"
         );
 
         assert_eq!(slugify_url("https://example.com/"), "example-com");

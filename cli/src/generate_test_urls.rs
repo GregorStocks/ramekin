@@ -667,6 +667,18 @@ async fn try_homepage(
 fn is_recipe_url(url: &str) -> bool {
     let lower = url.to_lowercase();
 
+    // SeriousEats-specific: reject collection pages (plural "recipes" pattern)
+    // Individual recipes use singular "-recipe-" followed by ID
+    // Collections use plural "-recipes-" followed by ID
+    if lower.contains("seriouseats.com") {
+        // Reject if it has the collection pattern (plural "-recipes-")
+        if lower.contains("-recipes-") {
+            return false;
+        }
+        // For seriouseats, require the singular "-recipe-" pattern
+        return lower.contains("-recipe-");
+    }
+
     // Common recipe URL patterns
     lower.contains("/recipe/")
         || lower.contains("/recipes/")
@@ -738,6 +750,34 @@ mod tests {
         assert!(!is_recipe_url("https://example.com/about"));
         assert!(!is_recipe_url("https://example.com/category/desserts"));
         assert!(!is_recipe_url("https://example.com/tag/chocolate"));
+    }
+
+    #[test]
+    fn test_seriouseats_recipe_url_filtering() {
+        // Individual recipes should be accepted (singular "-recipe-" pattern)
+        assert!(is_recipe_url(
+            "https://www.seriouseats.com/hot-milk-cake-recipe-11878680"
+        ));
+        assert!(is_recipe_url(
+            "https://www.seriouseats.com/lentil-sausage-stew-recipe-11880797"
+        ));
+        assert!(is_recipe_url(
+            "https://www.seriouseats.com/binakol-na-manok-filipino-chicken-and-coconut-soup-recipe-11878784"
+        ));
+
+        // Collection pages should be rejected (plural "-recipes-" pattern)
+        assert!(!is_recipe_url(
+            "https://www.seriouseats.com/vegan-dinner-recipes-11878691"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.seriouseats.com/tahini-recipes-beyond-hummus-11878978"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.seriouseats.com/most-saved-shrimp-recipes-11879657"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.seriouseats.com/hearty-chickpea-recipes-11878318"
+        ));
     }
 
     #[test]
