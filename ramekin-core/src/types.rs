@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use uuid::Uuid;
 
 /// Recipe extracted from a page - fields are raw blobs, not parsed.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -40,4 +41,20 @@ pub struct ExtractRecipeOutput {
 pub struct SaveRecipeOutput {
     pub raw_recipe: RawRecipe,
     pub saved_at: String,
+}
+
+/// Output from the fetch_images step
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FetchImagesOutput {
+    /// Successfully downloaded photo IDs
+    pub photo_ids: Vec<Uuid>,
+    /// URLs that failed to download, with error messages
+    pub failed_urls: Vec<FailedImageFetch>,
+}
+
+/// A failed image fetch attempt
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FailedImageFetch {
+    pub url: String,
+    pub error: String,
 }
