@@ -4,6 +4,11 @@ extends: compose/base.yaml
 log_location: ./logs/test.log
 
 processes:
+  rust-tests:
+    command: cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml
+    availability:
+      restart: "no"
+
   fixture:
     command: python3 -m http.server ${FIXTURE_PORT}
     working_dir: ./tests/scrape_fixtures
@@ -41,4 +46,6 @@ processes:
       exit_on_end: true
     depends_on:
       cli-build:
+        condition: process_completed_successfully
+      rust-tests:
         condition: process_completed_successfully
