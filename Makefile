@@ -136,7 +136,8 @@ pipeline-test: ## Run pipeline for test URLs (uses HTML cache)
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
-		$(if $(FORCE_FETCH),--force-fetch,)
+		$(if $(FORCE_FETCH),--force-fetch,) \
+		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),)
 
 pipeline-cache-stats: ## Show HTML cache statistics
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-stats

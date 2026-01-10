@@ -9,10 +9,22 @@ mod screenshot;
 mod seed;
 
 use anyhow::Result;
-use clap::{Parser, Subcommand};
+use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
 use std::path::{Path, PathBuf};
+
+/// What to do when HTML fetch fails
+#[derive(Clone, Copy, Default, ValueEnum)]
+pub enum OnFetchFail {
+    /// Mark as failed and continue to next URL (default)
+    #[default]
+    Continue,
+    /// Skip the URL entirely (don't record as failure)
+    Skip,
+    /// Prompt user to manually save HTML from browser
+    Prompt,
+}
 
 #[derive(Parser)]
 #[command(name = "ramekin")]
@@ -188,6 +200,9 @@ enum Commands {
         /// Re-fetch all HTML even if cached
         #[arg(long)]
         force_fetch: bool,
+        /// What to do when fetch fails: continue (default), skip, or prompt
+        #[arg(long, value_enum, default_value = "continue")]
+        on_fetch_fail: OnFetchFail,
     },
     /// Show HTML cache statistics
     PipelineCacheStats {
@@ -289,6 +304,7 @@ async fn main() -> Result<()> {
             site,
             delay_ms,
             force_fetch,
+            on_fetch_fail,
         } => {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
@@ -298,6 +314,7 @@ async fn main() -> Result<()> {
                 site_filter: site,
                 delay_ms,
                 force_fetch,
+                on_fetch_fail,
             };
             pipeline_orchestrator::run_pipeline_test(config).await?;
         }

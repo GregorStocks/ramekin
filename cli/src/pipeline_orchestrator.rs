@@ -1,10 +1,12 @@
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{run_all_steps, HtmlCache, PipelineStep, StepResult};
+use crate::OnFetchFail;
 use anyhow::{Context, Result};
 use chrono::Utc;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
+use std::io::{self, Write};
 use std::path::{Path, PathBuf};
 use std::time::{Duration, Instant};
 
@@ -20,6 +22,7 @@ pub struct OrchestratorConfig {
     pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub force_fetch: bool,
+    pub on_fetch_fail: OnFetchFail,
 }
 
 impl Default for OrchestratorConfig {
@@ -32,6 +35,7 @@ impl Default for OrchestratorConfig {
             site_filter: None,
             delay_ms: 1000,
             force_fetch: false,
+            on_fetch_fail: OnFetchFail::Continue,
         }
     }
 }
@@ -189,6 +193,17 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     }
     println!();
 
+    // In prompt mode, ensure staging directory exists and is empty
+    if matches!(config.on_fetch_fail, OnFetchFail::Prompt) {
+        HtmlCache::ensure_staging_dir()?;
+        HtmlCache::clear_staging()?;
+        println!(
+            "Interactive mode: save HTML files to {}",
+            HtmlCache::staging_dir().display()
+        );
+        println!();
+    }
+
     // Process each URL
     for (idx, (url, domain)) in urls_to_process.iter().enumerate() {
         let progress = format!("[{}/{}]", idx + 1, total_urls);
@@ -204,7 +219,35 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let step_results = run_all_steps(url, &cache, &run_dir, config.force_fetch).await;
+        let mut step_results = run_all_steps(url, &cache, &run_dir, config.force_fetch).await;
+
+        // Check if fetch failed
+        let fetch_failed = step_results
+            .first()
+            .map(|r| r.step == PipelineStep::FetchHtml && !r.success)
+            .unwrap_or(false);
+
+        if fetch_failed {
+            match config.on_fetch_fail {
+                OnFetchFail::Skip => {
+                    println!("  -> Skipped (fetch failed)");
+                    // Don't record this URL at all
+                    continue;
+                }
+                OnFetchFail::Prompt => {
+                    // Interactive mode: prompt user to save HTML
+                    if let Some(new_results) =
+                        prompt_for_manual_cache(url, &cache, &run_dir).await?
+                    {
+                        step_results = new_results;
+                    }
+                    // If user skipped, step_results still has the failed fetch
+                }
+                OnFetchFail::Continue => {
+                    // Default: just continue (already have failed result)
+                }
+            }
+        }
 
         // Determine final status
         let final_status = determine_final_status(&step_results);
@@ -413,6 +456,106 @@ fn truncate_url(url: &str, max_len: usize) -> String {
         url.to_string()
     } else {
         format!("{}...", &url[..max_len - 3])
+    }
+}
+
+// ============================================================================
+// Interactive cache prompting
+// ============================================================================
+
+/// Prompt user to manually save HTML for a URL, wait for file, and retry pipeline
+async fn prompt_for_manual_cache(
+    url: &str,
+    cache: &HtmlCache,
+    run_dir: &Path,
+) -> Result<Option<Vec<StepResult>>> {
+    let staging_dir = HtmlCache::staging_dir();
+
+    println!();
+    println!("  ┌─────────────────────────────────────────────────────────────┐");
+    println!("  │ Fetch failed - manual cache needed                          │");
+    println!("  └─────────────────────────────────────────────────────────────┘");
+    println!();
+    println!("  URL: {}", url);
+    println!();
+    println!("  To cache this page:");
+    println!("  1. Open the URL above in your browser");
+    println!("  2. Save the page (Cmd+S / Ctrl+S) to:");
+    println!("     {}", staging_dir.display());
+    println!();
+    print!("  Waiting for .html file... (or type 'skip' + Enter): ");
+    io::stdout().flush()?;
+
+    // Clear any existing files in staging
+    HtmlCache::clear_staging()?;
+
+    // Use a channel to communicate between stdin reader and file watcher
+    let (tx, mut rx) = tokio::sync::mpsc::channel::<String>(1);
+
+    // Spawn a blocking task to read stdin
+    let stdin_handle = tokio::task::spawn_blocking(move || {
+        let mut line = String::new();
+        if io::stdin().read_line(&mut line).is_ok() {
+            let _ = tx.blocking_send(line);
+        }
+    });
+
+    // Poll for file while waiting for stdin
+    let poll_interval = Duration::from_millis(200);
+
+    loop {
+        // Check for file
+        if let Some(staged_file) = HtmlCache::find_staged_html() {
+            // Wait a moment for write to complete
+            tokio::time::sleep(Duration::from_millis(300)).await;
+
+            // Abort the stdin task
+            stdin_handle.abort();
+
+            // Import the file
+            println!();
+            println!("  Found: {}", staged_file.display());
+            match cache.import_staged_file(&staged_file, url) {
+                Ok(()) => {
+                    println!("  Cached successfully, retrying pipeline...");
+                    println!();
+
+                    // Re-run all steps (should hit cache now)
+                    let new_results = run_all_steps(url, cache, run_dir, false).await;
+                    return Ok(Some(new_results));
+                }
+                Err(e) => {
+                    println!("  Failed to import: {}", e);
+                    println!("  Continuing with failed status...");
+                    println!();
+                    return Ok(None);
+                }
+            }
+        }
+
+        // Check if user typed something
+        match rx.try_recv() {
+            Ok(line) => {
+                if line.trim().eq_ignore_ascii_case("skip") || line.trim().is_empty() {
+                    println!();
+                    println!("  Skipped by user");
+                    println!();
+                    return Ok(None);
+                }
+            }
+            Err(tokio::sync::mpsc::error::TryRecvError::Empty) => {
+                // No input yet, continue waiting
+            }
+            Err(tokio::sync::mpsc::error::TryRecvError::Disconnected) => {
+                // Stdin closed, skip
+                println!();
+                println!("  Stdin closed, skipping...");
+                println!();
+                return Ok(None);
+            }
+        }
+
+        tokio::time::sleep(poll_interval).await;
     }
 }
 
