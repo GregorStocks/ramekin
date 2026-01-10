@@ -102,6 +102,19 @@ db-up: ## Start postgres container with dev and test databases
 	  docker exec ramekin-db createdb -U ramekin ramekin_test 2>/dev/null || true; \
 	  echo "Postgres ready on localhost:54321 (databases: ramekin, ramekin_test)"; \
 	fi
+	@# Create workspace-specific databases from dev.env and test.env if they exist
+	@if [ -f dev.env ]; then \
+	  DEV_DB=$$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||'); \
+	  if [ -n "$$DEV_DB" ]; then \
+	    docker exec ramekin-db createdb -U ramekin "$$DEV_DB" 2>/dev/null || true; \
+	  fi; \
+	fi
+	@if [ -f test.env ]; then \
+	  TEST_DB=$$(grep '^DATABASE_URL=' test.env | sed 's|.*/||'); \
+	  if [ -n "$$TEST_DB" ]; then \
+	    docker exec ramekin-db createdb -U ramekin "$$TEST_DB" 2>/dev/null || true; \
+	  fi; \
+	fi
 
 db-down: ## Stop postgres container
 	@docker stop ramekin-db >/dev/null 2>&1 || true
