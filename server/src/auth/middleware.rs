@@ -3,7 +3,7 @@ use crate::db::DbPool;
 use axum::{
     body::Body,
     extract::State,
-    http::{header, Request, StatusCode},
+    http::{header, Method, Request, StatusCode},
     middleware::Next,
     response::{IntoResponse, Response},
     Json,
@@ -19,6 +19,11 @@ pub async fn require_auth(
     request: Request<Body>,
     next: Next,
 ) -> Response {
+    // Allow CORS preflight requests through without auth
+    if request.method() == Method::OPTIONS {
+        return next.run(request).await;
+    }
+
     let auth_header = match request.headers().get(header::AUTHORIZATION) {
         Some(h) => h,
         None => {

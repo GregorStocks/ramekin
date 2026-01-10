@@ -10,9 +10,17 @@ processes:
     availability:
       restart: ${SERVER_RESTART:-on_failure}
 
+  certs:
+    command: ./scripts/setup-certs.sh
+    availability:
+      restart: "no"
+
   ui:
-    command: npm run dev
+    command: npm install && npm run dev
     working_dir: ./ramekin-ui
+    depends_on:
+      certs:
+        condition: process_completed_successfully
 
   seed:
     command: >-
@@ -26,7 +34,7 @@ processes:
       restart: "no"
 
   ready:
-    command: echo "UI ready at http://localhost:${UI_PORT}"
+    command: echo "UI ready at https://localhost:${UI_PORT}"
     depends_on:
       screenshot:
         condition: process_completed_successfully
@@ -34,7 +42,7 @@ processes:
       restart: "no"
 
   screenshot:
-    command: cargo run -q -- screenshot --ui-url http://localhost:${UI_PORT} --output-dir ../logs
+    command: cargo run -q -- screenshot --ui-url https://localhost:${UI_PORT} --output-dir ../logs
     working_dir: ./cli
     depends_on:
       seed:

@@ -18,6 +18,7 @@ use std::env;
 use std::net::{TcpStream, ToSocketAddrs};
 use std::sync::Arc;
 use std::time::Duration;
+use tower_http::cors::{Any, CorsLayer};
 use tower_http::trace::TraceLayer;
 use tracing::Span;
 use tracing_subscriber::layer::SubscriberExt;
@@ -141,7 +142,15 @@ async fn main() {
     // Public routes (no auth required)
     let public_router = api::public::router();
 
+    // CORS layer for bookmarklet requests (scrape endpoints need cross-origin access)
+    let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods(Any)
+        .allow_headers(Any);
+
     // Protected routes (auth required)
+    // Note: layer order is reversed (last added = first executed)
+    // So auth runs first, then CORS adds headers to response
     let protected_router = Router::new()
         .nest("/api/test", api::testing::router())
         .nest("/api/photos", api::photos::router())
@@ -150,7 +159,8 @@ async fn main() {
         .layer(middleware::from_fn_with_state(
             pool.clone(),
             auth::require_auth,
-        ));
+        ))
+        .layer(cors);
 
     let swagger_ui = SwaggerUi::new("/swagger-ui").url("/api-docs/openapi.json", api::openapi());
 

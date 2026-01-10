@@ -6,6 +6,7 @@ import {
   For,
   onCleanup,
 } from "solid-js";
+import bookmarkletSource from "../bookmarklet.js?raw";
 import { createStore } from "solid-js/store";
 import { useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
@@ -90,7 +91,21 @@ export default function CreateRecipePage() {
 
   const bookmarkletCode = createMemo(() => {
     const origin = window.location.origin;
-    return `javascript:(function(){var h=document.documentElement.outerHTML;var u=location.href;var p=window.open('${origin}/capture','ramekin','width=400,height=300');window.addEventListener('message',function f(e){if(e.source===p&&e.data==='ready'){p.postMessage({type:'html',html:h,url:u},'${origin}');window.removeEventListener('message',f);}});})();`;
+    // API server is on port 3000 (HTTP for now)
+    const apiOrigin = `http://${window.location.hostname}:3000`;
+    const userToken = token();
+    if (!userToken) return "";
+    const code = bookmarkletSource
+      .replace("__ORIGIN__", origin)
+      .replace("__TOKEN__", userToken)
+      .replace("__API__", encodeURIComponent(apiOrigin));
+    // Minify: remove newlines, collapse whitespace
+    const minified = code
+      .replace(/\n\s*/g, "")
+      .replace(/\s+/g, " ")
+      .replace(/\s*([{}();,:])\s*/g, "$1")
+      .trim();
+    return `javascript:${minified}`;
   });
 
   const startScrape = async () => {
