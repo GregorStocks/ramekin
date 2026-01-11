@@ -1792,6 +1792,7 @@ dependencies = [
  "ramekin_client",
  "rand",
  "rand_chacha",
+ "regex",
  "reqwest 0.13.1",
  "scraper",
  "serde",
