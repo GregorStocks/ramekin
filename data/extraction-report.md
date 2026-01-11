@@ -3,16 +3,16 @@
 ## Overall
 
 - Total URLs: 554
-- Completed: 501 (90.4%)
+- Completed: 500 (90.3%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 53 (9.6%)
+- Failed at extract: 54 (9.7%)
 
 ## Extraction Methods
 
 - JSON-LD: 473/554 (85.4%)
-- Microdata: 28/554 (5.1%)
+- Microdata: 27/554 (4.9%)
 - Both: 0/554 (0.0%)
-- Neither: 53/554 (9.6%)
+- Neither: 54/554 (9.7%)
 
 ## By Site
 
@@ -25,7 +25,7 @@
 | bakingbites.com | 0 | 12 | 0.0% |
 | browneyedbaker.com | 20 | 20 | 100.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
-| chefspencil.com | 4 | 4 | 100.0% |
+| chefspencil.com | 4 | 5 | 80.0% |
 | cookieandkate.com | 20 | 20 | 100.0% |
 | cookingclassy.com | 20 | 20 | 100.0% |
 | davidlebovitz.com | 7 | 7 | 100.0% |
@@ -49,7 +49,7 @@
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 20 | 20 | 100.0% |
 | slowlivingkitchen.com | 5 | 6 | 83.3% |
-| smittenkitchen.com | 15 | 17 | 88.2% |
+| smittenkitchen.com | 14 | 16 | 87.5% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 19 | 20 | 95.0% |
 | sugarfreelondoner.com | 20 | 20 | 100.0% |
@@ -63,7 +63,7 @@
 
 ## Failed URLs by Error
 
-### No recipe found (53 URLs)
+### No recipe found (54 URLs)
 
 - http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://alexandracooks.com/2018/12/21/15-savory-homemade-treats-to-gift-all-season/
@@ -88,6 +88,7 @@
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/
 - https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/
+- https://www.chefspencil.com/2018-thanksgiving-dinner-trends/
 - https://www.howsweeteats.com/2026/01/a-week-in-the-life-vol-1-7/
 - https://www.howsweeteats.com/2026/01/blood-orange-recipes/
 - https://www.howsweeteats.com/2026/01/currently-crushing-on-606/

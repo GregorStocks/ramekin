@@ -781,7 +781,7 @@ fn is_non_recipe_post(url: &str) -> bool {
     NON_RECIPE_PATTERNS.iter().any(|re| re.is_match(url))
 }
 
-/// Filter out very old posts that predate structured recipe data (JSON-LD/Microdata)
+/// Filter out old posts that predate reliable structured recipe data
 fn is_very_old_post(url: &str) -> bool {
     static DATE_PATTERN: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"/(\d{4})/\d{2}/").unwrap());
@@ -789,39 +789,21 @@ fn is_very_old_post(url: &str) -> bool {
     if let Some(caps) = DATE_PATTERN.captures(url) {
         if let Some(year_str) = caps.get(1) {
             if let Ok(year) = year_str.as_str().parse::<u32>() {
-                // Posts before 2012 often lack structured recipe data
-                // (JSON-LD became common around 2012-2013)
-                return year < 2012;
+                // Posts before 2016 often lack structured recipe data
+                return year < 2016;
             }
         }
     }
     false
 }
 
-/// Check if URL is a dated blog post from a recent year (2012+)
-/// For transitional years (2012-2014), requires stronger recipe signals
+/// Check if URL is a dated blog post from a recent year (2016+)
 fn is_recent_dated_post(url: &str) -> bool {
     // Pattern: /YYYY/MM/slug or /YYYY/MM/DD/slug (with optional day)
     static DATED_POST_PATTERN: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"/(\d{4})/\d{2}/(\d{2}/)?[a-z0-9-]{5,}").unwrap());
+        LazyLock::new(|| Regex::new(r"/201[6-9]|202\d/\d{2}/(\d{2}/)?[a-z0-9-]{5,}").unwrap());
 
-    if let Some(caps) = DATED_POST_PATTERN.captures(url) {
-        if let Some(year_str) = caps.get(1) {
-            if let Ok(year) = year_str.as_str().parse::<u32>() {
-                // 2015+ posts are generally safe - structured data was common
-                if year >= 2015 {
-                    return true;
-                }
-                // 2012-2014 posts need stronger recipe signals
-                if year >= 2012 {
-                    // Require "-recipe" suffix or "/recipe/" in path for transitional years
-                    let lower = url.to_lowercase();
-                    return lower.contains("-recipe") || lower.contains("/recipe/");
-                }
-            }
-        }
-    }
-    false
+    DATED_POST_PATTERN.is_match(url)
 }
 
 fn is_recipe_url(url: &str) -> bool {
@@ -880,7 +862,7 @@ fn is_recipe_url(url: &str) -> bool {
         return false;
     }
 
-    // Very old posts (before 2012) - often lack structured data
+    // Old posts (before 2016) - often lack structured data
     if is_very_old_post(&lower) {
         return false;
     }
@@ -1090,33 +1072,23 @@ mod tests {
 
     #[test]
     fn test_old_post_filtering() {
-        // Very old posts (pre-2012) should be rejected
+        // Posts before 2016 should be rejected
         assert!(!is_recipe_url(
             "https://bakingbites.com/2004/12/chocolate-cake/"
         ));
         assert!(!is_recipe_url(
             "https://howsweeteats.com/2009/09/random-post/"
         ));
-        assert!(!is_recipe_url("https://example.com/2005/01/old-recipe/"));
         assert!(!is_recipe_url("https://example.com/2010/01/old-recipe/"));
-        assert!(!is_recipe_url("https://example.com/2011/01/old-recipe/"));
-
-        // 2012-2014 posts without recipe signal should be rejected
         assert!(!is_recipe_url(
             "https://example.com/2012/01/chocolate-cake/"
         ));
-        assert!(!is_recipe_url("https://example.com/2014/05/random-post/"));
-
-        // 2012-2014 posts WITH recipe signal should be accepted
-        assert!(is_recipe_url(
-            "https://example.com/2012/01/chocolate-cake-recipe/"
-        ));
-        assert!(is_recipe_url(
-            "https://example.com/2014/05/best-brownie-recipe/"
+        assert!(!is_recipe_url(
+            "https://example.com/2015/01/chocolate-cake/"
         ));
 
-        // 2015+ posts should be accepted (structured data common by then)
-        assert!(is_recipe_url("https://example.com/2015/01/chocolate-cake/"));
+        // 2016+ posts should be accepted
+        assert!(is_recipe_url("https://example.com/2016/01/chocolate-cake/"));
         assert!(is_recipe_url("https://example.com/2023/01/chocolate-cake/"));
         assert!(is_recipe_url(
             "https://alexandracooks.com/2019/06/21/fish-en-papillote/"
