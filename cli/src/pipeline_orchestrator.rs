@@ -358,7 +358,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         rate_b.partial_cmp(&rate_a).unwrap()
     });
 
-    for site in sites.iter().take(10) {
+    for site in &sites {
         let rate = if site.total > 0 {
             site.completed as f64 / site.total as f64 * 100.0
         } else {
@@ -368,9 +368,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             "  {}: {}/{} ({:.1}%)",
             site.domain, site.completed, site.total, rate
         );
-    }
-    if sites.len() > 10 {
-        println!("  ... and {} more sites", sites.len() - 10);
     }
 
     println!();
