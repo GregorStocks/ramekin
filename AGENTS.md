@@ -27,3 +27,7 @@ Only use commands like `git checkout` when you're in a workspace that you own (a
 Never force-push without asking for permission. Merge master into your branch rather than rebasing so you don't need to force-push. Make new commits rather than amending. We want an honest Git history, not a clean one.
 
 Always run `make lint` before creating a PR, and fix any lint errors it finds.
+
+# Claude Web
+
+If you are Claude for Web, first run `make setup-claude-web`. (If you're not sure, just go ahead and run it - it's a no-op if you aren't.)
