@@ -711,34 +711,153 @@ async fn try_homepage(
 // Recipe URL detection
 // ============================================================================
 
+use regex::Regex;
+use std::sync::LazyLock;
+
+/// Detect roundup/collection pages that aggregate multiple recipes
+fn is_roundup_url(url: &str) -> bool {
+    static ROUNDUP_PATTERNS: LazyLock<Vec<Regex>> = LazyLock::new(|| {
+        vec![
+            // "30-easy-recipes", "15-chicken-recipes", "100-best-recipes"
+            Regex::new(r"/\d+-[a-z]+-recipes?(/|$)").unwrap(),
+            // "top-10-recipes", "top-25-most-popular"
+            Regex::new(r"/top-\d+").unwrap(),
+            // "best-25-soup-recipes"
+            Regex::new(r"/best-\d+").unwrap(),
+            // "recipe-roundup", "christmas-recipe-round-up"
+            Regex::new(r"-(roundup|round-up)(/|$)").unwrap(),
+            // "recipes-of-2021", "favorite-recipes-of-2009"
+            Regex::new(r"/[a-z]+-recipes?-of-\d{4}").unwrap(),
+            // "our-10-favorite-recipes"
+            Regex::new(r"/our-\d+-favorite").unwrap(),
+            // "all-recipes/" at end
+            Regex::new(r"/all-recipes/?$").unwrap(),
+            // Recipe category indexes like "/chicken-recipes/" at end of path
+            Regex::new(r"/[a-z]+-recipes/?$").unwrap(),
+            // "50-healthy-recipes-to-kick-off"
+            Regex::new(r"/\d+-[a-z]+-recipes-to-").unwrap(),
+        ]
+    });
+
+    ROUNDUP_PATTERNS.iter().any(|re| re.is_match(url))
+}
+
+/// Filter out very old posts that predate structured recipe data (JSON-LD/Microdata)
+fn is_very_old_post(url: &str) -> bool {
+    static DATE_PATTERN: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"/(\d{4})/\d{2}/").unwrap());
+
+    if let Some(caps) = DATE_PATTERN.captures(url) {
+        if let Some(year_str) = caps.get(1) {
+            if let Ok(year) = year_str.as_str().parse::<u32>() {
+                // Posts before 2010 often lack structured recipe data
+                return year < 2010;
+            }
+        }
+    }
+    false
+}
+
+/// Check if URL is a dated blog post from a recent year (2010+)
+fn is_recent_dated_post(url: &str) -> bool {
+    // Pattern: /YYYY/MM/slug or /YYYY/MM/DD/slug (with optional day)
+    static DATED_POST_PATTERN: LazyLock<Regex> =
+        LazyLock::new(|| Regex::new(r"/20[1-9]\d/\d{2}/(\d{2}/)?[a-z0-9-]{5,}").unwrap());
+
+    DATED_POST_PATTERN.is_match(url)
+}
+
 fn is_recipe_url(url: &str) -> bool {
     let lower = url.to_lowercase();
 
-    // SeriousEats-specific: reject collection pages (plural "recipes" pattern)
-    // Individual recipes use singular "-recipe-" followed by ID
-    // Collections use plural "-recipes-" followed by ID
+    // === PHASE 1: SITE-SPECIFIC LOGIC ===
+    // Handle sites with unique URL structures
+
     if lower.contains("seriouseats.com") {
-        // Reject if it has the collection pattern (plural "-recipes-")
+        // SeriousEats: reject collection pages (plural "-recipes-")
         if lower.contains("-recipes-") {
             return false;
         }
-        // For seriouseats, require the singular "-recipe-" pattern
+        // Require the singular "-recipe-" pattern
         return lower.contains("-recipe-");
     }
 
-    // Common recipe URL patterns
-    lower.contains("/recipe/")
-        || lower.contains("/recipes/")
-        || lower.contains("-recipe")
-        || lower.contains("/20")  // Date-based URLs common in blogs (e.g., /2025/01/)
-        && !lower.contains("/category/")
-        && !lower.contains("/tag/")
-        && !lower.contains("/page/")
-        && !lower.contains("/author/")
-        && !lower.contains("/about")
-        && !lower.contains("/contact")
-        && !lower.contains("/privacy")
-        && !lower.contains("/terms")
+    // === PHASE 2: UNIVERSAL EXCLUSIONS ===
+    // Reject URLs that are clearly NOT individual recipes
+
+    // Category and tag pages
+    if lower.contains("/category/")
+        || lower.contains("/tag/")
+        || lower.contains("/page/")
+        || lower.contains("/author/")
+    {
+        return false;
+    }
+
+    // Static/info pages
+    if lower.contains("/about")
+        || lower.contains("/contact")
+        || lower.contains("/privacy")
+        || lower.contains("/terms")
+    {
+        return false;
+    }
+
+    // Malformed relative paths (e.g., smittenkitchen ./recipes/)
+    if lower.contains("/./") {
+        return false;
+    }
+
+    // URLs with fragment identifiers (comments sections)
+    if lower.contains("#comments") || lower.contains("#respond") {
+        return false;
+    }
+
+    // Roundup/collection patterns
+    if is_roundup_url(&lower) {
+        return false;
+    }
+
+    // Very old posts (before 2010) - often lack structured data
+    if is_very_old_post(&lower) {
+        return false;
+    }
+
+    // === PHASE 3: POSITIVE INDICATORS ===
+    // Check for patterns that suggest individual recipes
+
+    // Strong positive: singular "/recipe/" in path
+    if lower.contains("/recipe/") {
+        return true;
+    }
+
+    // Check "/recipes/" followed by a slug (not ending there)
+    if let Some(pos) = lower.find("/recipes/") {
+        let after_recipes = &lower[pos + 9..];
+        // Strip trailing slash if present
+        let slug = after_recipes.trim_end_matches('/');
+        // Must have content after /recipes/ and not be a category path or nested
+        if !slug.is_empty()
+            && !slug.starts_with("category")
+            && !slug.contains('/')
+            && slug.len() > 3
+        {
+            return true;
+        }
+    }
+
+    // "-recipe" or "-recipe/" suffix (singular, specific recipe)
+    // But NOT "-recipes" (plural = collection)
+    if (lower.contains("-recipe/") || lower.ends_with("-recipe")) && !lower.contains("-recipes") {
+        return true;
+    }
+
+    // Date-based blog URLs from recent years with descriptive slugs
+    if is_recent_dated_post(&lower) {
+        return true;
+    }
+
+    false
 }
 
 // ============================================================================
@@ -788,15 +907,106 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_is_recipe_url() {
+    fn test_is_recipe_url_basic() {
+        // Positive cases - individual recipes
         assert!(is_recipe_url("https://example.com/recipe/chocolate-cake"));
-        assert!(is_recipe_url("https://example.com/recipes/soup"));
-        assert!(is_recipe_url("https://example.com/chocolate-cake-recipe"));
-        assert!(is_recipe_url("https://example.com/2025/01/my-recipe"));
+        assert!(is_recipe_url("https://example.com/recipes/minestrone-soup"));
+        assert!(is_recipe_url("https://example.com/chocolate-cake-recipe/"));
+        assert!(is_recipe_url(
+            "https://example.com/2025/01/my-delicious-recipe"
+        ));
 
+        // Negative cases - static pages
         assert!(!is_recipe_url("https://example.com/about"));
         assert!(!is_recipe_url("https://example.com/category/desserts"));
         assert!(!is_recipe_url("https://example.com/tag/chocolate"));
+    }
+
+    #[test]
+    fn test_roundup_detection() {
+        // Roundup patterns should be rejected
+        assert!(!is_recipe_url("https://example.com/30-easy-recipes/"));
+        assert!(!is_recipe_url(
+            "https://example.com/top-10-best-soup-recipes/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/christmas-recipe-roundup/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/favorite-recipes-of-2021/"
+        ));
+        assert!(!is_recipe_url(
+            "https://twopeasandtheirpod.com/our-10-favorite-recipes-from-2011/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/50-healthy-recipes-to-kick-off-2012/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/healthy-dinner-recipes/"
+        ));
+        assert!(!is_recipe_url("https://example.com/all-recipes/"));
+
+        // But individual recipes with numbers should be accepted
+        assert!(is_recipe_url(
+            "https://example.com/5-ingredient-pasta-recipe/"
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/20-minute-chicken-recipe/"
+        ));
+    }
+
+    #[test]
+    fn test_category_exclusion() {
+        // Category pages should be rejected
+        assert!(!is_recipe_url(
+            "https://davidlebovitz.com/category/recipes/breads/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/category/recipes/desserts/"
+        ));
+
+        // Malformed paths should be rejected
+        assert!(!is_recipe_url(
+            "https://smittenkitchen.com/./recipes/vegetable/cabbage/"
+        ));
+
+        // Comment fragment URLs should be rejected
+        assert!(!is_recipe_url("https://example.com/2025/01/cake/#comments"));
+    }
+
+    #[test]
+    fn test_old_post_filtering() {
+        // Very old posts (pre-2010) should be rejected
+        assert!(!is_recipe_url(
+            "https://bakingbites.com/2004/12/chocolate-cake/"
+        ));
+        assert!(!is_recipe_url(
+            "https://howsweeteats.com/2009/09/random-post/"
+        ));
+        assert!(!is_recipe_url("https://example.com/2005/01/old-recipe/"));
+
+        // Recent dated posts should be accepted
+        assert!(is_recipe_url("https://example.com/2023/01/chocolate-cake/"));
+        assert!(is_recipe_url(
+            "https://alexandracooks.com/2019/06/21/fish-en-papillote/"
+        ));
+    }
+
+    #[test]
+    fn test_valid_recipe_url_patterns() {
+        // /recipe/ path pattern
+        assert!(is_recipe_url(
+            "https://altonbrown.com/recipes/beef-carpaccio/"
+        ));
+        assert!(is_recipe_url(
+            "https://slenderkitchen.com/recipe/salmon-burgers"
+        ));
+
+        // -recipe suffix pattern
+        assert!(is_recipe_url(
+            "https://therecipecritic.com/avocado-toast-recipe/"
+        ));
+        assert!(is_recipe_url("https://cookingclassy.com/brownie-recipe/"));
     }
 
     #[test]
