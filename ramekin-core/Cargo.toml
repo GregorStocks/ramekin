@@ -37,6 +37,9 @@ dirs = "6.0"
 # Async runtime for rate limiter sleep
 tokio = { version = "1", features = ["time"] }
 
+# Logging
+tracing = "0.1"
+
 # UUIDs for photo IDs
 uuid = { version = "1.18", features = ["v4", "serde"] }
 
