@@ -5,6 +5,7 @@ mod models;
 mod photos;
 mod schema;
 mod scraping;
+mod telemetry;
 mod types;
 
 use axum::extract::MatchedPath;
@@ -97,6 +98,7 @@ fn init_telemetry() {
             tracing_subscriber::registry()
                 .with(env_filter)
                 .with(fmt_layer)
+                .with(telemetry::DbQueryCountingLayer)
                 .with(otel_trace_layer)
                 .with(otel_log_layer)
                 .init();
@@ -110,6 +112,7 @@ fn init_telemetry() {
             tracing_subscriber::registry()
                 .with(env_filter)
                 .with(fmt_layer)
+                .with(telemetry::DbQueryCountingLayer)
                 .init();
 
             tracing::info!(
@@ -121,6 +124,7 @@ fn init_telemetry() {
         tracing_subscriber::registry()
             .with(env_filter)
             .with(fmt_layer)
+            .with(telemetry::DbQueryCountingLayer)
             .init();
 
         tracing::debug!("OTEL_EXPORTER_OTLP_ENDPOINT not set, using console logging only");
@@ -195,6 +199,7 @@ async fn main() {
                             otel.name = %span_name,
                             http.request.method = %method,
                             http.route = %route,
+                            db.query_count = tracing::field::Empty,
                         )
                     }
                 })
@@ -207,17 +212,25 @@ async fn main() {
                         if span.metadata().map(|m| m.level()) == Some(&tracing::Level::TRACE) {
                             return;
                         }
+
                         let status = response.status().as_u16();
+                        let query_count = telemetry::get_query_count().unwrap_or(0);
+
+                        // Record query count on span for OpenTelemetry export
+                        span.record("db.query_count", query_count);
+
                         if status >= 500 {
                             tracing::error!(
                                 status = %status,
                                 latency_ms = %latency.as_millis(),
+                                db.query_count = query_count,
                                 "request failed with server error"
                             );
                         } else {
                             tracing::info!(
                                 status = %status,
                                 latency_ms = %latency.as_millis(),
+                                db.query_count = query_count,
                                 "request completed"
                             );
                         }
@@ -234,7 +247,8 @@ async fn main() {
                         );
                     },
                 ),
-        );
+        )
+        .layer(middleware::from_fn(telemetry::query_counting_middleware));
 
     let port: u16 = env::var("PORT")
         .expect("PORT environment variable required")
