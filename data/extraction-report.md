@@ -2,17 +2,17 @@
 
 ## Overall
 
-- Total URLs: 579
-- Completed: 489 (84.5%)
+- Total URLs: 553
+- Completed: 500 (90.4%)
 - Failed at fetch: 0 (0.0%)
-- Failed at extract: 90 (15.5%)
+- Failed at extract: 53 (9.6%)
 
 ## Extraction Methods
 
-- JSON-LD: 459/579 (79.3%)
-- Microdata: 30/579 (5.2%)
-- Both: 0/579 (0.0%)
-- Neither: 90/579 (15.5%)
+- JSON-LD: 473/553 (85.5%)
+- Microdata: 27/553 (4.9%)
+- Both: 0/553 (0.0%)
+- Neither: 53/553 (9.6%)
 
 ## By Site
 
@@ -22,7 +22,7 @@
 | acouplecooks.com | 20 | 20 | 100.0% |
 | alexandracooks.com | 19 | 20 | 95.0% |
 | altonbrown.com | 20 | 20 | 100.0% |
-| bakingbites.com | 0 | 20 | 0.0% |
+| bakingbites.com | 0 | 12 | 0.0% |
 | browneyedbaker.com | 20 | 20 | 100.0% |
 | budgetbytes.com | 2 | 2 | 100.0% |
 | chefspencil.com | 4 | 4 | 100.0% |
@@ -33,17 +33,15 @@
 | downshiftology.com | 20 | 20 | 100.0% |
 | giangiskitchen.com | 1 | 1 | 100.0% |
 | gimmesomeoven.com | 5 | 5 | 100.0% |
-| howsweeteats.com | 0 | 20 | 0.0% |
+| howsweeteats.com | 13 | 20 | 65.0% |
 | loveandlemons.com | 20 | 20 | 100.0% |
-| loveandoliveoil.com | 19 | 20 | 95.0% |
-| minimalistbaker.com | 0 | 2 | 0.0% |
+| loveandoliveoil.com | 20 | 20 | 100.0% |
 | mybakingaddiction.com | 0 | 20 | 0.0% |
 | mypureplants.com | 3 | 3 | 100.0% |
 | myquietkitchen.com | 3 | 3 | 100.0% |
-| ohmyveggies.com | 3 | 7 | 42.9% |
-| ohsheglows.com | 1 | 1 | 100.0% |
+| ohmyveggies.com | 3 | 6 | 50.0% |
 | onmykidsplate.com | 17 | 18 | 94.4% |
-| pinchofyum.com | 0 | 14 | 0.0% |
+| pinchofyum.com | 0 | 2 | 0.0% |
 | sallysbakingaddiction.com | 20 | 20 | 100.0% |
 | saltysidedish.com | 20 | 20 | 100.0% |
 | seriouseats.com | 20 | 20 | 100.0% |
@@ -51,89 +49,52 @@
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 20 | 20 | 100.0% |
 | slowlivingkitchen.com | 5 | 6 | 83.3% |
-| smittenkitchen.com | 17 | 19 | 89.5% |
+| smittenkitchen.com | 14 | 16 | 87.5% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 19 | 20 | 95.0% |
 | sugarfreelondoner.com | 20 | 20 | 100.0% |
 | sweetandsavorymeals.com | 20 | 20 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
 | thepetitecook.com | 3 | 3 | 100.0% |
-| thepioneerwoman.com | 1 | 1 | 100.0% |
+| thepioneerwoman.com | 2 | 2 | 100.0% |
 | therecipecritic.com | 20 | 20 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | twopeasandtheirpod.com | 18 | 20 | 90.0% |
 
 ## Failed URLs by Error
 
-### No recipe found (90 URLs)
+### No recipe found (53 URLs)
 
+- http://bakingbites.com/2017/02/how-to-use-freeze-dried-fruit-in-baking/
 - https://alexandracooks.com/2018/12/21/15-savory-homemade-treats-to-gift-all-season/
-- https://bakingbites.com/2010/01/bites-from-other-blogs-125/
-- https://bakingbites.com/2010/01/bites-from-other-blogs-126/
-- https://bakingbites.com/2010/01/bites-from-other-blogs-127/
-- https://bakingbites.com/2010/02/bites-from-other-blogs-129/
-- https://bakingbites.com/2010/02/bites-from-other-blogs-130/
-- https://bakingbites.com/2010/03/baking-bites-easter-giveaway/
-- https://bakingbites.com/2010/03/bites-from-other-blogs-132/
-- https://bakingbites.com/2010/03/bites-from-other-blogs-135/
-- https://bakingbites.com/2010/03/bites-from-other-blogs-136/
-- https://bakingbites.com/2010/04/baking-bites-in-kauai/
-- https://bakingbites.com/2010/04/bites-from-other-blogs-137/
-- https://bakingbites.com/2010/04/bites-from-other-blogs-138/
-- https://bakingbites.com/2010/04/bites-from-other-blogs-139/
-- https://bakingbites.com/2010/04/bites-from-other-blogs-140/
-- https://bakingbites.com/2010/05/1-mix-100-muffins/
-- https://bakingbites.com/2010/05/bites-from-other-blogs-141/
-- https://bakingbites.com/2010/05/bites-from-other-blogs-142/
-- https://bakingbites.com/2010/05/create-america%e2%80%99s-next-dunkin-donut/
-- https://bakingbites.com/2010/05/nordic-ware-banana-loaf-pan/
-- https://bakingbites.com/2010/05/where-did-that-wood-come-from/
-- https://minimalistbaker.com/recipes/hearty-meals/
-- https://minimalistbaker.com/recipes/sweet-things/
+- https://bakingbites.com/2016/08/bakery-style-buttermilk-blueberry-muffins/
+- https://bakingbites.com/2018/04/perfectly-creamy-frozen-yogurt-cookbook-pre-order/
+- https://bakingbites.com/2021/03/blueberry-lavender-muffins/
+- https://bakingbites.com/2023/01/coconut-chocolate-chip-cookies/
+- https://bakingbites.com/2023/01/nutella-cupcakes-with-raspberries/
+- https://bakingbites.com/2023/02/meyer-lemon-white-chocolate-blondies/
+- https://bakingbites.com/2023/03/buttermilk-coconut-waffles/
+- https://bakingbites.com/2023/03/individual-irish-coffee-chocolate-pudding-cakes/
+- https://bakingbites.com/2023/03/peanut-butter-sandwich-cookies-with-chocolate-peanut-butter-ganache/
+- https://bakingbites.com/2023/03/vanilla-pistachio-and-strawberry-mini-loaf-cakes/
+- https://bakingbites.com/2023/05/blueberries-and-cream-bread-pudding/
 - https://ohmyveggies.com/best-vegetarian-pho-recipe/
 - https://ohmyveggies.com/great-ginger-tea-recipe/
-- https://ohmyveggies.com/how-to-stir-fry-without-a-recipe/
 - https://ohmyveggies.com/red-lentil-recipe/
 - https://onmykidsplate.com/sidewalk-chalk-paint-recipe/
-- https://pinchofyum.com/recipes/casserole
-- https://pinchofyum.com/recipes/dinner
 - https://pinchofyum.com/recipes/healthy-choices
-- https://pinchofyum.com/recipes/instant-pot
-- https://pinchofyum.com/recipes/meal-prep
-- https://pinchofyum.com/recipes/pasta
-- https://pinchofyum.com/recipes/popular
 - https://pinchofyum.com/recipes/quick-and-easy
-- https://pinchofyum.com/recipes/salad
-- https://pinchofyum.com/recipes/soup
-- https://pinchofyum.com/recipes/taco
-- https://pinchofyum.com/recipes/vegan
-- https://pinchofyum.com/recipes/vegetarian
-- https://pinchofyum.com/recipes/winter
 - https://slowlivingkitchen.com/rhubarb-shrub-recipe/
 - https://smittenkitchen.com/2020/04/how-i-stock-the-smitten-kitchen/
 - https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/
 - https://www.101cookbooks.com/13-inspiring-instagrammers-to-follow-for-healthy-feelgood-food-recipe/
-- https://www.howsweeteats.com/2010/01/a-boys-job/
-- https://www.howsweeteats.com/2010/01/avoiding-the-weekend-weight-gain/
-- https://www.howsweeteats.com/2010/01/cheese-fondue/
-- https://www.howsweeteats.com/2010/01/cobb-salad/
-- https://www.howsweeteats.com/2010/01/field-trip/
-- https://www.howsweeteats.com/2010/01/fig-gorgonzola-and-red-onion-salad/
-- https://www.howsweeteats.com/2010/01/for-me-because-of-you/
-- https://www.howsweeteats.com/2010/01/homemade-chocolate-fudge-sauce/
-- https://www.howsweeteats.com/2010/01/how-meat-it-is/
-- https://www.howsweeteats.com/2010/01/i-started/
-- https://www.howsweeteats.com/2010/01/lowel-ego-lights/
-- https://www.howsweeteats.com/2010/01/mini-smores-tarts/
-- https://www.howsweeteats.com/2010/01/my-happy-place/
-- https://www.howsweeteats.com/2010/01/parmesan-risotto/
-- https://www.howsweeteats.com/2010/01/potato-crusted-salmon/
-- https://www.howsweeteats.com/2010/01/provolone-stuffed-fried-zucchini/
-- https://www.howsweeteats.com/2010/01/stacked-cheesy-bbq-pork-nachos/
-- https://www.howsweeteats.com/2010/01/the-best-turkey-burger/
-- https://www.howsweeteats.com/2010/01/vanilla-cinnamon-pecan-butter/
-- https://www.howsweeteats.com/2010/01/vegan-strawberry-cream-pancakes-with-strawberry-banana-syrup/
-- https://www.loveandoliveoil.com/2022/11/ultimate-foodie-holiday-gift-guide.html
+- https://www.howsweeteats.com/2026/01/a-week-in-the-life-vol-1-7/
+- https://www.howsweeteats.com/2026/01/blood-orange-recipes/
+- https://www.howsweeteats.com/2026/01/currently-crushing-on-606/
+- https://www.howsweeteats.com/2026/01/tuesday-things-750/
+- https://www.howsweeteats.com/2026/01/what-to-eat-this-week-1-11-26/
+- https://www.howsweeteats.com/2026/01/what-to-eat-this-week-1-4-26/
+- https://www.howsweeteats.com/recipes/weeknight-meals/
 - https://www.mybakingaddiction.com/apple-cinnamon-cheesecake-recipe/
 - https://www.mybakingaddiction.com/asian-chicken-kebabs-recipe/
 - https://www.mybakingaddiction.com/barbecue-chicken-pizza-recipe/

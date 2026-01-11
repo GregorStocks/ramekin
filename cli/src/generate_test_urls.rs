@@ -736,35 +736,62 @@ fn is_roundup_url(url: &str) -> bool {
             Regex::new(r"/[a-z]+-recipes/?$").unwrap(),
             // "50-healthy-recipes-to-kick-off"
             Regex::new(r"/\d+-[a-z]+-recipes-to-").unwrap(),
+            // "25-recipes-that-should" - number followed by recipes
+            Regex::new(r"/\d+-recipes-").unwrap(),
+            // "12-summer-recipes-i-forgot" - number-adjective-recipes
+            Regex::new(r"/\d+-[a-z]+-recipes-[a-z]").unwrap(),
         ]
     });
 
     ROUNDUP_PATTERNS.iter().any(|re| re.is_match(url))
 }
 
-/// Filter out very old posts that predate structured recipe data (JSON-LD/Microdata)
-fn is_very_old_post(url: &str) -> bool {
+/// Detect non-recipe blog posts: giveaways, link roundups, how-to guides, etc.
+fn is_non_recipe_post(url: &str) -> bool {
+    static NON_RECIPE_PATTERNS: LazyLock<Vec<Regex>> = LazyLock::new(|| {
+        vec![
+            // Giveaways
+            Regex::new(r"[-/]giveaway").unwrap(),
+            // Link roundups from other sites
+            Regex::new(r"bites-from-other-blogs").unwrap(),
+            Regex::new(r"links?-i-love").unwrap(),
+            Regex::new(r"link-love").unwrap(),
+            Regex::new(r"weekly-links").unwrap(),
+            Regex::new(r"friday-links").unwrap(),
+            // How-to guides that explicitly say "without a recipe"
+            Regex::new(r"without-a-recipe").unwrap(),
+            // Product reviews and announcements
+            Regex::new(r"[-/]product-review").unwrap(),
+            Regex::new(r"[-/]book-review").unwrap(),
+            // Travel and personal posts
+            Regex::new(r"[-/]trip-to-").unwrap(),
+            Regex::new(r"[-/]vacation-").unwrap(),
+            Regex::new(r"[-/]field-trip").unwrap(),
+            // Meta/personal blog posts
+            Regex::new(r"[-/]i-started/?$").unwrap(),
+            Regex::new(r"[-/]a-boys-job").unwrap(),
+            Regex::new(r"[-/]my-happy-place").unwrap(),
+            // Generic tips without recipes
+            Regex::new(r"[-/]tips-for-").unwrap(),
+            Regex::new(r"[-/]gift-guide").unwrap(),
+            Regex::new(r"[-/]holiday-gift").unwrap(),
+        ]
+    });
+
+    NON_RECIPE_PATTERNS.iter().any(|re| re.is_match(url))
+}
+
+/// Filter out old posts that predate reliable structured recipe data
+/// Check for dated blog post pattern, returning the year if found
+/// Returns Some(year) if URL has /YYYY/MM/ pattern, None otherwise
+fn extract_post_year(url: &str) -> Option<u32> {
     static DATE_PATTERN: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"/(\d{4})/\d{2}/").unwrap());
 
-    if let Some(caps) = DATE_PATTERN.captures(url) {
-        if let Some(year_str) = caps.get(1) {
-            if let Ok(year) = year_str.as_str().parse::<u32>() {
-                // Posts before 2010 often lack structured recipe data
-                return year < 2010;
-            }
-        }
-    }
-    false
-}
-
-/// Check if URL is a dated blog post from a recent year (2010+)
-fn is_recent_dated_post(url: &str) -> bool {
-    // Pattern: /YYYY/MM/slug or /YYYY/MM/DD/slug (with optional day)
-    static DATED_POST_PATTERN: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"/20[1-9]\d/\d{2}/(\d{2}/)?[a-z0-9-]{5,}").unwrap());
-
-    DATED_POST_PATTERN.is_match(url)
+    DATE_PATTERN
+        .captures(url)
+        .and_then(|caps| caps.get(1))
+        .and_then(|year_str| year_str.as_str().parse::<u32>().ok())
 }
 
 fn is_recipe_url(url: &str) -> bool {
@@ -818,9 +845,17 @@ fn is_recipe_url(url: &str) -> bool {
         return false;
     }
 
-    // Very old posts (before 2010) - often lack structured data
-    if is_very_old_post(&lower) {
+    // Non-recipe blog posts (giveaways, link roundups, how-to guides, etc.)
+    if is_non_recipe_post(&lower) {
         return false;
+    }
+
+    // Check for dated blog post - reject old posts, remember for later acceptance
+    let post_year = extract_post_year(&lower);
+    if let Some(year) = post_year {
+        if year < 2016 {
+            return false; // Old posts often lack structured data
+        }
     }
 
     // === PHASE 3: POSITIVE INDICATORS ===
@@ -837,10 +872,13 @@ fn is_recipe_url(url: &str) -> bool {
         // Strip trailing slash if present
         let slug = after_recipes.trim_end_matches('/');
         // Must have content after /recipes/ and not be a category path or nested
+        // Require either: hyphen + long enough (>12 chars) OR very long (>25 chars)
+        // This filters category pages like /recipes/dinner, /recipes/hearty-meals
+        // while allowing recipes like /recipes/minestrone-soup, /recipes/beef-carpaccio
         if !slug.is_empty()
             && !slug.starts_with("category")
             && !slug.contains('/')
-            && slug.len() > 3
+            && ((slug.contains('-') && slug.len() > 12) || slug.len() > 25)
         {
             return true;
         }
@@ -852,8 +890,8 @@ fn is_recipe_url(url: &str) -> bool {
         return true;
     }
 
-    // Date-based blog URLs from recent years with descriptive slugs
-    if is_recent_dated_post(&lower) {
+    // Date-based blog URLs from 2016+ (already passed old post filter)
+    if post_year.is_some() {
         return true;
     }
 
@@ -972,20 +1010,76 @@ mod tests {
 
         // Comment fragment URLs should be rejected
         assert!(!is_recipe_url("https://example.com/2025/01/cake/#comments"));
+
+        // Category index pages (/recipes/X with short single/two-word slug) should be rejected
+        assert!(!is_recipe_url("https://pinchofyum.com/recipes/dinner"));
+        assert!(!is_recipe_url("https://pinchofyum.com/recipes/pasta"));
+        assert!(!is_recipe_url("https://pinchofyum.com/recipes/casserole/"));
+        assert!(!is_recipe_url(
+            "https://minimalistbaker.com/recipes/hearty-meals/"
+        ));
+        assert!(!is_recipe_url(
+            "https://minimalistbaker.com/recipes/sweet-things/"
+        ));
+
+        // But actual recipe slugs with 3+ words should be accepted
+        assert!(is_recipe_url(
+            "https://example.com/recipes/chocolate-chip-cookies/"
+        ));
+        assert!(is_recipe_url(
+            "https://example.com/recipes/beef-brisket-pot-roast/"
+        ));
+    }
+
+    #[test]
+    fn test_non_recipe_posts() {
+        // Giveaways should be rejected
+        assert!(!is_recipe_url(
+            "https://bakingbites.com/2015/03/baking-bites-easter-giveaway/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2020/01/kitchen-giveaway/"
+        ));
+
+        // Link roundups should be rejected
+        assert!(!is_recipe_url(
+            "https://bakingbites.com/2015/01/bites-from-other-blogs-125/"
+        ));
+        assert!(!is_recipe_url("https://example.com/2020/01/links-i-love/"));
+        assert!(!is_recipe_url("https://example.com/2020/01/friday-links/"));
+
+        // Travel/personal posts should be rejected (old posts without recipe signal)
+        // Note: 2010 posts are rejected as too old, and field-trip matches the exclusion pattern
+        assert!(!is_recipe_url(
+            "https://bakingbites.com/2010/04/baking-bites-in-kauai/"
+        ));
+        assert!(!is_recipe_url("https://example.com/2020/01/field-trip/"));
+
+        // Gift guides should be rejected
+        assert!(!is_recipe_url(
+            "https://loveandoliveoil.com/2022/11/ultimate-foodie-holiday-gift-guide/"
+        ));
     }
 
     #[test]
     fn test_old_post_filtering() {
-        // Very old posts (pre-2010) should be rejected
+        // Posts before 2016 should be rejected
         assert!(!is_recipe_url(
             "https://bakingbites.com/2004/12/chocolate-cake/"
         ));
         assert!(!is_recipe_url(
             "https://howsweeteats.com/2009/09/random-post/"
         ));
-        assert!(!is_recipe_url("https://example.com/2005/01/old-recipe/"));
+        assert!(!is_recipe_url("https://example.com/2010/01/old-recipe/"));
+        assert!(!is_recipe_url(
+            "https://example.com/2012/01/chocolate-cake/"
+        ));
+        assert!(!is_recipe_url(
+            "https://example.com/2015/01/chocolate-cake/"
+        ));
 
-        // Recent dated posts should be accepted
+        // 2016+ posts should be accepted
+        assert!(is_recipe_url("https://example.com/2016/01/chocolate-cake/"));
         assert!(is_recipe_url("https://example.com/2023/01/chocolate-cake/"));
         assert!(is_recipe_url(
             "https://alexandracooks.com/2019/06/21/fish-en-papillote/"
