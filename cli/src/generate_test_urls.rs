@@ -462,11 +462,10 @@ async fn try_sitemap(
     all_urls
         .extend(extract_urls_from_sitemap_recursive(client, &sitemap_content, domain, 2).await?);
 
-    // Clean, validate, and filter for recipe URLs
+    // Filter for recipe URLs and take the requested amount
     let recipe_urls: Vec<String> = all_urls
         .into_iter()
-        .map(|url| clean_url(&url))
-        .filter(|url| is_valid_url(url) && is_recipe_url(url))
+        .filter(|url| is_recipe_url(url))
         .take(urls_per_site)
         .collect();
 
@@ -631,28 +630,24 @@ async fn try_homepage(
 
     for element in document.select(&link_selector) {
         if let Some(href) = element.value().attr("href") {
-            // Resolve relative and protocol-relative URLs
-            let Some(full_url) = resolve_url(href, domain) else {
+            // Resolve relative URLs
+            let full_url = if href.starts_with("http") {
+                href.to_string()
+            } else if href.starts_with('/') {
+                format!("https://{}{}", domain, href)
+            } else {
                 continue;
             };
 
-            // Clean the URL (strip fragments, etc.)
-            let cleaned_url = clean_url(&full_url);
-
-            // Validate the URL (reject login pages, malformed URLs, etc.)
-            if !is_valid_url(&cleaned_url) {
-                continue;
-            }
-
             // Check if it's a recipe URL from this domain
-            if let Ok(parsed) = url::Url::parse(&cleaned_url) {
+            if let Ok(parsed) = url::Url::parse(&full_url) {
                 if let Some(host) = parsed.host_str() {
                     let normalized = host.trim_start_matches("www.");
                     if normalized == domain
-                        && is_recipe_url(&cleaned_url)
-                        && seen.insert(cleaned_url.clone())
+                        && is_recipe_url(&full_url)
+                        && seen.insert(full_url.clone())
                     {
-                        recipe_urls.push(cleaned_url);
+                        recipe_urls.push(full_url);
                         if recipe_urls.len() >= urls_per_site {
                             break;
                         }
@@ -672,11 +667,6 @@ async fn try_homepage(
 fn is_recipe_url(url: &str) -> bool {
     let lower = url.to_lowercase();
 
-    // First, check exclusion patterns (things that are definitely NOT recipe pages)
-    if is_roundup_or_collection_url(&lower) {
-        return false;
-    }
-
     // SeriousEats-specific: reject collection pages (plural "recipes" pattern)
     // Individual recipes use singular "-recipe-" followed by ID
     // Collections use plural "-recipes-" followed by ID
@@ -693,165 +683,15 @@ fn is_recipe_url(url: &str) -> bool {
     lower.contains("/recipe/")
         || lower.contains("/recipes/")
         || lower.contains("-recipe")
-        || lower.contains("/20") // Date-based URLs common in blogs (e.g., /2025/01/)
-            && !lower.contains("/category/")
-            && !lower.contains("/tag/")
-            && !lower.contains("/page/")
-            && !lower.contains("/author/")
-            && !lower.contains("/about")
-            && !lower.contains("/contact")
-            && !lower.contains("/privacy")
-            && !lower.contains("/terms")
-}
-
-/// Check if a URL looks like a roundup or collection page, not a single recipe.
-fn is_roundup_or_collection_url(lower: &str) -> bool {
-    // Regex-like patterns for roundup detection
-    // Note: We use simple string matching since regex would add overhead
-
-    // Pattern: number followed by "-recipes" or "-recipe-" (e.g., "15-blueberry-recipes", "50-soup-recipes")
-    // We need to detect these without false positives on legit recipe names
-    let parts: Vec<&str> = lower.split('/').collect();
-    if let Some(last) = parts.last() {
-        // Check for patterns like "15-blueberry-recipes", "top-10-recipes"
-        if contains_number_recipes_pattern(last) {
-            return true;
-        }
-
-        // Check for explicit roundup keywords
-        let roundup_keywords = [
-            "roundup",
-            "round-up",
-            "recipe-round",
-            "favorites-of-",
-            "best-of-",
-            "top-recipes",
-            "top-10",
-            "top-20",
-            "top-25",
-            "top-50",
-            "most-popular",
-            "favorite-recipes",
-            "all-recipes",
-            "-recipes-of-20", // "recipes-of-2020"
-            "-recipes-from-20",
-            "bucket-list",
-            "gift-guide",
-            "cookbook-gift",
-        ];
-
-        for keyword in roundup_keywords {
-            if last.contains(keyword) {
-                return true;
-            }
-        }
-
-        // Check for category page indicators (but NOT /archives/ since some sites like 101cookbooks use it for recipes)
-        let category_patterns = [
-            "/category/",
-            "/categories/",
-            "/tag/",
-            "/tags/",
-            "/author/",
-            "/page/",
-        ];
-        for pattern in category_patterns {
-            if lower.contains(pattern) {
-                return true;
-            }
-        }
-
-        // Reject empty path segments or index pages
-        if last.is_empty() || *last == "recipes" || *last == "all-recipes" {
-            return true;
-        }
-    }
-
-    false
-}
-
-/// Check if URL segment contains a pattern like "15-xyz-recipes" or "best-xyz-recipes"
-fn contains_number_recipes_pattern(segment: &str) -> bool {
-    let parts: Vec<&str> = segment.split('-').collect();
-
-    // Look for number at start followed by recipes later
-    // e.g., "15-blueberry-recipes" -> ["15", "blueberry", "recipes"]
-    if parts.len() >= 2 {
-        // Check if first part is a number and last part is "recipes"
-        if parts[0].parse::<u32>().is_ok() && parts.last() == Some(&"recipes") {
-            return true;
-        }
-
-        // Check for patterns like "best-xyz-recipes", "top-xyz-recipes", "easy-xyz-recipes"
-        let list_starters = ["best", "top", "easy", "quick", "healthy", "favorite", "our"];
-        if list_starters.contains(&parts[0]) && parts.last() == Some(&"recipes") {
-            return true;
-        }
-    }
-
-    false
-}
-
-// ============================================================================
-// URL cleaning and validation
-// ============================================================================
-
-/// Clean a URL by stripping fragments and normalizing.
-fn clean_url(url: &str) -> String {
-    // Strip fragment (everything after #)
-    let without_fragment = url.split('#').next().unwrap_or(url);
-    without_fragment.to_string()
-}
-
-/// Check if a URL is valid and should be included in the test set.
-/// Rejects login pages, malformed URLs, and other non-recipe patterns.
-fn is_valid_url(url: &str) -> bool {
-    let lower = url.to_lowercase();
-
-    // Reject login and redirect URLs
-    if lower.contains("/wp-login.php")
-        || lower.contains("redirect_to=")
-        || lower.contains("/login")
-        || lower.contains("/signin")
-        || lower.contains("/sign-in")
-    {
-        return false;
-    }
-
-    // Reject malformed URLs with double protocols or broken paths
-    // e.g., "https://example.com//www.pinterest.com/..."
-    if lower.contains("://") && lower.matches("//").count() > 1 {
-        // Check if the second // is part of a malformed URL (not just a protocol)
-        if let Some(after_protocol) = lower.split("://").nth(1) {
-            if after_protocol.contains("//") {
-                return false;
-            }
-        }
-    }
-
-    // Reject URLs that are clearly external embeds or widgets
-    if lower.contains("pinterest.com/pin/create")
-        || lower.contains("facebook.com/sharer")
-        || lower.contains("twitter.com/intent")
-    {
-        return false;
-    }
-
-    true
-}
-
-/// Resolve a relative or protocol-relative URL against a domain.
-fn resolve_url(href: &str, domain: &str) -> Option<String> {
-    if href.starts_with("http://") || href.starts_with("https://") {
-        Some(href.to_string())
-    } else if href.starts_with("//") {
-        // Protocol-relative URL
-        Some(format!("https:{}", href))
-    } else if href.starts_with('/') {
-        Some(format!("https://{}{}", domain, href))
-    } else {
-        None
-    }
+        || lower.contains("/20")  // Date-based URLs common in blogs (e.g., /2025/01/)
+        && !lower.contains("/category/")
+        && !lower.contains("/tag/")
+        && !lower.contains("/page/")
+        && !lower.contains("/author/")
+        && !lower.contains("/about")
+        && !lower.contains("/contact")
+        && !lower.contains("/privacy")
+        && !lower.contains("/terms")
 }
 
 // ============================================================================
@@ -902,66 +742,14 @@ mod tests {
 
     #[test]
     fn test_is_recipe_url() {
-        // Valid recipe URLs
         assert!(is_recipe_url("https://example.com/recipe/chocolate-cake"));
         assert!(is_recipe_url("https://example.com/recipes/soup"));
         assert!(is_recipe_url("https://example.com/chocolate-cake-recipe"));
         assert!(is_recipe_url("https://example.com/2025/01/my-recipe"));
-        assert!(is_recipe_url(
-            "https://smittenkitchen.com/2007/01/world-peace-cookies"
-        ));
 
-        // Invalid - not recipe pages
         assert!(!is_recipe_url("https://example.com/about"));
         assert!(!is_recipe_url("https://example.com/category/desserts"));
         assert!(!is_recipe_url("https://example.com/tag/chocolate"));
-    }
-
-    #[test]
-    fn test_roundup_detection() {
-        // Roundup pages should be rejected
-        assert!(!is_recipe_url(
-            "https://www.gimmesomeoven.com/15-blueberry-recipes"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.gimmesomeoven.com/15-margarita-recipes"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.skinnytaste.com/50-pumpkin-recipes"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.twopeasandtheirpod.com/top-10-recipes-of-2010"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.twopeasandtheirpod.com/favorite-recipes-of-2009"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.budgetbytes.com/best-recipes-of-2023"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.seasonalcravings.com/easy-dinner-recipes"
-        ));
-        assert!(!is_recipe_url(
-            "https://www.loveandlemons.com/christmas-morning-recipe-roundup"
-        ));
-        assert!(!is_recipe_url("https://thestayathomechef.com/all-recipes"));
-
-        // Category pages should be rejected
-        assert!(!is_recipe_url(
-            "https://davidlebovitz.com/category/recipes/soups"
-        ));
-        // But /archives/ is allowed - some sites like 101cookbooks use it for real recipes
-        assert!(is_recipe_url(
-            "https://101cookbooks.com/archives/red-rice-salad-recipe-html"
-        ));
-
-        // Single recipes should still pass
-        assert!(is_recipe_url(
-            "https://www.gimmesomeoven.com/blueberry-muffins-recipe"
-        ));
-        assert!(is_recipe_url(
-            "https://www.skinnytaste.com/pumpkin-bread-recipe"
-        ));
     }
 
     #[test]
@@ -990,73 +778,6 @@ mod tests {
         assert!(!is_recipe_url(
             "https://www.seriouseats.com/hearty-chickpea-recipes-11878318"
         ));
-    }
-
-    #[test]
-    fn test_clean_url() {
-        // Strip fragments
-        assert_eq!(
-            clean_url("https://example.com/recipe#comments"),
-            "https://example.com/recipe"
-        );
-        assert_eq!(
-            clean_url("https://example.com/recipe#"),
-            "https://example.com/recipe"
-        );
-        // URLs without fragments unchanged
-        assert_eq!(
-            clean_url("https://example.com/recipe"),
-            "https://example.com/recipe"
-        );
-    }
-
-    #[test]
-    fn test_is_valid_url() {
-        // Valid URLs
-        assert!(is_valid_url("https://example.com/recipe/cake"));
-        assert!(is_valid_url("https://example.com/2025/01/cookies"));
-
-        // Login/redirect URLs should be rejected
-        assert!(!is_valid_url(
-            "https://example.com/wp-login.php?redirect_to=..."
-        ));
-        assert!(!is_valid_url("https://example.com/login"));
-        assert!(!is_valid_url("https://example.com/signin"));
-
-        // Malformed URLs with double protocols
-        assert!(!is_valid_url(
-            "https://example.com//www.pinterest.com/pin/create"
-        ));
-
-        // Social sharing widgets
-        assert!(!is_valid_url(
-            "https://pinterest.com/pin/create/button?url=..."
-        ));
-        assert!(!is_valid_url("https://facebook.com/sharer/sharer.php"));
-    }
-
-    #[test]
-    fn test_resolve_url() {
-        // Absolute URLs
-        assert_eq!(
-            resolve_url("https://example.com/recipe", "example.com"),
-            Some("https://example.com/recipe".to_string())
-        );
-
-        // Protocol-relative URLs
-        assert_eq!(
-            resolve_url("//cdn.example.com/image.jpg", "example.com"),
-            Some("https://cdn.example.com/image.jpg".to_string())
-        );
-
-        // Relative URLs
-        assert_eq!(
-            resolve_url("/recipe/cake", "example.com"),
-            Some("https://example.com/recipe/cake".to_string())
-        );
-
-        // Invalid relative URLs (no leading slash) return None
-        assert_eq!(resolve_url("recipe/cake", "example.com"), None);
     }
 
     #[test]
