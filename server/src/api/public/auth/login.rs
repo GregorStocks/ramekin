@@ -6,6 +6,11 @@ use crate::models::User;
 use crate::schema::users;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
+
+// SQL function declaration for PostgreSQL LOWER() on text
+diesel::define_sql_function! {
+    fn lower(x: diesel::sql_types::Text) -> diesel::sql_types::Text;
+}
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -38,11 +43,7 @@ pub async fn login(
     let mut conn = get_conn!(pool);
 
     let user: User = match users::table
-        .filter(
-            diesel::dsl::sql::<diesel::sql_types::Bool>("LOWER(username) = LOWER(")
-                .bind::<diesel::sql_types::Text, _>(&req.username)
-                .sql(")"),
-        )
+        .filter(lower(users::username).eq(req.username.to_lowercase()))
         .filter(users::deleted_at.is_null())
         .select(User::as_select())
         .first(&mut conn)
