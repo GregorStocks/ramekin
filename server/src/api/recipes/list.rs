@@ -12,7 +12,7 @@ use axum::{
 use chrono::{DateTime, NaiveDate, Utc};
 use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{Array, Bool, Nullable, Uuid as SqlUuid};
+use diesel::sql_types::{Array, BigInt, Bool, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -209,32 +209,24 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
-/// Row type for the recipe list query result
-#[derive(Queryable, Selectable)]
-#[diesel(table_name = recipes)]
-struct RecipeListRow {
-    id: Uuid,
-    created_at: DateTime<Utc>,
-}
-
-/// Version fields we need for the list
-#[derive(Queryable, Selectable)]
-#[diesel(table_name = recipe_versions)]
-struct VersionListRow {
-    title: String,
-    description: Option<String>,
-    tags: Vec<Option<String>>,
-    photo_ids: Vec<Option<Uuid>>,
-    #[diesel(column_name = created_at)]
-    updated_at: DateTime<Utc>,
-}
-
 /// Escape special characters for ILIKE patterns
 fn escape_like_pattern(s: &str) -> String {
     s.replace('\\', "\\\\")
         .replace('%', "\\%")
         .replace('_', "\\_")
 }
+
+// Type alias for our query result row
+type RecipeRow = (
+    Uuid,                // recipe id
+    DateTime<Utc>,       // recipe created_at
+    String,              // version title
+    Option<String>,      // version description
+    Vec<Option<String>>, // version tags
+    Vec<Option<Uuid>>,   // version photo_ids
+    DateTime<Utc>,       // version created_at (updated_at)
+    i64,                 // total count from window function
+);
 
 #[utoipa::path(
     get,
@@ -288,7 +280,7 @@ pub async fn list_recipes(
     }
 
     // Tag filters (AND logic - must have ALL tags)
-    // Use raw SQL for CITEXT array containment since Diesel doesn't have direct support
+    // Use sql fragment for CITEXT array containment (PostgreSQL-specific)
     for tag in &parsed.tags {
         let escaped_tag = tag.replace('\'', "''");
         query = query.filter(sql::<Bool>(&format!(
@@ -322,74 +314,6 @@ pub async fn list_recipes(
         query = query.filter(recipes::created_at.le(before_datetime));
     }
 
-    // Clone the query for count (before adding order/limit)
-    // We need to rebuild since boxed queries can't be easily cloned
-    let mut count_query = recipes::table
-        .inner_join(
-            recipe_versions::table.on(recipe_versions::id
-                .nullable()
-                .eq(recipes::current_version_id)),
-        )
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .into_boxed();
-
-    // Apply same filters to count query
-    if !parsed.text.is_empty() {
-        let search_text = parsed.text.join(" ");
-        let pattern = format!("%{}%", escape_like_pattern(&search_text));
-        count_query = count_query.filter(
-            recipe_versions::title
-                .ilike(pattern.clone())
-                .or(recipe_versions::description.ilike(pattern)),
-        );
-    }
-
-    for tag in &parsed.tags {
-        let escaped_tag = tag.replace('\'', "''");
-        count_query = count_query.filter(sql::<Bool>(&format!(
-            "'{}'::citext = ANY(recipe_versions.tags)",
-            escaped_tag
-        )));
-    }
-
-    if let Some(ref source) = parsed.source {
-        let pattern = format!("%{}%", escape_like_pattern(source));
-        count_query = count_query.filter(recipe_versions::source_name.ilike(pattern));
-    }
-
-    if let Some(has_photos) = parsed.has_photos {
-        if has_photos {
-            count_query = count_query.filter(cardinality(recipe_versions::photo_ids).gt(0));
-        } else {
-            count_query = count_query.filter(cardinality(recipe_versions::photo_ids).eq(0));
-        }
-    }
-
-    if let Some(after) = parsed.created_after {
-        let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.ge(after_datetime));
-    }
-    if let Some(before) = parsed.created_before {
-        let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        count_query = count_query.filter(recipes::created_at.le(before_datetime));
-    }
-
-    // Get total count
-    let total: i64 = match count_query.count().get_result(&mut conn) {
-        Ok(c) => c,
-        Err(e) => {
-            tracing::error!("Failed to count recipes: {:?}", e);
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipes".to_string(),
-                }),
-            )
-                .into_response();
-        }
-    };
-
     // Add ordering
     let query = match (params.sort_by, params.sort_dir) {
         (SortBy::Random, _) => query.order(random()),
@@ -397,9 +321,18 @@ pub async fn list_recipes(
         (SortBy::UpdatedAt, Direction::Asc) => query.order(recipe_versions::created_at.asc()),
     };
 
-    // Add pagination and execute
-    let results: Vec<(RecipeListRow, VersionListRow)> = match query
-        .select((RecipeListRow::as_select(), VersionListRow::as_select()))
+    // Select columns including COUNT(*) OVER() for total in single query
+    let results: Vec<RecipeRow> = match query
+        .select((
+            recipes::id,
+            recipes::created_at,
+            recipe_versions::title,
+            recipe_versions::description,
+            recipe_versions::tags,
+            recipe_versions::photo_ids,
+            recipe_versions::created_at,
+            sql::<BigInt>("COUNT(*) OVER()"),
+        ))
         .limit(limit)
         .offset(offset)
         .load(&mut conn)
@@ -417,21 +350,26 @@ pub async fn list_recipes(
         }
     };
 
+    // Extract total from first row, or 0 if no results
+    let total = results.first().map(|r| r.7).unwrap_or(0);
+
     let recipes = results
         .into_iter()
-        .map(|(recipe, version)| {
-            let thumbnail_photo_id = version.photo_ids.first().and_then(|id| *id);
+        .map(
+            |(id, created_at, title, description, tags, photo_ids, updated_at, _)| {
+                let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
 
-            RecipeSummary {
-                id: recipe.id,
-                title: version.title,
-                description: version.description,
-                tags: version.tags.into_iter().flatten().collect(),
-                thumbnail_photo_id,
-                created_at: recipe.created_at,
-                updated_at: version.updated_at,
-            }
-        })
+                RecipeSummary {
+                    id,
+                    title,
+                    description,
+                    tags: tags.into_iter().flatten().collect(),
+                    thumbnail_photo_id,
+                    created_at,
+                    updated_at,
+                }
+            },
+        )
         .collect();
 
     (
