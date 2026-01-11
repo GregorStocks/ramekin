@@ -24,6 +24,7 @@ import type {
   SortBy,
   TagsResponse,
   UpdateRecipeRequest,
+  VersionListResponse,
 } from '../models/index';
 import {
     CreateRecipeRequestFromJSON,
@@ -44,6 +45,8 @@ import {
     TagsResponseToJSON,
     UpdateRecipeRequestFromJSON,
     UpdateRecipeRequestToJSON,
+    VersionListResponseFromJSON,
+    VersionListResponseToJSON,
 } from '../models/index';
 
 export interface CreateRecipeOperationRequest {
@@ -60,6 +63,7 @@ export interface ExportRecipeRequest {
 
 export interface GetRecipeRequest {
     id: string;
+    versionId?: string | null;
 }
 
 export interface ListRecipesRequest {
@@ -68,6 +72,10 @@ export interface ListRecipesRequest {
     q?: string | null;
     sortBy?: SortBy;
     sortDir?: Direction;
+}
+
+export interface ListVersionsRequest {
+    id: string;
 }
 
 export interface UpdateRecipeOperationRequest {
@@ -255,6 +263,10 @@ export class RecipesApi extends runtime.BaseAPI {
 
         const queryParameters: any = {};
 
+        if (requestParameters['versionId'] != null) {
+            queryParameters['version_id'] = requestParameters['versionId'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
         if (this.configuration && this.configuration.accessToken) {
@@ -373,6 +385,49 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async listTags(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TagsResponse> {
         const response = await this.listTagsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async listVersionsRaw(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VersionListResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling listVersions().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/recipes/{id}/versions`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => VersionListResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async listVersions(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VersionListResponse> {
+        const response = await this.listVersionsRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

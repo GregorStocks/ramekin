@@ -1174,3 +1174,213 @@ def test_recipe_paprika_fields_optional(authed_api_client):
     assert recipe.difficulty is None
     assert recipe.nutritional_info is None
     assert recipe.notes is None
+
+
+# Version tests
+
+
+def test_recipe_has_version_info_on_create(authed_api_client):
+    """Test that a newly created recipe has version info."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Versioned Recipe",
+            instructions="Do the thing",
+            ingredients=[],
+        )
+    )
+
+    recipe = recipes_api.get_recipe(str(response.id))
+
+    # Should have version metadata
+    assert recipe.version_id is not None
+    assert recipe.version_source == "user"
+
+
+def test_update_recipe_creates_new_version(authed_api_client):
+    """Test that updating a recipe creates a new version."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create a recipe
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Original Title",
+            instructions="Original instructions",
+            ingredients=[],
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # Get original version info
+    original_recipe = recipes_api.get_recipe(recipe_id)
+    original_version_id = original_recipe.version_id
+
+    # Update the recipe
+    recipes_api.update_recipe(
+        recipe_id,
+        UpdateRecipeRequest(title="Updated Title"),
+    )
+
+    # Get updated recipe
+    updated_recipe = recipes_api.get_recipe(recipe_id)
+
+    # Version ID should be different
+    assert updated_recipe.version_id != original_version_id
+    assert updated_recipe.title == "Updated Title"
+    assert updated_recipe.version_source == "user"
+
+
+def test_list_versions(authed_api_client):
+    """Test listing versions of a recipe."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create a recipe
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Version Test Recipe",
+            instructions="Instructions",
+            ingredients=[],
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # Update it twice
+    recipes_api.update_recipe(
+        recipe_id,
+        UpdateRecipeRequest(title="Version 2"),
+    )
+    recipes_api.update_recipe(
+        recipe_id,
+        UpdateRecipeRequest(title="Version 3"),
+    )
+
+    # List versions
+    versions = recipes_api.list_versions(recipe_id)
+
+    # Should have 3 versions
+    assert len(versions.versions) == 3
+
+    # Most recent should be first (newest first)
+    assert versions.versions[0].title == "Version 3"
+    assert versions.versions[0].is_current is True
+    assert versions.versions[1].title == "Version 2"
+    assert versions.versions[1].is_current is False
+    assert versions.versions[2].title == "Version Test Recipe"
+    assert versions.versions[2].is_current is False
+
+    # All should have version_source
+    for v in versions.versions:
+        assert v.version_source == "user"
+
+
+def test_get_specific_version(authed_api_client):
+    """Test getting a specific version by version_id."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create a recipe
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Original Title",
+            instructions="Original instructions",
+            ingredients=[Ingredient(item="original ingredient")],
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # Get original version ID
+    original_recipe = recipes_api.get_recipe(recipe_id)
+    original_version_id = str(original_recipe.version_id)
+
+    # Update the recipe
+    recipes_api.update_recipe(
+        recipe_id,
+        UpdateRecipeRequest(
+            title="Updated Title",
+            ingredients=[Ingredient(item="new ingredient")],
+        ),
+    )
+
+    # Get current version (default)
+    current = recipes_api.get_recipe(recipe_id)
+    assert current.title == "Updated Title"
+    assert current.ingredients[0].item == "new ingredient"
+
+    # Get original version by version_id
+    original = recipes_api.get_recipe(recipe_id, version_id=original_version_id)
+    assert original.title == "Original Title"
+    assert original.ingredients[0].item == "original ingredient"
+
+
+def test_list_versions_requires_auth(unauthed_api_client):
+    """Test that listing versions requires authentication."""
+    recipes_api = RecipesApi(unauthed_api_client)
+
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api.list_versions("00000000-0000-0000-0000-000000000000")
+
+    assert exc_info.value.status == 401
+
+
+def test_list_versions_not_found(authed_api_client):
+    """Test that listing versions of non-existent recipe returns 404."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api.list_versions("00000000-0000-0000-0000-000000000000")
+
+    assert exc_info.value.status == 404
+
+
+def test_get_version_not_found(authed_api_client):
+    """Test that getting non-existent version returns 404."""
+    client, user_id = authed_api_client
+    recipes_api = RecipesApi(client)
+
+    # Create a recipe
+    create_response = recipes_api.create_recipe(
+        CreateRecipeRequest(
+            title="Test Recipe",
+            instructions="Instructions",
+            ingredients=[],
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # Try to get with a fake version ID
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api.get_recipe(
+            recipe_id, version_id="00000000-0000-0000-0000-000000000000"
+        )
+
+    assert exc_info.value.status == 404
+
+
+def test_cannot_access_other_users_versions(
+    authed_api_client, second_authed_api_client
+):
+    """Test that users cannot access versions of other users' recipes."""
+    client1, user1_id = authed_api_client
+    client2, user2_id = second_authed_api_client
+    recipes_api1 = RecipesApi(client1)
+    recipes_api2 = RecipesApi(client2)
+
+    # User 1 creates a recipe
+    create_response = recipes_api1.create_recipe(
+        CreateRecipeRequest(
+            title="User 1 Recipe",
+            instructions="Instructions",
+            ingredients=[],
+        )
+    )
+    recipe_id = str(create_response.id)
+
+    # User 2 should not be able to list versions
+    with pytest.raises(ApiException) as exc_info:
+        recipes_api2.list_versions(recipe_id)
+    assert exc_info.value.status == 404

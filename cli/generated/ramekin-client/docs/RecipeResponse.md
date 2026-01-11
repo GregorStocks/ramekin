@@ -22,7 +22,9 @@ Name | Type | Description | Notes
 **tags** | **Vec<String>** |  | 
 **title** | **String** |  | 
 **total_time** | Option<**String**> |  | [optional]
-**updated_at** | **String** |  | 
+**updated_at** | **String** | When viewing a specific version, this is the version's created_at | 
+**version_id** | [**uuid::Uuid**](uuid::Uuid.md) | Version metadata | 
+**version_source** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

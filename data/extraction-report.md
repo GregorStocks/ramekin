@@ -2,17 +2,17 @@
 
 ## Overall
 
-- Total URLs: 552
-- Completed: 498 (90.2%)
-- Failed at fetch: 1 (0.2%)
+- Total URLs: 553
+- Completed: 500 (90.4%)
+- Failed at fetch: 0 (0.0%)
 - Failed at extract: 53 (9.6%)
 
 ## Extraction Methods
 
-- JSON-LD: 471/551 (85.5%)
-- Microdata: 27/551 (4.9%)
-- Both: 0/551 (0.0%)
-- Neither: 53/551 (9.6%)
+- JSON-LD: 472/553 (85.4%)
+- Microdata: 28/553 (5.1%)
+- Both: 0/553 (0.0%)
+- Neither: 53/553 (9.6%)
 
 ## By Site
 
@@ -49,23 +49,19 @@
 | skinnytaste.com | 2 | 2 | 100.0% |
 | slenderkitchen.com | 20 | 20 | 100.0% |
 | slowlivingkitchen.com | 5 | 6 | 83.3% |
-| smittenkitchen.com | 14 | 16 | 87.5% |
+| smittenkitchen.com | 15 | 17 | 88.2% |
 | spoonforkbacon.com | 2 | 2 | 100.0% |
 | sprinklebakes.com | 19 | 20 | 95.0% |
 | sugarfreelondoner.com | 20 | 20 | 100.0% |
 | sweetandsavorymeals.com | 20 | 20 | 100.0% |
 | tastesbetterfromscratch.com | 3 | 3 | 100.0% |
-| thepetitecook.com | 2 | 3 | 66.7% |
+| thepetitecook.com | 3 | 3 | 100.0% |
 | thepioneerwoman.com | 1 | 1 | 100.0% |
 | therecipecritic.com | 20 | 20 | 100.0% |
 | thestayathomechef.com | 12 | 12 | 100.0% |
 | twopeasandtheirpod.com | 18 | 20 | 90.0% |
 
 ## Failed URLs by Error
-
-### Invalid response encoding: Invalid UTF-8 in respon... (1 URLs)
-
-- https://www.thepetitecook.com/peperonata-italian-sweet-peppers-recipe/
 
 ### No recipe found (53 URLs)
 

@@ -5,6 +5,7 @@ pub mod get;
 pub mod list;
 pub mod tags;
 pub mod update;
+pub mod versions;
 
 use crate::AppState;
 use axum::routing::get;
@@ -24,6 +25,7 @@ pub fn router() -> Router<AppState> {
                 .delete(delete::delete_recipe),
         )
         .route("/{id}/export", get(export::export_recipe))
+        .route("/{id}/versions", get(versions::list_versions))
 }
 
 #[derive(OpenApi)]
@@ -37,6 +39,7 @@ pub fn router() -> Router<AppState> {
         tags::list_tags,
         export::export_recipe,
         export::export_all_recipes,
+        versions::list_versions,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -48,6 +51,8 @@ pub fn router() -> Router<AppState> {
         get::RecipeResponse,
         update::UpdateRecipeRequest,
         tags::TagsResponse,
+        versions::VersionListResponse,
+        versions::VersionSummary,
     ))
 )]
 pub struct ApiDoc;

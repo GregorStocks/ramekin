@@ -68,6 +68,12 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_list_versions(self) -> None:
+        """Test case for list_versions
+
+        """
+        pass
+
     def test_update_recipe(self) -> None:
         """Test case for update_recipe
 

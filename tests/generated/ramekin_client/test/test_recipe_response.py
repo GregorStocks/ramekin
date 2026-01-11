@@ -63,7 +63,9 @@ class TestRecipeResponse(unittest.TestCase):
                     ],
                 title = '',
                 total_time = '',
-                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                version_id = '',
+                version_source = ''
             )
         else:
             return RecipeResponse(
@@ -85,6 +87,8 @@ class TestRecipeResponse(unittest.TestCase):
                     ],
                 title = '',
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                version_id = '',
+                version_source = '',
         )
         """
 

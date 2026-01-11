@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **instructions** | **str** |  | 
 **notes** | **str** |  | [optional] 
 **nutritional_info** | **str** |  | [optional] 
-**photo_ids** | **List[UUID]** |  | [optional] 
 **prep_time** | **str** |  | [optional] 
 **rating** | **int** |  | [optional] 
 **servings** | **str** |  | [optional] 
@@ -21,6 +20,7 @@ Name | Type | Description | Notes
 **tags** | **List[str]** |  | [optional] 
 **title** | **str** |  | 
 **total_time** | **str** |  | [optional] 
+**photo_ids** | **List[UUID]** |  | [optional] 
 
 ## Example
 

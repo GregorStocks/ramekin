@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **instructions** | **String** |  | 
 **notes** | Option<**String**> |  | [optional]
 **nutritional_info** | Option<**String**> |  | [optional]
-**photo_ids** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 **prep_time** | Option<**String**> |  | [optional]
 **rating** | Option<**i32**> |  | [optional]
 **servings** | Option<**String**> |  | [optional]
@@ -20,6 +19,7 @@ Name | Type | Description | Notes
 **tags** | Option<**Vec<String>**> |  | [optional]
 **title** | **String** |  | 
 **total_time** | Option<**String**> |  | [optional]
+**photo_ids** | Option<[**Vec<uuid::Uuid>**](uuid::Uuid.md)> |  | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

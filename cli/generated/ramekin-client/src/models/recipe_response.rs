@@ -104,8 +104,14 @@ pub struct RecipeResponse {
         skip_serializing_if = "Option::is_none"
     )]
     pub total_time: Option<Option<String>>,
+    /// When viewing a specific version, this is the version's created_at
     #[serde(rename = "updated_at")]
     pub updated_at: String,
+    /// Version metadata
+    #[serde(rename = "version_id")]
+    pub version_id: uuid::Uuid,
+    #[serde(rename = "version_source")]
+    pub version_source: String,
 }
 
 impl RecipeResponse {
@@ -118,6 +124,8 @@ impl RecipeResponse {
         tags: Vec<String>,
         title: String,
         updated_at: String,
+        version_id: uuid::Uuid,
+        version_source: String,
     ) -> RecipeResponse {
         RecipeResponse {
             cook_time: None,
@@ -139,6 +147,8 @@ impl RecipeResponse {
             title,
             total_time: None,
             updated_at,
+            version_id,
+            version_source,
         }
     }
 }

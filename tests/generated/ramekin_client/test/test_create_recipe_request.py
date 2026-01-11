@@ -48,9 +48,6 @@ class TestCreateRecipeRequest(unittest.TestCase):
                 instructions = '',
                 notes = '',
                 nutritional_info = '',
-                photo_ids = [
-                    ''
-                    ],
                 prep_time = '',
                 rating = 56,
                 servings = '',
@@ -60,7 +57,10 @@ class TestCreateRecipeRequest(unittest.TestCase):
                     ''
                     ],
                 title = '',
-                total_time = ''
+                total_time = '',
+                photo_ids = [
+                    ''
+                    ]
             )
         else:
             return CreateRecipeRequest(

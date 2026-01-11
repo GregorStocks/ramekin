@@ -65,6 +65,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
+*EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -75,6 +76,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_tags**](ramekin_client/docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
+*RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
@@ -99,6 +101,7 @@ Class | Method | HTTP request | Description
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
+ - [RecipeContent](ramekin_client/docs/RecipeContent.md)
  - [RecipeResponse](ramekin_client/docs/RecipeResponse.md)
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
@@ -110,6 +113,8 @@ Class | Method | HTTP request | Description
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)
+ - [VersionListResponse](ramekin_client/docs/VersionListResponse.md)
+ - [VersionSummary](ramekin_client/docs/VersionSummary.md)
 
 
 <a id="documentation-for-authorization"></a>

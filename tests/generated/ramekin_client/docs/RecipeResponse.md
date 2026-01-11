@@ -23,7 +23,9 @@ Name | Type | Description | Notes
 **tags** | **List[str]** |  | 
 **title** | **str** |  | 
 **total_time** | **str** |  | [optional] 
-**updated_at** | **datetime** |  | 
+**updated_at** | **datetime** | When viewing a specific version, this is the version&#39;s created_at | 
+**version_id** | **UUID** | Version metadata | 
+**version_source** | **str** |  | 
 
 ## Example
 
