@@ -1,11 +1,16 @@
 pub mod error;
 pub mod extract;
 pub mod fetch;
+pub mod http;
 pub mod types;
 
 pub use error::{ExtractError, FetchError};
 pub use extract::{extract_recipe, extract_recipe_with_stats};
 pub use fetch::{fetch_bytes, fetch_html};
+pub use http::{
+    CacheStats, CachingClient, CachingClientBuilder, DiskCache, HttpClient, MockClient,
+    MockResponse,
+};
 pub use types::{
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
     FetchImagesOutput, RawRecipe, SaveRecipeOutput, StepOutput,

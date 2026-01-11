@@ -318,7 +318,6 @@ async fn main() -> Result<()> {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
                 output_dir,
-                cache_dir: pipeline::HtmlCache::default_cache_dir(),
                 limit,
                 site_filter: site,
                 delay_ms,
@@ -328,11 +327,11 @@ async fn main() -> Result<()> {
             pipeline_orchestrator::run_pipeline_test(config).await?;
         }
         Commands::PipelineCacheStats { cache_dir } => {
-            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
+            let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
             pipeline_orchestrator::print_cache_stats(&cache_dir);
         }
         Commands::PipelineCacheClear { cache_dir } => {
-            let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
+            let cache_dir = cache_dir.unwrap_or_else(ramekin_core::http::DiskCache::default_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
         }
         Commands::PipelineSummary { runs_dir, output } => {
@@ -365,39 +364,40 @@ async fn ping(server: &str) -> Result<()> {
 }
 
 async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: bool) -> Result<()> {
-    use pipeline::{HtmlCache, PipelineStep};
+    use pipeline::PipelineStep;
+    use ramekin_core::CachingClient;
 
     let step = PipelineStep::from_str(step)?;
-    let cache = HtmlCache::new(HtmlCache::default_cache_dir());
+    let client = CachingClient::new()?;
 
     // Create run directory
     std::fs::create_dir_all(run_dir)?;
 
     let result = match step {
-        PipelineStep::FetchHtml => pipeline::run_fetch_html(url, &cache, force_fetch).await,
+        PipelineStep::FetchHtml => pipeline::run_fetch_html(url, &client, force_fetch).await,
         PipelineStep::ExtractRecipe => {
             // Ensure HTML is fetched first
-            if !cache.is_cached(url) && !force_fetch {
+            if !client.is_cached(url) && !force_fetch {
                 println!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &cache, false).await;
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
                     println!("Fetch failed: {:?}", fetch_result.error);
                     return Ok(());
                 }
             }
-            pipeline::run_extract_recipe(url, &cache, run_dir).step_result
+            pipeline::run_extract_recipe(url, &client, run_dir).step_result
         }
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
-            if !cache.is_cached(url) {
+            if !client.is_cached(url) {
                 println!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &cache, false).await;
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
                     println!("Fetch failed: {:?}", fetch_result.error);
                     return Ok(());
                 }
             }
-            let extract_result = pipeline::run_extract_recipe(url, &cache, run_dir);
+            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
             if !extract_result.step_result.success {
                 println!("Extract failed: {:?}", extract_result.step_result.error);
                 return Ok(());

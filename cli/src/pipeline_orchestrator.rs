@@ -1,10 +1,12 @@
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
-    run_all_steps, AllStepsResult, ExtractionStats, HtmlCache, PipelineStep, StepResult,
+    clear_staging, ensure_staging_dir, find_staged_html, run_all_steps, staging_dir,
+    AllStepsResult, ExtractionStats, PipelineStep, StepResult,
 };
 use crate::OnFetchFail;
 use anyhow::{Context, Result};
 use chrono::Utc;
+use ramekin_core::http::{CachingClient, DiskCache};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
@@ -19,7 +21,6 @@ use std::time::{Duration, Instant};
 pub struct OrchestratorConfig {
     pub test_urls_file: PathBuf,
     pub output_dir: PathBuf,
-    pub cache_dir: PathBuf,
     pub limit: Option<usize>,
     pub site_filter: Option<String>,
     pub delay_ms: u64,
@@ -32,7 +33,6 @@ impl Default for OrchestratorConfig {
         Self {
             test_urls_file: PathBuf::from("data/test-urls.json"),
             output_dir: PathBuf::from("data/pipeline-runs"),
-            cache_dir: crate::pipeline::HtmlCache::default_cache_dir(),
             limit: None,
             site_filter: None,
             delay_ms: 1000,
@@ -192,8 +192,13 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     };
     save_manifest(&run_dir, &manifest)?;
 
-    // Initialize cache
-    let cache = HtmlCache::new(config.cache_dir);
+    // Initialize HTTP client with caching
+    // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
+    // and handles rate limiting internally
+    let client = CachingClient::builder()
+        .rate_limit_ms(0) // We handle delay ourselves between URLs
+        .build()
+        .context("Failed to create HTTP client")?;
 
     // Initialize results
     let mut results = PipelineResults {
@@ -215,11 +220,11 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 
     // In prompt mode, ensure staging directory exists and is empty
     if matches!(config.on_fetch_fail, OnFetchFail::Prompt) {
-        HtmlCache::ensure_staging_dir()?;
-        HtmlCache::clear_staging()?;
+        ensure_staging_dir()?;
+        clear_staging()?;
         println!(
             "Interactive mode: save HTML files to {}",
-            HtmlCache::staging_dir().display()
+            staging_dir().display()
         );
         println!();
     }
@@ -229,7 +234,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         let progress = format!("[{}/{}]", idx + 1, total_urls);
 
         // Check if we need to fetch (for rate limiting purposes)
-        let needs_fetch = config.force_fetch || !cache.is_cached(url);
+        let needs_fetch = config.force_fetch || !client.is_cached(url);
 
         // Print progress
         if needs_fetch {
@@ -239,7 +244,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let mut all_results = run_all_steps(url, &cache, &run_dir, config.force_fetch).await;
+        let mut all_results = run_all_steps(url, &client, &run_dir, config.force_fetch).await;
 
         // Check if fetch failed
         let fetch_failed = all_results
@@ -258,7 +263,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                 OnFetchFail::Prompt => {
                     // Interactive mode: prompt user to save HTML
                     if let Some(new_results) =
-                        prompt_for_manual_cache(url, &cache, &run_dir).await?
+                        prompt_for_manual_cache(url, &client, &run_dir).await?
                     {
                         all_results = new_results;
                     }
@@ -542,10 +547,10 @@ fn truncate_url(url: &str, max_len: usize) -> String {
 /// Prompt user to manually save HTML for a URL, wait for file, and retry pipeline
 async fn prompt_for_manual_cache(
     url: &str,
-    cache: &HtmlCache,
+    client: &CachingClient,
     run_dir: &Path,
 ) -> Result<Option<AllStepsResult>> {
-    let staging_dir = HtmlCache::staging_dir();
+    let staging = staging_dir();
 
     println!();
     println!("  ┌─────────────────────────────────────────────────────────────┐");
@@ -557,13 +562,13 @@ async fn prompt_for_manual_cache(
     println!("  To cache this page:");
     println!("  1. Open the URL above in your browser");
     println!("  2. Save the page (Cmd+S / Ctrl+S) to:");
-    println!("     {}", staging_dir.display());
+    println!("     {}", staging.display());
     println!();
     print!("  Waiting for .html file... (or type 'skip' + Enter): ");
     io::stdout().flush()?;
 
     // Clear any existing files in staging
-    HtmlCache::clear_staging()?;
+    clear_staging()?;
 
     // Use a channel to communicate between stdin reader and file watcher
     let (tx, mut rx) = tokio::sync::mpsc::channel::<String>(1);
@@ -581,7 +586,7 @@ async fn prompt_for_manual_cache(
 
     loop {
         // Check for file
-        if let Some(staged_file) = HtmlCache::find_staged_html() {
+        if let Some(staged_file) = find_staged_html() {
             // Wait a moment for write to complete
             tokio::time::sleep(Duration::from_millis(300)).await;
 
@@ -591,17 +596,29 @@ async fn prompt_for_manual_cache(
             // Import the file
             println!();
             println!("  Found: {}", staged_file.display());
-            match cache.import_staged_file(&staged_file, url) {
-                Ok(()) => {
+
+            // Read the HTML and inject into cache
+            match fs::read_to_string(&staged_file) {
+                Ok(html) => {
+                    if let Err(e) = client.inject_html(url, &html) {
+                        println!("  Failed to cache: {}", e);
+                        println!("  Continuing with failed status...");
+                        println!();
+                        return Ok(None);
+                    }
+
+                    // Remove the staged file
+                    let _ = fs::remove_file(&staged_file);
+
                     println!("  Cached successfully, retrying pipeline...");
                     println!();
 
                     // Re-run all steps (should hit cache now)
-                    let new_results = run_all_steps(url, cache, run_dir, false).await;
+                    let new_results = run_all_steps(url, client, run_dir, false).await;
                     return Ok(Some(new_results));
                 }
                 Err(e) => {
-                    println!("  Failed to import: {}", e);
+                    println!("  Failed to read file: {}", e);
                     println!("  Continuing with failed status...");
                     println!();
                     return Ok(None);
@@ -640,19 +657,22 @@ async fn prompt_for_manual_cache(
 // ============================================================================
 
 pub fn print_cache_stats(cache_dir: &Path) {
-    let cache = HtmlCache::new(cache_dir.to_path_buf());
+    let cache = DiskCache::new(cache_dir.to_path_buf());
     let stats = cache.stats();
 
-    println!("HTML Cache Statistics");
+    println!("HTTP Cache Statistics");
     println!("=====================");
     println!("Cache directory: {}", cache_dir.display());
-    println!("Cached HTML (success): {}", stats.cached_success);
+    println!("Cached responses (success): {}", stats.cached_success);
     println!("Cached errors: {}", stats.cached_errors);
-    println!("Total entries: {}", stats.total());
+    println!(
+        "Total entries: {}",
+        stats.cached_success + stats.cached_errors
+    );
 }
 
 pub fn clear_cache(cache_dir: &Path) -> Result<()> {
-    let cache = HtmlCache::new(cache_dir.to_path_buf());
+    let cache = DiskCache::new(cache_dir.to_path_buf());
     cache.clear()?;
     println!("Cache cleared: {}", cache_dir.display());
     Ok(())
