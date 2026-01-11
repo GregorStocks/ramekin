@@ -1,6 +1,7 @@
 use anyhow::{anyhow, Context, Result};
 use chrono::Utc;
 use quick_xml::de::from_str;
+use ramekin_core::http::{CachingClient, HttpClient};
 use scraper::{Html, Selector};
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
@@ -89,7 +90,8 @@ pub async fn generate_test_urls(
     urls_per_site: usize,
     merge: bool,
 ) -> Result<()> {
-    let client = build_client()?;
+    // Use CachingClient with rate limiting to avoid hammering servers
+    let client = CachingClient::new().context("Failed to create HTTP client")?;
 
     // Load existing data if merging
     let existing_data = if merge && output.exists() {
@@ -216,33 +218,15 @@ pub async fn generate_test_urls(
 }
 
 // ============================================================================
-// HTTP client
-// ============================================================================
-
-fn build_client() -> Result<reqwest::Client> {
-    reqwest::Client::builder()
-        .timeout(Duration::from_secs(30))
-        .user_agent("Mozilla/5.0 (compatible; Ramekin/1.0; +https://ramekin.app)")
-        .build()
-        .context("Failed to build HTTP client")
-}
-
-// ============================================================================
 // Site rankings from detailed.com
 // ============================================================================
 
-async fn fetch_site_rankings(client: &reqwest::Client) -> Result<Vec<RankedSite>> {
+async fn fetch_site_rankings(client: &CachingClient) -> Result<Vec<RankedSite>> {
     let url = "https://detailed.com/food-blogs/";
-    let response = client.get(url).send().await?;
-
-    if !response.status().is_success() {
-        return Err(anyhow!(
-            "Failed to fetch rankings: HTTP {}",
-            response.status()
-        ));
-    }
-
-    let html = response.text().await?;
+    let html = client
+        .fetch_html(url)
+        .await
+        .map_err(|e| anyhow!("Failed to fetch rankings: {}", e))?;
     parse_detailed_rankings(&html)
 }
 
@@ -385,7 +369,7 @@ fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
 // ============================================================================
 
 async fn process_site(
-    client: &reqwest::Client,
+    client: &CachingClient,
     site: &RankedSite,
     urls_per_site: usize,
 ) -> SiteEntry {
@@ -438,7 +422,7 @@ async fn process_site(
 // ============================================================================
 
 async fn try_sitemap(
-    client: &reqwest::Client,
+    client: &CachingClient,
     domain: &str,
     urls_per_site: usize,
 ) -> Result<Vec<String>> {
@@ -482,24 +466,17 @@ async fn try_sitemap(
     Ok(recipe_urls)
 }
 
-async fn fetch_sitemap(client: &reqwest::Client, url: &str) -> Result<String> {
-    let response = client.get(url).send().await?;
+async fn fetch_sitemap(client: &CachingClient, url: &str) -> Result<String> {
+    let bytes = client
+        .fetch_bytes(url)
+        .await
+        .map_err(|e| anyhow!("Failed to fetch sitemap: {}", e))?;
 
-    if !response.status().is_success() {
-        return Err(anyhow!("HTTP {}", response.status()));
-    }
+    // Check if content looks like gzip (magic bytes) or URL ends in .gz
+    let is_gzip =
+        (bytes.len() >= 2 && bytes[0] == 0x1f && bytes[1] == 0x8b) || url.ends_with(".gz");
 
-    // Check if gzipped (need to extract before consuming response)
-    let content_encoding = response
-        .headers()
-        .get("content-encoding")
-        .and_then(|v| v.to_str().ok())
-        .map(|s| s.to_string())
-        .unwrap_or_default();
-
-    let bytes = response.bytes().await?;
-
-    if content_encoding.contains("gzip") || url.ends_with(".gz") {
+    if is_gzip {
         // Decompress gzip
         use flate2::read::GzDecoder;
         use std::io::Read;
@@ -509,7 +486,7 @@ async fn fetch_sitemap(client: &reqwest::Client, url: &str) -> Result<String> {
         decoder.read_to_string(&mut content)?;
         Ok(content)
     } else {
-        String::from_utf8(bytes.to_vec()).context("Invalid UTF-8 in sitemap")
+        String::from_utf8(bytes).context("Invalid UTF-8 in sitemap")
     }
 }
 
@@ -530,7 +507,7 @@ fn safe_parse_urlset(content: &str) -> Option<Urlset> {
 
 /// Recursively extract URLs from a sitemap, following sitemap indexes up to max_depth levels
 async fn extract_urls_from_sitemap_recursive(
-    client: &reqwest::Client,
+    client: &CachingClient,
     content: &str,
     domain: &str,
     max_depth: usize,
@@ -591,15 +568,10 @@ async fn extract_urls_from_sitemap_recursive(
 }
 
 /// Fetch robots.txt and extract ALL sitemap URLs
-async fn fetch_robots_sitemaps(client: &reqwest::Client, domain: &str) -> Vec<String> {
+async fn fetch_robots_sitemaps(client: &CachingClient, domain: &str) -> Vec<String> {
     let robots_url = format!("https://{}/robots.txt", domain);
 
-    let response = match client.get(&robots_url).send().await {
-        Ok(r) if r.status().is_success() => r,
-        _ => return Vec::new(),
-    };
-
-    let content = match response.text().await {
+    let content = match client.fetch_html(&robots_url).await {
         Ok(c) => c,
         Err(_) => return Vec::new(),
     };
@@ -657,18 +629,15 @@ fn prioritize_sitemaps(mut sitemaps: Vec<String>) -> Vec<String> {
 // ============================================================================
 
 async fn try_homepage(
-    client: &reqwest::Client,
+    client: &CachingClient,
     domain: &str,
     urls_per_site: usize,
 ) -> Result<Vec<String>> {
     let homepage_url = format!("https://{}/", domain);
-    let response = client.get(&homepage_url).send().await?;
-
-    if !response.status().is_success() {
-        return Err(anyhow!("HTTP {}", response.status()));
-    }
-
-    let html = response.text().await?;
+    let html = client
+        .fetch_html(&homepage_url)
+        .await
+        .map_err(|e| anyhow!("Failed to fetch homepage: {}", e))?;
     let document = Html::parse_document(&html);
     let link_selector = Selector::parse("a[href]").unwrap();
 
