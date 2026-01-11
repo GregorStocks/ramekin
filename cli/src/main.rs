@@ -309,7 +309,7 @@ async fn main() -> Result<()> {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
                 output_dir,
-                cache_dir: PathBuf::from("data/pipeline-cache/html"),
+                cache_dir: pipeline::HtmlCache::default_cache_dir(),
                 limit,
                 site_filter: site,
                 delay_ms,
