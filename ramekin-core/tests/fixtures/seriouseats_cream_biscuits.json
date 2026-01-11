@@ -1,0 +1,9 @@
+{
+  "html_fixture_path": "tests/scrape_fixtures/seriouseats/cream_biscuits.html",
+  "source_url": "https://www.seriouseats.com/two-ingredient-never-fail-cream-biscuit-recipe",
+  "expected": {
+    "title": "2-Ingredient Cream Biscuits",
+    "description": "These two-ingredient biscuits have one of the lowest effort-to-greatness ratios of any recipe I can think of. They take practically no effort or practice to pull off, yet produce some of the lightest, tenderest, tastiest biscuits around.",
+    "ingredients_raw": "10 ounces (about 2 cups) self-rising flour\n2 tablespoons sugar (if making sweet shortcake-style biscuits)\n10 ounces (about 1 1/4 cups) heavy cream, plus more for brushing"
+  }
+}
