@@ -76,6 +76,7 @@ pub struct NewPhoto<'a> {
     pub thumbnail: &'a [u8],
 }
 
+// Recipe is now minimal - just identity + pointer to current version
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::recipes)]
 #[diesel(check_for_backend(diesel::pg::Pg))]
@@ -83,6 +84,25 @@ pub struct NewPhoto<'a> {
 pub struct Recipe {
     pub id: Uuid,
     pub user_id: Uuid,
+    pub current_version_id: Option<Uuid>,
+    pub created_at: DateTime<Utc>,
+    pub deleted_at: Option<DateTime<Utc>>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::recipes)]
+pub struct NewRecipe {
+    pub user_id: Uuid,
+}
+
+// RecipeVersion contains all recipe content (normalized from recipes table)
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::recipe_versions)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+#[allow(dead_code)]
+pub struct RecipeVersion {
+    pub id: Uuid,
+    pub recipe_id: Uuid,
     pub title: String,
     pub description: Option<String>,
     pub ingredients: serde_json::Value,
@@ -91,10 +111,6 @@ pub struct Recipe {
     pub source_name: Option<String>,
     pub photo_ids: Vec<Option<Uuid>>,
     pub tags: Vec<Option<String>>,
-    pub created_at: DateTime<Utc>,
-    pub updated_at: DateTime<Utc>,
-    pub deleted_at: Option<DateTime<Utc>>,
-    // Paprika-compatible fields for lossless roundtrip
     pub servings: Option<String>,
     pub prep_time: Option<String>,
     pub cook_time: Option<String>,
@@ -103,12 +119,14 @@ pub struct Recipe {
     pub difficulty: Option<String>,
     pub nutritional_info: Option<String>,
     pub notes: Option<String>,
+    pub version_source: String,
+    pub created_at: DateTime<Utc>,
 }
 
 #[derive(Insertable)]
-#[diesel(table_name = crate::schema::recipes)]
-pub struct NewRecipe<'a> {
-    pub user_id: Uuid,
+#[diesel(table_name = crate::schema::recipe_versions)]
+pub struct NewRecipeVersion<'a> {
+    pub recipe_id: Uuid,
     pub title: &'a str,
     pub description: Option<&'a str>,
     pub ingredients: serde_json::Value,
@@ -117,7 +135,6 @@ pub struct NewRecipe<'a> {
     pub source_name: Option<&'a str>,
     pub photo_ids: &'a [Option<Uuid>],
     pub tags: &'a [Option<String>],
-    // Paprika-compatible fields for lossless roundtrip
     pub servings: Option<&'a str>,
     pub prep_time: Option<&'a str>,
     pub cook_time: Option<&'a str>,
@@ -126,6 +143,7 @@ pub struct NewRecipe<'a> {
     pub difficulty: Option<&'a str>,
     pub nutritional_info: Option<&'a str>,
     pub notes: Option<&'a str>,
+    pub version_source: &'a str,
 }
 
 // Scrape job for async URL scraping

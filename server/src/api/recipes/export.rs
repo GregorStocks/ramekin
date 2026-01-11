@@ -2,8 +2,8 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::{DbConn, DbPool};
 use crate::get_conn;
-use crate::models::{Ingredient, Recipe};
-use crate::schema::{photos, recipes};
+use crate::models::{Ingredient, RecipeVersion};
+use crate::schema::{photos, recipe_versions, recipes};
 use axum::{
     body::Body,
     extract::{Path, State},
@@ -12,7 +12,7 @@ use axum::{
     Json,
 };
 use base64::Engine;
-use chrono::Utc;
+use chrono::{DateTime, Utc};
 use diesel::prelude::*;
 use flate2::write::GzEncoder;
 use flate2::Compression;
@@ -23,6 +23,13 @@ use std::sync::Arc;
 use uuid::Uuid;
 use zip::write::SimpleFileOptions;
 use zip::ZipWriter;
+
+/// Recipe with version info needed for export
+pub struct RecipeWithVersion {
+    pub id: Uuid,
+    pub created_at: DateTime<Utc>,
+    pub version: RecipeVersion,
+}
 
 /// Paprika recipe format for export
 #[derive(Debug, Serialize)]
@@ -59,10 +66,15 @@ struct PaprikaPhoto {
 }
 
 /// Convert a Ramekin recipe to Paprika format
-fn convert_to_paprika(recipe: &Recipe, photos_data: Vec<(Uuid, Vec<u8>)>) -> PaprikaRecipe {
+fn convert_to_paprika(
+    recipe: &RecipeWithVersion,
+    photos_data: Vec<(Uuid, Vec<u8>)>,
+) -> PaprikaRecipe {
+    let version = &recipe.version;
+
     // Parse ingredients back to newline-separated format
     let ingredients: Vec<Ingredient> =
-        serde_json::from_value(recipe.ingredients.clone()).unwrap_or_default();
+        serde_json::from_value(version.ingredients.clone()).unwrap_or_default();
     let ingredients_str = ingredients
         .iter()
         .map(|i| i.item.clone())
@@ -95,32 +107,32 @@ fn convert_to_paprika(recipe: &Recipe, photos_data: Vec<(Uuid, Vec<u8>)>) -> Pap
     // Build the recipe JSON for hashing
     let recipe_content = format!(
         "{}{}{}{}",
-        recipe.title,
+        version.title,
         ingredients_str,
-        recipe.instructions,
-        recipe.description.as_deref().unwrap_or("")
+        version.instructions,
+        version.description.as_deref().unwrap_or("")
     );
     let mut hasher = Sha256::new();
     hasher.update(recipe_content.as_bytes());
     let hash = format!("{:X}", hasher.finalize());
 
     PaprikaRecipe {
-        uid: Uuid::new_v4().to_string().to_uppercase(),
-        name: recipe.title.clone(),
+        uid: recipe.id.to_string().to_uppercase(),
+        name: version.title.clone(),
         ingredients: ingredients_str,
-        directions: recipe.instructions.clone(),
-        description: recipe.description.clone().unwrap_or_default(),
-        notes: recipe.notes.clone().unwrap_or_default(),
-        source: recipe.source_name.clone().unwrap_or_default(),
-        source_url: recipe.source_url.clone().unwrap_or_default(),
-        categories: recipe.tags.iter().filter_map(|t| t.clone()).collect(),
-        servings: recipe.servings.clone().unwrap_or_default(),
-        prep_time: recipe.prep_time.clone().unwrap_or_default(),
-        cook_time: recipe.cook_time.clone().unwrap_or_default(),
-        total_time: recipe.total_time.clone().unwrap_or_default(),
-        rating: recipe.rating.unwrap_or(0),
-        difficulty: recipe.difficulty.clone().unwrap_or_default(),
-        nutritional_info: recipe.nutritional_info.clone().unwrap_or_default(),
+        directions: version.instructions.clone(),
+        description: version.description.clone().unwrap_or_default(),
+        notes: version.notes.clone().unwrap_or_default(),
+        source: version.source_name.clone().unwrap_or_default(),
+        source_url: version.source_url.clone().unwrap_or_default(),
+        categories: version.tags.iter().filter_map(|t| t.clone()).collect(),
+        servings: version.servings.clone().unwrap_or_default(),
+        prep_time: version.prep_time.clone().unwrap_or_default(),
+        cook_time: version.cook_time.clone().unwrap_or_default(),
+        total_time: version.total_time.clone().unwrap_or_default(),
+        rating: version.rating.unwrap_or(0),
+        difficulty: version.difficulty.clone().unwrap_or_default(),
+        nutritional_info: version.nutritional_info.clone().unwrap_or_default(),
         created,
         photos: paprika_photos,
         photo_data,
@@ -169,10 +181,10 @@ pub struct ExportedRecipe {
 pub fn export_recipe_to_paprikarecipe(
     conn: &mut DbConn,
     user_id: Uuid,
-    recipe: &Recipe,
+    recipe: &RecipeWithVersion,
 ) -> Result<ExportedRecipe, String> {
     // Fetch photos for this recipe
-    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.photo_ids);
+    let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids);
 
     // Convert to Paprika format
     let paprika_recipe = convert_to_paprika(recipe, photos_data);
@@ -189,6 +201,63 @@ pub fn export_recipe_to_paprikarecipe(
     let filename = format!("{}.paprikarecipe", filename);
 
     Ok(ExportedRecipe { filename, data })
+}
+
+/// Fetch a recipe with its current version
+fn fetch_recipe_with_version(
+    conn: &mut DbConn,
+    user_id: Uuid,
+    recipe_id: Uuid,
+) -> Result<RecipeWithVersion, diesel::result::Error> {
+    let (id, created_at, current_version_id): (Uuid, DateTime<Utc>, Option<Uuid>) = recipes::table
+        .filter(recipes::id.eq(recipe_id))
+        .filter(recipes::user_id.eq(user_id))
+        .filter(recipes::deleted_at.is_null())
+        .select((
+            recipes::id,
+            recipes::created_at,
+            recipes::current_version_id,
+        ))
+        .first(conn)?;
+
+    let version_id = current_version_id.ok_or(diesel::result::Error::NotFound)?;
+
+    let version: RecipeVersion = recipe_versions::table
+        .filter(recipe_versions::id.eq(version_id))
+        .first(conn)?;
+
+    Ok(RecipeWithVersion {
+        id,
+        created_at,
+        version,
+    })
+}
+
+/// Fetch all recipes with their current versions for a user
+fn fetch_all_recipes_with_versions(
+    conn: &mut DbConn,
+    user_id: Uuid,
+) -> Result<Vec<RecipeWithVersion>, diesel::result::Error> {
+    // Single query with JOIN
+    let rows: Vec<(Uuid, DateTime<Utc>, RecipeVersion)> = recipes::table
+        .inner_join(
+            recipe_versions::table.on(recipe_versions::id
+                .nullable()
+                .eq(recipes::current_version_id)),
+        )
+        .filter(recipes::user_id.eq(user_id))
+        .filter(recipes::deleted_at.is_null())
+        .select((recipes::id, recipes::created_at, RecipeVersion::as_select()))
+        .load(conn)?;
+
+    Ok(rows
+        .into_iter()
+        .map(|(id, created_at, version)| RecipeWithVersion {
+            id,
+            created_at,
+            version,
+        })
+        .collect())
 }
 
 #[utoipa::path(
@@ -214,14 +283,8 @@ pub async fn export_recipe(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Fetch the recipe
-    let recipe: Recipe = match recipes::table
-        .filter(recipes::id.eq(id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select(Recipe::as_select())
-        .first(&mut conn)
-    {
+    // Fetch the recipe with its current version
+    let recipe = match fetch_recipe_with_version(&mut conn, user.id, id) {
         Ok(r) => r,
         Err(diesel::NotFound) => {
             return (
@@ -288,13 +351,8 @@ pub async fn export_all_recipes(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Fetch all user's recipes
-    let all_recipes: Vec<Recipe> = match recipes::table
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select(Recipe::as_select())
-        .load(&mut conn)
-    {
+    // Fetch all user's recipes with their current versions
+    let all_recipes = match fetch_all_recipes_with_versions(&mut conn, user.id) {
         Ok(r) => r,
         Err(_) => {
             return (
@@ -321,18 +379,26 @@ pub async fn export_all_recipes(
             let exported = match export_recipe_to_paprikarecipe(&mut conn, user.id, recipe) {
                 Ok(e) => e,
                 Err(e) => {
-                    tracing::warn!("Failed to export recipe {}: {}", recipe.title, e);
+                    tracing::warn!("Failed to export recipe {}: {}", recipe.version.title, e);
                     continue;
                 }
             };
 
             // Add gzipped .paprikarecipe to ZIP
             if let Err(e) = zip.start_file(&exported.filename, options) {
-                tracing::warn!("Failed to start ZIP entry for {}: {}", recipe.title, e);
+                tracing::warn!(
+                    "Failed to start ZIP entry for {}: {}",
+                    recipe.version.title,
+                    e
+                );
                 continue;
             }
             if let Err(e) = zip.write_all(&exported.data) {
-                tracing::warn!("Failed to write ZIP entry for {}: {}", recipe.title, e);
+                tracing::warn!(
+                    "Failed to write ZIP entry for {}: {}",
+                    recipe.version.title,
+                    e
+                );
                 continue;
             }
         }

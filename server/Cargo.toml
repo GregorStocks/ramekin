@@ -59,6 +59,6 @@ flate2 = "1.0"
 zip = "2.2"
 
 # Web scraping
-reqwest = { version = "0.13", default-features = false, features = ["rustls"] }
+reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
 scraper = "0.25"
 ramekin-core = { path = "../ramekin-core" }

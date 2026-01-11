@@ -19,6 +19,7 @@ __version__ = "1.0.0"
 # Define package exports
 __all__ = [
     "AuthApi",
+    "EnrichApi",
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
@@ -45,6 +46,7 @@ __all__ = [
     "LoginResponse",
     "PaginationMetadata",
     "PingResponse",
+    "RecipeContent",
     "RecipeResponse",
     "RecipeSummary",
     "RetryScrapeResponse",
@@ -56,10 +58,13 @@ __all__ = [
     "UnauthedPingResponse",
     "UpdateRecipeRequest",
     "UploadPhotoResponse",
+    "VersionListResponse",
+    "VersionSummary",
 ]
 
 # import apis into sdk package
 from ramekin_client.api.auth_api import AuthApi as AuthApi
+from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
@@ -90,6 +95,7 @@ from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
+from ramekin_client.models.recipe_content import RecipeContent as RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse as RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse
@@ -101,4 +107,6 @@ from ramekin_client.models.tags_response import TagsResponse as TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse as UploadPhotoResponse
+from ramekin_client.models.version_list_response import VersionListResponse as VersionListResponse
+from ramekin_client.models.version_summary import VersionSummary as VersionSummary
 

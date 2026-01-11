@@ -11,6 +11,7 @@ All URIs are relative to *http://localhost*
 | [**getRecipe**](RecipesApi.md#getrecipe) | **GET** /api/recipes/{id} |  |
 | [**listRecipes**](RecipesApi.md#listrecipes) | **GET** /api/recipes |  |
 | [**listTags**](RecipesApi.md#listtags) | **GET** /api/recipes/tags |  |
+| [**listVersions**](RecipesApi.md#listversions) | **GET** /api/recipes/{id}/versions |  |
 | [**updateRecipe**](RecipesApi.md#updaterecipeoperation) | **PUT** /api/recipes/{id} |  |
 
 
@@ -292,7 +293,7 @@ example().catch(console.error);
 
 ## getRecipe
 
-> RecipeResponse getRecipe(id)
+> RecipeResponse getRecipe(id, versionId)
 
 
 
@@ -316,6 +317,8 @@ async function example() {
   const body = {
     // string | Recipe ID
     id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+    // string | Optional version ID to fetch a specific version instead of current (optional)
+    versionId: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
   } satisfies GetRecipeRequest;
 
   try {
@@ -336,6 +339,7 @@ example().catch(console.error);
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **id** | `string` | Recipe ID | [Defaults to `undefined`] |
+| **versionId** | `string` | Optional version ID to fetch a specific version instead of current | [Optional] [Defaults to `undefined`] |
 
 ### Return type
 
@@ -502,6 +506,77 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 | **200** | List of distinct tags |  -  |
 | **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+
+
+## listVersions
+
+> VersionListResponse listVersions(id)
+
+
+
+### Example
+
+```ts
+import {
+  Configuration,
+  RecipesApi,
+} from '';
+import type { ListVersionsRequest } from '';
+
+async function example() {
+  console.log("🚀 Testing  SDK...");
+  const config = new Configuration({ 
+    // Configure HTTP bearer authorization: bearer_auth
+    accessToken: "YOUR BEARER TOKEN",
+  });
+  const api = new RecipesApi(config);
+
+  const body = {
+    // string | Recipe ID
+    id: 38400000-8cf0-11bd-b23e-10b96e4ef00d,
+  } satisfies ListVersionsRequest;
+
+  try {
+    const data = await api.listVersions(body);
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Run the test
+example().catch(console.error);
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | `string` | Recipe ID | [Defaults to `undefined`] |
+
+### Return type
+
+[**VersionListResponse**](VersionListResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List of recipe versions |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Recipe not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
 

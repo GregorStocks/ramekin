@@ -35,7 +35,6 @@ class CreateRecipeRequest(BaseModel):
     instructions: StrictStr
     notes: Optional[StrictStr] = None
     nutritional_info: Optional[StrictStr] = None
-    photo_ids: Optional[List[UUID]] = None
     prep_time: Optional[StrictStr] = None
     rating: Optional[StrictInt] = None
     servings: Optional[StrictStr] = None
@@ -44,7 +43,8 @@ class CreateRecipeRequest(BaseModel):
     tags: Optional[List[StrictStr]] = None
     title: StrictStr
     total_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time"]
+    photo_ids: Optional[List[UUID]] = None
+    __properties: ClassVar[List[str]] = ["cook_time", "description", "difficulty", "ingredients", "instructions", "notes", "nutritional_info", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "photo_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,70 +92,10 @@ class CreateRecipeRequest(BaseModel):
                 if _item_ingredients:
                     _items.append(_item_ingredients.to_dict())
             _dict['ingredients'] = _items
-        # set to None if cook_time (nullable) is None
-        # and model_fields_set contains the field
-        if self.cook_time is None and "cook_time" in self.model_fields_set:
-            _dict['cook_time'] = None
-
-        # set to None if description (nullable) is None
-        # and model_fields_set contains the field
-        if self.description is None and "description" in self.model_fields_set:
-            _dict['description'] = None
-
-        # set to None if difficulty (nullable) is None
-        # and model_fields_set contains the field
-        if self.difficulty is None and "difficulty" in self.model_fields_set:
-            _dict['difficulty'] = None
-
-        # set to None if notes (nullable) is None
-        # and model_fields_set contains the field
-        if self.notes is None and "notes" in self.model_fields_set:
-            _dict['notes'] = None
-
-        # set to None if nutritional_info (nullable) is None
-        # and model_fields_set contains the field
-        if self.nutritional_info is None and "nutritional_info" in self.model_fields_set:
-            _dict['nutritional_info'] = None
-
         # set to None if photo_ids (nullable) is None
         # and model_fields_set contains the field
         if self.photo_ids is None and "photo_ids" in self.model_fields_set:
             _dict['photo_ids'] = None
-
-        # set to None if prep_time (nullable) is None
-        # and model_fields_set contains the field
-        if self.prep_time is None and "prep_time" in self.model_fields_set:
-            _dict['prep_time'] = None
-
-        # set to None if rating (nullable) is None
-        # and model_fields_set contains the field
-        if self.rating is None and "rating" in self.model_fields_set:
-            _dict['rating'] = None
-
-        # set to None if servings (nullable) is None
-        # and model_fields_set contains the field
-        if self.servings is None and "servings" in self.model_fields_set:
-            _dict['servings'] = None
-
-        # set to None if source_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.source_name is None and "source_name" in self.model_fields_set:
-            _dict['source_name'] = None
-
-        # set to None if source_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.source_url is None and "source_url" in self.model_fields_set:
-            _dict['source_url'] = None
-
-        # set to None if tags (nullable) is None
-        # and model_fields_set contains the field
-        if self.tags is None and "tags" in self.model_fields_set:
-            _dict['tags'] = None
-
-        # set to None if total_time (nullable) is None
-        # and model_fields_set contains the field
-        if self.total_time is None and "total_time" in self.model_fields_set:
-            _dict['total_time'] = None
 
         return _dict
 
@@ -176,7 +116,6 @@ class CreateRecipeRequest(BaseModel):
             "instructions": obj.get("instructions"),
             "notes": obj.get("notes"),
             "nutritional_info": obj.get("nutritional_info"),
-            "photo_ids": obj.get("photo_ids"),
             "prep_time": obj.get("prep_time"),
             "rating": obj.get("rating"),
             "servings": obj.get("servings"),
@@ -184,7 +123,8 @@ class CreateRecipeRequest(BaseModel):
             "source_url": obj.get("source_url"),
             "tags": obj.get("tags"),
             "title": obj.get("title"),
-            "total_time": obj.get("total_time")
+            "total_time": obj.get("total_time"),
+            "photo_ids": obj.get("photo_ids")
         })
         return _obj
 

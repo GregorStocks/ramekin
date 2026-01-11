@@ -13,6 +13,7 @@ use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
 use std::path::{Path, PathBuf};
+use tracing_subscriber::EnvFilter;
 
 /// What to do when HTML fetch fails
 #[derive(Clone, Copy, Default, ValueEnum)]
@@ -229,6 +230,15 @@ enum Commands {
 
 #[tokio::main]
 async fn main() -> Result<()> {
+    // Initialize tracing with debug level by default for CLI
+    // Can be overridden with RUST_LOG environment variable
+    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("debug"));
+    tracing_subscriber::fmt()
+        .with_env_filter(filter)
+        .with_target(false)
+        .without_time()
+        .init();
+
     let cli = Cli::parse();
 
     match cli.command {

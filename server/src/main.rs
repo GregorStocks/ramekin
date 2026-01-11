@@ -6,10 +6,12 @@ mod photos;
 mod schema;
 mod scraping;
 mod telemetry;
+mod types;
 
 use axum::extract::MatchedPath;
 use axum::http::Request;
 use axum::middleware;
+use axum::routing::post;
 use axum::Router;
 use opentelemetry::trace::TracerProvider;
 use opentelemetry_appender_tracing::layer::OpenTelemetryTracingBridge;
@@ -161,6 +163,7 @@ async fn main() {
         .nest("/api/photos", api::photos::router())
         .nest("/api/recipes", api::recipes::router())
         .nest("/api/scrape", api::scrape::router())
+        .route("/api/enrich", post(api::enrich::enrich_recipe))
         .layer(middleware::from_fn_with_state(
             pool.clone(),
             auth::require_auth,

@@ -1,3 +1,4 @@
+pub mod enrich;
 pub mod photos;
 pub mod public;
 pub mod recipes;
@@ -40,6 +41,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         photos::ApiDoc::openapi(),
         recipes::ApiDoc::openapi(),
         scrape::ApiDoc::openapi(),
+        enrich::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

@@ -26,6 +26,7 @@ from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
+from ramekin_client.models.recipe_content import RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse
@@ -37,4 +38,6 @@ from ramekin_client.models.tags_response import TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse
+from ramekin_client.models.version_list_response import VersionListResponse
+from ramekin_client.models.version_summary import VersionSummary
 

@@ -136,11 +136,23 @@ export interface RecipeResponse {
      */
     totalTime?: string | null;
     /**
-     * 
+     * When viewing a specific version, this is the version's created_at
      * @type {Date}
      * @memberof RecipeResponse
      */
     updatedAt: Date;
+    /**
+     * Version metadata
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    versionId: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RecipeResponse
+     */
+    versionSource: string;
 }
 
 /**
@@ -155,6 +167,8 @@ export function instanceOfRecipeResponse(value: object): value is RecipeResponse
     if (!('tags' in value) || value['tags'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     if (!('updatedAt' in value) || value['updatedAt'] === undefined) return false;
+    if (!('versionId' in value) || value['versionId'] === undefined) return false;
+    if (!('versionSource' in value) || value['versionSource'] === undefined) return false;
     return true;
 }
 
@@ -187,6 +201,8 @@ export function RecipeResponseFromJSONTyped(json: any, ignoreDiscriminator: bool
         'title': json['title'],
         'totalTime': json['total_time'] == null ? undefined : json['total_time'],
         'updatedAt': (new Date(json['updated_at'])),
+        'versionId': json['version_id'],
+        'versionSource': json['version_source'],
     };
 }
 
@@ -220,6 +236,8 @@ export function RecipeResponseToJSONTyped(value?: RecipeResponse | null, ignoreD
         'title': value['title'],
         'total_time': value['totalTime'],
         'updated_at': value['updatedAt'].toISOString(),
+        'version_id': value['versionId'],
+        'version_source': value['versionSource'],
     };
 }
 

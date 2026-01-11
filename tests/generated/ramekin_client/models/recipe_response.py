@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from uuid import UUID
 from ramekin_client.models.ingredient import Ingredient
@@ -47,8 +47,10 @@ class RecipeResponse(BaseModel):
     tags: List[StrictStr]
     title: StrictStr
     total_time: Optional[StrictStr] = None
-    updated_at: datetime
-    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at"]
+    updated_at: datetime = Field(description="When viewing a specific version, this is the version's created_at")
+    version_id: UUID = Field(description="Version metadata")
+    version_source: StrictStr
+    __properties: ClassVar[List[str]] = ["cook_time", "created_at", "description", "difficulty", "id", "ingredients", "instructions", "notes", "nutritional_info", "photo_ids", "prep_time", "rating", "servings", "source_name", "source_url", "tags", "title", "total_time", "updated_at", "version_id", "version_source"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -181,7 +183,9 @@ class RecipeResponse(BaseModel):
             "tags": obj.get("tags"),
             "title": obj.get("title"),
             "total_time": obj.get("total_time"),
-            "updated_at": obj.get("updated_at")
+            "updated_at": obj.get("updated_at"),
+            "version_id": obj.get("version_id"),
+            "version_source": obj.get("version_source")
         })
         return _obj
 
