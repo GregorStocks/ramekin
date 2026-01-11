@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_tags**](RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
+[**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -302,7 +303,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_recipe**
-> RecipeResponse get_recipe(id)
+> RecipeResponse get_recipe(id, version_id=version_id)
 
 ### Example
 
@@ -335,9 +336,10 @@ with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.RecipesApi(api_client)
     id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | Recipe ID
+    version_id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | Optional version ID to fetch a specific version instead of current (optional)
 
     try:
-        api_response = api_instance.get_recipe(id)
+        api_response = api_instance.get_recipe(id, version_id=version_id)
         print("The response of RecipesApi->get_recipe:\n")
         pprint(api_response)
     except Exception as e:
@@ -352,6 +354,7 @@ with ramekin_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **UUID**| Recipe ID | 
+ **version_id** | **UUID**| Optional version ID to fetch a specific version instead of current | [optional] 
 
 ### Return type
 
@@ -528,6 +531,81 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | List of distinct tags |  -  |
 **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **list_versions**
+> VersionListResponse list_versions(id)
+
+### Example
+
+* Bearer Authentication (bearer_auth):
+
+```python
+import ramekin_client
+from ramekin_client.models.version_list_response import VersionListResponse
+from ramekin_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ramekin_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearer_auth
+configuration = ramekin_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with ramekin_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ramekin_client.RecipesApi(api_client)
+    id = UUID('38400000-8cf0-11bd-b23e-10b96e4ef00d') # UUID | Recipe ID
+
+    try:
+        api_response = api_instance.list_versions(id)
+        print("The response of RecipesApi->list_versions:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RecipesApi->list_versions: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **UUID**| Recipe ID | 
+
+### Return type
+
+[**VersionListResponse**](VersionListResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | List of recipe versions |  -  |
+**401** | Unauthorized |  -  |
+**404** | Recipe not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

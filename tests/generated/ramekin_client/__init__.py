@@ -19,6 +19,7 @@ __version__ = "1.0.0"
 # Define package exports
 __all__ = [
     "AuthApi",
+    "EnrichApi",
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
@@ -38,6 +39,8 @@ __all__ = [
     "CreateScrapeRequest",
     "CreateScrapeResponse",
     "Direction",
+    "EnrichRequest",
+    "EnrichResponse",
     "ErrorResponse",
     "Ingredient",
     "ListRecipesResponse",
@@ -56,10 +59,13 @@ __all__ = [
     "UnauthedPingResponse",
     "UpdateRecipeRequest",
     "UploadPhotoResponse",
+    "VersionListResponse",
+    "VersionSummary",
 ]
 
 # import apis into sdk package
 from ramekin_client.api.auth_api import AuthApi as AuthApi
+from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
@@ -83,6 +89,8 @@ from ramekin_client.models.create_recipe_response import CreateRecipeResponse as
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
 from ramekin_client.models.direction import Direction as Direction
+from ramekin_client.models.enrich_request import EnrichRequest as EnrichRequest
+from ramekin_client.models.enrich_response import EnrichResponse as EnrichResponse
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
@@ -101,4 +109,6 @@ from ramekin_client.models.tags_response import TagsResponse as TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse as UploadPhotoResponse
+from ramekin_client.models.version_list_response import VersionListResponse as VersionListResponse
+from ramekin_client.models.version_summary import VersionSummary as VersionSummary
 

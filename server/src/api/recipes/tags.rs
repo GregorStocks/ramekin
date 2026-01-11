@@ -40,9 +40,12 @@ pub async fn list_tags(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
+    // Tags are now in recipe_versions, join via current_version_id
     let tags: Vec<TagRow> = match sql_query(
-        "SELECT DISTINCT unnest(tags)::text AS tag FROM recipes \
-         WHERE user_id = $1 AND deleted_at IS NULL \
+        "SELECT DISTINCT unnest(rv.tags)::text AS tag \
+         FROM recipes r \
+         JOIN recipe_versions rv ON rv.id = r.current_version_id \
+         WHERE r.user_id = $1 AND r.deleted_at IS NULL \
          ORDER BY tag",
     )
     .bind::<DieselUuid, _>(user.id)

@@ -19,6 +19,8 @@ from ramekin_client.models.create_recipe_response import CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse
 from ramekin_client.models.direction import Direction
+from ramekin_client.models.enrich_request import EnrichRequest
+from ramekin_client.models.enrich_response import EnrichResponse
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
@@ -37,4 +39,6 @@ from ramekin_client.models.tags_response import TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse
+from ramekin_client.models.version_list_response import VersionListResponse
+from ramekin_client.models.version_summary import VersionSummary
 

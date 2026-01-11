@@ -1,5 +1,6 @@
 .openapi-generator-ignore
 apis/AuthApi.ts
+apis/EnrichApi.ts
 apis/PhotosApi.ts
 apis/RecipesApi.ts
 apis/ScrapeApi.ts
@@ -12,6 +13,9 @@ docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
 docs/Direction.md
+docs/EnrichApi.md
+docs/EnrichRequest.md
+docs/EnrichResponse.md
 docs/ErrorResponse.md
 docs/Ingredient.md
 docs/ListRecipesResponse.md
@@ -34,6 +38,8 @@ docs/TestingApi.md
 docs/UnauthedPingResponse.md
 docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
+docs/VersionListResponse.md
+docs/VersionSummary.md
 index.ts
 models/CaptureRequest.ts
 models/CreateRecipeRequest.ts
@@ -41,6 +47,8 @@ models/CreateRecipeResponse.ts
 models/CreateScrapeRequest.ts
 models/CreateScrapeResponse.ts
 models/Direction.ts
+models/EnrichRequest.ts
+models/EnrichResponse.ts
 models/ErrorResponse.ts
 models/Ingredient.ts
 models/ListRecipesResponse.ts
@@ -59,5 +67,7 @@ models/TagsResponse.ts
 models/UnauthedPingResponse.ts
 models/UpdateRecipeRequest.ts
 models/UploadPhotoResponse.ts
+models/VersionListResponse.ts
+models/VersionSummary.ts
 models/index.ts
 runtime.ts

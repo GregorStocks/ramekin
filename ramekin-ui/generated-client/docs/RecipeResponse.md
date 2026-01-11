@@ -25,6 +25,8 @@ Name | Type
 `title` | string
 `totalTime` | string
 `updatedAt` | Date
+`versionId` | string
+`versionSource` | string
 
 ## Example
 
@@ -52,6 +54,8 @@ const example = {
   "title": null,
   "totalTime": null,
   "updatedAt": null,
+  "versionId": null,
+  "versionSource": null,
 } satisfies RecipeResponse
 
 console.log(example)

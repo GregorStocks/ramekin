@@ -1,0 +1,92 @@
+# ramekin_client.EnrichApi
+
+All URIs are relative to *http://localhost*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**enrich_recipe**](EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+
+
+# **enrich_recipe**
+> EnrichResponse enrich_recipe(enrich_request)
+
+Enrich a recipe using AI
+
+This is a stateless endpoint that takes a recipe object and returns an enriched version.
+It does NOT modify any database records. The client can apply the enriched data
+via a normal PUT /api/recipes/{id} call.
+
+### Example
+
+* Bearer Authentication (bearer_auth):
+
+```python
+import ramekin_client
+from ramekin_client.models.enrich_request import EnrichRequest
+from ramekin_client.models.enrich_response import EnrichResponse
+from ramekin_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = ramekin_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearer_auth
+configuration = ramekin_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with ramekin_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = ramekin_client.EnrichApi(api_client)
+    enrich_request = ramekin_client.EnrichRequest() # EnrichRequest | 
+
+    try:
+        # Enrich a recipe using AI
+        api_response = api_instance.enrich_recipe(enrich_request)
+        print("The response of EnrichApi->enrich_recipe:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling EnrichApi->enrich_recipe: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **enrich_request** | [**EnrichRequest**](EnrichRequest.md)|  | 
+
+### Return type
+
+[**EnrichResponse**](EnrichResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Enriched recipe object |  -  |
+**401** | Unauthorized |  -  |
+**503** | AI service unavailable |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

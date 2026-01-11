@@ -111,6 +111,63 @@
         }
       }
     },
+    "/api/enrich": {
+      "post": {
+        "tags": [
+          "enrich"
+        ],
+        "summary": "Enrich a recipe using AI",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.",
+        "operationId": "enrich_recipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnrichRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Enriched recipe object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnrichResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/photos": {
       "post": {
         "tags": [
@@ -510,6 +567,19 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "version_id",
+            "in": "query",
+            "description": "Optional version ID to fetch a specific version instead of current",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uuid"
+            }
           }
         ],
         "responses": {
@@ -690,6 +760,63 @@
             "description": "Paprika recipe file (.paprikarecipe)",
             "content": {
               "application/gzip": {}
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/recipes/{id}/versions": {
+      "get": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "list_versions",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of recipe versions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VersionListResponse"
+                }
+              }
             }
           },
           "401": {
@@ -1187,6 +1314,199 @@
           "asc"
         ]
       },
+      "EnrichRequest": {
+        "type": "object",
+        "description": "Request body for enrichment - a recipe object to enhance",
+        "required": [
+          "title",
+          "ingredients",
+          "instructions"
+        ],
+        "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ingredient"
+            }
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "EnrichResponse": {
+        "type": "object",
+        "description": "Response from enrichment - the enhanced recipe object",
+        "required": [
+          "title",
+          "ingredients",
+          "instructions",
+          "tags"
+        ],
+        "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ingredient"
+            }
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
       "ErrorResponse": {
         "type": "object",
         "description": "Shared error response used by all endpoints",
@@ -1318,7 +1638,9 @@
           "photo_ids",
           "tags",
           "created_at",
-          "updated_at"
+          "updated_at",
+          "version_id",
+          "version_source"
         ],
         "properties": {
           "cook_time": {
@@ -1423,7 +1745,16 @@
           },
           "updated_at": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "When viewing a specific version, this is the version's created_at"
+          },
+          "version_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Version metadata"
+          },
+          "version_source": {
+            "type": "string"
           }
         }
       },
@@ -1746,6 +2077,51 @@
           "id": {
             "type": "string",
             "format": "uuid"
+          }
+        }
+      },
+      "VersionListResponse": {
+        "type": "object",
+        "description": "Response for version list endpoint",
+        "required": [
+          "versions"
+        ],
+        "properties": {
+          "versions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/VersionSummary"
+            }
+          }
+        }
+      },
+      "VersionSummary": {
+        "type": "object",
+        "description": "Version summary for listing version history",
+        "required": [
+          "id",
+          "title",
+          "version_source",
+          "created_at",
+          "is_current"
+        ],
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "is_current": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "version_source": {
+            "type": "string"
           }
         }
       }

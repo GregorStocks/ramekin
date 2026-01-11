@@ -1,7 +1,9 @@
 use crate::db::DbPool;
-use crate::models::{NewPhoto, NewRecipe, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
+use crate::models::{
+    NewPhoto, NewRecipe, NewRecipeVersion, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput,
+};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::schema::{photos, recipes, scrape_jobs, step_outputs};
+use crate::schema::{photos, recipe_versions, recipes, scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::{FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID};
@@ -50,6 +52,7 @@ const STEP_FETCH_HTML: &str = "fetch_html";
 const STEP_EXTRACT_RECIPE: &str = "extract_recipe";
 const STEP_FETCH_IMAGES: &str = "fetch_images";
 const STEP_SAVE_RECIPE: &str = "save_recipe";
+const STEP_ENRICH: &str = "enrich";
 
 /// Maximum retries before hard fail
 const MAX_RETRIES: i32 = 5;
@@ -262,6 +265,7 @@ fn mark_completed(pool: &DbPool, job_id: Uuid, recipe_id: Uuid) -> Result<(), Sc
 }
 
 /// Create a recipe from RawRecipe.
+/// Creates both a recipe row and initial version with source='scrape'.
 pub fn create_recipe_from_raw(
     pool: &DbPool,
     user_id: Uuid,
@@ -291,34 +295,52 @@ pub fn create_recipe_from_raw(
     // Convert photo IDs to Option<Uuid> for the database
     let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
 
-    let new_recipe = NewRecipe {
-        user_id,
-        title: &raw.title,
-        description: raw.description.as_deref(),
-        ingredients: ingredients_json,
-        instructions: &raw.instructions,
-        source_url: Some(&raw.source_url),
-        source_name: raw.source_name.as_deref(),
-        photo_ids: &photo_ids_nullable,
-        tags: &[],
-        // Paprika-compatible fields - not populated from web scraping
-        servings: None,
-        prep_time: None,
-        cook_time: None,
-        total_time: None,
-        rating: None,
-        difficulty: None,
-        nutritional_info: None,
-        notes: None,
-    };
+    // Use a transaction to create recipe + version atomically
+    conn.transaction(|conn| {
+        // 1. Create the recipe row
+        let new_recipe = NewRecipe { user_id };
 
-    let recipe_id: Uuid = diesel::insert_into(recipes::table)
-        .values(&new_recipe)
-        .returning(recipes::id)
-        .get_result(&mut conn)
-        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+        let recipe_id: Uuid = diesel::insert_into(recipes::table)
+            .values(&new_recipe)
+            .returning(recipes::id)
+            .get_result(conn)?;
 
-    Ok(recipe_id)
+        // 2. Create the initial version with source='scrape'
+        let new_version = NewRecipeVersion {
+            recipe_id,
+            title: &raw.title,
+            description: raw.description.as_deref(),
+            ingredients: ingredients_json,
+            instructions: &raw.instructions,
+            source_url: Some(&raw.source_url),
+            source_name: raw.source_name.as_deref(),
+            photo_ids: &photo_ids_nullable,
+            tags: &[],
+            // Paprika-compatible fields - not populated from web scraping
+            servings: None,
+            prep_time: None,
+            cook_time: None,
+            total_time: None,
+            rating: None,
+            difficulty: None,
+            nutritional_info: None,
+            notes: None,
+            version_source: "scrape",
+        };
+
+        let version_id: Uuid = diesel::insert_into(recipe_versions::table)
+            .values(&new_version)
+            .returning(recipe_versions::id)
+            .get_result(conn)?;
+
+        // 3. Update recipe to point to this version
+        diesel::update(recipes::table.find(recipe_id))
+            .set(recipes::current_version_id.eq(version_id))
+            .execute(conn)?;
+
+        Ok(recipe_id)
+    })
+    .map_err(|e: diesel::result::Error| ScrapeError::Database(e.to_string()))
 }
 
 /// Spawn a scrape job with proper OpenTelemetry context propagation.
@@ -594,13 +616,19 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     Ok(recipe_id) => {
                         save_span.record("recipe.id", tracing::field::display(recipe_id));
                         tracing::info!(
-                            "Job {} created recipe {} with {} photos, marking completed",
+                            "Job {} created recipe {} with {} photos, proceeding to enrich",
                             job_id,
                             recipe_id,
                             photo_ids.len()
                         );
-                        mark_completed(pool, job_id, recipe_id)?;
-                        Ok(())
+
+                        // Store recipe_id for the enrich step
+                        let save_output = serde_json::json!({ "recipe_id": recipe_id });
+                        save_step_output(pool, job_id, STEP_SAVE_RECIPE, save_output)?;
+
+                        // Continue to enrich step
+                        update_status_and_step(pool, job_id, STATUS_PARSING, Some(STEP_ENRICH))?;
+                        Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
                     Err(e) => {
                         tracing::error!("Job {} recipe creation failed: {}", job_id, e);
@@ -608,6 +636,63 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         Ok(())
                     }
                 }
+            } else if current_step == STEP_ENRICH {
+                // Get recipe_id from save_recipe output
+                let save_output = get_latest_step_output(pool, job_id, STEP_SAVE_RECIPE)?
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No save_recipe output found".to_string())
+                    })?;
+
+                let recipe_id: Uuid = save_output
+                    .output
+                    .get("recipe_id")
+                    .and_then(|v| v.as_str())
+                    .and_then(|s| Uuid::parse_str(s).ok())
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No recipe_id in save output".to_string())
+                    })?;
+
+                let enrich_span = tracing::info_span!(
+                    "scrape_step",
+                    otel.name = "enrich",
+                    step.name = "enrich",
+                    recipe.id = %recipe_id,
+                    enrich.success = tracing::field::Empty,
+                );
+
+                let enrich_result = enrich_span
+                    .in_scope(|| enrich_recipe_after_scrape(pool, job.user_id, recipe_id))
+                    .await;
+
+                let enrich_success = enrich_result.is_ok();
+                let enrich_error = enrich_result.as_ref().err().map(|e| e.to_string());
+
+                match &enrich_result {
+                    Ok(()) => {
+                        enrich_span.record("enrich.success", true);
+                        tracing::info!("Job {} enrichment complete, marking completed", job_id);
+                    }
+                    Err(e) => {
+                        enrich_span.record("enrich.success", false);
+                        // Log but don't fail the job - enrichment is optional
+                        tracing::warn!(
+                            "Job {} enrichment failed (continuing anyway): {}",
+                            job_id,
+                            e
+                        );
+                    }
+                }
+
+                // Store enrich output (success or failure)
+                let enrich_output = serde_json::json!({
+                    "success": enrich_success,
+                    "error": enrich_error,
+                });
+                save_step_output(pool, job_id, STEP_ENRICH, enrich_output)?;
+
+                // Mark completed regardless of enrichment success
+                mark_completed(pool, job_id, recipe_id)?;
+                Ok(())
             } else {
                 Err(ScrapeError::InvalidState(format!(
                     "Unexpected step in parsing status: {}",
@@ -768,4 +853,282 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     Ok(resume_status.to_string())
+}
+
+/// Enrich a recipe after scraping using AI.
+/// Fetches the current version, calls AI enrichment, and creates a new version with source='enrich'.
+async fn enrich_recipe_after_scrape(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+) -> Result<(), ScrapeError> {
+    // Check if enrichment is configured
+    let api_key = env::var("ANTHROPIC_API_KEY")
+        .map_err(|_| ScrapeError::InvalidState("ANTHROPIC_API_KEY not configured".to_string()))?;
+
+    if api_key.is_empty() {
+        return Err(ScrapeError::InvalidState(
+            "ANTHROPIC_API_KEY is empty".to_string(),
+        ));
+    }
+
+    // Get the current recipe version
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let (current_version_id,): (Option<Uuid>,) = recipes::table
+        .filter(recipes::id.eq(recipe_id))
+        .filter(recipes::user_id.eq(user_id))
+        .select((recipes::current_version_id,))
+        .first(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let version_id = current_version_id
+        .ok_or_else(|| ScrapeError::InvalidState("Recipe has no current version".to_string()))?;
+
+    let version: crate::models::RecipeVersion = recipe_versions::table
+        .find(version_id)
+        .first(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Parse ingredients from JSON
+    let ingredients: Vec<crate::models::Ingredient> =
+        serde_json::from_value(version.ingredients.clone()).unwrap_or_default();
+
+    // Call Claude API for enrichment
+    let enriched = call_claude_for_enrichment(&api_key, &version, &ingredients).await?;
+
+    // Create new version with enriched data
+    let new_ingredients_json = serde_json::to_value(&enriched.ingredients)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let new_version = NewRecipeVersion {
+        recipe_id,
+        title: &enriched.title,
+        description: enriched.description.as_deref(),
+        ingredients: new_ingredients_json,
+        instructions: &enriched.instructions,
+        source_url: version.source_url.as_deref(),
+        source_name: version.source_name.as_deref(),
+        photo_ids: &version.photo_ids,
+        tags: &enriched
+            .tags
+            .iter()
+            .map(|s| Some(s.clone()))
+            .collect::<Vec<_>>(),
+        servings: enriched.servings.as_deref(),
+        prep_time: enriched.prep_time.as_deref(),
+        cook_time: enriched.cook_time.as_deref(),
+        total_time: enriched.total_time.as_deref(),
+        rating: version.rating, // Keep original rating
+        difficulty: enriched.difficulty.as_deref(),
+        nutritional_info: version.nutritional_info.as_deref(), // Keep original
+        notes: enriched.notes.as_deref(),
+        version_source: "enrich",
+    };
+
+    let new_version_id: Uuid = diesel::insert_into(recipe_versions::table)
+        .values(&new_version)
+        .returning(recipe_versions::id)
+        .get_result(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Update recipe to point to enriched version
+    diesel::update(recipes::table.find(recipe_id))
+        .set(recipes::current_version_id.eq(new_version_id))
+        .execute(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    tracing::info!(
+        "Created enriched version {} for recipe {}",
+        new_version_id,
+        recipe_id
+    );
+
+    Ok(())
+}
+
+/// Enriched recipe data from AI
+struct EnrichedRecipe {
+    title: String,
+    description: Option<String>,
+    ingredients: Vec<crate::models::Ingredient>,
+    instructions: String,
+    tags: Vec<String>,
+    servings: Option<String>,
+    prep_time: Option<String>,
+    cook_time: Option<String>,
+    total_time: Option<String>,
+    difficulty: Option<String>,
+    notes: Option<String>,
+}
+
+/// Call Claude API to enrich a recipe
+async fn call_claude_for_enrichment(
+    api_key: &str,
+    version: &crate::models::RecipeVersion,
+    ingredients: &[crate::models::Ingredient],
+) -> Result<EnrichedRecipe, ScrapeError> {
+    let client = reqwest::Client::new();
+
+    // Format the recipe for the prompt
+    let ingredients_text = ingredients
+        .iter()
+        .map(|i| i.item.as_str())
+        .collect::<Vec<_>>()
+        .join("\n");
+
+    let tags_text = version
+        .tags
+        .iter()
+        .filter_map(|t| t.as_ref())
+        .cloned()
+        .collect::<Vec<_>>()
+        .join(", ");
+
+    let prompt = format!(
+        r#"You are a culinary expert helping to enhance and enrich recipe data.
+
+Given this recipe, please enhance it by:
+1. Improving the description if it's missing or sparse
+2. Suggesting appropriate tags/categories
+3. Estimating prep_time, cook_time, and total_time if missing
+4. Suggesting a difficulty level (easy, medium, hard) if missing
+5. Cleaning up ingredient formatting
+6. Improving instruction clarity and formatting
+
+Current recipe:
+Title: {title}
+Description: {description}
+Ingredients:
+{ingredients}
+
+Instructions:
+{instructions}
+
+Current tags: {tags}
+Servings: {servings}
+Prep time: {prep_time}
+Cook time: {cook_time}
+Total time: {total_time}
+Difficulty: {difficulty}
+Notes: {notes}
+
+Please respond with a JSON object containing the enriched recipe. Include ALL fields, even if unchanged:
+{{
+  "title": "...",
+  "description": "...",
+  "ingredients": [{{ "item": "..." }}, ...],
+  "instructions": "...",
+  "tags": ["...", ...],
+  "servings": "...",
+  "prep_time": "...",
+  "cook_time": "...",
+  "total_time": "...",
+  "difficulty": "...",
+  "notes": "..."
+}}
+
+Respond ONLY with the JSON object, no other text."#,
+        title = version.title,
+        description = version.description.as_deref().unwrap_or("(none)"),
+        ingredients = ingredients_text,
+        instructions = version.instructions,
+        tags = tags_text,
+        servings = version.servings.as_deref().unwrap_or("(none)"),
+        prep_time = version.prep_time.as_deref().unwrap_or("(none)"),
+        cook_time = version.cook_time.as_deref().unwrap_or("(none)"),
+        total_time = version.total_time.as_deref().unwrap_or("(none)"),
+        difficulty = version.difficulty.as_deref().unwrap_or("(none)"),
+        notes = version.notes.as_deref().unwrap_or("(none)"),
+    );
+
+    let request_body = serde_json::json!({
+        "model": "claude-sonnet-4-20250514",
+        "max_tokens": 4096,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    });
+
+    let response = client
+        .post("https://api.anthropic.com/v1/messages")
+        .header("x-api-key", api_key)
+        .header("anthropic-version", "2023-06-01")
+        .header("content-type", "application/json")
+        .json(&request_body)
+        .send()
+        .await
+        .map_err(|e| ScrapeError::InvalidState(format!("HTTP request failed: {}", e)))?;
+
+    if !response.status().is_success() {
+        let status = response.status();
+        let body = response
+            .text()
+            .await
+            .unwrap_or_else(|_| "(failed to read body)".to_string());
+        return Err(ScrapeError::InvalidState(format!(
+            "Claude API returned {}: {}",
+            status, body
+        )));
+    }
+
+    let response_json: serde_json::Value = response.json().await.map_err(|e| {
+        ScrapeError::InvalidState(format!("Failed to parse Claude response: {}", e))
+    })?;
+
+    // Extract the text content from Claude's response
+    let content = response_json["content"]
+        .as_array()
+        .and_then(|arr| arr.first())
+        .and_then(|c| c["text"].as_str())
+        .ok_or_else(|| {
+            ScrapeError::InvalidState("No text content in Claude response".to_string())
+        })?;
+
+    // Parse the JSON from Claude's response
+    #[derive(serde::Deserialize)]
+    struct AiResponse {
+        title: String,
+        #[serde(default)]
+        description: Option<String>,
+        #[serde(default)]
+        ingredients: Vec<crate::models::Ingredient>,
+        instructions: String,
+        #[serde(default)]
+        tags: Vec<String>,
+        #[serde(default)]
+        servings: Option<String>,
+        #[serde(default)]
+        prep_time: Option<String>,
+        #[serde(default)]
+        cook_time: Option<String>,
+        #[serde(default)]
+        total_time: Option<String>,
+        #[serde(default)]
+        difficulty: Option<String>,
+        #[serde(default)]
+        notes: Option<String>,
+    }
+
+    let parsed: AiResponse = serde_json::from_str(content)
+        .map_err(|e| ScrapeError::InvalidState(format!("Failed to parse AI response: {}", e)))?;
+
+    Ok(EnrichedRecipe {
+        title: parsed.title,
+        description: parsed.description,
+        ingredients: parsed.ingredients,
+        instructions: parsed.instructions,
+        tags: parsed.tags,
+        servings: parsed.servings,
+        prep_time: parsed.prep_time,
+        cook_time: parsed.cook_time,
+        total_time: parsed.total_time,
+        difficulty: parsed.difficulty,
+        notes: parsed.notes,
+    })
 }

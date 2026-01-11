@@ -2,7 +2,6 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::schema::recipes;
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -10,9 +9,8 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
-use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{BigInt, Bool, Text};
+use diesel::sql_types::{BigInt, Text};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -22,7 +20,7 @@ use uuid::Uuid;
 #[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum SortBy {
-    /// Sort by update time
+    /// Sort by update time (version created_at)
     #[default]
     UpdatedAt,
     /// Random order (useful for "pick a random recipe")
@@ -198,19 +196,6 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
-#[derive(Queryable)]
-struct RecipeForList {
-    id: Uuid,
-    title: String,
-    description: Option<String>,
-    tags: Vec<Option<String>>,
-    photo_ids: Vec<Option<Uuid>>,
-    created_at: DateTime<Utc>,
-    updated_at: DateTime<Utc>,
-    /// Total count of all matching rows (from window function)
-    total_count: i64,
-}
-
 #[utoipa::path(
     get,
     path = "/api/recipes",
@@ -255,88 +240,150 @@ pub async fn list_recipes(
 
     let mut conn = get_conn!(pool);
 
-    // Build base query with filters
-    let mut query = recipes::table
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .into_boxed();
+    // Use raw SQL for the join query since Diesel's join support with filters is complex
+    // This query joins recipes with their current version via current_version_id
+    let mut sql_query = String::from(
+        r#"
+        SELECT
+            r.id,
+            rv.title,
+            rv.description,
+            rv.tags,
+            rv.photo_ids,
+            r.created_at,
+            rv.created_at as updated_at,
+            COUNT(*) OVER() as total_count
+        FROM recipes r
+        INNER JOIN recipe_versions rv ON rv.id = r.current_version_id
+        WHERE r.user_id = $1
+          AND r.deleted_at IS NULL
+        "#,
+    );
 
-    // Apply text search (ILIKE on title OR description)
+    let mut param_index = 2; // $1 is user_id
+
+    // Build WHERE conditions for filters
+    let mut conditions = Vec::new();
+    let mut bind_values: Vec<String> = Vec::new();
+
+    // Text search on title OR description
     if let Some(ref pattern) = text_pattern {
-        query = query.filter(
-            recipes::title
-                .ilike(pattern)
-                .or(recipes::description.ilike(pattern)),
-        );
+        conditions.push(format!(
+            "(rv.title ILIKE ${} OR rv.description ILIKE ${})",
+            param_index, param_index
+        ));
+        bind_values.push(pattern.clone());
+        param_index += 1;
     }
 
-    // Apply tag filter (AND logic - must have ALL tags)
-    // Cast search term to citext for case-insensitive comparison with citext[] column
+    // Tag filters (AND logic - must have ALL tags)
     for tag in &parsed.tags {
-        query = query.filter(
-            sql::<Bool>("")
-                .bind::<Text, _>(tag)
-                .sql("::citext = ANY(tags)"),
-        );
+        conditions.push(format!("${}::citext = ANY(rv.tags)", param_index));
+        bind_values.push(tag.clone());
+        param_index += 1;
     }
 
-    // Apply source filter (case-insensitive substring)
+    // Source filter
     if let Some(ref pattern) = source_pattern {
-        query = query.filter(recipes::source_name.ilike(pattern));
+        conditions.push(format!("rv.source_name ILIKE ${}", param_index));
+        bind_values.push(pattern.clone());
+        param_index += 1;
     }
 
-    // Apply has_photos filter
+    // Has photos filter
     if let Some(has_photos) = parsed.has_photos {
         if has_photos {
-            query = query.filter(sql::<Bool>("cardinality(photo_ids) > 0"));
+            conditions.push("cardinality(rv.photo_ids) > 0".to_string());
         } else {
-            query = query.filter(sql::<Bool>("cardinality(photo_ids) = 0"));
+            conditions.push("cardinality(rv.photo_ids) = 0".to_string());
         }
     }
 
-    // Apply date range filters
+    // Date range filters (on recipe created_at)
     if let Some(after) = parsed.created_after {
         let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        query = query.filter(recipes::created_at.ge(after_datetime));
+        conditions.push(format!("r.created_at >= ${}", param_index));
+        bind_values.push(after_datetime.to_rfc3339());
+        param_index += 1;
     }
     if let Some(before) = parsed.created_before {
         let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        query = query.filter(recipes::created_at.le(before_datetime));
+        conditions.push(format!("r.created_at <= ${}", param_index));
+        bind_values.push(before_datetime.to_rfc3339());
+        param_index += 1;
     }
 
-    // Apply ordering
-    let query = match (params.sort_by, params.sort_dir) {
-        (SortBy::Random, _) => query.order(sql::<Text>("RANDOM()")),
-        (SortBy::UpdatedAt, Direction::Desc) => query.order(recipes::updated_at.desc()),
-        (SortBy::UpdatedAt, Direction::Asc) => query.order(recipes::updated_at.asc()),
-    };
+    // Add conditions to query
+    for condition in conditions {
+        sql_query.push_str(&format!(" AND {}", condition));
+    }
 
-    // Get paginated results with total count using window function
-    // COUNT(*) OVER() computes the total count across all matching rows
-    let results: Vec<RecipeForList> = match query
-        .select((
-            recipes::id,
-            recipes::title,
-            recipes::description,
-            recipes::tags,
-            recipes::photo_ids,
-            recipes::created_at,
-            recipes::updated_at,
-            sql::<BigInt>("COUNT(*) OVER()"),
-        ))
-        .limit(limit)
-        .offset(offset)
-        .load(&mut conn)
-    {
+    // Add ordering
+    match (params.sort_by, params.sort_dir) {
+        (SortBy::Random, _) => sql_query.push_str(" ORDER BY RANDOM()"),
+        (SortBy::UpdatedAt, Direction::Desc) => sql_query.push_str(" ORDER BY rv.created_at DESC"),
+        (SortBy::UpdatedAt, Direction::Asc) => sql_query.push_str(" ORDER BY rv.created_at ASC"),
+    }
+
+    // Add pagination
+    sql_query.push_str(&format!(
+        " LIMIT ${} OFFSET ${}",
+        param_index,
+        param_index + 1
+    ));
+
+    // Execute query using Diesel's sql_query with inline parameters
+    // We escape the parameters to prevent SQL injection
+    use diesel::sql_query as raw_sql;
+    use diesel::sql_types::{Array, Nullable, Timestamptz, Uuid as SqlUuid, Varchar};
+
+    #[derive(QueryableByName)]
+    struct RecipeRow {
+        #[diesel(sql_type = SqlUuid)]
+        id: Uuid,
+        #[diesel(sql_type = Varchar)]
+        title: String,
+        #[diesel(sql_type = Nullable<Text>)]
+        description: Option<String>,
+        #[diesel(sql_type = Array<Nullable<Varchar>>)]
+        tags: Vec<Option<String>>,
+        #[diesel(sql_type = Array<Nullable<SqlUuid>>)]
+        photo_ids: Vec<Option<Uuid>>,
+        #[diesel(sql_type = Timestamptz)]
+        created_at: DateTime<Utc>,
+        #[diesel(sql_type = Timestamptz)]
+        updated_at: DateTime<Utc>,
+        #[diesel(sql_type = BigInt)]
+        total_count: i64,
+    }
+
+    // Escape and substitute parameters inline
+    // $1 is user_id (UUID - safe)
+    let mut final_sql = sql_query.replace("$1", &format!("'{}'", user.id));
+
+    // Replace each bind value (escape single quotes)
+    let mut placeholder_idx = 2usize;
+    for value in &bind_values {
+        let escaped = value.replace('\'', "''");
+        final_sql = final_sql.replace(&format!("${}", placeholder_idx), &format!("'{}'", escaped));
+        placeholder_idx += 1;
+    }
+
+    // Replace limit/offset (safe - i64 values)
+    final_sql = final_sql.replace(&format!("${}", placeholder_idx), &limit.to_string());
+    final_sql = final_sql.replace(&format!("${}", placeholder_idx + 1), &offset.to_string());
+
+    let results: Vec<RecipeRow> = match raw_sql(&final_sql).load(&mut conn) {
         Ok(r) => r,
-        Err(_) => {
+        Err(e) => {
+            tracing::error!("Failed to fetch recipes: {:?}", e);
             return (
                 StatusCode::INTERNAL_SERVER_ERROR,
                 Json(ErrorResponse {
                     error: "Failed to fetch recipes".to_string(),
                 }),
             )
-                .into_response()
+                .into_response();
         }
     };
 

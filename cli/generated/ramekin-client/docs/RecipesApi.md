@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_tags**](RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
+[**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -126,7 +127,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_recipe
 
-> models::RecipeResponse get_recipe(id)
+> models::RecipeResponse get_recipe(id, version_id)
 
 
 ### Parameters
@@ -135,6 +136,7 @@ Name | Type | Description  | Required | Notes
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **id** | **uuid::Uuid** | Recipe ID | [required] |
+**version_id** | Option<**uuid::Uuid**> | Optional version ID to fetch a specific version instead of current |  |
 
 ### Return type
 
@@ -196,6 +198,34 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**models::TagsResponse**](TagsResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## list_versions
+
+> models::VersionListResponse list_versions(id)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Recipe ID | [required] |
+
+### Return type
+
+[**models::VersionListResponse**](VersionListResponse.md)
 
 ### Authorization
 

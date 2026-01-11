@@ -10,6 +10,9 @@ docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
 docs/Direction.md
+docs/EnrichApi.md
+docs/EnrichRequest.md
+docs/EnrichResponse.md
 docs/ErrorResponse.md
 docs/Ingredient.md
 docs/ListRecipesResponse.md
@@ -32,9 +35,12 @@ docs/TestingApi.md
 docs/UnauthedPingResponse.md
 docs/UpdateRecipeRequest.md
 docs/UploadPhotoResponse.md
+docs/VersionListResponse.md
+docs/VersionSummary.md
 git_push.sh
 src/apis/auth_api.rs
 src/apis/configuration.rs
+src/apis/enrich_api.rs
 src/apis/mod.rs
 src/apis/photos_api.rs
 src/apis/recipes_api.rs
@@ -47,6 +53,8 @@ src/models/create_recipe_response.rs
 src/models/create_scrape_request.rs
 src/models/create_scrape_response.rs
 src/models/direction.rs
+src/models/enrich_request.rs
+src/models/enrich_response.rs
 src/models/error_response.rs
 src/models/ingredient.rs
 src/models/list_recipes_response.rs
@@ -66,3 +74,5 @@ src/models/tags_response.rs
 src/models/unauthed_ping_response.rs
 src/models/update_recipe_request.rs
 src/models/upload_photo_response.rs
+src/models/version_list_response.rs
+src/models/version_summary.rs

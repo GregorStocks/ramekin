@@ -13,9 +13,9 @@ diesel::table! {
 }
 
 diesel::table! {
-    recipes (id) {
+    recipe_versions (id) {
         id -> Uuid,
-        user_id -> Uuid,
+        recipe_id -> Uuid,
         title -> Varchar,
         description -> Nullable<Text>,
         ingredients -> Jsonb,
@@ -24,9 +24,6 @@ diesel::table! {
         source_name -> Nullable<Varchar>,
         photo_ids -> Array<Nullable<Uuid>>,
         tags -> Array<Nullable<Citext>>,
-        created_at -> Timestamptz,
-        updated_at -> Timestamptz,
-        deleted_at -> Nullable<Timestamptz>,
         servings -> Nullable<Text>,
         prep_time -> Nullable<Text>,
         cook_time -> Nullable<Text>,
@@ -35,6 +32,18 @@ diesel::table! {
         difficulty -> Nullable<Text>,
         nutritional_info -> Nullable<Text>,
         notes -> Nullable<Text>,
+        version_source -> Varchar,
+        created_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
+    recipes (id) {
+        id -> Uuid,
+        user_id -> Uuid,
+        current_version_id -> Nullable<Uuid>,
+        created_at -> Timestamptz,
+        deleted_at -> Nullable<Timestamptz>,
     }
 }
 
@@ -91,13 +100,13 @@ diesel::table! {
 
 diesel::joinable!(photos -> users (user_id));
 diesel::joinable!(recipes -> users (user_id));
-diesel::joinable!(scrape_jobs -> recipes (recipe_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
 diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     photos,
+    recipe_versions,
     recipes,
     scrape_jobs,
     sessions,
