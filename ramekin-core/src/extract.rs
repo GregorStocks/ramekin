@@ -1,23 +1,56 @@
 use crate::error::ExtractError;
-use crate::types::RawRecipe;
+use crate::types::{ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, RawRecipe};
 use scraper::{Html, Selector};
 
 /// Extract a recipe from HTML containing JSON-LD structured data.
 /// Falls back to microdata extraction if JSON-LD fails.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
+    extract_recipe_with_stats(html, source_url).map(|output| output.raw_recipe)
+}
+
+/// Extract a recipe, trying all methods and reporting which ones work.
+/// Returns the first successful recipe along with stats for all methods tried.
+pub fn extract_recipe_with_stats(
+    html: &str,
+    source_url: &str,
+) -> Result<ExtractRecipeOutput, ExtractError> {
     let document = Html::parse_document(html);
 
-    // First try JSON-LD extraction
-    if let Ok(recipe) = extract_recipe_from_jsonld(&document, source_url) {
-        return Ok(recipe);
+    let mut attempts = Vec::new();
+    let mut best_recipe: Option<(RawRecipe, ExtractionMethod)> = None;
+
+    // Try JSON-LD
+    let jsonld_result = extract_recipe_from_jsonld(&document, source_url);
+    attempts.push(ExtractionAttempt {
+        method: ExtractionMethod::JsonLd,
+        success: jsonld_result.is_ok(),
+        error: jsonld_result.as_ref().err().map(|e| e.to_string()),
+    });
+    if let Ok(recipe) = jsonld_result {
+        best_recipe = Some((recipe, ExtractionMethod::JsonLd));
     }
 
-    // Fall back to microdata extraction
-    if let Ok(recipe) = extract_recipe_from_microdata(&document, source_url) {
-        return Ok(recipe);
+    // Try microdata (even if JSON-LD succeeded, for stats)
+    let microdata_result = extract_recipe_from_microdata(&document, source_url);
+    attempts.push(ExtractionAttempt {
+        method: ExtractionMethod::Microdata,
+        success: microdata_result.is_ok(),
+        error: microdata_result.as_ref().err().map(|e| e.to_string()),
+    });
+    if best_recipe.is_none() {
+        if let Ok(recipe) = microdata_result {
+            best_recipe = Some((recipe, ExtractionMethod::Microdata));
+        }
     }
 
-    Err(ExtractError::NoRecipe)
+    match best_recipe {
+        Some((recipe, method)) => Ok(ExtractRecipeOutput {
+            raw_recipe: recipe,
+            method_used: method,
+            all_attempts: attempts,
+        }),
+        None => Err(ExtractError::NoRecipe),
+    }
 }
 
 /// Extract recipe from JSON-LD script tags.

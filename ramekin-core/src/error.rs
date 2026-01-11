@@ -14,7 +14,7 @@ pub enum FetchError {
 
 #[derive(Error, Debug)]
 pub enum ExtractError {
-    #[error("No Recipe found in JSON-LD")]
+    #[error("No recipe found")]
     NoRecipe,
 
     #[error("Invalid JSON-LD: {0}")]

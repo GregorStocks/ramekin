@@ -59,6 +59,28 @@ pub struct StepTiming {
     pub duration_ms: u64,
 }
 
+/// Stats about which extraction methods succeeded
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ExtractionStats {
+    pub method_used: ramekin_core::ExtractionMethod,
+    pub jsonld_success: bool,
+    pub microdata_success: bool,
+}
+
+/// Result from the extract_recipe step with extraction stats
+#[derive(Debug, Clone)]
+pub struct ExtractStepResult {
+    pub step_result: StepResult,
+    pub extraction_stats: Option<ExtractionStats>,
+}
+
+/// Result from running all steps, including extraction stats
+#[derive(Debug, Clone)]
+pub struct AllStepsResult {
+    pub step_results: Vec<StepResult>,
+    pub extraction_stats: Option<ExtractionStats>,
+}
+
 // ============================================================================
 // URL slugification
 // ============================================================================
@@ -384,7 +406,7 @@ pub async fn run_fetch_html(url: &str, cache: &HtmlCache, force: bool) -> StepRe
 
 /// Run the extract_recipe step for a URL.
 /// Requires HTML to be cached first.
-pub fn run_extract_recipe(url: &str, cache: &HtmlCache, run_dir: &Path) -> StepResult {
+pub fn run_extract_recipe(url: &str, cache: &HtmlCache, run_dir: &Path) -> ExtractStepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
     let output_dir = run_dir.join("urls").join(&slug).join("extract_recipe");
@@ -394,38 +416,60 @@ pub fn run_extract_recipe(url: &str, cache: &HtmlCache, run_dir: &Path) -> StepR
         Some(cached) => cached.html,
         None => {
             let duration_ms = start.elapsed().as_millis() as u64;
-            return StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: false,
-                duration_ms,
-                error: Some("HTML not cached - run fetch_html first".to_string()),
-                cached: false,
+            return ExtractStepResult {
+                step_result: StepResult {
+                    step: PipelineStep::ExtractRecipe,
+                    success: false,
+                    duration_ms,
+                    error: Some("HTML not cached - run fetch_html first".to_string()),
+                    cached: false,
+                },
+                extraction_stats: None,
             };
         }
     };
 
-    // Extract recipe
-    match ramekin_core::extract_recipe(&html, url) {
-        Ok(raw_recipe) => {
+    // Extract recipe with stats
+    match ramekin_core::extract_recipe_with_stats(&html, url) {
+        Ok(output) => {
             let duration_ms = start.elapsed().as_millis() as u64;
 
+            // Build extraction stats from the attempts
+            let stats = ExtractionStats {
+                method_used: output.method_used,
+                jsonld_success: output
+                    .all_attempts
+                    .iter()
+                    .any(|a| a.method == ramekin_core::ExtractionMethod::JsonLd && a.success),
+                microdata_success: output
+                    .all_attempts
+                    .iter()
+                    .any(|a| a.method == ramekin_core::ExtractionMethod::Microdata && a.success),
+            };
+
             // Save output
-            if let Err(e) = save_extract_output(&output_dir, &raw_recipe, duration_ms) {
-                return StepResult {
-                    step: PipelineStep::ExtractRecipe,
-                    success: false,
-                    duration_ms,
-                    error: Some(format!("Failed to save output: {}", e)),
-                    cached: false,
+            if let Err(e) = save_extract_output(&output_dir, &output, duration_ms) {
+                return ExtractStepResult {
+                    step_result: StepResult {
+                        step: PipelineStep::ExtractRecipe,
+                        success: false,
+                        duration_ms,
+                        error: Some(format!("Failed to save output: {}", e)),
+                        cached: false,
+                    },
+                    extraction_stats: Some(stats),
                 };
             }
 
-            StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: true,
-                duration_ms,
-                error: None,
-                cached: false,
+            ExtractStepResult {
+                step_result: StepResult {
+                    step: PipelineStep::ExtractRecipe,
+                    success: true,
+                    duration_ms,
+                    error: None,
+                    cached: false,
+                },
+                extraction_stats: Some(stats),
             }
         }
         Err(e) => {
@@ -435,12 +479,22 @@ pub fn run_extract_recipe(url: &str, cache: &HtmlCache, run_dir: &Path) -> StepR
             // Save error
             let _ = save_step_error(&output_dir, &error_msg, duration_ms);
 
-            StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: false,
-                duration_ms,
-                error: Some(error_msg),
-                cached: false,
+            // Even on failure, we know neither method worked
+            let stats = ExtractionStats {
+                method_used: ramekin_core::ExtractionMethod::JsonLd, // Placeholder, not actually used
+                jsonld_success: false,
+                microdata_success: false,
+            };
+
+            ExtractStepResult {
+                step_result: StepResult {
+                    step: PipelineStep::ExtractRecipe,
+                    success: false,
+                    duration_ms,
+                    error: Some(error_msg),
+                    cached: false,
+                },
+                extraction_stats: Some(stats),
             }
         }
     }
@@ -516,14 +570,11 @@ pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
 
 fn save_extract_output(
     output_dir: &Path,
-    raw_recipe: &ramekin_core::RawRecipe,
+    output: &ramekin_core::ExtractRecipeOutput,
     duration_ms: u64,
 ) -> Result<()> {
     fs::create_dir_all(output_dir)?;
 
-    let output = ramekin_core::ExtractRecipeOutput {
-        raw_recipe: raw_recipe.clone(),
-    };
     let json = serde_json::to_string_pretty(&output)?;
     fs::write(output_dir.join("output.json"), json)?;
 
@@ -597,32 +648,43 @@ pub async fn run_all_steps(
     cache: &HtmlCache,
     run_dir: &Path,
     force_fetch: bool,
-) -> Vec<StepResult> {
-    let mut results = Vec::new();
+) -> AllStepsResult {
+    let mut step_results = Vec::new();
+    let mut extraction_stats = None;
 
     // Step 1: Fetch HTML
     let fetch_result = run_fetch_html(url, cache, force_fetch).await;
     let fetch_success = fetch_result.success;
-    results.push(fetch_result);
+    step_results.push(fetch_result);
 
     if !fetch_success {
-        return results;
+        return AllStepsResult {
+            step_results,
+            extraction_stats,
+        };
     }
 
     // Step 2: Extract Recipe
     let extract_result = run_extract_recipe(url, cache, run_dir);
-    let extract_success = extract_result.success;
-    results.push(extract_result);
+    extraction_stats = extract_result.extraction_stats;
+    let extract_success = extract_result.step_result.success;
+    step_results.push(extract_result.step_result);
 
     if !extract_success {
-        return results;
+        return AllStepsResult {
+            step_results,
+            extraction_stats,
+        };
     }
 
     // Step 3: Save Recipe
     let save_result = run_save_recipe(url, run_dir);
-    results.push(save_result);
+    step_results.push(save_result);
 
-    results
+    AllStepsResult {
+        step_results,
+        extraction_stats,
+    }
 }
 
 // ============================================================================

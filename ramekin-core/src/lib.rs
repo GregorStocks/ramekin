@@ -4,11 +4,11 @@ pub mod fetch;
 pub mod types;
 
 pub use error::{ExtractError, FetchError};
-pub use extract::extract_recipe;
+pub use extract::{extract_recipe, extract_recipe_with_stats};
 pub use fetch::{fetch_bytes, fetch_html};
 pub use types::{
-    ExtractRecipeOutput, FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe,
-    SaveRecipeOutput, StepOutput,
+    ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
+    FetchImagesOutput, RawRecipe, SaveRecipeOutput, StepOutput,
 };
 
 /// Unique identifier for this build, generated at compile time.

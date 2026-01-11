@@ -4,9 +4,7 @@ use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::schema::{photos, recipes, scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::{
-    ExtractRecipeOutput, FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID,
-};
+use ramekin_core::{FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
@@ -459,15 +457,15 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     recipe.title = tracing::field::Empty,
                 );
 
-                let extract_result =
-                    extract_span.in_scope(|| ramekin_core::extract_recipe(html, &job.url));
+                let extract_result = extract_span
+                    .in_scope(|| ramekin_core::extract_recipe_with_stats(html, &job.url));
 
                 match extract_result {
-                    Ok(raw_recipe) => {
-                        extract_span.record("recipe.title", raw_recipe.title.as_str());
+                    Ok(extract_output) => {
+                        extract_span
+                            .record("recipe.title", extract_output.raw_recipe.title.as_str());
 
                         // Store extract output
-                        let extract_output = ExtractRecipeOutput { raw_recipe };
                         let output_json = serde_json::to_value(&extract_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
                         save_step_output(pool, job_id, STEP_EXTRACT_RECIPE, output_json)?;

@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-step pipeline-test pipeline-cache-stats pipeline-cache-clear
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-step pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -157,3 +157,6 @@ pipeline-cache-stats: ## Show HTML cache statistics
 
 pipeline-cache-clear: ## Clear HTML cache
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
+
+pipeline-summary: ## Generate summary report from latest pipeline run (saves to data/extraction-report.md)
+	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md

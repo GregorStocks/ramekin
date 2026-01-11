@@ -1,6 +1,23 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+/// Identifies which extraction method was used
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum ExtractionMethod {
+    JsonLd,
+    Microdata,
+}
+
+/// Result of attempting a single extraction method
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ExtractionAttempt {
+    pub method: ExtractionMethod,
+    pub success: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub error: Option<String>,
+}
+
 /// Recipe extracted from a page - fields are raw blobs, not parsed.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RawRecipe {
@@ -34,6 +51,11 @@ pub struct FetchHtmlOutput {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ExtractRecipeOutput {
     pub raw_recipe: RawRecipe,
+    /// Which method was used to extract the recipe
+    pub method_used: ExtractionMethod,
+    /// Results from all attempted extraction methods
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub all_attempts: Vec<ExtractionAttempt>,
 }
 
 /// Output from the save_recipe step (for disk-based pipeline testing)
