@@ -218,9 +218,9 @@ enum Commands {
     },
     /// Generate a summary report from the latest pipeline run
     PipelineSummary {
-        /// Pipeline runs directory
+        /// Directory containing pipeline run results
         #[arg(long, default_value = "data/pipeline-runs")]
-        output_dir: PathBuf,
+        runs_dir: PathBuf,
         /// Output file for the summary (default: print to stdout)
         #[arg(short, long)]
         output: Option<PathBuf>,
@@ -335,8 +335,8 @@ async fn main() -> Result<()> {
             let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
         }
-        Commands::PipelineSummary { output_dir, output } => {
-            let (run_id, results) = pipeline_orchestrator::load_latest_results(&output_dir)?;
+        Commands::PipelineSummary { runs_dir, output } => {
+            let (run_id, results) = pipeline_orchestrator::load_latest_results(&runs_dir)?;
             let report = pipeline_orchestrator::generate_summary_report(&results);
 
             if let Some(output_path) = output {
