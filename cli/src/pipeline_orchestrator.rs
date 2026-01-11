@@ -1,5 +1,7 @@
 use crate::generate_test_urls::TestUrlsOutput;
-use crate::pipeline::{run_all_steps, HtmlCache, PipelineStep, StepResult};
+use crate::pipeline::{
+    run_all_steps, AllStepsResult, ExtractionStats, HtmlCache, PipelineStep, StepResult,
+};
 use crate::OnFetchFail;
 use anyhow::{Context, Result};
 use chrono::Utc;
@@ -85,6 +87,22 @@ pub struct PipelineResults {
     pub cache_misses: usize,
     pub by_site: HashMap<String, SiteResults>,
     pub url_results: Vec<UrlResult>,
+    pub extraction_method_stats: ExtractionMethodStats,
+}
+
+/// Stats about which extraction methods work across all URLs
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct ExtractionMethodStats {
+    /// URLs where HTML was fetched successfully (denominator for extraction stats)
+    pub urls_with_html: usize,
+    /// URLs where JSON-LD extraction succeeded
+    pub jsonld_success: usize,
+    /// URLs where microdata extraction succeeded
+    pub microdata_success: usize,
+    /// URLs where both methods succeeded
+    pub both_success: usize,
+    /// URLs where neither method succeeded
+    pub neither_success: usize,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -101,6 +119,8 @@ pub struct UrlResult {
     pub site: String,
     pub steps: Vec<StepResult>,
     pub final_status: FinalStatus,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub extraction_stats: Option<ExtractionStats>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -219,10 +239,11 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let mut step_results = run_all_steps(url, &cache, &run_dir, config.force_fetch).await;
+        let mut all_results = run_all_steps(url, &cache, &run_dir, config.force_fetch).await;
 
         // Check if fetch failed
-        let fetch_failed = step_results
+        let fetch_failed = all_results
+            .step_results
             .first()
             .map(|r| r.step == PipelineStep::FetchHtml && !r.success)
             .unwrap_or(false);
@@ -239,9 +260,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                     if let Some(new_results) =
                         prompt_for_manual_cache(url, &cache, &run_dir).await?
                     {
-                        step_results = new_results;
+                        all_results = new_results;
                     }
-                    // If user skipped, step_results still has the failed fetch
+                    // If user skipped, all_results still has the failed fetch
                 }
                 OnFetchFail::Continue => {
                     // Default: just continue (already have failed result)
@@ -250,17 +271,24 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Determine final status
-        let final_status = determine_final_status(&step_results);
+        let final_status = determine_final_status(&all_results.step_results);
 
         // Update results
-        update_results(&mut results, &step_results, &final_status, domain);
+        update_results(
+            &mut results,
+            &all_results.step_results,
+            &final_status,
+            domain,
+            all_results.extraction_stats.as_ref(),
+        );
 
         // Record URL result
         results.url_results.push(UrlResult {
             url: url.clone(),
             site: domain.clone(),
-            steps: step_results,
+            steps: all_results.step_results,
             final_status,
+            extraction_stats: all_results.extraction_stats,
         });
 
         // Save intermediate results
@@ -371,6 +399,38 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     }
 
     println!();
+    println!("Extraction Method Stats:");
+    let ems = &results.extraction_method_stats;
+    if ems.urls_with_html > 0 {
+        println!(
+            "  JSON-LD: {}/{} ({:.1}%)",
+            ems.jsonld_success,
+            ems.urls_with_html,
+            ems.jsonld_success as f64 / ems.urls_with_html as f64 * 100.0
+        );
+        println!(
+            "  Microdata: {}/{} ({:.1}%)",
+            ems.microdata_success,
+            ems.urls_with_html,
+            ems.microdata_success as f64 / ems.urls_with_html as f64 * 100.0
+        );
+        println!(
+            "  Both: {}/{} ({:.1}%)",
+            ems.both_success,
+            ems.urls_with_html,
+            ems.both_success as f64 / ems.urls_with_html as f64 * 100.0
+        );
+        println!(
+            "  Neither: {}/{} ({:.1}%)",
+            ems.neither_success,
+            ems.urls_with_html,
+            ems.neither_success as f64 / ems.urls_with_html as f64 * 100.0
+        );
+    } else {
+        println!("  (no HTML fetched)");
+    }
+
+    println!();
     println!("Artifacts saved to: {}", run_dir.display());
 
     Ok(results)
@@ -398,6 +458,7 @@ fn update_results(
     steps: &[StepResult],
     final_status: &FinalStatus,
     domain: &str,
+    extraction_stats: Option<&ExtractionStats>,
 ) {
     // Update cache stats
     for step in steps {
@@ -416,6 +477,24 @@ fn update_results(
         FinalStatus::FailedAtFetch => results.failed_at_fetch += 1,
         FinalStatus::FailedAtExtract => results.failed_at_extract += 1,
         FinalStatus::FailedAtSave => results.failed_at_save += 1,
+    }
+
+    // Update extraction method stats if we have them
+    if let Some(stats) = extraction_stats {
+        results.extraction_method_stats.urls_with_html += 1;
+
+        if stats.jsonld_success {
+            results.extraction_method_stats.jsonld_success += 1;
+        }
+        if stats.microdata_success {
+            results.extraction_method_stats.microdata_success += 1;
+        }
+        if stats.jsonld_success && stats.microdata_success {
+            results.extraction_method_stats.both_success += 1;
+        }
+        if !stats.jsonld_success && !stats.microdata_success {
+            results.extraction_method_stats.neither_success += 1;
+        }
     }
 
     // Update site stats
@@ -465,7 +544,7 @@ async fn prompt_for_manual_cache(
     url: &str,
     cache: &HtmlCache,
     run_dir: &Path,
-) -> Result<Option<Vec<StepResult>>> {
+) -> Result<Option<AllStepsResult>> {
     let staging_dir = HtmlCache::staging_dir();
 
     println!();
@@ -577,4 +656,182 @@ pub fn clear_cache(cache_dir: &Path) -> Result<()> {
     cache.clear()?;
     println!("Cache cleared: {}", cache_dir.display());
     Ok(())
+}
+
+// ============================================================================
+// Summary report generation
+// ============================================================================
+
+/// Load results from the most recent pipeline run
+pub fn load_latest_results(output_dir: &Path) -> Result<(String, PipelineResults)> {
+    // Find the most recent run directory
+    let mut runs: Vec<_> = fs::read_dir(output_dir)?
+        .filter_map(|e| e.ok())
+        .filter(|e| e.path().is_dir())
+        .collect();
+
+    runs.sort_by_key(|e| e.file_name());
+    runs.reverse();
+
+    let latest = runs
+        .first()
+        .ok_or_else(|| anyhow::anyhow!("No pipeline runs found in {}", output_dir.display()))?;
+
+    let run_id = latest.file_name().to_string_lossy().to_string();
+    let results_path = latest.path().join("results.json");
+
+    let content = fs::read_to_string(&results_path)
+        .with_context(|| format!("Failed to read {}", results_path.display()))?;
+
+    let results: PipelineResults = serde_json::from_str(&content)
+        .with_context(|| format!("Failed to parse {}", results_path.display()))?;
+
+    Ok((run_id, results))
+}
+
+/// Generate a stable, diffable summary report from pipeline results
+pub fn generate_summary_report(results: &PipelineResults) -> String {
+    let mut report = String::new();
+
+    // Overall stats
+    report.push_str("# Pipeline Extraction Report\n\n");
+    report.push_str("## Overall\n\n");
+    report.push_str(&format!("- Total URLs: {}\n", results.total_urls));
+    report.push_str(&format!(
+        "- Completed: {} ({:.1}%)\n",
+        results.completed,
+        pct(results.completed, results.total_urls)
+    ));
+    report.push_str(&format!(
+        "- Failed at fetch: {} ({:.1}%)\n",
+        results.failed_at_fetch,
+        pct(results.failed_at_fetch, results.total_urls)
+    ));
+    report.push_str(&format!(
+        "- Failed at extract: {} ({:.1}%)\n",
+        results.failed_at_extract,
+        pct(results.failed_at_extract, results.total_urls)
+    ));
+
+    // Extraction method stats
+    let ems = &results.extraction_method_stats;
+    if ems.urls_with_html > 0 {
+        report.push_str("\n## Extraction Methods\n\n");
+        report.push_str(&format!(
+            "- JSON-LD: {}/{} ({:.1}%)\n",
+            ems.jsonld_success,
+            ems.urls_with_html,
+            pct(ems.jsonld_success, ems.urls_with_html)
+        ));
+        report.push_str(&format!(
+            "- Microdata: {}/{} ({:.1}%)\n",
+            ems.microdata_success,
+            ems.urls_with_html,
+            pct(ems.microdata_success, ems.urls_with_html)
+        ));
+        report.push_str(&format!(
+            "- Both: {}/{} ({:.1}%)\n",
+            ems.both_success,
+            ems.urls_with_html,
+            pct(ems.both_success, ems.urls_with_html)
+        ));
+        report.push_str(&format!(
+            "- Neither: {}/{} ({:.1}%)\n",
+            ems.neither_success,
+            ems.urls_with_html,
+            pct(ems.neither_success, ems.urls_with_html)
+        ));
+    }
+
+    // Per-site results (sorted alphabetically for stable diffs)
+    report.push_str("\n## By Site\n\n");
+    report.push_str("| Site | Completed | Total | Rate |\n");
+    report.push_str("|------|-----------|-------|------|\n");
+
+    let mut sites: Vec<_> = results.by_site.values().collect();
+    sites.sort_by(|a, b| a.domain.cmp(&b.domain));
+
+    for site in &sites {
+        report.push_str(&format!(
+            "| {} | {} | {} | {:.1}% |\n",
+            site.domain,
+            site.completed,
+            site.total,
+            pct(site.completed, site.total)
+        ));
+    }
+
+    // Failed URLs grouped by error type (sorted for stability)
+    let mut failures_by_error: std::collections::BTreeMap<String, Vec<&str>> =
+        std::collections::BTreeMap::new();
+
+    for url_result in &results.url_results {
+        if !matches!(url_result.final_status, FinalStatus::Completed) {
+            // Find the error message from the failed step
+            let error = url_result
+                .steps
+                .iter()
+                .find(|s| !s.success)
+                .and_then(|s| s.error.as_ref())
+                .map(|e| simplify_error(e))
+                .unwrap_or_else(|| "Unknown error".to_string());
+
+            failures_by_error
+                .entry(error)
+                .or_default()
+                .push(&url_result.url);
+        }
+    }
+
+    if !failures_by_error.is_empty() {
+        report.push_str("\n## Failed URLs by Error\n");
+
+        for (error, urls) in &failures_by_error {
+            report.push_str(&format!("\n### {} ({} URLs)\n\n", error, urls.len()));
+            let mut sorted_urls: Vec<_> = urls.iter().collect();
+            sorted_urls.sort();
+            for url in sorted_urls {
+                report.push_str(&format!("- {}\n", url));
+            }
+        }
+    }
+
+    report
+}
+
+fn pct(num: usize, denom: usize) -> f64 {
+    if denom == 0 {
+        0.0
+    } else {
+        num as f64 / denom as f64 * 100.0
+    }
+}
+
+/// Simplify error messages for grouping (remove URL-specific parts)
+fn simplify_error(error: &str) -> String {
+    // Extract just the error type for grouping
+    // Handle both new format ("No recipe found") and legacy ("No Recipe found in JSON-LD")
+    if error.contains("No recipe found") || error.contains("No Recipe found") {
+        "No recipe found".to_string()
+    } else if error.contains("MissingField") {
+        // Extract the field name
+        if let Some(start) = error.find("MissingField(") {
+            if let Some(end) = error[start..].find(')') {
+                return error[start..start + end + 1].to_string();
+            }
+        }
+        "MissingField".to_string()
+    } else if error.contains("Cached error") {
+        "Cached fetch error".to_string()
+    } else if error.contains("Fetch failed") {
+        "Fetch failed".to_string()
+    } else {
+        // Truncate long errors
+        let truncated: String = error.chars().take(50).collect();
+        if truncated.len() < error.len() {
+            format!("{}...", truncated)
+        } else {
+            truncated
+        }
+    }
 }

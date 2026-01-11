@@ -216,6 +216,15 @@ enum Commands {
         #[arg(long)]
         cache_dir: Option<PathBuf>,
     },
+    /// Generate a summary report from the latest pipeline run
+    PipelineSummary {
+        /// Pipeline runs directory
+        #[arg(long, default_value = "data/pipeline-runs")]
+        output_dir: PathBuf,
+        /// Output file for the summary (default: print to stdout)
+        #[arg(short, long)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[tokio::main]
@@ -326,6 +335,19 @@ async fn main() -> Result<()> {
             let cache_dir = cache_dir.unwrap_or_else(pipeline::HtmlCache::default_cache_dir);
             pipeline_orchestrator::clear_cache(&cache_dir)?;
         }
+        Commands::PipelineSummary { output_dir, output } => {
+            let (run_id, results) = pipeline_orchestrator::load_latest_results(&output_dir)?;
+            let report = pipeline_orchestrator::generate_summary_report(&results);
+
+            if let Some(output_path) = output {
+                std::fs::write(&output_path, &report)?;
+                println!("Summary saved to: {}", output_path.display());
+                println!("(from run: {})", run_id);
+            } else {
+                println!("Run: {}\n", run_id);
+                print!("{}", report);
+            }
+        }
     }
 
     Ok(())
@@ -363,7 +385,7 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                     return Ok(());
                 }
             }
-            pipeline::run_extract_recipe(url, &cache, run_dir)
+            pipeline::run_extract_recipe(url, &cache, run_dir).step_result
         }
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
@@ -376,8 +398,8 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 }
             }
             let extract_result = pipeline::run_extract_recipe(url, &cache, run_dir);
-            if !extract_result.success {
-                println!("Extract failed: {:?}", extract_result.error);
+            if !extract_result.step_result.success {
+                println!("Extract failed: {:?}", extract_result.step_result.error);
                 return Ok(());
             }
             pipeline::run_save_recipe(url, run_dir)
