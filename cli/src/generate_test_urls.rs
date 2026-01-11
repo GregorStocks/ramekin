@@ -782,28 +782,16 @@ fn is_non_recipe_post(url: &str) -> bool {
 }
 
 /// Filter out old posts that predate reliable structured recipe data
-fn is_very_old_post(url: &str) -> bool {
+/// Check for dated blog post pattern, returning the year if found
+/// Returns Some(year) if URL has /YYYY/MM/ pattern, None otherwise
+fn extract_post_year(url: &str) -> Option<u32> {
     static DATE_PATTERN: LazyLock<Regex> =
         LazyLock::new(|| Regex::new(r"/(\d{4})/\d{2}/").unwrap());
 
-    if let Some(caps) = DATE_PATTERN.captures(url) {
-        if let Some(year_str) = caps.get(1) {
-            if let Ok(year) = year_str.as_str().parse::<u32>() {
-                // Posts before 2016 often lack structured recipe data
-                return year < 2016;
-            }
-        }
-    }
-    false
-}
-
-/// Check if URL is a dated blog post from a recent year (2016+)
-fn is_recent_dated_post(url: &str) -> bool {
-    // Pattern: /YYYY/MM/slug or /YYYY/MM/DD/slug (with optional day)
-    static DATED_POST_PATTERN: LazyLock<Regex> =
-        LazyLock::new(|| Regex::new(r"/201[6-9]|202\d/\d{2}/(\d{2}/)?[a-z0-9-]{5,}").unwrap());
-
-    DATED_POST_PATTERN.is_match(url)
+    DATE_PATTERN
+        .captures(url)
+        .and_then(|caps| caps.get(1))
+        .and_then(|year_str| year_str.as_str().parse::<u32>().ok())
 }
 
 fn is_recipe_url(url: &str) -> bool {
@@ -862,9 +850,12 @@ fn is_recipe_url(url: &str) -> bool {
         return false;
     }
 
-    // Old posts (before 2016) - often lack structured data
-    if is_very_old_post(&lower) {
-        return false;
+    // Check for dated blog post - reject old posts, remember for later acceptance
+    let post_year = extract_post_year(&lower);
+    if let Some(year) = post_year {
+        if year < 2016 {
+            return false; // Old posts often lack structured data
+        }
     }
 
     // === PHASE 3: POSITIVE INDICATORS ===
@@ -899,8 +890,8 @@ fn is_recipe_url(url: &str) -> bool {
         return true;
     }
 
-    // Date-based blog URLs from recent years with descriptive slugs
-    if is_recent_dated_post(&lower) {
+    // Date-based blog URLs from 2016+ (already passed old post filter)
+    if post_year.is_some() {
         return true;
     }
 
