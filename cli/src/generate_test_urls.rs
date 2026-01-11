@@ -442,25 +442,35 @@ async fn try_sitemap(
     domain: &str,
     urls_per_site: usize,
 ) -> Result<Vec<String>> {
-    // Try standard sitemap.xml location
-    let sitemap_url = format!("https://{}/sitemap.xml", domain);
     let mut all_urls = Vec::new();
 
-    let sitemap_content = match fetch_sitemap(client, &sitemap_url).await {
-        Ok(content) => content,
-        Err(_) => {
-            // Try robots.txt for sitemap location
-            if let Some(sitemap_from_robots) = try_robots_txt(client, domain).await {
-                fetch_sitemap(client, &sitemap_from_robots).await?
-            } else {
-                return Err(anyhow!("No sitemap found"));
-            }
-        }
-    };
+    // Step 1: Try robots.txt first to get ALL sitemaps (the authoritative source)
+    let robots_sitemaps = fetch_robots_sitemaps(client, domain).await;
+    let prioritized_sitemaps = prioritize_sitemaps(robots_sitemaps);
 
-    // Parse the sitemap (handles both urlset and sitemapindex)
-    all_urls
-        .extend(extract_urls_from_sitemap_recursive(client, &sitemap_content, domain, 2).await?);
+    if !prioritized_sitemaps.is_empty() {
+        // Process sitemaps from robots.txt in priority order
+        for sitemap_url in prioritized_sitemaps.iter().take(3) {
+            if let Ok(content) = fetch_sitemap(client, sitemap_url).await {
+                if let Ok(urls) =
+                    extract_urls_from_sitemap_recursive(client, &content, domain, 2).await
+                {
+                    all_urls.extend(urls);
+                    if all_urls.len() >= 100 {
+                        break;
+                    }
+                }
+            }
+            tokio::time::sleep(Duration::from_millis(200)).await;
+        }
+    } else {
+        // Step 2: Fall back to /sitemap.xml if robots.txt had no sitemaps
+        let sitemap_url = format!("https://{}/sitemap.xml", domain);
+        let sitemap_content = fetch_sitemap(client, &sitemap_url).await?;
+        all_urls.extend(
+            extract_urls_from_sitemap_recursive(client, &sitemap_content, domain, 2).await?,
+        );
+    }
 
     // Filter for recipe URLs and take the requested amount
     let recipe_urls: Vec<String> = all_urls
@@ -503,6 +513,21 @@ async fn fetch_sitemap(client: &reqwest::Client, url: &str) -> Result<String> {
     }
 }
 
+/// Safely parse a sitemap, catching panics from malformed XML.
+/// Some sitemaps cause quick-xml to panic due to overflow issues.
+fn safe_parse_sitemap_index(content: &str) -> Option<SitemapIndex> {
+    std::panic::catch_unwind(|| from_str::<SitemapIndex>(content))
+        .ok()
+        .and_then(|r| r.ok())
+}
+
+/// Safely parse a urlset, catching panics from malformed XML.
+fn safe_parse_urlset(content: &str) -> Option<Urlset> {
+    std::panic::catch_unwind(|| from_str::<Urlset>(content))
+        .ok()
+        .and_then(|r| r.ok())
+}
+
 /// Recursively extract URLs from a sitemap, following sitemap indexes up to max_depth levels
 async fn extract_urls_from_sitemap_recursive(
     client: &reqwest::Client,
@@ -512,36 +537,18 @@ async fn extract_urls_from_sitemap_recursive(
 ) -> Result<Vec<String>> {
     let mut urls = Vec::new();
 
-    // Try to parse as sitemap index first
-    if let Ok(index) = from_str::<SitemapIndex>(content) {
+    // Try to parse as sitemap index first (using safe parsing to handle malformed XML)
+    if let Some(index) = safe_parse_sitemap_index(content) {
         if max_depth == 0 {
             return Err(anyhow!("Max sitemap depth reached"));
         }
 
-        // Prioritize recipe-specific sitemaps
-        let mut sitemaps_to_fetch: Vec<&str> = index
-            .sitemap
-            .iter()
-            .filter(|s| {
-                let loc_lower = s.loc.to_lowercase();
-                loc_lower.contains("recipe") || loc_lower.contains("post")
-            })
-            .map(|s| s.loc.as_str())
-            .collect();
+        // Use the same prioritization logic as robots.txt processing
+        let all_sitemaps: Vec<String> = index.sitemap.iter().map(|s| s.loc.clone()).collect();
+        let prioritized = prioritize_sitemaps(all_sitemaps);
 
-        // If no recipe-specific sitemaps, try all of them (but limit to first 5)
-        if sitemaps_to_fetch.is_empty() {
-            sitemaps_to_fetch = index
-                .sitemap
-                .iter()
-                .take(5)
-                .map(|s| s.loc.as_str())
-                .collect();
-        }
-
-        // Fetch and parse sub-sitemaps
-        for sitemap_url in sitemaps_to_fetch.into_iter().take(3) {
-            // Limit to 3 to avoid too many requests
+        // Fetch and parse sub-sitemaps (limit to 3 to avoid too many requests)
+        for sitemap_url in prioritized.iter().take(3) {
             if let Ok(sub_content) = fetch_sitemap(client, sitemap_url).await {
                 if let Ok(sub_urls) = Box::pin(extract_urls_from_sitemap_recursive(
                     client,
@@ -565,8 +572,8 @@ async fn extract_urls_from_sitemap_recursive(
         return Ok(urls);
     }
 
-    // Try to parse as urlset
-    if let Ok(urlset) = from_str::<Urlset>(content) {
+    // Try to parse as urlset (using safe parsing to handle malformed XML)
+    if let Some(urlset) = safe_parse_urlset(content) {
         for entry in urlset.url {
             // Verify URL is from the same domain
             if let Ok(parsed) = url::Url::parse(&entry.loc) {
@@ -583,26 +590,66 @@ async fn extract_urls_from_sitemap_recursive(
     Ok(urls)
 }
 
-async fn try_robots_txt(client: &reqwest::Client, domain: &str) -> Option<String> {
+/// Fetch robots.txt and extract ALL sitemap URLs
+async fn fetch_robots_sitemaps(client: &reqwest::Client, domain: &str) -> Vec<String> {
     let robots_url = format!("https://{}/robots.txt", domain);
 
-    let response = client.get(&robots_url).send().await.ok()?;
-    if !response.status().is_success() {
-        return None;
-    }
+    let response = match client.get(&robots_url).send().await {
+        Ok(r) if r.status().is_success() => r,
+        _ => return Vec::new(),
+    };
 
-    let content = response.text().await.ok()?;
+    let content = match response.text().await {
+        Ok(c) => c,
+        Err(_) => return Vec::new(),
+    };
 
-    // Look for Sitemap: directive
-    for line in content.lines() {
-        let line = line.trim();
-        if line.to_lowercase().starts_with("sitemap:") {
-            let sitemap_url = line[8..].trim();
-            return Some(sitemap_url.to_string());
-        }
-    }
+    parse_robots_sitemaps(&content)
+}
 
-    None
+/// Parse ALL sitemap URLs from robots.txt content
+fn parse_robots_sitemaps(content: &str) -> Vec<String> {
+    content
+        .lines()
+        .filter_map(|line| {
+            let line = line.trim();
+            if line.to_lowercase().starts_with("sitemap:") {
+                Some(line[8..].trim().to_string())
+            } else {
+                None
+            }
+        })
+        .collect()
+}
+
+/// Prioritize and filter sitemaps deterministically.
+/// Excludes category/tag/page/author sitemaps.
+/// Prioritizes recipe > post > others, then sorts alphabetically for determinism.
+fn prioritize_sitemaps(mut sitemaps: Vec<String>) -> Vec<String> {
+    // Exclude sitemaps that contain index/category pages
+    let excluded = ["category", "tag", "page", "author"];
+
+    sitemaps.retain(|s| {
+        let lower = s.to_lowercase();
+        !excluded.iter().any(|ex| lower.contains(ex))
+    });
+
+    // Sort deterministically: priority first, then alphabetically by URL
+    sitemaps.sort_by(|a, b| {
+        let priority = |s: &str| -> u8 {
+            let lower = s.to_lowercase();
+            if lower.contains("recipe") {
+                0
+            } else if lower.contains("post") {
+                1
+            } else {
+                2
+            }
+        };
+        priority(a).cmp(&priority(b)).then_with(|| a.cmp(b))
+    });
+
+    sitemaps
 }
 
 // ============================================================================
@@ -800,5 +847,66 @@ mod tests {
         assert_eq!(urls.len(), 2);
         assert!(urls.contains(&"https://example.com/recipe/cake".to_string()));
         assert!(urls.contains(&"https://example.com/recipe/cookies".to_string()));
+    }
+
+    #[test]
+    fn test_parse_robots_sitemaps() {
+        let content = r#"
+User-agent: *
+Disallow: /admin/
+
+Sitemap: https://example.com/post-sitemap.xml
+Sitemap: https://example.com/category-sitemap.xml
+Sitemap: https://example.com/recipe-sitemap.xml
+"#;
+
+        let sitemaps = parse_robots_sitemaps(content);
+        assert_eq!(sitemaps.len(), 3);
+        assert!(sitemaps.contains(&"https://example.com/post-sitemap.xml".to_string()));
+        assert!(sitemaps.contains(&"https://example.com/category-sitemap.xml".to_string()));
+        assert!(sitemaps.contains(&"https://example.com/recipe-sitemap.xml".to_string()));
+    }
+
+    #[test]
+    fn test_prioritize_sitemaps_filters_and_sorts() {
+        let sitemaps = vec![
+            "https://example.com/category-sitemap.xml".to_string(),
+            "https://example.com/post-sitemap.xml".to_string(),
+            "https://example.com/tag-sitemap.xml".to_string(),
+            "https://example.com/recipe-sitemap.xml".to_string(),
+            "https://example.com/page-sitemap.xml".to_string(),
+            "https://example.com/sitemap-1.xml".to_string(),
+        ];
+
+        let prioritized = prioritize_sitemaps(sitemaps);
+
+        // Should exclude category, tag, page
+        assert_eq!(prioritized.len(), 3);
+
+        // Should be sorted: recipe first, then post, then others
+        assert_eq!(prioritized[0], "https://example.com/recipe-sitemap.xml");
+        assert_eq!(prioritized[1], "https://example.com/post-sitemap.xml");
+        assert_eq!(prioritized[2], "https://example.com/sitemap-1.xml");
+    }
+
+    #[test]
+    fn test_prioritize_sitemaps_deterministic() {
+        // Multiple sitemaps with same priority should be sorted alphabetically
+        let sitemaps = vec![
+            "https://example.com/z-sitemap.xml".to_string(),
+            "https://example.com/a-sitemap.xml".to_string(),
+            "https://example.com/m-sitemap.xml".to_string(),
+        ];
+
+        let prioritized = prioritize_sitemaps(sitemaps.clone());
+
+        // All have priority 2 (others), so should be alphabetically sorted
+        assert_eq!(prioritized[0], "https://example.com/a-sitemap.xml");
+        assert_eq!(prioritized[1], "https://example.com/m-sitemap.xml");
+        assert_eq!(prioritized[2], "https://example.com/z-sitemap.xml");
+
+        // Should be deterministic on re-run
+        let prioritized2 = prioritize_sitemaps(sitemaps);
+        assert_eq!(prioritized, prioritized2);
     }
 }

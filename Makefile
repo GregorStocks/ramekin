@@ -138,7 +138,7 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 	@test -f logs/cookbook.png || (echo "Screenshots not found" && exit 1)
 
 generate-test-urls: ## Generate test URL list from top recipe sites
-	@cd cli && cargo run -q -- generate-test-urls
+	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
 pipeline-step: ## Run a single pipeline step (STEP=fetch_html|extract_recipe|save_recipe URL=...)
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-step --step $(STEP) --url "$(URL)" \
