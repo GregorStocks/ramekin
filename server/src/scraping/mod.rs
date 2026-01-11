@@ -1,9 +1,12 @@
 use crate::db::DbPool;
-use crate::models::{NewRecipe, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
-use crate::schema::{recipes, scrape_jobs, step_outputs};
+use crate::models::{NewPhoto, NewRecipe, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
+use crate::photos::processing::{process_image, MAX_FILE_SIZE};
+use crate::schema::{photos, recipes, scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::{ExtractRecipeOutput, FetchHtmlOutput, RawRecipe, BUILD_ID};
+use ramekin_core::{
+    ExtractRecipeOutput, FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID,
+};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
@@ -47,6 +50,7 @@ pub const STATUS_FAILED: &str = "failed";
 /// Step names for pipeline
 const STEP_FETCH_HTML: &str = "fetch_html";
 const STEP_EXTRACT_RECIPE: &str = "extract_recipe";
+const STEP_FETCH_IMAGES: &str = "fetch_images";
 const STEP_SAVE_RECIPE: &str = "save_recipe";
 
 /// Maximum retries before hard fail
@@ -264,6 +268,7 @@ pub fn create_recipe_from_raw(
     pool: &DbPool,
     user_id: Uuid,
     raw: &RawRecipe,
+    photo_ids: &[Uuid],
 ) -> Result<Uuid, ScrapeError> {
     let mut conn = pool
         .get()
@@ -285,6 +290,9 @@ pub fn create_recipe_from_raw(
     let ingredients_json =
         serde_json::to_value(&ingredients).map_err(|e| ScrapeError::Database(e.to_string()))?;
 
+    // Convert photo IDs to Option<Uuid> for the database
+    let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+
     let new_recipe = NewRecipe {
         user_id,
         title: &raw.title,
@@ -293,7 +301,7 @@ pub fn create_recipe_from_raw(
         instructions: &raw.instructions,
         source_url: Some(&raw.source_url),
         source_name: raw.source_name.as_deref(),
-        photo_ids: &[],
+        photo_ids: &photo_ids_nullable,
         tags: &[],
         // Paprika-compatible fields - not populated from web scraping
         servings: None,
@@ -464,15 +472,15 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
                         save_step_output(pool, job_id, STEP_EXTRACT_RECIPE, output_json)?;
 
-                        // Update current_step and continue
+                        // Update current_step and continue to fetch images
                         update_status_and_step(
                             pool,
                             job_id,
                             STATUS_PARSING,
-                            Some(STEP_SAVE_RECIPE),
+                            Some(STEP_FETCH_IMAGES),
                         )?;
 
-                        tracing::info!("Job {} extracted recipe, saving", job_id);
+                        tracing::info!("Job {} extracted recipe, fetching images", job_id);
                         Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
                     Err(e) => {
@@ -481,8 +489,8 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         Ok(())
                     }
                 }
-            } else if current_step == STEP_SAVE_RECIPE {
-                // Get raw_recipe from most recent step_output
+            } else if current_step == STEP_FETCH_IMAGES {
+                // Get raw_recipe from extract output to get image URLs
                 let extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
                     .ok_or_else(|| {
                         ScrapeError::InvalidState("No extract output found".to_string())
@@ -499,24 +507,99 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                             .map_err(|e| ScrapeError::Database(e.to_string()))
                     })?;
 
+                let fetch_images_span = tracing::info_span!(
+                    "scrape_step",
+                    otel.name = "fetch_images",
+                    step.name = "fetch_images",
+                    images.requested = raw_recipe.image_urls.len(),
+                    images.success = tracing::field::Empty,
+                    images.failed = tracing::field::Empty,
+                );
+
+                // Fetch the first image (if any)
+                let fetch_images_result = fetch_images_span
+                    .in_scope(|| fetch_and_store_images(pool, job.user_id, &raw_recipe.image_urls))
+                    .await;
+
+                let output = match fetch_images_result {
+                    Ok(output) => output,
+                    Err(e) => {
+                        // Even if something catastrophic happens, continue with empty photos
+                        tracing::warn!("Image fetch failed entirely: {}", e);
+                        FetchImagesOutput {
+                            photo_ids: vec![],
+                            failed_urls: vec![FailedImageFetch {
+                                url: "all".to_string(),
+                                error: e.to_string(),
+                            }],
+                        }
+                    }
+                };
+
+                fetch_images_span.record("images.success", output.photo_ids.len());
+                fetch_images_span.record("images.failed", output.failed_urls.len());
+
+                let output_json = serde_json::to_value(&output)
+                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+                save_step_output(pool, job_id, STEP_FETCH_IMAGES, output_json)?;
+
+                // Continue to save_recipe
+                update_status_and_step(pool, job_id, STATUS_PARSING, Some(STEP_SAVE_RECIPE))?;
+                tracing::info!(
+                    "Job {} fetched {} images, saving recipe",
+                    job_id,
+                    output.photo_ids.len()
+                );
+                Box::pin(run_scrape_job_inner(pool, job_id)).await
+            } else if current_step == STEP_SAVE_RECIPE {
+                // Get raw_recipe from extract output
+                let extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No extract output found".to_string())
+                    })?;
+
+                let raw_recipe: RawRecipe = extract_output
+                    .output
+                    .get("raw_recipe")
+                    .ok_or_else(|| {
+                        ScrapeError::InvalidState("No raw_recipe in extract output".to_string())
+                    })
+                    .and_then(|v| {
+                        serde_json::from_value(v.clone())
+                            .map_err(|e| ScrapeError::Database(e.to_string()))
+                    })?;
+
+                // Get photo IDs from fetch_images output (may not exist for old jobs)
+                let photo_ids: Vec<Uuid> = get_latest_step_output(pool, job_id, STEP_FETCH_IMAGES)?
+                    .and_then(|output| {
+                        output
+                            .output
+                            .get("photo_ids")
+                            .and_then(|v| serde_json::from_value(v.clone()).ok())
+                    })
+                    .unwrap_or_default();
+
                 let save_span = tracing::info_span!(
                     "scrape_step",
                     otel.name = "save_recipe",
                     step.name = "save_recipe",
                     recipe.title = %raw_recipe.title,
                     recipe.id = tracing::field::Empty,
+                    recipe.photo_count = photo_ids.len(),
                 );
 
-                let save_result =
-                    save_span.in_scope(|| create_recipe_from_raw(pool, job.user_id, &raw_recipe));
+                let save_result = save_span.in_scope(|| {
+                    create_recipe_from_raw(pool, job.user_id, &raw_recipe, &photo_ids)
+                });
 
                 match save_result {
                     Ok(recipe_id) => {
                         save_span.record("recipe.id", tracing::field::display(recipe_id));
                         tracing::info!(
-                            "Job {} created recipe {}, marking completed",
+                            "Job {} created recipe {} with {} photos, marking completed",
                             job_id,
-                            recipe_id
+                            recipe_id,
+                            photo_ids.len()
                         );
                         mark_completed(pool, job_id, recipe_id)?;
                         Ok(())
@@ -544,6 +627,83 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
     }
 }
 
+/// Fetch images from URLs, process them, and store as Photo records.
+/// Returns photo IDs for successful downloads and errors for failed ones.
+/// Only fetches the first image URL (if any).
+async fn fetch_and_store_images(
+    pool: &DbPool,
+    user_id: Uuid,
+    image_urls: &[String],
+) -> Result<FetchImagesOutput, ScrapeError> {
+    let mut photo_ids = Vec::new();
+    let mut failed_urls = Vec::new();
+
+    // Only fetch the first image
+    if let Some(url) = image_urls.first() {
+        match fetch_and_store_single_image(pool, user_id, url).await {
+            Ok(photo_id) => photo_ids.push(photo_id),
+            Err(e) => {
+                tracing::warn!("Failed to fetch image {}: {}", url, e);
+                failed_urls.push(FailedImageFetch {
+                    url: url.clone(),
+                    error: e.to_string(),
+                });
+            }
+        }
+    }
+
+    Ok(FetchImagesOutput {
+        photo_ids,
+        failed_urls,
+    })
+}
+
+/// Fetch a single image, process it, and store as a Photo record.
+async fn fetch_and_store_single_image(
+    pool: &DbPool,
+    user_id: Uuid,
+    url: &str,
+) -> Result<Uuid, ScrapeError> {
+    // Check if host is allowed
+    is_host_allowed(url)?;
+
+    // Fetch the image bytes
+    let data = ramekin_core::fetch_bytes(url).await?;
+
+    // Validate size
+    if data.len() > MAX_FILE_SIZE {
+        return Err(ScrapeError::InvalidState(format!(
+            "Image too large: {} bytes (max {})",
+            data.len(),
+            MAX_FILE_SIZE
+        )));
+    }
+
+    // Process: validate format, generate thumbnail
+    let (content_type, thumbnail) = process_image(&data).map_err(ScrapeError::InvalidState)?;
+
+    // Store in database
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let new_photo = NewPhoto {
+        user_id,
+        content_type: &content_type,
+        data: &data,
+        thumbnail: &thumbnail,
+    };
+
+    let photo_id: Uuid = diesel::insert_into(photos::table)
+        .values(&new_photo)
+        .returning(photos::id)
+        .get_result(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    tracing::info!("Stored photo {} from {}", photo_id, url);
+    Ok(photo_id)
+}
+
 /// Reset a failed job for retry.
 /// Returns the status to resume from.
 pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
@@ -564,6 +724,8 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     // Determine where to resume based on failed_at_step and available outputs
     let has_fetch_output = get_latest_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
     let has_extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?.is_some();
+    let has_fetch_images_output =
+        get_latest_step_output(pool, job_id, STEP_FETCH_IMAGES)?.is_some();
 
     let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
         Some(STATUS_SCRAPING) => {
@@ -571,9 +733,12 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
             (STATUS_SCRAPING, STEP_FETCH_HTML)
         }
         Some(STATUS_PARSING) => {
-            if has_extract_output {
-                // Have extract output, try save again
+            if has_fetch_images_output {
+                // Have fetch_images output, try save again
                 (STATUS_PARSING, STEP_SAVE_RECIPE)
+            } else if has_extract_output {
+                // Have extract output, try fetch_images
+                (STATUS_PARSING, STEP_FETCH_IMAGES)
             } else if has_fetch_output {
                 // Have fetch output, try extract again
                 (STATUS_PARSING, STEP_EXTRACT_RECIPE)

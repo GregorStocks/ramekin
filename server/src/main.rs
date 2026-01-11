@@ -2,6 +2,7 @@ mod api;
 mod auth;
 mod db;
 mod models;
+mod photos;
 mod schema;
 mod scraping;
 
