@@ -13,10 +13,10 @@ fi
 
 echo "Setting up Claude Code for Web environment..."
 
-# Install libpq-dev and shellcheck if not present
-if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1; then
+# Install libpq-dev, shellcheck, and gh CLI if not present
+if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1; then
     echo "Installing system dependencies..."
-    apt-get update -qq && apt-get install -y -qq libpq-dev shellcheck
+    apt-get update -qq && apt-get install -y -qq libpq-dev shellcheck gh
 fi
 
 # Install diesel_cli if not present
