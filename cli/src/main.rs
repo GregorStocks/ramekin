@@ -159,7 +159,7 @@ enum Commands {
         #[arg(long, default_value = "50")]
         num_sites: usize,
         /// Number of URLs per site
-        #[arg(long, default_value = "10")]
+        #[arg(long, default_value = "20")]
         urls_per_site: usize,
         /// Merge with existing file instead of replacing
         #[arg(long)]

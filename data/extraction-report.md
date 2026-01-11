@@ -2,17 +2,17 @@
 
 ## Overall
 
-- Total URLs: 852
-- Completed: 381 (44.7%)
-- Failed at fetch: 20 (2.3%)
-- Failed at extract: 451 (52.9%)
+- Total URLs: 815
+- Completed: 397 (48.7%)
+- Failed at fetch: 0 (0.0%)
+- Failed at extract: 418 (51.3%)
 
 ## Extraction Methods
 
-- JSON-LD: 365/832 (43.9%)
-- Microdata: 16/832 (1.9%)
-- Both: 0/832 (0.0%)
-- Neither: 451/832 (54.2%)
+- JSON-LD: 392/815 (48.1%)
+- Microdata: 5/815 (0.6%)
+- Both: 0/815 (0.0%)
+- Neither: 418/815 (51.3%)
 
 ## By Site
 
@@ -21,7 +21,7 @@
 | 101cookbooks.com | 0 | 20 | 0.0% |
 | acouplecooks.com | 20 | 20 | 100.0% |
 | alexandracooks.com | 19 | 20 | 95.0% |
-| altonbrown.com | 16 | 20 | 80.0% |
+| altonbrown.com | 20 | 20 | 100.0% |
 | bakingbites.com | 0 | 20 | 0.0% |
 | browneyedbaker.com | 17 | 20 | 85.0% |
 | budgetbytes.com | 1 | 20 | 5.0% |
@@ -30,37 +30,36 @@
 | cookingclassy.com | 20 | 20 | 100.0% |
 | davidlebovitz.com | 0 | 20 | 0.0% |
 | dinnerthendessert.com | 5 | 17 | 29.4% |
-| downshiftology.com | 8 | 20 | 40.0% |
+| downshiftology.com | 19 | 20 | 95.0% |
 | giangiskitchen.com | 1 | 20 | 5.0% |
-| gimmesomeoven.com | 0 | 20 | 0.0% |
+| gimmesomeoven.com | 5 | 19 | 26.3% |
 | howsweeteats.com | 0 | 20 | 0.0% |
 | loveandlemons.com | 2 | 20 | 10.0% |
 | loveandoliveoil.com | 19 | 20 | 95.0% |
-| minimalistbaker.com | 2 | 4 | 50.0% |
+| minimalistbaker.com | 3 | 5 | 60.0% |
 | mybakingaddiction.com | 0 | 20 | 0.0% |
 | mypureplants.com | 5 | 11 | 45.5% |
 | myquietkitchen.com | 4 | 9 | 44.4% |
 | ohmyveggies.com | 1 | 20 | 5.0% |
-| ohsheglows.com | 2 | 20 | 10.0% |
+| ohsheglows.com | 1 | 2 | 50.0% |
 | onmykidsplate.com | 17 | 20 | 85.0% |
 | pinchofyum.com | 3 | 18 | 16.7% |
 | sallysbakingaddiction.com | 18 | 20 | 90.0% |
 | saltysidedish.com | 19 | 20 | 95.0% |
 | seasonalcravings.com | 0 | 20 | 0.0% |
-| seriouseats.com | 7 | 20 | 35.0% |
-| simplyrecipes.com | 5 | 20 | 25.0% |
+| seriouseats.com | 20 | 20 | 100.0% |
+| simplyrecipes.com | 7 | 20 | 35.0% |
 | skinnytaste.com | 3 | 17 | 17.6% |
-| slenderkitchen.com | 19 | 20 | 95.0% |
+| slenderkitchen.com | 20 | 20 | 100.0% |
 | slowlivingkitchen.com | 5 | 10 | 50.0% |
-| smittenkitchen.com | 14 | 20 | 70.0% |
-| spoonforkbacon.com | 13 | 20 | 65.0% |
+| smittenkitchen.com | 3 | 20 | 15.0% |
+| spoonforkbacon.com | 2 | 16 | 12.5% |
 | sprinklebakes.com | 19 | 20 | 95.0% |
 | sugarfreelondoner.com | 17 | 20 | 85.0% |
 | sweetandsavorymeals.com | 20 | 20 | 100.0% |
 | tastesbetterfromscratch.com | 6 | 9 | 66.7% |
-| thekitchn.com | 0 | 20 | 0.0% |
 | thepetitecook.com | 5 | 20 | 25.0% |
-| thepioneerwoman.com | 0 | 1 | 0.0% |
+| thepioneerwoman.com | 2 | 6 | 33.3% |
 | therecipecritic.com | 18 | 20 | 90.0% |
 | thestayathomechef.com | 13 | 16 | 81.2% |
 | twopeasandtheirpod.com | 0 | 20 | 0.0% |
@@ -68,36 +67,9 @@
 
 ## Failed URLs by Error
 
-### Cached fetch error (20 URLs)
-
-- https://www.thekitchn.com/2000-dollar-scandi-industrial-kitchen-redo-23762232
-- https://www.thekitchn.com/2026-editor-cooking-bucket-list-23763205
-- https://www.thekitchn.com/air-fryer-acorn-squash-recipe-23759706
-- https://www.thekitchn.com/best-leftover-rice-recipes-23658614
-- https://www.thekitchn.com/best-recipes-to-cook-january-2026-23762079
-- https://www.thekitchn.com/boursin-cheese-recipe-23761797
-- https://www.thekitchn.com/caesar-roasted-brussels-sprouts-recipe-23761094
-- https://www.thekitchn.com/chicken-bacon-ranch-casserole-recipe-23254887
-- https://www.thekitchn.com/chili-recipe-23610703
-- https://www.thekitchn.com/garlic-parmesan-cauliflower-steaks-recipe-23764267
-- https://www.thekitchn.com/gochujang-chicken-thighs-recipe-23761714
-- https://www.thekitchn.com/harissa-honey-beef-and-broccoli-noodles-recipe-23762001
-- https://www.thekitchn.com/kielbasa-sauerkraut-skillet-recipe-review-23764491
-- https://www.thekitchn.com/king-arthur-flour-flaky-puff-crust-pizza-recipe-review-23763440
-- https://www.thekitchn.com/kristen-bell-jemma-salad-recipe-review-23763425
-- https://www.thekitchn.com/pigs-in-a-blanket-recipe-23256899
-- https://www.thekitchn.com/pineapple-smoothie-recipe-23761690
-- https://www.thekitchn.com/protein-cinnamon-toast-recipe-review-23763830
-- https://www.thekitchn.com/sausage-kale-soup-recipe-23761645
-- https://www.thekitchn.com/trisha-yearwood-cowboy-lasagna-recipe-review-2-23764049
-
-### No recipe found (451 URLs)
+### No recipe found (418 URLs)
 
 - https://alexandracooks.com/2007/07/22/best-granola-ever/
-- https://altonbrown.com/6-alton-brown-apple-recipes-for-autumn/
-- https://altonbrown.com/alton-brown-pumpkin-recipes/
-- https://altonbrown.com/everydaycook-recipe-corrections-clarifications/
-- https://altonbrown.com/how-to-read-a-recipe/
 - https://bakingbites.com/2004/11/what-is-divinity/
 - https://bakingbites.com/2004/12/cinnamon-babka/
 - https://bakingbites.com/2004/12/croatian-chocolate/
@@ -135,18 +107,8 @@
 - https://dinnerthendessert.com/slow-cooker-chicken-recipes/
 - https://dinnerthendessert.com/summer-side-dish-recipes/
 - https://dinnerthendessert.com/top-10-most-popular-recipes-of-2015/
-- https://downshiftology.com/10-most-popular-recipes-of-2015/
-- https://downshiftology.com/11-tasty-cassava-flour-recipes/
-- https://downshiftology.com/15-whole30-recipes-breakfast-lunch-dinner/
-- https://downshiftology.com/2016-reader-survey-results/
-- https://downshiftology.com/2018-holiday-gift-guide/
-- https://downshiftology.com/hard-boiled-eggs-recipes/
-- https://downshiftology.com/meal-prep-recipes-fall/
-- https://downshiftology.com/meal-prep-summer-light-fresh-meal-prep-recipes/
-- https://downshiftology.com/meal-prep-winter-recipes/
-- https://downshiftology.com/smoothie-bowl-recipes-to-make/
-- https://downshiftology.com/top-10-recipes-2016/
-- https://downshiftology.com/what-i-eat-in-a-day-whole30-recipes/
+- https://downshiftology.com/recipes/
+- https://gimmesomeoven.com/all-recipes/
 - https://minimalistbaker.com/christmas-recipe-roundup/
 - https://minimalistbaker.com/vegan-thanksgiving-recipe-roundup/
 - https://mypureplants.com/rice-paper-wrappers-rolls-recipes/
@@ -179,24 +141,7 @@
 - https://ohmyveggies.com/of-the-best-easy-vegetarian-recipes/
 - https://ohmyveggies.com/vegetarian-grilling-recipes/
 - https://ohmyveggies.com/zucchini-bread-recipes-everyone-will-love/
-- https://ohsheglows.com/20-weeks-pregnancy-2/
-- https://ohsheglows.com/20-weeks/
-- https://ohsheglows.com/21-vegan-freezer-friendly-mealsnack-recipes-my-tips-for-freezing/
-- https://ohsheglows.com/ask-angela-osg-recipes-with-5-to-7-ingredients-my-favourite-popsicle-molds-freezer-friendly-summer-recipes-and-more/
-- https://ohsheglows.com/calling-all-recipe-testers/
-- https://ohsheglows.com/friday-faqs-camping-food-pregnancy-updates-freezer-friendly-recipes-and-more/
-- https://ohsheglows.com/friday-faqs-edible-teacher-gifts-festive-canada-day-recipes-large-flake-coconut-whereabouts-and-more/
-- https://ohsheglows.com/friday-faqs-high-protein-recipes-sunflower-seed-butter-troubleshooting-freezing-aquafaba-and-more/
-- https://ohsheglows.com/friday-faqs-recipes-using-cacao-powder-storing-tofu-subs-for-my-jumbo-chocolate-chunk-cookies-and-more/
-- https://ohsheglows.com/friday-faqs-storing-sour-cream-omnivore-friendly-recipes-lentils-banana-swaps-and-more/
-- https://ohsheglows.com/friday-faqs-the-recipesfoods-i-packed-for-the-hospital-veggie-heavy-summer-recipes-canned-coconut-cream-and-more/
-- https://ohsheglows.com/most-popular-healthy-recipes-of-2014-vegan-gf-news/
-- https://ohsheglows.com/my-bonus-recipe-bundle-is-here/
-- https://ohsheglows.com/my-make-ahead-vegan-holiday-recipes-plus-handy-tips-and-tricks/
-- https://ohsheglows.com/oh-she-glows-15-best-vegan-cookie-recipes/
-- https://ohsheglows.com/the-oh-she-glows-recipe-app-is-here/
-- https://ohsheglows.com/vegan-mothers-day-brunch-recipes/
-- https://ohsheglows.com/vegan-recipes-and-snack-ideas-for-camp-and-travel/
+- https://ohsheglows.com/back-to-school-21-portable-allergy-friendly-snack-recipes-vegan-gluten-free-with-nut-free-options/
 - https://onmykidsplate.com/healthy-halloween-party-food-recipes-kids/
 - https://onmykidsplate.com/no-bake-halloween-recipes/
 - https://onmykidsplate.com/sidewalk-chalk-paint-recipe/
@@ -222,12 +167,31 @@
 - https://slowlivingkitchen.com/beyond-the-recipe-crock-pot-cooking-techniques/
 - https://slowlivingkitchen.com/rhubarb-shrub-recipe/
 - https://slowlivingkitchen.com/trending-recipe-searches-on-google/
-- https://smittenkitchen.com/2007/05/my-bacon-is-always-crisp/
-- https://smittenkitchen.com/2007/12/iceberg-wedge-salad-with-blue-cheese/
-- https://smittenkitchen.com/2009/12/balsamic-braised-brussels-with-pancetta/
-- https://smittenkitchen.com/2013/01/intensely-chocolate-sables/
-- https://smittenkitchen.com/2015/02/spaghetti-pangrattato-with-fried-eggs/
+- https://smittenkitchen.com/./recipes/
+- https://smittenkitchen.com/./recipes/course/salad/
+- https://smittenkitchen.com/./recipes/diet/gluten-free/
+- https://smittenkitchen.com/./recipes/diet/vegan/
+- https://smittenkitchen.com/./recipes/diet/vegetarian/
+- https://smittenkitchen.com/./recipes/fruit/citrus/
+- https://smittenkitchen.com/./recipes/fruit/orange/
+- https://smittenkitchen.com/./recipes/holiday/hanukkah/
+- https://smittenkitchen.com/./recipes/holiday/thanksgiving/
+- https://smittenkitchen.com/./recipes/season/fall/
+- https://smittenkitchen.com/./recipes/season/winter/
+- https://smittenkitchen.com/./recipes/sweets/cake/
+- https://smittenkitchen.com/./recipes/vegetable/cabbage/
+- https://smittenkitchen.com/./recipes/vegetable/fennel/
+- https://smittenkitchen.com/./recipes/vegetable/winter-squash/
 - https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/
+- https://smittenkitchen.com/2025/12/winter-cabbage-salad-with-mandarins-and-cashews/#comments
+- https://spoonforkbacon.com/category/asian-recipes
+- https://spoonforkbacon.com/category/breakfast-brunch-recipes
+- https://spoonforkbacon.com/category/chicken-poultry-recipes
+- https://spoonforkbacon.com/category/dessert-recipes
+- https://spoonforkbacon.com/category/dinner-recipes
+- https://spoonforkbacon.com/category/pasta-noodles-recipes
+- https://spoonforkbacon.com/category/quick-easy-recipes
+- https://spoonforkbacon.com/category/seafood-recipes
 - https://sugarfreelondoner.com/50-keto-dairy-free-recipes/
 - https://sugarfreelondoner.com/keto-christmas-cookies-recipes/
 - https://sugarfreelondoner.com/sugar-free-cookie-recipes/
@@ -327,36 +291,29 @@
 - https://www.giangiskitchen.com/french-bistro-recipes/
 - https://www.giangiskitchen.com/french-recipes/
 - https://www.giangiskitchen.com/from-fresh-to-comforting-12-must-try-side-recipes/
-- https://www.giangiskitchen.com/holiday-appetizer-recipes/
 - https://www.giangiskitchen.com/peach-recipes/
 - https://www.giangiskitchen.com/pork-roundup-recipes/
 - https://www.giangiskitchen.com/summer-fruit-recipes/
 - https://www.giangiskitchen.com/the-10-recipes-everyone-is-cooking-right-now/
 - https://www.giangiskitchen.com/the-ultimate-chicken-collection-12-irresistible-recipes-to-reignite-your-dinner-game/
+- https://www.giangiskitchen.com/these-10-recipes-have-taken-kitchens-by-storm/
 - https://www.giangiskitchen.com/top-10-fish-recipes/
 - https://www.giangiskitchen.com/top-10-quick-easy-pasta-recipes/
 - https://www.giangiskitchen.com/top-10-quick-easy-salads-recipes/
 - https://www.giangiskitchen.com/winter-recipes/
-- https://www.gimmesomeoven.com/15-blueberry-recipes/
-- https://www.gimmesomeoven.com/15-broccoli-recipes/
-- https://www.gimmesomeoven.com/15-margarita-recipes/
-- https://www.gimmesomeoven.com/15-naturally-red-white-and-blue-recipes/
-- https://www.gimmesomeoven.com/15-pasta-salad-recipes/
-- https://www.gimmesomeoven.com/15-peachy-recipes/
-- https://www.gimmesomeoven.com/15-pretty-popsicle-recipes/
-- https://www.gimmesomeoven.com/15-strawberry-recipes/
-- https://www.gimmesomeoven.com/15-tomato-recipes/
-- https://www.gimmesomeoven.com/15-vegetarian-dinner-recipes/
-- https://www.gimmesomeoven.com/15-watermelon-recipes/
-- https://www.gimmesomeoven.com/15-zucchini-recipes/
 - https://www.gimmesomeoven.com/all-recipes/
-- https://www.gimmesomeoven.com/favorite-recipes-of-2015/
-- https://www.gimmesomeoven.com/kale-recipes/
-- https://www.gimmesomeoven.com/my-16-favorite-recipes-of-2016/
-- https://www.gimmesomeoven.com/my-favorite-15-recipes-of-2015/
-- https://www.gimmesomeoven.com/super-bowl-dip-recipes/
-- https://www.gimmesomeoven.com/taco-recipes/
-- https://www.gimmesomeoven.com/your-16-favorite-recipes-of-2016/
+- https://www.gimmesomeoven.com/cooking-method/air-fryer-recipes/
+- https://www.gimmesomeoven.com/cooking-method/sheet-pan-recipes/
+- https://www.gimmesomeoven.com/occasions/mardi-gras-recipes/
+- https://www.gimmesomeoven.com/occasions/st-patricks-day-recipes/
+- https://www.gimmesomeoven.com/proteins/bean-recipes/
+- https://www.gimmesomeoven.com/proteins/beef-recipes/
+- https://www.gimmesomeoven.com/proteins/chicken-recipes/
+- https://www.gimmesomeoven.com/proteins/egg-recipes/
+- https://www.gimmesomeoven.com/proteins/pork-recipes/
+- https://www.gimmesomeoven.com/proteins/salmon-recipes/
+- https://www.gimmesomeoven.com/proteins/shrimp-recipes/
+- https://www.gimmesomeoven.com/proteins/tofu-recipes/
 - https://www.howsweeteats.com/2009/09/big-girls-dont-cry/
 - https://www.howsweeteats.com/2009/09/camera-concerns/
 - https://www.howsweeteats.com/2009/09/fra-gee-lay/
@@ -437,33 +394,18 @@
 - https://www.seasonalcravings.com/low-carb-pasta-recipes-using-zoodles/
 - https://www.seasonalcravings.com/no-bake-dessert-recipes/
 - https://www.seasonalcravings.com/stir-fry-recipes-better-than-take-out/
-- https://www.seriouseats.com/15-minute-lunch-recipes-11878675
-- https://www.seriouseats.com/cabbage-recipes-11878683
-- https://www.seriouseats.com/fresh-winter-salad-recipes-11878295
-- https://www.seriouseats.com/hearty-chickpea-recipes-11878318
-- https://www.seriouseats.com/january-2026-editor-recs-recipes-11874537
-- https://www.seriouseats.com/mediterranean-inspired-one-pan-dinner-recipes-11877437
-- https://www.seriouseats.com/most-saved-shrimp-recipes-11879657
-- https://www.seriouseats.com/salad-dressing-recipes-11878308
-- https://www.seriouseats.com/tahini-recipes-beyond-hummus-11878978
-- https://www.seriouseats.com/vegan-dinner-recipes-11878691
-- https://www.seriouseats.com/vegetable-casserole-recipes-for-sharing-11878293
-- https://www.seriouseats.com/vegetable-main-dish-dinner-recipes-11879784
-- https://www.seriouseats.com/winter-green-recipes-11878097
-- https://www.simplyrecipes.com/big-batch-soup-recipes-11877528
-- https://www.simplyrecipes.com/braised-canned-beans-recipes-11872894
-- https://www.simplyrecipes.com/cottage-cheese-scramble-recipe-11874515
+- https://www.simplyrecipes.com/cheesy-potato-recipes-11880023
+- https://www.simplyrecipes.com/cheesy-potato-recipes-11880023
 - https://www.simplyrecipes.com/creamy-maple-balsamic-dressing-recipe-11879067
-- https://www.simplyrecipes.com/four-ingredient-chicken-salad-recipe-11872876
-- https://www.simplyrecipes.com/four-ingredient-tuna-salad-recipe-11872474
+- https://www.simplyrecipes.com/five-minute-chutney-cheese-appetizer-recipe-11872870
+- https://www.simplyrecipes.com/five-minute-chutney-cheese-appetizer-recipe-11872870
+- https://www.simplyrecipes.com/hot-water-cornbread-recipe-11872525
+- https://www.simplyrecipes.com/hot-water-cornbread-recipe-11872525
 - https://www.simplyrecipes.com/most-popular-ground-beef-recipe-11874443
-- https://www.simplyrecipes.com/most-searched-soup-recipe-in-the-south-11871871
-- https://www.simplyrecipes.com/one-minute-salad-dressing-recipe-11872456
-- https://www.simplyrecipes.com/our-best-egg-recipes-for-stress-free-breakfasts-11877572
-- https://www.simplyrecipes.com/tahini-cinnamon-toast-recipe-11873619
-- https://www.simplyrecipes.com/thirty-minute-recipes-not-pasta-11864829
-- https://www.simplyrecipes.com/three-ingredient-mocktail-recipe-11873425
-- https://www.simplyrecipes.com/top-ten-ground-beef-recipes-11871306
+- https://www.simplyrecipes.com/quick-skillet-meals-recipes-11880208
+- https://www.simplyrecipes.com/quick-tortellini-soup-recipe-11872563
+- https://www.simplyrecipes.com/roasted-caesar-broccoli-recipe-11875667
+- https://www.simplyrecipes.com/roasted-caesar-broccoli-recipe-11875667
 - https://www.simplyrecipes.com/vanilla-yogurt-smoothie-recipe-11879255
 - https://www.skinnytaste.com/15-light-and-healthy-chili-recipes/
 - https://www.skinnytaste.com/35-skinny-zucchini-recipes/
@@ -479,14 +421,12 @@
 - https://www.skinnytaste.com/top-25-most-popular-skinnytaste-recipes-2021/
 - https://www.skinnytaste.com/top-25-most-popular-skinnytaste-recipes/
 - https://www.skinnytaste.com/top-25-skinny-recipes-2012/
-- https://www.slenderkitchen.com/article/best-stir-fry-recipes
-- https://www.spoonforkbacon.com/best-salad-recipes/
-- https://www.spoonforkbacon.com/best-smores-recipes/
-- https://www.spoonforkbacon.com/best-soup-recipes/
-- https://www.spoonforkbacon.com/favorite-summer-bbq-recipes/
-- https://www.spoonforkbacon.com/potato-recipes/
-- https://www.spoonforkbacon.com/the-best-pasta-recipes/
-- https://www.spoonforkbacon.com/the-best-shrimp-recipes/
+- https://www.spoonforkbacon.com/category/appetizers-snacks-recipes/
+- https://www.spoonforkbacon.com/category/dinner-recipes/
+- https://www.spoonforkbacon.com/category/quick-easy-recipes/
+- https://www.spoonforkbacon.com/category/salads-dressings-recipes/
+- https://www.spoonforkbacon.com/category/vegetarian-recipes/
+- https://www.spoonforkbacon.com/recipes/
 - https://www.sprinklebakes.com/2019/05/breakfast-pizza-with-biscuit-crust.html
 - https://www.thepetitecook.com/10-authentic-sicilian-recipes/
 - https://www.thepetitecook.com/18-egg-straordinary-easter-recipes/
@@ -503,7 +443,10 @@
 - https://www.thepetitecook.com/summer-meal-recipes/
 - https://www.thepetitecook.com/top-10-favorite-recipes-of-2015/
 - https://www.thepetitecook.com/top-10-recipes-2016/
-- https://www.thepioneerwoman.com/food-cooking/recipes/
+- https://www.thepioneerwoman.com/easy-recipes/
+- https://www.thepioneerwoman.com/healthy-recipes/
+- https://www.thepioneerwoman.com/ree-drummond-thanksgiving-tutorial-cooking-recipes-video/
+- https://www.thepioneerwoman.com/rees-classic-recipes/
 - https://www.twopeasandtheirpod.com/30-holiday-cookie-recipes/
 - https://www.twopeasandtheirpod.com/46-super-bowl-recipes-for-super-bowl-xlvi/
 - https://www.twopeasandtheirpod.com/50-healthy-recipes-to-kick-off-2012/
