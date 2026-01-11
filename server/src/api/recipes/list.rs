@@ -280,13 +280,13 @@ pub async fn list_recipes(
     }
 
     // Tag filters (AND logic - must have ALL tags)
-    // Use sql fragment for CITEXT array containment (PostgreSQL-specific)
+    // Use sql fragment with bind() for CITEXT array containment (PostgreSQL-specific)
     for tag in &parsed.tags {
-        let escaped_tag = tag.replace('\'', "''");
-        query = query.filter(sql::<Bool>(&format!(
-            "'{}'::citext = ANY(recipe_versions.tags)",
-            escaped_tag
-        )));
+        query = query.filter(
+            sql::<Bool>("(")
+                .bind::<diesel::sql_types::Text, _>(tag)
+                .sql("::citext = ANY(recipe_versions.tags))"),
+        );
     }
 
     // Source filter
