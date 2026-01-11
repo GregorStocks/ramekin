@@ -3,15 +3,38 @@ use crate::types::RawRecipe;
 use scraper::{Html, Selector};
 
 /// Extract a recipe from HTML containing JSON-LD structured data.
+/// Falls back to microdata extraction if JSON-LD fails.
 pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, ExtractError> {
     let document = Html::parse_document(html);
+
+    // First try JSON-LD extraction
+    if let Ok(recipe) = extract_recipe_from_jsonld(&document, source_url) {
+        return Ok(recipe);
+    }
+
+    // Fall back to microdata extraction
+    if let Ok(recipe) = extract_recipe_from_microdata(&document, source_url) {
+        return Ok(recipe);
+    }
+
+    Err(ExtractError::NoRecipe)
+}
+
+/// Extract recipe from JSON-LD script tags.
+fn extract_recipe_from_jsonld(
+    document: &Html,
+    source_url: &str,
+) -> Result<RawRecipe, ExtractError> {
     let selector = Selector::parse("script[type='application/ld+json']").expect("Invalid selector");
 
     for element in document.select(&selector) {
         let json_text = element.inner_html();
 
+        // Sanitize JSON to handle malformed content (e.g., unescaped newlines)
+        let sanitized = sanitize_json(&json_text);
+
         // Try to parse as JSON
-        let json: serde_json::Value = match serde_json::from_str(&json_text) {
+        let json: serde_json::Value = match serde_json::from_str(&sanitized) {
             Ok(v) => v,
             Err(_) => continue, // Try next script tag
         };
@@ -23,6 +46,38 @@ pub fn extract_recipe(html: &str, source_url: &str) -> Result<RawRecipe, Extract
     }
 
     Err(ExtractError::NoRecipe)
+}
+
+/// Sanitize JSON-LD content to handle common malformed patterns.
+/// Some sites include literal newlines/tabs inside JSON strings instead of escaped versions.
+fn sanitize_json(json: &str) -> String {
+    let mut result = String::with_capacity(json.len());
+    let mut in_string = false;
+    let mut prev_char = '\0';
+
+    for c in json.chars() {
+        if c == '"' && prev_char != '\\' {
+            in_string = !in_string;
+            result.push(c);
+        } else if in_string {
+            // Escape control characters inside strings
+            match c {
+                '\n' => result.push_str("\\n"),
+                '\r' => result.push_str("\\r"),
+                '\t' => result.push_str("\\t"),
+                // Other control characters (ASCII 0-31 except those already handled)
+                c if c.is_control() => {
+                    // Skip other control characters
+                }
+                _ => result.push(c),
+            }
+        } else {
+            result.push(c);
+        }
+        prev_char = c;
+    }
+
+    result
 }
 
 /// Recursively search for a Recipe object in JSON-LD.
@@ -114,6 +169,7 @@ fn extract_ingredients(recipe: &serde_json::Value) -> Result<String, ExtractErro
         .iter()
         .filter_map(|v| v.as_str())
         .map(|s| s.trim().to_string())
+        .filter(|s| !s.is_empty()) // Filter out empty/whitespace-only strings
         .collect();
 
     if ingredients.is_empty() {
@@ -221,4 +277,152 @@ fn extract_source_name(url: &str) -> Option<String> {
             }
         })
     })
+}
+
+/// Extract recipe from schema.org microdata markup.
+/// This is a fallback for sites that don't use JSON-LD but have microdata attributes.
+fn extract_recipe_from_microdata(
+    document: &Html,
+    source_url: &str,
+) -> Result<RawRecipe, ExtractError> {
+    // Find the Recipe container element
+    // Try both http and https schema.org URLs
+    let recipe_selector = Selector::parse(
+        r#"[itemtype="http://schema.org/Recipe"], [itemtype="https://schema.org/Recipe"]"#,
+    )
+    .expect("Invalid selector");
+
+    let recipe_element = document
+        .select(&recipe_selector)
+        .next()
+        .ok_or(ExtractError::NoRecipe)?;
+
+    // Extract title from itemprop="name"
+    let title = extract_microdata_text(&recipe_element, "name")
+        .ok_or_else(|| ExtractError::MissingField("name".to_string()))?;
+
+    // Extract description (optional)
+    let description = extract_microdata_text(&recipe_element, "description");
+
+    // Extract ingredients
+    let ingredient_selector =
+        Selector::parse(r#"[itemprop="recipeIngredient"], [itemprop="ingredients"]"#)
+            .expect("Invalid selector");
+    let ingredients: Vec<String> = recipe_element
+        .select(&ingredient_selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if ingredients.is_empty() {
+        return Err(ExtractError::MissingField(
+            "recipeIngredient (empty)".to_string(),
+        ));
+    }
+
+    // Extract instructions
+    let instructions = extract_microdata_instructions(&recipe_element)?;
+
+    // Extract image URLs
+    let image_urls = extract_microdata_images(&recipe_element);
+
+    let source_name = extract_source_name(source_url);
+
+    Ok(RawRecipe {
+        title,
+        description,
+        ingredients: ingredients.join("\n"),
+        instructions,
+        image_urls,
+        source_url: source_url.to_string(),
+        source_name,
+    })
+}
+
+/// Extract text content from an element with the given itemprop.
+fn extract_microdata_text(element: &scraper::ElementRef, prop: &str) -> Option<String> {
+    let selector = Selector::parse(&format!(r#"[itemprop="{}"]"#, prop)).ok()?;
+    element.select(&selector).next().map(|el| {
+        // Check for content attribute first (common for meta tags)
+        if let Some(content) = el.value().attr("content") {
+            content.trim().to_string()
+        } else {
+            el.text().collect::<String>().trim().to_string()
+        }
+    })
+}
+
+/// Extract instructions from microdata.
+fn extract_microdata_instructions(
+    recipe_element: &scraper::ElementRef,
+) -> Result<String, ExtractError> {
+    // Try to find instruction elements using schema.org microdata
+    let step_selector = Selector::parse(
+        r#"[itemprop="recipeInstructions"], [itemprop="instructions"], [itemtype*="HowToStep"]"#,
+    )
+    .expect("Invalid selector");
+
+    let steps: Vec<String> = recipe_element
+        .select(&step_selector)
+        .map(|el| {
+            // Check for text property inside HowToStep
+            let text_selector = Selector::parse(r#"[itemprop="text"]"#).ok();
+            if let Some(selector) = text_selector {
+                if let Some(text_el) = el.select(&selector).next() {
+                    return text_el.text().collect::<String>().trim().to_string();
+                }
+            }
+            el.text().collect::<String>().trim().to_string()
+        })
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if !steps.is_empty() {
+        return Ok(steps.join("\n\n"));
+    }
+
+    // Fallback: Try h-recipe microformat class (used by Jetpack and others)
+    // Look for elements with class containing "instructions" or "directions"
+    let class_selector = Selector::parse(
+        r#".e-instructions, .instructions, .recipe-instructions, .jetpack-recipe-directions, .recipe-directions"#,
+    )
+    .expect("Invalid selector");
+
+    let instructions: Vec<String> = recipe_element
+        .select(&class_selector)
+        .map(|el| el.text().collect::<String>().trim().to_string())
+        .filter(|s| !s.is_empty())
+        .collect();
+
+    if !instructions.is_empty() {
+        return Ok(instructions.join("\n\n"));
+    }
+
+    Err(ExtractError::MissingField(
+        "recipeInstructions (empty)".to_string(),
+    ))
+}
+
+/// Extract image URLs from microdata.
+fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> Vec<String> {
+    let image_selector = Selector::parse(r#"[itemprop="image"]"#).expect("Invalid selector");
+
+    recipe_element
+        .select(&image_selector)
+        .filter_map(|el| {
+            // Check src attribute for img tags
+            if let Some(src) = el.value().attr("src") {
+                return Some(src.to_string());
+            }
+            // Check href attribute for link tags
+            if let Some(href) = el.value().attr("href") {
+                return Some(href.to_string());
+            }
+            // Check content attribute for meta tags
+            if let Some(content) = el.value().attr("content") {
+                return Some(content.to_string());
+            }
+            None
+        })
+        .collect()
 }
