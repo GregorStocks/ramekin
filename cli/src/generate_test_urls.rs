@@ -667,6 +667,11 @@ async fn try_homepage(
 fn is_recipe_url(url: &str) -> bool {
     let lower = url.to_lowercase();
 
+    // First, check exclusion patterns (things that are definitely NOT recipe pages)
+    if is_roundup_or_collection_url(&lower) {
+        return false;
+    }
+
     // SeriousEats-specific: reject collection pages (plural "recipes" pattern)
     // Individual recipes use singular "-recipe-" followed by ID
     // Collections use plural "-recipes-" followed by ID
@@ -683,15 +688,103 @@ fn is_recipe_url(url: &str) -> bool {
     lower.contains("/recipe/")
         || lower.contains("/recipes/")
         || lower.contains("-recipe")
-        || lower.contains("/20")  // Date-based URLs common in blogs (e.g., /2025/01/)
-        && !lower.contains("/category/")
-        && !lower.contains("/tag/")
-        && !lower.contains("/page/")
-        && !lower.contains("/author/")
-        && !lower.contains("/about")
-        && !lower.contains("/contact")
-        && !lower.contains("/privacy")
-        && !lower.contains("/terms")
+        || lower.contains("/20") // Date-based URLs common in blogs (e.g., /2025/01/)
+            && !lower.contains("/category/")
+            && !lower.contains("/tag/")
+            && !lower.contains("/page/")
+            && !lower.contains("/author/")
+            && !lower.contains("/about")
+            && !lower.contains("/contact")
+            && !lower.contains("/privacy")
+            && !lower.contains("/terms")
+}
+
+/// Check if a URL looks like a roundup or collection page, not a single recipe.
+fn is_roundup_or_collection_url(lower: &str) -> bool {
+    // Regex-like patterns for roundup detection
+    // Note: We use simple string matching since regex would add overhead
+
+    // Pattern: number followed by "-recipes" or "-recipe-" (e.g., "15-blueberry-recipes", "50-soup-recipes")
+    // We need to detect these without false positives on legit recipe names
+    let parts: Vec<&str> = lower.split('/').collect();
+    if let Some(last) = parts.last() {
+        // Check for patterns like "15-blueberry-recipes", "top-10-recipes"
+        if contains_number_recipes_pattern(last) {
+            return true;
+        }
+
+        // Check for explicit roundup keywords
+        let roundup_keywords = [
+            "roundup",
+            "round-up",
+            "recipe-round",
+            "favorites-of-",
+            "best-of-",
+            "top-recipes",
+            "top-10",
+            "top-20",
+            "top-25",
+            "top-50",
+            "most-popular",
+            "favorite-recipes",
+            "all-recipes",
+            "-recipes-of-20", // "recipes-of-2020"
+            "-recipes-from-20",
+            "bucket-list",
+            "gift-guide",
+            "cookbook-gift",
+        ];
+
+        for keyword in roundup_keywords {
+            if last.contains(keyword) {
+                return true;
+            }
+        }
+
+        // Check for category page indicators (but NOT /archives/ since some sites like 101cookbooks use it for recipes)
+        let category_patterns = [
+            "/category/",
+            "/categories/",
+            "/tag/",
+            "/tags/",
+            "/author/",
+            "/page/",
+        ];
+        for pattern in category_patterns {
+            if lower.contains(pattern) {
+                return true;
+            }
+        }
+
+        // Reject empty path segments or index pages
+        if last.is_empty() || *last == "recipes" || *last == "all-recipes" {
+            return true;
+        }
+    }
+
+    false
+}
+
+/// Check if URL segment contains a pattern like "15-xyz-recipes" or "best-xyz-recipes"
+fn contains_number_recipes_pattern(segment: &str) -> bool {
+    let parts: Vec<&str> = segment.split('-').collect();
+
+    // Look for number at start followed by recipes later
+    // e.g., "15-blueberry-recipes" -> ["15", "blueberry", "recipes"]
+    if parts.len() >= 2 {
+        // Check if first part is a number and last part is "recipes"
+        if parts[0].parse::<u32>().is_ok() && parts.last() == Some(&"recipes") {
+            return true;
+        }
+
+        // Check for patterns like "best-xyz-recipes", "top-xyz-recipes", "easy-xyz-recipes"
+        let list_starters = ["best", "top", "easy", "quick", "healthy", "favorite", "our"];
+        if list_starters.contains(&parts[0]) && parts.last() == Some(&"recipes") {
+            return true;
+        }
+    }
+
+    false
 }
 
 // ============================================================================
@@ -742,14 +835,65 @@ mod tests {
 
     #[test]
     fn test_is_recipe_url() {
+        // Valid recipe URLs
         assert!(is_recipe_url("https://example.com/recipe/chocolate-cake"));
         assert!(is_recipe_url("https://example.com/recipes/soup"));
         assert!(is_recipe_url("https://example.com/chocolate-cake-recipe"));
         assert!(is_recipe_url("https://example.com/2025/01/my-recipe"));
+        assert!(is_recipe_url(
+            "https://smittenkitchen.com/2007/01/world-peace-cookies"
+        ));
 
+        // Invalid - not recipe pages
         assert!(!is_recipe_url("https://example.com/about"));
         assert!(!is_recipe_url("https://example.com/category/desserts"));
         assert!(!is_recipe_url("https://example.com/tag/chocolate"));
+    }
+
+    #[test]
+    fn test_roundup_detection() {
+        // Roundup pages should be rejected
+        assert!(!is_recipe_url(
+            "https://www.gimmesomeoven.com/15-blueberry-recipes"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.gimmesomeoven.com/15-margarita-recipes"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.skinnytaste.com/50-pumpkin-recipes"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.twopeasandtheirpod.com/top-10-recipes-of-2010"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.twopeasandtheirpod.com/favorite-recipes-of-2009"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.budgetbytes.com/best-recipes-of-2023"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.seasonalcravings.com/easy-dinner-recipes"
+        ));
+        assert!(!is_recipe_url(
+            "https://www.loveandlemons.com/christmas-morning-recipe-roundup"
+        ));
+        assert!(!is_recipe_url("https://thestayathomechef.com/all-recipes"));
+
+        // Category and archive pages
+        assert!(!is_recipe_url(
+            "https://davidlebovitz.com/category/recipes/soups"
+        ));
+        assert!(!is_recipe_url(
+            "https://101cookbooks.com/archives/red-rice-salad-recipe-html"
+        ));
+
+        // Single recipes should still pass
+        assert!(is_recipe_url(
+            "https://www.gimmesomeoven.com/blueberry-muffins-recipe"
+        ));
+        assert!(is_recipe_url(
+            "https://www.skinnytaste.com/pumpkin-bread-recipe"
+        ));
     }
 
     #[test]
