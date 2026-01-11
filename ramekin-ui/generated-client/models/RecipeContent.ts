@@ -22,118 +22,119 @@ import {
 } from './Ingredient';
 
 /**
- * Request body for enrichment - a recipe object to enhance
+ * Core recipe content - all fields that can be enriched by AI.
+ * Used for: Enrich API request/response, base for CreateRecipeRequest.
  * @export
- * @interface EnrichRequest
+ * @interface RecipeContent
  */
-export interface EnrichRequest {
+export interface RecipeContent {
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     cookTime?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     description?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     difficulty?: string | null;
     /**
      * 
      * @type {Array<Ingredient>}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     ingredients: Array<Ingredient>;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     instructions: string;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     notes?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     nutritionalInfo?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     prepTime?: string | null;
     /**
      * 
      * @type {number}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     rating?: number | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     servings?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     sourceName?: string | null;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     sourceUrl?: string | null;
     /**
      * 
      * @type {Array<string>}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     tags?: Array<string>;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     title: string;
     /**
      * 
      * @type {string}
-     * @memberof EnrichRequest
+     * @memberof RecipeContent
      */
     totalTime?: string | null;
 }
 
 /**
- * Check if a given object implements the EnrichRequest interface.
+ * Check if a given object implements the RecipeContent interface.
  */
-export function instanceOfEnrichRequest(value: object): value is EnrichRequest {
+export function instanceOfRecipeContent(value: object): value is RecipeContent {
     if (!('ingredients' in value) || value['ingredients'] === undefined) return false;
     if (!('instructions' in value) || value['instructions'] === undefined) return false;
     if (!('title' in value) || value['title'] === undefined) return false;
     return true;
 }
 
-export function EnrichRequestFromJSON(json: any): EnrichRequest {
-    return EnrichRequestFromJSONTyped(json, false);
+export function RecipeContentFromJSON(json: any): RecipeContent {
+    return RecipeContentFromJSONTyped(json, false);
 }
 
-export function EnrichRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): EnrichRequest {
+export function RecipeContentFromJSONTyped(json: any, ignoreDiscriminator: boolean): RecipeContent {
     if (json == null) {
         return json;
     }
@@ -157,11 +158,11 @@ export function EnrichRequestFromJSONTyped(json: any, ignoreDiscriminator: boole
     };
 }
 
-export function EnrichRequestToJSON(json: any): EnrichRequest {
-    return EnrichRequestToJSONTyped(json, false);
+export function RecipeContentToJSON(json: any): RecipeContent {
+    return RecipeContentToJSONTyped(json, false);
 }
 
-export function EnrichRequestToJSONTyped(value?: EnrichRequest | null, ignoreDiscriminator: boolean = false): any {
+export function RecipeContentToJSONTyped(value?: RecipeContent | null, ignoreDiscriminator: boolean = false): any {
     if (value == null) {
         return value;
     }

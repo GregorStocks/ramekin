@@ -32,19 +32,19 @@ export interface CreateRecipeRequest {
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    cookTime?: string | null;
+    cookTime?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    description?: string | null;
+    description?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    difficulty?: string | null;
+    difficulty?: string;
     /**
      * 
      * @type {Array<Ingredient>}
@@ -62,55 +62,49 @@ export interface CreateRecipeRequest {
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    notes?: string | null;
+    notes?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    nutritionalInfo?: string | null;
-    /**
-     * 
-     * @type {Array<string>}
-     * @memberof CreateRecipeRequest
-     */
-    photoIds?: Array<string> | null;
+    nutritionalInfo?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    prepTime?: string | null;
+    prepTime?: string;
     /**
      * 
      * @type {number}
      * @memberof CreateRecipeRequest
      */
-    rating?: number | null;
+    rating?: number;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    servings?: string | null;
+    servings?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    sourceName?: string | null;
+    sourceName?: string;
     /**
      * 
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    sourceUrl?: string | null;
+    sourceUrl?: string;
     /**
      * 
      * @type {Array<string>}
      * @memberof CreateRecipeRequest
      */
-    tags?: Array<string> | null;
+    tags?: Array<string>;
     /**
      * 
      * @type {string}
@@ -122,7 +116,13 @@ export interface CreateRecipeRequest {
      * @type {string}
      * @memberof CreateRecipeRequest
      */
-    totalTime?: string | null;
+    totalTime?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CreateRecipeRequest
+     */
+    photoIds?: Array<string> | null;
 }
 
 /**
@@ -152,7 +152,6 @@ export function CreateRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'instructions': json['instructions'],
         'notes': json['notes'] == null ? undefined : json['notes'],
         'nutritionalInfo': json['nutritional_info'] == null ? undefined : json['nutritional_info'],
-        'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
         'prepTime': json['prep_time'] == null ? undefined : json['prep_time'],
         'rating': json['rating'] == null ? undefined : json['rating'],
         'servings': json['servings'] == null ? undefined : json['servings'],
@@ -161,6 +160,7 @@ export function CreateRecipeRequestFromJSONTyped(json: any, ignoreDiscriminator:
         'tags': json['tags'] == null ? undefined : json['tags'],
         'title': json['title'],
         'totalTime': json['total_time'] == null ? undefined : json['total_time'],
+        'photoIds': json['photo_ids'] == null ? undefined : json['photo_ids'],
     };
 }
 
@@ -182,7 +182,6 @@ export function CreateRecipeRequestToJSONTyped(value?: CreateRecipeRequest | nul
         'instructions': value['instructions'],
         'notes': value['notes'],
         'nutritional_info': value['nutritionalInfo'],
-        'photo_ids': value['photoIds'],
         'prep_time': value['prepTime'],
         'rating': value['rating'],
         'servings': value['servings'],
@@ -191,6 +190,7 @@ export function CreateRecipeRequestToJSONTyped(value?: CreateRecipeRequest | nul
         'tags': value['tags'],
         'title': value['title'],
         'total_time': value['totalTime'],
+        'photo_ids': value['photoIds'],
     };
 }
 

@@ -1,7 +1,7 @@
 
-# EnrichRequest
+# RecipeContent
 
-Request body for enrichment - a recipe object to enhance
+Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
 
 ## Properties
 
@@ -26,7 +26,7 @@ Name | Type
 ## Example
 
 ```typescript
-import type { EnrichRequest } from ''
+import type { RecipeContent } from ''
 
 // TODO: Update the object below with actual values
 const example = {
@@ -45,7 +45,7 @@ const example = {
   "tags": null,
   "title": null,
   "totalTime": null,
-} satisfies EnrichRequest
+} satisfies RecipeContent
 
 console.log(example)
 
@@ -54,7 +54,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as EnrichRequest
+const exampleParsed = JSON.parse(exampleJSON) as RecipeContent
 console.log(exampleParsed)
 ```
 

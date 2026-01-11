@@ -16,8 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from ramekin_client.models.enrich_request import EnrichRequest
-from ramekin_client.models.enrich_response import EnrichResponse
+from ramekin_client.models.recipe_content import RecipeContent
 
 from ramekin_client.api_client import ApiClient, RequestSerialized
 from ramekin_client.api_response import ApiResponse
@@ -40,7 +39,7 @@ class EnrichApi:
     @validate_call
     def enrich_recipe(
         self,
-        enrich_request: EnrichRequest,
+        recipe_content: RecipeContent,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -53,13 +52,13 @@ class EnrichApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> EnrichResponse:
+    ) -> RecipeContent:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 
-        :param enrich_request: (required)
-        :type enrich_request: EnrichRequest
+        :param recipe_content: (required)
+        :type recipe_content: RecipeContent
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -83,7 +82,7 @@ class EnrichApi:
         """ # noqa: E501
 
         _param = self._enrich_recipe_serialize(
-            enrich_request=enrich_request,
+            recipe_content=recipe_content,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -91,7 +90,7 @@ class EnrichApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EnrichResponse",
+            '200': "RecipeContent",
             '401': "ErrorResponse",
             '503': "ErrorResponse",
         }
@@ -109,7 +108,7 @@ class EnrichApi:
     @validate_call
     def enrich_recipe_with_http_info(
         self,
-        enrich_request: EnrichRequest,
+        recipe_content: RecipeContent,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -122,13 +121,13 @@ class EnrichApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[EnrichResponse]:
+    ) -> ApiResponse[RecipeContent]:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 
-        :param enrich_request: (required)
-        :type enrich_request: EnrichRequest
+        :param recipe_content: (required)
+        :type recipe_content: RecipeContent
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -152,7 +151,7 @@ class EnrichApi:
         """ # noqa: E501
 
         _param = self._enrich_recipe_serialize(
-            enrich_request=enrich_request,
+            recipe_content=recipe_content,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -160,7 +159,7 @@ class EnrichApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EnrichResponse",
+            '200': "RecipeContent",
             '401': "ErrorResponse",
             '503': "ErrorResponse",
         }
@@ -178,7 +177,7 @@ class EnrichApi:
     @validate_call
     def enrich_recipe_without_preload_content(
         self,
-        enrich_request: EnrichRequest,
+        recipe_content: RecipeContent,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -194,10 +193,10 @@ class EnrichApi:
     ) -> RESTResponseType:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 
-        :param enrich_request: (required)
-        :type enrich_request: EnrichRequest
+        :param recipe_content: (required)
+        :type recipe_content: RecipeContent
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -221,7 +220,7 @@ class EnrichApi:
         """ # noqa: E501
 
         _param = self._enrich_recipe_serialize(
-            enrich_request=enrich_request,
+            recipe_content=recipe_content,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -229,7 +228,7 @@ class EnrichApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "EnrichResponse",
+            '200': "RecipeContent",
             '401': "ErrorResponse",
             '503': "ErrorResponse",
         }
@@ -242,7 +241,7 @@ class EnrichApi:
 
     def _enrich_recipe_serialize(
         self,
-        enrich_request,
+        recipe_content,
         _request_auth,
         _content_type,
         _headers,
@@ -268,8 +267,8 @@ class EnrichApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if enrich_request is not None:
-            _body_params = enrich_request
+        if recipe_content is not None:
+            _body_params = recipe_content
 
 
         # set the HTTP header `Accept`

@@ -1,6 +1,6 @@
-# EnrichResponse
+# RecipeContent
 
-Response from enrichment - the enhanced recipe object
+Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
 
 ## Properties
 
@@ -18,26 +18,26 @@ Name | Type | Description | Notes
 **servings** | **str** |  | [optional] 
 **source_name** | **str** |  | [optional] 
 **source_url** | **str** |  | [optional] 
-**tags** | **List[str]** |  | 
+**tags** | **List[str]** |  | [optional] 
 **title** | **str** |  | 
 **total_time** | **str** |  | [optional] 
 
 ## Example
 
 ```python
-from ramekin_client.models.enrich_response import EnrichResponse
+from ramekin_client.models.recipe_content import RecipeContent
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of EnrichResponse from a JSON string
-enrich_response_instance = EnrichResponse.from_json(json)
+# create an instance of RecipeContent from a JSON string
+recipe_content_instance = RecipeContent.from_json(json)
 # print the JSON string representation of the object
-print(EnrichResponse.to_json())
+print(RecipeContent.to_json())
 
 # convert the object into a dict
-enrich_response_dict = enrich_response_instance.to_dict()
-# create an instance of EnrichResponse from a dict
-enrich_response_from_dict = EnrichResponse.from_dict(enrich_response_dict)
+recipe_content_dict = recipe_content_instance.to_dict()
+# create an instance of RecipeContent from a dict
+recipe_content_from_dict = RecipeContent.from_dict(recipe_content_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

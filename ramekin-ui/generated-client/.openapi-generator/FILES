@@ -14,8 +14,6 @@ docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
 docs/Direction.md
 docs/EnrichApi.md
-docs/EnrichRequest.md
-docs/EnrichResponse.md
 docs/ErrorResponse.md
 docs/Ingredient.md
 docs/ListRecipesResponse.md
@@ -24,6 +22,7 @@ docs/LoginResponse.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
+docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
 docs/RecipesApi.md
@@ -47,8 +46,6 @@ models/CreateRecipeResponse.ts
 models/CreateScrapeRequest.ts
 models/CreateScrapeResponse.ts
 models/Direction.ts
-models/EnrichRequest.ts
-models/EnrichResponse.ts
 models/ErrorResponse.ts
 models/Ingredient.ts
 models/ListRecipesResponse.ts
@@ -56,6 +53,7 @@ models/LoginRequest.ts
 models/LoginResponse.ts
 models/PaginationMetadata.ts
 models/PingResponse.ts
+models/RecipeContent.ts
 models/RecipeResponse.ts
 models/RecipeSummary.ts
 models/RetryScrapeResponse.ts

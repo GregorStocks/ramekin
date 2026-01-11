@@ -39,8 +39,6 @@ __all__ = [
     "CreateScrapeRequest",
     "CreateScrapeResponse",
     "Direction",
-    "EnrichRequest",
-    "EnrichResponse",
     "ErrorResponse",
     "Ingredient",
     "ListRecipesResponse",
@@ -48,6 +46,7 @@ __all__ = [
     "LoginResponse",
     "PaginationMetadata",
     "PingResponse",
+    "RecipeContent",
     "RecipeResponse",
     "RecipeSummary",
     "RetryScrapeResponse",
@@ -89,8 +88,6 @@ from ramekin_client.models.create_recipe_response import CreateRecipeResponse as
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
 from ramekin_client.models.direction import Direction as Direction
-from ramekin_client.models.enrich_request import EnrichRequest as EnrichRequest
-from ramekin_client.models.enrich_response import EnrichResponse as EnrichResponse
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
@@ -98,6 +95,7 @@ from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
+from ramekin_client.models.recipe_content import RecipeContent as RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse as RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary as RecipeSummary
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse as RetryScrapeResponse

@@ -131,25 +131,25 @@ fn convert_recipe(recipe: &PaprikaRecipe, photo_ids: Vec<uuid::Uuid>) -> CreateR
 
     CreateRecipeRequest {
         title: recipe.name.clone(),
-        description: recipe.description.clone().map(Some),
+        description: recipe.description.clone(),
         instructions,
         ingredients,
-        tags: recipe.categories.clone().map(Some),
-        source_name: recipe.source.clone().map(Some),
-        source_url: recipe.source_url.clone().map(Some),
+        tags: recipe.categories.clone(),
+        source_name: recipe.source.clone(),
+        source_url: recipe.source_url.clone(),
         photo_ids: if photo_ids.is_empty() {
             None
         } else {
             Some(Some(photo_ids))
         },
-        servings: recipe.servings.clone().map(Some),
-        prep_time: recipe.prep_time.clone().map(Some),
-        cook_time: recipe.cook_time.clone().map(Some),
-        total_time: recipe.total_time.clone().map(Some),
-        rating: recipe.rating.map(Some),
-        difficulty: recipe.difficulty.clone().map(Some),
-        nutritional_info: recipe.nutritional_info.clone().map(Some),
-        notes: recipe.notes.clone().map(Some),
+        servings: recipe.servings.clone(),
+        prep_time: recipe.prep_time.clone(),
+        cook_time: recipe.cook_time.clone(),
+        total_time: recipe.total_time.clone(),
+        rating: recipe.rating,
+        difficulty: recipe.difficulty.clone(),
+        nutritional_info: recipe.nutritional_info.clone(),
+        notes: recipe.notes.clone(),
     }
 }
 

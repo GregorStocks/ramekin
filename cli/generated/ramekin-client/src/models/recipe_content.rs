@@ -11,9 +11,9 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// EnrichRequest : Request body for enrichment - a recipe object to enhance
+/// RecipeContent : Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct EnrichRequest {
+pub struct RecipeContent {
     #[serde(
         rename = "cook_time",
         default,
@@ -101,14 +101,14 @@ pub struct EnrichRequest {
     pub total_time: Option<Option<String>>,
 }
 
-impl EnrichRequest {
-    /// Request body for enrichment - a recipe object to enhance
+impl RecipeContent {
+    /// Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
     pub fn new(
         ingredients: Vec<models::Ingredient>,
         instructions: String,
         title: String,
-    ) -> EnrichRequest {
-        EnrichRequest {
+    ) -> RecipeContent {
+        RecipeContent {
             cook_time: None,
             description: None,
             difficulty: None,

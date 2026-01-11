@@ -22,13 +22,13 @@ pub enum EnrichRecipeError {
     UnknownValue(serde_json::Value),
 }
 
-/// This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+/// This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 pub async fn enrich_recipe(
     configuration: &configuration::Configuration,
-    enrich_request: models::EnrichRequest,
-) -> Result<models::EnrichResponse, Error<EnrichRecipeError>> {
+    recipe_content: models::RecipeContent,
+) -> Result<models::RecipeContent, Error<EnrichRecipeError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_enrich_request = enrich_request;
+    let p_body_recipe_content = recipe_content;
 
     let uri_str = format!("{}/api/enrich", configuration.base_path);
     let mut req_builder = configuration
@@ -41,7 +41,7 @@ pub async fn enrich_recipe(
     if let Some(ref token) = configuration.bearer_access_token {
         req_builder = req_builder.bearer_auth(token.to_owned());
     };
-    req_builder = req_builder.json(&p_body_enrich_request);
+    req_builder = req_builder.json(&p_body_recipe_content);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -58,8 +58,8 @@ pub async fn enrich_recipe(
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::EnrichResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::EnrichResponse`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::RecipeContent`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::RecipeContent`")))),
         }
     } else {
         let content = resp.text().await?;

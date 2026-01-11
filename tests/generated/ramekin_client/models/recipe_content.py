@@ -23,9 +23,9 @@ from ramekin_client.models.ingredient import Ingredient
 from typing import Optional, Set
 from typing_extensions import Self
 
-class EnrichRequest(BaseModel):
+class RecipeContent(BaseModel):
     """
-    Request body for enrichment - a recipe object to enhance
+    Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
     """ # noqa: E501
     cook_time: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
@@ -62,7 +62,7 @@ class EnrichRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of EnrichRequest from a JSON string"""
+        """Create an instance of RecipeContent from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -149,7 +149,7 @@ class EnrichRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of EnrichRequest from a dict"""
+        """Create an instance of RecipeContent from a dict"""
         if obj is None:
             return None
 

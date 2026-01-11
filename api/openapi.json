@@ -117,13 +117,13 @@
           "enrich"
         ],
         "summary": "Enrich a recipe using AI",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nCurrently a no-op skeleton - returns the input unchanged.",
         "operationId": "enrich_recipe",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/EnrichRequest"
+                "$ref": "#/components/schemas/RecipeContent"
               }
             }
           },
@@ -135,7 +135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/EnrichResponse"
+                  "$ref": "#/components/schemas/RecipeContent"
                 }
               }
             }
@@ -1157,112 +1157,26 @@
         }
       },
       "CreateRecipeRequest": {
-        "type": "object",
-        "required": [
-          "title",
-          "ingredients",
-          "instructions"
-        ],
-        "properties": {
-          "cook_time": {
-            "type": [
-              "string",
-              "null"
-            ]
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RecipeContent"
           },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "difficulty": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Ingredient"
+          {
+            "type": "object",
+            "properties": {
+              "photo_ids": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
             }
-          },
-          "instructions": {
-            "type": "string"
-          },
-          "notes": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "nutritional_info": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "photo_ids": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          "prep_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "rating": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int32"
-          },
-          "servings": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_url": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "tags": {
-            "type": [
-              "array",
-              "null"
-            ],
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": {
-            "type": "string"
-          },
-          "total_time": {
-            "type": [
-              "string",
-              "null"
-            ]
           }
-        }
+        ]
       },
       "CreateRecipeResponse": {
         "type": "object",
@@ -1313,199 +1227,6 @@
           "desc",
           "asc"
         ]
-      },
-      "EnrichRequest": {
-        "type": "object",
-        "description": "Request body for enrichment - a recipe object to enhance",
-        "required": [
-          "title",
-          "ingredients",
-          "instructions"
-        ],
-        "properties": {
-          "cook_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "difficulty": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Ingredient"
-            }
-          },
-          "instructions": {
-            "type": "string"
-          },
-          "notes": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "nutritional_info": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "prep_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "rating": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int32"
-          },
-          "servings": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_url": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": {
-            "type": "string"
-          },
-          "total_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
-      },
-      "EnrichResponse": {
-        "type": "object",
-        "description": "Response from enrichment - the enhanced recipe object",
-        "required": [
-          "title",
-          "ingredients",
-          "instructions",
-          "tags"
-        ],
-        "properties": {
-          "cook_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "description": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "difficulty": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Ingredient"
-            }
-          },
-          "instructions": {
-            "type": "string"
-          },
-          "notes": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "nutritional_info": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "prep_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "rating": {
-            "type": [
-              "integer",
-              "null"
-            ],
-            "format": "int32"
-          },
-          "servings": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_name": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "source_url": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": {
-            "type": "string"
-          },
-          "total_time": {
-            "type": [
-              "string",
-              "null"
-            ]
-          }
-        }
       },
       "ErrorResponse": {
         "type": "object",
@@ -1625,6 +1346,102 @@
         "properties": {
           "message": {
             "type": "string"
+          }
+        }
+      },
+      "RecipeContent": {
+        "type": "object",
+        "description": "Core recipe content - all fields that can be enriched by AI.\nUsed for: Enrich API request/response, base for CreateRecipeRequest.",
+        "required": [
+          "title",
+          "ingredients",
+          "instructions"
+        ],
+        "properties": {
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ingredient"
+            }
+          },
+          "instructions": {
+            "type": "string"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },

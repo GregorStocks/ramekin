@@ -10,21 +10,21 @@ Method | HTTP request | Description
 
 ## enrich_recipe
 
-> models::EnrichResponse enrich_recipe(enrich_request)
+> models::RecipeContent enrich_recipe(recipe_content)
 Enrich a recipe using AI
 
-This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 
 ### Parameters
 
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**enrich_request** | [**EnrichRequest**](EnrichRequest.md) |  | [required] |
+**recipe_content** | [**RecipeContent**](RecipeContent.md) |  | [required] |
 
 ### Return type
 
-[**models::EnrichResponse**](EnrichResponse.md)
+[**models::RecipeContent**](RecipeContent.md)
 
 ### Authorization
 

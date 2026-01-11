@@ -2,6 +2,7 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -9,12 +10,24 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
+use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{BigInt, Text};
+use diesel::sql_types::{Array, Bool, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
 use uuid::Uuid;
+
+// SQL function declarations for PostgreSQL functions
+diesel::define_sql_function! {
+    /// PostgreSQL cardinality() function for array length
+    fn cardinality(array: Array<Nullable<SqlUuid>>) -> diesel::sql_types::Integer;
+}
+
+diesel::define_sql_function! {
+    /// PostgreSQL random() function
+    fn random() -> diesel::sql_types::Double;
+}
 
 /// Sort field for recipe list
 #[derive(Debug, Default, Clone, Copy, Deserialize, ToSchema)]
@@ -196,6 +209,33 @@ pub struct ListRecipesResponse {
     pub pagination: PaginationMetadata,
 }
 
+/// Row type for the recipe list query result
+#[derive(Queryable, Selectable)]
+#[diesel(table_name = recipes)]
+struct RecipeListRow {
+    id: Uuid,
+    created_at: DateTime<Utc>,
+}
+
+/// Version fields we need for the list
+#[derive(Queryable, Selectable)]
+#[diesel(table_name = recipe_versions)]
+struct VersionListRow {
+    title: String,
+    description: Option<String>,
+    tags: Vec<Option<String>>,
+    photo_ids: Vec<Option<Uuid>>,
+    #[diesel(column_name = created_at)]
+    updated_at: DateTime<Utc>,
+}
+
+/// Escape special characters for ILIKE patterns
+fn escape_like_pattern(s: &str) -> String {
+    s.replace('\\', "\\\\")
+        .replace('%', "\\%")
+        .replace('_', "\\_")
+}
+
 #[utoipa::path(
     get,
     path = "/api/recipes",
@@ -222,158 +262,148 @@ pub async fn list_recipes(
     // Parse the query string
     let parsed = params.q.as_deref().map(parse_query).unwrap_or_default();
 
-    // Pre-compute patterns so they live long enough for the boxed queries
-    let text_pattern = if !parsed.text.is_empty() {
-        let search_text = parsed.text.join(" ");
-        Some(format!(
-            "%{}%",
-            search_text.replace('%', "\\%").replace('_', "\\_")
-        ))
-    } else {
-        None
-    };
-
-    let source_pattern = parsed
-        .source
-        .as_ref()
-        .map(|s| format!("%{}%", s.replace('%', "\\%").replace('_', "\\_")));
-
     let mut conn = get_conn!(pool);
 
-    // Use raw SQL for the join query since Diesel's join support with filters is complex
-    // This query joins recipes with their current version via current_version_id
-    let mut sql_query = String::from(
-        r#"
-        SELECT
-            r.id,
-            rv.title,
-            rv.description,
-            rv.tags,
-            rv.photo_ids,
-            r.created_at,
-            rv.created_at as updated_at,
-            COUNT(*) OVER() as total_count
-        FROM recipes r
-        INNER JOIN recipe_versions rv ON rv.id = r.current_version_id
-        WHERE r.user_id = $1
-          AND r.deleted_at IS NULL
-        "#,
-    );
-
-    let mut param_index = 2; // $1 is user_id
-
-    // Build WHERE conditions for filters
-    let mut conditions = Vec::new();
-    let mut bind_values: Vec<String> = Vec::new();
+    // Build base query with join
+    // We use into_boxed() to allow dynamic filter additions
+    let mut query = recipes::table
+        .inner_join(
+            recipe_versions::table.on(recipe_versions::id
+                .nullable()
+                .eq(recipes::current_version_id)),
+        )
+        .filter(recipes::user_id.eq(user.id))
+        .filter(recipes::deleted_at.is_null())
+        .into_boxed();
 
     // Text search on title OR description
-    if let Some(ref pattern) = text_pattern {
-        conditions.push(format!(
-            "(rv.title ILIKE ${} OR rv.description ILIKE ${})",
-            param_index, param_index
-        ));
-        bind_values.push(pattern.clone());
-        param_index += 1;
+    if !parsed.text.is_empty() {
+        let search_text = parsed.text.join(" ");
+        let pattern = format!("%{}%", escape_like_pattern(&search_text));
+        query = query.filter(
+            recipe_versions::title
+                .ilike(pattern.clone())
+                .or(recipe_versions::description.ilike(pattern)),
+        );
     }
 
     // Tag filters (AND logic - must have ALL tags)
+    // Use raw SQL for CITEXT array containment since Diesel doesn't have direct support
     for tag in &parsed.tags {
-        conditions.push(format!("${}::citext = ANY(rv.tags)", param_index));
-        bind_values.push(tag.clone());
-        param_index += 1;
+        let escaped_tag = tag.replace('\'', "''");
+        query = query.filter(sql::<Bool>(&format!(
+            "'{}'::citext = ANY(recipe_versions.tags)",
+            escaped_tag
+        )));
     }
 
     // Source filter
-    if let Some(ref pattern) = source_pattern {
-        conditions.push(format!("rv.source_name ILIKE ${}", param_index));
-        bind_values.push(pattern.clone());
-        param_index += 1;
+    if let Some(ref source) = parsed.source {
+        let pattern = format!("%{}%", escape_like_pattern(source));
+        query = query.filter(recipe_versions::source_name.ilike(pattern));
     }
 
     // Has photos filter
     if let Some(has_photos) = parsed.has_photos {
         if has_photos {
-            conditions.push("cardinality(rv.photo_ids) > 0".to_string());
+            query = query.filter(cardinality(recipe_versions::photo_ids).gt(0));
         } else {
-            conditions.push("cardinality(rv.photo_ids) = 0".to_string());
+            query = query.filter(cardinality(recipe_versions::photo_ids).eq(0));
         }
     }
 
     // Date range filters (on recipe created_at)
     if let Some(after) = parsed.created_after {
         let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        conditions.push(format!("r.created_at >= ${}", param_index));
-        bind_values.push(after_datetime.to_rfc3339());
-        param_index += 1;
+        query = query.filter(recipes::created_at.ge(after_datetime));
     }
     if let Some(before) = parsed.created_before {
         let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        conditions.push(format!("r.created_at <= ${}", param_index));
-        bind_values.push(before_datetime.to_rfc3339());
-        param_index += 1;
+        query = query.filter(recipes::created_at.le(before_datetime));
     }
 
-    // Add conditions to query
-    for condition in conditions {
-        sql_query.push_str(&format!(" AND {}", condition));
+    // Clone the query for count (before adding order/limit)
+    // We need to rebuild since boxed queries can't be easily cloned
+    let mut count_query = recipes::table
+        .inner_join(
+            recipe_versions::table.on(recipe_versions::id
+                .nullable()
+                .eq(recipes::current_version_id)),
+        )
+        .filter(recipes::user_id.eq(user.id))
+        .filter(recipes::deleted_at.is_null())
+        .into_boxed();
+
+    // Apply same filters to count query
+    if !parsed.text.is_empty() {
+        let search_text = parsed.text.join(" ");
+        let pattern = format!("%{}%", escape_like_pattern(&search_text));
+        count_query = count_query.filter(
+            recipe_versions::title
+                .ilike(pattern.clone())
+                .or(recipe_versions::description.ilike(pattern)),
+        );
     }
+
+    for tag in &parsed.tags {
+        let escaped_tag = tag.replace('\'', "''");
+        count_query = count_query.filter(sql::<Bool>(&format!(
+            "'{}'::citext = ANY(recipe_versions.tags)",
+            escaped_tag
+        )));
+    }
+
+    if let Some(ref source) = parsed.source {
+        let pattern = format!("%{}%", escape_like_pattern(source));
+        count_query = count_query.filter(recipe_versions::source_name.ilike(pattern));
+    }
+
+    if let Some(has_photos) = parsed.has_photos {
+        if has_photos {
+            count_query = count_query.filter(cardinality(recipe_versions::photo_ids).gt(0));
+        } else {
+            count_query = count_query.filter(cardinality(recipe_versions::photo_ids).eq(0));
+        }
+    }
+
+    if let Some(after) = parsed.created_after {
+        let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
+        count_query = count_query.filter(recipes::created_at.ge(after_datetime));
+    }
+    if let Some(before) = parsed.created_before {
+        let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
+        count_query = count_query.filter(recipes::created_at.le(before_datetime));
+    }
+
+    // Get total count
+    let total: i64 = match count_query.count().get_result(&mut conn) {
+        Ok(c) => c,
+        Err(e) => {
+            tracing::error!("Failed to count recipes: {:?}", e);
+            return (
+                StatusCode::INTERNAL_SERVER_ERROR,
+                Json(ErrorResponse {
+                    error: "Failed to fetch recipes".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
 
     // Add ordering
-    match (params.sort_by, params.sort_dir) {
-        (SortBy::Random, _) => sql_query.push_str(" ORDER BY RANDOM()"),
-        (SortBy::UpdatedAt, Direction::Desc) => sql_query.push_str(" ORDER BY rv.created_at DESC"),
-        (SortBy::UpdatedAt, Direction::Asc) => sql_query.push_str(" ORDER BY rv.created_at ASC"),
-    }
+    let query = match (params.sort_by, params.sort_dir) {
+        (SortBy::Random, _) => query.order(random()),
+        (SortBy::UpdatedAt, Direction::Desc) => query.order(recipe_versions::created_at.desc()),
+        (SortBy::UpdatedAt, Direction::Asc) => query.order(recipe_versions::created_at.asc()),
+    };
 
-    // Add pagination
-    sql_query.push_str(&format!(
-        " LIMIT ${} OFFSET ${}",
-        param_index,
-        param_index + 1
-    ));
-
-    // Execute query using Diesel's sql_query with inline parameters
-    // We escape the parameters to prevent SQL injection
-    use diesel::sql_query as raw_sql;
-    use diesel::sql_types::{Array, Nullable, Timestamptz, Uuid as SqlUuid, Varchar};
-
-    #[derive(QueryableByName)]
-    struct RecipeRow {
-        #[diesel(sql_type = SqlUuid)]
-        id: Uuid,
-        #[diesel(sql_type = Varchar)]
-        title: String,
-        #[diesel(sql_type = Nullable<Text>)]
-        description: Option<String>,
-        #[diesel(sql_type = Array<Nullable<Varchar>>)]
-        tags: Vec<Option<String>>,
-        #[diesel(sql_type = Array<Nullable<SqlUuid>>)]
-        photo_ids: Vec<Option<Uuid>>,
-        #[diesel(sql_type = Timestamptz)]
-        created_at: DateTime<Utc>,
-        #[diesel(sql_type = Timestamptz)]
-        updated_at: DateTime<Utc>,
-        #[diesel(sql_type = BigInt)]
-        total_count: i64,
-    }
-
-    // Escape and substitute parameters inline
-    // $1 is user_id (UUID - safe)
-    let mut final_sql = sql_query.replace("$1", &format!("'{}'", user.id));
-
-    // Replace each bind value (escape single quotes)
-    let mut placeholder_idx = 2usize;
-    for value in &bind_values {
-        let escaped = value.replace('\'', "''");
-        final_sql = final_sql.replace(&format!("${}", placeholder_idx), &format!("'{}'", escaped));
-        placeholder_idx += 1;
-    }
-
-    // Replace limit/offset (safe - i64 values)
-    final_sql = final_sql.replace(&format!("${}", placeholder_idx), &limit.to_string());
-    final_sql = final_sql.replace(&format!("${}", placeholder_idx + 1), &offset.to_string());
-
-    let results: Vec<RecipeRow> = match raw_sql(&final_sql).load(&mut conn) {
+    // Add pagination and execute
+    let results: Vec<(RecipeListRow, VersionListRow)> = match query
+        .select((RecipeListRow::as_select(), VersionListRow::as_select()))
+        .limit(limit)
+        .offset(offset)
+        .load(&mut conn)
+    {
         Ok(r) => r,
         Err(e) => {
             tracing::error!("Failed to fetch recipes: {:?}", e);
@@ -387,22 +417,19 @@ pub async fn list_recipes(
         }
     };
 
-    // Extract total from first result, or 0 if no results
-    let total = results.first().map(|r| r.total_count).unwrap_or(0);
-
     let recipes = results
         .into_iter()
-        .map(|r| {
-            let thumbnail_photo_id = r.photo_ids.first().and_then(|id| *id);
+        .map(|(recipe, version)| {
+            let thumbnail_photo_id = version.photo_ids.first().and_then(|id| *id);
 
             RecipeSummary {
-                id: r.id,
-                title: r.title,
-                description: r.description,
-                tags: r.tags.into_iter().flatten().collect(),
+                id: recipe.id,
+                title: version.title,
+                description: version.description,
+                tags: version.tags.into_iter().flatten().collect(),
                 thumbnail_photo_id,
-                created_at: r.created_at,
-                updated_at: r.updated_at,
+                created_at: recipe.created_at,
+                updated_at: version.updated_at,
             }
         })
         .collect();

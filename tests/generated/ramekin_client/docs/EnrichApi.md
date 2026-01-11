@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **enrich_recipe**
-> EnrichResponse enrich_recipe(enrich_request)
+> RecipeContent enrich_recipe(recipe_content)
 
 Enrich a recipe using AI
 
@@ -16,14 +16,15 @@ This is a stateless endpoint that takes a recipe object and returns an enriched 
 It does NOT modify any database records. The client can apply the enriched data
 via a normal PUT /api/recipes/{id} call.
 
+Currently a no-op skeleton - returns the input unchanged.
+
 ### Example
 
 * Bearer Authentication (bearer_auth):
 
 ```python
 import ramekin_client
-from ramekin_client.models.enrich_request import EnrichRequest
-from ramekin_client.models.enrich_response import EnrichResponse
+from ramekin_client.models.recipe_content import RecipeContent
 from ramekin_client.rest import ApiException
 from pprint import pprint
 
@@ -47,11 +48,11 @@ configuration = ramekin_client.Configuration(
 with ramekin_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = ramekin_client.EnrichApi(api_client)
-    enrich_request = ramekin_client.EnrichRequest() # EnrichRequest | 
+    recipe_content = ramekin_client.RecipeContent() # RecipeContent | 
 
     try:
         # Enrich a recipe using AI
-        api_response = api_instance.enrich_recipe(enrich_request)
+        api_response = api_instance.enrich_recipe(recipe_content)
         print("The response of EnrichApi->enrich_recipe:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,11 +66,11 @@ with ramekin_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **enrich_request** | [**EnrichRequest**](EnrichRequest.md)|  | 
+ **recipe_content** | [**RecipeContent**](RecipeContent.md)|  | 
 
 ### Return type
 
-[**EnrichResponse**](EnrichResponse.md)
+[**RecipeContent**](RecipeContent.md)
 
 ### Authorization
 

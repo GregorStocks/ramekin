@@ -13,45 +13,36 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct CreateRecipeRequest {
-    #[serde(
-        rename = "cook_time",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub cook_time: Option<Option<String>>,
-    #[serde(
-        rename = "description",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub description: Option<Option<String>>,
-    #[serde(
-        rename = "difficulty",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub difficulty: Option<Option<String>>,
+    #[serde(rename = "cook_time", skip_serializing_if = "Option::is_none")]
+    pub cook_time: Option<String>,
+    #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    #[serde(rename = "difficulty", skip_serializing_if = "Option::is_none")]
+    pub difficulty: Option<String>,
     #[serde(rename = "ingredients")]
     pub ingredients: Vec<models::Ingredient>,
     #[serde(rename = "instructions")]
     pub instructions: String,
-    #[serde(
-        rename = "notes",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub notes: Option<Option<String>>,
-    #[serde(
-        rename = "nutritional_info",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub nutritional_info: Option<Option<String>>,
+    #[serde(rename = "notes", skip_serializing_if = "Option::is_none")]
+    pub notes: Option<String>,
+    #[serde(rename = "nutritional_info", skip_serializing_if = "Option::is_none")]
+    pub nutritional_info: Option<String>,
+    #[serde(rename = "prep_time", skip_serializing_if = "Option::is_none")]
+    pub prep_time: Option<String>,
+    #[serde(rename = "rating", skip_serializing_if = "Option::is_none")]
+    pub rating: Option<i32>,
+    #[serde(rename = "servings", skip_serializing_if = "Option::is_none")]
+    pub servings: Option<String>,
+    #[serde(rename = "source_name", skip_serializing_if = "Option::is_none")]
+    pub source_name: Option<String>,
+    #[serde(rename = "source_url", skip_serializing_if = "Option::is_none")]
+    pub source_url: Option<String>,
+    #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
+    pub tags: Option<Vec<String>>,
+    #[serde(rename = "title")]
+    pub title: String,
+    #[serde(rename = "total_time", skip_serializing_if = "Option::is_none")]
+    pub total_time: Option<String>,
     #[serde(
         rename = "photo_ids",
         default,
@@ -59,57 +50,6 @@ pub struct CreateRecipeRequest {
         skip_serializing_if = "Option::is_none"
     )]
     pub photo_ids: Option<Option<Vec<uuid::Uuid>>>,
-    #[serde(
-        rename = "prep_time",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub prep_time: Option<Option<String>>,
-    #[serde(
-        rename = "rating",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub rating: Option<Option<i32>>,
-    #[serde(
-        rename = "servings",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub servings: Option<Option<String>>,
-    #[serde(
-        rename = "source_name",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub source_name: Option<Option<String>>,
-    #[serde(
-        rename = "source_url",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub source_url: Option<Option<String>>,
-    #[serde(
-        rename = "tags",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub tags: Option<Option<Vec<String>>>,
-    #[serde(rename = "title")]
-    pub title: String,
-    #[serde(
-        rename = "total_time",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub total_time: Option<Option<String>>,
 }
 
 impl CreateRecipeRequest {
@@ -126,7 +66,6 @@ impl CreateRecipeRequest {
             instructions,
             notes: None,
             nutritional_info: None,
-            photo_ids: None,
             prep_time: None,
             rating: None,
             servings: None,
@@ -135,6 +74,7 @@ impl CreateRecipeRequest {
             tags: None,
             title,
             total_time: None,
+            photo_ids: None,
         }
     }
 }

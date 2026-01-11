@@ -5,6 +5,7 @@ mod models;
 mod photos;
 mod schema;
 mod scraping;
+mod types;
 
 use axum::extract::MatchedPath;
 use axum::http::Request;

@@ -15,21 +15,18 @@
 
 import * as runtime from '../runtime';
 import type {
-  EnrichRequest,
-  EnrichResponse,
   ErrorResponse,
+  RecipeContent,
 } from '../models/index';
 import {
-    EnrichRequestFromJSON,
-    EnrichRequestToJSON,
-    EnrichResponseFromJSON,
-    EnrichResponseToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    RecipeContentFromJSON,
+    RecipeContentToJSON,
 } from '../models/index';
 
 export interface EnrichRecipeRequest {
-    enrichRequest: EnrichRequest;
+    recipeContent: RecipeContent;
 }
 
 /**
@@ -38,14 +35,14 @@ export interface EnrichRecipeRequest {
 export class EnrichApi extends runtime.BaseAPI {
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
      * Enrich a recipe using AI
      */
-    async enrichRecipeRaw(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<EnrichResponse>> {
-        if (requestParameters['enrichRequest'] == null) {
+    async enrichRecipeRaw(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>> {
+        if (requestParameters['recipeContent'] == null) {
             throw new runtime.RequiredError(
-                'enrichRequest',
-                'Required parameter "enrichRequest" was null or undefined when calling enrichRecipe().'
+                'recipeContent',
+                'Required parameter "recipeContent" was null or undefined when calling enrichRecipe().'
             );
         }
 
@@ -71,17 +68,17 @@ export class EnrichApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: EnrichRequestToJSON(requestParameters['enrichRequest']),
+            body: RecipeContentToJSON(requestParameters['recipeContent']),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => EnrichResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => RecipeContentFromJSON(jsonValue));
     }
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
      * Enrich a recipe using AI
      */
-    async enrichRecipe(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<EnrichResponse> {
+    async enrichRecipe(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent> {
         const response = await this.enrichRecipeRaw(requestParameters, initOverrides);
         return await response.value();
     }

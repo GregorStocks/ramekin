@@ -1,4 +1,4 @@
-# EnrichRequest
+# RecipeContent
 
 ## Properties
 

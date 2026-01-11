@@ -13,7 +13,6 @@ Name | Type
 `instructions` | string
 `notes` | string
 `nutritionalInfo` | string
-`photoIds` | Array&lt;string&gt;
 `prepTime` | string
 `rating` | number
 `servings` | string
@@ -22,6 +21,7 @@ Name | Type
 `tags` | Array&lt;string&gt;
 `title` | string
 `totalTime` | string
+`photoIds` | Array&lt;string&gt;
 
 ## Example
 
@@ -37,7 +37,6 @@ const example = {
   "instructions": null,
   "notes": null,
   "nutritionalInfo": null,
-  "photoIds": null,
   "prepTime": null,
   "rating": null,
   "servings": null,
@@ -46,6 +45,7 @@ const example = {
   "tags": null,
   "title": null,
   "totalTime": null,
+  "photoIds": null,
 } satisfies CreateRecipeRequest
 
 console.log(example)

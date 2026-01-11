@@ -18,8 +18,6 @@ ramekin_client/docs/CreateScrapeRequest.md
 ramekin_client/docs/CreateScrapeResponse.md
 ramekin_client/docs/Direction.md
 ramekin_client/docs/EnrichApi.md
-ramekin_client/docs/EnrichRequest.md
-ramekin_client/docs/EnrichResponse.md
 ramekin_client/docs/ErrorResponse.md
 ramekin_client/docs/Ingredient.md
 ramekin_client/docs/ListRecipesResponse.md
@@ -28,6 +26,7 @@ ramekin_client/docs/LoginResponse.md
 ramekin_client/docs/PaginationMetadata.md
 ramekin_client/docs/PhotosApi.md
 ramekin_client/docs/PingResponse.md
+ramekin_client/docs/RecipeContent.md
 ramekin_client/docs/RecipeResponse.md
 ramekin_client/docs/RecipeSummary.md
 ramekin_client/docs/RecipesApi.md
@@ -52,8 +51,6 @@ ramekin_client/models/create_recipe_response.py
 ramekin_client/models/create_scrape_request.py
 ramekin_client/models/create_scrape_response.py
 ramekin_client/models/direction.py
-ramekin_client/models/enrich_request.py
-ramekin_client/models/enrich_response.py
 ramekin_client/models/error_response.py
 ramekin_client/models/ingredient.py
 ramekin_client/models/list_recipes_response.py
@@ -61,6 +58,7 @@ ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
 ramekin_client/models/pagination_metadata.py
 ramekin_client/models/ping_response.py
+ramekin_client/models/recipe_content.py
 ramekin_client/models/recipe_response.py
 ramekin_client/models/recipe_summary.py
 ramekin_client/models/retry_scrape_response.py
@@ -84,8 +82,6 @@ ramekin_client/test/test_create_scrape_request.py
 ramekin_client/test/test_create_scrape_response.py
 ramekin_client/test/test_direction.py
 ramekin_client/test/test_enrich_api.py
-ramekin_client/test/test_enrich_request.py
-ramekin_client/test/test_enrich_response.py
 ramekin_client/test/test_error_response.py
 ramekin_client/test/test_ingredient.py
 ramekin_client/test/test_list_recipes_response.py
@@ -94,6 +90,7 @@ ramekin_client/test/test_login_response.py
 ramekin_client/test/test_pagination_metadata.py
 ramekin_client/test/test_photos_api.py
 ramekin_client/test/test_ping_response.py
+ramekin_client/test/test_recipe_content.py
 ramekin_client/test/test_recipe_response.py
 ramekin_client/test/test_recipe_summary.py
 ramekin_client/test/test_recipes_api.py

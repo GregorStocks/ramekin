@@ -14,10 +14,10 @@
 
 import unittest
 
-from ramekin_client.models.enrich_request import EnrichRequest
+from ramekin_client.models.recipe_content import RecipeContent
 
-class TestEnrichRequest(unittest.TestCase):
-    """EnrichRequest unit test stubs"""
+class TestRecipeContent(unittest.TestCase):
+    """RecipeContent unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,16 +25,16 @@ class TestEnrichRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EnrichRequest:
-        """Test EnrichRequest
+    def make_instance(self, include_optional) -> RecipeContent:
+        """Test RecipeContent
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `EnrichRequest`
+        # uncomment below to create an instance of `RecipeContent`
         """
-        model = EnrichRequest()
+        model = RecipeContent()
         if include_optional:
-            return EnrichRequest(
+            return RecipeContent(
                 cook_time = '',
                 description = '',
                 difficulty = '',
@@ -60,7 +60,7 @@ class TestEnrichRequest(unittest.TestCase):
                 total_time = ''
             )
         else:
-            return EnrichRequest(
+            return RecipeContent(
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
                         amount = '', 
@@ -73,8 +73,8 @@ class TestEnrichRequest(unittest.TestCase):
         )
         """
 
-    def testEnrichRequest(self):
-        """Test EnrichRequest"""
+    def testRecipeContent(self):
+        """Test RecipeContent"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

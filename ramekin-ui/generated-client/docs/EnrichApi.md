@@ -10,11 +10,11 @@ All URIs are relative to *http://localhost*
 
 ## enrichRecipe
 
-> EnrichResponse enrichRecipe(enrichRequest)
+> RecipeContent enrichRecipe(recipeContent)
 
 Enrich a recipe using AI
 
-This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.
+This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
 
 ### Example
 
@@ -34,8 +34,8 @@ async function example() {
   const api = new EnrichApi(config);
 
   const body = {
-    // EnrichRequest
-    enrichRequest: ...,
+    // RecipeContent
+    recipeContent: ...,
   } satisfies EnrichRecipeRequest;
 
   try {
@@ -55,11 +55,11 @@ example().catch(console.error);
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **enrichRequest** | [EnrichRequest](EnrichRequest.md) |  | |
+| **recipeContent** | [RecipeContent](RecipeContent.md) |  | |
 
 ### Return type
 
-[**EnrichResponse**](EnrichResponse.md)
+[**RecipeContent**](RecipeContent.md)
 
 ### Authorization
 

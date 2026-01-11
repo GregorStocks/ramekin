@@ -238,45 +238,26 @@ fn fetch_all_recipes_with_versions(
     conn: &mut DbConn,
     user_id: Uuid,
 ) -> Result<Vec<RecipeWithVersion>, diesel::result::Error> {
-    // Fetch all recipes with their current version IDs
-    let recipe_rows: Vec<(Uuid, DateTime<Utc>, Option<Uuid>)> = recipes::table
+    // Single query with JOIN
+    let rows: Vec<(Uuid, DateTime<Utc>, RecipeVersion)> = recipes::table
+        .inner_join(
+            recipe_versions::table.on(recipe_versions::id
+                .nullable()
+                .eq(recipes::current_version_id)),
+        )
         .filter(recipes::user_id.eq(user_id))
         .filter(recipes::deleted_at.is_null())
-        .filter(recipes::current_version_id.is_not_null())
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipes::current_version_id,
-        ))
+        .select((recipes::id, recipes::created_at, RecipeVersion::as_select()))
         .load(conn)?;
 
-    // Collect version IDs
-    let version_ids: Vec<Uuid> = recipe_rows.iter().filter_map(|(_, _, vid)| *vid).collect();
-
-    // Fetch all versions
-    let versions: Vec<RecipeVersion> = recipe_versions::table
-        .filter(recipe_versions::id.eq_any(&version_ids))
-        .load(conn)?;
-
-    // Build map of version_id -> version
-    let version_map: std::collections::HashMap<Uuid, RecipeVersion> =
-        versions.into_iter().map(|v| (v.id, v)).collect();
-
-    // Combine recipes with versions
-    let result: Vec<RecipeWithVersion> = recipe_rows
+    Ok(rows
         .into_iter()
-        .filter_map(|(id, created_at, vid)| {
-            vid.and_then(|version_id| {
-                version_map.get(&version_id).map(|v| RecipeWithVersion {
-                    id,
-                    created_at,
-                    version: v.clone(),
-                })
-            })
+        .map(|(id, created_at, version)| RecipeWithVersion {
+            id,
+            created_at,
+            version,
         })
-        .collect();
-
-    Ok(result)
+        .collect())
 }
 
 #[utoipa::path(
