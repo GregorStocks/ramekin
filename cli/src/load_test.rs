@@ -379,11 +379,11 @@ pub async fn load_test(
                 }
                 Err(e) => {
                     failures.fetch_add(1, Ordering::Relaxed);
-                    eprintln!("\nFailed to create user {}: {}", user_num, e);
-                    // Print the full error chain
+                    tracing::error!(user_num, error = %e, "Failed to create user");
+                    // Log the full error chain
                     let mut source = e.source();
                     while let Some(err) = source {
-                        eprintln!("  Caused by: {}", err);
+                        tracing::error!(cause = %err, "Caused by");
                         source = err.source();
                     }
                 }

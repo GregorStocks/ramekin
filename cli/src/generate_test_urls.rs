@@ -386,7 +386,7 @@ async fn process_site(
         }
         Ok(_) => {}
         Err(e) => {
-            eprintln!("  Sitemap failed: {}", e);
+            tracing::warn!(error = %e, "Sitemap failed");
         }
     }
 
@@ -403,7 +403,7 @@ async fn process_site(
         }
         Ok(_) => {}
         Err(e) => {
-            eprintln!("  Homepage fallback failed: {}", e);
+            tracing::warn!(error = %e, "Homepage fallback failed");
         }
     }
 
