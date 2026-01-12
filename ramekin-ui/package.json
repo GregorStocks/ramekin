@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@solidjs/router": "^0.15.4",
+    "@types/diff": "^7.0.2",
+    "diff": "^7.0.0",
     "ramekin-client": "file:./generated-client",
     "solid-js": "^1.9.10"
   },

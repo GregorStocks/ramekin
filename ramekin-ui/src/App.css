@@ -1528,3 +1528,248 @@
 .rating-clear:hover {
   color: #ff6b6b;
 }
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 10vh;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.modal-body {
+  padding: 1.25rem;
+}
+
+.modal-body p {
+  margin: 0 0 0.75rem 0;
+}
+
+.modal-body p:last-child {
+  margin-bottom: 0;
+}
+
+.modal-actions {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #333;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Version History Panel */
+.version-history-panel {
+  margin-bottom: 1.5rem;
+}
+
+.version-history-header {
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.version-history-header:hover {
+  background: #222;
+}
+
+.version-history-toggle {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.version-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.version-list {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.version-item {
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+
+.version-item.current {
+  border-color: #646cff;
+}
+
+.version-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.version-date {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.current-badge {
+  padding: 0.15rem 0.5rem;
+  background: rgba(100, 108, 255, 0.2);
+  border: 1px solid rgba(100, 108, 255, 0.4);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #a8aeff;
+}
+
+.version-item-title {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #888;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.version-item-actions {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-text,
+.error-text {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.error-text {
+  color: #ff6b6b;
+}
+
+/* Version Source Badges */
+.version-source-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.version-source-user {
+  background: rgba(100, 108, 255, 0.15);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  color: #a8aeff;
+}
+
+.version-source-scrape {
+  background: rgba(81, 207, 102, 0.15);
+  border: 1px solid rgba(81, 207, 102, 0.3);
+  color: #51cf66;
+}
+
+.version-source-enrich {
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  color: #ffb800;
+}
+
+/* Version Banner */
+.version-banner {
+  padding: 0.75rem 1rem;
+  background: rgba(255, 184, 0, 0.15);
+  border: 1px solid rgba(255, 184, 0, 0.3);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.version-banner span {
+  color: #ffb800;
+}
+
+.version-banner-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Diff Viewer */
+.diff-viewer {
+  margin-bottom: 1rem;
+}
+
+.diff-viewer:last-child {
+  margin-bottom: 0;
+}
+
+.diff-label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.35rem;
+}
+
+.diff-content {
+  padding: 0.75rem;
+  background: #242424;
+  border: 1px solid #333;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.diff-addition {
+  background: rgba(81, 207, 102, 0.2);
+  color: #51cf66;
+}
+
+.diff-deletion {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  text-decoration: line-through;
+}
+
+/* Enrich Preview */
+.enrich-preview {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.no-changes {
+  color: #888;
+  font-style: italic;
+}

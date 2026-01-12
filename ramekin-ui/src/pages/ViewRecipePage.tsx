@@ -1,8 +1,22 @@
-import { createSignal, Show, For, onMount, onCleanup } from "solid-js";
+import {
+  createSignal,
+  createEffect,
+  Show,
+  For,
+  onMount,
+  onCleanup,
+} from "solid-js";
 import { useParams, A, useNavigate, useSearchParams } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
 import StarRating from "../components/StarRating";
-import type { RecipeResponse } from "ramekin-client";
+import Modal from "../components/Modal";
+import VersionHistoryPanel from "../components/VersionHistoryPanel";
+import EnrichPreviewModal from "../components/EnrichPreviewModal";
+import type {
+  RecipeResponse,
+  RecipeContent,
+  VersionSummary,
+} from "ramekin-client";
 
 function PhotoImage(props: { photoId: string; token: string; alt: string }) {
   const [src, setSrc] = createSignal<string | null>(null);
@@ -32,21 +46,42 @@ function PhotoImage(props: { photoId: string; token: string; alt: string }) {
 export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const { getRecipesApi, token } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { getRecipesApi, getEnrichApi, token } = useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
     typeof searchParams.randomQ === "string" ? searchParams.randomQ : null;
   const isRandomMode = () => randomQuery() !== null;
 
+  // Get version_id from URL params
+  const versionId = () =>
+    typeof searchParams.version_id === "string"
+      ? searchParams.version_id
+      : null;
+
   const [recipe, setRecipe] = createSignal<RecipeResponse | null>(null);
+  const [currentVersionId, setCurrentVersionId] = createSignal<string | null>(
+    null,
+  );
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deleting, setDeleting] = createSignal(false);
   const [checkedIngredients, setCheckedIngredients] = createSignal<Set<number>>(
     new Set(),
   );
+
+  // Revert state
+  const [revertVersion, setRevertVersion] = createSignal<VersionSummary | null>(
+    null,
+  );
+  const [reverting, setReverting] = createSignal(false);
+
+  // Enrich state
+  const [enriching, setEnriching] = createSignal(false);
+  const [enrichedContent, setEnrichedContent] =
+    createSignal<RecipeContent | null>(null);
+  const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
 
   const toggleIngredient = (index: number) => {
     setCheckedIngredients((prev) => {
@@ -64,8 +99,16 @@ export default function ViewRecipePage() {
     setLoading(true);
     setError(null);
     try {
-      const response = await getRecipesApi().getRecipe({ id: params.id });
+      const vid = versionId();
+      const response = await getRecipesApi().getRecipe({
+        id: params.id,
+        versionId: vid ?? undefined,
+      });
       setRecipe(response);
+      // Store the current version ID when not viewing a specific version
+      if (!vid) {
+        setCurrentVersionId(response.versionId);
+      }
     } catch (err) {
       if (err instanceof Response && err.status === 404) {
         setError("Recipe not found");
@@ -74,6 +117,16 @@ export default function ViewRecipePage() {
       }
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Load current version ID on mount (before potentially loading a specific version)
+  const loadCurrentVersionId = async () => {
+    try {
+      const response = await getRecipesApi().getRecipe({ id: params.id });
+      setCurrentVersionId(response.versionId);
+    } catch {
+      // Ignore - will be handled by main loadRecipe
     }
   };
 
@@ -111,7 +164,169 @@ export default function ViewRecipePage() {
     }
   };
 
+  // Version viewing handlers
+  const handleViewVersion = (vid: string) => {
+    setSearchParams({ version_id: vid });
+  };
+
+  const handleViewCurrent = () => {
+    setSearchParams({ version_id: undefined });
+  };
+
+  // Check if viewing a historical version
+  const isViewingHistoricalVersion = () => {
+    const vid = versionId();
+    const currentVid = currentVersionId();
+    return vid !== null && currentVid !== null && vid !== currentVid;
+  };
+
+  // Revert handlers
+  const handleRevertClick = (version: VersionSummary) => {
+    setRevertVersion(version);
+  };
+
+  const handleRevertConfirm = async () => {
+    const version = revertVersion();
+    if (!version) return;
+
+    setReverting(true);
+    try {
+      // Fetch the full recipe content at that version
+      const oldRecipe = await getRecipesApi().getRecipe({
+        id: params.id,
+        versionId: version.id,
+      });
+
+      // Update the recipe with that content (creates new version)
+      await getRecipesApi().updateRecipe({
+        id: params.id,
+        updateRecipeRequest: {
+          title: oldRecipe.title,
+          description: oldRecipe.description,
+          instructions: oldRecipe.instructions,
+          ingredients: oldRecipe.ingredients,
+          tags: oldRecipe.tags,
+          prepTime: oldRecipe.prepTime,
+          cookTime: oldRecipe.cookTime,
+          totalTime: oldRecipe.totalTime,
+          servings: oldRecipe.servings,
+          difficulty: oldRecipe.difficulty,
+          rating: oldRecipe.rating,
+          notes: oldRecipe.notes,
+          nutritionalInfo: oldRecipe.nutritionalInfo,
+          sourceName: oldRecipe.sourceName,
+          sourceUrl: oldRecipe.sourceUrl,
+        },
+      });
+
+      // Clear version param and reload
+      setSearchParams({ version_id: undefined });
+      setRevertVersion(null);
+      await loadRecipe();
+      await loadCurrentVersionId();
+    } catch (err) {
+      setError("Failed to revert to this version");
+    } finally {
+      setReverting(false);
+    }
+  };
+
+  const handleRevertCancel = () => {
+    setRevertVersion(null);
+  };
+
+  // Enrich handlers
+  const handleEnrich = async () => {
+    const r = recipe();
+    if (!r) return;
+
+    setEnriching(true);
+    setError(null);
+    try {
+      const enriched = await getEnrichApi().enrichRecipe({
+        recipeContent: {
+          title: r.title,
+          description: r.description,
+          instructions: r.instructions,
+          ingredients: r.ingredients,
+          tags: r.tags,
+          prepTime: r.prepTime,
+          cookTime: r.cookTime,
+          totalTime: r.totalTime,
+          servings: r.servings,
+          difficulty: r.difficulty,
+          notes: r.notes,
+          nutritionalInfo: r.nutritionalInfo,
+          sourceName: r.sourceName,
+          sourceUrl: r.sourceUrl,
+        },
+      });
+      setEnrichedContent(enriched);
+    } catch (err) {
+      setError("Failed to enrich recipe");
+    } finally {
+      setEnriching(false);
+    }
+  };
+
+  const handleApplyEnrichment = async () => {
+    const enriched = enrichedContent();
+    if (!enriched) return;
+
+    setApplyingEnrichment(true);
+    try {
+      await getRecipesApi().updateRecipe({
+        id: params.id,
+        updateRecipeRequest: {
+          title: enriched.title,
+          description: enriched.description,
+          instructions: enriched.instructions,
+          ingredients: enriched.ingredients,
+          tags: enriched.tags,
+          prepTime: enriched.prepTime,
+          cookTime: enriched.cookTime,
+          totalTime: enriched.totalTime,
+          servings: enriched.servings,
+          difficulty: enriched.difficulty,
+          notes: enriched.notes,
+          nutritionalInfo: enriched.nutritionalInfo,
+          sourceName: enriched.sourceName,
+          sourceUrl: enriched.sourceUrl,
+        },
+      });
+      setEnrichedContent(null);
+      await loadRecipe();
+      await loadCurrentVersionId();
+    } catch (err) {
+      setError("Failed to apply enrichment");
+    } finally {
+      setApplyingEnrichment(false);
+    }
+  };
+
+  const handleEnrichClose = () => {
+    setEnrichedContent(null);
+  };
+
+  const formatDate = (date: Date) => {
+    return new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    }).format(date);
+  };
+
   onMount(() => {
+    loadCurrentVersionId();
+    loadRecipe();
+  });
+
+  // Reload when version_id changes
+  createEffect(() => {
+    // Read versionId to track it as a dependency
+    versionId();
     loadRecipe();
   });
 
@@ -149,6 +364,14 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
               <div class="recipe-actions">
+                <button
+                  type="button"
+                  class="btn"
+                  onClick={handleEnrich}
+                  disabled={enriching() || isViewingHistoricalVersion()}
+                >
+                  {enriching() ? "Enriching..." : "Enrich with AI"}
+                </button>
                 <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
                 </A>
@@ -161,6 +384,49 @@ export default function ViewRecipePage() {
                 </button>
               </div>
             </div>
+
+            {/* Historical version banner */}
+            <Show when={isViewingHistoricalVersion()}>
+              <div class="version-banner">
+                <span>
+                  You are viewing a version from {formatDate(r().updatedAt)}
+                </span>
+                <div class="version-banner-actions">
+                  <button
+                    type="button"
+                    class="btn btn-small"
+                    onClick={handleViewCurrent}
+                  >
+                    View Current
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-small btn-primary"
+                    onClick={() =>
+                      handleRevertClick({
+                        id: r().versionId,
+                        title: r().title,
+                        createdAt: r().updatedAt,
+                        isCurrent: false,
+                        versionSource: r().versionSource,
+                      })
+                    }
+                  >
+                    Revert to This Version
+                  </button>
+                </div>
+              </div>
+            </Show>
+
+            {/* Version History Panel */}
+            <Show when={currentVersionId()}>
+              <VersionHistoryPanel
+                recipeId={params.id}
+                currentVersionId={currentVersionId()!}
+                onViewVersion={handleViewVersion}
+                onRevertVersion={handleRevertClick}
+              />
+            </Show>
 
             <div class="recipe-header-compact">
               <h2>{r().title}</h2>
@@ -302,6 +568,53 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
             </div>
+
+            {/* Revert Confirmation Modal */}
+            <Modal
+              isOpen={() => revertVersion() !== null}
+              onClose={handleRevertCancel}
+              title="Revert to this version?"
+              actions={
+                <>
+                  <button
+                    type="button"
+                    class="btn"
+                    onClick={handleRevertCancel}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onClick={handleRevertConfirm}
+                    disabled={reverting()}
+                  >
+                    {reverting() ? "Reverting..." : "Revert"}
+                  </button>
+                </>
+              }
+            >
+              <p>
+                This will create a new version with the content from{" "}
+                <strong>
+                  {revertVersion() && formatDate(revertVersion()!.createdAt)}
+                </strong>
+                .
+              </p>
+              <p>The current version will be preserved in history.</p>
+            </Modal>
+
+            {/* Enrich Preview Modal */}
+            <Show when={enrichedContent() && recipe()}>
+              <EnrichPreviewModal
+                isOpen={() => enrichedContent() !== null}
+                onClose={handleEnrichClose}
+                currentRecipe={recipe()!}
+                enrichedContent={enrichedContent()!}
+                onApply={handleApplyEnrichment}
+                applying={applyingEnrichment()}
+              />
+            </Show>
           </>
         )}
       </Show>
