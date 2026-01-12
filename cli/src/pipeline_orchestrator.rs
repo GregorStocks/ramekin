@@ -643,7 +643,7 @@ async fn prompt_for_manual_cache(
             }
             Err(tokio::sync::mpsc::error::TryRecvError::Disconnected) => {
                 // Stdin closed, skip
-                tracing::debug!("Stdin closed, skipping URL");
+                tracing::warn!("Stdin closed, skipping URL");
                 return Ok(None);
             }
         }
