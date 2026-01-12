@@ -6,7 +6,6 @@ mod photos;
 mod schema;
 mod scraping;
 mod telemetry;
-mod tls;
 mod types;
 
 use axum::extract::MatchedPath;
@@ -255,42 +254,23 @@ async fn main() {
         .expect("PORT environment variable required")
         .parse()
         .expect("PORT must be a valid port number");
+    let bind_addr = format!("0.0.0.0:{}", port);
+    tracing::debug!("Attempting to bind to {}", bind_addr);
+    let listener = tokio::net::TcpListener::bind(&bind_addr)
+        .await
+        .unwrap_or_else(|e| panic!("Failed to bind to {}: {}", bind_addr, e));
+    let addr = listener.local_addr().unwrap();
 
-    // Check if ACME (Let's Encrypt) is enabled
-    let acme_enabled = env::var("ACME_ENABLED").is_ok();
+    tracing::info!("Server listening on {}", addr);
+    tracing::info!(
+        "Swagger UI available at http://localhost:{}/swagger-ui/",
+        addr.port()
+    );
+    tracing::info!(
+        "OpenAPI spec available at http://localhost:{}/api-docs/openapi.json",
+        addr.port()
+    );
+    tracing::info!("Hot reload is enabled!");
 
-    if acme_enabled {
-        let hostname =
-            env::var("ACME_HOSTNAME").expect("ACME_HOSTNAME required when ACME_ENABLED is set");
-        let email = env::var("ACME_EMAIL").ok();
-        let staging = env::var("ACME_STAGING").is_ok();
-
-        tracing::info!(
-            "ACME enabled for hostname {} (staging: {})",
-            hostname,
-            staging
-        );
-
-        tls::serve_with_acme(app, port, &hostname, email.as_deref(), staging).await;
-    } else {
-        let bind_addr = format!("0.0.0.0:{}", port);
-        tracing::debug!("Attempting to bind to {}", bind_addr);
-        let listener = tokio::net::TcpListener::bind(&bind_addr)
-            .await
-            .unwrap_or_else(|e| panic!("Failed to bind to {}: {}", bind_addr, e));
-        let addr = listener.local_addr().unwrap();
-
-        tracing::info!("Server listening on {}", addr);
-        tracing::info!(
-            "Swagger UI available at http://localhost:{}/swagger-ui/",
-            addr.port()
-        );
-        tracing::info!(
-            "OpenAPI spec available at http://localhost:{}/api-docs/openapi.json",
-            addr.port()
-        );
-        tracing::info!("Hot reload is enabled!");
-
-        axum::serve(listener, app).await.unwrap();
-    }
+    axum::serve(listener, app).await.unwrap();
 }

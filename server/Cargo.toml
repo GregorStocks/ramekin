@@ -62,10 +62,3 @@ zip = "2.2"
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
 scraper = "0.25"
 ramekin-core = { path = "../ramekin-core" }
-
-# TLS with ACME (Let's Encrypt)
-tokio-rustls-acme = { version = "0.9", features = ["axum"] }
-axum-server = { version = "0.8", features = ["tls-rustls"] }
-rustls = "0.23"
-tokio-stream = "0.1"
-dirs = "6.0"
