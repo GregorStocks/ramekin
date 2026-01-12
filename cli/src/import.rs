@@ -187,7 +187,7 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
         let entry_name = entry.name().to_string();
 
         if !entry_name.ends_with(".paprikarecipe") {
-            println!("  Skipping non-recipe file: {}", entry_name);
+            tracing::debug!(file = %entry_name, "Skipping non-recipe file");
             continue;
         }
 
@@ -219,20 +219,20 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
                             Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
                                 Ok(id) => photo_ids.push(id),
                                 Err(e) => {
-                                    println!(
-                                        "  Warning: Failed to upload photo {} for '{}': {}",
-                                        i + 1,
-                                        recipe_name,
-                                        e
+                                    tracing::warn!(
+                                        photo_num = i + 1,
+                                        recipe = %recipe_name,
+                                        error = %e,
+                                        "Failed to upload photo"
                                     );
                                 }
                             },
                             Err(e) => {
-                                println!(
-                                    "  Warning: Failed to decode photo {} for '{}': {}",
-                                    i + 1,
-                                    recipe_name,
-                                    e
+                                tracing::warn!(
+                                    photo_num = i + 1,
+                                    recipe = %recipe_name,
+                                    error = %e,
+                                    "Failed to decode photo"
                                 );
                             }
                         }
@@ -246,16 +246,18 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
                     Ok(image_bytes) => match upload_photo(&config, &image_bytes).await {
                         Ok(id) => photo_ids.push(id),
                         Err(e) => {
-                            println!(
-                                "  Warning: Failed to upload photo for '{}': {}",
-                                recipe_name, e
+                            tracing::warn!(
+                                recipe = %recipe_name,
+                                error = %e,
+                                "Failed to upload photo"
                             );
                         }
                     },
                     Err(e) => {
-                        println!(
-                            "  Warning: Failed to decode photo for '{}': {}",
-                            recipe_name, e
+                        tracing::warn!(
+                            recipe = %recipe_name,
+                            error = %e,
+                            "Failed to decode photo"
                         );
                     }
                 }

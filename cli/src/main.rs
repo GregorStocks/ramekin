@@ -388,10 +388,10 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
         PipelineStep::ExtractRecipe => {
             // Ensure HTML is fetched first
             if !client.is_cached(url) && !force_fetch {
-                println!("HTML not cached, fetching first...");
+                tracing::debug!("HTML not cached, fetching first...");
                 let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
-                    println!("Fetch failed: {:?}", fetch_result.error);
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
                     return Ok(());
                 }
             }
@@ -400,16 +400,16 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
             if !client.is_cached(url) {
-                println!("HTML not cached, fetching first...");
+                tracing::debug!("HTML not cached, fetching first...");
                 let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
-                    println!("Fetch failed: {:?}", fetch_result.error);
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
                     return Ok(());
                 }
             }
             let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
             if !extract_result.step_result.success {
-                println!("Extract failed: {:?}", extract_result.step_result.error);
+                tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
                 return Ok(());
             }
             pipeline::run_save_recipe(url, run_dir)

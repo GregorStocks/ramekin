@@ -601,6 +601,7 @@ async fn prompt_for_manual_cache(
             match fs::read_to_string(&staged_file) {
                 Ok(html) => {
                     if let Err(e) = client.inject_html(url, &html) {
+                        tracing::warn!(error = %e, "Failed to cache HTML");
                         println!("  Failed to cache: {}", e);
                         println!("  Continuing with failed status...");
                         println!();
@@ -618,6 +619,7 @@ async fn prompt_for_manual_cache(
                     return Ok(Some(new_results));
                 }
                 Err(e) => {
+                    tracing::warn!(error = %e, "Failed to read staged HTML file");
                     println!("  Failed to read file: {}", e);
                     println!("  Continuing with failed status...");
                     println!();
@@ -641,9 +643,7 @@ async fn prompt_for_manual_cache(
             }
             Err(tokio::sync::mpsc::error::TryRecvError::Disconnected) => {
                 // Stdin closed, skip
-                println!();
-                println!("  Stdin closed, skipping...");
-                println!();
+                tracing::debug!("Stdin closed, skipping URL");
                 return Ok(None);
             }
         }
