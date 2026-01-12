@@ -1,9 +1,4 @@
-interface Ingredient {
-  amount?: string | null;
-  unit?: string | null;
-  item: string;
-  note?: string | null;
-}
+import type { Ingredient } from "ramekin-client";
 
 export function formatIngredients(ingredients: Ingredient[]): string {
   return ingredients

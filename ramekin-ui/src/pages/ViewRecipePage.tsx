@@ -89,6 +89,7 @@ export default function ViewRecipePage() {
   const [compareVersions, setCompareVersions] = createSignal<
     [RecipeResponse, RecipeResponse] | null
   >(null);
+  const [compareError, setCompareError] = createSignal<string | null>(null);
 
   const toggleIngredient = (index: number) => {
     setCheckedIngredients((prev) => {
@@ -318,6 +319,7 @@ export default function ViewRecipePage() {
   // Compare handlers
   const handleCompareVersions = async (versionIds: [string, string]) => {
     setCompareLoading(true);
+    setCompareError(null);
     try {
       const [versionA, versionB] = await Promise.all([
         getRecipesApi().getRecipe({
@@ -336,7 +338,7 @@ export default function ViewRecipePage() {
         setCompareVersions([versionA, versionB]);
       }
     } catch (err) {
-      setError("Failed to load versions for comparison");
+      setCompareError("Failed to load versions for comparison");
     } finally {
       setCompareLoading(false);
     }
@@ -344,6 +346,7 @@ export default function ViewRecipePage() {
 
   const handleCompareClose = () => {
     setCompareVersions(null);
+    setCompareError(null);
   };
 
   const formatDate = (date: Date) => {
@@ -657,9 +660,14 @@ export default function ViewRecipePage() {
 
             {/* Version Compare Modal */}
             <VersionCompareModal
-              isOpen={() => compareLoading() || compareVersions() !== null}
+              isOpen={() =>
+                compareLoading() ||
+                compareVersions() !== null ||
+                compareError() !== null
+              }
               onClose={handleCompareClose}
               loading={compareLoading()}
+              error={compareError()}
               versionA={compareVersions()?.[0] ?? null}
               versionB={compareVersions()?.[1] ?? null}
             />

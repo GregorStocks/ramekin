@@ -9,6 +9,7 @@ interface VersionCompareModalProps {
   isOpen: () => boolean;
   onClose: () => void;
   loading: boolean;
+  error: string | null;
   versionA: RecipeResponse | null;
   versionB: RecipeResponse | null;
 }
@@ -62,6 +63,13 @@ export default function VersionCompareModal(props: VersionCompareModalProps) {
     );
   };
 
+  // Derive a tuple of both versions when both are present, for type-safe access
+  const versionPair = (): [RecipeResponse, RecipeResponse] | null => {
+    const a = props.versionA;
+    const b = props.versionB;
+    return a && b ? [a, b] : null;
+  };
+
   return (
     <Modal
       isOpen={props.isOpen}
@@ -77,140 +85,151 @@ export default function VersionCompareModal(props: VersionCompareModalProps) {
         <p class="loading-text">Loading versions...</p>
       </Show>
 
-      <Show when={!props.loading && props.versionA && props.versionB}>
-        <div class="version-compare-header">
-          <div class="version-compare-label">
-            <span class="version-compare-date">
-              {formatDate(props.versionA!.updatedAt)}
-            </span>
-            <VersionSourceBadge source={props.versionA!.versionSource} />
-          </div>
-          <span class="version-compare-arrow">→</span>
-          <div class="version-compare-label">
-            <span class="version-compare-date">
-              {formatDate(props.versionB!.updatedAt)}
-            </span>
-            <VersionSourceBadge source={props.versionB!.versionSource} />
-          </div>
-        </div>
+      <Show when={props.error}>
+        <p class="error">{props.error}</p>
+      </Show>
 
-        <div class="version-compare-content">
-          <Show when={hasChanges("title")}>
-            <DiffViewer
-              label="Title"
-              oldText={props.versionA!.title}
-              newText={props.versionB!.title}
-            />
-          </Show>
+      <Show when={!props.loading && !props.error && versionPair()}>
+        {(pair) => {
+          const [versionA, versionB] = pair();
+          return (
+            <>
+              <div class="version-compare-header">
+                <div class="version-compare-label">
+                  <span class="version-compare-date">
+                    {formatDate(versionA.updatedAt)}
+                  </span>
+                  <VersionSourceBadge source={versionA.versionSource} />
+                </div>
+                <span class="version-compare-arrow">→</span>
+                <div class="version-compare-label">
+                  <span class="version-compare-date">
+                    {formatDate(versionB.updatedAt)}
+                  </span>
+                  <VersionSourceBadge source={versionB.versionSource} />
+                </div>
+              </div>
 
-          <Show when={hasChanges("description")}>
-            <DiffViewer
-              label="Description"
-              oldText={props.versionA!.description || ""}
-              newText={props.versionB!.description || ""}
-            />
-          </Show>
+              <div class="version-compare-content">
+                <Show when={hasChanges("title")}>
+                  <DiffViewer
+                    label="Title"
+                    oldText={versionA.title}
+                    newText={versionB.title}
+                  />
+                </Show>
 
-          <Show when={ingredientsChanged()}>
-            <DiffViewer
-              label="Ingredients"
-              oldText={formatIngredients(props.versionA!.ingredients)}
-              newText={formatIngredients(props.versionB!.ingredients)}
-            />
-          </Show>
+                <Show when={hasChanges("description")}>
+                  <DiffViewer
+                    label="Description"
+                    oldText={versionA.description || ""}
+                    newText={versionB.description || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("instructions")}>
-            <DiffViewer
-              label="Instructions"
-              oldText={props.versionA!.instructions}
-              newText={props.versionB!.instructions}
-            />
-          </Show>
+                <Show when={ingredientsChanged()}>
+                  <DiffViewer
+                    label="Ingredients"
+                    oldText={formatIngredients(versionA.ingredients)}
+                    newText={formatIngredients(versionB.ingredients)}
+                  />
+                </Show>
 
-          <Show when={tagsChanged()}>
-            <DiffViewer
-              label="Tags"
-              oldText={formatTags(props.versionA!.tags)}
-              newText={formatTags(props.versionB!.tags)}
-            />
-          </Show>
+                <Show when={hasChanges("instructions")}>
+                  <DiffViewer
+                    label="Instructions"
+                    oldText={versionA.instructions}
+                    newText={versionB.instructions}
+                  />
+                </Show>
 
-          <Show when={hasChanges("notes")}>
-            <DiffViewer
-              label="Notes"
-              oldText={props.versionA!.notes || ""}
-              newText={props.versionB!.notes || ""}
-            />
-          </Show>
+                <Show when={tagsChanged()}>
+                  <DiffViewer
+                    label="Tags"
+                    oldText={formatTags(versionA.tags)}
+                    newText={formatTags(versionB.tags)}
+                  />
+                </Show>
 
-          <Show when={hasChanges("prepTime")}>
-            <DiffViewer
-              label="Prep Time"
-              oldText={props.versionA!.prepTime || ""}
-              newText={props.versionB!.prepTime || ""}
-            />
-          </Show>
+                <Show when={hasChanges("notes")}>
+                  <DiffViewer
+                    label="Notes"
+                    oldText={versionA.notes || ""}
+                    newText={versionB.notes || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("cookTime")}>
-            <DiffViewer
-              label="Cook Time"
-              oldText={props.versionA!.cookTime || ""}
-              newText={props.versionB!.cookTime || ""}
-            />
-          </Show>
+                <Show when={hasChanges("prepTime")}>
+                  <DiffViewer
+                    label="Prep Time"
+                    oldText={versionA.prepTime || ""}
+                    newText={versionB.prepTime || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("totalTime")}>
-            <DiffViewer
-              label="Total Time"
-              oldText={props.versionA!.totalTime || ""}
-              newText={props.versionB!.totalTime || ""}
-            />
-          </Show>
+                <Show when={hasChanges("cookTime")}>
+                  <DiffViewer
+                    label="Cook Time"
+                    oldText={versionA.cookTime || ""}
+                    newText={versionB.cookTime || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("servings")}>
-            <DiffViewer
-              label="Servings"
-              oldText={props.versionA!.servings || ""}
-              newText={props.versionB!.servings || ""}
-            />
-          </Show>
+                <Show when={hasChanges("totalTime")}>
+                  <DiffViewer
+                    label="Total Time"
+                    oldText={versionA.totalTime || ""}
+                    newText={versionB.totalTime || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("difficulty")}>
-            <DiffViewer
-              label="Difficulty"
-              oldText={props.versionA!.difficulty || ""}
-              newText={props.versionB!.difficulty || ""}
-            />
-          </Show>
+                <Show when={hasChanges("servings")}>
+                  <DiffViewer
+                    label="Servings"
+                    oldText={versionA.servings || ""}
+                    newText={versionB.servings || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("nutritionalInfo")}>
-            <DiffViewer
-              label="Nutritional Info"
-              oldText={props.versionA!.nutritionalInfo || ""}
-              newText={props.versionB!.nutritionalInfo || ""}
-            />
-          </Show>
+                <Show when={hasChanges("difficulty")}>
+                  <DiffViewer
+                    label="Difficulty"
+                    oldText={versionA.difficulty || ""}
+                    newText={versionB.difficulty || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("sourceName")}>
-            <DiffViewer
-              label="Source Name"
-              oldText={props.versionA!.sourceName || ""}
-              newText={props.versionB!.sourceName || ""}
-            />
-          </Show>
+                <Show when={hasChanges("nutritionalInfo")}>
+                  <DiffViewer
+                    label="Nutritional Info"
+                    oldText={versionA.nutritionalInfo || ""}
+                    newText={versionB.nutritionalInfo || ""}
+                  />
+                </Show>
 
-          <Show when={hasChanges("sourceUrl")}>
-            <DiffViewer
-              label="Source URL"
-              oldText={props.versionA!.sourceUrl || ""}
-              newText={props.versionB!.sourceUrl || ""}
-            />
-          </Show>
+                <Show when={hasChanges("sourceName")}>
+                  <DiffViewer
+                    label="Source Name"
+                    oldText={versionA.sourceName || ""}
+                    newText={versionB.sourceName || ""}
+                  />
+                </Show>
 
-          <Show when={!hasAnyChanges()}>
-            <p class="no-changes">These versions are identical.</p>
-          </Show>
-        </div>
+                <Show when={hasChanges("sourceUrl")}>
+                  <DiffViewer
+                    label="Source URL"
+                    oldText={versionA.sourceUrl || ""}
+                    newText={versionB.sourceUrl || ""}
+                  />
+                </Show>
+
+                <Show when={!hasAnyChanges()}>
+                  <p class="no-changes">These versions are identical.</p>
+                </Show>
+              </div>
+            </>
+          );
+        }}
       </Show>
     </Modal>
   );
