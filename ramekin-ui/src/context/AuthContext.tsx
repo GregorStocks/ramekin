@@ -10,6 +10,7 @@ import {
   RecipesApi,
   PhotosApi,
   ScrapeApi,
+  EnrichApi,
 } from "ramekin-client";
 
 interface AuthContextValue {
@@ -19,6 +20,7 @@ interface AuthContextValue {
   getRecipesApi: () => RecipesApi;
   getPhotosApi: () => PhotosApi;
   getScrapeApi: () => ScrapeApi;
+  getEnrichApi: () => EnrichApi;
 }
 
 const AuthContext = createContext<AuthContextValue>();
@@ -50,6 +52,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const getRecipesApi = () => new RecipesApi(getAuthedConfig());
   const getPhotosApi = () => new PhotosApi(getAuthedConfig());
   const getScrapeApi = () => new ScrapeApi(getAuthedConfig());
+  const getEnrichApi = () => new EnrichApi(getAuthedConfig());
 
   const value: AuthContextValue = {
     token,
@@ -58,6 +61,7 @@ export const AuthProvider: ParentComponent = (props) => {
     getRecipesApi,
     getPhotosApi,
     getScrapeApi,
+    getEnrichApi,
   };
 
   return (
