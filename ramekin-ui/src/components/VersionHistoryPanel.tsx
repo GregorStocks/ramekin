@@ -87,15 +87,15 @@ export default function VersionHistoryPanel(props: VersionHistoryPanelProps) {
                     </Show>
                   </div>
                   <div class="version-item-title">{version.title}</div>
-                  <Show when={!version.isCurrent}>
-                    <div class="version-item-actions">
-                      <button
-                        type="button"
-                        class="btn btn-small"
-                        onClick={() => props.onViewVersion(version.id)}
-                      >
-                        View
-                      </button>
+                  <div class="version-item-actions">
+                    <button
+                      type="button"
+                      class="btn btn-small"
+                      onClick={() => props.onViewVersion(version.id)}
+                    >
+                      View
+                    </button>
+                    <Show when={!version.isCurrent}>
                       <button
                         type="button"
                         class="btn btn-small btn-outline"
@@ -103,8 +103,8 @@ export default function VersionHistoryPanel(props: VersionHistoryPanelProps) {
                       >
                         Revert
                       </button>
-                    </div>
-                  </Show>
+                    </Show>
+                  </div>
                 </div>
               )}
             </For>
