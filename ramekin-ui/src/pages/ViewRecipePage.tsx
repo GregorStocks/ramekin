@@ -12,6 +12,7 @@ import StarRating from "../components/StarRating";
 import Modal from "../components/Modal";
 import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
+import VersionCompareModal from "../components/VersionCompareModal";
 import type {
   RecipeResponse,
   RecipeContent,
@@ -82,6 +83,12 @@ export default function ViewRecipePage() {
   const [enrichedContent, setEnrichedContent] =
     createSignal<RecipeContent | null>(null);
   const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
+
+  // Compare state
+  const [compareLoading, setCompareLoading] = createSignal(false);
+  const [compareVersions, setCompareVersions] = createSignal<
+    [RecipeResponse, RecipeResponse] | null
+  >(null);
 
   const toggleIngredient = (index: number) => {
     setCheckedIngredients((prev) => {
@@ -308,6 +315,37 @@ export default function ViewRecipePage() {
     setEnrichedContent(null);
   };
 
+  // Compare handlers
+  const handleCompareVersions = async (versionIds: [string, string]) => {
+    setCompareLoading(true);
+    try {
+      const [versionA, versionB] = await Promise.all([
+        getRecipesApi().getRecipe({
+          id: params.id,
+          versionId: versionIds[0],
+        }),
+        getRecipesApi().getRecipe({
+          id: params.id,
+          versionId: versionIds[1],
+        }),
+      ]);
+      // Order by date (older first)
+      if (versionA.updatedAt > versionB.updatedAt) {
+        setCompareVersions([versionB, versionA]);
+      } else {
+        setCompareVersions([versionA, versionB]);
+      }
+    } catch (err) {
+      setError("Failed to load versions for comparison");
+    } finally {
+      setCompareLoading(false);
+    }
+  };
+
+  const handleCompareClose = () => {
+    setCompareVersions(null);
+  };
+
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
       month: "short",
@@ -425,6 +463,7 @@ export default function ViewRecipePage() {
                 currentVersionId={currentVersionId()!}
                 onViewVersion={handleViewVersion}
                 onRevertVersion={handleRevertClick}
+                onCompareVersions={handleCompareVersions}
               />
             </Show>
 
@@ -615,6 +654,15 @@ export default function ViewRecipePage() {
                 applying={applyingEnrichment()}
               />
             </Show>
+
+            {/* Version Compare Modal */}
+            <VersionCompareModal
+              isOpen={() => compareLoading() || compareVersions() !== null}
+              onClose={handleCompareClose}
+              loading={compareLoading()}
+              versionA={compareVersions()?.[0] ?? null}
+              versionB={compareVersions()?.[1] ?? null}
+            />
           </>
         )}
       </Show>
