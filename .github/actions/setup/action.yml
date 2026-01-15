@@ -25,6 +25,10 @@ runs:
       shell: bash
       run: cargo install diesel_cli --no-default-features --features postgres
 
+    - name: Install ast-grep
+      shell: bash
+      run: cargo install ast-grep --locked
+
     - name: Install uv
       uses: astral-sh/setup-uv@v5
 
