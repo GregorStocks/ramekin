@@ -10,6 +10,7 @@ This script runs:
 - Shell script linter
 """
 
+import json
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -286,6 +287,85 @@ def lint_shell(project_root: Path) -> tuple[str, bool]:
     return ("Shell", result.returncode == 0)
 
 
+def check_raw_sql(project_root: Path) -> tuple[str, bool]:
+    """Check for raw SQL usage that could be vulnerable to SQL injection.
+
+    Uses ast-grep for proper AST-based detection of raw SQL patterns:
+    - sql_query() - runs arbitrary SQL strings
+    - sql::<Type>() - creates raw SQL fragments
+    - .sql() - appends raw SQL to queries
+
+    Approved exceptions must be listed in scripts/sql_allowlist.txt.
+    """
+    # Check if ast-grep is installed
+    which_result = subprocess.run(
+        ["which", "ast-grep"],
+        capture_output=True,
+        check=False,
+    )
+    if which_result.returncode != 0:
+        print("ast-grep not installed (cargo install ast-grep)", file=sys.stderr)
+        return ("Raw SQL check", False)
+
+    # Load allowlist
+    allowlist_path = project_root / "scripts" / "sql_allowlist.txt"
+    allowlist: set[str] = set()
+    if allowlist_path.exists():
+        for line in allowlist_path.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#"):
+                allowlist.add(line)
+
+    # Run ast-grep with the rule file
+    rule_file = project_root / "scripts" / "raw-sql-rules.yml"
+    result = subprocess.run(
+        ["ast-grep", "scan", "--rule", str(rule_file), "--json", "server/", "cli/"],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    # Parse JSON output to get matches
+    violations: dict[str, tuple[str, int, str]] = {}
+    if result.stdout.strip():
+        try:
+            matches = json.loads(result.stdout)
+            for match in matches:
+                file_path = match.get("file", "")
+                # Make path relative to project root
+                if file_path.startswith(str(project_root)):
+                    file_path = file_path[len(str(project_root)) + 1 :]
+                line_num = match.get("range", {}).get("start", {}).get("line", 0)
+                # ast-grep uses 0-indexed lines, convert to 1-indexed
+                line_num += 1
+                text = match.get("text", "").split("\n")[0].strip()
+
+                location = f"{file_path}:{line_num}"
+                if location not in allowlist and location not in violations:
+                    violations[location] = (file_path, line_num, text)
+        except json.JSONDecodeError:
+            print(f"Failed to parse ast-grep output: {result.stdout}", file=sys.stderr)
+            return ("Raw SQL check", False)
+
+    if violations:
+        print("Raw SQL detected (potential SQL injection risk):", file=sys.stderr)
+        print("", file=sys.stderr)
+        for file_path, line_num, text in violations.values():
+            print(f"  {file_path}:{line_num}", file=sys.stderr)
+            print(f"    {text}", file=sys.stderr)
+        print("", file=sys.stderr)
+        print("Use Diesel's type-safe DSL instead of raw SQL.", file=sys.stderr)
+        print(
+            "If raw SQL is unavoidable, add the location to scripts/sql_allowlist.txt",
+            file=sys.stderr,
+        )
+        print("after security review (ensure all user input uses .bind()).", file=sys.stderr)
+        return ("Raw SQL check", False)
+
+    return ("Raw SQL check", True)
+
+
 def main() -> None:
     """Main execution."""
     project_root = get_project_root()
@@ -298,11 +378,12 @@ def main() -> None:
         ("Python", lambda: lint_python(project_root)),
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
+        ("Raw SQL check", lambda: check_raw_sql(project_root)),
     ]
 
     # Run all linters in parallel
     results = {}
-    with ThreadPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=7) as executor:
         futures = {executor.submit(func): name for name, func in linters}
 
         for future in as_completed(futures):

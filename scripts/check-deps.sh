@@ -9,6 +9,7 @@ MISSING=()
 # Check Rust toolchain
 command -v cargo >/dev/null 2>&1 || MISSING+=("cargo (install Rust: https://rustup.rs)")
 command -v diesel >/dev/null 2>&1 || MISSING+=("diesel CLI (cargo install diesel_cli --no-default-features --features postgres)")
+command -v ast-grep >/dev/null 2>&1 || MISSING+=("ast-grep (cargo install ast-grep)")
 
 # Check cargo-watch for dev (not needed in CI)
 if [ -z "$CI" ]; then
