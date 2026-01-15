@@ -12,3 +12,12 @@
 # tags.rs: Uses sql_query for unnest() which isn't in Diesel DSL.
 # Safe: user_id is passed via .bind(), no string interpolation.
 server/src/api/recipes/tags.rs:44
+
+# list.rs: Tag filtering uses raw SQL for citext array containment check.
+# Safe: tag value is passed via .bind() on line 287, not interpolated.
+server/src/api/recipes/list.rs:286
+server/src/api/recipes/list.rs:288
+
+# list.rs: Window function for total count.
+# Safe: static SQL string with no user input.
+server/src/api/recipes/list.rs:334

@@ -290,7 +290,11 @@ def lint_shell(project_root: Path) -> tuple[str, bool]:
 def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     """Check for raw SQL usage that could be vulnerable to SQL injection.
 
-    Flags uses of diesel::sql_query which bypasses the type-safe DSL.
+    Flags uses of raw SQL patterns which bypass Diesel's type-safe DSL:
+    - sql_query() - runs arbitrary SQL strings
+    - sql::<Type>() - creates raw SQL fragments
+    - .sql() - appends raw SQL to queries
+
     Approved exceptions must be listed in scripts/sql_allowlist.txt.
     """
     # Load allowlist
@@ -307,34 +311,41 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     rust_files.extend((project_root / "cli").rglob("*.rs"))
 
     # Patterns that indicate raw SQL (potential injection risk)
-    # sql_query is the main concern - it runs arbitrary SQL strings
-    dangerous_pattern = re.compile(r"\bsql_query\s*\(")
+    # These all allow arbitrary SQL strings that could be vulnerable if
+    # user input is interpolated without using .bind()
+    dangerous_patterns = [
+        (re.compile(r"\bsql_query\s*\("), "sql_query()"),
+        (re.compile(r"\bsql::<"), "sql::<Type>()"),
+        (re.compile(r"\.sql\s*\("), ".sql()"),
+    ]
 
-    violations: list[tuple[Path, int, str]] = []
+    violations: list[tuple[Path, int, str, str]] = []
 
     for rust_file in rust_files:
         rel_path = rust_file.relative_to(project_root)
         content = rust_file.read_text()
 
         for line_num, line in enumerate(content.splitlines(), start=1):
-            if dangerous_pattern.search(line):
-                location = f"{rel_path}:{line_num}"
-                if location not in allowlist:
-                    violations.append((rel_path, line_num, line.strip()))
+            for pattern, pattern_name in dangerous_patterns:
+                if pattern.search(line):
+                    location = f"{rel_path}:{line_num}"
+                    if location not in allowlist:
+                        violations.append((rel_path, line_num, line.strip(), pattern_name))
+                    break  # Only report each line once
 
     if violations:
         print("Raw SQL detected (potential SQL injection risk):", file=sys.stderr)
         print("", file=sys.stderr)
-        for rel_path, line_num, line in violations:
-            print(f"  {rel_path}:{line_num}", file=sys.stderr)
+        for rel_path, line_num, line, pattern_name in violations:
+            print(f"  {rel_path}:{line_num} [{pattern_name}]", file=sys.stderr)
             print(f"    {line}", file=sys.stderr)
         print("", file=sys.stderr)
-        print("Use Diesel's type-safe DSL instead of sql_query.", file=sys.stderr)
+        print("Use Diesel's type-safe DSL instead of raw SQL.", file=sys.stderr)
         print(
             "If raw SQL is unavoidable, add the location to scripts/sql_allowlist.txt",
             file=sys.stderr,
         )
-        print("after security review.", file=sys.stderr)
+        print("after security review (ensure all user input uses .bind()).", file=sys.stderr)
         return ("Raw SQL check", False)
 
     return ("Raw SQL check", True)
