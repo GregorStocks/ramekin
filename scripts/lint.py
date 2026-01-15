@@ -10,6 +10,7 @@ This script runs:
 - Shell script linter
 """
 
+import re
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -286,6 +287,59 @@ def lint_shell(project_root: Path) -> tuple[str, bool]:
     return ("Shell", result.returncode == 0)
 
 
+def check_raw_sql(project_root: Path) -> tuple[str, bool]:
+    """Check for raw SQL usage that could be vulnerable to SQL injection.
+
+    Flags uses of diesel::sql_query which bypasses the type-safe DSL.
+    Approved exceptions must be listed in scripts/sql_allowlist.txt.
+    """
+    # Load allowlist
+    allowlist_path = project_root / "scripts" / "sql_allowlist.txt"
+    allowlist: set[str] = set()
+    if allowlist_path.exists():
+        for line in allowlist_path.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#"):
+                allowlist.add(line)
+
+    # Find all Rust files in server/ and cli/
+    rust_files = list((project_root / "server").rglob("*.rs"))
+    rust_files.extend((project_root / "cli").rglob("*.rs"))
+
+    # Patterns that indicate raw SQL (potential injection risk)
+    # sql_query is the main concern - it runs arbitrary SQL strings
+    dangerous_pattern = re.compile(r"\bsql_query\s*\(")
+
+    violations: list[tuple[Path, int, str]] = []
+
+    for rust_file in rust_files:
+        rel_path = rust_file.relative_to(project_root)
+        content = rust_file.read_text()
+
+        for line_num, line in enumerate(content.splitlines(), start=1):
+            if dangerous_pattern.search(line):
+                location = f"{rel_path}:{line_num}"
+                if location not in allowlist:
+                    violations.append((rel_path, line_num, line.strip()))
+
+    if violations:
+        print("Raw SQL detected (potential SQL injection risk):", file=sys.stderr)
+        print("", file=sys.stderr)
+        for rel_path, line_num, line in violations:
+            print(f"  {rel_path}:{line_num}", file=sys.stderr)
+            print(f"    {line}", file=sys.stderr)
+        print("", file=sys.stderr)
+        print("Use Diesel's type-safe DSL instead of sql_query.", file=sys.stderr)
+        print(
+            "If raw SQL is unavoidable, add the location to scripts/sql_allowlist.txt",
+            file=sys.stderr,
+        )
+        print("after security review.", file=sys.stderr)
+        return ("Raw SQL check", False)
+
+    return ("Raw SQL check", True)
+
+
 def main() -> None:
     """Main execution."""
     project_root = get_project_root()
@@ -298,11 +352,12 @@ def main() -> None:
         ("Python", lambda: lint_python(project_root)),
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
+        ("Raw SQL check", lambda: check_raw_sql(project_root)),
     ]
 
     # Run all linters in parallel
     results = {}
-    with ThreadPoolExecutor(max_workers=6) as executor:
+    with ThreadPoolExecutor(max_workers=7) as executor:
         futures = {executor.submit(func): name for name, func in linters}
 
         for future in as_completed(futures):

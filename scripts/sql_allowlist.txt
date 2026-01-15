@@ -1,0 +1,14 @@
+# Allowlist for raw SQL usage that has been reviewed for SQL injection safety.
+#
+# Format: relative/path/to/file.rs:line_number
+#
+# Before adding an entry:
+# 1. Verify all user input is passed via .bind() parameters
+# 2. Verify no string concatenation/formatting with user input
+# 3. Document why Diesel DSL couldn't be used
+#
+# Each entry should be reviewed when the code changes.
+
+# tags.rs: Uses sql_query for unnest() which isn't in Diesel DSL.
+# Safe: user_id is passed via .bind(), no string interpolation.
+server/src/api/recipes/tags.rs:44
