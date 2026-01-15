@@ -10,7 +10,7 @@ This script runs:
 - Shell script linter
 """
 
-import re
+import json
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -290,13 +290,25 @@ def lint_shell(project_root: Path) -> tuple[str, bool]:
 def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     """Check for raw SQL usage that could be vulnerable to SQL injection.
 
-    Flags uses of raw SQL patterns which bypass Diesel's type-safe DSL:
+    Uses ast-grep for proper AST-based detection of raw SQL patterns:
     - sql_query() - runs arbitrary SQL strings
     - sql::<Type>() - creates raw SQL fragments
     - .sql() - appends raw SQL to queries
 
     Approved exceptions must be listed in scripts/sql_allowlist.txt.
     """
+    # Check if ast-grep is installed
+    which_result = subprocess.run(
+        ["which", "ast-grep"],
+        capture_output=True,
+        check=False,
+    )
+    if which_result.returncode != 0:
+        print(
+            "ast-grep not installed (cargo install ast-grep --locked)", file=sys.stderr
+        )
+        return ("Raw SQL check", False)
+
     # Load allowlist
     allowlist_path = project_root / "scripts" / "sql_allowlist.txt"
     allowlist: set[str] = set()
@@ -306,39 +318,44 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
             if line and not line.startswith("#"):
                 allowlist.add(line)
 
-    # Find all Rust files in server/ and cli/
-    rust_files = list((project_root / "server").rglob("*.rs"))
-    rust_files.extend((project_root / "cli").rglob("*.rs"))
+    # Run ast-grep with the rule file
+    rule_file = project_root / "scripts" / "raw-sql-rules.yml"
+    result = subprocess.run(
+        ["ast-grep", "scan", "--rule", str(rule_file), "--json", "server/", "cli/"],
+        cwd=project_root,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
 
-    # Patterns that indicate raw SQL (potential injection risk)
-    # These all allow arbitrary SQL strings that could be vulnerable if
-    # user input is interpolated without using .bind()
-    dangerous_patterns = [
-        (re.compile(r"\bsql_query\s*\("), "sql_query()"),
-        (re.compile(r"\bsql::<"), "sql::<Type>()"),
-        (re.compile(r"\.sql\s*\("), ".sql()"),
-    ]
+    # Parse JSON output to get matches
+    violations: dict[str, tuple[str, int, str]] = {}
+    if result.stdout.strip():
+        try:
+            matches = json.loads(result.stdout)
+            for match in matches:
+                file_path = match.get("file", "")
+                # Make path relative to project root
+                if file_path.startswith(str(project_root)):
+                    file_path = file_path[len(str(project_root)) + 1 :]
+                line_num = match.get("range", {}).get("start", {}).get("line", 0)
+                # ast-grep uses 0-indexed lines, convert to 1-indexed
+                line_num += 1
+                text = match.get("text", "").split("\n")[0].strip()
 
-    violations: list[tuple[Path, int, str, str]] = []
-
-    for rust_file in rust_files:
-        rel_path = rust_file.relative_to(project_root)
-        content = rust_file.read_text()
-
-        for line_num, line in enumerate(content.splitlines(), start=1):
-            for pattern, pattern_name in dangerous_patterns:
-                if pattern.search(line):
-                    location = f"{rel_path}:{line_num}"
-                    if location not in allowlist:
-                        violations.append((rel_path, line_num, line.strip(), pattern_name))
-                    break  # Only report each line once
+                location = f"{file_path}:{line_num}"
+                if location not in allowlist and location not in violations:
+                    violations[location] = (file_path, line_num, text)
+        except json.JSONDecodeError:
+            print(f"Failed to parse ast-grep output: {result.stdout}", file=sys.stderr)
+            return ("Raw SQL check", False)
 
     if violations:
         print("Raw SQL detected (potential SQL injection risk):", file=sys.stderr)
         print("", file=sys.stderr)
-        for rel_path, line_num, line, pattern_name in violations:
-            print(f"  {rel_path}:{line_num} [{pattern_name}]", file=sys.stderr)
-            print(f"    {line}", file=sys.stderr)
+        for file_path, line_num, text in violations.values():
+            print(f"  {file_path}:{line_num}", file=sys.stderr)
+            print(f"    {text}", file=sys.stderr)
         print("", file=sys.stderr)
         print("Use Diesel's type-safe DSL instead of raw SQL.", file=sys.stderr)
         print(

@@ -1,0 +1,12 @@
+id: diesel-raw-sql
+message: "Raw SQL detected - potential SQL injection risk. Use Diesel's type-safe DSL or add to scripts/sql_allowlist.txt after security review."
+severity: error
+language: rust
+rule:
+  any:
+    # sql_query("...") - full raw SQL queries
+    - pattern: sql_query($$$ARGS)
+    # sql::<Type>("...") - raw SQL fragments
+    - pattern: sql::<$TYPE>($$$ARGS)
+    # .sql("...") - appending raw SQL
+    - pattern: $EXPR.sql($$$ARGS)
