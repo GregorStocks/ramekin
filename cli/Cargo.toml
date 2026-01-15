@@ -28,7 +28,7 @@ serde_repr = "0.1"
 url = "2.5"
 
 # XML parsing (for sitemaps)
-quick-xml = { version = "0.38", features = ["serialize"] }
+quick-xml = { version = "0.39", features = ["serialize"] }
 
 # Regex for URL pattern matching
 regex = "1.10"
@@ -51,7 +51,7 @@ dirs = "6.0"
 
 # Paprika import
 zip = "7.0"
-flate2 = "1.0"
+flate2 = "1.1"
 base64 = "0.22"
 
 # Load testing
