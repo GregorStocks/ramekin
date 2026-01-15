@@ -304,9 +304,7 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
     if which_result.returncode != 0:
-        print(
-            "ast-grep not installed (cargo install ast-grep --locked)", file=sys.stderr
-        )
+        print("ast-grep not installed (cargo install ast-grep)", file=sys.stderr)
         return ("Raw SQL check", False)
 
     # Load allowlist

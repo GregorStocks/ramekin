@@ -27,7 +27,7 @@ runs:
 
     - name: Install ast-grep
       shell: bash
-      run: cargo install ast-grep --locked
+      run: cargo install ast-grep
 
     - name: Install uv
       uses: astral-sh/setup-uv@v5
