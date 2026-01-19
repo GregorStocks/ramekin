@@ -2,7 +2,7 @@ use anyhow::{Context, Result};
 use headless_chrome::protocol::cdp::Emulation::SetDeviceMetricsOverride;
 use headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption;
 use headless_chrome::Browser;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 // Mobile viewport: iPhone-like width, but tall to see content below the fold
@@ -11,6 +11,48 @@ const MOBILE_HEIGHT: u32 = 1200;
 const MOBILE_DEVICE_SCALE_FACTOR: f64 = 2.0;
 
 type Tab = Arc<headless_chrome::Tab>;
+
+/// Find Chrome/Chromium executable, checking Playwright cache first
+fn find_chrome() -> Option<PathBuf> {
+    // Check CHROME environment variable first
+    if let Ok(chrome_path) = std::env::var("CHROME") {
+        let path = PathBuf::from(&chrome_path);
+        if path.exists() {
+            tracing::debug!(path = %path.display(), "Using Chrome from CHROME env var");
+            return Some(path);
+        }
+    }
+
+    // Check Playwright cache directories (sorted by version, newest first)
+    if let Ok(home) = std::env::var("HOME") {
+        let playwright_cache = PathBuf::from(&home).join(".cache/ms-playwright");
+        if playwright_cache.exists() {
+            if let Ok(entries) = std::fs::read_dir(&playwright_cache) {
+                let mut chrome_dirs: Vec<_> = entries
+                    .filter_map(|e| e.ok())
+                    .filter(|e| e.file_name().to_string_lossy().starts_with("chromium-"))
+                    .collect();
+                // Sort by name descending to get newest version first
+                chrome_dirs.sort_by_key(|b| std::cmp::Reverse(b.file_name()));
+
+                for dir in chrome_dirs {
+                    // Try common Chrome binary locations within Playwright dirs
+                    for subpath in &["chrome-linux64/chrome", "chrome-linux/chrome"] {
+                        let chrome_path = dir.path().join(subpath);
+                        if chrome_path.exists() {
+                            tracing::debug!(path = %chrome_path.display(), "Found Chrome in Playwright cache");
+                            return Some(chrome_path);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Let headless_chrome try its default detection
+    tracing::debug!("No Chrome found in Playwright cache, using default detection");
+    None
+}
 
 /// Set device metrics for proper viewport emulation
 /// For mobile: sets mobile=true and device_scale_factor=2.0 for retina display
@@ -71,17 +113,22 @@ pub fn screenshot(
 
     // Launch browser with no-sandbox for Linux compatibility
     tracing::debug!("Launching headless Chrome...");
-    let browser = Browser::new(
-        headless_chrome::LaunchOptions::default_builder()
-            .args(vec![
-                std::ffi::OsStr::new("--no-sandbox"),
-                std::ffi::OsStr::new("--disable-dev-shm-usage"),
-                std::ffi::OsStr::new("--ignore-certificate-errors"),
-            ])
-            .build()
-            .expect("Failed to build launch options"),
-    )
-    .context("Failed to launch browser")?;
+    let chrome_path = find_chrome();
+    if let Some(ref path) = chrome_path {
+        tracing::info!(path = %path.display(), "Using Chrome");
+    }
+
+    let mut builder = headless_chrome::LaunchOptions::default_builder();
+    builder
+        .args(vec![
+            std::ffi::OsStr::new("--no-sandbox"),
+            std::ffi::OsStr::new("--disable-dev-shm-usage"),
+            std::ffi::OsStr::new("--ignore-certificate-errors"),
+        ])
+        .path(chrome_path);
+
+    let browser = Browser::new(builder.build().expect("Failed to build launch options"))
+        .context("Failed to launch browser")?;
     tracing::debug!("Browser launched successfully");
 
     let tab = browser.new_tab().context("Failed to create tab")?;
@@ -175,7 +222,11 @@ pub fn screenshot(
 
     // Switch to mobile viewport with mobile=true and device_scale_factor=2.0
     set_device_metrics(&tab, MOBILE_WIDTH, MOBILE_HEIGHT, true)?;
-    tracing::debug!(MOBILE_WIDTH, MOBILE_HEIGHT, "Mobile viewport set (mobile=true, scale=2x)");
+    tracing::debug!(
+        MOBILE_WIDTH,
+        MOBILE_HEIGHT,
+        "Mobile viewport set (mobile=true, scale=2x)"
+    );
 
     // Navigate back to cookbook page
     tracing::debug!(url = %cookbook_url, "Navigating to cookbook page for mobile...");
