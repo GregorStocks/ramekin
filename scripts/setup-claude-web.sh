@@ -13,10 +13,37 @@ fi
 
 echo "Setting up Claude Code for Web environment..."
 
-# Install libpq-dev, shellcheck, and gh CLI if not present
-if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1; then
+# Install system dependencies if not present
+if ! dpkg -l libpq-dev >/dev/null 2>&1 || ! command -v shellcheck >/dev/null 2>&1 || ! command -v gh >/dev/null 2>&1 || ! command -v mkcert >/dev/null 2>&1; then
     echo "Installing system dependencies..."
-    apt-get update -qq && apt-get install -y -qq libpq-dev shellcheck gh
+    apt-get update -qq && apt-get install -y -qq libpq-dev shellcheck gh mkcert
+fi
+
+# Initialize mkcert if installed but not initialized
+if command -v mkcert >/dev/null 2>&1; then
+    # mkcert -install sets up the local CA (idempotent, safe to run multiple times)
+    mkcert -install 2>/dev/null || true
+fi
+
+# Install Chromium for screenshots (try multiple methods)
+if ! command -v chromium >/dev/null 2>&1 && ! command -v chromium-browser >/dev/null 2>&1 && ! command -v google-chrome >/dev/null 2>&1; then
+    echo "Installing Chromium for screenshots..."
+    # Method 1: Try apt (may require snap on newer Ubuntu)
+    if apt-get install -y -qq chromium 2>/dev/null; then
+        echo "Chromium installed via apt"
+    elif apt-get install -y -qq chromium-browser 2>/dev/null; then
+        echo "Chromium installed via apt (chromium-browser)"
+    else
+        # Method 2: Try using Playwright to install Chromium
+        echo "apt install failed, trying Playwright..."
+        if [ -d ".venv" ] && .venv/bin/python -c "import playwright" 2>/dev/null; then
+            .venv/bin/playwright install chromium 2>/dev/null && echo "Chromium installed via Playwright" || \
+                echo "Warning: Could not install Chromium. Screenshots will not work."
+        else
+            echo "Warning: Could not install Chromium. Screenshots will not work."
+            echo "  Install manually: apt install chromium OR playwright install chromium"
+        fi
+    fi
 fi
 
 # Install diesel_cli if not present
@@ -29,6 +56,12 @@ fi
 if ! command -v cargo-watch >/dev/null 2>&1; then
     echo "Installing cargo-watch..."
     cargo install cargo-watch
+fi
+
+# Install ast-grep if not present (used by linter)
+if ! command -v ast-grep >/dev/null 2>&1; then
+    echo "Installing ast-grep..."
+    cargo install ast-grep
 fi
 
 # Install process-compose if not present
