@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
+use headless_chrome::protocol::cdp::Emulation::SetDeviceMetricsOverride;
 use headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption;
-use headless_chrome::types::Bounds;
 use headless_chrome::Browser;
 use std::path::Path;
 use std::sync::Arc;
@@ -8,18 +8,36 @@ use std::sync::Arc;
 // Mobile viewport: iPhone-like width, but tall to see content below the fold
 const MOBILE_WIDTH: u32 = 375;
 const MOBILE_HEIGHT: u32 = 1200;
+const MOBILE_DEVICE_SCALE_FACTOR: f64 = 2.0;
 
 type Tab = Arc<headless_chrome::Tab>;
 
-/// Set the viewport size for the tab
-fn set_viewport(tab: &Tab, width: u32, height: u32) -> Result<()> {
-    tab.set_bounds(Bounds::Normal {
-        left: Some(0),
-        top: Some(0),
-        width: Some(width as f64),
-        height: Some(height as f64),
+/// Set device metrics for proper viewport emulation
+/// For mobile: sets mobile=true and device_scale_factor=2.0 for retina display
+fn set_device_metrics(tab: &Tab, width: u32, height: u32, mobile: bool) -> Result<()> {
+    let device_scale_factor = if mobile {
+        MOBILE_DEVICE_SCALE_FACTOR
+    } else {
+        1.0
+    };
+
+    tab.call_method(SetDeviceMetricsOverride {
+        width,
+        height,
+        device_scale_factor,
+        mobile,
+        scale: None,
+        screen_width: None,
+        screen_height: None,
+        position_x: None,
+        position_y: None,
+        dont_set_visible_size: None,
+        screen_orientation: None,
+        viewport: None,
+        display_feature: None,
+        device_posture: None,
     })
-    .context("Failed to set viewport")?;
+    .context("Failed to set device metrics")?;
     Ok(())
 }
 
@@ -70,8 +88,8 @@ pub fn screenshot(
     let tab = Arc::new(tab);
     tracing::debug!("New tab created");
 
-    // Set desktop viewport size
-    set_viewport(&tab, width, height)?;
+    // Set desktop viewport size (mobile=false)
+    set_device_metrics(&tab, width, height, false)?;
     tracing::debug!(width, height, "Desktop viewport set");
 
     // Navigate to login page
@@ -155,9 +173,9 @@ pub fn screenshot(
     // ===== MOBILE SCREENSHOTS =====
     tracing::info!("Taking mobile screenshots...");
 
-    // Switch to mobile viewport
-    set_viewport(&tab, MOBILE_WIDTH, MOBILE_HEIGHT)?;
-    tracing::debug!(MOBILE_WIDTH, MOBILE_HEIGHT, "Mobile viewport set");
+    // Switch to mobile viewport with mobile=true and device_scale_factor=2.0
+    set_device_metrics(&tab, MOBILE_WIDTH, MOBILE_HEIGHT, true)?;
+    tracing::debug!(MOBILE_WIDTH, MOBILE_HEIGHT, "Mobile viewport set (mobile=true, scale=2x)");
 
     // Navigate back to cookbook page
     tracing::debug!(url = %cookbook_url, "Navigating to cookbook page for mobile...");
