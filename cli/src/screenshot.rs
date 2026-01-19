@@ -1,6 +1,37 @@
 use anyhow::{Context, Result};
+use headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption;
+use headless_chrome::types::Bounds;
 use headless_chrome::Browser;
 use std::path::Path;
+use std::sync::Arc;
+
+// Mobile viewport: iPhone-like width, but tall to see content below the fold
+const MOBILE_WIDTH: u32 = 375;
+const MOBILE_HEIGHT: u32 = 1200;
+
+type Tab = Arc<headless_chrome::Tab>;
+
+/// Set the viewport size for the tab
+fn set_viewport(tab: &Tab, width: u32, height: u32) -> Result<()> {
+    tab.set_bounds(Bounds::Normal {
+        left: Some(0),
+        top: Some(0),
+        width: Some(width as f64),
+        height: Some(height as f64),
+    })
+    .context("Failed to set viewport")?;
+    Ok(())
+}
+
+/// Capture a screenshot and save it to a file
+fn capture_and_save(tab: &Tab, path: &Path) -> Result<()> {
+    let png = tab
+        .capture_screenshot(CaptureScreenshotFormatOption::Png, None, None, true)
+        .context("Failed to capture screenshot")?;
+    std::fs::write(path, &png).context("Failed to write screenshot")?;
+    tracing::debug!(path = %path.display(), "Saved screenshot");
+    Ok(())
+}
 
 /// Take screenshots of the app as the test user
 pub fn screenshot(
@@ -14,7 +45,8 @@ pub fn screenshot(
     tracing::debug!("Starting screenshot capture");
     tracing::debug!(url = %ui_url, "UI URL");
     tracing::debug!(path = %output_dir.display(), "Output directory");
-    tracing::debug!(width, height, "Viewport size");
+    tracing::debug!(width, height, "Desktop viewport size");
+    tracing::debug!(MOBILE_WIDTH, MOBILE_HEIGHT, "Mobile viewport size");
 
     std::fs::create_dir_all(output_dir).context("Failed to create output directory")?;
     tracing::debug!("Output directory created/verified");
@@ -35,17 +67,12 @@ pub fn screenshot(
     tracing::debug!("Browser launched successfully");
 
     let tab = browser.new_tab().context("Failed to create tab")?;
+    let tab = Arc::new(tab);
     tracing::debug!("New tab created");
 
-    // Set viewport size
-    tab.set_bounds(headless_chrome::types::Bounds::Normal {
-        left: Some(0),
-        top: Some(0),
-        width: Some(width as f64),
-        height: Some(height as f64),
-    })
-    .context("Failed to set viewport")?;
-    tracing::debug!(width, height, "Viewport set");
+    // Set desktop viewport size
+    set_viewport(&tab, width, height)?;
+    tracing::debug!(width, height, "Desktop viewport set");
 
     // Navigate to login page
     tracing::debug!(url = %ui_url, "Navigating to login page...");
@@ -82,19 +109,15 @@ pub fn screenshot(
         .context("Failed to wait for recipe cards")?;
     tracing::debug!("Cookbook page loaded");
 
+    // Store the cookbook URL for later
+    let cookbook_url = tab.get_url();
+
+    // ===== DESKTOP SCREENSHOTS =====
+    tracing::info!("Taking desktop screenshots...");
+
     // Screenshot 1: Cookbook page
     tracing::debug!("Capturing cookbook screenshot...");
-    let cookbook_path = output_dir.join("cookbook.png");
-    let cookbook_png = tab
-        .capture_screenshot(
-            headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption::Png,
-            None,
-            None,
-            true,
-        )
-        .context("Failed to capture cookbook screenshot")?;
-    std::fs::write(&cookbook_path, &cookbook_png).context("Failed to write cookbook screenshot")?;
-    tracing::debug!(path = %cookbook_path.display(), "Saved cookbook screenshot");
+    capture_and_save(&tab, &output_dir.join("cookbook.png"))?;
 
     // Click on first recipe card
     tracing::debug!("Clicking on first recipe card...");
@@ -110,21 +133,14 @@ pub fn screenshot(
     tracing::debug!("Recipe page loaded, waiting for images...");
     std::thread::sleep(std::time::Duration::from_millis(500));
 
+    // Store the recipe URL for mobile screenshots
+    let recipe_url = tab.get_url();
+
+    // Screenshot 2: Recipe page
     tracing::debug!("Capturing recipe screenshot...");
-    let recipe_path = output_dir.join("recipe.png");
-    let recipe_png = tab
-        .capture_screenshot(
-            headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption::Png,
-            None,
-            None,
-            true,
-        )
-        .context("Failed to capture recipe screenshot")?;
-    std::fs::write(&recipe_path, &recipe_png).context("Failed to write recipe screenshot")?;
-    tracing::debug!(path = %recipe_path.display(), "Saved recipe screenshot");
+    capture_and_save(&tab, &output_dir.join("recipe.png"))?;
 
     // Screenshot 3: Edit page
-    let recipe_url = tab.get_url();
     let edit_url = format!("{}/edit", recipe_url);
     tracing::debug!(url = %edit_url, "Navigating to edit page...");
     tab.navigate_to(&edit_url)
@@ -134,18 +150,50 @@ pub fn screenshot(
         .context("Failed to wait for edit form")?;
 
     tracing::debug!("Capturing edit screenshot...");
-    let edit_path = output_dir.join("edit.png");
-    let edit_png = tab
-        .capture_screenshot(
-            headless_chrome::protocol::cdp::Page::CaptureScreenshotFormatOption::Png,
-            None,
-            None,
-            true,
-        )
-        .context("Failed to capture edit screenshot")?;
-    std::fs::write(&edit_path, &edit_png).context("Failed to write edit screenshot")?;
-    tracing::debug!(path = %edit_path.display(), "Saved edit screenshot");
+    capture_and_save(&tab, &output_dir.join("edit.png"))?;
 
-    tracing::info!("All screenshots captured successfully");
+    // ===== MOBILE SCREENSHOTS =====
+    tracing::info!("Taking mobile screenshots...");
+
+    // Switch to mobile viewport
+    set_viewport(&tab, MOBILE_WIDTH, MOBILE_HEIGHT)?;
+    tracing::debug!(MOBILE_WIDTH, MOBILE_HEIGHT, "Mobile viewport set");
+
+    // Navigate back to cookbook page
+    tracing::debug!(url = %cookbook_url, "Navigating to cookbook page for mobile...");
+    tab.navigate_to(&cookbook_url)
+        .context("Failed to navigate to cookbook")?;
+    tab.wait_for_element(".recipe-card")
+        .context("Failed to wait for recipe cards")?;
+    std::thread::sleep(std::time::Duration::from_millis(300));
+
+    // Mobile screenshot 1: Cookbook page
+    tracing::debug!("Capturing mobile cookbook screenshot...");
+    capture_and_save(&tab, &output_dir.join("cookbook-mobile.png"))?;
+
+    // Navigate to recipe page
+    tracing::debug!(url = %recipe_url, "Navigating to recipe page for mobile...");
+    tab.navigate_to(&recipe_url)
+        .context("Failed to navigate to recipe")?;
+    tab.wait_for_element(".instructions")
+        .context("Failed to wait for recipe page")?;
+    std::thread::sleep(std::time::Duration::from_millis(500));
+
+    // Mobile screenshot 2: Recipe page
+    tracing::debug!("Capturing mobile recipe screenshot...");
+    capture_and_save(&tab, &output_dir.join("recipe-mobile.png"))?;
+
+    // Navigate to edit page
+    tracing::debug!(url = %edit_url, "Navigating to edit page for mobile...");
+    tab.navigate_to(&edit_url)
+        .context("Failed to navigate to edit page")?;
+    tab.wait_for_element("textarea")
+        .context("Failed to wait for edit form")?;
+
+    // Mobile screenshot 3: Edit page
+    tracing::debug!("Capturing mobile edit screenshot...");
+    capture_and_save(&tab, &output_dir.join("edit-mobile.png"))?;
+
+    tracing::info!("All screenshots captured successfully (desktop and mobile)");
     Ok(())
 }
