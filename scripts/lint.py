@@ -360,7 +360,10 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
             "If raw SQL is unavoidable, add the location to scripts/sql_allowlist.txt",
             file=sys.stderr,
         )
-        print("after security review (ensure all user input uses .bind()).", file=sys.stderr)
+        print(
+            "after security review (ensure all user input uses .bind()).",
+            file=sys.stderr,
+        )
         return ("Raw SQL check", False)
 
     return ("Raw SQL check", True)

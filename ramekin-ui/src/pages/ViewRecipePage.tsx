@@ -68,10 +68,6 @@ export default function ViewRecipePage() {
   const [loading, setLoading] = createSignal(true);
   const [error, setError] = createSignal<string | null>(null);
   const [deleting, setDeleting] = createSignal(false);
-  const [checkedIngredients, setCheckedIngredients] = createSignal<Set<number>>(
-    new Set(),
-  );
-
   // Revert state
   const [revertVersion, setRevertVersion] = createSignal<VersionSummary | null>(
     null,
@@ -90,18 +86,6 @@ export default function ViewRecipePage() {
     [RecipeResponse, RecipeResponse] | null
   >(null);
   const [compareError, setCompareError] = createSignal<string | null>(null);
-
-  const toggleIngredient = (index: number) => {
-    setCheckedIngredients((prev) => {
-      const next = new Set(prev);
-      if (next.has(index)) {
-        next.delete(index);
-      } else {
-        next.add(index);
-      }
-      return next;
-    });
-  };
 
   const loadRecipe = async () => {
     setLoading(true);
@@ -551,25 +535,18 @@ export default function ViewRecipePage() {
                     <h3>Ingredients</h3>
                     <ul class="ingredients-list">
                       <For each={r().ingredients}>
-                        {(ing, index) => (
-                          <li onClick={() => toggleIngredient(index())}>
-                            <div
-                              class={`ingredient-checkbox ${checkedIngredients().has(index()) ? "checked" : ""}`}
-                            />
-                            <span
-                              class={`ingredient-text ${checkedIngredients().has(index()) ? "checked" : ""}`}
-                            >
-                              <Show when={ing.amount}>
-                                <span class="amount">{ing.amount}</span>{" "}
-                              </Show>
-                              <Show when={ing.unit}>
-                                <span class="unit">{ing.unit}</span>{" "}
-                              </Show>
-                              <span class="item">{ing.item}</span>
-                              <Show when={ing.note}>
-                                <span class="note"> ({ing.note})</span>
-                              </Show>
-                            </span>
+                        {(ing) => (
+                          <li>
+                            <Show when={ing.amount}>
+                              <span class="amount">{ing.amount}</span>{" "}
+                            </Show>
+                            <Show when={ing.unit}>
+                              <span class="unit">{ing.unit}</span>{" "}
+                            </Show>
+                            <span class="item">{ing.item}</span>
+                            <Show when={ing.note}>
+                              <span class="note"> ({ing.note})</span>
+                            </Show>
                           </li>
                         )}
                       </For>
