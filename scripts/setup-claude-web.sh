@@ -96,10 +96,15 @@ if ! pg_isready -q 2>/dev/null; then
     sleep 2
 fi
 
-# Create user and database if they don't exist
+# Create user and databases if they don't exist
 if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_roles WHERE rolname='ramekin'" | grep -q 1; then
     echo "Creating postgres user 'ramekin'..."
     sudo -u postgres psql -c "CREATE USER ramekin WITH PASSWORD 'ramekin' CREATEDB;"
+fi
+
+if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_database WHERE datname='ramekin'" | grep -q 1; then
+    echo "Creating database 'ramekin'..."
+    sudo -u postgres psql -c "CREATE DATABASE ramekin OWNER ramekin;"
 fi
 
 if ! sudo -u postgres psql -tAc "SELECT 1 FROM pg_database WHERE datname='ramekin_test'" | grep -q 1; then
