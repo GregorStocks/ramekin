@@ -20,16 +20,13 @@ targets:
       - path: Ramekin
         excludes:
           - "*.entitlements"
+          - Info.plist
       - path: Shared
+    info:
+      path: Ramekin/Info.plist
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app
-        INFOPLIST_GENERATION_MODE: GeneratedFile
-        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
-        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
-        INFOPLIST_KEY_UILaunchScreen_Generation: YES
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
-        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         CODE_SIGN_ENTITLEMENTS: Ramekin/Ramekin.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
