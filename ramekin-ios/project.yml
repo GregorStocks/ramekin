@@ -63,16 +63,31 @@ targets:
       - target: Ramekin
         embed: false
 
+  RamekinTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: RamekinTests
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
+    dependencies:
+      - target: Ramekin
+
 schemes:
   Ramekin:
     build:
       targets:
         Ramekin: all
         RamekinShareExtension: all
+        RamekinTests: [test]
     run:
       config: Debug
     test:
       config: Debug
+      targets:
+        - RamekinTests
     profile:
       config: Release
     analyze:
