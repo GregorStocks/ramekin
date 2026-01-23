@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-step pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-step pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -160,3 +160,8 @@ pipeline-cache-clear: ## Clear HTML cache
 
 pipeline-summary: ## Generate summary report from latest pipeline run (saves to data/extraction-report.md)
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
+
+ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
+	@cd ramekin-ios && xcodegen generate
+	@echo "Xcode project generated at ramekin-ios/Ramekin.xcodeproj"
+	@echo "Open with: open ramekin-ios/Ramekin.xcodeproj"
