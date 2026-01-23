@@ -1,0 +1,93 @@
+name: Ramekin
+options:
+  bundleIdPrefix: com.ramekin
+  deploymentTarget:
+    iOS: "16.0"
+  xcodeVersion: "15.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Ramekin:
+    type: application
+    platform: iOS
+    sources:
+      - path: Ramekin
+        excludes:
+          - "*.entitlements"
+          - Info.plist
+      - path: Shared
+    info:
+      path: Ramekin/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app
+        CODE_SIGN_ENTITLEMENTS: Ramekin/Ramekin.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    entitlements:
+      path: Ramekin/Ramekin.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.ramekin.app
+
+  RamekinShareExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: RamekinShareExtension
+        excludes:
+          - "*.entitlements"
+      - path: Shared
+    info:
+      path: RamekinShareExtension/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.share
+        CODE_SIGN_ENTITLEMENTS: RamekinShareExtension/RamekinShareExtension.entitlements
+        SKIP_INSTALL: YES
+    entitlements:
+      path: RamekinShareExtension/RamekinShareExtension.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.ramekin.app
+    dependencies:
+      - target: Ramekin
+        embed: false
+
+  RamekinTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: RamekinTests
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app.tests
+    dependencies:
+      - target: Ramekin
+
+schemes:
+  Ramekin:
+    build:
+      targets:
+        Ramekin: all
+        RamekinShareExtension: all
+        RamekinTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - RamekinTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
