@@ -79,6 +79,6 @@ jobs:
           cd ramekin-ios
           xcodebuild test \
             -scheme Ramekin \
-            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -destination 'platform=iOS Simulator,name=iPhone 16' \
             -resultBundlePath TestResults \
             CODE_SIGNING_ALLOWED=NO
