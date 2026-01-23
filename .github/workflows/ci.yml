@@ -60,3 +60,25 @@ jobs:
         run: make test-ui
         env:
           DATABASE_URL: postgres://ramekin:ramekin@localhost:5432/ramekin
+
+  ios:
+    name: iOS Tests
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        run: make ios-generate
+
+      - name: Build and test
+        run: |
+          cd ramekin-ios
+          xcodebuild test \
+            -scheme Ramekin \
+            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -resultBundlePath TestResults \
+            CODE_SIGNING_ALLOWED=NO
