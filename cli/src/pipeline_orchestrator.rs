@@ -448,10 +448,18 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
 fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
     for step in steps {
         if !step.success {
-            return match step.step {
-                PipelineStep::FetchHtml => FinalStatus::FailedAtFetch,
-                PipelineStep::ExtractRecipe => FinalStatus::FailedAtExtract,
-                PipelineStep::SaveRecipe => FinalStatus::FailedAtSave,
+            match step.step {
+                PipelineStep::FetchHtml => return FinalStatus::FailedAtFetch,
+                PipelineStep::ExtractRecipe => return FinalStatus::FailedAtExtract,
+                PipelineStep::SaveRecipe => return FinalStatus::FailedAtSave,
+                PipelineStep::FetchImages => {
+                    // FetchImages is skipped in CLI, but handle it for completeness
+                    return FinalStatus::FailedAtSave;
+                }
+                PipelineStep::Enrich => {
+                    // Enrichment failures are expected - don't fail the job
+                    // Continue to check remaining steps
+                }
             };
         }
     }

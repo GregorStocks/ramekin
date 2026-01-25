@@ -232,7 +232,9 @@ enum Commands {
 async fn main() -> Result<()> {
     // Initialize tracing with debug level by default for CLI
     // Can be overridden with RUST_LOG environment variable
-    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("debug"));
+    // Filter out extremely verbose html5ever tokenizer debug logs
+    let filter = EnvFilter::try_from_default_env()
+        .unwrap_or_else(|_| EnvFilter::new("debug,html5ever=info,selectors=info"));
     tracing_subscriber::fmt()
         .with_env_filter(filter)
         .with_target(false)
@@ -374,10 +376,9 @@ async fn ping(server: &str) -> Result<()> {
 }
 
 async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: bool) -> Result<()> {
-    use pipeline::PipelineStep;
-    use ramekin_core::CachingClient;
+    use ramekin_core::{CachingClient, PipelineStep};
 
-    let step = PipelineStep::from_str(step)?;
+    let step = pipeline::parse_pipeline_step(step)?;
     let client = CachingClient::new()?;
 
     // Create run directory
@@ -413,6 +414,34 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 return Ok(());
             }
             pipeline::run_save_recipe(url, run_dir)
+        }
+        PipelineStep::FetchImages => {
+            // FetchImages is DB-specific, skip in CLI
+            return Err(anyhow::anyhow!(
+                "fetch_images step is DB-specific and not available in CLI"
+            ));
+        }
+        PipelineStep::Enrich => {
+            // Ensure previous steps are done
+            if !client.is_cached(url) {
+                tracing::debug!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                if !fetch_result.success {
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
+                    return Ok(());
+                }
+            }
+            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            if !extract_result.step_result.success {
+                tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
+                return Ok(());
+            }
+            let save_result = pipeline::run_save_recipe(url, run_dir);
+            if !save_result.success {
+                tracing::warn!(error = ?save_result.error, "Save failed");
+                return Ok(());
+            }
+            pipeline::run_enrich(url, run_dir)
         }
     };
 
