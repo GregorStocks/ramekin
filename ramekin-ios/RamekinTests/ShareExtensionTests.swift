@@ -11,7 +11,7 @@ final class ShareExtensionTests: XCTestCase {
             "https://cooking.nytimes.com/recipes/1234-pasta",
             "https://www.seriouseats.com/best-chocolate-chip-cookies",
             "https://www.bonappetit.com/recipe/chocolate-cake",
-            "https://example.com/my-recipe",
+            "https://example.com/my-recipe"
         ]
 
         for urlString in validURLs {
@@ -94,7 +94,7 @@ final class ShareExtensionTests: XCTestCase {
         let texts = [
             "https://example.com/recipe",
             "Check out this recipe: https://example.com/recipe",
-            "   https://example.com/recipe   ",
+            "   https://example.com/recipe   "
         ]
 
         for text in texts {

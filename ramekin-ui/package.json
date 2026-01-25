@@ -20,6 +20,8 @@
   "devDependencies": {
     "@types/http-proxy": "^1.17.17",
     "@types/node": "^25.0.9",
+    "stylelint": "^17.0.0",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-solid": "^2.11.10"

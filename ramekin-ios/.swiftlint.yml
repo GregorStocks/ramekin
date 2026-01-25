@@ -1,0 +1,17 @@
+included:
+  - Ramekin
+  - RamekinShareExtension
+  - Shared
+  - RamekinTests
+
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - identifier_name
+  - type_body_length
+  - function_body_length
+  - file_length
+
+opt_in_rules:
+  - empty_count
+  - closure_spacing

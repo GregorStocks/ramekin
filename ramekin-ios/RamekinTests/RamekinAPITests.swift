@@ -107,7 +107,10 @@ final class RamekinAPITests: XCTestCase {
     func testLoginRequestEncoding() throws {
         let request = RamekinAPI.LoginRequest(username: "testuser", password: "testpass")
         let data = try JSONEncoder().encode(request)
-        let json = try JSONSerialization.jsonObject(with: data) as! [String: String]
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
+            XCTFail("Failed to decode JSON as [String: String]")
+            return
+        }
 
         XCTAssertEqual(json["username"], "testuser")
         XCTAssertEqual(json["password"], "testpass")
@@ -116,7 +119,10 @@ final class RamekinAPITests: XCTestCase {
     func testScrapeRequestEncoding() throws {
         let request = RamekinAPI.ScrapeRequest(url: "https://example.com/recipe")
         let data = try JSONEncoder().encode(request)
-        let json = try JSONSerialization.jsonObject(with: data) as! [String: String]
+        guard let json = try JSONSerialization.jsonObject(with: data) as? [String: String] else {
+            XCTFail("Failed to decode JSON as [String: String]")
+            return
+        }
 
         XCTAssertEqual(json["url"], "https://example.com/recipe")
     }

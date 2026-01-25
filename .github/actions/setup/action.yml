@@ -29,6 +29,19 @@ runs:
       shell: bash
       run: cargo install ast-grep
 
+    - name: Install SwiftLint
+      shell: bash
+      run: |
+        SWIFTLINT_VERSION=$(curl -fsSL \
+          https://api.github.com/repos/realm/SwiftLint/releases/latest | jq -r .tag_name)
+        echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
+        SWIFTLINT_URL="https://github.com/realm/SwiftLint/releases/download"
+        curl -fsSL "${SWIFTLINT_URL}/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
+          -o /tmp/swiftlint.zip
+        unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
+        sudo mv /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
+        sudo chmod +x /usr/local/bin/swiftlint
+
     - name: Install uv
       uses: astral-sh/setup-uv@v5
 
