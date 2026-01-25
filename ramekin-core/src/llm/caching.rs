@@ -112,7 +112,6 @@ impl CachingProvider {
     }
 
     /// Get cache statistics.
-    #[allow(dead_code)]
     pub fn cache_stats(&self) -> CacheStats {
         let mut stats = CacheStats::default();
 
@@ -136,16 +135,6 @@ impl CachingProvider {
 
         stats
     }
-
-    /// Clear the cache for this provider/model.
-    #[allow(dead_code)]
-    pub fn clear_cache(&self) -> Result<(), LlmError> {
-        let dir = self.provider_cache_dir();
-        if dir.exists() {
-            fs::remove_dir_all(&dir).map_err(|e| LlmError::CacheError(e.to_string()))?;
-        }
-        Ok(())
-    }
 }
 
 /// Cached LLM response with metadata.
@@ -157,7 +146,6 @@ struct CachedLlmResponse {
 
 /// Cache statistics.
 #[derive(Debug, Clone, Default)]
-#[allow(dead_code)]
 pub struct CacheStats {
     pub cached_responses: usize,
 }

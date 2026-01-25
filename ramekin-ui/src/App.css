@@ -1891,6 +1891,8 @@
   .ingredient-row {
     flex-direction: column;
     gap: 0.375rem;
+    position: relative;
+    padding-right: 2rem;
   }
 
   .ingredient-row .input-item {
@@ -1911,11 +1913,6 @@
     top: 0;
     right: 0;
     margin: 0;
-  }
-
-  .ingredient-row {
-    position: relative;
-    padding-right: 2rem;
   }
 }
 

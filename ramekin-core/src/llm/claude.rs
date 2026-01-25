@@ -21,12 +21,6 @@ impl ClaudeProvider {
             client: reqwest::Client::new(),
         }
     }
-
-    /// Create with the default model (claude-3-5-sonnet).
-    #[allow(dead_code)]
-    pub fn with_default_model(api_key: String) -> Self {
-        Self::new(api_key, "claude-3-5-sonnet-20241022".to_string())
-    }
 }
 
 /// Claude API request format.
@@ -47,9 +41,6 @@ struct ClaudeMessage {
 #[derive(Debug, Deserialize)]
 struct ClaudeResponse {
     content: Vec<ClaudeContent>,
-    #[allow(dead_code)]
-    #[serde(default)]
-    error: Option<ClaudeApiError>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -61,9 +52,6 @@ struct ClaudeContent {
 
 #[derive(Debug, Deserialize)]
 struct ClaudeApiError {
-    #[allow(dead_code)]
-    #[serde(rename = "type")]
-    error_type: String,
     message: String,
 }
 

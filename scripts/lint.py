@@ -226,6 +226,43 @@ def lint_python(project_root: Path) -> tuple[str, bool]:
     return ("Python", success)
 
 
+def lint_css(project_root: Path) -> tuple[str, bool]:
+    """Lint CSS files with stylelint."""
+    ui_dir = project_root / "ramekin-ui"
+    css_files = list(ui_dir.glob("src/**/*.css"))
+
+    if not css_files:
+        return ("CSS", True)
+
+    result = subprocess.run(
+        [
+            "npx",
+            "stylelint",
+            "--fix",
+            "src/**/*.css",
+        ],
+        cwd=ui_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        # Filter out npx install messages
+        stderr_lines = [
+            line
+            for line in result.stderr.splitlines()
+            if not line.startswith("Need to install")
+            and not line.startswith("Ok to proceed")
+        ]
+        if stderr_lines:
+            print("\n".join(stderr_lines), end="", file=sys.stderr)
+
+    return ("CSS", result.returncode == 0)
+
+
 def lint_yaml(project_root: Path) -> tuple[str, bool]:
     """Lint YAML files."""
     yaml_files = [
@@ -378,6 +415,7 @@ def main() -> None:
         ("Rust (server)", lambda: lint_rust_server(project_root)),
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
         ("TypeScript", lambda: lint_typescript(project_root)),
+        ("CSS", lambda: lint_css(project_root)),
         ("Python", lambda: lint_python(project_root)),
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
@@ -386,7 +424,7 @@ def main() -> None:
 
     # Run all linters in parallel
     results = {}
-    with ThreadPoolExecutor(max_workers=7) as executor:
+    with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(func): name for name, func in linters}
 
         for future in as_completed(futures):

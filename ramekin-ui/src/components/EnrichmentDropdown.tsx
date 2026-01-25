@@ -62,21 +62,23 @@ export default function EnrichmentDropdown(props: EnrichmentDropdownProps) {
     <div class="enrichment-dropdown">
       <button
         type="button"
-        class="btn enrichment-dropdown-trigger"
+        class="btn enrichment-dropdown-toggle"
         onClick={toggleDropdown}
         disabled={props.disabled || props.loading}
       >
         <Show when={props.loading} fallback="Enrich">
           Enriching...
         </Show>
-        <span class="dropdown-arrow">{isOpen() ? "\u25B2" : "\u25BC"}</span>
+        <span class="enrichment-dropdown-arrow">
+          {isOpen() ? "\u25B2" : "\u25BC"}
+        </span>
       </button>
 
       <Show when={isOpen()}>
         <div class="enrichment-dropdown-menu">
           <Show
             when={!enrichments.loading && enrichments()}
-            fallback={<div class="dropdown-loading">Loading...</div>}
+            fallback={<div class="enrichment-dropdown-loading">Loading...</div>}
           >
             <For each={enrichments()}>
               {(enrichment) => (

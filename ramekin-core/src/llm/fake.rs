@@ -29,7 +29,6 @@ impl Default for FakeProvider {
     }
 }
 
-#[allow(dead_code)]
 impl FakeProvider {
     /// Create a new FakeProvider with no registered responses.
     pub fn new() -> Self {

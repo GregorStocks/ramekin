@@ -15,6 +15,9 @@ use async_trait::async_trait;
 use std::fmt;
 use thiserror::Error;
 
+/// Default Claude model for enrichment.
+pub const DEFAULT_CLAUDE_MODEL: &str = "claude-3-5-sonnet-20241022";
+
 /// Error type for LLM operations.
 #[derive(Debug, Error)]
 pub enum LlmError {
@@ -69,7 +72,7 @@ pub fn create_provider_from_env() -> Result<Box<dyn LlmProvider>, LlmError> {
             let api_key = std::env::var("ANTHROPIC_API_KEY")
                 .map_err(|_| LlmError::NotConfigured("ANTHROPIC_API_KEY not set".to_string()))?;
             let model = std::env::var("ENRICHMENT_MODEL")
-                .unwrap_or_else(|_| "claude-3-5-sonnet-20241022".to_string());
+                .unwrap_or_else(|_| DEFAULT_CLAUDE_MODEL.to_string());
             Ok(Box::new(ClaudeProvider::new(api_key, model)))
         }
         "openai" => Err(LlmError::NotConfigured(
