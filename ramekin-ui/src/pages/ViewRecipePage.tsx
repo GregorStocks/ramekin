@@ -12,6 +12,7 @@ import StarRating from "../components/StarRating";
 import Modal from "../components/Modal";
 import VersionHistoryPanel from "../components/VersionHistoryPanel";
 import EnrichPreviewModal from "../components/EnrichPreviewModal";
+import EnrichmentDropdown from "../components/EnrichmentDropdown";
 import VersionCompareModal from "../components/VersionCompareModal";
 import type {
   RecipeResponse,
@@ -78,6 +79,9 @@ export default function ViewRecipePage() {
   const [enriching, setEnriching] = createSignal(false);
   const [enrichedContent, setEnrichedContent] =
     createSignal<RecipeContent | null>(null);
+  const [selectedEnrichmentType, setSelectedEnrichmentType] = createSignal<
+    string | null
+  >(null);
   const [applyingEnrichment, setApplyingEnrichment] = createSignal(false);
 
   // Compare state
@@ -228,29 +232,33 @@ export default function ViewRecipePage() {
   };
 
   // Enrich handlers
-  const handleEnrich = async () => {
+  const handleEnrich = async (enrichmentType: string) => {
     const r = recipe();
     if (!r) return;
 
     setEnriching(true);
+    setSelectedEnrichmentType(enrichmentType);
     setError(null);
     try {
       const enriched = await getEnrichApi().enrichRecipe({
-        recipeContent: {
-          title: r.title,
-          description: r.description,
-          instructions: r.instructions,
-          ingredients: r.ingredients,
-          tags: r.tags,
-          prepTime: r.prepTime,
-          cookTime: r.cookTime,
-          totalTime: r.totalTime,
-          servings: r.servings,
-          difficulty: r.difficulty,
-          notes: r.notes,
-          nutritionalInfo: r.nutritionalInfo,
-          sourceName: r.sourceName,
-          sourceUrl: r.sourceUrl,
+        enrichRequest: {
+          enrichmentType,
+          recipe: {
+            title: r.title,
+            description: r.description,
+            instructions: r.instructions,
+            ingredients: r.ingredients,
+            tags: r.tags,
+            prepTime: r.prepTime,
+            cookTime: r.cookTime,
+            totalTime: r.totalTime,
+            servings: r.servings,
+            difficulty: r.difficulty,
+            notes: r.notes,
+            nutritionalInfo: r.nutritionalInfo,
+            sourceName: r.sourceName,
+            sourceUrl: r.sourceUrl,
+          },
         },
       });
       setEnrichedContent(enriched);
@@ -298,6 +306,7 @@ export default function ViewRecipePage() {
 
   const handleEnrichClose = () => {
     setEnrichedContent(null);
+    setSelectedEnrichmentType(null);
   };
 
   // Compare handlers
@@ -389,14 +398,11 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
               <div class="recipe-actions">
-                <button
-                  type="button"
-                  class="btn"
-                  onClick={handleEnrich}
-                  disabled={enriching() || isViewingHistoricalVersion()}
-                >
-                  {enriching() ? "Enriching..." : "Enrich with AI"}
-                </button>
+                <EnrichmentDropdown
+                  onSelect={handleEnrich}
+                  disabled={isViewingHistoricalVersion()}
+                  loading={enriching()}
+                />
                 <A href={`/recipes/${params.id}/edit`} class="btn btn-primary">
                   Edit
                 </A>
@@ -630,6 +636,7 @@ export default function ViewRecipePage() {
                 onClose={handleEnrichClose}
                 currentRecipe={recipe()!}
                 enrichedContent={enrichedContent()!}
+                enrichmentType={selectedEnrichmentType() ?? undefined}
                 onApply={handleApplyEnrichment}
                 applying={applyingEnrichment()}
               />

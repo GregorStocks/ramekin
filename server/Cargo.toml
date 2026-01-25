@@ -29,6 +29,9 @@ serde_json = "1.0"
 anyhow = "1.0"
 thiserror = "2.0"
 
+# Async utilities
+async-trait = "0.1"
+
 # Auth
 argon2 = "0.6.0-rc.2"
 rand = "0.9"
@@ -62,3 +65,6 @@ zip = "7.1"
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
 scraper = "0.25"
 ramekin-core = { path = "../ramekin-core" }
+
+[dev-dependencies]
+tempfile = "3.20"

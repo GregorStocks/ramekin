@@ -117,13 +117,13 @@
           "enrich"
         ],
         "summary": "Enrich a recipe using AI",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nCurrently a no-op skeleton - returns the input unchanged.",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.",
         "operationId": "enrich_recipe",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RecipeContent"
+                "$ref": "#/components/schemas/EnrichRequest"
               }
             }
           },
@@ -140,6 +140,16 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid enrichment type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorized",
             "content": {
@@ -152,6 +162,43 @@
           },
           "503": {
             "description": "AI service unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
+    "/api/enrichments": {
+      "get": {
+        "tags": [
+          "enrich"
+        ],
+        "summary": "List available enrichment types",
+        "description": "Returns information about all available enrichment types, including their\nnames, descriptions, and which recipe fields they modify.",
+        "operationId": "list_enrichments",
+        "responses": {
+          "200": {
+            "description": "List of available enrichments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListEnrichmentsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
             "content": {
               "application/json": {
                 "schema": {
@@ -1228,6 +1275,51 @@
           "asc"
         ]
       },
+      "EnrichRequest": {
+        "type": "object",
+        "description": "Request to enrich a recipe.",
+        "required": [
+          "enrichment_type",
+          "recipe"
+        ],
+        "properties": {
+          "enrichment_type": {
+            "type": "string",
+            "description": "The type of enrichment to apply (e.g., \"normalize_ingredients\")."
+          },
+          "recipe": {
+            "$ref": "#/components/schemas/RecipeContent",
+            "description": "The recipe content to enrich."
+          }
+        }
+      },
+      "EnrichmentInfo": {
+        "type": "object",
+        "description": "Information about an enrichment type for the API.",
+        "required": [
+          "type",
+          "display_name",
+          "description",
+          "output_fields"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "output_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
       "ErrorResponse": {
         "type": "object",
         "description": "Shared error response used by all endpoints",
@@ -1266,6 +1358,22 @@
               "string",
               "null"
             ]
+          }
+        }
+      },
+      "ListEnrichmentsResponse": {
+        "type": "object",
+        "description": "Response from the list enrichments endpoint.",
+        "required": [
+          "enrichments"
+        ],
+        "properties": {
+          "enrichments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EnrichmentInfo"
+            },
+            "description": "Available enrichment types."
           }
         }
       },

@@ -19,8 +19,11 @@ from ramekin_client.models.create_recipe_response import CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse
 from ramekin_client.models.direction import Direction
+from ramekin_client.models.enrich_request import EnrichRequest
+from ramekin_client.models.enrichment_info import EnrichmentInfo
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.ingredient import Ingredient
+from ramekin_client.models.list_enrichments_response import ListEnrichmentsResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse

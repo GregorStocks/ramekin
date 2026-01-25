@@ -1,3 +1,4 @@
+mod enrich_test;
 mod export;
 mod generate_test_urls;
 mod import;
@@ -8,10 +9,11 @@ mod pipeline_orchestrator;
 mod screenshot;
 mod seed;
 
-use anyhow::Result;
+use anyhow::{Context, Result};
 use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
-use ramekin_client::apis::testing_api;
+use ramekin_client::apis::{auth_api, testing_api};
+use ramekin_client::models::LoginRequest;
 use std::path::{Path, PathBuf};
 use tracing_subscriber::EnvFilter;
 
@@ -226,6 +228,33 @@ enum Commands {
         #[arg(short, long)]
         output: Option<PathBuf>,
     },
+    /// Test enrichments on recipes from pipeline runs
+    EnrichTest {
+        /// Server URL
+        #[arg(long, env = "API_BASE_URL")]
+        server_url: String,
+        /// Username for authentication
+        #[arg(long)]
+        username: String,
+        /// Password for authentication
+        #[arg(long)]
+        password: String,
+        /// Directory containing pipeline run results
+        #[arg(long, default_value = "data/pipeline-runs")]
+        runs_dir: PathBuf,
+        /// Output directory for enrichment test runs
+        #[arg(long, default_value = "data/pipeline-runs")]
+        output_dir: PathBuf,
+        /// Limit number of recipes to process
+        #[arg(long)]
+        limit: Option<usize>,
+        /// Run only a specific enrichment type
+        #[arg(long, short = 't')]
+        enrichment_type: Option<String>,
+        /// Filter to recipes from a specific site (domain)
+        #[arg(long)]
+        site: Option<String>,
+    },
 }
 
 #[tokio::main]
@@ -357,6 +386,30 @@ async fn main() -> Result<()> {
                 print!("{}", report);
             }
         }
+        Commands::EnrichTest {
+            server_url,
+            username,
+            password,
+            runs_dir,
+            output_dir,
+            limit,
+            enrichment_type,
+            site,
+        } => {
+            // Login to get auth token
+            let auth_token = login(&server_url, &username, &password).await?;
+
+            let config = enrich_test::EnrichTestConfig {
+                server_url,
+                auth_token,
+                runs_dir,
+                output_dir,
+                limit,
+                enrichment_type,
+                site_filter: site,
+            };
+            enrich_test::run_enrich_test(config).await?;
+        }
     }
 
     Ok(())
@@ -430,4 +483,21 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
     }
 
     Ok(())
+}
+
+async fn login(server_url: &str, username: &str, password: &str) -> Result<String> {
+    let mut config = Configuration::new();
+    config.base_path = server_url.to_string();
+
+    let response = auth_api::login(
+        &config,
+        LoginRequest {
+            username: username.to_string(),
+            password: password.to_string(),
+        },
+    )
+    .await
+    .context("Failed to login")?;
+
+    Ok(response.token)
 }

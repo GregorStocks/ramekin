@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+*EnrichApi* | [**list_enrichments**](ramekin_client/docs/EnrichApi.md#list_enrichments) | **GET** /api/enrichments | List available enrichment types
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -94,8 +95,11 @@ Class | Method | HTTP request | Description
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](ramekin_client/docs/CreateScrapeResponse.md)
  - [Direction](ramekin_client/docs/Direction.md)
+ - [EnrichRequest](ramekin_client/docs/EnrichRequest.md)
+ - [EnrichmentInfo](ramekin_client/docs/EnrichmentInfo.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [Ingredient](ramekin_client/docs/Ingredient.md)
+ - [ListEnrichmentsResponse](ramekin_client/docs/ListEnrichmentsResponse.md)
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)

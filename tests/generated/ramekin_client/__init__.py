@@ -39,8 +39,11 @@ __all__ = [
     "CreateScrapeRequest",
     "CreateScrapeResponse",
     "Direction",
+    "EnrichRequest",
+    "EnrichmentInfo",
     "ErrorResponse",
     "Ingredient",
+    "ListEnrichmentsResponse",
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
@@ -88,8 +91,11 @@ from ramekin_client.models.create_recipe_response import CreateRecipeResponse as
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
 from ramekin_client.models.direction import Direction as Direction
+from ramekin_client.models.enrich_request import EnrichRequest as EnrichRequest
+from ramekin_client.models.enrichment_info import EnrichmentInfo as EnrichmentInfo
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
+from ramekin_client.models.list_enrichments_response import ListEnrichmentsResponse as ListEnrichmentsResponse
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse

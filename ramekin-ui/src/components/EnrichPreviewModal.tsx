@@ -8,6 +8,7 @@ interface EnrichPreviewModalProps {
   onClose: () => void;
   currentRecipe: RecipeResponse;
   enrichedContent: RecipeContent;
+  enrichmentType?: string;
   onApply: () => void;
   applying: boolean;
 }
@@ -48,11 +49,20 @@ export default function EnrichPreviewModal(props: EnrichPreviewModalProps) {
     return currentTags !== enrichedTags;
   };
 
+  const formatEnrichmentType = (type?: string) => {
+    if (!type) return "AI Enrichment";
+    // Convert snake_case to Title Case
+    return type
+      .split("_")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
+
   return (
     <Modal
       isOpen={props.isOpen}
       onClose={props.onClose}
-      title="AI Enrichment Suggestions"
+      title={`${formatEnrichmentType(props.enrichmentType)} Suggestions`}
       actions={
         <>
           <button type="button" class="btn" onClick={props.onClose}>
