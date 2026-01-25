@@ -34,7 +34,7 @@ runs:
       run: |
         SWIFTLINT_VERSION=$(curl -fsSL https://api.github.com/repos/realm/SwiftLint/releases/latest | jq -r .tag_name)
         echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
-        curl -fsSL "https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux.zip" \
+        curl -fsSL "https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux_amd64.zip" \
           -o /tmp/swiftlint.zip
         unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
         sudo mv /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
