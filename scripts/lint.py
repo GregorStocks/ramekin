@@ -5,9 +5,11 @@ Run all linters in parallel.
 This script runs:
 - Rust formatters and linters (server and cli)
 - TypeScript formatter and type checker
+- CSS linter (Stylelint)
 - Python formatter and linter
 - YAML linter
 - Shell script linter
+- Swift linter (SwiftLint)
 """
 
 import json
@@ -171,6 +173,65 @@ def lint_typescript(project_root: Path) -> tuple[str, bool]:
 
     success = prettier_result.returncode == 0 and tsc_result.returncode == 0
     return ("TypeScript", success)
+
+
+def lint_css(project_root: Path) -> tuple[str, bool]:
+    """Lint CSS files with Stylelint."""
+    ui_dir = project_root / "ramekin-ui"
+
+    # Ensure node_modules exists
+    if not (ui_dir / "node_modules").exists():
+        subprocess.run(
+            ["npm", "install", "--silent"],
+            cwd=ui_dir,
+            capture_output=True,
+            check=False,
+        )
+
+    result = subprocess.run(
+        ["npx", "stylelint", "--fix", "src/**/*.css"],
+        cwd=ui_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
+
+    return ("CSS", result.returncode == 0)
+
+
+def lint_swift(project_root: Path) -> tuple[str, bool]:
+    """Lint Swift code with SwiftLint."""
+    ios_dir = project_root / "ramekin-ios"
+
+    # Check if swiftlint is installed (optional - only available on macOS)
+    which_result = subprocess.run(
+        ["which", "swiftlint"],
+        capture_output=True,
+        check=False,
+    )
+    if which_result.returncode != 0:
+        print("swiftlint not installed, skipping (brew install swiftlint)")
+        return ("Swift (skipped)", True)
+
+    result = subprocess.run(
+        ["swiftlint", "--strict"],
+        cwd=ios_dir,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    if result.stdout:
+        print(result.stdout, end="")
+    if result.stderr:
+        print(result.stderr, end="", file=sys.stderr)
+
+    return ("Swift", result.returncode == 0)
 
 
 def lint_python(project_root: Path) -> tuple[str, bool]:
@@ -378,6 +439,8 @@ def main() -> None:
         ("Rust (server)", lambda: lint_rust_server(project_root)),
         ("Rust (cli)", lambda: lint_rust_cli(project_root)),
         ("TypeScript", lambda: lint_typescript(project_root)),
+        ("CSS", lambda: lint_css(project_root)),
+        ("Swift", lambda: lint_swift(project_root)),
         ("Python", lambda: lint_python(project_root)),
         ("YAML", lambda: lint_yaml(project_root)),
         ("Shell", lambda: lint_shell(project_root)),
@@ -386,7 +449,7 @@ def main() -> None:
 
     # Run all linters in parallel
     results = {}
-    with ThreadPoolExecutor(max_workers=7) as executor:
+    with ThreadPoolExecutor(max_workers=9) as executor:
         futures = {executor.submit(func): name for name, func in linters}
 
         for future in as_completed(futures):

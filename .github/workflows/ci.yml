@@ -68,11 +68,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install xcodegen
-        run: brew install xcodegen
+      - name: Install tools
+        run: brew install xcodegen swiftlint
 
       - name: Generate Xcode project
         run: make ios-generate
+
+      - name: Lint Swift code
+        run: swiftlint --strict
+        working-directory: ramekin-ios
 
       - name: Find available simulator
         id: simulator
