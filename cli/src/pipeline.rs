@@ -1,6 +1,9 @@
 use anyhow::{anyhow, Result};
 use chrono::Utc;
+use ramekin_core::enrichment::run_all_enrichments;
 use ramekin_core::http::{CachingClient, HttpClient};
+use ramekin_core::llm::LlmProvider;
+use ramekin_core::{Ingredient, RawRecipe, RecipeContent};
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -15,6 +18,7 @@ use std::time::Instant;
 pub enum PipelineStep {
     FetchHtml,
     ExtractRecipe,
+    EnrichRecipe,
     SaveRecipe,
 }
 
@@ -23,9 +27,10 @@ impl PipelineStep {
         match s {
             "fetch_html" => Ok(PipelineStep::FetchHtml),
             "extract_recipe" => Ok(PipelineStep::ExtractRecipe),
+            "enrich_recipe" => Ok(PipelineStep::EnrichRecipe),
             "save_recipe" => Ok(PipelineStep::SaveRecipe),
             _ => Err(anyhow!(
-                "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe",
+                "Unknown step: {}. Valid steps: fetch_html, extract_recipe, enrich_recipe, save_recipe",
                 s
             )),
         }
@@ -35,6 +40,7 @@ impl PipelineStep {
         match self {
             PipelineStep::FetchHtml => "fetch_html",
             PipelineStep::ExtractRecipe => "extract_recipe",
+            PipelineStep::EnrichRecipe => "enrich_recipe",
             PipelineStep::SaveRecipe => "save_recipe",
         }
     }
@@ -75,11 +81,14 @@ pub struct ExtractStepResult {
     pub extraction_stats: Option<ExtractionStats>,
 }
 
-/// Result from running all steps, including extraction stats
+/// Result from running all steps, including extraction and enrichment stats
 #[derive(Debug, Clone)]
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
+    /// Errors from enrichments that failed (enrichment_type, error_message)
+    #[allow(dead_code)]
+    pub enrichment_errors: Vec<(String, String)>,
 }
 
 // ============================================================================
@@ -366,6 +375,248 @@ pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
     }
 }
 
+/// Run the enrich_recipe step for a URL.
+/// Requires extract_recipe to have run first.
+/// Enrichment is optional - if provider is None, this step is skipped.
+pub async fn run_enrich_recipe(
+    url: &str,
+    run_dir: &Path,
+    provider: Option<&dyn LlmProvider>,
+) -> EnrichStepResult {
+    let start = Instant::now();
+    let slug = slugify_url(url);
+    let extract_dir = run_dir.join("urls").join(&slug).join("extract_recipe");
+    let output_dir = run_dir.join("urls").join(&slug).join("enrich_recipe");
+
+    // If no provider, skip enrichment
+    let provider = match provider {
+        Some(p) => p,
+        None => {
+            let duration_ms = start.elapsed().as_millis() as u64;
+            return EnrichStepResult {
+                step_result: StepResult {
+                    step: PipelineStep::EnrichRecipe,
+                    success: true,
+                    duration_ms,
+                    error: None,
+                    cached: false,
+                },
+                enrichment_errors: vec![],
+                skipped: true,
+            };
+        }
+    };
+
+    // Load extract output
+    let extract_output_path = extract_dir.join("output.json");
+    let extract_output: ramekin_core::ExtractRecipeOutput =
+        match fs::read_to_string(&extract_output_path) {
+            Ok(content) => match serde_json::from_str(&content) {
+                Ok(output) => output,
+                Err(e) => {
+                    let duration_ms = start.elapsed().as_millis() as u64;
+                    return EnrichStepResult {
+                        step_result: StepResult {
+                            step: PipelineStep::EnrichRecipe,
+                            success: false,
+                            duration_ms,
+                            error: Some(format!("Failed to parse extract output: {}", e)),
+                            cached: false,
+                        },
+                        enrichment_errors: vec![],
+                        skipped: false,
+                    };
+                }
+            },
+            Err(_) => {
+                let duration_ms = start.elapsed().as_millis() as u64;
+                return EnrichStepResult {
+                    step_result: StepResult {
+                        step: PipelineStep::EnrichRecipe,
+                        success: false,
+                        duration_ms,
+                        error: Some(
+                            "Extract output not found - run extract_recipe first".to_string(),
+                        ),
+                        cached: false,
+                    },
+                    enrichment_errors: vec![],
+                    skipped: false,
+                };
+            }
+        };
+
+    // Convert RawRecipe to RecipeContent for enrichment
+    let recipe_content = raw_recipe_to_content(&extract_output.raw_recipe);
+
+    // Run all enrichments
+    let (enriched, errors) = run_all_enrichments(provider, &recipe_content).await;
+
+    let duration_ms = start.elapsed().as_millis() as u64;
+
+    // Convert error types for serialization
+    let enrichment_errors: Vec<(String, String)> = errors
+        .into_iter()
+        .map(|(name, e)| (name, e.to_string()))
+        .collect();
+
+    // Save the enriched output
+    let enrich_output = EnrichRecipeOutput {
+        original: recipe_content,
+        enriched: enriched.clone(),
+        enrichment_errors: enrichment_errors.clone(),
+    };
+
+    if let Err(e) = save_enrich_output(&output_dir, &enrich_output, duration_ms) {
+        return EnrichStepResult {
+            step_result: StepResult {
+                step: PipelineStep::EnrichRecipe,
+                success: false,
+                duration_ms,
+                error: Some(format!("Failed to save output: {}", e)),
+                cached: false,
+            },
+            enrichment_errors,
+            skipped: false,
+        };
+    }
+
+    // Update the extract output with enriched data for downstream steps
+    let enriched_raw = content_to_raw_recipe(&enriched, &extract_output.raw_recipe);
+    let updated_extract = ramekin_core::ExtractRecipeOutput {
+        raw_recipe: enriched_raw,
+        method_used: extract_output.method_used,
+        all_attempts: extract_output.all_attempts,
+    };
+    let _ = save_extract_output(&extract_dir, &updated_extract, 0);
+
+    EnrichStepResult {
+        step_result: StepResult {
+            step: PipelineStep::EnrichRecipe,
+            success: true,
+            duration_ms,
+            error: None,
+            cached: false,
+        },
+        enrichment_errors,
+        skipped: false,
+    }
+}
+
+/// Output from the enrich_recipe step.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EnrichRecipeOutput {
+    pub original: RecipeContent,
+    pub enriched: RecipeContent,
+    pub enrichment_errors: Vec<(String, String)>,
+}
+
+/// Result from the enrich step with enrichment-specific data.
+#[derive(Debug, Clone)]
+pub struct EnrichStepResult {
+    pub step_result: StepResult,
+    pub enrichment_errors: Vec<(String, String)>,
+    pub skipped: bool,
+}
+
+/// Convert RawRecipe to RecipeContent for enrichment.
+fn raw_recipe_to_content(raw: &RawRecipe) -> RecipeContent {
+    // Parse ingredients from newline-separated string into structured format
+    let ingredients: Vec<Ingredient> = raw
+        .ingredients
+        .lines()
+        .filter(|line| !line.trim().is_empty())
+        .map(|line| Ingredient {
+            item: line.trim().to_string(),
+            amount: None,
+            unit: None,
+            note: None,
+        })
+        .collect();
+
+    RecipeContent {
+        title: raw.title.clone(),
+        description: raw.description.clone(),
+        ingredients,
+        instructions: raw.instructions.clone(),
+        source_url: Some(raw.source_url.clone()),
+        source_name: raw.source_name.clone(),
+        tags: vec![],
+        servings: None,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
+    }
+}
+
+/// Convert enriched RecipeContent back to RawRecipe format.
+fn content_to_raw_recipe(content: &RecipeContent, original: &RawRecipe) -> RawRecipe {
+    // Convert structured ingredients back to newline-separated string
+    let ingredients = content
+        .ingredients
+        .iter()
+        .map(|ing| {
+            let mut parts = Vec::new();
+            if let Some(ref amount) = ing.amount {
+                parts.push(amount.clone());
+            }
+            if let Some(ref unit) = ing.unit {
+                parts.push(unit.clone());
+            }
+            parts.push(ing.item.clone());
+            if let Some(ref note) = ing.note {
+                parts.push(format!("({})", note));
+            }
+            parts.join(" ")
+        })
+        .collect::<Vec<_>>()
+        .join("\n");
+
+    RawRecipe {
+        title: content.title.clone(),
+        description: content.description.clone(),
+        ingredients,
+        instructions: content.instructions.clone(),
+        image_urls: original.image_urls.clone(),
+        source_url: content
+            .source_url
+            .clone()
+            .unwrap_or_else(|| original.source_url.clone()),
+        source_name: content.source_name.clone(),
+    }
+}
+
+fn save_enrich_output(
+    output_dir: &Path,
+    output: &EnrichRecipeOutput,
+    duration_ms: u64,
+) -> Result<()> {
+    fs::create_dir_all(output_dir)?;
+
+    let json = serde_json::to_string_pretty(&output)?;
+    fs::write(output_dir.join("output.json"), json)?;
+
+    let timing = StepTiming {
+        started_at: Utc::now().to_rfc3339(),
+        completed_at: Utc::now().to_rfc3339(),
+        duration_ms,
+    };
+    let timing_json = serde_json::to_string_pretty(&timing)?;
+    fs::write(output_dir.join("timing.json"), timing_json)?;
+
+    // Remove any existing error file
+    let error_path = output_dir.join("error.txt");
+    if error_path.exists() {
+        let _ = fs::remove_file(error_path);
+    }
+
+    Ok(())
+}
+
 // ============================================================================
 // Output saving helpers
 // ============================================================================
@@ -445,14 +696,19 @@ fn save_step_error(output_dir: &Path, error: &str, duration_ms: u64) -> Result<(
 // ============================================================================
 
 /// Run all pipeline steps for a URL.
+///
+/// If `llm_provider` is Some, enrichment will be run after extraction.
+/// If None, the enrich step is skipped.
 pub async fn run_all_steps(
     url: &str,
     client: &CachingClient,
     run_dir: &Path,
     force_fetch: bool,
+    llm_provider: Option<&dyn LlmProvider>,
 ) -> AllStepsResult {
     let mut step_results = Vec::new();
     let mut extraction_stats = None;
+    let mut enrichment_errors = Vec::new();
 
     // Step 1: Fetch HTML
     let fetch_result = run_fetch_html(url, client, force_fetch).await;
@@ -463,6 +719,7 @@ pub async fn run_all_steps(
         return AllStepsResult {
             step_results,
             extraction_stats,
+            enrichment_errors,
         };
     }
 
@@ -476,16 +733,34 @@ pub async fn run_all_steps(
         return AllStepsResult {
             step_results,
             extraction_stats,
+            enrichment_errors,
         };
     }
 
-    // Step 3: Save Recipe
+    // Step 3: Enrich Recipe (optional)
+    let enrich_result = run_enrich_recipe(url, run_dir, llm_provider).await;
+    enrichment_errors = enrich_result.enrichment_errors;
+    let enrich_success = enrich_result.step_result.success;
+    if !enrich_result.skipped {
+        step_results.push(enrich_result.step_result);
+    }
+
+    if !enrich_success {
+        return AllStepsResult {
+            step_results,
+            extraction_stats,
+            enrichment_errors,
+        };
+    }
+
+    // Step 4: Save Recipe
     let save_result = run_save_recipe(url, run_dir);
     step_results.push(save_result);
 
     AllStepsResult {
         step_results,
         extraction_stats,
+        enrichment_errors,
     }
 }
 
@@ -521,6 +796,10 @@ mod tests {
         assert_eq!(
             PipelineStep::from_str("extract_recipe").unwrap(),
             PipelineStep::ExtractRecipe
+        );
+        assert_eq!(
+            PipelineStep::from_str("enrich_recipe").unwrap(),
+            PipelineStep::EnrichRecipe
         );
         assert_eq!(
             PipelineStep::from_str("save_recipe").unwrap(),

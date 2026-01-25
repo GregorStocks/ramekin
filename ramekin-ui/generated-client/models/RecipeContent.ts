@@ -23,7 +23,7 @@ import {
 
 /**
  * Core recipe content - all fields that can be enriched by AI.
- * Used for: Enrich API request/response, base for CreateRecipeRequest.
+ * Used for enrichment APIs and recipe import.
  * @export
  * @interface RecipeContent
  */

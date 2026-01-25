@@ -1,5 +1,6 @@
 # Ingredient
 
+Structured ingredient with parsed amount, unit, item, and note.
 
 ## Properties
 

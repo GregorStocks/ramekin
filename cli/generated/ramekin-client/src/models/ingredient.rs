@@ -11,6 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+/// Ingredient : Structured ingredient with parsed amount, unit, item, and note.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Ingredient {
     #[serde(
@@ -39,6 +40,7 @@ pub struct Ingredient {
 }
 
 impl Ingredient {
+    /// Structured ingredient with parsed amount, unit, item, and note.
     pub fn new(item: String) -> Ingredient {
         Ingredient {
             amount: None,

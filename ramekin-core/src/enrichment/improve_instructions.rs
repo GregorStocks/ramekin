@@ -3,6 +3,7 @@
 //! Improves recipe instructions for clarity and consistency.
 
 use super::{Enrichment, EnrichmentError};
+use crate::llm::LlmProvider;
 use crate::types::RecipeContent;
 use async_trait::async_trait;
 
@@ -48,7 +49,7 @@ impl Enrichment for ImproveInstructions {
 
     async fn run(
         &self,
-        _provider: &dyn crate::llm::LlmProvider,
+        _provider: &dyn LlmProvider,
         _recipe: &RecipeContent,
     ) -> Result<RecipeContent, EnrichmentError> {
         Err(EnrichmentError::Validation(

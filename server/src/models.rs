@@ -1,6 +1,5 @@
 use chrono::{DateTime, Utc};
 use diesel::prelude::*;
-use serde::{Deserialize, Serialize};
 use serde_json::Value as JsonValue;
 use uuid::Uuid;
 
@@ -44,14 +43,8 @@ pub struct NewSession<'a> {
     pub expires_at: DateTime<Utc>,
 }
 
-// Ingredient structure for JSONB storage
-#[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
-pub struct Ingredient {
-    pub item: String,
-    pub amount: Option<String>,
-    pub unit: Option<String>,
-    pub note: Option<String>,
-}
+// Re-export Ingredient from ramekin-core (has ToSchema with openapi feature)
+pub use ramekin_core::Ingredient;
 
 #[derive(Queryable, Selectable, Debug)]
 #[diesel(table_name = crate::schema::photos)]

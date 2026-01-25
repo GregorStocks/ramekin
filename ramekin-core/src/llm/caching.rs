@@ -7,6 +7,7 @@ use super::{LlmError, LlmProvider};
 use async_trait::async_trait;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 use std::fs;
 use std::path::PathBuf;
 
@@ -39,8 +40,6 @@ impl CachingProvider {
     ///
     /// Uses SHA-256 for stable hashing across Rust versions.
     fn cache_key(&self, prompt: &str) -> String {
-        use sha2::{Digest, Sha256};
-
         let mut hasher = Sha256::new();
         hasher.update(prompt.as_bytes());
         let result = hasher.finalize();

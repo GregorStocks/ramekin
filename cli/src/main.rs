@@ -1,4 +1,3 @@
-mod pipeline_enrich;
 mod export;
 mod generate_test_urls;
 mod import;
@@ -9,11 +8,10 @@ mod pipeline_orchestrator;
 mod screenshot;
 mod seed;
 
-use anyhow::{Context, Result};
+use anyhow::Result;
 use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
-use ramekin_client::apis::{auth_api, testing_api};
-use ramekin_client::models::LoginRequest;
+use ramekin_client::apis::testing_api;
 use std::path::{Path, PathBuf};
 use tracing_subscriber::EnvFilter;
 
@@ -228,33 +226,6 @@ enum Commands {
         #[arg(short, long)]
         output: Option<PathBuf>,
     },
-    /// Run enrichments on recipes from pipeline runs
-    PipelineEnrich {
-        /// Server URL
-        #[arg(long, env = "API_BASE_URL")]
-        server_url: String,
-        /// Username for authentication
-        #[arg(long)]
-        username: String,
-        /// Password for authentication
-        #[arg(long)]
-        password: String,
-        /// Directory containing pipeline run results
-        #[arg(long, default_value = "data/pipeline-runs")]
-        runs_dir: PathBuf,
-        /// Output directory for enrichment test runs
-        #[arg(long, default_value = "data/pipeline-runs")]
-        output_dir: PathBuf,
-        /// Limit number of recipes to process
-        #[arg(long)]
-        limit: Option<usize>,
-        /// Run only a specific enrichment type
-        #[arg(long, short = 't')]
-        enrichment_type: Option<String>,
-        /// Filter to recipes from a specific site (domain)
-        #[arg(long)]
-        site: Option<String>,
-    },
 }
 
 #[tokio::main]
@@ -386,30 +357,6 @@ async fn main() -> Result<()> {
                 print!("{}", report);
             }
         }
-        Commands::PipelineEnrich {
-            server_url,
-            username,
-            password,
-            runs_dir,
-            output_dir,
-            limit,
-            enrichment_type,
-            site,
-        } => {
-            // Login to get auth token
-            let auth_token = login(&server_url, &username, &password).await?;
-
-            let config = pipeline_enrich::PipelineEnrichConfig {
-                server_url,
-                auth_token,
-                runs_dir,
-                output_dir,
-                limit,
-                enrichment_type,
-                site_filter: site,
-            };
-            pipeline_enrich::run_pipeline_enrich(config).await?;
-        }
     }
 
     Ok(())
@@ -450,6 +397,28 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
             }
             pipeline::run_extract_recipe(url, &client, run_dir).step_result
         }
+        PipelineStep::EnrichRecipe => {
+            // Ensure previous steps are done
+            if !client.is_cached(url) {
+                tracing::debug!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                if !fetch_result.success {
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
+                    return Ok(());
+                }
+            }
+            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            if !extract_result.step_result.success {
+                tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
+                return Ok(());
+            }
+            // Create LLM provider for enrichment
+            let llm_provider = ramekin_core::llm::create_cached_provider_from_env()
+                .map_err(|e| anyhow::anyhow!("Failed to create LLM provider: {}", e))?;
+            pipeline::run_enrich_recipe(url, run_dir, Some(llm_provider.as_ref()))
+                .await
+                .step_result
+        }
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
             if !client.is_cached(url) {
@@ -483,21 +452,4 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
     }
 
     Ok(())
-}
-
-async fn login(server_url: &str, username: &str, password: &str) -> Result<String> {
-    let mut config = Configuration::new();
-    config.base_path = server_url.to_string();
-
-    let response = auth_api::login(
-        &config,
-        LoginRequest {
-            username: username.to_string(),
-            password: password.to_string(),
-        },
-    )
-    .await
-    .context("Failed to login")?;
-
-    Ok(response.token)
 }

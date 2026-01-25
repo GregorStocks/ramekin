@@ -3,6 +3,7 @@
 //! Adds nutritional information to recipes based on ingredients.
 
 use super::{Enrichment, EnrichmentError};
+use crate::llm::LlmProvider;
 use crate::types::RecipeContent;
 use async_trait::async_trait;
 
@@ -48,7 +49,7 @@ impl Enrichment for AddNutrition {
 
     async fn run(
         &self,
-        _provider: &dyn crate::llm::LlmProvider,
+        _provider: &dyn LlmProvider,
         _recipe: &RecipeContent,
     ) -> Result<RecipeContent, EnrichmentError> {
         Err(EnrichmentError::Validation(

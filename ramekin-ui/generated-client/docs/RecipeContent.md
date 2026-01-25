@@ -1,7 +1,7 @@
 
 # RecipeContent
 
-Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
+Core recipe content - all fields that can be enriched by AI. Used for enrichment APIs and recipe import.
 
 ## Properties
 

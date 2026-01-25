@@ -1334,6 +1334,7 @@
       },
       "Ingredient": {
         "type": "object",
+        "description": "Structured ingredient with parsed amount, unit, item, and note.",
         "required": [
           "item"
         ],
@@ -1459,7 +1460,7 @@
       },
       "RecipeContent": {
         "type": "object",
-        "description": "Core recipe content - all fields that can be enriched by AI.\nUsed for: Enrich API request/response, base for CreateRecipeRequest.",
+        "description": "Core recipe content - all fields that can be enriched by AI.\nUsed for enrichment APIs and recipe import.",
         "required": [
           "title",
           "ingredients",

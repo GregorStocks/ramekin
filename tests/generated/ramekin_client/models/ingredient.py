@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class Ingredient(BaseModel):
     """
-    Ingredient
+    Structured ingredient with parsed amount, unit, item, and note.
     """ # noqa: E501
     amount: Optional[StrictStr] = None
     item: StrictStr

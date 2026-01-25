@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// RecipeContent : Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
+/// RecipeContent : Core recipe content - all fields that can be enriched by AI. Used for enrichment APIs and recipe import.
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RecipeContent {
     #[serde(
@@ -102,7 +102,7 @@ pub struct RecipeContent {
 }
 
 impl RecipeContent {
-    /// Core recipe content - all fields that can be enriched by AI. Used for: Enrich API request/response, base for CreateRecipeRequest.
+    /// Core recipe content - all fields that can be enriched by AI. Used for enrichment APIs and recipe import.
     pub fn new(
         ingredients: Vec<models::Ingredient>,
         instructions: String,

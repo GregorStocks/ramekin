@@ -64,7 +64,7 @@ zip = "7.1"
 # Web scraping
 reqwest = { version = "0.13", default-features = false, features = ["rustls", "json"] }
 scraper = "0.25"
-ramekin-core = { path = "../ramekin-core" }
+ramekin-core = { path = "../ramekin-core", features = ["openapi"] }
 
 [dev-dependencies]
 tempfile = "3.20"

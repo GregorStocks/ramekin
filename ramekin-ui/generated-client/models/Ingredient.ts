@@ -14,7 +14,7 @@
 
 import { mapValues } from '../runtime';
 /**
- * 
+ * Structured ingredient with parsed amount, unit, item, and note.
  * @export
  * @interface Ingredient
  */

@@ -3,8 +3,7 @@
 //! Standardizes ingredient amounts, units, and names into a consistent format.
 
 use super::{Enrichment, EnrichmentError};
-use crate::models::Ingredient;
-use crate::types::RecipeContent;
+use crate::types::{Ingredient, RecipeContent};
 use async_trait::async_trait;
 
 /// Enrichment that normalizes ingredient lists.

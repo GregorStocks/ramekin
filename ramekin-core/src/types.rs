@@ -1,6 +1,50 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+/// Structured ingredient with parsed amount, unit, item, and note.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+#[cfg_attr(feature = "openapi", derive(utoipa::ToSchema))]
+pub struct Ingredient {
+    pub item: String,
+    pub amount: Option<String>,
+    pub unit: Option<String>,
+    pub note: Option<String>,
+}
+
+/// Core recipe content - all fields that can be enriched by AI.
+/// Used for enrichment APIs and recipe import.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[cfg_attr(feature = "openapi", derive(utoipa::ToSchema))]
+pub struct RecipeContent {
+    pub title: String,
+    #[serde(default)]
+    pub description: Option<String>,
+    pub ingredients: Vec<Ingredient>,
+    pub instructions: String,
+    #[serde(default)]
+    pub source_url: Option<String>,
+    #[serde(default)]
+    pub source_name: Option<String>,
+    #[serde(default)]
+    pub tags: Vec<String>,
+    #[serde(default)]
+    pub servings: Option<String>,
+    #[serde(default)]
+    pub prep_time: Option<String>,
+    #[serde(default)]
+    pub cook_time: Option<String>,
+    #[serde(default)]
+    pub total_time: Option<String>,
+    #[serde(default)]
+    pub rating: Option<i32>,
+    #[serde(default)]
+    pub difficulty: Option<String>,
+    #[serde(default)]
+    pub nutritional_info: Option<String>,
+    #[serde(default)]
+    pub notes: Option<String>,
+}
+
 /// Identifies which extraction method was used
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]

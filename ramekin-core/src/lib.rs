@@ -1,7 +1,9 @@
+pub mod enrichment;
 pub mod error;
 pub mod extract;
 pub mod fetch;
 pub mod http;
+pub mod llm;
 pub mod types;
 
 pub use error::{ExtractError, FetchError};
@@ -13,7 +15,7 @@ pub use http::{
 };
 pub use types::{
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
-    FetchImagesOutput, RawRecipe, SaveRecipeOutput, StepOutput,
+    FetchImagesOutput, Ingredient, RawRecipe, RecipeContent, SaveRecipeOutput, StepOutput,
 };
 
 /// Unique identifier for this build, generated at compile time.

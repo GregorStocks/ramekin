@@ -7,6 +7,7 @@ use crate::OnFetchFail;
 use anyhow::{Context, Result};
 use chrono::Utc;
 use ramekin_core::http::{CachingClient, DiskCache};
+use ramekin_core::llm::{create_cached_provider_from_env, LlmProvider};
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
@@ -82,6 +83,7 @@ pub struct PipelineResults {
     pub completed: usize,
     pub failed_at_fetch: usize,
     pub failed_at_extract: usize,
+    pub failed_at_enrich: usize,
     pub failed_at_save: usize,
     pub cache_hits: usize,
     pub cache_misses: usize,
@@ -129,6 +131,7 @@ pub enum FinalStatus {
     Completed,
     FailedAtFetch,
     FailedAtExtract,
+    FailedAtEnrich,
     FailedAtSave,
 }
 
@@ -200,6 +203,23 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         .build()
         .context("Failed to create HTTP client")?;
 
+    // Initialize LLM provider for enrichment (optional)
+    // Uses ENRICHMENT_PROVIDER, ANTHROPIC_API_KEY, etc. from environment
+    let llm_provider: Option<Box<dyn LlmProvider>> = match create_cached_provider_from_env() {
+        Ok(provider) => {
+            tracing::info!(
+                provider = provider.provider_name(),
+                model = provider.model_name(),
+                "LLM provider initialized for enrichment"
+            );
+            Some(provider)
+        }
+        Err(e) => {
+            tracing::warn!(error = %e, "LLM provider not configured, enrichment will be skipped");
+            None
+        }
+    };
+
     // Initialize results
     let mut results = PipelineResults {
         total_urls: urls_to_process.len(),
@@ -244,7 +264,14 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let mut all_results = run_all_steps(url, &client, &run_dir, config.force_fetch).await;
+        let mut all_results = run_all_steps(
+            url,
+            &client,
+            &run_dir,
+            config.force_fetch,
+            llm_provider.as_deref(),
+        )
+        .await;
 
         // Check if fetch failed
         let fetch_failed = all_results
@@ -263,7 +290,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                 OnFetchFail::Prompt => {
                     // Interactive mode: prompt user to save HTML
                     if let Some(new_results) =
-                        prompt_for_manual_cache(url, &client, &run_dir).await?
+                        prompt_for_manual_cache(url, &client, &run_dir, llm_provider.as_deref())
+                            .await?
                     {
                         all_results = new_results;
                     }
@@ -451,6 +479,7 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
             return match step.step {
                 PipelineStep::FetchHtml => FinalStatus::FailedAtFetch,
                 PipelineStep::ExtractRecipe => FinalStatus::FailedAtExtract,
+                PipelineStep::EnrichRecipe => FinalStatus::FailedAtEnrich,
                 PipelineStep::SaveRecipe => FinalStatus::FailedAtSave,
             };
         }
@@ -481,6 +510,7 @@ fn update_results(
         FinalStatus::Completed => results.completed += 1,
         FinalStatus::FailedAtFetch => results.failed_at_fetch += 1,
         FinalStatus::FailedAtExtract => results.failed_at_extract += 1,
+        FinalStatus::FailedAtEnrich => results.failed_at_enrich += 1,
         FinalStatus::FailedAtSave => results.failed_at_save += 1,
     }
 
@@ -549,6 +579,7 @@ async fn prompt_for_manual_cache(
     url: &str,
     client: &CachingClient,
     run_dir: &Path,
+    llm_provider: Option<&dyn LlmProvider>,
 ) -> Result<Option<AllStepsResult>> {
     let staging = staging_dir();
 
@@ -615,7 +646,8 @@ async fn prompt_for_manual_cache(
                     println!();
 
                     // Re-run all steps (should hit cache now)
-                    let new_results = run_all_steps(url, client, run_dir, false).await;
+                    let new_results =
+                        run_all_steps(url, client, run_dir, false, llm_provider).await;
                     return Ok(Some(new_results));
                 }
                 Err(e) => {
