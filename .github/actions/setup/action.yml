@@ -32,7 +32,8 @@ runs:
     - name: Install SwiftLint
       shell: bash
       run: |
-        SWIFTLINT_VERSION=0.58.2
+        SWIFTLINT_VERSION=$(curl -fsSL https://api.github.com/repos/realm/SwiftLint/releases/latest | jq -r .tag_name)
+        echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
         curl -fsSL "https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/swiftlint_linux.zip" \
           -o /tmp/swiftlint.zip
         unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
