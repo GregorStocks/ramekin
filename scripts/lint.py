@@ -13,6 +13,7 @@ This script runs:
 """
 
 import json
+import os
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -218,12 +219,20 @@ def lint_swift(project_root: Path) -> tuple[str, bool]:
         print("swiftlint not installed (brew install swiftlint)", file=sys.stderr)
         return ("Swift", False)
 
+    # On macOS, ensure DEVELOPER_DIR points to Xcode.app if available
+    # (swiftlint needs SourceKit which isn't in CommandLineTools)
+    env = os.environ.copy()
+    xcode_path = Path("/Applications/Xcode.app/Contents/Developer")
+    if xcode_path.exists():
+        env["DEVELOPER_DIR"] = str(xcode_path)
+
     result = subprocess.run(
         ["swiftlint", "--strict"],
         cwd=ios_dir,
         capture_output=True,
         text=True,
         check=False,
+        env=env,
     )
 
     if result.stdout:

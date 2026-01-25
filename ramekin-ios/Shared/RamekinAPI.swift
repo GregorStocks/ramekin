@@ -18,7 +18,7 @@ class RamekinAPI {
     }
 
     var authToken: String? {
-        get { KeychainHelper.shared.getToken() }
+        KeychainHelper.shared.getToken()
     }
 
     var isLoggedIn: Bool {
