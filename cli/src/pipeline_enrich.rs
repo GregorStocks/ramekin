@@ -19,7 +19,7 @@ use std::time::Instant;
 // Configuration
 // ============================================================================
 
-pub struct EnrichValidateConfig {
+pub struct PipelineEnrichConfig {
     pub server_url: String,
     pub auth_token: String,
     pub runs_dir: PathBuf,
@@ -34,7 +34,7 @@ pub struct EnrichValidateConfig {
 // ============================================================================
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
-pub struct EnrichValidateResults {
+pub struct PipelineEnrichResults {
     pub total_recipes: usize,
     pub total_enrichments: usize,
     pub successful: usize,
@@ -73,7 +73,7 @@ pub struct RecipeEnrichResult {
 // Main test runner
 // ============================================================================
 
-pub async fn run_enrich_validate(config: EnrichValidateConfig) -> Result<EnrichValidateResults> {
+pub async fn run_pipeline_enrich(config: PipelineEnrichConfig) -> Result<PipelineEnrichResults> {
     // Generate run ID
     let now = Utc::now();
     let run_id = now.format("enrich-%Y-%m-%d_%H-%M-%S").to_string();
@@ -124,7 +124,7 @@ pub async fn run_enrich_validate(config: EnrichValidateConfig) -> Result<EnrichV
     }
 
     // Initialize results
-    let mut results = EnrichValidateResults {
+    let mut results = PipelineEnrichResults {
         total_recipes: recipes.len(),
         total_enrichments: recipes.len() * enrichment_types.len(),
         ..Default::default()
@@ -493,7 +493,7 @@ fn collect_recipes(
     Ok(recipes)
 }
 
-fn generate_report(results: &EnrichValidateResults) -> String {
+fn generate_report(results: &PipelineEnrichResults) -> String {
     let mut report = String::new();
 
     report.push_str("# Enrichment Test Report\n\n");

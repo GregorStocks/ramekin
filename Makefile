@@ -162,7 +162,7 @@ pipeline-summary: ## Generate summary report from latest pipeline run (saves to 
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
 
 pipeline-enrich: ## Run enrichments on pipeline recipes (requires dev server, pipeline data)
-	@cargo run -q --manifest-path cli/Cargo.toml -- enrich-validate \
+	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-enrich \
 		--username t --password t \
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \

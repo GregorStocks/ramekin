@@ -1,4 +1,4 @@
-mod enrich_validate;
+mod pipeline_enrich;
 mod export;
 mod generate_test_urls;
 mod import;
@@ -228,8 +228,8 @@ enum Commands {
         #[arg(short, long)]
         output: Option<PathBuf>,
     },
-    /// Validate enrichments on recipes from pipeline runs
-    EnrichValidate {
+    /// Run enrichments on recipes from pipeline runs
+    PipelineEnrich {
         /// Server URL
         #[arg(long, env = "API_BASE_URL")]
         server_url: String,
@@ -386,7 +386,7 @@ async fn main() -> Result<()> {
                 print!("{}", report);
             }
         }
-        Commands::EnrichValidate {
+        Commands::PipelineEnrich {
             server_url,
             username,
             password,
@@ -399,7 +399,7 @@ async fn main() -> Result<()> {
             // Login to get auth token
             let auth_token = login(&server_url, &username, &password).await?;
 
-            let config = enrich_validate::EnrichValidateConfig {
+            let config = pipeline_enrich::PipelineEnrichConfig {
                 server_url,
                 auth_token,
                 runs_dir,
@@ -408,7 +408,7 @@ async fn main() -> Result<()> {
                 enrichment_type,
                 site_filter: site,
             };
-            enrich_validate::run_enrich_validate(config).await?;
+            pipeline_enrich::run_pipeline_enrich(config).await?;
         }
     }
 
