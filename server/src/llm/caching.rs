@@ -36,15 +36,17 @@ impl CachingProvider {
     }
 
     /// Generate a cache key for a prompt.
+    ///
+    /// Uses SHA-256 for stable hashing across Rust versions.
     fn cache_key(&self, prompt: &str) -> String {
-        use std::collections::hash_map::DefaultHasher;
-        use std::hash::{Hash, Hasher};
+        use sha2::{Digest, Sha256};
 
-        let mut hasher = DefaultHasher::new();
-        prompt.hash(&mut hasher);
-        let hash = hasher.finish();
+        let mut hasher = Sha256::new();
+        hasher.update(prompt.as_bytes());
+        let result = hasher.finalize();
 
-        format!("{:016x}", hash)
+        // Use first 16 bytes (32 hex chars) for shorter filenames
+        hex::encode(&result[..16])
     }
 
     /// Get the cache directory for this provider/model combination.
