@@ -232,7 +232,9 @@ enum Commands {
 async fn main() -> Result<()> {
     // Initialize tracing with debug level by default for CLI
     // Can be overridden with RUST_LOG environment variable
-    let filter = EnvFilter::try_from_default_env().unwrap_or_else(|_| EnvFilter::new("debug"));
+    // Filter out extremely verbose html5ever tokenizer debug logs
+    let filter = EnvFilter::try_from_default_env()
+        .unwrap_or_else(|_| EnvFilter::new("debug,html5ever=info,selectors=info"));
     tracing_subscriber::fmt()
         .with_env_filter(filter)
         .with_target(false)
