@@ -208,15 +208,15 @@ def lint_swift(project_root: Path) -> tuple[str, bool]:
     """Lint Swift code with SwiftLint."""
     ios_dir = project_root / "ramekin-ios"
 
-    # Check if swiftlint is installed (optional - only available on macOS)
+    # Check if swiftlint is installed
     which_result = subprocess.run(
         ["which", "swiftlint"],
         capture_output=True,
         check=False,
     )
     if which_result.returncode != 0:
-        print("swiftlint not installed, skipping (brew install swiftlint)")
-        return ("Swift (skipped)", True)
+        print("swiftlint not installed (brew install swiftlint)", file=sys.stderr)
+        return ("Swift", False)
 
     result = subprocess.run(
         ["swiftlint", "--strict"],
