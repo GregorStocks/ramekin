@@ -6,7 +6,10 @@ use crate::photos::processing::{process_image, MAX_FILE_SIZE};
 use crate::schema::{photos, recipe_versions, recipes, scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::{FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID};
+use ramekin_core::{
+    EnrichOutput, FailedImageFetch, FetchHtmlOutput, FetchImagesOutput, PipelineStep, RawRecipe,
+    BUILD_ID,
+};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
@@ -46,13 +49,6 @@ pub const STATUS_SCRAPING: &str = "scraping";
 pub const STATUS_PARSING: &str = "parsing";
 pub const STATUS_COMPLETED: &str = "completed";
 pub const STATUS_FAILED: &str = "failed";
-
-/// Step names for pipeline
-const STEP_FETCH_HTML: &str = "fetch_html";
-const STEP_EXTRACT_RECIPE: &str = "extract_recipe";
-const STEP_FETCH_IMAGES: &str = "fetch_images";
-const STEP_SAVE_RECIPE: &str = "save_recipe";
-const STEP_ENRICH: &str = "enrich";
 
 /// Maximum retries before hard fail
 const MAX_RETRIES: i32 = 5;
@@ -128,13 +124,13 @@ pub fn create_job_with_html(
     };
     let output_json =
         serde_json::to_value(&fetch_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
-    save_step_output(pool, job.id, STEP_FETCH_HTML, output_json)?;
+    save_step_output(pool, job.id, PipelineStep::FetchHtml.as_str(), output_json)?;
 
     // Update the job to start from parsing (skip fetch step)
     diesel::update(scrape_jobs::table.find(job.id))
         .set((
             scrape_jobs::status.eq(STATUS_PARSING),
-            scrape_jobs::current_step.eq(Some(STEP_EXTRACT_RECIPE)),
+            scrape_jobs::current_step.eq(Some(PipelineStep::ExtractRecipe.as_str())),
             scrape_jobs::updated_at.eq(Utc::now()),
         ))
         .execute(&mut conn)
@@ -398,14 +394,22 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
     match job.status.as_str() {
         STATUS_PENDING => {
             tracing::info!("Job {} transitioning from pending to scraping", job_id);
-            update_status_and_step(pool, job_id, STATUS_SCRAPING, Some(STEP_FETCH_HTML))?;
+            update_status_and_step(
+                pool,
+                job_id,
+                STATUS_SCRAPING,
+                Some(PipelineStep::FetchHtml.as_str()),
+            )?;
             Box::pin(run_scrape_job_inner(pool, job_id)).await
         }
 
         STATUS_SCRAPING => {
-            let current_step = job.current_step.as_deref().unwrap_or(STEP_FETCH_HTML);
+            let current_step = job
+                .current_step
+                .as_deref()
+                .unwrap_or(PipelineStep::FetchHtml.as_str());
 
-            if current_step == STEP_FETCH_HTML {
+            if current_step == PipelineStep::FetchHtml.as_str() {
                 // Check host allowlist
                 is_host_allowed(&job.url)?;
 
@@ -429,14 +433,19 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         let fetch_output = FetchHtmlOutput { html };
                         let output_json = serde_json::to_value(&fetch_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        save_step_output(pool, job_id, STEP_FETCH_HTML, output_json)?;
+                        save_step_output(
+                            pool,
+                            job_id,
+                            PipelineStep::FetchHtml.as_str(),
+                            output_json,
+                        )?;
 
                         tracing::info!("Job {} fetch successful, transitioning to parsing", job_id);
                         update_status_and_step(
                             pool,
                             job_id,
                             STATUS_PARSING,
-                            Some(STEP_EXTRACT_RECIPE),
+                            Some(PipelineStep::ExtractRecipe.as_str()),
                         )?;
                         Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
@@ -455,14 +464,18 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
         }
 
         STATUS_PARSING => {
-            let current_step = job.current_step.as_deref().unwrap_or(STEP_EXTRACT_RECIPE);
+            let current_step = job
+                .current_step
+                .as_deref()
+                .unwrap_or(PipelineStep::ExtractRecipe.as_str());
 
-            if current_step == STEP_EXTRACT_RECIPE {
+            if current_step == PipelineStep::ExtractRecipe.as_str() {
                 // Get HTML from most recent step_output
-                let fetch_output = get_latest_step_output(pool, job_id, STEP_FETCH_HTML)?
-                    .ok_or_else(|| {
-                        ScrapeError::InvalidState("No fetch output found".to_string())
-                    })?;
+                let fetch_output =
+                    get_latest_step_output(pool, job_id, PipelineStep::FetchHtml.as_str())?
+                        .ok_or_else(|| {
+                            ScrapeError::InvalidState("No fetch output found".to_string())
+                        })?;
 
                 let html = fetch_output
                     .output
@@ -490,14 +503,19 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         // Store extract output
                         let output_json = serde_json::to_value(&extract_output)
                             .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                        save_step_output(pool, job_id, STEP_EXTRACT_RECIPE, output_json)?;
+                        save_step_output(
+                            pool,
+                            job_id,
+                            PipelineStep::ExtractRecipe.as_str(),
+                            output_json,
+                        )?;
 
                         // Update current_step and continue to fetch images
                         update_status_and_step(
                             pool,
                             job_id,
                             STATUS_PARSING,
-                            Some(STEP_FETCH_IMAGES),
+                            Some(PipelineStep::FetchImages.as_str()),
                         )?;
 
                         tracing::info!("Job {} extracted recipe, fetching images", job_id);
@@ -509,12 +527,13 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         Ok(())
                     }
                 }
-            } else if current_step == STEP_FETCH_IMAGES {
+            } else if current_step == PipelineStep::FetchImages.as_str() {
                 // Get raw_recipe from extract output to get image URLs
-                let extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
-                    .ok_or_else(|| {
-                        ScrapeError::InvalidState("No extract output found".to_string())
-                    })?;
+                let extract_output =
+                    get_latest_step_output(pool, job_id, PipelineStep::ExtractRecipe.as_str())?
+                        .ok_or_else(|| {
+                            ScrapeError::InvalidState("No extract output found".to_string())
+                        })?;
 
                 let raw_recipe: RawRecipe = extract_output
                     .output
@@ -561,22 +580,33 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
 
                 let output_json = serde_json::to_value(&output)
                     .map_err(|e| ScrapeError::Database(e.to_string()))?;
-                save_step_output(pool, job_id, STEP_FETCH_IMAGES, output_json)?;
+                save_step_output(
+                    pool,
+                    job_id,
+                    PipelineStep::FetchImages.as_str(),
+                    output_json,
+                )?;
 
                 // Continue to save_recipe
-                update_status_and_step(pool, job_id, STATUS_PARSING, Some(STEP_SAVE_RECIPE))?;
+                update_status_and_step(
+                    pool,
+                    job_id,
+                    STATUS_PARSING,
+                    Some(PipelineStep::SaveRecipe.as_str()),
+                )?;
                 tracing::info!(
                     "Job {} fetched {} images, saving recipe",
                     job_id,
                     output.photo_ids.len()
                 );
                 Box::pin(run_scrape_job_inner(pool, job_id)).await
-            } else if current_step == STEP_SAVE_RECIPE {
+            } else if current_step == PipelineStep::SaveRecipe.as_str() {
                 // Get raw_recipe from extract output
-                let extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?
-                    .ok_or_else(|| {
-                        ScrapeError::InvalidState("No extract output found".to_string())
-                    })?;
+                let extract_output =
+                    get_latest_step_output(pool, job_id, PipelineStep::ExtractRecipe.as_str())?
+                        .ok_or_else(|| {
+                            ScrapeError::InvalidState("No extract output found".to_string())
+                        })?;
 
                 let raw_recipe: RawRecipe = extract_output
                     .output
@@ -590,14 +620,15 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                     })?;
 
                 // Get photo IDs from fetch_images output (may not exist for old jobs)
-                let photo_ids: Vec<Uuid> = get_latest_step_output(pool, job_id, STEP_FETCH_IMAGES)?
-                    .and_then(|output| {
-                        output
-                            .output
-                            .get("photo_ids")
-                            .and_then(|v| serde_json::from_value(v.clone()).ok())
-                    })
-                    .unwrap_or_default();
+                let photo_ids: Vec<Uuid> =
+                    get_latest_step_output(pool, job_id, PipelineStep::FetchImages.as_str())?
+                        .and_then(|output| {
+                            output
+                                .output
+                                .get("photo_ids")
+                                .and_then(|v| serde_json::from_value(v.clone()).ok())
+                        })
+                        .unwrap_or_default();
 
                 let save_span = tracing::info_span!(
                     "scrape_step",
@@ -624,10 +655,20 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
 
                         // Store recipe_id for the enrich step
                         let save_output = serde_json::json!({ "recipe_id": recipe_id });
-                        save_step_output(pool, job_id, STEP_SAVE_RECIPE, save_output)?;
+                        save_step_output(
+                            pool,
+                            job_id,
+                            PipelineStep::SaveRecipe.as_str(),
+                            save_output,
+                        )?;
 
                         // Continue to enrich step
-                        update_status_and_step(pool, job_id, STATUS_PARSING, Some(STEP_ENRICH))?;
+                        update_status_and_step(
+                            pool,
+                            job_id,
+                            STATUS_PARSING,
+                            Some(PipelineStep::Enrich.as_str()),
+                        )?;
                         Box::pin(run_scrape_job_inner(pool, job_id)).await
                     }
                     Err(e) => {
@@ -636,12 +677,13 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                         Ok(())
                     }
                 }
-            } else if current_step == STEP_ENRICH {
+            } else if current_step == PipelineStep::Enrich.as_str() {
                 // Get recipe_id from save_recipe output
-                let save_output = get_latest_step_output(pool, job_id, STEP_SAVE_RECIPE)?
-                    .ok_or_else(|| {
-                        ScrapeError::InvalidState("No save_recipe output found".to_string())
-                    })?;
+                let save_output =
+                    get_latest_step_output(pool, job_id, PipelineStep::SaveRecipe.as_str())?
+                        .ok_or_else(|| {
+                            ScrapeError::InvalidState("No save_recipe output found".to_string())
+                        })?;
 
                 let recipe_id: Uuid = save_output
                     .output
@@ -684,11 +726,18 @@ async fn run_scrape_job_inner(pool: &DbPool, job_id: Uuid) -> Result<(), ScrapeE
                 }
 
                 // Store enrich output (success or failure)
-                let enrich_output = serde_json::json!({
-                    "success": enrich_success,
-                    "error": enrich_error,
-                });
-                save_step_output(pool, job_id, STEP_ENRICH, enrich_output)?;
+                let enrich_output = EnrichOutput {
+                    success: enrich_success,
+                    error: enrich_error,
+                };
+                let enrich_output_json = serde_json::to_value(&enrich_output)
+                    .map_err(|e| ScrapeError::Database(e.to_string()))?;
+                save_step_output(
+                    pool,
+                    job_id,
+                    PipelineStep::Enrich.as_str(),
+                    enrich_output_json,
+                )?;
 
                 // Mark completed regardless of enrichment success
                 mark_completed(pool, job_id, recipe_id)?;
@@ -805,34 +854,36 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
     }
 
     // Determine where to resume based on failed_at_step and available outputs
-    let has_fetch_output = get_latest_step_output(pool, job_id, STEP_FETCH_HTML)?.is_some();
-    let has_extract_output = get_latest_step_output(pool, job_id, STEP_EXTRACT_RECIPE)?.is_some();
+    let has_fetch_output =
+        get_latest_step_output(pool, job_id, PipelineStep::FetchHtml.as_str())?.is_some();
+    let has_extract_output =
+        get_latest_step_output(pool, job_id, PipelineStep::ExtractRecipe.as_str())?.is_some();
     let has_fetch_images_output =
-        get_latest_step_output(pool, job_id, STEP_FETCH_IMAGES)?.is_some();
+        get_latest_step_output(pool, job_id, PipelineStep::FetchImages.as_str())?.is_some();
 
     let (resume_status, resume_step) = match job.failed_at_step.as_deref() {
         Some(STATUS_SCRAPING) => {
             // Failed during fetch - restart from fetch
-            (STATUS_SCRAPING, STEP_FETCH_HTML)
+            (STATUS_SCRAPING, PipelineStep::FetchHtml.as_str())
         }
         Some(STATUS_PARSING) => {
             if has_fetch_images_output {
                 // Have fetch_images output, try save again
-                (STATUS_PARSING, STEP_SAVE_RECIPE)
+                (STATUS_PARSING, PipelineStep::SaveRecipe.as_str())
             } else if has_extract_output {
                 // Have extract output, try fetch_images
-                (STATUS_PARSING, STEP_FETCH_IMAGES)
+                (STATUS_PARSING, PipelineStep::FetchImages.as_str())
             } else if has_fetch_output {
                 // Have fetch output, try extract again
-                (STATUS_PARSING, STEP_EXTRACT_RECIPE)
+                (STATUS_PARSING, PipelineStep::ExtractRecipe.as_str())
             } else {
                 // No outputs, start from beginning
-                (STATUS_SCRAPING, STEP_FETCH_HTML)
+                (STATUS_SCRAPING, PipelineStep::FetchHtml.as_str())
             }
         }
         _ => {
             // Unknown failure point, start from beginning
-            (STATUS_PENDING, STEP_FETCH_HTML)
+            (STATUS_PENDING, PipelineStep::FetchHtml.as_str())
         }
     };
 
@@ -856,15 +907,18 @@ pub fn retry_job(pool: &DbPool, job_id: Uuid) -> Result<String, ScrapeError> {
 }
 
 /// Enrich a recipe after scraping using AI.
-/// Currently a no-op skeleton - returns success without modifying the recipe.
+/// Currently a no-op stub that always fails - enrichment is expected to be unreliable.
 /// TODO: Implement actual AI enrichment.
 async fn enrich_recipe_after_scrape(
     _pool: &DbPool,
     _user_id: Uuid,
     _recipe_id: Uuid,
 ) -> Result<(), ScrapeError> {
-    // No-op skeleton: just succeed without doing anything
+    // No-op stub: always fail to simulate unreliable enrichment
+    // The pipeline will continue regardless (enrichment failures are non-fatal)
     // TODO: Call Claude API for actual enrichment
-    tracing::debug!("Enrichment step skipped (no-op skeleton)");
-    Ok(())
+    tracing::debug!("Enrichment step failed (no-op stub)");
+    Err(ScrapeError::InvalidState(
+        "Enrichment not implemented".to_string(),
+    ))
 }

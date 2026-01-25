@@ -1,6 +1,67 @@
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
+/// Pipeline steps in execution order
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum PipelineStep {
+    FetchHtml,
+    ExtractRecipe,
+    FetchImages,
+    SaveRecipe,
+    Enrich,
+}
+
+impl PipelineStep {
+    /// All steps in execution order
+    pub const ALL: &'static [PipelineStep] = &[
+        PipelineStep::FetchHtml,
+        PipelineStep::ExtractRecipe,
+        PipelineStep::FetchImages,
+        PipelineStep::SaveRecipe,
+        PipelineStep::Enrich,
+    ];
+
+    /// Steps that should continue on failure (don't fail the overall job)
+    pub fn continues_on_failure(&self) -> bool {
+        matches!(self, PipelineStep::Enrich)
+    }
+
+    /// Steps that are DB-specific (CLI can skip or stub these)
+    pub fn is_db_specific(&self) -> bool {
+        matches!(self, PipelineStep::FetchImages)
+    }
+
+    pub fn as_str(&self) -> &'static str {
+        match self {
+            PipelineStep::FetchHtml => "fetch_html",
+            PipelineStep::ExtractRecipe => "extract_recipe",
+            PipelineStep::FetchImages => "fetch_images",
+            PipelineStep::SaveRecipe => "save_recipe",
+            PipelineStep::Enrich => "enrich",
+        }
+    }
+
+    pub fn from_str(s: &str) -> Option<Self> {
+        match s {
+            "fetch_html" => Some(PipelineStep::FetchHtml),
+            "extract_recipe" => Some(PipelineStep::ExtractRecipe),
+            "fetch_images" => Some(PipelineStep::FetchImages),
+            "save_recipe" => Some(PipelineStep::SaveRecipe),
+            "enrich" => Some(PipelineStep::Enrich),
+            _ => None,
+        }
+    }
+}
+
+/// Output from the enrich step
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EnrichOutput {
+    pub success: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub error: Option<String>,
+}
+
 /// Identifies which extraction method was used
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]

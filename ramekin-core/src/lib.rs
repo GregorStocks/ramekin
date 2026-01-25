@@ -12,8 +12,8 @@ pub use http::{
     MockResponse,
 };
 pub use types::{
-    ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
-    FetchImagesOutput, RawRecipe, SaveRecipeOutput, StepOutput,
+    EnrichOutput, ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch,
+    FetchHtmlOutput, FetchImagesOutput, PipelineStep, RawRecipe, SaveRecipeOutput, StepOutput,
 };
 
 /// Unique identifier for this build, generated at compile time.

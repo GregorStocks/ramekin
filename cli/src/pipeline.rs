@@ -1,43 +1,22 @@
 use anyhow::{anyhow, Result};
 use chrono::Utc;
 use ramekin_core::http::{CachingClient, HttpClient};
+// Re-export PipelineStep from ramekin_core for backwards compatibility
+pub use ramekin_core::PipelineStep;
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::Instant;
 
-// ============================================================================
-// Pipeline step enum
-// ============================================================================
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
-pub enum PipelineStep {
-    FetchHtml,
-    ExtractRecipe,
-    SaveRecipe,
-}
-
-impl PipelineStep {
-    pub fn from_str(s: &str) -> Result<Self> {
-        match s {
-            "fetch_html" => Ok(PipelineStep::FetchHtml),
-            "extract_recipe" => Ok(PipelineStep::ExtractRecipe),
-            "save_recipe" => Ok(PipelineStep::SaveRecipe),
-            _ => Err(anyhow!(
-                "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe",
-                s
-            )),
-        }
-    }
-
-    pub fn as_str(&self) -> &'static str {
-        match self {
-            PipelineStep::FetchHtml => "fetch_html",
-            PipelineStep::ExtractRecipe => "extract_recipe",
-            PipelineStep::SaveRecipe => "save_recipe",
-        }
-    }
+/// Parse a pipeline step from string, returning an error for invalid steps.
+/// This wraps PipelineStep::from_str with proper error handling for CLI usage.
+pub fn parse_pipeline_step(s: &str) -> Result<PipelineStep> {
+    PipelineStep::from_str(s).ok_or_else(|| {
+        anyhow!(
+            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich",
+            s
+        )
+    })
 }
 
 // ============================================================================
@@ -441,6 +420,31 @@ fn save_step_error(output_dir: &Path, error: &str, duration_ms: u64) -> Result<(
 }
 
 // ============================================================================
+// Enrich step runner
+// ============================================================================
+
+/// Run the enrich step for a URL.
+/// Currently a no-op that always fails - enrichment is expected to be unreliable.
+/// The pipeline will continue regardless (enrichment failures are non-fatal).
+pub fn run_enrich(url: &str, run_dir: &Path) -> StepResult {
+    let start = Instant::now();
+    let slug = slugify_url(url);
+    let output_dir = run_dir.join("urls").join(&slug).join("enrich");
+    let duration_ms = start.elapsed().as_millis() as u64;
+
+    let error_msg = "Enrichment not implemented (no-op stub)".to_string();
+    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
+
+    StepResult {
+        step: PipelineStep::Enrich,
+        success: false,
+        duration_ms,
+        error: Some(error_msg),
+        cached: false,
+    }
+}
+
+// ============================================================================
 // Run all steps for a URL
 // ============================================================================
 
@@ -481,7 +485,20 @@ pub async fn run_all_steps(
 
     // Step 3: Save Recipe
     let save_result = run_save_recipe(url, run_dir);
+    let save_success = save_result.success;
     step_results.push(save_result);
+
+    if !save_success {
+        return AllStepsResult {
+            step_results,
+            extraction_stats,
+        };
+    }
+
+    // Step 4: Enrich (always runs, continues on failure)
+    // Note: We skip FetchImages as it's DB-specific
+    let enrich_result = run_enrich(url, run_dir);
+    step_results.push(enrich_result);
 
     AllStepsResult {
         step_results,
@@ -515,17 +532,27 @@ mod tests {
     #[test]
     fn test_pipeline_step_from_str() {
         assert_eq!(
-            PipelineStep::from_str("fetch_html").unwrap(),
-            PipelineStep::FetchHtml
+            PipelineStep::from_str("fetch_html"),
+            Some(PipelineStep::FetchHtml)
         );
         assert_eq!(
-            PipelineStep::from_str("extract_recipe").unwrap(),
-            PipelineStep::ExtractRecipe
+            PipelineStep::from_str("extract_recipe"),
+            Some(PipelineStep::ExtractRecipe)
         );
         assert_eq!(
-            PipelineStep::from_str("save_recipe").unwrap(),
-            PipelineStep::SaveRecipe
+            PipelineStep::from_str("save_recipe"),
+            Some(PipelineStep::SaveRecipe)
         );
-        assert!(PipelineStep::from_str("invalid").is_err());
+        assert_eq!(PipelineStep::from_str("enrich"), Some(PipelineStep::Enrich));
+        assert_eq!(PipelineStep::from_str("invalid"), None);
+    }
+
+    #[test]
+    fn test_parse_pipeline_step() {
+        assert!(parse_pipeline_step("fetch_html").is_ok());
+        assert!(parse_pipeline_step("extract_recipe").is_ok());
+        assert!(parse_pipeline_step("save_recipe").is_ok());
+        assert!(parse_pipeline_step("enrich").is_ok());
+        assert!(parse_pipeline_step("invalid").is_err());
     }
 }
