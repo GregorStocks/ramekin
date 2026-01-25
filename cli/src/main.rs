@@ -4,6 +4,7 @@ mod import;
 mod load_test;
 mod parse_html;
 mod pipeline;
+mod pipeline_legacy;
 mod pipeline_orchestrator;
 mod screenshot;
 mod seed;
@@ -378,42 +379,42 @@ async fn ping(server: &str) -> Result<()> {
 async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: bool) -> Result<()> {
     use ramekin_core::{CachingClient, PipelineStep};
 
-    let step = pipeline::parse_pipeline_step(step)?;
+    let step = pipeline_legacy::parse_pipeline_step(step)?;
     let client = CachingClient::new()?;
 
     // Create run directory
     std::fs::create_dir_all(run_dir)?;
 
     let result = match step {
-        PipelineStep::FetchHtml => pipeline::run_fetch_html(url, &client, force_fetch).await,
+        PipelineStep::FetchHtml => pipeline_legacy::run_fetch_html(url, &client, force_fetch).await,
         PipelineStep::ExtractRecipe => {
             // Ensure HTML is fetched first
             if !client.is_cached(url) && !force_fetch {
                 tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                let fetch_result = pipeline_legacy::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
                     tracing::warn!(error = ?fetch_result.error, "Fetch failed");
                     return Ok(());
                 }
             }
-            pipeline::run_extract_recipe(url, &client, run_dir).step_result
+            pipeline_legacy::run_extract_recipe(url, &client, run_dir).step_result
         }
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
             if !client.is_cached(url) {
                 tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                let fetch_result = pipeline_legacy::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
                     tracing::warn!(error = ?fetch_result.error, "Fetch failed");
                     return Ok(());
                 }
             }
-            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            let extract_result = pipeline_legacy::run_extract_recipe(url, &client, run_dir);
             if !extract_result.step_result.success {
                 tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
                 return Ok(());
             }
-            pipeline::run_save_recipe(url, run_dir)
+            pipeline_legacy::run_save_recipe(url, run_dir)
         }
         PipelineStep::FetchImages => {
             // FetchImages is DB-specific, skip in CLI
@@ -425,23 +426,23 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
             // Ensure previous steps are done
             if !client.is_cached(url) {
                 tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                let fetch_result = pipeline_legacy::run_fetch_html(url, &client, false).await;
                 if !fetch_result.success {
                     tracing::warn!(error = ?fetch_result.error, "Fetch failed");
                     return Ok(());
                 }
             }
-            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            let extract_result = pipeline_legacy::run_extract_recipe(url, &client, run_dir);
             if !extract_result.step_result.success {
                 tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
                 return Ok(());
             }
-            let save_result = pipeline::run_save_recipe(url, run_dir);
+            let save_result = pipeline_legacy::run_save_recipe(url, run_dir);
             if !save_result.success {
                 tracing::warn!(error = ?save_result.error, "Save failed");
                 return Ok(());
             }
-            pipeline::run_enrich(url, run_dir)
+            pipeline_legacy::run_enrich(url, run_dir)
         }
     };
 

@@ -1,5 +1,5 @@
 use crate::generate_test_urls::TestUrlsOutput;
-use crate::pipeline::{
+use crate::pipeline_legacy::{
     clear_staging, ensure_staging_dir, find_staged_html, run_all_steps, staging_dir,
     AllStepsResult, ExtractionStats, PipelineStep, StepResult,
 };

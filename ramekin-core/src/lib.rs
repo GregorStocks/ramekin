@@ -2,6 +2,7 @@ pub mod error;
 pub mod extract;
 pub mod fetch;
 pub mod http;
+pub mod pipeline;
 pub mod types;
 
 pub use error::{ExtractError, FetchError};
