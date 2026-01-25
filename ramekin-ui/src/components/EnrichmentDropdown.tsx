@@ -1,4 +1,11 @@
-import { createSignal, createResource, For, Show } from "solid-js";
+import {
+  createSignal,
+  createResource,
+  For,
+  Show,
+  onMount,
+  onCleanup,
+} from "solid-js";
 import { useAuth } from "../context/AuthContext";
 import type { EnrichmentInfo } from "ramekin-client";
 
@@ -42,10 +49,14 @@ export default function EnrichmentDropdown(props: EnrichmentDropdownProps) {
     }
   };
 
-  // Add/remove click listener
-  if (typeof document !== "undefined") {
+  // Add/remove click listener with proper cleanup
+  onMount(() => {
     document.addEventListener("click", handleClickOutside);
-  }
+  });
+
+  onCleanup(() => {
+    document.removeEventListener("click", handleClickOutside);
+  });
 
   return (
     <div class="enrichment-dropdown">
@@ -74,8 +85,10 @@ export default function EnrichmentDropdown(props: EnrichmentDropdownProps) {
                   class="enrichment-dropdown-item"
                   onClick={() => handleSelect(enrichment)}
                 >
-                  <span class="enrichment-name">{enrichment.displayName}</span>
-                  <span class="enrichment-description">
+                  <span class="enrichment-dropdown-item-name">
+                    {enrichment.displayName}
+                  </span>
+                  <span class="enrichment-dropdown-item-desc">
                     {enrichment.description}
                   </span>
                 </button>
