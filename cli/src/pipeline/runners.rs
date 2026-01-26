@@ -182,7 +182,7 @@ pub async fn run_all_steps(
             extraction_stats = extract_stats_from_output(&result.output);
         }
 
-        // Skip FetchImages in CLI results (maintain backwards compatibility)
+        // Skip FetchImages in CLI results
         if step == PipelineStep::FetchImages {
             continue;
         }
@@ -207,17 +207,14 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
     let method_used = output.get("method_used")?.as_str()?;
     let all_attempts = output.get("all_attempts")?.as_array()?;
 
-    // Handle both formats: "json_ld" (new) and "jsonld" (legacy)
     let method = match method_used {
-        "jsonld" | "json_ld" => ramekin_core::ExtractionMethod::JsonLd,
+        "json_ld" => ramekin_core::ExtractionMethod::JsonLd,
         "microdata" => ramekin_core::ExtractionMethod::Microdata,
         _ => return None,
     };
 
-    // Handle both "jsonld" and "json_ld" in all_attempts
     let jsonld_success = all_attempts.iter().any(|a| {
-        let m = a.get("method").and_then(|m| m.as_str());
-        (m == Some("jsonld") || m == Some("json_ld"))
+        a.get("method").and_then(|m| m.as_str()) == Some("json_ld")
             && a.get("success").and_then(|s| s.as_bool()) == Some(true)
     });
 
