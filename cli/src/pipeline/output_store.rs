@@ -1,6 +1,5 @@
 //! File-based step output store for the CLI.
 
-use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -16,8 +15,6 @@ use serde_json::Value as JsonValue;
 pub struct FileOutputStore {
     run_dir: PathBuf,
     url_slug: String,
-    /// In-memory cache of outputs for fast access during pipeline execution
-    cache: HashMap<String, JsonValue>,
 }
 
 impl FileOutputStore {
@@ -26,7 +23,6 @@ impl FileOutputStore {
         Self {
             run_dir: run_dir.to_path_buf(),
             url_slug: slugify_url(url),
-            cache: HashMap::new(),
         }
     }
 
@@ -46,12 +42,6 @@ impl FileOutputStore {
 
 impl StepOutputStore for FileOutputStore {
     fn get_output(&self, step_name: &str) -> Option<JsonValue> {
-        // Check in-memory cache first
-        if let Some(cached) = self.cache.get(step_name) {
-            return Some(cached.clone());
-        }
-
-        // Try to load from disk
         let path = self.output_path(step_name);
         if path.exists() {
             if let Ok(content) = fs::read_to_string(&path) {
@@ -60,7 +50,6 @@ impl StepOutputStore for FileOutputStore {
                 }
             }
         }
-
         None
     }
 
@@ -69,10 +58,6 @@ impl StepOutputStore for FileOutputStore {
         step_name: &str,
         output: &JsonValue,
     ) -> Result<(), Box<dyn Error + Send + Sync>> {
-        // Save to in-memory cache
-        self.cache.insert(step_name.to_string(), output.clone());
-
-        // Save to disk
         let dir = self.step_dir(step_name);
         fs::create_dir_all(&dir)?;
 
