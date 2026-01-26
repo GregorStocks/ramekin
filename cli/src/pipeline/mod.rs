@@ -29,7 +29,11 @@ use steps::{FetchImagesStep, SaveRecipeStep};
 ///
 /// The HTTP client is injected for fetch_html and fetch_images steps.
 /// The AI client is created from environment variables.
-pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(client: C) -> StepRegistry {
+/// User tags are used for auto-tagging evaluation.
+pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
+    client: C,
+    user_tags: Vec<String>,
+) -> StepRegistry {
     let mut registry = StepRegistry::new();
 
     registry.register(Box::new(FetchHtmlStep::new(client.clone())));
@@ -39,11 +43,9 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(client: C) 
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
     // Create AI client for auto-tagging
-    // CLI doesn't have user context, so we pass empty tags
-    // The step will succeed with empty suggestions
     let ai_client: Arc<dyn AiClient> =
         Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set in cli.env"));
-    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, vec![])));
+    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
 
     registry.register(Box::new(EnrichGeneratePhotoStep));
 

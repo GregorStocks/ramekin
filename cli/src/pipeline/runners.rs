@@ -109,11 +109,13 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
 /// Run all pipeline steps for a URL using the generic pipeline infrastructure.
 ///
 /// Takes an `Arc<CachingClient>` for shared ownership across pipeline steps.
+/// User tags are passed to the auto-tag step for evaluation.
 pub async fn run_all_steps(
     url: &str,
     client: Arc<CachingClient>,
     run_dir: &Path,
     force_fetch: bool,
+    user_tags: Vec<String>,
 ) -> AllStepsResult {
     use super::build_registry;
 
@@ -161,8 +163,8 @@ pub async fn run_all_steps(
         "fetch_html"
     };
 
-    // Build the registry with the shared client
-    let registry = build_registry(client);
+    // Build the registry with the shared client and user tags
+    let registry = build_registry(client, user_tags);
 
     // Run the generic pipeline from the determined starting point
     let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
