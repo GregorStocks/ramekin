@@ -34,6 +34,7 @@ impl PipelineStep for FetchImagesStep {
         let extract_output = ctx.outputs.get_output("extract_recipe");
         if extract_output.is_none() {
             return StepResult {
+                step_name: FetchImagesStepMeta::NAME.to_string(),
                 success: false,
                 output: serde_json::Value::Null,
                 error: Some("extract_recipe output not found".to_string()),
@@ -44,6 +45,7 @@ impl PipelineStep for FetchImagesStep {
 
         // Pass through - image fetching not implemented in CLI
         StepResult {
+            step_name: FetchImagesStepMeta::NAME.to_string(),
             success: true,
             output: json!({
                 "images_fetched": 0,
@@ -76,6 +78,7 @@ impl PipelineStep for SaveRecipeStep {
             Some(o) => o,
             None => {
                 return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some("extract_recipe output not found".to_string()),
@@ -90,6 +93,7 @@ impl PipelineStep for SaveRecipeStep {
             Ok(d) => d,
             Err(e) => {
                 return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some(format!("Failed to parse extract output: {}", e)),
@@ -106,6 +110,7 @@ impl PipelineStep for SaveRecipeStep {
         };
 
         StepResult {
+            step_name: SaveRecipeStepMeta::NAME.to_string(),
             success: true,
             output: serde_json::to_value(&save_output).unwrap_or_default(),
             error: None,

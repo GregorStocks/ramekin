@@ -41,6 +41,7 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchHtmlStep<C> {
 
         match self.client.fetch_html(ctx.url).await {
             Ok(html) => StepResult {
+                step_name: Self::NAME.to_string(),
                 success: true,
                 output: json!({ "html": html }),
                 error: None,
@@ -48,6 +49,7 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchHtmlStep<C> {
                 next_step: Some("extract_recipe".to_string()),
             },
             Err(e) => StepResult {
+                step_name: Self::NAME.to_string(),
                 success: false,
                 output: serde_json::Value::Null,
                 error: Some(e.to_string()),

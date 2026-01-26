@@ -34,6 +34,7 @@ impl PipelineStep for EnrichGeneratePhotoStep {
         // TODO: Implement actual AI photo generation
         // For now, always fail (but continues_on_failure means pipeline continues)
         StepResult {
+            step_name: Self::NAME.to_string(),
             success: false,
             output: json!({ "success": false }),
             error: Some("Photo generation not implemented".to_string()),

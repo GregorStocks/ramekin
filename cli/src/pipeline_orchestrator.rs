@@ -502,20 +502,32 @@ fn update_results(
         FinalStatus::FailedAtSave => results.failed_at_save += 1,
     }
 
-    // Update extraction method stats if we have them
-    if let Some(stats) = extraction_stats {
+    // Update extraction method stats
+    // Count urls_with_html based on whether fetch succeeded (not just when extraction succeeds)
+    let fetch_succeeded = steps
+        .iter()
+        .any(|s| s.step == PipelineStep::FetchHtml && s.success);
+
+    if fetch_succeeded {
         results.extraction_method_stats.urls_with_html += 1;
 
-        if stats.jsonld_success {
-            results.extraction_method_stats.jsonld_success += 1;
-        }
-        if stats.microdata_success {
-            results.extraction_method_stats.microdata_success += 1;
-        }
-        if stats.jsonld_success && stats.microdata_success {
-            results.extraction_method_stats.both_success += 1;
-        }
-        if !stats.jsonld_success && !stats.microdata_success {
+        if let Some(stats) = extraction_stats {
+            // We have extraction stats - count which methods worked
+            if stats.jsonld_success {
+                results.extraction_method_stats.jsonld_success += 1;
+            }
+            if stats.microdata_success {
+                results.extraction_method_stats.microdata_success += 1;
+            }
+            if stats.jsonld_success && stats.microdata_success {
+                results.extraction_method_stats.both_success += 1;
+            }
+            if !stats.jsonld_success && !stats.microdata_success {
+                results.extraction_method_stats.neither_success += 1;
+            }
+        } else {
+            // Fetch succeeded but no extraction stats - means extraction failed
+            // This counts as "neither method succeeded"
             results.extraction_method_stats.neither_success += 1;
         }
     }

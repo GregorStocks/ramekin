@@ -34,6 +34,7 @@ impl PipelineStep for EnrichAutoTagStep {
         // TODO: Implement actual AI auto-tagging
         // For now, always fail (but continues_on_failure means pipeline continues)
         StepResult {
+            step_name: Self::NAME.to_string(),
             success: false,
             output: json!({ "success": false }),
             error: Some("Auto-tagging not implemented".to_string()),

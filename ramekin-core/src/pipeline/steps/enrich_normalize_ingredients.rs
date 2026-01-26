@@ -34,6 +34,7 @@ impl PipelineStep for EnrichNormalizeIngredientsStep {
         // TODO: Implement actual AI ingredient normalization
         // For now, always fail (but continues_on_failure means pipeline continues)
         StepResult {
+            step_name: Self::NAME.to_string(),
             success: false,
             output: json!({ "success": false }),
             error: Some("Ingredient normalization not implemented".to_string()),
