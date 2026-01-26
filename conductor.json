@@ -2,7 +2,7 @@
   "scripts": {
     "setup": "./scripts/conductor-setup.sh",
     "run": "make dev-headless",
-    "archive": "make dev-down"
+    "archive": "./scripts/conductor-shutdown.sh"
   },
   "runScriptMode": "nonconcurrent"
 }
