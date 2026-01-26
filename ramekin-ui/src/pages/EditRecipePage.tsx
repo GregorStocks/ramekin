@@ -1,44 +1,10 @@
-import { createSignal, Show, Index, For, onMount, onCleanup } from "solid-js";
+import { createSignal, Show, onMount } from "solid-js";
 import { createStore, reconcile } from "solid-js/store";
 import { useParams, useNavigate, A } from "@solidjs/router";
 import { useAuth } from "../context/AuthContext";
-import TagInput from "../components/TagInput";
-import StarRating from "../components/StarRating";
+import RecipeForm from "../components/RecipeForm";
+import { extractApiError } from "../utils/recipeFormHelpers";
 import type { Ingredient, RecipeResponse } from "ramekin-client";
-
-function PhotoThumbnail(props: {
-  photoId: string;
-  token: string;
-  onRemove: () => void;
-}) {
-  const [src, setSrc] = createSignal<string | null>(null);
-
-  onMount(async () => {
-    const response = await fetch(`/api/photos/${props.photoId}`, {
-      headers: { Authorization: `Bearer ${props.token}` },
-    });
-    if (response.ok) {
-      const blob = await response.blob();
-      setSrc(URL.createObjectURL(blob));
-    }
-  });
-
-  onCleanup(() => {
-    const url = src();
-    if (url) URL.revokeObjectURL(url);
-  });
-
-  return (
-    <div class="photo-thumbnail">
-      <Show when={src()} fallback={<div class="photo-loading">Loading...</div>}>
-        <img src={src()!} alt="Recipe photo" />
-      </Show>
-      <button type="button" class="photo-remove" onClick={props.onRemove}>
-        &times;
-      </button>
-    </div>
-  );
-}
 
 export default function EditRecipePage() {
   const params = useParams<{ id: string }>();
@@ -111,22 +77,6 @@ export default function EditRecipePage() {
     loadRecipe();
   });
 
-  const addIngredient = () => {
-    setIngredients(ingredients.length, { item: "", amount: "", unit: "" });
-  };
-
-  const removeIngredient = (index: number) => {
-    setIngredients((ings) => ings.filter((_, i) => i !== index));
-  };
-
-  const updateIngredient = (
-    index: number,
-    field: keyof Ingredient,
-    value: string,
-  ) => {
-    setIngredients(index, field, value);
-  };
-
   const handlePhotoUpload = async (e: Event) => {
     const input = e.target as HTMLInputElement;
     const file = input.files?.[0];
@@ -138,27 +88,8 @@ export default function EditRecipePage() {
       const response = await getPhotosApi().upload({ file });
       setPhotoIds([...photoIds(), response.id]);
     } catch (err) {
-      // The generated client throws ResponseError with a response property
-      const response =
-        err instanceof Response
-          ? err
-          : err &&
-              typeof err === "object" &&
-              "response" in err &&
-              err.response instanceof Response
-            ? err.response
-            : null;
-
-      if (response) {
-        try {
-          const body = await response.json();
-          setError(body.error || "Failed to upload photo");
-        } catch {
-          setError(`Failed to upload photo (${response.status})`);
-        }
-      } else {
-        setError("Failed to upload photo");
-      }
+      const errorMessage = await extractApiError(err, "Failed to upload photo");
+      setError(errorMessage);
     } finally {
       setUploading(false);
       input.value = "";
@@ -203,12 +134,11 @@ export default function EditRecipePage() {
 
       navigate(`/recipes/${params.id}`);
     } catch (err) {
-      if (err instanceof Response) {
-        const body = await err.json();
-        setError(body.error || "Failed to update recipe");
-      } else {
-        setError("Failed to update recipe");
-      }
+      const errorMessage = await extractApiError(
+        err,
+        "Failed to update recipe",
+      );
+      setError(errorMessage);
     } finally {
       setSaving(false);
     }
@@ -232,272 +162,49 @@ export default function EditRecipePage() {
       </Show>
 
       <Show when={!loading()}>
-        <form onSubmit={handleSubmit}>
-          <div class="form-group">
-            <label for="title">Title *</label>
-            <input
-              id="title"
-              type="text"
-              value={title()}
-              onInput={(e) => setTitle(e.currentTarget.value)}
-              required
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="description">Description</label>
-            <textarea
-              id="description"
-              value={description()}
-              onInput={(e) => setDescription(e.currentTarget.value)}
-              rows={2}
-            />
-          </div>
-
-          <div class="form-row-4">
-            <div class="form-group">
-              <label for="servings">Servings</label>
-              <input
-                id="servings"
-                type="text"
-                value={servings()}
-                onInput={(e) => setServings(e.currentTarget.value)}
-                placeholder="e.g., 4"
-              />
-            </div>
-            <div class="form-group">
-              <label for="prepTime">Prep Time</label>
-              <input
-                id="prepTime"
-                type="text"
-                value={prepTime()}
-                onInput={(e) => setPrepTime(e.currentTarget.value)}
-                placeholder="e.g., 15 min"
-              />
-            </div>
-            <div class="form-group">
-              <label for="cookTime">Cook Time</label>
-              <input
-                id="cookTime"
-                type="text"
-                value={cookTime()}
-                onInput={(e) => setCookTime(e.currentTarget.value)}
-                placeholder="e.g., 30 min"
-              />
-            </div>
-            <div class="form-group">
-              <label for="totalTime">Total Time</label>
-              <input
-                id="totalTime"
-                type="text"
-                value={totalTime()}
-                onInput={(e) => setTotalTime(e.currentTarget.value)}
-                placeholder="e.g., 45 min"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group-rating">
-              <label>Rating</label>
-              <div class="rating-input-wrapper">
-                <StarRating rating={rating()} onRate={setRating} />
-                <Show when={rating() !== null}>
-                  <button
-                    type="button"
-                    class="rating-clear"
-                    onClick={() => setRating(null)}
-                  >
-                    Clear
-                  </button>
-                </Show>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="difficulty">Difficulty</label>
-              <input
-                id="difficulty"
-                type="text"
-                value={difficulty()}
-                onInput={(e) => setDifficulty(e.currentTarget.value)}
-                placeholder="e.g., Easy, Medium, Hard"
-              />
-            </div>
-          </div>
-
-          <div class="form-section">
-            <div class="section-header">
-              <label>Ingredients</label>
-              <button
-                type="button"
-                class="btn btn-small"
-                onClick={addIngredient}
-              >
-                + Add
-              </button>
-            </div>
-            <Index each={ingredients}>
-              {(ing, index) => (
-                <div class="ingredient-row">
-                  <input
-                    type="text"
-                    placeholder="Amount"
-                    value={ing().amount || ""}
-                    onInput={(e) =>
-                      updateIngredient(index, "amount", e.currentTarget.value)
-                    }
-                    class="input-amount"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Unit"
-                    value={ing().unit || ""}
-                    onInput={(e) =>
-                      updateIngredient(index, "unit", e.currentTarget.value)
-                    }
-                    class="input-unit"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Ingredient *"
-                    value={ing().item}
-                    onInput={(e) =>
-                      updateIngredient(index, "item", e.currentTarget.value)
-                    }
-                    class="input-item"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Note"
-                    value={ing().note || ""}
-                    onInput={(e) =>
-                      updateIngredient(index, "note", e.currentTarget.value)
-                    }
-                    class="input-note"
-                  />
-                  <button
-                    type="button"
-                    class="btn btn-small btn-remove"
-                    onClick={() => removeIngredient(index)}
-                  >
-                    &times;
-                  </button>
-                </div>
-              )}
-            </Index>
-          </div>
-
-          <div class="form-group">
-            <label for="instructions">Instructions *</label>
-            <textarea
-              id="instructions"
-              value={instructions()}
-              onInput={(e) => setInstructions(e.currentTarget.value)}
-              rows={8}
-              required
-            />
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="sourceUrl">Source URL</label>
-              <input
-                id="sourceUrl"
-                type="url"
-                value={sourceUrl()}
-                onInput={(e) => setSourceUrl(e.currentTarget.value)}
-                placeholder="https://..."
-              />
-            </div>
-            <div class="form-group">
-              <label for="sourceName">Source Name</label>
-              <input
-                id="sourceName"
-                type="text"
-                value={sourceName()}
-                onInput={(e) => setSourceName(e.currentTarget.value)}
-                placeholder="e.g., Grandma's cookbook"
-              />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="tags">Tags</label>
-            <TagInput
-              id="tags"
-              tags={tags}
-              onTagsChange={setTags}
-              placeholder="e.g., dinner, easy, vegetarian"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="notes">Notes</label>
-            <textarea
-              id="notes"
-              value={notes()}
-              onInput={(e) => setNotes(e.currentTarget.value)}
-              rows={3}
-              placeholder="Additional notes, tips, or variations..."
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="nutritionalInfo">Nutritional Info</label>
-            <textarea
-              id="nutritionalInfo"
-              value={nutritionalInfo()}
-              onInput={(e) => setNutritionalInfo(e.currentTarget.value)}
-              rows={2}
-              placeholder="Calories, protein, carbs, etc."
-            />
-          </div>
-
-          <div class="form-section">
-            <div class="section-header">
-              <label>Photos</label>
-              <label class="btn btn-small">
-                {uploading() ? "Uploading..." : "+ Add Photo"}
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handlePhotoUpload}
-                  disabled={uploading()}
-                  style={{ display: "none" }}
-                />
-              </label>
-            </div>
-            <Show when={photoIds().length > 0}>
-              <div class="photo-grid">
-                <For each={photoIds()}>
-                  {(photoId) => (
-                    <PhotoThumbnail
-                      photoId={photoId}
-                      token={token() ?? ""}
-                      onRemove={() => removePhoto(photoId)}
-                    />
-                  )}
-                </For>
-              </div>
-            </Show>
-            <Show when={photoIds().length === 0}>
-              <p class="empty-photos">No photos yet</p>
-            </Show>
-          </div>
-
-          <Show when={error()}>
-            <div class="error">{error()}</div>
-          </Show>
-
-          <div class="form-actions">
-            <A href={`/recipes/${params.id}`} class="btn">
-              Cancel
-            </A>
-            <button type="submit" class="btn btn-primary" disabled={saving()}>
-              {saving() ? "Saving..." : "Save Changes"}
-            </button>
-          </div>
-        </form>
+        <RecipeForm
+          title={title}
+          setTitle={setTitle}
+          description={description}
+          setDescription={setDescription}
+          instructions={instructions}
+          setInstructions={setInstructions}
+          sourceUrl={sourceUrl}
+          setSourceUrl={setSourceUrl}
+          sourceName={sourceName}
+          setSourceName={setSourceName}
+          tags={tags}
+          setTags={setTags}
+          servings={servings}
+          setServings={setServings}
+          prepTime={prepTime}
+          setPrepTime={setPrepTime}
+          cookTime={cookTime}
+          setCookTime={setCookTime}
+          totalTime={totalTime}
+          setTotalTime={setTotalTime}
+          rating={rating}
+          setRating={setRating}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
+          nutritionalInfo={nutritionalInfo}
+          setNutritionalInfo={setNutritionalInfo}
+          notes={notes}
+          setNotes={setNotes}
+          ingredients={ingredients}
+          setIngredients={setIngredients}
+          photoIds={photoIds}
+          onPhotoUpload={handlePhotoUpload}
+          onPhotoRemove={removePhoto}
+          uploading={uploading}
+          saving={saving}
+          error={error}
+          onSubmit={handleSubmit}
+          submitLabel="Save Changes"
+          submitLabelSaving="Saving..."
+          cancelHref={`/recipes/${params.id}`}
+          token={token}
+        />
       </Show>
     </div>
   );
