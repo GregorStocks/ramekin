@@ -9,20 +9,30 @@ use async_trait::async_trait;
 use chrono::Utc;
 use serde_json::json;
 
+use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::{
     steps::{FetchImagesStepMeta, SaveRecipeStepMeta},
     PipelineStep, StepContext, StepMetadata, StepResult,
 };
-use ramekin_core::ExtractRecipeOutput;
+use ramekin_core::{fetch_and_validate_image, ExtractRecipeOutput, FailedImageFetch, RawRecipe};
 
 /// CLI implementation of FetchImages step.
 ///
-/// Currently a pass-through that doesn't actually fetch images -
-/// image fetching is not yet implemented in the CLI.
-pub struct FetchImagesStep;
+/// Fetches images from URLs found in the extracted recipe and caches them.
+/// Uses the same validation logic as the server (format and size checks).
+pub struct FetchImagesStep<C: HttpClient> {
+    client: C,
+}
+
+impl<C: HttpClient> FetchImagesStep<C> {
+    /// Create a new FetchImagesStep with the given HTTP client.
+    pub fn new(client: C) -> Self {
+        Self { client }
+    }
+}
 
 #[async_trait]
-impl PipelineStep for FetchImagesStep {
+impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
     fn metadata(&self) -> StepMetadata {
         FetchImagesStepMeta::metadata()
     }
@@ -30,27 +40,66 @@ impl PipelineStep for FetchImagesStep {
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        // Get extract output to pass through
-        let extract_output = ctx.outputs.get_output("extract_recipe");
-        if extract_output.is_none() {
-            return StepResult {
-                step_name: FetchImagesStepMeta::NAME.to_string(),
-                success: false,
-                output: serde_json::Value::Null,
-                error: Some("extract_recipe output not found".to_string()),
-                duration_ms: start.elapsed().as_millis() as u64,
-                next_step: None,
-            };
+        // Get extract output to find image URLs
+        let extract_output = match ctx.outputs.get_output("extract_recipe") {
+            Some(o) => o,
+            None => {
+                return StepResult {
+                    step_name: FetchImagesStepMeta::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some("extract_recipe output not found".to_string()),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
+
+        // Parse raw_recipe to get image URLs
+        let raw_recipe: RawRecipe = match extract_output
+            .get("raw_recipe")
+            .and_then(|v| serde_json::from_value(v.clone()).ok())
+        {
+            Some(r) => r,
+            None => {
+                return StepResult {
+                    step_name: FetchImagesStepMeta::NAME.to_string(),
+                    success: false,
+                    output: serde_json::Value::Null,
+                    error: Some("No raw_recipe in extract output".to_string()),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: None,
+                };
+            }
+        };
+
+        // Fetch images (only the first one, matching server behavior)
+        let mut fetched_urls = Vec::new();
+        let mut failed_urls = Vec::new();
+
+        if let Some(url) = raw_recipe.image_urls.first() {
+            match fetch_and_validate_image(&self.client, url).await {
+                Ok(_fetched) => {
+                    // Image is now available (either from cache or freshly fetched)
+                    fetched_urls.push(url.clone());
+                }
+                Err(e) => {
+                    tracing::warn!("Failed to fetch image {}: {}", url, e);
+                    failed_urls.push(FailedImageFetch {
+                        url: url.clone(),
+                        error: e,
+                    });
+                }
+            }
         }
 
-        // Pass through - image fetching not implemented in CLI
         StepResult {
             step_name: FetchImagesStepMeta::NAME.to_string(),
-            success: true,
+            success: true, // Image fetch failures don't fail the pipeline
             output: json!({
-                "images_fetched": 0,
-                "skipped": true,
-                "reason": "Image fetching not implemented in CLI"
+                "fetched_urls": fetched_urls,
+                "failed_urls": failed_urls,
+                "images_fetched": fetched_urls.len()
             }),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,

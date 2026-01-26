@@ -43,5 +43,8 @@ tracing = "0.1"
 # UUIDs for photo IDs
 uuid = { version = "1.18", features = ["v4", "serde"] }
 
+# Image format detection and validation
+image = "0.25"
+
 [build-dependencies]
 uuid = { version = "1.18", features = ["v4"] }

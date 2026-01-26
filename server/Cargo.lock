@@ -2381,6 +2381,7 @@ dependencies = [
  "chrono",
  "dashmap",
  "dirs",
+ "image",
  "reqwest 0.13.1",
  "scraper",
  "serde",

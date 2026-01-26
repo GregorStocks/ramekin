@@ -1,14 +1,10 @@
-use image::ImageFormat;
-use image::ImageReader;
 use std::io::Cursor;
 
-pub const ALLOWED_FORMATS: &[ImageFormat] = &[
-    ImageFormat::Jpeg,
-    ImageFormat::Png,
-    ImageFormat::Gif,
-    ImageFormat::WebP,
-];
-pub const MAX_FILE_SIZE: usize = 10 * 1024 * 1024; // 10MB
+use image::{ImageFormat, ImageReader};
+
+// Re-export shared constants from ramekin-core for use by other server modules
+pub use ramekin_core::image::{ALLOWED_FORMATS, MAX_FILE_SIZE};
+
 pub const THUMBNAIL_SIZE: u32 = 200;
 
 /// Process an image: detect format from magic bytes, validate it's allowed, and generate thumbnail.

@@ -198,9 +198,13 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Initialize HTTP client with caching
     // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
     // and handles rate limiting internally
+    // Use never_network mode unless force_fetch is requested - this means:
+    // - Cached responses are used directly without network validation
+    // - Uncached URLs will error instead of fetching (use --force-fetch to populate cache)
     let client = Arc::new(
         CachingClient::builder()
             .rate_limit_ms(0) // We handle delay ourselves between URLs
+            .never_network(!config.force_fetch)
             .build()
             .context("Failed to create HTTP client")?,
     );

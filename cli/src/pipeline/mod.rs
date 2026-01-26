@@ -24,13 +24,13 @@ use steps::{FetchImagesStep, SaveRecipeStep};
 
 /// Build a step registry with all CLI pipeline steps.
 ///
-/// The HTTP client is injected for the fetch_html step.
-pub fn build_registry<C: HttpClient + Send + Sync + 'static>(client: C) -> StepRegistry {
+/// The HTTP client is injected for fetch_html and fetch_images steps.
+pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(client: C) -> StepRegistry {
     let mut registry = StepRegistry::new();
 
-    registry.register(Box::new(FetchHtmlStep::new(client)));
+    registry.register(Box::new(FetchHtmlStep::new(client.clone())));
     registry.register(Box::new(ExtractRecipeStep));
-    registry.register(Box::new(FetchImagesStep));
+    registry.register(Box::new(FetchImagesStep::new(client)));
     registry.register(Box::new(SaveRecipeStep));
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
     registry.register(Box::new(EnrichAutoTagStep));
