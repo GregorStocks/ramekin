@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-step pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -139,10 +139,6 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
-
-pipeline-step: ## Run a single pipeline step (STEP=fetch_html|extract_recipe|save_recipe URL=...)
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-step --step $(STEP) --url "$(URL)" \
-		$(if $(FORCE_FETCH),--force-fetch,)
 
 pipeline-test: ## Run pipeline for test URLs (uses HTML cache)
 	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \

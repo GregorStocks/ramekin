@@ -6,7 +6,10 @@ use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
 use crate::schema::{scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, SaveRecipeStepMeta};
+use ramekin_core::pipeline::steps::{
+    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
+    FetchImagesStepMeta, SaveRecipeStepMeta,
+};
 use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
 use ramekin_core::{FetchHtmlOutput, BUILD_ID};
 use std::env;
@@ -16,7 +19,7 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{EnrichStep, FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
+use steps::{FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
@@ -95,7 +98,9 @@ pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
     registry.register(Box::new(SaveRecipeStep::new(pool, user_id)));
-    registry.register(Box::new(EnrichStep));
+    registry.register(Box::new(EnrichNormalizeIngredientsStep));
+    registry.register(Box::new(EnrichAutoTagStep));
+    registry.register(Box::new(EnrichGeneratePhotoStep));
     registry
 }
 
@@ -531,7 +536,7 @@ async fn execute_step_with_tracing(
                     }
                 }
             }
-            "enrich" => {
+            "enrich_normalize_ingredients" | "enrich_auto_tag" | "enrich_generate_photo" => {
                 // Get recipe_id from save_recipe output
                 if let Some(save_output) = store.get_output("save_recipe") {
                     if let Some(recipe_id) = save_output.get("recipe_id").and_then(|v| v.as_str()) {

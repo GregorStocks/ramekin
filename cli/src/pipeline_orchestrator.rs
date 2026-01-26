@@ -464,7 +464,9 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
                     // FetchImages is skipped in CLI, but handle it for completeness
                     return FinalStatus::FailedAtSave;
                 }
-                PipelineStep::Enrich => {
+                PipelineStep::EnrichNormalizeIngredients
+                | PipelineStep::EnrichAutoTag
+                | PipelineStep::EnrichGeneratePhoto => {
                     // Enrichment failures are expected - don't fail the job
                     // Continue to check remaining steps
                 }

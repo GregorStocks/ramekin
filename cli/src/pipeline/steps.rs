@@ -115,7 +115,7 @@ impl PipelineStep for SaveRecipeStep {
             output: serde_json::to_value(&save_output).unwrap_or_default(),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("enrich".to_string()),
+            next_step: Some("enrich_normalize_ingredients".to_string()),
         }
     }
 }

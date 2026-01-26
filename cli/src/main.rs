@@ -12,7 +12,7 @@ use anyhow::Result;
 use clap::{Parser, Subcommand, ValueEnum};
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::testing_api;
-use std::path::{Path, PathBuf};
+use std::path::PathBuf;
 use tracing_subscriber::EnvFilter;
 
 /// What to do when HTML fetch fails
@@ -166,21 +166,6 @@ enum Commands {
         #[arg(long)]
         merge: bool,
     },
-    /// Run a single pipeline step for a URL
-    PipelineStep {
-        /// The step to run: fetch_html, extract_recipe, or save_recipe
-        #[arg(long)]
-        step: String,
-        /// URL to process
-        #[arg(long)]
-        url: String,
-        /// Run directory for artifacts
-        #[arg(long, default_value = "data/pipeline-runs/adhoc")]
-        run_dir: PathBuf,
-        /// Re-fetch HTML even if cached
-        #[arg(long)]
-        force_fetch: bool,
-    },
     /// Run the full pipeline for all test URLs
     PipelineTest {
         /// Path to test-urls.json
@@ -310,14 +295,6 @@ async fn main() -> Result<()> {
             generate_test_urls::generate_test_urls(&output, num_sites, urls_per_site, merge)
                 .await?;
         }
-        Commands::PipelineStep {
-            step,
-            url,
-            run_dir,
-            force_fetch,
-        } => {
-            run_pipeline_step(&step, &url, &run_dir, force_fetch).await?;
-        }
         Commands::PipelineTest {
             test_urls,
             output_dir,
@@ -371,92 +348,6 @@ async fn ping(server: &str) -> Result<()> {
     let response = testing_api::unauthed_ping(&config).await?;
 
     println!("{}", response.message);
-
-    Ok(())
-}
-
-async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: bool) -> Result<()> {
-    use ramekin_core::{CachingClient, PipelineStep};
-
-    let step = pipeline::parse_pipeline_step(step)?;
-    let client = CachingClient::new()?;
-
-    // Create run directory
-    std::fs::create_dir_all(run_dir)?;
-
-    let result = match step {
-        PipelineStep::FetchHtml => pipeline::run_fetch_html(url, &client, force_fetch).await,
-        PipelineStep::ExtractRecipe => {
-            // Ensure HTML is fetched first
-            if !client.is_cached(url) && !force_fetch {
-                tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
-                if !fetch_result.success {
-                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
-                    return Ok(());
-                }
-            }
-            pipeline::run_extract_recipe(url, &client, run_dir)
-        }
-        PipelineStep::SaveRecipe => {
-            // Ensure previous steps are done
-            if !client.is_cached(url) {
-                tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
-                if !fetch_result.success {
-                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
-                    return Ok(());
-                }
-            }
-            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
-            if !extract_result.success {
-                tracing::warn!(error = ?extract_result.error, "Extract failed");
-                return Ok(());
-            }
-            pipeline::run_save_recipe(url, run_dir)
-        }
-        PipelineStep::FetchImages => {
-            // FetchImages is DB-specific, skip in CLI
-            return Err(anyhow::anyhow!(
-                "fetch_images step is DB-specific and not available in CLI"
-            ));
-        }
-        PipelineStep::Enrich => {
-            // Ensure previous steps are done
-            if !client.is_cached(url) {
-                tracing::debug!("HTML not cached, fetching first...");
-                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
-                if !fetch_result.success {
-                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
-                    return Ok(());
-                }
-            }
-            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
-            if !extract_result.success {
-                tracing::warn!(error = ?extract_result.error, "Extract failed");
-                return Ok(());
-            }
-            let save_result = pipeline::run_save_recipe(url, run_dir);
-            if !save_result.success {
-                tracing::warn!(error = ?save_result.error, "Save failed");
-                return Ok(());
-            }
-            pipeline::run_enrich(url, run_dir)
-        }
-    };
-
-    if result.success {
-        println!(
-            "Step {} succeeded in {}ms",
-            step.as_str(),
-            result.duration_ms
-        );
-        if result.cached {
-            println!("(used cached HTML)");
-        }
-    } else {
-        println!("Step {} failed: {:?}", step.as_str(), result.error);
-    }
 
     Ok(())
 }

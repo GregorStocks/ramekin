@@ -1,15 +1,12 @@
 //! CLI step runner functions for the pipeline orchestrator.
 
-use std::fs;
 use std::path::Path;
 use std::sync::Arc;
 use std::time::Instant;
 
-use anyhow::{anyhow, Result};
-use chrono::Utc;
 use serde::{Deserialize, Serialize};
 
-use ramekin_core::http::{slugify_url, CachingClient, HttpClient};
+use ramekin_core::http::{CachingClient, HttpClient};
 use ramekin_core::pipeline::{run_pipeline, StepOutputStore};
 pub use ramekin_core::PipelineStep;
 
@@ -29,13 +26,6 @@ pub struct StepResult {
     pub cached: bool,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct StepTiming {
-    pub started_at: String,
-    pub completed_at: String,
-    pub duration_ms: u64,
-}
-
 /// Stats about which extraction methods succeeded.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ExtractionStats {
@@ -49,20 +39,6 @@ pub struct ExtractionStats {
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
-}
-
-// ============================================================================
-// Step parsing
-// ============================================================================
-
-/// Parse a pipeline step from string, returning an error for invalid steps.
-pub fn parse_pipeline_step(s: &str) -> Result<PipelineStep> {
-    PipelineStep::from_str(s).ok_or_else(|| {
-        anyhow!(
-            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich",
-            s
-        )
-    })
 }
 
 // ============================================================================
@@ -123,154 +99,6 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
             error: Some(e.to_string()),
             cached: false,
         },
-    }
-}
-
-/// Run the extract_recipe step for a URL.
-/// Requires HTML to be cached first.
-pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> StepResult {
-    let start = Instant::now();
-    let slug = slugify_url(url);
-    let output_dir = run_dir.join("urls").join(&slug).join("extract_recipe");
-
-    // Get HTML from cache
-    let html = match client.get_cached_html(url) {
-        Some(html) => html,
-        None => {
-            let duration_ms = start.elapsed().as_millis() as u64;
-            return StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: false,
-                duration_ms,
-                error: Some("HTML not cached - run fetch_html first".to_string()),
-                cached: false,
-            };
-        }
-    };
-
-    // Extract recipe with stats
-    match ramekin_core::extract_recipe_with_stats(&html, url) {
-        Ok(output) => {
-            let duration_ms = start.elapsed().as_millis() as u64;
-
-            // Save output
-            if let Err(e) = save_extract_output(&output_dir, &output, duration_ms) {
-                return StepResult {
-                    step: PipelineStep::ExtractRecipe,
-                    success: false,
-                    duration_ms,
-                    error: Some(format!("Failed to save output: {}", e)),
-                    cached: false,
-                };
-            }
-
-            StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: true,
-                duration_ms,
-                error: None,
-                cached: false,
-            }
-        }
-        Err(e) => {
-            let duration_ms = start.elapsed().as_millis() as u64;
-            let error_msg = e.to_string();
-
-            // Save error
-            let _ = save_step_error(&output_dir, &error_msg, duration_ms);
-
-            StepResult {
-                step: PipelineStep::ExtractRecipe,
-                success: false,
-                duration_ms,
-                error: Some(error_msg),
-                cached: false,
-            }
-        }
-    }
-}
-
-/// Run the save_recipe step for a URL.
-/// Requires extract_recipe to have run first.
-pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
-    let start = Instant::now();
-    let slug = slugify_url(url);
-    let extract_dir = run_dir.join("urls").join(&slug).join("extract_recipe");
-    let output_dir = run_dir.join("urls").join(&slug).join("save_recipe");
-
-    // Load extract output
-    let extract_output_path = extract_dir.join("output.json");
-    let extract_output: ramekin_core::ExtractRecipeOutput =
-        match fs::read_to_string(&extract_output_path) {
-            Ok(content) => match serde_json::from_str(&content) {
-                Ok(output) => output,
-                Err(e) => {
-                    let duration_ms = start.elapsed().as_millis() as u64;
-                    return StepResult {
-                        step: PipelineStep::SaveRecipe,
-                        success: false,
-                        duration_ms,
-                        error: Some(format!("Failed to parse extract output: {}", e)),
-                        cached: false,
-                    };
-                }
-            },
-            Err(_) => {
-                let duration_ms = start.elapsed().as_millis() as u64;
-                return StepResult {
-                    step: PipelineStep::SaveRecipe,
-                    success: false,
-                    duration_ms,
-                    error: Some("Extract output not found - run extract_recipe first".to_string()),
-                    cached: false,
-                };
-            }
-        };
-
-    let duration_ms = start.elapsed().as_millis() as u64;
-
-    // Save the recipe to disk
-    let save_output = ramekin_core::SaveRecipeOutput {
-        raw_recipe: extract_output.raw_recipe,
-        saved_at: Utc::now().to_rfc3339(),
-    };
-
-    if let Err(e) = save_save_output(&output_dir, &save_output, duration_ms) {
-        return StepResult {
-            step: PipelineStep::SaveRecipe,
-            success: false,
-            duration_ms,
-            error: Some(format!("Failed to save output: {}", e)),
-            cached: false,
-        };
-    }
-
-    StepResult {
-        step: PipelineStep::SaveRecipe,
-        success: true,
-        duration_ms,
-        error: None,
-        cached: false,
-    }
-}
-
-/// Run the enrich step for a URL.
-/// Currently a no-op that always fails - enrichment is expected to be unreliable.
-pub fn run_enrich(url: &str, run_dir: &Path) -> StepResult {
-    let start = Instant::now();
-    let slug = slugify_url(url);
-    let output_dir = run_dir.join("urls").join(&slug).join("enrich");
-    let duration_ms = start.elapsed().as_millis() as u64;
-
-    let error_msg = "Enrichment not implemented (no-op stub)".to_string();
-    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
-
-    StepResult {
-        step: PipelineStep::Enrich,
-        success: false,
-        duration_ms,
-        error: Some(error_msg),
-        cached: false,
     }
 }
 
@@ -406,80 +234,6 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
 }
 
 // ============================================================================
-// Output saving helpers
-// ============================================================================
-
-fn save_extract_output(
-    output_dir: &Path,
-    output: &ramekin_core::ExtractRecipeOutput,
-    duration_ms: u64,
-) -> Result<()> {
-    fs::create_dir_all(output_dir)?;
-
-    let json = serde_json::to_string_pretty(&output)?;
-    fs::write(output_dir.join("output.json"), json)?;
-
-    let timing = StepTiming {
-        started_at: Utc::now().to_rfc3339(),
-        completed_at: Utc::now().to_rfc3339(),
-        duration_ms,
-    };
-    let timing_json = serde_json::to_string_pretty(&timing)?;
-    fs::write(output_dir.join("timing.json"), timing_json)?;
-
-    // Remove any existing error file
-    let error_path = output_dir.join("error.txt");
-    if error_path.exists() {
-        let _ = fs::remove_file(error_path);
-    }
-
-    Ok(())
-}
-
-fn save_save_output(
-    output_dir: &Path,
-    save_output: &ramekin_core::SaveRecipeOutput,
-    duration_ms: u64,
-) -> Result<()> {
-    fs::create_dir_all(output_dir)?;
-
-    let json = serde_json::to_string_pretty(&save_output)?;
-    fs::write(output_dir.join("output.json"), json)?;
-
-    let timing = StepTiming {
-        started_at: Utc::now().to_rfc3339(),
-        completed_at: Utc::now().to_rfc3339(),
-        duration_ms,
-    };
-    let timing_json = serde_json::to_string_pretty(&timing)?;
-    fs::write(output_dir.join("timing.json"), timing_json)?;
-
-    // Remove any existing error file
-    let error_path = output_dir.join("error.txt");
-    if error_path.exists() {
-        let _ = fs::remove_file(error_path);
-    }
-
-    Ok(())
-}
-
-fn save_step_error(output_dir: &Path, error: &str, duration_ms: u64) -> Result<()> {
-    fs::create_dir_all(output_dir)?;
-
-    fs::write(output_dir.join("error.txt"), error)?;
-
-    let timing = StepTiming {
-        started_at: Utc::now().to_rfc3339(),
-        completed_at: Utc::now().to_rfc3339(),
-        duration_ms,
-    };
-    let timing_json = serde_json::to_string_pretty(&timing)?;
-    fs::write(output_dir.join("timing.json"), timing_json)?;
-
-    Ok(())
-}
-
-// ============================================================================
 // Tests
 // ============================================================================
 
@@ -517,16 +271,18 @@ mod tests {
             PipelineStep::from_str("save_recipe"),
             Some(PipelineStep::SaveRecipe)
         );
-        assert_eq!(PipelineStep::from_str("enrich"), Some(PipelineStep::Enrich));
+        assert_eq!(
+            PipelineStep::from_str("enrich_normalize_ingredients"),
+            Some(PipelineStep::EnrichNormalizeIngredients)
+        );
+        assert_eq!(
+            PipelineStep::from_str("enrich_auto_tag"),
+            Some(PipelineStep::EnrichAutoTag)
+        );
+        assert_eq!(
+            PipelineStep::from_str("enrich_generate_photo"),
+            Some(PipelineStep::EnrichGeneratePhoto)
+        );
         assert_eq!(PipelineStep::from_str("invalid"), None);
-    }
-
-    #[test]
-    fn test_parse_pipeline_step() {
-        assert!(parse_pipeline_step("fetch_html").is_ok());
-        assert!(parse_pipeline_step("extract_recipe").is_ok());
-        assert!(parse_pipeline_step("save_recipe").is_ok());
-        assert!(parse_pipeline_step("enrich").is_ok());
-        assert!(parse_pipeline_step("invalid").is_err());
     }
 }
