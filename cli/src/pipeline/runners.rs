@@ -182,11 +182,6 @@ pub async fn run_all_steps(
             extraction_stats = extract_stats_from_output(&result.output);
         }
 
-        // Skip FetchImages in CLI results
-        if step == PipelineStep::FetchImages {
-            continue;
-        }
-
         step_results.push(StepResult {
             step,
             success: result.success,
