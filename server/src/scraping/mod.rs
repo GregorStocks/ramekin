@@ -2,10 +2,12 @@ mod output_store;
 pub mod steps;
 
 use crate::db::DbPool;
+use crate::distinct_tags_query;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
 use crate::schema::{scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
+use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
     FetchImagesStepMeta, SaveRecipeStepMeta,
@@ -89,6 +91,26 @@ pub fn is_host_allowed(url: &str) -> Result<(), ScrapeError> {
     Ok(())
 }
 
+/// Row type for the distinct tags query.
+#[derive(QueryableByName)]
+struct TagRow {
+    #[diesel(sql_type = diesel::sql_types::Text)]
+    tag: String,
+}
+
+/// Fetch user's existing tags from the database.
+fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let tags: Vec<TagRow> = distinct_tags_query!(user_id)
+        .load(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    Ok(tags.into_iter().map(|r| r.tag).collect())
+}
+
 /// Build a step registry for server-side pipeline execution.
 ///
 /// This creates all step implementations with the necessary resources (DB pool, user ID).
@@ -97,11 +119,51 @@ pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
     registry.register(Box::new(FetchHtmlStep));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
-    registry.register(Box::new(SaveRecipeStep::new(pool, user_id)));
+    registry.register(Box::new(SaveRecipeStep::new(pool.clone(), user_id)));
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
-    registry.register(Box::new(EnrichAutoTagStep));
+
+    // Create AI client and fetch user tags for auto-tagging
+    // If AI is not configured, we pass empty tags so the step succeeds with empty suggestions
+    let (ai_client, user_tags): (Arc<dyn AiClient>, Vec<String>) = match CachingAiClient::from_env()
+    {
+        Ok(client) => {
+            let tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
+                tracing::warn!("Failed to fetch user tags: {}", e);
+                vec![]
+            });
+            (Arc::new(client), tags)
+        }
+        Err(e) => {
+            tracing::info!(
+                "AI client not configured ({}), auto-tagging will be skipped",
+                e
+            );
+            // Pass empty tags so the step succeeds without calling AI
+            (Arc::new(NoOpAiClient), vec![])
+        }
+    };
+
+    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
     registry.register(Box::new(EnrichGeneratePhotoStep));
     registry
+}
+
+/// A no-op AI client that always fails. Used when AI is not configured.
+/// Note: We pass empty user_tags when using this, so the step never actually calls this.
+struct NoOpAiClient;
+
+#[async_trait::async_trait]
+impl AiClient for NoOpAiClient {
+    async fn complete(
+        &self,
+        _prompt_name: &str,
+        _prompt_version: &str,
+        _request: ramekin_core::ai::ChatRequest,
+    ) -> Result<ramekin_core::ai::ChatResponse, ramekin_core::ai::AiError> {
+        Err(ramekin_core::ai::AiError::Api(
+            "AI client not configured".to_string(),
+        ))
+    }
 }
 
 /// Create a new scrape job.

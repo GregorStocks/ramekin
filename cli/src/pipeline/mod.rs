@@ -10,6 +10,9 @@ mod runners;
 mod staging;
 mod steps;
 
+use std::sync::Arc;
+
+use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
@@ -25,6 +28,7 @@ use steps::{FetchImagesStep, SaveRecipeStep};
 /// Build a step registry with all CLI pipeline steps.
 ///
 /// The HTTP client is injected for the fetch_html step.
+/// The AI client is created from environment variables.
 pub fn build_registry<C: HttpClient + Send + Sync + 'static>(client: C) -> StepRegistry {
     let mut registry = StepRegistry::new();
 
@@ -33,7 +37,14 @@ pub fn build_registry<C: HttpClient + Send + Sync + 'static>(client: C) -> StepR
     registry.register(Box::new(FetchImagesStep));
     registry.register(Box::new(SaveRecipeStep));
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
-    registry.register(Box::new(EnrichAutoTagStep));
+
+    // Create AI client for auto-tagging
+    // CLI doesn't have user context, so we pass empty tags
+    // The step will succeed with empty suggestions
+    let ai_client: Arc<dyn AiClient> =
+        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set in cli.env"));
+    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, vec![])));
+
     registry.register(Box::new(EnrichGeneratePhotoStep));
 
     registry

@@ -141,7 +141,8 @@ generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
 pipeline-test: ## Run pipeline for test URLs (uses HTML cache)
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
@@ -149,13 +150,16 @@ pipeline-test: ## Run pipeline for test URLs (uses HTML cache)
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),)
 
 pipeline-cache-stats: ## Show HTML cache statistics
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-stats
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-stats
 
 pipeline-cache-clear: ## Clear HTML cache
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
 
 pipeline-summary: ## Generate summary report from latest pipeline run (saves to data/extraction-report.md)
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
 	@cd ramekin-ios && xcodegen generate

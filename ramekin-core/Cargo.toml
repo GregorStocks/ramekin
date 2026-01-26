@@ -43,5 +43,11 @@ tracing = "0.1"
 # UUIDs for photo IDs
 uuid = { version = "1.18", features = ["v4", "serde"] }
 
+# AI client (OpenAI-compatible API for OpenRouter)
+async-openai = "0.30"
+
+# Hashing for cache keys
+sha2 = "0.10"
+
 [build-dependencies]
 uuid = { version = "1.18", features = ["v4"] }
