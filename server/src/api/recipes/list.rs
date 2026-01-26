@@ -2,7 +2,9 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
+use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
+use crate::tag_in_array;
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -10,9 +12,8 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
-use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{Array, BigInt, Bool, Nullable, Uuid as SqlUuid};
+use diesel::sql_types::{Array, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -280,13 +281,8 @@ pub async fn list_recipes(
     }
 
     // Tag filters (AND logic - must have ALL tags)
-    // Use sql fragment with bind() for CITEXT array containment (PostgreSQL-specific)
     for tag in &parsed.tags {
-        query = query.filter(
-            sql::<Bool>("(")
-                .bind::<diesel::sql_types::Text, _>(tag)
-                .sql("::citext = ANY(recipe_versions.tags))"),
-        );
+        query = query.filter(tag_in_array!(tag));
     }
 
     // Source filter
@@ -306,12 +302,16 @@ pub async fn list_recipes(
 
     // Date range filters (on recipe created_at)
     if let Some(after) = parsed.created_after {
-        let after_datetime = after.and_hms_opt(0, 0, 0).unwrap().and_utc();
-        query = query.filter(recipes::created_at.ge(after_datetime));
+        if let Some(time) = after.and_hms_opt(0, 0, 0) {
+            let after_datetime = time.and_utc();
+            query = query.filter(recipes::created_at.ge(after_datetime));
+        }
     }
     if let Some(before) = parsed.created_before {
-        let before_datetime = before.and_hms_opt(23, 59, 59).unwrap().and_utc();
-        query = query.filter(recipes::created_at.le(before_datetime));
+        if let Some(time) = before.and_hms_opt(23, 59, 59) {
+            let before_datetime = time.and_utc();
+            query = query.filter(recipes::created_at.le(before_datetime));
+        }
     }
 
     // Add ordering
@@ -331,7 +331,7 @@ pub async fn list_recipes(
             recipe_versions::tags,
             recipe_versions::photo_ids,
             recipe_versions::created_at,
-            sql::<BigInt>("COUNT(*) OVER()"),
+            raw_sql::count_over(),
         ))
         .limit(limit)
         .offset(offset)

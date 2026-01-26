@@ -394,7 +394,9 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         } else {
             0.0
         };
-        rate_b.partial_cmp(&rate_a).unwrap()
+        rate_b
+            .partial_cmp(&rate_a)
+            .unwrap_or(std::cmp::Ordering::Equal)
     });
 
     for site in &sites {
