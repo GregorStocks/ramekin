@@ -343,21 +343,21 @@ pub async fn run_all_steps(
     let mut extraction_stats = None;
 
     for result in &generic_results {
-        // Determine which step this is by looking at the output structure
-        let step = if result.output.get("html").is_some() {
-            PipelineStep::FetchHtml
-        } else if result.output.get("method_used").is_some() {
-            // This is extract_recipe - also extract the stats
-            extraction_stats = extract_stats_from_output(&result.output);
-            PipelineStep::ExtractRecipe
-        } else if result.output.get("images_fetched").is_some() {
-            // fetch_images - skip in our results since we didn't have it before
-            continue;
-        } else if result.output.get("saved_at").is_some() {
-            PipelineStep::SaveRecipe
-        } else {
-            PipelineStep::Enrich
+        // Use step_name for reliable step identification
+        let step = match PipelineStep::from_str(&result.step_name) {
+            Some(s) => s,
+            None => continue, // Skip unknown steps
         };
+
+        // Extract stats for extract_recipe step
+        if step == PipelineStep::ExtractRecipe {
+            extraction_stats = extract_stats_from_output(&result.output);
+        }
+
+        // Skip FetchImages in CLI results (maintain backwards compatibility)
+        if step == PipelineStep::FetchImages {
+            continue;
+        }
 
         step_results.push(StepResult {
             step,
@@ -379,14 +379,17 @@ fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionSta
     let method_used = output.get("method_used")?.as_str()?;
     let all_attempts = output.get("all_attempts")?.as_array()?;
 
+    // Handle both formats: "json_ld" (new) and "jsonld" (legacy)
     let method = match method_used {
-        "jsonld" => ramekin_core::ExtractionMethod::JsonLd,
+        "jsonld" | "json_ld" => ramekin_core::ExtractionMethod::JsonLd,
         "microdata" => ramekin_core::ExtractionMethod::Microdata,
         _ => return None,
     };
 
+    // Handle both "jsonld" and "json_ld" in all_attempts
     let jsonld_success = all_attempts.iter().any(|a| {
-        a.get("method").and_then(|m| m.as_str()) == Some("jsonld")
+        let m = a.get("method").and_then(|m| m.as_str());
+        (m == Some("jsonld") || m == Some("json_ld"))
             && a.get("success").and_then(|s| s.as_bool()) == Some(true)
     });
 

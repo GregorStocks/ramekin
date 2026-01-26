@@ -34,6 +34,7 @@ impl PipelineStep for EnrichStep {
         // TODO: Implement actual AI enrichment
         // For now, always fail (but continues_on_failure means pipeline continues)
         StepResult {
+            step_name: Self::NAME.to_string(),
             success: false,
             output: json!({ "success": false }),
             error: Some("Enrichment not implemented".to_string()),

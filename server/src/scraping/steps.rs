@@ -49,6 +49,7 @@ impl PipelineStep for FetchHtmlStep {
         // Check host allowlist
         if let Err(e) = is_host_allowed(ctx.url) {
             return StepResult {
+                step_name: Self::NAME.to_string(),
                 success: false,
                 output: serde_json::Value::Null,
                 error: Some(e.to_string()),
@@ -59,6 +60,7 @@ impl PipelineStep for FetchHtmlStep {
 
         match ramekin_core::fetch_html(ctx.url).await {
             Ok(html) => StepResult {
+                step_name: Self::NAME.to_string(),
                 success: true,
                 output: json!({ "html": html }),
                 error: None,
@@ -66,6 +68,7 @@ impl PipelineStep for FetchHtmlStep {
                 next_step: Some("extract_recipe".to_string()),
             },
             Err(e) => StepResult {
+                step_name: Self::NAME.to_string(),
                 success: false,
                 output: serde_json::Value::Null,
                 error: Some(e.to_string()),
@@ -104,6 +107,7 @@ impl PipelineStep for FetchImagesStep {
             Some(o) => o,
             None => {
                 return StepResult {
+                    step_name: FetchImagesStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some("extract_recipe output not found".to_string()),
@@ -121,6 +125,7 @@ impl PipelineStep for FetchImagesStep {
             Some(r) => r,
             None => {
                 return StepResult {
+                    step_name: FetchImagesStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some("No raw_recipe in extract output".to_string()),
@@ -153,6 +158,7 @@ impl PipelineStep for FetchImagesStep {
         };
 
         StepResult {
+            step_name: FetchImagesStepMeta::NAME.to_string(),
             success: true, // Image fetch failures don't fail the pipeline
             output: serde_json::to_value(&output).unwrap_or_default(),
             error: None,
@@ -233,6 +239,7 @@ impl PipelineStep for SaveRecipeStep {
             Some(o) => o,
             None => {
                 return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some("extract_recipe output not found".to_string()),
@@ -250,6 +257,7 @@ impl PipelineStep for SaveRecipeStep {
             Some(r) => r,
             None => {
                 return StepResult {
+                    step_name: SaveRecipeStepMeta::NAME.to_string(),
                     success: false,
                     output: serde_json::Value::Null,
                     error: Some("No raw_recipe in extract output".to_string()),
@@ -270,6 +278,7 @@ impl PipelineStep for SaveRecipeStep {
         // Create recipe in database
         match self.create_recipe(&raw_recipe, &photo_ids) {
             Ok(recipe_id) => StepResult {
+                step_name: SaveRecipeStepMeta::NAME.to_string(),
                 success: true,
                 output: json!({ "recipe_id": recipe_id.to_string() }),
                 error: None,
@@ -277,6 +286,7 @@ impl PipelineStep for SaveRecipeStep {
                 next_step: Some("enrich".to_string()),
             },
             Err(e) => StepResult {
+                step_name: SaveRecipeStepMeta::NAME.to_string(),
                 success: false,
                 output: serde_json::Value::Null,
                 error: Some(e),
@@ -382,6 +392,7 @@ impl PipelineStep for EnrichStep {
         tracing::debug!("Enrichment step failed (no-op stub)");
 
         StepResult {
+            step_name: "enrich".to_string(),
             success: false,
             output: json!({ "success": false }),
             error: Some("Enrichment not implemented".to_string()),

@@ -20,6 +20,8 @@ pub struct StepMetadata {
 /// Result of executing a step.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct StepResult {
+    /// Name of the step that produced this result
+    pub step_name: String,
     /// Whether the step succeeded
     pub success: bool,
     /// The output data (JSON)
