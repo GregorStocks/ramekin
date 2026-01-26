@@ -5,7 +5,6 @@ use crate::distinct_tags_query;
 use crate::get_conn;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use diesel::sql_types::Uuid as DieselUuid;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
@@ -41,10 +40,7 @@ pub async fn list_tags(
     let mut conn = get_conn!(pool);
 
     // Tags are now in recipe_versions, join via current_version_id
-    let tags: Vec<TagRow> = match distinct_tags_query!()
-        .bind::<DieselUuid, _>(user.id)
-        .load(&mut conn)
-    {
+    let tags: Vec<TagRow> = match distinct_tags_query!(user.id).load(&mut conn) {
         Ok(rows) => rows,
         Err(_) => {
             return (

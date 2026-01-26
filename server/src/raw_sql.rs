@@ -50,10 +50,10 @@ macro_rules! tag_in_array {
 /// Uses `unnest()` to expand the tags array, which isn't in Diesel's DSL.
 ///
 /// # Safety
-/// The user_id MUST be passed via `.bind()`, not interpolated.
+/// The user_id is passed via `.bind()`, not interpolated.
 #[macro_export]
 macro_rules! distinct_tags_query {
-    () => {
+    ($user_id:expr) => {
         diesel::sql_query(
             "SELECT DISTINCT unnest(rv.tags)::text AS tag \
              FROM recipes r \
@@ -61,5 +61,6 @@ macro_rules! distinct_tags_query {
              WHERE r.user_id = $1 AND r.deleted_at IS NULL \
              ORDER BY tag",
         )
+        .bind::<diesel::sql_types::Uuid, _>($user_id)
     };
 }
