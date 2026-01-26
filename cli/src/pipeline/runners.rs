@@ -255,10 +255,29 @@ pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
 }
 
 /// Run the enrich_normalize_ingredients step for a URL.
+/// Requires save_recipe to have run first.
 /// Currently a no-op that always fails - enrichment is expected to be unreliable.
 pub fn run_enrich_normalize_ingredients(url: &str, run_dir: &Path) -> StepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
+
+    // Check that save_recipe output exists
+    let save_output_path = run_dir
+        .join("urls")
+        .join(&slug)
+        .join("save_recipe")
+        .join("output.json");
+    if !save_output_path.exists() {
+        let duration_ms = start.elapsed().as_millis() as u64;
+        return StepResult {
+            step: PipelineStep::EnrichNormalizeIngredients,
+            success: false,
+            duration_ms,
+            error: Some("save_recipe output not found - run save_recipe first".to_string()),
+            cached: false,
+        };
+    }
+
     let output_dir = run_dir
         .join("urls")
         .join(&slug)
@@ -278,10 +297,29 @@ pub fn run_enrich_normalize_ingredients(url: &str, run_dir: &Path) -> StepResult
 }
 
 /// Run the enrich_auto_tag step for a URL.
+/// Requires save_recipe to have run first.
 /// Currently a no-op that always fails - enrichment is expected to be unreliable.
 pub fn run_enrich_auto_tag(url: &str, run_dir: &Path) -> StepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
+
+    // Check that save_recipe output exists
+    let save_output_path = run_dir
+        .join("urls")
+        .join(&slug)
+        .join("save_recipe")
+        .join("output.json");
+    if !save_output_path.exists() {
+        let duration_ms = start.elapsed().as_millis() as u64;
+        return StepResult {
+            step: PipelineStep::EnrichAutoTag,
+            success: false,
+            duration_ms,
+            error: Some("save_recipe output not found - run save_recipe first".to_string()),
+            cached: false,
+        };
+    }
+
     let output_dir = run_dir.join("urls").join(&slug).join("enrich_auto_tag");
     let duration_ms = start.elapsed().as_millis() as u64;
 
@@ -298,10 +336,29 @@ pub fn run_enrich_auto_tag(url: &str, run_dir: &Path) -> StepResult {
 }
 
 /// Run the enrich_generate_photo step for a URL.
+/// Requires save_recipe to have run first.
 /// Currently a no-op that always fails - enrichment is expected to be unreliable.
 pub fn run_enrich_generate_photo(url: &str, run_dir: &Path) -> StepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
+
+    // Check that save_recipe output exists
+    let save_output_path = run_dir
+        .join("urls")
+        .join(&slug)
+        .join("save_recipe")
+        .join("output.json");
+    if !save_output_path.exists() {
+        let duration_ms = start.elapsed().as_millis() as u64;
+        return StepResult {
+            step: PipelineStep::EnrichGeneratePhoto,
+            success: false,
+            duration_ms,
+            error: Some("save_recipe output not found - run save_recipe first".to_string()),
+            cached: false,
+        };
+    }
+
     let output_dir = run_dir
         .join("urls")
         .join(&slug)
