@@ -274,7 +274,7 @@ impl PipelineStep for SaveRecipeStep {
                 output: json!({ "recipe_id": recipe_id.to_string() }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich".to_string()),
+                next_step: Some("enrich_normalize_ingredients".to_string()),
             },
             Err(e) => StepResult {
                 success: false,
@@ -359,34 +359,5 @@ impl SaveRecipeStep {
     }
 }
 
-/// Server implementation of Enrich step.
-///
-/// Currently a no-op stub that always fails - enrichment is expected to be unreliable.
-pub struct EnrichStep;
-
-#[async_trait]
-impl PipelineStep for EnrichStep {
-    fn metadata(&self) -> StepMetadata {
-        StepMetadata {
-            name: "enrich",
-            description: "Enrich recipe with AI",
-            continues_on_failure: true,
-        }
-    }
-
-    async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
-        let start = Instant::now();
-
-        // No-op stub: always fail
-        // The pipeline will continue regardless (continues_on_failure: true)
-        tracing::debug!("Enrichment step failed (no-op stub)");
-
-        StepResult {
-            success: false,
-            output: json!({ "success": false }),
-            error: Some("Enrichment not implemented".to_string()),
-            duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
-        }
-    }
-}
+// Enrich steps use generic implementations from ramekin-core
+// (EnrichNormalizeIngredientsStep, EnrichAutoTagStep, EnrichGeneratePhotoStep)

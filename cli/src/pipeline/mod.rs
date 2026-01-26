@@ -11,13 +11,13 @@ mod staging;
 mod steps;
 
 use ramekin_core::http::HttpClient;
-use ramekin_core::pipeline::steps::{EnrichStep, ExtractRecipeStep, FetchHtmlStep};
+use ramekin_core::pipeline::steps::{
+    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
+    FetchHtmlStep,
+};
 use ramekin_core::pipeline::StepRegistry;
 
-pub use runners::{
-    parse_pipeline_step, run_all_steps, run_enrich, run_extract_recipe, run_fetch_html,
-    run_save_recipe, AllStepsResult, ExtractionStats, PipelineStep, StepResult,
-};
+pub use runners::{run_all_steps, AllStepsResult, ExtractionStats, PipelineStep, StepResult};
 pub use staging::{clear_staging, ensure_staging_dir, find_staged_html, staging_dir};
 
 use steps::{FetchImagesStep, SaveRecipeStep};
@@ -32,7 +32,9 @@ pub fn build_registry<C: HttpClient + Send + Sync + 'static>(client: C) -> StepR
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep));
     registry.register(Box::new(SaveRecipeStep));
-    registry.register(Box::new(EnrichStep));
+    registry.register(Box::new(EnrichNormalizeIngredientsStep));
+    registry.register(Box::new(EnrichAutoTagStep));
+    registry.register(Box::new(EnrichGeneratePhotoStep));
 
     registry
 }
