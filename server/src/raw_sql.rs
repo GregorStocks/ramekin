@@ -51,8 +51,15 @@ macro_rules! tag_in_array {
 ///
 /// # Safety
 /// The user_id MUST be passed via `.bind()`, not interpolated.
-pub const DISTINCT_TAGS_QUERY: &str = "SELECT DISTINCT unnest(rv.tags)::text AS tag \
-    FROM recipes r \
-    JOIN recipe_versions rv ON rv.id = r.current_version_id \
-    WHERE r.user_id = $1 AND r.deleted_at IS NULL \
-    ORDER BY tag";
+#[macro_export]
+macro_rules! distinct_tags_query {
+    () => {
+        diesel::sql_query(
+            "SELECT DISTINCT unnest(rv.tags)::text AS tag \
+             FROM recipes r \
+             JOIN recipe_versions rv ON rv.id = r.current_version_id \
+             WHERE r.user_id = $1 AND r.deleted_at IS NULL \
+             ORDER BY tag",
+        )
+    };
+}

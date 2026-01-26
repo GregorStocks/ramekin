@@ -4,6 +4,3 @@
 
 # The designated raw SQL module - all SQL here is reviewed and documented
 server/src/raw_sql.rs
-
-# tags.rs uses sql_query with constant from raw_sql
-server/src/api/recipes/tags.rs~raw_sql::

@@ -1,11 +1,10 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
+use crate::distinct_tags_query;
 use crate::get_conn;
-use crate::raw_sql;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
-use diesel::sql_query;
 use diesel::sql_types::Uuid as DieselUuid;
 use serde::Serialize;
 use std::sync::Arc;
@@ -42,7 +41,7 @@ pub async fn list_tags(
     let mut conn = get_conn!(pool);
 
     // Tags are now in recipe_versions, join via current_version_id
-    let tags: Vec<TagRow> = match sql_query(raw_sql::DISTINCT_TAGS_QUERY)
+    let tags: Vec<TagRow> = match distinct_tags_query!()
         .bind::<DieselUuid, _>(user.id)
         .load(&mut conn)
     {
