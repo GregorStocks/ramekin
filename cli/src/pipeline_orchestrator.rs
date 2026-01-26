@@ -29,7 +29,7 @@ pub struct OrchestratorConfig {
     pub delay_ms: u64,
     pub force_fetch: bool,
     pub on_fetch_fail: OnFetchFail,
-    pub tags_file: Option<PathBuf>,
+    pub tags_file: PathBuf,
 }
 
 impl Default for OrchestratorConfig {
@@ -42,7 +42,7 @@ impl Default for OrchestratorConfig {
             delay_ms: 1000,
             force_fetch: false,
             on_fetch_fail: OnFetchFail::Continue,
-            tags_file: None,
+            tags_file: PathBuf::from("data/eval-tags.json"),
         }
     }
 }
@@ -105,6 +105,8 @@ pub struct PipelineResults {
     pub failed_at_save: usize,
     pub cache_hits: usize,
     pub cache_misses: usize,
+    pub ai_cache_hits: usize,
+    pub ai_cache_misses: usize,
     pub by_site: HashMap<String, SiteResults>,
     pub url_results: Vec<UrlResult>,
     pub extraction_method_stats: ExtractionMethodStats,
@@ -197,13 +199,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     }
 
     // Load tags for auto-tag evaluation
-    let user_tags = if let Some(ref tags_path) = config.tags_file {
-        let tags = load_tags_file(tags_path)?;
-        println!("Loaded {} tags from {}", tags.len(), tags_path.display());
-        tags
-    } else {
-        vec![]
-    };
+    let user_tags = load_tags_file(&config.tags_file)?;
+    println!(
+        "Loaded {} tags from {}",
+        user_tags.len(),
+        config.tags_file.display()
+    );
 
     // Create manifest
     let manifest = RunManifest {
@@ -279,8 +280,14 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let mut all_results =
-            run_all_steps(url, Arc::clone(&client), &run_dir, config.force_fetch, user_tags.clone()).await;
+        let mut all_results = run_all_steps(
+            url,
+            Arc::clone(&client),
+            &run_dir,
+            config.force_fetch,
+            user_tags.clone(),
+        )
+        .await;
 
         // Check if fetch failed
         let fetch_failed = all_results
@@ -298,8 +305,13 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                 }
                 OnFetchFail::Prompt => {
                     // Interactive mode: prompt user to save HTML
-                    if let Some(new_results) =
-                        prompt_for_manual_cache(url, Arc::clone(&client), &run_dir, user_tags.clone()).await?
+                    if let Some(new_results) = prompt_for_manual_cache(
+                        url,
+                        Arc::clone(&client),
+                        &run_dir,
+                        user_tags.clone(),
+                    )
+                    .await?
                     {
                         all_results = new_results;
                     }
@@ -321,6 +333,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             &final_status,
             domain,
             all_results.extraction_stats.as_ref(),
+            all_results.ai_cached,
         );
 
         // Record URL result
@@ -370,6 +383,15 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
     );
     println!("  HTML cache misses: {} (fetched)", results.cache_misses);
+    let ai_total = results.ai_cache_hits + results.ai_cache_misses;
+    if ai_total > 0 {
+        println!(
+            "  AI cache hits: {} ({:.1}%)",
+            results.ai_cache_hits,
+            results.ai_cache_hits as f64 / ai_total as f64 * 100.0
+        );
+        println!("  AI cache misses: {} (API calls)", results.ai_cache_misses);
+    }
     println!();
     println!("Overall Results:");
     println!(
@@ -512,8 +534,9 @@ fn update_results(
     final_status: &FinalStatus,
     domain: &str,
     extraction_stats: Option<&ExtractionStats>,
+    ai_cached: Option<bool>,
 ) {
-    // Update cache stats
+    // Update HTML cache stats
     for step in steps {
         if step.step == PipelineStep::FetchHtml {
             if step.cached {
@@ -521,6 +544,15 @@ fn update_results(
             } else {
                 results.cache_misses += 1;
             }
+        }
+    }
+
+    // Update AI cache stats
+    if let Some(cached) = ai_cached {
+        if cached {
+            results.ai_cache_hits += 1;
+        } else {
+            results.ai_cache_misses += 1;
         }
     }
 
@@ -676,7 +708,8 @@ async fn prompt_for_manual_cache(
                     println!();
 
                     // Re-run all steps (should hit cache now)
-                    let new_results = run_all_steps(url, Arc::clone(&client), run_dir, false, user_tags).await;
+                    let new_results =
+                        run_all_steps(url, Arc::clone(&client), run_dir, false, user_tags).await;
                     return Ok(Some(new_results));
                 }
                 Err(e) => {
@@ -793,14 +826,10 @@ pub fn get_latest_run_dir(output_dir: &Path) -> Result<(String, PathBuf)> {
 struct AutoTagOutput {
     suggested_tags: Vec<String>,
     cached: bool,
-    #[serde(default)]
-    usage: Option<serde_json::Value>,
 }
 
 /// Generate a report of auto-tag suggestions from a pipeline run
 pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
-    use ramekin_core::http::slugify_url;
-
     let mut report = String::new();
     report.push_str("# Auto-Tag Evaluation Report\n\n");
 
@@ -832,7 +861,12 @@ pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
             fs::read_to_string(&extract_path)
                 .ok()
                 .and_then(|c| serde_json::from_str::<serde_json::Value>(&c).ok())
-                .and_then(|v| v.get("raw_recipe")?.get("title")?.as_str().map(String::from))
+                .and_then(|v| {
+                    v.get("raw_recipe")?
+                        .get("title")?
+                        .as_str()
+                        .map(String::from)
+                })
                 .unwrap_or_else(|| url_slug.clone())
         } else {
             url_slug.clone()
@@ -881,7 +915,10 @@ pub fn generate_tag_report(run_dir: &Path) -> Result<String> {
     // Summary stats
     report.push_str("\n## Summary\n\n");
     report.push_str(&format!("- Total recipes processed: {}\n", entries.len()));
-    report.push_str(&format!("- Recipes with tag suggestions: {}\n", total_with_tags));
+    report.push_str(&format!(
+        "- Recipes with tag suggestions: {}\n",
+        total_with_tags
+    ));
     report.push_str(&format!("- Cached responses: {}\n", total_cached));
 
     // Tag frequency
@@ -952,6 +989,24 @@ pub fn generate_summary_report(results: &PipelineResults) -> String {
             ems.neither_success,
             ems.urls_with_html,
             pct(ems.neither_success, ems.urls_with_html)
+        ));
+    }
+
+    // AI cache stats
+    let ai_total = results.ai_cache_hits + results.ai_cache_misses;
+    if ai_total > 0 {
+        report.push_str("\n## AI Cache\n\n");
+        report.push_str(&format!(
+            "- Cache hits: {}/{} ({:.1}%)\n",
+            results.ai_cache_hits,
+            ai_total,
+            pct(results.ai_cache_hits, ai_total)
+        ));
+        report.push_str(&format!(
+            "- API calls: {}/{} ({:.1}%)\n",
+            results.ai_cache_misses,
+            ai_total,
+            pct(results.ai_cache_misses, ai_total)
         ));
     }
 

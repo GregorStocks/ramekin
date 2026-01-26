@@ -39,6 +39,8 @@ pub struct ExtractionStats {
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
+    /// Whether the AI auto-tag response was cached (None if auto-tag didn't run)
+    pub ai_cached: Option<bool>,
 }
 
 // ============================================================================
@@ -137,6 +139,7 @@ pub async fn run_all_steps(
             return AllStepsResult {
                 step_results,
                 extraction_stats: None,
+                ai_cached: None,
             };
         }
         // After force fetch, pre-populate store and start from extract_recipe
@@ -171,6 +174,7 @@ pub async fn run_all_steps(
 
     // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;
+    let mut ai_cached = None;
 
     for result in &generic_results {
         // Use step_name for reliable step identification
@@ -182,6 +186,11 @@ pub async fn run_all_steps(
         // Extract stats for extract_recipe step
         if step == PipelineStep::ExtractRecipe {
             extraction_stats = extract_stats_from_output(&result.output);
+        }
+
+        // Extract AI cache status from auto-tag step
+        if step == PipelineStep::EnrichAutoTag && result.success {
+            ai_cached = result.output.get("cached").and_then(|v| v.as_bool());
         }
 
         step_results.push(StepResult {
@@ -196,6 +205,7 @@ pub async fn run_all_steps(
     AllStepsResult {
         step_results,
         extraction_stats,
+        ai_cached,
     }
 }
 

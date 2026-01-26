@@ -140,7 +140,7 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
-pipeline-test: ## Run pipeline for test URLs (uses HTML cache). Use TAGS_FILE=data/eval-tags.json for auto-tag evaluation.
+pipeline-test: ## Run pipeline for test URLs (uses HTML cache). Uses data/eval-tags.json by default.
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
 		$(if $(LIMIT),--limit $(LIMIT),) \

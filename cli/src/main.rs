@@ -190,8 +190,8 @@ enum Commands {
         #[arg(long, value_enum, default_value = "continue")]
         on_fetch_fail: OnFetchFail,
         /// Path to tags JSON file for auto-tag evaluation
-        #[arg(long)]
-        tags_file: Option<PathBuf>,
+        #[arg(long, default_value = "data/eval-tags.json")]
+        tags_file: PathBuf,
     },
     /// Show HTML cache statistics
     PipelineCacheStats {
