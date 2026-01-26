@@ -1,18 +1,21 @@
+use std::collections::HashMap;
+use std::fs;
+use std::io::{self, Write};
+use std::path::{Path, PathBuf};
+use std::sync::Arc;
+use std::time::{Duration, Instant};
+
+use anyhow::{Context, Result};
+use chrono::Utc;
+use serde::{Deserialize, Serialize};
+
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
     clear_staging, ensure_staging_dir, find_staged_html, run_all_steps, staging_dir,
     AllStepsResult, ExtractionStats, PipelineStep, StepResult,
 };
 use crate::OnFetchFail;
-use anyhow::{Context, Result};
-use chrono::Utc;
 use ramekin_core::http::{CachingClient, DiskCache};
-use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
-use std::fs;
-use std::io::{self, Write};
-use std::path::{Path, PathBuf};
-use std::time::{Duration, Instant};
 
 // ============================================================================
 // Configuration
@@ -195,10 +198,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Initialize HTTP client with caching
     // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
     // and handles rate limiting internally
-    let client = CachingClient::builder()
-        .rate_limit_ms(0) // We handle delay ourselves between URLs
-        .build()
-        .context("Failed to create HTTP client")?;
+    let client = Arc::new(
+        CachingClient::builder()
+            .rate_limit_ms(0) // We handle delay ourselves between URLs
+            .build()
+            .context("Failed to create HTTP client")?,
+    );
 
     // Initialize results
     let mut results = PipelineResults {
@@ -244,7 +249,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         }
 
         // Run all steps
-        let mut all_results = run_all_steps(url, &client, &run_dir, config.force_fetch).await;
+        let mut all_results =
+            run_all_steps(url, Arc::clone(&client), &run_dir, config.force_fetch).await;
 
         // Check if fetch failed
         let fetch_failed = all_results
@@ -263,7 +269,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
                 OnFetchFail::Prompt => {
                     // Interactive mode: prompt user to save HTML
                     if let Some(new_results) =
-                        prompt_for_manual_cache(url, &client, &run_dir).await?
+                        prompt_for_manual_cache(url, Arc::clone(&client), &run_dir).await?
                     {
                         all_results = new_results;
                     }
@@ -555,7 +561,7 @@ fn truncate_url(url: &str, max_len: usize) -> String {
 /// Prompt user to manually save HTML for a URL, wait for file, and retry pipeline
 async fn prompt_for_manual_cache(
     url: &str,
-    client: &CachingClient,
+    client: Arc<CachingClient>,
     run_dir: &Path,
 ) -> Result<Option<AllStepsResult>> {
     let staging = staging_dir();
@@ -623,7 +629,7 @@ async fn prompt_for_manual_cache(
                     println!();
 
                     // Re-run all steps (should hit cache now)
-                    let new_results = run_all_steps(url, client, run_dir, false).await;
+                    let new_results = run_all_steps(url, Arc::clone(&client), run_dir, false).await;
                     return Ok(Some(new_results));
                 }
                 Err(e) => {

@@ -1,28 +1,25 @@
-use anyhow::{anyhow, Result};
-use chrono::Utc;
-use ramekin_core::http::{CachingClient, HttpClient};
-// Re-export PipelineStep from ramekin_core for backwards compatibility
-pub use ramekin_core::PipelineStep;
-use serde::{Deserialize, Serialize};
+//! CLI step runner functions for the pipeline orchestrator.
+
 use std::fs;
-use std::path::{Path, PathBuf};
+use std::path::Path;
+use std::sync::Arc;
 use std::time::Instant;
 
-/// Parse a pipeline step from string, returning an error for invalid steps.
-/// This wraps PipelineStep::from_str with proper error handling for CLI usage.
-pub fn parse_pipeline_step(s: &str) -> Result<PipelineStep> {
-    PipelineStep::from_str(s).ok_or_else(|| {
-        anyhow!(
-            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich",
-            s
-        )
-    })
-}
+use anyhow::{anyhow, Result};
+use chrono::Utc;
+use serde::{Deserialize, Serialize};
+
+use ramekin_core::http::{slugify_url, CachingClient, HttpClient};
+use ramekin_core::pipeline::{run_pipeline, StepOutputStore};
+pub use ramekin_core::PipelineStep;
+
+use super::output_store::FileOutputStore;
 
 // ============================================================================
-// Step result types
+// Types
 // ============================================================================
 
+/// Result from a single pipeline step.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct StepResult {
     pub step: PipelineStep,
@@ -39,7 +36,7 @@ pub struct StepTiming {
     pub duration_ms: u64,
 }
 
-/// Stats about which extraction methods succeeded
+/// Stats about which extraction methods succeeded.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ExtractionStats {
     pub method_used: ramekin_core::ExtractionMethod,
@@ -47,14 +44,7 @@ pub struct ExtractionStats {
     pub microdata_success: bool,
 }
 
-/// Result from the extract_recipe step with extraction stats
-#[derive(Debug, Clone)]
-pub struct ExtractStepResult {
-    pub step_result: StepResult,
-    pub extraction_stats: Option<ExtractionStats>,
-}
-
-/// Result from running all steps, including extraction stats
+/// Result from running all steps, including extraction stats.
 #[derive(Debug, Clone)]
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
@@ -62,66 +52,17 @@ pub struct AllStepsResult {
 }
 
 // ============================================================================
-// URL slugification (re-exported from ramekin_core)
+// Step parsing
 // ============================================================================
 
-pub use ramekin_core::http::slugify_url;
-
-// ============================================================================
-// Staging directory utilities
-// ============================================================================
-
-/// Get the staging directory path for manual HTML saves
-pub fn staging_dir() -> PathBuf {
-    dirs::home_dir()
-        .map(|h| h.join(".ramekin").join("cache-staging"))
-        .unwrap_or_else(|| PathBuf::from("data/cache-staging"))
-}
-
-/// Ensure staging directory exists and return its path
-pub fn ensure_staging_dir() -> Result<PathBuf> {
-    let staging = staging_dir();
-    fs::create_dir_all(&staging)?;
-    Ok(staging)
-}
-
-/// Find the newest .html file in staging directory
-pub fn find_staged_html() -> Option<PathBuf> {
-    let staging = staging_dir();
-    if !staging.exists() {
-        return None;
-    }
-
-    fs::read_dir(&staging)
-        .ok()?
-        .filter_map(|e| e.ok())
-        .filter(|e| {
-            e.path()
-                .extension()
-                .map(|ext| ext == "html")
-                .unwrap_or(false)
-                || e.path()
-                    .extension()
-                    .map(|ext| ext == "htm")
-                    .unwrap_or(false)
-        })
-        .max_by_key(|e| e.metadata().ok().and_then(|m| m.modified().ok()))
-        .map(|e| e.path())
-}
-
-/// Clear any existing files in staging directory
-pub fn clear_staging() -> Result<()> {
-    let staging = staging_dir();
-    if staging.exists() {
-        for entry in fs::read_dir(&staging)? {
-            let entry = entry?;
-            let path = entry.path();
-            if path.is_file() {
-                fs::remove_file(&path)?;
-            }
-        }
-    }
-    Ok(())
+/// Parse a pipeline step from string, returning an error for invalid steps.
+pub fn parse_pipeline_step(s: &str) -> Result<PipelineStep> {
+    PipelineStep::from_str(s).ok_or_else(|| {
+        anyhow!(
+            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich",
+            s
+        )
+    })
 }
 
 // ============================================================================
@@ -187,7 +128,7 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
 
 /// Run the extract_recipe step for a URL.
 /// Requires HTML to be cached first.
-pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> ExtractStepResult {
+pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> StepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
     let output_dir = run_dir.join("urls").join(&slug).join("extract_recipe");
@@ -197,15 +138,12 @@ pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> 
         Some(html) => html,
         None => {
             let duration_ms = start.elapsed().as_millis() as u64;
-            return ExtractStepResult {
-                step_result: StepResult {
-                    step: PipelineStep::ExtractRecipe,
-                    success: false,
-                    duration_ms,
-                    error: Some("HTML not cached - run fetch_html first".to_string()),
-                    cached: false,
-                },
-                extraction_stats: None,
+            return StepResult {
+                step: PipelineStep::ExtractRecipe,
+                success: false,
+                duration_ms,
+                error: Some("HTML not cached - run fetch_html first".to_string()),
+                cached: false,
             };
         }
     };
@@ -215,42 +153,23 @@ pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> 
         Ok(output) => {
             let duration_ms = start.elapsed().as_millis() as u64;
 
-            // Build extraction stats from the attempts
-            let stats = ExtractionStats {
-                method_used: output.method_used,
-                jsonld_success: output
-                    .all_attempts
-                    .iter()
-                    .any(|a| a.method == ramekin_core::ExtractionMethod::JsonLd && a.success),
-                microdata_success: output
-                    .all_attempts
-                    .iter()
-                    .any(|a| a.method == ramekin_core::ExtractionMethod::Microdata && a.success),
-            };
-
             // Save output
             if let Err(e) = save_extract_output(&output_dir, &output, duration_ms) {
-                return ExtractStepResult {
-                    step_result: StepResult {
-                        step: PipelineStep::ExtractRecipe,
-                        success: false,
-                        duration_ms,
-                        error: Some(format!("Failed to save output: {}", e)),
-                        cached: false,
-                    },
-                    extraction_stats: Some(stats),
+                return StepResult {
+                    step: PipelineStep::ExtractRecipe,
+                    success: false,
+                    duration_ms,
+                    error: Some(format!("Failed to save output: {}", e)),
+                    cached: false,
                 };
             }
 
-            ExtractStepResult {
-                step_result: StepResult {
-                    step: PipelineStep::ExtractRecipe,
-                    success: true,
-                    duration_ms,
-                    error: None,
-                    cached: false,
-                },
-                extraction_stats: Some(stats),
+            StepResult {
+                step: PipelineStep::ExtractRecipe,
+                success: true,
+                duration_ms,
+                error: None,
+                cached: false,
             }
         }
         Err(e) => {
@@ -260,22 +179,12 @@ pub fn run_extract_recipe(url: &str, client: &CachingClient, run_dir: &Path) -> 
             // Save error
             let _ = save_step_error(&output_dir, &error_msg, duration_ms);
 
-            // Even on failure, we know neither method worked
-            let stats = ExtractionStats {
-                method_used: ramekin_core::ExtractionMethod::JsonLd, // Placeholder, not actually used
-                jsonld_success: false,
-                microdata_success: false,
-            };
-
-            ExtractStepResult {
-                step_result: StepResult {
-                    step: PipelineStep::ExtractRecipe,
-                    success: false,
-                    duration_ms,
-                    error: Some(error_msg),
-                    cached: false,
-                },
-                extraction_stats: Some(stats),
+            StepResult {
+                step: PipelineStep::ExtractRecipe,
+                success: false,
+                duration_ms,
+                error: Some(error_msg),
+                cached: false,
             }
         }
     }
@@ -345,6 +254,154 @@ pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
     }
 }
 
+/// Run the enrich step for a URL.
+/// Currently a no-op that always fails - enrichment is expected to be unreliable.
+pub fn run_enrich(url: &str, run_dir: &Path) -> StepResult {
+    let start = Instant::now();
+    let slug = slugify_url(url);
+    let output_dir = run_dir.join("urls").join(&slug).join("enrich");
+    let duration_ms = start.elapsed().as_millis() as u64;
+
+    let error_msg = "Enrichment not implemented (no-op stub)".to_string();
+    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
+
+    StepResult {
+        step: PipelineStep::Enrich,
+        success: false,
+        duration_ms,
+        error: Some(error_msg),
+        cached: false,
+    }
+}
+
+// ============================================================================
+// Run all steps
+// ============================================================================
+
+/// Run all pipeline steps for a URL using the generic pipeline infrastructure.
+///
+/// Takes an `Arc<CachingClient>` for shared ownership across pipeline steps.
+pub async fn run_all_steps(
+    url: &str,
+    client: Arc<CachingClient>,
+    run_dir: &Path,
+    force_fetch: bool,
+) -> AllStepsResult {
+    use super::build_registry;
+
+    let mut step_results = Vec::new();
+    let mut store = FileOutputStore::new(run_dir, url);
+
+    // Check if content is already cached (fast path to avoid network requests)
+    let already_cached = !force_fetch
+        && client.is_cached(url)
+        && client.get_cached_html(url).is_some()
+        && client.get_cached_error(url).is_none();
+
+    // Determine starting point for the pipeline
+    let first_step = if force_fetch {
+        // Force fetch by running the dedicated fetch function
+        let fetch_result = run_fetch_html(url, &client, true).await;
+        step_results.push(fetch_result.clone());
+        if !fetch_result.success {
+            return AllStepsResult {
+                step_results,
+                extraction_stats: None,
+            };
+        }
+        // After force fetch, pre-populate store and start from extract_recipe
+        if let Some(html) = client.get_cached_html(url) {
+            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        }
+        "extract_recipe"
+    } else if already_cached {
+        // Content is cached - add a synthetic fetch result and skip to extract_recipe
+        step_results.push(StepResult {
+            step: PipelineStep::FetchHtml,
+            success: true,
+            duration_ms: 0,
+            error: None,
+            cached: true,
+        });
+        // Pre-populate store with cached HTML so extract_recipe can find it
+        if let Some(html) = client.get_cached_html(url) {
+            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        }
+        "extract_recipe"
+    } else {
+        // Not cached - start from fetch_html
+        "fetch_html"
+    };
+
+    // Build the registry with the shared client
+    let registry = build_registry(client);
+
+    // Run the generic pipeline from the determined starting point
+    let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
+
+    // Convert generic results to our StepResult format and append to any existing results
+    let mut extraction_stats = None;
+
+    for result in &generic_results {
+        // Determine which step this is by looking at the output structure
+        let step = if result.output.get("html").is_some() {
+            PipelineStep::FetchHtml
+        } else if result.output.get("method_used").is_some() {
+            // This is extract_recipe - also extract the stats
+            extraction_stats = extract_stats_from_output(&result.output);
+            PipelineStep::ExtractRecipe
+        } else if result.output.get("images_fetched").is_some() {
+            // fetch_images - skip in our results since we didn't have it before
+            continue;
+        } else if result.output.get("saved_at").is_some() {
+            PipelineStep::SaveRecipe
+        } else {
+            PipelineStep::Enrich
+        };
+
+        step_results.push(StepResult {
+            step,
+            success: result.success,
+            duration_ms: result.duration_ms,
+            error: result.error.clone(),
+            cached: false, // Generic pipeline doesn't track this
+        });
+    }
+
+    AllStepsResult {
+        step_results,
+        extraction_stats,
+    }
+}
+
+/// Extract ExtractionStats from the extract_recipe output JSON.
+fn extract_stats_from_output(output: &serde_json::Value) -> Option<ExtractionStats> {
+    let method_used = output.get("method_used")?.as_str()?;
+    let all_attempts = output.get("all_attempts")?.as_array()?;
+
+    let method = match method_used {
+        "jsonld" => ramekin_core::ExtractionMethod::JsonLd,
+        "microdata" => ramekin_core::ExtractionMethod::Microdata,
+        _ => return None,
+    };
+
+    let jsonld_success = all_attempts.iter().any(|a| {
+        a.get("method").and_then(|m| m.as_str()) == Some("jsonld")
+            && a.get("success").and_then(|s| s.as_bool()) == Some(true)
+    });
+
+    let microdata_success = all_attempts.iter().any(|a| {
+        a.get("method").and_then(|m| m.as_str()) == Some("microdata")
+            && a.get("success").and_then(|s| s.as_bool()) == Some(true)
+    });
+
+    Some(ExtractionStats {
+        method_used: method,
+        jsonld_success,
+        microdata_success,
+    })
+}
+
 // ============================================================================
 // Output saving helpers
 // ============================================================================
@@ -360,7 +417,7 @@ fn save_extract_output(
     fs::write(output_dir.join("output.json"), json)?;
 
     let timing = StepTiming {
-        started_at: Utc::now().to_rfc3339(), // Approximate
+        started_at: Utc::now().to_rfc3339(),
         completed_at: Utc::now().to_rfc3339(),
         duration_ms,
     };
@@ -387,7 +444,7 @@ fn save_save_output(
     fs::write(output_dir.join("output.json"), json)?;
 
     let timing = StepTiming {
-        started_at: Utc::now().to_rfc3339(), // Approximate
+        started_at: Utc::now().to_rfc3339(),
         completed_at: Utc::now().to_rfc3339(),
         duration_ms,
     };
@@ -420,99 +477,13 @@ fn save_step_error(output_dir: &Path, error: &str, duration_ms: u64) -> Result<(
 }
 
 // ============================================================================
-// Enrich step runner
-// ============================================================================
-
-/// Run the enrich step for a URL.
-/// Currently a no-op that always fails - enrichment is expected to be unreliable.
-/// The pipeline will continue regardless (enrichment failures are non-fatal).
-pub fn run_enrich(url: &str, run_dir: &Path) -> StepResult {
-    let start = Instant::now();
-    let slug = slugify_url(url);
-    let output_dir = run_dir.join("urls").join(&slug).join("enrich");
-    let duration_ms = start.elapsed().as_millis() as u64;
-
-    let error_msg = "Enrichment not implemented (no-op stub)".to_string();
-    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
-
-    StepResult {
-        step: PipelineStep::Enrich,
-        success: false,
-        duration_ms,
-        error: Some(error_msg),
-        cached: false,
-    }
-}
-
-// ============================================================================
-// Run all steps for a URL
-// ============================================================================
-
-/// Run all pipeline steps for a URL.
-pub async fn run_all_steps(
-    url: &str,
-    client: &CachingClient,
-    run_dir: &Path,
-    force_fetch: bool,
-) -> AllStepsResult {
-    let mut step_results = Vec::new();
-    let mut extraction_stats = None;
-
-    // Step 1: Fetch HTML
-    let fetch_result = run_fetch_html(url, client, force_fetch).await;
-    let fetch_success = fetch_result.success;
-    step_results.push(fetch_result);
-
-    if !fetch_success {
-        return AllStepsResult {
-            step_results,
-            extraction_stats,
-        };
-    }
-
-    // Step 2: Extract Recipe
-    let extract_result = run_extract_recipe(url, client, run_dir);
-    extraction_stats = extract_result.extraction_stats;
-    let extract_success = extract_result.step_result.success;
-    step_results.push(extract_result.step_result);
-
-    if !extract_success {
-        return AllStepsResult {
-            step_results,
-            extraction_stats,
-        };
-    }
-
-    // Step 3: Save Recipe
-    let save_result = run_save_recipe(url, run_dir);
-    let save_success = save_result.success;
-    step_results.push(save_result);
-
-    if !save_success {
-        return AllStepsResult {
-            step_results,
-            extraction_stats,
-        };
-    }
-
-    // Step 4: Enrich (always runs, continues on failure)
-    // Note: We skip FetchImages as it's DB-specific
-    let enrich_result = run_enrich(url, run_dir);
-    step_results.push(enrich_result);
-
-    AllStepsResult {
-        step_results,
-        extraction_stats,
-    }
-}
-
-// ============================================================================
 // Tests
 // ============================================================================
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    use ramekin_core::http::slugify_url;
 
     #[test]
     fn test_slugify_url() {

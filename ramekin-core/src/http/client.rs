@@ -386,6 +386,18 @@ impl HttpClient for CachingClient {
     }
 }
 
+/// Allow sharing a CachingClient via Arc for use in the generic pipeline.
+#[async_trait]
+impl HttpClient for Arc<CachingClient> {
+    async fn fetch_html(&self, url: &str) -> Result<String, FetchError> {
+        (**self).fetch_html(url).await
+    }
+
+    async fn fetch_bytes(&self, url: &str) -> Result<Vec<u8>, FetchError> {
+        (**self).fetch_bytes(url).await
+    }
+}
+
 /// Mock response for testing.
 #[derive(Clone)]
 pub enum MockResponse {
