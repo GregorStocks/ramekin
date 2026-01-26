@@ -124,7 +124,7 @@ pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
 
     // Create AI client and fetch user tags for auto-tagging
     let ai_client: Arc<dyn AiClient> =
-        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set in dev.env"));
+        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set"));
     let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
         tracing::warn!("Failed to fetch user tags: {}", e);
         vec![]
