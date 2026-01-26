@@ -42,15 +42,19 @@ impl StepOutputStore for DbOutputStore<'_> {
             }
         };
 
-        step_outputs::table
+        match step_outputs::table
             .filter(step_outputs::scrape_job_id.eq(self.job_id))
             .filter(step_outputs::step_name.eq(step_name))
             .order(step_outputs::created_at.desc())
             .first::<StepOutput>(&mut conn)
             .optional()
-            .ok()
-            .flatten()
-            .map(|so| so.output)
+        {
+            Ok(opt) => opt.map(|so| so.output),
+            Err(e) => {
+                tracing::error!("Failed to query step output for {}: {}", step_name, e);
+                None
+            }
+        }
     }
 
     fn save_output(

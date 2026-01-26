@@ -118,7 +118,7 @@ impl PipelineStep for FetchImagesStep<'_> {
             }
         };
 
-        // Fetch images (only the first one for now)
+        // TODO: Currently only fetches the first image. Consider fetching all images.
         let mut photo_ids = Vec::new();
         let mut failed_urls = Vec::new();
 

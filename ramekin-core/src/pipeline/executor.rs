@@ -62,6 +62,7 @@ pub async fn run_pipeline(
         let result = step.execute(&ctx).await;
 
         // Save output if successful
+        // TODO: Confirm that we want to continue on save failure (vs failing the step)
         if result.success {
             if let Err(e) = store.save_output(meta.name, &result.output) {
                 // Log error but continue - we still have the result
