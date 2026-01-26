@@ -421,7 +421,7 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 "fetch_images step is DB-specific and not available in CLI"
             ));
         }
-        PipelineStep::Enrich => {
+        PipelineStep::EnrichNormalizeIngredients => {
             // Ensure previous steps are done
             if !client.is_cached(url) {
                 tracing::debug!("HTML not cached, fetching first...");
@@ -441,7 +441,56 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 tracing::warn!(error = ?save_result.error, "Save failed");
                 return Ok(());
             }
-            pipeline::run_enrich(url, run_dir)
+            pipeline::run_enrich_normalize_ingredients(url, run_dir)
+        }
+        PipelineStep::EnrichAutoTag => {
+            // Ensure previous steps are done
+            if !client.is_cached(url) {
+                tracing::debug!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                if !fetch_result.success {
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
+                    return Ok(());
+                }
+            }
+            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            if !extract_result.success {
+                tracing::warn!(error = ?extract_result.error, "Extract failed");
+                return Ok(());
+            }
+            let save_result = pipeline::run_save_recipe(url, run_dir);
+            if !save_result.success {
+                tracing::warn!(error = ?save_result.error, "Save failed");
+                return Ok(());
+            }
+            // Run prior enrich step (but don't fail if it fails)
+            let _ = pipeline::run_enrich_normalize_ingredients(url, run_dir);
+            pipeline::run_enrich_auto_tag(url, run_dir)
+        }
+        PipelineStep::EnrichGeneratePhoto => {
+            // Ensure previous steps are done
+            if !client.is_cached(url) {
+                tracing::debug!("HTML not cached, fetching first...");
+                let fetch_result = pipeline::run_fetch_html(url, &client, false).await;
+                if !fetch_result.success {
+                    tracing::warn!(error = ?fetch_result.error, "Fetch failed");
+                    return Ok(());
+                }
+            }
+            let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
+            if !extract_result.success {
+                tracing::warn!(error = ?extract_result.error, "Extract failed");
+                return Ok(());
+            }
+            let save_result = pipeline::run_save_recipe(url, run_dir);
+            if !save_result.success {
+                tracing::warn!(error = ?save_result.error, "Save failed");
+                return Ok(());
+            }
+            // Run prior enrich steps (but don't fail if they fail)
+            let _ = pipeline::run_enrich_normalize_ingredients(url, run_dir);
+            let _ = pipeline::run_enrich_auto_tag(url, run_dir);
+            pipeline::run_enrich_generate_photo(url, run_dir)
         }
     };
 

@@ -59,7 +59,7 @@ pub struct AllStepsResult {
 pub fn parse_pipeline_step(s: &str) -> Result<PipelineStep> {
     PipelineStep::from_str(s).ok_or_else(|| {
         anyhow!(
-            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich",
+            "Unknown step: {}. Valid steps: fetch_html, extract_recipe, save_recipe, enrich_normalize_ingredients, enrich_auto_tag, enrich_generate_photo",
             s
         )
     })
@@ -254,19 +254,65 @@ pub fn run_save_recipe(url: &str, run_dir: &Path) -> StepResult {
     }
 }
 
-/// Run the enrich step for a URL.
+/// Run the enrich_normalize_ingredients step for a URL.
 /// Currently a no-op that always fails - enrichment is expected to be unreliable.
-pub fn run_enrich(url: &str, run_dir: &Path) -> StepResult {
+pub fn run_enrich_normalize_ingredients(url: &str, run_dir: &Path) -> StepResult {
     let start = Instant::now();
     let slug = slugify_url(url);
-    let output_dir = run_dir.join("urls").join(&slug).join("enrich");
+    let output_dir = run_dir
+        .join("urls")
+        .join(&slug)
+        .join("enrich_normalize_ingredients");
     let duration_ms = start.elapsed().as_millis() as u64;
 
-    let error_msg = "Enrichment not implemented (no-op stub)".to_string();
+    let error_msg = "Ingredient normalization not implemented (no-op stub)".to_string();
     let _ = save_step_error(&output_dir, &error_msg, duration_ms);
 
     StepResult {
-        step: PipelineStep::Enrich,
+        step: PipelineStep::EnrichNormalizeIngredients,
+        success: false,
+        duration_ms,
+        error: Some(error_msg),
+        cached: false,
+    }
+}
+
+/// Run the enrich_auto_tag step for a URL.
+/// Currently a no-op that always fails - enrichment is expected to be unreliable.
+pub fn run_enrich_auto_tag(url: &str, run_dir: &Path) -> StepResult {
+    let start = Instant::now();
+    let slug = slugify_url(url);
+    let output_dir = run_dir.join("urls").join(&slug).join("enrich_auto_tag");
+    let duration_ms = start.elapsed().as_millis() as u64;
+
+    let error_msg = "Auto-tagging not implemented (no-op stub)".to_string();
+    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
+
+    StepResult {
+        step: PipelineStep::EnrichAutoTag,
+        success: false,
+        duration_ms,
+        error: Some(error_msg),
+        cached: false,
+    }
+}
+
+/// Run the enrich_generate_photo step for a URL.
+/// Currently a no-op that always fails - enrichment is expected to be unreliable.
+pub fn run_enrich_generate_photo(url: &str, run_dir: &Path) -> StepResult {
+    let start = Instant::now();
+    let slug = slugify_url(url);
+    let output_dir = run_dir
+        .join("urls")
+        .join(&slug)
+        .join("enrich_generate_photo");
+    let duration_ms = start.elapsed().as_millis() as u64;
+
+    let error_msg = "Photo generation not implemented (no-op stub)".to_string();
+    let _ = save_step_error(&output_dir, &error_msg, duration_ms);
+
+    StepResult {
+        step: PipelineStep::EnrichGeneratePhoto,
         success: false,
         duration_ms,
         error: Some(error_msg),
@@ -344,6 +390,7 @@ pub async fn run_all_steps(
 
     for result in &generic_results {
         // Determine which step this is by looking at the output structure
+        // Note: For enrich steps, we check next_step to differentiate them
         let step = if result.output.get("html").is_some() {
             PipelineStep::FetchHtml
         } else if result.output.get("method_used").is_some() {
@@ -355,8 +402,13 @@ pub async fn run_all_steps(
             continue;
         } else if result.output.get("saved_at").is_some() {
             PipelineStep::SaveRecipe
+        } else if result.next_step.as_deref() == Some("enrich_auto_tag") {
+            PipelineStep::EnrichNormalizeIngredients
+        } else if result.next_step.as_deref() == Some("enrich_generate_photo") {
+            PipelineStep::EnrichAutoTag
         } else {
-            PipelineStep::Enrich
+            // Terminal enrich step (no next_step)
+            PipelineStep::EnrichGeneratePhoto
         };
 
         step_results.push(StepResult {
@@ -514,7 +566,18 @@ mod tests {
             PipelineStep::from_str("save_recipe"),
             Some(PipelineStep::SaveRecipe)
         );
-        assert_eq!(PipelineStep::from_str("enrich"), Some(PipelineStep::Enrich));
+        assert_eq!(
+            PipelineStep::from_str("enrich_normalize_ingredients"),
+            Some(PipelineStep::EnrichNormalizeIngredients)
+        );
+        assert_eq!(
+            PipelineStep::from_str("enrich_auto_tag"),
+            Some(PipelineStep::EnrichAutoTag)
+        );
+        assert_eq!(
+            PipelineStep::from_str("enrich_generate_photo"),
+            Some(PipelineStep::EnrichGeneratePhoto)
+        );
         assert_eq!(PipelineStep::from_str("invalid"), None);
     }
 
@@ -523,7 +586,9 @@ mod tests {
         assert!(parse_pipeline_step("fetch_html").is_ok());
         assert!(parse_pipeline_step("extract_recipe").is_ok());
         assert!(parse_pipeline_step("save_recipe").is_ok());
-        assert!(parse_pipeline_step("enrich").is_ok());
+        assert!(parse_pipeline_step("enrich_normalize_ingredients").is_ok());
+        assert!(parse_pipeline_step("enrich_auto_tag").is_ok());
+        assert!(parse_pipeline_step("enrich_generate_photo").is_ok());
         assert!(parse_pipeline_step("invalid").is_err());
     }
 }

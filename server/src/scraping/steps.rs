@@ -274,7 +274,7 @@ impl PipelineStep for SaveRecipeStep {
                 output: json!({ "recipe_id": recipe_id.to_string() }),
                 error: None,
                 duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("enrich".to_string()),
+                next_step: Some("enrich_normalize_ingredients".to_string()),
             },
             Err(e) => StepResult {
                 success: false,
@@ -359,17 +359,17 @@ impl SaveRecipeStep {
     }
 }
 
-/// Server implementation of Enrich step.
+/// Server implementation of EnrichNormalizeIngredients step.
 ///
 /// Currently a no-op stub that always fails - enrichment is expected to be unreliable.
-pub struct EnrichStep;
+pub struct EnrichNormalizeIngredientsStep;
 
 #[async_trait]
-impl PipelineStep for EnrichStep {
+impl PipelineStep for EnrichNormalizeIngredientsStep {
     fn metadata(&self) -> StepMetadata {
         StepMetadata {
-            name: "enrich",
-            description: "Enrich recipe with AI",
+            name: "enrich_normalize_ingredients",
+            description: "Normalize ingredient text with AI",
             continues_on_failure: true,
         }
     }
@@ -377,16 +377,74 @@ impl PipelineStep for EnrichStep {
     async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
 
-        // No-op stub: always fail
-        // The pipeline will continue regardless (continues_on_failure: true)
-        tracing::debug!("Enrichment step failed (no-op stub)");
+        tracing::debug!("Ingredient normalization step failed (no-op stub)");
 
         StepResult {
             success: false,
             output: json!({ "success": false }),
-            error: Some("Enrichment not implemented".to_string()),
+            error: Some("Ingredient normalization not implemented".to_string()),
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: None,
+            next_step: Some("enrich_auto_tag".to_string()),
+        }
+    }
+}
+
+/// Server implementation of EnrichAutoTag step.
+///
+/// Currently a no-op stub that always fails - enrichment is expected to be unreliable.
+pub struct EnrichAutoTagStep;
+
+#[async_trait]
+impl PipelineStep for EnrichAutoTagStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: "enrich_auto_tag",
+            description: "Auto-tag recipe based on user's existing tags",
+            continues_on_failure: true,
+        }
+    }
+
+    async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        tracing::debug!("Auto-tag step failed (no-op stub)");
+
+        StepResult {
+            success: false,
+            output: json!({ "success": false }),
+            error: Some("Auto-tagging not implemented".to_string()),
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: Some("enrich_generate_photo".to_string()),
+        }
+    }
+}
+
+/// Server implementation of EnrichGeneratePhoto step.
+///
+/// Currently a no-op stub that always fails - enrichment is expected to be unreliable.
+pub struct EnrichGeneratePhotoStep;
+
+#[async_trait]
+impl PipelineStep for EnrichGeneratePhotoStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: "enrich_generate_photo",
+            description: "Generate AI photo if recipe has no photo",
+            continues_on_failure: true,
+        }
+    }
+
+    async fn execute(&self, _ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        tracing::debug!("Photo generation step failed (no-op stub)");
+
+        StepResult {
+            success: false,
+            output: json!({ "success": false }),
+            error: Some("Photo generation not implemented".to_string()),
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: None, // Terminal step
         }
     }
 }
