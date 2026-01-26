@@ -3,6 +3,7 @@ mod auth;
 mod db;
 mod models;
 mod photos;
+mod raw_sql;
 mod schema;
 mod scraping;
 mod telemetry;

@@ -377,14 +377,36 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
         print("ast-grep not installed (cargo install ast-grep)", file=sys.stderr)
         return ("Raw SQL check", False)
 
-    # Load allowlist
+    # Load allowlist - supports three formats:
+    # - file (whole file allowed - for designated raw SQL modules)
+    # - file~pattern (content match in specific file)
+    # - *~pattern (content match in any file)
     allowlist_path = project_root / "scripts" / "sql_allowlist.txt"
-    allowlist: set[str] = set()
+    file_allowlist: set[str] = set()
+    pattern_allowlist: list[tuple[str, str]] = []  # (file_or_wildcard, pattern)
     if allowlist_path.exists():
         for line in allowlist_path.read_text().splitlines():
             line = line.strip()
             if line and not line.startswith("#"):
-                allowlist.add(line)
+                if "~" in line:
+                    # Content-based match: file~pattern or *~pattern
+                    file_part, pattern = line.split("~", 1)
+                    pattern_allowlist.append((file_part, pattern))
+                else:
+                    # Whole file allowed
+                    file_allowlist.add(line)
+
+    def is_allowed(file_path: str, line_num: int, text: str) -> bool:
+        # Check whole-file allowlist
+        if file_path in file_allowlist:
+            return True
+        # Check pattern-based allowlist
+        for allowed_file, pattern in pattern_allowlist:
+            if allowed_file == "*" and pattern in text:
+                return True
+            if file_path == allowed_file and pattern in text:
+                return True
+        return False
 
     # Run ast-grep with the rule file
     rule_file = project_root / "scripts" / "raw-sql-rules.yml"
@@ -412,7 +434,10 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
                 text = match.get("text", "").split("\n")[0].strip()
 
                 location = f"{file_path}:{line_num}"
-                if location not in allowlist and location not in violations:
+                if (
+                    not is_allowed(file_path, line_num, text)
+                    and location not in violations
+                ):
                     violations[location] = (file_path, line_num, text)
         except json.JSONDecodeError:
             print(f"Failed to parse ast-grep output: {result.stdout}", file=sys.stderr)
