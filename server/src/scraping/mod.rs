@@ -7,7 +7,7 @@ use crate::schema::{scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, SaveRecipeStepMeta};
-use ramekin_core::pipeline::{run_pipeline, StepOutputStore, StepRegistry};
+use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
 use ramekin_core::{FetchHtmlOutput, BUILD_ID};
 use std::env;
 use std::sync::Arc;
@@ -335,99 +335,219 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     // Determine starting step
     let first_step = job.current_step.as_deref().unwrap_or(FetchHtmlStep::NAME);
 
-    // Update status to scraping/parsing based on first step
-    let status = if first_step == FetchHtmlStep::NAME {
-        STATUS_SCRAPING
-    } else {
-        STATUS_PARSING
-    };
-    update_status_and_step(&pool, job_id, status, Some(first_step))?;
-
     tracing::info!(
-        "Job {} starting pipeline from step '{}' in status '{}'",
+        "Job {} starting pipeline from step '{}'",
         job_id,
-        first_step,
-        status
+        first_step
     );
 
     // Build the step registry and output store
     let registry = build_registry(pool.clone(), job.user_id);
     let mut store = DbOutputStore::new(&pool, job_id);
 
-    // Run the generic pipeline
-    let results = run_pipeline(first_step, &job.url, &mut store, &registry).await;
+    // Run pipeline with status updates and OpenTelemetry instrumentation
+    let mut current_step_name: Option<String> = Some(first_step.to_string());
+    let mut failed_at_status = STATUS_SCRAPING;
+    let mut last_error: Option<String> = None;
 
-    // Determine which step failed by tracking the step chain
-    // fetch_html is "scraping", all other steps are "parsing"
-    let mut current_step = first_step;
-    let mut failed_at_status = status;
-    for result in &results {
-        // Determine the phase for this step
-        failed_at_status = if current_step == FetchHtmlStep::NAME {
+    while let Some(step_name) = current_step_name.take() {
+        let step = match registry.get(&step_name) {
+            Some(s) => s,
+            None => {
+                tracing::warn!("Unknown step '{}', stopping pipeline", step_name);
+                break;
+            }
+        };
+
+        // Determine status for this step: fetch_html is "scraping", all others are "parsing"
+        let step_status = if step_name == FetchHtmlStep::NAME {
             STATUS_SCRAPING
         } else {
             STATUS_PARSING
         };
+        failed_at_status = step_status;
+
+        // Update job status and current_step before executing
+        update_status_and_step(&pool, job_id, step_status, Some(&step_name))?;
+
+        // Execute step with OpenTelemetry span
+        let result = execute_step_with_tracing(step, &job.url, &store, &step_name).await;
+
+        // Save output (for both success and failure - useful for debugging)
+        if let Err(e) = store.save_output(&step_name, &result.output) {
+            tracing::warn!("Failed to save output for step {}: {}", step_name, e);
+        }
+
+        let meta = step.metadata();
+        let should_continue = result.success || meta.continues_on_failure;
 
         if result.success {
             tracing::debug!(
                 "Step '{}' completed successfully in {}ms",
-                current_step,
+                step_name,
                 result.duration_ms
             );
-            // Move to next step
-            if let Some(ref next) = result.next_step {
-                current_step = next.as_str();
-            }
-        } else if let Some(ref error) = result.error {
-            tracing::debug!("Step '{}' failed: {}", current_step, error);
-            // Don't update current_step - we want to record where it failed
+        } else {
+            last_error = result.error.clone();
+            tracing::debug!(
+                "Step '{}' failed: {}",
+                step_name,
+                last_error.as_deref().unwrap_or("unknown error")
+            );
         }
+
+        if !should_continue {
+            break;
+        }
+
+        current_step_name = result.next_step;
     }
 
-    // Determine final outcome from results
-    let last_result = results.last();
+    // Determine final outcome
+    let recipe_id = store
+        .get_output(SaveRecipeStepMeta::NAME)
+        .and_then(|o| {
+            o.get("recipe_id")
+                .and_then(|v| v.as_str())
+                .map(String::from)
+        })
+        .and_then(|s| Uuid::parse_str(&s).ok());
 
-    match last_result {
-        Some(result) => {
-            // Check if we completed successfully (save_recipe succeeded)
-            let recipe_id = store
-                .get_output(SaveRecipeStepMeta::NAME)
-                .and_then(|o| {
-                    o.get("recipe_id")
-                        .and_then(|v| v.as_str())
-                        .map(String::from)
-                })
-                .and_then(|s| Uuid::parse_str(&s).ok());
-
-            if let Some(id) = recipe_id {
-                // Pipeline completed through save_recipe
-                tracing::info!("Job {} completed successfully, recipe_id={}", job_id, id);
-                mark_completed(&pool, job_id, id)?;
-            } else if !result.success && result.next_step.is_none() {
-                // Pipeline failed (step returned failure with no next step)
-                let error = result.error.as_deref().unwrap_or("Unknown error");
-                tracing::warn!("Job {} failed at '{}': {}", job_id, failed_at_status, error);
-                mark_failed(&pool, job_id, failed_at_status, error)?;
-            } else {
-                // Pipeline ended without a recipe (shouldn't happen in normal flow)
-                tracing::warn!("Job {} ended without recipe", job_id);
-                mark_failed(
-                    &pool,
-                    job_id,
-                    failed_at_status,
-                    "Pipeline ended without creating recipe",
-                )?;
-            }
-        }
-        None => {
-            // No results at all (shouldn't happen)
-            tracing::warn!("Job {} produced no results", job_id);
-            mark_failed(&pool, job_id, failed_at_status, "No pipeline results")?;
-        }
+    if let Some(id) = recipe_id {
+        // Pipeline completed through save_recipe
+        tracing::info!("Job {} completed successfully, recipe_id={}", job_id, id);
+        mark_completed(&pool, job_id, id)?;
+    } else if let Some(error) = last_error {
+        // Pipeline failed
+        tracing::warn!("Job {} failed at '{}': {}", job_id, failed_at_status, error);
+        mark_failed(&pool, job_id, failed_at_status, &error)?;
+    } else {
+        // Pipeline ended without a recipe (shouldn't happen in normal flow)
+        tracing::warn!("Job {} ended without recipe", job_id);
+        mark_failed(
+            &pool,
+            job_id,
+            failed_at_status,
+            "Pipeline ended without creating recipe",
+        )?;
     }
 
     Ok(())
+}
+
+/// Execute a pipeline step with OpenTelemetry tracing.
+///
+/// Creates a span for the step with relevant attributes and records
+/// step-specific data after execution.
+async fn execute_step_with_tracing(
+    step: &dyn PipelineStep,
+    url: &str,
+    store: &dyn StepOutputStore,
+    step_name: &str,
+) -> ramekin_core::pipeline::StepResult {
+    use ramekin_core::pipeline::StepResult;
+
+    let span = tracing::info_span!(
+        "scrape_step",
+        otel.name = %format!("{}", step_name),
+        step.name = %step_name,
+        step.success = tracing::field::Empty,
+        step.duration_ms = tracing::field::Empty,
+        step.error = tracing::field::Empty,
+        // Step-specific fields (recorded after execution)
+        http.url = tracing::field::Empty,
+        http.response_content_length = tracing::field::Empty,
+        recipe.title = tracing::field::Empty,
+        recipe.id = tracing::field::Empty,
+        images.requested = tracing::field::Empty,
+        images.success = tracing::field::Empty,
+        images.failed = tracing::field::Empty,
+    );
+
+    let ctx = StepContext {
+        url,
+        outputs: store,
+    };
+
+    let result: StepResult = async {
+        let result = step.execute(&ctx).await;
+
+        // Record common fields
+        let current_span = tracing::Span::current();
+        current_span.record("step.success", result.success);
+        current_span.record("step.duration_ms", result.duration_ms);
+        if let Some(ref error) = result.error {
+            current_span.record("step.error", error.as_str());
+        }
+
+        // Record step-specific fields based on output
+        match step_name {
+            "fetch_html" => {
+                current_span.record("http.url", url);
+                if let Some(html) = result.output.get("html").and_then(|v| v.as_str()) {
+                    current_span.record("http.response_content_length", html.len());
+                }
+            }
+            "extract_recipe" => {
+                if let Some(title) = result
+                    .output
+                    .get("raw_recipe")
+                    .and_then(|r| r.get("title"))
+                    .and_then(|t| t.as_str())
+                {
+                    current_span.record("recipe.title", title);
+                }
+            }
+            "fetch_images" => {
+                // Get requested count from extract_recipe output
+                if let Some(extract_output) = store.get_output("extract_recipe") {
+                    if let Some(urls) = extract_output
+                        .get("raw_recipe")
+                        .and_then(|r| r.get("image_urls"))
+                        .and_then(|u| u.as_array())
+                    {
+                        current_span.record("images.requested", urls.len());
+                    }
+                }
+                if let Some(photo_ids) = result.output.get("photo_ids").and_then(|v| v.as_array()) {
+                    current_span.record("images.success", photo_ids.len());
+                }
+                if let Some(failed) = result.output.get("failed_urls").and_then(|v| v.as_array()) {
+                    current_span.record("images.failed", failed.len());
+                }
+            }
+            "save_recipe" => {
+                if let Some(recipe_id) = result.output.get("recipe_id").and_then(|v| v.as_str()) {
+                    current_span.record("recipe.id", recipe_id);
+                }
+                // Get title from extract_recipe output
+                if let Some(extract_output) = store.get_output("extract_recipe") {
+                    if let Some(title) = extract_output
+                        .get("raw_recipe")
+                        .and_then(|r| r.get("title"))
+                        .and_then(|t| t.as_str())
+                    {
+                        current_span.record("recipe.title", title);
+                    }
+                }
+            }
+            "enrich" => {
+                // Get recipe_id from save_recipe output
+                if let Some(save_output) = store.get_output("save_recipe") {
+                    if let Some(recipe_id) = save_output.get("recipe_id").and_then(|v| v.as_str()) {
+                        current_span.record("recipe.id", recipe_id);
+                    }
+                }
+            }
+            _ => {}
+        }
+
+        result
+    }
+    .instrument(span)
+    .await;
+
+    result
 }
 
 /// Reset a failed job for retry.
