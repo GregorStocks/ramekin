@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 63;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,7 +65,7 @@
 		2D0329159F00DE9F47C1781B /* RamekinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamekinApp.swift; sourceTree = "<group>"; };
 		4BD81ED689AFD40ADCB8CA6A /* Ramekin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Ramekin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D63C3C4C8F4BC8EFFF437A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamekinShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = RamekinShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogger.swift; sourceTree = "<group>"; };
 		B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CD59586EF35C9330613DB46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +205,9 @@
 					67DC56D85ECA0F433270268C = {
 						DevelopmentTeam = 32ANM8P9HJ;
 					};
+					9D6049B4F0454D312E3217E9 = {
+						DevelopmentTeam = 32ANM8P9HJ;
+					};
 					C0187AB667835C46F266BB25 = {
 						DevelopmentTeam = 32ANM8P9HJ;
 					};
@@ -220,6 +223,7 @@
 			);
 			mainGroup = 97DB743FE4B97C3A41CB62AD;
 			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -425,9 +429,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RamekinShareExtension/RamekinShareExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				INFOPLIST_FILE = RamekinShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -435,7 +436,6 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramekin.app.share;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,9 +446,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RamekinShareExtension/RamekinShareExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				INFOPLIST_FILE = RamekinShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +453,6 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramekin.app.share;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

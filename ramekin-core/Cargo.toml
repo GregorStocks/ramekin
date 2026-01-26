@@ -49,5 +49,8 @@ async-openai = "0.30"
 # Hashing for cache keys
 sha2 = "0.10"
 
+# Image format detection and validation
+image = "0.25"
+
 [build-dependencies]
 uuid = { version = "1.18", features = ["v4"] }

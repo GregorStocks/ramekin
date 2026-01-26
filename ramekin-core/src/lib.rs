@@ -3,6 +3,7 @@ pub mod error;
 pub mod extract;
 pub mod fetch;
 pub mod http;
+pub mod image;
 pub mod pipeline;
 pub mod types;
 
@@ -13,6 +14,7 @@ pub use http::{
     CacheStats, CachingClient, CachingClientBuilder, DiskCache, HttpClient, MockClient,
     MockResponse,
 };
+pub use image::{fetch_and_validate_image, validate_image, FetchedImage, MAX_FILE_SIZE};
 pub use types::{
     EnrichAutoTagOutput, EnrichGeneratePhotoOutput, EnrichNormalizeIngredientsOutput,
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
