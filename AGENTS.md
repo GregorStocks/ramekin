@@ -14,11 +14,13 @@ Never modify generated code (except for temporary testing), since your changes w
 
 Never bypass the linter with #noqa or equivalent. Never put a Python import anywhere other than the top of the file.
 
-We do not need backwards compatibility. This does not exist in production. Do not keep unneeded code around for "backwards compatibility".
-
 If a test is failing, you aren't done. There is no such thing as an unrelated test failure. Your extremely strong prior should be that you broke the test. Even if you didn't, you should fix it.
 
 Try very hard to avoid ever writing raw SQL. We should always use the regular Diesel DSL. If you're really sure that you need raw SQL, explicitly confirm with the user first.
+
+We do not need backwards compatibility. This does not exist in production. Do not keep unneeded code around for "backwards compatibility". If you find yourself writing a comment about backwards compatibility or legacy support or anything like that, check with me because you are probably doing the wrong thing. (You've probably been trained to want to do this way more than makes sense - fight that instinct.)
+
+Never fail gracefully, always fail fast. Check with me if you're not sure. (This is another training issue.)
 
 # Git
 
