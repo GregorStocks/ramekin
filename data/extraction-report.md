@@ -9,10 +9,10 @@
 
 ## Extraction Methods
 
-- JSON-LD: 472/500 (94.4%)
-- Microdata: 28/500 (5.6%)
-- Both: 0/500 (0.0%)
-- Neither: 0/500 (0.0%)
+- JSON-LD: 472/553 (85.4%)
+- Microdata: 28/553 (5.1%)
+- Both: 0/553 (0.0%)
+- Neither: 53/553 (9.6%)
 
 ## By Site
 
