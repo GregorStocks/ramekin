@@ -35,6 +35,10 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.ramekin.app
+    dependencies:
+      - target: RamekinShareExtension
+        embed:
+          codeSign: true
 
   RamekinShareExtension:
     type: app-extension
@@ -56,9 +60,6 @@ targets:
       properties:
         com.apple.security.application-groups:
           - group.com.ramekin.app
-    dependencies:
-      - target: Ramekin
-        embed: false
 
   RamekinTests:
     type: bundle.unit-test
