@@ -396,7 +396,7 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                     return Ok(());
                 }
             }
-            pipeline::run_extract_recipe(url, &client, run_dir).step_result
+            pipeline::run_extract_recipe(url, &client, run_dir)
         }
         PipelineStep::SaveRecipe => {
             // Ensure previous steps are done
@@ -409,8 +409,8 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 }
             }
             let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
-            if !extract_result.step_result.success {
-                tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
+            if !extract_result.success {
+                tracing::warn!(error = ?extract_result.error, "Extract failed");
                 return Ok(());
             }
             pipeline::run_save_recipe(url, run_dir)
@@ -432,8 +432,8 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 }
             }
             let extract_result = pipeline::run_extract_recipe(url, &client, run_dir);
-            if !extract_result.step_result.success {
-                tracing::warn!(error = ?extract_result.step_result.error, "Extract failed");
+            if !extract_result.success {
+                tracing::warn!(error = ?extract_result.error, "Extract failed");
                 return Ok(());
             }
             let save_result = pipeline::run_save_recipe(url, run_dir);
