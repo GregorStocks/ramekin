@@ -1,6 +1,3 @@
-pub mod output_store;
-pub mod steps;
-
 use crate::db::DbPool;
 use crate::models::{
     NewPhoto, NewRecipe, NewRecipeVersion, NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput,
