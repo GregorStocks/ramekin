@@ -1,6 +1,0 @@
-# Allowlist for raw SQL usage that has been reviewed for SQL injection safety.
-#
-# All raw SQL is consolidated in raw_sql.rs - see that file for safety docs.
-
-# The designated raw SQL module - all SQL here is reviewed and documented
-server/src/raw_sql.rs

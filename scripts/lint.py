@@ -377,14 +377,8 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
         print("ast-grep not installed (cargo install ast-grep)", file=sys.stderr)
         return ("Raw SQL check", False)
 
-    # Load allowlist of files that are allowed to contain raw SQL
-    allowlist_path = project_root / "scripts" / "sql_allowlist.txt"
-    allowed_files: set[str] = set()
-    if allowlist_path.exists():
-        for line in allowlist_path.read_text().splitlines():
-            line = line.strip()
-            if line and not line.startswith("#"):
-                allowed_files.add(line)
+    # The designated module for all raw SQL - see server/src/raw_sql.rs for safety docs
+    allowed_files = {"server/src/raw_sql.rs"}
 
     # Run ast-grep with the rule file
     rule_file = project_root / "scripts" / "raw-sql-rules.yml"
