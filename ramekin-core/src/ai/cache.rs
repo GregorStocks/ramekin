@@ -36,25 +36,22 @@ impl From<CachedAiResponse> for ChatResponse {
 #[derive(Debug, Clone)]
 pub struct CacheKey {
     pub prompt_name: String,
-    pub prompt_version: String,
     pub model: String,
     pub input_hash: String,
 }
 
 impl CacheKey {
     /// Create a new cache key from the given components.
-    pub fn new(
-        prompt_name: &str,
-        prompt_version: &str,
-        model: &str,
-        messages: &[ChatMessage],
-    ) -> Self {
+    ///
+    /// The cache key is based on the prompt name, model, and a hash of the messages.
+    /// Since the messages include the full rendered prompt, any changes to the prompt
+    /// template will automatically invalidate the cache (no manual version bumping needed).
+    pub fn new(prompt_name: &str, model: &str, messages: &[ChatMessage]) -> Self {
         let input_json = serde_json::to_string(messages).unwrap_or_default();
         let input_hash = sha256_hex(&input_json);
 
         Self {
             prompt_name: prompt_name.to_string(),
-            prompt_version: prompt_version.to_string(),
             model: model.to_string(),
             input_hash,
         }
@@ -62,14 +59,13 @@ impl CacheKey {
 
     /// Convert to a filesystem path relative to the cache directory.
     ///
-    /// Format: {prompt_name}/{prompt_version}/{model_safe}/{hash[0:2]}/{hash}.json
+    /// Format: {prompt_name}/{model_safe}/{hash[0:2]}/{hash}.json
     pub fn to_path(&self) -> PathBuf {
         // Replace slashes in model name (e.g., "openai/gpt-4o-mini" -> "openai--gpt-4o-mini")
         let model_safe = self.model.replace('/', "--");
 
         PathBuf::new()
             .join(&self.prompt_name)
-            .join(&self.prompt_version)
             .join(&model_safe)
             .join(&self.input_hash[..2])
             .join(format!("{}.json", &self.input_hash))

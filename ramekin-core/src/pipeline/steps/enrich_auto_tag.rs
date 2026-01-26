@@ -7,9 +7,7 @@ use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 
-use crate::ai::prompts::auto_tag::{
-    render_auto_tag_prompt, AUTO_TAG_PROMPT_NAME, AUTO_TAG_PROMPT_VERSION,
-};
+use crate::ai::prompts::auto_tag::{render_auto_tag_prompt, AUTO_TAG_PROMPT_NAME};
 use crate::ai::{AiClient, ChatMessage, ChatRequest};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
@@ -135,11 +133,7 @@ impl PipelineStep for EnrichAutoTagStep {
         };
 
         // Call the AI
-        let response = match self
-            .ai_client
-            .complete(AUTO_TAG_PROMPT_NAME, AUTO_TAG_PROMPT_VERSION, request)
-            .await
-        {
+        let response = match self.ai_client.complete(AUTO_TAG_PROMPT_NAME, request).await {
             Ok(r) => r,
             Err(e) => {
                 return StepResult {
@@ -171,14 +165,15 @@ impl PipelineStep for EnrichAutoTagStep {
             }
         };
 
-        // Filter to only valid existing tags (case-insensitive match)
+        // Filter to only valid existing tags (case-insensitive match, preserving user's casing)
         let valid_tags: Vec<String> = ai_response
             .suggested_tags
             .into_iter()
-            .filter(|suggested| {
+            .filter_map(|suggested| {
                 self.user_tags
                     .iter()
-                    .any(|ut| ut.eq_ignore_ascii_case(suggested))
+                    .find(|ut| ut.eq_ignore_ascii_case(&suggested))
+                    .cloned()
             })
             .collect();
 

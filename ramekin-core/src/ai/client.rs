@@ -38,10 +38,12 @@ pub enum AiError {
 #[async_trait]
 pub trait AiClient: Send + Sync {
     /// Complete a chat request.
+    ///
+    /// The `prompt_name` is used for cache organization. Cache invalidation happens
+    /// automatically based on the content hash of the messages.
     async fn complete(
         &self,
         prompt_name: &str,
-        prompt_version: &str,
         request: ChatRequest,
     ) -> Result<ChatResponse, AiError>;
 }
@@ -96,25 +98,25 @@ impl CachingAiClient {
     }
 
     /// Convert our ChatMessage to async-openai's format.
-    fn to_openai_message(msg: &ChatMessage) -> ChatCompletionRequestMessage {
+    fn to_openai_message(msg: &ChatMessage) -> Result<ChatCompletionRequestMessage, AiError> {
         match msg.role {
             Role::System => ChatCompletionRequestSystemMessageArgs::default()
                 .content(msg.content.clone())
                 .build()
-                .unwrap()
-                .into(),
+                .map(Into::into)
+                .map_err(|e| AiError::Api(format!("Failed to build system message: {}", e))),
             Role::User => ChatCompletionRequestUserMessageArgs::default()
                 .content(msg.content.clone())
                 .build()
-                .unwrap()
-                .into(),
+                .map(Into::into)
+                .map_err(|e| AiError::Api(format!("Failed to build user message: {}", e))),
             Role::Assistant => {
                 use async_openai::types::ChatCompletionRequestAssistantMessageArgs;
                 ChatCompletionRequestAssistantMessageArgs::default()
                     .content(msg.content.clone())
                     .build()
-                    .unwrap()
-                    .into()
+                    .map(Into::into)
+                    .map_err(|e| AiError::Api(format!("Failed to build assistant message: {}", e)))
             }
         }
     }
@@ -125,23 +127,13 @@ impl AiClient for CachingAiClient {
     async fn complete(
         &self,
         prompt_name: &str,
-        prompt_version: &str,
         request: ChatRequest,
     ) -> Result<ChatResponse, AiError> {
         // Check cache first
-        let cache_key = CacheKey::new(
-            prompt_name,
-            prompt_version,
-            &self.config.model,
-            &request.messages,
-        );
+        let cache_key = CacheKey::new(prompt_name, &self.config.model, &request.messages);
 
         if let Some(cached) = self.cache.get(&cache_key) {
-            tracing::debug!(
-                prompt_name = prompt_name,
-                prompt_version = prompt_version,
-                "AI response found in cache"
-            );
+            tracing::debug!(prompt_name = prompt_name, "AI response found in cache");
             return Ok(cached.into());
         }
 
@@ -154,11 +146,11 @@ impl AiClient for CachingAiClient {
         self.rate_limit().await;
 
         // Build the request
-        let messages: Vec<_> = request
+        let messages: Vec<ChatCompletionRequestMessage> = request
             .messages
             .iter()
             .map(Self::to_openai_message)
-            .collect();
+            .collect::<Result<Vec<_>, _>>()?;
 
         let mut req_builder = CreateChatCompletionRequestArgs::default();
         req_builder.model(&self.config.model).messages(messages);
@@ -181,7 +173,6 @@ impl AiClient for CachingAiClient {
 
         tracing::debug!(
             prompt_name = prompt_name,
-            prompt_version = prompt_version,
             model = &self.config.model,
             "Calling AI API"
         );
@@ -236,13 +227,12 @@ mod tests {
     fn test_cache_key_path() {
         let key = CacheKey::new(
             "auto_tag",
-            "v1",
             "openai/gpt-4o-mini",
             &[ChatMessage::user("test")],
         );
 
         let path = key.to_path();
-        assert!(path.starts_with("auto_tag/v1/openai--gpt-4o-mini/"));
+        assert!(path.starts_with("auto_tag/openai--gpt-4o-mini/"));
         assert!(path.to_string_lossy().ends_with(".json"));
     }
 }

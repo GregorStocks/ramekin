@@ -1,8 +1,5 @@
 //! Auto-tag prompt for suggesting recipe tags based on user's existing tags.
 
-/// Prompt version - update this when changing the prompt.
-pub const AUTO_TAG_PROMPT_VERSION: &str = "v1";
-
 /// Prompt name for cache keys.
 pub const AUTO_TAG_PROMPT_NAME: &str = "auto_tag";
 
