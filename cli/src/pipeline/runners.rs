@@ -10,7 +10,7 @@ use chrono::Utc;
 use serde::{Deserialize, Serialize};
 
 use ramekin_core::http::{slugify_url, CachingClient, HttpClient};
-use ramekin_core::pipeline::run_pipeline;
+use ramekin_core::pipeline::{run_pipeline, StepOutputStore};
 pub use ramekin_core::PipelineStep;
 
 use super::output_store::FileOutputStore;
@@ -289,28 +289,57 @@ pub async fn run_all_steps(
 ) -> AllStepsResult {
     use super::build_registry;
 
-    // Handle force_fetch by running the fetch step separately first
-    // The generic pipeline doesn't have a force_fetch concept, so we handle it here
-    if force_fetch {
+    let mut step_results = Vec::new();
+    let mut store = FileOutputStore::new(run_dir, url);
+
+    // Check if content is already cached (fast path to avoid network requests)
+    let already_cached = !force_fetch
+        && client.is_cached(url)
+        && client.get_cached_html(url).is_some()
+        && client.get_cached_error(url).is_none();
+
+    // Determine starting point for the pipeline
+    let first_step = if force_fetch {
         // Force fetch by running the dedicated fetch function
         let fetch_result = run_fetch_html(url, &client, true).await;
+        step_results.push(fetch_result.clone());
         if !fetch_result.success {
             return AllStepsResult {
-                step_results: vec![fetch_result],
+                step_results,
                 extraction_stats: None,
             };
         }
-    }
+        // After force fetch, pre-populate store and start from extract_recipe
+        if let Some(html) = client.get_cached_html(url) {
+            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        }
+        "extract_recipe"
+    } else if already_cached {
+        // Content is cached - add a synthetic fetch result and skip to extract_recipe
+        step_results.push(StepResult {
+            step: PipelineStep::FetchHtml,
+            success: true,
+            duration_ms: 0,
+            error: None,
+            cached: true,
+        });
+        // Pre-populate store with cached HTML so extract_recipe can find it
+        if let Some(html) = client.get_cached_html(url) {
+            let _ = store.save_output("fetch_html", &serde_json::json!({ "html": html }));
+        }
+        "extract_recipe"
+    } else {
+        // Not cached - start from fetch_html
+        "fetch_html"
+    };
 
     // Build the registry with the shared client
     let registry = build_registry(client);
-    let mut store = FileOutputStore::new(run_dir, url);
 
-    // Run the generic pipeline
-    let generic_results = run_pipeline("fetch_html", url, &mut store, &registry).await;
+    // Run the generic pipeline from the determined starting point
+    let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
 
-    // Convert generic results to our StepResult format
-    let mut step_results = Vec::new();
+    // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;
 
     for result in &generic_results {
