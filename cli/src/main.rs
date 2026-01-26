@@ -421,17 +421,13 @@ async fn run_pipeline_step(step: &str, url: &str, run_dir: &Path, force_fetch: b
                 "fetch_images step is DB-specific and not available in CLI"
             ));
         }
-        PipelineStep::EnrichNormalizeIngredients => {
-            // Just run this step - fail if prerequisites aren't met
-            pipeline::run_enrich_normalize_ingredients(url, run_dir)
-        }
-        PipelineStep::EnrichAutoTag => {
-            // Just run this step - fail if prerequisites aren't met
-            pipeline::run_enrich_auto_tag(url, run_dir)
-        }
-        PipelineStep::EnrichGeneratePhoto => {
-            // Just run this step - fail if prerequisites aren't met
-            pipeline::run_enrich_generate_photo(url, run_dir)
+        PipelineStep::EnrichNormalizeIngredients
+        | PipelineStep::EnrichAutoTag
+        | PipelineStep::EnrichGeneratePhoto => {
+            // Enrich steps run as part of the full pipeline only
+            return Err(anyhow::anyhow!(
+                "enrich steps run automatically as part of the full pipeline (use pipeline-test)"
+            ));
         }
     };
 

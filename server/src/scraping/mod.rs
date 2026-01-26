@@ -6,7 +6,10 @@ use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
 use crate::schema::{scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
-use ramekin_core::pipeline::steps::{ExtractRecipeStep, FetchImagesStepMeta, SaveRecipeStepMeta};
+use ramekin_core::pipeline::steps::{
+    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
+    FetchImagesStepMeta, SaveRecipeStepMeta,
+};
 use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
 use ramekin_core::{FetchHtmlOutput, BUILD_ID};
 use std::env;
@@ -16,10 +19,7 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{
-    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, FetchHtmlStep,
-    FetchImagesStep, SaveRecipeStep,
-};
+use steps::{FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
