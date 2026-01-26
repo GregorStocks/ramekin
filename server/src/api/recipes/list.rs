@@ -4,6 +4,7 @@ use crate::db::DbPool;
 use crate::get_conn;
 use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
+use crate::tag_in_array;
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -11,9 +12,8 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
-use diesel::dsl::sql;
 use diesel::prelude::*;
-use diesel::sql_types::{Array, Bool, Nullable, Text, Uuid as SqlUuid};
+use diesel::sql_types::{Array, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use utoipa::{IntoParams, ToSchema};
@@ -282,11 +282,7 @@ pub async fn list_recipes(
 
     // Tag filters (AND logic - must have ALL tags)
     for tag in &parsed.tags {
-        query = query.filter(
-            sql::<Bool>(raw_sql::TAG_ARRAY_PREFIX)
-                .bind::<Text, _>(tag)
-                .sql(raw_sql::TAG_ARRAY_SUFFIX),
-        );
+        query = query.filter(tag_in_array!(tag));
     }
 
     // Source filter

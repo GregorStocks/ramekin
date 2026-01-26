@@ -26,22 +26,24 @@ pub fn count_over() -> SqlLiteral<BigInt> {
     sql::<BigInt>("COUNT(*) OVER()")
 }
 
-/// SQL fragment for case-insensitive tag containment check.
+/// Filter expression for case-insensitive tag containment in a citext array.
 ///
-/// # Usage
-/// ```ignore
-/// sql::<Bool>(raw_sql::TAG_ARRAY_PREFIX)
-///     .bind::<Text, _>(tag)
-///     .sql(raw_sql::TAG_ARRAY_SUFFIX)
-/// ```
+/// Checks if `tag` exists in `recipe_versions.tags` using PostgreSQL's
+/// citext extension for case-insensitive comparison.
 ///
 /// # Safety
-/// The tag value MUST be passed via `.bind()`, not interpolated.
+/// The tag value is passed via `.bind()`, not interpolated.
 ///
 /// # Why raw SQL?
 /// Diesel doesn't have native support for citext array containment.
-pub const TAG_ARRAY_PREFIX: &str = "(";
-pub const TAG_ARRAY_SUFFIX: &str = "::citext = ANY(recipe_versions.tags))";
+#[macro_export]
+macro_rules! tag_in_array {
+    ($tag:expr) => {
+        diesel::dsl::sql::<diesel::sql_types::Bool>("(")
+            .bind::<diesel::sql_types::Text, _>($tag)
+            .sql("::citext = ANY(recipe_versions.tags))")
+    };
+}
 
 /// Query to get distinct tags for a user's recipes.
 ///

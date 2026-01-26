@@ -1,14 +1,9 @@
 # Allowlist for raw SQL usage that has been reviewed for SQL injection safety.
 #
-# Formats:
-#   file              - allow all SQL in this file (for designated raw SQL modules)
-#   file~pattern      - allow if pattern appears in the SQL call
-#   *~pattern         - allow in any file if pattern appears
-#
 # All raw SQL is consolidated in raw_sql.rs - see that file for safety docs.
 
 # The designated raw SQL module - all SQL here is reviewed and documented
 server/src/raw_sql.rs
 
-# Any SQL call that uses constants/functions from raw_sql is allowed
-*~raw_sql::
+# tags.rs uses sql_query with constant from raw_sql
+server/src/api/recipes/tags.rs~raw_sql::
