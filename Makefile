@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate ios-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -161,3 +161,6 @@ ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew ins
 	@cd ramekin-ios && xcodegen generate
 	@echo "Xcode project generated at ramekin-ios/Ramekin.xcodeproj"
 	@echo "Open with: open ramekin-ios/Ramekin.xcodeproj"
+
+ios-build: ## Build iOS app for simulator
+	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin -destination 'generic/platform=iOS Simulator' build

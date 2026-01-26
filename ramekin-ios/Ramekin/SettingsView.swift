@@ -5,6 +5,8 @@ struct SettingsView: View {
 
     @State private var showingLogoutConfirmation = false
     @State private var connectionStatus: ConnectionStatus = .unknown
+    @State private var showingDebugLogs = false
+    @State private var debugLogs = ""
 
     enum ConnectionStatus {
         case unknown
@@ -108,6 +110,37 @@ struct SettingsView: View {
                         Spacer()
                         Text("Sign Out")
                         Spacer()
+                    }
+                }
+            }
+
+            Section("Debug") {
+                Button("View Share Extension Logs") {
+                    debugLogs = DebugLogger.shared.readLogs()
+                    showingDebugLogs = true
+                }
+
+                Button("Clear Logs") {
+                    DebugLogger.shared.clearLogs()
+                    debugLogs = ""
+                }
+            }
+        }
+        .sheet(isPresented: $showingDebugLogs) {
+            NavigationStack {
+                ScrollView {
+                    Text(debugLogs.isEmpty ? "No logs yet. Try using the share extension." : debugLogs)
+                        .font(.system(.caption, design: .monospaced))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                }
+                .navigationTitle("Extension Logs")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("Done") {
+                            showingDebugLogs = false
+                        }
                     }
                 }
             }

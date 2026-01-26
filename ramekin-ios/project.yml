@@ -11,6 +11,7 @@ settings:
     SWIFT_VERSION: "5.9"
     MARKETING_VERSION: "1.0.0"
     CURRENT_PROJECT_VERSION: "1"
+    DEVELOPMENT_TEAM: 32ANM8P9HJ
 
 targets:
   Ramekin:
@@ -24,6 +25,9 @@ targets:
       - path: Shared
     info:
       path: Ramekin/Info.plist
+      properties:
+        UILaunchScreen:
+          UIColorName: AccentColor
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ramekin.app
@@ -56,6 +60,7 @@ targets:
           NSExtensionAttributes:
             NSExtensionActivationRule:
               NSExtensionActivationSupportsWebURLWithMaxCount: 1
+              NSExtensionActivationSupportsWebPageWithMaxCount: 1
           NSExtensionPointIdentifier: com.apple.share-services
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShareViewController
     settings:

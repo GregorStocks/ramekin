@@ -4,6 +4,8 @@ import Foundation
 class RamekinAPI {
     static let shared = RamekinAPI()
 
+    private let logger = DebugLogger.shared
+
     private init() {}
 
     // MARK: - Configuration
@@ -150,13 +152,22 @@ class RamekinAPI {
 
     /// Submit a URL for scraping (async job)
     func scrapeURL(_ urlString: String) async throws -> ScrapeResponse {
+        logger.log("scrapeURL called with: \(urlString)")
+
         guard let baseURL = serverURL else {
+            logger.log("ERROR: No server URL configured")
             throw APIError.noServerURL
         }
+        logger.log("Using server URL: \(baseURL)")
+
         guard let token = authToken else {
+            logger.log("ERROR: No auth token")
             throw APIError.noAuthToken
         }
+        logger.log("Auth token present (length: \(token.count))")
+
         guard let url = URL(string: "\(baseURL)/api/scrape") else {
+            logger.log("ERROR: Invalid URL: \(baseURL)/api/scrape")
             throw APIError.invalidURL
         }
 
@@ -168,22 +179,40 @@ class RamekinAPI {
         let body = ScrapeRequest(url: urlString)
         request.httpBody = try JSONEncoder().encode(body)
 
-        let (data, response) = try await URLSession.shared.data(for: request)
+        logger.log("REQUEST: POST \(url.absoluteString)")
+        logger.log("REQUEST BODY: \(String(data: request.httpBody ?? Data(), encoding: .utf8) ?? "nil")")
 
-        guard let httpResponse = response as? HTTPURLResponse else {
-            throw APIError.invalidResponse
-        }
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
 
-        if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
-            return try JSONDecoder().decode(ScrapeResponse.self, from: data)
-        } else {
-            let errorMessage: String?
-            if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
-                errorMessage = errorResponse.errorMessage
-            } else {
-                errorMessage = String(data: data, encoding: .utf8)
+            guard let httpResponse = response as? HTTPURLResponse else {
+                logger.log("ERROR: Invalid response (not HTTPURLResponse)")
+                throw APIError.invalidResponse
             }
-            throw APIError.httpError(httpResponse.statusCode, errorMessage)
+
+            let responseBody = String(data: data, encoding: .utf8) ?? "nil"
+            logger.log("RESPONSE: HTTP \(httpResponse.statusCode)")
+            logger.log("RESPONSE BODY: \(responseBody)")
+
+            if httpResponse.statusCode == 200 || httpResponse.statusCode == 201 {
+                let decoded = try JSONDecoder().decode(ScrapeResponse.self, from: data)
+                logger.log("SUCCESS: Scrape job ID: \(decoded.id)")
+                return decoded
+            } else {
+                let errorMessage: String?
+                if let errorResponse = try? JSONDecoder().decode(ErrorResponse.self, from: data) {
+                    errorMessage = errorResponse.errorMessage
+                } else {
+                    errorMessage = responseBody
+                }
+                logger.log("ERROR: HTTP \(httpResponse.statusCode) - \(errorMessage ?? "unknown")")
+                throw APIError.httpError(httpResponse.statusCode, errorMessage)
+            }
+        } catch let error as APIError {
+            throw error
+        } catch {
+            logger.log("NETWORK ERROR: \(error.localizedDescription)")
+            throw APIError.networkError(error)
         }
     }
 

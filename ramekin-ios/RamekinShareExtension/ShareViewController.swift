@@ -1,13 +1,28 @@
 import UIKit
 import SwiftUI
 import UniformTypeIdentifiers
+import os.log
+
+private let logger = Logger(subsystem: "com.ramekin.app.share", category: "ShareExtension")
 
 /// Share Extension entry point
 /// Handles receiving URLs from Safari and other apps
 class ShareViewController: UIViewController {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        DebugLogger.shared.log("ShareViewController init called")
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        DebugLogger.shared.log("ShareViewController init(coder:) called")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        DebugLogger.shared.log("ShareViewController viewDidLoad called")
+        logger.info("ShareViewController viewDidLoad called")
 
         // Extract the shared URL
         extractURL { [weak self] url in
@@ -52,38 +67,61 @@ class ShareViewController: UIViewController {
     /// Extract URL from the share extension context
     private func extractURL(completion: @escaping (URL?) -> Void) {
         guard let extensionItems = extensionContext?.inputItems as? [NSExtensionItem] else {
+            logger.error("No extension items found in context")
             completion(nil)
             return
         }
 
+        logger.info("Found \(extensionItems.count) extension items")
+
         for item in extensionItems {
-            guard let attachments = item.attachments else { continue }
+            guard let attachments = item.attachments else {
+                logger.debug("Item has no attachments")
+                continue
+            }
+
+            logger.info("Item has \(attachments.count) attachments")
 
             for provider in attachments {
+                logger.debug("Provider registered types: \(provider.registeredTypeIdentifiers)")
+
                 // Try to get URL directly
                 if provider.hasItemConformingToTypeIdentifier(UTType.url.identifier) {
-                    provider.loadItem(forTypeIdentifier: UTType.url.identifier) { item, _ in
+                    logger.info("Provider has URL type, loading...")
+                    provider.loadItem(forTypeIdentifier: UTType.url.identifier) { item, error in
+                        if let error = error {
+                            logger.error("Error loading URL: \(error.localizedDescription)")
+                        }
                         if let url = item as? URL {
+                            logger.info("Successfully extracted URL: \(url.absoluteString)")
                             completion(url)
                             return
                         }
+                        logger.warning("URL item was not a URL type")
                     }
                     return
                 }
 
                 // Try to get plain text (might be a URL string)
                 if provider.hasItemConformingToTypeIdentifier(UTType.plainText.identifier) {
-                    provider.loadItem(forTypeIdentifier: UTType.plainText.identifier) { item, _ in
+                    logger.info("Provider has plainText type, loading...")
+                    provider.loadItem(forTypeIdentifier: UTType.plainText.identifier) { item, error in
+                        if let error = error {
+                            logger.error("Error loading text: \(error.localizedDescription)")
+                        }
                         if let text = item as? String, let url = URL(string: text) {
+                            logger.info("Successfully extracted URL from text: \(url.absoluteString)")
                             completion(url)
                             return
                         }
+                        logger.warning("Text item was not a valid URL string")
                     }
                     return
                 }
             }
         }
 
+        logger.error("Could not extract URL from any provider")
         completion(nil)
     }
 }
@@ -264,39 +302,60 @@ struct ShareExtensionView: View {
     }
 
     private func checkLoginAndSend() {
+        DebugLogger.shared.log("checkLoginAndSend called")
+        DebugLogger.shared.log("isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
+        DebugLogger.shared.log("serverURL: \(RamekinAPI.shared.serverURL ?? "nil")")
+        DebugLogger.shared.log("authToken present: \(RamekinAPI.shared.authToken != nil)")
+        logger.info("checkLoginAndSend called, isLoggedIn: \(RamekinAPI.shared.isLoggedIn)")
+
         // Check if logged in
         guard RamekinAPI.shared.isLoggedIn else {
+            DebugLogger.shared.log("ERROR: User not logged in")
+            logger.warning("User not logged in")
             status = .notLoggedIn
             return
         }
 
         // Check if we have a URL
         guard let url = sharedURL else {
+            DebugLogger.shared.log("ERROR: No URL provided to share")
+            logger.error("No URL provided to share")
             status = .error
             errorMessage = "No URL to save"
             return
         }
 
+        DebugLogger.shared.log("URL to share: \(url.absoluteString)")
         // Send the URL
         sendURL(url)
     }
 
     private func sendURL(_ url: URL) {
+        DebugLogger.shared.log("sendURL called with: \(url.absoluteString)")
+        logger.info("Sending URL to API: \(url.absoluteString)")
         status = .sending
 
         Task {
             do {
+                DebugLogger.shared.log("Calling RamekinAPI.shared.scrapeURL...")
                 _ = try await RamekinAPI.shared.scrapeURL(url.absoluteString)
+                DebugLogger.shared.log("API call completed successfully")
+                logger.info("API call succeeded")
 
                 await MainActor.run {
                     status = .success
+                    DebugLogger.shared.log("Status set to success, will dismiss in 1.5s")
 
                     // Auto-dismiss after a short delay
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                        DebugLogger.shared.log("Calling onComplete()")
                         onComplete()
                     }
                 }
             } catch {
+                DebugLogger.shared.log("API call FAILED: \(error)")
+                DebugLogger.shared.log("Error localized: \(error.localizedDescription)")
+                logger.error("API call failed: \(error.localizedDescription)")
                 await MainActor.run {
                     status = .error
                     errorMessage = error.localizedDescription

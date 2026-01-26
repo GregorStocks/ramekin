@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,14 @@
 		1977F0FB2C15F3F231CCEA93 /* RamekinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8940739D7FD7D674E9EEEAE /* RamekinAPI.swift */; };
 		1CE480F2E18F4BC9672A5CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD59586EF35C9330613DB46A /* Assets.xcassets */; };
 		1FF3C5A864AE091414ABDF4B /* RamekinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0329159F00DE9F47C1781B /* RamekinApp.swift */; };
+		2160E12945B7A2B5AE3AC138 /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */; };
 		34D3C46A9C1BD4481BDC6862 /* RamekinAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22790372DC0BC84154AC9D6 /* RamekinAPITests.swift */; };
 		41A6E6CB6C18D29121830222 /* RamekinShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		477B3746D8F369EECC5C35C4 /* ShareExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881685E07612C128E796D0F /* ShareExtensionTests.swift */; };
+		5D6BB9B97C8523D2CCB56EA5 /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */; };
 		65E1355E7C0D22F25C8D90ED /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */; };
 		7C8BC077FFBC862D15388226 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63C3C4C8F4BC8EFFF437A2 /* ShareViewController.swift */; };
+		85E20E1829CCC2D0047F7D95 /* DebugLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */; };
 		C7F7242B7A49DA0E719CC3A0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D459758C4EE86BC13B17C2 /* LoginView.swift */; };
 		EE131E1BF01C056F2F1D4049 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */; };
 		F67D3A24A5F9F7840772EB5F /* RamekinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8940739D7FD7D674E9EEEAE /* RamekinAPI.swift */; };
@@ -62,7 +65,8 @@
 		2D0329159F00DE9F47C1781B /* RamekinApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamekinApp.swift; sourceTree = "<group>"; };
 		4BD81ED689AFD40ADCB8CA6A /* Ramekin.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Ramekin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D63C3C4C8F4BC8EFFF437A2 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = RamekinShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RamekinShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLogger.swift; sourceTree = "<group>"; };
 		B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		CD59586EF35C9330613DB46A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D22790372DC0BC84154AC9D6 /* RamekinAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RamekinAPITests.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		F02153A7CDEF16DA680BA5D2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AAD1FA9C24C630269EDFD3CD /* DebugLogger.swift */,
 				B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */,
 				E8940739D7FD7D674E9EEEAE /* RamekinAPI.swift */,
 			);
@@ -196,6 +201,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					67DC56D85ECA0F433270268C = {
+						DevelopmentTeam = 32ANM8P9HJ;
+					};
+					C0187AB667835C46F266BB25 = {
+						DevelopmentTeam = 32ANM8P9HJ;
+					};
+				};
 			};
 			buildConfigurationList = C8616806395066E00F258E30 /* Build configuration list for PBXProject "Ramekin" */;
 			compatibilityVersion = "Xcode 14.0";
@@ -207,7 +220,6 @@
 			);
 			mainGroup = 97DB743FE4B97C3A41CB62AD;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -234,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E20E1829CCC2D0047F7D95 /* DebugLogger.swift in Sources */,
 				EE131E1BF01C056F2F1D4049 /* KeychainHelper.swift in Sources */,
 				C7F7242B7A49DA0E719CC3A0 /* LoginView.swift in Sources */,
 				1977F0FB2C15F3F231CCEA93 /* RamekinAPI.swift in Sources */,
@@ -246,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2160E12945B7A2B5AE3AC138 /* DebugLogger.swift in Sources */,
 				17A4238A31F047ABC64B7F52 /* KeychainHelper.swift in Sources */,
 				F67D3A24A5F9F7840772EB5F /* RamekinAPI.swift in Sources */,
 				7C8BC077FFBC862D15388226 /* ShareViewController.swift in Sources */,
@@ -256,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D6BB9B97C8523D2CCB56EA5 /* DebugLogger.swift in Sources */,
 				65E1355E7C0D22F25C8D90ED /* KeychainHelper.swift in Sources */,
 				FB6882291214633D149E5B27 /* RamekinAPI.swift in Sources */,
 				34D3C46A9C1BD4481BDC6862 /* RamekinAPITests.swift in Sources */,
@@ -315,6 +330,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -409,6 +425,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RamekinShareExtension/RamekinShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				INFOPLIST_FILE = RamekinShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +435,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramekin.app.share;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,6 +446,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = RamekinShareExtension/RamekinShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				INFOPLIST_FILE = RamekinShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,6 +456,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ramekin.app.share;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,6 +499,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 32ANM8P9HJ;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
