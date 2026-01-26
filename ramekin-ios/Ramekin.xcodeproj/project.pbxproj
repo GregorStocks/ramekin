@@ -12,6 +12,7 @@
 		1CE480F2E18F4BC9672A5CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD59586EF35C9330613DB46A /* Assets.xcassets */; };
 		1FF3C5A864AE091414ABDF4B /* RamekinApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0329159F00DE9F47C1781B /* RamekinApp.swift */; };
 		34D3C46A9C1BD4481BDC6862 /* RamekinAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22790372DC0BC84154AC9D6 /* RamekinAPITests.swift */; };
+		41A6E6CB6C18D29121830222 /* RamekinShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A4BE43D2461F3756628DE051 /* RamekinShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		477B3746D8F369EECC5C35C4 /* ShareExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1881685E07612C128E796D0F /* ShareExtensionTests.swift */; };
 		65E1355E7C0D22F25C8D90ED /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B939FBCA19E5F5035BC9AD07 /* KeychainHelper.swift */; };
 		7C8BC077FFBC862D15388226 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D63C3C4C8F4BC8EFFF437A2 /* ShareViewController.swift */; };
@@ -23,12 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9F879A44FAED5921E9185509 /* PBXContainerItemProxy */ = {
+		69CDDF9B9FC878F13A59834F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33483522ECE37DB03FF62288 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C0187AB667835C46F266BB25;
-			remoteInfo = Ramekin;
+			remoteGlobalIDString = 9D6049B4F0454D312E3217E9;
+			remoteInfo = RamekinShareExtension;
 		};
 		C17C79741E271B7810CD1316 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -38,6 +39,20 @@
 			remoteInfo = Ramekin;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1D81400A480B472D46B9D90D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				41A6E6CB6C18D29121830222 /* RamekinShareExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		03421A2A0FA405C5E3DEBFE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -145,7 +160,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				3D4135B909E67079B62C37B3 /* PBXTargetDependency */,
 			);
 			name = RamekinShareExtension;
 			packageProductDependencies = (
@@ -160,10 +174,12 @@
 			buildPhases = (
 				6BFB9A9C03A2A1F3817E0276 /* Sources */,
 				DF27271F0D2E0DB3E3C2F2F7 /* Resources */,
+				1D81400A480B472D46B9D90D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				55E7605BD756841C7E56029E /* PBXTargetDependency */,
 			);
 			name = Ramekin;
 			packageProductDependencies = (
@@ -255,10 +271,10 @@
 			target = C0187AB667835C46F266BB25 /* Ramekin */;
 			targetProxy = C17C79741E271B7810CD1316 /* PBXContainerItemProxy */;
 		};
-		3D4135B909E67079B62C37B3 /* PBXTargetDependency */ = {
+		55E7605BD756841C7E56029E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0187AB667835C46F266BB25 /* Ramekin */;
-			targetProxy = 9F879A44FAED5921E9185509 /* PBXContainerItemProxy */;
+			target = 9D6049B4F0454D312E3217E9 /* RamekinShareExtension */;
+			targetProxy = 69CDDF9B9FC878F13A59834F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
