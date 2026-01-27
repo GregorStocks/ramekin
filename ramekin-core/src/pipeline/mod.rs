@@ -18,7 +18,8 @@ mod tests {
     use std::collections::HashSet;
 
     use super::steps::{
-        EnrichStep, ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta, SaveRecipeStepMeta,
+        EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep,
+        ExtractRecipeStep, FetchHtmlStep, FetchImagesStepMeta, SaveRecipeStepMeta,
     };
     use crate::MockClient;
 
@@ -33,7 +34,9 @@ mod tests {
             ExtractRecipeStep::NAME,
             FetchImagesStepMeta::NAME,
             SaveRecipeStepMeta::NAME,
-            EnrichStep::NAME,
+            EnrichAutoTagStep::NAME,
+            EnrichGeneratePhotoStep::NAME,
+            EnrichNormalizeIngredientsStep::NAME,
         ];
 
         let unique: HashSet<_> = names.iter().collect();
