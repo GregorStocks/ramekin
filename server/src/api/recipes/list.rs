@@ -216,16 +216,16 @@ fn escape_like_pattern(s: &str) -> String {
         .replace('_', "\\_")
 }
 
-// Type alias for our query result row (tags fetched separately now)
+// Type alias for our query result row (tags included via correlated subquery)
 type RecipeRow = (
     Uuid,              // recipe id
-    Uuid,              // version id (needed to fetch tags)
     DateTime<Utc>,     // recipe created_at
     String,            // version title
     Option<String>,    // version description
     Vec<Option<Uuid>>, // version photo_ids
     DateTime<Utc>,     // version created_at (updated_at)
     i64,               // total count from window function
+    Vec<String>,       // tags from correlated subquery
 );
 
 #[utoipa::path(
@@ -326,18 +326,18 @@ pub async fn list_recipes(
         (SortBy::UpdatedAt, Direction::Asc) => query.order(recipe_versions::created_at.asc()),
     };
 
-    // Select columns including COUNT(*) OVER() for total in single query
-    // Tags are fetched separately via junction table
+    // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
+    // All data fetched in a single query
     let results: Vec<RecipeRow> = match query
         .select((
             recipes::id,
-            recipe_versions::id,
             recipes::created_at,
             recipe_versions::title,
             recipe_versions::description,
             recipe_versions::photo_ids,
             recipe_versions::created_at,
             raw_sql::count_over(),
+            raw_sql::tags_subquery(),
         ))
         .limit(limit)
         .offset(offset)
@@ -357,37 +357,13 @@ pub async fn list_recipes(
     };
 
     // Extract total from first row, or 0 if no results
-    let total = results.first().map(|r| r.7).unwrap_or(0);
-
-    // Fetch tags for all versions in one query
-    let version_ids: Vec<Uuid> = results.iter().map(|r| r.1).collect();
-    let tags_by_version: std::collections::HashMap<Uuid, Vec<String>> = if version_ids.is_empty() {
-        std::collections::HashMap::new()
-    } else {
-        let tag_rows: Vec<(Uuid, String)> = recipe_version_tags::table
-            .inner_join(user_tags::table)
-            .filter(recipe_version_tags::recipe_version_id.eq_any(&version_ids))
-            .select((recipe_version_tags::recipe_version_id, user_tags::name))
-            .load(&mut conn)
-            .unwrap_or_default();
-
-        let mut map: std::collections::HashMap<Uuid, Vec<String>> =
-            std::collections::HashMap::new();
-        for (version_id, tag_name) in tag_rows {
-            map.entry(version_id).or_default().push(tag_name);
-        }
-        map
-    };
+    let total = results.first().map(|r| r.6).unwrap_or(0);
 
     let recipes = results
         .into_iter()
         .map(
-            |(id, version_id, created_at, title, description, photo_ids, updated_at, _)| {
+            |(id, created_at, title, description, photo_ids, updated_at, _, tags)| {
                 let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
-                let tags = tags_by_version
-                    .get(&version_id)
-                    .cloned()
-                    .unwrap_or_default();
 
                 RecipeSummary {
                     id,

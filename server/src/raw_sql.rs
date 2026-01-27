@@ -13,7 +13,7 @@
 
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::BigInt;
+use diesel::sql_types::{Array, BigInt, Text};
 
 /// Window function for counting total rows across the full result set.
 ///
@@ -24,4 +24,21 @@ use diesel::sql_types::BigInt;
 /// Static SQL string with no user input.
 pub fn count_over() -> SqlLiteral<BigInt> {
     sql::<BigInt>("COUNT(*) OVER()")
+}
+
+/// Correlated subquery to fetch tags for the current recipe_versions row.
+///
+/// Returns an array of tag names from user_tags via the junction table.
+/// Diesel doesn't support correlated subqueries with array_agg natively.
+///
+/// # Safety
+/// Static SQL string with no user input. References recipe_versions.id
+/// from the outer query context.
+pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
+    sql::<Array<Text>>(
+        "(SELECT COALESCE(array_agg(ut.name ORDER BY ut.name), ARRAY[]::text[]) \
+         FROM recipe_version_tags rvt \
+         JOIN user_tags ut ON ut.id = rvt.tag_id \
+         WHERE rvt.recipe_version_id = recipe_versions.id)",
+    )
 }

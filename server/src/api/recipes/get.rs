@@ -76,20 +76,49 @@ pub async fn get_recipe(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // First verify the recipe exists and belongs to the user
-    let recipe: (Uuid, DateTime<Utc>, Option<Uuid>) = match recipes::table
-        .filter(recipes::id.eq(id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipes::current_version_id,
-        ))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => {
+    // Build the version filter based on whether a specific version was requested
+    // We join recipes with recipe_versions in a single query
+    let result: Option<(DateTime<Utc>, crate::models::RecipeVersion)> = match params.version_id {
+        Some(version_id) => {
+            // Fetch specific version, verifying it belongs to user's recipe
+            recipes::table
+                .inner_join(recipe_versions::table.on(recipe_versions::recipe_id.eq(recipes::id)))
+                .filter(recipes::id.eq(id))
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_null())
+                .filter(recipe_versions::id.eq(version_id))
+                .select((
+                    recipes::created_at,
+                    crate::models::RecipeVersion::as_select(),
+                ))
+                .first(&mut conn)
+                .optional()
+                .unwrap_or(None)
+        }
+        None => {
+            // Fetch current version
+            recipes::table
+                .inner_join(
+                    recipe_versions::table.on(recipe_versions::id
+                        .nullable()
+                        .eq(recipes::current_version_id)),
+                )
+                .filter(recipes::id.eq(id))
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_null())
+                .select((
+                    recipes::created_at,
+                    crate::models::RecipeVersion::as_select(),
+                ))
+                .first(&mut conn)
+                .optional()
+                .unwrap_or(None)
+        }
+    };
+
+    let (recipe_created_at, version) = match result {
+        Some(r) => r,
+        None => {
             return (
                 StatusCode::NOT_FOUND,
                 Json(ErrorResponse {
@@ -98,65 +127,10 @@ pub async fn get_recipe(
             )
                 .into_response()
         }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    let (recipe_id, recipe_created_at, current_version_id) = recipe;
-
-    // Determine which version to fetch
-    let version_id_to_fetch = match params.version_id {
-        Some(vid) => vid,
-        None => match current_version_id {
-            Some(vid) => vid,
-            None => {
-                return (
-                    StatusCode::NOT_FOUND,
-                    Json(ErrorResponse {
-                        error: "Recipe has no versions".to_string(),
-                    }),
-                )
-                    .into_response()
-            }
-        },
-    };
-
-    // Fetch the version (with verification it belongs to this recipe)
-    let version: crate::models::RecipeVersion = match recipe_versions::table
-        .filter(recipe_versions::id.eq(version_id_to_fetch))
-        .filter(recipe_versions::recipe_id.eq(recipe_id))
-        .first(&mut conn)
-    {
-        Ok(v) => v,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Version not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe version".to_string(),
-                }),
-            )
-                .into_response()
-        }
     };
 
     let ingredients: Vec<Ingredient> =
-        serde_json::from_value(version.ingredients).unwrap_or_default();
+        serde_json::from_value(version.ingredients.clone()).unwrap_or_default();
 
     // Fetch tags from junction table
     let tags: Vec<String> = recipe_version_tags::table
@@ -167,7 +141,7 @@ pub async fn get_recipe(
         .unwrap_or_default();
 
     let response = RecipeResponse {
-        id: recipe_id,
+        id,
         title: version.title,
         description: version.description,
         ingredients,
@@ -177,7 +151,7 @@ pub async fn get_recipe(
         photo_ids: version.photo_ids.into_iter().flatten().collect(),
         tags,
         created_at: recipe_created_at,
-        updated_at: version.created_at, // Version's created_at is the "updated" time
+        updated_at: version.created_at,
         servings: version.servings,
         prep_time: version.prep_time,
         cook_time: version.cook_time,
