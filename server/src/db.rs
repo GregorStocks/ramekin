@@ -48,7 +48,11 @@ impl Instrumentation for TracingInstrumentation {
     fn on_connection_event(&mut self, event: InstrumentationEvent<'_>) {
         match event {
             InstrumentationEvent::StartQuery { query, .. } => {
+                // TODO: Diesel's DebugQuery format includes bindings after " -- binds:".
+                // We strip them to avoid logging sensitive values. Replace this with a
+                // cleaner API once Diesel provides one (e.g., a method to get just the SQL).
                 let sql = format!("{}", query);
+                let sql = sql.split(" -- binds:").next().unwrap_or(&sql);
                 let span = tracing::info_span!(
                     "db.query",
                     db.system = "postgresql",
