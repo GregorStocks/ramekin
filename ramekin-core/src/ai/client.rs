@@ -2,7 +2,7 @@
 
 use async_openai::{
     config::OpenAIConfig,
-    types::{
+    types::chat::{
         ChatCompletionRequestMessage, ChatCompletionRequestSystemMessageArgs,
         ChatCompletionRequestUserMessageArgs, CreateChatCompletionRequestArgs, ResponseFormat,
     },
@@ -111,7 +111,7 @@ impl CachingAiClient {
                 .map(Into::into)
                 .map_err(|e| AiError::Api(format!("Failed to build user message: {}", e))),
             Role::Assistant => {
-                use async_openai::types::ChatCompletionRequestAssistantMessageArgs;
+                use async_openai::types::chat::ChatCompletionRequestAssistantMessageArgs;
                 ChatCompletionRequestAssistantMessageArgs::default()
                     .content(msg.content.clone())
                     .build()
