@@ -44,6 +44,13 @@ jobs:
       - name: Create Python venv
         run: make venv
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-chromium
+
       - name: Install Playwright browsers
         run: |
           START=$(date +%s)
@@ -65,6 +72,13 @@ jobs:
           cd server && cargo build --release 2>&1 | tee /tmp/build.log
           CRATE_COUNT=$(grep -c "Compiling" /tmp/build.log || echo 0)
           echo "::notice::Server build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
+
+      - name: Build CLI binary
+        run: |
+          START=$(date +%s)
+          cd cli && cargo build 2>&1 | tee /tmp/cli-build.log
+          CRATE_COUNT=$(grep -c "Compiling" /tmp/cli-build.log || echo 0)
+          echo "::notice::CLI build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
 
       - name: Create test.env
         run: |

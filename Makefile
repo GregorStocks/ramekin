@@ -68,7 +68,10 @@ generate-schema: ## Regenerate schema.rs from database (requires db-up and migra
 setup-claude-web: ## Setup environment for Claude Code for Web (no-op elsewhere)
 	@./scripts/setup-claude-web.sh
 
-test: check-deps $(CLIENT_MARKER) ## Run API tests
+cli/target/debug/ramekin-cli: $(CLIENT_MARKER)
+	cd cli && cargo build
+
+test: check-deps $(CLIENT_MARKER) cli/target/debug/ramekin-cli ## Run API tests
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/run-tests.sh
 
 test-ui: check-deps $(CLIENT_MARKER) ## Run UI tests with Playwright (requires DATABASE_URL)
