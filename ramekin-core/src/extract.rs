@@ -74,7 +74,14 @@ fn extract_recipe_from_jsonld(
 
         // Look for Recipe type
         if let Some(recipe) = find_recipe_in_json(&json) {
-            return extract_recipe_data(recipe, source_url);
+            let mut raw_recipe = extract_recipe_data(recipe, source_url)?;
+            // Fallback to og:image if no images found in JSON-LD structured data
+            if raw_recipe.image_urls.is_empty() {
+                if let Some(og_image) = extract_og_image(document) {
+                    raw_recipe.image_urls.push(og_image);
+                }
+            }
+            return Ok(raw_recipe);
         }
     }
 
@@ -357,7 +364,13 @@ fn extract_recipe_from_microdata(
     let instructions = extract_microdata_instructions(&recipe_element)?;
 
     // Extract image URLs
-    let image_urls = extract_microdata_images(&recipe_element);
+    let mut image_urls = extract_microdata_images(&recipe_element);
+    // Fallback to og:image if no images found in microdata
+    if image_urls.is_empty() {
+        if let Some(og_image) = extract_og_image(document) {
+            image_urls.push(og_image);
+        }
+    }
 
     let source_name = extract_source_name(source_url);
 
@@ -458,4 +471,102 @@ fn extract_microdata_images(recipe_element: &scraper::ElementRef) -> Vec<String>
             None
         })
         .collect()
+}
+
+/// Extract image URL from og:image meta tag.
+/// This is a fallback for sites that don't include image data in their recipe structured data
+/// (e.g., smittenkitchen.com uses Jetpack recipes which omit itemprop="image").
+fn extract_og_image(document: &Html) -> Option<String> {
+    let selector = Selector::parse(r#"meta[property="og:image"]"#).ok()?;
+    document
+        .select(&selector)
+        .next()?
+        .value()
+        .attr("content")
+        .map(|s| s.to_string())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_og_image_fallback_for_microdata_without_image() {
+        // HTML with microdata recipe but no itemprop="image", only og:image
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta property="og:image" content="https://example.com/recipe-photo.jpg">
+            </head>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Test Recipe</h1>
+                    <p itemprop="description">A test description</p>
+                    <ul>
+                        <li itemprop="recipeIngredient">1 cup flour</li>
+                        <li itemprop="recipeIngredient">2 eggs</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">Mix and bake.</div>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+
+        assert_eq!(result.title, "Test Recipe");
+        assert_eq!(result.image_urls.len(), 1);
+        assert_eq!(result.image_urls[0], "https://example.com/recipe-photo.jpg");
+    }
+
+    #[test]
+    fn test_og_image_not_used_when_microdata_has_image() {
+        // HTML with microdata recipe that HAS itemprop="image"
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta property="og:image" content="https://example.com/og-photo.jpg">
+            </head>
+            <body>
+                <div itemscope itemtype="https://schema.org/Recipe">
+                    <h1 itemprop="name">Test Recipe</h1>
+                    <img itemprop="image" src="https://example.com/microdata-photo.jpg">
+                    <ul>
+                        <li itemprop="recipeIngredient">1 cup flour</li>
+                    </ul>
+                    <div itemprop="recipeInstructions">Mix and bake.</div>
+                </div>
+            </body>
+            </html>
+        "#;
+
+        let result = extract_recipe(html, "https://example.com/recipe").unwrap();
+
+        // Should use the microdata image, not the og:image
+        assert_eq!(result.image_urls.len(), 1);
+        assert_eq!(
+            result.image_urls[0],
+            "https://example.com/microdata-photo.jpg"
+        );
+    }
+
+    #[test]
+    fn test_extract_og_image() {
+        let html = r#"
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta property="og:image" content="https://example.com/image.jpg">
+            </head>
+            <body></body>
+            </html>
+        "#;
+
+        let document = Html::parse_document(html);
+        let og_image = extract_og_image(&document);
+
+        assert_eq!(og_image, Some("https://example.com/image.jpg".to_string()));
+    }
 }

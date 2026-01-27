@@ -90,13 +90,13 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_validate_jpeg() {
-        // Minimal valid JPEG (just the header bytes for format detection)
-        // This won't decode but will be detected as JPEG format
+    fn test_validate_jpeg_header() {
+        // JPEG header bytes are enough for format detection
+        // validate_image only checks format, not full image validity
         let jpeg_header = [0xFF, 0xD8, 0xFF, 0xE0];
         let result = validate_image(&jpeg_header);
-        // This will fail because it's not a complete JPEG, but let's test with a real one
-        assert!(result.is_err()); // Incomplete JPEG
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), "image/jpeg");
     }
 
     #[test]
