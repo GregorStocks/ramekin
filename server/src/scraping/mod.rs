@@ -21,7 +21,7 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
+use steps::{ApplyAutoTagsStep, FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
@@ -131,6 +131,7 @@ pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
     });
 
     registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+    registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
     registry.register(Box::new(EnrichGeneratePhotoStep));
     registry
 }

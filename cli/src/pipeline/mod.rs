@@ -23,7 +23,7 @@ use ramekin_core::pipeline::StepRegistry;
 pub use runners::{run_all_steps, AllStepsResult, ExtractionStats, PipelineStep, StepResult};
 pub use staging::{clear_staging, ensure_staging_dir, find_staged_html, staging_dir};
 
-use steps::{FetchImagesStep, SaveRecipeStep};
+use steps::{ApplyAutoTagsStep, FetchImagesStep, SaveRecipeStep};
 
 /// Build a step registry with all CLI pipeline steps.
 ///
@@ -46,6 +46,7 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
     let ai_client: Arc<dyn AiClient> =
         Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set in cli.env"));
     registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+    registry.register(Box::new(ApplyAutoTagsStep));
 
     registry.register(Box::new(EnrichGeneratePhotoStep));
 

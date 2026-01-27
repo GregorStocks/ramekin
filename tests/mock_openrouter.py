@@ -29,7 +29,8 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                 self.send_error(400, "Invalid JSON")
                 return
 
-            # Return a mock response with empty suggested_tags
+            # Return a mock response with a test tag
+            # The tag must be in the user's existing tags list to be applied
             response = {
                 "id": "mock-completion-id",
                 "object": "chat.completion",
@@ -40,7 +41,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
                         "index": 0,
                         "message": {
                             "role": "assistant",
-                            "content": '{"suggested_tags": []}',
+                            "content": '{"suggested_tags": ["test-auto-tag"]}',
                         },
                         "finish_reason": "stop",
                     }
