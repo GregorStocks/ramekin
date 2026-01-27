@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 [**list_tags**](RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+[**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 
 
@@ -226,6 +227,34 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**models::VersionListResponse**](VersionListResponse.md)
+
+### Authorization
+
+[bearer_auth](../README.md#bearer_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## rescrape
+
+> models::RescrapeResponse rescrape(id)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**id** | **uuid::Uuid** | Recipe ID | [required] |
+
+### Return type
+
+[**models::RescrapeResponse**](RescrapeResponse.md)
 
 ### Authorization
 
