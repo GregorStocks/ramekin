@@ -10,7 +10,7 @@ processes:
       restart: "no"
 
   fixture:
-    command: python3 -m http.server ${FIXTURE_PORT}
+    command: python3 ../fixture_server.py ${FIXTURE_PORT}
     working_dir: ./tests/scrape_fixtures
     readiness_probe:
       http_get:
