@@ -16,6 +16,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
@@ -433,8 +434,19 @@ def check_raw_sql(project_root: Path) -> tuple[str, bool]:
     return ("Raw SQL check", True)
 
 
+def run_with_timing(name: str, func: callable) -> tuple[str, bool, float]:
+    """Run a linter function and return (name, success, elapsed_seconds)."""
+
+    start = time.monotonic()
+    _, success = func()
+    elapsed = time.monotonic() - start
+    return (name, success, elapsed)
+
+
 def main() -> None:
     """Main execution."""
+
+    overall_start = time.monotonic()
     project_root = get_project_root()
 
     # Define linters to run
@@ -450,20 +462,34 @@ def main() -> None:
         ("Raw SQL check", lambda: check_raw_sql(project_root)),
     ]
 
-    # Run all linters in parallel
-    results = {}
+    # Run all linters in parallel with timing
+    results: dict[str, bool] = {}
+    timings: dict[str, float] = {}
     with ThreadPoolExecutor(max_workers=9) as executor:
-        futures = {executor.submit(func): name for name, func in linters}
+        futures = {
+            executor.submit(run_with_timing, name, func): name for name, func in linters
+        }
 
         for future in as_completed(futures):
-            name, success = future.result()
+            name, success, elapsed = future.result()
             results[name] = success
+            timings[name] = elapsed
+
+    overall_elapsed = time.monotonic() - overall_start
+
+    # Print timing summary (sorted by duration, slowest first)
+    print("\nLinter timings:")
+    for name, elapsed in sorted(timings.items(), key=lambda x: -x[1]):
+        status = "✓" if results[name] else "✗"
+        print(f"  {status} {name:20s} {elapsed:6.1f}s")
+    print(f"  {'─' * 30}")
+    print(f"  Total elapsed:       {overall_elapsed:6.1f}s (parallel)")
 
     # Check if all succeeded
     all_success = all(results.values())
 
     if all_success:
-        print("Linted")
+        print("\nLinted")
     else:
         print("\nLinting failed for:", file=sys.stderr)
         for name, success in results.items():

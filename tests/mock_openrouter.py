@@ -66,7 +66,11 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
 
 
 def main():
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 3003
+    if len(sys.argv) < 2:
+        print("Error: Port argument required", file=sys.stderr)
+        print("Usage: python mock_openrouter.py <port>", file=sys.stderr)
+        sys.exit(1)
+    port = int(sys.argv[1])
     server = HTTPServer(("", port), MockOpenRouterHandler)
     print(f"Mock OpenRouter server running on port {port}", file=sys.stderr)
     server.serve_forever()

@@ -5,7 +5,11 @@ log_location: ./logs/test.log
 
 processes:
   rust-tests:
-    command: cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml
+    command: |
+      echo "[TIMING] rust-tests starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      cargo test -q --manifest-path server/Cargo.toml && cargo test -q --manifest-path cli/Cargo.toml
+      echo "[TIMING] rust-tests completed in $(($(date +%s) - START))s"
     availability:
       restart: "no"
 
@@ -39,7 +43,11 @@ processes:
         condition: process_healthy
 
   cli-build:
-    command: cargo build -q
+    command: |
+      echo "[TIMING] cli-build starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      cargo build -q
+      echo "[TIMING] cli-build completed in $(($(date +%s) - START))s"
     working_dir: ./cli
     availability:
       restart: "no"
@@ -48,7 +56,13 @@ processes:
         condition: process_healthy
 
   api-tests:
-    command: pytest tests -v --ignore=tests/ui
+    command: |
+      echo "[TIMING] api-tests starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      pytest tests -v --ignore=tests/ui
+      EXIT_CODE=$?
+      echo "[TIMING] api-tests completed in $(($(date +%s) - START))s"
+      exit $EXIT_CODE
     environment:
       - FIXTURE_BASE_URL=http://localhost:${FIXTURE_PORT}
       - API_BASE_URL=http://localhost:${PORT}

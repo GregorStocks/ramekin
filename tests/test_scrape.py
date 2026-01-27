@@ -8,7 +8,9 @@ from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
 
 
-FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL", "http://localhost:8888")
+FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL")
+if not FIXTURE_BASE_URL:
+    raise ValueError("FIXTURE_BASE_URL environment variable required")
 
 
 def wait_for_job_completion(scrape_api: ScrapeApi, job_id: str, timeout: float = 10.0):
