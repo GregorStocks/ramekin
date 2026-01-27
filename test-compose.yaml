@@ -18,12 +18,24 @@ processes:
         port: ${FIXTURE_PORT}
         path: /
 
+  mock-openrouter:
+    command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${MOCK_OPENROUTER_PORT}
+        path: /
+
   server:
     working_dir: ./server
     environment:
       - SCRAPE_ALLOWED_HOSTS=localhost:${FIXTURE_PORT}
+      - OPENROUTER_API_KEY=test-api-key
+      - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
     depends_on:
       fixture:
+        condition: process_healthy
+      mock-openrouter:
         condition: process_healthy
 
   cli-build:

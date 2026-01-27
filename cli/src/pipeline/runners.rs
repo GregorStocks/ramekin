@@ -39,6 +39,8 @@ pub struct ExtractionStats {
 pub struct AllStepsResult {
     pub step_results: Vec<StepResult>,
     pub extraction_stats: Option<ExtractionStats>,
+    /// Whether the AI auto-tag response was cached (None if auto-tag didn't run)
+    pub ai_cached: Option<bool>,
 }
 
 // ============================================================================
@@ -109,11 +111,13 @@ pub async fn run_fetch_html(url: &str, client: &CachingClient, force: bool) -> S
 /// Run all pipeline steps for a URL using the generic pipeline infrastructure.
 ///
 /// Takes an `Arc<CachingClient>` for shared ownership across pipeline steps.
+/// User tags are passed to the auto-tag step for evaluation.
 pub async fn run_all_steps(
     url: &str,
     client: Arc<CachingClient>,
     run_dir: &Path,
     force_fetch: bool,
+    user_tags: Vec<String>,
 ) -> AllStepsResult {
     use super::build_registry;
 
@@ -135,6 +139,7 @@ pub async fn run_all_steps(
             return AllStepsResult {
                 step_results,
                 extraction_stats: None,
+                ai_cached: None,
             };
         }
         // After force fetch, pre-populate store and start from extract_recipe
@@ -161,14 +166,15 @@ pub async fn run_all_steps(
         "fetch_html"
     };
 
-    // Build the registry with the shared client
-    let registry = build_registry(client);
+    // Build the registry with the shared client and user tags
+    let registry = build_registry(client, user_tags);
 
     // Run the generic pipeline from the determined starting point
     let generic_results = run_pipeline(first_step, url, &mut store, &registry).await;
 
     // Convert generic results to our StepResult format and append to any existing results
     let mut extraction_stats = None;
+    let mut ai_cached = None;
 
     for result in &generic_results {
         // Use step_name for reliable step identification
@@ -180,6 +186,11 @@ pub async fn run_all_steps(
         // Extract stats for extract_recipe step
         if step == PipelineStep::ExtractRecipe {
             extraction_stats = extract_stats_from_output(&result.output);
+        }
+
+        // Extract AI cache status from auto-tag step
+        if step == PipelineStep::EnrichAutoTag && result.success {
+            ai_cached = result.output.get("cached").and_then(|v| v.as_bool());
         }
 
         step_results.push(StepResult {
@@ -194,6 +205,7 @@ pub async fn run_all_steps(
     AllStepsResult {
         step_results,
         extraction_stats,
+        ai_cached,
     }
 }
 

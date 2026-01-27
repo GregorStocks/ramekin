@@ -108,6 +108,51 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
     }
 }
 
+/// CLI implementation of ApplyAutoTags step.
+///
+/// No-op for CLI - we don't have a database to update.
+/// Just passes through to the next step.
+pub struct ApplyAutoTagsStep;
+
+impl ApplyAutoTagsStep {
+    pub const NAME: &'static str = "apply_auto_tags";
+}
+
+#[async_trait]
+impl PipelineStep for ApplyAutoTagsStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply auto-suggested tags (no-op for CLI)",
+            continues_on_failure: true,
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        // Get suggested tags from enrich_auto_tag output for reporting
+        let auto_tag_output = ctx.outputs.get_output("enrich_auto_tag");
+        let suggested_tags: Vec<String> = auto_tag_output
+            .as_ref()
+            .and_then(|o| o.get("suggested_tags"))
+            .and_then(|v| serde_json::from_value(v.clone()).ok())
+            .unwrap_or_default();
+
+        StepResult {
+            step_name: Self::NAME.to_string(),
+            success: true,
+            output: json!({
+                "message": "No-op for CLI (no database to update)",
+                "suggested_tags": suggested_tags,
+            }),
+            error: None,
+            duration_ms: start.elapsed().as_millis() as u64,
+            next_step: Some("enrich_generate_photo".to_string()),
+        }
+    }
+}
+
 /// CLI implementation of SaveRecipe step.
 ///
 /// Saves the extracted recipe to the output directory as JSON.

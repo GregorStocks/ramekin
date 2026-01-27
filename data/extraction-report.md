@@ -14,6 +14,11 @@
 - Both: 0/553 (0.0%)
 - Neither: 53/553 (9.6%)
 
+## AI Cache
+
+- Cache hits: 247/500 (49.4%)
+- API calls: 253/500 (50.6%)
+
 ## By Site
 
 | Site | Completed | Total | Rate |

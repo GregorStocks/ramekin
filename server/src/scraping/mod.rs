@@ -2,10 +2,12 @@ mod output_store;
 pub mod steps;
 
 use crate::db::DbPool;
+use crate::distinct_tags_query;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
 use crate::schema::{scrape_jobs, step_outputs};
 use chrono::Utc;
 use diesel::prelude::*;
+use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
     FetchImagesStepMeta, SaveRecipeStepMeta,
@@ -19,7 +21,7 @@ use tracing::Instrument;
 use uuid::Uuid;
 
 use output_store::DbOutputStore;
-use steps::{FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
+use steps::{ApplyAutoTagsStep, FetchHtmlStep, FetchImagesStep, SaveRecipeStep};
 
 #[derive(Error, Debug)]
 pub enum ScrapeError {
@@ -89,6 +91,26 @@ pub fn is_host_allowed(url: &str) -> Result<(), ScrapeError> {
     Ok(())
 }
 
+/// Row type for the distinct tags query.
+#[derive(QueryableByName)]
+struct TagRow {
+    #[diesel(sql_type = diesel::sql_types::Text)]
+    tag: String,
+}
+
+/// Fetch user's existing tags from the database.
+fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    let tags: Vec<TagRow> = distinct_tags_query!(user_id)
+        .load(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    Ok(tags.into_iter().map(|r| r.tag).collect())
+}
+
 /// Build a step registry for server-side pipeline execution.
 ///
 /// This creates all step implementations with the necessary resources (DB pool, user ID).
@@ -97,9 +119,19 @@ pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
     registry.register(Box::new(FetchHtmlStep));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
-    registry.register(Box::new(SaveRecipeStep::new(pool, user_id)));
+    registry.register(Box::new(SaveRecipeStep::new(pool.clone(), user_id)));
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
-    registry.register(Box::new(EnrichAutoTagStep));
+
+    // Create AI client and fetch user tags for auto-tagging
+    let ai_client: Arc<dyn AiClient> =
+        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set"));
+    let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
+        tracing::warn!("Failed to fetch user tags: {}", e);
+        vec![]
+    });
+
+    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+    registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
     registry.register(Box::new(EnrichGeneratePhotoStep));
     registry
 }

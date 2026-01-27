@@ -189,6 +189,9 @@ enum Commands {
         /// What to do when fetch fails: continue (default), skip, or prompt
         #[arg(long, value_enum, default_value = "continue")]
         on_fetch_fail: OnFetchFail,
+        /// Path to tags JSON file for auto-tag evaluation
+        #[arg(long, default_value = "data/eval-tags.json")]
+        tags_file: PathBuf,
     },
     /// Show HTML cache statistics
     PipelineCacheStats {
@@ -208,6 +211,15 @@ enum Commands {
         #[arg(long, default_value = "data/pipeline-runs")]
         runs_dir: PathBuf,
         /// Output file for the summary (default: print to stdout)
+        #[arg(short, long)]
+        output: Option<PathBuf>,
+    },
+    /// Generate a report of auto-tag suggestions from the latest pipeline run
+    PipelineTagReport {
+        /// Directory containing pipeline run results
+        #[arg(long, default_value = "data/pipeline-runs")]
+        runs_dir: PathBuf,
+        /// Output file for the report (default: print to stdout)
         #[arg(short, long)]
         output: Option<PathBuf>,
     },
@@ -304,6 +316,7 @@ async fn main() -> Result<()> {
             delay_ms,
             force_fetch,
             on_fetch_fail,
+            tags_file,
         } => {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
@@ -313,6 +326,7 @@ async fn main() -> Result<()> {
                 delay_ms,
                 force_fetch,
                 on_fetch_fail,
+                tags_file,
             };
             pipeline_orchestrator::run_pipeline_test(config).await?;
         }
@@ -331,6 +345,19 @@ async fn main() -> Result<()> {
             if let Some(output_path) = output {
                 std::fs::write(&output_path, &report)?;
                 println!("Summary saved to: {}", output_path.display());
+                println!("(from run: {})", run_id);
+            } else {
+                println!("Run: {}\n", run_id);
+                print!("{}", report);
+            }
+        }
+        Commands::PipelineTagReport { runs_dir, output } => {
+            let (run_id, run_dir) = pipeline_orchestrator::get_latest_run_dir(&runs_dir)?;
+            let report = pipeline_orchestrator::generate_tag_report(&run_dir)?;
+
+            if let Some(output_path) = output {
+                std::fs::write(&output_path, &report)?;
+                println!("Tag report saved to: {}", output_path.display());
                 println!("(from run: {})", run_id);
             } else {
                 println!("Run: {}\n", run_id);

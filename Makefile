@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary ios-generate ios-build
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -44,7 +44,7 @@ api/openapi.json: check-deps $(API_SOURCES)
 # Generate clients from OpenAPI spec
 $(CLIENT_MARKER): api/openapi.json
 	@./scripts/generate-clients.sh
-	@bash -o pipefail -c 'PATH="$(CURDIR)/.venv/bin:$$PATH" ./scripts/lint.py 2>&1 | $(TS)'
+	@cd cli && cargo fmt --all -q 2>/dev/null || true
 
 lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
 	@bash -o pipefail -c 'PATH="$(CURDIR)/.venv/bin:$$PATH" ./scripts/lint.py 2>&1 | $(TS)'
@@ -140,22 +140,31 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
-pipeline-test: ## Run pipeline for test URLs (uses HTML cache)
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
+pipeline-test: ## Run pipeline for test URLs (uses HTML cache). Uses data/eval-tags.json by default.
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
 		$(if $(FORCE_FETCH),--force-fetch,) \
-		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),)
+		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
+		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),)
 
 pipeline-cache-stats: ## Show HTML cache statistics
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-stats
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-stats
 
 pipeline-cache-clear: ## Clear HTML cache
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-cache-clear
 
 pipeline-summary: ## Generate summary report from latest pipeline run (saves to data/extraction-report.md)
-	@cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-summary -o data/extraction-report.md
+
+pipeline-tag-report: ## Generate auto-tag evaluation report from latest pipeline run
+	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
+	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-tag-report -o data/tag-report.md
 
 ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew install xcodegen)
 	@cd ramekin-ios && xcodegen generate

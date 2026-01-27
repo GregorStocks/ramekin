@@ -5,7 +5,7 @@ import pytest
 
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
-from ramekin_client.models import CreateScrapeRequest
+from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
 
 
 FIXTURE_BASE_URL = os.environ.get("FIXTURE_BASE_URL", "http://localhost:8888")
@@ -269,6 +269,49 @@ class TestScrapeIsolation:
             scrape_api2.retry_scrape(response.id)
 
         assert exc_info.value.status == 404
+
+
+class TestScrapeAutoTag:
+    """Test auto-tagging during scrape workflow."""
+
+    def test_scrape_auto_tags_recipe_with_existing_user_tag(self, authed_api_client):
+        """Test that scraping auto-tags the recipe with matching user tags.
+
+        The mock OpenRouter returns 'test-auto-tag' as a suggested tag.
+        If the user has this tag in their tag list, it should be applied.
+        """
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+
+        # First, create a recipe with the tag 'test-auto-tag' so the user has it
+
+        initial_recipe = recipes_api.create_recipe(
+            CreateRecipeRequest(
+                title="Setup Recipe for Tags",
+                ingredients=[{"item": "test ingredient"}],
+                instructions="test instructions",
+                tags=["test-auto-tag"],
+            )
+        )
+        # Verify the tag was created by fetching the recipe
+        fetched_initial = recipes_api.get_recipe(initial_recipe.id)
+        assert "test-auto-tag" in fetched_initial.tags
+
+        # Now scrape a new recipe - it should get auto-tagged
+        url = f"{FIXTURE_BASE_URL}/seriouseats/cream_biscuits.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+
+        job = wait_for_job_completion(scrape_api, response.id, timeout=30.0)
+
+        assert job.status == "completed"
+        assert job.recipe_id is not None
+
+        # Verify the scraped recipe has the auto-tag applied
+        recipe = recipes_api.get_recipe(job.recipe_id)
+        assert "test-auto-tag" in recipe.tags, (
+            f"Expected 'test-auto-tag' in recipe tags, but got: {recipe.tags}"
+        )
 
 
 class TestScrapeNotFound:

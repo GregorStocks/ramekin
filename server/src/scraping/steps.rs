@@ -369,5 +369,177 @@ impl SaveRecipeStep {
     }
 }
 
+/// Server implementation of ApplyAutoTags step.
+///
+/// Takes the suggested tags from enrich_auto_tag output and creates a new
+/// recipe version with those tags applied.
+pub struct ApplyAutoTagsStep {
+    pool: Arc<DbPool>,
+}
+
+impl ApplyAutoTagsStep {
+    pub const NAME: &'static str = "apply_auto_tags";
+
+    pub fn new(pool: Arc<DbPool>) -> Self {
+        Self { pool }
+    }
+}
+
+#[async_trait]
+impl PipelineStep for ApplyAutoTagsStep {
+    fn metadata(&self) -> StepMetadata {
+        StepMetadata {
+            name: Self::NAME,
+            description: "Apply auto-suggested tags to recipe",
+            continues_on_failure: true, // Don't fail the pipeline if tags can't be applied
+        }
+    }
+
+    async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
+        let start = Instant::now();
+
+        // Get recipe_id from save_recipe output
+        let save_output = ctx.outputs.get_output("save_recipe");
+        let recipe_id = match save_output
+            .as_ref()
+            .and_then(|o| o.get("recipe_id"))
+            .and_then(|v| v.as_str())
+            .and_then(|s| Uuid::parse_str(s).ok())
+        {
+            Some(id) => id,
+            None => {
+                return StepResult {
+                    step_name: Self::NAME.to_string(),
+                    success: false,
+                    output: json!({ "error": "No recipe_id in save_recipe output" }),
+                    error: Some("No recipe_id in save_recipe output".to_string()),
+                    duration_ms: start.elapsed().as_millis() as u64,
+                    next_step: Some("enrich_generate_photo".to_string()),
+                };
+            }
+        };
+
+        // Get suggested_tags from enrich_auto_tag output
+        let auto_tag_output = ctx.outputs.get_output("enrich_auto_tag");
+        let suggested_tags: Vec<String> = auto_tag_output
+            .as_ref()
+            .and_then(|o| o.get("suggested_tags"))
+            .and_then(|v| serde_json::from_value(v.clone()).ok())
+            .unwrap_or_default();
+
+        // If no tags suggested, nothing to do
+        if suggested_tags.is_empty() {
+            return StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({ "message": "No tags to apply", "tags_applied": [] }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: Some("enrich_generate_photo".to_string()),
+            };
+        }
+
+        // Apply the tags to the recipe
+        match self.apply_tags(recipe_id, &suggested_tags) {
+            Ok(version_id) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: true,
+                output: json!({
+                    "tags_applied": suggested_tags,
+                    "new_version_id": version_id.to_string(),
+                }),
+                error: None,
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: Some("enrich_generate_photo".to_string()),
+            },
+            Err(e) => StepResult {
+                step_name: Self::NAME.to_string(),
+                success: false,
+                output: json!({ "error": e }),
+                error: Some(e),
+                duration_ms: start.elapsed().as_millis() as u64,
+                next_step: Some("enrich_generate_photo".to_string()),
+            },
+        }
+    }
+}
+
+impl ApplyAutoTagsStep {
+    fn apply_tags(&self, recipe_id: Uuid, tags: &[String]) -> Result<Uuid, String> {
+        use crate::models::{NewRecipeVersion, Recipe, RecipeVersion};
+
+        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+
+        // Get the current version
+        let recipe: Recipe = recipes::table
+            .find(recipe_id)
+            .first(&mut conn)
+            .map_err(|e| e.to_string())?;
+
+        let current_version_id = recipe
+            .current_version_id
+            .ok_or("Recipe has no current version")?;
+
+        let current_version: RecipeVersion = recipe_versions::table
+            .find(current_version_id)
+            .first(&mut conn)
+            .map_err(|e| e.to_string())?;
+
+        // Merge existing tags with new tags (avoid duplicates, case-insensitive)
+        let existing_tags: Vec<String> = current_version
+            .tags
+            .iter()
+            .filter_map(|t| t.clone())
+            .collect();
+
+        let mut merged_tags = existing_tags.clone();
+        for tag in tags {
+            if !merged_tags.iter().any(|t| t.eq_ignore_ascii_case(tag)) {
+                merged_tags.push(tag.clone());
+            }
+        }
+
+        // Convert to Option<String> for the database
+        let tags_for_db: Vec<Option<String>> = merged_tags.into_iter().map(Some).collect();
+
+        // Create new version with tags
+        conn.transaction(|conn| {
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: &current_version.title,
+                description: current_version.description.as_deref(),
+                ingredients: current_version.ingredients.clone(),
+                instructions: &current_version.instructions,
+                source_url: current_version.source_url.as_deref(),
+                source_name: current_version.source_name.as_deref(),
+                photo_ids: &current_version.photo_ids,
+                tags: &tags_for_db,
+                servings: current_version.servings.as_deref(),
+                prep_time: current_version.prep_time.as_deref(),
+                cook_time: current_version.cook_time.as_deref(),
+                total_time: current_version.total_time.as_deref(),
+                rating: current_version.rating,
+                difficulty: current_version.difficulty.as_deref(),
+                nutritional_info: current_version.nutritional_info.as_deref(),
+                notes: current_version.notes.as_deref(),
+                version_source: "auto_tag",
+            };
+
+            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
+                .values(&new_version)
+                .returning(recipe_versions::id)
+                .get_result(conn)?;
+
+            // Update recipe to point to new version
+            diesel::update(recipes::table.find(recipe_id))
+                .set(recipes::current_version_id.eq(version_id))
+                .execute(conn)?;
+
+            Ok(version_id)
+        })
+        .map_err(|e: diesel::result::Error| e.to_string())
+    }
+}
+
 // Enrich steps use generic implementations from ramekin-core
 // (EnrichNormalizeIngredientsStep, EnrichAutoTagStep, EnrichGeneratePhotoStep)
