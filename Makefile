@@ -44,7 +44,7 @@ api/openapi.json: check-deps $(API_SOURCES)
 # Generate clients from OpenAPI spec
 $(CLIENT_MARKER): api/openapi.json
 	@./scripts/generate-clients.sh
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
+	@cd cli && cargo fmt --all -q 2>/dev/null || true
 
 lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
 	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
