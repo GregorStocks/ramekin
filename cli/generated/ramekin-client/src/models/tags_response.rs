@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct TagsResponse {
-    /// List of distinct tags used across user's recipes, sorted alphabetically
+    /// List of all user's tags, sorted alphabetically
     #[serde(rename = "tags")]
     pub tags: Vec<String>,
 }

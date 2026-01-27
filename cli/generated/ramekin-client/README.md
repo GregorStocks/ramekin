@@ -46,6 +46,9 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**create_scrape**](docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**retry_scrape**](docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /api/tags | 
+*TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
+*TagsApi* | [**list_all_tags**](docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
 *TestingApi* | [**ping**](docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
@@ -57,6 +60,8 @@ Class | Method | HTTP request | Description
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](docs/CreateScrapeResponse.md)
+ - [CreateTagRequest](docs/CreateTagRequest.md)
+ - [CreateTagResponse](docs/CreateTagResponse.md)
  - [Direction](docs/Direction.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [Ingredient](docs/Ingredient.md)
@@ -74,6 +79,8 @@ Class | Method | HTTP request | Description
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
+ - [TagItem](docs/TagItem.md)
+ - [TagsListResponse](docs/TagsListResponse.md)
  - [TagsResponse](docs/TagsResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)

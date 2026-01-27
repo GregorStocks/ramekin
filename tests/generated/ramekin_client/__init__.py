@@ -23,6 +23,7 @@ __all__ = [
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
+    "TagsApi",
     "TestingApi",
     "ApiResponse",
     "ApiClient",
@@ -38,6 +39,8 @@ __all__ = [
     "CreateRecipeResponse",
     "CreateScrapeRequest",
     "CreateScrapeResponse",
+    "CreateTagRequest",
+    "CreateTagResponse",
     "Direction",
     "ErrorResponse",
     "Ingredient",
@@ -55,6 +58,8 @@ __all__ = [
     "SignupRequest",
     "SignupResponse",
     "SortBy",
+    "TagItem",
+    "TagsListResponse",
     "TagsResponse",
     "UnauthedPingResponse",
     "UpdateRecipeRequest",
@@ -69,6 +74,7 @@ from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
+from ramekin_client.api.tags_api import TagsApi as TagsApi
 from ramekin_client.api.testing_api import TestingApi as TestingApi
 
 # import ApiClient
@@ -88,6 +94,8 @@ from ramekin_client.models.create_recipe_request import CreateRecipeRequest as C
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse as CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest as CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse as CreateScrapeResponse
+from ramekin_client.models.create_tag_request import CreateTagRequest as CreateTagRequest
+from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
@@ -105,6 +113,8 @@ from ramekin_client.models.scrape_job_response import ScrapeJobResponse as Scrap
 from ramekin_client.models.signup_request import SignupRequest as SignupRequest
 from ramekin_client.models.signup_response import SignupResponse as SignupResponse
 from ramekin_client.models.sort_by import SortBy as SortBy
+from ramekin_client.models.tag_item import TagItem as TagItem
+from ramekin_client.models.tags_list_response import TagsListResponse as TagsListResponse
 from ramekin_client.models.tags_response import TagsResponse as TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest

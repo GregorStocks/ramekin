@@ -26,7 +26,7 @@ class TagsResponse(BaseModel):
     """
     TagsResponse
     """ # noqa: E501
-    tags: List[StrictStr] = Field(description="List of distinct tags used across user's recipes, sorted alphabetically")
+    tags: List[StrictStr] = Field(description="List of all user's tags, sorted alphabetically")
     __properties: ClassVar[List[str]] = ["tags"]
 
     model_config = ConfigDict(

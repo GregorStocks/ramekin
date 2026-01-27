@@ -4,6 +4,7 @@ apis/EnrichApi.ts
 apis/PhotosApi.ts
 apis/RecipesApi.ts
 apis/ScrapeApi.ts
+apis/TagsApi.ts
 apis/TestingApi.ts
 apis/index.ts
 docs/AuthApi.md
@@ -12,6 +13,8 @@ docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
+docs/CreateTagRequest.md
+docs/CreateTagResponse.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
@@ -33,6 +36,9 @@ docs/ScrapeJobResponse.md
 docs/SignupRequest.md
 docs/SignupResponse.md
 docs/SortBy.md
+docs/TagItem.md
+docs/TagsApi.md
+docs/TagsListResponse.md
 docs/TagsResponse.md
 docs/TestingApi.md
 docs/UnauthedPingResponse.md
@@ -46,6 +52,8 @@ models/CreateRecipeRequest.ts
 models/CreateRecipeResponse.ts
 models/CreateScrapeRequest.ts
 models/CreateScrapeResponse.ts
+models/CreateTagRequest.ts
+models/CreateTagResponse.ts
 models/Direction.ts
 models/ErrorResponse.ts
 models/Ingredient.ts
@@ -63,6 +71,8 @@ models/ScrapeJobResponse.ts
 models/SignupRequest.ts
 models/SignupResponse.ts
 models/SortBy.ts
+models/TagItem.ts
+models/TagsListResponse.ts
 models/TagsResponse.ts
 models/UnauthedPingResponse.ts
 models/UpdateRecipeRequest.ts

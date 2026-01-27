@@ -1,8 +1,8 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::distinct_tags_query;
 use crate::get_conn;
+use crate::schema::user_tags;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use serde::Serialize;
@@ -11,14 +11,8 @@ use utoipa::ToSchema;
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
 pub struct TagsResponse {
-    /// List of distinct tags used across user's recipes, sorted alphabetically
+    /// List of all user's tags, sorted alphabetically
     pub tags: Vec<String>,
-}
-
-#[derive(QueryableByName)]
-struct TagRow {
-    #[diesel(sql_type = diesel::sql_types::Text)]
-    tag: String,
 }
 
 #[utoipa::path(
@@ -26,7 +20,7 @@ struct TagRow {
     path = "/api/recipes/tags",
     tag = "recipes",
     responses(
-        (status = 200, description = "List of distinct tags", body = TagsResponse),
+        (status = 200, description = "List of user's tags", body = TagsResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(
@@ -39,8 +33,13 @@ pub async fn list_tags(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Tags are now in recipe_versions, join via current_version_id
-    let tags: Vec<TagRow> = match distinct_tags_query!(user.id).load(&mut conn) {
+    // Query tags from user_tags table directly
+    let tags: Vec<String> = match user_tags::table
+        .filter(user_tags::user_id.eq(user.id))
+        .select(user_tags::name)
+        .order(user_tags::name.asc())
+        .load(&mut conn)
+    {
         Ok(rows) => rows,
         Err(_) => {
             return (
@@ -53,9 +52,7 @@ pub async fn list_tags(
         }
     };
 
-    let response = TagsResponse {
-        tags: tags.into_iter().map(|r| r.tag).collect(),
-    };
+    let response = TagsResponse { tags };
 
     (StatusCode::OK, Json(response)).into_response()
 }

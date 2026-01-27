@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tags** | **List[str]** | List of distinct tags used across user&#39;s recipes, sorted alphabetically | 
+**tags** | **List[str]** | List of all user&#39;s tags, sorted alphabetically | 
 
 ## Example
 

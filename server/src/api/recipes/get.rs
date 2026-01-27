@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::Ingredient;
-use crate::schema::{recipe_versions, recipes};
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Path, Query, State},
     http::StatusCode,
@@ -158,6 +158,14 @@ pub async fn get_recipe(
     let ingredients: Vec<Ingredient> =
         serde_json::from_value(version.ingredients).unwrap_or_default();
 
+    // Fetch tags from junction table
+    let tags: Vec<String> = recipe_version_tags::table
+        .inner_join(user_tags::table)
+        .filter(recipe_version_tags::recipe_version_id.eq(version.id))
+        .select(user_tags::name)
+        .load(&mut conn)
+        .unwrap_or_default();
+
     let response = RecipeResponse {
         id: recipe_id,
         title: version.title,
@@ -167,7 +175,7 @@ pub async fn get_recipe(
         source_url: version.source_url,
         source_name: version.source_name,
         photo_ids: version.photo_ids.into_iter().flatten().collect(),
-        tags: version.tags.into_iter().flatten().collect(),
+        tags,
         created_at: recipe_created_at,
         updated_at: version.created_at, // Version's created_at is the "updated" time
         servings: version.servings,

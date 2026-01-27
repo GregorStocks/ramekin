@@ -3,8 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::raw_sql;
-use crate::schema::{recipe_versions, recipes};
-use crate::tag_in_array;
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -217,16 +216,16 @@ fn escape_like_pattern(s: &str) -> String {
         .replace('_', "\\_")
 }
 
-// Type alias for our query result row
+// Type alias for our query result row (tags fetched separately now)
 type RecipeRow = (
-    Uuid,                // recipe id
-    DateTime<Utc>,       // recipe created_at
-    String,              // version title
-    Option<String>,      // version description
-    Vec<Option<String>>, // version tags
-    Vec<Option<Uuid>>,   // version photo_ids
-    DateTime<Utc>,       // version created_at (updated_at)
-    i64,                 // total count from window function
+    Uuid,              // recipe id
+    Uuid,              // version id (needed to fetch tags)
+    DateTime<Utc>,     // recipe created_at
+    String,            // version title
+    Option<String>,    // version description
+    Vec<Option<Uuid>>, // version photo_ids
+    DateTime<Utc>,     // version created_at (updated_at)
+    i64,               // total count from window function
 );
 
 #[utoipa::path(
@@ -281,8 +280,14 @@ pub async fn list_recipes(
     }
 
     // Tag filters (AND logic - must have ALL tags)
+    // Use EXISTS subquery for each tag
     for tag in &parsed.tags {
-        query = query.filter(tag_in_array!(tag));
+        let tag_subquery = recipe_version_tags::table
+            .inner_join(user_tags::table)
+            .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+            .filter(user_tags::name.eq(tag))
+            .select(recipe_version_tags::recipe_version_id);
+        query = query.filter(diesel::dsl::exists(tag_subquery));
     }
 
     // Source filter
@@ -322,13 +327,14 @@ pub async fn list_recipes(
     };
 
     // Select columns including COUNT(*) OVER() for total in single query
+    // Tags are fetched separately via junction table
     let results: Vec<RecipeRow> = match query
         .select((
             recipes::id,
+            recipe_versions::id,
             recipes::created_at,
             recipe_versions::title,
             recipe_versions::description,
-            recipe_versions::tags,
             recipe_versions::photo_ids,
             recipe_versions::created_at,
             raw_sql::count_over(),
@@ -353,17 +359,41 @@ pub async fn list_recipes(
     // Extract total from first row, or 0 if no results
     let total = results.first().map(|r| r.7).unwrap_or(0);
 
+    // Fetch tags for all versions in one query
+    let version_ids: Vec<Uuid> = results.iter().map(|r| r.1).collect();
+    let tags_by_version: std::collections::HashMap<Uuid, Vec<String>> = if version_ids.is_empty() {
+        std::collections::HashMap::new()
+    } else {
+        let tag_rows: Vec<(Uuid, String)> = recipe_version_tags::table
+            .inner_join(user_tags::table)
+            .filter(recipe_version_tags::recipe_version_id.eq_any(&version_ids))
+            .select((recipe_version_tags::recipe_version_id, user_tags::name))
+            .load(&mut conn)
+            .unwrap_or_default();
+
+        let mut map: std::collections::HashMap<Uuid, Vec<String>> =
+            std::collections::HashMap::new();
+        for (version_id, tag_name) in tag_rows {
+            map.entry(version_id).or_default().push(tag_name);
+        }
+        map
+    };
+
     let recipes = results
         .into_iter()
         .map(
-            |(id, created_at, title, description, tags, photo_ids, updated_at, _)| {
+            |(id, version_id, created_at, title, description, photo_ids, updated_at, _)| {
                 let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
+                let tags = tags_by_version
+                    .get(&version_id)
+                    .cloned()
+                    .unwrap_or_default();
 
                 RecipeSummary {
                     id,
                     title,
                     description,
-                    tags: tags.into_iter().flatten().collect(),
+                    tags,
                     thumbnail_photo_id,
                     created_at,
                     updated_at,

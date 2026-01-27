@@ -6,6 +6,7 @@ ramekin_client/api/enrich_api.py
 ramekin_client/api/photos_api.py
 ramekin_client/api/recipes_api.py
 ramekin_client/api/scrape_api.py
+ramekin_client/api/tags_api.py
 ramekin_client/api/testing_api.py
 ramekin_client/api_client.py
 ramekin_client/api_response.py
@@ -16,6 +17,8 @@ ramekin_client/docs/CreateRecipeRequest.md
 ramekin_client/docs/CreateRecipeResponse.md
 ramekin_client/docs/CreateScrapeRequest.md
 ramekin_client/docs/CreateScrapeResponse.md
+ramekin_client/docs/CreateTagRequest.md
+ramekin_client/docs/CreateTagResponse.md
 ramekin_client/docs/Direction.md
 ramekin_client/docs/EnrichApi.md
 ramekin_client/docs/ErrorResponse.md
@@ -37,6 +40,9 @@ ramekin_client/docs/ScrapeJobResponse.md
 ramekin_client/docs/SignupRequest.md
 ramekin_client/docs/SignupResponse.md
 ramekin_client/docs/SortBy.md
+ramekin_client/docs/TagItem.md
+ramekin_client/docs/TagsApi.md
+ramekin_client/docs/TagsListResponse.md
 ramekin_client/docs/TagsResponse.md
 ramekin_client/docs/TestingApi.md
 ramekin_client/docs/UnauthedPingResponse.md
@@ -51,6 +57,8 @@ ramekin_client/models/create_recipe_request.py
 ramekin_client/models/create_recipe_response.py
 ramekin_client/models/create_scrape_request.py
 ramekin_client/models/create_scrape_response.py
+ramekin_client/models/create_tag_request.py
+ramekin_client/models/create_tag_response.py
 ramekin_client/models/direction.py
 ramekin_client/models/error_response.py
 ramekin_client/models/ingredient.py
@@ -68,6 +76,8 @@ ramekin_client/models/scrape_job_response.py
 ramekin_client/models/signup_request.py
 ramekin_client/models/signup_response.py
 ramekin_client/models/sort_by.py
+ramekin_client/models/tag_item.py
+ramekin_client/models/tags_list_response.py
 ramekin_client/models/tags_response.py
 ramekin_client/models/unauthed_ping_response.py
 ramekin_client/models/update_recipe_request.py
@@ -82,6 +92,8 @@ ramekin_client/test/test_create_recipe_request.py
 ramekin_client/test/test_create_recipe_response.py
 ramekin_client/test/test_create_scrape_request.py
 ramekin_client/test/test_create_scrape_response.py
+ramekin_client/test/test_create_tag_request.py
+ramekin_client/test/test_create_tag_response.py
 ramekin_client/test/test_direction.py
 ramekin_client/test/test_enrich_api.py
 ramekin_client/test/test_error_response.py
@@ -103,6 +115,9 @@ ramekin_client/test/test_scrape_job_response.py
 ramekin_client/test/test_signup_request.py
 ramekin_client/test/test_signup_response.py
 ramekin_client/test/test_sort_by.py
+ramekin_client/test/test_tag_item.py
+ramekin_client/test/test_tags_api.py
+ramekin_client/test/test_tags_list_response.py
 ramekin_client/test/test_tags_response.py
 ramekin_client/test/test_testing_api.py
 ramekin_client/test/test_unauthed_ping_response.py

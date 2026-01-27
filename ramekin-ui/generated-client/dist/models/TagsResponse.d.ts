@@ -16,7 +16,7 @@
  */
 export interface TagsResponse {
     /**
-     * List of distinct tags used across user's recipes, sorted alphabetically
+     * List of all user's tags, sorted alphabetically
      * @type {Array<string>}
      * @memberof TagsResponse
      */

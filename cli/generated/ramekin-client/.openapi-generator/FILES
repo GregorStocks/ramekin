@@ -9,6 +9,8 @@ docs/CreateRecipeRequest.md
 docs/CreateRecipeResponse.md
 docs/CreateScrapeRequest.md
 docs/CreateScrapeResponse.md
+docs/CreateTagRequest.md
+docs/CreateTagResponse.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
@@ -30,6 +32,9 @@ docs/ScrapeJobResponse.md
 docs/SignupRequest.md
 docs/SignupResponse.md
 docs/SortBy.md
+docs/TagItem.md
+docs/TagsApi.md
+docs/TagsListResponse.md
 docs/TagsResponse.md
 docs/TestingApi.md
 docs/UnauthedPingResponse.md
@@ -45,6 +50,7 @@ src/apis/mod.rs
 src/apis/photos_api.rs
 src/apis/recipes_api.rs
 src/apis/scrape_api.rs
+src/apis/tags_api.rs
 src/apis/testing_api.rs
 src/lib.rs
 src/models/capture_request.rs
@@ -52,6 +58,8 @@ src/models/create_recipe_request.rs
 src/models/create_recipe_response.rs
 src/models/create_scrape_request.rs
 src/models/create_scrape_response.rs
+src/models/create_tag_request.rs
+src/models/create_tag_response.rs
 src/models/direction.rs
 src/models/error_response.rs
 src/models/ingredient.rs
@@ -70,6 +78,8 @@ src/models/scrape_job_response.rs
 src/models/signup_request.rs
 src/models/signup_response.rs
 src/models/sort_by.rs
+src/models/tag_item.rs
+src/models/tags_list_response.rs
 src/models/tags_response.rs
 src/models/unauthed_ping_response.rs
 src/models/update_recipe_request.rs

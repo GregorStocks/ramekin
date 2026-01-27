@@ -2,9 +2,8 @@ mod output_store;
 pub mod steps;
 
 use crate::db::DbPool;
-use crate::distinct_tags_query;
 use crate::models::{NewScrapeJob, NewStepOutput, ScrapeJob, StepOutput};
-use crate::schema::{scrape_jobs, step_outputs};
+use crate::schema::{scrape_jobs, step_outputs, user_tags};
 use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
@@ -91,24 +90,20 @@ pub fn is_host_allowed(url: &str) -> Result<(), ScrapeError> {
     Ok(())
 }
 
-/// Row type for the distinct tags query.
-#[derive(QueryableByName)]
-struct TagRow {
-    #[diesel(sql_type = diesel::sql_types::Text)]
-    tag: String,
-}
-
 /// Fetch user's existing tags from the database.
 fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, ScrapeError> {
     let mut conn = pool
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    let tags: Vec<TagRow> = distinct_tags_query!(user_id)
+    let tags: Vec<String> = user_tags::table
+        .filter(user_tags::user_id.eq(user_id))
+        .select(user_tags::name)
+        .order(user_tags::name.asc())
         .load(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    Ok(tags.into_iter().map(|r| r.tag).collect())
+    Ok(tags)
 }
 
 /// Build a step registry for server-side pipeline execution.

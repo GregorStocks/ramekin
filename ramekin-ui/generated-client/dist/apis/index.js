@@ -5,4 +5,5 @@ export * from './EnrichApi';
 export * from './PhotosApi';
 export * from './RecipesApi';
 export * from './ScrapeApi';
+export * from './TagsApi';
 export * from './TestingApi';

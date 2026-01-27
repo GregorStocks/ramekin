@@ -1,20 +1,14 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::distinct_tags_query;
 use crate::get_conn;
+use crate::schema::user_tags;
 use crate::types::RecipeContent;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use ramekin_core::ai::{suggest_tags, CachingAiClient};
 use std::sync::Arc;
 use utoipa::OpenApi;
-
-#[derive(QueryableByName)]
-struct TagRow {
-    #[diesel(sql_type = diesel::sql_types::Text)]
-    tag: String,
-}
 
 /// Enrich a recipe using AI
 ///
@@ -42,12 +36,14 @@ pub async fn enrich_recipe(
     State(pool): State<Arc<DbPool>>,
     Json(request): Json<RecipeContent>,
 ) -> impl IntoResponse {
-    // Fetch user's existing tags
+    // Fetch user's existing tags from user_tags table
     let mut conn = get_conn!(pool);
-    let user_tags: Vec<String> = match distinct_tags_query!(user.id).load(&mut conn) {
-        Ok(rows) => rows.into_iter().map(|r: TagRow| r.tag).collect(),
-        Err(_) => vec![], // If we can't fetch tags, continue with empty list
-    };
+    let user_tags: Vec<String> = user_tags::table
+        .filter(user_tags::user_id.eq(user.id))
+        .select(user_tags::name)
+        .order(user_tags::name.asc())
+        .load(&mut conn)
+        .unwrap_or_default();
 
     // Create AI client
     let ai_client = match CachingAiClient::from_env() {

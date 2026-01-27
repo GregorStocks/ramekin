@@ -110,7 +110,6 @@ pub struct RecipeVersion {
     pub source_url: Option<String>,
     pub source_name: Option<String>,
     pub photo_ids: Vec<Option<Uuid>>,
-    pub tags: Vec<Option<String>>,
     pub servings: Option<String>,
     pub prep_time: Option<String>,
     pub cook_time: Option<String>,
@@ -134,7 +133,6 @@ pub struct NewRecipeVersion<'a> {
     pub source_url: Option<&'a str>,
     pub source_name: Option<&'a str>,
     pub photo_ids: &'a [Option<Uuid>],
-    pub tags: &'a [Option<String>],
     pub servings: Option<&'a str>,
     pub prep_time: Option<&'a str>,
     pub cook_time: Option<&'a str>,
@@ -193,4 +191,31 @@ pub struct NewStepOutput {
     pub step_name: String,
     pub build_id: String,
     pub output: JsonValue,
+}
+
+// User tags for first-class tag management
+// Note: user_id is excluded since it's always the authenticated user's
+#[derive(Queryable, Selectable, Debug, Clone)]
+#[diesel(table_name = crate::schema::user_tags)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct UserTag {
+    pub id: Uuid,
+    pub name: String,
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Insertable)]
+#[diesel(table_name = crate::schema::user_tags)]
+pub struct NewUserTag<'a> {
+    pub user_id: Uuid,
+    pub name: &'a str,
+}
+
+// Junction table for recipe version <-> tag associations
+#[derive(Queryable, Selectable, Insertable, Debug, Clone)]
+#[diesel(table_name = crate::schema::recipe_version_tags)]
+#[diesel(check_for_backend(diesel::pg::Pg))]
+pub struct RecipeVersionTag {
+    pub recipe_version_id: Uuid,
+    pub tag_id: Uuid,
 }

@@ -2,8 +2,8 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
-use crate::schema::{recipe_versions, recipes};
+use crate::models::{Ingredient, NewRecipeVersion, NewUserTag, RecipeVersion, RecipeVersionTag};
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -171,10 +171,16 @@ pub async fn update_recipe(
         .photo_ids
         .map(|ids| ids.into_iter().map(Some).collect())
         .unwrap_or(current_version.photo_ids);
-    let new_tags: Vec<Option<String>> = request
-        .tags
-        .map(|tags| tags.into_iter().map(Some).collect())
-        .unwrap_or(current_version.tags);
+
+    // Fetch current tags from junction table if not provided in request
+    let current_tags: Vec<String> = recipe_version_tags::table
+        .inner_join(user_tags::table)
+        .filter(recipe_version_tags::recipe_version_id.eq(current_version.id))
+        .select(user_tags::name)
+        .load(&mut conn)
+        .unwrap_or_default();
+
+    let new_tags: Vec<String> = request.tags.unwrap_or(current_tags);
     let new_servings = request.servings.or(current_version.servings);
     let new_prep_time = request.prep_time.or(current_version.prep_time);
     let new_cook_time = request.cook_time.or(current_version.cook_time);
@@ -197,7 +203,6 @@ pub async fn update_recipe(
             source_url: new_source_url.as_deref(),
             source_name: new_source_name.as_deref(),
             photo_ids: &new_photo_ids,
-            tags: &new_tags,
             servings: new_servings.as_deref(),
             prep_time: new_prep_time.as_deref(),
             cook_time: new_cook_time.as_deref(),
@@ -218,6 +223,30 @@ pub async fn update_recipe(
         diesel::update(recipes::table.find(recipe_id))
             .set(recipes::current_version_id.eq(version_id))
             .execute(conn)?;
+
+        // Handle tags: upsert into user_tags and insert into junction table
+        for tag_name in &new_tags {
+            // Upsert the tag into user_tags
+            let tag_id: Uuid = diesel::insert_into(user_tags::table)
+                .values(NewUserTag {
+                    user_id: user.id,
+                    name: tag_name,
+                })
+                .on_conflict((user_tags::user_id, user_tags::name))
+                .do_update()
+                .set(user_tags::name.eq(user_tags::name)) // No-op update to return the id
+                .returning(user_tags::id)
+                .get_result(conn)?;
+
+            // Insert into junction table
+            diesel::insert_into(recipe_version_tags::table)
+                .values(RecipeVersionTag {
+                    recipe_version_id: version_id,
+                    tag_id,
+                })
+                .on_conflict_do_nothing()
+                .execute(conn)?;
+        }
 
         Ok(())
     });

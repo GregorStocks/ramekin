@@ -6,5 +6,6 @@ from ramekin_client.api.enrich_api import EnrichApi
 from ramekin_client.api.photos_api import PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi
+from ramekin_client.api.tags_api import TagsApi
 from ramekin_client.api.testing_api import TestingApi
 
