@@ -42,20 +42,6 @@ processes:
       mock-openrouter:
         condition: process_healthy
 
-  cli-build:
-    command: |
-      echo "[TIMING] cli-build starting at $(date +%H:%M:%S)"
-      START=$(date +%s)
-      cargo build 2>&1 | tee /tmp/cli-build.log
-      CRATE_COUNT=$(grep -c "Compiling" /tmp/cli-build.log 2>/dev/null || echo 0)
-      echo "[TIMING] cli-build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
-    working_dir: ./cli
-    availability:
-      restart: "no"
-    depends_on:
-      server:
-        condition: process_healthy
-
   api-tests:
     command: |
       echo "[TIMING] api-tests starting at $(date +%H:%M:%S)"
@@ -72,7 +58,7 @@ processes:
       restart: "no"
       exit_on_end: true
     depends_on:
-      cli-build:
-        condition: process_completed_successfully
+      server:
+        condition: process_healthy
       rust-tests:
         condition: process_completed_successfully
