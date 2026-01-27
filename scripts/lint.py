@@ -227,7 +227,7 @@ def lint_swift(project_root: Path) -> tuple[str, bool]:
         env["DEVELOPER_DIR"] = str(xcode_path)
 
     result = subprocess.run(
-        ["swiftlint", "--strict"],
+        ["swiftlint", "--quiet", "--strict"],
         cwd=ios_dir,
         capture_output=True,
         text=True,
