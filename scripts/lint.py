@@ -64,11 +64,12 @@ def lint_rust_server(project_root: Path) -> tuple[str, bool]:
         check=False,
     )
 
-    # Run clippy
+    # Run clippy (using --release to match the server build profile in CI)
     clippy_result = subprocess.run(
         [
             "cargo",
             "clippy",
+            "--release",
             "--all-targets",
             "--all-features",
             "-q",

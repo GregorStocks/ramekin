@@ -63,12 +63,7 @@ jobs:
       - name: Skip unnecessary regeneration
         run: touch api/openapi.json cli/generated/ramekin-client/Cargo.toml
 
-      - name: Run linters
-        run: |
-          START=$(date +%s)
-          make lint
-          echo "::notice::Linters completed in $(($(date +%s) - START))s"
-
+      # Build server first so clippy --release can reuse the artifacts
       - name: Build server binary
         run: |
           START=$(date +%s)
@@ -82,6 +77,13 @@ jobs:
           cd cli && cargo build 2>&1 | tee /tmp/cli-build.log
           CRATE_COUNT=$(grep -c "Compiling" /tmp/cli-build.log || echo 0)
           echo "::notice::CLI build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
+
+      # Lint after build - clippy --release reuses server artifacts, clippy debug reuses CLI artifacts
+      - name: Run linters
+        run: |
+          START=$(date +%s)
+          make lint
+          echo "::notice::Linters completed in $(($(date +%s) - START))s"
 
       - name: Create test.env
         run: |
