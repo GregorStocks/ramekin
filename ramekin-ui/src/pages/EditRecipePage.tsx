@@ -9,7 +9,7 @@ import type { Ingredient, RecipeResponse } from "ramekin-client";
 export default function EditRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { getRecipesApi, getPhotosApi, token } = useAuth();
+  const { getRecipesApi, getPhotosApi, refreshTags, token } = useAuth();
 
   const [loading, setLoading] = createSignal(true);
   const [title, setTitle] = createSignal("");
@@ -131,6 +131,9 @@ export default function EditRecipePage() {
           notes: notes() || undefined,
         },
       });
+
+      // Refresh tags cache in case new tags were created
+      refreshTags();
 
       navigate(`/recipes/${params.id}`);
     } catch (err) {

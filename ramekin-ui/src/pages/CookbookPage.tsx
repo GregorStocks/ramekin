@@ -202,7 +202,7 @@ function formatRelativeDate(date: Date): string {
 }
 
 export default function CookbookPage() {
-  const { getRecipesApi, getTagsApi, token } = useAuth();
+  const { getRecipesApi, tags: availableTags, token } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -226,7 +226,6 @@ export default function CookbookPage() {
 
   // Filter panel state
   const [showFilters, setShowFilters] = createSignal(false);
-  const [availableTags, setAvailableTags] = createSignal<string[]>([]);
   const [filterTags, setFilterTags] = createSignal<string[]>([]);
   const [filterSource, setFilterSource] = createSignal("");
   const [filterPhotos, setFilterPhotos] = createSignal<"any" | "has" | "no">(
@@ -239,16 +238,6 @@ export default function CookbookPage() {
   const [textTerms, setTextTerms] = createSignal<string[]>([]);
 
   const PAGE_SIZE = 20;
-
-  // Load available tags on mount
-  onMount(async () => {
-    try {
-      const response = await getTagsApi().listAllTags();
-      setAvailableTags(response.tags.map((t) => t.name));
-    } catch {
-      // Ignore errors loading tags
-    }
-  });
 
   // Get current search query from URL
   const searchQuery = () => getQueryParam(searchParams.q);

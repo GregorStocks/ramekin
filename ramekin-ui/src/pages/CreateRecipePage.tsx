@@ -9,7 +9,8 @@ import type { Ingredient, ScrapeJobResponse } from "ramekin-client";
 
 export default function CreateRecipePage() {
   const navigate = useNavigate();
-  const { getRecipesApi, getPhotosApi, getScrapeApi, token } = useAuth();
+  const { getRecipesApi, getPhotosApi, getScrapeApi, refreshTags, token } =
+    useAuth();
 
   // URL import state
   const [importUrl, setImportUrl] = createSignal("");
@@ -229,6 +230,9 @@ export default function CreateRecipePage() {
           notes: notes() || undefined,
         },
       });
+
+      // Refresh tags cache in case new tags were created
+      refreshTags();
 
       navigate(`/recipes/${response.id}`);
     } catch (err) {

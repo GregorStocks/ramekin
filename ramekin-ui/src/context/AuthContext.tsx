@@ -4,7 +4,7 @@ import {
   createEffect,
   useContext,
 } from "solid-js";
-import type { ParentComponent } from "solid-js";
+import type { Accessor, ParentComponent } from "solid-js";
 import {
   Configuration,
   RecipesApi,
@@ -23,6 +23,10 @@ interface AuthContextValue {
   getScrapeApi: () => ScrapeApi;
   getEnrichApi: () => EnrichApi;
   getTagsApi: () => TagsApi;
+  // Cached tags - fetched once, shared across components
+  tags: Accessor<string[]>;
+  tagsLoading: Accessor<boolean>;
+  refreshTags: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue>();
@@ -31,6 +35,8 @@ export const AuthProvider: ParentComponent = (props) => {
   const [token, setTokenInternal] = createSignal<string | null>(
     localStorage.getItem("token"),
   );
+  const [tags, setTags] = createSignal<string[]>([]);
+  const [tagsLoading, setTagsLoading] = createSignal(false);
 
   const setToken = (newToken: string | null) => {
     setTokenInternal(newToken);
@@ -57,6 +63,31 @@ export const AuthProvider: ParentComponent = (props) => {
   const getEnrichApi = () => new EnrichApi(getAuthedConfig());
   const getTagsApi = () => new TagsApi(getAuthedConfig());
 
+  const refreshTags = async () => {
+    if (!token()) {
+      setTags([]);
+      return;
+    }
+    setTagsLoading(true);
+    try {
+      const response = await getTagsApi().listAllTags();
+      setTags(response.tags.map((t) => t.name));
+    } catch {
+      // Ignore errors loading tags
+    } finally {
+      setTagsLoading(false);
+    }
+  };
+
+  // Fetch tags when token changes
+  createEffect(() => {
+    if (token()) {
+      refreshTags();
+    } else {
+      setTags([]);
+    }
+  });
+
   const value: AuthContextValue = {
     token,
     setToken,
@@ -66,6 +97,9 @@ export const AuthProvider: ParentComponent = (props) => {
     getScrapeApi,
     getEnrichApi,
     getTagsApi,
+    tags,
+    tagsLoading,
+    refreshTags,
   };
 
   return (
