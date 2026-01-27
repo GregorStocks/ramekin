@@ -53,9 +53,10 @@ QUERY_THRESHOLDS: dict[str, tuple[int, int]] = {
 }
 
 # Default thresholds for endpoints not explicitly listed
-# Using wide range initially - tighten as we discover actual counts
-DEFAULT_MIN = 0
-DEFAULT_MAX = 20
+# Tight defaults: min 1 (should always check creds), max 3 (check creds + fetch + write)
+# Endpoints needing more queries must be explicitly listed above
+DEFAULT_MIN = 1
+DEFAULT_MAX = 3
 
 
 def get_thresholds(endpoint: str) -> tuple[int, int]:
