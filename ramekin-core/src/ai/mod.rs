@@ -33,12 +33,14 @@
 //! println!("Response: {}", response.content);
 //! ```
 
+mod auto_tag;
 mod cache;
 mod client;
 mod config;
 pub mod prompts;
 mod types;
 
+pub use auto_tag::{suggest_tags, AutoTagResult};
 pub use cache::{AiCache, CacheKey, CacheStats, CachedAiResponse};
 pub use client::{AiClient, AiError, CachingAiClient};
 pub use config::{AiConfig, ConfigError};

@@ -55,7 +55,7 @@ class EnrichApi:
     ) -> RecipeContent:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user's existing tag library.
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
@@ -124,7 +124,7 @@ class EnrichApi:
     ) -> ApiResponse[RecipeContent]:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user's existing tag library.
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
@@ -193,7 +193,7 @@ class EnrichApi:
     ) -> RESTResponseType:
         """Enrich a recipe using AI
 
-        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
+        This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user's existing tag library.
 
         :param recipe_content: (required)
         :type recipe_content: RecipeContent
