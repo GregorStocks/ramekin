@@ -31,6 +31,7 @@ runs:
           ramekin-core -> target
         cache-on-failure: true
         cache-all-crates: true
+        shared-key: ci
 
     - name: Log Rust cache status
       shell: bash
@@ -46,7 +47,9 @@ runs:
       uses: actions/cache@v4
       with:
         path: ~/.cargo/bin
-        key: cargo-bin-${{ runner.os }}-diesel-2.3.6-ast-grep
+        key: cargo-bin-${{ runner.os }}-v1
+        restore-keys: |
+          cargo-bin-${{ runner.os }}-
 
     - name: Log cargo binary cache status
       shell: bash
