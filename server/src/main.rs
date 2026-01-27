@@ -250,6 +250,9 @@ async fn main() {
                     },
                 ),
         )
+        .layer(middleware::from_fn(
+            telemetry::db_query_count_header_middleware,
+        ))
         .layer(middleware::from_fn(telemetry::query_counting_middleware));
 
     let port: u16 = env::var("PORT")
