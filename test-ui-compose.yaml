@@ -22,7 +22,11 @@ processes:
         condition: process_healthy
 
   seed:
-    command: cargo run -q -- seed --server-url http://localhost:${PORT} --username t --password t ../data/dev/seed.paprikarecipes
+    command: |
+      echo "[TIMING] seed starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      cargo run -q -- seed --server-url http://localhost:${PORT} --username t --password t ../data/dev/seed.paprikarecipes
+      echo "[TIMING] seed completed in $(($(date +%s) - START))s"
     working_dir: ./cli
     availability:
       restart: "no"
@@ -31,7 +35,13 @@ processes:
         condition: process_healthy
 
   ui-tests:
-    command: pytest tests/ui -v
+    command: |
+      echo "[TIMING] ui-tests starting at $(date +%H:%M:%S)"
+      START=$(date +%s)
+      pytest tests/ui -v
+      EXIT_CODE=$?
+      echo "[TIMING] ui-tests completed in $(($(date +%s) - START))s"
+      exit $EXIT_CODE
     environment:
       - API_BASE_URL=http://localhost:${PORT}
       - UI_BASE_URL=http://localhost:${UI_PORT}

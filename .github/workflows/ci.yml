@@ -25,6 +25,9 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
+      - name: Record CI start time
+        run: echo "CI_START=$(date +%s)" >> $GITHUB_ENV
+
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
 
@@ -32,23 +35,35 @@ jobs:
         run: PGPASSWORD=ramekin psql -h localhost -U ramekin -d ramekin -c "CREATE DATABASE ramekin_test;"
 
       - name: Install UI dependencies
-        run: npm ci
+        run: |
+          START=$(date +%s)
+          npm ci
+          echo "::notice::UI dependencies installed in $(($(date +%s) - START))s"
         working-directory: ramekin-ui
 
       - name: Create Python venv
         run: make venv
 
       - name: Install Playwright browsers
-        run: .venv/bin/playwright install chromium --with-deps
+        run: |
+          START=$(date +%s)
+          .venv/bin/playwright install chromium --with-deps
+          echo "::notice::Playwright browsers installed in $(($(date +%s) - START))s"
 
       - name: Skip unnecessary regeneration
         run: touch api/openapi.json cli/generated/ramekin-client/Cargo.toml
 
       - name: Run linters
-        run: make lint
+        run: |
+          START=$(date +%s)
+          make lint
+          echo "::notice::Linters completed in $(($(date +%s) - START))s"
 
       - name: Build server binary
-        run: cd server && cargo build --release -q
+        run: |
+          START=$(date +%s)
+          cd server && cargo build --release -q
+          echo "::notice::Server build completed in $(($(date +%s) - START))s"
 
       - name: Create test.env
         run: |
@@ -63,9 +78,19 @@ jobs:
           echo "INSECURE_PASSWORD_HASHING=1" >> test.env
 
       - name: Run tests
-        run: make test
+        run: |
+          START=$(date +%s)
+          make test
+          echo "::notice::API tests completed in $(($(date +%s) - START))s"
 
       - name: Run UI tests
-        run: make test-ui
+        run: |
+          START=$(date +%s)
+          make test-ui
+          echo "::notice::UI tests completed in $(($(date +%s) - START))s"
         env:
           DATABASE_URL: postgres://ramekin:ramekin@localhost:5432/ramekin
+
+      - name: Print CI timing summary
+        if: always()
+        run: echo "::notice::Total CI time was $(($(date +%s) - CI_START))s"
