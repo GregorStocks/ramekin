@@ -47,7 +47,7 @@ $(CLIENT_MARKER): api/openapi.json
 	@cd cli && cargo fmt --all -q 2>/dev/null || true
 
 lint: venv $(CLIENT_MARKER) ## Run all linters (Rust, TypeScript, Python)
-	@PATH="$(CURDIR)/.venv/bin:$(PATH)" ./scripts/lint.py 2>&1 | $(TS)
+	@bash -o pipefail -c 'PATH="$(CURDIR)/.venv/bin:$$PATH" ./scripts/lint.py 2>&1 | $(TS)'
 
 clean: ## Clean generated files and build artifacts
 	@rm -rf cli/generated/ ramekin-ui/generated-client/ tests/generated/
