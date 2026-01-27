@@ -2,10 +2,10 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::raw_sql;
-use crate::schema::user_tags;
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use chrono::{DateTime, Utc};
+use diesel::dsl::count;
 use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
@@ -48,13 +48,27 @@ pub async fn list_all_tags(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
+    // Use Diesel DSL with JOINs and GROUP BY instead of raw SQL subquery
+    // Query: user_tags LEFT JOIN recipe_version_tags LEFT JOIN recipe_versions LEFT JOIN recipes
+    // where recipes.current_version_id matches and deleted_at IS NULL
     let tags: Vec<TagRow> = match user_tags::table
+        .left_join(recipe_version_tags::table)
+        .left_join(
+            recipe_versions::table
+                .on(recipe_versions::id.eq(recipe_version_tags::recipe_version_id)),
+        )
+        .left_join(
+            recipes::table.on(recipes::current_version_id
+                .eq(recipe_versions::id.nullable())
+                .and(recipes::deleted_at.is_null())),
+        )
         .filter(user_tags::user_id.eq(user.id))
+        .group_by((user_tags::id, user_tags::name, user_tags::created_at))
         .select((
             user_tags::id,
             user_tags::name,
             user_tags::created_at,
-            raw_sql::tag_recipe_count(),
+            count(recipes::id.nullable()),
         ))
         .order(user_tags::name.asc())
         .load(&mut conn)
