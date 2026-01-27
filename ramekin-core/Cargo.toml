@@ -41,7 +41,7 @@ tokio = { version = "1", features = ["time"] }
 tracing = "0.1"
 
 # UUIDs for photo IDs
-uuid = { version = "1.18", features = ["v4", "serde"] }
+uuid = { version = "1.20", features = ["v4", "serde"] }
 
 # AI client (OpenAI-compatible API for OpenRouter)
 async-openai = "0.30"
@@ -53,4 +53,4 @@ sha2 = "0.10"
 image = "0.25"
 
 [build-dependencies]
-uuid = { version = "1.18", features = ["v4"] }
+uuid = { version = "1.20", features = ["v4"] }
