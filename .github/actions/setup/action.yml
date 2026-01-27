@@ -31,11 +31,11 @@ runs:
 
     - name: Install diesel CLI
       shell: bash
-      run: cargo binstall diesel_cli --no-confirm
+      run: cargo binstall diesel_cli --no-confirm --force
 
     - name: Install ast-grep
       shell: bash
-      run: cargo binstall ast-grep --no-confirm
+      run: cargo binstall ast-grep --no-confirm --force
 
     - name: Install SwiftLint
       shell: bash
