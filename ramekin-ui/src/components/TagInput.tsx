@@ -1,4 +1,4 @@
-import { createSignal, For, Show, onMount } from "solid-js";
+import { createSignal, For, Show } from "solid-js";
 import { useAuth } from "../context/AuthContext";
 
 interface TagInputProps {
@@ -9,21 +9,11 @@ interface TagInputProps {
 }
 
 export default function TagInput(props: TagInputProps) {
-  const { getRecipesApi } = useAuth();
+  const { tags: availableTags } = useAuth();
 
   let inputRef: HTMLInputElement | undefined;
 
   const [inputValue, setInputValue] = createSignal("");
-  const [availableTags, setAvailableTags] = createSignal<string[]>([]);
-
-  onMount(async () => {
-    try {
-      const response = await getRecipesApi().listTags();
-      setAvailableTags(response.tags);
-    } catch {
-      // Ignore errors loading tags
-    }
-  });
 
   // Unselected tags, optionally filtered by input
   const unselectedTags = () => {

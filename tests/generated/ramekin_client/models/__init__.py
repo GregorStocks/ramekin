@@ -18,6 +18,8 @@ from ramekin_client.models.create_recipe_request import CreateRecipeRequest
 from ramekin_client.models.create_recipe_response import CreateRecipeResponse
 from ramekin_client.models.create_scrape_request import CreateScrapeRequest
 from ramekin_client.models.create_scrape_response import CreateScrapeResponse
+from ramekin_client.models.create_tag_request import CreateTagRequest
+from ramekin_client.models.create_tag_response import CreateTagResponse
 from ramekin_client.models.direction import Direction
 from ramekin_client.models.error_response import ErrorResponse
 from ramekin_client.models.ingredient import Ingredient
@@ -35,7 +37,8 @@ from ramekin_client.models.scrape_job_response import ScrapeJobResponse
 from ramekin_client.models.signup_request import SignupRequest
 from ramekin_client.models.signup_response import SignupResponse
 from ramekin_client.models.sort_by import SortBy
-from ramekin_client.models.tags_response import TagsResponse
+from ramekin_client.models.tag_item import TagItem
+from ramekin_client.models.tags_list_response import TagsListResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse

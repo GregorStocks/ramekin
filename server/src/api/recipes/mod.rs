@@ -4,7 +4,6 @@ pub mod export;
 pub mod get;
 pub mod list;
 pub mod rescrape;
-pub mod tags;
 pub mod update;
 pub mod versions;
 
@@ -17,7 +16,6 @@ use utoipa::OpenApi;
 pub fn router() -> Router<AppState> {
     Router::new()
         .route("/", get(list::list_recipes).post(create::create_recipe))
-        .route("/tags", get(tags::list_tags))
         .route("/export", get(export::export_all_recipes))
         .route(
             "/{id}",
@@ -38,7 +36,6 @@ pub fn router() -> Router<AppState> {
         get::get_recipe,
         update::update_recipe,
         delete::delete_recipe,
-        tags::list_tags,
         export::export_recipe,
         export::export_all_recipes,
         versions::list_versions,
@@ -53,7 +50,6 @@ pub fn router() -> Router<AppState> {
         list::Direction,
         get::RecipeResponse,
         update::UpdateRecipeRequest,
-        tags::TagsResponse,
         versions::VersionListResponse,
         versions::VersionSummary,
         rescrape::RescrapeResponse,

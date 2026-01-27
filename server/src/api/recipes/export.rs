@@ -3,7 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::{DbConn, DbPool};
 use crate::get_conn;
 use crate::models::{Ingredient, RecipeVersion};
-use crate::schema::{photos, recipe_versions, recipes};
+use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     body::Body,
     extract::{Path, State},
@@ -69,6 +69,7 @@ struct PaprikaPhoto {
 fn convert_to_paprika(
     recipe: &RecipeWithVersion,
     photos_data: Vec<(Uuid, Vec<u8>)>,
+    tags: Vec<String>,
 ) -> PaprikaRecipe {
     let version = &recipe.version;
 
@@ -125,7 +126,7 @@ fn convert_to_paprika(
         notes: version.notes.clone().unwrap_or_default(),
         source: version.source_name.clone().unwrap_or_default(),
         source_url: version.source_url.clone().unwrap_or_default(),
-        categories: version.tags.iter().filter_map(|t| t.clone()).collect(),
+        categories: tags,
         servings: version.servings.clone().unwrap_or_default(),
         prep_time: version.prep_time.clone().unwrap_or_default(),
         cook_time: version.cook_time.clone().unwrap_or_default(),
@@ -186,8 +187,16 @@ pub fn export_recipe_to_paprikarecipe(
     // Fetch photos for this recipe
     let photos_data = fetch_recipe_photos(conn, user_id, &recipe.version.photo_ids);
 
+    // Fetch tags for this recipe version from junction table
+    let tags: Vec<String> = recipe_version_tags::table
+        .inner_join(user_tags::table)
+        .filter(recipe_version_tags::recipe_version_id.eq(recipe.version.id))
+        .select(user_tags::name)
+        .load(conn)
+        .unwrap_or_default();
+
     // Convert to Paprika format
-    let paprika_recipe = convert_to_paprika(recipe, photos_data);
+    let paprika_recipe = convert_to_paprika(recipe, photos_data, tags);
 
     // Gzip compress
     let data = gzip_recipe(&paprika_recipe)?;

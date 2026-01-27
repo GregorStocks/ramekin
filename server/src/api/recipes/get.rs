@@ -3,6 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::models::Ingredient;
+use crate::raw_sql;
 use crate::schema::{recipe_versions, recipes};
 use axum::{
     extract::{Path, Query, State},
@@ -51,6 +52,59 @@ pub struct GetRecipeParams {
     pub version_id: Option<Uuid>,
 }
 
+// Type alias for the query result row (all version fields plus tags via correlated subquery)
+#[allow(clippy::type_complexity)]
+type RecipeRow = (
+    DateTime<Utc>,     // recipes.created_at
+    Uuid,              // recipe_versions.id (version_id)
+    String,            // title
+    Option<String>,    // description
+    serde_json::Value, // ingredients (JSON)
+    String,            // instructions
+    Option<String>,    // source_url
+    Option<String>,    // source_name
+    Vec<Option<Uuid>>, // photo_ids
+    DateTime<Utc>,     // recipe_versions.created_at (updated_at)
+    Option<String>,    // servings
+    Option<String>,    // prep_time
+    Option<String>,    // cook_time
+    Option<String>,    // total_time
+    Option<i32>,       // rating
+    Option<String>,    // difficulty
+    Option<String>,    // nutritional_info
+    Option<String>,    // notes
+    String,            // version_source
+    Vec<String>,       // tags (from correlated subquery)
+);
+
+/// Common select columns for recipe queries, including tags via correlated subquery
+macro_rules! recipe_select {
+    () => {
+        (
+            recipes::created_at,
+            recipe_versions::id,
+            recipe_versions::title,
+            recipe_versions::description,
+            recipe_versions::ingredients,
+            recipe_versions::instructions,
+            recipe_versions::source_url,
+            recipe_versions::source_name,
+            recipe_versions::photo_ids,
+            recipe_versions::created_at,
+            recipe_versions::servings,
+            recipe_versions::prep_time,
+            recipe_versions::cook_time,
+            recipe_versions::total_time,
+            recipe_versions::rating,
+            recipe_versions::difficulty,
+            recipe_versions::nutritional_info,
+            recipe_versions::notes,
+            recipe_versions::version_source,
+            raw_sql::tags_subquery(),
+        )
+    };
+}
+
 #[utoipa::path(
     get,
     path = "/api/recipes/{id}",
@@ -76,20 +130,43 @@ pub async fn get_recipe(
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // First verify the recipe exists and belongs to the user
-    let recipe: (Uuid, DateTime<Utc>, Option<Uuid>) = match recipes::table
-        .filter(recipes::id.eq(id))
-        .filter(recipes::user_id.eq(user.id))
-        .filter(recipes::deleted_at.is_null())
-        .select((
-            recipes::id,
-            recipes::created_at,
-            recipes::current_version_id,
-        ))
-        .first(&mut conn)
-    {
-        Ok(r) => r,
-        Err(diesel::NotFound) => {
+    // Fetch recipe with version and tags in a single query.
+    // The join condition differs based on whether we're fetching a specific version or current.
+    let result: Option<RecipeRow> = match params.version_id {
+        Some(version_id) => {
+            // Fetch specific version
+            recipes::table
+                .inner_join(recipe_versions::table.on(recipe_versions::recipe_id.eq(recipes::id)))
+                .filter(recipes::id.eq(id))
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_null())
+                .filter(recipe_versions::id.eq(version_id))
+                .select(recipe_select!())
+                .first(&mut conn)
+                .optional()
+                .unwrap_or(None)
+        }
+        None => {
+            // Fetch current version
+            recipes::table
+                .inner_join(
+                    recipe_versions::table.on(recipe_versions::id
+                        .nullable()
+                        .eq(recipes::current_version_id)),
+                )
+                .filter(recipes::id.eq(id))
+                .filter(recipes::user_id.eq(user.id))
+                .filter(recipes::deleted_at.is_null())
+                .select(recipe_select!())
+                .first(&mut conn)
+                .optional()
+                .unwrap_or(None)
+        }
+    };
+
+    let row = match result {
+        Some(r) => r,
+        None => {
             return (
                 StatusCode::NOT_FOUND,
                 Json(ErrorResponse {
@@ -98,88 +175,55 @@ pub async fn get_recipe(
             )
                 .into_response()
         }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe".to_string(),
-                }),
-            )
-                .into_response()
-        }
     };
 
-    let (recipe_id, recipe_created_at, current_version_id) = recipe;
+    let (
+        recipe_created_at,
+        version_id,
+        title,
+        description,
+        ingredients_json,
+        instructions,
+        source_url,
+        source_name,
+        photo_ids,
+        updated_at,
+        servings,
+        prep_time,
+        cook_time,
+        total_time,
+        rating,
+        difficulty,
+        nutritional_info,
+        notes,
+        version_source,
+        tags,
+    ) = row;
 
-    // Determine which version to fetch
-    let version_id_to_fetch = match params.version_id {
-        Some(vid) => vid,
-        None => match current_version_id {
-            Some(vid) => vid,
-            None => {
-                return (
-                    StatusCode::NOT_FOUND,
-                    Json(ErrorResponse {
-                        error: "Recipe has no versions".to_string(),
-                    }),
-                )
-                    .into_response()
-            }
-        },
-    };
-
-    // Fetch the version (with verification it belongs to this recipe)
-    let version: crate::models::RecipeVersion = match recipe_versions::table
-        .filter(recipe_versions::id.eq(version_id_to_fetch))
-        .filter(recipe_versions::recipe_id.eq(recipe_id))
-        .first(&mut conn)
-    {
-        Ok(v) => v,
-        Err(diesel::NotFound) => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Version not found".to_string(),
-                }),
-            )
-                .into_response()
-        }
-        Err(_) => {
-            return (
-                StatusCode::INTERNAL_SERVER_ERROR,
-                Json(ErrorResponse {
-                    error: "Failed to fetch recipe version".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
-
-    let ingredients: Vec<Ingredient> =
-        serde_json::from_value(version.ingredients).unwrap_or_default();
+    let ingredients: Vec<Ingredient> = serde_json::from_value(ingredients_json).unwrap_or_default();
 
     let response = RecipeResponse {
-        id: recipe_id,
-        title: version.title,
-        description: version.description,
+        id,
+        title,
+        description,
         ingredients,
-        instructions: version.instructions,
-        source_url: version.source_url,
-        source_name: version.source_name,
-        photo_ids: version.photo_ids.into_iter().flatten().collect(),
-        tags: version.tags.into_iter().flatten().collect(),
+        instructions,
+        source_url,
+        source_name,
+        photo_ids: photo_ids.into_iter().flatten().collect(),
+        tags,
         created_at: recipe_created_at,
-        updated_at: version.created_at, // Version's created_at is the "updated" time
-        servings: version.servings,
-        prep_time: version.prep_time,
-        cook_time: version.cook_time,
-        total_time: version.total_time,
-        rating: version.rating,
-        difficulty: version.difficulty,
-        nutritional_info: version.nutritional_info,
-        notes: version.notes,
-        version_id: version.id,
-        version_source: version.version_source,
+        updated_at,
+        servings,
+        prep_time,
+        cook_time,
+        total_time,
+        rating,
+        difficulty,
+        nutritional_info,
+        notes,
+        version_id,
+        version_source,
     };
 
     (StatusCode::OK, Json(response)).into_response()

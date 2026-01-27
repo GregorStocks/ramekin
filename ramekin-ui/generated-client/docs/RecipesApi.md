@@ -10,7 +10,6 @@ All URIs are relative to *http://localhost*
 | [**exportRecipe**](RecipesApi.md#exportrecipe) | **GET** /api/recipes/{id}/export |  |
 | [**getRecipe**](RecipesApi.md#getrecipe) | **GET** /api/recipes/{id} |  |
 | [**listRecipes**](RecipesApi.md#listrecipes) | **GET** /api/recipes |  |
-| [**listTags**](RecipesApi.md#listtags) | **GET** /api/recipes/tags |  |
 | [**listVersions**](RecipesApi.md#listversions) | **GET** /api/recipes/{id}/versions |  |
 | [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape |  |
 | [**updateRecipe**](RecipesApi.md#updaterecipeoperation) | **PUT** /api/recipes/{id} |  |
@@ -444,68 +443,6 @@ example().catch(console.error);
 |-------------|-------------|------------------|
 | **200** | List of user\&#39;s recipes |  -  |
 | **400** | Invalid parameters |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
-
-
-## listTags
-
-> TagsResponse listTags()
-
-
-
-### Example
-
-```ts
-import {
-  Configuration,
-  RecipesApi,
-} from '';
-import type { ListTagsRequest } from '';
-
-async function example() {
-  console.log("🚀 Testing  SDK...");
-  const config = new Configuration({ 
-    // Configure HTTP bearer authorization: bearer_auth
-    accessToken: "YOUR BEARER TOKEN",
-  });
-  const api = new RecipesApi(config);
-
-  try {
-    const data = await api.listTags();
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-// Run the test
-example().catch(console.error);
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**TagsResponse**](TagsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | List of distinct tags |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)

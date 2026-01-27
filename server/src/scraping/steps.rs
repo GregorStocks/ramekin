@@ -20,7 +20,7 @@ use ramekin_core::{FailedImageFetch, FetchImagesOutput, RawRecipe};
 use crate::db::DbPool;
 use crate::models::{Ingredient, NewPhoto, NewRecipe, NewRecipeVersion};
 use crate::photos::processing::{process_image, MAX_FILE_SIZE};
-use crate::schema::{photos, recipe_versions, recipes};
+use crate::schema::{photos, recipe_version_tags, recipe_versions, recipes, user_tags};
 
 use super::is_host_allowed;
 
@@ -360,7 +360,6 @@ impl SaveRecipeStep {
                 source_url: Some(&raw.source_url),
                 source_name: raw.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                tags: &[],
                 servings: None,
                 prep_time: None,
                 cook_time: None,
@@ -425,7 +424,6 @@ impl SaveRecipeStep {
                 source_url: Some(&raw.source_url),
                 source_name: raw.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                tags: &[],
                 servings: None,
                 prep_time: None,
                 cook_time: None,
@@ -550,11 +548,11 @@ impl PipelineStep for ApplyAutoTagsStep {
 
 impl ApplyAutoTagsStep {
     fn apply_tags(&self, recipe_id: Uuid, tags: &[String]) -> Result<Uuid, String> {
-        use crate::models::{NewRecipeVersion, Recipe, RecipeVersion};
+        use crate::models::{NewUserTag, Recipe, RecipeVersionTag};
 
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
-        // Get the current version
+        // Get the recipe to find user_id and current_version_id
         let recipe: Recipe = recipes::table
             .find(recipe_id)
             .first(&mut conn)
@@ -564,62 +562,45 @@ impl ApplyAutoTagsStep {
             .current_version_id
             .ok_or("Recipe has no current version")?;
 
-        let current_version: RecipeVersion = recipe_versions::table
-            .find(current_version_id)
-            .first(&mut conn)
-            .map_err(|e| e.to_string())?;
+        // Fetch existing tags from junction table
+        let existing_tags: Vec<String> = recipe_version_tags::table
+            .inner_join(user_tags::table)
+            .filter(recipe_version_tags::recipe_version_id.eq(current_version_id))
+            .select(user_tags::name)
+            .load(&mut conn)
+            .unwrap_or_default();
 
-        // Merge existing tags with new tags (avoid duplicates, case-insensitive)
-        let existing_tags: Vec<String> = current_version
-            .tags
-            .iter()
-            .filter_map(|t| t.clone())
-            .collect();
-
-        let mut merged_tags = existing_tags.clone();
-        for tag in tags {
-            if !merged_tags.iter().any(|t| t.eq_ignore_ascii_case(tag)) {
-                merged_tags.push(tag.clone());
-            }
-        }
-
-        // Convert to Option<String> for the database
-        let tags_for_db: Vec<Option<String>> = merged_tags.into_iter().map(Some).collect();
-
-        // Create new version with tags
+        // Add new tags (avoiding duplicates, case-insensitive)
         conn.transaction(|conn| {
-            let new_version = NewRecipeVersion {
-                recipe_id,
-                title: &current_version.title,
-                description: current_version.description.as_deref(),
-                ingredients: current_version.ingredients.clone(),
-                instructions: &current_version.instructions,
-                source_url: current_version.source_url.as_deref(),
-                source_name: current_version.source_name.as_deref(),
-                photo_ids: &current_version.photo_ids,
-                tags: &tags_for_db,
-                servings: current_version.servings.as_deref(),
-                prep_time: current_version.prep_time.as_deref(),
-                cook_time: current_version.cook_time.as_deref(),
-                total_time: current_version.total_time.as_deref(),
-                rating: current_version.rating,
-                difficulty: current_version.difficulty.as_deref(),
-                nutritional_info: current_version.nutritional_info.as_deref(),
-                notes: current_version.notes.as_deref(),
-                version_source: "auto_tag",
-            };
+            for tag in tags {
+                // Skip if tag already exists (case-insensitive)
+                if existing_tags.iter().any(|t| t.eq_ignore_ascii_case(tag)) {
+                    continue;
+                }
 
-            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
-                .values(&new_version)
-                .returning(recipe_versions::id)
-                .get_result(conn)?;
+                // Upsert the tag into user_tags
+                let tag_id: Uuid = diesel::insert_into(user_tags::table)
+                    .values(NewUserTag {
+                        user_id: recipe.user_id,
+                        name: tag,
+                    })
+                    .on_conflict((user_tags::user_id, user_tags::name))
+                    .do_update()
+                    .set(user_tags::name.eq(user_tags::name)) // No-op update to return the id
+                    .returning(user_tags::id)
+                    .get_result(conn)?;
 
-            // Update recipe to point to new version
-            diesel::update(recipes::table.find(recipe_id))
-                .set(recipes::current_version_id.eq(version_id))
-                .execute(conn)?;
+                // Insert into junction table
+                diesel::insert_into(recipe_version_tags::table)
+                    .values(RecipeVersionTag {
+                        recipe_version_id: current_version_id,
+                        tag_id,
+                    })
+                    .on_conflict_do_nothing()
+                    .execute(conn)?;
+            }
 
-            Ok(version_id)
+            Ok(current_version_id)
         })
         .map_err(|e: diesel::result::Error| e.to_string())
     }

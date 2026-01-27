@@ -14,10 +14,10 @@
 
 import unittest
 
-from ramekin_client.models.tags_response import TagsResponse
+from ramekin_client.models.create_tag_response import CreateTagResponse
 
-class TestTagsResponse(unittest.TestCase):
-    """TagsResponse unit test stubs"""
+class TestCreateTagResponse(unittest.TestCase):
+    """CreateTagResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,30 +25,28 @@ class TestTagsResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TagsResponse:
-        """Test TagsResponse
+    def make_instance(self, include_optional) -> CreateTagResponse:
+        """Test CreateTagResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TagsResponse`
+        # uncomment below to create an instance of `CreateTagResponse`
         """
-        model = TagsResponse()
+        model = CreateTagResponse()
         if include_optional:
-            return TagsResponse(
-                tags = [
-                    ''
-                    ]
+            return CreateTagResponse(
+                id = '',
+                name = ''
             )
         else:
-            return TagsResponse(
-                tags = [
-                    ''
-                    ],
+            return CreateTagResponse(
+                id = '',
+                name = '',
         )
         """
 
-    def testTagsResponse(self):
-        """Test TagsResponse"""
+    def testCreateTagResponse(self):
+        """Test CreateTagResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -3,6 +3,7 @@ pub mod photos;
 pub mod public;
 pub mod recipes;
 pub mod scrape;
+pub mod tags;
 pub mod testing;
 
 use serde::Serialize;
@@ -42,6 +43,7 @@ pub fn openapi() -> utoipa::openapi::OpenApi {
         recipes::ApiDoc::openapi(),
         scrape::ApiDoc::openapi(),
         enrich::ApiDoc::openapi(),
+        tags::ApiDoc::openapi(),
     ];
 
     for module_spec in modules {

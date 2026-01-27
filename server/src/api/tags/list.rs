@@ -1,46 +1,55 @@
 use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
-use crate::distinct_tags_query;
 use crate::get_conn;
+use crate::models::UserTag;
+use crate::schema::user_tags;
 use axum::{extract::State, http::StatusCode, response::IntoResponse, Json};
 use diesel::prelude::*;
 use serde::Serialize;
 use std::sync::Arc;
 use utoipa::ToSchema;
+use uuid::Uuid;
+
+use chrono::{DateTime, Utc};
 
 #[derive(Debug, Clone, Serialize, ToSchema)]
-pub struct TagsResponse {
-    /// List of distinct tags used across user's recipes, sorted alphabetically
-    pub tags: Vec<String>,
+pub struct TagItem {
+    pub id: Uuid,
+    pub name: String,
+    pub created_at: DateTime<Utc>,
 }
 
-#[derive(QueryableByName)]
-struct TagRow {
-    #[diesel(sql_type = diesel::sql_types::Text)]
-    tag: String,
+#[derive(Debug, Clone, Serialize, ToSchema)]
+pub struct TagsListResponse {
+    pub tags: Vec<TagItem>,
 }
 
 #[utoipa::path(
     get,
-    path = "/api/recipes/tags",
-    tag = "recipes",
+    path = "/api/tags",
+    tag = "tags",
+    operation_id = "list_all_tags",
     responses(
-        (status = 200, description = "List of distinct tags", body = TagsResponse),
+        (status = 200, description = "List of user's tags with IDs", body = TagsListResponse),
         (status = 401, description = "Unauthorized", body = ErrorResponse)
     ),
     security(
         ("bearer_auth" = [])
     )
 )]
-pub async fn list_tags(
+pub async fn list_all_tags(
     AuthUser(user): AuthUser,
     State(pool): State<Arc<DbPool>>,
 ) -> impl IntoResponse {
     let mut conn = get_conn!(pool);
 
-    // Tags are now in recipe_versions, join via current_version_id
-    let tags: Vec<TagRow> = match distinct_tags_query!(user.id).load(&mut conn) {
+    let tags: Vec<UserTag> = match user_tags::table
+        .filter(user_tags::user_id.eq(user.id))
+        .select(UserTag::as_select())
+        .order(user_tags::name.asc())
+        .load(&mut conn)
+    {
         Ok(rows) => rows,
         Err(_) => {
             return (
@@ -53,8 +62,15 @@ pub async fn list_tags(
         }
     };
 
-    let response = TagsResponse {
-        tags: tags.into_iter().map(|r| r.tag).collect(),
+    let response = TagsListResponse {
+        tags: tags
+            .into_iter()
+            .map(|t| TagItem {
+                id: t.id,
+                name: t.name,
+                created_at: t.created_at,
+            })
+            .collect(),
     };
 
     (StatusCode::OK, Json(response)).into_response()

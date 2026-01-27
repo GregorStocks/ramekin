@@ -1,22 +1,22 @@
 
-# TagsResponse
+# TagsListResponse
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`tags` | Array&lt;string&gt;
+`tags` | [Array&lt;TagItem&gt;](TagItem.md)
 
 ## Example
 
 ```typescript
-import type { TagsResponse } from ''
+import type { TagsListResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
   "tags": null,
-} satisfies TagsResponse
+} satisfies TagsListResponse
 
 console.log(example)
 
@@ -25,7 +25,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TagsResponse
+const exampleParsed = JSON.parse(exampleJSON) as TagsListResponse
 console.log(exampleParsed)
 ```
 

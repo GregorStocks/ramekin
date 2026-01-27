@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateRecipeRequest, CreateRecipeResponse, Direction, ListRecipesResponse, RecipeResponse, RescrapeResponse, SortBy, TagsResponse, UpdateRecipeRequest, VersionListResponse } from '../models/index';
+import type { CreateRecipeRequest, CreateRecipeResponse, Direction, ListRecipesResponse, RecipeResponse, RescrapeResponse, SortBy, UpdateRecipeRequest, VersionListResponse } from '../models/index';
 export interface CreateRecipeOperationRequest {
     createRecipeRequest: CreateRecipeRequest;
 }
@@ -81,12 +81,6 @@ export declare class RecipesApi extends runtime.BaseAPI {
     /**
      */
     listRecipes(requestParameters?: ListRecipesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListRecipesResponse>;
-    /**
-     */
-    listTagsRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TagsResponse>>;
-    /**
-     */
-    listTags(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TagsResponse>;
     /**
      */
     listVersionsRaw(requestParameters: ListVersionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VersionListResponse>>;

@@ -13,7 +13,7 @@
 
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::BigInt;
+use diesel::sql_types::{Array, BigInt, Text};
 
 /// Window function for counting total rows across the full result set.
 ///
@@ -26,41 +26,19 @@ pub fn count_over() -> SqlLiteral<BigInt> {
     sql::<BigInt>("COUNT(*) OVER()")
 }
 
-/// Filter expression for case-insensitive tag containment in a citext array.
+/// Correlated subquery to fetch tags for the current recipe_versions row.
 ///
-/// Checks if `tag` exists in `recipe_versions.tags` using PostgreSQL's
-/// citext extension for case-insensitive comparison.
-///
-/// # Safety
-/// The tag value is passed via `.bind()`, not interpolated.
-///
-/// # Why raw SQL?
-/// Diesel doesn't have native support for citext array containment.
-#[macro_export]
-macro_rules! tag_in_array {
-    ($tag:expr) => {
-        diesel::dsl::sql::<diesel::sql_types::Bool>("(")
-            .bind::<diesel::sql_types::Text, _>($tag)
-            .sql("::citext = ANY(recipe_versions.tags))")
-    };
-}
-
-/// Query to get distinct tags for a user's recipes.
-///
-/// Uses `unnest()` to expand the tags array, which isn't in Diesel's DSL.
+/// Returns an array of tag names from user_tags via the junction table.
+/// Diesel doesn't support correlated subqueries with array_agg natively.
 ///
 /// # Safety
-/// The user_id is passed via `.bind()`, not interpolated.
-#[macro_export]
-macro_rules! distinct_tags_query {
-    ($user_id:expr) => {
-        diesel::sql_query(
-            "SELECT DISTINCT unnest(rv.tags)::text AS tag \
-             FROM recipes r \
-             JOIN recipe_versions rv ON rv.id = r.current_version_id \
-             WHERE r.user_id = $1 AND r.deleted_at IS NULL \
-             ORDER BY tag",
-        )
-        .bind::<diesel::sql_types::Uuid, _>($user_id)
-    };
+/// Static SQL string with no user input. References recipe_versions.id
+/// from the outer query context.
+pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
+    sql::<Array<Text>>(
+        "(SELECT COALESCE(array_agg(ut.name ORDER BY ut.name), ARRAY[]::text[]) \
+         FROM recipe_version_tags rvt \
+         JOIN user_tags ut ON ut.id = rvt.tag_id \
+         WHERE rvt.recipe_version_id = recipe_versions.id)",
+    )
 }

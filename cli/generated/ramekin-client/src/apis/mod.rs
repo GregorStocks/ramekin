@@ -118,6 +118,7 @@ pub mod enrich_api;
 pub mod photos_api;
 pub mod recipes_api;
 pub mod scrape_api;
+pub mod tags_api;
 pub mod testing_api;
 
 pub mod configuration;

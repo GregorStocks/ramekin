@@ -2,8 +2,9 @@ use crate::api::ErrorResponse;
 use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
-use crate::models::{Ingredient, NewRecipeVersion, RecipeVersion};
-use crate::schema::{recipe_versions, recipes};
+use crate::models::{Ingredient, NewRecipeVersion, NewUserTag, RecipeVersionTag};
+use crate::raw_sql;
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Path, State},
     http::StatusCode,
@@ -36,6 +37,28 @@ pub struct UpdateRecipeRequest {
     pub nutritional_info: Option<String>,
     pub notes: Option<String>,
 }
+
+// Type alias for the combined recipe + version + tags query result
+#[allow(clippy::type_complexity)]
+type CurrentVersionRow = (
+    Uuid,              // recipes.id
+    String,            // recipe_versions.title
+    Option<String>,    // description
+    serde_json::Value, // ingredients (JSON)
+    String,            // instructions
+    Option<String>,    // source_url
+    Option<String>,    // source_name
+    Vec<Option<Uuid>>, // photo_ids
+    Option<String>,    // servings
+    Option<String>,    // prep_time
+    Option<String>,    // cook_time
+    Option<String>,    // total_time
+    Option<i32>,       // rating
+    Option<String>,    // difficulty
+    Option<String>,    // nutritional_info
+    Option<String>,    // notes
+    Vec<String>,       // tags (from correlated subquery)
+);
 
 #[utoipa::path(
     put,
@@ -87,12 +110,35 @@ pub async fn update_recipe(
 
     let mut conn = get_conn!(pool);
 
-    // Fetch the recipe and its current version
-    let recipe: (Uuid, Option<Uuid>) = match recipes::table
+    // Fetch recipe, current version, and tags in a single query
+    let current: CurrentVersionRow = match recipes::table
+        .inner_join(
+            recipe_versions::table.on(recipe_versions::id
+                .nullable()
+                .eq(recipes::current_version_id)),
+        )
         .filter(recipes::id.eq(id))
         .filter(recipes::user_id.eq(user.id))
         .filter(recipes::deleted_at.is_null())
-        .select((recipes::id, recipes::current_version_id))
+        .select((
+            recipes::id,
+            recipe_versions::title,
+            recipe_versions::description,
+            recipe_versions::ingredients,
+            recipe_versions::instructions,
+            recipe_versions::source_url,
+            recipe_versions::source_name,
+            recipe_versions::photo_ids,
+            recipe_versions::servings,
+            recipe_versions::prep_time,
+            recipe_versions::cook_time,
+            recipe_versions::total_time,
+            recipe_versions::rating,
+            recipe_versions::difficulty,
+            recipe_versions::nutritional_info,
+            recipe_versions::notes,
+            raw_sql::tags_subquery(),
+        ))
         .first(&mut conn)
     {
         Ok(r) => r,
@@ -116,39 +162,29 @@ pub async fn update_recipe(
         }
     };
 
-    let (recipe_id, current_version_id) = recipe;
-
-    // Fetch the current version to merge with updates
-    let current_version: RecipeVersion = match current_version_id {
-        Some(vid) => match recipe_versions::table
-            .filter(recipe_versions::id.eq(vid))
-            .first(&mut conn)
-        {
-            Ok(v) => v,
-            Err(_) => {
-                return (
-                    StatusCode::INTERNAL_SERVER_ERROR,
-                    Json(ErrorResponse {
-                        error: "Failed to fetch current version".to_string(),
-                    }),
-                )
-                    .into_response()
-            }
-        },
-        None => {
-            return (
-                StatusCode::NOT_FOUND,
-                Json(ErrorResponse {
-                    error: "Recipe has no current version".to_string(),
-                }),
-            )
-                .into_response()
-        }
-    };
+    let (
+        recipe_id,
+        cur_title,
+        cur_description,
+        cur_ingredients,
+        cur_instructions,
+        cur_source_url,
+        cur_source_name,
+        cur_photo_ids,
+        cur_servings,
+        cur_prep_time,
+        cur_cook_time,
+        cur_total_time,
+        cur_rating,
+        cur_difficulty,
+        cur_nutritional_info,
+        cur_notes,
+        cur_tags,
+    ) = current;
 
     // Merge request with current version
-    let new_title = request.title.unwrap_or(current_version.title);
-    let new_description = request.description.or(current_version.description);
+    let new_title = request.title.unwrap_or(cur_title);
+    let new_description = request.description.or(cur_description);
     let new_ingredients = match request.ingredients {
         Some(ingredients) => match serde_json::to_value(&ingredients) {
             Ok(v) => v,
@@ -162,29 +198,24 @@ pub async fn update_recipe(
                     .into_response()
             }
         },
-        None => current_version.ingredients,
+        None => cur_ingredients,
     };
-    let new_instructions = request.instructions.unwrap_or(current_version.instructions);
-    let new_source_url = request.source_url.or(current_version.source_url);
-    let new_source_name = request.source_name.or(current_version.source_name);
+    let new_instructions = request.instructions.unwrap_or(cur_instructions);
+    let new_source_url = request.source_url.or(cur_source_url);
+    let new_source_name = request.source_name.or(cur_source_name);
     let new_photo_ids: Vec<Option<Uuid>> = request
         .photo_ids
         .map(|ids| ids.into_iter().map(Some).collect())
-        .unwrap_or(current_version.photo_ids);
-    let new_tags: Vec<Option<String>> = request
-        .tags
-        .map(|tags| tags.into_iter().map(Some).collect())
-        .unwrap_or(current_version.tags);
-    let new_servings = request.servings.or(current_version.servings);
-    let new_prep_time = request.prep_time.or(current_version.prep_time);
-    let new_cook_time = request.cook_time.or(current_version.cook_time);
-    let new_total_time = request.total_time.or(current_version.total_time);
-    let new_rating = request.rating.or(current_version.rating);
-    let new_difficulty = request.difficulty.or(current_version.difficulty);
-    let new_nutritional_info = request
-        .nutritional_info
-        .or(current_version.nutritional_info);
-    let new_notes = request.notes.or(current_version.notes);
+        .unwrap_or(cur_photo_ids);
+    let new_tags: Vec<String> = request.tags.unwrap_or(cur_tags);
+    let new_servings = request.servings.or(cur_servings);
+    let new_prep_time = request.prep_time.or(cur_prep_time);
+    let new_cook_time = request.cook_time.or(cur_cook_time);
+    let new_total_time = request.total_time.or(cur_total_time);
+    let new_rating = request.rating.or(cur_rating);
+    let new_difficulty = request.difficulty.or(cur_difficulty);
+    let new_nutritional_info = request.nutritional_info.or(cur_nutritional_info);
+    let new_notes = request.notes.or(cur_notes);
 
     // Create new version in a transaction
     let result: Result<(), diesel::result::Error> = conn.transaction(|conn| {
@@ -197,7 +228,6 @@ pub async fn update_recipe(
             source_url: new_source_url.as_deref(),
             source_name: new_source_name.as_deref(),
             photo_ids: &new_photo_ids,
-            tags: &new_tags,
             servings: new_servings.as_deref(),
             prep_time: new_prep_time.as_deref(),
             cook_time: new_cook_time.as_deref(),
@@ -218,6 +248,30 @@ pub async fn update_recipe(
         diesel::update(recipes::table.find(recipe_id))
             .set(recipes::current_version_id.eq(version_id))
             .execute(conn)?;
+
+        // Handle tags: upsert into user_tags and insert into junction table
+        for tag_name in &new_tags {
+            // Upsert the tag into user_tags
+            let tag_id: Uuid = diesel::insert_into(user_tags::table)
+                .values(NewUserTag {
+                    user_id: user.id,
+                    name: tag_name,
+                })
+                .on_conflict((user_tags::user_id, user_tags::name))
+                .do_update()
+                .set(user_tags::name.eq(user_tags::name)) // No-op update to return the id
+                .returning(user_tags::id)
+                .get_result(conn)?;
+
+            // Insert into junction table
+            diesel::insert_into(recipe_version_tags::table)
+                .values(RecipeVersionTag {
+                    recipe_version_id: version_id,
+                    tag_id,
+                })
+                .on_conflict_do_nothing()
+                .execute(conn)?;
+        }
 
         Ok(())
     });

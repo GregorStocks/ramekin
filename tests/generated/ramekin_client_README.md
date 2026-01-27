@@ -75,7 +75,6 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
-*RecipesApi* | [**list_tags**](ramekin_client/docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -83,6 +82,9 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](ramekin_client/docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**retry_scrape**](ramekin_client/docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*TagsApi* | [**create_tag**](ramekin_client/docs/TagsApi.md#create_tag) | **POST** /api/tags | 
+*TagsApi* | [**delete_tag**](ramekin_client/docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
+*TagsApi* | [**list_all_tags**](ramekin_client/docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
 *TestingApi* | [**ping**](ramekin_client/docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](ramekin_client/docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
@@ -94,6 +96,8 @@ Class | Method | HTTP request | Description
  - [CreateRecipeResponse](ramekin_client/docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](ramekin_client/docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](ramekin_client/docs/CreateScrapeResponse.md)
+ - [CreateTagRequest](ramekin_client/docs/CreateTagRequest.md)
+ - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
  - [Ingredient](ramekin_client/docs/Ingredient.md)
@@ -111,7 +115,8 @@ Class | Method | HTTP request | Description
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)
  - [SignupResponse](ramekin_client/docs/SignupResponse.md)
  - [SortBy](ramekin_client/docs/SortBy.md)
- - [TagsResponse](ramekin_client/docs/TagsResponse.md)
+ - [TagItem](ramekin_client/docs/TagItem.md)
+ - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)

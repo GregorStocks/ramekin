@@ -11,33 +11,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { TagItemFromJSON, TagItemToJSON, } from './TagItem';
 /**
- * Check if a given object implements the TagsResponse interface.
+ * Check if a given object implements the TagsListResponse interface.
  */
-export function instanceOfTagsResponse(value) {
+export function instanceOfTagsListResponse(value) {
     if (!('tags' in value) || value['tags'] === undefined)
         return false;
     return true;
 }
-export function TagsResponseFromJSON(json) {
-    return TagsResponseFromJSONTyped(json, false);
+export function TagsListResponseFromJSON(json) {
+    return TagsListResponseFromJSONTyped(json, false);
 }
-export function TagsResponseFromJSONTyped(json, ignoreDiscriminator) {
+export function TagsListResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'tags': json['tags'],
+        'tags': (json['tags'].map(TagItemFromJSON)),
     };
 }
-export function TagsResponseToJSON(json) {
-    return TagsResponseToJSONTyped(json, false);
+export function TagsListResponseToJSON(json) {
+    return TagsListResponseToJSONTyped(json, false);
 }
-export function TagsResponseToJSONTyped(value, ignoreDiscriminator = false) {
+export function TagsListResponseToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
     return {
-        'tags': value['tags'],
+        'tags': (value['tags'].map(TagItemToJSON)),
     };
 }

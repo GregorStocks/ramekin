@@ -12,14 +12,13 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct TagsResponse {
-    /// List of distinct tags used across user's recipes, sorted alphabetically
+pub struct TagsListResponse {
     #[serde(rename = "tags")]
-    pub tags: Vec<String>,
+    pub tags: Vec<models::TagItem>,
 }
 
-impl TagsResponse {
-    pub fn new(tags: Vec<String>) -> TagsResponse {
-        TagsResponse { tags }
+impl TagsListResponse {
+    pub fn new(tags: Vec<models::TagItem>) -> TagsListResponse {
+        TagsListResponse { tags }
     }
 }

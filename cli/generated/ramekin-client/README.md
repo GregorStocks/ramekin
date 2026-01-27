@@ -38,7 +38,6 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
-*RecipesApi* | [**list_tags**](docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -46,6 +45,9 @@ Class | Method | HTTP request | Description
 *ScrapeApi* | [**create_scrape**](docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
 *ScrapeApi* | [**get_scrape**](docs/ScrapeApi.md#get_scrape) | **GET** /api/scrape/{id} | 
 *ScrapeApi* | [**retry_scrape**](docs/ScrapeApi.md#retry_scrape) | **POST** /api/scrape/{id}/retry | 
+*TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /api/tags | 
+*TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
+*TagsApi* | [**list_all_tags**](docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
 *TestingApi* | [**ping**](docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
@@ -57,6 +59,8 @@ Class | Method | HTTP request | Description
  - [CreateRecipeResponse](docs/CreateRecipeResponse.md)
  - [CreateScrapeRequest](docs/CreateScrapeRequest.md)
  - [CreateScrapeResponse](docs/CreateScrapeResponse.md)
+ - [CreateTagRequest](docs/CreateTagRequest.md)
+ - [CreateTagResponse](docs/CreateTagResponse.md)
  - [Direction](docs/Direction.md)
  - [ErrorResponse](docs/ErrorResponse.md)
  - [Ingredient](docs/Ingredient.md)
@@ -74,7 +78,8 @@ Class | Method | HTTP request | Description
  - [SignupRequest](docs/SignupRequest.md)
  - [SignupResponse](docs/SignupResponse.md)
  - [SortBy](docs/SortBy.md)
- - [TagsResponse](docs/TagsResponse.md)
+ - [TagItem](docs/TagItem.md)
+ - [TagsListResponse](docs/TagsListResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](docs/UploadPhotoResponse.md)

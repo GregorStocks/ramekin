@@ -13,6 +13,13 @@ diesel::table! {
 }
 
 diesel::table! {
+    recipe_version_tags (recipe_version_id, tag_id) {
+        recipe_version_id -> Uuid,
+        tag_id -> Uuid,
+    }
+}
+
+diesel::table! {
     recipe_versions (id) {
         id -> Uuid,
         recipe_id -> Uuid,
@@ -23,7 +30,6 @@ diesel::table! {
         source_url -> Nullable<Varchar>,
         source_name -> Nullable<Varchar>,
         photo_ids -> Array<Nullable<Uuid>>,
-        tags -> Array<Nullable<Citext>>,
         servings -> Nullable<Text>,
         prep_time -> Nullable<Text>,
         cook_time -> Nullable<Text>,
@@ -86,6 +92,15 @@ diesel::table! {
 }
 
 diesel::table! {
+    user_tags (id) {
+        id -> Uuid,
+        user_id -> Uuid,
+        name -> Citext,
+        created_at -> Timestamptz,
+    }
+}
+
+diesel::table! {
     users (id) {
         id -> Uuid,
         #[max_length = 255]
@@ -99,17 +114,22 @@ diesel::table! {
 }
 
 diesel::joinable!(photos -> users (user_id));
+diesel::joinable!(recipe_version_tags -> recipe_versions (recipe_version_id));
+diesel::joinable!(recipe_version_tags -> user_tags (tag_id));
 diesel::joinable!(recipes -> users (user_id));
 diesel::joinable!(scrape_jobs -> users (user_id));
 diesel::joinable!(sessions -> users (user_id));
 diesel::joinable!(step_outputs -> scrape_jobs (scrape_job_id));
+diesel::joinable!(user_tags -> users (user_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     photos,
+    recipe_version_tags,
     recipe_versions,
     recipes,
     scrape_jobs,
     sessions,
     step_outputs,
+    user_tags,
     users,
 );

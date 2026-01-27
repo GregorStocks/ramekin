@@ -164,6 +164,7 @@ async fn main() {
         .nest("/api/photos", api::photos::router())
         .nest("/api/recipes", api::recipes::router())
         .nest("/api/scrape", api::scrape::router())
+        .nest("/api/tags", api::tags::router())
         .route("/api/enrich", post(api::enrich::enrich_recipe))
         .layer(middleware::from_fn_with_state(
             pool.clone(),

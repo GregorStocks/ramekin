@@ -3,8 +3,7 @@ use crate::auth::AuthUser;
 use crate::db::DbPool;
 use crate::get_conn;
 use crate::raw_sql;
-use crate::schema::{recipe_versions, recipes};
-use crate::tag_in_array;
+use crate::schema::{recipe_version_tags, recipe_versions, recipes, user_tags};
 use axum::{
     extract::{Query, State},
     http::StatusCode,
@@ -217,16 +216,16 @@ fn escape_like_pattern(s: &str) -> String {
         .replace('_', "\\_")
 }
 
-// Type alias for our query result row
+// Type alias for our query result row (tags included via correlated subquery)
 type RecipeRow = (
-    Uuid,                // recipe id
-    DateTime<Utc>,       // recipe created_at
-    String,              // version title
-    Option<String>,      // version description
-    Vec<Option<String>>, // version tags
-    Vec<Option<Uuid>>,   // version photo_ids
-    DateTime<Utc>,       // version created_at (updated_at)
-    i64,                 // total count from window function
+    Uuid,              // recipe id
+    DateTime<Utc>,     // recipe created_at
+    String,            // version title
+    Option<String>,    // version description
+    Vec<Option<Uuid>>, // version photo_ids
+    DateTime<Utc>,     // version created_at (updated_at)
+    i64,               // total count from window function
+    Vec<String>,       // tags from correlated subquery
 );
 
 #[utoipa::path(
@@ -281,8 +280,14 @@ pub async fn list_recipes(
     }
 
     // Tag filters (AND logic - must have ALL tags)
+    // Use EXISTS subquery for each tag
     for tag in &parsed.tags {
-        query = query.filter(tag_in_array!(tag));
+        let tag_subquery = recipe_version_tags::table
+            .inner_join(user_tags::table)
+            .filter(recipe_version_tags::recipe_version_id.eq(recipe_versions::id))
+            .filter(user_tags::name.eq(tag))
+            .select(recipe_version_tags::recipe_version_id);
+        query = query.filter(diesel::dsl::exists(tag_subquery));
     }
 
     // Source filter
@@ -321,17 +326,18 @@ pub async fn list_recipes(
         (SortBy::UpdatedAt, Direction::Asc) => query.order(recipe_versions::created_at.asc()),
     };
 
-    // Select columns including COUNT(*) OVER() for total in single query
+    // Select columns including COUNT(*) OVER() for total and tags via correlated subquery
+    // All data fetched in a single query
     let results: Vec<RecipeRow> = match query
         .select((
             recipes::id,
             recipes::created_at,
             recipe_versions::title,
             recipe_versions::description,
-            recipe_versions::tags,
             recipe_versions::photo_ids,
             recipe_versions::created_at,
             raw_sql::count_over(),
+            raw_sql::tags_subquery(),
         ))
         .limit(limit)
         .offset(offset)
@@ -351,19 +357,19 @@ pub async fn list_recipes(
     };
 
     // Extract total from first row, or 0 if no results
-    let total = results.first().map(|r| r.7).unwrap_or(0);
+    let total = results.first().map(|r| r.6).unwrap_or(0);
 
     let recipes = results
         .into_iter()
         .map(
-            |(id, created_at, title, description, tags, photo_ids, updated_at, _)| {
+            |(id, created_at, title, description, photo_ids, updated_at, _, tags)| {
                 let thumbnail_photo_id = photo_ids.first().and_then(|id| *id);
 
                 RecipeSummary {
                     id,
                     title,
                     description,
-                    tags: tags.into_iter().flatten().collect(),
+                    tags,
                     thumbnail_photo_id,
                     created_at,
                     updated_at,

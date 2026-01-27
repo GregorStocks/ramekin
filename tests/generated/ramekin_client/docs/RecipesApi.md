@@ -10,7 +10,6 @@ Method | HTTP request | Description
 [**export_recipe**](RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 [**get_recipe**](RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 [**list_recipes**](RecipesApi.md#list_recipes) | **GET** /api/recipes | 
-[**list_tags**](RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 [**list_versions**](RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 [**rescrape**](RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 [**update_recipe**](RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -461,76 +460,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | List of user&#39;s recipes |  -  |
 **400** | Invalid parameters |  -  |
-**401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **list_tags**
-> TagsResponse list_tags()
-
-### Example
-
-* Bearer Authentication (bearer_auth):
-
-```python
-import ramekin_client
-from ramekin_client.models.tags_response import TagsResponse
-from ramekin_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = ramekin_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: bearer_auth
-configuration = ramekin_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with ramekin_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = ramekin_client.RecipesApi(api_client)
-
-    try:
-        api_response = api_instance.list_tags()
-        print("The response of RecipesApi->list_tags:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling RecipesApi->list_tags: %s\n" % e)
-```
-
-
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**TagsResponse**](TagsResponse.md)
-
-### Authorization
-
-[bearer_auth](../README.md#bearer_auth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | List of distinct tags |  -  |
 **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
