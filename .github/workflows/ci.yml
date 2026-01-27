@@ -47,6 +47,9 @@ jobs:
       - name: Run linters
         run: make lint
 
+      - name: Build server binary
+        run: cd server && cargo build --release -q
+
       - name: Create test.env
         run: |
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
@@ -54,6 +57,8 @@ jobs:
           echo "FIXTURE_PORT=55043" >> test.env
           echo "UI_PORT=55044" >> test.env
           echo "UI_HOSTNAME=localhost" >> test.env
+          echo "MOCK_OPENROUTER_PORT=55045" >> test.env
+          echo "PROCESS_COMPOSE_PORT=55046" >> test.env
           echo "RUST_LOG=error" >> test.env
           echo "INSECURE_PASSWORD_HASHING=1" >> test.env
 
