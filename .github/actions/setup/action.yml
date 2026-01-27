@@ -22,6 +22,12 @@ runs:
         cache-on-failure: true
         cache-all-crates: true
 
+    - name: Cache cargo binaries
+      uses: actions/cache@v4
+      with:
+        path: ~/.cargo/bin
+        key: cargo-bin-${{ runner.os }}-diesel-2.3.6-ast-grep
+
     - name: Install cargo-binstall
       shell: bash
       run: |
@@ -31,11 +37,17 @@ runs:
 
     - name: Install diesel CLI
       shell: bash
-      run: cargo binstall diesel_cli --no-confirm --force
+      run: |
+        if ! command -v diesel &> /dev/null; then
+          cargo binstall diesel_cli --no-confirm --force
+        fi
 
     - name: Install ast-grep
       shell: bash
-      run: cargo binstall ast-grep --no-confirm --force
+      run: |
+        if ! command -v ast-grep &> /dev/null; then
+          cargo binstall ast-grep --no-confirm --force
+        fi
 
     - name: Install SwiftLint
       shell: bash
