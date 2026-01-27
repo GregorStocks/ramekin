@@ -41,6 +41,9 @@ jobs:
       - name: Install Playwright browsers
         run: .venv/bin/playwright install chromium --with-deps
 
+      - name: Skip unnecessary regeneration
+        run: touch api/openapi.json cli/generated/ramekin-client/Cargo.toml
+
       - name: Run linters
         run: make lint
 

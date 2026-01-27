@@ -1,6 +1,7 @@
+---
 name: iOS
 
-on:
+"on":
   pull_request:
     branches: ["*"]
     paths:
