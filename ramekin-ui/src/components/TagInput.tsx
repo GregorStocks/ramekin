@@ -9,7 +9,7 @@ interface TagInputProps {
 }
 
 export default function TagInput(props: TagInputProps) {
-  const { getRecipesApi } = useAuth();
+  const { getTagsApi } = useAuth();
 
   let inputRef: HTMLInputElement | undefined;
 
@@ -18,8 +18,8 @@ export default function TagInput(props: TagInputProps) {
 
   onMount(async () => {
     try {
-      const response = await getRecipesApi().listTags();
-      setAvailableTags(response.tags);
+      const response = await getTagsApi().listAllTags();
+      setAvailableTags(response.tags.map((t) => t.name));
     } catch {
       // Ignore errors loading tags
     }

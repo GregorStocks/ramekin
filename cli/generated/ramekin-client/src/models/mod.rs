@@ -50,8 +50,6 @@ pub mod tag_item;
 pub use self::tag_item::TagItem;
 pub mod tags_list_response;
 pub use self::tags_list_response::TagsListResponse;
-pub mod tags_response;
-pub use self::tags_response::TagsResponse;
 pub mod unauthed_ping_response;
 pub use self::unauthed_ping_response::UnauthedPingResponse;
 pub mod update_recipe_request;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, ListRecipesResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, TagsResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
+import { CreateRecipeRequestToJSON, CreateRecipeResponseFromJSON, ListRecipesResponseFromJSON, RecipeResponseFromJSON, RescrapeResponseFromJSON, UpdateRecipeRequestToJSON, VersionListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -209,33 +209,6 @@ export class RecipesApi extends runtime.BaseAPI {
      */
     async listRecipes(requestParameters = {}, initOverrides) {
         const response = await this.listRecipesRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-    /**
-     */
-    async listTagsRaw(initOverrides) {
-        const queryParameters = {};
-        const headerParameters = {};
-        if (this.configuration && this.configuration.accessToken) {
-            const token = this.configuration.accessToken;
-            const tokenString = await token("bearer_auth", []);
-            if (tokenString) {
-                headerParameters["Authorization"] = `Bearer ${tokenString}`;
-            }
-        }
-        let urlPath = `/api/recipes/tags`;
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => TagsResponseFromJSON(jsonValue));
-    }
-    /**
-     */
-    async listTags(initOverrides) {
-        const response = await this.listTagsRaw(initOverrides);
         return await response.value();
     }
     /**

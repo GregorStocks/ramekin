@@ -516,41 +516,6 @@
         ]
       }
     },
-    "/api/recipes/tags": {
-      "get": {
-        "tags": [
-          "recipes"
-        ],
-        "operationId": "list_tags",
-        "responses": {
-          "200": {
-            "description": "List of user's tags",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TagsResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearer_auth": []
-          }
-        ]
-      }
-    },
     "/api/recipes/{id}": {
       "get": {
         "tags": [
@@ -2027,21 +1992,6 @@
             "items": {
               "$ref": "#/components/schemas/TagItem"
             }
-          }
-        }
-      },
-      "TagsResponse": {
-        "type": "object",
-        "required": [
-          "tags"
-        ],
-        "properties": {
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "List of all user's tags, sorted alphabetically"
           }
         }
       },

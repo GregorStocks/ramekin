@@ -38,7 +38,6 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**export_recipe**](docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
-*RecipesApi* | [**list_tags**](docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -81,7 +80,6 @@ Class | Method | HTTP request | Description
  - [SortBy](docs/SortBy.md)
  - [TagItem](docs/TagItem.md)
  - [TagsListResponse](docs/TagsListResponse.md)
- - [TagsResponse](docs/TagsResponse.md)
  - [UnauthedPingResponse](docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](docs/UploadPhotoResponse.md)

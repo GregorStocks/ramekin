@@ -234,20 +234,6 @@ def test_tags_returned_alphabetically(authed_api_client):
     assert names == sorted(names, key=str.lower)
 
 
-def test_recipe_tags_endpoint_returns_all_tags(authed_api_client):
-    """Test that /api/recipes/tags also returns all user tags (not just used ones)."""
-    client, user_id = authed_api_client
-    tags_api = TagsApi(client)
-    recipes_api = RecipesApi(client)
-
-    # Create an unused tag
-    tags_api.create_tag(CreateTagRequest(name="recipe-endpoint-unused"))
-
-    # Verify it appears in the recipes tags endpoint too
-    response = recipes_api.list_tags()
-    assert "recipe-endpoint-unused" in response.tags
-
-
 def test_update_recipe_creates_new_tags(authed_api_client):
     """Test that updating a recipe with new tags auto-creates them."""
     client, user_id = authed_api_client

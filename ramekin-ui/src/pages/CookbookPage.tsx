@@ -202,7 +202,7 @@ function formatRelativeDate(date: Date): string {
 }
 
 export default function CookbookPage() {
-  const { getRecipesApi, token } = useAuth();
+  const { getRecipesApi, getTagsApi, token } = useAuth();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -243,8 +243,8 @@ export default function CookbookPage() {
   // Load available tags on mount
   onMount(async () => {
     try {
-      const response = await getRecipesApi().listTags();
-      setAvailableTags(response.tags);
+      const response = await getTagsApi().listAllTags();
+      setAvailableTags(response.tags.map((t) => t.name));
     } catch {
       // Ignore errors loading tags
     }

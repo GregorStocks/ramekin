@@ -39,7 +39,6 @@ from ramekin_client.models.signup_response import SignupResponse
 from ramekin_client.models.sort_by import SortBy
 from ramekin_client.models.tag_item import TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse
-from ramekin_client.models.tags_response import TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse

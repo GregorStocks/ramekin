@@ -43,7 +43,6 @@ ramekin_client/docs/SortBy.md
 ramekin_client/docs/TagItem.md
 ramekin_client/docs/TagsApi.md
 ramekin_client/docs/TagsListResponse.md
-ramekin_client/docs/TagsResponse.md
 ramekin_client/docs/TestingApi.md
 ramekin_client/docs/UnauthedPingResponse.md
 ramekin_client/docs/UpdateRecipeRequest.md
@@ -78,7 +77,6 @@ ramekin_client/models/signup_response.py
 ramekin_client/models/sort_by.py
 ramekin_client/models/tag_item.py
 ramekin_client/models/tags_list_response.py
-ramekin_client/models/tags_response.py
 ramekin_client/models/unauthed_ping_response.py
 ramekin_client/models/update_recipe_request.py
 ramekin_client/models/upload_photo_response.py
@@ -118,7 +116,6 @@ ramekin_client/test/test_sort_by.py
 ramekin_client/test/test_tag_item.py
 ramekin_client/test/test_tags_api.py
 ramekin_client/test/test_tags_list_response.py
-ramekin_client/test/test_tags_response.py
 ramekin_client/test/test_testing_api.py
 ramekin_client/test/test_unauthed_ping_response.py
 ramekin_client/test/test_update_recipe_request.py

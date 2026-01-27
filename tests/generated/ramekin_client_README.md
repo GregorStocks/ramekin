@@ -75,7 +75,6 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**export_recipe**](ramekin_client/docs/RecipesApi.md#export_recipe) | **GET** /api/recipes/{id}/export | 
 *RecipesApi* | [**get_recipe**](ramekin_client/docs/RecipesApi.md#get_recipe) | **GET** /api/recipes/{id} | 
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
-*RecipesApi* | [**list_tags**](ramekin_client/docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
 *RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
@@ -118,7 +117,6 @@ Class | Method | HTTP request | Description
  - [SortBy](ramekin_client/docs/SortBy.md)
  - [TagItem](ramekin_client/docs/TagItem.md)
  - [TagsListResponse](ramekin_client/docs/TagsListResponse.md)
- - [TagsResponse](ramekin_client/docs/TagsResponse.md)
  - [UnauthedPingResponse](ramekin_client/docs/UnauthedPingResponse.md)
  - [UpdateRecipeRequest](ramekin_client/docs/UpdateRecipeRequest.md)
  - [UploadPhotoResponse](ramekin_client/docs/UploadPhotoResponse.md)

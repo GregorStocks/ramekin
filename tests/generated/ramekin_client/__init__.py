@@ -60,7 +60,6 @@ __all__ = [
     "SortBy",
     "TagItem",
     "TagsListResponse",
-    "TagsResponse",
     "UnauthedPingResponse",
     "UpdateRecipeRequest",
     "UploadPhotoResponse",
@@ -115,7 +114,6 @@ from ramekin_client.models.signup_response import SignupResponse as SignupRespon
 from ramekin_client.models.sort_by import SortBy as SortBy
 from ramekin_client.models.tag_item import TagItem as TagItem
 from ramekin_client.models.tags_list_response import TagsListResponse as TagsListResponse
-from ramekin_client.models.tags_response import TagsResponse as TagsResponse
 from ramekin_client.models.unauthed_ping_response import UnauthedPingResponse as UnauthedPingResponse
 from ramekin_client.models.update_recipe_request import UpdateRecipeRequest as UpdateRecipeRequest
 from ramekin_client.models.upload_photo_response import UploadPhotoResponse as UploadPhotoResponse

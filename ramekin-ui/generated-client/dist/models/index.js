@@ -26,7 +26,6 @@ export * from './SignupResponse';
 export * from './SortBy';
 export * from './TagItem';
 export * from './TagsListResponse';
-export * from './TagsResponse';
 export * from './UnauthedPingResponse';
 export * from './UpdateRecipeRequest';
 export * from './UploadPhotoResponse';
