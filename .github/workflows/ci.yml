@@ -47,6 +47,9 @@ jobs:
       - name: Run linters
         run: make lint
 
+      - name: Build server binary
+        run: cd server && cargo build --release -q
+
       - name: Create test.env
         run: |
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
