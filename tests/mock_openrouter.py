@@ -61,8 +61,7 @@ class MockOpenRouterHandler(BaseHTTPRequestHandler):
             self.send_error(404, "Not found")
 
     def log_message(self, format, *args):
-        # Log to stderr so it appears in process-compose logs
-        print(f"[mock-openrouter] {args[0]}", file=sys.stderr)
+        pass
 
 
 def main():
