@@ -58,3 +58,22 @@ pub async fn query_counting_middleware(request: Request<Body>, next: Next) -> Re
     let counter = Arc::new(AtomicU32::new(0));
     DB_QUERY_COUNTER.scope(counter, next.run(request)).await
 }
+
+/// Middleware that adds X-DB-Query-Count header to responses.
+/// Only enabled when TRACK_DB_QUERY_COUNT=1 environment variable is set.
+pub async fn db_query_count_header_middleware(request: Request<Body>, next: Next) -> Response {
+    let mut response = next.run(request).await;
+
+    if std::env::var("TRACK_DB_QUERY_COUNT")
+        .map(|v| v == "1")
+        .unwrap_or(false)
+    {
+        if let Some(count) = get_query_count() {
+            if let Ok(value) = axum::http::header::HeaderValue::from_str(&count.to_string()) {
+                response.headers_mut().insert("X-DB-Query-Count", value);
+            }
+        }
+    }
+
+    response
+}
