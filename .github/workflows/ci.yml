@@ -52,6 +52,7 @@ jobs:
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
           echo "PORT=55042" >> test.env
           echo "FIXTURE_PORT=55043" >> test.env
+          echo "MOCK_OPENROUTER_PORT=55045" >> test.env
           echo "UI_PORT=55044" >> test.env
           echo "UI_HOSTNAME=localhost" >> test.env
           echo "RUST_LOG=error" >> test.env
