@@ -48,6 +48,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /api/tags | 
 *TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
 *TagsApi* | [**list_all_tags**](docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
+*TagsApi* | [**rename_tag**](docs/TagsApi.md#rename_tag) | **PATCH** /api/tags/{id} | 
 *TestingApi* | [**ping**](docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
@@ -72,6 +73,8 @@ Class | Method | HTTP request | Description
  - [RecipeContent](docs/RecipeContent.md)
  - [RecipeResponse](docs/RecipeResponse.md)
  - [RecipeSummary](docs/RecipeSummary.md)
+ - [RenameTagRequest](docs/RenameTagRequest.md)
+ - [RenameTagResponse](docs/RenameTagResponse.md)
  - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)

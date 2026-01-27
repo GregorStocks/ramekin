@@ -37,6 +37,12 @@ export interface TagItem {
      * @memberof TagItem
      */
     name: string;
+    /**
+     * Number of recipes using this tag
+     * @type {number}
+     * @memberof TagItem
+     */
+    recipeCount: number;
 }
 
 /**
@@ -46,6 +52,7 @@ export function instanceOfTagItem(value: object): value is TagItem {
     if (!('createdAt' in value) || value['createdAt'] === undefined) return false;
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('name' in value) || value['name'] === undefined) return false;
+    if (!('recipeCount' in value) || value['recipeCount'] === undefined) return false;
     return true;
 }
 
@@ -62,6 +69,7 @@ export function TagItemFromJSONTyped(json: any, ignoreDiscriminator: boolean): T
         'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'name': json['name'],
+        'recipeCount': json['recipe_count'],
     };
 }
 
@@ -79,6 +87,7 @@ export function TagItemToJSONTyped(value?: TagItem | null, ignoreDiscriminator: 
         'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'name': value['name'],
+        'recipe_count': value['recipeCount'],
     };
 }
 

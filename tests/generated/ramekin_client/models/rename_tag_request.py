@@ -17,22 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
-from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TagItem(BaseModel):
+class RenameTagRequest(BaseModel):
     """
-    TagItem
+    RenameTagRequest
     """ # noqa: E501
-    created_at: datetime
-    id: UUID
     name: StrictStr
-    recipe_count: StrictInt = Field(description="Number of recipes using this tag")
-    __properties: ClassVar[List[str]] = ["created_at", "id", "name", "recipe_count"]
+    __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +47,7 @@ class TagItem(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TagItem from a JSON string"""
+        """Create an instance of RenameTagRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,7 +72,7 @@ class TagItem(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TagItem from a dict"""
+        """Create an instance of RenameTagRequest from a dict"""
         if obj is None:
             return None
 
@@ -85,10 +80,7 @@ class TagItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "created_at": obj.get("created_at"),
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "recipe_count": obj.get("recipe_count")
+            "name": obj.get("name")
         })
         return _obj
 

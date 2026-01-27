@@ -44,6 +44,12 @@ class TestTagsApi(unittest.TestCase):
         """
         pass
 
+    def test_rename_tag(self) -> None:
+        """Test case for rename_tag
+
+        """
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

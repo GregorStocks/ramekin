@@ -18,6 +18,8 @@ import type {
   CreateTagRequest,
   CreateTagResponse,
   ErrorResponse,
+  RenameTagRequest,
+  RenameTagResponse,
   TagsListResponse,
 } from '../models/index';
 import {
@@ -27,6 +29,10 @@ import {
     CreateTagResponseToJSON,
     ErrorResponseFromJSON,
     ErrorResponseToJSON,
+    RenameTagRequestFromJSON,
+    RenameTagRequestToJSON,
+    RenameTagResponseFromJSON,
+    RenameTagResponseToJSON,
     TagsListResponseFromJSON,
     TagsListResponseToJSON,
 } from '../models/index';
@@ -37,6 +43,11 @@ export interface CreateTagOperationRequest {
 
 export interface DeleteTagRequest {
     id: string;
+}
+
+export interface RenameTagOperationRequest {
+    id: string;
+    renameTagRequest: RenameTagRequest;
 }
 
 /**
@@ -163,6 +174,59 @@ export class TagsApi extends runtime.BaseAPI {
      */
     async listAllTags(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TagsListResponse> {
         const response = await this.listAllTagsRaw(initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async renameTagRaw(requestParameters: RenameTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RenameTagResponse>> {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling renameTag().'
+            );
+        }
+
+        if (requestParameters['renameTagRequest'] == null) {
+            throw new runtime.RequiredError(
+                'renameTagRequest',
+                'Required parameter "renameTagRequest" was null or undefined when calling renameTag().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+
+        let urlPath = `/api/tags/{id}`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+
+        const response = await this.request({
+            path: urlPath,
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RenameTagRequestToJSON(requestParameters['renameTagRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => RenameTagResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async renameTag(requestParameters: RenameTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RenameTagResponse> {
+        const response = await this.renameTagRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

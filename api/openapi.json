@@ -1121,7 +1121,7 @@
         "operationId": "list_all_tags",
         "responses": {
           "200": {
-            "description": "List of user's tags with IDs",
+            "description": "List of user's tags with IDs and recipe counts",
             "content": {
               "application/json": {
                 "schema": {
@@ -1245,6 +1245,91 @@
           },
           "404": {
             "description": "Tag not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "tags"
+        ],
+        "operationId": "rename_tag",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Tag ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RenameTagRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Tag renamed successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RenameTagResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request (empty name)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Tag not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Tag with that name already exists",
             "content": {
               "application/json": {
                 "schema": {
@@ -1829,6 +1914,33 @@
           }
         }
       },
+      "RenameTagRequest": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "RenameTagResponse": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "RescrapeResponse": {
         "type": "object",
         "required": [
@@ -1965,7 +2077,8 @@
         "required": [
           "id",
           "name",
-          "created_at"
+          "created_at",
+          "recipe_count"
         ],
         "properties": {
           "created_at": {
@@ -1978,6 +2091,11 @@
           },
           "name": {
             "type": "string"
+          },
+          "recipe_count": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Number of recipes using this tag"
           }
         }
       },

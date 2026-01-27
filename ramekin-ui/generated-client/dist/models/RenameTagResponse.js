@@ -12,44 +12,36 @@
  * Do not edit the class manually.
  */
 /**
- * Check if a given object implements the TagItem interface.
+ * Check if a given object implements the RenameTagResponse interface.
  */
-export function instanceOfTagItem(value) {
-    if (!('createdAt' in value) || value['createdAt'] === undefined)
-        return false;
+export function instanceOfRenameTagResponse(value) {
     if (!('id' in value) || value['id'] === undefined)
         return false;
     if (!('name' in value) || value['name'] === undefined)
         return false;
-    if (!('recipeCount' in value) || value['recipeCount'] === undefined)
-        return false;
     return true;
 }
-export function TagItemFromJSON(json) {
-    return TagItemFromJSONTyped(json, false);
+export function RenameTagResponseFromJSON(json) {
+    return RenameTagResponseFromJSONTyped(json, false);
 }
-export function TagItemFromJSONTyped(json, ignoreDiscriminator) {
+export function RenameTagResponseFromJSONTyped(json, ignoreDiscriminator) {
     if (json == null) {
         return json;
     }
     return {
-        'createdAt': (new Date(json['created_at'])),
         'id': json['id'],
         'name': json['name'],
-        'recipeCount': json['recipe_count'],
     };
 }
-export function TagItemToJSON(json) {
-    return TagItemToJSONTyped(json, false);
+export function RenameTagResponseToJSON(json) {
+    return RenameTagResponseToJSONTyped(json, false);
 }
-export function TagItemToJSONTyped(value, ignoreDiscriminator = false) {
+export function RenameTagResponseToJSONTyped(value, ignoreDiscriminator = false) {
     if (value == null) {
         return value;
     }
     return {
-        'created_at': value['createdAt'].toISOString(),
         'id': value['id'],
         'name': value['name'],
-        'recipe_count': value['recipeCount'],
     };
 }

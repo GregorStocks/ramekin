@@ -1,28 +1,24 @@
 
-# TagItem
+# RenameTagResponse
 
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`createdAt` | Date
 `id` | string
 `name` | string
-`recipeCount` | number
 
 ## Example
 
 ```typescript
-import type { TagItem } from ''
+import type { RenameTagResponse } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "createdAt": null,
   "id": null,
   "name": null,
-  "recipeCount": null,
-} satisfies TagItem
+} satisfies RenameTagResponse
 
 console.log(example)
 
@@ -31,7 +27,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as TagItem
+const exampleParsed = JSON.parse(exampleJSON) as RenameTagResponse
 console.log(exampleParsed)
 ```
 

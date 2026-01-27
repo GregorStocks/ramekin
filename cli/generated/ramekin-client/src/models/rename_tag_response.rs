@@ -12,25 +12,15 @@ use crate::models;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
-pub struct TagItem {
-    #[serde(rename = "created_at")]
-    pub created_at: String,
+pub struct RenameTagResponse {
     #[serde(rename = "id")]
     pub id: uuid::Uuid,
     #[serde(rename = "name")]
     pub name: String,
-    /// Number of recipes using this tag
-    #[serde(rename = "recipe_count")]
-    pub recipe_count: i64,
 }
 
-impl TagItem {
-    pub fn new(created_at: String, id: uuid::Uuid, name: String, recipe_count: i64) -> TagItem {
-        TagItem {
-            created_at,
-            id,
-            name,
-            recipe_count,
-        }
+impl RenameTagResponse {
+    pub fn new(id: uuid::Uuid, name: String) -> RenameTagResponse {
+        RenameTagResponse { id, name }
     }
 }

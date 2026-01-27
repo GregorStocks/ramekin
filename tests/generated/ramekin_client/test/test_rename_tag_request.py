@@ -14,10 +14,10 @@
 
 import unittest
 
-from ramekin_client.models.tag_item import TagItem
+from ramekin_client.models.rename_tag_request import RenameTagRequest
 
-class TestTagItem(unittest.TestCase):
-    """TagItem unit test stubs"""
+class TestRenameTagRequest(unittest.TestCase):
+    """RenameTagRequest unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,32 +25,26 @@ class TestTagItem(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TagItem:
-        """Test TagItem
+    def make_instance(self, include_optional) -> RenameTagRequest:
+        """Test RenameTagRequest
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TagItem`
+        # uncomment below to create an instance of `RenameTagRequest`
         """
-        model = TagItem()
+        model = RenameTagRequest()
         if include_optional:
-            return TagItem(
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                id = '',
-                name = '',
-                recipe_count = 56
+            return RenameTagRequest(
+                name = ''
             )
         else:
-            return TagItem(
-                created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                id = '',
+            return RenameTagRequest(
                 name = '',
-                recipe_count = 56,
         )
         """
 
-    def testTagItem(self):
-        """Test TagItem"""
+    def testRenameTagRequest(self):
+        """Test RenameTagRequest"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

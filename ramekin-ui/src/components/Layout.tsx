@@ -17,6 +17,7 @@ const Layout: ParentComponent = (props) => {
         </A>
         <nav class="app-nav">
           <A href="/">My Cookbook</A>
+          <A href="/tags">Tags</A>
           <A href="/recipes/new" class="btn btn-primary btn-header">
             + New Recipe
           </A>

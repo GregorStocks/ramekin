@@ -193,17 +193,6 @@ pub struct NewStepOutput {
     pub output: JsonValue,
 }
 
-// User tags for first-class tag management
-// Note: user_id is excluded since it's always the authenticated user's
-#[derive(Queryable, Selectable, Debug, Clone)]
-#[diesel(table_name = crate::schema::user_tags)]
-#[diesel(check_for_backend(diesel::pg::Pg))]
-pub struct UserTag {
-    pub id: Uuid,
-    pub name: String,
-    pub created_at: DateTime<Utc>,
-}
-
 #[derive(Insertable)]
 #[diesel(table_name = crate::schema::user_tags)]
 pub struct NewUserTag<'a> {

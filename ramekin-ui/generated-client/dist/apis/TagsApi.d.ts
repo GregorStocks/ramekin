@@ -10,12 +10,16 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import type { CreateTagRequest, CreateTagResponse, TagsListResponse } from '../models/index';
+import type { CreateTagRequest, CreateTagResponse, RenameTagRequest, RenameTagResponse, TagsListResponse } from '../models/index';
 export interface CreateTagOperationRequest {
     createTagRequest: CreateTagRequest;
 }
 export interface DeleteTagRequest {
     id: string;
+}
+export interface RenameTagOperationRequest {
+    id: string;
+    renameTagRequest: RenameTagRequest;
 }
 /**
  *
@@ -39,4 +43,10 @@ export declare class TagsApi extends runtime.BaseAPI {
     /**
      */
     listAllTags(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TagsListResponse>;
+    /**
+     */
+    renameTagRaw(requestParameters: RenameTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RenameTagResponse>>;
+    /**
+     */
+    renameTag(requestParameters: RenameTagOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RenameTagResponse>;
 }
