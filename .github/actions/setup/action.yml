@@ -30,7 +30,7 @@ runs:
 
     - name: Install diesel CLI
       shell: bash
-      run: cargo binstall diesel_cli --no-default-features --features postgres --no-confirm
+      run: cargo install diesel_cli --no-default-features --features postgres
 
     - name: Install ast-grep
       shell: bash
