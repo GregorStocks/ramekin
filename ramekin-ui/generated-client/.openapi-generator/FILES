@@ -26,6 +26,7 @@ docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
 docs/RecipesApi.md
+docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
@@ -56,6 +57,7 @@ models/PingResponse.ts
 models/RecipeContent.ts
 models/RecipeResponse.ts
 models/RecipeSummary.ts
+models/RescrapeResponse.ts
 models/RetryScrapeResponse.ts
 models/ScrapeJobResponse.ts
 models/SignupRequest.ts

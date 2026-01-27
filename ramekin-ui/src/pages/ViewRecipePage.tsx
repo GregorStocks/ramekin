@@ -48,7 +48,7 @@ export default function ViewRecipePage() {
   const params = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
-  const { getRecipesApi, getEnrichApi, token } = useAuth();
+  const { getRecipesApi, getEnrichApi, getScrapeApi, token } = useAuth();
 
   // Check if we're in "random browsing" mode
   const randomQuery = () =>
@@ -86,6 +86,9 @@ export default function ViewRecipePage() {
     [RecipeResponse, RecipeResponse] | null
   >(null);
   const [compareError, setCompareError] = createSignal<string | null>(null);
+
+  // Rescrape state
+  const [rescraping, setRescraping] = createSignal(false);
 
   const loadRecipe = async () => {
     setLoading(true);
@@ -333,6 +336,43 @@ export default function ViewRecipePage() {
     setCompareError(null);
   };
 
+  // Rescrape handler
+  const handleRescrape = async () => {
+    const r = recipe();
+    if (!r || !r.sourceUrl) return;
+
+    setRescraping(true);
+    setError(null);
+    try {
+      // Start the rescrape job
+      const response = await getRecipesApi().rescrape({ id: params.id });
+      const jobId = response.jobId;
+
+      // Poll for completion
+      const poll = async (): Promise<void> => {
+        const job = await getScrapeApi().getScrape({ id: jobId });
+
+        if (job.status === "completed") {
+          await loadRecipe();
+          await loadCurrentVersionId();
+          setRescraping(false);
+        } else if (job.status === "failed") {
+          setError(`Rescrape failed: ${job.error || "Unknown error"}`);
+          setRescraping(false);
+        } else {
+          // Continue polling
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          await poll();
+        }
+      };
+
+      await poll();
+    } catch (err) {
+      setError("Failed to rescrape recipe");
+      setRescraping(false);
+    }
+  };
+
   const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat("en-US", {
       month: "short",
@@ -389,6 +429,16 @@ export default function ViewRecipePage() {
                 </Show>
               </div>
               <div class="recipe-actions">
+                <Show when={r().sourceUrl}>
+                  <button
+                    type="button"
+                    class="btn"
+                    onClick={handleRescrape}
+                    disabled={rescraping() || isViewingHistoricalVersion()}
+                  >
+                    {rescraping() ? "Rescraping..." : "Rescrape"}
+                  </button>
+                </Show>
                 <button
                   type="button"
                   class="btn"

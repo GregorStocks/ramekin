@@ -114,12 +114,25 @@ fn fetch_user_tags(pool: &DbPool, user_id: Uuid) -> Result<Vec<String>, ScrapeEr
 /// Build a step registry for server-side pipeline execution.
 ///
 /// This creates all step implementations with the necessary resources (DB pool, user ID).
-pub fn build_registry(pool: Arc<DbPool>, user_id: Uuid) -> StepRegistry {
+/// If `existing_recipe_id` is provided, SaveRecipeStep will update that recipe instead of
+/// creating a new one (for rescrape functionality).
+pub fn build_registry(
+    pool: Arc<DbPool>,
+    user_id: Uuid,
+    existing_recipe_id: Option<Uuid>,
+) -> StepRegistry {
     let mut registry = StepRegistry::new();
     registry.register(Box::new(FetchHtmlStep));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
-    registry.register(Box::new(SaveRecipeStep::new(pool.clone(), user_id)));
+
+    // Use the appropriate SaveRecipeStep based on whether this is a rescrape
+    let save_step = match existing_recipe_id {
+        Some(recipe_id) => SaveRecipeStep::for_rescrape(pool.clone(), user_id, recipe_id),
+        None => SaveRecipeStep::new(pool.clone(), user_id),
+    };
+    registry.register(Box::new(save_step));
+
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
     // Create AI client and fetch user tags for auto-tagging
@@ -146,6 +159,28 @@ pub fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, 
 
     diesel::insert_into(scrape_jobs::table)
         .values(&new_job)
+        .get_result::<ScrapeJob>(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))
+}
+
+/// Create a rescrape job for an existing recipe.
+/// This pre-populates recipe_id so save_recipe knows to update instead of create.
+pub fn create_rescrape_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    recipe_id: Uuid,
+    url: &str,
+) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    diesel::insert_into(scrape_jobs::table)
+        .values((
+            scrape_jobs::user_id.eq(user_id),
+            scrape_jobs::url.eq(url),
+            scrape_jobs::recipe_id.eq(Some(recipe_id)),
+        ))
         .get_result::<ScrapeJob>(&mut conn)
         .map_err(|e| ScrapeError::Database(e.to_string()))
 }
@@ -379,7 +414,8 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     );
 
     // Build the step registry and output store
-    let registry = build_registry(pool.clone(), job.user_id);
+    // If job.recipe_id is already set, this is a rescrape - pass it to build_registry
+    let registry = build_registry(pool.clone(), job.user_id, job.recipe_id);
     let mut store = DbOutputStore::new(&pool, job_id);
 
     // Run pipeline with status updates and OpenTelemetry instrumentation

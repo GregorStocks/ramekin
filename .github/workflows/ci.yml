@@ -62,14 +62,16 @@ jobs:
       - name: Build server binary
         run: |
           START=$(date +%s)
-          cd server && cargo build --release -q
-          echo "::notice::Server build completed in $(($(date +%s) - START))s"
+          cd server && cargo build --release 2>&1 | tee /tmp/build.log
+          CRATE_COUNT=$(grep -c "Compiling" /tmp/build.log || echo 0)
+          echo "::notice::Server build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
 
       - name: Create test.env
         run: |
           echo "DATABASE_URL=postgres://ramekin:ramekin@localhost:5432/ramekin_test" > test.env
           echo "PORT=55042" >> test.env
           echo "FIXTURE_PORT=55043" >> test.env
+          echo "MOCK_OPENROUTER_PORT=55045" >> test.env
           echo "UI_PORT=55044" >> test.env
           echo "UI_HOSTNAME=localhost" >> test.env
           echo "MOCK_OPENROUTER_PORT=55045" >> test.env

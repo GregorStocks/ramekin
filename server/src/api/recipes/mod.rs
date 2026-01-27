@@ -3,12 +3,13 @@ pub mod delete;
 pub mod export;
 pub mod get;
 pub mod list;
+pub mod rescrape;
 pub mod tags;
 pub mod update;
 pub mod versions;
 
 use crate::AppState;
-use axum::routing::get;
+use axum::routing::{get, post};
 use axum::Router;
 use utoipa::OpenApi;
 
@@ -26,6 +27,7 @@ pub fn router() -> Router<AppState> {
         )
         .route("/{id}/export", get(export::export_recipe))
         .route("/{id}/versions", get(versions::list_versions))
+        .route("/{id}/rescrape", post(rescrape::rescrape))
 }
 
 #[derive(OpenApi)]
@@ -40,6 +42,7 @@ pub fn router() -> Router<AppState> {
         export::export_recipe,
         export::export_all_recipes,
         versions::list_versions,
+        rescrape::rescrape,
     ),
     components(schemas(
         create::CreateRecipeRequest,
@@ -53,6 +56,7 @@ pub fn router() -> Router<AppState> {
         tags::TagsResponse,
         versions::VersionListResponse,
         versions::VersionSummary,
+        rescrape::RescrapeResponse,
     ))
 )]
 pub struct ApiDoc;

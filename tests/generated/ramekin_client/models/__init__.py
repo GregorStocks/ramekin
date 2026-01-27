@@ -29,6 +29,7 @@ from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.recipe_content import RecipeContent
 from ramekin_client.models.recipe_response import RecipeResponse
 from ramekin_client.models.recipe_summary import RecipeSummary
+from ramekin_client.models.rescrape_response import RescrapeResponse
 from ramekin_client.models.retry_scrape_response import RetryScrapeResponse
 from ramekin_client.models.scrape_job_response import ScrapeJobResponse
 from ramekin_client.models.signup_request import SignupRequest
