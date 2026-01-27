@@ -34,7 +34,7 @@ dev-down: ## Stop dev processes (not database)
 	@pkill -f "cargo watch" 2>/dev/null || true
 
 # Generate OpenAPI spec from Rust source
-api/openapi.json: check-deps $(API_SOURCES)
+api/openapi.json: $(API_SOURCES)
 	@echo "Building server and generating OpenAPI spec..." | $(TS)
 	@mkdir -p api
 	@cd server && cargo build --release -q
