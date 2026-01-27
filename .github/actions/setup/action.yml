@@ -22,13 +22,20 @@ runs:
         cache-on-failure: true
         cache-all-crates: true
 
+    - name: Install cargo-binstall
+      shell: bash
+      run: |
+        curl -L --proto '=https' --tlsv1.2 -sSf \
+          https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh \
+          | bash
+
     - name: Install diesel CLI
       shell: bash
-      run: cargo install diesel_cli --no-default-features --features postgres
+      run: cargo binstall diesel_cli --no-confirm
 
     - name: Install ast-grep
       shell: bash
-      run: cargo install ast-grep
+      run: cargo binstall ast-grep --no-confirm
 
     - name: Install SwiftLint
       shell: bash
