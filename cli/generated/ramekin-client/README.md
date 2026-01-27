@@ -40,6 +40,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_tags**](docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+*RecipesApi* | [**rescrape**](docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
@@ -67,6 +68,7 @@ Class | Method | HTTP request | Description
  - [RecipeContent](docs/RecipeContent.md)
  - [RecipeResponse](docs/RecipeResponse.md)
  - [RecipeSummary](docs/RecipeSummary.md)
+ - [RescrapeResponse](docs/RescrapeResponse.md)
  - [RetryScrapeResponse](docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](docs/ScrapeJobResponse.md)
  - [SignupRequest](docs/SignupRequest.md)

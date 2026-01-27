@@ -213,15 +213,29 @@ impl FetchImagesStep {
 
 /// Server implementation of SaveRecipe step.
 ///
-/// Creates a recipe and recipe_version in the database.
+/// Creates a recipe and recipe_version in the database, or updates an existing
+/// recipe if `existing_recipe_id` is set (for rescrape).
 pub struct SaveRecipeStep {
     pool: Arc<DbPool>,
     user_id: Uuid,
+    existing_recipe_id: Option<Uuid>,
 }
 
 impl SaveRecipeStep {
     pub fn new(pool: Arc<DbPool>, user_id: Uuid) -> Self {
-        Self { pool, user_id }
+        Self {
+            pool,
+            user_id,
+            existing_recipe_id: None,
+        }
+    }
+
+    pub fn for_rescrape(pool: Arc<DbPool>, user_id: Uuid, recipe_id: Uuid) -> Self {
+        Self {
+            pool,
+            user_id,
+            existing_recipe_id: Some(recipe_id),
+        }
     }
 }
 
@@ -275,8 +289,13 @@ impl PipelineStep for SaveRecipeStep {
             .and_then(|v| serde_json::from_value(v).ok())
             .unwrap_or_default();
 
-        // Create recipe in database
-        match self.create_recipe(&raw_recipe, &photo_ids) {
+        // Create or update recipe in database
+        let result = match self.existing_recipe_id {
+            Some(recipe_id) => self.update_recipe(recipe_id, &raw_recipe, &photo_ids),
+            None => self.create_recipe(&raw_recipe, &photo_ids),
+        };
+
+        match result {
             Ok(recipe_id) => StepResult {
                 step_name: SaveRecipeStepMeta::NAME.to_string(),
                 success: true,
@@ -359,6 +378,71 @@ impl SaveRecipeStep {
                 .get_result(conn)?;
 
             // 3. Update recipe to point to this version
+            diesel::update(recipes::table.find(recipe_id))
+                .set(recipes::current_version_id.eq(version_id))
+                .execute(conn)?;
+
+            Ok(recipe_id)
+        })
+        .map_err(|e: diesel::result::Error| e.to_string())
+    }
+
+    fn update_recipe(
+        &self,
+        recipe_id: Uuid,
+        raw: &RawRecipe,
+        photo_ids: &[Uuid],
+    ) -> Result<Uuid, String> {
+        let mut conn = self.pool.get().map_err(|e| e.to_string())?;
+
+        // Convert raw ingredients to our Ingredient JSON format
+        let ingredients: Vec<Ingredient> = raw
+            .ingredients
+            .lines()
+            .filter(|line| !line.trim().is_empty())
+            .map(|line| Ingredient {
+                item: line.trim().to_string(),
+                amount: None,
+                unit: None,
+                note: None,
+            })
+            .collect();
+
+        let ingredients_json = serde_json::to_value(&ingredients).map_err(|e| e.to_string())?;
+
+        // Convert photo IDs to Option<Uuid> for the database
+        let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
+
+        // Use a transaction to create new version and update recipe
+        conn.transaction(|conn| {
+            // Create a new version with source='rescrape'
+            let new_version = NewRecipeVersion {
+                recipe_id,
+                title: &raw.title,
+                description: raw.description.as_deref(),
+                ingredients: ingredients_json.clone(),
+                instructions: &raw.instructions,
+                source_url: Some(&raw.source_url),
+                source_name: raw.source_name.as_deref(),
+                photo_ids: &photo_ids_nullable,
+                tags: &[],
+                servings: None,
+                prep_time: None,
+                cook_time: None,
+                total_time: None,
+                rating: None,
+                difficulty: None,
+                nutritional_info: None,
+                notes: None,
+                version_source: "rescrape",
+            };
+
+            let version_id: Uuid = diesel::insert_into(recipe_versions::table)
+                .values(&new_version)
+                .returning(recipe_versions::id)
+                .get_result(conn)?;
+
+            // Update recipe to point to this new version
             diesel::update(recipes::table.find(recipe_id))
                 .set(recipes::current_version_id.eq(version_id))
                 .execute(conn)?;

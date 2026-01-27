@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 *RecipesApi* | [**list_recipes**](ramekin_client/docs/RecipesApi.md#list_recipes) | **GET** /api/recipes | 
 *RecipesApi* | [**list_tags**](ramekin_client/docs/RecipesApi.md#list_tags) | **GET** /api/recipes/tags | 
 *RecipesApi* | [**list_versions**](ramekin_client/docs/RecipesApi.md#list_versions) | **GET** /api/recipes/{id}/versions | 
+*RecipesApi* | [**rescrape**](ramekin_client/docs/RecipesApi.md#rescrape) | **POST** /api/recipes/{id}/rescrape | 
 *RecipesApi* | [**update_recipe**](ramekin_client/docs/RecipesApi.md#update_recipe) | **PUT** /api/recipes/{id} | 
 *ScrapeApi* | [**capture**](ramekin_client/docs/ScrapeApi.md#capture) | **POST** /api/scrape/capture | 
 *ScrapeApi* | [**create_scrape**](ramekin_client/docs/ScrapeApi.md#create_scrape) | **POST** /api/scrape | 
@@ -104,6 +105,7 @@ Class | Method | HTTP request | Description
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)
  - [RecipeResponse](ramekin_client/docs/RecipeResponse.md)
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
+ - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)
  - [SignupRequest](ramekin_client/docs/SignupRequest.md)

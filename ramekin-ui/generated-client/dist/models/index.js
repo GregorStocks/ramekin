@@ -16,6 +16,7 @@ export * from './PingResponse';
 export * from './RecipeContent';
 export * from './RecipeResponse';
 export * from './RecipeSummary';
+export * from './RescrapeResponse';
 export * from './RetryScrapeResponse';
 export * from './ScrapeJobResponse';
 export * from './SignupRequest';

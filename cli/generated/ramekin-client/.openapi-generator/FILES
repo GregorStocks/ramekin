@@ -23,6 +23,7 @@ docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
 docs/RecipesApi.md
+docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
 docs/ScrapeJobResponse.md
@@ -63,6 +64,7 @@ src/models/ping_response.rs
 src/models/recipe_content.rs
 src/models/recipe_response.rs
 src/models/recipe_summary.rs
+src/models/rescrape_response.rs
 src/models/retry_scrape_response.rs
 src/models/scrape_job_response.rs
 src/models/signup_request.rs

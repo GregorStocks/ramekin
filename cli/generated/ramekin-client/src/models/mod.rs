@@ -30,6 +30,8 @@ pub mod recipe_response;
 pub use self::recipe_response::RecipeResponse;
 pub mod recipe_summary;
 pub use self::recipe_summary::RecipeSummary;
+pub mod rescrape_response;
+pub use self::rescrape_response::RescrapeResponse;
 pub mod retry_scrape_response;
 pub use self::retry_scrape_response::RetryScrapeResponse;
 pub mod scrape_job_response;

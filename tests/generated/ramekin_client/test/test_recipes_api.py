@@ -74,6 +74,12 @@ class TestRecipesApi(unittest.TestCase):
         """
         pass
 
+    def test_rescrape(self) -> None:
+        """Test case for rescrape
+
+        """
+        pass
+
     def test_update_recipe(self) -> None:
         """Test case for update_recipe
 

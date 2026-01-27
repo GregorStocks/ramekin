@@ -790,6 +790,73 @@
         ]
       }
     },
+    "/api/recipes/{id}/rescrape": {
+      "post": {
+        "tags": [
+          "recipes"
+        ],
+        "operationId": "rescrape",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Recipe ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Rescrape job created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RescrapeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Recipe has no source URL",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Recipe not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/recipes/{id}/versions": {
       "get": {
         "tags": [
@@ -1619,6 +1686,24 @@
           "updated_at": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "RescrapeResponse": {
+        "type": "object",
+        "required": [
+          "job_id",
+          "status"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The scrape job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status"
           }
         }
       },
