@@ -46,8 +46,9 @@ processes:
     command: |
       echo "[TIMING] cli-build starting at $(date +%H:%M:%S)"
       START=$(date +%s)
-      cargo build -q
-      echo "[TIMING] cli-build completed in $(($(date +%s) - START))s"
+      cargo build 2>&1 | tee /tmp/cli-build.log
+      CRATE_COUNT=$(grep -c "Compiling" /tmp/cli-build.log 2>/dev/null || echo 0)
+      echo "[TIMING] cli-build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
     working_dir: ./cli
     availability:
       restart: "no"

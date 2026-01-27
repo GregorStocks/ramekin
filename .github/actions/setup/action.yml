@@ -22,6 +22,7 @@ runs:
       uses: dtolnay/rust-toolchain@stable
 
     - name: Cache Rust
+      id: rust-cache
       uses: Swatinem/rust-cache@v2
       with:
         workspaces: |
@@ -31,12 +32,30 @@ runs:
         cache-on-failure: true
         cache-all-crates: true
 
+    - name: Log Rust cache status
+      shell: bash
+      run: |
+        if [[ "${{ steps.rust-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "::notice::✓ Rust cache HIT"
+        else
+          echo "::warning::✗ Rust cache MISS - expect slow build"
+        fi
+
     - name: Cache cargo binaries
       id: cargo-bin-cache
       uses: actions/cache@v4
       with:
         path: ~/.cargo/bin
         key: cargo-bin-${{ runner.os }}-diesel-2.3.6-ast-grep
+
+    - name: Log cargo binary cache status
+      shell: bash
+      run: |
+        if [[ "${{ steps.cargo-bin-cache.outputs.cache-hit }}" == "true" ]]; then
+          echo "::notice::✓ Cargo binaries cache HIT"
+        else
+          echo "::warning::✗ Cargo binaries cache MISS"
+        fi
 
     - name: Install cargo-binstall
       shell: bash
