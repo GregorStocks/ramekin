@@ -35,13 +35,15 @@ do_setup() {
     DEV_UI_PORT=$((BASE_PORT + 1))
     TEST_PORT=$((BASE_PORT + 2))
     TEST_FIXTURE_PORT=$((BASE_PORT + 3))
+    MOCK_OPENROUTER_PORT=$((BASE_PORT + 4))
+    PROCESS_COMPOSE_PORT=$((BASE_PORT + 5))
 
     # Derive database names (sanitize workspace name for postgres)
     DB_SUFFIX=$(echo "$WORKSPACE_NAME" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
     DEV_DB="ramekin_${DB_SUFFIX}"
     TEST_DB="ramekin_${DB_SUFFIX}_test"
 
-    echo "Ports: server=$DEV_PORT, ui=$DEV_UI_PORT, test=$TEST_PORT, fixture=$TEST_FIXTURE_PORT"
+    echo "Ports: server=$DEV_PORT, ui=$DEV_UI_PORT, test=$TEST_PORT, fixture=$TEST_FIXTURE_PORT, mock_openrouter=$MOCK_OPENROUTER_PORT, process_compose=$PROCESS_COMPOSE_PORT"
     echo "Databases: dev=$DEV_DB, test=$TEST_DB"
 
     # Generate dev.env
@@ -59,6 +61,8 @@ EOF
 DATABASE_URL=postgres://ramekin:ramekin@localhost:54321/${TEST_DB}
 PORT=${TEST_PORT}
 FIXTURE_PORT=${TEST_FIXTURE_PORT}
+MOCK_OPENROUTER_PORT=${MOCK_OPENROUTER_PORT}
+PROCESS_COMPOSE_PORT=${PROCESS_COMPOSE_PORT}
 RUST_LOG=error
 INSECURE_PASSWORD_HASHING=1
 EOF

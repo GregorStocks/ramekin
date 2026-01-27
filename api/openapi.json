@@ -117,7 +117,7 @@
           "enrich"
         ],
         "summary": "Enrich a recipe using AI",
-        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nCurrently a no-op skeleton - returns the input unchanged.",
+        "description": "This is a stateless endpoint that takes a recipe object and returns an enriched version.\nIt does NOT modify any database records. The client can apply the enriched data\nvia a normal PUT /api/recipes/{id} call.\n\nCurrently enriches tags by suggesting from the user's existing tag library.",
         "operationId": "enrich_recipe",
         "requestBody": {
           "content": {

@@ -5,9 +5,18 @@ description: Install Rust, Node.js, uv, process-compose, and configure caching
 runs:
   using: composite
   steps:
+    - name: Record setup start time
+      shell: bash
+      run: echo "SETUP_START=$(date +%s)" >> $GITHUB_ENV
+
     - name: Install system dependencies
       shell: bash
-      run: sudo apt-get update && sudo apt-get install -y libpq-dev shellcheck
+      run: |
+        echo "::group::Install system dependencies"
+        START=$(date +%s)
+        sudo apt-get update && sudo apt-get install -y libpq-dev shellcheck
+        echo "System dependencies installed in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
@@ -22,24 +31,57 @@ runs:
         cache-on-failure: true
         cache-all-crates: true
 
+    - name: Cache cargo binaries
+      id: cargo-bin-cache
+      uses: actions/cache@v4
+      with:
+        path: ~/.cargo/bin
+        key: cargo-bin-${{ runner.os }}-diesel-2.3.6-ast-grep
+
     - name: Install cargo-binstall
       shell: bash
       run: |
+        echo "::group::Install cargo-binstall"
+        START=$(date +%s)
         curl -L --proto '=https' --tlsv1.2 -sSf \
           https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh \
           | bash
+        echo "cargo-binstall installed in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install diesel CLI
       shell: bash
-      run: cargo binstall diesel_cli --no-confirm --force
+      run: |
+        echo "::group::Install diesel CLI"
+        START=$(date +%s)
+        if ! command -v diesel &> /dev/null; then
+          echo "diesel not found in cache, installing..."
+          cargo binstall diesel_cli --no-confirm --force
+        else
+          echo "diesel found in cache"
+        fi
+        echo "diesel CLI ready in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install ast-grep
       shell: bash
-      run: cargo binstall ast-grep --no-confirm --force
+      run: |
+        echo "::group::Install ast-grep"
+        START=$(date +%s)
+        if ! command -v ast-grep &> /dev/null; then
+          echo "ast-grep not found in cache, installing..."
+          cargo binstall ast-grep --no-confirm --force
+        else
+          echo "ast-grep found in cache"
+        fi
+        echo "ast-grep ready in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install SwiftLint
       shell: bash
       run: |
+        echo "::group::Install SwiftLint"
+        START=$(date +%s)
         SWIFTLINT_VERSION=$(curl -fsSL \
           https://api.github.com/repos/realm/SwiftLint/releases/latest | jq -r .tag_name)
         echo "Installing SwiftLint ${SWIFTLINT_VERSION}"
@@ -49,6 +91,8 @@ runs:
         unzip -q /tmp/swiftlint.zip -d /tmp/swiftlint
         sudo mv /tmp/swiftlint/swiftlint /usr/local/bin/swiftlint
         sudo chmod +x /usr/local/bin/swiftlint
+        echo "SwiftLint installed in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install uv
       uses: astral-sh/setup-uv@v5
@@ -63,15 +107,21 @@ runs:
     - name: Install process-compose
       shell: bash
       run: |
+        echo "::group::Install process-compose"
+        START=$(date +%s)
         PC_VERSION=v1.87.0
         PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
         curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
           | sudo tar -xzf - -C /usr/local/bin process-compose
         sudo chmod +x /usr/local/bin/process-compose
+        echo "process-compose installed in $(($(date +%s) - START))s"
+        echo "::endgroup::"
 
     - name: Install mkcert
       shell: bash
       run: |
+        echo "::group::Install mkcert"
+        START=$(date +%s)
         MKCERT_VERSION=v1.4.4
         MKCERT_URL="https://github.com/FiloSottile/mkcert/releases/download"
         curl -fsSL "${MKCERT_URL}/${MKCERT_VERSION}/mkcert-${MKCERT_VERSION}-linux-amd64" \
@@ -79,3 +129,10 @@ runs:
         sudo mv /tmp/mkcert /usr/local/bin/mkcert
         sudo chmod +x /usr/local/bin/mkcert
         mkcert -install
+        echo "mkcert installed in $(($(date +%s) - START))s"
+        echo "::endgroup::"
+
+    - name: Print setup timing summary
+      shell: bash
+      run: |
+        echo "::notice::Setup completed in $(($(date +%s) - SETUP_START))s total"
