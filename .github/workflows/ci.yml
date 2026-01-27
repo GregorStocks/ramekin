@@ -62,8 +62,9 @@ jobs:
       - name: Build server binary
         run: |
           START=$(date +%s)
-          cd server && cargo build --release -q
-          echo "::notice::Server build completed in $(($(date +%s) - START))s"
+          cd server && cargo build --release 2>&1 | tee /tmp/build.log
+          CRATE_COUNT=$(grep -c "Compiling" /tmp/build.log || echo 0)
+          echo "::notice::Server build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
 
       - name: Create test.env
         run: |
