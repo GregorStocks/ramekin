@@ -309,7 +309,7 @@ def lint_yaml(project_root: Path) -> tuple[str, bool]:
             "yamllint",
             "--strict",
             "-d",
-            "{extends: relaxed, rules: {line-length: {max: 120}}}",
+            "{extends: default, rules: {line-length: {max: 120}}}",
             *yaml_files,
         ],
         cwd=project_root,
