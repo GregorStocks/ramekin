@@ -25,6 +25,8 @@ docs/RecipeContent.md
 docs/RecipeResponse.md
 docs/RecipeSummary.md
 docs/RecipesApi.md
+docs/RenameTagRequest.md
+docs/RenameTagResponse.md
 docs/RescrapeResponse.md
 docs/RetryScrapeResponse.md
 docs/ScrapeApi.md
@@ -71,6 +73,8 @@ src/models/ping_response.rs
 src/models/recipe_content.rs
 src/models/recipe_response.rs
 src/models/recipe_summary.rs
+src/models/rename_tag_request.rs
+src/models/rename_tag_response.rs
 src/models/rescrape_response.rs
 src/models/retry_scrape_response.rs
 src/models/scrape_job_response.rs

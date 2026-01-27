@@ -39,7 +39,8 @@ class TestTagsListResponse(unittest.TestCase):
                     ramekin_client.models.tag_item.TagItem(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         id = '', 
-                        name = '', )
+                        name = '', 
+                        recipe_count = 56, )
                     ]
             )
         else:
@@ -48,7 +49,8 @@ class TestTagsListResponse(unittest.TestCase):
                     ramekin_client.models.tag_item.TagItem(
                         created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         id = '', 
-                        name = '', )
+                        name = '', 
+                        recipe_count = 56, )
                     ],
         )
         """

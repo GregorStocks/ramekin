@@ -33,6 +33,12 @@ export interface TagItem {
      * @memberof TagItem
      */
     name: string;
+    /**
+     * Number of recipes using this tag
+     * @type {number}
+     * @memberof TagItem
+     */
+    recipeCount: number;
 }
 /**
  * Check if a given object implements the TagItem interface.

@@ -42,3 +42,22 @@ pub fn tags_subquery() -> SqlLiteral<Array<Text>> {
          WHERE rvt.recipe_version_id = recipe_versions.id)",
     )
 }
+
+/// Correlated subquery to count recipes using a tag.
+///
+/// Counts distinct recipes where the tag is on the current_version and the
+/// recipe is not deleted. Used by the tag list endpoint.
+/// Diesel doesn't easily support chained LEFT JOINs with GROUP BY for counts.
+///
+/// # Safety
+/// Static SQL string with no user input. References user_tags.id
+/// from the outer query context.
+pub fn tag_recipe_count() -> SqlLiteral<BigInt> {
+    sql::<BigInt>(
+        "(SELECT COUNT(DISTINCT r.id) \
+         FROM recipe_version_tags rvt \
+         JOIN recipe_versions rv ON rv.id = rvt.recipe_version_id \
+         JOIN recipes r ON r.current_version_id = rv.id AND r.deleted_at IS NULL \
+         WHERE rvt.tag_id = user_tags.id)",
+    )
+}

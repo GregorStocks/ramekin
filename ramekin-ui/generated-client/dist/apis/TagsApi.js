@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-import { CreateTagRequestToJSON, CreateTagResponseFromJSON, TagsListResponseFromJSON, } from '../models/index';
+import { CreateTagRequestToJSON, CreateTagResponseFromJSON, RenameTagRequestToJSON, RenameTagResponseFromJSON, TagsListResponseFromJSON, } from '../models/index';
 /**
  *
  */
@@ -104,6 +104,42 @@ export class TagsApi extends runtime.BaseAPI {
      */
     async listAllTags(initOverrides) {
         const response = await this.listAllTagsRaw(initOverrides);
+        return await response.value();
+    }
+    /**
+     */
+    async renameTagRaw(requestParameters, initOverrides) {
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling renameTag().');
+        }
+        if (requestParameters['renameTagRequest'] == null) {
+            throw new runtime.RequiredError('renameTagRequest', 'Required parameter "renameTagRequest" was null or undefined when calling renameTag().');
+        }
+        const queryParameters = {};
+        const headerParameters = {};
+        headerParameters['Content-Type'] = 'application/json';
+        if (this.configuration && this.configuration.accessToken) {
+            const token = this.configuration.accessToken;
+            const tokenString = await token("bearer_auth", []);
+            if (tokenString) {
+                headerParameters["Authorization"] = `Bearer ${tokenString}`;
+            }
+        }
+        let urlPath = `/api/tags/{id}`;
+        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        const response = await this.request({
+            path: urlPath,
+            method: 'PATCH',
+            headers: headerParameters,
+            query: queryParameters,
+            body: RenameTagRequestToJSON(requestParameters['renameTagRequest']),
+        }, initOverrides);
+        return new runtime.JSONApiResponse(response, (jsonValue) => RenameTagResponseFromJSON(jsonValue));
+    }
+    /**
+     */
+    async renameTag(requestParameters, initOverrides) {
+        const response = await this.renameTagRaw(requestParameters, initOverrides);
         return await response.value();
     }
 }

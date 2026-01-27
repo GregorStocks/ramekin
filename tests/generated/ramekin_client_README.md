@@ -85,6 +85,7 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**create_tag**](ramekin_client/docs/TagsApi.md#create_tag) | **POST** /api/tags | 
 *TagsApi* | [**delete_tag**](ramekin_client/docs/TagsApi.md#delete_tag) | **DELETE** /api/tags/{id} | 
 *TagsApi* | [**list_all_tags**](ramekin_client/docs/TagsApi.md#list_all_tags) | **GET** /api/tags | 
+*TagsApi* | [**rename_tag**](ramekin_client/docs/TagsApi.md#rename_tag) | **PATCH** /api/tags/{id} | 
 *TestingApi* | [**ping**](ramekin_client/docs/TestingApi.md#ping) | **GET** /api/test/ping | 
 *TestingApi* | [**unauthed_ping**](ramekin_client/docs/TestingApi.md#unauthed_ping) | **GET** /api/test/unauthed-ping | 
 
@@ -109,6 +110,8 @@ Class | Method | HTTP request | Description
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)
  - [RecipeResponse](ramekin_client/docs/RecipeResponse.md)
  - [RecipeSummary](ramekin_client/docs/RecipeSummary.md)
+ - [RenameTagRequest](ramekin_client/docs/RenameTagRequest.md)
+ - [RenameTagResponse](ramekin_client/docs/RenameTagResponse.md)
  - [RescrapeResponse](ramekin_client/docs/RescrapeResponse.md)
  - [RetryScrapeResponse](ramekin_client/docs/RetryScrapeResponse.md)
  - [ScrapeJobResponse](ramekin_client/docs/ScrapeJobResponse.md)

@@ -33,6 +33,8 @@ ramekin_client/docs/RecipeContent.md
 ramekin_client/docs/RecipeResponse.md
 ramekin_client/docs/RecipeSummary.md
 ramekin_client/docs/RecipesApi.md
+ramekin_client/docs/RenameTagRequest.md
+ramekin_client/docs/RenameTagResponse.md
 ramekin_client/docs/RescrapeResponse.md
 ramekin_client/docs/RetryScrapeResponse.md
 ramekin_client/docs/ScrapeApi.md
@@ -69,6 +71,8 @@ ramekin_client/models/ping_response.py
 ramekin_client/models/recipe_content.py
 ramekin_client/models/recipe_response.py
 ramekin_client/models/recipe_summary.py
+ramekin_client/models/rename_tag_request.py
+ramekin_client/models/rename_tag_response.py
 ramekin_client/models/rescrape_response.py
 ramekin_client/models/retry_scrape_response.py
 ramekin_client/models/scrape_job_response.py
@@ -106,6 +110,8 @@ ramekin_client/test/test_recipe_content.py
 ramekin_client/test/test_recipe_response.py
 ramekin_client/test/test_recipe_summary.py
 ramekin_client/test/test_recipes_api.py
+ramekin_client/test/test_rename_tag_request.py
+ramekin_client/test/test_rename_tag_response.py
 ramekin_client/test/test_rescrape_response.py
 ramekin_client/test/test_retry_scrape_response.py
 ramekin_client/test/test_scrape_api.py
