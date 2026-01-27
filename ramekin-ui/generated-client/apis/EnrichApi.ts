@@ -35,7 +35,7 @@ export interface EnrichRecipeRequest {
 export class EnrichApi extends runtime.BaseAPI {
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user\'s existing tag library.
      * Enrich a recipe using AI
      */
     async enrichRecipeRaw(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RecipeContent>> {
@@ -75,7 +75,7 @@ export class EnrichApi extends runtime.BaseAPI {
     }
 
     /**
-     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently a no-op skeleton - returns the input unchanged.
+     * This is a stateless endpoint that takes a recipe object and returns an enriched version. It does NOT modify any database records. The client can apply the enriched data via a normal PUT /api/recipes/{id} call.  Currently enriches tags by suggesting from the user\'s existing tag library.
      * Enrich a recipe using AI
      */
     async enrichRecipe(requestParameters: EnrichRecipeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RecipeContent> {

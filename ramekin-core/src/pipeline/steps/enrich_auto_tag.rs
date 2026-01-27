@@ -4,11 +4,10 @@ use std::sync::Arc;
 use std::time::Instant;
 
 use async_trait::async_trait;
-use serde::{Deserialize, Serialize};
+use serde::Serialize;
 use serde_json::json;
 
-use crate::ai::prompts::auto_tag::{render_auto_tag_prompt, AUTO_TAG_PROMPT_NAME};
-use crate::ai::{AiClient, ChatMessage, ChatRequest};
+use crate::ai::{suggest_tags, AiClient};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 
 /// Step that automatically tags recipes based on user's existing tags.
@@ -33,12 +32,6 @@ impl EnrichAutoTagStep {
     }
 }
 
-/// Response format from the AI.
-#[derive(Debug, Deserialize)]
-struct AutoTagResponse {
-    suggested_tags: Vec<String>,
-}
-
 /// Output of the auto-tag step.
 #[derive(Debug, Serialize)]
 struct AutoTagOutput {
@@ -60,23 +53,6 @@ impl PipelineStep for EnrichAutoTagStep {
 
     async fn execute(&self, ctx: &StepContext<'_>) -> StepResult {
         let start = Instant::now();
-
-        // If no user tags, return success with empty suggestions
-        // This is a valid case for CLI where there's no user context
-        if self.user_tags.is_empty() {
-            return StepResult {
-                step_name: Self::NAME.to_string(),
-                success: true,
-                output: json!(AutoTagOutput {
-                    suggested_tags: vec![],
-                    cached: false,
-                    usage: None,
-                }),
-                error: None,
-                duration_ms: start.elapsed().as_millis() as u64,
-                next_step: Some("apply_auto_tags".to_string()),
-            };
-        }
 
         // Get recipe from extract_recipe output
         let extract_output = match ctx.outputs.get_output("extract_recipe") {
@@ -121,19 +97,16 @@ impl PipelineStep for EnrichAutoTagStep {
             .and_then(|v| v.as_str())
             .unwrap_or("");
 
-        // Build the prompt
-        let prompt = render_auto_tag_prompt(title, ingredients, instructions, &self.user_tags);
-
-        // Build the AI request
-        let request = ChatRequest {
-            messages: vec![ChatMessage::user(prompt)],
-            json_response: true,
-            max_tokens: Some(256),
-            temperature: Some(0.3), // Lower temperature for more deterministic results
-        };
-
-        // Call the AI
-        let response = match self.ai_client.complete(AUTO_TAG_PROMPT_NAME, request).await {
+        // Call the shared suggest_tags function
+        let result = match suggest_tags(
+            self.ai_client.as_ref(),
+            title,
+            ingredients,
+            instructions,
+            &self.user_tags,
+        )
+        .await
+        {
             Ok(r) => r,
             Err(e) => {
                 return StepResult {
@@ -147,40 +120,10 @@ impl PipelineStep for EnrichAutoTagStep {
             }
         };
 
-        // Parse the AI response
-        let ai_response: AutoTagResponse = match serde_json::from_str(&response.content) {
-            Ok(r) => r,
-            Err(e) => {
-                return StepResult {
-                    step_name: Self::NAME.to_string(),
-                    success: false,
-                    output: json!({
-                        "error": format!("Failed to parse AI response: {}", e),
-                        "raw_response": response.content,
-                    }),
-                    error: Some(format!("Failed to parse AI response: {}", e)),
-                    duration_ms: start.elapsed().as_millis() as u64,
-                    next_step: Some("apply_auto_tags".to_string()),
-                };
-            }
-        };
-
-        // Filter to only valid existing tags (case-insensitive match, preserving user's casing)
-        let valid_tags: Vec<String> = ai_response
-            .suggested_tags
-            .into_iter()
-            .filter_map(|suggested| {
-                self.user_tags
-                    .iter()
-                    .find(|ut| ut.eq_ignore_ascii_case(&suggested))
-                    .cloned()
-            })
-            .collect();
-
         let output = AutoTagOutput {
-            suggested_tags: valid_tags,
-            cached: response.cached,
-            usage: Some(response.usage),
+            suggested_tags: result.suggested_tags,
+            cached: result.cached,
+            usage: Some(result.usage),
         };
 
         StepResult {
