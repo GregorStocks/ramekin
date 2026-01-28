@@ -615,6 +615,9 @@ export default function ViewRecipePage() {
                             <Show when={ing.note}>
                               <span class="note"> ({ing.note})</span>
                             </Show>
+                            <Show when={ing.raw}>
+                              <div class="ingredient-raw">Raw: {ing.raw}</div>
+                            </Show>
                           </li>
                         )}
                       </For>

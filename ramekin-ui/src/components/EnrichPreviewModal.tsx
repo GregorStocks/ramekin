@@ -2,6 +2,7 @@ import { Show } from "solid-js";
 import Modal from "./Modal";
 import DiffViewer from "./DiffViewer";
 import type { RecipeResponse, RecipeContent } from "ramekin-client";
+import { formatIngredients } from "../utils/formatRecipeForDiff";
 
 interface EnrichPreviewModalProps {
   isOpen: () => boolean;
@@ -17,23 +18,6 @@ export default function EnrichPreviewModal(props: EnrichPreviewModalProps) {
     const current = props.currentRecipe[field as keyof RecipeResponse];
     const enriched = props.enrichedContent[field];
     return current !== enriched;
-  };
-
-  const formatIngredients = (
-    ingredients: Array<{
-      amount?: string | null;
-      unit?: string | null;
-      item: string;
-      note?: string | null;
-    }>,
-  ) => {
-    return ingredients
-      .map((ing) =>
-        [ing.amount, ing.unit, ing.item, ing.note ? `(${ing.note})` : ""]
-          .filter(Boolean)
-          .join(" "),
-      )
-      .join("\n");
   };
 
   const ingredientsChanged = () => {

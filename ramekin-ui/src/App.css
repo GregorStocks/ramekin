@@ -775,6 +775,14 @@
   font-style: italic;
 }
 
+.ingredients-list .ingredient-raw {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
 .instructions {
   white-space: pre-wrap;
   line-height: 1.6;
@@ -904,6 +912,104 @@
   color: #dc3545;
   border-color: #dc3545;
   background: rgba(220, 53, 69, 0.1);
+}
+
+.ingredient-row .btn-add-alt {
+  padding: 0.4rem 0.6rem;
+  background: transparent;
+  border: 1px solid #555;
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.7;
+  transition: all 0.15s;
+}
+
+.ingredient-row .btn-add-alt:hover {
+  color: #646cff;
+  border-color: #646cff;
+  background: rgba(100, 108, 255, 0.1);
+  opacity: 1;
+}
+
+.ingredient-entry {
+  margin-bottom: 0.75rem;
+}
+
+.alt-measurements {
+  margin-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.alt-measurement-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.alt-measurement-row .alt-label {
+  color: #888;
+  font-size: 0.8rem;
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.alt-measurement-row .input-amount,
+.alt-measurement-row .input-unit {
+  width: 70px;
+  flex-shrink: 0;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #252525;
+  color: #fff;
+}
+
+.alt-measurement-row .input-amount::placeholder,
+.alt-measurement-row .input-unit::placeholder {
+  color: #666;
+}
+
+.alt-measurement-row .input-amount:focus,
+.alt-measurement-row .input-unit:focus {
+  outline: none;
+  border-color: #646cff;
+  background: #2a2a2a;
+}
+
+.alt-measurement-row .btn-remove {
+  padding: 0.3rem 0.5rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1;
+  opacity: 0.5;
+  transition: all 0.15s;
+}
+
+.alt-measurement-row:hover .btn-remove {
+  opacity: 1;
+}
+
+.alt-measurement-row .btn-remove:hover {
+  color: #dc3545;
+  border-color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+}
+
+.ingredient-raw {
+  margin-top: 0.25rem;
+  margin-left: 1rem;
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
+.ingredient-raw .raw-label {
+  color: #888;
 }
 
 .form-actions {
