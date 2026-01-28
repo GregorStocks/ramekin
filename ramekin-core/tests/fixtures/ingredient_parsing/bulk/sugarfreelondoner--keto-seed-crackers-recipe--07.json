@@ -1,8 +1,13 @@
 {
   "raw": "generous pinch  salt (to taste)",
   "expected": {
-    "item": "generous pinch  salt",
-    "measurements": [],
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous pinch"
+      }
+    ],
     "note": "to taste"
   }
 }

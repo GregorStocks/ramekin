@@ -1,11 +1,11 @@
 {
   "raw": "1 and 2/3 cups (210g) pecan halves or chopped pecans",
   "expected": {
-    "item": "and 2/3 cups pecan halves or chopped pecans",
+    "item": "pecan halves or chopped pecans",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1 2/3",
+        "unit": "cups"
       },
       {
         "amount": "210",

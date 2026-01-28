@@ -136,6 +136,27 @@ const UNITS_RAW: &[&str] = &[
     "xl",
 ];
 
+/// Measurement modifiers that appear before amounts or between amounts and units.
+/// These are stripped during parsing but preserved in the raw field.
+/// Examples: "scant 1 teaspoon", "2 heaping tablespoons", "1 generous cup"
+const MEASUREMENT_MODIFIERS: &[&str] = &[
+    // Multi-word modifiers first (longer matches take priority)
+    "lightly packed",
+    "firmly packed",
+    "loosely packed",
+    "slightly heaped",
+    "slightly heaping",
+    // Single-word modifiers
+    "scant",
+    "heaping",
+    "heaped",
+    "rounded",
+    "level",
+    "generous",
+    "good",
+    "packed",
+];
+
 /// Common preparation notes
 const PREP_NOTES: &[&str] = &[
     "at room temperature",
@@ -200,6 +221,25 @@ const PREP_NOTES: &[&str] = &[
     "raw",
     "scrubbed",
 ];
+
+/// Strip measurement modifiers from the beginning of a string.
+/// Returns (modifier if found, remaining_string).
+fn strip_measurement_modifier(s: &str) -> (Option<String>, String) {
+    let s_lower = s.to_lowercase();
+    let s_trimmed = s.trim();
+
+    for &modifier in MEASUREMENT_MODIFIERS {
+        if s_lower.trim().starts_with(modifier) {
+            let after = &s_trimmed[modifier.len()..];
+            // Make sure it's a word boundary (followed by space or end)
+            if after.is_empty() || after.starts_with(char::is_whitespace) {
+                return (Some(modifier.to_string()), after.trim().to_string());
+            }
+        }
+    }
+
+    (None, s_trimmed.to_string())
+}
 
 /// Decode common HTML entities.
 fn decode_html_entities(s: &str) -> String {
@@ -371,13 +411,29 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
-    // Step 3: Extract primary amount from the beginning
+    // Step 3: Strip measurement modifiers before amount, preserve for unit
+    // Handles "scant 1 teaspoon" - modifier goes on the unit as "scant teaspoon"
+    let (pre_amount_modifier, after_modifier) = strip_measurement_modifier(&remaining);
+    remaining = after_modifier;
+
     let (primary_amount, after_amount) = extract_amount(&remaining);
     remaining = after_amount;
 
-    // Step 4: Extract primary unit
-    let (primary_unit, after_unit) = extract_unit(&remaining);
+    // Step 4: Strip measurement modifiers before unit, combine with any pre-amount modifier
+    // Handles "2 heaping tablespoons" - modifier goes on the unit as "heaping tablespoons"
+    let (pre_unit_modifier, after_modifier) = strip_measurement_modifier(&remaining);
+    remaining = after_modifier;
+
+    let (base_unit, after_unit) = extract_unit(&remaining);
     remaining = after_unit;
+
+    // Combine modifiers with unit: prefer pre-unit modifier, fall back to pre-amount modifier
+    let modifier = pre_unit_modifier.or(pre_amount_modifier);
+    let primary_unit = match (modifier, base_unit) {
+        (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
+        (Some(m), None) => Some(m), // modifier without unit (rare but possible)
+        (None, u) => u,
+    };
 
     // Step 5: Extract note from the end (after comma), if not already set
     if note.is_none() {
@@ -551,6 +607,18 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
                 let end_pos = pos + second.len();
                 return (Some(amount), s[end_pos..].trim().to_string());
             }
+        }
+
+        // Check for "X and Y/Z" pattern: "2 and 1/2"
+        if words.len() >= 3
+            && words[1].eq_ignore_ascii_case("and")
+            && first.chars().all(|c| c.is_ascii_digit())
+            && is_fraction(words[2])
+        {
+            // Normalize to "X Y/Z" format (e.g., "2 1/2")
+            let amount = format!("{} {}", first, words[2]);
+            let remaining_after_fraction = words[3..].join(" ");
+            return (Some(amount), remaining_after_fraction);
         }
 
         // Check for range: "1 to 4" or "6 to 8"
