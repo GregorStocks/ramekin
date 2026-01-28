@@ -158,10 +158,10 @@ enum Commands {
         #[arg(short, long, default_value = "data/test-urls.json")]
         output: PathBuf,
         /// Number of sites to include
-        #[arg(long, default_value = "50")]
+        #[arg(long, default_value = "100")]
         num_sites: usize,
         /// Number of URLs per site
-        #[arg(long, default_value = "20")]
+        #[arg(long, default_value = "100")]
         urls_per_site: usize,
         /// Merge with existing file instead of replacing
         #[arg(long)]

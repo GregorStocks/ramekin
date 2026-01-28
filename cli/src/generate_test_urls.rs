@@ -259,6 +259,7 @@ fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
 
     // Known food blog domains to validate against
     let known_food_blogs = [
+        // Original 48 sites
         "thekitchn.com",
         "food52.com",
         "seriouseats.com",
@@ -307,6 +308,57 @@ fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
         "alexandracooks.com",
         "ohsheglows.com",
         "thestayathomechef.com",
+        // High-traffic sites
+        "spendwithpennies.com",
+        "food.com",
+        "tastesbetterfromscratch.com",
+        // Popular blogs from Detailed.com
+        "onmykidsplate.com",
+        "browneyedbaker.com",
+        "mybakingaddiction.com",
+        "loveandoliveoil.com",
+        "slenderkitchen.com",
+        "ohmyveggies.com",
+        "altonbrown.com",
+        "dinnerthendessert.com",
+        "sweetandsavorymeals.com",
+        "bakingbites.com",
+        "sprinklebakes.com",
+        "spoonforkbacon.com",
+        "chefspencil.com",
+        // Japanese & Asian recipe sites
+        "justonecookbook.com",
+        "sudachirecipes.com",
+        "norecipes.com",
+        "japanesecooking101.com",
+        "chopstickchronicles.com",
+        "thewoksoflife.com",
+        // Other well-known sites
+        "indianhealthyrecipes.com",
+        "inspiredtaste.net",
+        "jocooks.com",
+        "themediterraneandish.com",
+        "joyfoodsunshine.com",
+        "themodernproper.com",
+        "hostthetoast.com",
+        "keviniscooking.com",
+        "whiteonricecouple.com",
+        "asweetpeachef.com",
+        "afamilyfeast.com",
+        "barefeetinthekitchen.com",
+        "littlesweetbaker.com",
+        "bakerita.com",
+        "feastingathome.com",
+        "peasandcrayons.com",
+        "closetcooking.com",
+        "lecremedelacrumb.com",
+        "theforkedspoon.com",
+        "lifemadesweeter.com",
+        "averiecooks.com",
+        "butterwithasideofbread.com",
+        "yellowblissroad.com",
+        "gonnawantseconds.com",
+        "momontimeout.com",
     ];
 
     for element in document.select(&link_selector) {
@@ -360,6 +412,21 @@ fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
             })
             .collect());
     }
+
+    // If we have fewer sites than known_food_blogs, supplement with additional known blogs
+    // that weren't found in the rankings
+    let seen_domains: HashSet<String> = sites.iter().map(|s| s.domain.clone()).collect();
+    let next_rank = sites.len() + 1;
+    let additional: Vec<_> = known_food_blogs
+        .iter()
+        .enumerate()
+        .filter(|(_, domain)| !seen_domains.contains(**domain))
+        .map(|(i, domain)| RankedSite {
+            domain: domain.to_string(),
+            rank: next_rank + i,
+        })
+        .collect();
+    sites.extend(additional);
 
     Ok(sites)
 }
@@ -440,7 +507,7 @@ async fn try_sitemap(
                     extract_urls_from_sitemap_recursive(client, &content, domain, 2).await
                 {
                     all_urls.extend(urls);
-                    if all_urls.len() >= 100 {
+                    if all_urls.len() >= 200 {
                         break;
                     }
                 }
@@ -537,7 +604,7 @@ async fn extract_urls_from_sitemap_recursive(
                 {
                     urls.extend(sub_urls);
                     // Stop if we have enough URLs
-                    if urls.len() >= 100 {
+                    if urls.len() >= 200 {
                         break;
                     }
                 }
