@@ -34,22 +34,20 @@ fn default_fixtures_dir() -> PathBuf {
 /// Generate test fixtures from the latest pipeline run.
 ///
 /// Reads parse_ingredients output from pipeline results and creates
-/// individual JSON test case files in the bulk/ directory.
+/// individual JSON test case files in the pipeline/ directory.
+/// Uses UPSERT behavior: only adds new test cases, never deletes existing ones.
 pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
         .unwrap_or_else(default_fixtures_dir);
-    let bulk_dir = fixtures_dir.join("bulk");
+    let pipeline_dir = fixtures_dir.join("pipeline");
 
     // Find latest run
     let (run_id, run_dir) = find_latest_run(runs_dir)?;
     println!("Generating from run: {}", run_id);
 
-    // Clear existing bulk tests
-    if bulk_dir.exists() {
-        fs::remove_dir_all(&bulk_dir)?;
-    }
-    fs::create_dir_all(&bulk_dir)?;
+    // Create directory if it doesn't exist (UPSERT: never delete existing)
+    fs::create_dir_all(&pipeline_dir)?;
 
     let mut total_cases = 0;
 
@@ -96,18 +94,21 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
             };
 
             let filename = format!("{}--{}--{:02}.json", site, recipe_slug, idx + 1);
-            let filepath = bulk_dir.join(&filename);
+            let filepath = pipeline_dir.join(&filename);
 
-            let json = serde_json::to_string_pretty(&test_case)?;
-            fs::write(&filepath, json)?;
-            total_cases += 1;
+            // UPSERT: only write if file doesn't already exist
+            if !filepath.exists() {
+                let json = serde_json::to_string_pretty(&test_case)?;
+                fs::write(&filepath, json)?;
+                total_cases += 1;
+            }
         }
     }
 
     println!(
-        "Generated {} test cases in {}",
+        "Generated {} new test cases in {}",
         total_cases,
-        bulk_dir.display()
+        pipeline_dir.display()
     );
 
     Ok(())
@@ -125,8 +126,8 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let mut updated = 0;
     let mut unchanged = 0;
 
-    // Process curated, bulk, and paprika directories
-    for subdir in ["curated", "bulk", "paprika"] {
+    // Process curated, pipeline, and paprika directories
+    for subdir in ["curated", "pipeline", "paprika"] {
         let dir = fixtures_dir.join(subdir);
         if !dir.exists() {
             continue;
@@ -252,16 +253,14 @@ struct PaprikaRecipe {
 ///
 /// Reads recipes from the Paprika archive and creates individual JSON
 /// test case files in the paprika/ directory.
+/// Uses UPSERT behavior: only adds new test cases, never deletes existing ones.
 pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
         .unwrap_or_else(default_fixtures_dir);
     let paprika_dir = fixtures_dir.join("paprika");
 
-    // Clear existing paprika tests
-    if paprika_dir.exists() {
-        fs::remove_dir_all(&paprika_dir)?;
-    }
+    // Create directory if it doesn't exist (UPSERT: never delete existing)
     fs::create_dir_all(&paprika_dir)?;
 
     // Open the paprikarecipes archive
@@ -332,14 +331,17 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
             let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
             let filepath = paprika_dir.join(&filename);
 
-            let json = serde_json::to_string_pretty(&test_case)?;
-            fs::write(&filepath, json)?;
-            total_cases += 1;
+            // UPSERT: only write if file doesn't already exist
+            if !filepath.exists() {
+                let json = serde_json::to_string_pretty(&test_case)?;
+                fs::write(&filepath, json)?;
+                total_cases += 1;
+            }
         }
     }
 
     println!(
-        "Generated {} test cases in {}",
+        "Generated {} new test cases in {}",
         total_cases,
         paprika_dir.display()
     );

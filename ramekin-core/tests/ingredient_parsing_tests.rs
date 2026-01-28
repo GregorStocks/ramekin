@@ -5,7 +5,7 @@
 //!
 //! Directory structure:
 //! - `curated/` - Hand-picked test cases representing important scenarios
-//! - `bulk/` - Auto-generated from pipeline runs for regression testing
+//! - `pipeline/` - Auto-generated from pipeline runs for regression testing
 //! - `paprika/` - Auto-generated from paprikarecipes file for regression testing
 
 use glob::glob;
@@ -48,8 +48,8 @@ fn load_test_cases() -> Vec<(String, TestCase)> {
 
     let mut cases = Vec::new();
 
-    // Load from curated, bulk, and paprika directories
-    for subdir in ["curated", "bulk", "paprika"] {
+    // Load from curated, pipeline, and paprika directories
+    for subdir in ["curated", "pipeline", "paprika"] {
         let pattern = fixtures_dir.join(subdir).join("*.json");
         let pattern_str = pattern.to_string_lossy();
 
