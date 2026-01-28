@@ -20,9 +20,11 @@ pub struct ParsedIngredient {
     pub raw: Option<String>,
 }
 
-/// Common cooking units (lowercase for matching)
+/// Common cooking units (lowercase for matching).
+/// Within each category, longer strings should come before shorter ones
+/// to avoid partial matches (e.g., "tablespoons" before "tbsp" before "tb").
 const UNITS: &[&str] = &[
-    // Volume - US (longest first to avoid partial matches)
+    // Volume - US
     "fluid ounces",
     "fluid ounce",
     "tablespoons",

@@ -113,7 +113,7 @@ fn parse_ingredients(ingredients_str: &str) -> Vec<Ingredient> {
             item: line.trim().to_string(),
             measurements: vec![],
             note: None,
-            raw: Some(Some(line.trim().to_string())),
+            raw: None,
         })
         .collect()
 }

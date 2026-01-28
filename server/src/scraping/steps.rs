@@ -289,13 +289,27 @@ impl PipelineStep for SaveRecipeStep {
             .and_then(|v| serde_json::from_value(v).ok())
             .unwrap_or_default();
 
-        // Get parsed ingredients from parse_ingredients output
+        // Get parsed ingredients from parse_ingredients output, or fall back to
+        // simple line-by-line parsing if the step failed or is missing
         let parsed_ingredients: Vec<Ingredient> = ctx
             .outputs
             .get_output("parse_ingredients")
             .and_then(|o| o.get("ingredients").cloned())
             .and_then(|v| serde_json::from_value(v).ok())
-            .unwrap_or_default();
+            .unwrap_or_else(|| {
+                // Fallback: split by newlines, put each line in the item field
+                raw_recipe
+                    .ingredients
+                    .lines()
+                    .filter(|line| !line.trim().is_empty())
+                    .map(|line| Ingredient {
+                        item: line.trim().to_string(),
+                        measurements: vec![],
+                        note: None,
+                        raw: None,
+                    })
+                    .collect()
+            });
 
         // Create or update recipe in database
         let result = match self.existing_recipe_id {

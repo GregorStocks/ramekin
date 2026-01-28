@@ -51,7 +51,7 @@ export default function EditRecipePage() {
         reconcile(
           response.ingredients?.length
             ? response.ingredients
-            : [{ item: "", measurements: [] }],
+            : [{ item: "", measurements: [{}] }],
         ),
       );
       setServings(response.servings || "");

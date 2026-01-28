@@ -5,7 +5,7 @@ export function addIngredient(
   ingredients: Ingredient[],
   setIngredients: SetStoreFunction<Ingredient[]>,
 ) {
-  setIngredients(ingredients.length, { item: "", measurements: [] });
+  setIngredients(ingredients.length, { item: "", measurements: [{}] });
 }
 
 export function removeIngredient(
