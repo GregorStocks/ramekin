@@ -597,6 +597,20 @@ export default function ViewRecipePage() {
                                 {ing.measurements[0]?.unit}
                               </span>{" "}
                             </Show>
+                            <Show when={ing.measurements.length > 1}>
+                              <span class="alt-measurement">
+                                (
+                                {ing.measurements
+                                  .slice(1)
+                                  .map((m) =>
+                                    [m.amount, m.unit]
+                                      .filter(Boolean)
+                                      .join(" "),
+                                  )
+                                  .join(", ")}
+                                ){" "}
+                              </span>
+                            </Show>
                             <span class="item">{ing.item}</span>
                             <Show when={ing.note}>
                               <span class="note"> ({ing.note})</span>

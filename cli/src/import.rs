@@ -3,7 +3,8 @@ use base64::Engine;
 use flate2::read::GzDecoder;
 use ramekin_client::apis::configuration::Configuration;
 use ramekin_client::apis::{auth_api, recipes_api};
-use ramekin_client::models::{CreateRecipeRequest, Ingredient, LoginRequest};
+use ramekin_client::models::{CreateRecipeRequest, Ingredient, LoginRequest, Measurement};
+use ramekin_core::ingredient_parser;
 use serde::Deserialize;
 use std::fs::File;
 use std::io::Read;
@@ -103,17 +104,22 @@ pub async fn upload_photo_with_client(
 }
 
 /// Parse ingredients from Paprika's newline-separated format into structured ingredients.
-/// For now, we just put the whole line as the item since parsing ingredient strings
-/// (e.g. "1 1/2 cups flour, sifted") is complex and error-prone.
+/// Uses the same ingredient parser as the scrape pipeline for consistency.
 fn parse_ingredients(ingredients_str: &str) -> Vec<Ingredient> {
-    ingredients_str
-        .lines()
-        .filter(|line| !line.trim().is_empty())
-        .map(|line| Ingredient {
-            item: line.trim().to_string(),
-            measurements: vec![],
-            note: None,
-            raw: None,
+    ingredient_parser::parse_ingredients(ingredients_str)
+        .into_iter()
+        .map(|parsed| Ingredient {
+            item: parsed.item,
+            measurements: parsed
+                .measurements
+                .into_iter()
+                .map(|m| Measurement {
+                    amount: Some(m.amount),
+                    unit: Some(m.unit),
+                })
+                .collect(),
+            note: Some(parsed.note),
+            raw: Some(parsed.raw),
         })
         .collect()
 }

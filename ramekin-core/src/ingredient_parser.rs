@@ -2,6 +2,8 @@
 //!
 //! Parses raw ingredient strings (e.g., "2 cups flour, sifted") into structured data.
 
+use std::sync::LazyLock;
+
 use serde::{Deserialize, Serialize};
 
 /// A single measurement (amount + unit pair)
@@ -21,9 +23,15 @@ pub struct ParsedIngredient {
 }
 
 /// Common cooking units (lowercase for matching).
-/// Within each category, longer strings should come before shorter ones
-/// to avoid partial matches (e.g., "tablespoons" before "tbsp" before "tb").
-const UNITS: &[&str] = &[
+/// Sorted by length at runtime (longest first) to avoid partial matches
+/// (e.g., "tablespoons" must match before "tb").
+static UNITS_SORTED: LazyLock<Vec<&'static str>> = LazyLock::new(|| {
+    let mut units = UNITS_RAW.to_vec();
+    units.sort_by(|a, b| b.len().cmp(&a.len()));
+    units
+});
+
+const UNITS_RAW: &[&str] = &[
     // Volume - US
     "fluid ounces",
     "fluid ounce",
@@ -382,8 +390,7 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
     let s = s.trim();
     let s_lower = s.to_lowercase();
 
-    // UNITS is already sorted by length (longest first)
-    for &unit in UNITS {
+    for &unit in UNITS_SORTED.iter() {
         if s_lower.starts_with(unit) {
             // Make sure it's a word boundary
             let after = &s[unit.len()..];
