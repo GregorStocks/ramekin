@@ -1,11 +1,11 @@
 {
   "raw": "½ - 1 teaspoon gochugaru",
   "expected": {
-    "item": "- 1 teaspoon gochugaru",
+    "item": "gochugaru",
     "measurements": [
       {
-        "amount": "1/2",
-        "unit": null
+        "amount": "1/2-1",
+        "unit": "teaspoon"
       }
     ],
     "note": null

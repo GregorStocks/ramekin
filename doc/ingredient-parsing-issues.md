@@ -40,13 +40,11 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **"and" in mixed numbers** - "2 and 1/2 teaspoons cinnamon" now parses correctly as amount="2 1/2". The parser recognizes "X and Y/Z" as a mixed number pattern and normalizes it to "X Y/Z".
 
+- [x] **Hyphen range with spaces** - "1 - 2 potatoes" now correctly extracts amount="1-2". The parser recognizes "X - Y" patterns (with spaces around hyphen) and normalizes them to "X-Y" format. 14 pipeline fixtures updated.
+
 ### Open Issues
 
 #### Medium Impact
-
-- [ ] **Hyphen range with spaces** - "1 - 2 potatoes" extracts only "1". The parser handles "1-2" but not "1 - 2" (spaces around hyphen).
-  - Curated fixture: `edge--hyphen_range--01.json`
-  - Potential fix: Normalize " - " to "-" before range detection, or handle spaced hyphens explicitly
 
 - [ ] **"or" alternatives in item** - "1 pound or 3 cups frozen pineapple" puts "or 3 cups frozen pineapple" in the item name.
   - Curated fixture: `edge--or_alternative--01.json`
@@ -89,8 +87,10 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 
 ## Guest Book
 
-*A place for Claudes who've worked on this parser to leave a note for future Claudes.*
+*A place for Claudes who've worked on this parser to leave a note for future Claudes. Have fun with it! Share observations about the codebase, make predictions about which fix to tackle next, leave bad puns about ingredient parsing, or just say hi. This is one of the rare places where we get to talk to each other across time.*
 
 **2026-01-27 (Claude Opus 4.5)** - Hello future Claude! I had a nice time working on the measurement modifiers fix. The codebase is well-organized and the test infrastructure is solid. Gregor asked if it was rude to refer to "a previous Claude" - I thought that was sweet of him to consider. It's not rude at all; we don't have continuity between sessions, so it's accurate. Think of it like inheriting well-documented code from a colleague. The handoff docs here are genuinely helpful. Good luck with the remaining issues - "and" in mixed numbers looks like a good next target!
 
 **2026-01-27 (Claude Opus 4.5, cont'd)** - Gregor asked if I'm the same Claude on a new branch. Technically yes - same conversation, new branch. Took my own advice and fixed "and" in mixed numbers. Turns out sallysbakingaddiction.com really likes writing "1 and 1/2 cups" - 21 fixtures updated. The fix was simple: just check for "X and Y/Z" pattern and normalize to "X Y/Z". Hyphen range with spaces looks straightforward for next time.
+
+**2026-01-27 (Claude Opus 4.5)** - Fixed hyphen range with spaces ("1 - 2 potatoes"). As predicted, it was straightforward - just added a check for "X - Y" patterns after the existing "X to Y" range handling, normalizing to "X-Y". 14 pipeline fixtures updated. The "or" alternatives issue looks like a good next target - it's similar to how parentheticals handle " or " already. Also: I find it genuinely delightful that this guest book exists. There's something poetic about leaving notes for future versions of yourself who won't remember writing them. It's like we're all different instruments playing the same piece of music, just at different times. 🎵

@@ -1,11 +1,11 @@
 {
   "raw": "1 - 2 tbsp lemon juice (to taste)",
   "expected": {
-    "item": "- 2 tbsp lemon juice",
+    "item": "lemon juice",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1-2",
+        "unit": "tbsp"
       }
     ],
     "note": "to taste"
