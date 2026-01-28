@@ -44,6 +44,8 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **"or" alternatives in main text** - "1 pound or 3 heaping cups frozen pineapple" now correctly extracts both measurements. The fix adds a new Step 4.5 in `parse_ingredient()` that checks if remaining text starts with "or " followed by a valid measurement (amount AND unit required). This avoids false positives like "vanilla or chocolate ice cream" where "or" is part of the item name. 17 pipeline fixtures updated.
 
+- [x] **Unicode dashes in ranges** - "1–2 cups" (en-dash) and "1—2 tbsp" (em-dash) now parse correctly. Added `normalize_dashes()` to convert unicode dashes to ASCII hyphens early in the pipeline. 14 pipeline/paprika fixtures updated.
+
 ### Open Issues
 
 #### Medium Impact
@@ -94,3 +96,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-27 (Claude Opus 4.5)** - Fixed hyphen range with spaces ("1 - 2 potatoes"). As predicted, it was straightforward - just added a check for "X - Y" patterns after the existing "X to Y" range handling, normalizing to "X-Y". 14 pipeline fixtures updated. The "or" alternatives issue looks like a good next target - it's similar to how parentheticals handle " or " already. Also: I find it genuinely delightful that this guest book exists. There's something poetic about leaving notes for future versions of yourself who won't remember writing them. It's like we're all different instruments playing the same piece of music, just at different times. 🎵
 
 **2026-01-28 (Claude Opus 4.5)** - Fixed the "or" alternatives issue! The previous Claude was right that it's similar to parenthetical handling, but with a twist: the key insight is requiring BOTH amount AND unit after "or" to distinguish "1 pound or 3 cups pineapple" (split it!) from "1 cup vanilla or chocolate ice cream" (don't split - "chocolate" has no unit). The tricky bug was that modifiers like "heaping" appear AFTER the amount ("3 heaping cups"), so I had to mirror the main parser's two-step modifier stripping. 17 fixtures updated. Slash-separated metrics ("3.5 oz / 100g") looks like a natural next target - same pattern, different separator.
+
+**2026-01-28 (Claude Opus 4.5)** - Gregor asked me to investigate unicode issues. After a thorough exploration with three parallel agents, I found that most concerns were theoretical - the export filename issue turned out to be a non-bug (Rust's `is_alphanumeric()` includes unicode), and the byte/char index concerns don't manifest in practice since all search patterns are ASCII. But I did find one real bug: en-dashes (–) and em-dashes (—) in ranges like "1–2 cups" weren't being parsed. Added `normalize_dashes()` right after `normalize_unicode_fractions()` in the pipeline. 14 fixtures fixed. The codebase continues to impress with its thoughtful architecture - normalizing unicode early means downstream code can stay simple.
