@@ -198,7 +198,27 @@ const PREP_NOTES: &[&str] = &[
     "whole",
     "cold",
     "raw",
+    "scrubbed",
 ];
+
+/// Convert unicode fractions to ASCII equivalents.
+fn normalize_unicode_fractions(s: &str) -> String {
+    s.replace('½', "1/2")
+        .replace('⅓', "1/3")
+        .replace('⅔', "2/3")
+        .replace('¼', "1/4")
+        .replace('¾', "3/4")
+        .replace('⅕', "1/5")
+        .replace('⅖', "2/5")
+        .replace('⅗', "3/5")
+        .replace('⅘', "4/5")
+        .replace('⅙', "1/6")
+        .replace('⅚', "5/6")
+        .replace('⅛', "1/8")
+        .replace('⅜', "3/8")
+        .replace('⅝', "5/8")
+        .replace('⅞', "7/8")
+}
 
 /// Parse a single ingredient line into structured data.
 ///
@@ -215,17 +235,34 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
-    let mut remaining = raw.to_string();
+    // Normalize unicode fractions before processing
+    let mut remaining = normalize_unicode_fractions(raw);
     let mut measurements = Vec::new();
     let mut note = None;
 
-    // Step 1: Extract any parenthetical alternative measurements
-    // e.g., "1 stick (113g) butter" -> extract "(113g)"
-    // Also handles multiple measurements like "(8 ounces; 227 g each)"
+    // Step 1: Extract any parenthetical content (measurements or prep notes)
+    // e.g., "1 stick (113g) butter" -> extract "(113g)" as alt measurement
+    // e.g., "1/2 cup butter (softened)" -> extract "(softened)" as note
     let mut alt_measurements = Vec::new();
     while let Some(start) = remaining.find('(') {
         if let Some(end) = remaining[start..].find(')') {
             let paren_content = &remaining[start + 1..start + end];
+
+            // First check if this is a prep note (like "softened", "chopped", etc.)
+            if is_prep_note(paren_content) && note.is_none() {
+                note = Some(paren_content.trim().to_string());
+                // Remove the parenthetical from remaining
+                let before = remaining[..start].trim_end();
+                let after = remaining[start + end + 1..].trim_start();
+                remaining = if before.is_empty() {
+                    after.to_string()
+                } else if after.is_empty() {
+                    before.to_string()
+                } else {
+                    format!("{} {}", before, after)
+                };
+                continue;
+            }
 
             // Try to parse the parenthetical content as one or more measurements
             // Split by semicolons or commas to handle "8 ounces; 227 g each"
@@ -244,7 +281,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
                     format!("{} {}", before, after)
                 };
             } else {
-                // Not a measurement, leave it and stop looking for more
+                // Not a measurement or prep note, leave it and stop looking for more
                 break;
             }
         } else {
@@ -318,12 +355,18 @@ fn try_parse_measurement(s: &str) -> Option<Measurement> {
 }
 
 /// Parse parenthetical content that may contain multiple measurements.
-/// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup"
+/// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
 fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
     let mut results = Vec::new();
 
+    // First, normalize " or " to ";" for splitting (but not "or" within words)
+    let normalized = content
+        .replace(" or ", ";")
+        .replace(" Or ", ";")
+        .replace(" OR ", ";");
+
     // Split by semicolons or commas (common separators in recipe measurements)
-    for part in content.split(|c| c == ';' || c == ',') {
+    for part in normalized.split(|c| c == ';' || c == ',') {
         let part = part.trim();
         if part.is_empty() {
             continue;
@@ -643,5 +686,99 @@ mod tests {
 
         // Note should be "finely chopped"
         assert_eq!(result.note, Some("finely chopped".to_string()));
+    }
+
+    #[test]
+    fn test_is_prep_note() {
+        assert!(is_prep_note("scrubbed clean"));
+        assert!(is_prep_note("chopped"));
+        assert!(is_prep_note("finely chopped"));
+        assert!(!is_prep_note("potatoes"));
+    }
+
+    #[test]
+    fn test_real_world_samples() {
+        // Test a variety of real-world ingredient formats from different sites
+        let test_cases = [
+            // smittenkitchen.com - parenthetical with weight per item
+            (
+                "4 (about 8 ounces or 225 grams each) russet potatoes, scrubbed clean",
+                "russet potatoes",
+                vec![("4", None), ("8", Some("ounces")), ("225", Some("grams"))],
+                Some("scrubbed clean"),
+            ),
+            // cookingclassy.com - double parens (unusual, we accept that the parens stay in item)
+            (
+                "1 lb Italian Sausage ((casings removed if necessary))",
+                "Italian Sausage",
+                vec![("1", Some("lb"))],
+                None, // Double parens not parsed as note - OK for now
+            ),
+            // browneyedbaker.com - unicode fractions
+            (
+                "⅓ cup graham cracker crumbs",
+                "graham cracker crumbs",
+                vec![("1/3", Some("cup"))],
+                None,
+            ),
+            // mypureplants.com - measurement in parens after
+            (
+                "⅓ cup Irish whiskey (1 fl oz)",
+                "Irish whiskey",
+                vec![("1/3", Some("cup")), ("1", Some("fl oz"))],
+                None,
+            ),
+            // acouplecooks.com - "for serving" note
+            (
+                "Fresh herbs, for serving",
+                "Fresh herbs",
+                vec![],
+                Some("for serving"),
+            ),
+            // Simple case
+            (
+                "1/2 cup salted butter (softened)",
+                "salted butter",
+                vec![("1/2", Some("cup"))],
+                Some("softened"),
+            ),
+        ];
+
+        for (raw, expected_item, _expected_measurements, expected_note) in test_cases {
+            let result = parse_ingredient(raw);
+            println!("\nRAW: {:?}", raw);
+            println!("  => item: {:?}", result.item);
+            println!("     measurements: {:?}", result.measurements);
+            println!("     note: {:?}", result.note);
+
+            // Check item contains expected substring
+            assert!(
+                result
+                    .item
+                    .to_lowercase()
+                    .contains(&expected_item.to_lowercase()),
+                "Item mismatch for '{}': expected '{}' to contain '{}', got '{}'",
+                raw,
+                result.item,
+                expected_item,
+                result.item
+            );
+
+            // Check note if expected
+            if let Some(expected) = expected_note {
+                assert!(
+                    result
+                        .note
+                        .as_ref()
+                        .map(|n| n.to_lowercase().contains(&expected.to_lowercase()))
+                        .unwrap_or(false),
+                    "Note mismatch for '{}': expected '{:?}' to contain '{}', got '{:?}'",
+                    raw,
+                    result.note,
+                    expected,
+                    result.note
+                );
+            }
+        }
     }
 }
