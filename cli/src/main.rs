@@ -158,10 +158,10 @@ enum Commands {
         #[arg(short, long, default_value = "data/test-urls.json")]
         output: PathBuf,
         /// Number of sites to include
-        #[arg(long, default_value = "50")]
+        #[arg(long, default_value = "100")]
         num_sites: usize,
         /// Number of URLs per site
-        #[arg(long, default_value = "20")]
+        #[arg(long, default_value = "100")]
         urls_per_site: usize,
         /// Merge with existing file instead of replacing
         #[arg(long)]
@@ -184,9 +184,12 @@ enum Commands {
         /// Delay in milliseconds between URL fetches
         #[arg(long, default_value = "1000")]
         delay_ms: u64,
-        /// Re-fetch all HTML even if cached
+        /// Run in offline mode (cache only, no network requests)
+        #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+        offline: bool,
+        /// Force re-fetch all URLs, ignoring cache
         #[arg(long)]
-        force_fetch: bool,
+        force_refetch: bool,
         /// What to do when fetch fails: continue (default), skip, or prompt
         #[arg(long, value_enum, default_value = "continue")]
         on_fetch_fail: OnFetchFail,
@@ -339,7 +342,8 @@ async fn main() -> Result<()> {
             limit,
             site,
             delay_ms,
-            force_fetch,
+            offline,
+            force_refetch,
             on_fetch_fail,
             tags_file,
         } => {
@@ -349,7 +353,8 @@ async fn main() -> Result<()> {
                 limit,
                 site_filter: site,
                 delay_ms,
-                force_fetch,
+                offline,
+                force_refetch,
                 on_fetch_fail,
                 tags_file,
             };

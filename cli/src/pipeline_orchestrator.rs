@@ -27,7 +27,8 @@ pub struct OrchestratorConfig {
     pub limit: Option<usize>,
     pub site_filter: Option<String>,
     pub delay_ms: u64,
-    pub force_fetch: bool,
+    pub offline: bool,
+    pub force_refetch: bool,
     pub on_fetch_fail: OnFetchFail,
     pub tags_file: PathBuf,
 }
@@ -40,7 +41,8 @@ impl Default for OrchestratorConfig {
             limit: None,
             site_filter: None,
             delay_ms: 1000,
-            force_fetch: false,
+            offline: true,
+            force_refetch: false,
             on_fetch_fail: OnFetchFail::Continue,
             tags_file: PathBuf::from("data/eval-tags.json"),
         }
@@ -81,7 +83,8 @@ pub struct ManifestConfig {
     pub limit: Option<usize>,
     pub site_filter: Option<String>,
     pub delay_ms: u64,
-    pub force_fetch: bool,
+    pub offline: bool,
+    pub force_refetch: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -216,7 +219,8 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             limit: config.limit,
             site_filter: config.site_filter.clone(),
             delay_ms: config.delay_ms,
-            force_fetch: config.force_fetch,
+            offline: config.offline,
+            force_refetch: config.force_refetch,
         },
         status: RunStatus::Running,
     };
@@ -225,13 +229,13 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     // Initialize HTTP client with caching
     // The CachingClient uses RAMEKIN_HTTP_CACHE env var for cache directory
     // and handles rate limiting internally
-    // Use never_network mode unless force_fetch is requested - this means:
+    // Use never_network mode when offline - this means:
     // - Cached responses are used directly without network validation
-    // - Uncached URLs will error instead of fetching (use --force-fetch to populate cache)
+    // - Uncached URLs will error instead of fetching (use --offline=false to enable network)
     let client = Arc::new(
         CachingClient::builder()
             .rate_limit_ms(0) // We handle delay ourselves between URLs
-            .never_network(!config.force_fetch)
+            .never_network(config.offline)
             .build()
             .context("Failed to create HTTP client")?,
     );
@@ -270,10 +274,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         let progress = format!("[{}/{}]", idx + 1, total_urls);
 
         // Check if we need to fetch (for rate limiting purposes)
-        let needs_fetch = config.force_fetch || !client.is_cached(url);
+        let needs_fetch = config.force_refetch || (!config.offline && !client.is_cached(url));
 
         // Print progress
-        if needs_fetch {
+        if config.force_refetch {
+            println!("{} {} (force refetch)", progress, truncate_url(url, 60));
+        } else if needs_fetch {
             println!("{} {} (fetching...)", progress, truncate_url(url, 60));
         } else {
             println!("{} {} (cached)", progress, truncate_url(url, 60));
@@ -284,7 +290,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             url,
             Arc::clone(&client),
             &run_dir,
-            config.force_fetch,
+            config.force_refetch,
             user_tags.clone(),
         )
         .await;

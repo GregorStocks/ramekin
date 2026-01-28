@@ -115,10 +115,9 @@ pub async fn generate_test_urls(
         })
         .unwrap_or_default();
 
-    // Fetch site rankings from detailed.com
-    println!("Fetching site rankings from detailed.com...");
-    let ranked_sites = fetch_site_rankings(&client).await?;
-    println!("Found {} ranked sites", ranked_sites.len());
+    // Get list of known food blogs
+    let ranked_sites = get_known_food_blogs();
+    println!("Found {} known food blog sites", ranked_sites.len());
 
     // Process sites
     let sites_to_process: Vec<_> = ranked_sites.into_iter().take(num_sites).collect();
@@ -218,47 +217,12 @@ pub async fn generate_test_urls(
 }
 
 // ============================================================================
-// Site rankings from detailed.com
+// Site list
 // ============================================================================
 
-async fn fetch_site_rankings(client: &CachingClient) -> Result<Vec<RankedSite>> {
-    let url = "https://detailed.com/food-blogs/";
-    let html = client
-        .fetch_html(url)
-        .await
-        .map_err(|e| anyhow!("Failed to fetch rankings: {}", e))?;
-    parse_detailed_rankings(&html)
-}
-
-fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
-    let document = Html::parse_document(html);
-    let link_selector = Selector::parse("a[href]").unwrap();
-
-    let mut sites = Vec::new();
-    let mut seen_domains: HashSet<String> = HashSet::new();
-    let mut rank = 0;
-
-    // Domains to skip (not food blogs, navigation, etc.)
-    let skip_domains = [
-        "detailed.com",
-        "google.com",
-        "facebook.com",
-        "twitter.com",
-        "instagram.com",
-        "pinterest.com",
-        "youtube.com",
-        "seoblueprint.com",
-        "linkedin.com",
-        "x.com",
-        "apple.com",
-        "spotify.com",
-        "reddit.com",
-        "tiktok.com",
-        "amazon.com",
-    ];
-
-    // Known food blog domains to validate against
+fn get_known_food_blogs() -> Vec<RankedSite> {
     let known_food_blogs = [
+        // Original 48 sites
         "thekitchn.com",
         "food52.com",
         "seriouseats.com",
@@ -307,61 +271,67 @@ fn parse_detailed_rankings(html: &str) -> Result<Vec<RankedSite>> {
         "alexandracooks.com",
         "ohsheglows.com",
         "thestayathomechef.com",
+        // High-traffic sites
+        "spendwithpennies.com",
+        "food.com",
+        "tastesbetterfromscratch.com",
+        // Popular blogs from Detailed.com
+        "onmykidsplate.com",
+        "browneyedbaker.com",
+        "mybakingaddiction.com",
+        "loveandoliveoil.com",
+        "slenderkitchen.com",
+        "ohmyveggies.com",
+        "altonbrown.com",
+        "dinnerthendessert.com",
+        "sweetandsavorymeals.com",
+        "bakingbites.com",
+        "sprinklebakes.com",
+        "spoonforkbacon.com",
+        "chefspencil.com",
+        // Japanese & Asian recipe sites
+        "justonecookbook.com",
+        "sudachirecipes.com",
+        "norecipes.com",
+        "japanesecooking101.com",
+        "chopstickchronicles.com",
+        "thewoksoflife.com",
+        // Other well-known sites
+        "indianhealthyrecipes.com",
+        "inspiredtaste.net",
+        "jocooks.com",
+        "themediterraneandish.com",
+        "joyfoodsunshine.com",
+        "themodernproper.com",
+        "hostthetoast.com",
+        "keviniscooking.com",
+        "whiteonricecouple.com",
+        "asweetpeachef.com",
+        "afamilyfeast.com",
+        "barefeetinthekitchen.com",
+        "littlesweetbaker.com",
+        "bakerita.com",
+        "feastingathome.com",
+        "peasandcrayons.com",
+        "closetcooking.com",
+        "lecremedelacrumb.com",
+        "theforkedspoon.com",
+        "lifemadesweeter.com",
+        "averiecooks.com",
+        "butterwithasideofbread.com",
+        "yellowblissroad.com",
+        "gonnawantseconds.com",
+        "momontimeout.com",
     ];
 
-    for element in document.select(&link_selector) {
-        if let Some(href) = element.value().attr("href") {
-            // Look for external links that look like blog domains
-            if let Ok(parsed) = url::Url::parse(href) {
-                if let Some(host) = parsed.host_str() {
-                    // Skip non-blog domains
-                    let should_skip = skip_domains.iter().any(|skip| host.contains(skip));
-                    if should_skip {
-                        continue;
-                    }
-
-                    // Normalize domain (remove www.)
-                    let domain = host.trim_start_matches("www.").to_string();
-
-                    // Only include each domain once
-                    if seen_domains.insert(domain.clone()) {
-                        rank += 1;
-                        sites.push(RankedSite { domain, rank });
-                    }
-                }
-            }
-        }
-    }
-
-    // Filter to only known food blogs if we got a lot of junk
-    if sites.len() > 100
-        || sites
-            .iter()
-            .take(5)
-            .all(|s| !known_food_blogs.contains(&s.domain.as_str()))
-    {
-        // Too many results or first entries aren't food blogs - filter to known list
-        sites.retain(|s| known_food_blogs.contains(&s.domain.as_str()));
-
-        // Re-rank
-        for (i, site) in sites.iter_mut().enumerate() {
-            site.rank = i + 1;
-        }
-    }
-
-    if sites.is_empty() {
-        // Fallback: use hardcoded list
-        return Ok(known_food_blogs
-            .iter()
-            .enumerate()
-            .map(|(i, domain)| RankedSite {
-                domain: domain.to_string(),
-                rank: i + 1,
-            })
-            .collect());
-    }
-
-    Ok(sites)
+    known_food_blogs
+        .iter()
+        .enumerate()
+        .map(|(i, domain)| RankedSite {
+            domain: domain.to_string(),
+            rank: i + 1,
+        })
+        .collect()
 }
 
 // ============================================================================
@@ -440,7 +410,7 @@ async fn try_sitemap(
                     extract_urls_from_sitemap_recursive(client, &content, domain, 2).await
                 {
                     all_urls.extend(urls);
-                    if all_urls.len() >= 100 {
+                    if all_urls.len() >= 200 {
                         break;
                     }
                 }
@@ -537,7 +507,7 @@ async fn extract_urls_from_sitemap_recursive(
                 {
                     urls.extend(sub_urls);
                     // Stop if we have enough URLs
-                    if urls.len() >= 100 {
+                    if urls.len() >= 200 {
                         break;
                     }
                 }
