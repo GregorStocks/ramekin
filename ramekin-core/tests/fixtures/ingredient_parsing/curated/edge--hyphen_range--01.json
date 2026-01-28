@@ -1,0 +1,8 @@
+{
+  "raw": "1 - 2 cooked potatoes, cubed",
+  "expected": {
+    "item": "- 2 cooked potatoes",
+    "measurements": [{"amount": "1", "unit": null}],
+    "note": "cubed"
+  }
+}
