@@ -8,14 +8,14 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 ### The Workflow
 
-**One issue per PR.** Each Claude instance should fix exactly one issue, then create a PR. This keeps PRs small and reviewable (bulk fixtures have 5000+ test cases, so changes need to be spot-checkable).
+**One issue per PR.** Each Claude instance should fix exactly one issue, then create a PR. This keeps PRs small and reviewable (pipeline fixtures have 5000+ test cases, so changes need to be spot-checkable).
 
 1. Look at the curated test fixtures in `ramekin-core/tests/fixtures/ingredient_parsing/curated/`
 2. These fixtures document both working behavior and known issues
 3. Pick **one** issue that seems worth fixing (see criteria below - you can add new issues that you discover, past and future Claudes have access to this file.)
 4. Implement the fix in `ingredient_parser.rs`
 5. Update the curated fixture to expect the correct behavior
-6. Run `make ingredient-tests-update` to update bulk fixtures
+6. Run `make ingredient-tests-update` to update pipeline fixtures
 7. Run `make ingredient-tests` and `make lint` to verify
 8. Create a PR, then stop - leave remaining issues for the next Claude
 
@@ -23,10 +23,10 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e.g. an uncommon typo) or where it's not realistically possible to determine the original author's intent, it's fine to give up and say "we parse the entire ingredient string into `ingredient` and leave the amount, note, etc, blank". That's better than being _wrong_. Our #1 goal is not to be wrong.
 
-### Curated vs Bulk Fixtures
+### Curated vs Pipeline Fixtures
 
 - **Curated** (`curated/`): Hand-picked test cases representing important scenarios. Update these manually when fixing issues.
-- **Bulk** (`bulk/`): ~5500 auto-generated fixtures from real recipe sites. Run `make ingredient-tests-update` to sync these with current parser behavior.
+- **Pipeline** (`pipeline/`): ~5500 auto-generated fixtures from real recipe sites. Run `make ingredient-tests-update` to sync these with current parser behavior.
 
 ## Known Issues
 
@@ -68,21 +68,21 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 # Run ingredient parsing tests
 make ingredient-tests
 
-# Update bulk fixtures after changing parser
+# Update pipeline fixtures after changing parser
 make ingredient-tests-update
 
 # Run just the curated tests (faster iteration)
 cd ramekin-core && cargo test ingredient_parsing_curated -- --nocapture
 
-# Search bulk fixtures for a pattern
-grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/bulk/
+# Search pipeline fixtures for a pattern
+grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 ```
 
 ## File Locations
 
 - Parser implementation: `ramekin-core/src/ingredient_parser.rs`
 - Curated fixtures: `ramekin-core/tests/fixtures/ingredient_parsing/curated/`
-- Bulk fixtures: `ramekin-core/tests/fixtures/ingredient_parsing/bulk/`
+- Pipeline fixtures: `ramekin-core/tests/fixtures/ingredient_parsing/pipeline/`
 - Test runner: `ramekin-core/tests/ingredient_parsing_tests.rs`
 
 ---
