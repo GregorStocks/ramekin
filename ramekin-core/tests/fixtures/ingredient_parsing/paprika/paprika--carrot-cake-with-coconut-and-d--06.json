@@ -1,8 +1,12 @@
 {
   "raw": "Heaped 1/2 cup (45 grams) finely shredded unsweetened coconut",
   "expected": {
-    "item": "Heaped 1/2 cup finely shredded unsweetened coconut",
+    "item": "finely shredded unsweetened coconut",
     "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "heaped cup"
+      },
       {
         "amount": "45",
         "unit": "grams"

@@ -1,8 +1,13 @@
 {
   "raw": "Generous 8 ounces slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
   "expected": {
-    "item": "Generous 8 ounces slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
-    "measurements": [],
+    "item": "slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "generous ounces"
+      }
+    ],
     "note": null
   }
 }

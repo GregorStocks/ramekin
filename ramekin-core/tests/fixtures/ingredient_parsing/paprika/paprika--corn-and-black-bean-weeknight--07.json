@@ -1,11 +1,11 @@
 {
   "raw": "2 generous cups (about 8 ounces) coarsely grated cheddar cheese",
   "expected": {
-    "item": "generous cups coarsely grated cheddar cheese",
+    "item": "coarsely grated cheddar cheese",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "generous cups"
       },
       {
         "amount": "8",

@@ -1,11 +1,11 @@
 {
   "raw": "1 packed cup canned whole tomatoes, drained",
   "expected": {
-    "item": "packed cup canned whole tomatoes",
+    "item": "canned whole tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "packed cup"
       }
     ],
     "note": "drained"

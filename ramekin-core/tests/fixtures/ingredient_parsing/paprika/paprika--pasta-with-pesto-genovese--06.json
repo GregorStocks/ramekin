@@ -1,8 +1,12 @@
 {
   "raw": "Heaped 4 cups fresh basil leaves (3 ounces or 85 grams), from approximately a 5-6-ounce bundle with stems",
   "expected": {
-    "item": "Heaped 4 cups fresh basil leaves",
+    "item": "fresh basil leaves",
     "measurements": [
+      {
+        "amount": "4",
+        "unit": "heaped cups"
+      },
       {
         "amount": "3",
         "unit": "ounces"

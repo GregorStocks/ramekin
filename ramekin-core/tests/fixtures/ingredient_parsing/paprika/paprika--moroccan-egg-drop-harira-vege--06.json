@@ -1,11 +1,11 @@
 {
   "raw": "1/4 packed cup (20g) finely chopped flat-leaf parsley leaves and tender stems",
   "expected": {
-    "item": "packed cup finely chopped flat-leaf parsley leaves and tender stems",
+    "item": "finely chopped flat-leaf parsley leaves and tender stems",
     "measurements": [
       {
         "amount": "1/4",
-        "unit": null
+        "unit": "packed cup"
       },
       {
         "amount": "20",

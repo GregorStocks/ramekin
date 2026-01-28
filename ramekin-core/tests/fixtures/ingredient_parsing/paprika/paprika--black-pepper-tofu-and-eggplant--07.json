@@ -1,11 +1,11 @@
 {
   "raw": "1 heaped cup thinly sliced shallots or 1 medium white or red onion, thinly sliced",
   "expected": {
-    "item": "heaped cup thinly sliced shallots or 1 medium white or red onion",
+    "item": "thinly sliced shallots or 1 medium white or red onion",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "heaped cup"
       }
     ],
     "note": "thinly sliced"
