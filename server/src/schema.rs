@@ -57,7 +57,7 @@ diesel::table! {
     scrape_jobs (id) {
         id -> Uuid,
         user_id -> Uuid,
-        url -> Varchar,
+        url -> Nullable<Varchar>,
         status -> Varchar,
         failed_at_step -> Nullable<Varchar>,
         recipe_id -> Nullable<Uuid>,

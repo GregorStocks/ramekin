@@ -78,6 +78,20 @@ pub async fn retry_scrape(
             .into_response();
     }
 
+    // Retry only makes sense for jobs with a URL (scrape jobs, not imports)
+    let url = match &job.url {
+        Some(u) => u,
+        None => {
+            return (
+                StatusCode::BAD_REQUEST,
+                Json(ErrorResponse {
+                    error: "Cannot retry import jobs".to_string(),
+                }),
+            )
+                .into_response();
+        }
+    };
+
     // Retry job
     let new_status = match scraping::retry_job(&pool, job_id) {
         Ok(s) => s,
@@ -97,7 +111,7 @@ pub async fn retry_scrape(
     };
 
     // Spawn background task with instrumentation
-    scraping::spawn_scrape_job(pool.clone(), job_id, &job.url, "retry");
+    scraping::spawn_scrape_job(pool.clone(), job_id, url, "retry");
 
     (
         StatusCode::OK,

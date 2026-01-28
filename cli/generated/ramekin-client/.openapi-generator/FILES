@@ -14,6 +14,11 @@ docs/CreateTagResponse.md
 docs/Direction.md
 docs/EnrichApi.md
 docs/ErrorResponse.md
+docs/ImportApi.md
+docs/ImportExtractionMethod.md
+docs/ImportRawRecipe.md
+docs/ImportRecipeRequest.md
+docs/ImportRecipeResponse.md
 docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
@@ -48,6 +53,7 @@ git_push.sh
 src/apis/auth_api.rs
 src/apis/configuration.rs
 src/apis/enrich_api.rs
+src/apis/import_api.rs
 src/apis/mod.rs
 src/apis/photos_api.rs
 src/apis/recipes_api.rs
@@ -64,6 +70,10 @@ src/models/create_tag_request.rs
 src/models/create_tag_response.rs
 src/models/direction.rs
 src/models/error_response.rs
+src/models/import_extraction_method.rs
+src/models/import_raw_recipe.rs
+src/models/import_recipe_request.rs
+src/models/import_recipe_response.rs
 src/models/ingredient.rs
 src/models/list_recipes_response.rs
 src/models/login_request.rs

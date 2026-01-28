@@ -58,11 +58,11 @@ export interface ScrapeJobResponse {
      */
     status: string;
     /**
-     * URL being scraped
+     * URL being scraped (optional for imports)
      * @type {string}
      * @memberof ScrapeJobResponse
      */
-    url: string;
+    url?: string | null;
 }
 /**
  * Check if a given object implements the ScrapeJobResponse interface.

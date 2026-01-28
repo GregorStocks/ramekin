@@ -3,6 +3,7 @@ ramekin_client/__init__.py
 ramekin_client/api/__init__.py
 ramekin_client/api/auth_api.py
 ramekin_client/api/enrich_api.py
+ramekin_client/api/import_api.py
 ramekin_client/api/photos_api.py
 ramekin_client/api/recipes_api.py
 ramekin_client/api/scrape_api.py
@@ -22,6 +23,11 @@ ramekin_client/docs/CreateTagResponse.md
 ramekin_client/docs/Direction.md
 ramekin_client/docs/EnrichApi.md
 ramekin_client/docs/ErrorResponse.md
+ramekin_client/docs/ImportApi.md
+ramekin_client/docs/ImportExtractionMethod.md
+ramekin_client/docs/ImportRawRecipe.md
+ramekin_client/docs/ImportRecipeRequest.md
+ramekin_client/docs/ImportRecipeResponse.md
 ramekin_client/docs/Ingredient.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
@@ -63,6 +69,10 @@ ramekin_client/models/create_tag_request.py
 ramekin_client/models/create_tag_response.py
 ramekin_client/models/direction.py
 ramekin_client/models/error_response.py
+ramekin_client/models/import_extraction_method.py
+ramekin_client/models/import_raw_recipe.py
+ramekin_client/models/import_recipe_request.py
+ramekin_client/models/import_recipe_response.py
 ramekin_client/models/ingredient.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
@@ -101,6 +111,11 @@ ramekin_client/test/test_create_tag_response.py
 ramekin_client/test/test_direction.py
 ramekin_client/test/test_enrich_api.py
 ramekin_client/test/test_error_response.py
+ramekin_client/test/test_import_api.py
+ramekin_client/test/test_import_extraction_method.py
+ramekin_client/test/test_import_raw_recipe.py
+ramekin_client/test/test_import_recipe_request.py
+ramekin_client/test/test_import_recipe_response.py
 ramekin_client/test/test_ingredient.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py

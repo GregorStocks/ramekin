@@ -4,8 +4,22 @@ extends: compose/base.yaml
 log_location: ./logs/test-ui.log
 
 processes:
+  mock-openrouter:
+    command: python3 tests/mock_openrouter.py ${MOCK_OPENROUTER_PORT}
+    readiness_probe:
+      http_get:
+        host: localhost
+        port: ${MOCK_OPENROUTER_PORT}
+        path: /
+
   server:
     working_dir: ./server
+    environment:
+      - OPENROUTER_API_KEY=test-api-key
+      - RAMEKIN_AI_BASE_URL=http://localhost:${MOCK_OPENROUTER_PORT}/v1
+    depends_on:
+      mock-openrouter:
+        condition: process_healthy
 
   ui:
     command: npm run dev -- --port ${UI_PORT}

@@ -163,7 +163,7 @@ pub struct NewRecipeVersion<'a> {
 pub struct ScrapeJob {
     pub id: Uuid,
     pub user_id: Uuid,
-    pub url: String,
+    pub url: Option<String>,
     pub status: String,
     pub failed_at_step: Option<String>,
     pub recipe_id: Option<Uuid>,
@@ -178,7 +178,7 @@ pub struct ScrapeJob {
 #[diesel(table_name = crate::schema::scrape_jobs)]
 pub struct NewScrapeJob<'a> {
     pub user_id: Uuid,
-    pub url: &'a str,
+    pub url: Option<&'a str>,
 }
 
 // Step output for pipeline step results (append-only log)

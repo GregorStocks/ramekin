@@ -34,7 +34,7 @@ class ScrapeJobResponse(BaseModel):
     recipe_id: Optional[UUID] = Field(default=None, description="Recipe ID if completed successfully")
     retry_count: StrictInt = Field(description="Number of retry attempts")
     status: StrictStr = Field(description="Current job status (pending, scraping, parsing, completed, failed)")
-    url: StrictStr = Field(description="URL being scraped")
+    url: Optional[StrictStr] = Field(default=None, description="URL being scraped (optional for imports)")
     __properties: ClassVar[List[str]] = ["can_retry", "error", "failed_at_step", "id", "recipe_id", "retry_count", "status", "url"]
 
     model_config = ConfigDict(
@@ -90,6 +90,11 @@ class ScrapeJobResponse(BaseModel):
         # and model_fields_set contains the field
         if self.recipe_id is None and "recipe_id" in self.model_fields_set:
             _dict['recipe_id'] = None
+
+        # set to None if url (nullable) is None
+        # and model_fields_set contains the field
+        if self.url is None and "url" in self.model_fields_set:
+            _dict['url'] = None
 
         return _dict
 

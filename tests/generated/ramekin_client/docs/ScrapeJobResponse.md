@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **recipe_id** | **UUID** | Recipe ID if completed successfully | [optional] 
 **retry_count** | **int** | Number of retry attempts | 
 **status** | **str** | Current job status (pending, scraping, parsing, completed, failed) | 
-**url** | **str** | URL being scraped | 
+**url** | **str** | URL being scraped (optional for imports) | [optional] 
 
 ## Example
 

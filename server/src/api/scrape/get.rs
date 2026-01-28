@@ -19,8 +19,9 @@ pub struct ScrapeJobResponse {
     pub id: Uuid,
     /// Current job status (pending, scraping, parsing, completed, failed)
     pub status: String,
-    /// URL being scraped
-    pub url: String,
+    /// URL being scraped (optional for imports)
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub url: Option<String>,
     /// Recipe ID if completed successfully
     #[serde(skip_serializing_if = "Option::is_none")]
     pub recipe_id: Option<Uuid>,

@@ -29,6 +29,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**enrich_recipe**](docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+*ImportApi* | [**import_recipe**](docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *PhotosApi* | [**get_photo**](docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -64,6 +65,10 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](docs/CreateTagResponse.md)
  - [Direction](docs/Direction.md)
  - [ErrorResponse](docs/ErrorResponse.md)
+ - [ImportExtractionMethod](docs/ImportExtractionMethod.md)
+ - [ImportRawRecipe](docs/ImportRawRecipe.md)
+ - [ImportRecipeRequest](docs/ImportRecipeRequest.md)
+ - [ImportRecipeResponse](docs/ImportRecipeResponse.md)
  - [Ingredient](docs/Ingredient.md)
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
