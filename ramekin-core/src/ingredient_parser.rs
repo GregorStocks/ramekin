@@ -221,13 +221,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // Step 1: Extract any parenthetical alternative measurements
     // e.g., "1 stick (113g) butter" -> extract "(113g)"
+    // Also handles multiple measurements like "(8 ounces; 227 g each)"
     let mut alt_measurements = Vec::new();
     while let Some(start) = remaining.find('(') {
         if let Some(end) = remaining[start..].find(')') {
             let paren_content = &remaining[start + 1..start + end];
-            // Try to parse as a measurement
-            if let Some(m) = try_parse_measurement(paren_content) {
-                alt_measurements.push(m);
+
+            // Try to parse the parenthetical content as one or more measurements
+            // Split by semicolons or commas to handle "8 ounces; 227 g each"
+            let parsed_measurements = parse_parenthetical_measurements(paren_content);
+
+            if !parsed_measurements.is_empty() {
+                alt_measurements.extend(parsed_measurements);
                 // Remove the parenthetical from remaining, preserving space
                 let before = remaining[..start].trim_end();
                 let after = remaining[start + end + 1..].trim_start();
@@ -310,6 +315,65 @@ fn try_parse_measurement(s: &str) -> Option<Measurement> {
     } else {
         None
     }
+}
+
+/// Parse parenthetical content that may contain multiple measurements.
+/// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup"
+fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
+    let mut results = Vec::new();
+
+    // Split by semicolons or commas (common separators in recipe measurements)
+    for part in content.split(|c| c == ';' || c == ',') {
+        let part = part.trim();
+        if part.is_empty() {
+            continue;
+        }
+
+        // Strip common qualifiers like "each", "total", "about", etc.
+        let cleaned = strip_measurement_qualifiers(part);
+
+        if let Some(m) = try_parse_measurement(&cleaned) {
+            // Only add if we got a meaningful measurement (has amount or recognized unit)
+            if m.amount.is_some() || m.unit.is_some() {
+                results.push(m);
+            }
+        }
+    }
+
+    results
+}
+
+/// Strip common qualifiers from measurement strings.
+/// e.g., "227 g each" -> "227 g", "about 1 cup" -> "1 cup"
+fn strip_measurement_qualifiers(s: &str) -> String {
+    let qualifiers = [
+        " each",
+        " total",
+        " about",
+        " approximately",
+        " approx",
+        " roughly",
+        " or so",
+    ];
+
+    let mut result = s.to_string();
+    for q in qualifiers {
+        if let Some(idx) = result.to_lowercase().find(q) {
+            result = result[..idx].to_string();
+        }
+    }
+
+    // Also handle qualifiers at the start
+    let start_qualifiers = ["about ", "approximately ", "approx ", "roughly ", "~"];
+    let lower = result.to_lowercase();
+    for q in start_qualifiers {
+        if lower.starts_with(q) {
+            result = result[q.len()..].to_string();
+            break;
+        }
+    }
+
+    result.trim().to_string()
 }
 
 /// Extract an amount from the beginning of a string.
@@ -525,5 +589,59 @@ mod tests {
     fn test_preserves_raw() {
         let result = parse_ingredient("2 cups flour, sifted");
         assert_eq!(result.raw, Some("2 cups flour, sifted".to_string()));
+    }
+
+    #[test]
+    fn test_medium_onions() {
+        let result = parse_ingredient("2 medium onions");
+        println!("{:#?}", result);
+        assert_eq!(result.item, "onions");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("medium".to_string()));
+    }
+
+    #[test]
+    fn test_medium_onions_with_weight() {
+        // Test ingredient with size descriptor and weight in parens
+        let result = parse_ingredient("2 medium (8 oz) onions");
+        println!("{:#?}", result);
+        assert_eq!(result.item, "onions");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("medium".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("8".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("oz".to_string()));
+    }
+
+    #[test]
+    fn test_seriouseats_onion_format() {
+        // Real input: "2 medium onions (8 ounces; 227 g each), finely chopped"
+        // The "(8 ounces; 227 g each)" contains multiple measurements separated by semicolon
+        // "8 ounces" and "227 g each" - we should parse both as alt measurements
+        // "finely chopped" is the note
+        let result = parse_ingredient("2 medium onions (8 ounces; 227 g each), finely chopped");
+        println!("{:#?}", result);
+
+        // Should have 3 measurements: primary + 2 alt
+        assert_eq!(result.measurements.len(), 3);
+
+        // Primary measurement: 2 medium
+        assert_eq!(result.measurements[0].amount, Some("2".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("medium".to_string()));
+
+        // Alt measurement 1: 8 ounces
+        assert_eq!(result.measurements[1].amount, Some("8".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("ounces".to_string()));
+
+        // Alt measurement 2: 227 g (with "each" stripped)
+        assert_eq!(result.measurements[2].amount, Some("227".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("g".to_string()));
+
+        // Item should be "onions"
+        assert_eq!(result.item, "onions");
+
+        // Note should be "finely chopped"
+        assert_eq!(result.note, Some("finely chopped".to_string()));
     }
 }
