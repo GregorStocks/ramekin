@@ -140,16 +140,21 @@ const UNITS_RAW: &[&str] = &[
 /// These are stripped during parsing but preserved in the raw field.
 /// Examples: "scant 1 teaspoon", "2 heaping tablespoons", "1 generous cup"
 const MEASUREMENT_MODIFIERS: &[&str] = &[
+    // Multi-word modifiers first (longer matches take priority)
+    "lightly packed",
+    "firmly packed",
+    "loosely packed",
+    "slightly heaped",
+    "slightly heaping",
+    // Single-word modifiers
     "scant",
     "heaping",
     "heaped",
     "rounded",
     "level",
     "generous",
+    "good",
     "packed",
-    "lightly packed",
-    "firmly packed",
-    "loosely packed",
 ];
 
 /// Common preparation notes
