@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cup (75g) almond or hazelnut flour ((see Note below))",
+  "expected": {
+    "item": "almond or hazelnut flour (see Note below)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

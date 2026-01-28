@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup bacon (crumbled)",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

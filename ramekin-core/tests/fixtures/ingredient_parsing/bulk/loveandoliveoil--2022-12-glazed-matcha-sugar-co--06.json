@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (2 sticks) unsalted butter (at cool room temperature)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "at cool room temperature"
+  }
+}

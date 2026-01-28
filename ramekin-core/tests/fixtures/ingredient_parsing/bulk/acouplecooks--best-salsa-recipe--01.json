@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds fresh tomatoes (6 medium)",
+  "expected": {
+    "item": "fresh tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "6",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "5 Tbsp (1.6 oz) flour",
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1.6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces semi-sweet chocolate (about 3/4 cup)",
+  "expected": {
+    "item": "semi-sweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

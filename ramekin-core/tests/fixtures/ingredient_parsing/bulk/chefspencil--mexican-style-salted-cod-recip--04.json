@@ -1,0 +1,13 @@
+{
+  "raw": "2 lb fresh tomatoes",
+  "expected": {
+    "item": "fresh tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

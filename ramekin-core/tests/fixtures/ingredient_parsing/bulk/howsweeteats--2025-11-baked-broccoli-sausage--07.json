@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces refrigerated fresh tortellini",
+  "expected": {
+    "item": "refrigerated fresh tortellini",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

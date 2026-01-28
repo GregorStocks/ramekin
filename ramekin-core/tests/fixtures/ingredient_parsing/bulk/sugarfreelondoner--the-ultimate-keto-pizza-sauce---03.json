@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup tomato puree (50g)",
+  "expected": {
+    "item": "tomato puree",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

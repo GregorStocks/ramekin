@@ -1,0 +1,17 @@
+{
+  "raw": "1 ½ cups lightly packed carrot greens (large stems removed)",
+  "expected": {
+    "item": "lightly packed carrot greens",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

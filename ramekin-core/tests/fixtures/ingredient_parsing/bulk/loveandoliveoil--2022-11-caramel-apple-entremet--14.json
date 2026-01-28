@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup heavy cream (at room temperature)",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (120g) confectioners&amp;#8217; sugar, sifted",
+  "expected": {
+    "item": "confectioners&#8217; sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
+  }
+}

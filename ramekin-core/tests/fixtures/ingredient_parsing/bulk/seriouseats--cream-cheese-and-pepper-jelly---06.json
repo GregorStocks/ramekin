@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup pepper jelly (5 1/2 ounces; 155 g)",
+  "expected": {
+    "item": "pepper jelly",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "5 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "155",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

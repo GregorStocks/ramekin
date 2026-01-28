@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon hot honey. (plus more for drizzling)",
+  "expected": {
+    "item": "hot honey.",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus more for drizzling"
+  }
+}

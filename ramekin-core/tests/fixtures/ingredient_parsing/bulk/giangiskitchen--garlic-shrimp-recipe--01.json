@@ -1,0 +1,13 @@
+{
+  "raw": "24  large shrimp (peeled and tail left intact, deveined)",
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and tail left intact, deveined"
+  }
+}

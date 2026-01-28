@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup fresh herbs (parsley, cilantro, dill, basil, chives, etc)",
+  "expected": {
+    "item": "fresh herbs (parsley, cilantro, dill, basil, chives, etc)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup unsweetened almond milk",
+  "expected": {
+    "item": "unsweetened almond milk",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

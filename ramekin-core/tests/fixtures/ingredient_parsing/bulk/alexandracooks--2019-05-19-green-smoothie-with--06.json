@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 4 ounces spinach (I use 4 ounces)",
+  "expected": {
+    "item": "spinach (I use 4 ounces)",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

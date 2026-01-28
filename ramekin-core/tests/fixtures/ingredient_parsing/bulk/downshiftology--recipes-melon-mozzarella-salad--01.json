@@ -1,0 +1,13 @@
+{
+  "raw": "1  cantaloupe melon",
+  "expected": {
+    "item": "cantaloupe melon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

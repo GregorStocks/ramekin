@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tablespoons soy sauce (more to taste)",
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "more to taste"
+  }
+}

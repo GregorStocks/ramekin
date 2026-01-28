@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cup + 1/3 cup panko breadcrumbs, (divided)",
+  "expected": {
+    "item": "+ 1/3 cup panko breadcrumbs,",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 slice artisan bread or Homemade Bread",
+  "expected": {
+    "item": "artisan bread or Homemade Bread",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2/3 cup  cream cheese (or mascarpone, 150g)",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

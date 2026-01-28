@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup schmaltz, plus more as needed",
+  "expected": {
+    "item": "schmaltz",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
+  }
+}

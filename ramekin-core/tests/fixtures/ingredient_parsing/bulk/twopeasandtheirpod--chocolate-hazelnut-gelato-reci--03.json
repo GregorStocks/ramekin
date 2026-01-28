@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 500 ml heavy cream",
+  "expected": {
+    "item": "500 ml heavy cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

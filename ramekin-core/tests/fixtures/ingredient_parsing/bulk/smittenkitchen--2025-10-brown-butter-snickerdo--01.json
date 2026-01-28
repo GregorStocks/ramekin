@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup (8 ounces or 225 grams) unsalted butter (see Note)",
+  "expected": {
+    "item": "unsalted butter (see Note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

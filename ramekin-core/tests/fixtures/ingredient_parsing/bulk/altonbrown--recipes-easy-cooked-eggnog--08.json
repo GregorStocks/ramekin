@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 fluid ounces (3 tablespoons) fino dry sherry",
+  "expected": {
+    "item": "fino dry sherry",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "fluid ounces"
+      },
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

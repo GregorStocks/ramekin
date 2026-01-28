@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (170g) chopped walnuts ((optional, I don't add these))",
+  "expected": {
+    "item": "chopped walnuts",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "optional, I don't add these"
+  }
+}

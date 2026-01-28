@@ -1,0 +1,21 @@
+{
+  "raw": "1 medium red onion (8 ounces; 227 g), finely chopped",
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup sugar (optional but recommended)",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional but recommended"
+  }
+}

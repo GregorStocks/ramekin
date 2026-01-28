@@ -1,0 +1,17 @@
+{
+  "raw": "3 ounces milk chocolate chips (about 1/2 cup)",
+  "expected": {
+    "item": "milk chocolate chips",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

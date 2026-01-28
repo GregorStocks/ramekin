@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (115g/4oz) unsalted butter (cubed, at room temperature)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "115",
+        "unit": null
+      }
+    ],
+    "note": "cubed, at room temperature"
+  }
+}

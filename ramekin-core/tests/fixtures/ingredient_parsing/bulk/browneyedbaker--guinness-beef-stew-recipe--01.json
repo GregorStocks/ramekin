@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 to 4 pound boneless beef chuck-eye roast, pulled apart at seams, trimmed and cut into 1&amp;amp;frac12-inch pieces",
+  "expected": {
+    "item": "boneless beef chuck-eye roast, pulled apart at seams",
+    "measurements": [
+      {
+        "amount": "3.5 to 4",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed and cut into 1&amp;frac12-inch pieces"
+  }
+}

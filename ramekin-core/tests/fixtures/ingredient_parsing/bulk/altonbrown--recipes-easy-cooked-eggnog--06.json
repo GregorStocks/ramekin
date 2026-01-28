@@ -1,0 +1,17 @@
+{
+  "raw": "3 fluid ounces (6 tablespoons) bourbon",
+  "expected": {
+    "item": "bourbon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "fluid ounces"
+      },
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

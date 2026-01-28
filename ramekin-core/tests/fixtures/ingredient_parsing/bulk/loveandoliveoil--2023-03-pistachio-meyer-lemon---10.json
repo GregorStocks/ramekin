@@ -1,0 +1,13 @@
+{
+  "raw": "1 3/4 oz pistachio flour or almond flour",
+  "expected": {
+    "item": "pistachio flour or almond flour",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

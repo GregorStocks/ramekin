@@ -1,0 +1,13 @@
+{
+  "raw": "5  large eggs (at room temperature)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "large"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

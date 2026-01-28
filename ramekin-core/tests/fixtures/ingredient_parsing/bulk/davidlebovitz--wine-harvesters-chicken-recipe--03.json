@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons olive oil (plus a tablespoon or more for frying the bacon)",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus a tablespoon or more for frying the bacon"
+  }
+}

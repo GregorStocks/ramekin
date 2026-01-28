@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces tamarind concentrate",
+  "expected": {
+    "item": "tamarind concentrate",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

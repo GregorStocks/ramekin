@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon blackstrap molasses",
+  "expected": {
+    "item": "blackstrap molasses",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

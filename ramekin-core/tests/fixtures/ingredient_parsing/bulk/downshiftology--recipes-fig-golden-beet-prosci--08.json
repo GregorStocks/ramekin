@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp shallot (finely diced )",
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

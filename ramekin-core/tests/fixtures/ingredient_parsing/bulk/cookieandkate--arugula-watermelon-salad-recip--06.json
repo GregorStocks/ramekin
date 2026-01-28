@@ -1,0 +1,17 @@
+{
+  "raw": "1 small shallot, chopped (about 2 tablespoons)",
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "chopped"
+  }
+}

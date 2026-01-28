@@ -1,0 +1,13 @@
+{
+  "raw": "2 large carrots, sliced into ribbons with a vegetable peeler",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "sliced into ribbons with a vegetable peeler"
+  }
+}

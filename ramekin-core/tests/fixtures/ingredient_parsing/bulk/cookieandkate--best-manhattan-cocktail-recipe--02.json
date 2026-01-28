@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces rye or bourbon (I like Bulleit Rye)",
+  "expected": {
+    "item": "rye or bourbon (I like Bulleit Rye)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

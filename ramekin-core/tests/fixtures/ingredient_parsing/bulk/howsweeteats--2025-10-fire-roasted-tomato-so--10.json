@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup cooking sherry",
+  "expected": {
+    "item": "cooking sherry",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

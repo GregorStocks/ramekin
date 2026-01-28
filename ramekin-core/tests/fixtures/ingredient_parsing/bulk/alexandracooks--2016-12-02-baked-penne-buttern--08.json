@@ -1,0 +1,13 @@
+{
+  "raw": "4&nbsp;ounces&nbsp;fresh mozzarella or fontina, cubed",
+  "expected": {
+    "item": "fresh mozzarella or fontina",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cubed"
+  }
+}

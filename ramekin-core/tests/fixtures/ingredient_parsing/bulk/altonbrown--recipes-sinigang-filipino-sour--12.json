@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces daikon radish, peeled and thinly sliced",
+  "expected": {
+    "item": "daikon radish",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "peeled and thinly sliced"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 1/2 cups (590ml) whole milk, (warmed**)",
+  "expected": {
+    "item": "whole milk, (warmed**)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "590",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

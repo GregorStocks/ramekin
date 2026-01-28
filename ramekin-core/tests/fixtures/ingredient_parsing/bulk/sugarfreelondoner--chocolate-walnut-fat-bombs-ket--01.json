@@ -1,0 +1,17 @@
+{
+  "raw": "3.5 oz dark chocolate (100g, minimum 85% cocoa solids (I used 90%))",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

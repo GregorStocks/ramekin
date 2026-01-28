@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup (240ml) lemon juice (about 4 lemons)",
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

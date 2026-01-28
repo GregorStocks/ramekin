@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons dry instant mashed potatoes",
+  "expected": {
+    "item": "dry instant mashed potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

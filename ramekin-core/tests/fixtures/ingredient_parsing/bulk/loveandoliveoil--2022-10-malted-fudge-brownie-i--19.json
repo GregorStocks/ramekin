@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons malted milk powder (optional)",
+  "expected": {
+    "item": "malted milk powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

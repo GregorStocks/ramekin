@@ -1,0 +1,17 @@
+{
+  "raw": "12 ounces sliced Andouille sausage (½-inch pieces)",
+  "expected": {
+    "item": "sliced Andouille sausage",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

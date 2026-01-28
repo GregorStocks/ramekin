@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons honey (optional, but adds extra sweetness if needed)",
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "optional, but adds extra sweetness if needed"
+  }
+}

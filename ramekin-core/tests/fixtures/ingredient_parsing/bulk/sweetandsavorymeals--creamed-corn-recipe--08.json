@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon fresh or dried rosemary (optional)",
+  "expected": {
+    "item": "fresh or dried rosemary",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

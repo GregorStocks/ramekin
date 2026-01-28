@@ -1,0 +1,13 @@
+{
+  "raw": "1 whole Thai bird chili, finely minced",
+  "expected": {
+    "item": "whole Thai bird chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely minced"
+  }
+}

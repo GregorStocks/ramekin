@@ -1,0 +1,13 @@
+{
+  "raw": "1 can full-fat coconut milk (refrigerated overnight)",
+  "expected": {
+    "item": "full-fat coconut milk (refrigerated overnight)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

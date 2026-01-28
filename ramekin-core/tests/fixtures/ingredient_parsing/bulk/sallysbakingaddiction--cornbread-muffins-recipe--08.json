@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (50g) packed light or dark brown sugar",
+  "expected": {
+    "item": "packed light or dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

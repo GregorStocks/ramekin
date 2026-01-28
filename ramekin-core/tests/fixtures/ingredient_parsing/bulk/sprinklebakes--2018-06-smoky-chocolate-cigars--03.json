@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups 540g semisweet chocolate, chopped (or semisweet chips)",
+  "expected": {
+    "item": "540g semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped (or semisweet chips)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons crumbled feta cheese, optional",
+  "expected": {
+    "item": "crumbled feta cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

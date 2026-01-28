@@ -1,0 +1,17 @@
+{
+  "raw": "1 tsp flaked sea salt (6g)",
+  "expected": {
+    "item": "flaked sea salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "6",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

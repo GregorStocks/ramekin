@@ -1,0 +1,21 @@
+{
+  "raw": "2 (15-ounce; 425 g each) cans black-eyed peas, drained and rinsed&nbsp;&nbsp;",
+  "expected": {
+    "item": "black-eyed peas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      },
+      {
+        "amount": "425",
+        "unit": "g each"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

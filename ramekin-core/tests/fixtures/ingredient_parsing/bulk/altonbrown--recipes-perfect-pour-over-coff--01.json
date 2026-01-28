@@ -1,0 +1,13 @@
+{
+  "raw": "17 fluid ounces filtered water",
+  "expected": {
+    "item": "filtered water",
+    "measurements": [
+      {
+        "amount": "17",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

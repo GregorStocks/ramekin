@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 lbs carrots, peeled and cut into 1/2-inch chunks",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch chunks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups broth (I prefer chicken broth but any broth works.)",
+  "expected": {
+    "item": "broth (I prefer chicken broth but any broth works.)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

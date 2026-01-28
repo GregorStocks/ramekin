@@ -1,0 +1,13 @@
+{
+  "raw": "10 g gelatin sheets",
+  "expected": {
+    "item": "gelatin sheets",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

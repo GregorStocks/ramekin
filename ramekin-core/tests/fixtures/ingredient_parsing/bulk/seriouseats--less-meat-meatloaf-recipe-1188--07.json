@@ -1,0 +1,21 @@
+{
+  "raw": "2 stalks celery (50 g total), roughly chopped (about 1/2 cup)",
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalks"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

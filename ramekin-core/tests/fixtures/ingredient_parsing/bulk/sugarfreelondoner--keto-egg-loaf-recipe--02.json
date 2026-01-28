@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz / 170g cream cheese",
+  "expected": {
+    "item": "/ 170g cream cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

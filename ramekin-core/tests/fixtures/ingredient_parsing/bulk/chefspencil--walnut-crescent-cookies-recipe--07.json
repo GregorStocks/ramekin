@@ -1,0 +1,13 @@
+{
+  "raw": "200-220 g flour",
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "200-220",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

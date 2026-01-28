@@ -1,0 +1,13 @@
+{
+  "raw": "2 quarts water, filtered or good-tasting tap",
+  "expected": {
+    "item": "water, filtered or good-tasting tap",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quarts"
+      }
+    ],
+    "note": null
+  }
+}

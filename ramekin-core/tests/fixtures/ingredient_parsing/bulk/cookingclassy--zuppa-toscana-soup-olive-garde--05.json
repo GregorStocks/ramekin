@@ -1,0 +1,17 @@
+{
+  "raw": "3 (14.5 oz) cans low-sodium chicken broth",
+  "expected": {
+    "item": "low-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cans"
+      },
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

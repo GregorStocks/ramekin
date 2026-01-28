@@ -1,0 +1,8 @@
+{
+  "raw": "Totally optional: &amp;frac12; cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins, chopped dried fruit&amp;#8230;",
+  "expected": {
+    "item": "Totally optional: 1/2 cup mix-ins like chopped walnuts or pecans, chocolate chips, raisins",
+    "measurements": [],
+    "note": "chopped dried fruit&#8230;"
+  }
+}

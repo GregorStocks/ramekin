@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups strawberries, halved",
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "halved"
+  }
+}

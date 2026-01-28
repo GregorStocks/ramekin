@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 c. sour cream",
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

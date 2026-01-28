@@ -1,0 +1,13 @@
+{
+  "raw": "7 oz. 200g chestnut puree",
+  "expected": {
+    "item": "200g chestnut puree",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon cayenne",
+  "expected": {
+    "item": "cayenne",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

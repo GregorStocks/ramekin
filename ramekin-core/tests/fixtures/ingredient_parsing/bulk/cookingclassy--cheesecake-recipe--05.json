@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/4 cups (250g) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

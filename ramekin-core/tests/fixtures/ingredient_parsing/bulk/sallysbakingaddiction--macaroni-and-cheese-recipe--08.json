@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (240ml) half-and-half (or more whole milk)",
+  "expected": {
+    "item": "half-and-half",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      }
+    ],
+    "note": "or more whole milk"
+  }
+}

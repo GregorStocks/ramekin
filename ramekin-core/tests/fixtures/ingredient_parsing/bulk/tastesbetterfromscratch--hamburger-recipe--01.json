@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ pounds ground chuck* (, (80/20))",
+  "expected": {
+    "item": "ground chuck* (, (80/20)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

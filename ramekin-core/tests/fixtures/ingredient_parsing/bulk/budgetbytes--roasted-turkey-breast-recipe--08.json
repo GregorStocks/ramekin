@@ -1,0 +1,13 @@
+{
+  "raw": "5.5 lb. bone-in turkey breast (skin on)** ($19.25)",
+  "expected": {
+    "item": "bone-in turkey breast (skin on)** ($19.25)",
+    "measurements": [
+      {
+        "amount": "5.5",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

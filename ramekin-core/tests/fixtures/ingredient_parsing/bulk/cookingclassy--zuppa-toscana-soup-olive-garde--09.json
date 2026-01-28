@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tsp fennel seeds, (crushed (optional))",
+  "expected": {
+    "item": "fennel seeds,",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "crushed (optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp Cane sugar",
+  "expected": {
+    "item": "Cane sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

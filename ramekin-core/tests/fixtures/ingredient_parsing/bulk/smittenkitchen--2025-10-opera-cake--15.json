@@ -1,0 +1,17 @@
+{
+  "raw": "10 tablespoons (150 ml) hot espresso",
+  "expected": {
+    "item": "hot espresso",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

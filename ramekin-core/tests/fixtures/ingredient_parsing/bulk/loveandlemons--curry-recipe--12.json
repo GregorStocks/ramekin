@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups cauliflower florets",
+  "expected": {
+    "item": "cauliflower florets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 tablespoons sriracha or chili-garlic sauce, to taste",
+  "expected": {
+    "item": "sriracha or chili-garlic sauce",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "to taste"
+  }
+}

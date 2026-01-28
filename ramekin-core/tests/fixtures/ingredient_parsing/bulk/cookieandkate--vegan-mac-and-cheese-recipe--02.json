@@ -1,0 +1,17 @@
+{
+  "raw": "1 head of broccoli, florets cut into small bites (about 1 &amp;frac12; to 2 cups), optional*",
+  "expected": {
+    "item": "of broccoli, florets cut into small bites",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": "optional*"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces shiitake mushrooms",
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

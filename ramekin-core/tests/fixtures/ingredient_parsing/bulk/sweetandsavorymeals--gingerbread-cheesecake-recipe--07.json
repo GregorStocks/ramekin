@@ -1,0 +1,13 @@
+{
+  "raw": "32 ounces full fat cream cheese (4 packages at room temperature)",
+  "expected": {
+    "item": "full fat cream cheese",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": "4 packages at room temperature"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (280g/10 ounces) fresh or frozen cranberries",
+  "expected": {
+    "item": "fresh or frozen cranberries",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "280",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon hemp seeds, optional",
+  "expected": {
+    "item": "hemp seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

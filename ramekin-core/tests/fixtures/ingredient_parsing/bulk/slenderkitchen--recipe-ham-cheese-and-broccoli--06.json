@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups cooked broccoli, diced",
+  "expected": {
+    "item": "cooked broccoli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "diced"
+  }
+}

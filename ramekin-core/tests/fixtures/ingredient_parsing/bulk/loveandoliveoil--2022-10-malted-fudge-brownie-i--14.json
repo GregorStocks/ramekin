@@ -1,0 +1,17 @@
+{
+  "raw": "2 oz milk chocolate (25-35%) (finely chopped)",
+  "expected": {
+    "item": "milk chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "25",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

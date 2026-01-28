@@ -1,0 +1,17 @@
+{
+  "raw": "1  avocado ((200g))",
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

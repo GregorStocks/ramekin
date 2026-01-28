@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounce bag of fresh spinach",
+  "expected": {
+    "item": "bag of fresh spinach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  16 oz. Sara Lee frozen all-butter pound cake, thawed",
+  "expected": {
+    "item": "16 oz. Sara Lee frozen all-butter pound cake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
+  }
+}

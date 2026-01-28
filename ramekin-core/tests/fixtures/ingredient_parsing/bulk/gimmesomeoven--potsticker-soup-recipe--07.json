@@ -1,0 +1,13 @@
+{
+  "raw": "16 to 20 ounces frozen potstickers",
+  "expected": {
+    "item": "frozen potstickers",
+    "measurements": [
+      {
+        "amount": "16 to 20",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

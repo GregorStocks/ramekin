@@ -1,0 +1,13 @@
+{
+  "raw": "2 bananas, mashed",
+  "expected": {
+    "item": "bananas, mashed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

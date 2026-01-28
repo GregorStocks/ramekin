@@ -1,0 +1,13 @@
+{
+  "raw": "1  head green cabbage (choose a larger one)",
+  "expected": {
+    "item": "green cabbage (choose a larger one)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
+  }
+}

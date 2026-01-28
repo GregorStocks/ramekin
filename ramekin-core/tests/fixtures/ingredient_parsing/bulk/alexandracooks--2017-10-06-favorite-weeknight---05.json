@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 pounds greens, soaked in water to allow dirt to settle",
+  "expected": {
+    "item": "greens, soaked in water to allow dirt to settle",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

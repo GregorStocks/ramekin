@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455 grams) fresh broccoli, cut into 1-inch pieces",
+  "expected": {
+    "item": "fresh broccoli, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

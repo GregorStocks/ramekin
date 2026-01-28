@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound skirt steak",
+  "expected": {
+    "item": "skirt steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

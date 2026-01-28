@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tbsp powdered sweetener",
+  "expected": {
+    "item": "powdered sweetener",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

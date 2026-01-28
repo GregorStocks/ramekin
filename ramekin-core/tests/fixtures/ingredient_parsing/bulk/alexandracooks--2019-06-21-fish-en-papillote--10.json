@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup sliced zucchini, optional",
+  "expected": {
+    "item": "sliced zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

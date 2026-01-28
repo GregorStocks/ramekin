@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons&nbsp;oyster sauce&nbsp;(optional)",
+  "expected": {
+    "item": "oyster sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup (16 Tbsp; 226g) unsalted butter, melted",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "16",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
+  }
+}

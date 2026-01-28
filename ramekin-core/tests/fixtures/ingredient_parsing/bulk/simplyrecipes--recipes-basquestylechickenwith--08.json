@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 pound (one thick piece) baked ham, cut into matchsticks",
+  "expected": {
+    "item": "(one thick piece) baked ham, cut into matchsticks",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

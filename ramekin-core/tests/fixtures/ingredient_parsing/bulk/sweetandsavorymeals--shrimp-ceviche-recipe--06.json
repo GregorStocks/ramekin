@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup cilantro leaves (finely chopped)",
+  "expected": {
+    "item": "cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

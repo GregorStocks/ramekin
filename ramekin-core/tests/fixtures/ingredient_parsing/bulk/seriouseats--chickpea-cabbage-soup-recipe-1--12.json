@@ -1,0 +1,21 @@
+{
+  "raw": "1 (15-ounce, 425 g) can chickpeas, rinsed and drained",
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "rinsed and drained"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (475 ml) boiling water (update: actually I just use tap, not boiled, water)",
+  "expected": {
+    "item": "boiling water (update: actually I just use tap, not boiled, water)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "475",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

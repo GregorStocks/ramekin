@@ -1,0 +1,13 @@
+{
+  "raw": "Pinch of Salt (optional)",
+  "expected": {
+    "item": "of Salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
+  }
+}

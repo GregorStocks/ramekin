@@ -1,0 +1,13 @@
+{
+  "raw": "1  medium bell pepper or 3-4 small sweet peppers (cored, seeded and thinly sliced)",
+  "expected": {
+    "item": "bell pepper or 3-4 small sweet peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "cored, seeded and thinly sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounce canned water chestnuts, drained and minced",
+  "expected": {
+    "item": "canned water chestnuts",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained and minced"
+  }
+}

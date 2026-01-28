@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (224g) dark chocolate, finely chopped*",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "224",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped*"
+  }
+}

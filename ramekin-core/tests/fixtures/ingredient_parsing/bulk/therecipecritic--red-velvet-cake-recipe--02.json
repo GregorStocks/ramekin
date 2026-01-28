@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup Dutch-processed cocoa powder",
+  "expected": {
+    "item": "Dutch-processed cocoa powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

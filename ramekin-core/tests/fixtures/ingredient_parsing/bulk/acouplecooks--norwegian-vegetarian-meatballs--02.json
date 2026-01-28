@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups frozen mixed vegetables (corn, carrots, peas and green beans)",
+  "expected": {
+    "item": "frozen mixed vegetables (corn, carrots, peas and green beans)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons milk or half and half",
+  "expected": {
+    "item": "milk or half and half",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

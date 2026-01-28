@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz baby spinach (fresh)",
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "fresh"
+  }
+}

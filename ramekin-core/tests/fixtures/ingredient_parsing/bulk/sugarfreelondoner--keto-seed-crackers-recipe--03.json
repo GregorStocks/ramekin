@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup / 72g sesame seeds",
+  "expected": {
+    "item": "/ 72g sesame seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

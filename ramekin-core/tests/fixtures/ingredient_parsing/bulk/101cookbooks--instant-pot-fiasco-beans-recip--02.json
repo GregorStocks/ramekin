@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups / 1.5 L water",
+  "expected": {
+    "item": "/ 1.5 L water",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

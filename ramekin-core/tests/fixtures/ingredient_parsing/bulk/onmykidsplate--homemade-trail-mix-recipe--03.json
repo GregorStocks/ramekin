@@ -1,0 +1,13 @@
+{
+  "raw": "¼  chocolate drops",
+  "expected": {
+    "item": "chocolate drops",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

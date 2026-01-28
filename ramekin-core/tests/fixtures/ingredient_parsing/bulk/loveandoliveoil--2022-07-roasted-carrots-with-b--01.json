@@ -1,0 +1,17 @@
+{
+  "raw": "16 oz carrots (with greens (from 1 large bunch, about 12-14 small-ish carrots))",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "12-14",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

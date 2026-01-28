@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;frac14; cup nutritional yeast&nbsp;",
+  "expected": {
+    "item": "nutritional yeast",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

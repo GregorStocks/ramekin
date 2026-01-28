@@ -1,0 +1,13 @@
+{
+  "raw": "handful of ice",
+  "expected": {
+    "item": "of ice",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
+  }
+}

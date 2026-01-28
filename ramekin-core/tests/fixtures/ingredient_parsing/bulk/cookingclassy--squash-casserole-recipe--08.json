@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp butter, (divided)",
+  "expected": {
+    "item": "butter,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
+  }
+}

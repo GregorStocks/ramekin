@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz full fat cream cheese (at room temperature)",
+  "expected": {
+    "item": "full fat cream cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

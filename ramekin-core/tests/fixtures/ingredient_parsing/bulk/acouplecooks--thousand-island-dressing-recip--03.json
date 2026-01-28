@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon minced jarred red pepper (optional)",
+  "expected": {
+    "item": "minced jarred red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

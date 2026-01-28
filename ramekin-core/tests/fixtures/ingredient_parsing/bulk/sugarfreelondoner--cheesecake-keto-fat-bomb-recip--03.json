@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp keto caramel sauce",
+  "expected": {
+    "item": "keto caramel sauce",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

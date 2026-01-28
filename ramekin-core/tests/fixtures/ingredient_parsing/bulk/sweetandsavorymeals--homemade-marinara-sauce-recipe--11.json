@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon Italian herbs",
+  "expected": {
+    "item": "Italian herbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

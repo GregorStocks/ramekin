@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup dried apricots (very finely chopped)",
+  "expected": {
+    "item": "dried apricots",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "very finely chopped"
+  }
+}

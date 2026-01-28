@@ -1,0 +1,13 @@
+{
+  "raw": "¾ cup evaporated milk",
+  "expected": {
+    "item": "evaporated milk",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

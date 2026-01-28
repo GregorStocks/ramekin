@@ -1,0 +1,13 @@
+{
+  "raw": "2 large ripe heirloom tomatoes",
+  "expected": {
+    "item": "ripe heirloom tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

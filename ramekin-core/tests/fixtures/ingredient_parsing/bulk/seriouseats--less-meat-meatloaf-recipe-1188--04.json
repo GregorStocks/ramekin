@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 ounce unflavored gelatin (14 g; about 1 1/2 tablespoons)",
+  "expected": {
+    "item": "unflavored gelatin",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

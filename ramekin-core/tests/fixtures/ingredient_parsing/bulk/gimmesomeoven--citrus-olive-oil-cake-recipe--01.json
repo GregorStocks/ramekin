@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (220 grams) almond flour&nbsp;(please see note below)",
+  "expected": {
+    "item": "almond flour (please see note below)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "220",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

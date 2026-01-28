@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cooked chickpeas, drained",
+  "expected": {
+    "item": "cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "drained"
+  }
+}

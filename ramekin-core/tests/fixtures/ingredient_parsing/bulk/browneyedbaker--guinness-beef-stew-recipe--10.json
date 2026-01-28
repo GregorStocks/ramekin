@@ -1,0 +1,13 @@
+{
+  "raw": "4½ teaspoons dark brown sugar",
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

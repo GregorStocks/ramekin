@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp molasses",
+  "expected": {
+    "item": "molasses",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

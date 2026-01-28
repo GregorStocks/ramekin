@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (10 g) chopped fresh parsley leaves",
+  "expected": {
+    "item": "chopped fresh parsley leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

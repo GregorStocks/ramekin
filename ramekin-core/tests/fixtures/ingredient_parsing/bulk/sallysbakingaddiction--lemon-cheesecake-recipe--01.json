@@ -1,0 +1,21 @@
+{
+  "raw": "1 and 3/4 cups (210g) graham cracker crumbs (about&nbsp;14 full-sheet graham crackers)",
+  "expected": {
+    "item": "and 3/4 cups graham cracker crumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "210",
+        "unit": "g"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

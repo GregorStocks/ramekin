@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup roughly sliced shallots, peeled",
+  "expected": {
+    "item": "roughly sliced shallots",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled"
+  }
+}

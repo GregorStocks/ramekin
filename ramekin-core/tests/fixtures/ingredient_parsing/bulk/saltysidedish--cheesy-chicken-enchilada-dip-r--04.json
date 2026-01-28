@@ -1,0 +1,13 @@
+{
+  "raw": "1-1/2 cups shredded cheese (divided -used Mexican 4 cheese)",
+  "expected": {
+    "item": "shredded cheese",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided -used Mexican 4 cheese"
+  }
+}

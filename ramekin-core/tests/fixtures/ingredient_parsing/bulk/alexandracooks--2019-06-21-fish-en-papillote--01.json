@@ -1,0 +1,13 @@
+{
+  "raw": "4 18&amp;#215;13-inch (approximately) pieces parchment paper",
+  "expected": {
+    "item": "18&#215;13-inch pieces parchment paper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "approximately"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 white onion",
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

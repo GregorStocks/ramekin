@@ -1,0 +1,13 @@
+{
+  "raw": "2 stalks Chinese celery with leaves, finely chopped",
+  "expected": {
+    "item": "Chinese celery with leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalks"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

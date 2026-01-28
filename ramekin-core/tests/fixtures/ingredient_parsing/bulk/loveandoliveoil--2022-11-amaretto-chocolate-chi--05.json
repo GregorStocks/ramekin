@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup packed light or dark brown sugar",
+  "expected": {
+    "item": "packed light or dark brown sugar",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

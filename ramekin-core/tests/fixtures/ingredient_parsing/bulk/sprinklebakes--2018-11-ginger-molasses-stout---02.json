@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 500ml blackstrap molasses",
+  "expected": {
+    "item": "500ml blackstrap molasses",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

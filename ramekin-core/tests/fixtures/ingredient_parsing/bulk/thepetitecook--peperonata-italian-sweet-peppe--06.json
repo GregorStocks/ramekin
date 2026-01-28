@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp white vinegar",
+  "expected": {
+    "item": "white vinegar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

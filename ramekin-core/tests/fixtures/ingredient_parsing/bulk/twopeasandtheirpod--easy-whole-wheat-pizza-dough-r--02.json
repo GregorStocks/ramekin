@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/4 teaspoons one 1/4 oz packet Active Dry Yeast",
+  "expected": {
+    "item": "one 1/4 oz packet Active Dry Yeast",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

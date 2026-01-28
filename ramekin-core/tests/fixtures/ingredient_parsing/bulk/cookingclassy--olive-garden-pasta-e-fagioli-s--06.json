@@ -1,0 +1,13 @@
+{
+  "raw": "3 cloves garlic, (minced (1 Tbsp))",
+  "expected": {
+    "item": "garlic,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cloves"
+      }
+    ],
+    "note": "minced (1 Tbsp"
+  }
+}

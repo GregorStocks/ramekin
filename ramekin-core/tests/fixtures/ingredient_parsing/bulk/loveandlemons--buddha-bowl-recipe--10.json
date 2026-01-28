@@ -1,0 +1,13 @@
+{
+  "raw": "¾ cup sauerkraut or other fermented veggie",
+  "expected": {
+    "item": "sauerkraut or other fermented veggie",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

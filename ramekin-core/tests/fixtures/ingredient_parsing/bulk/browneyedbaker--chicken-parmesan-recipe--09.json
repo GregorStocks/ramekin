@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces mozzarella cheese (sliced or shredded)",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced or shredded"
+  }
+}

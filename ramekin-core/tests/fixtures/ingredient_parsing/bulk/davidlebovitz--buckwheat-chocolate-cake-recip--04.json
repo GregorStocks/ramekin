@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (100g) unrefined or granulated sugar",
+  "expected": {
+    "item": "unrefined or granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

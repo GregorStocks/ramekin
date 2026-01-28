@@ -1,0 +1,25 @@
+{
+  "raw": "1 small carrot (2 ounces; 56 g), peeled and roughly chopped (about 1/2 cup)",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled and roughly chopped"
+  }
+}

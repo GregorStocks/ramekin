@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup pineapple salsa",
+  "expected": {
+    "item": "pineapple salsa",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

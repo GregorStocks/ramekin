@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces (170g) bittersweet or semisweet chocolate (chopped)",
+  "expected": {
+    "item": "bittersweet or semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
+  }
+}

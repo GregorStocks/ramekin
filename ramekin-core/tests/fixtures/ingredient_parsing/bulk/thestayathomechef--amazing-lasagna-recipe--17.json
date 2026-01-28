@@ -1,0 +1,13 @@
+{
+  "raw": "30 ounces ricotta cheese",
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

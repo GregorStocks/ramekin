@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon chipotle chili powder",
+  "expected": {
+    "item": "chipotle chili powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

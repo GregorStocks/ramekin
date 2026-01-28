@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. egg noodles",
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

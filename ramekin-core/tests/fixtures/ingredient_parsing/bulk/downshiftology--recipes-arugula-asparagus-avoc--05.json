@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup microgreens",
+  "expected": {
+    "item": "microgreens",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

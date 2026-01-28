@@ -1,0 +1,17 @@
+{
+  "raw": "2  medium avocados (280g flesh)",
+  "expected": {
+    "item": "avocados",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

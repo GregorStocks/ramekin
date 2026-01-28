@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup + 2 Tbsp warm water ((110 - 115 degrees))",
+  "expected": {
+    "item": "+ 2 Tbsp warm water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "2 cups (13 ounces or 370 grams) grated, packed zucchini, not wrung out, grated on the large holes of a box grater",
+  "expected": {
+    "item": "grated, packed zucchini, not wrung out",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "13",
+        "unit": "ounces"
+      },
+      {
+        "amount": "370",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated on the large holes of a box grater"
+  }
+}

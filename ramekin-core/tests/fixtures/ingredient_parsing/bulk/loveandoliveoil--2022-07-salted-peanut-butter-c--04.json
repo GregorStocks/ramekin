@@ -1,0 +1,17 @@
+{
+  "raw": "½ cup (1 stick) unsalted butter (melted and slightly cooled)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "melted and slightly cooled"
+  }
+}

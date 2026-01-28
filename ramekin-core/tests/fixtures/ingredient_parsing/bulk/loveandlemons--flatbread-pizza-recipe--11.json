@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups loose-packed spinach",
+  "expected": {
+    "item": "loose-packed spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

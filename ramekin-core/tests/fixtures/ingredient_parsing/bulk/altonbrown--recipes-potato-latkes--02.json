@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds russet potatoes, quartered",
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "quartered"
+  }
+}

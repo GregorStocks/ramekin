@@ -1,0 +1,21 @@
+{
+  "raw": "6 tablespoons (3 ounces, 85g) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

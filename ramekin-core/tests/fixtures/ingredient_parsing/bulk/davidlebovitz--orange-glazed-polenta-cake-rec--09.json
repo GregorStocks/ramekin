@@ -1,0 +1,17 @@
+{
+  "raw": "6 tablespoons (55g) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

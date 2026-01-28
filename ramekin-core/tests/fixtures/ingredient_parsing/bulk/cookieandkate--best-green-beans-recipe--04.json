@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound haricots verts or slender green beans, trimmed",
+  "expected": {
+    "item": "haricots verts or slender green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

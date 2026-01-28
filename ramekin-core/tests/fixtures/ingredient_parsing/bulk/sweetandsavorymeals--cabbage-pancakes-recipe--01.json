@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. green cabbage (shredded)",
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "shredded"
+  }
+}

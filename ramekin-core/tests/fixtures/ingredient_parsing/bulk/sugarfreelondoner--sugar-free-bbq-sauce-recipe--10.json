@@ -1,0 +1,13 @@
+{
+  "raw": "pinch  ground cloves (optional)",
+  "expected": {
+    "item": "ground cloves",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
+  }
+}

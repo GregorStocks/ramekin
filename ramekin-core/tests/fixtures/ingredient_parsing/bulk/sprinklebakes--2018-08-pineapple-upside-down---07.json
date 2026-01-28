@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 240ml whole milk",
+  "expected": {
+    "item": "240ml whole milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

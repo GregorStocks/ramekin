@@ -1,0 +1,17 @@
+{
+  "raw": "4&nbsp;cups&nbsp;1-inch cubes, butternut squash (about 1 lb. post peeling)",
+  "expected": {
+    "item": "1-inch cubes, butternut squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

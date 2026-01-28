@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;frac12; ounce honey syrup (see step 1)",
+  "expected": {
+    "item": "honey syrup (see step 1)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

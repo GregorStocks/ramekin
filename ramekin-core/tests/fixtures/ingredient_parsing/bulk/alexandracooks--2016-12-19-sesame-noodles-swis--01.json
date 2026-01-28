@@ -1,0 +1,13 @@
+{
+  "raw": "8&nbsp;ounces boneless skinless chicken breast",
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

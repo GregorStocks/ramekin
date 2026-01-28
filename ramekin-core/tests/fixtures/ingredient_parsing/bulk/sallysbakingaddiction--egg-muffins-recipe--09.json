@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (15g) finely chopped fresh spinach (or kale)",
+  "expected": {
+    "item": "finely chopped fresh spinach (or kale)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

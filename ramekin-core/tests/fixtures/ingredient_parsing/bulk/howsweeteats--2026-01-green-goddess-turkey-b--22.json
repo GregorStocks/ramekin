@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6 buns, (for serving)",
+  "expected": {
+    "item": "buns,",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
+  }
+}

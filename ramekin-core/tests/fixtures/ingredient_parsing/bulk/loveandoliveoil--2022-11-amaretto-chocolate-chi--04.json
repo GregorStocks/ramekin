@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz almond paste (crumbled)",
+  "expected": {
+    "item": "almond paste",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cooked brown rice",
+  "expected": {
+    "item": "cooked brown rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dry elbow pasta",
+  "expected": {
+    "item": "dry elbow pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

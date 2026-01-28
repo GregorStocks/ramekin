@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups 360ml heavy whipping cream",
+  "expected": {
+    "item": "360ml heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

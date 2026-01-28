@@ -1,0 +1,17 @@
+{
+  "raw": "1.1 lb ground beef (500g)",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1.1",
+        "unit": "lb"
+      },
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

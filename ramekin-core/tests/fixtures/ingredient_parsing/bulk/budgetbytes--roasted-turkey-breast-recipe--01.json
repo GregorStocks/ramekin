@@ -1,0 +1,13 @@
+{
+  "raw": "8 Tbsp butter, room temperature ($1.12)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "room temperature ($1.12)"
+  }
+}

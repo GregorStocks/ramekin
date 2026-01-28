@@ -1,0 +1,13 @@
+{
+  "raw": "2  large sweet potatoes, (peeled and chopped)",
+  "expected": {
+    "item": "sweet potatoes,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and chopped"
+  }
+}

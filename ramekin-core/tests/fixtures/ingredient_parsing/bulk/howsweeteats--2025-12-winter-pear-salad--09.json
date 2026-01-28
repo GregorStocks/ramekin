@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons freshly squeezed orange juice",
+  "expected": {
+    "item": "freshly squeezed orange juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

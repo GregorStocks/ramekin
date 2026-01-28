@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces room-temperature unsalted butter",
+  "expected": {
+    "item": "room-temperature unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  eggs (white &amp;amp; yolk, at room temperature)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "white &amp; yolk, at room temperature"
+  }
+}

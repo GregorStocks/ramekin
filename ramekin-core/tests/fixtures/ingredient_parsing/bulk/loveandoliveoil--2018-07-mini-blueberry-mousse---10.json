@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons cake flour",
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

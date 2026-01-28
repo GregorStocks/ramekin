@@ -1,0 +1,13 @@
+{
+  "raw": "1 tart green apple, cored, peeled, sliced",
+  "expected": {
+    "item": "tart green apple, cored, peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup pistachio cream spread",
+  "expected": {
+    "item": "pistachio cream spread",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

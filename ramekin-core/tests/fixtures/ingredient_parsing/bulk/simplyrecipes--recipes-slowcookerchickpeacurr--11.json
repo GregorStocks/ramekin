@@ -1,0 +1,13 @@
+{
+  "raw": "1 diced serrano, jalapeño, or fresno chili (optional)",
+  "expected": {
+    "item": "diced serrano, jalapeño, or fresno chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

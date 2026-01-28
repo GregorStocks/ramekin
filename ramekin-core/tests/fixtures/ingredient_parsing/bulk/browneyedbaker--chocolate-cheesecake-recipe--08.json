@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces bittersweet chocolate (melted and cooled to lukewarm)",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "melted and cooled to lukewarm"
+  }
+}

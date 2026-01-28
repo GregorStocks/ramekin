@@ -1,0 +1,13 @@
+{
+  "raw": "1  large pink grapefruit (cut in half)",
+  "expected": {
+    "item": "pink grapefruit (cut in half)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

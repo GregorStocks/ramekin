@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 6oz. white chocolate, chopped",
+  "expected": {
+    "item": "6oz. white chocolate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

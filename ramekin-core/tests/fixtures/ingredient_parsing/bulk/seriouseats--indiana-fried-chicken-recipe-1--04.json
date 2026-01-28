@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups (2 pounds) pure, non-hydrogenated lard",
+  "expected": {
+    "item": "pure, non-hydrogenated lard",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

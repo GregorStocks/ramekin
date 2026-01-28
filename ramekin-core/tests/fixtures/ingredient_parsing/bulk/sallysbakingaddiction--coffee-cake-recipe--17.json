@@ -1,0 +1,17 @@
+{
+  "raw": "2 Tablespoons (30ml) heavy cream or milk",
+  "expected": {
+    "item": "heavy cream or milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

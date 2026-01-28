@@ -1,0 +1,13 @@
+{
+  "raw": "1½ pounds chicken breasts (3 to 4 breasts, thin sliced)",
+  "expected": {
+    "item": "chicken breasts",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "3 to 4 breasts, thin sliced"
+  }
+}

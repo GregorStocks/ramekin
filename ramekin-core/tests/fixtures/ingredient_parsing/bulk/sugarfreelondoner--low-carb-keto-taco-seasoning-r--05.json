@@ -1,0 +1,17 @@
+{
+  "raw": "1 tsp garlic powder (3g)",
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      },
+      {
+        "amount": "3",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

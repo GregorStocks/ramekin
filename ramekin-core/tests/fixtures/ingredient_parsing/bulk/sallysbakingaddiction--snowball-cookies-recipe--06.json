@@ -1,0 +1,13 @@
+{
+  "raw": "optional: 3/4 cup (100g) finely chopped and toasted pecans*",
+  "expected": {
+    "item": "optional: 3/4 cup finely chopped and toasted pecans*",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

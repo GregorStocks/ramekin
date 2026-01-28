@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 ounces / 40 g flat-leaf parsley, loosely chopped",
+  "expected": {
+    "item": "/ 40 g flat-leaf parsley",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "loosely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz farfalle pasta",
+  "expected": {
+    "item": "farfalle pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  of a medium-large cabbage",
+  "expected": {
+    "item": "of a medium-large cabbage",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces tuna, (packed in water or oil and drained)",
+  "expected": {
+    "item": "tuna,",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "packed in water or oil and drained"
+  }
+}
