@@ -12,17 +12,25 @@ generate_client() {
     local generator=$1
     local output=$2
     local extra_props=$3
+    local final_path="$PROJECT_ROOT/$output"
+    local temp_path="$PROJECT_ROOT/$output.generating"
 
     echo "Generating $generator client -> $output"
 
-    rm -rf "${PROJECT_ROOT:?}/${output:?}"
+    # Clean up any leftover temp dir from previous failed run
+    rm -rf "${temp_path:?}"
 
+    # Generate to temp directory
     npx --yes @openapitools/openapi-generator-cli@2.27.0 generate \
         -i "$SPEC_FILE" \
         -g "$generator" \
-        -o "$PROJECT_ROOT/$output" \
+        -o "$temp_path" \
         --additional-properties="$extra_props" \
         2>&1 | grep -v "^\[main\] INFO" || true
+
+    # Atomic swap: remove old, move new into place
+    rm -rf "${final_path:?}"
+    mv "$temp_path" "$final_path"
 }
 
 main() {
