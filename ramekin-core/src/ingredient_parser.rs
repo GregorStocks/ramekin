@@ -342,10 +342,18 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 }
 
 /// Try to parse a string as a measurement (amount + optional unit).
+/// Preserves "each" qualifier as part of the unit (e.g., "8 ounces each" -> unit: "ounces each")
 fn try_parse_measurement(s: &str) -> Option<Measurement> {
     let s = s.trim();
     let (amount, after_amount) = extract_amount(s);
-    let (unit, _) = extract_unit(&after_amount);
+    let (unit, remaining) = extract_unit(&after_amount);
+
+    // Check if remaining is "each" - if so, append it to the unit
+    // This preserves important semantic info like "8 ounces each" vs "8 ounces total"
+    let unit = match (unit, remaining.trim().to_lowercase().as_str()) {
+        (Some(u), "each") => Some(format!("{} each", u)),
+        (u, _) => u,
+    };
 
     if amount.is_some() || unit.is_some() {
         Some(Measurement { amount, unit })
@@ -358,6 +366,13 @@ fn try_parse_measurement(s: &str) -> Option<Measurement> {
 /// Handles formats like "8 ounces; 227 g each" or "113g, 1/2 cup" or "8 ounces or 225 grams"
 fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
     let mut results = Vec::new();
+
+    // Check if the content ends with "each" - this applies to ALL measurements
+    // e.g., "8 ounces; 227 g each" means both are per-item
+    let content_lower = content.to_lowercase();
+    let has_trailing_each = content_lower.trim().ends_with(" each")
+        || content_lower.trim().ends_with(";each")
+        || content_lower.trim().ends_with(",each");
 
     // First, normalize " or " to ";" for splitting (but not "or" within words)
     let normalized = content
@@ -372,12 +387,21 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
             continue;
         }
 
-        // Strip common qualifiers like "each", "total", "about", etc.
+        // Strip common qualifiers (but not "each" - handled separately)
         let cleaned = strip_measurement_qualifiers(part);
 
-        if let Some(m) = try_parse_measurement(&cleaned) {
+        if let Some(mut m) = try_parse_measurement(&cleaned) {
             // Only add if we got a meaningful measurement (has amount or recognized unit)
             if m.amount.is_some() || m.unit.is_some() {
+                // If the entire parenthetical had trailing "each", apply it to all measurements
+                // unless this measurement already has "each"
+                if has_trailing_each {
+                    if let Some(ref unit) = m.unit {
+                        if !unit.ends_with(" each") {
+                            m.unit = Some(format!("{} each", unit));
+                        }
+                    }
+                }
                 results.push(m);
             }
         }
@@ -386,11 +410,11 @@ fn parse_parenthetical_measurements(content: &str) -> Vec<Measurement> {
     results
 }
 
-/// Strip common qualifiers from measurement strings.
-/// e.g., "227 g each" -> "227 g", "about 1 cup" -> "1 cup"
+/// Strip common qualifiers from measurement strings, but preserve "each" as a unit suffix.
+/// e.g., "about 1 cup" -> "1 cup", "227 g each" -> "227 g each" (preserved)
 fn strip_measurement_qualifiers(s: &str) -> String {
-    let qualifiers = [
-        " each",
+    // Qualifiers to remove completely (they don't change the meaning)
+    let remove_qualifiers = [
         " total",
         " about",
         " approximately",
@@ -400,7 +424,7 @@ fn strip_measurement_qualifiers(s: &str) -> String {
     ];
 
     let mut result = s.to_string();
-    for q in qualifiers {
+    for q in remove_qualifiers {
         if let Some(idx) = result.to_lowercase().find(q) {
             result = result[..idx].to_string();
         }
@@ -660,9 +684,8 @@ mod tests {
     #[test]
     fn test_seriouseats_onion_format() {
         // Real input: "2 medium onions (8 ounces; 227 g each), finely chopped"
-        // The "(8 ounces; 227 g each)" contains multiple measurements separated by semicolon
-        // "8 ounces" and "227 g each" - we should parse both as alt measurements
-        // "finely chopped" is the note
+        // The "(8 ounces; 227 g each)" means BOTH measurements are per-onion
+        // The trailing "each" applies to all measurements in the parenthetical
         let result = parse_ingredient("2 medium onions (8 ounces; 227 g each), finely chopped");
         println!("{:#?}", result);
 
@@ -673,13 +696,13 @@ mod tests {
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
         assert_eq!(result.measurements[0].unit, Some("medium".to_string()));
 
-        // Alt measurement 1: 8 ounces
+        // Alt measurement 1: 8 ounces each (trailing "each" applies to all)
         assert_eq!(result.measurements[1].amount, Some("8".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("ounces".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("ounces each".to_string()));
 
-        // Alt measurement 2: 227 g (with "each" stripped)
+        // Alt measurement 2: 227 g each
         assert_eq!(result.measurements[2].amount, Some("227".to_string()));
-        assert_eq!(result.measurements[2].unit, Some("g".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("g each".to_string()));
 
         // Item should be "onions"
         assert_eq!(result.item, "onions");
