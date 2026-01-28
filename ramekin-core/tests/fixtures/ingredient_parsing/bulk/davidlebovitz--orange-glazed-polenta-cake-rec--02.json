@@ -1,8 +1,12 @@
 {
   "raw": "scant 1 cup (180g) sugar",
   "expected": {
-    "item": "scant 1 cup sugar",
+    "item": "sugar",
     "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant cup"
+      },
       {
         "amount": "180",
         "unit": "g"

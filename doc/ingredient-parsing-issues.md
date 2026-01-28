@@ -8,13 +8,16 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 ### The Workflow
 
+**One issue per PR.** Each Claude instance should fix exactly one issue, then create a PR. This keeps PRs small and reviewable (bulk fixtures have 5000+ test cases, so changes need to be spot-checkable).
+
 1. Look at the curated test fixtures in `ramekin-core/tests/fixtures/ingredient_parsing/curated/`
 2. These fixtures document both working behavior and known issues
-3. Pick an issue that seems worth fixing (see criteria below - you can add new issues that you discover, past and future Claudes have access to this file.)
+3. Pick **one** issue that seems worth fixing (see criteria below - you can add new issues that you discover, past and future Claudes have access to this file.)
 4. Implement the fix in `ingredient_parser.rs`
 5. Update the curated fixture to expect the correct behavior
 6. Run `make ingredient-tests-update` to update bulk fixtures
 7. Run `make ingredient-tests` and `make lint` to verify
+8. Create a PR, then stop - leave remaining issues for the next Claude
 
 ### Is It Worth Fixing?
 
@@ -33,17 +36,11 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **"of" not stripped after units** - "4 cloves of garlic" produced item="of garlic". Fixed by stripping "of " after recognized units in `extract_unit()`.
 
+- [x] **Measurement modifiers (scant, heaping, etc.)** - "scant 1 teaspoon salt" and "2 heaping tablespoons miso" now parse correctly. Modifiers are recognized and included in the unit (e.g., "scant teaspoon", "heaping tablespoons"). Supported modifiers: scant, heaping, heaped, rounded, level, generous, packed, lightly packed, firmly packed, loosely packed.
+
 ### Open Issues
 
 #### High Impact (Common Patterns)
-
-- [ ] **"scant" prefix breaks parsing** - "scant 1 teaspoon salt" fails to parse entirely (item becomes the whole string, no measurements). The word "scant" before the amount confuses the parser.
-  - Curated fixture: `edge--scant--01.json`
-  - Potential fix: Recognize "scant" as a measurement qualifier and strip it before parsing amount
-
-- [ ] **"heaping" prefix breaks parsing** - "2 heaping tablespoons miso" extracts only "2" with no unit. The word "heaping" between amount and unit breaks unit extraction.
-  - Curated fixture: `edge--heaping--01.json`
-  - Potential fix: Recognize "heaping" as a unit qualifier, either strip it or include it in the unit
 
 - [ ] **"and" in mixed numbers** - "2 and 1/2 teaspoons cinnamon" extracts only "2". The parser doesn't recognize "X and Y/Z" as a mixed number.
   - Curated fixture: `edge--and_mixed_number--01.json`
