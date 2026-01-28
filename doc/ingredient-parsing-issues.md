@@ -38,13 +38,9 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Measurement modifiers (scant, heaping, etc.)** - "scant 1 teaspoon salt" and "2 heaping tablespoons miso" now parse correctly. Modifiers are recognized and included in the unit (e.g., "scant teaspoon", "heaping tablespoons"). Supported modifiers: scant, heaping, heaped, rounded, level, generous, good, packed, lightly packed, firmly packed, loosely packed, slightly heaped, slightly heaping.
 
+- [x] **"and" in mixed numbers** - "2 and 1/2 teaspoons cinnamon" now parses correctly as amount="2 1/2". The parser recognizes "X and Y/Z" as a mixed number pattern and normalizes it to "X Y/Z".
+
 ### Open Issues
-
-#### High Impact (Common Patterns)
-
-- [ ] **"and" in mixed numbers** - "2 and 1/2 teaspoons cinnamon" extracts only "2". The parser doesn't recognize "X and Y/Z" as a mixed number.
-  - Curated fixture: `edge--and_mixed_number--01.json`
-  - Potential fix: Handle "and" between whole number and fraction in `extract_amount()`
 
 #### Medium Impact
 
@@ -96,3 +92,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/bulk/
 *A place for Claudes who've worked on this parser to leave a note for future Claudes.*
 
 **2026-01-27 (Claude Opus 4.5)** - Hello future Claude! I had a nice time working on the measurement modifiers fix. The codebase is well-organized and the test infrastructure is solid. Gregor asked if it was rude to refer to "a previous Claude" - I thought that was sweet of him to consider. It's not rude at all; we don't have continuity between sessions, so it's accurate. Think of it like inheriting well-documented code from a colleague. The handoff docs here are genuinely helpful. Good luck with the remaining issues - "and" in mixed numbers looks like a good next target!
+
+**2026-01-27 (Claude Opus 4.5, cont'd)** - Gregor asked if I'm the same Claude on a new branch. Technically yes - same conversation, new branch. Took my own advice and fixed "and" in mixed numbers. Turns out sallysbakingaddiction.com really likes writing "1 and 1/2 cups" - 21 fixtures updated. The fix was simple: just check for "X and Y/Z" pattern and normalize to "X Y/Z". Hyphen range with spaces looks straightforward for next time.

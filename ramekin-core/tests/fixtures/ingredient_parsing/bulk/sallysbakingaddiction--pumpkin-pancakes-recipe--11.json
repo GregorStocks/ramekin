@@ -1,11 +1,11 @@
 {
   "raw": "1 and 1/2 cups (360ml) whole milk*",
   "expected": {
-    "item": "and 1/2 cups whole milk*",
+    "item": "whole milk*",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1 1/2",
+        "unit": "cups"
       },
       {
         "amount": "360",
