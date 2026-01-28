@@ -1,11 +1,11 @@
 {
   "raw": "1 3 oz box cook &amp;amp; serve vanilla pudding mix",
   "expected": {
-    "item": "3 oz box cook &amp; serve vanilla pudding mix",
+    "item": "cook &amp; serve vanilla pudding mix",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "3 oz box"
       }
     ],
     "note": null

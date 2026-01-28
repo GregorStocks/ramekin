@@ -1,11 +1,11 @@
 {
   "raw": "1 14.5 oz can&nbsp;Hunt's Petite Diced Tomatoes",
   "expected": {
-    "item": "14.5 oz can Hunt's Petite Diced Tomatoes",
+    "item": "Hunt's Petite Diced Tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "14.5 oz can"
       }
     ],
     "note": null

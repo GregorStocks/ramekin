@@ -465,7 +465,17 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     let (pre_unit_modifier, after_modifier) = strip_measurement_modifier(&remaining);
     remaining = after_modifier;
 
-    let (base_unit, after_unit) = extract_unit(&remaining);
+    let (mut base_unit, mut after_unit) = extract_unit(&remaining);
+
+    // Step 4a: Handle "N unit container" compound units (e.g., "14 ounce can")
+    // If no unit was found, check if remaining starts with a compound unit pattern
+    if base_unit.is_none() {
+        if let Some((compound_unit, after_compound)) = try_extract_compound_unit(&remaining) {
+            base_unit = Some(compound_unit);
+            after_unit = after_compound;
+        }
+    }
+
     remaining = after_unit;
 
     // Combine modifiers with unit: prefer pre-unit modifier, fall back to pre-amount modifier
@@ -893,6 +903,74 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
     }
 
     (None, s.to_string())
+}
+
+/// Container types that can form compound units like "14 ounce can"
+const CONTAINERS: &[&str] = &[
+    "packages", "package", "bottles", "bottle", "boxes", "cans", "jars", "bags", "box", "can",
+    "jar", "bag", "pkgs", "pkg",
+];
+
+/// Weight/volume units that can precede containers in compound units
+const WEIGHT_UNITS_FOR_COMPOUND: &[&str] = &[
+    "ounce",
+    "ounces",
+    "oz",
+    "gram",
+    "grams",
+    "g",
+    "pound",
+    "pounds",
+    "lb",
+    "lbs",
+    "ml",
+    "milliliter",
+    "milliliters",
+    "liter",
+    "liters",
+    "l",
+];
+
+/// Try to extract a compound unit like "14 ounce can" or "10 oz bag".
+/// Returns (compound_unit, remaining) if found, None otherwise.
+fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
+    let s = s.trim();
+    let words: Vec<&str> = s.split_whitespace().collect();
+
+    // Need at least 3 words: NUMBER UNIT CONTAINER
+    if words.len() < 3 {
+        return None;
+    }
+
+    // First word must be a number (integer or decimal)
+    let first = words[0];
+    if !is_amount_like(first) {
+        return None;
+    }
+
+    // Second word must be a weight/volume unit
+    let second_lower = words[1].to_lowercase();
+    let is_weight_unit = WEIGHT_UNITS_FOR_COMPOUND
+        .iter()
+        .any(|&u| second_lower == u || second_lower == format!("{}.", u));
+    if !is_weight_unit {
+        return None;
+    }
+
+    // Third word must be a container
+    let third_lower = words[2].to_lowercase();
+    let is_container = CONTAINERS.iter().any(|&c| third_lower == c);
+    if !is_container {
+        return None;
+    }
+
+    // Build the compound unit (preserving original case)
+    let compound_unit = format!("{} {} {}", words[0], words[1], words[2]);
+
+    // Calculate remaining string
+    let remaining = words[3..].join(" ");
+
+    Some((compound_unit, remaining))
 }
 
 /// Check if a string looks like a preparation note.

@@ -1,11 +1,11 @@
 {
   "raw": "1  15 oz can corn (well-drained)",
   "expected": {
-    "item": "15 oz can corn",
+    "item": "corn",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "15 oz can"
       }
     ],
     "note": "well-drained"

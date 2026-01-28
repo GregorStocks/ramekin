@@ -1,11 +1,11 @@
 {
   "raw": "1 13.5 oz. can full fat coconut milk ((not refrigerated), divided)",
   "expected": {
-    "item": "13.5 oz. can full fat coconut milk (not refrigerated)",
+    "item": "full fat coconut milk (not refrigerated)",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "13.5 oz. can"
       }
     ],
     "note": "divided)"

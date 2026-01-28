@@ -1,11 +1,11 @@
 {
   "raw": "1 8 oz pkg cream cheese",
   "expected": {
-    "item": "8 oz pkg cream cheese",
+    "item": "cream cheese",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8 oz pkg"
       }
     ],
     "note": null

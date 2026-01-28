@@ -1,11 +1,11 @@
 {
   "raw": "1 20 oz can pineapple chunks (do NOT drain)",
   "expected": {
-    "item": "20 oz can pineapple chunks (do NOT drain)",
+    "item": "pineapple chunks (do NOT drain)",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "20 oz can"
       }
     ],
     "note": null

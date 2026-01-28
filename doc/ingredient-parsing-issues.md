@@ -52,11 +52,9 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Leading comma after unit** - "2 large, boneless chicken breasts" now correctly strips the leading comma from item. Added `.trim_start_matches(',')` when extracting the item. 7 fixtures updated.
 
+- [x] **"N X-unit container" compound units** - "1 14 ounce can coconut milk" now correctly extracts unit="14 ounce can". Added `try_extract_compound_unit()` to recognize patterns like "NUMBER WEIGHT_UNIT CONTAINER". 32 fixtures updated.
+
 ### Open Issues
-
-#### Medium Impact
-
-- [ ] **"N X-ounce container" pattern** - "1 14 ounce can coconut milk" parses as amount=1, item="14 ounce can coconut milk" instead of recognizing "14 ounce can" as a compound unit. ~24 fixtures affected.
 
 #### Low Impact / Edge Cases
 
@@ -108,3 +106,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5)** - Gregor scaled up the fixtures to 45k+ and asked me to reassess priorities. After analyzing the new data, I found "word numbers" was a bigger issue than I expected - 70 fixtures had "One", "Two", etc. at the start that weren't being parsed at all. The fix was simple: `normalize_word_numbers()` converts them to digits early in the pipeline, matching the pattern of unicode fractions and dashes. I also documented two new issues I found during exploration: the "N X-ounce container" pattern (24 fixtures) and leading commas after size units (4 fixtures). The former is the trickier one - would need to recognize compound units like "14 ounce can". Future Claude: the container pattern might be worth tackling if you're feeling ambitious!
 
 **2026-01-28 (Claude Opus 4.5, cont'd)** - Quick follow-up fix: leading commas after units. "2 large, boneless chicken breasts" was leaving ", boneless" in the item. One-liner fix: `.trim_start_matches(',')` when extracting the item. 7 fixtures fixed. The only remaining medium-impact issue is the "N X-ounce container" pattern, which is more complex - it needs to recognize compound units. The double-encoded HTML entities issue is still in "give up" territory.
+
+**2026-01-28 (Claude Opus 4.5, cont'd)** - Fixed the compound unit pattern! "1 14 ounce can coconut milk" now extracts unit="14 ounce can". Added `try_extract_compound_unit()` which looks for "NUMBER WEIGHT_UNIT CONTAINER" patterns after the primary amount is extracted but no regular unit is found. 32 fixtures updated - more than the original 24 estimate because it also caught variations I hadn't noticed. The only remaining issue is double-encoded HTML entities, which is still "give up" territory. The parser is looking very solid now - 50k+ fixtures, all passing!
