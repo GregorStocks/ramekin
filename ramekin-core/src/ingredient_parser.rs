@@ -310,6 +310,13 @@ fn normalize_unicode_fractions(s: &str) -> String {
     result
 }
 
+/// Normalize unicode dashes to ASCII hyphen for consistent range parsing.
+/// Recipes often use en-dashes (–) or em-dashes (—) for ranges like "1–2 cups".
+fn normalize_dashes(s: &str) -> String {
+    s.replace('–', "-") // en-dash (U+2013)
+        .replace('—', "-") // em-dash (U+2014)
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -325,9 +332,10 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         };
     }
 
-    // Decode HTML entities and normalize unicode fractions before processing
+    // Decode HTML entities and normalize unicode before processing
     let decoded = decode_html_entities(raw);
-    let mut remaining = normalize_unicode_fractions(&decoded);
+    let normalized = normalize_unicode_fractions(&decoded);
+    let mut remaining = normalize_dashes(&normalized);
     let mut measurements = Vec::new();
     let mut note = None;
 

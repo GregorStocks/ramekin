@@ -1,11 +1,11 @@
 {
   "raw": "1–2 teaspoons peeled minced fresh ginger, optional",
   "expected": {
-    "item": "–2 teaspoons peeled minced fresh ginger",
+    "item": "peeled minced fresh ginger",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1-2",
+        "unit": "teaspoons"
       }
     ],
     "note": "optional"
