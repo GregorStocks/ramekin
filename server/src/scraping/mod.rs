@@ -9,7 +9,7 @@ use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
-    FetchImagesStepMeta, SaveRecipeStepMeta,
+    FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
 use ramekin_core::{FetchHtmlOutput, BUILD_ID};
@@ -120,6 +120,7 @@ pub fn build_registry(
     registry.register(Box::new(FetchHtmlStep));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
+    registry.register(Box::new(ParseIngredientsStep));
 
     // Use the appropriate SaveRecipeStep based on whether this is a rescrape
     let save_step = match existing_recipe_id {

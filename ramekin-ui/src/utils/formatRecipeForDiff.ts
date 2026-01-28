@@ -2,11 +2,17 @@ import type { Ingredient } from "ramekin-client";
 
 export function formatIngredients(ingredients: Ingredient[]): string {
   return ingredients
-    .map((ing) =>
-      [ing.amount, ing.unit, ing.item, ing.note ? `(${ing.note})` : ""]
+    .map((ing) => {
+      const primary = ing.measurements[0];
+      return [
+        primary?.amount,
+        primary?.unit,
+        ing.item,
+        ing.note ? `(${ing.note})` : "",
+      ]
         .filter(Boolean)
-        .join(" "),
-    )
+        .join(" ");
+    })
     .join("\n");
 }
 

@@ -26,6 +26,7 @@ from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest
 from ramekin_client.models.login_response import LoginResponse
+from ramekin_client.models.measurement import Measurement
 from ramekin_client.models.pagination_metadata import PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse
 from ramekin_client.models.recipe_content import RecipeContent

@@ -18,6 +18,7 @@ docs/Ingredient.md
 docs/ListRecipesResponse.md
 docs/LoginRequest.md
 docs/LoginResponse.md
+docs/Measurement.md
 docs/PaginationMetadata.md
 docs/PhotosApi.md
 docs/PingResponse.md
@@ -67,6 +68,7 @@ src/models/ingredient.rs
 src/models/list_recipes_response.rs
 src/models/login_request.rs
 src/models/login_response.rs
+src/models/measurement.rs
 src/models/mod.rs
 src/models/pagination_metadata.rs
 src/models/ping_response.rs

@@ -9,36 +9,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { Measurement } from './Measurement';
 /**
- *
+ * Ingredient structure for JSONB storage
  * @export
  * @interface Ingredient
  */
 export interface Ingredient {
     /**
-     *
-     * @type {string}
-     * @memberof Ingredient
-     */
-    amount?: string | null;
-    /**
-     *
+     * The ingredient name (e.g., "butter", "all-purpose flour")
      * @type {string}
      * @memberof Ingredient
      */
     item: string;
     /**
-     *
+     * Measurements - first is primary, rest are alternatives (e.g., "1 stick" then "113g")
+     * @type {Array<Measurement>}
+     * @memberof Ingredient
+     */
+    measurements: Array<Measurement>;
+    /**
+     * Preparation notes (e.g., "chopped", "softened", "optional")
      * @type {string}
      * @memberof Ingredient
      */
     note?: string | null;
     /**
-     *
+     * Original unparsed text for debugging
      * @type {string}
      * @memberof Ingredient
      */
-    unit?: string | null;
+    raw?: string | null;
 }
 /**
  * Check if a given object implements the Ingredient interface.

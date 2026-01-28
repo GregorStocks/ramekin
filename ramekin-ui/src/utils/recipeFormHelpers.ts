@@ -5,7 +5,7 @@ export function addIngredient(
   ingredients: Ingredient[],
   setIngredients: SetStoreFunction<Ingredient[]>,
 ) {
-  setIngredients(ingredients.length, { item: "", amount: "", unit: "" });
+  setIngredients(ingredients.length, { item: "", measurements: [] });
 }
 
 export function removeIngredient(
@@ -15,13 +15,50 @@ export function removeIngredient(
   setIngredients((ings) => ings.filter((_, i) => i !== index));
 }
 
-export function updateIngredient(
+export function updateIngredientItem(
   index: number,
-  field: keyof Ingredient,
   value: string,
   setIngredients: SetStoreFunction<Ingredient[]>,
 ) {
-  setIngredients(index, field, value);
+  setIngredients(index, "item", value);
+}
+
+export function updateIngredientNote(
+  index: number,
+  value: string | undefined,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(index, "note", value || undefined);
+}
+
+export function updateIngredientAmount(
+  index: number,
+  value: string,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(index, "measurements", 0, "amount", value || undefined);
+}
+
+export function updateIngredientUnit(
+  index: number,
+  value: string,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(index, "measurements", 0, "unit", value || undefined);
+}
+
+/**
+ * Get the primary measurement's amount from an ingredient.
+ */
+export function getAmount(ing: Ingredient): string {
+  return ing.measurements[0]?.amount || "";
+}
+
+/**
+ * Get the primary measurement's unit from an ingredient.
+ */
+export function getUnit(ing: Ingredient): string {
+  return ing.measurements[0]?.unit || "";
 }
 
 /**

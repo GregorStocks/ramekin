@@ -1534,30 +1534,36 @@
       },
       "Ingredient": {
         "type": "object",
+        "description": "Ingredient structure for JSONB storage",
         "required": [
-          "item"
+          "item",
+          "measurements"
         ],
         "properties": {
-          "amount": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
           "item": {
-            "type": "string"
+            "type": "string",
+            "description": "The ingredient name (e.g., \"butter\", \"all-purpose flour\")"
+          },
+          "measurements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Measurement"
+            },
+            "description": "Measurements - first is primary, rest are alternatives (e.g., \"1 stick\" then \"113g\")"
           },
           "note": {
             "type": [
               "string",
               "null"
-            ]
+            ],
+            "description": "Preparation notes (e.g., \"chopped\", \"softened\", \"optional\")"
           },
-          "unit": {
+          "raw": {
             "type": [
               "string",
               "null"
-            ]
+            ],
+            "description": "Original unparsed text for debugging"
           }
         }
       },
@@ -1602,6 +1608,24 @@
         "properties": {
           "token": {
             "type": "string"
+          }
+        }
+      },
+      "Measurement": {
+        "type": "object",
+        "description": "A single measurement (amount + unit pair)",
+        "properties": {
+          "amount": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "unit": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       },

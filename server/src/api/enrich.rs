@@ -65,12 +65,19 @@ pub async fn enrich_recipe(
         .ingredients
         .iter()
         .map(|i| {
-            format!(
-                "{} {} {}",
-                i.amount.as_deref().unwrap_or(""),
-                i.unit.as_deref().unwrap_or(""),
-                i.item
-            )
+            // Format primary measurement if present
+            let measurement_str = i
+                .measurements
+                .first()
+                .map(|m| {
+                    format!(
+                        "{} {}",
+                        m.amount.as_deref().unwrap_or(""),
+                        m.unit.as_deref().unwrap_or("")
+                    )
+                })
+                .unwrap_or_default();
+            format!("{} {}", measurement_str, i.item).trim().to_string()
         })
         .collect::<Vec<_>>()
         .join(", ");

@@ -13,36 +13,44 @@
  */
 
 import { mapValues } from '../runtime';
+import type { Measurement } from './Measurement';
+import {
+    MeasurementFromJSON,
+    MeasurementFromJSONTyped,
+    MeasurementToJSON,
+    MeasurementToJSONTyped,
+} from './Measurement';
+
 /**
- * 
+ * Ingredient structure for JSONB storage
  * @export
  * @interface Ingredient
  */
 export interface Ingredient {
     /**
-     * 
-     * @type {string}
-     * @memberof Ingredient
-     */
-    amount?: string | null;
-    /**
-     * 
+     * The ingredient name (e.g., "butter", "all-purpose flour")
      * @type {string}
      * @memberof Ingredient
      */
     item: string;
     /**
-     * 
+     * Measurements - first is primary, rest are alternatives (e.g., "1 stick" then "113g")
+     * @type {Array<Measurement>}
+     * @memberof Ingredient
+     */
+    measurements: Array<Measurement>;
+    /**
+     * Preparation notes (e.g., "chopped", "softened", "optional")
      * @type {string}
      * @memberof Ingredient
      */
     note?: string | null;
     /**
-     * 
+     * Original unparsed text for debugging
      * @type {string}
      * @memberof Ingredient
      */
-    unit?: string | null;
+    raw?: string | null;
 }
 
 /**
@@ -50,6 +58,7 @@ export interface Ingredient {
  */
 export function instanceOfIngredient(value: object): value is Ingredient {
     if (!('item' in value) || value['item'] === undefined) return false;
+    if (!('measurements' in value) || value['measurements'] === undefined) return false;
     return true;
 }
 
@@ -63,10 +72,10 @@ export function IngredientFromJSONTyped(json: any, ignoreDiscriminator: boolean)
     }
     return {
         
-        'amount': json['amount'] == null ? undefined : json['amount'],
         'item': json['item'],
+        'measurements': ((json['measurements'] as Array<any>).map(MeasurementFromJSON)),
         'note': json['note'] == null ? undefined : json['note'],
-        'unit': json['unit'] == null ? undefined : json['unit'],
+        'raw': json['raw'] == null ? undefined : json['raw'],
     };
 }
 
@@ -81,10 +90,10 @@ export function IngredientToJSONTyped(value?: Ingredient | null, ignoreDiscrimin
 
     return {
         
-        'amount': value['amount'],
         'item': value['item'],
+        'measurements': ((value['measurements'] as Array<any>).map(MeasurementToJSON)),
         'note': value['note'],
-        'unit': value['unit'],
+        'raw': value['raw'],
     };
 }
 

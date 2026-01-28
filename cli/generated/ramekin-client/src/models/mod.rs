@@ -24,6 +24,8 @@ pub mod login_request;
 pub use self::login_request::LoginRequest;
 pub mod login_response;
 pub use self::login_response::LoginResponse;
+pub mod measurement;
+pub use self::measurement::Measurement;
 pub mod pagination_metadata;
 pub use self::pagination_metadata::PaginationMetadata;
 pub mod ping_response;

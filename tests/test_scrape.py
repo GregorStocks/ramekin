@@ -3,6 +3,7 @@ import time
 
 import pytest
 
+from conftest import make_ingredient
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
@@ -52,6 +53,60 @@ class TestScrapeSuccess:
         assert recipe.source_url == url
         assert len(recipe.ingredients) > 0
         assert len(recipe.instructions) > 0
+
+    def test_scrape_parses_ingredient_measurements(self, authed_api_client):
+        """Test that scraping parses ingredient measurements correctly.
+
+        The rice_pilaf.html fixture has ingredients like:
+        '1 cup (185g) long-grain white rice'
+
+        This should be parsed into:
+        - item: 'long-grain white rice'
+        - measurements: [{amount: '1', unit: 'cup'}, {amount: '185', unit: 'g'}]
+        """
+        client, user_id = authed_api_client
+        scrape_api = ScrapeApi(client)
+        recipes_api = RecipesApi(client)
+
+        url = f"{FIXTURE_BASE_URL}/seriouseats/rice_pilaf.html"
+        response = scrape_api.create_scrape(CreateScrapeRequest(url=url))
+
+        job = wait_for_job_completion(scrape_api, response.id)
+        assert job.status == "completed"
+
+        recipe = recipes_api.get_recipe(job.recipe_id)
+
+        # Find the rice ingredient (first one)
+        rice_ingredient = recipe.ingredients[0]
+
+        # Verify it has measurements parsed
+        assert len(rice_ingredient.measurements) >= 1, (
+            f"Expected at least 1 measurement, got: {rice_ingredient.measurements}"
+        )
+
+        # First measurement should be the primary (1 cup)
+        first_measurement = rice_ingredient.measurements[0]
+        assert first_measurement.amount == "1", (
+            f"Expected amount '1', got: {first_measurement.amount}"
+        )
+        assert first_measurement.unit == "cup", (
+            f"Expected unit 'cup', got: {first_measurement.unit}"
+        )
+
+        # If there's an alternative measurement (185g), verify it too
+        if len(rice_ingredient.measurements) > 1:
+            second_measurement = rice_ingredient.measurements[1]
+            assert second_measurement.amount == "185", (
+                f"Expected amount '185', got: {second_measurement.amount}"
+            )
+            assert second_measurement.unit == "g", (
+                f"Expected unit 'g', got: {second_measurement.unit}"
+            )
+
+        # The item should be the ingredient name without measurements
+        assert "rice" in rice_ingredient.item.lower(), (
+            f"Expected 'rice' in item, got: {rice_ingredient.item}"
+        )
 
     def test_scrape_second_recipe_from_different_url(self, authed_api_client):
         """Test that we can scrape multiple different URLs."""
@@ -291,7 +346,7 @@ class TestScrapeAutoTag:
         initial_recipe = recipes_api.create_recipe(
             CreateRecipeRequest(
                 title="Setup Recipe for Tags",
-                ingredients=[{"item": "test ingredient"}],
+                ingredients=[make_ingredient(item="test ingredient")],
                 instructions="test instructions",
                 tags=["test-auto-tag"],
             )

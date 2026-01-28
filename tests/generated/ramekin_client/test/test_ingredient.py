@@ -35,14 +35,23 @@ class TestIngredient(unittest.TestCase):
         model = Ingredient()
         if include_optional:
             return Ingredient(
-                amount = '',
                 item = '',
+                measurements = [
+                    ramekin_client.models.measurement.Measurement(
+                        amount = '', 
+                        unit = '', )
+                    ],
                 note = '',
-                unit = ''
+                raw = ''
             )
         else:
             return Ingredient(
                 item = '',
+                measurements = [
+                    ramekin_client.models.measurement.Measurement(
+                        amount = '', 
+                        unit = '', )
+                    ],
         )
         """
 

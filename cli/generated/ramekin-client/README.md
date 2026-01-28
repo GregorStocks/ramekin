@@ -68,6 +68,7 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](docs/ListRecipesResponse.md)
  - [LoginRequest](docs/LoginRequest.md)
  - [LoginResponse](docs/LoginResponse.md)
+ - [Measurement](docs/Measurement.md)
  - [PaginationMetadata](docs/PaginationMetadata.md)
  - [PingResponse](docs/PingResponse.md)
  - [RecipeContent](docs/RecipeContent.md)

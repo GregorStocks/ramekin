@@ -1,11 +1,11 @@
 import pytest
 
+from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
     Direction,
-    Ingredient,
     SortBy,
     UpdateRecipeRequest,
 )
@@ -39,8 +39,8 @@ def test_create_recipe_success(authed_api_client):
         title="Test Recipe",
         instructions="Mix ingredients and cook.",
         ingredients=[
-            Ingredient(item="flour", amount="2", unit="cups"),
-            Ingredient(item="sugar", amount="1", unit="cup"),
+            make_ingredient(item="flour", amount="2", unit="cups"),
+            make_ingredient(item="sugar", amount="1", unit="cup"),
         ],
         description="A test recipe",
         tags=["test", "easy"],
@@ -110,8 +110,8 @@ def test_get_recipe_success(authed_api_client):
         title="Get Test Recipe",
         instructions="Step 1: Do this. Step 2: Do that.",
         ingredients=[
-            Ingredient(item="eggs", amount="3"),
-            Ingredient(item="milk", amount="1", unit="cup", note="whole milk"),
+            make_ingredient(item="eggs", amount="3"),
+            make_ingredient(item="milk", amount="1", unit="cup", note="whole milk"),
         ],
         description="A recipe to test get",
         source_url="https://example.com/recipe",
@@ -171,7 +171,7 @@ def test_update_recipe_success(authed_api_client):
     create_request = CreateRecipeRequest(
         title="Original Title",
         instructions="Original instructions",
-        ingredients=[Ingredient(item="original ingredient")],
+        ingredients=[make_ingredient(item="original ingredient")],
     )
 
     create_response = recipes_api.create_recipe(create_request)
@@ -182,8 +182,8 @@ def test_update_recipe_success(authed_api_client):
         title="Updated Title",
         instructions="Updated instructions",
         ingredients=[
-            Ingredient(item="new ingredient 1"),
-            Ingredient(item="new ingredient 2"),
+            make_ingredient(item="new ingredient 1"),
+            make_ingredient(item="new ingredient 2"),
         ],
         description="Now with a description",
         tags=["updated"],
@@ -209,7 +209,7 @@ def test_update_recipe_partial(authed_api_client):
     create_request = CreateRecipeRequest(
         title="Original Title",
         instructions="Original instructions",
-        ingredients=[Ingredient(item="ingredient")],
+        ingredients=[make_ingredient(item="ingredient")],
         description="Original description",
     )
 
@@ -983,7 +983,7 @@ def test_create_recipe_with_paprika_fields(authed_api_client):
     request = CreateRecipeRequest(
         title="Paprika Test Recipe",
         instructions="Cook the thing.",
-        ingredients=[Ingredient(item="chicken", amount="1", unit="lb")],
+        ingredients=[make_ingredient(item="chicken", amount="1", unit="lb")],
         servings="4 servings",
         prep_time="15 mins",
         cook_time="30 mins",
@@ -1178,7 +1178,7 @@ def test_get_specific_version(authed_api_client):
         CreateRecipeRequest(
             title="Original Title",
             instructions="Original instructions",
-            ingredients=[Ingredient(item="original ingredient")],
+            ingredients=[make_ingredient(item="original ingredient")],
         )
     )
     recipe_id = str(create_response.id)
@@ -1192,7 +1192,7 @@ def test_get_specific_version(authed_api_client):
         recipe_id,
         UpdateRecipeRequest(
             title="Updated Title",
-            ingredients=[Ingredient(item="new ingredient")],
+            ingredients=[make_ingredient(item="new ingredient")],
         ),
     )
 

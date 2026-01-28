@@ -11,17 +11,16 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
+/// Ingredient : Ingredient structure for JSONB storage
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Ingredient {
-    #[serde(
-        rename = "amount",
-        default,
-        with = "::serde_with::rust::double_option",
-        skip_serializing_if = "Option::is_none"
-    )]
-    pub amount: Option<Option<String>>,
+    /// The ingredient name (e.g., \"butter\", \"all-purpose flour\")
     #[serde(rename = "item")]
     pub item: String,
+    /// Measurements - first is primary, rest are alternatives (e.g., \"1 stick\" then \"113g\")
+    #[serde(rename = "measurements")]
+    pub measurements: Vec<models::Measurement>,
+    /// Preparation notes (e.g., \"chopped\", \"softened\", \"optional\")
     #[serde(
         rename = "note",
         default,
@@ -29,22 +28,24 @@ pub struct Ingredient {
         skip_serializing_if = "Option::is_none"
     )]
     pub note: Option<Option<String>>,
+    /// Original unparsed text for debugging
     #[serde(
-        rename = "unit",
+        rename = "raw",
         default,
         with = "::serde_with::rust::double_option",
         skip_serializing_if = "Option::is_none"
     )]
-    pub unit: Option<Option<String>>,
+    pub raw: Option<Option<String>>,
 }
 
 impl Ingredient {
-    pub fn new(item: String) -> Ingredient {
+    /// Ingredient structure for JSONB storage
+    pub fn new(item: String, measurements: Vec<models::Measurement>) -> Ingredient {
         Ingredient {
-            amount: None,
             item,
+            measurements,
             note: None,
-            unit: None,
+            raw: None,
         }
     }
 }

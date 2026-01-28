@@ -47,6 +47,7 @@ __all__ = [
     "ListRecipesResponse",
     "LoginRequest",
     "LoginResponse",
+    "Measurement",
     "PaginationMetadata",
     "PingResponse",
     "RecipeContent",
@@ -103,6 +104,7 @@ from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest
 from ramekin_client.models.login_response import LoginResponse as LoginResponse
+from ramekin_client.models.measurement import Measurement as Measurement
 from ramekin_client.models.pagination_metadata import PaginationMetadata as PaginationMetadata
 from ramekin_client.models.ping_response import PingResponse as PingResponse
 from ramekin_client.models.recipe_content import RecipeContent as RecipeContent

@@ -157,9 +157,12 @@ async fn create_user_and_recipes(
             .iter()
             .map(|(item, amount, unit)| Ingredient {
                 item: item.to_string(),
-                amount: Some(Some(amount.to_string())),
-                unit: Some(Some(unit.to_string())),
+                measurements: vec![ramekin_client::models::Measurement {
+                    amount: Some(Some(amount.to_string())),
+                    unit: Some(Some(unit.to_string())),
+                }],
                 note: None,
+                raw: None,
             })
             .collect();
 

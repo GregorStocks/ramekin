@@ -40,10 +40,14 @@ class TestUpdateRecipeRequest(unittest.TestCase):
                 difficulty = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
-                        amount = '', 
                         item = '', 
+                        measurements = [
+                            ramekin_client.models.measurement.Measurement(
+                                amount = '', 
+                                unit = '', )
+                            ], 
                         note = '', 
-                        unit = '', )
+                        raw = '', )
                     ],
                 instructions = '',
                 notes = '',

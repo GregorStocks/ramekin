@@ -35,7 +35,7 @@ export default function CreateRecipePage() {
   const [photoIds, setPhotoIds] = createSignal<string[]>([]);
   const [uploading, setUploading] = createSignal(false);
   const [ingredients, setIngredients] = createStore<Ingredient[]>([
-    { item: "", amount: "", unit: "" },
+    { item: "", measurements: [] },
   ]);
   const [servings, setServings] = createSignal("");
   const [prepTime, setPrepTime] = createSignal("");

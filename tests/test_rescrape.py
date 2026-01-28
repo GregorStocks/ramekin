@@ -3,6 +3,7 @@ import time
 
 import pytest
 
+from conftest import make_ingredient
 from ramekin_client.api import RecipesApi, ScrapeApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import CreateRecipeRequest, CreateScrapeRequest
@@ -103,7 +104,7 @@ class TestRescrapeValidation:
         recipe = recipes_api.create_recipe(
             CreateRecipeRequest(
                 title="Manual Recipe",
-                ingredients=[{"item": "test ingredient"}],
+                ingredients=[make_ingredient(item="test ingredient")],
                 instructions="test instructions",
             )
         )

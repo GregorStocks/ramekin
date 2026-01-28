@@ -40,10 +40,14 @@ class TestCreateRecipeRequest(unittest.TestCase):
                 difficulty = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
-                        amount = '', 
                         item = '', 
+                        measurements = [
+                            ramekin_client.models.measurement.Measurement(
+                                amount = '', 
+                                unit = '', )
+                            ], 
                         note = '', 
-                        unit = '', )
+                        raw = '', )
                     ],
                 instructions = '',
                 notes = '',
@@ -66,10 +70,14 @@ class TestCreateRecipeRequest(unittest.TestCase):
             return CreateRecipeRequest(
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
-                        amount = '', 
                         item = '', 
+                        measurements = [
+                            ramekin_client.models.measurement.Measurement(
+                                amount = '', 
+                                unit = '', )
+                            ], 
                         note = '', 
-                        unit = '', )
+                        raw = '', )
                     ],
                 instructions = '',
                 title = '',

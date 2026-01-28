@@ -7,8 +7,9 @@ from io import BytesIO
 
 import requests
 
+from conftest import make_ingredient
 from ramekin_client.api import RecipesApi
-from ramekin_client.models import CreateRecipeRequest, Ingredient
+from ramekin_client.models import CreateRecipeRequest
 
 
 def test_export_single_recipe(authed_api_client, server_url):
@@ -22,8 +23,8 @@ def test_export_single_recipe(authed_api_client, server_url):
             title="Export Test Recipe",
             instructions="Step 1: Do the thing.\nStep 2: Profit.",
             ingredients=[
-                Ingredient(item="flour", amount="2", unit="cups"),
-                Ingredient(item="sugar", amount="1", unit="cup"),
+                make_ingredient(item="flour", amount="2", unit="cups"),
+                make_ingredient(item="sugar", amount="1", unit="cup"),
             ],
             description="A recipe to test export",
             tags=["test", "export"],
