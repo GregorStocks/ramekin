@@ -11,10 +11,12 @@ import {
   removeIngredient,
   updateIngredientItem,
   updateIngredientNote,
-  updateIngredientAmount,
-  updateIngredientUnit,
-  getAmount,
-  getUnit,
+  addAlternativeMeasurement,
+  removeMeasurement,
+  updateMeasurementAmount,
+  updateMeasurementUnit,
+  getMeasurementAmount,
+  getMeasurementUnit,
 } from "../utils/recipeFormHelpers";
 
 export interface RecipeFormProps {
@@ -184,66 +186,138 @@ export default function RecipeForm(props: RecipeFormProps) {
         </div>
         <Index each={props.ingredients}>
           {(ing, index) => (
-            <div class="ingredient-row">
-              <input
-                type="text"
-                placeholder="Amount"
-                value={getAmount(ing())}
-                onInput={(e) =>
-                  updateIngredientAmount(
-                    index,
-                    e.currentTarget.value,
-                    props.setIngredients,
-                  )
-                }
-                class="input-amount"
-              />
-              <input
-                type="text"
-                placeholder="Unit"
-                value={getUnit(ing())}
-                onInput={(e) =>
-                  updateIngredientUnit(
-                    index,
-                    e.currentTarget.value,
-                    props.setIngredients,
-                  )
-                }
-                class="input-unit"
-              />
-              <input
-                type="text"
-                placeholder="Ingredient *"
-                value={ing().item}
-                onInput={(e) =>
-                  updateIngredientItem(
-                    index,
-                    e.currentTarget.value,
-                    props.setIngredients,
-                  )
-                }
-                class="input-item"
-              />
-              <input
-                type="text"
-                placeholder="Note"
-                value={ing().note || ""}
-                onInput={(e) =>
-                  updateIngredientNote(
-                    index,
-                    e.currentTarget.value,
-                    props.setIngredients,
-                  )
-                }
-                class="input-note"
-              />
-              <button
-                type="button"
-                class="btn btn-small btn-remove"
-                onClick={() => removeIngredient(index, props.setIngredients)}
-              >
-                &times;
-              </button>
+            <div class="ingredient-entry">
+              <div class="ingredient-row">
+                <input
+                  type="text"
+                  placeholder="Amount"
+                  value={getMeasurementAmount(ing(), 0)}
+                  onInput={(e) =>
+                    updateMeasurementAmount(
+                      index,
+                      0,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-amount"
+                />
+                <input
+                  type="text"
+                  placeholder="Unit"
+                  value={getMeasurementUnit(ing(), 0)}
+                  onInput={(e) =>
+                    updateMeasurementUnit(
+                      index,
+                      0,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-unit"
+                />
+                <input
+                  type="text"
+                  placeholder="Ingredient *"
+                  value={ing().item}
+                  onInput={(e) =>
+                    updateIngredientItem(
+                      index,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-item"
+                />
+                <input
+                  type="text"
+                  placeholder="Note"
+                  value={ing().note || ""}
+                  onInput={(e) =>
+                    updateIngredientNote(
+                      index,
+                      e.currentTarget.value,
+                      props.setIngredients,
+                    )
+                  }
+                  class="input-note"
+                />
+                <button
+                  type="button"
+                  class="btn btn-small btn-add-alt"
+                  onClick={() =>
+                    addAlternativeMeasurement(index, props.setIngredients)
+                  }
+                  title="Add alternative measurement"
+                >
+                  +
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-small btn-remove"
+                  onClick={() => removeIngredient(index, props.setIngredients)}
+                >
+                  &times;
+                </button>
+              </div>
+              <Show when={ing().measurements.length > 1}>
+                <div class="alt-measurements">
+                  <Index each={ing().measurements.slice(1)}>
+                    {(_, mIndex) => (
+                      <div class="alt-measurement-row">
+                        <span class="alt-label">Alt:</span>
+                        <input
+                          type="text"
+                          placeholder="Amount"
+                          value={getMeasurementAmount(ing(), mIndex + 1)}
+                          onInput={(e) =>
+                            updateMeasurementAmount(
+                              index,
+                              mIndex + 1,
+                              e.currentTarget.value,
+                              props.setIngredients,
+                            )
+                          }
+                          class="input-amount"
+                        />
+                        <input
+                          type="text"
+                          placeholder="Unit"
+                          value={getMeasurementUnit(ing(), mIndex + 1)}
+                          onInput={(e) =>
+                            updateMeasurementUnit(
+                              index,
+                              mIndex + 1,
+                              e.currentTarget.value,
+                              props.setIngredients,
+                            )
+                          }
+                          class="input-unit"
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-small btn-remove"
+                          onClick={() =>
+                            removeMeasurement(
+                              index,
+                              mIndex + 1,
+                              props.setIngredients,
+                            )
+                          }
+                          title="Remove alternative measurement"
+                        >
+                          &times;
+                        </button>
+                      </div>
+                    )}
+                  </Index>
+                </div>
+              </Show>
+              <Show when={ing().raw}>
+                <div class="ingredient-raw">
+                  <span class="raw-label">Raw:</span> {ing().raw}
+                </div>
+              </Show>
             </div>
           )}
         </Index>

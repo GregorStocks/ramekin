@@ -62,6 +62,88 @@ export function getUnit(ing: Ingredient): string {
 }
 
 /**
+ * Add an alternative measurement to an ingredient.
+ */
+export function addAlternativeMeasurement(
+  ingredientIndex: number,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(ingredientIndex, "measurements", (measurements) => [
+    ...measurements,
+    {},
+  ]);
+}
+
+/**
+ * Remove a measurement from an ingredient (must have at least one measurement).
+ */
+export function removeMeasurement(
+  ingredientIndex: number,
+  measurementIndex: number,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(ingredientIndex, "measurements", (measurements) =>
+    measurements.filter((_, i) => i !== measurementIndex),
+  );
+}
+
+/**
+ * Update a specific measurement's amount.
+ */
+export function updateMeasurementAmount(
+  ingredientIndex: number,
+  measurementIndex: number,
+  value: string,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(
+    ingredientIndex,
+    "measurements",
+    measurementIndex,
+    "amount",
+    value || undefined,
+  );
+}
+
+/**
+ * Update a specific measurement's unit.
+ */
+export function updateMeasurementUnit(
+  ingredientIndex: number,
+  measurementIndex: number,
+  value: string,
+  setIngredients: SetStoreFunction<Ingredient[]>,
+) {
+  setIngredients(
+    ingredientIndex,
+    "measurements",
+    measurementIndex,
+    "unit",
+    value || undefined,
+  );
+}
+
+/**
+ * Get a specific measurement's amount.
+ */
+export function getMeasurementAmount(
+  ing: Ingredient,
+  measurementIndex: number,
+): string {
+  return ing.measurements[measurementIndex]?.amount || "";
+}
+
+/**
+ * Get a specific measurement's unit.
+ */
+export function getMeasurementUnit(
+  ing: Ingredient,
+  measurementIndex: number,
+): string {
+  return ing.measurements[measurementIndex]?.unit || "";
+}
+
+/**
  * Extract error message from API response errors.
  * Handles both direct Response objects and objects with a response property
  * (like the generated client's ResponseError).
