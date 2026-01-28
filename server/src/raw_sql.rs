@@ -13,18 +13,7 @@
 
 use diesel::dsl::sql;
 use diesel::expression::SqlLiteral;
-use diesel::sql_types::{Array, BigInt, Text};
-
-/// Window function for counting total rows across the full result set.
-///
-/// Returns `COUNT(*) OVER()` which gives the total count before LIMIT/OFFSET.
-/// Diesel doesn't support window functions natively.
-///
-/// # Safety
-/// Static SQL string with no user input.
-pub fn count_over() -> SqlLiteral<BigInt> {
-    sql::<BigInt>("COUNT(*) OVER()")
-}
+use diesel::sql_types::{Array, Text};
 
 /// Correlated subquery to fetch tags for the current recipe_versions row.
 ///
