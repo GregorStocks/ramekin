@@ -1,11 +1,15 @@
 {
   "raw": "2 cups / 475 ml water, ice cold",
   "expected": {
-    "item": "/ 475 ml water",
+    "item": "water",
     "measurements": [
       {
         "amount": "2",
         "unit": "cups"
+      },
+      {
+        "amount": "475",
+        "unit": "ml"
       }
     ],
     "note": "ice cold"

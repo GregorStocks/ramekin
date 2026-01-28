@@ -1,11 +1,11 @@
 {
   "raw": "2 - 3 cups powdered sugar",
   "expected": {
-    "item": "- 3 cups powdered sugar",
+    "item": "powdered sugar",
     "measurements": [
       {
-        "amount": "2",
-        "unit": null
+        "amount": "2-3",
+        "unit": "cups"
       }
     ],
     "note": null

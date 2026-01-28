@@ -1,11 +1,15 @@
 {
   "raw": "2  large or 3 Medium Eggplant (Cut into 1/2 Rounds)",
   "expected": {
-    "item": "or 3 Medium Eggplant (Cut into 1/2 Rounds)",
+    "item": "Eggplant (Cut into 1/2 Rounds)",
     "measurements": [
       {
         "amount": "2",
         "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
       }
     ],
     "note": null

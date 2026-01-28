@@ -1,11 +1,11 @@
 {
   "raw": "1/2 – 3/4 cups stock, vegetable or chicken",
   "expected": {
-    "item": "– 3/4 cups stock, vegetable or chicken",
+    "item": "stock, vegetable or chicken",
     "measurements": [
       {
-        "amount": "1/2",
-        "unit": null
+        "amount": "1/2-3/4",
+        "unit": "cups"
       }
     ],
     "note": null

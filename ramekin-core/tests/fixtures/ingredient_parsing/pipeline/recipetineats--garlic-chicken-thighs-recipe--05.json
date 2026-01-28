@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup / 125 ml  dry white wine ((or broth or water))",
   "expected": {
-    "item": "/ 125 ml  dry white wine (or broth or water)",
+    "item": "dry white wine (or broth or water)",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
       }
     ],
     "note": null

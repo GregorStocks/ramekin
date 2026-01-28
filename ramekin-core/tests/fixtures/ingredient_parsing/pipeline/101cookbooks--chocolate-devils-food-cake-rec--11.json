@@ -1,11 +1,15 @@
 {
   "raw": "1 cup / 225g hot water",
   "expected": {
-    "item": "/ 225g hot water",
+    "item": "hot water",
     "measurements": [
       {
         "amount": "1",
         "unit": "cup"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
       }
     ],
     "note": null

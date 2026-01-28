@@ -1,11 +1,15 @@
 {
   "raw": "150g / 5oz   ginger (, sliced down the centre)",
   "expected": {
-    "item": "/ 5oz   ginger",
+    "item": "ginger",
     "measurements": [
       {
         "amount": "150",
         "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "oz"
       }
     ],
     "note": ", sliced down the centre"

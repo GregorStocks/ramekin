@@ -1,11 +1,15 @@
 {
   "raw": "7 tablespoons / 100g vegetable oil*",
   "expected": {
-    "item": "/ 100g vegetable oil*",
+    "item": "vegetable oil*",
     "measurements": [
       {
         "amount": "7",
         "unit": "tablespoons"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
       }
     ],
     "note": null

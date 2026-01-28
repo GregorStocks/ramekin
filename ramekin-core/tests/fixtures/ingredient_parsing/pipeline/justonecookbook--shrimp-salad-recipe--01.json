@@ -1,11 +1,11 @@
 {
   "raw": "6–7 pieces shrimp",
   "expected": {
-    "item": "–7 pieces shrimp",
+    "item": "shrimp",
     "measurements": [
       {
-        "amount": "6",
-        "unit": null
+        "amount": "6-7",
+        "unit": "pieces"
       }
     ],
     "note": null

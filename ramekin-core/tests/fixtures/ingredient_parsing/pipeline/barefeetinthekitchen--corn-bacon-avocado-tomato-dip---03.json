@@ -1,11 +1,11 @@
 {
   "raw": "1/2 - 1 teaspoon Cholula hot sauce (or your favorite hot sauce)",
   "expected": {
-    "item": "- 1 teaspoon Cholula hot sauce (or your favorite hot sauce)",
+    "item": "Cholula hot sauce (or your favorite hot sauce)",
     "measurements": [
       {
-        "amount": "1/2",
-        "unit": null
+        "amount": "1/2-1",
+        "unit": "teaspoon"
       }
     ],
     "note": null

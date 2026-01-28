@@ -1,11 +1,15 @@
 {
   "raw": "1 kg / 2 lb   ground beef (mince) (, preferably not lean)",
   "expected": {
-    "item": "/ 2 lb   ground beef (mince) (, preferably not lean)",
+    "item": "ground beef (mince) (, preferably not lean)",
     "measurements": [
       {
         "amount": "1",
         "unit": "kg"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
       }
     ],
     "note": null

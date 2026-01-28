@@ -1,11 +1,15 @@
 {
   "raw": "30g / 2 tbsp  ghee or unsalted butter (, melted (Note 4))",
   "expected": {
-    "item": "/ 2 tbsp  ghee or unsalted butter",
+    "item": "ghee or unsalted butter",
     "measurements": [
       {
         "amount": "30",
         "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
       }
     ],
     "note": ", melted (Note 4"

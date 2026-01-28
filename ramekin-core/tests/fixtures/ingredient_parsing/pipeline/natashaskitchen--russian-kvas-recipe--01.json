@@ -1,11 +1,15 @@
 {
   "raw": "5 Liters or 5.28 Quarts (or 21 cups Warm Water)",
   "expected": {
-    "item": "or 5.28 Quarts (or 21 cups Warm Water)",
+    "item": "(or 21 cups Warm Water)",
     "measurements": [
       {
         "amount": "5",
         "unit": "liters"
+      },
+      {
+        "amount": "5.28",
+        "unit": "quarts"
       }
     ],
     "note": null
