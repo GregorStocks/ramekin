@@ -68,6 +68,42 @@ INSECURE_PASSWORD_HASHING=1
 EOF
     echo "Created test.env"
 
+    # Sync keys from source directory (if available)
+    SOURCE_DIR="$HOME/code/ramekin"
+    if [ -d "$SOURCE_DIR" ]; then
+        echo ""
+        echo "Syncing keys from $SOURCE_DIR..."
+
+        # Create cli.env with OPENROUTER_API_KEY
+        if [ -f "$SOURCE_DIR/cli.env" ]; then
+            OPENROUTER_KEY=$(grep '^OPENROUTER_API_KEY=' "$SOURCE_DIR/cli.env" | head -1)
+            if [ -n "$OPENROUTER_KEY" ]; then
+                echo "$OPENROUTER_KEY" > cli.env
+                echo "Created cli.env with OPENROUTER_API_KEY"
+            fi
+        fi
+
+        # Append OTEL config to dev.env
+        if [ -f "$SOURCE_DIR/dev.env" ]; then
+            OTEL_ENDPOINT=$(grep '^OTEL_EXPORTER_OTLP_ENDPOINT=' "$SOURCE_DIR/dev.env" | head -1)
+            OTEL_HEADERS=$(grep '^OTEL_EXPORTER_OTLP_HEADERS=' "$SOURCE_DIR/dev.env" | head -1)
+            OTEL_SERVICE=$(grep '^OTEL_SERVICE_NAME=' "$SOURCE_DIR/dev.env" | head -1)
+
+            if [ -n "$OTEL_ENDPOINT" ]; then
+                {
+                    echo ""
+                    echo "# OpenTelemetry (synced from source)"
+                    echo "$OTEL_ENDPOINT"
+                    [ -n "$OTEL_HEADERS" ] && echo "$OTEL_HEADERS"
+                    [ -n "$OTEL_SERVICE" ] && echo "$OTEL_SERVICE"
+                } >> dev.env
+                echo "Appended OTEL config to dev.env"
+            fi
+        fi
+    else
+        echo "Note: $SOURCE_DIR not found, skipping key sync"
+    fi
+
     # Create Claude settings with lint hook
     echo ""
     echo "Creating Claude settings..."
