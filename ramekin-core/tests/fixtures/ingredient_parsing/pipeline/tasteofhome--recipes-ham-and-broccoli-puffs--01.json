@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups frozen broccoli florets, thawed and finely chopped",
+  "expected": {
+    "item": "frozen broccoli florets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "thawed and finely chopped"
+  }
+}

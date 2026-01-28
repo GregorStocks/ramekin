@@ -1,0 +1,13 @@
+{
+  "raw": "2  shallot, (diced)",
+  "expected": {
+    "item": "shallot,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

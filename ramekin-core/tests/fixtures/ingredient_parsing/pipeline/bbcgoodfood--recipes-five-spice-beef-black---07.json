@@ -1,0 +1,13 @@
+{
+  "raw": "1 small piece fresh root ginger finely minced",
+  "expected": {
+    "item": "piece fresh root ginger finely minced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

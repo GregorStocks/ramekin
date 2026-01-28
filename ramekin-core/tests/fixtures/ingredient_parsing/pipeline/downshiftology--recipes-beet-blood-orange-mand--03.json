@@ -1,0 +1,13 @@
+{
+  "raw": "4  blood oranges",
+  "expected": {
+    "item": "blood oranges",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

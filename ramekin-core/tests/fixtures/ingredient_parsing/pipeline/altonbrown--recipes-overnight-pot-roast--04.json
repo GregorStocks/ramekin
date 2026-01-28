@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces button mushrooms, washed and halved if large, divided",
+  "expected": {
+    "item": "button mushrooms, washed and halved if large",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "divided"
+  }
+}

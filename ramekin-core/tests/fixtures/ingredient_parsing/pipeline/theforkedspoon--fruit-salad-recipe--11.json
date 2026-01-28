@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces raspberries ((see notes))",
+  "expected": {
+    "item": "raspberries (see notes)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

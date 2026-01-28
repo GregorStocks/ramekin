@@ -1,0 +1,13 @@
+{
+  "raw": "3 - 4 teaspoons light brown sugar (optional)",
+  "expected": {
+    "item": "- 4 teaspoons light brown sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (240 g) sour cream",
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

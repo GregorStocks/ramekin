@@ -1,0 +1,13 @@
+{
+  "raw": "560 grams oxtail",
+  "expected": {
+    "item": "oxtail",
+    "measurements": [
+      {
+        "amount": "560",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

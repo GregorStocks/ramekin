@@ -1,0 +1,13 @@
+{
+  "raw": "6 jalapeno peppers, seeded and chopped",
+  "expected": {
+    "item": "jalapeno peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "seeded and chopped"
+  }
+}

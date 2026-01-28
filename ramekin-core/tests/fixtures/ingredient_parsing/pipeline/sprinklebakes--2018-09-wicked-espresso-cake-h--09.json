@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 226g/8 oz. unsalted butter, softened",
+  "expected": {
+    "item": "226g/8 oz. unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened"
+  }
+}

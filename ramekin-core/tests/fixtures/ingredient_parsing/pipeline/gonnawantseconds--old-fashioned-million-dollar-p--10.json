@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons coconut (toasted )",
+  "expected": {
+    "item": "coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "toasted"
+  }
+}

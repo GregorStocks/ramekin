@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon sea salt, plus more for salted caramel sauce, see tips",
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more for salted caramel sauce, see tips"
+  }
+}

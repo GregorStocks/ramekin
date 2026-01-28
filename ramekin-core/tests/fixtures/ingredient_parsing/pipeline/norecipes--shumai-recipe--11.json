@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon ginger juice ((ginger grated and juice squeezed out))",
+  "expected": {
+    "item": "ginger juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "ginger grated and juice squeezed out"
+  }
+}

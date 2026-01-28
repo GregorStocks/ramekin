@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (140 grams) sweetened flaked coconut",
+  "expected": {
+    "item": "sweetened flaked coconut",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "140",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

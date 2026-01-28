@@ -1,0 +1,17 @@
+{
+  "raw": "140 grams chickpea flour ((~ 1 1/2 cups))",
+  "expected": {
+    "item": "chickpea flour",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "grams"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces bittersweet chocolate (finely chopped)",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

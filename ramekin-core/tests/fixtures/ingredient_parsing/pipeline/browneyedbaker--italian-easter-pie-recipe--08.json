@@ -1,0 +1,13 @@
+{
+  "raw": "1  small sweet onion (finely chopped)",
+  "expected": {
+    "item": "sweet onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

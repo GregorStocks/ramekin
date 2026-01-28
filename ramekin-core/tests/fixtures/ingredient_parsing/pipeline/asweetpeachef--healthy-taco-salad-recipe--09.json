@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup taco meat, (cooled (see recipe above))",
+  "expected": {
+    "item": "taco meat, (cooled (see recipe above)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

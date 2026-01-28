@@ -1,0 +1,13 @@
+{
+  "raw": "4  large tomatillos (husks removed and washed)",
+  "expected": {
+    "item": "tomatillos",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "husks removed and washed"
+  }
+}

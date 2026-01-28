@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces manicotti",
+  "expected": {
+    "item": "manicotti",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

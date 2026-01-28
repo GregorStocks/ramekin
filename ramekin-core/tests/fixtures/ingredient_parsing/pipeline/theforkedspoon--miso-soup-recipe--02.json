@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup Bonito fish flakes",
+  "expected": {
+    "item": "Bonito fish flakes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

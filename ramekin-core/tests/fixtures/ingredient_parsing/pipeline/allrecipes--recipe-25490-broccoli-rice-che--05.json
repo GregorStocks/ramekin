@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound processed cheese food, cubed",
+  "expected": {
+    "item": "processed cheese food",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "cubed"
+  }
+}

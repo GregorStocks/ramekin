@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

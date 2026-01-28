@@ -1,0 +1,17 @@
+{
+  "raw": "2 and 3/4 cups (344g) all-purpose flour (spooned &amp;amp; leveled)",
+  "expected": {
+    "item": "all-purpose flour (spooned &amp; leveled)",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "344",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

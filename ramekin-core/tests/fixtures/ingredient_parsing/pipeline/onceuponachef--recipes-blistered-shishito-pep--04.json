@@ -1,0 +1,13 @@
+{
+  "raw": "Generous pinch flaky sea salt, (for serving (optional))",
+  "expected": {
+    "item": "flaky sea salt,",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous pinch"
+      }
+    ],
+    "note": "for serving (optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces pancetta, thickly sliced, finely diced",
+  "expected": {
+    "item": "pancetta, thickly sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

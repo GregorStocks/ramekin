@@ -1,0 +1,17 @@
+{
+  "raw": "1 bone-in beef rib roast (about 3 pounds and 2 ribs)",
+  "expected": {
+    "item": "bone-in beef rib roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

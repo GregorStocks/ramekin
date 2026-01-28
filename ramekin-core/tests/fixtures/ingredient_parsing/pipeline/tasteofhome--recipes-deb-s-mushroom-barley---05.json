@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup medium pearl barley",
+  "expected": {
+    "item": "medium pearl barley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

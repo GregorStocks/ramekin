@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons minced scallions",
+  "expected": {
+    "item": "minced scallions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

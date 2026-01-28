@@ -1,0 +1,13 @@
+{
+  "raw": "70 grams baby corn ((5 ears, sliced in half at an angle))",
+  "expected": {
+    "item": "baby corn",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      }
+    ],
+    "note": "5 ears, sliced in half at an angle"
+  }
+}

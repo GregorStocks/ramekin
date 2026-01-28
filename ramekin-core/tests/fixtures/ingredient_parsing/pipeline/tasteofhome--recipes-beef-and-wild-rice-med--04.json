@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound beef top sirloin steak, cut into 3/4-inch cubes",
+  "expected": {
+    "item": "beef top sirloin steak, cut into 3/4-inch cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

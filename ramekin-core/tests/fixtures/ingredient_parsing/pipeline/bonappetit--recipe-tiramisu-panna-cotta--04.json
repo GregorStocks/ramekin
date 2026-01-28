@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tbsp. instant espresso powder",
+  "expected": {
+    "item": "instant espresso powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

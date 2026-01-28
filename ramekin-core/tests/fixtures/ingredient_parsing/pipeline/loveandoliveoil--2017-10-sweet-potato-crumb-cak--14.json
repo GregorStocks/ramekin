@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup sweet potato puree",
+  "expected": {
+    "item": "sweet potato puree",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

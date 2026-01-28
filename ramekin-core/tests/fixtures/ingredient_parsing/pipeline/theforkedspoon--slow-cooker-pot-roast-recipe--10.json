@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces pancetta",
+  "expected": {
+    "item": "pancetta",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

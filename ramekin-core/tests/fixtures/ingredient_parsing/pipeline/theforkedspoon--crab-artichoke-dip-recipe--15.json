@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon Frank&amp;#39;s Red Hot Sauce (optional)",
+  "expected": {
+    "item": "Frank's Red Hot Sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

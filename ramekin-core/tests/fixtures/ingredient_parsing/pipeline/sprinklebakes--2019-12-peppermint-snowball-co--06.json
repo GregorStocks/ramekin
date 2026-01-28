@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup finely chopped almonds",
+  "expected": {
+    "item": "finely chopped almonds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

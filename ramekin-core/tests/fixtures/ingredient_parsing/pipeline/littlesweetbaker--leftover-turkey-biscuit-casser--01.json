@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups leftover turkey (diced or shredded)",
+  "expected": {
+    "item": "leftover turkey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "diced or shredded"
+  }
+}

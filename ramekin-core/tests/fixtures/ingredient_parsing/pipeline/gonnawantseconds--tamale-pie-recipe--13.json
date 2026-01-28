@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon dried oregano",
+  "expected": {
+    "item": "dried oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

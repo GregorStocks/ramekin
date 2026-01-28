@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup dry sherry&nbsp;",
+  "expected": {
+    "item": "dry sherry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "14.5 ounces fire roasted tomatoes",
+  "expected": {
+    "item": "fire roasted tomatoes",
+    "measurements": [
+      {
+        "amount": "14.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

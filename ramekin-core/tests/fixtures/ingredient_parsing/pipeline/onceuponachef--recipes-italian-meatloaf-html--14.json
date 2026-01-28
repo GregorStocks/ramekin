@@ -1,0 +1,13 @@
+{
+  "raw": "¾ cup marinara sauce, plus more for serving",
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

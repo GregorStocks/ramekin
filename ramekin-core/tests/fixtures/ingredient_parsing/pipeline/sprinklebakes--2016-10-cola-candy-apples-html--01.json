@@ -1,0 +1,13 @@
+{
+  "raw": "8-10  small apples",
+  "expected": {
+    "item": "apples",
+    "measurements": [
+      {
+        "amount": "8-10",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces smoked salmon, cut into 2-inch pieces",
+  "expected": {
+    "item": "smoked salmon, cut into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

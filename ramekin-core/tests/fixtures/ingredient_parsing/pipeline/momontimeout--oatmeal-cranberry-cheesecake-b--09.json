@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz jellied cranberry sauce",
+  "expected": {
+    "item": "jellied cranberry sauce",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

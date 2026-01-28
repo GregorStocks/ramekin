@@ -1,0 +1,17 @@
+{
+  "raw": "1 (18.25 ounce) package yellow cake mix",
+  "expected": {
+    "item": "yellow cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "18.25",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

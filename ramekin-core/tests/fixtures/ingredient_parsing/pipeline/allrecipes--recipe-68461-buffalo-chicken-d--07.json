@@ -1,0 +1,17 @@
+{
+  "raw": "1 (8 ounce) box chicken-flavored crackers",
+  "expected": {
+    "item": "chicken-flavored crackers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      },
+      {
+        "amount": "8",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "36  gummy bears",
+  "expected": {
+    "item": "gummy bears",
+    "measurements": [
+      {
+        "amount": "36",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

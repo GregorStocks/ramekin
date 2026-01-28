@@ -1,0 +1,13 @@
+{
+  "raw": "3 large eggs and 1 egg yolk at room temprature",
+  "expected": {
+    "item": "eggs and 1 egg yolk at room temprature",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

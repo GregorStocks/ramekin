@@ -1,0 +1,13 @@
+{
+  "raw": "30 oz frozen hash brown potatoes (1 bag - keep frozen)",
+  "expected": {
+    "item": "frozen hash brown potatoes",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "oz"
+      }
+    ],
+    "note": "1 bag - keep frozen"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups heavy cream, divided",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

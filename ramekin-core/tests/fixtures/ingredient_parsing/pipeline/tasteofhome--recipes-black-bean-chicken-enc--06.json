@@ -1,0 +1,17 @@
+{
+  "raw": "3 cans (4 ounces each) whole green chiles, drained and coarsely chopped",
+  "expected": {
+    "item": "whole green chiles",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cans"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces each"
+      }
+    ],
+    "note": "drained and coarsely chopped"
+  }
+}

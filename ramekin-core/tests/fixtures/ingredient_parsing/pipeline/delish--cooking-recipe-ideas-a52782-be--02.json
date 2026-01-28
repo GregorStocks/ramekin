@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. linguine",
+  "expected": {
+    "item": "linguine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

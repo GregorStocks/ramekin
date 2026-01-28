@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup low-fat buttermilk, chilled",
+  "expected": {
+    "item": "low-fat buttermilk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
+  }
+}

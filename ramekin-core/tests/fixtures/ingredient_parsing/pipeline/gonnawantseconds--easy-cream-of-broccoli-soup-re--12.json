@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 Cups Carrot (Peeled and Diced)",
+  "expected": {
+    "item": "Carrot",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "Peeled and Diced"
+  }
+}

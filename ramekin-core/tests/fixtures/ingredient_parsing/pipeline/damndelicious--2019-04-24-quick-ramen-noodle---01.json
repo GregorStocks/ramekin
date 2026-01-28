@@ -1,0 +1,13 @@
+{
+  "raw": "2  3.5-ounce packages instant ramen noodles, flavor packets discarded",
+  "expected": {
+    "item": "3.5-ounce packages instant ramen noodles, flavor packets discarded",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

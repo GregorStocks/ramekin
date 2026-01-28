@@ -1,0 +1,17 @@
+{
+  "raw": "1 piece kombu seaweed (approx 4 inches long)",
+  "expected": {
+    "item": "kombu seaweed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (60ml) milk (any kind), at room temperature",
+  "expected": {
+    "item": "milk (any kind)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

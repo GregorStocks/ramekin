@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon (5g) vanilla extract&nbsp;",
+  "expected": {
+    "item": "vanilla extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds top sirloin steak (diced)",
+  "expected": {
+    "item": "top sirloin steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "diced"
+  }
+}

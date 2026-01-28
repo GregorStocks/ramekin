@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce unsweetened chocolate, chopped (30g)",
+  "expected": {
+    "item": "unsweetened chocolate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
+  }
+}

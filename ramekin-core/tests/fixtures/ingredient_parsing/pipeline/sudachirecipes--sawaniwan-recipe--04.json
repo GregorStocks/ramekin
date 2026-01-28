@@ -1,0 +1,13 @@
+{
+  "raw": "4  fresh shiitake mushroom (thinly sliced)",
+  "expected": {
+    "item": "fresh shiitake mushroom",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

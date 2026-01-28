@@ -1,0 +1,13 @@
+{
+  "raw": "19 ounces processed cheese food (such as Velveeta®), cubed",
+  "expected": {
+    "item": "processed cheese food (such as Velveeta®)",
+    "measurements": [
+      {
+        "amount": "19",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cubed"
+  }
+}

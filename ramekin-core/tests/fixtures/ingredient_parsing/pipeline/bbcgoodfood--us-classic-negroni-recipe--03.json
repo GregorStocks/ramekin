@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp Campari",
+  "expected": {
+    "item": "Campari",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

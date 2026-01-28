@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces fresh button or wild mushrooms, thinly sliced",
+  "expected": {
+    "item": "fresh button or wild mushrooms",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

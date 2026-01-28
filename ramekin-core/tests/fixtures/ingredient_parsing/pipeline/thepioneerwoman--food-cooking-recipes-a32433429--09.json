@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. small red potatoes, halved",
+  "expected": {
+    "item": "small red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved"
+  }
+}

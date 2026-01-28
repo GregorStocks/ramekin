@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (85g) honey",
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

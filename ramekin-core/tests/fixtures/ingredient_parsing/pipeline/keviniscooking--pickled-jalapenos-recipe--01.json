@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb jalapeños",
+  "expected": {
+    "item": "jalapeños",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  ripe avocado",
+  "expected": {
+    "item": "ripe avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

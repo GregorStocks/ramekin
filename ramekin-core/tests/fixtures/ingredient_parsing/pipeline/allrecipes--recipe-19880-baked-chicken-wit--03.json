@@ -1,0 +1,13 @@
+{
+  "raw": "4 fresh peaches - peeled, pitted, and sliced",
+  "expected": {
+    "item": "fresh peaches - peeled, pitted",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "and sliced"
+  }
+}

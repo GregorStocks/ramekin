@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 1.3 lbs ground pork",
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "1 to 1.3",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

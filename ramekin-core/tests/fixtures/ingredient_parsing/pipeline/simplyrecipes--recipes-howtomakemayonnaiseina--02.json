@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon Dijon mustard, or 1/2 teaspoon dry mustard powder",
+  "expected": {
+    "item": "Dijon mustard, or 1/2 teaspoon dry mustard powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

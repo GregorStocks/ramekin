@@ -1,0 +1,17 @@
+{
+  "raw": "5 ounces (about 6 cups) packed spinach leaves",
+  "expected": {
+    "item": "packed spinach leaves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

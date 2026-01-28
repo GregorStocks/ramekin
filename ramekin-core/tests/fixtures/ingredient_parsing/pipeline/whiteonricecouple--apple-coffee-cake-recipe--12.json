@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon ground Ginger ( or 2 teaspoons fresh grated ginger)",
+  "expected": {
+    "item": "ground Ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or 2 teaspoons fresh grated ginger"
+  }
+}

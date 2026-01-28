@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp almond butter or peanut butter",
+  "expected": {
+    "item": "almond butter or peanut butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

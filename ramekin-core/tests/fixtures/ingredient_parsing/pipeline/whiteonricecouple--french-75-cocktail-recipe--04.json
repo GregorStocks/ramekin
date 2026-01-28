@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 oz. simple syrup",
+  "expected": {
+    "item": "simple syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

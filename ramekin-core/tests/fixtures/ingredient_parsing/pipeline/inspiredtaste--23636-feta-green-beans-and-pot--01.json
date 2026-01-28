@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound small yellow or white potatoes",
+  "expected": {
+    "item": "small yellow or white potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

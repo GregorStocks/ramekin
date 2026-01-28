@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup + 1 tsp honey",
+  "expected": {
+    "item": "+ 1 tsp honey",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

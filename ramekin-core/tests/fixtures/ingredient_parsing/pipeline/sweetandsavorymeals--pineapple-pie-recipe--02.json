@@ -1,0 +1,13 @@
+{
+  "raw": "20 oz canned crushed pineapple",
+  "expected": {
+    "item": "canned crushed pineapple",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

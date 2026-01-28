@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup pepitas (pumpkin&nbsp;seeds)",
+  "expected": {
+    "item": "pepitas (pumpkin seeds)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

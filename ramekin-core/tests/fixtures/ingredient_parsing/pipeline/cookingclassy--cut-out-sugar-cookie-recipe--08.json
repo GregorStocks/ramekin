@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 tsp almond extract ((optional))",
+  "expected": {
+    "item": "almond extract",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
+  }
+}

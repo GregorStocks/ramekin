@@ -1,0 +1,13 @@
+{
+  "raw": "4 leaves Swiss chard (sliced)",
+  "expected": {
+    "item": "leaves Swiss chard",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
+  }
+}

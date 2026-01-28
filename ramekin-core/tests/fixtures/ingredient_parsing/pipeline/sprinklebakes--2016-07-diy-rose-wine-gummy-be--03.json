@@ -1,0 +1,17 @@
+{
+  "raw": "6  packets (.25 oz. each powdered gelatin)",
+  "expected": {
+    "item": "packets",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": ".25",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup beef broth (optional, if needed)",
+  "expected": {
+    "item": "beef broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional, if needed"
+  }
+}

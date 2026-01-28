@@ -1,0 +1,17 @@
+{
+  "raw": "30 g (3 tablespoons) powdered sugar",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

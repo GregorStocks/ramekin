@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces grapefruit soda",
+  "expected": {
+    "item": "grapefruit soda",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

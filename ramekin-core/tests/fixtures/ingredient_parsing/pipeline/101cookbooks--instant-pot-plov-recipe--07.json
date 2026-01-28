@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups boiling water with 1/2 teaspoon salt added, divided",
+  "expected": {
+    "item": "boiling water with 1/2 teaspoon salt added",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

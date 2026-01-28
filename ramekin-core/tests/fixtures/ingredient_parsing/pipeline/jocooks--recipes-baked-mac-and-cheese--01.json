@@ -1,0 +1,17 @@
+{
+  "raw": "2½ cups elbow macaroni ((10 oz) uncooked (will yield about 5 cups of cooked macaroni))",
+  "expected": {
+    "item": "elbow macaroni uncooked",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "will yield about 5 cups of cooked macaroni"
+  }
+}

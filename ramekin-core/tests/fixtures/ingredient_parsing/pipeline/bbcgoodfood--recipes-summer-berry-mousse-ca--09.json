@@ -1,0 +1,13 @@
+{
+  "raw": "400g raspberries",
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

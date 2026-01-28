@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup hollandaise sauce (freshly made)",
+  "expected": {
+    "item": "hollandaise sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "freshly made"
+  }
+}

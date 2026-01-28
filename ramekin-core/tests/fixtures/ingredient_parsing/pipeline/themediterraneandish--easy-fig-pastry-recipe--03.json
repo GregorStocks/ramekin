@@ -1,0 +1,13 @@
+{
+  "raw": "4-5 oz goat cheese, room temperature",
+  "expected": {
+    "item": "goat cheese",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": "oz"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

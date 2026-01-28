@@ -1,0 +1,13 @@
+{
+  "raw": "7 cups plus 6 Tbsp unbleached all-purpose flour",
+  "expected": {
+    "item": "7 cups plus 6 Tbsp unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus 6 Tbsp unbleached all-purpose flour"
+  }
+}

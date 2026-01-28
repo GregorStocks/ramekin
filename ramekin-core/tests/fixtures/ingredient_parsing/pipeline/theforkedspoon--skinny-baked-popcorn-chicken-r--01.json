@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 pounds chicken breast (cut into small bite-size chunks)",
+  "expected": {
+    "item": "chicken breast (cut into small bite-size chunks)",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

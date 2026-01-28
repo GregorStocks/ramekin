@@ -1,0 +1,17 @@
+{
+  "raw": "2 - 3 ounces firm tofu (2 handfuls), chopped into 1/3-inch cubes",
+  "expected": {
+    "item": "- 3 ounces firm tofu",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "handfuls"
+      }
+    ],
+    "note": "chopped into 1/3-inch cubes"
+  }
+}

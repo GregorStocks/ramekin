@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp Teriyaki sauce",
+  "expected": {
+    "item": "Teriyaki sauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "100 g onion (roughly cut)",
+  "expected": {
+    "item": "onion (roughly cut)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

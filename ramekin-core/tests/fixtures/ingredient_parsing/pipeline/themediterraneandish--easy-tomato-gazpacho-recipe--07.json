@@ -1,0 +1,13 @@
+{
+  "raw": "2  green onions, (trimmed, roughly chopped, more for garnish)",
+  "expected": {
+    "item": "green onions,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "trimmed, roughly chopped, more for garnish"
+  }
+}

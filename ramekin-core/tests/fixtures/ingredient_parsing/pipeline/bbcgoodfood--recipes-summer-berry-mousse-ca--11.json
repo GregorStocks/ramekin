@@ -1,0 +1,13 @@
+{
+  "raw": "250g mixture of  strawberries (chopped) and raspberries",
+  "expected": {
+    "item": "mixture of  strawberries and raspberries",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
+  }
+}

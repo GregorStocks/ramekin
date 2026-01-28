@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup lightly salted cashews, coarsely chopped",
+  "expected": {
+    "item": "lightly salted cashews",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

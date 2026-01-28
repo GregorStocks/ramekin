@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup Caesar dressing, see our homemade dressing recipe",
+  "expected": {
+    "item": "Caesar dressing, see our homemade dressing recipe",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

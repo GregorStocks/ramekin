@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound medium fresh mushrooms, halved",
+  "expected": {
+    "item": "medium fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "halved"
+  }
+}

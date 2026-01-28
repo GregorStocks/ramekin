@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces thin rice noodles",
+  "expected": {
+    "item": "thin rice noodles",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

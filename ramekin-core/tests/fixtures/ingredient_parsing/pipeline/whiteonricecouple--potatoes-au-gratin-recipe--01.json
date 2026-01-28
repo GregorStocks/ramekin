@@ -1,0 +1,13 @@
+{
+  "raw": "4 pounds Potatoes (,  scrubbed clean (preferably gold potatoes))",
+  "expected": {
+    "item": "Potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pounds"
+      }
+    ],
+    "note": ",  scrubbed clean (preferably gold potatoes"
+  }
+}

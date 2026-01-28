@@ -1,0 +1,13 @@
+{
+  "raw": "1 package instant ramen (curly flash-fried type)",
+  "expected": {
+    "item": "instant ramen (curly flash-fried type)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

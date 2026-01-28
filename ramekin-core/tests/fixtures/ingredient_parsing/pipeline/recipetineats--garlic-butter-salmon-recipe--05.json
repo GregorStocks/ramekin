@@ -1,0 +1,17 @@
+{
+  "raw": "1 tbsp garlic (~2 cloves) (, finely minced by hand (don&amp;#039;t use a garlic press))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "2",
+        "unit": "cloves"
+      }
+    ],
+    "note": ", finely minced by hand (don&#039;t use a garlic press"
+  }
+}

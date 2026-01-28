@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Pecorino Romano (grated, or Parmesan cheese)",
+  "expected": {
+    "item": "Pecorino Romano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "grated, or Parmesan cheese"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "250g penne or other tubular pasta",
+  "expected": {
+    "item": "penne or other tubular pasta",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

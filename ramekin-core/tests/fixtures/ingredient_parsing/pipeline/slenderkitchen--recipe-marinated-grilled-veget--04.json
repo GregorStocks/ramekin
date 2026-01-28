@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb asparagus",
+  "expected": {
+    "item": "asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

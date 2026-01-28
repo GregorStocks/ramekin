@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz fresh sliced sashimi",
+  "expected": {
+    "item": "fresh sliced sashimi",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

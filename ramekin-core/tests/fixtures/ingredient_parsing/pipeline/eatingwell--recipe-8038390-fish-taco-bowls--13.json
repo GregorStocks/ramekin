@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups hot cooked long-grain brown rice",
+  "expected": {
+    "item": "hot cooked long-grain brown rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

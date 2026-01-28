@@ -1,0 +1,13 @@
+{
+  "raw": "1  small loaf Challah (sliced into 1\" cubes, about 6 cups worth)",
+  "expected": {
+    "item": "loaf Challah",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced into 1\" cubes, about 6 cups worth"
+  }
+}

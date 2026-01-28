@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups carrots (about 3 medium, grated)",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "about 3 medium, grated"
+  }
+}

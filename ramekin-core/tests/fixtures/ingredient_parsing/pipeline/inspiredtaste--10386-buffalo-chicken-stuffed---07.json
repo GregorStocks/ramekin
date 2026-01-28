@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces ricotta cheese (about 1/2 cup)",
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

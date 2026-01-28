@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons (1 stick) unsalted butter, divided",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "divided"
+  }
+}

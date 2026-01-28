@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. minced tomatoes",
+  "expected": {
+    "item": "minced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "3 large zucchinis (about 1 1/2 pounds)",
+  "expected": {
+    "item": "zucchinis",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

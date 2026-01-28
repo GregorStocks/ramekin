@@ -1,0 +1,13 @@
+{
+  "raw": "2 small heads romaine lettuce, washed and torn into bite-size pieces",
+  "expected": {
+    "item": "heads romaine lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "washed and torn into bite-size pieces"
+  }
+}

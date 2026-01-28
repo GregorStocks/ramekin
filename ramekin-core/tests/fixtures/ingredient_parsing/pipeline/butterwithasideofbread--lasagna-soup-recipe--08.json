@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb cooked Italian sausage- sliced and crumbled (or ground beef)",
+  "expected": {
+    "item": "cooked Italian sausage- sliced and crumbled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "or ground beef"
+  }
+}

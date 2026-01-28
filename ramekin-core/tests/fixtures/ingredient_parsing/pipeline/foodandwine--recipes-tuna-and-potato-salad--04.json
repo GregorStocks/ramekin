@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup plus 2 tablespoons mayonnaise",
+  "expected": {
+    "item": "1/4 cup plus 2 tablespoons mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons mayonnaise"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp grenadine",
+  "expected": {
+    "item": "grenadine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

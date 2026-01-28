@@ -1,0 +1,13 @@
+{
+  "raw": "1 garlic head, whole",
+  "expected": {
+    "item": "garlic head",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "whole"
+  }
+}

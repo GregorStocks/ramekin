@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds small red potatoes, quartered",
+  "expected": {
+    "item": "small red potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "quartered"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cups (2 sticks) unsalted butter, softened",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cups"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "softened"
+  }
+}

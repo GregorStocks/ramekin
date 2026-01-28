@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp finely chopped cilantro leaves (plus more for garnish)",
+  "expected": {
+    "item": "finely chopped cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for garnish"
+  }
+}

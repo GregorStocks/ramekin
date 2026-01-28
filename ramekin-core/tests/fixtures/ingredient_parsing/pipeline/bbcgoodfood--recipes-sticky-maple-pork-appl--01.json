@@ -1,0 +1,13 @@
+{
+  "raw": "600g pork fillet",
+  "expected": {
+    "item": "pork fillet",
+    "measurements": [
+      {
+        "amount": "600",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

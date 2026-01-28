@@ -1,0 +1,13 @@
+{
+  "raw": "1  square Aburaage",
+  "expected": {
+    "item": "square Aburaage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

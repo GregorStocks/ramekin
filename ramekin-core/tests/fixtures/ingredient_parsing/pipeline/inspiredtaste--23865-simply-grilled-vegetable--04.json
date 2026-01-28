@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 pound dry pasta such as cavatappi, fusilli or penne",
+  "expected": {
+    "item": "dry pasta such as cavatappi, fusilli or penne",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

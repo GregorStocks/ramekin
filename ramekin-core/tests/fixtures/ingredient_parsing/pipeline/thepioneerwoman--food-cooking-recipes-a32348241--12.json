@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. chopped fresh chives",
+  "expected": {
+    "item": "chopped fresh chives",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

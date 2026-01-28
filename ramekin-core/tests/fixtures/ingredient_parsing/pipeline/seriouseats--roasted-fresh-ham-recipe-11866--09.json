@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (700 ml) water",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "700",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

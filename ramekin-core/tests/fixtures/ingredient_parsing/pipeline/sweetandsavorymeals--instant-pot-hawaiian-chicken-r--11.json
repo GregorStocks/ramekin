@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon ginger grated",
+  "expected": {
+    "item": "ginger grated",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

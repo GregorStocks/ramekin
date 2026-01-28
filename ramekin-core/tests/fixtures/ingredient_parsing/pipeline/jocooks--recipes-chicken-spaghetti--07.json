@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups cooked chicken (shredded, rotisserie chicken works well)",
+  "expected": {
+    "item": "cooked chicken",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded, rotisserie chicken works well"
+  }
+}

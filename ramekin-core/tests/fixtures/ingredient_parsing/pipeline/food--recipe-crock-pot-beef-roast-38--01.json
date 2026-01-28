@@ -1,0 +1,13 @@
+{
+  "raw": "6       potatoes, peeled and cut into large chunks",
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "peeled and cut into large chunks"
+  }
+}

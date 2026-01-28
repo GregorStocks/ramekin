@@ -1,0 +1,13 @@
+{
+  "raw": "1 large head garlic",
+  "expected": {
+    "item": "head garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

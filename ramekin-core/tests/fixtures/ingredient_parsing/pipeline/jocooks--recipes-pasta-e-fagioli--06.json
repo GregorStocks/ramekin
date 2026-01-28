@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces bacon (diced (optional))",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "diced (optional"
+  }
+}

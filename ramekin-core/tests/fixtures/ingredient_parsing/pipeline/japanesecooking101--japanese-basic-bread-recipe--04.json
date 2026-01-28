@@ -1,0 +1,13 @@
+{
+  "raw": "240 g bread flour",
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "240",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

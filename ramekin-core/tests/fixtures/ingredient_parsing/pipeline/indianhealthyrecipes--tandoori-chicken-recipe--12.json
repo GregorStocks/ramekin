@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon lemon juice ((or 1 teaspoon amchur/ dried mango powder or use ½ teaspoon chaat masala))",
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or 1 teaspoon amchur/ dried mango powder or use 1/2 teaspoon chaat masala"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 quart organic low sodium chicken broth",
+  "expected": {
+    "item": "organic low sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
+  }
+}

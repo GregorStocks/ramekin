@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces frozen peaches",
+  "expected": {
+    "item": "frozen peaches",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

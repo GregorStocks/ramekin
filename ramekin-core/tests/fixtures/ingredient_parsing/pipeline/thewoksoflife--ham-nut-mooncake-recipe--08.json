@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams jinhua ham ((京华火腿))",
+  "expected": {
+    "item": "jinhua ham (京华火腿)",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

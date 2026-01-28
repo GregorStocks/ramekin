@@ -1,0 +1,13 @@
+{
+  "raw": "1½ teaspoon black pepper (divided 3 ways)",
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "divided 3 ways"
+  }
+}

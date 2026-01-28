@@ -1,0 +1,17 @@
+{
+  "raw": "24  oz (3 cups) full fat cottage cheese",
+  "expected": {
+    "item": "full fat cottage cheese",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

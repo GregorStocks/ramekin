@@ -1,0 +1,17 @@
+{
+  "raw": "10.5 oz cream of chicken soup  (can use low-sodium or Healthy Request; other cream soups can be used)",
+  "expected": {
+    "item": "cream of chicken soup",
+    "measurements": [
+      {
+        "amount": "10.5",
+        "unit": "oz"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

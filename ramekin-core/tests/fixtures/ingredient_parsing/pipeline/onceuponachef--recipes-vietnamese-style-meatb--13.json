@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup chopped unsalted peanuts, for serving",
+  "expected": {
+    "item": "chopped unsalted peanuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "for serving"
+  }
+}

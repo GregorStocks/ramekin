@@ -1,0 +1,13 @@
+{
+  "raw": "20 large basil leaves, roughly torn",
+  "expected": {
+    "item": "basil leaves, roughly torn",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

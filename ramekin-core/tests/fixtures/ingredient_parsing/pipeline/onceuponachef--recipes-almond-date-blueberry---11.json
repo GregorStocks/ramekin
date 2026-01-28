@@ -1,0 +1,13 @@
+{
+  "raw": "Heaping ⅓ cup dried blueberries",
+  "expected": {
+    "item": "dried blueberries",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
+  }
+}

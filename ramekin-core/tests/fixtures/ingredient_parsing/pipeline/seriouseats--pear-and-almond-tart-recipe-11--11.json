@@ -1,0 +1,21 @@
+{
+  "raw": "2 firm but ripe medium pears (about 11 3/4 ounces; 330g), peeled, cored, and quartered",
+  "expected": {
+    "item": "firm but ripe medium pears , peeled, cored",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "11 3/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "330",
+        "unit": "g"
+      }
+    ],
+    "note": "and quartered"
+  }
+}

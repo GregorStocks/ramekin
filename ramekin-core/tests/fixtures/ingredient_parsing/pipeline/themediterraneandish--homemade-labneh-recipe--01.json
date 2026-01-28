@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups (32 ounces) whole milk yogurt",
+  "expected": {
+    "item": "whole milk yogurt",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

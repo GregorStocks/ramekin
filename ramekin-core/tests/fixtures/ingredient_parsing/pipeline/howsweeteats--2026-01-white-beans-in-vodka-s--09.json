@@ -1,0 +1,13 @@
+{
+  "raw": "1 cups starchy pasta water",
+  "expected": {
+    "item": "starchy pasta water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

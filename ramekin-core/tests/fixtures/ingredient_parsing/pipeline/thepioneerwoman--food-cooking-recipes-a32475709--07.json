@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. ricotta cheese",
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

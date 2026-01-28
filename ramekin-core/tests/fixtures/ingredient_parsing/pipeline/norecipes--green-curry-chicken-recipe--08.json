@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams Thai green eggplant ((trimmed and quartered))",
+  "expected": {
+    "item": "Thai green eggplant",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "trimmed and quartered"
+  }
+}

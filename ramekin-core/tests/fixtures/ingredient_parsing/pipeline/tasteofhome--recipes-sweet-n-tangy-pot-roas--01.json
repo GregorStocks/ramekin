@@ -1,0 +1,17 @@
+{
+  "raw": "1 boneless beef chuck roast (3 pounds)",
+  "expected": {
+    "item": "boneless beef chuck roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

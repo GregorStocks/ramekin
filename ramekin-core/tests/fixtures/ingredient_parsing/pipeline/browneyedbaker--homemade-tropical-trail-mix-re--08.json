@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup chopped dried pineapple",
+  "expected": {
+    "item": "chopped dried pineapple",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

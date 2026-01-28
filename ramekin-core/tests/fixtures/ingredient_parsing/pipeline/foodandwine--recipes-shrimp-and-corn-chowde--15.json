@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups fish or chicken stock or canned low-sodium broth",
+  "expected": {
+    "item": "fish or chicken stock or canned low-sodium broth",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

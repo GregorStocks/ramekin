@@ -1,0 +1,13 @@
+{
+  "raw": "40 ml / 3 tbsp   fish sauce ((Note 2))",
+  "expected": {
+    "item": "/ 3 tbsp   fish sauce (Note 2)",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

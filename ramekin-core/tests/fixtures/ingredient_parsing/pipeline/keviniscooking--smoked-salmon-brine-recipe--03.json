@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups soy sauce",
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 potato bun or other soft bun",
+  "expected": {
+    "item": "potato bun or other soft bun",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

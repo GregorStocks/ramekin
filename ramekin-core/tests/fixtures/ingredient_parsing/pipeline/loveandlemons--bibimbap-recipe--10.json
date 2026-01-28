@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces sautéed shiitake mushrooms (optional)",
+  "expected": {
+    "item": "sautéed shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "optional"
+  }
+}

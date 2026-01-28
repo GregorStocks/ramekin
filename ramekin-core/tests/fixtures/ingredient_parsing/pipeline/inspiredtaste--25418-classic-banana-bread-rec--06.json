@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons (115g) butter, melted and cooled",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": "melted and cooled"
+  }
+}

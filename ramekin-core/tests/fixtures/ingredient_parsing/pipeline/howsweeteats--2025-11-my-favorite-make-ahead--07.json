@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup turkey drippings",
+  "expected": {
+    "item": "turkey drippings",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

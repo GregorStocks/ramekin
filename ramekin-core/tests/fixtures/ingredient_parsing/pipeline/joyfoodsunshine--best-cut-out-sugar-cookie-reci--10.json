@@ -1,0 +1,13 @@
+{
+  "raw": "2 ½ Tablespoons light corn syrup",
+  "expected": {
+    "item": "light corn syrup",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

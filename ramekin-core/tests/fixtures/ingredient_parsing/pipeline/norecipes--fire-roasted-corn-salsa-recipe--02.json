@@ -1,0 +1,13 @@
+{
+  "raw": "1/4  red bell pepper (, minced)",
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": ", minced"
+  }
+}

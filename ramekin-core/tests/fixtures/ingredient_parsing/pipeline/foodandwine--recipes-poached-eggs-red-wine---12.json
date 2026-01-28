@@ -1,0 +1,13 @@
+{
+  "raw": "8 poached eggs",
+  "expected": {
+    "item": "poached eggs",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

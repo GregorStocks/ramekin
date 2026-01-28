@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz. spinach ((6 cups packed))",
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "6 cups packed"
+  }
+}

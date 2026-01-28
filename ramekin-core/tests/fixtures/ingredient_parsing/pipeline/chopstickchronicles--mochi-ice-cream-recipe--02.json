@@ -1,0 +1,13 @@
+{
+  "raw": "180 ml water",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "180",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

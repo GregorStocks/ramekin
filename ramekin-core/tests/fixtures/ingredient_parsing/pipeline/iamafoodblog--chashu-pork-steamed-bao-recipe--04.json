@@ -1,0 +1,13 @@
+{
+  "raw": "10 grams heavy cream",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

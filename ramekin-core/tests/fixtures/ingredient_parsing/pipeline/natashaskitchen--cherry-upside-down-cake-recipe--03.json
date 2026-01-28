@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 14 oz fresh cherries, pitted and halved",
+  "expected": {
+    "item": "14 oz fresh cherries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "pitted and halved"
+  }
+}

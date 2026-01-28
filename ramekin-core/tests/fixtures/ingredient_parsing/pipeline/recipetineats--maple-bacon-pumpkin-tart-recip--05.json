@@ -1,0 +1,13 @@
+{
+  "raw": "7 oz / 200g   butternut or Jap pumpkin (, peeled and roughly diced into 1.5cm/0.5\" cubes)",
+  "expected": {
+    "item": "/ 200g   butternut or Jap pumpkin",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": ", peeled and roughly diced into 1.5cm/0.5\" cubes"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups hot chicken or vegetable broth",
+  "expected": {
+    "item": "hot chicken or vegetable broth",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

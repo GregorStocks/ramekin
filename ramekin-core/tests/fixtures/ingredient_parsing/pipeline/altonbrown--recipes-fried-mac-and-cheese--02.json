@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups leftover macaroni and cheese, refrigerated overnight",
+  "expected": {
+    "item": "leftover macaroni and cheese, refrigerated overnight",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces cream cheese",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

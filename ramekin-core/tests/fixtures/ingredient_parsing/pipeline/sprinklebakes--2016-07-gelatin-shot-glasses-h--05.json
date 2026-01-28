@@ -1,0 +1,13 @@
+{
+  "raw": "2.5 ounces blue Curaçao liqueur",
+  "expected": {
+    "item": "blue Curaçao liqueur",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

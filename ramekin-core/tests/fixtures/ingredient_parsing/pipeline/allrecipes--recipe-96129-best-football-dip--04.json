@@ -1,0 +1,17 @@
+{
+  "raw": "1 (1 pound) loaf processed cheese food, sliced",
+  "expected": {
+    "item": "loaf processed cheese food",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "sliced"
+  }
+}

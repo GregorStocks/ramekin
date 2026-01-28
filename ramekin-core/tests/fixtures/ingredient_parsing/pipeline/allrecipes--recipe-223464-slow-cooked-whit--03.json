@@ -1,0 +1,17 @@
+{
+  "raw": "5 (14 ounce) cans navy beans, rinsed and drained",
+  "expected": {
+    "item": "navy beans",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cans"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": "rinsed and drained"
+  }
+}

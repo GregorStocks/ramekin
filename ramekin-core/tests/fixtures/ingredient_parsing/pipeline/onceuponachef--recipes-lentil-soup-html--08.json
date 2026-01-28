@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups chicken broth, best quality such as Swanson",
+  "expected": {
+    "item": "chicken broth, best quality such as Swanson",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

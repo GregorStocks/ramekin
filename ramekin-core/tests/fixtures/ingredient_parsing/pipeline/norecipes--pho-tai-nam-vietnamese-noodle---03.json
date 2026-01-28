@@ -1,0 +1,13 @@
+{
+  "raw": "25 grams ginger",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

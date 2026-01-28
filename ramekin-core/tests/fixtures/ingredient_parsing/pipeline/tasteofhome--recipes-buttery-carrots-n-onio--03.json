@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon chicken bouillon granules",
+  "expected": {
+    "item": "chicken bouillon granules",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

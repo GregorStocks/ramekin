@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 tsp Black pepper",
+  "expected": {
+    "item": "Black pepper",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

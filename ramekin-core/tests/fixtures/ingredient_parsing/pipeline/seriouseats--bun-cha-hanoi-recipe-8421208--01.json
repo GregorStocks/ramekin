@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/4 pounds (567g) ground pork, 20 percent fat",
+  "expected": {
+    "item": "ground pork, 20 percent fat",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      },
+      {
+        "amount": "567",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

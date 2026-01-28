@@ -1,0 +1,13 @@
+{
+  "raw": "2 c. cooked brown rice (thawed if frozen)",
+  "expected": {
+    "item": "cooked brown rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "c"
+      }
+    ],
+    "note": "thawed if frozen"
+  }
+}

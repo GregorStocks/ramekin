@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon Kosher Salt ((5g))",
+  "expected": {
+    "item": "Kosher Salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

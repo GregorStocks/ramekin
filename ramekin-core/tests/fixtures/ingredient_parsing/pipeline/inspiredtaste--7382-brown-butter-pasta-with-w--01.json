@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces dry pasta such as linguine or spaghetti",
+  "expected": {
+    "item": "dry pasta such as linguine or spaghetti",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

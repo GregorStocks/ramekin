@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 tsp red pepper flakes ((optional for heat))",
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional for heat"
+  }
+}

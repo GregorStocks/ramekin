@@ -1,0 +1,17 @@
+{
+  "raw": "1 pint (16 ounces) vanilla ice cream, softened slightly",
+  "expected": {
+    "item": "vanilla ice cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      },
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "softened slightly"
+  }
+}

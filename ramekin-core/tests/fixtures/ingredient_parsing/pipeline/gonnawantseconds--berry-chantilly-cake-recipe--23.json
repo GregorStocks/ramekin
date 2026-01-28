@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces Mascarpone (at room temperature)",
+  "expected": {
+    "item": "Mascarpone",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

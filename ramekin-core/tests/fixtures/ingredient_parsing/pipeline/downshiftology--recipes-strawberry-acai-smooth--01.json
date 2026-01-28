@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 oz packet frozen acai",
+  "expected": {
+    "item": "packet frozen acai",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

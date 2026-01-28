@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds white fish fillet ((cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+  "expected": {
+    "item": "white fish fillet (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

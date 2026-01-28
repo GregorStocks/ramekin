@@ -1,0 +1,17 @@
+{
+  "raw": "8 (4 ounce) chicken cutlets",
+  "expected": {
+    "item": "chicken cutlets",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

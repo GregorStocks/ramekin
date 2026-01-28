@@ -1,0 +1,13 @@
+{
+  "raw": "1  egg white beaten",
+  "expected": {
+    "item": "egg white beaten",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "14 oz can sweetened condensed milk ((397 grams) raw/un-cooked)",
+  "expected": {
+    "item": "can sweetened condensed milk raw/un-cooked)",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "397",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

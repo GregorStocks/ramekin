@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz jarred roasted red peppers, (drained rinsed, and dried (2 large peppers))",
+  "expected": {
+    "item": "jarred roasted red peppers,",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained rinsed, and dried (2 large peppers"
+  }
+}

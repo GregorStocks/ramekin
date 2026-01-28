@@ -1,0 +1,13 @@
+{
+  "raw": "1 5-ounce package mixed greens",
+  "expected": {
+    "item": "5-ounce package mixed greens",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

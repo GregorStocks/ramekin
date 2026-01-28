@@ -1,0 +1,13 @@
+{
+  "raw": "14 to 16 pound turkey",
+  "expected": {
+    "item": "turkey",
+    "measurements": [
+      {
+        "amount": "14 to 16",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

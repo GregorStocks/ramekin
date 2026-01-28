@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups pistachio flour*",
+  "expected": {
+    "item": "pistachio flour*",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "9 oz refrigerated cheese tortellini",
+  "expected": {
+    "item": "refrigerated cheese tortellini",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

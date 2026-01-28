@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup buffalo wing sauce",
+  "expected": {
+    "item": "buffalo wing sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

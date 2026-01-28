@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb fresh asparagus, trimmed of tough ends, chopped into 2-inch / 5cm pieces",
+  "expected": {
+    "item": "fresh asparagus, trimmed of tough ends",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "chopped into 2-inch / 5cm pieces"
+  }
+}

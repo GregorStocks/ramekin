@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces frozen corn",
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

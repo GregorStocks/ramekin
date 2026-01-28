@@ -1,0 +1,13 @@
+{
+  "raw": "24  Oreo cookies (finely crushed into crumbs)",
+  "expected": {
+    "item": "Oreo cookies",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      }
+    ],
+    "note": "finely crushed into crumbs"
+  }
+}

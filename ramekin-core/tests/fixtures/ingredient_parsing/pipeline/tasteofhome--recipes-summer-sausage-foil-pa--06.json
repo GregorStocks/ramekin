@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium sweet red pepper, cut into strips",
+  "expected": {
+    "item": "sweet red pepper, cut into strips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

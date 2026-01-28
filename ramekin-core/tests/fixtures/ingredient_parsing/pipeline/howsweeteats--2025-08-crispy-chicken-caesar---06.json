@@ -1,0 +1,13 @@
+{
+  "raw": "5 to 6 tablespoons olive oil",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "5 to 6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

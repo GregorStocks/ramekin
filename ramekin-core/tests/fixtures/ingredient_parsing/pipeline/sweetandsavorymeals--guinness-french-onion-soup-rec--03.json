@@ -1,0 +1,13 @@
+{
+  "raw": "4 pounds onions (sliced)",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pounds"
+      }
+    ],
+    "note": "sliced"
+  }
+}

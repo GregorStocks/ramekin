@@ -1,0 +1,17 @@
+{
+  "raw": "2 sticks (227 g) salted butter (unsalted is fine if it&amp;#8217;s all you have), melted",
+  "expected": {
+    "item": "salted butter (unsalted is fine if it&#8217;s all you have)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
+  }
+}

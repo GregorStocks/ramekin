@@ -1,0 +1,13 @@
+{
+  "raw": "½-¾ cup peanut butter (to taste)",
+  "expected": {
+    "item": "peanut butter",
+    "measurements": [
+      {
+        "amount": "1/2-3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "to taste"
+  }
+}

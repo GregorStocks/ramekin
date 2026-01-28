@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams cashews ((toasted))",
+  "expected": {
+    "item": "cashews",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "toasted"
+  }
+}

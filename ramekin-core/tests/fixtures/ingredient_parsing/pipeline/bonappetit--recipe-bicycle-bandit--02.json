@@ -1,0 +1,13 @@
+{
+  "raw": "½ oz. Campari",
+  "expected": {
+    "item": "Campari",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

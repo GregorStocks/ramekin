@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cup watermelon juice (see Tip)",
+  "expected": {
+    "item": "watermelon juice (see Tip)",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

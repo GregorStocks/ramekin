@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams red onion ((sliced thinly))",
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": "sliced thinly"
+  }
+}

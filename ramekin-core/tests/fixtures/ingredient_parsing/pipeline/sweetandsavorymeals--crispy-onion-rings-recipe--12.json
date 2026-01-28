@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups oil for frying (or as needed)",
+  "expected": {
+    "item": "oil for frying",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": "or as needed"
+  }
+}

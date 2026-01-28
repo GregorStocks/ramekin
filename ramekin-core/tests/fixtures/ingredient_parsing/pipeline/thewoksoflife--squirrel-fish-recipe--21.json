@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons onion ((finely chopped))",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

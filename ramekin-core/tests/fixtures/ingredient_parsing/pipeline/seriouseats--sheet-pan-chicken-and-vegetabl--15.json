@@ -1,0 +1,17 @@
+{
+  "raw": "2 1/2 tablespoons (40 g) creamy natural peanut butter&nbsp;",
+  "expected": {
+    "item": "creamy natural peanut butter",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

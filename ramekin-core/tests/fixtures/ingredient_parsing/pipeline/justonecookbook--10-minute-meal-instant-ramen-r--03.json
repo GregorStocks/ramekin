@@ -1,0 +1,17 @@
+{
+  "raw": "500 ml water ((about 2 cups))",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

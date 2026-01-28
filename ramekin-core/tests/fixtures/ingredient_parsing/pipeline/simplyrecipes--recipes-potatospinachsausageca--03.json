@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz fresh spinach, washed, dried, and stemmed",
+  "expected": {
+    "item": "fresh spinach, washed, dried, and stemmed",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

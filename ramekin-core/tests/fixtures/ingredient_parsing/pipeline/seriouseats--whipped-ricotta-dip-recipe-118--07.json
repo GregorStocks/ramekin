@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (56 g) finely grated Parmigiano-Reggiano cheese",
+  "expected": {
+    "item": "finely grated Parmigiano-Reggiano cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

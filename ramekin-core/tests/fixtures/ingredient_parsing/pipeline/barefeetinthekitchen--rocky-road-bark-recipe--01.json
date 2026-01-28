@@ -1,0 +1,13 @@
+{
+  "raw": "2 10 ounce bags semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+  "expected": {
+    "item": "10 ounce bags semi-sweet, milk, white, or dark chocolate chips, about 3 cups",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

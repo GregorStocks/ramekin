@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups almond milk, at room temperature",
+  "expected": {
+    "item": "almond milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

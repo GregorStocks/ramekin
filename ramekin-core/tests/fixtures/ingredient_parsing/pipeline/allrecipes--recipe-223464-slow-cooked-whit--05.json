@@ -1,0 +1,17 @@
+{
+  "raw": "2 (4 ounce) cans chopped green chilies",
+  "expected": {
+    "item": "chopped green chilies",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 sticks unsalted butter ((at room temperature))",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

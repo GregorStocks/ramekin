@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces spaghetti, (cooked per package instructions)",
+  "expected": {
+    "item": "spaghetti,",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cooked per package instructions"
+  }
+}

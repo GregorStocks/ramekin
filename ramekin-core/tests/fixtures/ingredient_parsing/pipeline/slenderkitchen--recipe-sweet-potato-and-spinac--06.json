@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups sweet potato, diced",
+  "expected": {
+    "item": "sweet potato",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": "diced"
+  }
+}

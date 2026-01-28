@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup coarsely chopped basil",
+  "expected": {
+    "item": "coarsely chopped basil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

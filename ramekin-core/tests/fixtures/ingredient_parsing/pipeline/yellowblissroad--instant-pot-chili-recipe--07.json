@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounce can green chiles",
+  "expected": {
+    "item": "can green chiles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

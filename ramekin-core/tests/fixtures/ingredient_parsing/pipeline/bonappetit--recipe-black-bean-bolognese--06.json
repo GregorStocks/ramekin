@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb. ground beef chuck (20% fat)",
+  "expected": {
+    "item": "ground beef chuck",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

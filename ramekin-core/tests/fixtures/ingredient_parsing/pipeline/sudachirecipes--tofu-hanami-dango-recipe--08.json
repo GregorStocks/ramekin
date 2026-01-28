@@ -1,0 +1,13 @@
+{
+  "raw": "1 drop cherry blossom extract (or flavoring of your choice (optional))",
+  "expected": {
+    "item": "cherry blossom extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "drop"
+      }
+    ],
+    "note": "or flavoring of your choice (optional"
+  }
+}

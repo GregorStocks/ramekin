@@ -1,0 +1,13 @@
+{
+  "raw": "12 cups popped kettle corn",
+  "expected": {
+    "item": "popped kettle corn",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

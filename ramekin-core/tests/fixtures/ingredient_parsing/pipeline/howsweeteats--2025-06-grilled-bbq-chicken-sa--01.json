@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound boneless, skinless chicken thighs",
+  "expected": {
+    "item": "boneless, skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

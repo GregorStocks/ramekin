@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces guanciale (or pancetta, diced)",
+  "expected": {
+    "item": "guanciale",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "or pancetta, diced"
+  }
+}

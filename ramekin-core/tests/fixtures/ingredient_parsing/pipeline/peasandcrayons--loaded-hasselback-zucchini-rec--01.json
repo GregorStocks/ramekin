@@ -1,0 +1,13 @@
+{
+  "raw": "3  medium zucchini squash",
+  "expected": {
+    "item": "zucchini squash",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

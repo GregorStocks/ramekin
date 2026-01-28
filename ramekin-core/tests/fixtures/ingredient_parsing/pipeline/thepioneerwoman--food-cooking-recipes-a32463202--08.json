@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. green beans, trimmed&nbsp;",
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

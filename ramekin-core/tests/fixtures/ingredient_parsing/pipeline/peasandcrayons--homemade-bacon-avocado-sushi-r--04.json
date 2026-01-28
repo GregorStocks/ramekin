@@ -1,0 +1,13 @@
+{
+  "raw": "2-4 slices bacon (cooked til crispy)",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "slices"
+      }
+    ],
+    "note": "cooked til crispy"
+  }
+}

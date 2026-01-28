@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tablespoons vegetable oil vegetable oil",
+  "expected": {
+    "item": "vegetable oil vegetable oil",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

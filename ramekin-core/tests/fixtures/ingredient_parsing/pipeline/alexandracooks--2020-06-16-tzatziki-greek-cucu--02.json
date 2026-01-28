@@ -1,0 +1,13 @@
+{
+  "raw": "1&nbsp;cup plain Greek yogurt, I like the Fage 5%",
+  "expected": {
+    "item": "plain Greek yogurt, I like the Fage 5%",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

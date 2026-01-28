@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp butter, (melted (unsalted or salted is fine))",
+  "expected": {
+    "item": "butter,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted (unsalted or salted is fine"
+  }
+}

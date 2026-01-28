@@ -1,0 +1,13 @@
+{
+  "raw": "4-5 tablespoons grapefruit cordial",
+  "expected": {
+    "item": "grapefruit cordial",
+    "measurements": [
+      {
+        "amount": "4-5",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

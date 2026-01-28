@@ -1,0 +1,13 @@
+{
+  "raw": "10 x 10 inch sheet of frozen puff pastry, thawed and cut in half",
+  "expected": {
+    "item": "x 10 inch sheet of frozen puff pastry",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "thawed and cut in half"
+  }
+}

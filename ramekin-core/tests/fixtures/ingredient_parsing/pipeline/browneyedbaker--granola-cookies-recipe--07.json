@@ -1,0 +1,17 @@
+{
+  "raw": "14 tablespoons unsalted butter, at room temperature ((7 ounces ))",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

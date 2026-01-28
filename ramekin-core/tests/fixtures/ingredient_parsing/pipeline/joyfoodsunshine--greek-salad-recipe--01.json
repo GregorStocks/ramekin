@@ -1,0 +1,13 @@
+{
+  "raw": "2.5 ounces spring mix",
+  "expected": {
+    "item": "spring mix",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

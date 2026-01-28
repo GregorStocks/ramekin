@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce sharp cheddar cheese (cubed)",
+  "expected": {
+    "item": "sharp cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "cubed"
+  }
+}

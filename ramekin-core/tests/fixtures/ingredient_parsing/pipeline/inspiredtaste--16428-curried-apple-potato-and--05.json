@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound yellow or red potatoes, chopped (3 to 4 medium)",
+  "expected": {
+    "item": "yellow or red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "3 to 4",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
+  }
+}

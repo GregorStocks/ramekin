@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (28 ounces) Italian diced tomatoes, drained",
+  "expected": {
+    "item": "Italian diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces blueberries (washed)",
+  "expected": {
+    "item": "blueberries",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "washed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce triple sec",
+  "expected": {
+    "item": "triple sec",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

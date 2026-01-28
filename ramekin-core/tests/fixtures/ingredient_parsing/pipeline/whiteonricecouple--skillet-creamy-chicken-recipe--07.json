@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Cream",
+  "expected": {
+    "item": "Cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

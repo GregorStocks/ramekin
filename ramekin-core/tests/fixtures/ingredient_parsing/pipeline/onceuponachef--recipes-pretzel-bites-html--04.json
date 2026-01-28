@@ -1,0 +1,17 @@
+{
+  "raw": "2¼ teaspoons instant/rapid-rise yeast (1 package)",
+  "expected": {
+    "item": "instant/rapid-rise yeast",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

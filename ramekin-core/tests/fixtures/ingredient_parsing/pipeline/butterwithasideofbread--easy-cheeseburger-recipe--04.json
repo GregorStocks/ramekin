@@ -1,0 +1,13 @@
+{
+  "raw": "4 Slices of your favorite cheese (for topping)",
+  "expected": {
+    "item": "your favorite cheese (for topping)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

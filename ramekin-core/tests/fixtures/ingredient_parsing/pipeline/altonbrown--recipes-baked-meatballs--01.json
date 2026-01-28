@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces ground pork butt",
+  "expected": {
+    "item": "ground pork butt",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

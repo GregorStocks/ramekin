@@ -1,0 +1,17 @@
+{
+  "raw": "1 small fennel bulb (3/4 pound)—halved, cored and finely chopped",
+  "expected": {
+    "item": "fennel bulb —halved",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "3/4",
+        "unit": "pound"
+      }
+    ],
+    "note": "cored and finely chopped"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225g) pork shoulder,sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)&nbsp;&nbsp;",
+  "expected": {
+    "item": "pork shoulder",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "sliced very thinly into roughly 1- by 1 1/2-inch pieces (see notes)"
+  }
+}

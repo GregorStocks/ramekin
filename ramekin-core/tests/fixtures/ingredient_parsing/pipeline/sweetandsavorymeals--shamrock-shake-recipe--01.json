@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups vanilla ice cream",
+  "expected": {
+    "item": "vanilla ice cream",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

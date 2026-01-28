@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups baby spinach (about 2.5 ounces),",
+  "expected": {
+    "item": "baby spinach ,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "2.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

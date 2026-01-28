@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup granola ((see above for recipe))",
+  "expected": {
+    "item": "granola (see above for recipe)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

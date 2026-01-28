@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon douchi ((fermented black beans, finely minced))",
+  "expected": {
+    "item": "douchi",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "fermented black beans, finely minced"
+  }
+}

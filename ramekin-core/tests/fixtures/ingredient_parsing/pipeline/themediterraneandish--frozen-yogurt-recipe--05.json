@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6 tbsp honey, (more to your liking, I used Greek honey)",
+  "expected": {
+    "item": "honey, (more to your liking, I used Greek honey)",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

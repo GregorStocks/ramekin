@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. store-bought pizza dough, at room temperature",
+  "expected": {
+    "item": "store-bought pizza dough",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

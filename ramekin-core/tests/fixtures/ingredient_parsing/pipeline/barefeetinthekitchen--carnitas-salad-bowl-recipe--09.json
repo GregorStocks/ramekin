@@ -1,0 +1,13 @@
+{
+  "raw": "dash of kosher salt",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
+  }
+}

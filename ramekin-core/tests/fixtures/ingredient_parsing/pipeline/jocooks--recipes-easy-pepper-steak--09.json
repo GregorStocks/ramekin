@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium onion (sliced)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced"
+  }
+}

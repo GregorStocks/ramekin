@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons confectioners' sugar",
+  "expected": {
+    "item": "confectioners' sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

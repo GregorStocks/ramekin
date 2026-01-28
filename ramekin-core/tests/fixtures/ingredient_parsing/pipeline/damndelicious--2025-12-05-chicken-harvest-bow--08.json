@@ -1,0 +1,13 @@
+{
+  "raw": "1  medium honeycrisp apple (diced)",
+  "expected": {
+    "item": "honeycrisp apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
+  }
+}

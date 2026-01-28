@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup milk ((cow, almond, soy, etc))",
+  "expected": {
+    "item": "milk (cow, almond, soy, etc)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

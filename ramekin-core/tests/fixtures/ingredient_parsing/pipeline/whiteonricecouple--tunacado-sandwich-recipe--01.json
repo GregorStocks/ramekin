@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces tuna (drained (preferably a good chunky tuna in olive oil),  (usually 2 cans that are 5 oz each))",
+  "expected": {
+    "item": "tuna ,  (usually 2 cans that are 5 oz each)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained (preferably a good chunky tuna in olive oil"
+  }
+}

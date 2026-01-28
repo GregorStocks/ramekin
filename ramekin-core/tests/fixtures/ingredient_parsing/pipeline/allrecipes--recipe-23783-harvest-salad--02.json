@@ -1,0 +1,13 @@
+{
+  "raw": "1 bunch spinach, rinsed and torn into bite-size pieces",
+  "expected": {
+    "item": "spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "rinsed and torn into bite-size pieces"
+  }
+}

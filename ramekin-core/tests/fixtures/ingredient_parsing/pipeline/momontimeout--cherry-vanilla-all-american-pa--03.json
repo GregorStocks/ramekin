@@ -1,0 +1,17 @@
+{
+  "raw": "2 tsp extract of your choice (2 to 3 tsp)",
+  "expected": {
+    "item": "extract of your choice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      },
+      {
+        "amount": "2 to 3",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

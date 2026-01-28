@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz French green beans, (trimmed)",
+  "expected": {
+    "item": "French green beans,",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

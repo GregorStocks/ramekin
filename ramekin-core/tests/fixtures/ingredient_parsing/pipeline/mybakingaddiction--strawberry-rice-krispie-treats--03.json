@@ -1,0 +1,13 @@
+{
+  "raw": "9 cups Strawberry Rice Krispies",
+  "expected": {
+    "item": "Strawberry Rice Krispies",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

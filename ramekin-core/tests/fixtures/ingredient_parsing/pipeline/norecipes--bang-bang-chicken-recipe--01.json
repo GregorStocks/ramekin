@@ -1,0 +1,17 @@
+{
+  "raw": "32 grams scallion ((2-3 scallions, white parts only))",
+  "expected": {
+    "item": "scallion",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "grams"
+      },
+      {
+        "amount": "2-3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

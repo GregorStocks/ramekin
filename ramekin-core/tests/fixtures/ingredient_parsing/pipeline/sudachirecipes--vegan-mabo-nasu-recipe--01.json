@@ -1,0 +1,13 @@
+{
+  "raw": "200 g eggplant",
+  "expected": {
+    "item": "eggplant",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

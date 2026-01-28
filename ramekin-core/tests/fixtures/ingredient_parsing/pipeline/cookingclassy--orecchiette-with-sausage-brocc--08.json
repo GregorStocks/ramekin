@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups reserved pasta water, (divided)",
+  "expected": {
+    "item": "reserved pasta water,",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

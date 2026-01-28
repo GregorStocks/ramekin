@@ -1,0 +1,13 @@
+{
+  "raw": "5 to 6 tablespoons ice water",
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "5 to 6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

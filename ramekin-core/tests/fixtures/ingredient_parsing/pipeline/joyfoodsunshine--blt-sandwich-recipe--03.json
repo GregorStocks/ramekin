@@ -1,0 +1,13 @@
+{
+  "raw": "1  tomato ((thinly sliced into 8 slices))",
+  "expected": {
+    "item": "tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced into 8 slices"
+  }
+}

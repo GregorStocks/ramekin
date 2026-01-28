@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium onion, sliced into 1/4-inch half moons",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced into 1/4-inch half moons"
+  }
+}

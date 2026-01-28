@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp tomato ketchup",
+  "expected": {
+    "item": "tomato ketchup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

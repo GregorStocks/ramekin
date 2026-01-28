@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tablespoons mini chocolate chips",
+  "expected": {
+    "item": "mini chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

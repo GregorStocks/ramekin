@@ -1,0 +1,13 @@
+{
+  "raw": "5 to 6 cups of wood chips, hickory, oak, apple, or other fruit wood",
+  "expected": {
+    "item": "wood chips, hickory, oak, apple, or other fruit wood",
+    "measurements": [
+      {
+        "amount": "5 to 6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

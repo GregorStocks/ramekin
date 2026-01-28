@@ -1,0 +1,13 @@
+{
+  "raw": "2 large pimento stuffed olives",
+  "expected": {
+    "item": "pimento stuffed olives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

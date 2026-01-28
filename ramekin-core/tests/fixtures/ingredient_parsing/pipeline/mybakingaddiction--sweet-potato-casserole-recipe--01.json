@@ -1,0 +1,17 @@
+{
+  "raw": "3 ½ pounds fresh sweet potatoes (about 5 medium)",
+  "expected": {
+    "item": "fresh sweet potatoes",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

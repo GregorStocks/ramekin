@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lb. precut zucchini noodles",
+  "expected": {
+    "item": "precut zucchini noodles",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

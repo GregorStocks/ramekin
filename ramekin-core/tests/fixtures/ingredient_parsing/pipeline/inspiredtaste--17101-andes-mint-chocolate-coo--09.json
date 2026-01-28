@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces semisweet chocolate, finely chopped",
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

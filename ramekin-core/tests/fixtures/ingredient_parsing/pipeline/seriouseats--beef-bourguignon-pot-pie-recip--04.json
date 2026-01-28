@@ -1,0 +1,21 @@
+{
+  "raw": "1 small yellow onion (4 ounces; 113 g), finely diced",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

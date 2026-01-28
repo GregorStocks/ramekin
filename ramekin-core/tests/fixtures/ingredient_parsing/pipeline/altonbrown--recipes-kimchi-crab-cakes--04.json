@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces kimchi, drained and finely chopped",
+  "expected": {
+    "item": "kimchi",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 pounds pork baby back ribs",
+  "expected": {
+    "item": "pork baby back ribs",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

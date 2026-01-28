@@ -1,0 +1,13 @@
+{
+  "raw": "2  carrots, (shaved with a vegetable peeler)",
+  "expected": {
+    "item": "carrots, (shaved with a vegetable peeler)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (750-ml) bottles of dry red wine",
+  "expected": {
+    "item": "dry red wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bottles"
+      },
+      {
+        "amount": "750",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

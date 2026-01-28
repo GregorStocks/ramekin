@@ -1,0 +1,13 @@
+{
+  "raw": "8 cups low sodium chicken broth  (or vegetable broth)",
+  "expected": {
+    "item": "low sodium chicken broth  (or vegetable broth)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

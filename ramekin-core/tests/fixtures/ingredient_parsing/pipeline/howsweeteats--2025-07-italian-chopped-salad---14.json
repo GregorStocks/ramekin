@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces fresh mozzarella pearls",
+  "expected": {
+    "item": "fresh mozzarella pearls",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

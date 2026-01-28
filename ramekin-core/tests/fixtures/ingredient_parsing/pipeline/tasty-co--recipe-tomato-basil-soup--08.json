@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup finely chopped fresh basil, plus more for garnish",
+  "expected": {
+    "item": "finely chopped fresh basil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for garnish"
+  }
+}

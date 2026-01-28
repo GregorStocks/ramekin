@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound shiitake mushrooms",
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

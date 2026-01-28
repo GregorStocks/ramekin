@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon turmeric  ((optional))",
+  "expected": {
+    "item": "turmeric",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. rigatoni or other tubular pasta",
+  "expected": {
+    "item": "rigatoni or other tubular pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

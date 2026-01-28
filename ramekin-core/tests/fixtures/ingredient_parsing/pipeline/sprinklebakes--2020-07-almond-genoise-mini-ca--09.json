@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups 570g confectioners’ sugar",
+  "expected": {
+    "item": "570g confectioners’ sugar",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups sugar snap peas, cut into bite-size pieces",
+  "expected": {
+    "item": "sugar snap peas, cut into bite-size pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

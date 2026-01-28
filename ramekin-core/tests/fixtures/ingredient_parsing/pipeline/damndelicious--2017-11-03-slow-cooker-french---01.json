@@ -1,0 +1,13 @@
+{
+  "raw": "3 pounds sweet onions (thinly sliced)",
+  "expected": {
+    "item": "sweet onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds chicken breasts (boneless and skinless, diced into 1 inch pieces)",
+  "expected": {
+    "item": "chicken breasts",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "boneless and skinless, diced into 1 inch pieces"
+  }
+}

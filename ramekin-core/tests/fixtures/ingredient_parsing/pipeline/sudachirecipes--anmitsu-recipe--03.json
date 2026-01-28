@@ -1,0 +1,13 @@
+{
+  "raw": "500 ml cold water",
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

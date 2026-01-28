@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup chopped roasted red peppers",
+  "expected": {
+    "item": "chopped roasted red peppers",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

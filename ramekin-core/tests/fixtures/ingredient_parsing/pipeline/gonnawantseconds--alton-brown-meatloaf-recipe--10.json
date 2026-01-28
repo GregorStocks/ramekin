@@ -1,0 +1,13 @@
+{
+  "raw": "18 ounces ground chuck",
+  "expected": {
+    "item": "ground chuck",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

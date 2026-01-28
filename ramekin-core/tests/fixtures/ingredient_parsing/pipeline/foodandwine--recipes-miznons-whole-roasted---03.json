@@ -1,0 +1,13 @@
+{
+  "raw": "7 tablespoons sel gris, divided",
+  "expected": {
+    "item": "sel gris",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

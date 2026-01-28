@@ -1,0 +1,13 @@
+{
+  "raw": "4 medium sweet potatoes",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

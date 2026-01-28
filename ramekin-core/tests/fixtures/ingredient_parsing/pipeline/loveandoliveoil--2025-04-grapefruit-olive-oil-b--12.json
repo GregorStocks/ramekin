@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ cups whole Greek yogurt (at room temperature)",
+  "expected": {
+    "item": "whole Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

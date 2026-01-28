@@ -2,12 +2,16 @@ use std::collections::HashMap;
 use std::fs;
 use std::io::{self, Write};
 use std::path::{Path, PathBuf};
+use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Arc;
 use std::time::{Duration, Instant};
 
 use anyhow::{Context, Result};
 use chrono::Utc;
+use futures::stream::{self, StreamExt};
+use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
+use tokio::sync::Mutex;
 
 use crate::generate_test_urls::TestUrlsOutput;
 use crate::pipeline::{
@@ -31,6 +35,7 @@ pub struct OrchestratorConfig {
     pub force_refetch: bool,
     pub on_fetch_fail: OnFetchFail,
     pub tags_file: PathBuf,
+    pub concurrency: usize,
 }
 
 impl Default for OrchestratorConfig {
@@ -45,6 +50,7 @@ impl Default for OrchestratorConfig {
             force_refetch: false,
             on_fetch_fail: OnFetchFail::Continue,
             tags_file: PathBuf::from("data/eval-tags.json"),
+            concurrency: 10,
         }
     }
 }
@@ -85,6 +91,7 @@ pub struct ManifestConfig {
     pub delay_ms: u64,
     pub offline: bool,
     pub force_refetch: bool,
+    pub concurrency: usize,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -221,6 +228,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             delay_ms: config.delay_ms,
             offline: config.offline,
             force_refetch: config.force_refetch,
+            concurrency: config.concurrency,
         },
         status: RunStatus::Running,
     };
@@ -240,12 +248,6 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             .context("Failed to create HTTP client")?,
     );
 
-    // Initialize results
-    let mut results = PipelineResults {
-        total_urls: urls_to_process.len(),
-        ..Default::default()
-    };
-
     let total_urls = urls_to_process.len();
     let start_time = Instant::now();
 
@@ -259,106 +261,153 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
     println!();
 
     // In prompt mode, ensure staging directory exists and is empty
-    if matches!(config.on_fetch_fail, OnFetchFail::Prompt) {
+    // Also force concurrency=1 since interactive prompts don't work well with parallelism
+    let concurrency = if matches!(config.on_fetch_fail, OnFetchFail::Prompt) {
         ensure_staging_dir()?;
         clear_staging()?;
         println!(
             "Interactive mode: save HTML files to {}",
             staging_dir().display()
         );
+        println!("(concurrency forced to 1 for interactive mode)");
         println!();
-    }
+        1
+    } else {
+        println!("Concurrency: {}", config.concurrency);
+        println!();
+        config.concurrency
+    };
 
-    // Process each URL
-    for (idx, (url, domain)) in urls_to_process.iter().enumerate() {
-        let progress = format!("[{}/{}]", idx + 1, total_urls);
+    // Shuffle URLs to interleave domains for better parallelism
+    // (avoids all concurrent slots hitting the same domain)
+    urls_to_process.shuffle(&mut rand::rng());
 
-        // Check if we need to fetch (for rate limiting purposes)
-        let needs_fetch = config.force_refetch || (!config.offline && !client.is_cached(url));
+    // Shared state for concurrent processing
+    let results = Arc::new(Mutex::new(PipelineResults {
+        total_urls,
+        ..Default::default()
+    }));
+    let completed_count = Arc::new(AtomicUsize::new(0));
+    let run_dir = Arc::new(run_dir);
 
-        // Print progress
-        if config.force_refetch {
-            println!("{} {} (force refetch)", progress, truncate_url(url, 60));
-        } else if needs_fetch {
-            println!("{} {} (fetching...)", progress, truncate_url(url, 60));
-        } else {
-            println!("{} {} (cached)", progress, truncate_url(url, 60));
-        }
+    // Process URLs concurrently
+    let url_results: Vec<Option<UrlResult>> = stream::iter(urls_to_process.into_iter())
+        .map(|(url, domain)| {
+            let client = Arc::clone(&client);
+            let run_dir = Arc::clone(&run_dir);
+            let user_tags = user_tags.clone();
+            let results = Arc::clone(&results);
+            let completed_count = Arc::clone(&completed_count);
+            let on_fetch_fail = config.on_fetch_fail;
+            let force_refetch = config.force_refetch;
+            let offline = config.offline;
 
-        // Run all steps
-        let mut all_results = run_all_steps(
-            url,
-            Arc::clone(&client),
-            &run_dir,
-            config.force_refetch,
-            user_tags.clone(),
-        )
+            async move {
+                // Check if we need to fetch (for progress display)
+                let needs_fetch = force_refetch || (!offline && !client.is_cached(&url));
+
+                // Increment and get progress
+                let completed = completed_count.fetch_add(1, Ordering::SeqCst) + 1;
+                let progress = format!("[{}/{}]", completed, total_urls);
+
+                // Print progress
+                if force_refetch {
+                    println!("{} {} (force refetch)", progress, truncate_url(&url, 60));
+                } else if needs_fetch {
+                    println!("{} {} (fetching...)", progress, truncate_url(&url, 60));
+                } else {
+                    println!("{} {} (cached)", progress, truncate_url(&url, 60));
+                }
+
+                // Run all steps
+                let mut all_results = run_all_steps(
+                    &url,
+                    Arc::clone(&client),
+                    &run_dir,
+                    force_refetch,
+                    user_tags.clone(),
+                )
+                .await;
+
+                // Check if fetch failed
+                let fetch_failed = all_results
+                    .step_results
+                    .first()
+                    .map(|r| r.step == PipelineStep::FetchHtml && !r.success)
+                    .unwrap_or(false);
+
+                if fetch_failed {
+                    match on_fetch_fail {
+                        OnFetchFail::Skip => {
+                            println!("  -> Skipped (fetch failed)");
+                            return None;
+                        }
+                        OnFetchFail::Prompt => {
+                            // Interactive mode: prompt user to save HTML
+                            if let Ok(Some(new_results)) = prompt_for_manual_cache(
+                                &url,
+                                Arc::clone(&client),
+                                &run_dir,
+                                user_tags,
+                            )
+                            .await
+                            {
+                                all_results = new_results;
+                            }
+                            // If user skipped, all_results still has the failed fetch
+                        }
+                        OnFetchFail::Continue => {
+                            // Default: just continue (already have failed result)
+                        }
+                    }
+                }
+
+                // Determine final status
+                let final_status = determine_final_status(&all_results.step_results);
+
+                // Update shared results
+                {
+                    let mut results = results.lock().await;
+                    update_results(
+                        &mut results,
+                        &all_results.step_results,
+                        &final_status,
+                        &domain,
+                        all_results.extraction_stats.as_ref(),
+                        all_results.ai_cached,
+                    );
+
+                    // Save intermediate results periodically
+                    if let Err(e) = save_results(&run_dir, &results) {
+                        tracing::warn!(error = %e, "Failed to save intermediate results");
+                    }
+                }
+
+                Some(UrlResult {
+                    url,
+                    site: domain,
+                    steps: all_results.step_results,
+                    final_status,
+                    extraction_stats: all_results.extraction_stats,
+                })
+            }
+        })
+        .buffer_unordered(concurrency)
+        .collect()
         .await;
 
-        // Check if fetch failed
-        let fetch_failed = all_results
-            .step_results
-            .first()
-            .map(|r| r.step == PipelineStep::FetchHtml && !r.success)
-            .unwrap_or(false);
-
-        if fetch_failed {
-            match config.on_fetch_fail {
-                OnFetchFail::Skip => {
-                    println!("  -> Skipped (fetch failed)");
-                    // Don't record this URL at all
-                    continue;
-                }
-                OnFetchFail::Prompt => {
-                    // Interactive mode: prompt user to save HTML
-                    if let Some(new_results) = prompt_for_manual_cache(
-                        url,
-                        Arc::clone(&client),
-                        &run_dir,
-                        user_tags.clone(),
-                    )
-                    .await?
-                    {
-                        all_results = new_results;
-                    }
-                    // If user skipped, all_results still has the failed fetch
-                }
-                OnFetchFail::Continue => {
-                    // Default: just continue (already have failed result)
-                }
-            }
-        }
-
-        // Determine final status
-        let final_status = determine_final_status(&all_results.step_results);
-
-        // Update results
-        update_results(
-            &mut results,
-            &all_results.step_results,
-            &final_status,
-            domain,
-            all_results.extraction_stats.as_ref(),
-            all_results.ai_cached,
-        );
-
-        // Record URL result
-        results.url_results.push(UrlResult {
-            url: url.clone(),
-            site: domain.clone(),
-            steps: all_results.step_results,
-            final_status,
-            extraction_stats: all_results.extraction_stats,
-        });
-
-        // Save intermediate results
-        save_results(&run_dir, &results)?;
-
-        // Rate limiting: only delay if we actually fetched
-        if needs_fetch && idx < total_urls - 1 {
-            tokio::time::sleep(Duration::from_millis(config.delay_ms)).await;
+    // Collect all URL results into the final results
+    {
+        let mut results = results.lock().await;
+        for url_result in url_results.into_iter().flatten() {
+            results.url_results.push(url_result);
         }
     }
+
+    // Extract final results from Arc<Mutex<>>
+    let results = Arc::try_unwrap(results)
+        .expect("All references should be dropped")
+        .into_inner();
 
     let elapsed = start_time.elapsed();
 

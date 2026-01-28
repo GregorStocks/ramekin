@@ -1,0 +1,13 @@
+{
+  "raw": "1  head garlic, unpeeled, halved crosswise",
+  "expected": {
+    "item": "garlic, unpeeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "halved crosswise"
+  }
+}

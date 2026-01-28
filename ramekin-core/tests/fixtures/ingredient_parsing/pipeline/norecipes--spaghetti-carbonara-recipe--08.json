@@ -1,0 +1,13 @@
+{
+  "raw": "3  slow cooked eggs ((optional))",
+  "expected": {
+    "item": "slow cooked eggs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

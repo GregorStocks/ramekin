@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup of coconut cream (not coconut milk*)",
+  "expected": {
+    "item": "coconut cream (not coconut milk*)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

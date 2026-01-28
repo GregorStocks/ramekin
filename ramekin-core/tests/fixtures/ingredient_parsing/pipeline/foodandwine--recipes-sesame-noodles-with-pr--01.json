@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 pound dried chow mein noodles or thin spaghetti",
+  "expected": {
+    "item": "dried chow mein noodles or thin spaghetti",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

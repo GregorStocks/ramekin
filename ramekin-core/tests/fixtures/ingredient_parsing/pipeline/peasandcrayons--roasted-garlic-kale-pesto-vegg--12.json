@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz mushrooms (sliced)",
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "sliced"
+  }
+}

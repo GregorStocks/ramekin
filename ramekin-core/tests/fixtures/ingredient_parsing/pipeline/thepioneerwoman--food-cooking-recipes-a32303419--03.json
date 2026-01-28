@@ -1,0 +1,13 @@
+{
+  "raw": "1 oz. blood orange juice",
+  "expected": {
+    "item": "blood orange juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

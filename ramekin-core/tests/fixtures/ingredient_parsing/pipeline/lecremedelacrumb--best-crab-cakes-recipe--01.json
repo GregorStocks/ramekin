@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces lump crab meat",
+  "expected": {
+    "item": "lump crab meat",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

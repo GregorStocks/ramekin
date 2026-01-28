@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp sugar ((optional; for an authentic Japanese taste))",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional; for an authentic Japanese taste"
+  }
+}

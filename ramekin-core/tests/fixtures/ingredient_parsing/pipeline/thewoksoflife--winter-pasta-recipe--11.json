@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup toasted walnuts",
+  "expected": {
+    "item": "toasted walnuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

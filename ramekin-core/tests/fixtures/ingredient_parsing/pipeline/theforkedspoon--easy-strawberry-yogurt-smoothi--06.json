@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Greek yogurt (plain or flavored)",
+  "expected": {
+    "item": "Greek yogurt (plain or flavored)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

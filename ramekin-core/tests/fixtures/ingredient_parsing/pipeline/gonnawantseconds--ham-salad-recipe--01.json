@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound ham (cut into 2-inch cubes)",
+  "expected": {
+    "item": "ham (cut into 2-inch cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

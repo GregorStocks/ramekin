@@ -1,0 +1,13 @@
+{
+  "raw": "2-3  roma tomatoes (sliced into 1/4\" thick rings)",
+  "expected": {
+    "item": "roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": null
+      }
+    ],
+    "note": "sliced into 1/4\" thick rings"
+  }
+}

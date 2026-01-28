@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 to 1 tsp sweet Spanish paprika",
+  "expected": {
+    "item": "sweet Spanish paprika",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

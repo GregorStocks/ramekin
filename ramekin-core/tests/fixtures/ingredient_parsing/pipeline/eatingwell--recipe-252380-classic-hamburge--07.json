@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces lean (90&amp;amp;#37; or leaner) ground beef",
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

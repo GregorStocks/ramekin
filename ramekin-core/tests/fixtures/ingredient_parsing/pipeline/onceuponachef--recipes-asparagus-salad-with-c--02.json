@@ -1,0 +1,13 @@
+{
+  "raw": "2  bunches thick asparagus spears, (bottom ends trimmed)",
+  "expected": {
+    "item": "thick asparagus spears,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      }
+    ],
+    "note": "bottom ends trimmed"
+  }
+}

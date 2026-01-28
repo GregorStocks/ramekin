@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15 ml) fish sauce",
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

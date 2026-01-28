@@ -1,0 +1,17 @@
+{
+  "raw": "2 sticks (1 cup) unsalted butter, (cut into cubes, very cold)",
+  "expected": {
+    "item": "unsalted butter,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "cut into cubes, very cold"
+  }
+}

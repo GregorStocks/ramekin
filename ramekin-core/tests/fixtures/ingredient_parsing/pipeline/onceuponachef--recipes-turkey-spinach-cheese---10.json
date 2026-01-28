@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup Italian seasoned bread crumbs",
+  "expected": {
+    "item": "Italian seasoned bread crumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

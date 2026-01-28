@@ -1,0 +1,17 @@
+{
+  "raw": "70 grams roasted peanuts ((~1/2 cup))",
+  "expected": {
+    "item": "roasted peanuts",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

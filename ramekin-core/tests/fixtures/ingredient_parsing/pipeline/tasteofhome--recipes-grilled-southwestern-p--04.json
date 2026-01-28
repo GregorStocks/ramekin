@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium ears sweet corn, husks removed",
+  "expected": {
+    "item": "ears sweet corn, husks removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

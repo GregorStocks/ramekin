@@ -1,0 +1,13 @@
+{
+  "raw": "1 large carrot, julienned",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "julienned"
+  }
+}

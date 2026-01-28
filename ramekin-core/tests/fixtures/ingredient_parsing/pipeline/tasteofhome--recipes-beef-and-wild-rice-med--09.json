@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (6 ounces) long grain and wild rice mix",
+  "expected": {
+    "item": "long grain and wild rice mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

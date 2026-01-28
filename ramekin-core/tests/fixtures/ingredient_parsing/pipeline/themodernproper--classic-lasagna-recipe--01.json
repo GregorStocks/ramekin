@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried lasagna noodles",
+  "expected": {
+    "item": "dried lasagna noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

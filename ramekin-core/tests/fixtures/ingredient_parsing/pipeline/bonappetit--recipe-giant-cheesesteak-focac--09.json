@@ -1,0 +1,13 @@
+{
+  "raw": "5 Tbsp. (or more) vegetable oil, divided",
+  "expected": {
+    "item": "vegetable oil, divided",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or more"
+  }
+}

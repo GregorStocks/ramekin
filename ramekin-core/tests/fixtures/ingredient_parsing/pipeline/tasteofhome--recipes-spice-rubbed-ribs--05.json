@@ -1,0 +1,13 @@
+{
+  "raw": "4 teaspoons onion powder",
+  "expected": {
+    "item": "onion powder",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

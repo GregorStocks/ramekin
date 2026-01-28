@@ -1,0 +1,21 @@
+{
+  "raw": "270g granulated sugar (9 1/2 ounces; 1 1/4 cups)",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "270",
+        "unit": "g"
+      },
+      {
+        "amount": "9 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

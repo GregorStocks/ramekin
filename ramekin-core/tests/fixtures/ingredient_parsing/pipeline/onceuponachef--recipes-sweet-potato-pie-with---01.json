@@ -1,0 +1,17 @@
+{
+  "raw": "2 large sweet potatoes (about 2¼ pounds)",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

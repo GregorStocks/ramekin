@@ -196,6 +196,9 @@ enum Commands {
         /// Path to tags JSON file for auto-tag evaluation
         #[arg(long, default_value = "data/eval-tags.json")]
         tags_file: PathBuf,
+        /// Number of URLs to process concurrently
+        #[arg(long, default_value = "10")]
+        concurrency: usize,
     },
     /// Show HTML cache statistics
     PipelineCacheStats {
@@ -346,6 +349,7 @@ async fn main() -> Result<()> {
             force_refetch,
             on_fetch_fail,
             tags_file,
+            concurrency,
         } => {
             let config = pipeline_orchestrator::OrchestratorConfig {
                 test_urls_file: test_urls,
@@ -357,6 +361,7 @@ async fn main() -> Result<()> {
                 force_refetch,
                 on_fetch_fail,
                 tags_file,
+                concurrency,
             };
             pipeline_orchestrator::run_pipeline_test(config).await?;
         }

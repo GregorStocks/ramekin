@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces of tuna, (packed in water)",
+  "expected": {
+    "item": "tuna,",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "packed in water"
+  }
+}

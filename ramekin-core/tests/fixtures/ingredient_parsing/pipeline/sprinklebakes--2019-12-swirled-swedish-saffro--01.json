@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup 120 ml warm water (110° to 115°F)",
+  "expected": {
+    "item": "120 ml warm water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "110",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

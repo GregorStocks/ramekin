@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces grape or cherry tomatoes (halved)",
+  "expected": {
+    "item": "grape or cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "halved"
+  }
+}

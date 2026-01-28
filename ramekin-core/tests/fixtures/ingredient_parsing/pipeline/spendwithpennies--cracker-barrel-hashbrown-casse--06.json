@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups shredded Colby cheese (divided, or cheddar cheese)",
+  "expected": {
+    "item": "shredded Colby cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided, or cheddar cheese"
+  }
+}

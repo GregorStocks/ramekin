@@ -1,0 +1,13 @@
+{
+  "raw": "12 butter lettuce leaves",
+  "expected": {
+    "item": "butter lettuce leaves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  heads Romaine lettuce (finely chopped)",
+  "expected": {
+    "item": "Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

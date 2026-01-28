@@ -1,0 +1,13 @@
+{
+  "raw": "1 Granny Smith apple—peeled, cored and thinly sliced",
+  "expected": {
+    "item": "Granny Smith apple—peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "cored and thinly sliced"
+  }
+}

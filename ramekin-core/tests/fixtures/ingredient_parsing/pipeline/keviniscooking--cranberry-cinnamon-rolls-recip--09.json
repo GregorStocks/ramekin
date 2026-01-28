@@ -1,0 +1,17 @@
+{
+  "raw": "50 g sugar (1/4 cup)",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

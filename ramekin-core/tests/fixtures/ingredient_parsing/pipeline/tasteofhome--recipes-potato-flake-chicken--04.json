@@ -1,0 +1,17 @@
+{
+  "raw": "4 boneless skinless chicken breast halves (8 ounces each)",
+  "expected": {
+    "item": "boneless skinless chicken breast halves",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

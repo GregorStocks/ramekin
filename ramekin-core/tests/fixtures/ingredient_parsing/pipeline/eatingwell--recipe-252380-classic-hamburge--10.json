@@ -1,0 +1,13 @@
+{
+  "raw": "2 sesame-seed or other hamburger buns, toasted",
+  "expected": {
+    "item": "sesame-seed or other hamburger buns",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "toasted"
+  }
+}

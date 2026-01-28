@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 teaspoon red pepper flakes",
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

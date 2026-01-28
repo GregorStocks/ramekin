@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces brie cheese, cut into chunks",
+  "expected": {
+    "item": "brie cheese, cut into chunks",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

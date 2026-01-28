@@ -1,0 +1,13 @@
+{
+  "raw": "1 plum (Roma) tomato (4 ounces; 113 g), finely diced",
+  "expected": {
+    "item": "plum (Roma) tomato (4 ounces; 113 g)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
+  }
+}

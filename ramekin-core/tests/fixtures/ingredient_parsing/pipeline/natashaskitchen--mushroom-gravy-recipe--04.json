@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 lb about 6 mushrooms, thinly sliced",
+  "expected": {
+    "item": "about 6 mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

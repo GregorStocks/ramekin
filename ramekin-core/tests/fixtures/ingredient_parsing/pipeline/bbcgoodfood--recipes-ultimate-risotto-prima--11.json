@@ -1,0 +1,13 @@
+{
+  "raw": "140g shelled peas",
+  "expected": {
+    "item": "shelled peas",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

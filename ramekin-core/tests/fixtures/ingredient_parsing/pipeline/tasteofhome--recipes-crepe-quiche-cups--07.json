@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound bulk pork sausage",
+  "expected": {
+    "item": "bulk pork sausage",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

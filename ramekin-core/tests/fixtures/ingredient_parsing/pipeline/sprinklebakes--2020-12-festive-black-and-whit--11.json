@@ -1,0 +1,13 @@
+{
+  "raw": "6 2/3 cups about 27 oz. confectioner’s sugar",
+  "expected": {
+    "item": "about 27 oz. confectioner’s sugar",
+    "measurements": [
+      {
+        "amount": "6 2/3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

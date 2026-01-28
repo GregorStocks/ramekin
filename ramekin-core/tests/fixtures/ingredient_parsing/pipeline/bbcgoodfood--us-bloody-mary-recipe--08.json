@@ -1,0 +1,13 @@
+{
+  "raw": "pinch of black pepper",
+  "expected": {
+    "item": "black pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "pinch fine sea salt",
+  "expected": {
+    "item": "fine sea salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
+  }
+}

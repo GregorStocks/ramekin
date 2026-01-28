@@ -1,0 +1,17 @@
+{
+  "raw": "20 oz dark chocolate chips ((60% Cacoa))",
+  "expected": {
+    "item": "dark chocolate chips",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

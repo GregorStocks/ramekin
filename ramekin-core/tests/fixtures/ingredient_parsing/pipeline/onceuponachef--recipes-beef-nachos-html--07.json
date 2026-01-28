@@ -1,0 +1,17 @@
+{
+  "raw": "2  small ripe tomatoes, (about ¾ pound (340 g), cored and diced)",
+  "expected": {
+    "item": "ripe tomatoes,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "3/4",
+        "unit": "pound"
+      }
+    ],
+    "note": "cored and diced)"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "12 ounces cauliflower florets ((1 small cauliflower))",
+  "expected": {
+    "item": "cauliflower florets",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

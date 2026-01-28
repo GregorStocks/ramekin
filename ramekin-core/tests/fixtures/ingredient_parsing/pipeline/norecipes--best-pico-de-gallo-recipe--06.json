@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 teaspoon xanthan gum ((optional))",
+  "expected": {
+    "item": "xanthan gum",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

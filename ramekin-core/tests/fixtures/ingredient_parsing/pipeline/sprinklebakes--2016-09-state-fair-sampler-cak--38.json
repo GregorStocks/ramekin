@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 226g unsalted butter, softened",
+  "expected": {
+    "item": "226g unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened"
+  }
+}

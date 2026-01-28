@@ -1,0 +1,13 @@
+{
+  "raw": "50g red lentil",
+  "expected": {
+    "item": "red lentil",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  medium apples (peeled, cored, and finely diced (about 1 1/2 cups diced))",
+  "expected": {
+    "item": "apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled, cored, and finely diced (about 1 1/2 cups diced"
+  }
+}

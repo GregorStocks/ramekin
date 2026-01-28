@@ -1,0 +1,13 @@
+{
+  "raw": "1 gallon vegetable broth",
+  "expected": {
+    "item": "vegetable broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
+  }
+}

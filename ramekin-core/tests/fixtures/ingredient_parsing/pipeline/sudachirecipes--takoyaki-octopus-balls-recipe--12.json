@@ -1,0 +1,13 @@
+{
+  "raw": "120 g boiled octopus (or steamed)",
+  "expected": {
+    "item": "boiled octopus (or steamed)",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

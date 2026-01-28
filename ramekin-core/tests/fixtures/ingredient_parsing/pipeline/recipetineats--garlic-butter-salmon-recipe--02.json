@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tsp salt (, cooking / kosher)",
+  "expected": {
+    "item": "salt (, cooking / kosher)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

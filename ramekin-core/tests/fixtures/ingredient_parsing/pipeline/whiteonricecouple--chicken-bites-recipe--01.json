@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds boneless skinless chicken (, (breasts or thigh) , cut into about 1” bite sized pieces (approximately))",
+  "expected": {
+    "item": "boneless skinless chicken (, (breasts or thigh)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "cut into about 1” bite sized pieces (approximately)"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "¼ cup (20 g) finely chopped reserved carrot tops (see Pasta)",
+  "expected": {
+    "item": "finely chopped reserved carrot tops (see Pasta)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "20 grams lemongrass (3 stalks, finely minced)",
+  "expected": {
+    "item": "lemongrass",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "grams"
+      }
+    ],
+    "note": "3 stalks, finely minced"
+  }
+}

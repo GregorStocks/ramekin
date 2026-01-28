@@ -1,0 +1,17 @@
+{
+  "raw": "1 (4 ounce) can small shrimp, drained",
+  "expected": {
+    "item": "small shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

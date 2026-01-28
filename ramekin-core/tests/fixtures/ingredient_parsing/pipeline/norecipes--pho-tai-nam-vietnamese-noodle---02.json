@@ -1,0 +1,13 @@
+{
+  "raw": "275 grams brisket",
+  "expected": {
+    "item": "brisket",
+    "measurements": [
+      {
+        "amount": "275",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

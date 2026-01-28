@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon lemongrass (minced)",
+  "expected": {
+    "item": "lemongrass",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "minced"
+  }
+}

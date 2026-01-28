@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounce pinto beans, (drained and rinsed)",
+  "expected": {
+    "item": "pinto beans,",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

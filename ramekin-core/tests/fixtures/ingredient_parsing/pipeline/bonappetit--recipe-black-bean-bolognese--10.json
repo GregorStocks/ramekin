@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. pappardelle, bucatini, or rigatoni",
+  "expected": {
+    "item": "pappardelle, bucatini, or rigatoni",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

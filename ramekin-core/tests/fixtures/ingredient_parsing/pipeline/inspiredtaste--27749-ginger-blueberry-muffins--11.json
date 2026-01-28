@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cup (180 ml) milk; dairy and non-dairy both work",
+  "expected": {
+    "item": "milk; dairy and non-dairy both work",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "180",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

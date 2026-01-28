@@ -1,0 +1,13 @@
+{
+  "raw": "90 grams carrots ((1 small carrot, julienned))",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 small carrot, julienned"
+  }
+}

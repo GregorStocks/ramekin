@@ -1,0 +1,21 @@
+{
+  "raw": "113g chopped semi-sweet chocolate, 56% cacao (4 ounces; 3/4 cup)&nbsp;",
+  "expected": {
+    "item": "chopped semi-sweet chocolate, 56% cacao",
+    "measurements": [
+      {
+        "amount": "113",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces fresh cranberries (rinsed and dried)",
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "rinsed and dried"
+  }
+}

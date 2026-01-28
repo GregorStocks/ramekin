@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 tablespoons mayonnaise",
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

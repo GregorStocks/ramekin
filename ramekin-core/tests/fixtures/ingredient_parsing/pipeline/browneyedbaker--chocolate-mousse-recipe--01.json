@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces bittersweet chocolate (60% cacao, finely chopped)",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "60% cacao, finely chopped"
+  }
+}

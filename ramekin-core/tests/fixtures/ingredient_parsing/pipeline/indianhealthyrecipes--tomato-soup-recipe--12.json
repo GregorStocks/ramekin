@@ -1,0 +1,13 @@
+{
+  "raw": "2 stalks Basil ((optional))",
+  "expected": {
+    "item": "Basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalks"
+      }
+    ],
+    "note": "optional"
+  }
+}

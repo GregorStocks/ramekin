@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (5 to 6) boneless skinless chicken thighs, cut into 1 1/2-inch pieces",
+  "expected": {
+    "item": "boneless skinless chicken thighs, cut into 1 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "5 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

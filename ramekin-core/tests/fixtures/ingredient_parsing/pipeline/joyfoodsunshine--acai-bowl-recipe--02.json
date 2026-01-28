@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams acai puree ((frozen, unsweetened (about ½ cup)))",
+  "expected": {
+    "item": "acai puree",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "frozen, unsweetened (about 1/2 cup"
+  }
+}

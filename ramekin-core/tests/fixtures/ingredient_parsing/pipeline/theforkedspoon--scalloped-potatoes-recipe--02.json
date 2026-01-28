@@ -1,0 +1,13 @@
+{
+  "raw": "4 tablespoon butter",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

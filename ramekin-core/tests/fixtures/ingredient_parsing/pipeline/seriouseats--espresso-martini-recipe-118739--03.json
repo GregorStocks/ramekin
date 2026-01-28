@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce (30 ml) coffee liqueur, such as Kahlua or Mr. Black",
+  "expected": {
+    "item": "coffee liqueur, such as Kahlua or Mr. Black",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

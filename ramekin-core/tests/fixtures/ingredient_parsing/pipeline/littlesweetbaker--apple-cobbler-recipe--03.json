@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp apple pie spice or ground cinnamon",
+  "expected": {
+    "item": "apple pie spice or ground cinnamon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

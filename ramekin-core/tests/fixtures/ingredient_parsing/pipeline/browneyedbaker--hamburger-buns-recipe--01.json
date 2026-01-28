@@ -1,0 +1,13 @@
+{
+  "raw": "4¼ cups bread flour",
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "4 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

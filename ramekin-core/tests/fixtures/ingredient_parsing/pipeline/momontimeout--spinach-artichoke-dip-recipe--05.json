@@ -1,0 +1,13 @@
+{
+  "raw": "21 oz marinated quartered artichoke hearts (drained and coarsely chopped)",
+  "expected": {
+    "item": "marinated quartered artichoke hearts",
+    "measurements": [
+      {
+        "amount": "21",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained and coarsely chopped"
+  }
+}

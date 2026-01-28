@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounces canned chickpeas (also known as garbanzo beans, drained and rinsed)",
+  "expected": {
+    "item": "canned chickpeas",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "also known as garbanzo beans, drained and rinsed"
+  }
+}

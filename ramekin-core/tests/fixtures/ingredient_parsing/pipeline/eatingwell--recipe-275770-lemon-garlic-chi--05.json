@@ -1,0 +1,17 @@
+{
+  "raw": "6 cups green beans (about 1 pound), trimmed",
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

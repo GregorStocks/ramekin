@@ -1,0 +1,13 @@
+{
+  "raw": "1 head romaine, torn",
+  "expected": {
+    "item": "romaine, torn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
+  }
+}

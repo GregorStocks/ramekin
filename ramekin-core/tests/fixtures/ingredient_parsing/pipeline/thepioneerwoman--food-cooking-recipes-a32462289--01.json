@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. golden raisins",
+  "expected": {
+    "item": "golden raisins",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

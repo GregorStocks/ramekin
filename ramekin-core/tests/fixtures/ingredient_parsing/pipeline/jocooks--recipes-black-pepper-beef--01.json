@@ -1,0 +1,13 @@
+{
+  "raw": "1½ pounds flank steak (cut into thin strips)",
+  "expected": {
+    "item": "flank steak (cut into thin strips)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

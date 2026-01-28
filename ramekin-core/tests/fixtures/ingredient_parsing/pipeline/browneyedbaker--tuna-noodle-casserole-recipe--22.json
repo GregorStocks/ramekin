@@ -1,0 +1,13 @@
+{
+  "raw": "3½ ounces sharp cheddar cheese (shredded)",
+  "expected": {
+    "item": "sharp cheddar cheese",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "shredded"
+  }
+}

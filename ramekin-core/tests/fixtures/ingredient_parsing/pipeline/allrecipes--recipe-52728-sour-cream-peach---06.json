@@ -1,0 +1,17 @@
+{
+  "raw": "1 (9 inch) unbaked pie crust",
+  "expected": {
+    "item": "unbaked pie crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

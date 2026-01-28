@@ -1,0 +1,13 @@
+{
+  "raw": "16 grams galangal (finely minced)",
+  "expected": {
+    "item": "galangal",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "grams"
+      }
+    ],
+    "note": "finely minced"
+  }
+}

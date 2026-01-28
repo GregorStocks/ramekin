@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tablespoon white vinegar (, or more depending on how tangy you want it)",
+  "expected": {
+    "item": "white vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": ", or more depending on how tangy you want it"
+  }
+}

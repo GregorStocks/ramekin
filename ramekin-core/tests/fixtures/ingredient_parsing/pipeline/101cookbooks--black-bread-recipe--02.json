@@ -1,0 +1,17 @@
+{
+  "raw": "320 - 400 ml warm water (105 - 115F)",
+  "expected": {
+    "item": "- 400 ml warm water",
+    "measurements": [
+      {
+        "amount": "320",
+        "unit": null
+      },
+      {
+        "amount": "105",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

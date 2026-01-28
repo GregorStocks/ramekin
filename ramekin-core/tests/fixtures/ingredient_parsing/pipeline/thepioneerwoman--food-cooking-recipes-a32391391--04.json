@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp. ground allspice",
+  "expected": {
+    "item": "ground allspice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

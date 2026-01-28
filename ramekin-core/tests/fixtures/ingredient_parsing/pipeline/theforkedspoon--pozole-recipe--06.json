@@ -1,0 +1,17 @@
+{
+  "raw": "3 (25 ounce) cans Hominy",
+  "expected": {
+    "item": "Hominy",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cans"
+      },
+      {
+        "amount": "25",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

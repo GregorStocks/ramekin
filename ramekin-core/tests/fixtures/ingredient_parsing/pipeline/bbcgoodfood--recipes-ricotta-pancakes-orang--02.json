@@ -1,0 +1,13 @@
+{
+  "raw": "200g plain flour",
+  "expected": {
+    "item": "plain flour",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

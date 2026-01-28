@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon juice from the pickled jalapenos",
+  "expected": {
+    "item": "juice from the pickled jalapenos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

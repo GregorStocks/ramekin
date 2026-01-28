@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. semi-sweet chocolate, (chopped (optional))",
+  "expected": {
+    "item": "semi-sweet chocolate,",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "chopped (optional"
+  }
+}

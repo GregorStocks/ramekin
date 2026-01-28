@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces&nbsp;firm tofu, drained and cut into 1/3-inch cubes",
+  "expected": {
+    "item": "firm tofu",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and cut into 1/3-inch cubes"
+  }
+}

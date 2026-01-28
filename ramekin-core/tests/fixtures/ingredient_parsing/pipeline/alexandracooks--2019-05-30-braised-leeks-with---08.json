@@ -1,0 +1,13 @@
+{
+  "raw": "5 peppercorns, optional",
+  "expected": {
+    "item": "peppercorns",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

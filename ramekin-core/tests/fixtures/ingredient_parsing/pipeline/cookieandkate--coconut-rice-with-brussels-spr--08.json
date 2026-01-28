@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;frac14; cup torn fresh mint",
+  "expected": {
+    "item": "torn fresh mint",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

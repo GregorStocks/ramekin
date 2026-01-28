@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces kale (stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces))",
+  "expected": {
+    "item": "kale",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "stems removed and chopped into ribbons (if using bagged, pre-cut kale, use 8 ounces"
+  }
+}

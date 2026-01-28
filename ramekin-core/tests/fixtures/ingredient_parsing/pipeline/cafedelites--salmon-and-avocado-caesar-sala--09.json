@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium avocado (sliced)",
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced"
+  }
+}

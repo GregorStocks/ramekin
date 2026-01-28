@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons unsalted butter, melted and cooled ((½ cup ))",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted and cooled"
+  }
+}

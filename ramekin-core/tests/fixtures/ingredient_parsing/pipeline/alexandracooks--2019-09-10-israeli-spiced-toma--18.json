@@ -1,0 +1,13 @@
+{
+  "raw": "Good bread for serving",
+  "expected": {
+    "item": "bread for serving",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good"
+      }
+    ],
+    "note": null
+  }
+}

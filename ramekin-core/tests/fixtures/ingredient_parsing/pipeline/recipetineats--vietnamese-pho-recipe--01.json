@@ -1,0 +1,13 @@
+{
+  "raw": "2  large onions (, halved)",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": ", halved"
+  }
+}

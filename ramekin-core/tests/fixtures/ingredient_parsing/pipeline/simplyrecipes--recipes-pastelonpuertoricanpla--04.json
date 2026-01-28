@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon adobo seasoning blend",
+  "expected": {
+    "item": "adobo seasoning blend",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

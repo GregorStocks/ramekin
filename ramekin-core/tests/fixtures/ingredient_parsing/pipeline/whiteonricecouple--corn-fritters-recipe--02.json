@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium Sweet Onion (, about 1/2 pound / 225g, diced)",
+  "expected": {
+    "item": "Sweet Onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": ", about 1/2 pound / 225g, diced"
+  }
+}

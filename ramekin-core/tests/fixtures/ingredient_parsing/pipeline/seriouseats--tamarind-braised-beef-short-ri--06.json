@@ -1,0 +1,13 @@
+{
+  "raw": "Pinch of asafetida (optional)",
+  "expected": {
+    "item": "asafetida",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
+  }
+}

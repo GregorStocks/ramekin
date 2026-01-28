@@ -1,0 +1,13 @@
+{
+  "raw": "3 thick slices deli ham, halved crosswise",
+  "expected": {
+    "item": "thick slices deli ham",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "halved crosswise"
+  }
+}

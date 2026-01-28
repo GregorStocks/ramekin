@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds chicken wings, separated if necessary",
+  "expected": {
+    "item": "chicken wings, separated if necessary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

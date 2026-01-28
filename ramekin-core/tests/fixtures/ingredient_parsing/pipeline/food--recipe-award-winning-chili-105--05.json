@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14   ounce) can   Mexican-style tomatoes (like Rotel)",
+  "expected": {
+    "item": "Mexican-style tomatoes (like Rotel)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups cooked corned beef (1-inch cubes)",
+  "expected": {
+    "item": "cooked corned beef",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

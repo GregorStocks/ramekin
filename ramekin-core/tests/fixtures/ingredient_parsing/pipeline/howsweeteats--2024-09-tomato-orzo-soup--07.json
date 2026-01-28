@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ cups uncooked orzo pasta",
+  "expected": {
+    "item": "uncooked orzo pasta",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

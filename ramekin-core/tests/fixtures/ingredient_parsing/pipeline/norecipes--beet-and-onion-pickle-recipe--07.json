@@ -1,0 +1,13 @@
+{
+  "raw": "handful  cilantro (of chopped)",
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "of chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup thinly sliced scallions (optional)",
+  "expected": {
+    "item": "thinly sliced scallions",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

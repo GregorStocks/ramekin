@@ -1,0 +1,17 @@
+{
+  "raw": "1 15-oz can (about 425 g) baby artichokes, drained",
+  "expected": {
+    "item": "15-oz can baby artichokes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "425",
+        "unit": "g"
+      }
+    ],
+    "note": "drained"
+  }
+}

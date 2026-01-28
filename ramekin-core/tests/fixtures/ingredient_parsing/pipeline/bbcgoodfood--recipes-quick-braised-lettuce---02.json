@@ -1,0 +1,13 @@
+{
+  "raw": "300g frozen pea",
+  "expected": {
+    "item": "frozen pea",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

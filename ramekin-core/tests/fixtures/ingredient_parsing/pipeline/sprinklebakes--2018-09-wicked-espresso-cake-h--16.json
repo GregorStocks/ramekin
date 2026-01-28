@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 240ml/8 oz. whole milk, cold",
+  "expected": {
+    "item": "240ml/8 oz. whole milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
+  }
+}

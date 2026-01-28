@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups sour cherries (pitted (See note below.))",
+  "expected": {
+    "item": "sour cherries (pitted (See note below.)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

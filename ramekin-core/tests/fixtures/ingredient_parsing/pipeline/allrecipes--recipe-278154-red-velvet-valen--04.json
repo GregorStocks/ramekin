@@ -1,0 +1,13 @@
+{
+  "raw": "0.75 cup light sour cream",
+  "expected": {
+    "item": "light sour cream",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

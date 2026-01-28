@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams peanuts ((crushed))",
+  "expected": {
+    "item": "peanuts",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": "crushed"
+  }
+}

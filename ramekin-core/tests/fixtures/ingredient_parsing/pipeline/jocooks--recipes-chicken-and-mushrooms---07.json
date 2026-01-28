@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounce white mushrooms (cut in half)",
+  "expected": {
+    "item": "white mushrooms (cut in half)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

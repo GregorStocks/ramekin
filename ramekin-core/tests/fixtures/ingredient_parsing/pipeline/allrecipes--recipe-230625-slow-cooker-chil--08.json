@@ -1,0 +1,17 @@
+{
+  "raw": "1 (4.5 ounce) can chopped green chiles",
+  "expected": {
+    "item": "chopped green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "4.5",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

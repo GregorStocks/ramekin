@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup toasted sesame oil",
+  "expected": {
+    "item": "toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

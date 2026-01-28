@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon asafoetida ( (hing, optional))",
+  "expected": {
+    "item": "asafoetida",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "(hing, optional"
+  }
+}

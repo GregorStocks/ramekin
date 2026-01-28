@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cups 165g sugar",
+  "expected": {
+    "item": "165g sugar",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "85g brown basmati rice",
+  "expected": {
+    "item": "brown basmati rice",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

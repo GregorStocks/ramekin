@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup finely diced corned beef",
+  "expected": {
+    "item": "finely diced corned beef",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 bottle sparkling white wine, chilled",
+  "expected": {
+    "item": "sparkling white wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      }
+    ],
+    "note": "chilled"
+  }
+}

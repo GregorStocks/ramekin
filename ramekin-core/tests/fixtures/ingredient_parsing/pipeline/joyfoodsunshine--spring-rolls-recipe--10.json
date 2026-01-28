@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces vermicelli noodles ((or Maifun brown rice noodles, or cooked quinoa or rice))",
+  "expected": {
+    "item": "vermicelli noodles",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "or Maifun brown rice noodles, or cooked quinoa or rice"
+  }
+}

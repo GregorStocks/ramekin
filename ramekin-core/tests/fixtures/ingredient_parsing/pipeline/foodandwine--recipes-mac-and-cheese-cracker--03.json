@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon&nbsp;sodium citrate (see Note)",
+  "expected": {
+    "item": "sodium citrate (see Note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

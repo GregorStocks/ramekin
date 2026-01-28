@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup fresh oregano",
+  "expected": {
+    "item": "fresh oregano",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

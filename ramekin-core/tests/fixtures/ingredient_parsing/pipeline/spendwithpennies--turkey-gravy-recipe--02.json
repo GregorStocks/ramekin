@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
+  "expected": {
+    "item": "fresh herbs (parsley, thyme, sage)",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

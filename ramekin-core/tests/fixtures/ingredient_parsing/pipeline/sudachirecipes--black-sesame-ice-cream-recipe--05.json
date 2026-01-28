@@ -1,0 +1,17 @@
+{
+  "raw": "200 ml heavy cream (35% milk fat or higher)",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "ml"
+      },
+      {
+        "amount": "35",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 small sugar pumpkin",
+  "expected": {
+    "item": "sugar pumpkin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

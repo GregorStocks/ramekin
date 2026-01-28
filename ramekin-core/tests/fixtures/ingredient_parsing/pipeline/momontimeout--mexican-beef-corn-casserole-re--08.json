@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup low fat cheddar cheese (shredded )",
+  "expected": {
+    "item": "low fat cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
+  }
+}

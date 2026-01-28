@@ -1,0 +1,17 @@
+{
+  "raw": "1 (22 ounce) can lemon pie filling",
+  "expected": {
+    "item": "lemon pie filling",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "22",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

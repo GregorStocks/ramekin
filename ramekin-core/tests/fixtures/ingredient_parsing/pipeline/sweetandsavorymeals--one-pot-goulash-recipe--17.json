@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces elbow macaroni (uncooked)",
+  "expected": {
+    "item": "elbow macaroni",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "uncooked"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon orange juice ((or syrup from mandarins))",
+  "expected": {
+    "item": "orange juice (or syrup from mandarins)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

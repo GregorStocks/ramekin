@@ -1,0 +1,13 @@
+{
+  "raw": "12 medium shrimp, peeled and deveined, tails left on if preferred",
+  "expected": {
+    "item": "shrimp, peeled and deveined, tails left on if preferred",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups baby kale",
+  "expected": {
+    "item": "baby kale",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

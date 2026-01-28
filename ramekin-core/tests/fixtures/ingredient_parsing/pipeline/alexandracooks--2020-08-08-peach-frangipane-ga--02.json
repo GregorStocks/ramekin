@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (14 g)&nbsp;sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

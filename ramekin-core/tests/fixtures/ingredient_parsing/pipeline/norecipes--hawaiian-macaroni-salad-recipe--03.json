@@ -1,0 +1,17 @@
+{
+  "raw": "150 grams dry macaroni ((about 1 1/2 cups))",
+  "expected": {
+    "item": "dry macaroni",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "grams"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

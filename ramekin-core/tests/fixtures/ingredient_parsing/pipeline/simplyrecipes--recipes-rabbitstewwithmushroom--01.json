@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce of dried porcini mushrooms",
+  "expected": {
+    "item": "dried porcini mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

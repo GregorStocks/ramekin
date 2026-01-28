@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices kabocha squash",
+  "expected": {
+    "item": "kabocha squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

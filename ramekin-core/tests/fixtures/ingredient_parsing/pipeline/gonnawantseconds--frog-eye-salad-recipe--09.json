@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups colored mini marshmallow",
+  "expected": {
+    "item": "colored mini marshmallow",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

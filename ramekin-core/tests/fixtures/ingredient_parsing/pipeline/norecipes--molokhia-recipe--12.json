@@ -1,0 +1,13 @@
+{
+  "raw": "500 grams fresh molokhia",
+  "expected": {
+    "item": "fresh molokhia",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

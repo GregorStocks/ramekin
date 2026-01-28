@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons apple cider",
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

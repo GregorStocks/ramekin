@@ -1,0 +1,13 @@
+{
+  "raw": "4 ears of corn",
+  "expected": {
+    "item": "ears of corn",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

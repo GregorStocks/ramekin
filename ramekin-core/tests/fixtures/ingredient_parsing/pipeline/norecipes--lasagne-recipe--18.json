@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams Gruyère cheese ((grated))",
+  "expected": {
+    "item": "Gruyère cheese",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated"
+  }
+}

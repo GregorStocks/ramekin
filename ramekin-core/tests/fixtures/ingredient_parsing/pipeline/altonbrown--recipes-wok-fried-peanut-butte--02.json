@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound peanuts, raw, shelled and skinned",
+  "expected": {
+    "item": "peanuts, raw, shelled and skinned",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

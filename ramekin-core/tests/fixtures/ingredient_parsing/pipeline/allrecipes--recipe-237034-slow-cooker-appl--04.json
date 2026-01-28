@@ -1,0 +1,17 @@
+{
+  "raw": "2 (12 fluid ounce) cans evaporated skim milk",
+  "expected": {
+    "item": "evaporated skim milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "12",
+        "unit": "fluid ounce"
+      }
+    ],
+    "note": null
+  }
+}

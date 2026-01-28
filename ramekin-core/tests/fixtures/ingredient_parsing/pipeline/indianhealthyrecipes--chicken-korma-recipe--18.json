@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2   green chilies (slit or chopped (optional, Thai/Indian or serrano peppers))",
+  "expected": {
+    "item": "green chilies",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": "slit or chopped (optional, Thai/Indian or serrano peppers"
+  }
+}

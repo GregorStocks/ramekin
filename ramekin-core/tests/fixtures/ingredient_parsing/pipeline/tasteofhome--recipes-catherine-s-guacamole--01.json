@@ -1,0 +1,13 @@
+{
+  "raw": "3 medium ripe avocados, peeled and pitted",
+  "expected": {
+    "item": "ripe avocados",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and pitted"
+  }
+}

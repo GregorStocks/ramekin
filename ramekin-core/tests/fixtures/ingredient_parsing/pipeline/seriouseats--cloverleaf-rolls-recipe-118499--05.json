@@ -1,0 +1,17 @@
+{
+  "raw": "6 g (2 teaspoons) instant yeast",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups low-sodium chicken stock",
+  "expected": {
+    "item": "low-sodium chicken stock",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

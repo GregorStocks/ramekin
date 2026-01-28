@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon butter (optional)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

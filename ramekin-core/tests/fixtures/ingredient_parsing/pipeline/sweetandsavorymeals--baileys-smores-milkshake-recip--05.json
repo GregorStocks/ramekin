@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup marshmallow fluff",
+  "expected": {
+    "item": "marshmallow fluff",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

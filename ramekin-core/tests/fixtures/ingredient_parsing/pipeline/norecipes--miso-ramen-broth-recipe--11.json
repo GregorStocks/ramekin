@@ -1,0 +1,13 @@
+{
+  "raw": "10 grams powdered gelatin",
+  "expected": {
+    "item": "powdered gelatin",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

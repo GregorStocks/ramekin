@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 tablespoons seasoning blend/rub of your choice, fresh or dried",
+  "expected": {
+    "item": "seasoning blend/rub of your choice",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "fresh or dried"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "3 grams cumin seeds ((~1 teaspoon))",
+  "expected": {
+    "item": "cumin seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces ground beef or ground turkey",
+  "expected": {
+    "item": "ground beef or ground turkey",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

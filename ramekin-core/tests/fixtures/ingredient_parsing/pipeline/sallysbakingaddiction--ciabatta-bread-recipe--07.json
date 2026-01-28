@@ -1,0 +1,17 @@
+{
+  "raw": "1 and 1/2 teaspoons (8g) table salt",
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "8",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

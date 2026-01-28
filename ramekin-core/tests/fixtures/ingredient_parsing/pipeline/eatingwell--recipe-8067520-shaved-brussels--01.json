@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound Brussels sprouts, thinly sliced (about 6 cups)",
+  "expected": {
+    "item": "Brussels sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

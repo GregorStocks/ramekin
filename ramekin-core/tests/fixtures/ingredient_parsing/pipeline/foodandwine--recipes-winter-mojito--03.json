@@ -1,0 +1,17 @@
+{
+  "raw": "1.5 tablespoons Herb-Infused Simple Syrup (3/4 ounce) (see Note)",
+  "expected": {
+    "item": "Herb-Infused Simple Syrup (see Note)",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "3/4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

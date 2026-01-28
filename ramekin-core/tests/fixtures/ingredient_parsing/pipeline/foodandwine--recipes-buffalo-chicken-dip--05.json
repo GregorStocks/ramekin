@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups shredded Monterey Jack cheese",
+  "expected": {
+    "item": "shredded Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

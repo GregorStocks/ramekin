@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lbs peaches (diced)",
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "diced"
+  }
+}

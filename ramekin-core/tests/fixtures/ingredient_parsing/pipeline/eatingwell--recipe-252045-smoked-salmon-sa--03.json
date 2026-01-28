@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons reduced-fat mayonnaise",
+  "expected": {
+    "item": "reduced-fat mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

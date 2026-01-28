@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup chopped scallion",
+  "expected": {
+    "item": "chopped scallion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

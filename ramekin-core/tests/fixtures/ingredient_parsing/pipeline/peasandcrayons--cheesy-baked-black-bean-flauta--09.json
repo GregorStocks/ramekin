@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz grated cheese (cheddar, colby, gouda, mozz)",
+  "expected": {
+    "item": "grated cheese (cheddar, colby, gouda, mozz)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

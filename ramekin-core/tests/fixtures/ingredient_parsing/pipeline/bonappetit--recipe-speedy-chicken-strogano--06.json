@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. crimini mushrooms, sliced ¼\" thick",
+  "expected": {
+    "item": "crimini mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced 1/4\" thick"
+  }
+}

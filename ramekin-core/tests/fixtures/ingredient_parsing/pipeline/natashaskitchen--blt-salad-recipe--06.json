@@ -1,0 +1,13 @@
+{
+  "raw": "4 Tbsp sour cream",
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup finely diced onion",
+  "expected": {
+    "item": "finely diced onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

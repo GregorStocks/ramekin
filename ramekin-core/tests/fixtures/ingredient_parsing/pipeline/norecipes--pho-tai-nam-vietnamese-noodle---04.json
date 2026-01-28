@@ -1,0 +1,17 @@
+{
+  "raw": "175 grams onion ((1/2 large onion))",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

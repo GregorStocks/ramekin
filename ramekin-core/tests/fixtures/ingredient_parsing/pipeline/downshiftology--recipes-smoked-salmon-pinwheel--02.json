@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces plain chevre",
+  "expected": {
+    "item": "plain chevre",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

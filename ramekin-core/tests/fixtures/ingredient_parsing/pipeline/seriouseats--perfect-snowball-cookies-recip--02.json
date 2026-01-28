@@ -1,0 +1,21 @@
+{
+  "raw": "1 scant cup all-purpose flour (4 1/2 ounces; 130g)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant cup"
+      },
+      {
+        "amount": "4 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

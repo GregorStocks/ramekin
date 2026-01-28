@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups chicken stock ((or vegetable or mushroom stock; 350ml))",
+  "expected": {
+    "item": "chicken stock",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "350",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

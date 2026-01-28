@@ -1,0 +1,13 @@
+{
+  "raw": "50g / 1.5 oz   dried rice sticks ((or 120g/4oz fresh) (Note 3))",
+  "expected": {
+    "item": "/ 1.5 oz   dried rice sticks (Note 3)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "or 120g/4oz fresh"
+  }
+}

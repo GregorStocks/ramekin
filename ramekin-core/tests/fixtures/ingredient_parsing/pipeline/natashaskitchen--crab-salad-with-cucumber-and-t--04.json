@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup chopped Green onions (fresh or frozen)",
+  "expected": {
+    "item": "chopped Green onions",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "fresh or frozen"
+  }
+}

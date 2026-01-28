@@ -1,0 +1,13 @@
+{
+  "raw": "400 grams boneless skinless chicken thighs",
+  "expected": {
+    "item": "boneless skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

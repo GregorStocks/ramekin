@@ -1,0 +1,13 @@
+{
+  "raw": "1 package  chocolate cake mix (regular size)",
+  "expected": {
+    "item": "chocolate cake mix (regular size)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

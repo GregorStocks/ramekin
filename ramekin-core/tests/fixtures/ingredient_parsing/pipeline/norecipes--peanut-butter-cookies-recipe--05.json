@@ -1,0 +1,17 @@
+{
+  "raw": "320 grams chunky peanut butter ((~1 1/4 cup))",
+  "expected": {
+    "item": "chunky peanut butter",
+    "measurements": [
+      {
+        "amount": "320",
+        "unit": "grams"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

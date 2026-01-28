@@ -1,0 +1,13 @@
+{
+  "raw": "70 grams tomatoes ((1/2 medium tomato, sliced))",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      }
+    ],
+    "note": "1/2 medium tomato, sliced"
+  }
+}

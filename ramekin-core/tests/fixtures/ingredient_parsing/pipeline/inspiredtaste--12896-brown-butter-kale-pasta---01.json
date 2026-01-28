@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces dry pasta such as bow tie or penne",
+  "expected": {
+    "item": "dry pasta such as bow tie or penne",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

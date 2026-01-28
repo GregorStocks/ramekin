@@ -1,0 +1,17 @@
+{
+  "raw": "1 pork tenderloin (1 pound), halved and thinly sliced",
+  "expected": {
+    "item": "pork tenderloin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "halved and thinly sliced"
+  }
+}

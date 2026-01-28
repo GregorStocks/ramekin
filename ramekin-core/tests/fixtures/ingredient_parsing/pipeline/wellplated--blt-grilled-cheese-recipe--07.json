@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices good quality (sturdy whole wheat bread (I like sourdough))",
+  "expected": {
+    "item": "good quality",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": "sturdy whole wheat bread (I like sourdough"
+  }
+}

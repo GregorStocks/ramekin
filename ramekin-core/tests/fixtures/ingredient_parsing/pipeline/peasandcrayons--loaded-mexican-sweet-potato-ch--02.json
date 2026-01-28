@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 cups shredded cheese ((Pepper Jack or Mexican Blend are my fav))",
+  "expected": {
+    "item": "shredded cheese (Pepper Jack or Mexican Blend are my fav)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

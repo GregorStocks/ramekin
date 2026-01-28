@@ -1,0 +1,17 @@
+{
+  "raw": "2 large aloe leaves ((about 1 pound))",
+  "expected": {
+    "item": "aloe leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

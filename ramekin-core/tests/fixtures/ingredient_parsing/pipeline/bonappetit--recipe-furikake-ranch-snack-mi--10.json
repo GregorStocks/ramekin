@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups Pepperidge Farm Goldfish Crackers",
+  "expected": {
+    "item": "Pepperidge Farm Goldfish Crackers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

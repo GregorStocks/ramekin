@@ -1,0 +1,17 @@
+{
+  "raw": "3  small lemons (4 to 5 oz each)",
+  "expected": {
+    "item": "lemons",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      },
+      {
+        "amount": "4 to 5",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
+  }
+}

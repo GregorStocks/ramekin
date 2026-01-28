@@ -1,0 +1,17 @@
+{
+  "raw": "2 oz. Pecorino Romano, finely grated (about 1½ cups)",
+  "expected": {
+    "item": "Pecorino Romano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "finely grated"
+  }
+}

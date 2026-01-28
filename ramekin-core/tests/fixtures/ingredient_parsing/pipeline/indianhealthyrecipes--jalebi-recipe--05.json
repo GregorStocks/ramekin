@@ -1,0 +1,13 @@
+{
+  "raw": "½  cup water ((more if needed) (120 ml))",
+  "expected": {
+    "item": "water (more if needed) (120 ml)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

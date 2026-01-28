@@ -1,0 +1,13 @@
+{
+  "raw": "10  pork cutlets",
+  "expected": {
+    "item": "pork cutlets",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

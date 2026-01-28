@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup mascarpone (4 ounces; 113 g)",
+  "expected": {
+    "item": "mascarpone",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

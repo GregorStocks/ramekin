@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon dry rosemary (or fresh, finely minced)",
+  "expected": {
+    "item": "dry rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or fresh, finely minced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup Half &amp;amp; Half",
+  "expected": {
+    "item": "Half &amp; Half",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

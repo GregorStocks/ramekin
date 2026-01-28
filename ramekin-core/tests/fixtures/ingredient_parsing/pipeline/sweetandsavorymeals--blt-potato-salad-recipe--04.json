@@ -1,0 +1,13 @@
+{
+  "raw": "12 slices thick cut bacon (cut into 1 inch pieces)",
+  "expected": {
+    "item": "thick cut bacon (cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

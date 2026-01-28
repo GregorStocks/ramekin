@@ -1,0 +1,17 @@
+{
+  "raw": "1 (8 ounce) package Neufchatel cheese",
+  "expected": {
+    "item": "Neufchatel cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

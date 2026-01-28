@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp sake",
+  "expected": {
+    "item": "sake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

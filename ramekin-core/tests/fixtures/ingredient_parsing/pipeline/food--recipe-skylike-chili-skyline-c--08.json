@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  ounce   grated unsweetened chocolate or 2 3/4  tablespoons    cocoa",
+  "expected": {
+    "item": "grated unsweetened chocolate or 2 3/4  tablespoons    cocoa",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

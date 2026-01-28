@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound ham (sliced)",
+  "expected": {
+    "item": "ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "sliced"
+  }
+}

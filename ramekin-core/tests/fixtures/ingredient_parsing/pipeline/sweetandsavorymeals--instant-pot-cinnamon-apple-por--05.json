@@ -1,0 +1,13 @@
+{
+  "raw": "2  Granny Smith apples (thickly sliced or chopped)",
+  "expected": {
+    "item": "Granny Smith apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thickly sliced or chopped"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 pounds bone-in pork shoulder ((1.8 kg, cut into 2-inch chunks))",
+  "expected": {
+    "item": "bone-in pork shoulder",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pounds"
+      },
+      {
+        "amount": "1.8",
+        "unit": "kg"
+      }
+    ],
+    "note": null
+  }
+}

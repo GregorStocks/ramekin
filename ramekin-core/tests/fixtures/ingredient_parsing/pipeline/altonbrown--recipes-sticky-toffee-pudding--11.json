@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups  pitted Medjool date meat, divided",
+  "expected": {
+    "item": "pitted Medjool date meat",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

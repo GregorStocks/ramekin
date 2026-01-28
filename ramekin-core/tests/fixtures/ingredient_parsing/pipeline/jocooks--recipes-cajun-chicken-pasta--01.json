@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces penne (2 cups, uncooked)",
+  "expected": {
+    "item": "penne",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "2 cups, uncooked"
+  }
+}

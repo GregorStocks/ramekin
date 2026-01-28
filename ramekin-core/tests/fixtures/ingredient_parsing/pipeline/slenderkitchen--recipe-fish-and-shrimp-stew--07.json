@@ -1,0 +1,13 @@
+{
+  "raw": "28 oz. canned San Marzano tomatoes",
+  "expected": {
+    "item": "canned San Marzano tomatoes",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "32 ounces chicken stock",
+  "expected": {
+    "item": "chicken stock",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

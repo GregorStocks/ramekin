@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 teaspoon (1g) salt",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "1",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

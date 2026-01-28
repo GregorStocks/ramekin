@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds (about 8) Persian or Japanese cucumbers, stripey peeled",
+  "expected": {
+    "item": "Persian or Japanese cucumbers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "stripey peeled"
+  }
+}

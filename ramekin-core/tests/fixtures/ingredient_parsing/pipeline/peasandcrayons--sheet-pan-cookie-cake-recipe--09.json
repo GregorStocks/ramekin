@@ -1,0 +1,13 @@
+{
+  "raw": "1 + ½ tsp salt",
+  "expected": {
+    "item": "+ 1/2 tsp salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

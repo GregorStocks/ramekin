@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup frozen okra (chopped)",
+  "expected": {
+    "item": "frozen okra",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

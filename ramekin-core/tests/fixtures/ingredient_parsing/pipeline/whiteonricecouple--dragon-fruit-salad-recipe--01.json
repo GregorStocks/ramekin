@@ -1,0 +1,13 @@
+{
+  "raw": "1  dragon fruit (, chilled)",
+  "expected": {
+    "item": "dragon fruit",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": ", chilled"
+  }
+}

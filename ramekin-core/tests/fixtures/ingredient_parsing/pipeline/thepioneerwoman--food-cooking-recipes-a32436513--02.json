@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. spaghetti or angel hair pasta&nbsp;",
+  "expected": {
+    "item": "spaghetti or angel hair pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

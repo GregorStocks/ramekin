@@ -1,0 +1,13 @@
+{
+  "raw": "70 grams cultured unsalted butter (melted)",
+  "expected": {
+    "item": "cultured unsalted butter",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      }
+    ],
+    "note": "melted"
+  }
+}

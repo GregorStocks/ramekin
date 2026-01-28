@@ -1,0 +1,13 @@
+{
+  "raw": "65 grams dill pickles ((1 small pickle, chopped))",
+  "expected": {
+    "item": "dill pickles",
+    "measurements": [
+      {
+        "amount": "65",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 small pickle, chopped"
+  }
+}

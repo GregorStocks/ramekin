@@ -1,0 +1,13 @@
+{
+  "raw": "1  bag shredded coleslaw mix (OR 4 cups of shredded purple and green cabbage and carrots)",
+  "expected": {
+    "item": "shredded coleslaw mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      }
+    ],
+    "note": "OR 4 cups of shredded purple and green cabbage and carrots"
+  }
+}

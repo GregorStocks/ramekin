@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup distilled white vinegar",
+  "expected": {
+    "item": "distilled white vinegar",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

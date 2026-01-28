@@ -1,0 +1,13 @@
+{
+  "raw": "30g / 1 oz   beef tenderloin, raw, very thinly sliced ((Note 4))",
+  "expected": {
+    "item": "/ 1 oz   beef tenderloin, raw",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "very thinly sliced (Note 4)"
+  }
+}

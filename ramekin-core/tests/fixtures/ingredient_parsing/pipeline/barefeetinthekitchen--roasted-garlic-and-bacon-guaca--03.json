@@ -1,0 +1,13 @@
+{
+  "raw": "3  strips bacon (roughly chopped into 1/2\" pieces)",
+  "expected": {
+    "item": "strips bacon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "roughly chopped into 1/2\" pieces"
+  }
+}

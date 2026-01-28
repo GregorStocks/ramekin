@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon  white soy sauce",
+  "expected": {
+    "item": "white soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

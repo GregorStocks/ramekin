@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  teaspoon    red chili powder (preferably kashmiri type)",
+  "expected": {
+    "item": "red chili powder (preferably kashmiri type)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

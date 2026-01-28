@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (180 grams)  cauliflower florets ((gobi, chopped to 1½ inch) )",
+  "expected": {
+    "item": "cauliflower florets )",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "180",
+        "unit": "grams"
+      }
+    ],
+    "note": "gobi, chopped to 1 1/2 inch"
+  }
+}

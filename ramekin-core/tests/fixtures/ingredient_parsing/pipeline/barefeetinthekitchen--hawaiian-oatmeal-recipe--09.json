@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup sweetened coconut (plain or toasted)",
+  "expected": {
+    "item": "sweetened coconut",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plain or toasted"
+  }
+}

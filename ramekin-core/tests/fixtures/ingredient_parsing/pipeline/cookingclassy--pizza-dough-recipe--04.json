@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp olive oil, (plus more for brushing)",
+  "expected": {
+    "item": "olive oil,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for brushing"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound small sweet potatoes (halved lengthwise and sliced)",
+  "expected": {
+    "item": "small sweet potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "halved lengthwise and sliced"
+  }
+}

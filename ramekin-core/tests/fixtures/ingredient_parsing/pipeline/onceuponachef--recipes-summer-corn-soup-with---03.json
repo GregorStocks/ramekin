@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups low-sodium chicken broth, best quality",
+  "expected": {
+    "item": "low-sodium chicken broth, best quality",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

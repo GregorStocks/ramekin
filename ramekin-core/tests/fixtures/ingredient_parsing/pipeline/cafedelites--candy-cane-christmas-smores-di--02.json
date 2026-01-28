@@ -1,0 +1,13 @@
+{
+  "raw": "10 large marshmallows",
+  "expected": {
+    "item": "marshmallows",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1¼ cup (2½ sticks) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "sticks"
+      }
+    ],
+    "note": null
+  }
+}

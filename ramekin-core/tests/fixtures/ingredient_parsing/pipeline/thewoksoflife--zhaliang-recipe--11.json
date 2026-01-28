@@ -1,0 +1,17 @@
+{
+  "raw": "5 tablespoons rice flour ((40g))",
+  "expected": {
+    "item": "rice flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

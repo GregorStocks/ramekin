@@ -1,0 +1,17 @@
+{
+  "raw": "12  small flour tortillas (6-inch)",
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

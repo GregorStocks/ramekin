@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup refrigerated hash browns (if using frozen, thaw and pat dry)",
+  "expected": {
+    "item": "refrigerated hash browns",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "if using frozen, thaw and pat dry"
+  }
+}

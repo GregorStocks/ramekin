@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/2 cups all-purpose flour (6 3/4 ounces; 192 grams)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "6 3/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "192",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

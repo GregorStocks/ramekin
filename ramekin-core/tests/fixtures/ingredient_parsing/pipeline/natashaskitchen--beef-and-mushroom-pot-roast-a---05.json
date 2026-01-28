@@ -1,0 +1,17 @@
+{
+  "raw": "1/2  head of garlic (6 cloves, pressed)",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "head"
+      },
+      {
+        "amount": "6",
+        "unit": "cloves"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1  whole chicken (about 3-4 lbs)",
+  "expected": {
+    "item": "whole chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3-4",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

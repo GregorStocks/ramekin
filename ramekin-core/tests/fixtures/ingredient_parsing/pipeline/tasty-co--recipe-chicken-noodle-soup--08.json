@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups egg noodle",
+  "expected": {
+    "item": "egg noodle",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

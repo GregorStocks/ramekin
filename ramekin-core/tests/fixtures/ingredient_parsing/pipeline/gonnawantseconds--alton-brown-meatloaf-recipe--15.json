@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon dried cumin",
+  "expected": {
+    "item": "dried cumin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

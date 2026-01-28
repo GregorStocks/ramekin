@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 2 oz. milk or cream",
+  "expected": {
+    "item": "2 oz. milk or cream",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

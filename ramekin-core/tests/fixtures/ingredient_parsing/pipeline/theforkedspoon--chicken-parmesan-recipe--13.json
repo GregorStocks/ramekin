@@ -1,0 +1,13 @@
+{
+  "raw": "2 large eggs (plus ¼ cup water, whisked)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "plus 1/4 cup water, whisked"
+  }
+}

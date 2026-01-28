@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces bacon ((8 pieces - oven baked bacon))",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "8",
+        "unit": "pieces"
+      }
+    ],
+    "note": null
+  }
+}

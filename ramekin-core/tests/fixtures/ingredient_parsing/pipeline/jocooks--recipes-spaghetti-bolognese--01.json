@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound spaghetti (uncooked)",
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "uncooked"
+  }
+}

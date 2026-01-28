@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup warm milk (about 100˚F, not hot!)",
+  "expected": {
+    "item": "warm milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4  medium avocados ((about 2 lbs))",
+  "expected": {
+    "item": "avocados",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

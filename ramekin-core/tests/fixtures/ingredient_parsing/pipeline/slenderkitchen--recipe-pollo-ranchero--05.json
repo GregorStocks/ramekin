@@ -1,0 +1,13 @@
+{
+  "raw": "1 jalapeno pepper, diced (seeds removed for less heat)",
+  "expected": {
+    "item": "jalapeno pepper, diced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeds removed for less heat"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 3/4 cups cooked black beans or from a can, (rinsed if from can)",
+  "expected": {
+    "item": "cooked black beans or from a can,",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "rinsed if from can"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "3.5 litres / 3.75 quarts   water ((15 cups))",
+  "expected": {
+    "item": "/ 3.75 quarts   water",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "litres"
+      },
+      {
+        "amount": "15",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "14 ounces coconut milk ((1 ½ cups))",
+  "expected": {
+    "item": "coconut milk",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

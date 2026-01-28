@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6  burrito-size tortillas",
+  "expected": {
+    "item": "burrito-size tortillas",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

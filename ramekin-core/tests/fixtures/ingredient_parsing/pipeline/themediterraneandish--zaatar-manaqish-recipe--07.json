@@ -1,0 +1,13 @@
+{
+  "raw": "7 to 8 tbsp quality Za'atar spice",
+  "expected": {
+    "item": "quality Za'atar spice",
+    "measurements": [
+      {
+        "amount": "7 to 8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

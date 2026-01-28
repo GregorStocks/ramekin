@@ -1,0 +1,13 @@
+{
+  "raw": "225 grams button mushrooms ((trimmed and halved))",
+  "expected": {
+    "item": "button mushrooms",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": "trimmed and halved"
+  }
+}

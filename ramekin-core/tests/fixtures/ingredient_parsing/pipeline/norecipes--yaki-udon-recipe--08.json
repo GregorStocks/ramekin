@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams shiitake mushrooms ((3 mushrooms, sliced))",
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": "3 mushrooms, sliced"
+  }
+}

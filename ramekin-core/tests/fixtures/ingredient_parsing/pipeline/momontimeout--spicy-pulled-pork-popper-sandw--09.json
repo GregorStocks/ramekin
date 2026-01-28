@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp chili powder",
+  "expected": {
+    "item": "chili powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

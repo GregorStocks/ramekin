@@ -1,0 +1,13 @@
+{
+  "raw": "8 large lemons, divided&amp;nbsp;",
+  "expected": {
+    "item": "lemons",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": "divided"
+  }
+}

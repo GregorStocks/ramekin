@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoons orange zest",
+  "expected": {
+    "item": "orange zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

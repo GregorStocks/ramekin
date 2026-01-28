@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces green beans, preferably thin haricots verts, trimmed and halved",
+  "expected": {
+    "item": "green beans, preferably thin haricots verts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "trimmed and halved"
+  }
+}

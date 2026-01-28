@@ -1,0 +1,13 @@
+{
+  "raw": "½ tsp coarse sea salt ((plus more for sprinkling))",
+  "expected": {
+    "item": "coarse sea salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for sprinkling"
+  }
+}

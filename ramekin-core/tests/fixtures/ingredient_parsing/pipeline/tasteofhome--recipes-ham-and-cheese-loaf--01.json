@@ -1,0 +1,17 @@
+{
+  "raw": "1 tube (13.8 ounces) refrigerated pizza crust",
+  "expected": {
+    "item": "tube refrigerated pizza crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "13.8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

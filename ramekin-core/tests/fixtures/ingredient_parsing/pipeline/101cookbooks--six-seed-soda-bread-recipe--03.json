@@ -1,0 +1,13 @@
+{
+  "raw": "1 3/4 cup / 9 oz / 250 g spelt flour",
+  "expected": {
+    "item": "/ 9 oz / 250 g spelt flour",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

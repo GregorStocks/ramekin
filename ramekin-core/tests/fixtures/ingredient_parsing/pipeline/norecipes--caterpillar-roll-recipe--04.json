@@ -1,0 +1,13 @@
+{
+  "raw": "1 batch prepared sushi rice",
+  "expected": {
+    "item": "batch prepared sushi rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

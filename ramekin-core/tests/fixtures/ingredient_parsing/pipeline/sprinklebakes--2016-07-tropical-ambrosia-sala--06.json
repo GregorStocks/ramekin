@@ -1,0 +1,13 @@
+{
+  "raw": "20 ounce can crushed pineapple (drained)",
+  "expected": {
+    "item": "can crushed pineapple",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

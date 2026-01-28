@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon fresh parsley or 1 teaspoon dried parsley",
+  "expected": {
+    "item": "fresh parsley or 1 teaspoon dried parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

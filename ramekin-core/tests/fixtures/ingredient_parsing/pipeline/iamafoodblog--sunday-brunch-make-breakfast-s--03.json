@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups 1-inch bread cubes",
+  "expected": {
+    "item": "1-inch bread cubes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

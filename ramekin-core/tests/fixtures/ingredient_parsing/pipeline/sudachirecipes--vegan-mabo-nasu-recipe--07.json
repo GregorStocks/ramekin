@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp ginger root (finely diced)",
+  "expected": {
+    "item": "ginger root",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

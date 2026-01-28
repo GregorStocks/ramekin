@@ -1,0 +1,13 @@
+{
+  "raw": "1 can black beans, drained and rinsed",
+  "expected": {
+    "item": "black beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

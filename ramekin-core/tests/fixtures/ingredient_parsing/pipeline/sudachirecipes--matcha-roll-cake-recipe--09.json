@@ -1,0 +1,17 @@
+{
+  "raw": "150 ml heavy cream (36% or higher)",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "ml"
+      },
+      {
+        "amount": "36",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

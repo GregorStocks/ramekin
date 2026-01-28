@@ -1,0 +1,13 @@
+{
+  "raw": "15 oz red kidney beans",
+  "expected": {
+    "item": "red kidney beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

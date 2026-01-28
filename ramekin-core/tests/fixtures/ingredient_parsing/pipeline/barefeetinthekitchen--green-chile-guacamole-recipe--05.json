@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces chopped green chile",
+  "expected": {
+    "item": "chopped green chile",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

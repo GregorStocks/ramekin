@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cooked white or brown rice OR mashed potatoes OR cooked egg noodles",
+  "expected": {
+    "item": "cooked white or brown rice OR mashed potatoes OR cooked egg noodles",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

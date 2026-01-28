@@ -1,0 +1,21 @@
+{
+  "raw": "255g all-purpose flour (9 ounces; 2 cups)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "255",
+        "unit": "g"
+      },
+      {
+        "amount": "9",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

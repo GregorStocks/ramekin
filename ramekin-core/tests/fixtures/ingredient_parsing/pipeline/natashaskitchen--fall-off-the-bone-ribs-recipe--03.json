@@ -1,0 +1,13 @@
+{
+  "raw": "1  medium head of pressed garlic",
+  "expected": {
+    "item": "head of pressed garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

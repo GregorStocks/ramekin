@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz canned fire-roasted tomatoes, (well drained)",
+  "expected": {
+    "item": "canned fire-roasted tomatoes,",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": "well drained"
+  }
+}

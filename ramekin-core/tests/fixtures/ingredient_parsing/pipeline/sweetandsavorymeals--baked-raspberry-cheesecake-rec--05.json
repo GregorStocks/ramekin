@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup sour cream or plain Greek yogurt (room temperature)",
+  "expected": {
+    "item": "sour cream or plain Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

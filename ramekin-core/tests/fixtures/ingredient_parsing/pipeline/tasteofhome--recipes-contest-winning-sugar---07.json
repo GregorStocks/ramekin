@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup dry roasted peanuts",
+  "expected": {
+    "item": "dry roasted peanuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

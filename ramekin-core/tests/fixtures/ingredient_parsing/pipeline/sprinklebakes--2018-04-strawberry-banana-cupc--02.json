@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 60 ml lemon-lime soda",
+  "expected": {
+    "item": "60 ml lemon-lime soda",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

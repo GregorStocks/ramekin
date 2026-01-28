@@ -1,0 +1,13 @@
+{
+  "raw": ".5 teaspoon ground turmeric powder",
+  "expected": {
+    "item": "ground turmeric powder",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

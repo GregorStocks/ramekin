@@ -1,0 +1,13 @@
+{
+  "raw": "240 grams egg noodles",
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "240",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

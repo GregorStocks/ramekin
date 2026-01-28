@@ -1,0 +1,17 @@
+{
+  "raw": "3 1/2 cups (17 oz) unbleached all-purpose flour (or bread flour, then more as needed (scoop and level to measure))",
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "17",
+        "unit": "oz"
+      }
+    ],
+    "note": "or bread flour, then more as needed (scoop and level to measure"
+  }
+}

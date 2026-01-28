@@ -1,0 +1,13 @@
+{
+  "raw": "7 cups 875 grams unsifted, all-purpose four, measured correctly*",
+  "expected": {
+    "item": "875 grams unsifted, all-purpose four, measured correctly*",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

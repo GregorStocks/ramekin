@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 ounce Cointreau or Triple Sec",
+  "expected": {
+    "item": "Cointreau or Triple Sec",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

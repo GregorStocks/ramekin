@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon instant coffee powder ((optional))",
+  "expected": {
+    "item": "instant coffee powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

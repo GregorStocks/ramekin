@@ -1,0 +1,17 @@
+{
+  "raw": "12 ounces whole-wheat penne (about 4 cups)",
+  "expected": {
+    "item": "whole-wheat penne",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

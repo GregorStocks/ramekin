@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz. artichoke hearts, drained, see notes above",
+  "expected": {
+    "item": "artichoke hearts, drained, see notes above",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

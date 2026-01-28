@@ -1,0 +1,13 @@
+{
+  "raw": "1  large russet potato (peeled and cut in 1/2-inch chunks)",
+  "expected": {
+    "item": "russet potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and cut in 1/2-inch chunks"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz. gin",
+  "expected": {
+    "item": "gin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

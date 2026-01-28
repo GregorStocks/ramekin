@@ -1,0 +1,13 @@
+{
+  "raw": "400ml can reduced-fat coconut milk",
+  "expected": {
+    "item": "can reduced-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

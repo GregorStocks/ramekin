@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 60ml heavy cream or whole milk",
+  "expected": {
+    "item": "60ml heavy cream or whole milk",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

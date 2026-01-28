@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (9 g) toasted sesame seeds, optional",
+  "expected": {
+    "item": "toasted sesame seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "9",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
+  }
+}

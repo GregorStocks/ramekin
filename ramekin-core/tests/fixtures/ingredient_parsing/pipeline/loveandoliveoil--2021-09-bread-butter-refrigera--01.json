@@ -1,0 +1,21 @@
+{
+  "raw": "1 pound kirby or other pickling cucumbers (about 4 small) (blossom ends removed and cut into spears or slices)",
+  "expected": {
+    "item": "kirby or other pickling cucumbers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "4",
+        "unit": "small"
+      },
+      {
+        "amount": null,
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

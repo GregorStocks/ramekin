@@ -1,0 +1,13 @@
+{
+  "raw": "15 red peppers quartered and deseeded",
+  "expected": {
+    "item": "red peppers quartered and deseeded",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

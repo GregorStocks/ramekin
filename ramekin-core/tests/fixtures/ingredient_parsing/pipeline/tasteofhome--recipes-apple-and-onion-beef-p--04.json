@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon reduced-sodium soy sauce",
+  "expected": {
+    "item": "reduced-sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

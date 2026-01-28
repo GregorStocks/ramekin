@@ -1,0 +1,13 @@
+{
+  "raw": "1  jalapeño (finely minced)",
+  "expected": {
+    "item": "jalapeño",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely minced"
+  }
+}

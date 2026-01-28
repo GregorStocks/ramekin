@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (454g) buttermilk",
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

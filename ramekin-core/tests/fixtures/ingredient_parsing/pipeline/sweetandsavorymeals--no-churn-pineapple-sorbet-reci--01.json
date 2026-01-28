@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups frozen pineapple",
+  "expected": {
+    "item": "frozen pineapple",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

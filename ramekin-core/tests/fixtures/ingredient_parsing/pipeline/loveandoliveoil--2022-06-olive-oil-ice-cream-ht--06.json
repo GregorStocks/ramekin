@@ -1,0 +1,13 @@
+{
+  "raw": "1  piece lemon peel (about the size of a quarter)",
+  "expected": {
+    "item": "lemon peel (about the size of a quarter)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      }
+    ],
+    "note": null
+  }
+}

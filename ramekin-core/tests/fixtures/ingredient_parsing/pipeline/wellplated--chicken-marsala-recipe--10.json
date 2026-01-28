@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup dry Marsala wine ( not cooking wine; or more chicken stock)",
+  "expected": {
+    "item": "dry Marsala wine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "not cooking wine; or more chicken stock"
+  }
+}

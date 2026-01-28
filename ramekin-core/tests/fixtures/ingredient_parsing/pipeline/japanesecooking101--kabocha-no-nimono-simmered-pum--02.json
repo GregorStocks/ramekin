@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 lb Kabocha (pumpkin)",
+  "expected": {
+    "item": "Kabocha (pumpkin)",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

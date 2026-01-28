@@ -1,0 +1,17 @@
+{
+  "raw": "1  zucchini (medium size)",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

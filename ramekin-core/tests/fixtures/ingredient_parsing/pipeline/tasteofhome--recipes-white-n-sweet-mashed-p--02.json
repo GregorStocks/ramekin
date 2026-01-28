@@ -1,0 +1,17 @@
+{
+  "raw": "1-1/2 pounds sweet potatoes (about 4 medium), peeled and cubed",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and cubed"
+  }
+}

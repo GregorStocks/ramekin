@@ -1,0 +1,17 @@
+{
+  "raw": "3 scallions, finely chopped (about ¼ cup), plus a few more for serving",
+  "expected": {
+    "item": "scallions, finely chopped",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus a few more for serving"
+  }
+}

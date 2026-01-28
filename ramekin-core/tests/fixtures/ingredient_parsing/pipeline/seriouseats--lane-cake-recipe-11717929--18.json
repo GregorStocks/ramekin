@@ -1,0 +1,21 @@
+{
+  "raw": "6 ounces dried sweetened tart cherries (170 g; 1 cup), finely chopped",
+  "expected": {
+    "item": "dried sweetened tart cherries",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

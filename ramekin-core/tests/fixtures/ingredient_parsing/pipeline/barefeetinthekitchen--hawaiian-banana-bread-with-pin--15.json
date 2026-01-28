@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup tapioca starch",
+  "expected": {
+    "item": "tapioca starch",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

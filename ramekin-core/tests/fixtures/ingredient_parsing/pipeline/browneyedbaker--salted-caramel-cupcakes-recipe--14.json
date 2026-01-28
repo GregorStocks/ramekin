@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup salted caramel sauce",
+  "expected": {
+    "item": "salted caramel sauce",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (454 g) extra-thick-cut bacon",
+  "expected": {
+    "item": "extra-thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

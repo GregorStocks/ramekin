@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. white button mushrooms, quartered",
+  "expected": {
+    "item": "white button mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "quartered"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 grams dried shiitake mushroom",
+  "expected": {
+    "item": "dried shiitake mushroom",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

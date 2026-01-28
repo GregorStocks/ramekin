@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup drained canned diced tomatoes",
+  "expected": {
+    "item": "drained canned diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

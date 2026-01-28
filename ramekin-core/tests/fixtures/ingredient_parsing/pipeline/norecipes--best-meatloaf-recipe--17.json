@@ -1,0 +1,13 @@
+{
+  "raw": "170 grams thick-cut bacon",
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "170",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

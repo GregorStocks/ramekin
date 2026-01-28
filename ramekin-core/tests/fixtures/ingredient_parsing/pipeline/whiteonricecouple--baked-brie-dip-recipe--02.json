@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces sun-dried tomatoes ( packed in oil, drained &amp;amp; chopped (@ 1/4 cup))",
+  "expected": {
+    "item": "sun-dried tomatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "packed in oil, drained &amp; chopped (@ 1/4 cup"
+  }
+}

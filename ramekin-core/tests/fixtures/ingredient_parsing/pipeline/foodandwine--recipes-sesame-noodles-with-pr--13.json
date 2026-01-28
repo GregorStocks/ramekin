@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 ounces prosciutto, sliced 1/8 inch thick, cut into matchsticks",
+  "expected": {
+    "item": "prosciutto, sliced 1/8 inch thick, cut into matchsticks",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

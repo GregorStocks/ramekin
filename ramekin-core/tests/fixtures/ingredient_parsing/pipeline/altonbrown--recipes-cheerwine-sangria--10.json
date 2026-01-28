@@ -1,0 +1,17 @@
+{
+  "raw": "2 (12-ounce) bottles Cheerwine, chilled",
+  "expected": {
+    "item": "Cheerwine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bottles"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "chilled"
+  }
+}

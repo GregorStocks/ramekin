@@ -1,0 +1,17 @@
+{
+  "raw": "1 quart (32 ounces) full-fat plain yogurt",
+  "expected": {
+    "item": "full-fat plain yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      },
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

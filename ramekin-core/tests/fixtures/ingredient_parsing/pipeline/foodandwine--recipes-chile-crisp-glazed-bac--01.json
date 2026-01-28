@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce dried whole Japones chiles (mild or medium)",
+  "expected": {
+    "item": "dried whole Japones chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": null,
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

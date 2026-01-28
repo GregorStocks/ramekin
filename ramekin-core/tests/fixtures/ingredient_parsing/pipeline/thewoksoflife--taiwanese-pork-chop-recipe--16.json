@@ -1,0 +1,13 @@
+{
+  "raw": "2-2.5 cups pickled mustard greens ((chopped))",
+  "expected": {
+    "item": "pickled mustard greens",
+    "measurements": [
+      {
+        "amount": "2-2.5",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4   slices    bacon, cooked and crumbled",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": "cooked and crumbled"
+  }
+}

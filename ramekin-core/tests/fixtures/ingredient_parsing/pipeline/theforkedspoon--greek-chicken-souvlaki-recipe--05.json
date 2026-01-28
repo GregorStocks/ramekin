@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoon fresh thyme (finely chopped)",
+  "expected": {
+    "item": "fresh thyme",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

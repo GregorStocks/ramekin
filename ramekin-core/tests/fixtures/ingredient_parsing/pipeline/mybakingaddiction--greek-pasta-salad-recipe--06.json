@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons Za’atar",
+  "expected": {
+    "item": "Za’atar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

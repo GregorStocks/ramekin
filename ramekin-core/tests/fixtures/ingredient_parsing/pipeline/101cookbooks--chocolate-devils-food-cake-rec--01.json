@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups plus 1 tablespoon / 200g all-purpose flour",
+  "expected": {
+    "item": "1 1/2 cups plus 1 tablespoon / 200g all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus 1 tablespoon / 200g all-purpose flour"
+  }
+}

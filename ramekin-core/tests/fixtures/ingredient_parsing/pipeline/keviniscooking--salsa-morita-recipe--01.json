@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb tomatoes (cored)",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cored"
+  }
+}

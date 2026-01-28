@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups kale (or spinach)",
+  "expected": {
+    "item": "kale (or spinach)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

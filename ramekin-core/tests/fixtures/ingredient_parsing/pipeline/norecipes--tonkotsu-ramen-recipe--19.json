@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 batch fresh ramen noodles",
+  "expected": {
+    "item": "batch fresh ramen noodles",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon grapefruit extract (optional)",
+  "expected": {
+    "item": "grapefruit extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

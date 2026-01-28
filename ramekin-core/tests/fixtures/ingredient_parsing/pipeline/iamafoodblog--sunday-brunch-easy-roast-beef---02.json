@@ -1,0 +1,13 @@
+{
+  "raw": "1 small wheel brie cheese, sliced thinly",
+  "expected": {
+    "item": "wheel brie cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced thinly"
+  }
+}

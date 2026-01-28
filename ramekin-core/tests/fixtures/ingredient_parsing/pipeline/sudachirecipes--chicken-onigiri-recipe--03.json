@@ -1,0 +1,13 @@
+{
+  "raw": "100 g ground chicken (or ground turkey)",
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": "or ground turkey"
+  }
+}

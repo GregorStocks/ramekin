@@ -1,0 +1,13 @@
+{
+  "raw": "30 ounces corn kernels (fresh, frozen or canned)",
+  "expected": {
+    "item": "corn kernels",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "ounces"
+      }
+    ],
+    "note": "fresh, frozen or canned"
+  }
+}

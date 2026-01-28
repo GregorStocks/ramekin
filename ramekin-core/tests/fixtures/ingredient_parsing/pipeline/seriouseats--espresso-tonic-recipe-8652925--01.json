@@ -1,0 +1,17 @@
+{
+  "raw": "4 fluid ounces tonic water (120ml)",
+  "expected": {
+    "item": "tonic water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "fluid ounces"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

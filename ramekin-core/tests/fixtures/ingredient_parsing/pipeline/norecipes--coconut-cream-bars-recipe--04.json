@@ -1,0 +1,13 @@
+{
+  "raw": "150 grams bittersweet chocolate",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

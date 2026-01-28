@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon pistachio extract (optional (can replace with 1/4 teaspoon almond extract))",
+  "expected": {
+    "item": "pistachio extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional (can replace with 1/4 teaspoon almond extract"
+  }
+}

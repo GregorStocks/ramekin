@@ -1,0 +1,17 @@
+{
+  "raw": "2 (9-ounce) packages refrigerated ravioli",
+  "expected": {
+    "item": "refrigerated ravioli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

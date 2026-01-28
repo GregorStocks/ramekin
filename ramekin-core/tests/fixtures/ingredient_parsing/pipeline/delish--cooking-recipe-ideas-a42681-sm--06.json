@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 c. (1 stick)&nbsp;butter, softened",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "softened"
+  }
+}

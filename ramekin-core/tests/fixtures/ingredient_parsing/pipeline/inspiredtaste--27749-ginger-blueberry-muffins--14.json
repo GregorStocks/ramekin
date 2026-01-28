@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon milk; dairy and non-dairy both work",
+  "expected": {
+    "item": "milk; dairy and non-dairy both work",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

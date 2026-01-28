@@ -1,0 +1,21 @@
+{
+  "raw": "8 cups crispy rice cereal squares (10 ounces; 280 g) (such as Rice Chex)&nbsp;",
+  "expected": {
+    "item": "crispy rice cereal squares (such as Rice Chex)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "280",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

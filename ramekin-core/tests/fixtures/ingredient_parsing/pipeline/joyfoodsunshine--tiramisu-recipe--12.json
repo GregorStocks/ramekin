@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons pure vanilla extract vanilla",
+  "expected": {
+    "item": "pure vanilla extract vanilla",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

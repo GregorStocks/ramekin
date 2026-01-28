@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup mayonnaise (or to taste (I'm keeping it healthier with a a vegenaise))",
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or to taste (I'm keeping it healthier with a a vegenaise"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2-4 tablespoons parmesan cheese (fresh grated)",
+  "expected": {
+    "item": "parmesan cheese",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "fresh grated"
+  }
+}

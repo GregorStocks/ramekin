@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups chopped dill pickles (I use 10-12 baby dills)",
+  "expected": {
+    "item": "chopped dill pickles (I use 10-12 baby dills)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

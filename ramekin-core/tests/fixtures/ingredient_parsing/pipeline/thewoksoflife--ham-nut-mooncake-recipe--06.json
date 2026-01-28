@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon lye water ((available at your Chinese grocery store))",
+  "expected": {
+    "item": "lye water (available at your Chinese grocery store)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

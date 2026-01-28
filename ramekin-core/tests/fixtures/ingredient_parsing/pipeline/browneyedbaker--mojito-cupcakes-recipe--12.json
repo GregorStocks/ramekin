@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons white rum",
+  "expected": {
+    "item": "white rum",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

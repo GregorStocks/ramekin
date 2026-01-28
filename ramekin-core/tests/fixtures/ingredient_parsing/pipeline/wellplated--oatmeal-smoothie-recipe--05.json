@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tablespoon pure maple syrup (plus additional to taste)",
+  "expected": {
+    "item": "pure maple syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus additional to taste"
+  }
+}

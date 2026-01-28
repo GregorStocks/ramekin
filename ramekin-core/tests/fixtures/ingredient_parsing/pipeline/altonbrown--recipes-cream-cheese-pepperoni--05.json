@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon sriracha&nbsp;",
+  "expected": {
+    "item": "sriracha",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

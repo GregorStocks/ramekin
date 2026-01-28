@@ -1,0 +1,17 @@
+{
+  "raw": "2½ cups water  ((3 cups for Instant pot, more for regular pot))",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

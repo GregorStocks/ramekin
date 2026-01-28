@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6 scallions, thinly sliced",
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

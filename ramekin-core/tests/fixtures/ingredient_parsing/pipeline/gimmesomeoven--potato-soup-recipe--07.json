@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups&nbsp;milk, warmed",
+  "expected": {
+    "item": "milk, warmed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

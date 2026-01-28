@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbs shallots (, minced (abot 1 large shallot))",
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbs"
+      }
+    ],
+    "note": ", minced (abot 1 large shallot"
+  }
+}

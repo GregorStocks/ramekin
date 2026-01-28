@@ -1,0 +1,17 @@
+{
+  "raw": ".7 grams garlic powder ((~1/4 teaspoon))",
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": ".7",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

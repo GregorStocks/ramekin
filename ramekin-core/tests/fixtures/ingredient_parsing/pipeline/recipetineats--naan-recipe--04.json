@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp milk (, full fat (low fat ok too))",
+  "expected": {
+    "item": "milk (, full fat (low fat ok too)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

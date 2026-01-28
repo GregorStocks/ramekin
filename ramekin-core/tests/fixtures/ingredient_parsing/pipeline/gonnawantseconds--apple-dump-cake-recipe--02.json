@@ -1,0 +1,13 @@
+{
+  "raw": "1 box yellow cake mix",
+  "expected": {
+    "item": "yellow cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      }
+    ],
+    "note": null
+  }
+}

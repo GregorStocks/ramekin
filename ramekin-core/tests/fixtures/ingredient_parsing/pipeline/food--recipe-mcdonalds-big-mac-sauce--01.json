@@ -1,0 +1,13 @@
+{
+  "raw": "1/4  cup    Miracle Whip",
+  "expected": {
+    "item": "Miracle Whip",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

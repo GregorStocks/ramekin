@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces dry pasta",
+  "expected": {
+    "item": "dry pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

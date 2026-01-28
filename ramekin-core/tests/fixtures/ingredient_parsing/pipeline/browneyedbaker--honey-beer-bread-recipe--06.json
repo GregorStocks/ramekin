@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounce bottled beer",
+  "expected": {
+    "item": "bottled beer",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

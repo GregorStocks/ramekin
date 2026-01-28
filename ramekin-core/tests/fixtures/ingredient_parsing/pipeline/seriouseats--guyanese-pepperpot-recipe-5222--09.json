@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (450g) bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
+  "expected": {
+    "item": "bone-in beef chuck, cut into roughly 2-inch pieces (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

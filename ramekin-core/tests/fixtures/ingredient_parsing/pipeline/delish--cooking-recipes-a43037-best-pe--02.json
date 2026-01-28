@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. peach nectar",
+  "expected": {
+    "item": "peach nectar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

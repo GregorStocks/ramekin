@@ -1,0 +1,17 @@
+{
+  "raw": "2 bunches baby bok choy, trimmed and cut into 1-inch pieces (about 2 cups)",
+  "expected": {
+    "item": "baby bok choy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "trimmed and cut into 1-inch pieces"
+  }
+}

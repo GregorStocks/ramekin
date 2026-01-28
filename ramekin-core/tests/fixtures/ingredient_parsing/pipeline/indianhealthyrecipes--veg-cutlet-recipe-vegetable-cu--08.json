@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2  green chilies (finely chopped (skip for kids))",
+  "expected": {
+    "item": "green chilies",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped (skip for kids"
+  }
+}

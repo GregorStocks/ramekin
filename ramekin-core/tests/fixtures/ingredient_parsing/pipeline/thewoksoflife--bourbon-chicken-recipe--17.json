@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon cornstarch ((mixed with 2 tablespoons water))",
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "mixed with 2 tablespoons water"
+  }
+}

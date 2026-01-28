@@ -1,0 +1,13 @@
+{
+  "raw": "2-3  drops pink food color",
+  "expected": {
+    "item": "pink food color",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "drops"
+      }
+    ],
+    "note": null
+  }
+}

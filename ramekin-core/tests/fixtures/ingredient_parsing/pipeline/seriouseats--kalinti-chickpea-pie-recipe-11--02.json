@@ -1,0 +1,21 @@
+{
+  "raw": "2 cups finely milled chickpea flour (about 9 ounces; 250 g) (see notes)",
+  "expected": {
+    "item": "finely milled chickpea flour (see notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "9",
+        "unit": "ounces"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

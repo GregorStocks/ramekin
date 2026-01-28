@@ -1,0 +1,17 @@
+{
+  "raw": "20 ounces pineapple chunks in syrup ((1 can))",
+  "expected": {
+    "item": "pineapple chunks in syrup",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

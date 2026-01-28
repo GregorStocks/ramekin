@@ -1,0 +1,13 @@
+{
+  "raw": "1 large crown broccoli (cut into florets)",
+  "expected": {
+    "item": "crown broccoli (cut into florets)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (14 ounce) cans white corn, drained",
+  "expected": {
+    "item": "white corn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

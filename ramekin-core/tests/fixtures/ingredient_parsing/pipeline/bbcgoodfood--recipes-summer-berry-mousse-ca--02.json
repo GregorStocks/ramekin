@@ -1,0 +1,13 @@
+{
+  "raw": "100g butter melted",
+  "expected": {
+    "item": "butter melted",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 grams cinnamon",
+  "expected": {
+    "item": "cinnamon",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

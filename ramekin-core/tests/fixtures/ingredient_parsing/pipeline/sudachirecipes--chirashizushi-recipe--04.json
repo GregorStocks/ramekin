@@ -1,0 +1,13 @@
+{
+  "raw": "30 g fried tofu pouch (aburaage) (thinly sliced)",
+  "expected": {
+    "item": "fried tofu pouch (aburaage) (thinly sliced)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

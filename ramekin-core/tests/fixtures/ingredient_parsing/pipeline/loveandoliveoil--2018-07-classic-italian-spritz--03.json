@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce aperitif (such as Aperol or Campari)",
+  "expected": {
+    "item": "aperitif (such as Aperol or Campari)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

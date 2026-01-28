@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup coconut oil (liquified )",
+  "expected": {
+    "item": "coconut oil (liquified )",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

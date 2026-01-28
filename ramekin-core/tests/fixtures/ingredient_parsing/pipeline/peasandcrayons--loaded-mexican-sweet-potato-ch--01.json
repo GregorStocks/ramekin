@@ -1,0 +1,13 @@
+{
+  "raw": "20 oz crinkle-cut sweet potato fries",
+  "expected": {
+    "item": "crinkle-cut sweet potato fries",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

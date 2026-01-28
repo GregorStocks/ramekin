@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (227 g) extra sharp cheddar cheese, finely shredded (2 cups shredded)&nbsp;",
+  "expected": {
+    "item": "extra sharp cheddar cheese, finely shredded",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "2 cups shredded"
+  }
+}

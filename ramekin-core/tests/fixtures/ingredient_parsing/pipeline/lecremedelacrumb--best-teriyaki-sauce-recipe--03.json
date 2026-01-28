@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup rice vinegar",
+  "expected": {
+    "item": "rice vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

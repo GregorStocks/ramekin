@@ -1,0 +1,13 @@
+{
+  "raw": "500g dried  red kidney beans",
+  "expected": {
+    "item": "dried  red kidney beans",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

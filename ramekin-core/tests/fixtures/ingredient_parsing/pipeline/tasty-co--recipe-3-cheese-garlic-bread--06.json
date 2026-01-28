@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup fresh green onion, sliced",
+  "expected": {
+    "item": "fresh green onion",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "sliced"
+  }
+}

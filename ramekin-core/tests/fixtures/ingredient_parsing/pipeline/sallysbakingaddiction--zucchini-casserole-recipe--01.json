@@ -1,0 +1,21 @@
+{
+  "raw": "1.5 lbs. (about 680g) zucchini (about 3–4 medium)",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "lbs"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

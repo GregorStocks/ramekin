@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 ounce (14 g) dried porcini, morel, chanterelle, lobster, or shiitake mushrooms",
+  "expected": {
+    "item": "dried porcini, morel, chanterelle, lobster, or shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

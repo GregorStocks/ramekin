@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon lemon juice or vinegar",
+  "expected": {
+    "item": "lemon juice or vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

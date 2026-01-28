@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (150 grams)  tomatoes ( (2 medium chopped finely))",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": "(2 medium chopped finely"
+  }
+}

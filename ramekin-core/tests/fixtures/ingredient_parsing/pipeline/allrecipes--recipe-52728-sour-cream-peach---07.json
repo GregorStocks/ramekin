@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups sliced fresh or frozen peaches",
+  "expected": {
+    "item": "sliced fresh or frozen peaches",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

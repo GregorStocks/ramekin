@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon dark chocolate chip, optional",
+  "expected": {
+    "item": "dark chocolate chip",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

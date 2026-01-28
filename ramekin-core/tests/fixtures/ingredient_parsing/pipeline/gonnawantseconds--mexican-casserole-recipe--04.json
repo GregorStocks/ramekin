@@ -1,0 +1,13 @@
+{
+  "raw": "1 can  chili beans, (undrained)",
+  "expected": {
+    "item": "chili beans,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": "undrained"
+  }
+}

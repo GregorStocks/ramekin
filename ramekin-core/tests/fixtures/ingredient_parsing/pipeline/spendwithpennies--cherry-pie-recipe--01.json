@@ -1,0 +1,13 @@
+{
+  "raw": "2 ⅓ cups all purpose flour (sifted)",
+  "expected": {
+    "item": "all purpose flour",
+    "measurements": [
+      {
+        "amount": "2 1/3",
+        "unit": "cups"
+      }
+    ],
+    "note": "sifted"
+  }
+}

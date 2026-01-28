@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups frozen black-eyed peas.  (thawed and drained)",
+  "expected": {
+    "item": "frozen black-eyed peas.",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "thawed and drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounces chickpeas (drained (or&nbsp;1 1/2 cups cooked chickpeas))",
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained (or 1 1/2 cups cooked chickpeas"
+  }
+}

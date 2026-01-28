@@ -1,0 +1,17 @@
+{
+  "raw": "325 grams zucchini ((about 2 medium zucchinis))",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "325",
+        "unit": "grams"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

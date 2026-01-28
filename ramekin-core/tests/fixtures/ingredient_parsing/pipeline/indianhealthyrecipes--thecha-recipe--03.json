@@ -1,0 +1,13 @@
+{
+  "raw": "12 grams medium garlic cloves  ((peeled))",
+  "expected": {
+    "item": "medium garlic cloves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "grams"
+      }
+    ],
+    "note": "peeled"
+  }
+}

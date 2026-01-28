@@ -1,0 +1,13 @@
+{
+  "raw": "dash cardamom bitters (optional)",
+  "expected": {
+    "item": "cardamom bitters",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
+  }
+}

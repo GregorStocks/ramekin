@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons instant coffee + 3 tablespoons boiling water",
+  "expected": {
+    "item": "instant coffee + 3 tablespoons boiling water",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "150 grams dry wide rice noodles ((or 350 grams fresh, sen yai))",
+  "expected": {
+    "item": "dry wide rice noodles",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": "or 350 grams fresh, sen yai"
+  }
+}

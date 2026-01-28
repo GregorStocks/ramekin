@@ -1,0 +1,21 @@
+{
+  "raw": "4 medium scallions (about 2 ounces), trimmed and thinly sliced crosswise (about 3/4 cup)",
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "trimmed and thinly sliced crosswise"
+  }
+}

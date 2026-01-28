@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams red cabbage ((shredded))",
+  "expected": {
+    "item": "red cabbage",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "shredded"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 head lettuce (, washed, drained, torn)",
+  "expected": {
+    "item": "lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": ", washed, drained, torn"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups peas ((fresh or frozen))",
+  "expected": {
+    "item": "peas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "fresh or frozen"
+  }
+}

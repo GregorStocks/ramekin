@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup cold water (or cold broth)",
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "or cold broth"
+  }
+}

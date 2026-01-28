@@ -1,0 +1,13 @@
+{
+  "raw": "2  handfuls of fresh baby arugula or spinach",
+  "expected": {
+    "item": "fresh baby arugula or spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "handfuls"
+      }
+    ],
+    "note": null
+  }
+}

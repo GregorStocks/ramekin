@@ -1,0 +1,17 @@
+{
+  "raw": "120 grams cacao nibs ((~1 cup))",
+  "expected": {
+    "item": "cacao nibs",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ ounces marshmallow vodka",
+  "expected": {
+    "item": "marshmallow vodka",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons matcha green tea powder",
+  "expected": {
+    "item": "matcha green tea powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

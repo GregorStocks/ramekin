@@ -1,0 +1,13 @@
+{
+  "raw": "5 Tablespoons chili powder",
+  "expected": {
+    "item": "chili powder",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

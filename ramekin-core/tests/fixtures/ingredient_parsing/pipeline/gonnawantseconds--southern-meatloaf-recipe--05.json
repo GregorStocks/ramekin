@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup store bought dry bread crumbs",
+  "expected": {
+    "item": "store bought dry bread crumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

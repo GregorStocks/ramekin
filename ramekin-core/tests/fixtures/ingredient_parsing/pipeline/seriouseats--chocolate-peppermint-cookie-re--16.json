@@ -1,0 +1,21 @@
+{
+  "raw": "2 3/4 cups powdered sugar (11 ounces; 312 g)",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "11",
+        "unit": "ounces"
+      },
+      {
+        "amount": "312",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

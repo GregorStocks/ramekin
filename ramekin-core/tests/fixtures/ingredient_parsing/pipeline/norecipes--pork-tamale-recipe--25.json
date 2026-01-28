@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups masa harina para tamales",
+  "expected": {
+    "item": "masa harina para tamales",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

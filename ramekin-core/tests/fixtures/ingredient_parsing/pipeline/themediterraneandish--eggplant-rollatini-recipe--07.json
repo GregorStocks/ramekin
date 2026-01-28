@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup part-skim shredded Mozzarella (more for later)",
+  "expected": {
+    "item": "part-skim shredded Mozzarella (more for later)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

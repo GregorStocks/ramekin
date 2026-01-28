@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried pinto beans",
+  "expected": {
+    "item": "dried pinto beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

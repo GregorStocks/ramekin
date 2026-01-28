@@ -1,0 +1,13 @@
+{
+  "raw": "2 pound ground beef (extra lean)",
+  "expected": {
+    "item": "ground beef (extra lean)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

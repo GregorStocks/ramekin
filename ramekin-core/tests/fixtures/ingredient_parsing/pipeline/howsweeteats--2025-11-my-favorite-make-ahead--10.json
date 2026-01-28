@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6 cups turkey stock",
+  "expected": {
+    "item": "turkey stock",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

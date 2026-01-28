@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/4 tablespoons Thai red curry paste",
+  "expected": {
+    "item": "Thai red curry paste",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

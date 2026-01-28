@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds plum tomatoes (about 8 medium), halved lengthwise",
+  "expected": {
+    "item": "plum tomatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "8",
+        "unit": "medium"
+      }
+    ],
+    "note": "halved lengthwise"
+  }
+}

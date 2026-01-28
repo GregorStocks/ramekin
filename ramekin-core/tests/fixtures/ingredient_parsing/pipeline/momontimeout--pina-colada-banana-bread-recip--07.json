@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp rum extract",
+  "expected": {
+    "item": "rum extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

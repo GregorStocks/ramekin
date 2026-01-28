@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium  green bell pepper (diced)",
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
+  }
+}

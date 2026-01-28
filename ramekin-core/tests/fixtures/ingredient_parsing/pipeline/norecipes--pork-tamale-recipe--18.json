@@ -1,0 +1,13 @@
+{
+  "raw": "400 grams whole stewed tomatoes",
+  "expected": {
+    "item": "whole stewed tomatoes",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

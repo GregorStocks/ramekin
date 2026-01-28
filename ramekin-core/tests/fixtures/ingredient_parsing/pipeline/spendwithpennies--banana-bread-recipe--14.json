@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons coconut flakes",
+  "expected": {
+    "item": "coconut flakes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

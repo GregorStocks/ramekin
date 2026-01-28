@@ -1,0 +1,17 @@
+{
+  "raw": "10 grams galangal ((about 1/2-inch slice, smashed))",
+  "expected": {
+    "item": "galangal",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

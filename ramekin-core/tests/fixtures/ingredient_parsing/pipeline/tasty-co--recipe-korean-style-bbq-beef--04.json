@@ -1,0 +1,13 @@
+{
+  "raw": "½ pear, peeled and roughly chopped",
+  "expected": {
+    "item": "pear",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and roughly chopped"
+  }
+}

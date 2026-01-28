@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (210 g) dark muscovado sugar, packed or dark brown sugar",
+  "expected": {
+    "item": "dark muscovado sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "210",
+        "unit": "g"
+      }
+    ],
+    "note": "packed or dark brown sugar"
+  }
+}

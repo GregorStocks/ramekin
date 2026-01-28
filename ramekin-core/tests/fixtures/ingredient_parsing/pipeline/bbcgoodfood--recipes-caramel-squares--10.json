@@ -1,0 +1,17 @@
+{
+  "raw": "200g bar dark chocolate (70% cocoa solids)",
+  "expected": {
+    "item": "bar dark chocolate",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "70",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

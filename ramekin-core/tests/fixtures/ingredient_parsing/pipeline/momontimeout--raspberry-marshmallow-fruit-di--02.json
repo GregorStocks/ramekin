@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz light cream cheese",
+  "expected": {
+    "item": "light cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

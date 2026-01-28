@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups first clear flour",
+  "expected": {
+    "item": "first clear flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

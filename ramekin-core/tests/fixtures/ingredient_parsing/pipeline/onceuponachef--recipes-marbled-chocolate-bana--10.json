@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces  semisweet chocolate, chopped (a heaping ½ cup)",
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped (a heaping 1/2 cup)"
+  }
+}

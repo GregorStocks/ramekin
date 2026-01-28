@@ -1,0 +1,13 @@
+{
+  "raw": "2 fluid ounces club soda (or grapefruit soda)",
+  "expected": {
+    "item": "club soda (or grapefruit soda)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

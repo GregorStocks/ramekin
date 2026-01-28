@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces white rum",
+  "expected": {
+    "item": "white rum",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

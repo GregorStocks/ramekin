@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz brussels sprouts ((quartered))",
+  "expected": {
+    "item": "brussels sprouts",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "quartered"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound mixed mushrooms, sliced",
+  "expected": {
+    "item": "mixed mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "sliced"
+  }
+}

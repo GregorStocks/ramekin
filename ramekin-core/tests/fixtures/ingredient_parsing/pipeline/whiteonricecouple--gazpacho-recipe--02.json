@@ -1,0 +1,13 @@
+{
+  "raw": "1  whole English cucumber (, peeled &amp;amp; sliced)",
+  "expected": {
+    "item": "whole English cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": ", peeled &amp; sliced"
+  }
+}

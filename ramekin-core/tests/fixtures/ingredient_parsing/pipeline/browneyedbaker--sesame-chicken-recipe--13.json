@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon chili paste (can substitute a couple pinches of red pepper flakes)",
+  "expected": {
+    "item": "chili paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "60 g cake flour",
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

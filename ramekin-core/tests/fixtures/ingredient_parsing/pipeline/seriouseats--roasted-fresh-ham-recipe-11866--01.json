@@ -1,0 +1,21 @@
+{
+  "raw": "3 medium navel oranges (7 ounces; 200 g each)",
+  "expected": {
+    "item": "navel oranges",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces each"
+      },
+      {
+        "amount": "200",
+        "unit": "g each"
+      }
+    ],
+    "note": null
+  }
+}

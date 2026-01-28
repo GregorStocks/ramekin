@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon chile-garlic sauce, or to taste",
+  "expected": {
+    "item": "chile-garlic sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

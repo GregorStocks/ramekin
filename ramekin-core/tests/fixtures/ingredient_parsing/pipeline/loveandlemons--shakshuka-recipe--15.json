@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup fresh parsley leaves",
+  "expected": {
+    "item": "fresh parsley leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

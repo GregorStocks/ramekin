@@ -1,0 +1,13 @@
+{
+  "raw": "6 grams Thai basil (finely minced)",
+  "expected": {
+    "item": "Thai basil",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "grams"
+      }
+    ],
+    "note": "finely minced"
+  }
+}

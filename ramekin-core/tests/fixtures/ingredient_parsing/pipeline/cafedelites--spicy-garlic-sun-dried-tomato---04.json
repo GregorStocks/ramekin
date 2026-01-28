@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/2 oz sun dried tomato strips in oil (drained)",
+  "expected": {
+    "item": "sun dried tomato strips in oil",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained"
+  }
+}

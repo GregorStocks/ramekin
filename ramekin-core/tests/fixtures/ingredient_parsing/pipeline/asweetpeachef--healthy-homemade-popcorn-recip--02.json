@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup popcorn  kernels (divided)",
+  "expected": {
+    "item": "popcorn  kernels",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

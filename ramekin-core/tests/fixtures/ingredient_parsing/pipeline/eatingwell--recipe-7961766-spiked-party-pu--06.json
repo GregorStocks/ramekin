@@ -1,0 +1,17 @@
+{
+  "raw": "1 (12 ounce) can frozen lemonade concentrate, thawed",
+  "expected": {
+    "item": "frozen lemonade concentrate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": "thawed"
+  }
+}

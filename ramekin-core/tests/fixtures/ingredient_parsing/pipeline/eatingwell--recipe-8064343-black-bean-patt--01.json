@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15 ounce) cans no-salt-added black beans, rinsed",
+  "expected": {
+    "item": "no-salt-added black beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": "ounce"
+      }
+    ],
+    "note": "rinsed"
+  }
+}

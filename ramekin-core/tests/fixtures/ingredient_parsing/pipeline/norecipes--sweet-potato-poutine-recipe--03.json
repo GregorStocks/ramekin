@@ -1,0 +1,13 @@
+{
+  "raw": "114 grams cheese curds",
+  "expected": {
+    "item": "cheese curds",
+    "measurements": [
+      {
+        "amount": "114",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

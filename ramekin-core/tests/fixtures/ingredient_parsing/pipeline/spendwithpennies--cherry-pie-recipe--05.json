@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup ice water",
+  "expected": {
+    "item": "ice water",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

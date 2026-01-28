@@ -1,0 +1,17 @@
+{
+  "raw": "optional: 2 ounces (56g or about 4 slices) roughly chopped prosciutto",
+  "expected": {
+    "item": "optional: 2 ounces roughly chopped prosciutto",
+    "measurements": [
+      {
+        "amount": "56",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

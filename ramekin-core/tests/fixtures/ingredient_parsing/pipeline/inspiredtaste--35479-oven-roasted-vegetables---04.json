@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 teaspoons dried herbs or 2 tablespoons chopped fresh herbs",
+  "expected": {
+    "item": "dried herbs or 2 tablespoons chopped fresh herbs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces Kentucky bourbon whisky (1/4 cup)",
+  "expected": {
+    "item": "Kentucky bourbon whisky",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

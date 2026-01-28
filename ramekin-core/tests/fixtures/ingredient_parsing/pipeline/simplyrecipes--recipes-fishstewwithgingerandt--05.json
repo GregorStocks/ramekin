@@ -1,0 +1,21 @@
+{
+  "raw": "1 can (14 to 16 ounces, 400 to 453 g) diced tomatoes",
+  "expected": {
+    "item": "diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14 to 16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "400 to 453",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

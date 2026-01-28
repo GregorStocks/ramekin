@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 teaspoon butter (optional)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

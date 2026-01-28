@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tsp garlic salt (or to taste)",
+  "expected": {
+    "item": "garlic salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

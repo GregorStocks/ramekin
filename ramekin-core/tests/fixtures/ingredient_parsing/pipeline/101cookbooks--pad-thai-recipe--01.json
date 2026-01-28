@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces dried rice noodles",
+  "expected": {
+    "item": "dried rice noodles",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

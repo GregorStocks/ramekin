@@ -1,0 +1,13 @@
+{
+  "raw": "1l milk",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "l"
+      }
+    ],
+    "note": null
+  }
+}

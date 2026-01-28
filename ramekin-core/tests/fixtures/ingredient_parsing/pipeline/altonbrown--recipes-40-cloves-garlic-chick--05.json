@@ -1,0 +1,13 @@
+{
+  "raw": "5 sprigs fresh thyme",
+  "expected": {
+    "item": "fresh thyme",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "sprigs"
+      }
+    ],
+    "note": null
+  }
+}

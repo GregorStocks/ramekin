@@ -1,0 +1,17 @@
+{
+  "raw": "4 oz. bittersweet chocolate  ((60 to 65 percent), chopped small)",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "60 to 65",
+        "unit": null
+      }
+    ],
+    "note": "chopped small)"
+  }
+}

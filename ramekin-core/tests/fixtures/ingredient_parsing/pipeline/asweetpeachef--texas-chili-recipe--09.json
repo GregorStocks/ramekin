@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tsp granulated onion",
+  "expected": {
+    "item": "granulated onion",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

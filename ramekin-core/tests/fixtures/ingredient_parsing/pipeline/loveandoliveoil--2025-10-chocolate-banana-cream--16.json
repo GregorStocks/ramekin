@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup dark chocolate (50-70%) (finely chopped)",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

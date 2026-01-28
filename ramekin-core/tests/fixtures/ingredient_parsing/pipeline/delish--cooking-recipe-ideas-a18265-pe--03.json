@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. evaporated milk",
+  "expected": {
+    "item": "evaporated milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

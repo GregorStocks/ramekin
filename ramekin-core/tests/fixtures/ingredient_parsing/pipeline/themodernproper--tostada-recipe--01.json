@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound ground chorizo",
+  "expected": {
+    "item": "ground chorizo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

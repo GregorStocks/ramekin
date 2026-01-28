@@ -1,0 +1,17 @@
+{
+  "raw": "226 grams mushrooms ((about 10 large mushrooms))",
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "226",
+        "unit": "grams"
+      },
+      {
+        "amount": "10",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

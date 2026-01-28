@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces fresh blueberries (about ¾ cup)",
+  "expected": {
+    "item": "fresh blueberries",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

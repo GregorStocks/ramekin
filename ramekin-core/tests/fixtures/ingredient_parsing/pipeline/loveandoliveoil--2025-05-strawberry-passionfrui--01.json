@@ -1,0 +1,13 @@
+{
+  "raw": "20 ounces strawberries (hulled and coarsely chopped)",
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ounces"
+      }
+    ],
+    "note": "hulled and coarsely chopped"
+  }
+}

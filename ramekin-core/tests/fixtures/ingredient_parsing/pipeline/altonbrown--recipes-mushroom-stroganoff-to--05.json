@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound mixed meaty mushrooms, such as cremini and button, trimmed and sliced 1/4 inch thick",
+  "expected": {
+    "item": "mixed meaty mushrooms, such as cremini and button",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed and sliced 1/4 inch thick"
+  }
+}

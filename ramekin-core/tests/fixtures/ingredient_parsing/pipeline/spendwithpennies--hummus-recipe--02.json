@@ -1,0 +1,13 @@
+{
+  "raw": "2 ½ tablespoons tahini",
+  "expected": {
+    "item": "tahini",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoons rice vinegar",
+  "expected": {
+    "item": "rice vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

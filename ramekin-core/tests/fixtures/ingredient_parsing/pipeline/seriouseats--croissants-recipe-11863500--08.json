@@ -1,0 +1,25 @@
+{
+  "raw": "2 (8-ounce) packages European-style butter (16 ounces; 454 g), such as Kerrygold or Plugra, divided",
+  "expected": {
+    "item": "European-style butter , such as Kerrygold or Plugra",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 15- ounce cans chili beans",
+  "expected": {
+    "item": "15- ounce cans chili beans",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

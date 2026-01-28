@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup sherry vinegar",
+  "expected": {
+    "item": "sherry vinegar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

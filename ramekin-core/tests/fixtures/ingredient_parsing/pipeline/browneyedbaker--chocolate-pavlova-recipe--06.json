@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups mascarpone cheese",
+  "expected": {
+    "item": "mascarpone cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

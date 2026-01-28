@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (250ml) mango puree (see notes below***)",
+  "expected": {
+    "item": "mango puree (see notes below***)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (23 grams)  moong dal ((optional))",
+  "expected": {
+    "item": "moong dal",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "23",
+        "unit": "grams"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces (113 g) spring mix (6 to 6 1/2 loosely packed cups)",
+  "expected": {
+    "item": "spring mix",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "6 to 6 1/2 loosely packed cups"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz caramel ice cream topping",
+  "expected": {
+    "item": "caramel ice cream topping",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

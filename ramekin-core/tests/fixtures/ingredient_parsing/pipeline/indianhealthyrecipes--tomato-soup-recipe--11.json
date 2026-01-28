@@ -1,0 +1,13 @@
+{
+  "raw": "¾ to 1 teaspoon dried herbs ((I use mixed Italian herbs))",
+  "expected": {
+    "item": "dried herbs",
+    "measurements": [
+      {
+        "amount": "3/4 to 1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "I use mixed Italian herbs"
+  }
+}

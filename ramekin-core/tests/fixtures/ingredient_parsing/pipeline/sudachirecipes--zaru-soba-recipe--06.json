@@ -1,0 +1,17 @@
+{
+  "raw": "120 g dry soba noodles (approx 60g/2oz per portion)",
+  "expected": {
+    "item": "dry soba noodles",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

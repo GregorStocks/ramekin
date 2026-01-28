@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 ounces dry gin (such as Hendrick's or Tanqueray, or vodka)",
+  "expected": {
+    "item": "dry gin (such as Hendrick's or Tanqueray, or vodka)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

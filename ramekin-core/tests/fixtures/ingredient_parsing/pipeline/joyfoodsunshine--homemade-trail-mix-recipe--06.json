@@ -1,0 +1,17 @@
+{
+  "raw": "5 ounces chocolate candies ((1 cup))",
+  "expected": {
+    "item": "chocolate candies",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

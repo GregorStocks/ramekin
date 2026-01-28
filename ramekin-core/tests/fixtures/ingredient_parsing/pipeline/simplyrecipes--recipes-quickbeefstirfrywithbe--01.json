@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound top sirloin or chuck steaks (about 1/2 inch thick), trimmed",
+  "expected": {
+    "item": "top sirloin or chuck steaks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
+  }
+}

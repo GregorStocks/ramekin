@@ -1,0 +1,13 @@
+{
+  "raw": "2 sticks salted butter, softened",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "softened"
+  }
+}

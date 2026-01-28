@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (20 ounces) pineapple chunks (drained)",
+  "expected": {
+    "item": "pineapple chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "20",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained"
+  }
+}

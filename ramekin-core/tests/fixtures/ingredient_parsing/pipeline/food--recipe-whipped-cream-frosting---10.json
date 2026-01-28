@@ -1,0 +1,13 @@
+{
+  "raw": "1   teaspoon    almond extract, in place of the vanilla",
+  "expected": {
+    "item": "almond extract, in place of the vanilla",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

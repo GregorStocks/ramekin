@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups whole milk, warm to the touch",
+  "expected": {
+    "item": "whole milk, warm to the touch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

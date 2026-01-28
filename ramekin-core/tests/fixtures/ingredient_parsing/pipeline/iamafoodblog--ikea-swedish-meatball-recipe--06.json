@@ -1,0 +1,13 @@
+{
+  "raw": "2 small potatoes",
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

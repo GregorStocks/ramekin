@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (120 ml) Crème fraîche or sour cream",
+  "expected": {
+    "item": "Crème fraîche or sour cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

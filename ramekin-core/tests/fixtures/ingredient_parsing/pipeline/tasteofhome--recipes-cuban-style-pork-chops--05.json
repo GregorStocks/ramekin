@@ -1,0 +1,17 @@
+{
+  "raw": "4 slices deli ham (about 3 ounces)",
+  "expected": {
+    "item": "deli ham",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

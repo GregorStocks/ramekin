@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons glucose syrup or corn syrup",
+  "expected": {
+    "item": "glucose syrup or corn syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

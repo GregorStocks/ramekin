@@ -1,0 +1,13 @@
+{
+  "raw": "1 10-ounce can sweetened condensed milk",
+  "expected": {
+    "item": "10-ounce can sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

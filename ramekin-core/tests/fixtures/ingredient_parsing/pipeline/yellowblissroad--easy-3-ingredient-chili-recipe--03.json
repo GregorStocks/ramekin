@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounce Rotel tomatoes with diced chiles",
+  "expected": {
+    "item": "Rotel tomatoes with diced chiles",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

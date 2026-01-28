@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoon pickle juice ((optional))",
+  "expected": {
+    "item": "pickle juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

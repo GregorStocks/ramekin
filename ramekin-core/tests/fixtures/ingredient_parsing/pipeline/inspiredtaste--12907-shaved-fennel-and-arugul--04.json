@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium fennel bulb",
+  "expected": {
+    "item": "fennel bulb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

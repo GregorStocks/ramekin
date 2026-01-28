@@ -1,0 +1,13 @@
+{
+  "raw": "1  medium carrot, (cut into 1/2-inch dice)",
+  "expected": {
+    "item": "carrot, (cut into 1/2-inch dice)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "180 grams spaghettini",
+  "expected": {
+    "item": "spaghettini",
+    "measurements": [
+      {
+        "amount": "180",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

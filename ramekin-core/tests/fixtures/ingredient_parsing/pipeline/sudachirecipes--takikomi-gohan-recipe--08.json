@@ -1,0 +1,13 @@
+{
+  "raw": "½  carrot (peeled and julienned)",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and julienned"
+  }
+}

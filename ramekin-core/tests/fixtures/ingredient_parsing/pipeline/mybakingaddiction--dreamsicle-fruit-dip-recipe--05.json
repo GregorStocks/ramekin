@@ -1,0 +1,13 @@
+{
+  "raw": "1  heaping cup Cool Whip",
+  "expected": {
+    "item": "Cool Whip",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": null
+  }
+}

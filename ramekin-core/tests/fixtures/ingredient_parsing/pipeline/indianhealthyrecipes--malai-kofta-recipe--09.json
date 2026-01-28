@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoons raisins ( (optional))",
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "(optional"
+  }
+}

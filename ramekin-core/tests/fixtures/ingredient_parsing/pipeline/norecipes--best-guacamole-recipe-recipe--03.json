@@ -1,0 +1,17 @@
+{
+  "raw": "7 grams cilantro ((about 1 tablespoon))",
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

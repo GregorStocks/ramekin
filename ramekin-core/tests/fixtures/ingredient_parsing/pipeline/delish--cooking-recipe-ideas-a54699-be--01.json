@@ -1,0 +1,13 @@
+{
+  "raw": "12 lemon Oreos",
+  "expected": {
+    "item": "lemon Oreos",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

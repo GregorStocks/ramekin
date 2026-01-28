@@ -1,0 +1,13 @@
+{
+  "raw": "29 ounces diced tomatoes",
+  "expected": {
+    "item": "diced tomatoes",
+    "measurements": [
+      {
+        "amount": "29",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

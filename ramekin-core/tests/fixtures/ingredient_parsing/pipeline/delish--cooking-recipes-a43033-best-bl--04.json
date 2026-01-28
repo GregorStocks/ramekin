@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. fresh or frozen blueberries",
+  "expected": {
+    "item": "fresh or frozen blueberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

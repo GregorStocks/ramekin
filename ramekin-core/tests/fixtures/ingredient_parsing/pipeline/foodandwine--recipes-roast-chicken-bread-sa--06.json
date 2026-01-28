@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon warm water (90°F to 110°F)",
+  "expected": {
+    "item": "warm water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "90",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

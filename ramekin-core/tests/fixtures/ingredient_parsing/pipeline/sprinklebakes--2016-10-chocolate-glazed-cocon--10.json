@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons gluten free dark cocoa powder",
+  "expected": {
+    "item": "gluten free dark cocoa powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

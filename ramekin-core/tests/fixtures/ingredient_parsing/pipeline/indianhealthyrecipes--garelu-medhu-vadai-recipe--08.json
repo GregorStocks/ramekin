@@ -1,0 +1,13 @@
+{
+  "raw": "1 sprig curry leaves ((chopped))",
+  "expected": {
+    "item": "curry leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "sprig"
+      }
+    ],
+    "note": "chopped"
+  }
+}

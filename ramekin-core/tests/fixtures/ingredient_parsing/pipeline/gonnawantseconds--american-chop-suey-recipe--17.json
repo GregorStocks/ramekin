@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tablespoons Italian parsley (roughly chopped, optional)",
+  "expected": {
+    "item": "Italian parsley",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "roughly chopped, optional"
+  }
+}

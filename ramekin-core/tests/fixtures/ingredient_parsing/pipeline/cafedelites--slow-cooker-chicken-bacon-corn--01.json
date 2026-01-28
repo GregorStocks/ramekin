@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound chicken thighs (diced into 1-inch pieces)",
+  "expected": {
+    "item": "chicken thighs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "diced into 1-inch pieces"
+  }
+}

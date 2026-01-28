@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams pork fat",
+  "expected": {
+    "item": "pork fat",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

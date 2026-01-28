@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce cranberry juice",
+  "expected": {
+    "item": "cranberry juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (12 ounce) cans   orange seltzer",
+  "expected": {
+    "item": "orange seltzer",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

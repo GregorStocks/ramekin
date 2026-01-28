@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces mixed berries ((frozen (about 2 ½ cups)))",
+  "expected": {
+    "item": "mixed berries",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "frozen (about 2 1/2 cups"
+  }
+}

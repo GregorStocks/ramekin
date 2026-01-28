@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup raw sunflower seeds",
+  "expected": {
+    "item": "raw sunflower seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

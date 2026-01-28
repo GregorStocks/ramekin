@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp (optional) maple syrup or other sweetener",
+  "expected": {
+    "item": "maple syrup or other sweetener",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
+  }
+}

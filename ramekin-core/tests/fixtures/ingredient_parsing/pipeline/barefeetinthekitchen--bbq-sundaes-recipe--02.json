@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups hot Baked Beans",
+  "expected": {
+    "item": "hot Baked Beans",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

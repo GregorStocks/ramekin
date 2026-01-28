@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/4 cups (150g) powdered sugar, sifted",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
+  }
+}

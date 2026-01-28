@@ -1,0 +1,13 @@
+{
+  "raw": "12 small dinner rolls, split",
+  "expected": {
+    "item": "dinner rolls, split",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

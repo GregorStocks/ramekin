@@ -1,0 +1,17 @@
+{
+  "raw": "0.75 cup (1 ½ sticks) unsalted butter, room temperature, plus more for pan",
+  "expected": {
+    "item": "unsalted butter, room temperature",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "plus more for pan"
+  }
+}

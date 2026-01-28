@@ -1,0 +1,29 @@
+{
+  "raw": "255g white whole wheat flour (9 ounces; 2 cups), see notes226g cornstarch (8 ounces; 2 cups)&nbsp;",
+  "expected": {
+    "item": "white whole wheat flour , see notes226g cornstarch",
+    "measurements": [
+      {
+        "amount": "255",
+        "unit": "g"
+      },
+      {
+        "amount": "9",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

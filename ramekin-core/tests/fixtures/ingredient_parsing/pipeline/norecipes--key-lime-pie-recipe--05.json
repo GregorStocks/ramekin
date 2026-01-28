@@ -1,0 +1,17 @@
+{
+  "raw": "110 grams evaporated cane sugar (about 1/2 cup)",
+  "expected": {
+    "item": "evaporated cane sugar",
+    "measurements": [
+      {
+        "amount": "110",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

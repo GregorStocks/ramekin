@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 teaspoons chicken bouillon, divided&nbsp;",
+  "expected": {
+    "item": "chicken bouillon",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "1 (10-ounce) bag fresh spinach leaves (about 6 cups)",
+  "expected": {
+    "item": "fresh spinach leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "10",
+        "unit": null
+      },
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

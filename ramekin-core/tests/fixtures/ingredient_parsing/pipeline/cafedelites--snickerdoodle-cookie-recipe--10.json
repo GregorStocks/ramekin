@@ -1,0 +1,13 @@
+{
+  "raw": "5 tablespoons white granulated sugar",
+  "expected": {
+    "item": "white granulated sugar",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

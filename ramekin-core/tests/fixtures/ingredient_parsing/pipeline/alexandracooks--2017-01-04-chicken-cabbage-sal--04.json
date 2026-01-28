@@ -1,0 +1,13 @@
+{
+  "raw": "1/2&nbsp;cup neutral oil such as canola or grapeseed",
+  "expected": {
+    "item": "neutral oil such as canola or grapeseed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

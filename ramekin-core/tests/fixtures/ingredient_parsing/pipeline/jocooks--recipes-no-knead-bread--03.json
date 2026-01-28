@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon active dry yeast",
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon rum extract",
+  "expected": {
+    "item": "rum extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

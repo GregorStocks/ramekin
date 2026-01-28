@@ -1,0 +1,13 @@
+{
+  "raw": "1 slice ginger ((optional))",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "slice"
+      }
+    ],
+    "note": "optional"
+  }
+}

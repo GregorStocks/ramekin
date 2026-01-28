@@ -1,0 +1,17 @@
+{
+  "raw": "100 grams Riceberry (about 1 US cup)",
+  "expected": {
+    "item": "Riceberry",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

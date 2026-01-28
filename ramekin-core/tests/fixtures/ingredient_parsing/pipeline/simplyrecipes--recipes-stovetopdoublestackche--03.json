@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon pickle relish",
+  "expected": {
+    "item": "pickle relish",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

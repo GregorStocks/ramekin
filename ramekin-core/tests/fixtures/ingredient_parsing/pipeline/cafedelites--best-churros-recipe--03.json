@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces butter",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

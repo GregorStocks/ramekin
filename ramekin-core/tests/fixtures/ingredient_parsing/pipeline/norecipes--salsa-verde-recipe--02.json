@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium serrano chili",
+  "expected": {
+    "item": "serrano chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

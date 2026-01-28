@@ -1,0 +1,13 @@
+{
+  "raw": "20 grams holy basil",
+  "expected": {
+    "item": "holy basil",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

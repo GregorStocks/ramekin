@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces thinly sliced Genoa salami, cut into thin strips (1 1/2 cups)",
+  "expected": {
+    "item": "thinly sliced Genoa salami, cut into thin strips",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

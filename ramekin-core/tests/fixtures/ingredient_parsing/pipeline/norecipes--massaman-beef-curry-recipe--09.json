@@ -1,0 +1,17 @@
+{
+  "raw": "25 grams tamarind pulp ((about 1 tablespoon))",
+  "expected": {
+    "item": "tamarind pulp",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

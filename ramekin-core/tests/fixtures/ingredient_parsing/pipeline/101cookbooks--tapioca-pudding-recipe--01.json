@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups organic milk, divided",
+  "expected": {
+    "item": "organic milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

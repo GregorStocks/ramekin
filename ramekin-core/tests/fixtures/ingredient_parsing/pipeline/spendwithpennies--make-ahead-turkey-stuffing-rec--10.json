@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups dry bread cubes",
+  "expected": {
+    "item": "dry bread cubes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

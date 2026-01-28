@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp. chopped sage",
+  "expected": {
+    "item": "chopped sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

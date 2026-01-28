@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tablespoons balsamic vinegar",
+  "expected": {
+    "item": "balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 medium red bell pepper, seeded and cut into large pieces",
+  "expected": {
+    "item": "red bell pepper, seeded and cut into large pieces",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

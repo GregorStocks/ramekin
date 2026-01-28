@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup homemade chimichurri sauce&nbsp;",
+  "expected": {
+    "item": "homemade chimichurri sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

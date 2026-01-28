@@ -1,0 +1,17 @@
+{
+  "raw": "½ tablespoon (½ inch)  ginger (peeled &amp;amp; minced or grated)",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "peeled &amp; minced or grated"
+  }
+}

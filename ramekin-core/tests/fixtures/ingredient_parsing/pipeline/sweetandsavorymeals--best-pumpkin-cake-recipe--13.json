@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz butter (softened to room temperature)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "softened to room temperature"
+  }
+}

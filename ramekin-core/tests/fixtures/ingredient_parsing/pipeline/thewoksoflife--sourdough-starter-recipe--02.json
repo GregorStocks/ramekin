@@ -1,0 +1,13 @@
+{
+  "raw": "35 g whole wheat flour",
+  "expected": {
+    "item": "whole wheat flour",
+    "measurements": [
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

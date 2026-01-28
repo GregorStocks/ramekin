@@ -1,0 +1,17 @@
+{
+  "raw": "1 (1 1/2 pound) skinless halibut fillet",
+  "expected": {
+    "item": "skinless halibut fillet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 tablespoons unsalted Wisconsin butter, softened",
+  "expected": {
+    "item": "unsalted Wisconsin butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "softened"
+  }
+}

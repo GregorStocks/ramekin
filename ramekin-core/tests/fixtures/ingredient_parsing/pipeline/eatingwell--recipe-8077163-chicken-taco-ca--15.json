@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup shredded iceberg lettuce",
+  "expected": {
+    "item": "shredded iceberg lettuce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

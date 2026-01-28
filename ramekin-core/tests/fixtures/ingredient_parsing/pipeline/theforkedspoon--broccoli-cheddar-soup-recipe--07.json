@@ -1,0 +1,17 @@
+{
+  "raw": "8 heads broccoli ((10-12 cups broccoli florets))",
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "heads"
+      },
+      {
+        "amount": "10-12",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

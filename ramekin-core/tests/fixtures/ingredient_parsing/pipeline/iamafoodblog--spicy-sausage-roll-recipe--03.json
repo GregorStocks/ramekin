@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon spicy korean seasoning, or crushed red pepper flakes",
+  "expected": {
+    "item": "spicy korean seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or crushed red pepper flakes"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces arugula or baby arugula",
+  "expected": {
+    "item": "arugula or baby arugula",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

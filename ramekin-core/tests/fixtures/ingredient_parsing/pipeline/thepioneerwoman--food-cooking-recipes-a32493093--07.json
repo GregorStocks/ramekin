@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp. dried Italian seasoning",
+  "expected": {
+    "item": "dried Italian seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

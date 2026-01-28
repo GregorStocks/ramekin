@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup pumpkin puree",
+  "expected": {
+    "item": "pumpkin puree",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

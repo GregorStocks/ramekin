@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup pizza sauce",
+  "expected": {
+    "item": "pizza sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

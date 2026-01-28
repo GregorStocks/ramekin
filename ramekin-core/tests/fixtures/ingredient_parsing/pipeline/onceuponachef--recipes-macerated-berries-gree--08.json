@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup Greek yogurt (Gina recommends 0%; I used 2%)",
+  "expected": {
+    "item": "Greek yogurt (Gina recommends 0%; I used 2%)",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

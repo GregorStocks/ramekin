@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. triple sec",
+  "expected": {
+    "item": "triple sec",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

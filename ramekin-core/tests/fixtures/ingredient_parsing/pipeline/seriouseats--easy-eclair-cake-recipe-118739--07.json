@@ -1,0 +1,21 @@
+{
+  "raw": "1 tablespoon unsalted butter (1/2 ounce; 14g)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

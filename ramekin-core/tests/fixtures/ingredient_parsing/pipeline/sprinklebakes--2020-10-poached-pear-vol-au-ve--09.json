@@ -1,0 +1,13 @@
+{
+  "raw": "6  small firm but ripe pears",
+  "expected": {
+    "item": "firm but ripe pears",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

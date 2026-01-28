@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon finely minced white onion",
+  "expected": {
+    "item": "finely minced white onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

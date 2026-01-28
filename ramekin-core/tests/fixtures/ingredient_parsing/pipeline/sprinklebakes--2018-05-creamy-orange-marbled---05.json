@@ -1,0 +1,13 @@
+{
+  "raw": "1 7- ounce jar marshmallow crème",
+  "expected": {
+    "item": "7- ounce jar marshmallow crème",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz broccoli florets",
+  "expected": {
+    "item": "broccoli florets",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

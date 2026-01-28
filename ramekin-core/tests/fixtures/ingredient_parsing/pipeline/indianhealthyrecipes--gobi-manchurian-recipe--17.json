@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 tablespoon tomato ketchup ((optional, use if using hot sauce))",
+  "expected": {
+    "item": "tomato ketchup",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional, use if using hot sauce"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 grams chili peppers ((to taste, roughly chopped))",
+  "expected": {
+    "item": "chili peppers",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "grams"
+      }
+    ],
+    "note": "to taste, roughly chopped"
+  }
+}

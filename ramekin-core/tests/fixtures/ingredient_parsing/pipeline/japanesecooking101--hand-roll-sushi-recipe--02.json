@@ -1,0 +1,17 @@
+{
+  "raw": "5 sheets nori roasted seaweed (large, cut into quarters)",
+  "expected": {
+    "item": "sheets nori roasted seaweed",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

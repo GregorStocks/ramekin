@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 teaspoon capers, drained and loosely chopped (I like 2 tsp)",
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "drained and loosely chopped (I like 2 tsp)"
+  }
+}

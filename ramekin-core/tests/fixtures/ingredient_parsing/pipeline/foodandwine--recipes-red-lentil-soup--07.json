@@ -1,0 +1,17 @@
+{
+  "raw": "1 rounded cup red lentils (8 ounces)",
+  "expected": {
+    "item": "red lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "rounded cup"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

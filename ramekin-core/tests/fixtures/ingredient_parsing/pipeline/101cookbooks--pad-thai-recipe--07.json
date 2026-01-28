@@ -1,0 +1,13 @@
+{
+  "raw": "1  bunch of broccolini, (trimmed)",
+  "expected": {
+    "item": "broccolini,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

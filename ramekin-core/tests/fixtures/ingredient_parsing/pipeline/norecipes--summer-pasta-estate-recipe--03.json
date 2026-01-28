@@ -1,0 +1,13 @@
+{
+  "raw": "140 grams zucchini ((1 small, julienned))",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 small, julienned"
+  }
+}

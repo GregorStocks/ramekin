@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons minced fresh rosemary or 1/2 teaspoon dried rosemary, crushed",
+  "expected": {
+    "item": "minced fresh rosemary or 1/2 teaspoon dried rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "crushed"
+  }
+}

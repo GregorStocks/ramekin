@@ -1,0 +1,17 @@
+{
+  "raw": "28 ounces (2 cans) artichoke hearts (drained)",
+  "expected": {
+    "item": "artichoke hearts",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cans"
+      }
+    ],
+    "note": "drained"
+  }
+}

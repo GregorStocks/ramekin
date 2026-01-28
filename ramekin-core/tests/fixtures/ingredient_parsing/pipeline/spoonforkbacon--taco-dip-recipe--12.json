@@ -1,0 +1,13 @@
+{
+  "raw": "2  chipotle peppers in adobo",
+  "expected": {
+    "item": "chipotle peppers in adobo",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

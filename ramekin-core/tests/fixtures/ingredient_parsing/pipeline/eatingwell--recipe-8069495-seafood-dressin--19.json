@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups unsalted chicken or vegetable broth",
+  "expected": {
+    "item": "unsalted chicken or vegetable broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

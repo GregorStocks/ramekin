@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/3 cups manteca ((lard))",
+  "expected": {
+    "item": "manteca (lard)",
+    "measurements": [
+      {
+        "amount": "1 1/3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

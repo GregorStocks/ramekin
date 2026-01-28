@@ -1,0 +1,13 @@
+{
+  "raw": "400 grams Banh Pho Noodles ((dried flat rice noodles))",
+  "expected": {
+    "item": "Banh Pho Noodles",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "grams"
+      }
+    ],
+    "note": "dried flat rice noodles"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 oz ground beef",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz sweetened condensed milk",
+  "expected": {
+    "item": "sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

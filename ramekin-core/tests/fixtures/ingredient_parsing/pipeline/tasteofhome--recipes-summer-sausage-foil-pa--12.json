@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup prepared Italian salad dressing",
+  "expected": {
+    "item": "prepared Italian salad dressing",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

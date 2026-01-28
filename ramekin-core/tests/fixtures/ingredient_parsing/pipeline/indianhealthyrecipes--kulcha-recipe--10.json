@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams potato ((2 medium, boiled &amp;amp; grated))",
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "2 medium, boiled &amp; grated"
+  }
+}

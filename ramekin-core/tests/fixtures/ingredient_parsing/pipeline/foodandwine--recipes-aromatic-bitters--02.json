@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon cardamom seeds, toasted",
+  "expected": {
+    "item": "cardamom seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "toasted"
+  }
+}

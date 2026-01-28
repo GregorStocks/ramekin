@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices provolone cheese",
+  "expected": {
+    "item": "provolone cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

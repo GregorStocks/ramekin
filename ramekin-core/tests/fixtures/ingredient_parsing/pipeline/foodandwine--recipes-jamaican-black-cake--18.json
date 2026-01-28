@@ -1,0 +1,17 @@
+{
+  "raw": "0.25 cup raw sliced almonds (1 ounce)",
+  "expected": {
+    "item": "raw sliced almonds",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

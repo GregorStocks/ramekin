@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds boneless skinless chicken thighs (trimmed of excess fat*)",
+  "expected": {
+    "item": "boneless skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "trimmed of excess fat*"
+  }
+}

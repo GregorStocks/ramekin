@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds mixed heirloom tomatoes, some sliced, some halved",
+  "expected": {
+    "item": "mixed heirloom tomatoes, some sliced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "some halved"
+  }
+}

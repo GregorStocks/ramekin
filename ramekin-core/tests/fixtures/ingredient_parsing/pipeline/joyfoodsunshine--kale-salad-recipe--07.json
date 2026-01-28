@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup dried cranberries",
+  "expected": {
+    "item": "dried cranberries",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

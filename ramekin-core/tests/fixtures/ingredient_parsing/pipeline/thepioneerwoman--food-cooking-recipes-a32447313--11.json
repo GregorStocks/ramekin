@@ -1,0 +1,17 @@
+{
+  "raw": "2 c. grated pepper jack cheese (about 4 ounces)",
+  "expected": {
+    "item": "grated pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "c"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

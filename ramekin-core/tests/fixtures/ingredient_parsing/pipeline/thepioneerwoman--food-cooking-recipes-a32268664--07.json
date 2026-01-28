@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp. peanut or vegetable oil",
+  "expected": {
+    "item": "peanut or vegetable oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

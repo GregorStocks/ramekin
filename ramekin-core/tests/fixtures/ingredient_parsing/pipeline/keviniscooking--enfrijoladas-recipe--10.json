@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces queso fresco (Oaxaca cheese or Monterey Jack cheese (crumbled or shredded))",
+  "expected": {
+    "item": "queso fresco",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded"
+  }
+}

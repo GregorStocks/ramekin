@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14 oz) can black beans with liquid",
+  "expected": {
+    "item": "black beans with liquid",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

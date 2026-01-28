@@ -1,0 +1,13 @@
+{
+  "raw": "100ml dry  white wine",
+  "expected": {
+    "item": "dry  white wine",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

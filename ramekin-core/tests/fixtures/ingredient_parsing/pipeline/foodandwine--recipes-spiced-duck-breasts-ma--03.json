@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons ras el hanout, divided",
+  "expected": {
+    "item": "ras el hanout",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons Bourbon, rum, brandy or vanilla",
+  "expected": {
+    "item": "Bourbon, rum, brandy or vanilla",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

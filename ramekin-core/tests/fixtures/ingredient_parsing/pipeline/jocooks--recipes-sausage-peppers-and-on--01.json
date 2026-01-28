@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound Italian sausage links",
+  "expected": {
+    "item": "Italian sausage links",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

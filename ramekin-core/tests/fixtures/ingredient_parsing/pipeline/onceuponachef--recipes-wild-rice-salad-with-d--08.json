@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon  Dijon mustard",
+  "expected": {
+    "item": "Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

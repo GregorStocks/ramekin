@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup Meyer lemon juice (freshly squeezed, from 1-2 juicy lemons)",
+  "expected": {
+    "item": "Meyer lemon juice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "freshly squeezed, from 1-2 juicy lemons"
+  }
+}

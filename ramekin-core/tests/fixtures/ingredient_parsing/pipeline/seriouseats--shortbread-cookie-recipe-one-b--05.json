@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 teaspoon Diamond Crystal kosher salt; for table salt, use half as much by volume454g unsalted butter (1 pound; 2 cups)",
+  "expected": {
+    "item": "Diamond Crystal kosher salt; for table salt, use half as much by volume454g unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

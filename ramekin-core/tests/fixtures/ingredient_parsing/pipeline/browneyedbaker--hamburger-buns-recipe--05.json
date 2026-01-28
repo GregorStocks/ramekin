@@ -1,0 +1,13 @@
+{
+  "raw": "1  egg (slightly beaten, at room temperature)",
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "slightly beaten, at room temperature"
+  }
+}

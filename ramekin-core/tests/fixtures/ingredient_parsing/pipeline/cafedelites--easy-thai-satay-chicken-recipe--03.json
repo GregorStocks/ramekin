@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 tablespoon light brown sugar (packed, omit for keto)",
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "packed, omit for keto"
+  }
+}

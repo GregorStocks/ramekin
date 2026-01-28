@@ -1,0 +1,13 @@
+{
+  "raw": "7 oz ground lamb or ground beef",
+  "expected": {
+    "item": "ground lamb or ground beef",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

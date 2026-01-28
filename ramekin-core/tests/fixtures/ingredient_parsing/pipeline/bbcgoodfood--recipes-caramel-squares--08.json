@@ -1,0 +1,13 @@
+{
+  "raw": "142ml single cream",
+  "expected": {
+    "item": "single cream",
+    "measurements": [
+      {
+        "amount": "142",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

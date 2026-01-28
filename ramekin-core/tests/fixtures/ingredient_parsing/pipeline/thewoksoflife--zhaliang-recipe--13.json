@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons wheat starch ((18g))",
+  "expected": {
+    "item": "wheat starch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "18",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

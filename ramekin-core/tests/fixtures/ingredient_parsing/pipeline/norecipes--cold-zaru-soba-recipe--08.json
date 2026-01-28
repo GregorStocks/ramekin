@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams daikon ((grated and drained))",
+  "expected": {
+    "item": "daikon",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated and drained"
+  }
+}

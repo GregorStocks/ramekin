@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz baby Bella mushrooms (sliced)",
+  "expected": {
+    "item": "baby Bella mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "sliced"
+  }
+}

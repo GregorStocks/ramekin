@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices melting cheese like cheddar  ((optional))",
+  "expected": {
+    "item": "melting cheese like cheddar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": "optional"
+  }
+}

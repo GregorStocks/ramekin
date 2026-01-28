@@ -1,0 +1,13 @@
+{
+  "raw": "160 grams Tocino",
+  "expected": {
+    "item": "Tocino",
+    "measurements": [
+      {
+        "amount": "160",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

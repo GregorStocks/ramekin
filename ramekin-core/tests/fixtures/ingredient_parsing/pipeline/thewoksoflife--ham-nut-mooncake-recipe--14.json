@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams sunflower seeds ((toasted))",
+  "expected": {
+    "item": "sunflower seeds",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": "toasted"
+  }
+}

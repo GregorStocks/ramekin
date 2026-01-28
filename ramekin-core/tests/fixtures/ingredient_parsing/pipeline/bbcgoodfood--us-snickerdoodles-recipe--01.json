@@ -1,0 +1,13 @@
+{
+  "raw": "1⅔ sticks unsalted butter softened",
+  "expected": {
+    "item": "unsalted butter softened",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "sticks"
+      }
+    ],
+    "note": null
+  }
+}

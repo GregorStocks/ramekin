@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 teaspoons cornstarch dissolved in 1 tablespoon of water",
+  "expected": {
+    "item": "cornstarch dissolved in 1 tablespoon of water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces store-bought pizza dough",
+  "expected": {
+    "item": "store-bought pizza dough",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

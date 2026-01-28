@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons brown sugar, (packed)",
+  "expected": {
+    "item": "brown sugar,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "packed"
+  }
+}

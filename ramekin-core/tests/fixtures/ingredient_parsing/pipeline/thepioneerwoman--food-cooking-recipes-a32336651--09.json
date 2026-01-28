@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. mozzarella (fresh or smoked), cut into small cubes",
+  "expected": {
+    "item": "mozzarella , cut into small cubes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": "fresh or smoked"
+  }
+}

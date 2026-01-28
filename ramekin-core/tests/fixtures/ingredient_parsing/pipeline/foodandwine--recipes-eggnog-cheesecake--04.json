@@ -1,0 +1,17 @@
+{
+  "raw": "0.25 cup plus 2 tablespoons (3 ounces) melted unsalted butter",
+  "expected": {
+    "item": "0.25 cup plus 2 tablespoons (3 ounces) melted unsalted butter",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "plus 2 tablespoons melted unsalted butter"
+  }
+}

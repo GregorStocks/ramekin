@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups chilled seltzer",
+  "expected": {
+    "item": "chilled seltzer",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

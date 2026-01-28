@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds baby potatoes",
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

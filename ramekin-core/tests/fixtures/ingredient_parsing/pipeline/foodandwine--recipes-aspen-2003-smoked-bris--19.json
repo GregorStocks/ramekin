@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups Zinfandel, divided",
+  "expected": {
+    "item": "Zinfandel",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

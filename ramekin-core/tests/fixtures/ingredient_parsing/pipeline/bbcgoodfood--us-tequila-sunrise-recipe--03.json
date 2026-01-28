@@ -1,0 +1,13 @@
+{
+  "raw": "1½ oz tequila",
+  "expected": {
+    "item": "tequila",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

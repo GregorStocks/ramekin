@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz. cooked bacon (chopped)",
+  "expected": {
+    "item": "cooked bacon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "chopped"
+  }
+}

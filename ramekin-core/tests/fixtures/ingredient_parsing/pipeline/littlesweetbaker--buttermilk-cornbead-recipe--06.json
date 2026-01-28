@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (250ml) buttermilk",
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

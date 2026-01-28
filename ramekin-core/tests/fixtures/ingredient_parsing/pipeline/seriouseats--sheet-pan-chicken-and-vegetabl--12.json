@@ -1,0 +1,17 @@
+{
+  "raw": "4 teaspoons (20 ml) fresh lime juice from 1 lime",
+  "expected": {
+    "item": "fresh lime juice from 1 lime",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "20",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

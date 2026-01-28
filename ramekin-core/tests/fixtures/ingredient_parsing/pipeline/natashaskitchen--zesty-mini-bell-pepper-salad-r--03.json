@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tbsp Fresh dill (chopped)",
+  "expected": {
+    "item": "Fresh dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped"
+  }
+}

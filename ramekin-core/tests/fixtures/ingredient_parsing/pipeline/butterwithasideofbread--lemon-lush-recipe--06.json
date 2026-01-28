@@ -1,0 +1,13 @@
+{
+  "raw": "2 3.4 oz pkg lemon instant pudding",
+  "expected": {
+    "item": "3.4 oz pkg lemon instant pudding",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

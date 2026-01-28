@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. whole milk, at room temperature",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

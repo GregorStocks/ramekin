@@ -1,0 +1,13 @@
+{
+  "raw": "1 quart or 5 cups of no churn vanilla ice cream ((or use your favorite brand), softened)",
+  "expected": {
+    "item": "or 5 cups of no churn vanilla ice cream (or use your favorite brand)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": "softened)"
+  }
+}

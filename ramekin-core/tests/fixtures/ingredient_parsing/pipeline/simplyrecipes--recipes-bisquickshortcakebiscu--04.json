@@ -1,0 +1,17 @@
+{
+  "raw": "3 tablespoons butter, melted (can sub coconut oil)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": "melted"
+  }
+}

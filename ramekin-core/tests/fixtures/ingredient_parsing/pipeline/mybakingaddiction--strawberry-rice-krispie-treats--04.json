@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce freeze dried strawberries (roughly chopped)",
+  "expected": {
+    "item": "freeze dried strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

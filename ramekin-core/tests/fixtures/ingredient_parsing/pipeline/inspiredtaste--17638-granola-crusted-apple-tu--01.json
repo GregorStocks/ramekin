@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices multigrain bread",
+  "expected": {
+    "item": "multigrain bread",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

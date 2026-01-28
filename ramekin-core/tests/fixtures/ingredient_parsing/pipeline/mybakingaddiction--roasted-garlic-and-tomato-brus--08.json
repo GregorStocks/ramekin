@@ -1,0 +1,13 @@
+{
+  "raw": "12 slices baguette, 1/2-inch thick",
+  "expected": {
+    "item": "baguette, 1/2-inch thick",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

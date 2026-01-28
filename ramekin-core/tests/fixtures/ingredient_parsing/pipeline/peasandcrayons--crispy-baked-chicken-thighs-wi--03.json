@@ -1,0 +1,13 @@
+{
+  "raw": "2 TBSP dried basil leaves",
+  "expected": {
+    "item": "dried basil leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

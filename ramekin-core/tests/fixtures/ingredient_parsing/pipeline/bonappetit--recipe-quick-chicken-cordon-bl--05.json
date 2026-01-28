@@ -1,0 +1,17 @@
+{
+  "raw": "4 thin slices Gruyère or Swiss cheese (about 4 oz. total)",
+  "expected": {
+    "item": "thin slices Gruyère or Swiss cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

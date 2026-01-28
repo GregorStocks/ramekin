@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (15 g) fresh cilantro leaves, minced",
+  "expected": {
+    "item": "fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "minced"
+  }
+}

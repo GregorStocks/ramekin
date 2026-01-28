@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cup Challenge butter (softened)",
+  "expected": {
+    "item": "Challenge butter",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "softened"
+  }
+}

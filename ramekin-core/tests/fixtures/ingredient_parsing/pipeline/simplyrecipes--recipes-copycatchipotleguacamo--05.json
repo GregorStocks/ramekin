@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 large jalapeño, optional",
+  "expected": {
+    "item": "jalapeño",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": "optional"
+  }
+}

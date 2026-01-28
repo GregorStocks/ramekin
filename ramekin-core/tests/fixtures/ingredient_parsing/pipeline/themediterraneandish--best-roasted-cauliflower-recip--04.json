@@ -1,0 +1,13 @@
+{
+  "raw": "1  tsp harissa spice",
+  "expected": {
+    "item": "harissa spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

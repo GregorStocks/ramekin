@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. salsa verde",
+  "expected": {
+    "item": "salsa verde",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

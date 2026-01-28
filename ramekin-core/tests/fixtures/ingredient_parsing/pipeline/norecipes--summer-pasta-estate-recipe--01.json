@@ -1,0 +1,13 @@
+{
+  "raw": "210 grams cherry tomatoes ((cut in half if large))",
+  "expected": {
+    "item": "cherry tomatoes (cut in half if large)",
+    "measurements": [
+      {
+        "amount": "210",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

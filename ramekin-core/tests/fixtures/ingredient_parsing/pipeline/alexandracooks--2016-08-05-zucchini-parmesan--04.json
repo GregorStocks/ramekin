@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup fresh breadcrumbs",
+  "expected": {
+    "item": "fresh breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

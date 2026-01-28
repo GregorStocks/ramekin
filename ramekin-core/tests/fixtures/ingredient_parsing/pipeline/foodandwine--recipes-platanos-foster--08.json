@@ -1,0 +1,13 @@
+{
+  "raw": "0.125 teaspoon ground clove",
+  "expected": {
+    "item": "ground clove",
+    "measurements": [
+      {
+        "amount": "0.125",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

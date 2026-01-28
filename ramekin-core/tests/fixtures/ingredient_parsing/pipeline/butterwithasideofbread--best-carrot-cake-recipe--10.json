@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb carrots (peeled and grated (I just buy them already shredded!))",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and grated (I just buy them already shredded!"
+  }
+}

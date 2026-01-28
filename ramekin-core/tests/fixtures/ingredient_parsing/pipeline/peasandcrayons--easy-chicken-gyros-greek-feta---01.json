@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces chicken breast (cooked any way you'd like (see notes))",
+  "expected": {
+    "item": "chicken breast",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cooked any way you'd like (see notes"
+  }
+}

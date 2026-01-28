@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups (or one 10-oz/283-g bag) shredded red cabbage",
+  "expected": {
+    "item": "(or one 10-oz/283-g bag) shredded red cabbage",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 lime, juiced (about 2 tablespoons)",
+  "expected": {
+    "item": "lime, juiced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

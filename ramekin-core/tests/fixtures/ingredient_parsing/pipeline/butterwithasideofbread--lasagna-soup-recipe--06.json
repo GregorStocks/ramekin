@@ -1,0 +1,13 @@
+{
+  "raw": "29 ounce diced tomatoes (two 14.5 cans, undrained)",
+  "expected": {
+    "item": "diced tomatoes",
+    "measurements": [
+      {
+        "amount": "29",
+        "unit": "ounce"
+      }
+    ],
+    "note": "two 14.5 cans, undrained"
+  }
+}

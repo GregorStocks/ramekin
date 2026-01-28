@@ -1,0 +1,17 @@
+{
+  "raw": "3/8 cup (95ml) vegetable oil",
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "3/8",
+        "unit": "cup"
+      },
+      {
+        "amount": "95",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

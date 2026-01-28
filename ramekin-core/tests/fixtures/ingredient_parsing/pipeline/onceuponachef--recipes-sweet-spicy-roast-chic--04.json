@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons freshly squeezed orange juice, from 2 oranges",
+  "expected": {
+    "item": "freshly squeezed orange juice, from 2 oranges",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

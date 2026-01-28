@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon garlic powder (optional)",
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

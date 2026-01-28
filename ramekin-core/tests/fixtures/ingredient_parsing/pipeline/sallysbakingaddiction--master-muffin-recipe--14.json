@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (120g) sour cream or plain yogurt, at room temperature",
+  "expected": {
+    "item": "sour cream or plain yogurt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

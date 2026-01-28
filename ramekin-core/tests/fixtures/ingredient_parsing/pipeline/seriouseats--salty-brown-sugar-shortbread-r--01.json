@@ -1,0 +1,21 @@
+{
+  "raw": "227g unsalted butter (8 ounces; 2 sticks), at room temperature",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "227",
+        "unit": "g"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

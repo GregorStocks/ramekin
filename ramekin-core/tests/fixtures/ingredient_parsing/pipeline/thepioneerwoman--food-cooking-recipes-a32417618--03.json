@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp. vegetable oil, plus more for the pan",
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for the pan"
+  }
+}

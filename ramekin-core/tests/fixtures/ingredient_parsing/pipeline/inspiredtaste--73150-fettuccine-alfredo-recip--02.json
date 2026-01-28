@@ -1,0 +1,17 @@
+{
+  "raw": "5 tablespoons butter, see notes (55g)",
+  "expected": {
+    "item": "butter, see notes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

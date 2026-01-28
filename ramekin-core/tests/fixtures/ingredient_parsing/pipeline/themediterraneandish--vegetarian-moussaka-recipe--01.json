@@ -1,0 +1,17 @@
+{
+  "raw": "2 medium eggplants (about 1 1/2 lb), partially peeled and sliced length-wise",
+  "expected": {
+    "item": "eggplants",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "partially peeled and sliced length-wise"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups raw cashews (soaked overnight and drained)",
+  "expected": {
+    "item": "raw cashews",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "soaked overnight and drained"
+  }
+}

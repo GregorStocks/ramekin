@@ -1,0 +1,17 @@
+{
+  "raw": "4  or 5 small/medium zucchini/squash (about 2 1/2 lbs)",
+  "expected": {
+    "item": "or 5 small/medium zucchini/squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

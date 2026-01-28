@@ -1,0 +1,13 @@
+{
+  "raw": "1-1/2 cups diced fully cooked ham",
+  "expected": {
+    "item": "diced fully cooked ham",
+    "measurements": [
+      {
+        "amount": "1-1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

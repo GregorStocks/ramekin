@@ -1,0 +1,13 @@
+{
+  "raw": "16  onions (medium (peeled with just the tops trimmed off))",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": "medium (peeled with just the tops trimmed off"
+  }
+}

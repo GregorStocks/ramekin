@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (14 ounces) smoked turkey sausage, cut into 1/2-inch slices",
+  "expected": {
+    "item": "smoked turkey sausage, cut into 1/2-inch slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

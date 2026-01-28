@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces mozzarella cheese, coarsely grated (about 1 cup)",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely grated"
+  }
+}

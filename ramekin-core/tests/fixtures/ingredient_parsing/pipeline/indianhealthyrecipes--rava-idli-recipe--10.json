@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ teaspoon sea salt  ((or use as needed))",
+  "expected": {
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or use as needed"
+  }
+}

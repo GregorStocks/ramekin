@@ -1,0 +1,17 @@
+{
+  "raw": "24 tablespoons (344 g) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "344",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

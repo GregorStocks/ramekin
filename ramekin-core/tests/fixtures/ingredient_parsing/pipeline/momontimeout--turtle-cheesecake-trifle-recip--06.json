@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups pecans (chopped )",
+  "expected": {
+    "item": "pecans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped"
+  }
+}

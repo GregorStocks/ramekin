@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces top sirloin, cleaned and trimmed",
+  "expected": {
+    "item": "top sirloin",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cleaned and trimmed"
+  }
+}

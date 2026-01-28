@@ -1,0 +1,13 @@
+{
+  "raw": "7 fl oz chicken or vegetable broth",
+  "expected": {
+    "item": "chicken or vegetable broth",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "fl oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ cups peanut butter",
+  "expected": {
+    "item": "peanut butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

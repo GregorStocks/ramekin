@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon salt and pepper",
+  "expected": {
+    "item": "salt and pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

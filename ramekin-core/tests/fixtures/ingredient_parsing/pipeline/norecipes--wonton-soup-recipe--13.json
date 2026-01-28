@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon ginger juice",
+  "expected": {
+    "item": "ginger juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

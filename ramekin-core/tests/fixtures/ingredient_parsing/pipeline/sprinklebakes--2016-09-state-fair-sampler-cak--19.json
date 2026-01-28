@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup 100g vegetable oil or light-tasting olive oil",
+  "expected": {
+    "item": "100g vegetable oil or light-tasting olive oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

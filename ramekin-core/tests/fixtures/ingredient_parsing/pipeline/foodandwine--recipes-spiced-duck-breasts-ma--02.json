@@ -1,0 +1,13 @@
+{
+  "raw": "4 1/4 teaspoons kosher salt, divided",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "4 1/4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

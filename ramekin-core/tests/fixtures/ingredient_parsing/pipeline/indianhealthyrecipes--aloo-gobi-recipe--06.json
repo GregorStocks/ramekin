@@ -1,0 +1,17 @@
+{
+  "raw": "½ tablespoon (3 to 4)  garlic  (cloves, peeled &amp;amp; minced or pressed)",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "3 to 4",
+        "unit": null
+      }
+    ],
+    "note": "cloves, peeled &amp; minced or pressed"
+  }
+}

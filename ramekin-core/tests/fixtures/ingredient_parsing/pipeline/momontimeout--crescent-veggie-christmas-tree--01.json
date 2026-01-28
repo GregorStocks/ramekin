@@ -1,0 +1,17 @@
+{
+  "raw": "16 oz Pillsbury Crescent Rolls (2 cans)",
+  "expected": {
+    "item": "Pillsbury Crescent Rolls",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "cans"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "250 grams cooked chickpeas ((drained))",
+  "expected": {
+    "item": "cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "grams"
+      }
+    ],
+    "note": "drained"
+  }
+}

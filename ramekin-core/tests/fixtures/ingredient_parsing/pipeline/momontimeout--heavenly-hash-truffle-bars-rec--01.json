@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups semi-sweet chocolate chips",
+  "expected": {
+    "item": "semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

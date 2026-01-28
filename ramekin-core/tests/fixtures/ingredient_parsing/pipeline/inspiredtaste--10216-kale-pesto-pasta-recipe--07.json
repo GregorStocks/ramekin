@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pasta, any shape",
+  "expected": {
+    "item": "pasta, any shape",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

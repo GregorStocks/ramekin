@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces bourbon",
+  "expected": {
+    "item": "bourbon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

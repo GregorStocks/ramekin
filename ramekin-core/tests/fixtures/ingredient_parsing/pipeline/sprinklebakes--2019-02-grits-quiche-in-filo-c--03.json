@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz. frozen chopped kale (thawed)",
+  "expected": {
+    "item": "frozen chopped kale",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "thawed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 oz dried onion soup mix",
+  "expected": {
+    "item": "dried onion soup mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups crushed unsalted tortilla chips, divided",
+  "expected": {
+    "item": "crushed unsalted tortilla chips",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces cream cheese, sliced into 4 even pieces",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced into 4 even pieces"
+  }
+}

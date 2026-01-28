@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (54 g)&nbsp;almond flour",
+  "expected": {
+    "item": "almond flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "54",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

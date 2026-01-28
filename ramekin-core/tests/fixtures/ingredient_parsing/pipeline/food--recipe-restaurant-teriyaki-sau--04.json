@@ -1,0 +1,13 @@
+{
+  "raw": "1/4  teaspoon    garlic powder",
+  "expected": {
+    "item": "garlic powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

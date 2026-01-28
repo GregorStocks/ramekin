@@ -1,0 +1,13 @@
+{
+  "raw": "1½ tablespoons oil ((for sauce))",
+  "expected": {
+    "item": "oil (for sauce)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

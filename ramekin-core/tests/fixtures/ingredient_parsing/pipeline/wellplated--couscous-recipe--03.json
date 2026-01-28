@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon olive oil or butter (optional)",
+  "expected": {
+    "item": "olive oil or butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  shallot (, minced and peeled)",
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": ", minced and peeled"
+  }
+}

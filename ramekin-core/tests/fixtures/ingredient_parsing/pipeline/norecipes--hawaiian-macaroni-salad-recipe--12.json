@@ -1,0 +1,13 @@
+{
+  "raw": "45 grams carrot ((~1/2 , shredded))",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1/2 , shredded"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon grated fresh ginger",
+  "expected": {
+    "item": "grated fresh ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

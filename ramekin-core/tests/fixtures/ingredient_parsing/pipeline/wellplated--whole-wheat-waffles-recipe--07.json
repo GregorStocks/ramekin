@@ -1,0 +1,13 @@
+{
+  "raw": "2&nbsp; cups white whole wheat flour (or whole wheat pastry flour)",
+  "expected": {
+    "item": "white whole wheat flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "or whole wheat pastry flour"
+  }
+}

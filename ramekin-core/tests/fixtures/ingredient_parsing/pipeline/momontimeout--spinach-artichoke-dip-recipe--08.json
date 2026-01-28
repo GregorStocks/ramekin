@@ -1,0 +1,13 @@
+{
+  "raw": "2  heads of garlic (roasted)",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": "roasted"
+  }
+}

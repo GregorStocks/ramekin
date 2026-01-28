@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium tomatoes, diced",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
+  }
+}

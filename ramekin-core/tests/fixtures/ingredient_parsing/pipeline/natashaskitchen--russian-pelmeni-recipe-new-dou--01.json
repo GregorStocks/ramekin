@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cups buttermilk",
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

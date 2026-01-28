@@ -1,0 +1,13 @@
+{
+  "raw": "700 g slab skinless pork belly",
+  "expected": {
+    "item": "slab skinless pork belly",
+    "measurements": [
+      {
+        "amount": "700",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

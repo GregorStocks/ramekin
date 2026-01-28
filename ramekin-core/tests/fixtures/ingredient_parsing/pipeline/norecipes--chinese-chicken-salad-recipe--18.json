@@ -1,0 +1,13 @@
+{
+  "raw": "20 grams scallions ((chopped))",
+  "expected": {
+    "item": "scallions",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "grams"
+      }
+    ],
+    "note": "chopped"
+  }
+}

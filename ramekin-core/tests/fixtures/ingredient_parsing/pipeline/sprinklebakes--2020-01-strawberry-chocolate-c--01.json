@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups cake flour (sifted)",
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": "sifted"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "12 grams kosher salt",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

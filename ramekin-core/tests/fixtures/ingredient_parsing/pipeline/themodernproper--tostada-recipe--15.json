@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon Mexican hot sauce, plus more to taste, such as Tapatío",
+  "expected": {
+    "item": "Mexican hot sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more to taste, such as Tapatío"
+  }
+}

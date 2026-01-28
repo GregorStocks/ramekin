@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces full-fat cream cheese (softened to room temperature)",
+  "expected": {
+    "item": "full-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "softened to room temperature"
+  }
+}

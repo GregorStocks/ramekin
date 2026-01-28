@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces cashews (roasted and salted (2 cups))",
+  "expected": {
+    "item": "cashews",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roasted and salted (2 cups"
+  }
+}

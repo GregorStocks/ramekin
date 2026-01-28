@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15-ounce) cans no-salt-added cannellini beans, rinsed",
+  "expected": {
+    "item": "no-salt-added cannellini beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "rinsed"
+  }
+}

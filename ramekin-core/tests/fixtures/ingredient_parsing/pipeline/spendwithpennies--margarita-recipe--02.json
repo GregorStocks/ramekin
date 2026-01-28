@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce fresh lime juice (must be fresh)",
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "must be fresh"
+  }
+}

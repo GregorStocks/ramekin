@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup 85g/ 5 oz. water",
+  "expected": {
+    "item": "85g/ 5 oz. water",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pork belly (cut into 5-6 large pieces)",
+  "expected": {
+    "item": "pork belly (cut into 5-6 large pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

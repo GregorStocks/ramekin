@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound baby potatoes (halved)",
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "halved"
+  }
+}

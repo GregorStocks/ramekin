@@ -1,0 +1,13 @@
+{
+  "raw": "15 oz ricotta",
+  "expected": {
+    "item": "ricotta",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup all-purpose baking mix",
+  "expected": {
+    "item": "all-purpose baking mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

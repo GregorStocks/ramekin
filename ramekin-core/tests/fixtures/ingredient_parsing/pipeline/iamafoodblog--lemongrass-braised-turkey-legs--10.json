@@ -1,0 +1,13 @@
+{
+  "raw": "2 stalks lemongrass, bruised",
+  "expected": {
+    "item": "lemongrass, bruised",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "stalks"
+      }
+    ],
+    "note": null
+  }
+}

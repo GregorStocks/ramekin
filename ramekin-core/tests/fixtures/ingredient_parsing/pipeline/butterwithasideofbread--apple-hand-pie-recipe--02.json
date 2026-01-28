@@ -1,0 +1,13 @@
+{
+  "raw": "1 pkg refrigerated pie crust (double crust, thawed for 15 mins)",
+  "expected": {
+    "item": "refrigerated pie crust",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pkg"
+      }
+    ],
+    "note": "double crust, thawed for 15 mins"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounce can chopped ripe olives (drained)",
+  "expected": {
+    "item": "can chopped ripe olives",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

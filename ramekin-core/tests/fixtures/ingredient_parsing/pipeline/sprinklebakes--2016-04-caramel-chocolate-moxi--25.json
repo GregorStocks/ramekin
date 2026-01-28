@@ -1,0 +1,17 @@
+{
+  "raw": "2  TCHO chocolate squares (.28 oz. each)",
+  "expected": {
+    "item": "TCHO chocolate squares",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": ".28",
+        "unit": "oz each"
+      }
+    ],
+    "note": null
+  }
+}

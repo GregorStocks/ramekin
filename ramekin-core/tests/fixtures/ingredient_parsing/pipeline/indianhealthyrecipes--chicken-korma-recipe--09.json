@@ -1,0 +1,13 @@
+{
+  "raw": "2  green cardamoms",
+  "expected": {
+    "item": "green cardamoms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

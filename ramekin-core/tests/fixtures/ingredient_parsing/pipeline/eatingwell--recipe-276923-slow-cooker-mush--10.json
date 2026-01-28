@@ -1,0 +1,17 @@
+{
+  "raw": "1 garlic clove, minced (about 1 teaspoon)",
+  "expected": {
+    "item": "garlic clove",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "minced"
+  }
+}

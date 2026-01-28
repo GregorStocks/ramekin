@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz. dried somen noodles",
+  "expected": {
+    "item": "dried somen noodles",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

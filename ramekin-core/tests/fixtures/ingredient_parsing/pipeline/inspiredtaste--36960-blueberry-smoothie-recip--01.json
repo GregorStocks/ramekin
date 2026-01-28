@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (5 to 6 ounces) blueberries, frozen preferred, see notes",
+  "expected": {
+    "item": "blueberries, frozen preferred, see notes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5 to 6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

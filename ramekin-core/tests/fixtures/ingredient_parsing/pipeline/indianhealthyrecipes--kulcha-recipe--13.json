@@ -1,0 +1,17 @@
+{
+  "raw": "¼ cup (1 medium carrot)  carrot ( grated)",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "grated"
+  }
+}

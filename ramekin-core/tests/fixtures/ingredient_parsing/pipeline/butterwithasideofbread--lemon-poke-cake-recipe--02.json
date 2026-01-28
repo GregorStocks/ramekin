@@ -1,0 +1,13 @@
+{
+  "raw": "21 oz lemon pie filling",
+  "expected": {
+    "item": "lemon pie filling",
+    "measurements": [
+      {
+        "amount": "21",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

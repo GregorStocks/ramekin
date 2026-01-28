@@ -1,0 +1,13 @@
+{
+  "raw": "2  dill pickles (sliced lengthwise)",
+  "expected": {
+    "item": "dill pickles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced lengthwise"
+  }
+}

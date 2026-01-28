@@ -1,0 +1,13 @@
+{
+  "raw": "20 grams toasted fennel seeds",
+  "expected": {
+    "item": "toasted fennel seeds",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

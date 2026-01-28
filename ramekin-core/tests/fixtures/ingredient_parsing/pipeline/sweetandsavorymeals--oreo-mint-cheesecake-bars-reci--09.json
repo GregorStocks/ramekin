@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup heavy cream (cold)",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "cold"
+  }
+}

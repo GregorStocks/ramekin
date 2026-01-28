@@ -1,0 +1,17 @@
+{
+  "raw": "2 (3\"-long) lemon twists",
+  "expected": {
+    "item": "lemon twists",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

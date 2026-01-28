@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams boneless skinless chicken breast ((thinly sliced))",
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

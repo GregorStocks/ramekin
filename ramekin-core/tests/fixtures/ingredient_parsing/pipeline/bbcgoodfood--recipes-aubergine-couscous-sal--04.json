@@ -1,0 +1,13 @@
+{
+  "raw": "225ml hot vegetable stock",
+  "expected": {
+    "item": "hot vegetable stock",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

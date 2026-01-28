@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp. granulated&nbsp;sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

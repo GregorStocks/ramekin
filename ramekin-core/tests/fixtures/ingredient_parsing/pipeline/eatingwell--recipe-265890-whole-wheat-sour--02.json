@@ -1,0 +1,17 @@
+{
+  "raw": "2.5 cups warm water (85 degrees F), divided, plus more as needed for feeding",
+  "expected": {
+    "item": "warm water , divided",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "cups"
+      },
+      {
+        "amount": "85",
+        "unit": null
+      }
+    ],
+    "note": "plus more as needed for feeding"
+  }
+}

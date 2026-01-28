@@ -1,0 +1,13 @@
+{
+  "raw": "400 g fresh shrimps",
+  "expected": {
+    "item": "fresh shrimps",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

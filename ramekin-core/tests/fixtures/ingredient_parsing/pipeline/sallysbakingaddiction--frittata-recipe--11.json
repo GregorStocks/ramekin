@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (about 80g) chopped red bell pepper",
+  "expected": {
+    "item": "chopped red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "80",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

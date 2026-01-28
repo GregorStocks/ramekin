@@ -1,0 +1,17 @@
+{
+  "raw": "1 (2-inch) piece cassia bark or cinnamon stick",
+  "expected": {
+    "item": "cassia bark or cinnamon stick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

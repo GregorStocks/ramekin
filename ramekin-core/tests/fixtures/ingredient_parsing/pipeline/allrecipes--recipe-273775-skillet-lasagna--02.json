@@ -1,0 +1,17 @@
+{
+  "raw": "0.5 (28 ounce) jar spaghetti sauce",
+  "expected": {
+    "item": "spaghetti sauce",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "jar"
+      },
+      {
+        "amount": "28",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

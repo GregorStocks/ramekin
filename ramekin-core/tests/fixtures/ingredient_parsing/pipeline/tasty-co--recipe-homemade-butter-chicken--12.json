@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons ginger garlic paste",
+  "expected": {
+    "item": "ginger garlic paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

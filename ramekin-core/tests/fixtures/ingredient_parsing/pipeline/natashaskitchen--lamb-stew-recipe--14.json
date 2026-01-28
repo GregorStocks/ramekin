@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lbs small yellow potatoes (halved or quartered into 1\" pieces)",
+  "expected": {
+    "item": "small yellow potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "halved or quartered into 1\" pieces"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 &nbsp;5-oz cans quality Albacore tuna, drained",
+  "expected": {
+    "item": "5-oz cans quality Albacore tuna",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

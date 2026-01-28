@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz pie crust dough",
+  "expected": {
+    "item": "pie crust dough",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

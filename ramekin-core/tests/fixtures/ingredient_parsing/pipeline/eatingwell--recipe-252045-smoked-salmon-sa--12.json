@@ -1,0 +1,13 @@
+{
+  "raw": "12 small cherry or grape tomatoes, halved",
+  "expected": {
+    "item": "cherry or grape tomatoes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      }
+    ],
+    "note": "halved"
+  }
+}

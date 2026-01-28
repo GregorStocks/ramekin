@@ -1,0 +1,13 @@
+{
+  "raw": "1 Thai chili, finely diced",
+  "expected": {
+    "item": "Thai chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "finely diced"
+  }
+}

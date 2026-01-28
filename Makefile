@@ -152,7 +152,8 @@ pipeline-test: ## Run pipeline for test URLs (offline by default, use OFFLINE=fa
 		$(if $(OFFLINE),--offline=$(OFFLINE),) \
 		$(if $(FORCE_REFETCH),--force-refetch,) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
-		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),)
+		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),) \
+		$(if $(CONCURRENCY),--concurrency $(CONCURRENCY),)
 
 pipeline-cache-stats: ## Show HTML cache statistics
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \

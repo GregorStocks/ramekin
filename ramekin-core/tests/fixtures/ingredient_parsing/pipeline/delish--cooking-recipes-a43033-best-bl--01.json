@@ -1,0 +1,13 @@
+{
+  "raw": "1 750-ml bottle dry white wine",
+  "expected": {
+    "item": "750-ml bottle dry white wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

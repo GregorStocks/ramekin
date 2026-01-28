@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. Campari or Aperol",
+  "expected": {
+    "item": "Campari or Aperol",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

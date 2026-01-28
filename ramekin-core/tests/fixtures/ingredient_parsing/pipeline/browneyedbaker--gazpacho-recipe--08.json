@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups tomato juice (divided)",
+  "expected": {
+    "item": "tomato juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

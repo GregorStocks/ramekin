@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (470ml) milk ((I used 2%))",
+  "expected": {
+    "item": "milk (I used 2%)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "470",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 quart plain Greek yogurt",
+  "expected": {
+    "item": "plain Greek yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
+  }
+}

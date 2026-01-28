@@ -1,0 +1,17 @@
+{
+  "raw": "1 (22   ounce) package  frozen mashed potatoes",
+  "expected": {
+    "item": "frozen mashed potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "22",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

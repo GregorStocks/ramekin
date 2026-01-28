@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup confectioners' sugar (117 grams)",
+  "expected": {
+    "item": "confectioners' sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "117",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

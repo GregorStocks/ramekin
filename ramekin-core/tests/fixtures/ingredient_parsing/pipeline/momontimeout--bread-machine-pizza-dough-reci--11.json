@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp yeast",
+  "expected": {
+    "item": "yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

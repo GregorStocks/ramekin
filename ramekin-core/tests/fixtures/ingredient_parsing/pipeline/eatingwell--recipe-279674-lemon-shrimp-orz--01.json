@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces whole-wheat orzo",
+  "expected": {
+    "item": "whole-wheat orzo",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

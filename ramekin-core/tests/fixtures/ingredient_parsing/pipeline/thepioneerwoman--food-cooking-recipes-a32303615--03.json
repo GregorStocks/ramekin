@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 oz. crème de violette",
+  "expected": {
+    "item": "crème de violette",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

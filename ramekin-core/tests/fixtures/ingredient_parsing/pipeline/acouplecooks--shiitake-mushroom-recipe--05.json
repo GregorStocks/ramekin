@@ -1,0 +1,13 @@
+{
+  "raw": "2 dashes toasted sesame oil",
+  "expected": {
+    "item": "toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "dashes"
+      }
+    ],
+    "note": null
+  }
+}

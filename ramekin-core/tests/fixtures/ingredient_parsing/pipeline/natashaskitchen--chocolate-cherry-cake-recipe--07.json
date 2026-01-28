@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups fresh or frozen cherries (pitted and coarsely chopped)",
+  "expected": {
+    "item": "fresh or frozen cherries",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "pitted and coarsely chopped"
+  }
+}

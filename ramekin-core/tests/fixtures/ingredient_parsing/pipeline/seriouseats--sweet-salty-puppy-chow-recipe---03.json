@@ -1,0 +1,21 @@
+{
+  "raw": "6 1/2 ounces (180 g) chopped bittersweet or dark chocolate or chocolate chips (about 1 cup)",
+  "expected": {
+    "item": "chopped bittersweet or dark chocolate or chocolate chips",
+    "measurements": [
+      {
+        "amount": "6 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "180",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

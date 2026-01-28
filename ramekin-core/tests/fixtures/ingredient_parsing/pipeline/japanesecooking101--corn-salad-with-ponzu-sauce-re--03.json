@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp chopped green onions",
+  "expected": {
+    "item": "chopped green onions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

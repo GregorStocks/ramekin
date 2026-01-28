@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup sliced almonds, (lightly toasted if desired)",
+  "expected": {
+    "item": "sliced almonds,",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "lightly toasted if desired"
+  }
+}

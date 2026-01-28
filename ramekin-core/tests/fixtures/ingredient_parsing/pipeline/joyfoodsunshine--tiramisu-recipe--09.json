@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces mascarpone cheese",
+  "expected": {
+    "item": "mascarpone cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

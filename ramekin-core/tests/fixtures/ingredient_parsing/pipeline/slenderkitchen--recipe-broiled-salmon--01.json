@@ -1,0 +1,13 @@
+{
+  "raw": "1.33 lbs salmon (wild if possible)",
+  "expected": {
+    "item": "salmon (wild if possible)",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

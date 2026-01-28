@@ -1,0 +1,13 @@
+{
+  "raw": "500 g rock sugar ((korizato))",
+  "expected": {
+    "item": "rock sugar (korizato)",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

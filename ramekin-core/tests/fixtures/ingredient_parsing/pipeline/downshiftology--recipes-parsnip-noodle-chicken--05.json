@@ -1,0 +1,13 @@
+{
+  "raw": "1  head of broccoli (florets trimmed off)",
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "florets trimmed off"
+  }
+}

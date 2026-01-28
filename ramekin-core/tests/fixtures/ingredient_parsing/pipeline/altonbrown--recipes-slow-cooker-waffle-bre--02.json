@@ -1,0 +1,13 @@
+{
+  "raw": "4 3/4 ounces whole-wheat pastry flour",
+  "expected": {
+    "item": "whole-wheat pastry flour",
+    "measurements": [
+      {
+        "amount": "4 3/4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

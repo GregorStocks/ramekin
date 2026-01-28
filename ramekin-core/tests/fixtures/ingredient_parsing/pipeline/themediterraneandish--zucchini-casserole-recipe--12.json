@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3  zucchini, (sliced into thin rounds)",
+  "expected": {
+    "item": "zucchini,",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      }
+    ],
+    "note": "sliced into thin rounds"
+  }
+}

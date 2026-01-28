@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (14 ounces) sauerkraut, rinsed and well-drained",
+  "expected": {
+    "item": "sauerkraut",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": "rinsed and well-drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tablespoon chili garlic sauce, if desired",
+  "expected": {
+    "item": "chili garlic sauce, if desired",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

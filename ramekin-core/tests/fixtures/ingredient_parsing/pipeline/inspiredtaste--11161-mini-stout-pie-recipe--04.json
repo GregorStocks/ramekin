@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium onion, diced (about 3/4 cup)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
+  }
+}

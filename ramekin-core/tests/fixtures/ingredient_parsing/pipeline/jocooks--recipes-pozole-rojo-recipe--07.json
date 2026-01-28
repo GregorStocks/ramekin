@@ -1,0 +1,13 @@
+{
+  "raw": "5  guajillo chiles (dried)",
+  "expected": {
+    "item": "guajillo chiles",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "dried"
+  }
+}

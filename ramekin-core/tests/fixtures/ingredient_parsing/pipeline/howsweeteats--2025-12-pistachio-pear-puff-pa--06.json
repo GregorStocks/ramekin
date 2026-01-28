@@ -1,0 +1,13 @@
+{
+  "raw": "1  egg + 1 teaspoon water, (beaten together for egg wash)",
+  "expected": {
+    "item": "egg + 1 teaspoon water,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "beaten together for egg wash"
+  }
+}

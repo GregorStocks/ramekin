@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups shredded zucchini",
+  "expected": {
+    "item": "shredded zucchini",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

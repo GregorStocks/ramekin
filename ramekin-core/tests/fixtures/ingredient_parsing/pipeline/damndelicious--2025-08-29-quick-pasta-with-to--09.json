@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14-ounce) can pureed or crushed tomatoes",
+  "expected": {
+    "item": "pureed or crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

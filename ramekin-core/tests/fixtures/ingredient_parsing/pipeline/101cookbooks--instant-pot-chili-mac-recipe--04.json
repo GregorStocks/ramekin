@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups of dried elbow pasta",
+  "expected": {
+    "item": "dried elbow pasta",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

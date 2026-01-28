@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz. diced cooked ham",
+  "expected": {
+    "item": "diced cooked ham",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

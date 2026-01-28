@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup chopped pistachios, optional",
+  "expected": {
+    "item": "chopped pistachios",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

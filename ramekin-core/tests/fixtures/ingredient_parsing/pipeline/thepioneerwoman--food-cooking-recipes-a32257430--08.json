@@ -1,0 +1,13 @@
+{
+  "raw": "5 c. cereal squares",
+  "expected": {
+    "item": "cereal squares",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

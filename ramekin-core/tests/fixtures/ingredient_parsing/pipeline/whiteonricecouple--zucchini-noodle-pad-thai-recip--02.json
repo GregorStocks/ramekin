@@ -1,0 +1,17 @@
+{
+  "raw": "2 Tablespoons olive oil ((30ml) , divided)",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided)"
+  }
+}

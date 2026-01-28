@@ -1,0 +1,13 @@
+{
+  "raw": "1 TBSP crushed red pepper flakes",
+  "expected": {
+    "item": "crushed red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

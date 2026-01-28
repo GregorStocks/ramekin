@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup whole milk (at room temperature)",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

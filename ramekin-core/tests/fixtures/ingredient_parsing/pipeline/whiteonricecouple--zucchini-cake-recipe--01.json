@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455g) zucchini (, grated)",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": ", grated"
+  }
+}

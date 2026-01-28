@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups shredded part-skim mozzarella cheese, divided",
+  "expected": {
+    "item": "shredded part-skim mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

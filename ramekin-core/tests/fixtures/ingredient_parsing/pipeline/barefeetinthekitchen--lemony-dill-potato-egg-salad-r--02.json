@@ -1,0 +1,13 @@
+{
+  "raw": "4  hardboiled eggs (chopped small)",
+  "expected": {
+    "item": "hardboiled eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped small"
+  }
+}

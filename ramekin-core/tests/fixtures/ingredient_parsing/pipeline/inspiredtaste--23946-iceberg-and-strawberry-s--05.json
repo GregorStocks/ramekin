@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces blue cheese, crumbled (1/2 cup)",
+  "expected": {
+    "item": "blue cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

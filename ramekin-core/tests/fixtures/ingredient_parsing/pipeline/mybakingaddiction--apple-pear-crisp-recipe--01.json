@@ -1,0 +1,17 @@
+{
+  "raw": "6 cups peeled, cored, and thinly sliced baking apples  (about 6 large)",
+  "expected": {
+    "item": "peeled, cored",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      },
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": "and thinly sliced baking apples"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 coffee beans for garnish",
+  "expected": {
+    "item": "coffee beans for garnish",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

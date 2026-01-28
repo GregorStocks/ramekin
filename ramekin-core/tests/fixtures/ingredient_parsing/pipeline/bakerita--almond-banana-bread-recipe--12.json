@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon turbinado sugar, not paleo, totally optional!",
+  "expected": {
+    "item": "turbinado sugar, not paleo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "totally optional!"
+  }
+}

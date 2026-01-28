@@ -1,0 +1,21 @@
+{
+  "raw": "10 1/2 ounces granulated sugar (300 g; 1 1/2 cups)",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "10 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

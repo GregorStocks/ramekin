@@ -1,0 +1,13 @@
+{
+  "raw": "30 g fresh shiitake mushroom (finely diced)",
+  "expected": {
+    "item": "fresh shiitake mushroom",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

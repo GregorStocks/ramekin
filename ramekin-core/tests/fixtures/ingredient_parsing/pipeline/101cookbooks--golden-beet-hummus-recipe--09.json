@@ -1,0 +1,13 @@
+{
+  "raw": "pinch of saffron (optional)",
+  "expected": {
+    "item": "saffron",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional"
+  }
+}

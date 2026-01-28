@@ -1,0 +1,13 @@
+{
+  "raw": "2-3  serrano chilis (seeded and minced)",
+  "expected": {
+    "item": "serrano chilis",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": null
+      }
+    ],
+    "note": "seeded and minced"
+  }
+}

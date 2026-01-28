@@ -1,0 +1,29 @@
+{
+  "raw": "1 1/2 pound (675g) top round beef roast, or 6 store-bought pre-sliced thin (1/4- to 1/8-inch-thick) top round steaks (about 1 1/2 pounds; 675g) (see notes)",
+  "expected": {
+    "item": "top round beef roast",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pound"
+      },
+      {
+        "amount": "675",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "675",
+        "unit": "g"
+      }
+    ],
+    "note": "or 6 store-bought pre-sliced thin top round steaks (see notes)"
+  }
+}

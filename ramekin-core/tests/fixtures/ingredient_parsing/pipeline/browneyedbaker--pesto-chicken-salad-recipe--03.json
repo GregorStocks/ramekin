@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounce frozen chopped spinach, thawed and squeezed dry",
+  "expected": {
+    "item": "frozen chopped spinach",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounce"
+      }
+    ],
+    "note": "thawed and squeezed dry"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 slices Kamaboko",
+  "expected": {
+    "item": "Kamaboko",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

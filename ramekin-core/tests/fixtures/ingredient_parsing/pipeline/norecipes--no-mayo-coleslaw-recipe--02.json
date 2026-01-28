@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams kale",
+  "expected": {
+    "item": "kale",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

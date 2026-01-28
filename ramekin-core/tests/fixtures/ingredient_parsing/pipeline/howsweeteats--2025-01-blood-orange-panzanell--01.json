@@ -1,0 +1,13 @@
+{
+  "raw": "1  loaf sourdough bread cut into cubes",
+  "expected": {
+    "item": "loaf sourdough bread cut into cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

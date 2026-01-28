@@ -1,0 +1,13 @@
+{
+  "raw": "5 to 6 cups chicken or vegetable stock",
+  "expected": {
+    "item": "chicken or vegetable stock",
+    "measurements": [
+      {
+        "amount": "5 to 6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

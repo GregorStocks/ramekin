@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 Tablespoons Bourbon ((22 ml) )",
+  "expected": {
+    "item": "Bourbon )",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "22",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

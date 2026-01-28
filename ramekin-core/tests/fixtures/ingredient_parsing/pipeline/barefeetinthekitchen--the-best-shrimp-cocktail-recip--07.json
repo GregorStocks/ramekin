@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon celery seeds",
+  "expected": {
+    "item": "celery seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

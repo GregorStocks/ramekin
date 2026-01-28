@@ -1,0 +1,13 @@
+{
+  "raw": "800 grams yogurt",
+  "expected": {
+    "item": "yogurt",
+    "measurements": [
+      {
+        "amount": "800",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

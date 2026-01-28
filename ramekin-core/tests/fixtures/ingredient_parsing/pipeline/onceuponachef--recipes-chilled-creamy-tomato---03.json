@@ -1,0 +1,13 @@
+{
+  "raw": "2  medium carrots, (peeled and sliced into ¼-in (6-mm) rounds)",
+  "expected": {
+    "item": "carrots, rounds)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and sliced into 1/4-in (6-mm"
+  }
+}

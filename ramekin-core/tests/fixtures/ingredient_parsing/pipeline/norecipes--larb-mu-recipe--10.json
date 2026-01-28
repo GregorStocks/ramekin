@@ -1,0 +1,13 @@
+{
+  "raw": "10 grams culantro ((or cilantro, chopped))",
+  "expected": {
+    "item": "culantro",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "grams"
+      }
+    ],
+    "note": "or cilantro, chopped"
+  }
+}

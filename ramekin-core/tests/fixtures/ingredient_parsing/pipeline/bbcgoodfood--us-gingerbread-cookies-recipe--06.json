@@ -1,0 +1,13 @@
+{
+  "raw": "1¾ cups plus 1 tbsp all-purpose flour",
+  "expected": {
+    "item": "1¾ cups plus 1 tbsp all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus 1 tbsp all-purpose flour"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 large eggs, beaten to blend",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "beaten to blend"
+  }
+}

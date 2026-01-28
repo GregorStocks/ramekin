@@ -1,0 +1,13 @@
+{
+  "raw": "10  snow peas (blanched and cut in half diagonally)",
+  "expected": {
+    "item": "snow peas",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "blanched and cut in half diagonally"
+  }
+}

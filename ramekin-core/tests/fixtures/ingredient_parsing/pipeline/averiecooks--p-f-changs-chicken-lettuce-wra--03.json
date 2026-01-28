@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound ground chicken (I’ve also used ground turkey with good results)",
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "I’ve also used ground turkey with good results"
+  }
+}

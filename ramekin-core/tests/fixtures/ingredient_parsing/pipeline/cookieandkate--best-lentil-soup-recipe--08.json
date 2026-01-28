@@ -1,0 +1,17 @@
+{
+  "raw": "1 large can (28 ounces) diced tomatoes, lightly drained",
+  "expected": {
+    "item": "can diced tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": "lightly drained"
+  }
+}

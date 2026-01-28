@@ -1,0 +1,13 @@
+{
+  "raw": "6   large    eggs (or as many as will fit on your sautÃƒ pan)",
+  "expected": {
+    "item": "eggs (or as many as will fit on your sautÃƒ pan)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

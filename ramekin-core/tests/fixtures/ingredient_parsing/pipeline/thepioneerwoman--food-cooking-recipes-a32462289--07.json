@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. penne",
+  "expected": {
+    "item": "penne",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

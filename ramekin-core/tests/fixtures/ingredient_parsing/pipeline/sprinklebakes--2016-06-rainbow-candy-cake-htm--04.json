@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/4  cups/500 ml whole milk",
+  "expected": {
+    "item": "cups/500 ml whole milk",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

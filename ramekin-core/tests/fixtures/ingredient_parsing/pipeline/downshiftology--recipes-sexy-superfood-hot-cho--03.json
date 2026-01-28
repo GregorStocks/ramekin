@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp goji berries",
+  "expected": {
+    "item": "goji berries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

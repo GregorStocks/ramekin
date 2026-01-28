@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce St. Germain liqueur",
+  "expected": {
+    "item": "St. Germain liqueur",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

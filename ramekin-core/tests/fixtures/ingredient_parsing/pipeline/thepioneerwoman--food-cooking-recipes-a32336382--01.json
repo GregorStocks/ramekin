@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. sliced strawberries",
+  "expected": {
+    "item": "sliced strawberries",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

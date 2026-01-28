@@ -1,0 +1,17 @@
+{
+  "raw": "100 grams coconut sugar ((~1/2 cup + 2 tablespoons))",
+  "expected": {
+    "item": "coconut sugar",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

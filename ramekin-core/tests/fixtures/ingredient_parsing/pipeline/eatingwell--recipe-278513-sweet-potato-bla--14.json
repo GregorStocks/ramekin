@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup thinly sliced cucumber",
+  "expected": {
+    "item": "thinly sliced cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (15.25 ounce) package organic yellow cake mix (see Ingredient Note)",
+  "expected": {
+    "item": "organic yellow cake mix (see Ingredient Note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "15.25",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 5 dashes hot sauce, optional",
+  "expected": {
+    "item": "hot sauce",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "dashes"
+      }
+    ],
+    "note": "optional"
+  }
+}

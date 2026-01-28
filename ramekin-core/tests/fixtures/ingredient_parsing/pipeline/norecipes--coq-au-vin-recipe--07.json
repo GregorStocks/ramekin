@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups dry red wine",
+  "expected": {
+    "item": "dry red wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

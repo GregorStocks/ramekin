@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces uncooked angel hair pasta",
+  "expected": {
+    "item": "uncooked angel hair pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

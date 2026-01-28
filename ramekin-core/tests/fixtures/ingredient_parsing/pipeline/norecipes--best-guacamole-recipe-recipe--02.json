@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon sweet onion ((grated))",
+  "expected": {
+    "item": "sweet onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "grated"
+  }
+}

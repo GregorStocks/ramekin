@@ -1,0 +1,13 @@
+{
+  "raw": "6 Tablespoons salted butter ((cold))",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "cold"
+  }
+}

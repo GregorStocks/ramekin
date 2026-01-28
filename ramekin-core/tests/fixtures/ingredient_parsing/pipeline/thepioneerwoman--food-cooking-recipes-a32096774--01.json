@@ -1,0 +1,17 @@
+{
+  "raw": "2 peaches (about 12 ounces), thinly sliced",
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 small carrots, cut into 1-inch diagonal pieces",
+  "expected": {
+    "item": "carrots, cut into 1-inch diagonal pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

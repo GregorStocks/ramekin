@@ -1,0 +1,17 @@
+{
+  "raw": "0.5 (1 ounce) package dry ranch salad dressing mix",
+  "expected": {
+    "item": "dry ranch salad dressing mix",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "package"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

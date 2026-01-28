@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoon butter ((1/2 cup))",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

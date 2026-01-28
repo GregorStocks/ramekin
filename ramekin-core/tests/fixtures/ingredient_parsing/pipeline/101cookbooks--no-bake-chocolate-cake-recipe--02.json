@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces / 225 g 70% chocolate, well chopped",
+  "expected": {
+    "item": "/ 225 g 70% chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "well chopped"
+  }
+}

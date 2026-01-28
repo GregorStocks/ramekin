@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 pounds Yukon Gold potatoes or Tri-Color potatoes (washed, peeled and cut into 1 inch pieces*)",
+  "expected": {
+    "item": "Yukon Gold potatoes or Tri-Color potatoes",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "washed, peeled and cut into 1 inch pieces*"
+  }
+}

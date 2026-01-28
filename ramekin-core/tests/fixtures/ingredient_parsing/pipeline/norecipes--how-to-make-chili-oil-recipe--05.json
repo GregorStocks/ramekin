@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams dried scallops ((optional))",
+  "expected": {
+    "item": "dried scallops",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": "optional"
+  }
+}

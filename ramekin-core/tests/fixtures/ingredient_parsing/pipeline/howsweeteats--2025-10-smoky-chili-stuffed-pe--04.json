@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 cups leftover chili",
+  "expected": {
+    "item": "leftover chili",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

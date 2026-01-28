@@ -1,0 +1,13 @@
+{
+  "raw": "2  fresh chili peppers",
+  "expected": {
+    "item": "fresh chili peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

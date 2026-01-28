@@ -1,0 +1,17 @@
+{
+  "raw": "¾ cup (83 g) powdered sugar",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "83",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

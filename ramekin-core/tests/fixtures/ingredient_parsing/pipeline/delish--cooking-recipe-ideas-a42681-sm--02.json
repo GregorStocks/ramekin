@@ -1,0 +1,13 @@
+{
+  "raw": "1 box vanilla cake mix, plus ingredients called for on box",
+  "expected": {
+    "item": "vanilla cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "box"
+      }
+    ],
+    "note": "plus ingredients called for on box"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pt. grape tomatoes, halved if large",
+  "expected": {
+    "item": "grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pt"
+      }
+    ],
+    "note": "halved if large"
+  }
+}

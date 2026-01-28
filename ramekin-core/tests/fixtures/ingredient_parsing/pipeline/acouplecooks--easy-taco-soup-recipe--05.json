@@ -1,0 +1,13 @@
+{
+  "raw": "15-ounce can pinto beans",
+  "expected": {
+    "item": "-ounce can pinto beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

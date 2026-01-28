@@ -1,0 +1,17 @@
+{
+  "raw": "4 Tablespoons (56g) unsalted butter, melted",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": "melted"
+  }
+}

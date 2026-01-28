@@ -1,0 +1,13 @@
+{
+  "raw": "4 medium yellow squash",
+  "expected": {
+    "item": "yellow squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

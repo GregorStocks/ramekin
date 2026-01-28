@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces club soda",
+  "expected": {
+    "item": "club soda",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

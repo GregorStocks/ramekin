@@ -1,0 +1,13 @@
+{
+  "raw": "200g cherry tomato halved",
+  "expected": {
+    "item": "cherry tomato halved",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

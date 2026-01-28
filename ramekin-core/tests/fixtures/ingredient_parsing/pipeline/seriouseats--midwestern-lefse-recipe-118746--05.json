@@ -1,0 +1,17 @@
+{
+  "raw": "8 g (2 teaspoons) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 teaspoon sesame oil, toasted or hot",
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "toasted or hot"
+  }
+}

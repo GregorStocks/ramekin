@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon granulated sugar (divided)",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "divided"
+  }
+}

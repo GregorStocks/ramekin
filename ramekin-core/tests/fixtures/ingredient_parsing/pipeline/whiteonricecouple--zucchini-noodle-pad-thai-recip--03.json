@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 pound peeled and de-veined shrimp ((225g)  or what ever protein you prefer)",
+  "expected": {
+    "item": "peeled and de-veined shrimp or what ever protein you prefer)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

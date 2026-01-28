@@ -1,0 +1,17 @@
+{
+  "raw": "4  boneless and skinless chicken breasts ( 4 ounces each)",
+  "expected": {
+    "item": "boneless and skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

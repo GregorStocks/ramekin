@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon powdered ginger",
+  "expected": {
+    "item": "powdered ginger",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

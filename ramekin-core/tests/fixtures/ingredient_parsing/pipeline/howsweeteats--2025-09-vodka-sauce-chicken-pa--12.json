@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup vodka, (I like Tito’s)",
+  "expected": {
+    "item": "vodka, (I like Tito’s)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

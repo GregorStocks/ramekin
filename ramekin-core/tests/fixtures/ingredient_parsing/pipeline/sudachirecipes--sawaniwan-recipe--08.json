@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp mirin",
+  "expected": {
+    "item": "mirin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

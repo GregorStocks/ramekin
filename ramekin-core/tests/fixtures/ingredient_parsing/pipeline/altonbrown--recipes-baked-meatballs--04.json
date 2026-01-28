@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces frozen spinach, thawed and drained",
+  "expected": {
+    "item": "frozen spinach",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thawed and drained"
+  }
+}

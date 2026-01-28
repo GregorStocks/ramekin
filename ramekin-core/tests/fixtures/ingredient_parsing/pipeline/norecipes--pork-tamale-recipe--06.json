@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams dried Pasilla chilies",
+  "expected": {
+    "item": "dried Pasilla chilies",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

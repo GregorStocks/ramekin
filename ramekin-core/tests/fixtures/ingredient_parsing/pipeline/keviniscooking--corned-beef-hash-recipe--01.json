@@ -1,0 +1,13 @@
+{
+  "raw": "2  large russet potatoes (1/2-inch diced, 4 cups total)",
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "1/2-inch diced, 4 cups total"
+  }
+}

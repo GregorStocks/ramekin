@@ -1,0 +1,13 @@
+{
+  "raw": "1 sheet of nori, julienned (see Note)",
+  "expected": {
+    "item": "sheet of nori",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "julienned (see Note)"
+  }
+}

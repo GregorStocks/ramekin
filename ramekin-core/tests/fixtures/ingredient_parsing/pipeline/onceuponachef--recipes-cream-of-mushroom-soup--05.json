@@ -1,0 +1,13 @@
+{
+  "raw": "1½ lbs mixed wild mushrooms (such as shiitake, oyster, portobello, stemmed and roughly chopped)",
+  "expected": {
+    "item": "mixed wild mushrooms",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "such as shiitake, oyster, portobello, stemmed and roughly chopped"
+  }
+}

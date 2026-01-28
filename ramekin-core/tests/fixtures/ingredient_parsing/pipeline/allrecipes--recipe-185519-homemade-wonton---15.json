@@ -1,0 +1,13 @@
+{
+  "raw": "1 dash soy sauce, or to taste",
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "dash"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

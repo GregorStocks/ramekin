@@ -1,0 +1,13 @@
+{
+  "raw": "¼ tsp salt (or season to taste)",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or season to taste"
+  }
+}

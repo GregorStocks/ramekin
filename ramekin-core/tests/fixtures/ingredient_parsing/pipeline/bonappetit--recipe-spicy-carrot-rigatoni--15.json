@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb. (454 g) dry rigatoni",
+  "expected": {
+    "item": "dry rigatoni",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

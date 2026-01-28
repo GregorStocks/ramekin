@@ -1,0 +1,13 @@
+{
+  "raw": "11 ounce can mandarin orange segments (drained)",
+  "expected": {
+    "item": "can mandarin orange segments",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

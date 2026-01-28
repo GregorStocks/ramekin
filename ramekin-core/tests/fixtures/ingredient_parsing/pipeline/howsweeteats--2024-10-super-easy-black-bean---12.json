@@ -1,0 +1,17 @@
+{
+  "raw": "2 (4 ounce)  cans diced green chiles",
+  "expected": {
+    "item": "diced green chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

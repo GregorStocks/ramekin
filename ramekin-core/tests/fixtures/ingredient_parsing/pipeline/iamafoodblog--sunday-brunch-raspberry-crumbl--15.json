@@ -1,0 +1,13 @@
+{
+  "raw": "1 pint raspberries, washed and dried",
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "washed and dried"
+  }
+}

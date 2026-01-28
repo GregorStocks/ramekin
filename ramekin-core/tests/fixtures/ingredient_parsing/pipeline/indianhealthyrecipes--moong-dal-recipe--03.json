@@ -1,0 +1,17 @@
+{
+  "raw": "½ cup (1 medium)   tomatoes  ((deseeded &amp;amp; chopped))",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "deseeded &amp; chopped"
+  }
+}

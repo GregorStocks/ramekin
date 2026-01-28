@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14-ounce) can  whole tomatoes, drained",
+  "expected": {
+    "item": "whole tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

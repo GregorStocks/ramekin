@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 10oz/284g all-purpose flour",
+  "expected": {
+    "item": "10oz/284g all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

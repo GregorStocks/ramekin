@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup pure maple syrup",
+  "expected": {
+    "item": "pure maple syrup",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

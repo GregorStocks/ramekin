@@ -1,0 +1,13 @@
+{
+  "raw": "2&nbsp;tablespoons capers, drained",
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "drained"
+  }
+}

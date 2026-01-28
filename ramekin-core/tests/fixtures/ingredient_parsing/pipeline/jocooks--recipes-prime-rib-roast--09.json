@@ -1,0 +1,13 @@
+{
+  "raw": "5 pounds prime rib",
+  "expected": {
+    "item": "prime rib",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

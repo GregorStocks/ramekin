@@ -1,0 +1,17 @@
+{
+  "raw": "1 (29 ounce) can pinto beans, undrained",
+  "expected": {
+    "item": "pinto beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "29",
+        "unit": "ounce"
+      }
+    ],
+    "note": "undrained"
+  }
+}

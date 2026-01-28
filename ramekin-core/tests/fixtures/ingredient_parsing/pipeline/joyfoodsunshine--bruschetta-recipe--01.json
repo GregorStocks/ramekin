@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs tomatoes ((Roma, heirloom, vine tomatoes, etc))",
+  "expected": {
+    "item": "tomatoes (Roma, heirloom, vine tomatoes, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

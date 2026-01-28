@@ -1,0 +1,13 @@
+{
+  "raw": "1  heaping cup cabbage (finely chopped/shredded)",
+  "expected": {
+    "item": "cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaping cup"
+      }
+    ],
+    "note": "finely chopped/shredded"
+  }
+}

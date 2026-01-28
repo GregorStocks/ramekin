@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound lean ground turkey",
+  "expected": {
+    "item": "lean ground turkey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

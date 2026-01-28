@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces long noodles (such as whole grain spaghetti, whole grain fettuccine, soba noodles, or udon noodles)",
+  "expected": {
+    "item": "long noodles",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "such as whole grain spaghetti, whole grain fettuccine, soba noodles, or udon noodles"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound carrots, (peeled and chopped into 1-inch (2.5-cm) pieces)",
+  "expected": {
+    "item": "carrots, pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and chopped into 1-inch (2.5-cm"
+  }
+}

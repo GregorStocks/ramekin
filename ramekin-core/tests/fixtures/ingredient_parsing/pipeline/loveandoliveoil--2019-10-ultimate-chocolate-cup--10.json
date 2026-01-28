@@ -1,0 +1,13 @@
+{
+  "raw": "1/3 cup vegetable oil or light olive oil",
+  "expected": {
+    "item": "vegetable oil or light olive oil",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

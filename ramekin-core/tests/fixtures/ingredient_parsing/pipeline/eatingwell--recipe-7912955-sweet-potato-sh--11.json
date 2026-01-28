@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons no-salt-added tomato paste",
+  "expected": {
+    "item": "no-salt-added tomato paste",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup plus 2 tablespoons (90 ml) freshly squeezed orange juice from 1 medium orange, divided, plus 1 tablespoon zest from 2 medium oranges, divided",
+  "expected": {
+    "item": "plus 2 tablespoons freshly squeezed orange juice from 1 medium orange, divided",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "90",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus 1 tablespoon zest from 2 medium oranges, divided"
+  }
+}

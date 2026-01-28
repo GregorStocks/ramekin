@@ -1,0 +1,13 @@
+{
+  "raw": "10 sprigs cilantro ((minced))",
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "sprigs"
+      }
+    ],
+    "note": "minced"
+  }
+}

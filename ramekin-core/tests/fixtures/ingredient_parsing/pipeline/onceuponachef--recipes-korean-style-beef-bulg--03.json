@@ -1,0 +1,13 @@
+{
+  "raw": "1½ tablespoons (packed) dark brown sugar",
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "packed"
+  }
+}

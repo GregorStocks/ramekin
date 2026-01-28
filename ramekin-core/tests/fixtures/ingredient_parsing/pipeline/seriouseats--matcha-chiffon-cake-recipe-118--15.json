@@ -1,0 +1,21 @@
+{
+  "raw": "42 g powdered sugar (about 1 1/2 ounces; 3 tablespoons), plus more as needed",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "42",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus more as needed"
+  }
+}

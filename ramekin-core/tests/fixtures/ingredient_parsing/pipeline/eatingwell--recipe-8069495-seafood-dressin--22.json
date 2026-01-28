@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces fresh jumbo lump crabmeat, drained and picked over",
+  "expected": {
+    "item": "fresh jumbo lump crabmeat",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and picked over"
+  }
+}

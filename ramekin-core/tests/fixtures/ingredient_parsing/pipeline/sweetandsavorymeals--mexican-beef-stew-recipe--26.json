@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces baby Bella mushrooms (cleaned, stem removed and cap cut into halves)",
+  "expected": {
+    "item": "baby Bella mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cleaned, stem removed and cap cut into halves"
+  }
+}

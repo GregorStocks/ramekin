@@ -1,0 +1,17 @@
+{
+  "raw": "3 (14 ounce)  cans white beans,  (drained and rinsed)",
+  "expected": {
+    "item": "white beans,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cans"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

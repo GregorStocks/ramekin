@@ -1,0 +1,13 @@
+{
+  "raw": "2 heads of  garlic broken down into individual unpeeled cloves",
+  "expected": {
+    "item": "garlic broken down into individual unpeeled cloves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": null
+  }
+}

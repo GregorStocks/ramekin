@@ -1,0 +1,21 @@
+{
+  "raw": "4 1/4 ounces fine semolina flour (120 g; 1 cup)&nbsp;",
+  "expected": {
+    "item": "fine semolina flour",
+    "measurements": [
+      {
+        "amount": "4 1/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/3 cup (80ml) vegetable oil, safflower oil, or avocado oil",
+  "expected": {
+    "item": "vegetable oil, safflower oil, or avocado oil",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "80",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

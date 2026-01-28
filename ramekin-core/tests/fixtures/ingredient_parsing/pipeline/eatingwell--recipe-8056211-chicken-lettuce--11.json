@@ -1,0 +1,17 @@
+{
+  "raw": "1 (5 ounce) can sliced water chestnuts, drained and chopped",
+  "expected": {
+    "item": "sliced water chestnuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "5",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained and chopped"
+  }
+}

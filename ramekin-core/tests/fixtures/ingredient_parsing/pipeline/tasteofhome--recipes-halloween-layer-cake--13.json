@@ -1,0 +1,13 @@
+{
+  "raw": "10 drops yellow food coloring",
+  "expected": {
+    "item": "yellow food coloring",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "drops"
+      }
+    ],
+    "note": null
+  }
+}

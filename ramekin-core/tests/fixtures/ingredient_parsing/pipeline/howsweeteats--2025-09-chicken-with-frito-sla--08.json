@@ -1,0 +1,17 @@
+{
+  "raw": "1 (9oz)  bag chili cheese fritos",
+  "expected": {
+    "item": "chili cheese fritos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

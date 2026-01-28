@@ -1,0 +1,13 @@
+{
+  "raw": "200g basmati rice",
+  "expected": {
+    "item": "basmati rice",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

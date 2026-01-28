@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon freshly parsley (chopped, to garnish)",
+  "expected": {
+    "item": "freshly parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "chopped, to garnish"
+  }
+}

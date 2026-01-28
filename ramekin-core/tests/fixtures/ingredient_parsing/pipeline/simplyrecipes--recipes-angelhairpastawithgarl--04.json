@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons finely chopped fresh herbs such as rosemary, thyme, oregano",
+  "expected": {
+    "item": "finely chopped fresh herbs such as rosemary, thyme, oregano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

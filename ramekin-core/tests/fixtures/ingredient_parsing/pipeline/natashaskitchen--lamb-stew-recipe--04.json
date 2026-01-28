@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp black pepper for lamb plus 1/2 tsp for stew",
+  "expected": {
+    "item": "black pepper for lamb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus 1/2 tsp for stew"
+  }
+}

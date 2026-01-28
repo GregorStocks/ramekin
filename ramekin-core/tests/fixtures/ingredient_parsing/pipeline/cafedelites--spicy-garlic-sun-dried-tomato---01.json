@@ -1,0 +1,13 @@
+{
+  "raw": "4 teaspoons sun dried tomato oil",
+  "expected": {
+    "item": "sun dried tomato oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

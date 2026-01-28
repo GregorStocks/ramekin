@@ -1,0 +1,13 @@
+{
+  "raw": "7.8 ounce instant chocolate pudding",
+  "expected": {
+    "item": "instant chocolate pudding",
+    "measurements": [
+      {
+        "amount": "7.8",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

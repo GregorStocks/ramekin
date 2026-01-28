@@ -1,0 +1,21 @@
+{
+  "raw": "4 ounces (114g) mozzarella cheese, fresh; cubed into 1/4\" pieces (about 1 cup)",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "114",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "fresh; cubed into 1/4\" pieces"
+  }
+}

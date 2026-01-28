@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. red grapes, halved",
+  "expected": {
+    "item": "red grapes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": "halved"
+  }
+}

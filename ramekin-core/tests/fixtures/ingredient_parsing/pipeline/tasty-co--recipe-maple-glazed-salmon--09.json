@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz salmon fillet, 2 fillets",
+  "expected": {
+    "item": "salmon fillet, 2 fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

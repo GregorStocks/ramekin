@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces baby arugula (4 cups)",
+  "expected": {
+    "item": "baby arugula",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

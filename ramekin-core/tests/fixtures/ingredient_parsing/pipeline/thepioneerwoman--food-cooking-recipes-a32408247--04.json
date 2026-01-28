@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 c. half-and-half or whole milk",
+  "expected": {
+    "item": "half-and-half or whole milk",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

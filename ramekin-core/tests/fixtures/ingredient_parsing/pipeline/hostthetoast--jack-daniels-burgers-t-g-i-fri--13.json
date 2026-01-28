@@ -1,0 +1,13 @@
+{
+  "raw": "6 slices white cheddar or provolone cheese",
+  "expected": {
+    "item": "white cheddar or provolone cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 &amp;amp;1/2  cups (170g) pecans ((chopped or halves))",
+  "expected": {
+    "item": "&amp;1/2  cups pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped or halves"
+  }
+}

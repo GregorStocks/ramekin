@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon golden rum",
+  "expected": {
+    "item": "golden rum",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

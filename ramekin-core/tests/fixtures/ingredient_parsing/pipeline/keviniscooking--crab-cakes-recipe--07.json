@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb jumbo lump crabmeat",
+  "expected": {
+    "item": "jumbo lump crabmeat",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

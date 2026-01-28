@@ -1,0 +1,13 @@
+{
+  "raw": "1 large red bell pepper (cut into 1 inch pieces)",
+  "expected": {
+    "item": "red bell pepper (cut into 1 inch pieces)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

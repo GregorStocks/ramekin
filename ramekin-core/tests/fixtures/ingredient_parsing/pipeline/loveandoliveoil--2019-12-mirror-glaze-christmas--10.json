@@ -1,0 +1,13 @@
+{
+  "raw": "75 g semisweet chocolate (finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate))",
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate"
+  }
+}

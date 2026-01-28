@@ -1,0 +1,13 @@
+{
+  "raw": "5 tablespoons pickling salt",
+  "expected": {
+    "item": "pickling salt",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

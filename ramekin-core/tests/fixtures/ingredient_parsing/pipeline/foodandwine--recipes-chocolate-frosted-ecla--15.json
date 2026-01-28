@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces bittersweet chocolate",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

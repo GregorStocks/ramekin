@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup sugar, plus more to taste (optional)",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

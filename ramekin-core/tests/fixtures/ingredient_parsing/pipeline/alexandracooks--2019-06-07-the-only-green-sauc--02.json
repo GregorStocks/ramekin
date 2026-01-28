@@ -1,0 +1,17 @@
+{
+  "raw": "1 small bunch chives (about 1 ounce), roughly chopped",
+  "expected": {
+    "item": "bunch chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

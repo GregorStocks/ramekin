@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup leftover Mac &amp;amp; cheese ((I used Kraft))",
+  "expected": {
+    "item": "leftover Mac &amp; cheese (I used Kraft)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

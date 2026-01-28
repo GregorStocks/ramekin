@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup brown rice flour",
+  "expected": {
+    "item": "brown rice flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams ginger ((finely minced))",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": "finely minced"
+  }
+}

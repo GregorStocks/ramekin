@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon whole yellow mustard seeds",
+  "expected": {
+    "item": "whole yellow mustard seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

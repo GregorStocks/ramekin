@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30g) sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 lb cod fillet pieces (about 1/2 inch in thickness)",
+  "expected": {
+    "item": "cod fillet pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      },
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

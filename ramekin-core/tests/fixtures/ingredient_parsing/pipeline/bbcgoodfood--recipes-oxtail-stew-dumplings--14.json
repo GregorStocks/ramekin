@@ -1,0 +1,13 @@
+{
+  "raw": "75g butter",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

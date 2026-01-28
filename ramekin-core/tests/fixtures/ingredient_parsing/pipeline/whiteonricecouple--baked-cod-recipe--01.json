@@ -1,0 +1,17 @@
+{
+  "raw": "4 (6 oz./170g) cod filets",
+  "expected": {
+    "item": "cod filets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

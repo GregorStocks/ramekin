@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups Store-bought Marinara sauce",
+  "expected": {
+    "item": "Store-bought Marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

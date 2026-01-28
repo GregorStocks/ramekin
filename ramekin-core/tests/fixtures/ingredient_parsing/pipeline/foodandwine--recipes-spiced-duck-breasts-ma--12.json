@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup fresh mint leaves, coarsely chopped",
+  "expected": {
+    "item": "fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

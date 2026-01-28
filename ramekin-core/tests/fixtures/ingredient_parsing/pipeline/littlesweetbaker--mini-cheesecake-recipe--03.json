@@ -1,0 +1,17 @@
+{
+  "raw": "16 oz (2pkg./250g each) cream cheese (softened)",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "pkg each"
+      }
+    ],
+    "note": "softened"
+  }
+}

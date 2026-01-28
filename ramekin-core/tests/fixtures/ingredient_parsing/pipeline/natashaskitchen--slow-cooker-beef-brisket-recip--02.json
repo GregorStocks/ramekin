@@ -1,0 +1,13 @@
+{
+  "raw": "4 lb beef brisket",
+  "expected": {
+    "item": "beef brisket",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

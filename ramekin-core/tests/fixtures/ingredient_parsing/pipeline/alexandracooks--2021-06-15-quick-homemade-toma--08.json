@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (packed) fresh basil (about 1/2 ounce)",
+  "expected": {
+    "item": "fresh basil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      }
+    ],
+    "note": "packed"
+  }
+}

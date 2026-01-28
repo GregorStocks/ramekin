@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon curry powder",
+  "expected": {
+    "item": "curry powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

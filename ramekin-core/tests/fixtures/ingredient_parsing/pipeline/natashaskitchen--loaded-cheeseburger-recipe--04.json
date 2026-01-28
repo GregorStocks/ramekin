@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tbsp A1 Steak Sauce",
+  "expected": {
+    "item": "A1 Steak Sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

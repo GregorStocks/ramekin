@@ -1,0 +1,13 @@
+{
+  "raw": "3 celery ribs, finely chopped",
+  "expected": {
+    "item": "celery ribs",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. mini sweet peppers, sliced into ½\"-thick rings",
+  "expected": {
+    "item": "mini sweet peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "sliced into 1/2\"-thick rings"
+  }
+}

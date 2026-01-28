@@ -1,0 +1,13 @@
+{
+  "raw": "140 grams bamboo shoots ((julienned))",
+  "expected": {
+    "item": "bamboo shoots",
+    "measurements": [
+      {
+        "amount": "140",
+        "unit": "grams"
+      }
+    ],
+    "note": "julienned"
+  }
+}

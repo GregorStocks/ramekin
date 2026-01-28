@@ -1,0 +1,13 @@
+{
+  "raw": "2-4 Tablespoons almond milk",
+  "expected": {
+    "item": "almond milk",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

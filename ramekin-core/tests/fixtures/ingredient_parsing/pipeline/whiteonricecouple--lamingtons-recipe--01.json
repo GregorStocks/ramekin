@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (340g) cake flour ((not self-rising), plus additional for dusting pans)",
+  "expected": {
+    "item": "cake flour (not self-rising)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": "plus additional for dusting pans)"
+  }
+}

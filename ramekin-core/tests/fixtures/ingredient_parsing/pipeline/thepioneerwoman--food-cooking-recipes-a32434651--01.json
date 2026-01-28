@@ -1,0 +1,13 @@
+{
+  "raw": "4 lb. skin-on, bone-in chicken pieces",
+  "expected": {
+    "item": "skin-on, bone-in chicken pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon bacon bits",
+  "expected": {
+    "item": "bacon bits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

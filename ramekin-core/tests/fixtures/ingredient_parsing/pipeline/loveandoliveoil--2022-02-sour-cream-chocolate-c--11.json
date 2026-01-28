@@ -1,0 +1,13 @@
+{
+  "raw": "scant 1/2 cup  hot brewed coffee or hot water",
+  "expected": {
+    "item": "hot brewed coffee or hot water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "scant cup"
+      }
+    ],
+    "note": null
+  }
+}

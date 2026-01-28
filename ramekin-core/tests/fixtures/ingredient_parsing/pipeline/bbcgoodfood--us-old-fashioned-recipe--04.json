@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz bourbon or rye whiskey",
+  "expected": {
+    "item": "bourbon or rye whiskey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

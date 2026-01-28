@@ -1,0 +1,13 @@
+{
+  "raw": "2 TBSP orange juice for sweetness ((or to taste))",
+  "expected": {
+    "item": "orange juice for sweetness",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

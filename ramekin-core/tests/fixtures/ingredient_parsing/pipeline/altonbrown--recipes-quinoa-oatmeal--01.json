@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 cups old-fashioned rolled oats",
+  "expected": {
+    "item": "old-fashioned rolled oats",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

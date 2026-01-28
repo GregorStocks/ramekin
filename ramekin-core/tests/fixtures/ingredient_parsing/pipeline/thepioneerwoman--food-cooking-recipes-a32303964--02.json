@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. cranberries&nbsp;(thawed if frozen)",
+  "expected": {
+    "item": "cranberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": "thawed if frozen"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "6 to 7 cups shredded cabbage (from one small head, or roughly 1 pound of shreds)",
+  "expected": {
+    "item": "shredded cabbage",
+    "measurements": [
+      {
+        "amount": "6 to 7",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

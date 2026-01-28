@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fully cooked ham, diced",
+  "expected": {
+    "item": "fully cooked ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "diced"
+  }
+}

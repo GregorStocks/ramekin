@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces fresh or frozen strawberries",
+  "expected": {
+    "item": "fresh or frozen strawberries",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

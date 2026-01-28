@@ -1,0 +1,17 @@
+{
+  "raw": "1¼ cups  (4% milkfat) cottage cheese",
+  "expected": {
+    "item": "cottage cheese",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "0.25 cup (2 ounces) spiced rum",
+  "expected": {
+    "item": "spiced rum",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

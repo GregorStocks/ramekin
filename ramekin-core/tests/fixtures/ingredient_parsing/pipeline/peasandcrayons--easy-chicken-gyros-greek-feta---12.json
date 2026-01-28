@@ -1,0 +1,13 @@
+{
+  "raw": "3 TBSP plain Greek yogurt",
+  "expected": {
+    "item": "plain Greek yogurt",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 chicken breasts, bone in, skin on",
+  "expected": {
+    "item": "chicken breasts, bone in, skin on",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

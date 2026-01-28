@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs lean pork tenderloin",
+  "expected": {
+    "item": "lean pork tenderloin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (16-ounce) package cooked ham steak (or leftover holiday ham )",
+  "expected": {
+    "item": "cooked ham steak (or leftover holiday ham )",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

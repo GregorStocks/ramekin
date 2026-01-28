@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces oreo cookies",
+  "expected": {
+    "item": "oreo cookies",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6  or 7 hard boiled eggs (diced)",
+  "expected": {
+    "item": "or 7 hard boiled eggs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

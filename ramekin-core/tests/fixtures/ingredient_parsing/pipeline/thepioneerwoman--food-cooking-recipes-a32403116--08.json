@@ -1,0 +1,13 @@
+{
+  "raw": "Pinch of grated&nbsp;nutmeg",
+  "expected": {
+    "item": "grated nutmeg",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": null
+  }
+}

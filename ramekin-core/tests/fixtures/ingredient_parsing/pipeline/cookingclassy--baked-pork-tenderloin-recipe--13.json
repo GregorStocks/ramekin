@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp cornstarch (mixed with 1 Tbsp low-sodium chicken broth)",
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "mixed with 1 Tbsp low-sodium chicken broth"
+  }
+}

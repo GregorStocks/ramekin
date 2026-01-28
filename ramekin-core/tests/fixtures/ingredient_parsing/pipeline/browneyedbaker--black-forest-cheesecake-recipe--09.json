@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces frozen dark sweet cherries (thawed)",
+  "expected": {
+    "item": "frozen dark sweet cherries",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thawed"
+  }
+}

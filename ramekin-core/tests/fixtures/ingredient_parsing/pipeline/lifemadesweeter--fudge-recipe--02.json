@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup creamy unsalted cashew butter",
+  "expected": {
+    "item": "creamy unsalted cashew butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

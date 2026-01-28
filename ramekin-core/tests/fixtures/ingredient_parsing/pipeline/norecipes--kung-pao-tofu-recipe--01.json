@@ -1,0 +1,13 @@
+{
+  "raw": "400 grams firm tofu ((cut into 1-inch cubes))",
+  "expected": {
+    "item": "firm tofu (cut into 1-inch cubes)",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

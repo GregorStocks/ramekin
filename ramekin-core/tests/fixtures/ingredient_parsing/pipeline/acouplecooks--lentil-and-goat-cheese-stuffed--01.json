@@ -1,0 +1,17 @@
+{
+  "raw": "4 medium sweet potatoes (2 ½ pounds)",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

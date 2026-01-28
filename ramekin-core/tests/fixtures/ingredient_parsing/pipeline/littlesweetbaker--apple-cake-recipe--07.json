@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (125ml) vegetable or canola oil",
+  "expected": {
+    "item": "vegetable or canola oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "125",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

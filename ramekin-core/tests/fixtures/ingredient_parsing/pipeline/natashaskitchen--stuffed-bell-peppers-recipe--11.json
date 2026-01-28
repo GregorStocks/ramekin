@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp salt for boiling water",
+  "expected": {
+    "item": "salt for boiling water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

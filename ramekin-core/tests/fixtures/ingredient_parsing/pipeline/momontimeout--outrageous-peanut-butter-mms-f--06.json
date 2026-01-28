@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup M&amp;amp;Ms",
+  "expected": {
+    "item": "M&amp;Ms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

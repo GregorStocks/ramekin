@@ -1,0 +1,13 @@
+{
+  "raw": "¾ cups sharp cheddar or gouda cheese (or extra to taste)",
+  "expected": {
+    "item": "sharp cheddar or gouda cheese",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "or extra to taste"
+  }
+}

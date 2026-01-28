@@ -1,0 +1,13 @@
+{
+  "raw": "18 black olives preferably Niçoise, pitted",
+  "expected": {
+    "item": "black olives preferably Niçoise, pitted",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4-6 cups coconut milk",
+  "expected": {
+    "item": "coconut milk",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

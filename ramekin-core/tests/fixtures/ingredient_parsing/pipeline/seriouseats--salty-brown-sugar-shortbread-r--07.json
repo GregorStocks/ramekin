@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (1 3/4 ounces/50 grams) granulated sugar, for coating",
+  "expected": {
+    "item": "granulated sugar, for coating",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 3/4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

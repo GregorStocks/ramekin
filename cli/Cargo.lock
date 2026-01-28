@@ -2430,6 +2430,7 @@ dependencies = [
  "clap",
  "dirs",
  "flate2",
+ "futures",
  "headless_chrome",
  "quick-xml",
  "ramekin-core",

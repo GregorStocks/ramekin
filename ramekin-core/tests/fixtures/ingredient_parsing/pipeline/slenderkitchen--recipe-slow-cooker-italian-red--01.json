@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs. boneless skinless chicken breast, chopped",
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "chopped"
+  }
+}

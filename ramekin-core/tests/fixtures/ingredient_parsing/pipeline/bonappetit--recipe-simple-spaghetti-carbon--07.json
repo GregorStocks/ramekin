@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. spaghetti",
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

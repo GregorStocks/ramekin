@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp  light muscovado sugar",
+  "expected": {
+    "item": "light muscovado sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2  unsweetened cocoa powder (for a mild chocolate cake OR 1 tablespoon for a darker. Level teaspoons.)",
+  "expected": {
+    "item": "unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

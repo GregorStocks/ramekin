@@ -1,0 +1,13 @@
+{
+  "raw": "15  cashew nuts",
+  "expected": {
+    "item": "cashew nuts",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

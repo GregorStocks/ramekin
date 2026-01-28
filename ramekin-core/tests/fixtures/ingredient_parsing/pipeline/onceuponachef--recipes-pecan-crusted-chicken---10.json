@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup mayonnaise, best quality such as Hellmann's",
+  "expected": {
+    "item": "mayonnaise, best quality such as Hellmann's",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

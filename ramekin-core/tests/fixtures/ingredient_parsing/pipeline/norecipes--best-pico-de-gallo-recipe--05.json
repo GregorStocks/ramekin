@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams cilantro ((~2 tablespoons, minced))",
+  "expected": {
+    "item": "cilantro",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": "~2 tablespoons, minced"
+  }
+}

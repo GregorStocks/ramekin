@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 cups frozen tater tots",
+  "expected": {
+    "item": "frozen tater tots",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

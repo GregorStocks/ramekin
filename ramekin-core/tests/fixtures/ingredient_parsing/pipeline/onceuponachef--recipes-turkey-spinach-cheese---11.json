@@ -1,0 +1,17 @@
+{
+  "raw": "1 (24 oz) jar marinara sauce, homemade or good quality store-bought",
+  "expected": {
+    "item": "marinara sauce, homemade or good quality store-bought",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "24",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

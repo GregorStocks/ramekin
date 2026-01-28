@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons (10 ml) orange blossom water (see notes)",
+  "expected": {
+    "item": "orange blossom water (see notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

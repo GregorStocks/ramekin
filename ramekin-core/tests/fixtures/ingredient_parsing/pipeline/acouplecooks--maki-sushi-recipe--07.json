@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons mirin",
+  "expected": {
+    "item": "mirin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

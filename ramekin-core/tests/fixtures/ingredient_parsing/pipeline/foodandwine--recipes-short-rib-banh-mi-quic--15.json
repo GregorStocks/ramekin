@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (12 ounces) chopped napa cabbage kimchi",
+  "expected": {
+    "item": "chopped napa cabbage kimchi",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

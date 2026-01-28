@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. bacon",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

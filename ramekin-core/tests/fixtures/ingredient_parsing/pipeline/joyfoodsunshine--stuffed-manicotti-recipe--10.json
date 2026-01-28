@@ -1,0 +1,17 @@
+{
+  "raw": "24 ounces marinara sauce ((about 3 cups))",
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

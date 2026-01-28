@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cubed butternut squash",
+  "expected": {
+    "item": "cubed butternut squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

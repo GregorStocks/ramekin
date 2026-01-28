@@ -1,0 +1,13 @@
+{
+  "raw": "1   lb    sea bass (cleaned and scaled)",
+  "expected": {
+    "item": "sea bass",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cleaned and scaled"
+  }
+}

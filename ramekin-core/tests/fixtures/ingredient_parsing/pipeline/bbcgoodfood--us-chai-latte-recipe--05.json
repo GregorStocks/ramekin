@@ -1,0 +1,13 @@
+{
+  "raw": "1 star anise",
+  "expected": {
+    "item": "star anise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

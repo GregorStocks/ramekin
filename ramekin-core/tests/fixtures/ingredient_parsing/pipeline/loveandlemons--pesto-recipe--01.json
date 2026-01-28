@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup toasted pine nuts",
+  "expected": {
+    "item": "toasted pine nuts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

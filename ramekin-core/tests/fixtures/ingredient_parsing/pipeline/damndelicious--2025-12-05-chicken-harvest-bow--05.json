@@ -1,0 +1,17 @@
+{
+  "raw": "5 cups lightly packed shredded kale (about 1 bunch)",
+  "expected": {
+    "item": "lightly packed shredded kale",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
+  }
+}

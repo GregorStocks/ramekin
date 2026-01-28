@@ -1,0 +1,17 @@
+{
+  "raw": "1 Tablespoon (14g) unsalted butter, softened to room temperature",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": "softened to room temperature"
+  }
+}

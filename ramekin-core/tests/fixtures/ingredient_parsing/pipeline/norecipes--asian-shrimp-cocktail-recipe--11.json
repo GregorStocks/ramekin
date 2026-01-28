@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cups tomato sauce ((pureed stewed tomatoes))",
+  "expected": {
+    "item": "tomato sauce (pureed stewed tomatoes)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

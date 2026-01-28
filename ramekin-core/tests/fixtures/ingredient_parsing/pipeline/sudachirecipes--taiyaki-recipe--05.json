@@ -1,0 +1,13 @@
+{
+  "raw": "20 g light brown sugar",
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

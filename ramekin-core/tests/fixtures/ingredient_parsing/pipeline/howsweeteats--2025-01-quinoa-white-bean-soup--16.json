@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups sourdough bread cubes",
+  "expected": {
+    "item": "sourdough bread cubes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp coconut oil",
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

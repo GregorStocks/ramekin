@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds 80/20 ground beef (cold)",
+  "expected": {
+    "item": "80/20 ground beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "cold"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3  large zucchini",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

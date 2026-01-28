@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup small dried shrimp, rinsed and patted dry (see note)",
+  "expected": {
+    "item": "small dried shrimp",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed and patted dry (see note)"
+  }
+}

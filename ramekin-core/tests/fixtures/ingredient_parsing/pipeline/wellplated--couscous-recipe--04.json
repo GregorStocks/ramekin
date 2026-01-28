@@ -1,0 +1,13 @@
+{
+  "raw": "Pinch kosher salt (optional; omit if using broth)",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "optional; omit if using broth"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "75 g sashimi grade tuna (cubed)",
+  "expected": {
+    "item": "sashimi grade tuna",
+    "measurements": [
+      {
+        "amount": "75",
+        "unit": "g"
+      }
+    ],
+    "note": "cubed"
+  }
+}

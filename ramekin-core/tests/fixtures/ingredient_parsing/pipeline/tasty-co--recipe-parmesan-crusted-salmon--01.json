@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz skinless salmon",
+  "expected": {
+    "item": "skinless salmon",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

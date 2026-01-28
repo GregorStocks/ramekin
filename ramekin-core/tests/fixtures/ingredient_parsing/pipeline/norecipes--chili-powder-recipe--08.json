@@ -1,0 +1,17 @@
+{
+  "raw": "1.5 grams onion powder ((~1/2 teaspoon))",
+  "expected": {
+    "item": "onion powder",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

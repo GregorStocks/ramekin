@@ -1,0 +1,13 @@
+{
+  "raw": "400 g Tofu",
+  "expected": {
+    "item": "Tofu",
+    "measurements": [
+      {
+        "amount": "400",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

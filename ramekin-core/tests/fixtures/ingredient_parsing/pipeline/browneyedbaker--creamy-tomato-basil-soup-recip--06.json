@@ -1,0 +1,13 @@
+{
+  "raw": "56 ounces canned whole tomatoes packed in juice",
+  "expected": {
+    "item": "canned whole tomatoes packed in juice",
+    "measurements": [
+      {
+        "amount": "56",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

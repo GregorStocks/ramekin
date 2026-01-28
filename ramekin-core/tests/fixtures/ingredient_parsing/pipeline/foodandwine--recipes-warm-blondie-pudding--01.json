@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cup (6 ounces)&nbsp;plus 2 tablespoons&nbsp;cold unsalted butter, cut into&nbsp;1/2-inch cubes, plus more for greasing pan",
+  "expected": {
+    "item": "plus 2 tablespoons cold unsalted butter, cut into 1/2-inch cubes",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "plus more for greasing pan"
+  }
+}

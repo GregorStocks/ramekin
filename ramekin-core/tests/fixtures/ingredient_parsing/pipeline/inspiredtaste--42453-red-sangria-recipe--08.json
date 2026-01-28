@@ -1,0 +1,13 @@
+{
+  "raw": "1 bottle sparkling water, chilled, optional",
+  "expected": {
+    "item": "sparkling water, chilled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams bulk sausage",
+  "expected": {
+    "item": "bulk sausage",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

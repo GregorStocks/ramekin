@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound cabbage, savoy or green",
+  "expected": {
+    "item": "cabbage, savoy or green",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

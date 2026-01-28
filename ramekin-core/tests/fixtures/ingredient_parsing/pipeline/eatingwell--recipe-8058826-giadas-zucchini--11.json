@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound long pasta, such as spaghetti chitarra or bucatini",
+  "expected": {
+    "item": "long pasta, such as spaghetti chitarra or bucatini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "18  sprigs of rosemary (about 1 ½ stems)",
+  "expected": {
+    "item": "rosemary",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "sprigs"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

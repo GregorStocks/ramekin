@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb ditalini pasta",
+  "expected": {
+    "item": "ditalini pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

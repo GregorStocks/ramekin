@@ -1,0 +1,13 @@
+{
+  "raw": "4 - 5&nbsp;  Millionaire Bars (chopped small, about 1 1/2 cups worth)",
+  "expected": {
+    "item": "- 5   Millionaire Bars",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chopped small, about 1 1/2 cups worth"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "90 grams Tasso ham ((or bacon, cut into 1/3-inch cubes))",
+  "expected": {
+    "item": "Tasso ham (or bacon, cut into 1/3-inch cubes)",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

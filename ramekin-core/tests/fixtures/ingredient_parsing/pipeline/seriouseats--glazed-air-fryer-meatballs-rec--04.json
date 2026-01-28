@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (226 g) ground beef",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

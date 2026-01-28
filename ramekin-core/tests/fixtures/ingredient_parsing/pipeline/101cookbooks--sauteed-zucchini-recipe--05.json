@@ -1,0 +1,13 @@
+{
+  "raw": "2  medium zucchini, sliced into 1/4-inch thick coins",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced into 1/4-inch thick coins"
+  }
+}

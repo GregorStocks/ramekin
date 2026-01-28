@@ -1,0 +1,13 @@
+{
+  "raw": "8 c. fresh blueberries",
+  "expected": {
+    "item": "fresh blueberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

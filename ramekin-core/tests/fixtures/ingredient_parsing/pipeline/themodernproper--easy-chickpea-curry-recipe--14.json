@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14 oz) can full-fat coconut milk",
+  "expected": {
+    "item": "full-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

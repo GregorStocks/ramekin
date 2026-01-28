@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound chicken breast (boneless and skinless, cut into small cubes)",
+  "expected": {
+    "item": "chicken breast (boneless and skinless, cut into small cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

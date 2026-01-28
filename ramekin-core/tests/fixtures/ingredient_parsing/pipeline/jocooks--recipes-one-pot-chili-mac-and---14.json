@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces elbow pasta (uncooked)",
+  "expected": {
+    "item": "elbow pasta",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "uncooked"
+  }
+}

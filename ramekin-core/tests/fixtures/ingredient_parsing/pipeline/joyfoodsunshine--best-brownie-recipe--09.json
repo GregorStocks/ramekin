@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup of mix-ins ((chocolate chips, nuts, etc. if desired))",
+  "expected": {
+    "item": "mix-ins (chocolate chips, nuts, etc. if desired)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

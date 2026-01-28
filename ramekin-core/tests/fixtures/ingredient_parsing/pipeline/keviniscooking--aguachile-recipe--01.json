@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ pounds medium raw shrimp (peeled, deveined, and tail-off (26/30))",
+  "expected": {
+    "item": "medium raw shrimp",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled, deveined, and tail-off (26/30"
+  }
+}

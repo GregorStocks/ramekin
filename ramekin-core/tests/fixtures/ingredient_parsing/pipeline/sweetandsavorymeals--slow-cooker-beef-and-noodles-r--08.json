@@ -1,0 +1,13 @@
+{
+  "raw": "6  pepperoncini peppers (optional)",
+  "expected": {
+    "item": "pepperoncini peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

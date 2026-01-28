@@ -1,0 +1,13 @@
+{
+  "raw": "3 small bread bowls",
+  "expected": {
+    "item": "bread bowls",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

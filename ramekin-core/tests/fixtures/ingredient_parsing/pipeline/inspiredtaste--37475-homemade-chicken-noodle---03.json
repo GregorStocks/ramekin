@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons butter, chicken fat, or olive oil (28g)",
+  "expected": {
+    "item": "butter, chicken fat, or olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

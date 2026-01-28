@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons unflavored gelatin",
+  "expected": {
+    "item": "unflavored gelatin",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

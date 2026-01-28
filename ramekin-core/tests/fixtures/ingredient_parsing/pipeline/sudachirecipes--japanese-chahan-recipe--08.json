@@ -1,0 +1,21 @@
+{
+  "raw": "2 g salt (1% of the rice quantity, approx ¼ tsp per 200g)",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

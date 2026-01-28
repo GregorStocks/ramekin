@@ -1,0 +1,13 @@
+{
+  "raw": "220g tub ricotta",
+  "expected": {
+    "item": "tub ricotta",
+    "measurements": [
+      {
+        "amount": "220",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

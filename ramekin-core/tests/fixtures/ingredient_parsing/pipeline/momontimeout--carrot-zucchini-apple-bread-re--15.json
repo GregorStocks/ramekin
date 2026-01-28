@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup apple (peeled/diced)",
+  "expected": {
+    "item": "apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "peeled/diced"
+  }
+}

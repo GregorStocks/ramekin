@@ -1,0 +1,13 @@
+{
+  "raw": "2 c. whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

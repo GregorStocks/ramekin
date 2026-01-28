@@ -1,0 +1,13 @@
+{
+  "raw": "30 grams fresh ginger ((~ 1-inch piece, peeled and sliced))",
+  "expected": {
+    "item": "fresh ginger",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": "~ 1-inch piece, peeled and sliced"
+  }
+}

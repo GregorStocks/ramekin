@@ -1,0 +1,13 @@
+{
+  "raw": "4  small Yukon gold potatoes (diced 1/2\" small, about 3 cups)",
+  "expected": {
+    "item": "Yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": "diced 1/2\" small, about 3 cups"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz penne pasta with 1 cup reserved pasta cooking liquid",
+  "expected": {
+    "item": "penne pasta with 1 cup reserved pasta cooking liquid",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

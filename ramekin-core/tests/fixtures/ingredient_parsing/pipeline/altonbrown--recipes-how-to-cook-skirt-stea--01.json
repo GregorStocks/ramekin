@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds inside skirt steak, cut into three equal pieces",
+  "expected": {
+    "item": "inside skirt steak, cut into three equal pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

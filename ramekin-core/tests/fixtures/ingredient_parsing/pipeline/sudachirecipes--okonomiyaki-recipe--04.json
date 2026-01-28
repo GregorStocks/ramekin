@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp milk",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

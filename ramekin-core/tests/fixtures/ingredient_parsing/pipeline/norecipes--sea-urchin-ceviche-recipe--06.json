@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces sea beans",
+  "expected": {
+    "item": "sea beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

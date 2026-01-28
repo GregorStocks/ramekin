@@ -1,0 +1,13 @@
+{
+  "raw": "300 grams Asian bread flour",
+  "expected": {
+    "item": "Asian bread flour",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

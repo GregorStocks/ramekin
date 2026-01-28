@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups buttermilk, at room temperature",
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

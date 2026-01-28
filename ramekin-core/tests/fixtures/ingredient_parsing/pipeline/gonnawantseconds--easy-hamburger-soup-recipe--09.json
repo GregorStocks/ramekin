@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14.5 -ounce) can  petite diced tomatoes, (undrained)",
+  "expected": {
+    "item": "petite diced tomatoes,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14.5",
+        "unit": null
+      }
+    ],
+    "note": "undrained"
+  }
+}

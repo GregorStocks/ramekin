@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons (10 ml) light soy sauce",
+  "expected": {
+    "item": "light soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

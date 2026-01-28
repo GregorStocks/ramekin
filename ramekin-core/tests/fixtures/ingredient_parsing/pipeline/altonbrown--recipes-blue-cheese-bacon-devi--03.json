@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces blue cheese&nbsp;",
+  "expected": {
+    "item": "blue cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

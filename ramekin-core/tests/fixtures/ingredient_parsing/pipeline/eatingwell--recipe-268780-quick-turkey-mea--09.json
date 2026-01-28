@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup chopped fresh parsley or basil",
+  "expected": {
+    "item": "chopped fresh parsley or basil",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

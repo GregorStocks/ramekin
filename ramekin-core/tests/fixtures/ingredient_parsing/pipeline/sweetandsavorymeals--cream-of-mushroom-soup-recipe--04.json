@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups mushrooms (sliced)",
+  "expected": {
+    "item": "mushrooms",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": "sliced"
+  }
+}

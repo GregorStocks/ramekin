@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound penne, rigatoni, or medium shells",
+  "expected": {
+    "item": "penne, rigatoni, or medium shells",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

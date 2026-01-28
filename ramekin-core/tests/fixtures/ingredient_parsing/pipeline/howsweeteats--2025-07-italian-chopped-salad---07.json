@@ -1,0 +1,13 @@
+{
+  "raw": "½  head iceberg lettuce, (thinly sliced)",
+  "expected": {
+    "item": "iceberg lettuce,",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "head"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

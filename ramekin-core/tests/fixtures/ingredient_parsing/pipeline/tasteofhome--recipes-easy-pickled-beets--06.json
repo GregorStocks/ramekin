@@ -1,0 +1,17 @@
+{
+  "raw": "4 cans (16 ounces each) sliced beets",
+  "expected": {
+    "item": "sliced beets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cans"
+      },
+      {
+        "amount": "16",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

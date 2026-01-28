@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounce bag low salt tortilla chips",
+  "expected": {
+    "item": "bag low salt tortilla chips",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

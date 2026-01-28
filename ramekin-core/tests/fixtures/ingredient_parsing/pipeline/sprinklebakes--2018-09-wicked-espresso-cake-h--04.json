@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups 600g/22.10 oz. all-purpose flour",
+  "expected": {
+    "item": "600g/22.10 oz. all-purpose flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

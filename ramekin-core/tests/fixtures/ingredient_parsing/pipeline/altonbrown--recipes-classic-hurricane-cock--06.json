@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups crushed ice, divided",
+  "expected": {
+    "item": "crushed ice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon fish sauce, or to taste",
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

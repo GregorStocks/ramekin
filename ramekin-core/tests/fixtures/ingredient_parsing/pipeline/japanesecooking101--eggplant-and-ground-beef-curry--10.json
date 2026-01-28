@@ -1,0 +1,13 @@
+{
+  "raw": "4 servings Steamed Rice",
+  "expected": {
+    "item": "servings Steamed Rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

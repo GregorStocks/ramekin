@@ -1,0 +1,17 @@
+{
+  "raw": "2¼ cups (280 grams)  organic all-purpose flour   ((or 1¼ cup whole wheat flour + 1 cup all-purpose flour))",
+  "expected": {
+    "item": "organic all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "280",
+        "unit": "grams"
+      }
+    ],
+    "note": "or 1 1/4 cup whole wheat flour + 1 cup all-purpose flour"
+  }
+}

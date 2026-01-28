@@ -1,0 +1,13 @@
+{
+  "raw": "2 TBSP Sriracha (or to taste)",
+  "expected": {
+    "item": "Sriracha",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

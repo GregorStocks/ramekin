@@ -1,0 +1,17 @@
+{
+  "raw": "80 grams all-purpose flour ((about 2/3 cup))",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "grams"
+      },
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

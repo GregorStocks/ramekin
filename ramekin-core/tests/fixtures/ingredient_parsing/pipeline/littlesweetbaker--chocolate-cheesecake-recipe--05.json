@@ -1,0 +1,17 @@
+{
+  "raw": "24 oz (3 blocks) cream cheese (softened)",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "softened"
+  }
+}

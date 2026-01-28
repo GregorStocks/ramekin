@@ -1,0 +1,13 @@
+{
+  "raw": "225 grams cipollini onions ((or pearl , trimmed and peeled))",
+  "expected": {
+    "item": "cipollini onions",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": "or pearl , trimmed and peeled"
+  }
+}

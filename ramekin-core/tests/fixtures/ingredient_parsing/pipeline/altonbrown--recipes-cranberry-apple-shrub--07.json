@@ -1,0 +1,13 @@
+{
+  "raw": "1  &nbsp;lemon, rind only, scraped clean of pith&nbsp;",
+  "expected": {
+    "item": "lemon, rind only, scraped clean of pith",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

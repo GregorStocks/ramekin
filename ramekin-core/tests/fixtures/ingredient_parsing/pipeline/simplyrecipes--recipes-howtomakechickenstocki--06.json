@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 quarts water, enough to cover",
+  "expected": {
+    "item": "water, enough to cover",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "quarts"
+      }
+    ],
+    "note": null
+  }
+}

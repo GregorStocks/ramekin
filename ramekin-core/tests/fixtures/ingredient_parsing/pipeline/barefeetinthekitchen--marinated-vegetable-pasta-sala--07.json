@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup marinated tomatoes",
+  "expected": {
+    "item": "marinated tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

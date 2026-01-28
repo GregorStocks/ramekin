@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup / 5 oz / 140g seeds (equal parts chopped pepitas, sunflower &amp; poppy seeds)",
+  "expected": {
+    "item": "/ 5 oz / 140g seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "equal parts chopped pepitas, sunflower & poppy seeds"
+  }
+}

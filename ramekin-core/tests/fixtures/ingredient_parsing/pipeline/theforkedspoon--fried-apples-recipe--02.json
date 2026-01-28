@@ -1,0 +1,13 @@
+{
+  "raw": "8 medium  red apples (unpeeled and chopped into cubes)",
+  "expected": {
+    "item": "red apples",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "medium"
+      }
+    ],
+    "note": "unpeeled and chopped into cubes"
+  }
+}

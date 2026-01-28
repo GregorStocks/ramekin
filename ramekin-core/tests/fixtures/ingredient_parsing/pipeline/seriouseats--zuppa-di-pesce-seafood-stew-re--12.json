@@ -1,0 +1,21 @@
+{
+  "raw": "1 (24.5-ounce; 700 g) bottle tomato passata",
+  "expected": {
+    "item": "tomato passata",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      },
+      {
+        "amount": "24.5",
+        "unit": null
+      },
+      {
+        "amount": "700",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3  medium size very ripe bananas",
+  "expected": {
+    "item": "size very ripe bananas",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (20g) pine nuts, lightly toasted and roughly chopped",
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "lightly toasted and roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. fresh mint, chopped, divided",
+  "expected": {
+    "item": "fresh mint, chopped",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": "divided"
+  }
+}

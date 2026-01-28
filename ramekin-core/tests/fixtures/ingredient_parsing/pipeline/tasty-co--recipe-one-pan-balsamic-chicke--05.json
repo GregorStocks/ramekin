@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb chicken breast",
+  "expected": {
+    "item": "chicken breast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

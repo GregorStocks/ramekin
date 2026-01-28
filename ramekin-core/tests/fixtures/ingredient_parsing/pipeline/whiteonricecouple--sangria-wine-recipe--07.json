@@ -1,0 +1,13 @@
+{
+  "raw": "3-4 cups (optional) ice",
+  "expected": {
+    "item": "ice",
+    "measurements": [
+      {
+        "amount": "3-4",
+        "unit": "cups"
+      }
+    ],
+    "note": "optional"
+  }
+}

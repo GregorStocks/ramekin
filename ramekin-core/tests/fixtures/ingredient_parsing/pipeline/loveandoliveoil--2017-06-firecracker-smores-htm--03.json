@@ -1,0 +1,13 @@
+{
+  "raw": "8 jumbo or s&amp;#8217;mores marshmallows",
+  "expected": {
+    "item": "jumbo or s&#8217;mores marshmallows",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp hazelnuts (chopped)",
+  "expected": {
+    "item": "hazelnuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "chopped"
+  }
+}

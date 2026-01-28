@@ -1,0 +1,17 @@
+{
+  "raw": "12 ounces (340g) dried rigatoni pasta",
+  "expected": {
+    "item": "dried rigatoni pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

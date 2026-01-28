@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds carrots (about 5 medium sized carrots), peeled",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled"
+  }
+}

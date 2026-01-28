@@ -1,0 +1,13 @@
+{
+  "raw": "230 grams napa cabbage ((shredded))",
+  "expected": {
+    "item": "napa cabbage",
+    "measurements": [
+      {
+        "amount": "230",
+        "unit": "grams"
+      }
+    ],
+    "note": "shredded"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz 50-60% semisweet chocolate (chopped)",
+  "expected": {
+    "item": "50-60% semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "chopped"
+  }
+}

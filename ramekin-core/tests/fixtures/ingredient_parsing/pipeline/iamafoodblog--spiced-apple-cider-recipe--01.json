@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups apple cider",
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

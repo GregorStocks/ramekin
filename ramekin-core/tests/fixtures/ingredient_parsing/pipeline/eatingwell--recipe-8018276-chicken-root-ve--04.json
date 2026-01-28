@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup chopped celery",
+  "expected": {
+    "item": "chopped celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

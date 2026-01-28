@@ -1,0 +1,17 @@
+{
+  "raw": "8 to 10 strips of bacon (about 12 ounces), cut in half",
+  "expected": {
+    "item": "strips of bacon , cut in half",
+    "measurements": [
+      {
+        "amount": "8 to 10",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

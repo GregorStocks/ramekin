@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium Fuji apple, seeded and cubed",
+  "expected": {
+    "item": "Fuji apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "seeded and cubed"
+  }
+}

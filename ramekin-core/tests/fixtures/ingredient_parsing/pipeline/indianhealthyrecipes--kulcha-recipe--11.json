@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams paneer ((grated or crumbled))",
+  "expected": {
+    "item": "paneer",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated or crumbled"
+  }
+}

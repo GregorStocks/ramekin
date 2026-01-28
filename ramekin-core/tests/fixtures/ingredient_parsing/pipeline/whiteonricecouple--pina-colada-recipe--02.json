@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces (180ml) pineapple juice ( (fresh or canned))",
+  "expected": {
+    "item": "pineapple juice",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "180",
+        "unit": "ml"
+      }
+    ],
+    "note": "(fresh or canned"
+  }
+}

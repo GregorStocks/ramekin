@@ -1,0 +1,13 @@
+{
+  "raw": "8 tablespoons salted butter, room temperature",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

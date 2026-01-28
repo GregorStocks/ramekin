@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces kale or spinach, chopped (frozen is ok)",
+  "expected": {
+    "item": "kale or spinach, chopped",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "frozen is ok"
+  }
+}

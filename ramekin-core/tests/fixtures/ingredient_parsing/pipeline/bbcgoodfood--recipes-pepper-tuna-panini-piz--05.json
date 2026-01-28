@@ -1,0 +1,13 @@
+{
+  "raw": "200g can tuna drained",
+  "expected": {
+    "item": "can tuna drained",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

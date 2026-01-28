@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons crème fraîche",
+  "expected": {
+    "item": "crème fraîche",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

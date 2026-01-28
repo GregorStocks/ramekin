@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces corn, (cooked if frozen (I use a steamfresh bag))",
+  "expected": {
+    "item": "corn,",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cooked if frozen (I use a steamfresh bag"
+  }
+}

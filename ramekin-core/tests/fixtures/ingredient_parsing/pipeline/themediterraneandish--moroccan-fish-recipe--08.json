@@ -1,0 +1,13 @@
+{
+  "raw": "Large handful fresh cilantro (about 1 cup fresh cilantro)",
+  "expected": {
+    "item": "handful fresh cilantro",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": "about 1 cup fresh cilantro"
+  }
+}

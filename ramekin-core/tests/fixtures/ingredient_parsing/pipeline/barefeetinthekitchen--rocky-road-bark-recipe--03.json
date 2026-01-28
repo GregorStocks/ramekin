@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup roasted (salted peanuts, divided)",
+  "expected": {
+    "item": "roasted",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "salted peanuts, divided"
+  }
+}

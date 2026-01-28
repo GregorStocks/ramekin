@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (13.66 ounces) coconut milk",
+  "expected": {
+    "item": "coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "13.66",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

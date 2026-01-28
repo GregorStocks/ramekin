@@ -1,0 +1,21 @@
+{
+  "raw": "226g granulated sugar (8 ounces; 1 cup plus 2 tablespoons)",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "226",
+        "unit": "g"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

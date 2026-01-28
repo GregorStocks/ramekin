@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons corn syrup",
+  "expected": {
+    "item": "corn syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

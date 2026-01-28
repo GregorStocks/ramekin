@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups arborio rice (10 ounces)",
+  "expected": {
+    "item": "arborio rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

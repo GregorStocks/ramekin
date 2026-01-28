@@ -1,0 +1,17 @@
+{
+  "raw": "12 baby potatoes (about 12 oz), scrubbed",
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": "scrubbed"
+  }
+}

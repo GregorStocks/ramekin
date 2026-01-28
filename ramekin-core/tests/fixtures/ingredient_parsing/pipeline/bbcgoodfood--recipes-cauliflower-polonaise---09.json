@@ -1,0 +1,13 @@
+{
+  "raw": "1 heaped tbsp  chopped curly parsley",
+  "expected": {
+    "item": "chopped curly parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped tbsp"
+      }
+    ],
+    "note": null
+  }
+}

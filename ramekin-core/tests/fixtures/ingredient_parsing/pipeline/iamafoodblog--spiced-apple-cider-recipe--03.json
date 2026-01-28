@@ -1,0 +1,13 @@
+{
+  "raw": "1 anise pod",
+  "expected": {
+    "item": "anise pod",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

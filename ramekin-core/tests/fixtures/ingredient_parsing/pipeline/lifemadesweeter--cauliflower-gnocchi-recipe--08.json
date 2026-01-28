@@ -1,0 +1,13 @@
+{
+  "raw": "handful fresh basil (, chopped + more for serving)",
+  "expected": {
+    "item": "fresh basil",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": ", chopped + more for serving"
+  }
+}

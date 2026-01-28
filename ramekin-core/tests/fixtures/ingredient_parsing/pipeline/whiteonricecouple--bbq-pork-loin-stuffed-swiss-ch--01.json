@@ -1,0 +1,13 @@
+{
+  "raw": "4 pound Pork Loin",
+  "expected": {
+    "item": "Pork Loin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

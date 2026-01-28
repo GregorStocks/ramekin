@@ -1,0 +1,13 @@
+{
+  "raw": "0.333 cup packed brown sugar",
+  "expected": {
+    "item": "packed brown sugar",
+    "measurements": [
+      {
+        "amount": "0.333",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 large can (28 ounces) whole tomatoes*, with their liquid",
+  "expected": {
+    "item": "can whole tomatoes*, with their liquid",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

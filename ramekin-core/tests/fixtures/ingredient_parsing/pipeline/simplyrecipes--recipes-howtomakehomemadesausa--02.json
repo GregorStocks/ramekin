@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pork fat",
+  "expected": {
+    "item": "pork fat",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

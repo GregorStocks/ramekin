@@ -1,0 +1,13 @@
+{
+  "raw": "4  cloves ((optional))",
+  "expected": {
+    "item": "4  cloves ((optional))",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cloves"
+      }
+    ],
+    "note": "optional"
+  }
+}

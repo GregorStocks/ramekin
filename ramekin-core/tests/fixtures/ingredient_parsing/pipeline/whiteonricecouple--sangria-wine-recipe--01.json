@@ -1,0 +1,17 @@
+{
+  "raw": "1  (750 ml) bottle dry red, white, or rosé wine (, chilled *see note below)",
+  "expected": {
+    "item": "dry red, white, or rosé wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bottle"
+      },
+      {
+        "amount": "750",
+        "unit": "ml"
+      }
+    ],
+    "note": ", chilled *see note below"
+  }
+}

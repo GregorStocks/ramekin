@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon olive oil from tuna can",
+  "expected": {
+    "item": "olive oil from tuna can",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

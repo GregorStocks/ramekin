@@ -1,0 +1,13 @@
+{
+  "raw": "1 avocado - peeled, pitted and diced",
+  "expected": {
+    "item": "avocado - peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "pitted and diced"
+  }
+}

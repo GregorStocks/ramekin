@@ -1,0 +1,13 @@
+{
+  "raw": "2 jalapeno peppers, chopped (or 1 green bell pepper if you prefer mild)",
+  "expected": {
+    "item": "jalapeno peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "chopped (or 1 green bell pepper if you prefer mild)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound strawberries (washed, hulled and sliced)",
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "washed, hulled and sliced"
+  }
+}

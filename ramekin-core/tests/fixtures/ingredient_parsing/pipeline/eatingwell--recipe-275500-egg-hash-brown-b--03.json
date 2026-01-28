@@ -1,0 +1,17 @@
+{
+  "raw": "16 ounces frozen southern-style diced hash browns (4 cups)",
+  "expected": {
+    "item": "frozen southern-style diced hash browns",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (20-ounce) cans apple pie filling",
+  "expected": {
+    "item": "apple pie filling",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

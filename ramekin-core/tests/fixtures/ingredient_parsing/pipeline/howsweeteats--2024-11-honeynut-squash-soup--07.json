@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 5 cups honeynut squash cubes",
+  "expected": {
+    "item": "honeynut squash cubes",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

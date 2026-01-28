@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup bottled salsa verde",
+  "expected": {
+    "item": "bottled salsa verde",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

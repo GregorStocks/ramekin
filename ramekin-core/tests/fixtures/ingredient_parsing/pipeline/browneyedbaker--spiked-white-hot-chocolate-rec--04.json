@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces steamed or warmed milk",
+  "expected": {
+    "item": "steamed or warmed milk",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

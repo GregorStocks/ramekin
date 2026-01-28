@@ -1,0 +1,17 @@
+{
+  "raw": "1  large bunch kale (8 ounces), (thick veins and stems removed, chopped)",
+  "expected": {
+    "item": "bunch kale ,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thick veins and stems removed, chopped"
+  }
+}

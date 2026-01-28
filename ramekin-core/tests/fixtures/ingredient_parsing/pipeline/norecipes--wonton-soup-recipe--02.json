@@ -1,0 +1,13 @@
+{
+  "raw": "300 grams medium shrimp ((shelled))",
+  "expected": {
+    "item": "medium shrimp (shelled)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

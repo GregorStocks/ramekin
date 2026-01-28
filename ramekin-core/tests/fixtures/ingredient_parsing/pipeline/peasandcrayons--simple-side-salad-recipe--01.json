@@ -1,0 +1,17 @@
+{
+  "raw": "5 oz chopped lettuce ((a 5 ounce bag or 3-4 cups))",
+  "expected": {
+    "item": "chopped lettuce",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      },
+      {
+        "amount": "3-4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

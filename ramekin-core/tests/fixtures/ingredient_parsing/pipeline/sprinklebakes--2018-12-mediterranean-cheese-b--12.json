@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 300 grams walnuts or pine nuts, roasted and coarsely chopped",
+  "expected": {
+    "item": "300 grams walnuts or pine nuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "roasted and coarsely chopped"
+  }
+}

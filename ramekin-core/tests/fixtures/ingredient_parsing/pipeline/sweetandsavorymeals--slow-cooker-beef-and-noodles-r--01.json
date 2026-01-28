@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds stew beef",
+  "expected": {
+    "item": "stew beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

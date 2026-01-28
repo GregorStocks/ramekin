@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon unsalted butter, melted",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "melted"
+  }
+}

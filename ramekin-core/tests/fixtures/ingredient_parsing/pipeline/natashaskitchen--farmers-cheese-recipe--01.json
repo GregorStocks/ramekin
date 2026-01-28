@@ -1,0 +1,13 @@
+{
+  "raw": "1 gallon whole milk (preferably organic, room temp*)",
+  "expected": {
+    "item": "whole milk (preferably organic, room temp*)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "gallon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 tablespoon onions ((chopped) (1 small))",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "chopped"
+  }
+}

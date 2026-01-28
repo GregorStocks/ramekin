@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon fresh mint (minced)",
+  "expected": {
+    "item": "fresh mint",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "minced"
+  }
+}

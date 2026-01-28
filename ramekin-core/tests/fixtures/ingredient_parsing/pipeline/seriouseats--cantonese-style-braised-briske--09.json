@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 tablespoons (22 ml) oyster sauce",
+  "expected": {
+    "item": "oyster sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "22",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

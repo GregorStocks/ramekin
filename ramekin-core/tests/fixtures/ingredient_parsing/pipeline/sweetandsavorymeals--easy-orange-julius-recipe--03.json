@@ -1,0 +1,13 @@
+{
+  "raw": "12- ounces frozen orange juice concentrate",
+  "expected": {
+    "item": "- ounces frozen orange juice concentrate",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

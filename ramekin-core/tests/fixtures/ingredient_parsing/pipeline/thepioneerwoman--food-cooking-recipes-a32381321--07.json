@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. Marsala wine",
+  "expected": {
+    "item": "Marsala wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

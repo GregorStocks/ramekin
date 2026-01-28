@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp cashew nuts  ((optional))",
+  "expected": {
+    "item": "cashew nuts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "optional"
+  }
+}

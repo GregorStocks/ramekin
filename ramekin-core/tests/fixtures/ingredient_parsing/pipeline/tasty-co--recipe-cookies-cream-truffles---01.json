@@ -1,0 +1,13 @@
+{
+  "raw": "36 chocolate sandwich cookies",
+  "expected": {
+    "item": "chocolate sandwich cookies",
+    "measurements": [
+      {
+        "amount": "36",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

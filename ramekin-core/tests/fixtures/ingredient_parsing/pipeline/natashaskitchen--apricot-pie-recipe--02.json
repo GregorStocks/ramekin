@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 lbs fresh ripe apricots (pitted and sliced into 1/2\" thick slices)",
+  "expected": {
+    "item": "fresh ripe apricots",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "pitted and sliced into 1/2\" thick slices"
+  }
+}

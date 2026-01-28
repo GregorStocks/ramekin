@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams sweet onions ((~1/4 onion, minced))",
+  "expected": {
+    "item": "sweet onions",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1/4 onion, minced"
+  }
+}

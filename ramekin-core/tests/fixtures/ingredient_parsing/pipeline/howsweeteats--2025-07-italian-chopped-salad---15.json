@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces smoked provolone cheese, (diced)",
+  "expected": {
+    "item": "smoked provolone cheese,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "diced"
+  }
+}

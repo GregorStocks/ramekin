@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces mozzarella pearls (halved)",
+  "expected": {
+    "item": "mozzarella pearls",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "halved"
+  }
+}

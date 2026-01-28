@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups confectioners&amp;#039; sugar",
+  "expected": {
+    "item": "confectioners&#039; sugar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

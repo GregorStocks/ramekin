@@ -1,0 +1,13 @@
+{
+  "raw": "2 fluid ounces brandy",
+  "expected": {
+    "item": "brandy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

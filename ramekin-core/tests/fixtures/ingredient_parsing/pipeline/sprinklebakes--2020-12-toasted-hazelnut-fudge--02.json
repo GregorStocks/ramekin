@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz. 1 can, 397 grams sweetened condensed milk",
+  "expected": {
+    "item": "1 can, 397 grams sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

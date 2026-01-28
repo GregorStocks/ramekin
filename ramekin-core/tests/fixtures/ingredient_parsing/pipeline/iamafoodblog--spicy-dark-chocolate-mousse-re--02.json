@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces chocolate (I used 70% bittersweet), roughly chopped",
+  "expected": {
+    "item": "chocolate (I used 70% bittersweet)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

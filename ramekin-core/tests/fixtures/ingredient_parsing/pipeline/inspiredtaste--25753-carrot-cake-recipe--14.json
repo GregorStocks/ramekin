@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons cornstarch, optional",
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

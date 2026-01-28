@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 c. fresh or frozen&nbsp;corn",
+  "expected": {
+    "item": "fresh or frozen corn",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

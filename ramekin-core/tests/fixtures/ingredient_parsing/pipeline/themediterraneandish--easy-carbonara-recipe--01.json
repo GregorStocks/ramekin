@@ -1,0 +1,13 @@
+{
+  "raw": "2 lb Campari tomatoes, halved (you may use smaller vine-ripe or Roma tomatoes)",
+  "expected": {
+    "item": "Campari tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "halved (you may use smaller vine-ripe or Roma tomatoes)"
+  }
+}

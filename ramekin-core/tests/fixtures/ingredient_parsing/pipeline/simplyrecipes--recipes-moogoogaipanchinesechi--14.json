@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons grated fresh garlic",
+  "expected": {
+    "item": "grated fresh garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

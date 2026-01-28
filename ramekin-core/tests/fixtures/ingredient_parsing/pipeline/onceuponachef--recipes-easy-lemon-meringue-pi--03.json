@@ -1,0 +1,17 @@
+{
+  "raw": "¼ cup (4 tablespoons) unsalted butter, melted",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "melted"
+  }
+}

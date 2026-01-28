@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp arrowroot flour",
+  "expected": {
+    "item": "arrowroot flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "8 cups lightly packed baby spinach (about 5 ounces)",
+  "expected": {
+    "item": "lightly packed baby spinach",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

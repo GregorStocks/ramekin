@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce Orange Liqueur (, or to taste *see headnote)",
+  "expected": {
+    "item": "Orange Liqueur",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": ", or to taste *see headnote"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15-ounce) cans alfredo sauce",
+  "expected": {
+    "item": "alfredo sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

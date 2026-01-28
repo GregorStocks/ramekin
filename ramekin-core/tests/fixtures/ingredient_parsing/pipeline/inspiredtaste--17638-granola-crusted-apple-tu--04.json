@@ -1,0 +1,13 @@
+{
+  "raw": "8 slices deli-style turkey",
+  "expected": {
+    "item": "deli-style turkey",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

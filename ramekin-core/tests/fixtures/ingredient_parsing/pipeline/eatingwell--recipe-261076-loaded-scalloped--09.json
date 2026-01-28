@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup shredded extra-sharp Cheddar cheese, divided",
+  "expected": {
+    "item": "shredded extra-sharp Cheddar cheese",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

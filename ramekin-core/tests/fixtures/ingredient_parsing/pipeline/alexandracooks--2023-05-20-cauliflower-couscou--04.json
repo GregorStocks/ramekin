@@ -1,0 +1,17 @@
+{
+  "raw": "1 head of cauliflower or romanesco (about 1 to 1.25 lbs)",
+  "expected": {
+    "item": "cauliflower or romanesco",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      },
+      {
+        "amount": "1 to 1.25",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

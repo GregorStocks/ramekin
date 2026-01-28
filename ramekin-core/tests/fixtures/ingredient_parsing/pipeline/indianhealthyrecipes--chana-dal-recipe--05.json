@@ -1,0 +1,17 @@
+{
+  "raw": "¾ cup (100 grams)  onions  ((1 medium onion fine chopped))",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 medium onion fine chopped"
+  }
+}

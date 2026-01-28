@@ -1,0 +1,13 @@
+{
+  "raw": "1  chicken thigh",
+  "expected": {
+    "item": "chicken thigh",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

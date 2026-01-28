@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoon  turmeric",
+  "expected": {
+    "item": "turmeric",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

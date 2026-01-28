@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup powdered sugar plus about 2 tbsp for dusting",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus about 2 tbsp for dusting"
+  }
+}

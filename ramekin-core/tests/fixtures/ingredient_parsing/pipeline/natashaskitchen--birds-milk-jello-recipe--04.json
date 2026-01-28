@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz tub sour cream",
+  "expected": {
+    "item": "tub sour cream",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

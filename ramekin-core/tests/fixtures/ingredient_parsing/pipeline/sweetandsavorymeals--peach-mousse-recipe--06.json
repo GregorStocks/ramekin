@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups heavy whipping cream",
+  "expected": {
+    "item": "heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

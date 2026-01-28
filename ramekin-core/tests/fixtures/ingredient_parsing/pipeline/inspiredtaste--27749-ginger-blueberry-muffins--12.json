@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces fresh or frozen blueberries (about 1 cup)",
+  "expected": {
+    "item": "fresh or frozen blueberries",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

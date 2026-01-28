@@ -1,0 +1,17 @@
+{
+  "raw": "20 tablespoons (2½&nbsp;sticks) unsalted butter, softened but still cool",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "softened but still cool"
+  }
+}

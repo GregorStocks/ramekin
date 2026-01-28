@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp minced garlic",
+  "expected": {
+    "item": "minced garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

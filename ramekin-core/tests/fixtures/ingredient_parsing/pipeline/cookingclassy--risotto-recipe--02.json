@@ -1,0 +1,13 @@
+{
+  "raw": "4 Tbsp unsalted butter, (diced into 4 pieces)",
+  "expected": {
+    "item": "unsalted butter,",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "diced into 4 pieces"
+  }
+}

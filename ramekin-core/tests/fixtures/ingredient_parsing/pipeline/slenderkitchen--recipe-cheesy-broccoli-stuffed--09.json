@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup low fat cream cheese",
+  "expected": {
+    "item": "low fat cream cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

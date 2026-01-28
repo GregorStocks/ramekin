@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Dried Cranberries ((we used a dried orange-cranberry - delicious))",
+  "expected": {
+    "item": "Dried Cranberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "we used a dried orange-cranberry - delicious"
+  }
+}

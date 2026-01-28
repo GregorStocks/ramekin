@@ -1,0 +1,13 @@
+{
+  "raw": "1 envelope taco seasoning",
+  "expected": {
+    "item": "envelope taco seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

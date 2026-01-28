@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds pork tenderloin (cut into 1 1/2-inch pieces)",
+  "expected": {
+    "item": "pork tenderloin (cut into 1 1/2-inch pieces)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4&nbsp; ounces crumbled feta cheese",
+  "expected": {
+    "item": "crumbled feta cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

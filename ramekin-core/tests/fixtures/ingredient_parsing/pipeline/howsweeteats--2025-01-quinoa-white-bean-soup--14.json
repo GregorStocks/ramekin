@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup dry quinoa, (rinsed well)",
+  "expected": {
+    "item": "dry quinoa,",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed well"
+  }
+}

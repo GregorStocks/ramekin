@@ -1,0 +1,13 @@
+{
+  "raw": "26 1/2  ounces   pomi brand chopped tomatoes (nothing works like this!)",
+  "expected": {
+    "item": "pomi brand chopped tomatoes (nothing works like this!)",
+    "measurements": [
+      {
+        "amount": "26 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

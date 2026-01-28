@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup diced sweet onion",
+  "expected": {
+    "item": "diced sweet onion",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

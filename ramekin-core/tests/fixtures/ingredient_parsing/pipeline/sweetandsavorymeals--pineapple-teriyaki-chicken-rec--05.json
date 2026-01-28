@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoons Asian chili garlic sauce",
+  "expected": {
+    "item": "Asian chili garlic sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

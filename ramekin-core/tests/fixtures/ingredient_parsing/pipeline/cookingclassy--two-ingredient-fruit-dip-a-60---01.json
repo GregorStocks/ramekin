@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz strawberry cream cheese (, at room temperature)",
+  "expected": {
+    "item": "strawberry cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": ", at room temperature"
+  }
+}

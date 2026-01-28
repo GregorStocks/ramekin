@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces fresh strawberries (rinsed, hulled and halved (quartered if large))",
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "rinsed, hulled and halved (quartered if large"
+  }
+}

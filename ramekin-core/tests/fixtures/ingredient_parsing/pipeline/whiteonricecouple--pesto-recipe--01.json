@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup pine nuts ( or chopped nuts of choice (walnuts, pecans, cashews, pistachios, etc…))",
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or chopped nuts of choice (walnuts, pecans, cashews, pistachios, etc…"
+  }
+}

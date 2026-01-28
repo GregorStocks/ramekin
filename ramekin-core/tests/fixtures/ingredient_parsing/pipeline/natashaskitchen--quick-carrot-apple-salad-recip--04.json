@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup purple or sweet onion (finely diced)",
+  "expected": {
+    "item": "purple or sweet onion",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely diced"
+  }
+}

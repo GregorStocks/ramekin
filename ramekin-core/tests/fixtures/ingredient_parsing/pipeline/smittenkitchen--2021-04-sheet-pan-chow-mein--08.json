@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces asparagus, sugar snaps, or snow peas, trimmed and cut into 1- to 2-inch segments",
+  "expected": {
+    "item": "asparagus, sugar snaps, or snow peas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "trimmed and cut into 1- to 2-inch segments"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 lbs Beef Short Ribs (flanken cut) ((cut @ 1/2-3/4″ thick))",
+  "expected": {
+    "item": "Beef Short Ribs (flanken cut) (cut @ 1/2-3/4″ thick)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

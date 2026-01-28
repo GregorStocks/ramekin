@@ -1,0 +1,13 @@
+{
+  "raw": "40 grams sliced almonds",
+  "expected": {
+    "item": "sliced almonds",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

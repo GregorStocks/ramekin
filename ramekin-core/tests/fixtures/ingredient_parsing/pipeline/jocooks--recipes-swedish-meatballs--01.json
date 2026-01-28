@@ -1,0 +1,13 @@
+{
+  "raw": "2 slices bread (cut up into cubes)",
+  "expected": {
+    "item": "bread (cut up into cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

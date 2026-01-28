@@ -1,0 +1,13 @@
+{
+  "raw": "12  corn tortillas",
+  "expected": {
+    "item": "corn tortillas",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

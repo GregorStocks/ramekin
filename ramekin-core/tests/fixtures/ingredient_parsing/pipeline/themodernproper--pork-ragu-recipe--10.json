@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups dry white wine, such as sauvignon blanc",
+  "expected": {
+    "item": "dry white wine, such as sauvignon blanc",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

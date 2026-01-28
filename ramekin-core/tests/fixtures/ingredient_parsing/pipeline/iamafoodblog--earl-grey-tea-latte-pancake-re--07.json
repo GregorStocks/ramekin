@@ -1,0 +1,13 @@
+{
+  "raw": "1 Earl grey tea bag",
+  "expected": {
+    "item": "Earl grey tea bag",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

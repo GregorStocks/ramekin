@@ -1,0 +1,13 @@
+{
+  "raw": "5 teaspoons brewed coffee",
+  "expected": {
+    "item": "brewed coffee",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

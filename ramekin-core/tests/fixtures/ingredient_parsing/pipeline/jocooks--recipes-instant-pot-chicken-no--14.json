@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounce egg noodles (uncooked, (about 2 cups))",
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounce"
+      }
+    ],
+    "note": "uncooked, (about 2 cups"
+  }
+}

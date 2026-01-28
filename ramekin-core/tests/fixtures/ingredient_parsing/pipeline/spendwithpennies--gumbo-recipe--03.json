@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound andouille sausage (or smoked sausage, chopped)",
+  "expected": {
+    "item": "andouille sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "or smoked sausage, chopped"
+  }
+}

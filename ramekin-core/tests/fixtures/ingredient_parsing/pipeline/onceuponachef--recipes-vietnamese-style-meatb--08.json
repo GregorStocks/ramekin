@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons  chopped fresh cilantro leaves, plus more for serving",
+  "expected": {
+    "item": "chopped fresh cilantro leaves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

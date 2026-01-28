@@ -1,0 +1,13 @@
+{
+  "raw": "2  large egg whites",
+  "expected": {
+    "item": "egg whites",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

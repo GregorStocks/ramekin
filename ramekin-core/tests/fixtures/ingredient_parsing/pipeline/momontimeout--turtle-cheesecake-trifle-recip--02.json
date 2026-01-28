@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz reduced-fat cream cheese (3 package - softened)",
+  "expected": {
+    "item": "reduced-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "3 package - softened"
+  }
+}

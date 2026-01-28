@@ -1,0 +1,13 @@
+{
+  "raw": "1  bunch fresh thyme leaves (about 8-10 stems with leaves, whole)",
+  "expected": {
+    "item": "fresh thyme leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "about 8-10 stems with leaves, whole"
+  }
+}

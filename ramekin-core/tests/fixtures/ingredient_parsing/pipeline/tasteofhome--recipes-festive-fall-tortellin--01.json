@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (9 ounces) refrigerated cheese tortellini",
+  "expected": {
+    "item": "refrigerated cheese tortellini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "9",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

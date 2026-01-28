@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup curry paste",
+  "expected": {
+    "item": "curry paste",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds of daikon radishes (about 2 large daikon), peeled",
+  "expected": {
+    "item": "daikon radishes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled"
+  }
+}

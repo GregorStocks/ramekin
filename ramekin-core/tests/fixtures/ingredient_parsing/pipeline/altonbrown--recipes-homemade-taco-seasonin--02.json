@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon whole cumin seeds, freshly toasted and ground",
+  "expected": {
+    "item": "whole cumin seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "freshly toasted and ground"
+  }
+}
