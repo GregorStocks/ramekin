@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 a red chili pepper, thinly sliced",
+  "expected": {
+    "item": "a red chili pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

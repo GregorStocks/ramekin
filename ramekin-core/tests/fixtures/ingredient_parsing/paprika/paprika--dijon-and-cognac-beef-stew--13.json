@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound mushrooms, stemmed, cleaned and quartered",
+  "expected": {
+    "item": "mushrooms, stemmed",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "cleaned and quartered"
+  }
+}

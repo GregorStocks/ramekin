@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces burrata cheese, at room temperature",
+  "expected": {
+    "item": "burrata cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

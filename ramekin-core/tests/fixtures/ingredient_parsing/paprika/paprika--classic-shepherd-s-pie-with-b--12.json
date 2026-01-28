@@ -1,0 +1,21 @@
+{
+  "raw": "2 ribs celery (about 4 ounces; 110 g), diced",
+  "expected": {
+    "item": "ribs celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
+  }
+}

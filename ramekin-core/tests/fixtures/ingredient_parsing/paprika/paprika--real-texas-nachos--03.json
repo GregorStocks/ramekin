@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces Longhorn cheese, grated (see note)",
+  "expected": {
+    "item": "Longhorn cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "grated (see note)"
+  }
+}

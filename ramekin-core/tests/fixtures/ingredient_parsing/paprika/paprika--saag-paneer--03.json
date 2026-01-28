@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces paneer, cut into 1-by-1/2-inch pieces",
+  "expected": {
+    "item": "paneer, cut into 1-by-1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

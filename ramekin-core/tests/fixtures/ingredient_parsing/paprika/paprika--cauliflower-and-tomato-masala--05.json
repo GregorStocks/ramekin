@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon finely grated garlic (about 2 cloves)",
+  "expected": {
+    "item": "finely grated garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "2",
+        "unit": "cloves"
+      }
+    ],
+    "note": null
+  }
+}

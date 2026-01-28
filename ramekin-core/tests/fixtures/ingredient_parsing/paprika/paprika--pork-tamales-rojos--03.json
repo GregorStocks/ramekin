@@ -1,0 +1,13 @@
+{
+  "raw": "5 large ancho chiles, stems and seeds removed",
+  "expected": {
+    "item": "ancho chiles, stems and seeds removed",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

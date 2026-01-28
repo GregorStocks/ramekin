@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium onion (about 10 ounces), chopped",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

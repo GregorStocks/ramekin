@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (30 grams) panko-style breadcrumbs",
+  "expected": {
+    "item": "panko-style breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (28g) unsalted butter, as needed",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "as needed"
+  }
+}

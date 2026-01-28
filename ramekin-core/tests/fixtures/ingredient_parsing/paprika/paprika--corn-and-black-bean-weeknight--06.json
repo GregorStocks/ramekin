@@ -1,0 +1,17 @@
+{
+  "raw": "2 generous cups (about 8 ounces) coarsely grated monterey jack cheese",
+  "expected": {
+    "item": "generous cups coarsely grated monterey jack cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

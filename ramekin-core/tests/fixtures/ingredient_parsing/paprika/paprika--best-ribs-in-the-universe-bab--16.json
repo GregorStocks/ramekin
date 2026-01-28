@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tablespoons + 2 teaspoons ground cumin",
+  "expected": {
+    "item": "+ 2 teaspoons ground cumin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

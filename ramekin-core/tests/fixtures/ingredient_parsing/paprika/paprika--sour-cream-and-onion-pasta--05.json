@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 onions, sliced thin (1½ cups)",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "sliced thin"
+  }
+}

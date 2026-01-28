@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces (about 2 cups) self-rising flour",
+  "expected": {
+    "item": "self-rising flour",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

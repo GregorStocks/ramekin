@@ -1,0 +1,17 @@
+{
+  "raw": "9 tablespoons (150ml) extra-virgin olive oil, divided",
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons extra-virgin olive oil, plus more for serving",
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

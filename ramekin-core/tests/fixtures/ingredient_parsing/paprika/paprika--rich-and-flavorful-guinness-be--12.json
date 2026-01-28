@@ -1,0 +1,21 @@
+{
+  "raw": "2 (15-ounce) cans Guinness Draught beer (900 ml)",
+  "expected": {
+    "item": "Guinness Draught beer",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      },
+      {
+        "amount": "900",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455 grams) fresh strawberries, halved or sliced",
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": "halved or sliced"
+  }
+}

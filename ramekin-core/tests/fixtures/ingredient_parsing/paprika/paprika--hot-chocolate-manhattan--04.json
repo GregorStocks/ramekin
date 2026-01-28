@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ ounces whiskey, such as Wild Turkey 101 bourbon",
+  "expected": {
+    "item": "whiskey, such as Wild Turkey 101 bourbon",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

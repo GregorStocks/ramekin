@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (680g) ground beef, 93% lean",
+  "expected": {
+    "item": "ground beef, 93% lean",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

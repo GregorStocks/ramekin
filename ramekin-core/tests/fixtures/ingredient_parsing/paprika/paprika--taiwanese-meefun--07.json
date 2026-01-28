@@ -1,0 +1,17 @@
+{
+  "raw": "1 large carrot, cut into thin matchsticks (about 2 1/2 cups)",
+  "expected": {
+    "item": "carrot, cut into thin matchsticks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

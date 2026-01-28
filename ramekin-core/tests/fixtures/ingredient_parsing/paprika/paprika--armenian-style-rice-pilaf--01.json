@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (185 g) long-grain white rice",
+  "expected": {
+    "item": "long-grain white rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "185",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

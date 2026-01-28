@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound zucchini or other summer squash (about 2 small/medium), diced",
+  "expected": {
+    "item": "zucchini or other summer squash",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

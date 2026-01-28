@@ -1,0 +1,21 @@
+{
+  "raw": "6 to 8 scallions (about 2.25 ounces or 65 grams) scallions thinly sliced",
+  "expected": {
+    "item": "scallions scallions thinly sliced",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": null
+      },
+      {
+        "amount": "2.25",
+        "unit": "ounces"
+      },
+      {
+        "amount": "65",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

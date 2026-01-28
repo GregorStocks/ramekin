@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ pounds 80 percent lean ground beef",
+  "expected": {
+    "item": "80 percent lean ground beef",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

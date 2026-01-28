@@ -1,0 +1,17 @@
+{
+  "raw": "2 pints cherry or grape tomatoes (about 1 1/4 pounds)",
+  "expected": {
+    "item": "cherry or grape tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pints"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

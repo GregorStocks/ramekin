@@ -1,0 +1,13 @@
+{
+  "raw": "1lb dried pasta, any shape",
+  "expected": {
+    "item": "dried pasta, any shape",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

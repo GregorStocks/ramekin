@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces (113 g) Spanish dry-cured ham, such as jamón serrano, minced (see notes)",
+  "expected": {
+    "item": "Spanish dry-cured ham, such as jamón serrano",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "minced (see notes)"
+  }
+}

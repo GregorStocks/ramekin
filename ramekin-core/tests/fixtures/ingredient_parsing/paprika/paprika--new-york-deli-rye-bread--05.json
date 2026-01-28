@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/2 tablespoons (0.6 ounces, 18.7 grams) sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "0.6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "18.7",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

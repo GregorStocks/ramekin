@@ -1,0 +1,13 @@
+{
+  "raw": "Handful of lettuce leaves, arugula or watercress",
+  "expected": {
+    "item": "lettuce leaves, arugula or watercress",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (2 ounces) finely grated parmesan",
+  "expected": {
+    "item": "finely grated parmesan",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

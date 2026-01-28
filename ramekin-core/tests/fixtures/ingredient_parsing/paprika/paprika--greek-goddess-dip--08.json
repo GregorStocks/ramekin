@@ -1,0 +1,13 @@
+{
+  "raw": "Pinch kosher salt, more to taste",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "pinch"
+      }
+    ],
+    "note": "more to taste"
+  }
+}

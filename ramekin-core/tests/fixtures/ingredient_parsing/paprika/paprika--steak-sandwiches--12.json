@@ -1,0 +1,17 @@
+{
+  "raw": "2 large or 4 medium (about 6″) focaccia or ciabatta buns, split and toasted, if you wish",
+  "expected": {
+    "item": "or 4 medium focaccia or ciabatta buns, split and toasted, if you wish",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

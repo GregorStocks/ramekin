@@ -1,0 +1,17 @@
+{
+  "raw": "2 cans (15.5 ounces each) black, red or kidney beans (or a mixture of any two), drained and rinsed",
+  "expected": {
+    "item": "black, red or kidney beans (or a mixture of any two)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15.5",
+        "unit": "ounces each"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

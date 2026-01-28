@@ -1,0 +1,17 @@
+{
+  "raw": "4 (10-inch) flour tortillas",
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

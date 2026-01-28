@@ -1,0 +1,13 @@
+{
+  "raw": "12 sandwich rolls",
+  "expected": {
+    "item": "sandwich rolls",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

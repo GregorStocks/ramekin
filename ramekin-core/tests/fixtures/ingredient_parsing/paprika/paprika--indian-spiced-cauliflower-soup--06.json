@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium potato (about 6 ounces), peeled and chopped",
+  "expected": {
+    "item": "potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "peeled and chopped"
+  }
+}

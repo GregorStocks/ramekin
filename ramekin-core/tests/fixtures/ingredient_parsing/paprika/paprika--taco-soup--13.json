@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup frozen corn (5 ounces; 140g)",
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

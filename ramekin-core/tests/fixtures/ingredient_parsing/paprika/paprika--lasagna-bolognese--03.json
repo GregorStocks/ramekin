@@ -1,0 +1,13 @@
+{
+  "raw": "1 large or 2 slim carrots, coarsely chopped",
+  "expected": {
+    "item": "or 2 slim carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

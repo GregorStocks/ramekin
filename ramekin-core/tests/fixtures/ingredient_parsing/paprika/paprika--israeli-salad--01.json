@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium roma tomatoes, cubed",
+  "expected": {
+    "item": "roma tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "cubed"
+  }
+}

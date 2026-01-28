@@ -1,0 +1,17 @@
+{
+  "raw": "4 slices ham (4 ounces)",
+  "expected": {
+    "item": "ham",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 to 6 cups (950ml to 1.4l) chicken broth",
+  "expected": {
+    "item": "chicken broth",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "cups"
+      },
+      {
+        "amount": "950",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

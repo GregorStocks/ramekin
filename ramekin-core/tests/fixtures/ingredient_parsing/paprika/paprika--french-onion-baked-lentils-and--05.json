@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons dry sherry, vermouth, or white wine (optional)",
+  "expected": {
+    "item": "dry sherry, vermouth, or white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

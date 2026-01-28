@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound ball of mozzarella, sliced (this is a great place to use the really fresh stuff, if you can get it)",
+  "expected": {
+    "item": "ball of mozzarella, sliced",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "this is a great place to use the really fresh stuff, if you can get it"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (8 ounces) coarsely grated gruyere cheese",
+  "expected": {
+    "item": "coarsely grated gruyere cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

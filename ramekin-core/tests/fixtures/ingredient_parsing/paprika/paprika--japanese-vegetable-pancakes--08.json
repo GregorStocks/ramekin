@@ -1,0 +1,13 @@
+{
+  "raw": "6 large eggs, lightly beaten",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": "lightly beaten"
+  }
+}

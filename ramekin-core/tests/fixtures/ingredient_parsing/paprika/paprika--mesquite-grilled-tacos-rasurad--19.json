@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons coarse sea salt, divided",
+  "expected": {
+    "item": "coarse sea salt",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

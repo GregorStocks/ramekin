@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon capers, roughly chopped",
+  "expected": {
+    "item": "capers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

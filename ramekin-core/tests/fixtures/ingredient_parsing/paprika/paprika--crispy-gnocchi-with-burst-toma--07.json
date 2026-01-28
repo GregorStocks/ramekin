@@ -1,0 +1,13 @@
+{
+  "raw": "2 pints small tomatoes, such as cherry, grape or Sungold",
+  "expected": {
+    "item": "small tomatoes, such as cherry, grape or Sungold",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pints"
+      }
+    ],
+    "note": null
+  }
+}

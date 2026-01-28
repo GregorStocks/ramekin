@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (5 ounces/142 grams) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

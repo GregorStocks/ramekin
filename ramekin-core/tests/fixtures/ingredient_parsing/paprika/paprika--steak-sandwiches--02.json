@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons smooth Dijon mustard",
+  "expected": {
+    "item": "smooth Dijon mustard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

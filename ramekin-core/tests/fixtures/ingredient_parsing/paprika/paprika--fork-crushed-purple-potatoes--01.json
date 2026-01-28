@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound Purple Majesty or other purple potatoes, washed",
+  "expected": {
+    "item": "Purple Majesty or other purple potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "washed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds sweet potato, scrubbed, unpeeled, in 3/4- to 1-inch coins",
+  "expected": {
+    "item": "sweet potato, scrubbed, unpeeled, in 3/4- to 1-inch coins",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

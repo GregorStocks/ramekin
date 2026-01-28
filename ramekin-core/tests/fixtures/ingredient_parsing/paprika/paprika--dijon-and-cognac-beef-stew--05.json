@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds beef chuck, in 1-inch cubes",
+  "expected": {
+    "item": "beef chuck, in 1-inch cubes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

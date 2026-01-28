@@ -1,0 +1,17 @@
+{
+  "raw": "12 (6-inch) corn tortillas (see note)",
+  "expected": {
+    "item": "corn tortillas (see note)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

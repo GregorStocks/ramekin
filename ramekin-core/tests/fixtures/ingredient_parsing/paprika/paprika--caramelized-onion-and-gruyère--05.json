@@ -1,0 +1,17 @@
+{
+  "raw": "2 3/4 cups (345 grams) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "345",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

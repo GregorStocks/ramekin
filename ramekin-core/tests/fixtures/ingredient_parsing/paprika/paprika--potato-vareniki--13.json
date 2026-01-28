@@ -1,0 +1,17 @@
+{
+  "raw": "5 tablespoons (55 grams) fine semolina flour",
+  "expected": {
+    "item": "fine semolina flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "55",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

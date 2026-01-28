@@ -1,0 +1,17 @@
+{
+  "raw": "3 whole boneless chicken breasts with skin (about 2 1/2 pounds), halved (see Note)",
+  "expected": {
+    "item": "whole boneless chicken breasts with skin",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "halved (see Note)"
+  }
+}

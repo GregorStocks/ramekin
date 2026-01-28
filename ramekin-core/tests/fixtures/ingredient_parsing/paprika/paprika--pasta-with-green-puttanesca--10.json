@@ -1,0 +1,17 @@
+{
+  "raw": "12 cups baby spinach leaves (11 ounces)",
+  "expected": {
+    "item": "baby spinach leaves",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "cups"
+      },
+      {
+        "amount": "11",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

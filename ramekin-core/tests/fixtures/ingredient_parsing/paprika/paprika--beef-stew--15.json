@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ cups frozen pearl onions, thawed",
+  "expected": {
+    "item": "frozen pearl onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "thawed"
+  }
+}

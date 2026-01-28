@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/2 cups (8 ounces or 225 grams) cherry tomatoes, chopped small, plus more to taste",
+  "expected": {
+    "item": "cherry tomatoes, chopped small",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": "plus more to taste"
+  }
+}

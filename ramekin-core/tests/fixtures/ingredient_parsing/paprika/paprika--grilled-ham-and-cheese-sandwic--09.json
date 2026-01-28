@@ -1,0 +1,17 @@
+{
+  "raw": "4 slices deli American cheese (4 ounces)",
+  "expected": {
+    "item": "deli American cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

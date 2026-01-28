@@ -1,0 +1,13 @@
+{
+  "raw": "¾ ounce fresh squeezed lemon juice",
+  "expected": {
+    "item": "fresh squeezed lemon juice",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup (approximately 150 ml) whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "approximately 150 ml"
+  }
+}

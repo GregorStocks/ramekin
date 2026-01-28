@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon crushed red pepper flakes, or more to taste",
+  "expected": {
+    "item": "crushed red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or more to taste"
+  }
+}

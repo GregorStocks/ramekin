@@ -1,0 +1,17 @@
+{
+  "raw": "1 stick (8 tablespoons) salted butter",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stick"
+      },
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

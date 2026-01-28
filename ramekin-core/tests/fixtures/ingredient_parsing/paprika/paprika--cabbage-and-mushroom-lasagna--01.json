@@ -1,0 +1,17 @@
+{
+  "raw": "9 tablespoons (130 grams) unsalted butter, divided",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "130",
+        "unit": "grams"
+      }
+    ],
+    "note": "divided"
+  }
+}

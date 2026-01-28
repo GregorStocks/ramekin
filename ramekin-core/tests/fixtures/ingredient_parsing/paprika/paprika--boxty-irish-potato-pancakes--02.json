@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 teaspoons Diamond Crystal kosher salt, divided; for table salt use half as much by volume",
+  "expected": {
+    "item": "Diamond Crystal kosher salt",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "divided; for table salt use half as much by volume"
+  }
+}

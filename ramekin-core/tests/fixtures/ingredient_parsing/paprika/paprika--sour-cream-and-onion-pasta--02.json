@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 teaspoons table salt, divided, plus salt for cooking pasta",
+  "expected": {
+    "item": "table salt, divided",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "plus salt for cooking pasta"
+  }
+}

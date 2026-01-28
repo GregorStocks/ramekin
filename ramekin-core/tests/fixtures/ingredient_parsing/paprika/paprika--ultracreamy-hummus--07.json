@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon ground cumin, plus extra for garnish",
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus extra for garnish"
+  }
+}

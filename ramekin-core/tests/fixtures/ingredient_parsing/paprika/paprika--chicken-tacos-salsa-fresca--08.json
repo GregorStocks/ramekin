@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 large white onion, peeled and minced",
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and minced"
+  }
+}

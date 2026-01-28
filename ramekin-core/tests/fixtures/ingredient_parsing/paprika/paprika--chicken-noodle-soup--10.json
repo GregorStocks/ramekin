@@ -1,0 +1,17 @@
+{
+  "raw": "1 large celery stalk, diced (1/3-inch)",
+  "expected": {
+    "item": "celery stalk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

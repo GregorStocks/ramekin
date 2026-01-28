@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces cotija cheese, cut into 2 pieces",
+  "expected": {
+    "item": "cotija cheese, cut into 2 pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

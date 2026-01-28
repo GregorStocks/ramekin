@@ -1,0 +1,13 @@
+{
+  "raw": "60g granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

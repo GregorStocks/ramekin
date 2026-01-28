@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup marinated artichokes, quartered",
+  "expected": {
+    "item": "marinated artichokes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "quartered"
+  }
+}

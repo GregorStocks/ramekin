@@ -1,0 +1,13 @@
+{
+  "raw": "3 pounds ground beef, ideally coarse-ground",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": "ideally coarse-ground"
+  }
+}

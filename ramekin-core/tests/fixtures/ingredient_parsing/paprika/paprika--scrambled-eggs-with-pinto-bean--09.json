@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce cotija cheese, crumbled (¼ cup)",
+  "expected": {
+    "item": "cotija cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

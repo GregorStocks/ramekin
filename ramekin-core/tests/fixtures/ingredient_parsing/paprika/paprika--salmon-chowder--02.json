@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons water (30ml)",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "⅔ cup (130 grams) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "130",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15ml) fresh lime juice from 1 lime",
+  "expected": {
+    "item": "fresh lime juice from 1 lime",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

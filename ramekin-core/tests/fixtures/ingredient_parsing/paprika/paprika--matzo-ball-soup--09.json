@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon Kosher salt",
+  "expected": {
+    "item": "Kosher salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

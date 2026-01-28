@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup finely chopped celery (5 ounces; 140g; from 3 large ribs)",
+  "expected": {
+    "item": "finely chopped celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "140",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

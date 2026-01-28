@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon ground coriander",
+  "expected": {
+    "item": "ground coriander",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

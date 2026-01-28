@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup sour cream (4 ounces; 113 g)",
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

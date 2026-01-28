@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (150 grams) milk, any kind",
+  "expected": {
+    "item": "milk, any kind",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

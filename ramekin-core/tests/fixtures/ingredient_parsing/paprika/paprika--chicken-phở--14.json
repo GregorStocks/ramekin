@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound mung bean sprouts",
+  "expected": {
+    "item": "mung bean sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

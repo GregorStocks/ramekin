@@ -1,0 +1,13 @@
+{
+  "raw": "¼ ounce maple syrup",
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

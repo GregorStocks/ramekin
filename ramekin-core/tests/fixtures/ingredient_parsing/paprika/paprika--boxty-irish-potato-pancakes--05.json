@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds (907 g) russet potatoes (see notes), divided",
+  "expected": {
+    "item": "russet potatoes (see notes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
+  }
+}

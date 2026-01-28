@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 cups tomato paste (from 2 6-ounce cans)",
+  "expected": {
+    "item": "tomato paste (from 2 6-ounce cans)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

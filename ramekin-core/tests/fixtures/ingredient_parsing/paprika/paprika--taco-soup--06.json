@@ -1,0 +1,13 @@
+{
+  "raw": "Two 14.5-ounce (411g) cans fire-roasted diced tomatoes, undrained, divided",
+  "expected": {
+    "item": "Two 14.5-ounce cans fire-roasted diced tomatoes, undrained",
+    "measurements": [
+      {
+        "amount": "411",
+        "unit": "g"
+      }
+    ],
+    "note": "divided"
+  }
+}

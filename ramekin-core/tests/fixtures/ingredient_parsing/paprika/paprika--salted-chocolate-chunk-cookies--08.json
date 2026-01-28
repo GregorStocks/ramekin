@@ -1,0 +1,13 @@
+{
+  "raw": "Heaped 1/4 teaspoon (or, technically, 1/4 + 1/8 teaspoon) fine sea or table salt",
+  "expected": {
+    "item": "Heaped 1/4 teaspoon fine sea or table salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 3/4 cups tomato puree",
+  "expected": {
+    "item": "tomato puree",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

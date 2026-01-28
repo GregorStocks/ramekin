@@ -1,0 +1,21 @@
+{
+  "raw": "12 ounces (340 grams) grated carrots, or 2.75 cups, gently packed; start with more (about 15 ounces) to account for trimming and peeling",
+  "expected": {
+    "item": "grated carrots, or 2.75 cups",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "340",
+        "unit": "grams"
+      },
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "gently packed; start with more to account for trimming and peeling"
+  }
+}

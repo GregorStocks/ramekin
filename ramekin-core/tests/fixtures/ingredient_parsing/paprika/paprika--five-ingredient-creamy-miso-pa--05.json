@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces Parmesan, finely grated (1 packed cup)",
+  "expected": {
+    "item": "Parmesan, finely grated",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "1 packed cup"
+  }
+}

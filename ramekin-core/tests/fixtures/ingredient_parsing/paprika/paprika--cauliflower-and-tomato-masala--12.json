@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 cups tomato puree from a 28-ounce can",
+  "expected": {
+    "item": "tomato puree from a 28-ounce can",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

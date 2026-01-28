@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
+  "expected": {
+    "item": "mashing potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled and cut into quarters"
+  }
+}

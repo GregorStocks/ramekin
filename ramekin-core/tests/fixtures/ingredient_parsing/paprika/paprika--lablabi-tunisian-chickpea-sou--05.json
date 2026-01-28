@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups dried chickpeas, soaked overnight and drained",
+  "expected": {
+    "item": "dried chickpeas",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "soaked overnight and drained"
+  }
+}

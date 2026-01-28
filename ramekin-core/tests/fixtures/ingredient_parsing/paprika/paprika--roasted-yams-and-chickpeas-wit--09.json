@@ -1,0 +1,13 @@
+{
+  "raw": "4 tablespoons fresh lime juice, from approximately 2 limes",
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "from approximately 2 limes"
+  }
+}

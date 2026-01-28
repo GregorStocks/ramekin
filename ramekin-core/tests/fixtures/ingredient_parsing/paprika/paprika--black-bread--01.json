@@ -1,0 +1,17 @@
+{
+  "raw": "2 packages (1 1/2 tablespoons) active dry yeast",
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

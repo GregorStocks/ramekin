@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup picked cilantro leaves",
+  "expected": {
+    "item": "picked cilantro leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

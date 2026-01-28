@@ -1,0 +1,17 @@
+{
+  "raw": "5 medium garlic cloves, 3 peeled and smashed and 2 minced or pressed through garlic press (about 2 teaspoons)",
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "3 peeled and smashed and 2 minced or pressed through garlic press"
+  }
+}

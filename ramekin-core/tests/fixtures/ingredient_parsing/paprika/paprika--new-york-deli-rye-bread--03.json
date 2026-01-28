@@ -1,0 +1,21 @@
+{
+  "raw": "3/4 cup (3.3 ounces, 95 grams) rye flour",
+  "expected": {
+    "item": "rye flour",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "3.3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "95",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

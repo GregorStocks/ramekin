@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

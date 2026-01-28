@@ -1,0 +1,13 @@
+{
+  "raw": "Small pinch of cayenne pepper",
+  "expected": {
+    "item": "pinch of cayenne pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "2 1/2 pounds (about 5 small-medium or 3 large) zucchini or other summer squash, trimmed",
+  "expected": {
+    "item": "zucchini or other summer squash",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

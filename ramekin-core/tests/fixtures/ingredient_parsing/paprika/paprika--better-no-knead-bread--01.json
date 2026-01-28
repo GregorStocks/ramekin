@@ -1,0 +1,21 @@
+{
+  "raw": "300 grams (10.5 ounces, about 2 cups) bread flour or all-purpose flour",
+  "expected": {
+    "item": "bread flour or all-purpose flour",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      },
+      {
+        "amount": "10.5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

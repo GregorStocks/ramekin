@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon chopped fresh herbs — parsley, cilantro, chives or a mix",
+  "expected": {
+    "item": "chopped fresh herbs — parsley, cilantro, chives or a mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

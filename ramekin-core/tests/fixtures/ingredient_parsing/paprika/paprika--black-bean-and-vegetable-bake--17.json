@@ -1,0 +1,17 @@
+{
+  "raw": "6 to 8 ounces (1 1/2 to 2 cups) coarsely grated monterey jack or pepper jack cheese",
+  "expected": {
+    "item": "coarsely grated monterey jack or pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

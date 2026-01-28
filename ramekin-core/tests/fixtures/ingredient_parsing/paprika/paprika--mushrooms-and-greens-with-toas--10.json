@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces of a good melting cheese, thickly sliced (suggestions above)",
+  "expected": {
+    "item": "a good melting cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thickly sliced (suggestions above)"
+  }
+}

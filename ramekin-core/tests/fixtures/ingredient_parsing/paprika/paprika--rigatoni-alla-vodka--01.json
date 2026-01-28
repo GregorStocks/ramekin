@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried rigatoni",
+  "expected": {
+    "item": "dried rigatoni",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

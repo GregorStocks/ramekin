@@ -1,0 +1,13 @@
+{
+  "raw": "One 2-pound (907 g) head green cabbage, any bruised outermost leaves removed",
+  "expected": {
+    "item": "One 2-pound head green cabbage, any bruised outermost leaves removed",
+    "measurements": [
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

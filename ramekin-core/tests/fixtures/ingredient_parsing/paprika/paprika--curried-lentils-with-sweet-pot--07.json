@@ -1,0 +1,13 @@
+{
+  "raw": "1 jalapeño pepper, seeded if desired, then minced",
+  "expected": {
+    "item": "jalapeño pepper, seeded if desired",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "then minced"
+  }
+}

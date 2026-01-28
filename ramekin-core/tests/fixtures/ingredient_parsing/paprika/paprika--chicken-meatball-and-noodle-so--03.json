@@ -1,0 +1,17 @@
+{
+  "raw": "3 tablespoons (45 ml) water or milk",
+  "expected": {
+    "item": "water or milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (454g) pork breakfast sausage, casings removed",
+  "expected": {
+    "item": "pork breakfast sausage, casings removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

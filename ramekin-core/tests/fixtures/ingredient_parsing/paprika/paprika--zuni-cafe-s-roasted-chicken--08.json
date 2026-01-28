@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons Champagne vinegar or white wine vinegar",
+  "expected": {
+    "item": "Champagne vinegar or white wine vinegar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

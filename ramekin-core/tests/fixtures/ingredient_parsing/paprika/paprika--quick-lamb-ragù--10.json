@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces cooked pasta, noodles or tubes, for serving",
+  "expected": {
+    "item": "cooked pasta, noodles or tubes",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "for serving"
+  }
+}

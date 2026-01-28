@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/2 tablespoons all-purpose flour (1/2 ounce; about 12 g)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "12",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

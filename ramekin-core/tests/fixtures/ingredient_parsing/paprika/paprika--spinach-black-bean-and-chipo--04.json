@@ -1,0 +1,17 @@
+{
+  "raw": "3 ounces (85g) drained canned black beans",
+  "expected": {
+    "item": "drained canned black beans",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

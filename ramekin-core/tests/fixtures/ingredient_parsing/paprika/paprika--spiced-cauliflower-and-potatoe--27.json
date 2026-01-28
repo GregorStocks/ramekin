@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium onion, peeled and cut into fine slices",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and cut into fine slices"
+  }
+}

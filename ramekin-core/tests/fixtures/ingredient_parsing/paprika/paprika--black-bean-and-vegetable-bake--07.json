@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 teaspoons ground chili powder (to taste)",
+  "expected": {
+    "item": "ground chili powder",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "to taste"
+  }
+}

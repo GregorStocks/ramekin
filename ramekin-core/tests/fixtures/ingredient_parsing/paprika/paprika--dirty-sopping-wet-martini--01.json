@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 ounces (45 ml) dry gin",
+  "expected": {
+    "item": "dry gin",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

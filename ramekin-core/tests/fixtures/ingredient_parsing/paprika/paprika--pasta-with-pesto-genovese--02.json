@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (55 grams) aged parmesan or pecorino romano",
+  "expected": {
+    "item": "aged parmesan or pecorino romano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "55",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

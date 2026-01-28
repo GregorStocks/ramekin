@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon pepper, divided",
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "divided"
+  }
+}

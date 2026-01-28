@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15 grams) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

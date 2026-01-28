@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tablespoon olive oil to brush bread (optional)",
+  "expected": {
+    "item": "olive oil to brush bread",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

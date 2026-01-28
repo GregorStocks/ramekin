@@ -1,0 +1,13 @@
+{
+  "raw": "1 serrano chile, thinly sliced, optional",
+  "expected": {
+    "item": "serrano chile, thinly sliced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

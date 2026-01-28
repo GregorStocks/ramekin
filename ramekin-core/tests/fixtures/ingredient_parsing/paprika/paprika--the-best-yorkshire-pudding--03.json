@@ -1,0 +1,21 @@
+{
+  "raw": "175 g whole milk (6 ounces; 3/4 cup) (see notes)",
+  "expected": {
+    "item": "whole milk (see notes)",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "g"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

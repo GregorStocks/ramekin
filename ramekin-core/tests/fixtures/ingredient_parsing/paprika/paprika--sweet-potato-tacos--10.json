@@ -1,0 +1,21 @@
+{
+  "raw": "12 small (6-inch) or 6 medium (8 to 9-inch) flour tortillas",
+  "expected": {
+    "item": "or 6 medium flour tortillas",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "small"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

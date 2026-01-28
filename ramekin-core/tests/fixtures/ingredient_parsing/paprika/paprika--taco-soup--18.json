@@ -1,0 +1,21 @@
+{
+  "raw": "1/4 cup chopped fresh cilantro (1 ounce; 29g)",
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "29",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

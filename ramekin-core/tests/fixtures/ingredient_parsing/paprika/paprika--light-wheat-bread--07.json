@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (1 oz.) shortening or unsalted butter, at room temperature",
+  "expected": {
+    "item": "shortening or unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

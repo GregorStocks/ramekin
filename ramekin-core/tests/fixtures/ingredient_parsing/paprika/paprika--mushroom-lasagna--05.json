@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups (950 ml) whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "950",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

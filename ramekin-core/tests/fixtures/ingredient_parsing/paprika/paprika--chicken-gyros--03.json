@@ -1,0 +1,13 @@
+{
+  "raw": "1 lemon, zest and juice",
+  "expected": {
+    "item": "lemon, zest and juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

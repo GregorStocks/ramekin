@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon chili powder or cayenne, or adjusted to taste1/2 teaspoon ground turmeric",
+  "expected": {
+    "item": "chili powder or cayenne",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or adjusted to taste1/2 teaspoon ground turmeric"
+  }
+}

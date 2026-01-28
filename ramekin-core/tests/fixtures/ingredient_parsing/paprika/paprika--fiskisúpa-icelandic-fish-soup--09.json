@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound Yukon gold potatoes, peeled and cut into 1/2-inch pieces",
+  "expected": {
+    "item": "Yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch pieces"
+  }
+}

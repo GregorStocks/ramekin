@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces (170 g) mixed mushrooms, such as oyster, shiitake, and/or cremini, roughly chopped",
+  "expected": {
+    "item": "mixed mushrooms, such as oyster, shiitake, and/or cremini",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

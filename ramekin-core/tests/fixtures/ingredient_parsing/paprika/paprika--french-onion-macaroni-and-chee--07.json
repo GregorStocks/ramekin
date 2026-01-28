@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound cavatappi or elbow pasta",
+  "expected": {
+    "item": "cavatappi or elbow pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

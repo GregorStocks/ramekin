@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 to 1 avocado, thinly sliced (to taste)",
+  "expected": {
+    "item": "avocado, thinly sliced",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": null
+      }
+    ],
+    "note": "to taste"
+  }
+}

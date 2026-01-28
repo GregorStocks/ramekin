@@ -1,0 +1,21 @@
+{
+  "raw": "210 grams (7.5 ounces, about 1 cup minus 1.5 tablespoons) water",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "210",
+        "unit": "grams"
+      },
+      {
+        "amount": "7.5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

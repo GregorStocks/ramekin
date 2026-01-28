@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons cumin seeds, toasted and ground",
+  "expected": {
+    "item": "cumin seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "toasted and ground"
+  }
+}

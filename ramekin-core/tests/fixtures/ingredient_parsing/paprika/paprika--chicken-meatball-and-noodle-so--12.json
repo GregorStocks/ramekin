@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces (170 grams) soup noodles of your choice (I choose these)",
+  "expected": {
+    "item": "soup noodles of your choice (I choose these)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

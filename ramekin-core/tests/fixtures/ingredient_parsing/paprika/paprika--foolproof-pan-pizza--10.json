@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces grated Parmesan or Pecorino Romano cheese (optional)",
+  "expected": {
+    "item": "grated Parmesan or Pecorino Romano cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "optional"
+  }
+}

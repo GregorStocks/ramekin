@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225 grams) dried pasta (see Note), broken into pieces if large/long",
+  "expected": {
+    "item": "dried pasta (see Note), broken into pieces if large/long",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

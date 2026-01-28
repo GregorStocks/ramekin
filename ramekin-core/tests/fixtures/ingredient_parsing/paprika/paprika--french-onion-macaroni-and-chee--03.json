@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds yellow or Vidalia onions, peeled, halved and thinly sliced",
+  "expected": {
+    "item": "yellow or Vidalia onions, peeled",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "halved and thinly sliced"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces sharp cheddar cheese, shredded (1 cup), divided",
+  "expected": {
+    "item": "sharp cheddar cheese, shredded",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

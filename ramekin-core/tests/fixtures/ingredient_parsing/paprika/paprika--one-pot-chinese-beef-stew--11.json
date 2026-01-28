@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15 ml) Chinese dark soy sauce",
+  "expected": {
+    "item": "Chinese dark soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

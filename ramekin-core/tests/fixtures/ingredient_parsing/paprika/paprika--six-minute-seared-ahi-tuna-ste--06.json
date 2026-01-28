@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon black pepper to taste",
+  "expected": {
+    "item": "black pepper to taste",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

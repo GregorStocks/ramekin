@@ -1,0 +1,13 @@
+{
+  "raw": "5 pounds sweet potatoes, peeled and sliced thin",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled and sliced thin"
+  }
+}

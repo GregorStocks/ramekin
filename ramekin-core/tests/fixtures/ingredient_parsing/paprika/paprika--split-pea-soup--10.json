@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 sprigs of thyme, leaves still on (optional)",
+  "expected": {
+    "item": "thyme, leaves still on",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "sprigs"
+      }
+    ],
+    "note": "optional"
+  }
+}

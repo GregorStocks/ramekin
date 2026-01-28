@@ -1,0 +1,21 @@
+{
+  "raw": "8 1/2 ounces (240g) Chinese broccoli, sliced on a bias into 1-inch pieces (4 cups)",
+  "expected": {
+    "item": "Chinese broccoli",
+    "measurements": [
+      {
+        "amount": "8 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "240",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "sliced on a bias into 1-inch pieces"
+  }
+}

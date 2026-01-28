@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (237 ml) milk, plus more if needed",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "237",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus more if needed"
+  }
+}

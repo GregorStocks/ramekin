@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups medium-diced yellow onion (2 onions)",
+  "expected": {
+    "item": "medium-diced yellow onion",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

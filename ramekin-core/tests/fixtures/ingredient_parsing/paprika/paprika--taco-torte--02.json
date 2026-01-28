@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon olive, vegetable, or canola oil",
+  "expected": {
+    "item": "olive, vegetable, or canola oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

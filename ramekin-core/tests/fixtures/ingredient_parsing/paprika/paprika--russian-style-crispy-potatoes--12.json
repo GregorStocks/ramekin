@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455 grams) cremini or other mushroom, thinly sliced",
+  "expected": {
+    "item": "cremini or other mushroom",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

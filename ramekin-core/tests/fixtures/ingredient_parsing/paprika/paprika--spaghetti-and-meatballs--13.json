@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 lb dried spaghetti",
+  "expected": {
+    "item": "dried spaghetti",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

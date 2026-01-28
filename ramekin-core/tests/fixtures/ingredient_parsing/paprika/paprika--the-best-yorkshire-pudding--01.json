@@ -1,0 +1,21 @@
+{
+  "raw": "4 large eggs (200 g; 7 ounces)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

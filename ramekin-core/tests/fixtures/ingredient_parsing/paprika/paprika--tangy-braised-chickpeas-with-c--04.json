@@ -1,0 +1,17 @@
+{
+  "raw": "2 large, thick carrots (12 ounces), in 1/4-inch slices",
+  "expected": {
+    "item": ", thick carrots , in 1/4-inch slices",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

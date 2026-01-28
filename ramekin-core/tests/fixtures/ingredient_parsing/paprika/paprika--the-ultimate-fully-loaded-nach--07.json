@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces cheddar and/or Monterey Jack cheese, grated",
+  "expected": {
+    "item": "cheddar and/or Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "grated"
+  }
+}

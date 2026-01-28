@@ -1,0 +1,13 @@
+{
+  "raw": "1 large bunch cilantro, leaves and stems finely chopped, a few whole leaves reserved for serving",
+  "expected": {
+    "item": "bunch cilantro, leaves and stems finely chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "a few whole leaves reserved for serving"
+  }
+}

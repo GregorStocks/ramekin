@@ -1,0 +1,13 @@
+{
+  "raw": "5g instant yeast",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

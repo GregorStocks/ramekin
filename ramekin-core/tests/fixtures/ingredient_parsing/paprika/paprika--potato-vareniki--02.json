@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (680 grams) yukon gold potatoes, peeled and diced (weight is for whole potatoes)",
+  "expected": {
+    "item": "yukon gold potatoes, peeled and diced",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "680",
+        "unit": "grams"
+      }
+    ],
+    "note": "weight is for whole potatoes"
+  }
+}

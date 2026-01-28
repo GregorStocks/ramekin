@@ -1,0 +1,13 @@
+{
+  "raw": "1 white onion, minced, for serving",
+  "expected": {
+    "item": "white onion, minced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
+  }
+}

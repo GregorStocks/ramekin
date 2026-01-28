@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups cooked medium-grain rice, preferably day-old or cooked a little dry",
+  "expected": {
+    "item": "cooked medium-grain rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "preferably day-old or cooked a little dry"
+  }
+}

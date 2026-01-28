@@ -1,0 +1,13 @@
+{
+  "raw": "4 pinches table salt, divided",
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pinches"
+      }
+    ],
+    "note": "divided"
+  }
+}

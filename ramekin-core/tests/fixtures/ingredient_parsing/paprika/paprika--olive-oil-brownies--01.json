@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces (115 grams) unsweetened chocolate, chopped",
+  "expected": {
+    "item": "unsweetened chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "115",
+        "unit": "grams"
+      }
+    ],
+    "note": "chopped"
+  }
+}

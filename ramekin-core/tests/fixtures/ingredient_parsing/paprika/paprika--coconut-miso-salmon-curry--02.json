@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium red onion, halved and sliced 1/2-inch thick (about 2 cups)",
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "halved and sliced 1/2-inch thick"
+  }
+}

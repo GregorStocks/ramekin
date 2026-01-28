@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups unsalted beef stock",
+  "expected": {
+    "item": "unsalted beef stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

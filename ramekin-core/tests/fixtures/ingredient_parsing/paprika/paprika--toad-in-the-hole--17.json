@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (454 g) pork sausages",
+  "expected": {
+    "item": "pork sausages",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

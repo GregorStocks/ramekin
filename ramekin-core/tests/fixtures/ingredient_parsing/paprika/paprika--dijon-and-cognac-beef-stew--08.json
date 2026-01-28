@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup Cognac (see Note)",
+  "expected": {
+    "item": "Cognac (see Note)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

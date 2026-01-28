@@ -1,0 +1,21 @@
+{
+  "raw": "2 tablespoons pomegranate seeds (1 ounce; 28 g), optional",
+  "expected": {
+    "item": "pomegranate seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": "optional"
+  }
+}

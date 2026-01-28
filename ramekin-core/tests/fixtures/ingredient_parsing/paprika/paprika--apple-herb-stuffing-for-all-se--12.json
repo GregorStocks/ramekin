@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 to 1 cup cup turkey, chicken or vegetable stock or broth",
+  "expected": {
+    "item": "cup turkey, chicken or vegetable stock or broth",
+    "measurements": [
+      {
+        "amount": "1/2 to 1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

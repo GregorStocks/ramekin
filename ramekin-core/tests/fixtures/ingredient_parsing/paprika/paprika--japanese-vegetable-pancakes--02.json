@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 small head cabbage, very thinly sliced (1 pound or 5 to 6 cups shreds) which will be easiest on a mandoline if you have one",
+  "expected": {
+    "item": "head cabbage",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "5 to 6",
+        "unit": "cups"
+      }
+    ],
+    "note": "very thinly sliced which will be easiest on a mandoline if you have one"
+  }
+}

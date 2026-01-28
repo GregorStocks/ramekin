@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups boiling water, plus extra water as needed",
+  "expected": {
+    "item": "boiling water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus extra water as needed"
+  }
+}

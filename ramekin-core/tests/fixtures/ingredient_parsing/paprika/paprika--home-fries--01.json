@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 red potatoes per person",
+  "expected": {
+    "item": "red potatoes per person",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

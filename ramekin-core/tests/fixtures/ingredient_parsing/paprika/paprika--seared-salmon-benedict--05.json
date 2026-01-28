@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp cooking fat",
+  "expected": {
+    "item": "cooking fat",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

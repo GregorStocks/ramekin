@@ -1,0 +1,13 @@
+{
+  "raw": "4 anchovy fillets packed in oil, rinsed",
+  "expected": {
+    "item": "anchovy fillets packed in oil",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "rinsed"
+  }
+}

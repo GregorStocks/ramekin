@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (450 g) dried spaghetti",
+  "expected": {
+    "item": "dried spaghetti",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

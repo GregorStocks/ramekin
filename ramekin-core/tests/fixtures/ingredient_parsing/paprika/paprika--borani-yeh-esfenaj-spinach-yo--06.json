@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces fresh baby spinach, or thawed frozen spinach (no need to squeeze)",
+  "expected": {
+    "item": "fresh baby spinach",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "or thawed frozen spinach (no need to squeeze)"
+  }
+}

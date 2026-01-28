@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup non-iodized table salt",
+  "expected": {
+    "item": "non-iodized table salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

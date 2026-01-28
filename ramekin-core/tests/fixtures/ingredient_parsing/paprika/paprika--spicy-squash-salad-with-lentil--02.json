@@ -1,0 +1,17 @@
+{
+  "raw": "6 cups peeled, seeded and cubed butternut squash or sugar pumpkin (1-inch cubes) (from about a 2-pound squash)",
+  "expected": {
+    "item": "peeled",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeded and cubed butternut squash or sugar pumpkin (from about a 2-pound squash)"
+  }
+}

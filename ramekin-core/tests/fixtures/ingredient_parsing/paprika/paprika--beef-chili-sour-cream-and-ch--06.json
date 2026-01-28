@@ -1,0 +1,13 @@
+{
+  "raw": "3 pounds boneless beef chuck, ground coarse or 3 pounds ground beef",
+  "expected": {
+    "item": "boneless beef chuck",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": "ground coarse or 3 pounds ground beef"
+  }
+}

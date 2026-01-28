@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup all-purpose flour (2.5 ounces; 71 g)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2.5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "71",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (227 g) ham steak, diced",
+  "expected": {
+    "item": "ham steak",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": "diced"
+  }
+}

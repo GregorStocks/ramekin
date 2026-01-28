@@ -1,0 +1,21 @@
+{
+  "raw": "2 large ribs celery, finely chopped (about 6 ounces; 170g)",
+  "expected": {
+    "item": "ribs celery",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

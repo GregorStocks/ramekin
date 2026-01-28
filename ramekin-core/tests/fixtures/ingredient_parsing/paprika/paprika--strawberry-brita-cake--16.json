@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30 grams) sour cream or creme fraiche",
+  "expected": {
+    "item": "sour cream or creme fraiche",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

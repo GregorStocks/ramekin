@@ -1,0 +1,13 @@
+{
+  "raw": "1 dash Angostura Aromatic bitters",
+  "expected": {
+    "item": "Angostura Aromatic bitters",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "dash"
+      }
+    ],
+    "note": null
+  }
+}

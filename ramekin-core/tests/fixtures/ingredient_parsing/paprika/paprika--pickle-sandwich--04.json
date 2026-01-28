@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon pickle brine",
+  "expected": {
+    "item": "pickle brine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

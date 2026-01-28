@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon chicken stock or dashi (optional)",
+  "expected": {
+    "item": "chicken stock or dashi",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}
