@@ -1,11 +1,11 @@
 {
   "raw": "1 and 1/4 cups (150g) confectioners&amp;#8217; sugar",
   "expected": {
-    "item": "and 1/4 cups confectioners&#8217; sugar",
+    "item": "confectioners&#8217; sugar",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1 1/4",
+        "unit": "cups"
       },
       {
         "amount": "150",

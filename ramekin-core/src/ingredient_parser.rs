@@ -609,6 +609,18 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             }
         }
 
+        // Check for "X and Y/Z" pattern: "2 and 1/2"
+        if words.len() >= 3
+            && words[1].eq_ignore_ascii_case("and")
+            && first.chars().all(|c| c.is_ascii_digit())
+            && is_fraction(words[2])
+        {
+            // Normalize to "X Y/Z" format (e.g., "2 1/2")
+            let amount = format!("{} {}", first, words[2]);
+            let remaining_after_fraction = words[3..].join(" ");
+            return (Some(amount), remaining_after_fraction);
+        }
+
         // Check for range: "1 to 4" or "6 to 8"
         if words.len() >= 3
             && words[1].eq_ignore_ascii_case("to")
