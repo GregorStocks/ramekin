@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons chopped dill, tarragon or parsley",
+  "expected": {
+    "item": "chopped dill, tarragon or parsley",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

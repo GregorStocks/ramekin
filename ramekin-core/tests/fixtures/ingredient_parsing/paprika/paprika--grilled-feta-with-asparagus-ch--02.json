@@ -1,0 +1,13 @@
+{
+  "raw": "3 large or 4 regular cloves garlic",
+  "expected": {
+    "item": "or 4 regular cloves garlic",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

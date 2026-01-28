@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup heavy cream or 1 cup diced mozzarella cheese",
+  "expected": {
+    "item": "heavy cream or 1 cup diced mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

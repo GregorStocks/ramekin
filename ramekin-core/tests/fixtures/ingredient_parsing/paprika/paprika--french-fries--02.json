@@ -1,0 +1,17 @@
+{
+  "raw": "6 cups (1.4 liters) peanut oil",
+  "expected": {
+    "item": "peanut oil",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      },
+      {
+        "amount": "1.4",
+        "unit": "liters"
+      }
+    ],
+    "note": null
+  }
+}

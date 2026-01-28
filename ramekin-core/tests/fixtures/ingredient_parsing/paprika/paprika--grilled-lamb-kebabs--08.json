@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds top round lamb",
+  "expected": {
+    "item": "top round lamb",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons toasted sesame oil, plus a splash to loosen noodles",
+  "expected": {
+    "item": "toasted sesame oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus a splash to loosen noodles"
+  }
+}

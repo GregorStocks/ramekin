@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds baking potatoes, peeled and cut into chunks",
+  "expected": {
+    "item": "baking potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled and cut into chunks"
+  }
+}

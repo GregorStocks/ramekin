@@ -1,0 +1,17 @@
+{
+  "raw": "4 flounder fillets (about 1 pound), halved crosswise",
+  "expected": {
+    "item": "flounder fillets",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "halved crosswise"
+  }
+}

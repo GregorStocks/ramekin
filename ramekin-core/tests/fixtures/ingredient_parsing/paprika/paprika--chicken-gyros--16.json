@@ -1,0 +1,13 @@
+{
+  "raw": "1 hothouse, English or seedless cucumber, chopped",
+  "expected": {
+    "item": "hothouse, English or seedless cucumber",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "chopped"
+  }
+}

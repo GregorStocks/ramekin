@@ -1,0 +1,17 @@
+{
+  "raw": "5 ounces (140 grams) bittersweet chocolate, chopped into chips, or a generous 3/4 cup store-bought mini chocolate chips",
+  "expected": {
+    "item": "bittersweet chocolate, chopped into chips, or a generous 3/4 cup store-bought mini chocolate chips",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "140",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

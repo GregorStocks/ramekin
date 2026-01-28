@@ -1,0 +1,17 @@
+{
+  "raw": "½ ounce rich (2:1) syrup",
+  "expected": {
+    "item": "rich syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "3 cups (250 g) breadcrumbs from very stale bread or 5 cups (250 g) diced day-old bread, plus additional breadcrumbs if needed (see notes)",
+  "expected": {
+    "item": "breadcrumbs from very stale bread or 5 cups diced day-old bread",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": "plus additional breadcrumbs if needed (see notes)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup thinly sliced chives (or 1 tablespoon dried chives), plus more for serving",
+  "expected": {
+    "item": "thinly sliced chives",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "or 1 tablespoon dried chives"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/4 teaspoons (5 grams) instant or active dry yeast",
+  "expected": {
+    "item": "instant or active dry yeast",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "5",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

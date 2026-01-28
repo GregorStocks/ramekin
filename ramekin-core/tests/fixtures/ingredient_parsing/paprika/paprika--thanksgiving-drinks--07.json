@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
+  "expected": {
+    "item": "pumpkin pie spice, such as McCormick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (28 ounces) diced tomatoes in juice",
+  "expected": {
+    "item": "diced tomatoes in juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

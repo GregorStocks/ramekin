@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon caraway seeds (optional)",
+  "expected": {
+    "item": "caraway seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (100 grams) finely grated parmesan, divided",
+  "expected": {
+    "item": "finely grated parmesan",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "divided"
+  }
+}

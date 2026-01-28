@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons vegetable oil, divided",
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

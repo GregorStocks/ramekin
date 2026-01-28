@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup extra-virgin olive oil, divided, plus extra for drizzling (optional)",
+  "expected": {
+    "item": "extra-virgin olive oil, divided",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

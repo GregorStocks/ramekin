@@ -1,0 +1,13 @@
+{
+  "raw": "¼ pound provolone cheese or fresh mozzarella, thin-sliced",
+  "expected": {
+    "item": "provolone cheese or fresh mozzarella",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "pound"
+      }
+    ],
+    "note": "thin-sliced"
+  }
+}

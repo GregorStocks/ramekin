@@ -1,0 +1,13 @@
+{
+  "raw": "1 five-pound leg of lamb",
+  "expected": {
+    "item": "five-pound leg of lamb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

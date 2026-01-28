@@ -1,0 +1,17 @@
+{
+  "raw": "5 cups (635 grams) whole-wheat flour",
+  "expected": {
+    "item": "whole-wheat flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      },
+      {
+        "amount": "635",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

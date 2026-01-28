@@ -1,0 +1,13 @@
+{
+  "raw": "500g all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

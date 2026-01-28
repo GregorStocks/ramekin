@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces fresh Granny Smith apple juice",
+  "expected": {
+    "item": "fresh Granny Smith apple juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

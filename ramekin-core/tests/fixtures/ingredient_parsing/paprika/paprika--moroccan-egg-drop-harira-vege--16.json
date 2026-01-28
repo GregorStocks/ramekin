@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup canned chickpeas (2.8 ounces; 79g), rinsed and drained",
+  "expected": {
+    "item": "canned chickpeas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2.8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "79",
+        "unit": "g"
+      }
+    ],
+    "note": "rinsed and drained"
+  }
+}

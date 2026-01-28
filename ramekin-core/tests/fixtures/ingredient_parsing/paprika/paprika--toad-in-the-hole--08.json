@@ -1,0 +1,21 @@
+{
+  "raw": "2 tablespoons beef drippings or ghee (1 ounce; 28 g)",
+  "expected": {
+    "item": "beef drippings or ghee",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

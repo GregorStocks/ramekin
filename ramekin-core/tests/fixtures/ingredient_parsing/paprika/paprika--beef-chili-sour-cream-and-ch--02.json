@@ -1,0 +1,17 @@
+{
+  "raw": "2 large onions, chopped (about 3 cups)",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped"
+  }
+}

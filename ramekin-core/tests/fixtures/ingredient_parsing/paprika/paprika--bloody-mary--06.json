@@ -1,0 +1,13 @@
+{
+  "raw": "2 or 3 dashes of Worcestershire sauce",
+  "expected": {
+    "item": "or 3 dashes of Worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (50 grams) mayonnaise",
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "2 tablespoons unsalted butter (1 ounce; 28g)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces water",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

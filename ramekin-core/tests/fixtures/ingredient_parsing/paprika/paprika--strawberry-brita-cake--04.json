@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (300 grams) granulated sugar, divided",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "300",
+        "unit": "grams"
+      }
+    ],
+    "note": "divided"
+  }
+}

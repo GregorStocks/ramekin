@@ -1,0 +1,21 @@
+{
+  "raw": "2 tablespoons (30 grams) plus 3 tablespoons (45 grams) unsalted butter",
+  "expected": {
+    "item": "2 tablespoons (30 grams) plus 3 tablespoons (45 grams) unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "grams"
+      },
+      {
+        "amount": "45",
+        "unit": "grams"
+      }
+    ],
+    "note": "plus 3 tablespoons unsalted butter"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds Russet potatoes",
+  "expected": {
+    "item": "Russet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

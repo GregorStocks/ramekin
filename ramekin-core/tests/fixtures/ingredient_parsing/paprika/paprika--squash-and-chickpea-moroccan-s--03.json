@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium yellow onion, small dice",
+  "expected": {
+    "item": "yellow onion, small dice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

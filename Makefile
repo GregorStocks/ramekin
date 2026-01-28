@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build ingredient-tests ingredient-tests-generate ingredient-tests-update
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build ingredient-tests ingredient-tests-generate ingredient-tests-update ingredient-tests-generate-paprika
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -185,3 +185,6 @@ ingredient-tests-generate: ## Generate ingredient parsing test fixtures from lat
 
 ingredient-tests-update: ## Update ingredient parsing test fixtures to match current parser output
 	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-update
+
+ingredient-tests-generate-paprika: ## Generate ingredient parsing test fixtures from paprikarecipes file
+	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-generate-paprika

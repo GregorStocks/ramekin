@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (680 grams) yellow onions, diced",
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "680",
+        "unit": "grams"
+      }
+    ],
+    "note": "diced"
+  }
+}

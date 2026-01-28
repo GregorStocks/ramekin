@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon soy sauce or tamari",
+  "expected": {
+    "item": "soy sauce or tamari",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

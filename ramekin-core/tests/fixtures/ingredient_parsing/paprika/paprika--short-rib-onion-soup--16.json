@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (120 grams) dry sherry",
+  "expected": {
+    "item": "dry sherry",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "120",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

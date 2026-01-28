@@ -1,0 +1,13 @@
+{
+  "raw": "4 teaspoons butter (salted is lovely here)",
+  "expected": {
+    "item": "butter (salted is lovely here)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

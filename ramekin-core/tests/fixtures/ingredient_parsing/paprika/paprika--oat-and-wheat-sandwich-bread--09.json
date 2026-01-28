@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 tablespoons (about 14 grams) instant yeast",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "14",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

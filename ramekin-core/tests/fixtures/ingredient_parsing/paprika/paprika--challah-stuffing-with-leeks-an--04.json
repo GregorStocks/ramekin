@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups small-diced leeks or yellow onions (from about 2 large leeks or 1 large onion)",
+  "expected": {
+    "item": "small-diced leeks or yellow onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

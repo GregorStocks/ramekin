@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (12 g) panko breadcrumbs",
+  "expected": {
+    "item": "panko breadcrumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "12",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

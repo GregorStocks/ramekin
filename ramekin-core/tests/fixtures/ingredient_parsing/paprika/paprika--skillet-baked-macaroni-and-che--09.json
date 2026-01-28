@@ -1,0 +1,21 @@
+{
+  "raw": "3 cups milk (710 ml), any kind, or 1 1/2 cups (355 ml) milk, any kind, plus 1 12-ounce can evaporated milk (see Note)",
+  "expected": {
+    "item": "milk , any kind, or 1 1/2 cups milk, any kind",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "710",
+        "unit": "ml"
+      },
+      {
+        "amount": "355",
+        "unit": "ml"
+      }
+    ],
+    "note": "plus 1 12-ounce can evaporated milk (see Note)"
+  }
+}

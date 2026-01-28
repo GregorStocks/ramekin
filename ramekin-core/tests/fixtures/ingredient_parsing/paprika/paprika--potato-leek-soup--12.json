@@ -1,0 +1,17 @@
+{
+  "raw": "1 small bundle (about 1/2-ounce/15 grams) fresh chives, minced",
+  "expected": {
+    "item": "bundle fresh chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "minced"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces baked or smoked tofu, cut into thin matchsticks (about 2 cups)",
+  "expected": {
+    "item": "baked or smoked tofu, cut into thin matchsticks",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

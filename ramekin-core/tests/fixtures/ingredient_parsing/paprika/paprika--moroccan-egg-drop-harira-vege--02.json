@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (14g) ghee or unsalted butter",
+  "expected": {
+    "item": "ghee or unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

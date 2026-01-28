@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fresh or frozen udon noodles",
+  "expected": {
+    "item": "fresh or frozen udon noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

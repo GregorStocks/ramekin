@@ -1,0 +1,21 @@
+{
+  "raw": "2 cups (16 ounces or 455 grams) cottage cheese, whole or low-fat",
+  "expected": {
+    "item": "cottage cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": "whole or low-fat"
+  }
+}

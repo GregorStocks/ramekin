@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces cream cheese at room temperature",
+  "expected": {
+    "item": "cream cheese at room temperature",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces Gouda cheese, shredded (1½ cups)",
+  "expected": {
+    "item": "Gouda cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

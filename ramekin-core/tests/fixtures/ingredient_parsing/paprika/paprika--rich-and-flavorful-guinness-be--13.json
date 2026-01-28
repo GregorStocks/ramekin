@@ -1,0 +1,21 @@
+{
+  "raw": "1 bouquet garni (about 4 sprigs thyme, 3 sprigs parsley, and 1 bay leaf, tied together with kitchen twine)",
+  "expected": {
+    "item": "bouquet garni",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "sprigs"
+      },
+      {
+        "amount": "3",
+        "unit": "sprigs"
+      }
+    ],
+    "note": null
+  }
+}

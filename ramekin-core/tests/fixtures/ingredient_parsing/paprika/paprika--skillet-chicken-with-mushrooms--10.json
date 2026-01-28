@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup fresh flat-leaf parsley or dill leaves and fine stems, roughly chopped",
+  "expected": {
+    "item": "fresh flat-leaf parsley or dill leaves and fine stems",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

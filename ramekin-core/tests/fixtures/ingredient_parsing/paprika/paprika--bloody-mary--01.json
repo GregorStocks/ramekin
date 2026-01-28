@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces tomato juice",
+  "expected": {
+    "item": "tomato juice",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "raw": "1/2 head small cabbage (1 pound; 455 g), halved lengthwise, cored, then cut crosswise into 1/2-inch-thick slices (about 3 cups)",
+  "expected": {
+    "item": "small cabbage , halved lengthwise, cored, then cut crosswise into 1/2-inch-thick slices",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "head"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

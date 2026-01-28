@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon finely chopped fresh thyme leaves (optional)",
+  "expected": {
+    "item": "finely chopped fresh thyme leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 pounds sweet potato, peeled and cut into 1/2-inch dice",
+  "expected": {
+    "item": "sweet potato",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch dice"
+  }
+}

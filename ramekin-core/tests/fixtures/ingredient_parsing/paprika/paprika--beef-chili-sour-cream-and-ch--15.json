@@ -1,0 +1,13 @@
+{
+  "raw": "1 19-ounce can kidney beans, rinsed and drained",
+  "expected": {
+    "item": "19-ounce can kidney beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "rinsed and drained"
+  }
+}

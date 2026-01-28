@@ -1,0 +1,17 @@
+{
+  "raw": "12 ounces white Cheddar, grated (about 4 cups)",
+  "expected": {
+    "item": "white Cheddar",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "grated"
+  }
+}

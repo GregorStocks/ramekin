@@ -1,0 +1,13 @@
+{
+  "raw": "1½ tablespoons minced garlic, divided",
+  "expected": {
+    "item": "minced garlic",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

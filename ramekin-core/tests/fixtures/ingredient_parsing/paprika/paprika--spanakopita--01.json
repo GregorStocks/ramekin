@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/4 pounds (20 ounces or 565 grams) baby spinach [see Note about frozen], roughly chopped",
+  "expected": {
+    "item": "baby spinach [see Note about frozen]",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      },
+      {
+        "amount": "20",
+        "unit": "ounces"
+      },
+      {
+        "amount": "565",
+        "unit": "grams"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

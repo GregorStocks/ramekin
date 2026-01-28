@@ -1,0 +1,25 @@
+{
+  "raw": "1 medium yellow onion (8 ounces; 227g), finely chopped (1 1/4 cups)",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

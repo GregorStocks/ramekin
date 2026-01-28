@@ -1,0 +1,17 @@
+{
+  "raw": "4 small sweet potatoes (8 ounces each), unpeeled, each pricked lightly with fork in 3 places Salt and pepper",
+  "expected": {
+    "item": "sweet potatoes , unpeeled, each pricked lightly with fork in 3 places Salt and pepper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

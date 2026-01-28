@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon harissa paste, plus more for serving",
+  "expected": {
+    "item": "harissa paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

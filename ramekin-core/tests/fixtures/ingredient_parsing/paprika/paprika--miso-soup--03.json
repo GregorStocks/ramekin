@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons miso paste",
+  "expected": {
+    "item": "miso paste",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

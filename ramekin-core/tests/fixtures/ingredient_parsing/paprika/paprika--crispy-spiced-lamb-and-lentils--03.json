@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound ground lamb",
+  "expected": {
+    "item": "ground lamb",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

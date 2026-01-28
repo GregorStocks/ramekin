@@ -1,0 +1,17 @@
+{
+  "raw": "10 ½ ounces (1 1/2 cups) red lentils, picked over and rinsed",
+  "expected": {
+    "item": "red lentils",
+    "measurements": [
+      {
+        "amount": "10 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "picked over and rinsed"
+  }
+}

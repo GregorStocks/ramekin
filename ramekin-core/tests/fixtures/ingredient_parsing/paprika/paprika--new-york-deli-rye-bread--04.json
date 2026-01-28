@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 teaspoon (1.6 grams) instant yeast",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "1.6",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

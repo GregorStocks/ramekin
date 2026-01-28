@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon lemon zest and 1 tablespoon lemon juice, plus more juice to taste",
+  "expected": {
+    "item": "lemon zest and 1 tablespoon lemon juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more juice to taste"
+  }
+}

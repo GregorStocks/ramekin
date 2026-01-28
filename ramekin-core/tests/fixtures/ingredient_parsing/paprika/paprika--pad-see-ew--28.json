@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225g) marinated pork from above",
+  "expected": {
+    "item": "marinated pork from above",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

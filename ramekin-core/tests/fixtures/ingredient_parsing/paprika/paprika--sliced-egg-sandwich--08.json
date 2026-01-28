@@ -1,0 +1,13 @@
+{
+  "raw": "2 hard-boiled eggs, cold, peeled, and sliced",
+  "expected": {
+    "item": "hard-boiled eggs, cold, peeled",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "and sliced"
+  }
+}

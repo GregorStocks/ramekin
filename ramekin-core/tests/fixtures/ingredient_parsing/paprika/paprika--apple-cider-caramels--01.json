@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups (945 ml) apple cider",
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "945",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

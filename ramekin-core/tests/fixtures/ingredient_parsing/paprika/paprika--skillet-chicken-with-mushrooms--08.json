@@ -1,0 +1,17 @@
+{
+  "raw": "2 medium yellow onions, thinly sliced (about 4 cups)",
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

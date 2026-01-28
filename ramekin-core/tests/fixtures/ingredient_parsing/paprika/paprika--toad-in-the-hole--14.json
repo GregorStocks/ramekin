@@ -1,0 +1,21 @@
+{
+  "raw": "2 teaspoons red wine vinegar (1/3 ounce; 10 g)",
+  "expected": {
+    "item": "red wine vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "1/3",
+        "unit": "ounce"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

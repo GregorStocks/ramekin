@@ -3,10 +3,13 @@
 //! Provides commands to generate and update ingredient parsing test fixtures.
 
 use anyhow::{Context, Result};
+use flate2::read::GzDecoder;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement};
 use serde::{Deserialize, Serialize};
-use std::fs;
+use std::fs::{self, File};
+use std::io::Read;
 use std::path::{Path, PathBuf};
+use zip::ZipArchive;
 
 /// A test case for ingredient parsing
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -122,8 +125,8 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let mut updated = 0;
     let mut unchanged = 0;
 
-    // Process both curated and bulk directories
-    for subdir in ["curated", "bulk"] {
+    // Process curated, bulk, and paprika directories
+    for subdir in ["curated", "bulk", "paprika"] {
         let dir = fixtures_dir.join(subdir);
         if !dir.exists() {
             continue;
@@ -236,4 +239,145 @@ struct ParsedIngredient {
     measurements: Vec<Measurement>,
     note: Option<String>,
     raw: Option<String>,
+}
+
+/// Minimal Paprika recipe structure for ingredient extraction
+#[derive(Debug, Deserialize)]
+struct PaprikaRecipe {
+    name: String,
+    ingredients: Option<String>,
+}
+
+/// Generate test fixtures from a .paprikarecipes file.
+///
+/// Reads recipes from the Paprika archive and creates individual JSON
+/// test case files in the paprika/ directory.
+pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -> Result<()> {
+    let fixtures_dir = fixtures_dir
+        .map(PathBuf::from)
+        .unwrap_or_else(default_fixtures_dir);
+    let paprika_dir = fixtures_dir.join("paprika");
+
+    // Clear existing paprika tests
+    if paprika_dir.exists() {
+        fs::remove_dir_all(&paprika_dir)?;
+    }
+    fs::create_dir_all(&paprika_dir)?;
+
+    // Open the paprikarecipes archive
+    let file = File::open(paprika_file)
+        .with_context(|| format!("Failed to open file: {}", paprika_file.display()))?;
+
+    let mut archive = ZipArchive::new(file)
+        .with_context(|| format!("Failed to read zip archive: {}", paprika_file.display()))?;
+
+    println!("Reading recipes from: {}", paprika_file.display());
+
+    let mut total_cases = 0;
+
+    for i in 0..archive.len() {
+        let mut entry = archive.by_index(i)?;
+        let entry_name = entry.name().to_string();
+
+        if !entry_name.ends_with(".paprikarecipe") {
+            continue;
+        }
+
+        // Read the gzipped content
+        let mut compressed_data = Vec::new();
+        entry.read_to_end(&mut compressed_data)?;
+
+        // Decompress with gzip
+        let mut decoder = GzDecoder::new(&compressed_data[..]);
+        let mut json_content = String::new();
+        decoder
+            .read_to_string(&mut json_content)
+            .with_context(|| format!("Failed to decompress recipe: {}", entry_name))?;
+
+        // Parse the recipe JSON
+        let recipe: PaprikaRecipe = serde_json::from_str(&json_content)
+            .with_context(|| format!("Failed to parse recipe JSON: {}", entry_name))?;
+
+        // Skip recipes without ingredients
+        let Some(ingredients_str) = recipe.ingredients.as_ref() else {
+            continue;
+        };
+
+        if ingredients_str.trim().is_empty() {
+            continue;
+        }
+
+        // Create recipe slug from name
+        let recipe_slug = slugify_recipe_name(&recipe.name);
+
+        // Parse each ingredient line and create test cases
+        for (idx, line) in ingredients_str.lines().enumerate() {
+            let raw = line.trim().to_string();
+            if raw.is_empty() {
+                continue;
+            }
+
+            // Run the parser to get current output
+            let parsed = parse_ingredient(&raw);
+
+            let test_case = TestCase {
+                raw,
+                expected: ExpectedIngredient {
+                    item: parsed.item,
+                    measurements: parsed.measurements,
+                    note: parsed.note,
+                },
+            };
+
+            let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
+            let filepath = paprika_dir.join(&filename);
+
+            let json = serde_json::to_string_pretty(&test_case)?;
+            fs::write(&filepath, json)?;
+            total_cases += 1;
+        }
+    }
+
+    println!(
+        "Generated {} test cases in {}",
+        total_cases,
+        paprika_dir.display()
+    );
+
+    Ok(())
+}
+
+/// Convert a recipe name to a filesystem-safe slug
+fn slugify_recipe_name(name: &str) -> String {
+    let slug: String = name
+        .to_lowercase()
+        .chars()
+        .map(|c| if c.is_alphanumeric() { c } else { '-' })
+        .collect();
+
+    // Collapse multiple hyphens and trim
+    let mut result = String::new();
+    let mut prev_hyphen = false;
+    for c in slug.chars().take(30) {
+        if c == '-' {
+            if !prev_hyphen && !result.is_empty() {
+                result.push(c);
+            }
+            prev_hyphen = true;
+        } else {
+            result.push(c);
+            prev_hyphen = false;
+        }
+    }
+
+    // Trim trailing hyphen
+    while result.ends_with('-') {
+        result.pop();
+    }
+
+    if result.is_empty() {
+        "recipe".to_string()
+    } else {
+        result
+    }
 }

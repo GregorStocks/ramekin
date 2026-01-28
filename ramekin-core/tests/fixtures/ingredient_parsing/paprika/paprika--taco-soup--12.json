@@ -1,0 +1,13 @@
+{
+  "raw": "Two 15.5-ounce (439g) cans pinto beans, drained and rinsed",
+  "expected": {
+    "item": "Two 15.5-ounce cans pinto beans",
+    "measurements": [
+      {
+        "amount": "439",
+        "unit": "g"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

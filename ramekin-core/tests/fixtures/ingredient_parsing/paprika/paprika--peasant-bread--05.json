@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoons (4 g) SAF Instant Yeast",
+  "expected": {
+    "item": "SAF Instant Yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "4",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (20 g) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

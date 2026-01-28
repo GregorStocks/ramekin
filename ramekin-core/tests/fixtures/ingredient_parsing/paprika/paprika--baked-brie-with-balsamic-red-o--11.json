@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons brown sugar, light or dark",
+  "expected": {
+    "item": "brown sugar, light or dark",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

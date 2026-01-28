@@ -1,0 +1,21 @@
+{
+  "raw": "4 g instant yeast (0.15 ounces; about 1 teaspoon), such as SAF Instant Yeast",
+  "expected": {
+    "item": "instant yeast , such as SAF Instant Yeast",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "g"
+      },
+      {
+        "amount": "0.15",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

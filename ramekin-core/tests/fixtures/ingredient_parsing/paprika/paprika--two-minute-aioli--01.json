@@ -1,0 +1,13 @@
+{
+  "raw": "1 whole egg",
+  "expected": {
+    "item": "whole egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

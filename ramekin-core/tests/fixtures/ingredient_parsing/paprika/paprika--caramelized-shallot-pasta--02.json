@@ -1,0 +1,13 @@
+{
+  "raw": "6 large shallots, very thinly sliced",
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": "very thinly sliced"
+  }
+}

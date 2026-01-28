@@ -1,0 +1,13 @@
+{
+  "raw": "1 quart beef stock",
+  "expected": {
+    "item": "beef stock",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
+  }
+}

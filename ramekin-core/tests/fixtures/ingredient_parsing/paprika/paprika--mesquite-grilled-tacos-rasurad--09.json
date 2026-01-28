@@ -1,0 +1,13 @@
+{
+  "raw": "12 spring onions",
+  "expected": {
+    "item": "spring onions",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

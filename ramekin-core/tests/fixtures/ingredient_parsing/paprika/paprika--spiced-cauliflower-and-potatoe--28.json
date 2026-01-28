@@ -1,0 +1,17 @@
+{
+  "raw": "225 grams (1/2 pound) cored and finely shredded cabbage",
+  "expected": {
+    "item": "cored and finely shredded cabbage",
+    "measurements": [
+      {
+        "amount": "225",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

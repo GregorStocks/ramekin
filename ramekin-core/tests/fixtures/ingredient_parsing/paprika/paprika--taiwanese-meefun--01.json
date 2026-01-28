@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces dried rice vermicelli",
+  "expected": {
+    "item": "dried rice vermicelli",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

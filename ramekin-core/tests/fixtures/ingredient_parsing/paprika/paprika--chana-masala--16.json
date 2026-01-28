@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups cooked chickpeas or 2 (15-ounce) cans chickpeas, drained and rinsed",
+  "expected": {
+    "item": "cooked chickpeas or 2 cans chickpeas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

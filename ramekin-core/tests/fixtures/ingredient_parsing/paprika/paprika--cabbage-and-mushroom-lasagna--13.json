@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (135 grams) grated Parmesan cheese, or Västerbotten (the chef’s preference).",
+  "expected": {
+    "item": "grated Parmesan cheese, or Västerbotten (the chef’s preference).",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "135",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

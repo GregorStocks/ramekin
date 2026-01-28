@@ -1,0 +1,17 @@
+{
+  "raw": "4 tablespoons (60 g) unsalted butter (see notes)",
+  "expected": {
+    "item": "unsalted butter (see notes)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

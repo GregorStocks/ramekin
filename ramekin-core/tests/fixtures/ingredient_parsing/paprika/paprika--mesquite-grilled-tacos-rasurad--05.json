@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon lime juice, plus extra as needed",
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus extra as needed"
+  }
+}

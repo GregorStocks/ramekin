@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/2 cups cooked, drained beans (save cooking liquid for water in recipe, if desired) or 2 15-ounce cans small white beans (such as Great Northern or Cannelini), rinsed",
+  "expected": {
+    "item": "cooked, drained beans (save cooking liquid for water in recipe, if desired) or 2 15-ounce cans small white beans (such as Great Northern or Cannelini)",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "rinsed"
+  }
+}

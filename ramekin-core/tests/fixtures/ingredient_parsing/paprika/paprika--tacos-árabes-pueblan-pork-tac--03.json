@@ -1,0 +1,13 @@
+{
+  "raw": "2½ pounds boneless pork butt roast",
+  "expected": {
+    "item": "boneless pork butt roast",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

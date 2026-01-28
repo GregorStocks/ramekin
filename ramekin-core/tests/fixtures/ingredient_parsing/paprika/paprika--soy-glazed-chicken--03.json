@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon minced ginger, or 1 inch fresh ginger root",
+  "expected": {
+    "item": "minced ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or 1 inch fresh ginger root"
+  }
+}

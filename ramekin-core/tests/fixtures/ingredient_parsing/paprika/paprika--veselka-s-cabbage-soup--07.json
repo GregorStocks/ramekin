@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup sauerkraut, plus around 4 tablespoons juice",
+  "expected": {
+    "item": "sauerkraut",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus around 4 tablespoons juice"
+  }
+}

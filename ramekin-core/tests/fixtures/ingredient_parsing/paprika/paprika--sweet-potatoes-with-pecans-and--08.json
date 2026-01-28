@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces firmish goat cheese",
+  "expected": {
+    "item": "firmish goat cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

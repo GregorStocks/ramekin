@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon amchoor powder (see note)",
+  "expected": {
+    "item": "amchoor powder (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 large or 3 medium leeks, halved and thinly sliced",
+  "expected": {
+    "item": "or 3 medium leeks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "halved and thinly sliced"
+  }
+}

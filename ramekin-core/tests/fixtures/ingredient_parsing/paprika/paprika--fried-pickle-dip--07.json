@@ -1,0 +1,21 @@
+{
+  "raw": "2/3 cup panko (1 3/4 ounce; 50g)",
+  "expected": {
+    "item": "panko",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 3/4",
+        "unit": "ounce"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

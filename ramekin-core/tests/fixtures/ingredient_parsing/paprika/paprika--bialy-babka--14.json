@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons poppy seeds, plus more to finish",
+  "expected": {
+    "item": "poppy seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "plus more to finish"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz croutons",
+  "expected": {
+    "item": "croutons",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

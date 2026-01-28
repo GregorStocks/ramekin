@@ -1,0 +1,17 @@
+{
+  "raw": "1 quart whole milk (900ml)",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      },
+      {
+        "amount": "900",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

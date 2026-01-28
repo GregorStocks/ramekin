@@ -1,0 +1,17 @@
+{
+  "raw": "2/3 cups (150 grams) room temperature water",
+  "expected": {
+    "item": "room temperature water",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cups"
+      },
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

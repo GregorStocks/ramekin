@@ -1,0 +1,17 @@
+{
+  "raw": "9 tablespoons (127 grams) cold unsalted butter",
+  "expected": {
+    "item": "cold unsalted butter",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "127",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

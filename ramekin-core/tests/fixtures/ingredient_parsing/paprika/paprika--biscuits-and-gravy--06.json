@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (710ml) whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "710",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

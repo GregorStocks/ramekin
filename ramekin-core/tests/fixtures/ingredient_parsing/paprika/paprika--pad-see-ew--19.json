@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon (5ml) Shaoxing wine",
+  "expected": {
+    "item": "Shaoxing wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

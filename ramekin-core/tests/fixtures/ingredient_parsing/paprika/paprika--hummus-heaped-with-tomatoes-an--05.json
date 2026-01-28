@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225 grams) small cucumbers, washed, unpeeled, chopped small",
+  "expected": {
+    "item": "small cucumbers, washed, unpeeled",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": "chopped small"
+  }
+}

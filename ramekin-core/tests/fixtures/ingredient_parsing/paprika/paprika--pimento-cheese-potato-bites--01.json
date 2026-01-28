@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (680 grams) baby potatoes (I used a mix of red and yellow)",
+  "expected": {
+    "item": "baby potatoes (I used a mix of red and yellow)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "680",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

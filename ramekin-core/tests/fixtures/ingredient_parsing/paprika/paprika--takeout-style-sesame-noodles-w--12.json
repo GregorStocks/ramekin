@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound cucumber, very thinly sliced",
+  "expected": {
+    "item": "cucumber",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "very thinly sliced"
+  }
+}

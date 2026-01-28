@@ -1,0 +1,13 @@
+{
+  "raw": "4 small shallots, minced",
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "small"
+      }
+    ],
+    "note": "minced"
+  }
+}

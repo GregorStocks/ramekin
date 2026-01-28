@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/4-pound (560-grams) butternut or another sturdy winter squash, peeled, seeded, sliced thin or 1 pound (455 grams) in prepared chunks, sliced thin",
+  "expected": {
+    "item": "1/4-pound butternut or another sturdy winter squash, peeled, seeded, sliced thin or 1 pound in prepared chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "560",
+        "unit": null
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": "sliced thin"
+  }
+}

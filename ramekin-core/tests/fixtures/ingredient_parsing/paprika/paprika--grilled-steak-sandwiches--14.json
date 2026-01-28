@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (2 cups) baby arugula",
+  "expected": {
+    "item": "baby arugula",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

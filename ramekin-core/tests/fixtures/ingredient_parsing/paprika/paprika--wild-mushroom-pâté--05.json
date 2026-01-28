@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups diced yellow onion or a combination of chopped onions and shallots (I used 1 cup onion, 1/2 cup shallots)",
+  "expected": {
+    "item": "diced yellow onion or a combination of chopped onions and shallots",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

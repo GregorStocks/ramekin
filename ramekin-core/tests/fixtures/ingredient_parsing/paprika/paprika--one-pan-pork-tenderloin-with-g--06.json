@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds pork tenderloins (2 loins), trimmed",
+  "expected": {
+    "item": "pork tenderloins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (12- to 16-ounce) boneless strip steaks, 1½ inches thick, trimmed",
+  "expected": {
+    "item": "boneless strip steaks, 1 1/2 inches thick",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": "trimmed"
+  }
+}

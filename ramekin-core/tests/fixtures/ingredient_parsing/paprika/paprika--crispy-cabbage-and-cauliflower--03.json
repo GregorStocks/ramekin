@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound cauliflower (from half a small head)",
+  "expected": {
+    "item": "cauliflower (from half a small head)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

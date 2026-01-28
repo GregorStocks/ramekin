@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons extra-virgin olive oil, plus extra for drizzling",
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus extra for drizzling"
+  }
+}

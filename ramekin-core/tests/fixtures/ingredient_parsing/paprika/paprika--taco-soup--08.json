@@ -1,0 +1,17 @@
+{
+  "raw": "2 1/2 tablespoons homemade taco seasoning or store-bought taco seasoning (21g)",
+  "expected": {
+    "item": "homemade taco seasoning or store-bought taco seasoning",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "21",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

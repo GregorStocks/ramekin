@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fresh Mexican chorizo or vegan Mexican chorizo",
+  "expected": {
+    "item": "fresh Mexican chorizo or vegan Mexican chorizo",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

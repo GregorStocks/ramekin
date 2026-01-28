@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounces broccoli",
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

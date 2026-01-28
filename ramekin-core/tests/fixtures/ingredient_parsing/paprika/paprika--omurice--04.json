@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 slices deli ham, cut into 1/2-inch pieces",
+  "expected": {
+    "item": "deli ham, cut into 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225 g) frozen peas",
+  "expected": {
+    "item": "frozen peas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

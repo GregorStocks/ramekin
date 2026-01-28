@@ -1,0 +1,13 @@
+{
+  "raw": "1 carrot, thinly sliced",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

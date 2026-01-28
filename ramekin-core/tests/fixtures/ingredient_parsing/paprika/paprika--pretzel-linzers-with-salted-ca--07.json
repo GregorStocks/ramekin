@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon coarse or kosher salt",
+  "expected": {
+    "item": "coarse or kosher salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

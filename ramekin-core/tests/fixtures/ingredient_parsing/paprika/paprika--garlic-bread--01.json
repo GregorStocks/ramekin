@@ -1,0 +1,17 @@
+{
+  "raw": "1 large (about 12 ounces), not-too-firm seeded baguette",
+  "expected": {
+    "item": ", not-too-firm seeded baguette",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

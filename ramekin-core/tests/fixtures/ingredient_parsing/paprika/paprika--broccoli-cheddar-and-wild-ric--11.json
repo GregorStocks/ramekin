@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup low-sodium vegetable or chicken broth",
+  "expected": {
+    "item": "low-sodium vegetable or chicken broth",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

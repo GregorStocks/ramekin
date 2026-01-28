@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds chicken livers",
+  "expected": {
+    "item": "chicken livers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

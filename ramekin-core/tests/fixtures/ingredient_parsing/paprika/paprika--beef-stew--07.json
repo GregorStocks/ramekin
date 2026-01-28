@@ -1,0 +1,17 @@
+{
+  "raw": "4 medium carrots, peeled and cut into 1-inch pieces (about 2 cups)",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "peeled and cut into 1-inch pieces"
+  }
+}

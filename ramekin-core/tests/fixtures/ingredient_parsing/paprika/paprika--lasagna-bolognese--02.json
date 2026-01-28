@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium onion, coarsely chopped (1-inch pieces are fine)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

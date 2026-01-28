@@ -1,0 +1,13 @@
+{
+  "raw": "2 scallions, white and green parts, sliced",
+  "expected": {
+    "item": "scallions, white and green parts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
+  }
+}

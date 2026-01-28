@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lb. cod (or other flaky white fish)",
+  "expected": {
+    "item": "cod (or other flaky white fish)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

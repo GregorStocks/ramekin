@@ -1,0 +1,13 @@
+{
+  "raw": "8 to 9 ounces fresh spinach, larger stems removed",
+  "expected": {
+    "item": "fresh spinach, larger stems removed",
+    "measurements": [
+      {
+        "amount": "8 to 9",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

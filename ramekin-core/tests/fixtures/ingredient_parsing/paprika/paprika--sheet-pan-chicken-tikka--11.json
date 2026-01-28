@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon garam masala",
+  "expected": {
+    "item": "garam masala",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

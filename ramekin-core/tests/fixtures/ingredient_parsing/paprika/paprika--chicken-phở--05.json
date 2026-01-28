@@ -1,0 +1,13 @@
+{
+  "raw": "3 pounds chicken bones or chicken wings",
+  "expected": {
+    "item": "chicken bones or chicken wings",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

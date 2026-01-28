@@ -1,0 +1,21 @@
+{
+  "raw": "2 heaped cups (8 ounces or 225 grams) coarsely grated sharp cheddar cheese, ideally a mix of yellow and white",
+  "expected": {
+    "item": "coarsely grated sharp cheddar cheese, ideally a mix of yellow and white",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaped cups"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

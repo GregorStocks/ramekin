@@ -1,0 +1,21 @@
+{
+  "raw": "1/4 cup mayonnaise (2 ounces; 57 g)",
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

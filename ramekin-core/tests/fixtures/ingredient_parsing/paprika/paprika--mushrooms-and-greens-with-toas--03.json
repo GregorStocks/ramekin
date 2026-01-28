@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds mixed mushrooms, cleaned, trimmed and torn into bite size pieces (see suggestions above)",
+  "expected": {
+    "item": "mixed mushrooms, cleaned",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "trimmed and torn into bite size pieces (see suggestions above)"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
+  "expected": {
+    "item": "1/2 cup plus 2 tablespoons (10 tablespoons total; 85 grams) all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "85",
+        "unit": "grams"
+      }
+    ],
+    "note": "plus 2 tablespoons all-purpose flour"
+  }
+}

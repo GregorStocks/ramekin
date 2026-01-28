@@ -1,0 +1,13 @@
+{
+  "raw": "1 heaped teaspoon ground cumin",
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

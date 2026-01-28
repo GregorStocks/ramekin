@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (375 grams) all-purpose flour (bread flour works too)",
+  "expected": {
+    "item": "all-purpose flour (bread flour works too)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "375",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

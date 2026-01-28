@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ teaspoons dried mint, crumbled",
+  "expected": {
+    "item": "dried mint",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

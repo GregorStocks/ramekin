@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce (30g) chopped fresh spinach",
+  "expected": {
+    "item": "chopped fresh spinach",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

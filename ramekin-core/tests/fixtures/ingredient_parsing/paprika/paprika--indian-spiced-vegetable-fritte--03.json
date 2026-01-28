@@ -1,0 +1,13 @@
+{
+  "raw": "1 large russet or Idaho potato, peeled",
+  "expected": {
+    "item": "russet or Idaho potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled"
+  }
+}

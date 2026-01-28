@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 quarts prepared chicken stock (recipe above)",
+  "expected": {
+    "item": "prepared chicken stock (recipe above)",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "quarts"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "6 ounces (170g) medium Cheddar cheese, shredded (about 1 1/2 cups)",
+  "expected": {
+    "item": "medium Cheddar cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

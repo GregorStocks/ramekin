@@ -1,0 +1,17 @@
+{
+  "raw": "3 pounds (1.4Kg) boneless beef chuck roast",
+  "expected": {
+    "item": "boneless beef chuck roast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      },
+      {
+        "amount": "1.4",
+        "unit": "kg"
+      }
+    ],
+    "note": null
+  }
+}

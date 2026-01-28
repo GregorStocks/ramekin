@@ -1,0 +1,17 @@
+{
+  "raw": "8 pitted prunes (about 2 ounces), roughly chopped",
+  "expected": {
+    "item": "pitted prunes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

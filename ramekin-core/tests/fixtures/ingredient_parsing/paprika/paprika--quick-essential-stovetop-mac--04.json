@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons (6 grams) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "6",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon red-pepper flakes, plus more to taste",
+  "expected": {
+    "item": "red-pepper flakes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more to taste"
+  }
+}

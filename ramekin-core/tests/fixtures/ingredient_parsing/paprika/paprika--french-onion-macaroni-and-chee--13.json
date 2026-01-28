@@ -1,0 +1,17 @@
+{
+  "raw": "16 ounces Gruyère, grated (about 5 cups)",
+  "expected": {
+    "item": "Gruyère",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": "grated"
+  }
+}

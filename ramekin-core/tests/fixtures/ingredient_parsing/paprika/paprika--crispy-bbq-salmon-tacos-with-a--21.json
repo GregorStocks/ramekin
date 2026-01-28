@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon lime zest, plus 1/4 cup lime juice",
+  "expected": {
+    "item": "lime zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus 1/4 cup lime juice"
+  }
+}

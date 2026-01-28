@@ -1,0 +1,17 @@
+{
+  "raw": "3 pounds (1.25 kg) whole boneless beef chuck roast, cut into 3 steaks",
+  "expected": {
+    "item": "whole boneless beef chuck roast, cut into 3 steaks",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      },
+      {
+        "amount": "1.25",
+        "unit": "kg"
+      }
+    ],
+    "note": null
+  }
+}

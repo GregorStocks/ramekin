@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225 grams) spaghetti, cooked al dente",
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": "cooked al dente"
+  }
+}

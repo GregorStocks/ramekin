@@ -1,0 +1,13 @@
+{
+  "raw": "2 slices seedy bread, lightly toasted",
+  "expected": {
+    "item": "seedy bread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
+    "note": "lightly toasted"
+  }
+}

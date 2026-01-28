@@ -1,0 +1,13 @@
+{
+  "raw": "1 baguette or 4 ciabatta rolls",
+  "expected": {
+    "item": "baguette or 4 ciabatta rolls",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

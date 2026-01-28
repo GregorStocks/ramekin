@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon dried cranberries or cherries (optional)",
+  "expected": {
+    "item": "dried cranberries or cherries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

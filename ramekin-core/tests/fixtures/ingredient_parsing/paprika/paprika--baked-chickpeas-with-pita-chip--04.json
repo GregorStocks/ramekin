@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium yellow onions, halved and thinly sliced",
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "halved and thinly sliced"
+  }
+}

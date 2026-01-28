@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup ground black pepper",
+  "expected": {
+    "item": "ground black pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

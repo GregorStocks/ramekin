@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces small (Persian-style, about 2) cucumbers, thinly sliced",
+  "expected": {
+    "item": "small cucumbers",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

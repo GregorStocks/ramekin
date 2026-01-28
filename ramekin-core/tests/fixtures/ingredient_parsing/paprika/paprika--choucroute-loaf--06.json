@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 pound mixture of ground chuck, pork and veal",
+  "expected": {
+    "item": "mixture of ground chuck, pork and veal",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons plus 2 cups water",
+  "expected": {
+    "item": "2 tablespoons plus 2 cups water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus 2 cups water"
+  }
+}

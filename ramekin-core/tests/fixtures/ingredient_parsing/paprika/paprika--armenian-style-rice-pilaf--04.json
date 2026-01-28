@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (480 ml) homemade or store-bought low-sodium chicken stock",
+  "expected": {
+    "item": "homemade or store-bought low-sodium chicken stock",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

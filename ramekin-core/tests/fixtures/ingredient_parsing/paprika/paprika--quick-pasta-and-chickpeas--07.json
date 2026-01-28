@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup (2 ounces or 55 grams) uncooked ditalini pasta (or another small shape; I use annelini)",
+  "expected": {
+    "item": "uncooked ditalini pasta (or another small shape; I use annelini)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "55",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

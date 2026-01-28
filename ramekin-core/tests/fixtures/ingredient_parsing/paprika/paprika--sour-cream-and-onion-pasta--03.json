@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces cavatappi",
+  "expected": {
+    "item": "cavatappi",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

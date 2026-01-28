@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 teaspoons (.38 oz.) salt",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": ".38",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

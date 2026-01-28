@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces (113 grams) thinly sliced pepperoni",
+  "expected": {
+    "item": "thinly sliced pepperoni",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 or 4 drops of Tabasco sauce",
+  "expected": {
+    "item": "or 4 drops of Tabasco sauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

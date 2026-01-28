@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (60 ml) espresso or strong brewed coffee",
+  "expected": {
+    "item": "espresso or strong brewed coffee",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

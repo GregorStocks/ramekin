@@ -1,0 +1,13 @@
+{
+  "raw": "Handful chopped chives or parsley, to finish (optional)",
+  "expected": {
+    "item": "chopped chives or parsley, to finish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
+  }
+}

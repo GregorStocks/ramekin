@@ -239,6 +239,15 @@ enum Commands {
         #[arg(long)]
         fixtures_dir: Option<PathBuf>,
     },
+    /// Generate ingredient parsing test fixtures from a .paprikarecipes file
+    IngredientTestsGeneratePaprika {
+        /// Path to the .paprikarecipes file
+        #[arg(value_name = "FILE", default_value = "data/dev/seed.paprikarecipes")]
+        file: PathBuf,
+        /// Fixtures directory (default: ramekin-core/tests/fixtures/ingredient_parsing)
+        #[arg(long)]
+        fixtures_dir: Option<PathBuf>,
+    },
 }
 
 #[tokio::main]
@@ -388,6 +397,9 @@ async fn main() -> Result<()> {
         }
         Commands::IngredientTestsUpdate { fixtures_dir } => {
             ingredient_tests::update_fixtures(fixtures_dir.as_deref())?;
+        }
+        Commands::IngredientTestsGeneratePaprika { file, fixtures_dir } => {
+            ingredient_tests::generate_from_paprika(&file, fixtures_dir.as_deref())?;
         }
     }
 

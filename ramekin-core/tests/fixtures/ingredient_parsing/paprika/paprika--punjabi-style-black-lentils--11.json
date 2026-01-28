@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup finely chopped or pureed tomatoes, fresh or from a can",
+  "expected": {
+    "item": "finely chopped or pureed tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "fresh or from a can"
+  }
+}

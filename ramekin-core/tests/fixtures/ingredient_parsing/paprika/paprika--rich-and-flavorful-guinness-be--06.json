@@ -1,0 +1,33 @@
+{
+  "raw": "1 1/4 pounds carrots (500 g; about 3 large carrots), 1/2 pound (250 g) peeled and split lengthwise, 3/4 pound (350 g) cut into large dice (about 1 1/2 cups)",
+  "expected": {
+    "item": "carrots , 1/2 pound peeled and split lengthwise, 3/4 pound cut into large dice",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      },
+      {
+        "amount": "500",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      },
+      {
+        "amount": "350",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

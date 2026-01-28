@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried tagliatelle",
+  "expected": {
+    "item": "dried tagliatelle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

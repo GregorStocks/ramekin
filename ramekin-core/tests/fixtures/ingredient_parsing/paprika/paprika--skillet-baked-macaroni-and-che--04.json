@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 pound (8 ounces or 225 grams) dried elbow macaroni",
+  "expected": {
+    "item": "dried elbow macaroni",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

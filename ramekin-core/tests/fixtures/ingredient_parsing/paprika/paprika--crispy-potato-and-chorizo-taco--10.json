@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium limes cut into 8 wedges each, for serving",
+  "expected": {
+    "item": "limes cut into 8 wedges each",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "for serving"
+  }
+}

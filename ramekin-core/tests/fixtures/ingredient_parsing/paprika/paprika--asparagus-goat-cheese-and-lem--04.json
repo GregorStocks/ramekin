@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon finely grated lemon peel",
+  "expected": {
+    "item": "finely grated lemon peel",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

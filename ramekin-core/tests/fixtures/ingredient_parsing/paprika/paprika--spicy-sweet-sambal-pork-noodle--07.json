@@ -1,0 +1,13 @@
+{
+  "raw": "2 sprigs basil, plus more for serving",
+  "expected": {
+    "item": "basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sprigs"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

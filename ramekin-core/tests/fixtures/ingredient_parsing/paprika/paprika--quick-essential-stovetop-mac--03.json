@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons (10 grams) salted or unsalted butter",
+  "expected": {
+    "item": "salted or unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "10",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

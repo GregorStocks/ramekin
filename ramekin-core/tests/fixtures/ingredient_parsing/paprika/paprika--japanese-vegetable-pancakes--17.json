@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon honey (use 2 if you like a sweeter sauce)",
+  "expected": {
+    "item": "honey (use 2 if you like a sweeter sauce)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 large head cauliflower (3 pounds)",
+  "expected": {
+    "item": "head cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

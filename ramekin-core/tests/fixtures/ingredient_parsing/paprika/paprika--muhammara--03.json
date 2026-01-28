@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds (907 g) red bell peppers, seeded and chopped",
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "907",
+        "unit": "g"
+      }
+    ],
+    "note": "seeded and chopped"
+  }
+}

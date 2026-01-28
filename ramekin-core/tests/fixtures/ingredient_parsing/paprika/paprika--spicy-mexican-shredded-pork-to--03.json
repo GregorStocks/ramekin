@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds boneless pork butt, trimmed of excess fat and cut into 1-inch pieces (see note)",
+  "expected": {
+    "item": "boneless pork butt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "trimmed of excess fat and cut into 1-inch pieces (see note)"
+  }
+}

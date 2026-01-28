@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces Monterey Jack cheese, cut into 8 pieces",
+  "expected": {
+    "item": "Monterey Jack cheese, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

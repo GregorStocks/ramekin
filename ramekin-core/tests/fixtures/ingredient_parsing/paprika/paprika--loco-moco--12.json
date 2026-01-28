@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (14 g) cornstarch",
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -6,6 +6,7 @@
 //! Directory structure:
 //! - `curated/` - Hand-picked test cases representing important scenarios
 //! - `bulk/` - Auto-generated from pipeline runs for regression testing
+//! - `paprika/` - Auto-generated from paprikarecipes file for regression testing
 
 use glob::glob;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
@@ -47,8 +48,8 @@ fn load_test_cases() -> Vec<(String, TestCase)> {
 
     let mut cases = Vec::new();
 
-    // Load from both curated and bulk directories
-    for subdir in ["curated", "bulk"] {
+    // Load from curated, bulk, and paprika directories
+    for subdir in ["curated", "bulk", "paprika"] {
         let pattern = fixtures_dir.join(subdir).join("*.json");
         let pattern_str = pattern.to_string_lossy();
 

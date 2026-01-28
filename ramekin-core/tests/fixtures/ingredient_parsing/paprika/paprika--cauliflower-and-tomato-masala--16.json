@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon amchur (dried mango) powder or juice of half a lemon",
+  "expected": {
+    "item": "amchur powder or juice of half a lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "dried mango"
+  }
+}

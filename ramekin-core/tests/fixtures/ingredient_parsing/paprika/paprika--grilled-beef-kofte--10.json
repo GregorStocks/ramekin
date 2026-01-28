@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons hot smoked paprika",
+  "expected": {
+    "item": "hot smoked paprika",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

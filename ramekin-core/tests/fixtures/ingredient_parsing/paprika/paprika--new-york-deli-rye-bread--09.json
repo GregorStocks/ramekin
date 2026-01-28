@@ -1,0 +1,21 @@
+{
+  "raw": "2 1/4 cups (12.5 ounces, 351 grams) bread flour",
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "12.5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "351",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

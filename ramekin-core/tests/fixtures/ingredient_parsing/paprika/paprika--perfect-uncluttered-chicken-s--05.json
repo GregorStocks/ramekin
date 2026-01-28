@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon table salt, or more to taste*",
+  "expected": {
+    "item": "table salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or more to taste*"
+  }
+}

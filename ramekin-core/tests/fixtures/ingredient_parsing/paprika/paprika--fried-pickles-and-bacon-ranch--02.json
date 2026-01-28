@@ -1,0 +1,21 @@
+{
+  "raw": "3 slices thick-cut bacon (about 4 1/2 ounces; 130 g), finely chopped",
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "slices"
+      },
+      {
+        "amount": "4 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

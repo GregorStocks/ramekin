@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 small green cabbage, shredded (about 2 1/2 cups)",
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "small"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "6g (1 1/2 teaspoons) Diamond Crystal kosher salt",
+  "expected": {
+    "item": "Diamond Crystal kosher salt",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "g"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}
