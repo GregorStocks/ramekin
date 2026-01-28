@@ -1,11 +1,15 @@
 {
   "raw": "1 ounce / 30g sun-dried tomatoes",
   "expected": {
-    "item": "/ 30g sun-dried tomatoes",
+    "item": "sun-dried tomatoes",
     "measurements": [
       {
         "amount": "1",
         "unit": "ounce"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
       }
     ],
     "note": null

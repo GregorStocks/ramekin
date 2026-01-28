@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup / 10g fresh mint (finely chopped)",
   "expected": {
-    "item": "/ 10g fresh mint",
+    "item": "fresh mint",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "10",
+        "unit": "g"
       }
     ],
     "note": "finely chopped"

@@ -478,6 +478,39 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 4.6: Handle " / " alternatives in remaining text
+    // e.g., remaining = " / 100g celery root" (after parsing "3.5 ounces")
+    // This handles metric/imperial alternatives like "3.5 oz / 100g"
+    let remaining_trimmed = remaining.trim_start();
+    if remaining_trimmed.starts_with("/ ") {
+        let after_slash = remaining_trimmed[2..].trim_start();
+
+        // Try to parse as measurement
+        let (slash_pre_amount_modifier, after_slash_modifier) =
+            strip_measurement_modifier(after_slash);
+        let (slash_amount, after_slash_amount) = extract_amount(&after_slash_modifier);
+        let (slash_pre_unit_modifier, after_slash_pre_unit) =
+            strip_measurement_modifier(&after_slash_amount);
+        let (slash_base_unit, after_slash_unit) = extract_unit(&after_slash_pre_unit);
+
+        // Only treat as alternative if we got BOTH amount AND unit
+        if slash_amount.is_some() && slash_base_unit.is_some() {
+            let slash_modifier = slash_pre_unit_modifier.or(slash_pre_amount_modifier);
+            let slash_unit = match (slash_modifier, slash_base_unit) {
+                (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
+                (None, u) => u,
+                _ => None,
+            };
+
+            alt_measurements.push(Measurement {
+                amount: slash_amount,
+                unit: slash_unit,
+            });
+
+            remaining = after_slash_unit;
+        }
+    }
+
     // Step 5: Extract note from the end (after comma), if not already set
     if note.is_none() {
         if let Some(comma_idx) = remaining.rfind(',') {
@@ -1304,5 +1337,18 @@ mod tests {
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("3 or 4".to_string()));
         assert_eq!(result.measurements[0].unit, Some("drops".to_string()));
+    }
+
+    #[test]
+    fn test_slash_metric_alternative() {
+        // "3.5 oz / 100g" should parse both measurements
+        let result = parse_ingredient("3.5 ounces / 100g celery root, peeled");
+        assert_eq!(result.item, "celery root");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("3.5".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("ounces".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("100".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        assert_eq!(result.note, Some("peeled".to_string()));
     }
 }

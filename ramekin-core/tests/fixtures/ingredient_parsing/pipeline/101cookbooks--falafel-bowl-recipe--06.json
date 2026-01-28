@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup / 20g grated Parmesan",
   "expected": {
-    "item": "/ 20g grated Parmesan",
+    "item": "grated Parmesan",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
       }
     ],
     "note": null

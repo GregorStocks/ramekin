@@ -1,11 +1,15 @@
 {
   "raw": "9 ounces / 250g fine grain sea salt",
   "expected": {
-    "item": "/ 250g fine grain sea salt",
+    "item": "fine grain sea salt",
     "measurements": [
       {
         "amount": "9",
         "unit": "ounces"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
       }
     ],
     "note": null

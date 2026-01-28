@@ -1,11 +1,15 @@
 {
   "raw": "4 tbsp / 30g coconut flour",
   "expected": {
-    "item": "/ 30g coconut flour",
+    "item": "coconut flour",
     "measurements": [
       {
         "amount": "4",
         "unit": "tbsp"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
       }
     ],
     "note": null

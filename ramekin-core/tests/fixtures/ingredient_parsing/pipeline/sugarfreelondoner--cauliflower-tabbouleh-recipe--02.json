@@ -1,11 +1,15 @@
 {
   "raw": "1 1/2 cup / 160g large cucumber (chopped)",
   "expected": {
-    "item": "/ 160g large cucumber",
+    "item": "large cucumber",
     "measurements": [
       {
         "amount": "1 1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "160",
+        "unit": "g"
       }
     ],
     "note": "chopped"

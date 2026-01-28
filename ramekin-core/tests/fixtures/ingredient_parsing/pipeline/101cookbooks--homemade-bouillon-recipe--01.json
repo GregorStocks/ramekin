@@ -1,11 +1,15 @@
 {
   "raw": "5 ounces / 150 g leeks, sliced and well-washed",
   "expected": {
-    "item": "/ 150 g leeks",
+    "item": "leeks",
     "measurements": [
       {
         "amount": "5",
         "unit": "ounces"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
       }
     ],
     "note": "sliced and well-washed"
