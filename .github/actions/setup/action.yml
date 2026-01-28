@@ -131,7 +131,9 @@ runs:
       run: |
         echo "::group::Install process-compose"
         START=$(date +%s)
-        PC_VERSION=v1.87.0
+        PC_API="https://api.github.com/repos/F1bonacc1/process-compose/releases/latest"
+        PC_VERSION=$(curl -fsSL "$PC_API" | jq -r .tag_name)
+        echo "Installing process-compose ${PC_VERSION}"
         PC_URL="https://github.com/F1bonacc1/process-compose/releases/download/${PC_VERSION}"
         curl -fsSL "${PC_URL}/process-compose_linux_amd64.tar.gz" \
           | sudo tar -xzf - -C /usr/local/bin process-compose
