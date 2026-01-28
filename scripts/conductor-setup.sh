@@ -74,12 +74,19 @@ EOF
         echo ""
         echo "Syncing keys from $SOURCE_DIR..."
 
-        # Create cli.env with OPENROUTER_API_KEY
+        # Create cli.env with OPENROUTER_API_KEY and also add to dev.env for server
         if [ -f "$SOURCE_DIR/cli.env" ]; then
             OPENROUTER_KEY=$(grep '^OPENROUTER_API_KEY=' "$SOURCE_DIR/cli.env" | head -1)
             if [ -n "$OPENROUTER_KEY" ]; then
                 echo "$OPENROUTER_KEY" > cli.env
                 echo "Created cli.env with OPENROUTER_API_KEY"
+                # Also add to dev.env so the server can use it for pipeline enrichment
+                {
+                    echo ""
+                    echo "# AI enrichment (synced from source)"
+                    echo "$OPENROUTER_KEY"
+                } >> dev.env
+                echo "Added OPENROUTER_API_KEY to dev.env"
             fi
         fi
 
