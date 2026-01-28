@@ -641,6 +641,18 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
                 return (Some(first.to_string()), remaining);
             }
         }
+
+        // Check for hyphenated range with spaces: "1 - 2"
+        if words.len() >= 3
+            && words[1] == "-"
+            && is_amount_like(words[0])
+            && is_amount_like(words[2])
+        {
+            // Normalize to "X-Y" format (no spaces)
+            let amount = format!("{}-{}", words[0], words[2]);
+            let remaining_after_range = words[3..].join(" ");
+            return (Some(amount), remaining_after_range);
+        }
     }
 
     // Check for fraction at start: "1/2"

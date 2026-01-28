@@ -1,11 +1,11 @@
 {
   "raw": "1 - 2 tbsp tomato puree",
   "expected": {
-    "item": "- 2 tbsp tomato puree",
+    "item": "tomato puree",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1-2",
+        "unit": "tbsp"
       }
     ],
     "note": null

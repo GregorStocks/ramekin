@@ -1,11 +1,11 @@
 {
   "raw": "1/2 - 1 teaspoon chili flakes, depending on how spicy you like it",
   "expected": {
-    "item": "- 1 teaspoon chili flakes, depending on how spicy you like it",
+    "item": "chili flakes, depending on how spicy you like it",
     "measurements": [
       {
-        "amount": "1/2",
-        "unit": null
+        "amount": "1/2-1",
+        "unit": "teaspoon"
       }
     ],
     "note": null
