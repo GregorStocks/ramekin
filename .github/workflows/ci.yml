@@ -78,6 +78,12 @@ jobs:
           CRATE_COUNT=$(grep -c "Compiling" /tmp/cli-build.log || echo 0)
           echo "::notice::CLI build completed in $(($(date +%s) - START))s (compiled $CRATE_COUNT crates)"
 
+      - name: Run ingredient parsing tests
+        run: |
+          START=$(date +%s)
+          make ingredient-tests
+          echo "::notice::Ingredient parsing tests completed in $(($(date +%s) - START))s"
+
       # Lint after build - clippy --release reuses server artifacts, clippy debug reuses CLI artifacts
       - name: Run linters
         run: |

@@ -1,0 +1,11 @@
+{
+  "raw": "2 medium (8 oz) onions",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {"amount": "2", "unit": "medium"},
+      {"amount": "8", "unit": "oz"}
+    ],
+    "note": null
+  }
+}

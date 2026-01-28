@@ -1,4 +1,4 @@
-.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build
+.PHONY: help dev dev-headless dev-down check-deps lint clean clean-api generate-schema test test-ui venv venv-clean db-up db-down db-clean seed load-test install-hooks setup-claude-web screenshots generate-test-urls pipeline-test pipeline-cache-stats pipeline-cache-clear pipeline-summary pipeline-tag-report ios-generate ios-build ingredient-tests ingredient-tests-generate ingredient-tests-update
 
 # Use bash with pipefail so piped commands propagate exit codes
 SHELL := /bin/bash
@@ -176,3 +176,12 @@ ios-generate: ## Generate Xcode project for iOS app (requires xcodegen: brew ins
 
 ios-build: ## Build iOS app for simulator
 	@cd ramekin-ios && xcodebuild -project Ramekin.xcodeproj -scheme Ramekin -destination 'generic/platform=iOS Simulator' build
+
+ingredient-tests: ## Run ingredient parsing golden tests
+	@cd ramekin-core && cargo test ingredient_parsing -- --nocapture
+
+ingredient-tests-generate: ## Generate ingredient parsing test fixtures from latest pipeline run
+	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-generate
+
+ingredient-tests-update: ## Update ingredient parsing test fixtures to match current parser output
+	@cargo run -q --manifest-path cli/Cargo.toml -- ingredient-tests-update
