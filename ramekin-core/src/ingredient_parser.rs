@@ -580,7 +580,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     measurements.extend(alt_measurements);
 
     // Step 7: The remaining text is the ingredient item
-    let item = remaining.trim().to_string();
+    // Strip leading commas that can occur after units (e.g., "2 large, boneless chicken")
+    let item = remaining.trim().trim_start_matches(',').trim().to_string();
 
     // If we didn't extract anything useful, just use raw as item
     if item.is_empty() && measurements.is_empty() {
