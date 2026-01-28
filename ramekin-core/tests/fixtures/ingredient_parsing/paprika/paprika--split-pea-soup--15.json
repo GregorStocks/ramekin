@@ -1,8 +1,13 @@
 {
   "raw": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
   "expected": {
-    "item": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
-    "measurements": [],
+    "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
     "note": null
   }
 }

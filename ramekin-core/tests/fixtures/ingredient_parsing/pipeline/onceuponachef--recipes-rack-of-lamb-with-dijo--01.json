@@ -1,8 +1,12 @@
 {
   "raw": "Two 8-rib \"frenched\" lamb rib racks (1½ to 2 pounds each), trimmed of fat and silver skin (see note)",
   "expected": {
-    "item": "Two 8-rib \"frenched\" lamb rib racks",
+    "item": "8-rib \"frenched\" lamb rib racks",
     "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
       {
         "amount": "1 1/2",
         "unit": null

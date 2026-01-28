@@ -1,8 +1,13 @@
 {
   "raw": "One 13.5-oz can unsweetened coconut milk",
   "expected": {
-    "item": "One 13.5-oz can unsweetened coconut milk",
-    "measurements": [],
+    "item": "13.5-oz can unsweetened coconut milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": null
   }
 }

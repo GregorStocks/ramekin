@@ -1,8 +1,13 @@
 {
   "raw": "Four thyme sprigs, plus more fresh leaves for garnish",
   "expected": {
-    "item": "Four thyme sprigs",
-    "measurements": [],
+    "item": "thyme sprigs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
     "note": "plus more fresh leaves for garnish"
   }
 }

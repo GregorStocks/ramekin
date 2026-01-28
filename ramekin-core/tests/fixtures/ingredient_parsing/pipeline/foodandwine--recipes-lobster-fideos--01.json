@@ -1,8 +1,13 @@
 {
   "raw": "Six 1 1/4-pound lobsters",
   "expected": {
-    "item": "Six 1 1/4-pound lobsters",
-    "measurements": [],
+    "item": "1 1/4-pound lobsters",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
     "note": null
   }
 }

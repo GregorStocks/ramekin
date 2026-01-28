@@ -1,8 +1,13 @@
 {
   "raw": "One 12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
   "expected": {
-    "item": "One 12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
-    "measurements": [],
+    "item": "12-count pack square soft white dinner rolls, such as Kings Hawaiian Sweet Rolls",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": null
   }
 }

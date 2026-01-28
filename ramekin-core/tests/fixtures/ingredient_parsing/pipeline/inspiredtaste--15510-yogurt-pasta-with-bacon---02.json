@@ -1,8 +1,12 @@
 {
   "raw": "One (16-ounce) package frozen sugar snap peas",
   "expected": {
-    "item": "One package frozen sugar snap peas",
+    "item": "frozen sugar snap peas",
     "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
       {
         "amount": "16",
         "unit": null

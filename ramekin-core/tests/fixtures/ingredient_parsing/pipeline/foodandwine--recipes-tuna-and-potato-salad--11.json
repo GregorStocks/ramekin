@@ -1,8 +1,13 @@
 {
   "raw": "One 6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian, drained and flaked",
   "expected": {
-    "item": "One 6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian",
-    "measurements": [],
+    "item": "6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": "drained and flaked"
   }
 }

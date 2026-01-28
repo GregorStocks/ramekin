@@ -317,6 +317,38 @@ fn normalize_dashes(s: &str) -> String {
         .replace('—', "-") // em-dash (U+2014)
 }
 
+/// Convert word numbers to digits at the start of the string.
+/// Only converts at word boundaries and only at the start to avoid
+/// changing words like "someone" or "twenty-one" mid-string.
+fn normalize_word_numbers(s: &str) -> String {
+    let word_to_digit = [
+        ("one", "1"),
+        ("two", "2"),
+        ("three", "3"),
+        ("four", "4"),
+        ("five", "5"),
+        ("six", "6"),
+        ("seven", "7"),
+        ("eight", "8"),
+        ("nine", "9"),
+        ("ten", "10"),
+        ("eleven", "11"),
+        ("twelve", "12"),
+    ];
+
+    let s_lower = s.to_lowercase();
+    for (word, digit) in word_to_digit {
+        if s_lower.starts_with(word) {
+            // Check for word boundary (space or end of string)
+            let after = &s[word.len()..];
+            if after.is_empty() || after.starts_with(char::is_whitespace) {
+                return format!("{}{}", digit, after);
+            }
+        }
+    }
+    s.to_string()
+}
+
 /// Parse a single ingredient line into structured data.
 ///
 /// This does best-effort parsing - if we can't parse something meaningful,
@@ -335,7 +367,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Decode HTML entities and normalize unicode before processing
     let decoded = decode_html_entities(raw);
     let normalized = normalize_unicode_fractions(&decoded);
-    let mut remaining = normalize_dashes(&normalized);
+    let after_dashes = normalize_dashes(&normalized);
+    let mut remaining = normalize_word_numbers(&after_dashes);
     let mut measurements = Vec::new();
     let mut note = None;
 

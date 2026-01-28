@@ -1,8 +1,12 @@
 {
   "raw": "one 14.5 ounce can diced tomatoes or 1 lb. diced fresh tomatoes (about 2 cups)",
   "expected": {
-    "item": "one 14.5 ounce can diced tomatoes or 1 lb. diced fresh tomatoes",
+    "item": "14.5 ounce can diced tomatoes or 1 lb. diced fresh tomatoes",
     "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
       {
         "amount": "2",
         "unit": "cups"
