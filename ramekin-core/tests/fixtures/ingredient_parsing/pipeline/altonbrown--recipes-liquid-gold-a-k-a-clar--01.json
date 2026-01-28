@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound high-quality butter",
+  "expected": {
+    "item": "high-quality butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

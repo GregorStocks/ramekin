@@ -1,0 +1,17 @@
+{
+  "raw": "1.5 cups unbleached all-purpose flour, plus more for cake pans (7 ounces)",
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": "plus more for cake pans"
+  }
+}

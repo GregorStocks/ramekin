@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup grated sweet onion",
+  "expected": {
+    "item": "grated sweet onion",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

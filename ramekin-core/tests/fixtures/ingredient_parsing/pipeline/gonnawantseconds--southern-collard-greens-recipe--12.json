@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon Cajun seasoning",
+  "expected": {
+    "item": "Cajun seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

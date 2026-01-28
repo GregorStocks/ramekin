@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 fluid ounce Agave syrup (optional)",
+  "expected": {
+    "item": "Agave syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "fluid ounce"
+      }
+    ],
+    "note": "optional"
+  }
+}

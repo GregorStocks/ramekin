@@ -1,0 +1,13 @@
+{
+  "raw": "100g shredded kale",
+  "expected": {
+    "item": "shredded kale",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

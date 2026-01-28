@@ -1,0 +1,13 @@
+{
+  "raw": "3  English Muffins (each sliced in half)",
+  "expected": {
+    "item": "English Muffins",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "each sliced in half"
+  }
+}

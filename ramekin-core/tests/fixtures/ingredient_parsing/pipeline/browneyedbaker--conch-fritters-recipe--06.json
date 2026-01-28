@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces conch (finely minced)",
+  "expected": {
+    "item": "conch",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "finely minced"
+  }
+}

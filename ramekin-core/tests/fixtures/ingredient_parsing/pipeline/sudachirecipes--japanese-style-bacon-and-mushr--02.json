@@ -1,0 +1,17 @@
+{
+  "raw": "160 g dry spaghetti (1.8mm)",
+  "expected": {
+    "item": "dry spaghetti",
+    "measurements": [
+      {
+        "amount": "160",
+        "unit": "g"
+      },
+      {
+        "amount": "1.8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium-size ripe tomato, coarsely chopped",
+  "expected": {
+    "item": "medium-size ripe tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

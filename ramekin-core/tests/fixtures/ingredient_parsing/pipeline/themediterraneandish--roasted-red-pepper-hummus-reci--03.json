@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups/453 g cooked chickpeas (canned chickpeas are fine, drained and rinsed)",
+  "expected": {
+    "item": "cups/453 g cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "canned chickpeas are fine, drained and rinsed"
+  }
+}

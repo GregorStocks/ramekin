@@ -1,0 +1,13 @@
+{
+  "raw": "1  cup malted milk powder",
+  "expected": {
+    "item": "malted milk powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

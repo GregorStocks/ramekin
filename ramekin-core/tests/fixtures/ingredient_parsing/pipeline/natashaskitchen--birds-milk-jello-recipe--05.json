@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz tub cool whip (refrigerated (should be fully thawed, not frozen))",
+  "expected": {
+    "item": "tub cool whip",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "refrigerated (should be fully thawed, not frozen"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp cider apple vinegar ((or white vinegar))",
+  "expected": {
+    "item": "cider apple vinegar (or white vinegar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2&nbsp;tablespoons plus 1 teaspoon kosher salt",
+  "expected": {
+    "item": "2&nbsp;tablespoons plus 1 teaspoon kosher salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus 1 teaspoon kosher salt"
+  }
+}

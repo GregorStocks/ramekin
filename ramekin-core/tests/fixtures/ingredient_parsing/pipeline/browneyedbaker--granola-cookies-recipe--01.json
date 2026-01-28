@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups granola (without the fruit or nuts)",
+  "expected": {
+    "item": "granola (without the fruit or nuts)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

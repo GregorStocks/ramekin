@@ -1,0 +1,17 @@
+{
+  "raw": "1&nbsp;egg (small if possible)",
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

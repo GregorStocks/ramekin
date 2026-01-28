@@ -1,0 +1,13 @@
+{
+  "raw": "8 bacon strips, cut into 1-inch pieces",
+  "expected": {
+    "item": "bacon strips, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 cups 300 ml heavy cream, whipped to firm peaks",
+  "expected": {
+    "item": "300 ml heavy cream, whipped to firm peaks",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

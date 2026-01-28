@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon dried chile flakes",
+  "expected": {
+    "item": "dried chile flakes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

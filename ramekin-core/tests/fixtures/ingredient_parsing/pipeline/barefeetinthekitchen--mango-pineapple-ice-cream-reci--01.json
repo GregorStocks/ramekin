@@ -1,0 +1,13 @@
+{
+  "raw": "1 14-ounce can pineapple tidbits, drained",
+  "expected": {
+    "item": "14-ounce can pineapple tidbits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

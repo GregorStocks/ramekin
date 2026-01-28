@@ -1,0 +1,13 @@
+{
+  "raw": "1  small onion (thinly sliced (~1/4 lb))",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "thinly sliced (~1/4 lb"
+  }
+}

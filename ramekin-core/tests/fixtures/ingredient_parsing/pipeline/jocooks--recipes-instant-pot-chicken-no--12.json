@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds chicken (with skin and bones, use at least 1 chicken breast)",
+  "expected": {
+    "item": "chicken (with skin and bones, use at least 1 chicken breast)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

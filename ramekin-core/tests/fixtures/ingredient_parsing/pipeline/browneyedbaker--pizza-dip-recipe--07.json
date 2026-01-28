@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons sliced black olives",
+  "expected": {
+    "item": "sliced black olives",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

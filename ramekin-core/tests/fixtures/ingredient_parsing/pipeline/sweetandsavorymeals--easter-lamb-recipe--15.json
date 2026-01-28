@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons fresh rosemary (chopped)",
+  "expected": {
+    "item": "fresh rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "chopped"
+  }
+}

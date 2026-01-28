@@ -1,0 +1,13 @@
+{
+  "raw": "3  cobs of corn",
+  "expected": {
+    "item": "cobs of corn",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

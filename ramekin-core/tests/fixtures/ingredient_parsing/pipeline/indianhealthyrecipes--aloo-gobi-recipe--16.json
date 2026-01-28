@@ -1,0 +1,13 @@
+{
+  "raw": "¾ to 1 teaspoon coriander powder",
+  "expected": {
+    "item": "coriander powder",
+    "measurements": [
+      {
+        "amount": "3/4 to 1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.33 cup canola oil",
+  "expected": {
+    "item": "canola oil",
+    "measurements": [
+      {
+        "amount": "0.33",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

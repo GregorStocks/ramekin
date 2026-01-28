@@ -1,0 +1,13 @@
+{
+  "raw": "12-18 oz button mushrooms ((3 cups minced))",
+  "expected": {
+    "item": "button mushrooms",
+    "measurements": [
+      {
+        "amount": "12-18",
+        "unit": "oz"
+      }
+    ],
+    "note": "3 cups minced"
+  }
+}

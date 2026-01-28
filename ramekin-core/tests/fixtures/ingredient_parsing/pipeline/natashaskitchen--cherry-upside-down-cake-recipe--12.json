@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 tsp cream of tartar",
+  "expected": {
+    "item": "cream of tartar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

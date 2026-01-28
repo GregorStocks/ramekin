@@ -1,0 +1,13 @@
+{
+  "raw": "2 Tablespoons whole milk (room temperature.)",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "room temperature."
+  }
+}

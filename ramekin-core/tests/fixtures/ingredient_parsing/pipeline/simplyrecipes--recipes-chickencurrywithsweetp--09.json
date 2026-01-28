@@ -1,0 +1,17 @@
+{
+  "raw": "4 large boneless, skinless chicken thighs (about 1 3/4 pounds total), each cut into 3 pieces",
+  "expected": {
+    "item": "boneless, skinless chicken thighs , each cut into 3 pieces",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "1 3/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces reduced fat cream cheese (at room temperature)",
+  "expected": {
+    "item": "reduced fat cream cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

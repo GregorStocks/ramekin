@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups  sharp cheddar, grated  ((about 6 ounces))",
+  "expected": {
+    "item": "sharp cheddar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "grated"
+  }
+}

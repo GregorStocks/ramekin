@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces block cream cheese, at room temperature (225g)",
+  "expected": {
+    "item": "block cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

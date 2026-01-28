@@ -1,0 +1,13 @@
+{
+  "raw": "2 bird’s eye chiles, thinly sliced",
+  "expected": {
+    "item": "bird’s eye chiles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

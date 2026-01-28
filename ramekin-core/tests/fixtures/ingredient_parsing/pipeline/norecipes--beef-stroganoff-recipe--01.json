@@ -1,0 +1,13 @@
+{
+  "raw": "413 grams hanger steak ((sliced into thin strips))",
+  "expected": {
+    "item": "hanger steak",
+    "measurements": [
+      {
+        "amount": "413",
+        "unit": "grams"
+      }
+    ],
+    "note": "sliced into thin strips"
+  }
+}

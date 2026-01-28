@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups uncooked instant rice",
+  "expected": {
+    "item": "uncooked instant rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

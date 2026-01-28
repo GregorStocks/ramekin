@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ cups cooked quinoa",
+  "expected": {
+    "item": "cooked quinoa",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

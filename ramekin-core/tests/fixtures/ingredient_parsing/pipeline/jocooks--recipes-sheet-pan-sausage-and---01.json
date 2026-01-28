@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups baby potatoes (washed and patted dry)",
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "washed and patted dry"
+  }
+}

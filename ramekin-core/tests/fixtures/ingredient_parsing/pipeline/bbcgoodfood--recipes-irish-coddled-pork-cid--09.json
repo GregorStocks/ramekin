@@ -1,0 +1,13 @@
+{
+  "raw": "100ml Irish cider",
+  "expected": {
+    "item": "Irish cider",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

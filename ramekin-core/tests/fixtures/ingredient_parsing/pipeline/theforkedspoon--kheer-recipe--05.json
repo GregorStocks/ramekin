@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon ground cardamom",
+  "expected": {
+    "item": "ground cardamom",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

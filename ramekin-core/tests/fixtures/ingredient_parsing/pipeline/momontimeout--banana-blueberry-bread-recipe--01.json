@@ -1,0 +1,17 @@
+{
+  "raw": "4  ripe bananas  (~ 1 1/2 cups mashed)",
+  "expected": {
+    "item": "ripe bananas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

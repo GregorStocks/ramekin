@@ -1,0 +1,13 @@
+{
+  "raw": "4 lbs. sweet potatoes, washed if very dirty",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lbs"
+      }
+    ],
+    "note": "washed if very dirty"
+  }
+}

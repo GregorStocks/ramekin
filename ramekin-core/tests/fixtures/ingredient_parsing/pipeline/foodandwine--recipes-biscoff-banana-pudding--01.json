@@ -1,0 +1,17 @@
+{
+  "raw": "1 (5.1-ounce) package instant vanilla pudding and pie filling mix (such as Jell-O)",
+  "expected": {
+    "item": "instant vanilla pudding and pie filling mix (such as Jell-O)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "5.1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

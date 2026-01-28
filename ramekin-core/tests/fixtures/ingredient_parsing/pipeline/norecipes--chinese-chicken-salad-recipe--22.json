@@ -1,0 +1,13 @@
+{
+  "raw": "30 grams cilantro ((leaves picked from stems))",
+  "expected": {
+    "item": "cilantro (leaves picked from stems)",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

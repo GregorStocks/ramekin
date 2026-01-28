@@ -1,0 +1,13 @@
+{
+  "raw": "1  ice cube",
+  "expected": {
+    "item": "ice cube",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

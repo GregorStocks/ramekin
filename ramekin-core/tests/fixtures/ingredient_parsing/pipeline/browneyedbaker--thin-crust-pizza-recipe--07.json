@@ -1,0 +1,13 @@
+{
+  "raw": "28 ounce can whole peeled tomatoes, drained",
+  "expected": {
+    "item": "can whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

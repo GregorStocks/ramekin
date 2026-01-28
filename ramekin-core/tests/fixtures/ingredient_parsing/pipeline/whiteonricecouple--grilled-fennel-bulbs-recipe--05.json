@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup grated parmesan cheese",
+  "expected": {
+    "item": "grated parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

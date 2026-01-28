@@ -1,0 +1,13 @@
+{
+  "raw": "3 inches dashi konbu",
+  "expected": {
+    "item": "inches dashi konbu",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

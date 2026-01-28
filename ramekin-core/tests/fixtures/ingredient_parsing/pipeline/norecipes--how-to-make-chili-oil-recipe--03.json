@@ -1,0 +1,13 @@
+{
+  "raw": "4 grams Sichuan pepper",
+  "expected": {
+    "item": "Sichuan pepper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

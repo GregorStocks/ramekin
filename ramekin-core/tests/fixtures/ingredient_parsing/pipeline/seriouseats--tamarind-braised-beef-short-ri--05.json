@@ -1,0 +1,17 @@
+{
+  "raw": "4 teaspoons (17 g) jaggery or dark brown sugar (see note)",
+  "expected": {
+    "item": "jaggery or dark brown sugar (see note)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "17",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

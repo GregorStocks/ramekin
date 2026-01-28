@@ -1,0 +1,13 @@
+{
+  "raw": "scant 1 cup of unbleached all-purpose flour",
+  "expected": {
+    "item": "unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup fresh basil leaves, torn, plus more for serving",
+  "expected": {
+    "item": "fresh basil leaves, torn",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

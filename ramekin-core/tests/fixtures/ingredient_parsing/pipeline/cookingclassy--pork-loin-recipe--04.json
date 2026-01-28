@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp chopped fresh thyme ((or 3/4 tsp dried))",
+  "expected": {
+    "item": "chopped fresh thyme",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "or 3/4 tsp dried"
+  }
+}

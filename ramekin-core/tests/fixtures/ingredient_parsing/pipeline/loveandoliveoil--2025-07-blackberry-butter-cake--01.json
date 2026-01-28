@@ -1,0 +1,13 @@
+{
+  "raw": "7 ounces blackberries (washed and dried)",
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": "washed and dried"
+  }
+}

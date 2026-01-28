@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds fresh figs, stems removed and chopped into 1/2-inch pieces (about 4 cups chopped)",
+  "expected": {
+    "item": "fresh figs, stems removed and chopped into 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "about 4 cups chopped"
+  }
+}

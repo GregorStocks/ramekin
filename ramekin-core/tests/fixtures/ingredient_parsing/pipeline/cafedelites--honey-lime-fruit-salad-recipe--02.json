@@ -1,0 +1,13 @@
+{
+  "raw": "3  kiwi fruits (peeled and sliced into half moons)",
+  "expected": {
+    "item": "kiwi fruits",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced into half moons"
+  }
+}

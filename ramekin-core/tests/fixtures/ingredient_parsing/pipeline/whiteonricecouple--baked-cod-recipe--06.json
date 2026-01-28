@@ -1,0 +1,17 @@
+{
+  "raw": "2 Tablespoons minced or crushed garlic ((about 3 large cloves))",
+  "expected": {
+    "item": "minced or crushed garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

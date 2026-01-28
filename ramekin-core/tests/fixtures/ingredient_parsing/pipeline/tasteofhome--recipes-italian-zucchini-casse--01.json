@@ -1,0 +1,17 @@
+{
+  "raw": "3 medium zucchini, sliced (about 6-1/2 cups)",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "medium"
+      },
+      {
+        "amount": "6-1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "sliced"
+  }
+}

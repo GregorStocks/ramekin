@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup 107g light brown sugar",
+  "expected": {
+    "item": "107g light brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

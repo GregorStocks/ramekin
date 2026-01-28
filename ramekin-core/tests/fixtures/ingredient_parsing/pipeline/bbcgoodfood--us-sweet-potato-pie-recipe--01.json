@@ -1,0 +1,13 @@
+{
+  "raw": "1.1 lbs sweet potatoes",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "1.1",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pint blueberries (plus more for garnish)",
+  "expected": {
+    "item": "blueberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "plus more for garnish"
+  }
+}

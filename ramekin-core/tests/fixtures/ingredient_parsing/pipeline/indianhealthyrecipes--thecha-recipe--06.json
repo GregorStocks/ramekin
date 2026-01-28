@@ -1,0 +1,17 @@
+{
+  "raw": "½ cup (13 grams)  coriander leaves ( (with tender stalks, may double if you prefer))",
+  "expected": {
+    "item": "coriander leaves ( (with tender stalks, may double if you prefer)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "13",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

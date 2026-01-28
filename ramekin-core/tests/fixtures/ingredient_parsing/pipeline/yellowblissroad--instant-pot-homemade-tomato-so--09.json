@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons low sodium soy sauce",
+  "expected": {
+    "item": "low sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6  limes",
+  "expected": {
+    "item": "limes",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup / 20g fine cornmeal",
+  "expected": {
+    "item": "/ 20g fine cornmeal",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

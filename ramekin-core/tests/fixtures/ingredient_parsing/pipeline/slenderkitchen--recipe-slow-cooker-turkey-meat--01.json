@@ -1,0 +1,13 @@
+{
+  "raw": "2.5 lbs 93% lean ground turkey (or 99% lean)",
+  "expected": {
+    "item": "93% lean ground turkey (or 99% lean)",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

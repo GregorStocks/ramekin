@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups (960 ml) cold water",
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "960",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

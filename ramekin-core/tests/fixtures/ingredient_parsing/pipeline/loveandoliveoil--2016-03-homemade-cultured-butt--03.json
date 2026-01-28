@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon fine sea salt or butter salt (optional, for salted butter)",
+  "expected": {
+    "item": "fine sea salt or butter salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional, for salted butter"
+  }
+}

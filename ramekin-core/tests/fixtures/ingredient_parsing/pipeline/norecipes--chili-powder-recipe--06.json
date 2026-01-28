@@ -1,0 +1,17 @@
+{
+  "raw": ".5 grams smoked paprika ((~1/4 teaspoon))",
+  "expected": {
+    "item": "smoked paprika",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

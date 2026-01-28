@@ -1,0 +1,13 @@
+{
+  "raw": "5  Roma tomatoes (diced, divided)",
+  "expected": {
+    "item": "Roma tomatoes",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": "diced, divided"
+  }
+}

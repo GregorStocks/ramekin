@@ -1,0 +1,17 @@
+{
+  "raw": "45g (3 tablespoons) cold whole milk1 large egg yolk",
+  "expected": {
+    "item": "cold whole milk1 large egg yolk",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

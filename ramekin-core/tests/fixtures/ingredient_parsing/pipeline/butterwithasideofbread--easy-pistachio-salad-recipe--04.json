@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz whipped topping",
+  "expected": {
+    "item": "whipped topping",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

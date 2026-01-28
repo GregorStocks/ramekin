@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb (about 454 g) large shrimp or prawns, peeled, deviened, tail-on (if frozen, thaw properly before use)",
+  "expected": {
+    "item": "large shrimp or prawns, peeled, deviened, tail-on",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "454",
+        "unit": "g"
+      }
+    ],
+    "note": "if frozen, thaw properly before use"
+  }
+}

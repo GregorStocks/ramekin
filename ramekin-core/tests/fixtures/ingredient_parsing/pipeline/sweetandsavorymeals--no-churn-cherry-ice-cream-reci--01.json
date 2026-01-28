@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz cherries (frozen or fresh, pitted)",
+  "expected": {
+    "item": "cherries",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": "frozen or fresh, pitted"
+  }
+}

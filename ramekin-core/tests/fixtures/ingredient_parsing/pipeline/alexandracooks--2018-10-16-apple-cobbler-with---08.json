@@ -1,0 +1,17 @@
+{
+  "raw": "3/8&nbsp;cup&nbsp;(93g) whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "3/8",
+        "unit": "cup"
+      },
+      {
+        "amount": "93",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

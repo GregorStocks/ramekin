@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup shredded romaine lettuce",
+  "expected": {
+    "item": "shredded romaine lettuce",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams Mozzarella cheese ((grated))",
+  "expected": {
+    "item": "Mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated"
+  }
+}

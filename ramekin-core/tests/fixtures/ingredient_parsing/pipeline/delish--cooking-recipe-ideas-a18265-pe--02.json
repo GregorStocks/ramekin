@@ -1,0 +1,17 @@
+{
+  "raw": "1 c. (200 g.) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

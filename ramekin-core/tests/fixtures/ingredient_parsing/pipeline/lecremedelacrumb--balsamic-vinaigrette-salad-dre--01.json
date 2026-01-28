@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup high quality balsamic vinegar",
+  "expected": {
+    "item": "high quality balsamic vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

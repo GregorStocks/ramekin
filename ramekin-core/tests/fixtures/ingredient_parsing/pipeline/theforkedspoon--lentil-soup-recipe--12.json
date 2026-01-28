@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups dry lentils (rinsed in cold water)",
+  "expected": {
+    "item": "dry lentils",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "rinsed in cold water"
+  }
+}

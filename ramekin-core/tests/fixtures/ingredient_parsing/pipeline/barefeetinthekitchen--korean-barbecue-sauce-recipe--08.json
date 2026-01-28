@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup plus 2 tablespoons minced garlic (about 16-20 cloves, minced)",
+  "expected": {
+    "item": "1/4 cup plus 2 tablespoons minced garlic (about 16-20 cloves, minced)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "about 16-20 cloves, minced"
+  }
+}

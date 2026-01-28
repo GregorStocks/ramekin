@@ -1,0 +1,17 @@
+{
+  "raw": "2 large grapefruits, juiced (about 2 cups)",
+  "expected": {
+    "item": "grapefruits, juiced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

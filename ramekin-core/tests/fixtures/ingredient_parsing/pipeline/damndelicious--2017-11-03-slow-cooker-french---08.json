@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons sherry vinegar",
+  "expected": {
+    "item": "sherry vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "½ teaspoon (3ml) baking soda",
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "3",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

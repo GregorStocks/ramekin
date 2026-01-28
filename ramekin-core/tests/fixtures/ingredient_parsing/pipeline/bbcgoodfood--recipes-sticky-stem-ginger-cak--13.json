@@ -1,0 +1,13 @@
+{
+  "raw": "50g icing sugar, sifted",
+  "expected": {
+    "item": "icing sugar",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": "sifted"
+  }
+}

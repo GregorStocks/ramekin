@@ -1,0 +1,13 @@
+{
+  "raw": "5 oz pork (thinly sliced)",
+  "expected": {
+    "item": "pork",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

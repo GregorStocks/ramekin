@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp Tonkatsu sauce",
+  "expected": {
+    "item": "Tonkatsu sauce",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

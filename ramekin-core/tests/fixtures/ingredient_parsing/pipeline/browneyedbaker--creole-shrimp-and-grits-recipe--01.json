@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds unpeeled medium-size raw shrimp  ((26/30 count))",
+  "expected": {
+    "item": "unpeeled medium-size raw shrimp",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "26/30",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

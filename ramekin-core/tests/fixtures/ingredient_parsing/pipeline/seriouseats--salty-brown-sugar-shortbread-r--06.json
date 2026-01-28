@@ -1,0 +1,21 @@
+{
+  "raw": "288g all-purpose flour (10 ounces; 2 1/4 cups)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "288",
+        "unit": "g"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

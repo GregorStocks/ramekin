@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (60 ml) neutral oil, such as canola",
+  "expected": {
+    "item": "neutral oil, such as canola",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "600 g cooked Japanese short-grain rice",
+  "expected": {
+    "item": "cooked Japanese short-grain rice",
+    "measurements": [
+      {
+        "amount": "600",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

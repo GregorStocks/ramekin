@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups sauerkraut ((drained))",
+  "expected": {
+    "item": "sauerkraut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces dulce de leche",
+  "expected": {
+    "item": "dulce de leche",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

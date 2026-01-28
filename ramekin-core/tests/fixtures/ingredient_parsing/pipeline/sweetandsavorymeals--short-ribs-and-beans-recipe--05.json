@@ -1,0 +1,13 @@
+{
+  "raw": "2 19 oz cans pinto beans (rinsed)",
+  "expected": {
+    "item": "19 oz cans pinto beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "rinsed"
+  }
+}

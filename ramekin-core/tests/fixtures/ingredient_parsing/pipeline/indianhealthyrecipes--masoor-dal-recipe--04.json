@@ -1,0 +1,13 @@
+{
+  "raw": "1  green chili ((optional))",
+  "expected": {
+    "item": "green chili",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

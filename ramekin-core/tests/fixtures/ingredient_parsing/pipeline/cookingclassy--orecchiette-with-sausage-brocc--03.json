@@ -1,0 +1,13 @@
+{
+  "raw": "12  oz.  orecchiette pasta",
+  "expected": {
+    "item": "orecchiette pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

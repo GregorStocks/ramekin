@@ -1,0 +1,13 @@
+{
+  "raw": "1 package instant ramen noodles",
+  "expected": {
+    "item": "instant ramen noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

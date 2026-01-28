@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup nonfat plain yogurt",
+  "expected": {
+    "item": "nonfat plain yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

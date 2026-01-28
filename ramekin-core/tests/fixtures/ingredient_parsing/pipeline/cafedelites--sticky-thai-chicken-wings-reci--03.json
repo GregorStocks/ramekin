@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cup Thai sweet chili sauce",
+  "expected": {
+    "item": "Thai sweet chili sauce",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

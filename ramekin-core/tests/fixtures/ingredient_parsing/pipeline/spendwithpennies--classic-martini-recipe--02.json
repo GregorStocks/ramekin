@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon dry vermouth (optional)",
+  "expected": {
+    "item": "dry vermouth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

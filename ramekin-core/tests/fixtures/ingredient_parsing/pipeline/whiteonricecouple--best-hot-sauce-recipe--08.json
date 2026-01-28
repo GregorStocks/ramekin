@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tablespoon Fish Sauce ((this is a vital ingredient for wonderful flavor, please don't skip it))",
+  "expected": {
+    "item": "Fish Sauce (this is a vital ingredient for wonderful flavor, please don't skip it)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

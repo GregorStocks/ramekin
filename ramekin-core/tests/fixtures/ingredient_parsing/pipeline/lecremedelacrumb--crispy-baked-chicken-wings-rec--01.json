@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ pounds chicken wings and drumsticks",
+  "expected": {
+    "item": "chicken wings and drumsticks",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

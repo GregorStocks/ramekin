@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp Aleppo pepper",
+  "expected": {
+    "item": "Aleppo pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

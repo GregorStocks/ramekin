@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon Tabasco",
+  "expected": {
+    "item": "Tabasco",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

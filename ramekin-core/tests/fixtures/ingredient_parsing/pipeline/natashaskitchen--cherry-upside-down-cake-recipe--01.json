@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 4 Tbsp unsalted butter",
+  "expected": {
+    "item": "4 Tbsp unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

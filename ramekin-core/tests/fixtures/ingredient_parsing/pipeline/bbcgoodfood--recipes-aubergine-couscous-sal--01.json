@@ -1,0 +1,13 @@
+{
+  "raw": "1 large aubergine sliced into 1cm rounds",
+  "expected": {
+    "item": "aubergine sliced into 1cm rounds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

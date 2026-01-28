@@ -1,0 +1,21 @@
+{
+  "raw": "2 1/2 cups plus 1 tablespoon (300g) King Arthur ‘00’ Pizza Flour or 2 1/2 cups (300g) King Arthur Unbleached All-Purpose Flour",
+  "expected": {
+    "item": "2 1/2 cups plus 1 tablespoon (300g) King Arthur ‘00’ Pizza Flour or 2 1/2 cups (300g) King Arthur Unbleached All-Purpose Flour",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": "plus 1 tablespoon King Arthur ‘00’ Pizza Flour or 2 1/2 cups King Arthur Unbleached All-Purpose Flour"
+  }
+}

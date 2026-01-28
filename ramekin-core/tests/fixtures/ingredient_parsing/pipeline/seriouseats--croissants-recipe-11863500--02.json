@@ -1,0 +1,21 @@
+{
+  "raw": "85 g granulated sugar (3 ounces; 1/4 cup plus 3 tablespoons)",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

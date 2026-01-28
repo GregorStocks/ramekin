@@ -1,0 +1,13 @@
+{
+  "raw": "100ml olive oil",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

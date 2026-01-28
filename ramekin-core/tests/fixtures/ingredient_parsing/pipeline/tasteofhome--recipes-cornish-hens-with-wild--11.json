@@ -1,0 +1,17 @@
+{
+  "raw": "5 Cornish game hens (20 to 24 ounces each)",
+  "expected": {
+    "item": "Cornish game hens",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      },
+      {
+        "amount": "20 to 24",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

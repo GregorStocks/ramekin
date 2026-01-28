@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon brown miso paste, at room temperature",
+  "expected": {
+    "item": "brown miso paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups peeled and grated tart Apples (, about 2 medium apples)",
+  "expected": {
+    "item": "peeled and grated tart Apples",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

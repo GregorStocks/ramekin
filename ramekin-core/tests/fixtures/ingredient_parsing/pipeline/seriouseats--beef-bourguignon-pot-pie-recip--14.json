@@ -1,0 +1,13 @@
+{
+  "raw": "Dash of fish sauce (optional)",
+  "expected": {
+    "item": "fish sauce",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
+  }
+}

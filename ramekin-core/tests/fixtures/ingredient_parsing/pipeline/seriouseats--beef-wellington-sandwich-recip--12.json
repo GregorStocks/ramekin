@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces (113 g) thinly sliced prosciutto",
+  "expected": {
+    "item": "thinly sliced prosciutto",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

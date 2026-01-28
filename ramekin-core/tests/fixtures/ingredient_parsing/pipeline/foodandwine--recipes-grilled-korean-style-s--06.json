@@ -1,0 +1,17 @@
+{
+  "raw": "7 large garlic cloves, finely chopped (about 1/4 cup)",
+  "expected": {
+    "item": "garlic cloves",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "large"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

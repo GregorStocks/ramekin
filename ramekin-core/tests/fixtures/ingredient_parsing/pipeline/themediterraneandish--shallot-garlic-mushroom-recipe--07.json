@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb/ 453 g baby bella mushrooms, cleaned and halved",
+  "expected": {
+    "item": "lb/ 453 g baby bella mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "cleaned and halved"
+  }
+}

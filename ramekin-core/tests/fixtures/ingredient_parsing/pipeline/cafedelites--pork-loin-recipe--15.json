@@ -1,0 +1,17 @@
+{
+  "raw": "1 pinch salt (large)",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pinch"
+      },
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

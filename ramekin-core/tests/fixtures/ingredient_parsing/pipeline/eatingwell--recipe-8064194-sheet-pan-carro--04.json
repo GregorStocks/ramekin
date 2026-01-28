@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup cider vinegar, divided",
+  "expected": {
+    "item": "cider vinegar",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

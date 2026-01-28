@@ -1,0 +1,13 @@
+{
+  "raw": "6 grams cracked black pepper",
+  "expected": {
+    "item": "cracked black pepper",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

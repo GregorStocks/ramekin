@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 8 oz shredded cheese (cheddar, Monterey jack, any will work)",
+  "expected": {
+    "item": "8 oz shredded cheese (cheddar, Monterey jack, any will work)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

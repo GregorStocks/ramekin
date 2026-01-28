@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs. zucchini, ends trimmed, sliced into rounds 1/4-inch thick",
+  "expected": {
+    "item": "zucchini, ends trimmed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "sliced into rounds 1/4-inch thick"
+  }
+}

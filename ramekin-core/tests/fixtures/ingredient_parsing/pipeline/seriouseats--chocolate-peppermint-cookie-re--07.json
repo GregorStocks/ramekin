@@ -1,0 +1,21 @@
+{
+  "raw": "5 1/2 tablespoons unsalted butter (2 3/4 ounces; 78 g), softened",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "5 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "2 3/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "78",
+        "unit": "g"
+      }
+    ],
+    "note": "softened"
+  }
+}

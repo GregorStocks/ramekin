@@ -1,0 +1,13 @@
+{
+  "raw": "15 oz can chopped tomatoes with juice",
+  "expected": {
+    "item": "can chopped tomatoes with juice",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "Handful fresh parsley (about 1 oz)",
+  "expected": {
+    "item": "fresh parsley",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

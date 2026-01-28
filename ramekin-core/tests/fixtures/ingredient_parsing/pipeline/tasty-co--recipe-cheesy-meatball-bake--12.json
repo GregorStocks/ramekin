@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups mozzarella cheese",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

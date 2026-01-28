@@ -1,0 +1,13 @@
+{
+  "raw": "1 TBSP seasoned rice vinegar",
+  "expected": {
+    "item": "seasoned rice vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

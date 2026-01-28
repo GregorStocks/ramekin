@@ -1,0 +1,17 @@
+{
+  "raw": "1  white onion (small )",
+  "expected": {
+    "item": "white onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

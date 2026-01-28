@@ -1,0 +1,17 @@
+{
+  "raw": "200 grams water (1 2/3 US cups)",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      },
+      {
+        "amount": "1 2/3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

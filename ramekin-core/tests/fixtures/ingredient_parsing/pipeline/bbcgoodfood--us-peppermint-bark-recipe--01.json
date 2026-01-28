@@ -1,0 +1,13 @@
+{
+  "raw": "7 oz milk chocolate broken into chunks, or use melts",
+  "expected": {
+    "item": "milk chocolate broken into chunks, or use melts",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

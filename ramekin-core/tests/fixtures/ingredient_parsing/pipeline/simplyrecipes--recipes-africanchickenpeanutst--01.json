@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 pounds chicken legs, thighs and/or wings",
+  "expected": {
+    "item": "chicken legs, thighs and/or wings",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

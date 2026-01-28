@@ -1,0 +1,13 @@
+{
+  "raw": "300 grams Japanese short-grain rice",
+  "expected": {
+    "item": "Japanese short-grain rice",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

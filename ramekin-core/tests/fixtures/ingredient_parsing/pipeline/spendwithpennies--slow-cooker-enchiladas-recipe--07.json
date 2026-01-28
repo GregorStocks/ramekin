@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces enchilada sauce (1 can, divided)",
+  "expected": {
+    "item": "enchilada sauce",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "1 can, divided"
+  }
+}

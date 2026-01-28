@@ -1,0 +1,13 @@
+{
+  "raw": "4 grams garlic ((grated))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "grams"
+      }
+    ],
+    "note": "grated"
+  }
+}

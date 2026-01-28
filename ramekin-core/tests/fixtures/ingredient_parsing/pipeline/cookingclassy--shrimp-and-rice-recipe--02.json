@@ -1,0 +1,13 @@
+{
+  "raw": "5 Tbsp butter, (divided, cut into 1/2-Tbsp pieces)",
+  "expected": {
+    "item": "butter,",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided, cut into 1/2-Tbsp pieces"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  medium shallot (diced)",
+  "expected": {
+    "item": "shallot",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
+  }
+}

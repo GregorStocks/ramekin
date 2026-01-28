@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 teaspoon (3ml) ground clove",
+  "expected": {
+    "item": "ground clove",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "3",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

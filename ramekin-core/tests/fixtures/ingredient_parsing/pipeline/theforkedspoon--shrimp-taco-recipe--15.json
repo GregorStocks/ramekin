@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon fresh cilantro (minced)",
+  "expected": {
+    "item": "fresh cilantro",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "minced"
+  }
+}

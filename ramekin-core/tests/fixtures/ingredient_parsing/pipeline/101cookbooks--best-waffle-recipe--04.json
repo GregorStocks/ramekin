@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz | 110 g organic cornstarch or rice flour",
+  "expected": {
+    "item": "| 110 g organic cornstarch or rice flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

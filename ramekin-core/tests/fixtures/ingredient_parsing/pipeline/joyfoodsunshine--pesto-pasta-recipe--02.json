@@ -1,0 +1,13 @@
+{
+  "raw": "6 Tablespoons pine nuts ((toasted))",
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "toasted"
+  }
+}

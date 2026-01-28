@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup (220 grams)  tomato puree  ((bottled or 2 to 3 medium tomatoes pureed in a blender))",
+  "expected": {
+    "item": "tomato puree",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "220",
+        "unit": "grams"
+      },
+      {
+        "amount": "2 to 3",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

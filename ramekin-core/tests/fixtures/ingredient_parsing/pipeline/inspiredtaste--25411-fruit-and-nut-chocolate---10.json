@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (350 grams) chocolate chips",
+  "expected": {
+    "item": "chocolate chips",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "350",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 12- ounce beer, or equivalent amount of broth",
+  "expected": {
+    "item": "12- ounce beer, or equivalent amount of broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

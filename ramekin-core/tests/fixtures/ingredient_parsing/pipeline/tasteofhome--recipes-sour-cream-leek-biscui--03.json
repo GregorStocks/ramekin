@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups white whole wheat flour",
+  "expected": {
+    "item": "white whole wheat flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

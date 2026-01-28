@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon (3g) active-dry or instant yeast",
+  "expected": {
+    "item": "active-dry or instant yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "3",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

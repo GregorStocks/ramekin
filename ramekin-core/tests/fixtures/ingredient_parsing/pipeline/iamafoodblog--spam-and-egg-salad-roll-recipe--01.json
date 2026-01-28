@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 can spam",
+  "expected": {
+    "item": "spam",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

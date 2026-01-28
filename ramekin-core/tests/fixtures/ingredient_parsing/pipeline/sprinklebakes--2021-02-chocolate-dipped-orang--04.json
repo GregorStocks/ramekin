@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon orange peel (finely grated)",
+  "expected": {
+    "item": "orange peel",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "finely grated"
+  }
+}

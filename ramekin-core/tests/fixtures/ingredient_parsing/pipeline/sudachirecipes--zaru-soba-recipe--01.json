@@ -1,0 +1,13 @@
+{
+  "raw": "200 ml dashi stock",
+  "expected": {
+    "item": "dashi stock",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

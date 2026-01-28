@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds swordfish steaks, cut 1/2 inch thick",
+  "expected": {
+    "item": "swordfish steaks, cut 1/2 inch thick",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

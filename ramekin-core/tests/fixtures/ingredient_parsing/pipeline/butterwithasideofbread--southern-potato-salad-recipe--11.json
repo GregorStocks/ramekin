@@ -1,0 +1,13 @@
+{
+  "raw": "dash  paprika",
+  "expected": {
+    "item": "paprika",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": null
+  }
+}

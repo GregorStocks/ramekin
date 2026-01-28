@@ -1,0 +1,17 @@
+{
+  "raw": "1 (15.25 ounce) package lemon cake mix",
+  "expected": {
+    "item": "lemon cake mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "15.25",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

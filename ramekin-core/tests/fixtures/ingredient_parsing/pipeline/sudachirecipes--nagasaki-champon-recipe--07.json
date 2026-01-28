@@ -1,0 +1,13 @@
+{
+  "raw": "50 g green cabbage (roughly cut)",
+  "expected": {
+    "item": "green cabbage (roughly cut)",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

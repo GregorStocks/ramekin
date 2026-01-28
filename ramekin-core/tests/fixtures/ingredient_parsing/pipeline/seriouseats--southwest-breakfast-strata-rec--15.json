@@ -1,0 +1,21 @@
+{
+  "raw": "1 large plum tomato (5 ounces; 142 g), chopped",
+  "expected": {
+    "item": "plum tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": "chopped"
+  }
+}

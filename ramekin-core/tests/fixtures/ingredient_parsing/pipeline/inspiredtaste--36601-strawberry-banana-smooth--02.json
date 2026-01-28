@@ -1,0 +1,17 @@
+{
+  "raw": "1 heaped cup (150 grams) fresh or frozen strawberries",
+  "expected": {
+    "item": "fresh or frozen strawberries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "heaped cup"
+      },
+      {
+        "amount": "150",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  package enoki mushrooms",
+  "expected": {
+    "item": "enoki mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

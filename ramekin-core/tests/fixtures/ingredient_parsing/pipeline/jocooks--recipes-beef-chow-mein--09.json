@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound beef sirloin (or flank steak, thinly sliced against the grain)",
+  "expected": {
+    "item": "beef sirloin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "or flank steak, thinly sliced against the grain"
+  }
+}

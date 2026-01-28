@@ -1,0 +1,13 @@
+{
+  "raw": "900 grams beef shanks (or shortribs (cut into large cubes))",
+  "expected": {
+    "item": "beef shanks (or shortribs (cut into large cubes)",
+    "measurements": [
+      {
+        "amount": "900",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

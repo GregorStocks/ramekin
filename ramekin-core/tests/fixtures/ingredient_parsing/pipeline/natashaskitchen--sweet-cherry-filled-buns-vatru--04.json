@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/4 cups all purpose flour (divided, plus more for dusting)",
+  "expected": {
+    "item": "all purpose flour",
+    "measurements": [
+      {
+        "amount": "3 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided, plus more for dusting"
+  }
+}

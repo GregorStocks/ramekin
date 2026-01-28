@@ -1,0 +1,17 @@
+{
+  "raw": "12 oz tortilla chips (1 bag - broken up)",
+  "expected": {
+    "item": "tortilla chips",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bag"
+      }
+    ],
+    "note": null
+  }
+}

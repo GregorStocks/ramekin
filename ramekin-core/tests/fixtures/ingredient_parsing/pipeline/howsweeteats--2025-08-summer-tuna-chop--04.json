@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup chopped castelvetrano olives",
+  "expected": {
+    "item": "chopped castelvetrano olives",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

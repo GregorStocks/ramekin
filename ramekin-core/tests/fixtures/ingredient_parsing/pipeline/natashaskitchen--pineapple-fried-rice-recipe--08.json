@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp sesame oil (optional (but highly recommended))",
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional (but highly recommended"
+  }
+}

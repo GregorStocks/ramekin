@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium onion, finely chopped (about 1 cup)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

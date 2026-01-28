@@ -1,0 +1,13 @@
+{
+  "raw": "200 ml chicken bouillon",
+  "expected": {
+    "item": "chicken bouillon",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

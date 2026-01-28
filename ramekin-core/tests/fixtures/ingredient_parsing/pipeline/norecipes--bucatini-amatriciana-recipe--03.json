@@ -1,0 +1,13 @@
+{
+  "raw": "120 grams Guanciale ((sliced into matchsticks))",
+  "expected": {
+    "item": "Guanciale",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "grams"
+      }
+    ],
+    "note": "sliced into matchsticks"
+  }
+}

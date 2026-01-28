@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup rye flour",
+  "expected": {
+    "item": "rye flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

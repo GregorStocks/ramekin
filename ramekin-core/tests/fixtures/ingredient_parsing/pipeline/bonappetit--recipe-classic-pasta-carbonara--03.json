@@ -1,0 +1,13 @@
+{
+  "raw": "6 large egg yolks",
+  "expected": {
+    "item": "egg yolks",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

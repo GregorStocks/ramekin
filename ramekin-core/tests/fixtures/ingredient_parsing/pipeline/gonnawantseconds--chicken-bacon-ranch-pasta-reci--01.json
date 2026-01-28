@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried penne pasta",
+  "expected": {
+    "item": "dried penne pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

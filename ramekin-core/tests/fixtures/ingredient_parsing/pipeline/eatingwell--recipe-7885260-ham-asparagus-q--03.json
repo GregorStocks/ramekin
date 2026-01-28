@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound fresh asparagus, trimmed and cut diagonally (1-inch)",
+  "expected": {
+    "item": "fresh asparagus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "trimmed and cut diagonally"
+  }
+}

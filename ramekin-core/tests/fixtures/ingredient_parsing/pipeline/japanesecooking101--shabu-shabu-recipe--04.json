@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz beef (sliced very thinly)",
+  "expected": {
+    "item": "beef",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "sliced very thinly"
+  }
+}

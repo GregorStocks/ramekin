@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces frozen fruit ((about 2 ½ cups))",
+  "expected": {
+    "item": "frozen fruit",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

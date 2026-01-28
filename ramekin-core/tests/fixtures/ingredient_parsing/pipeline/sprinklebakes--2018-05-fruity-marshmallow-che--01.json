@@ -1,0 +1,17 @@
+{
+  "raw": "16  McVities digestive biscuits (about 250g)",
+  "expected": {
+    "item": "McVities digestive biscuits",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

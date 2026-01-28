@@ -1,0 +1,13 @@
+{
+  "raw": "1 inch piece ginger",
+  "expected": {
+    "item": "inch piece ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

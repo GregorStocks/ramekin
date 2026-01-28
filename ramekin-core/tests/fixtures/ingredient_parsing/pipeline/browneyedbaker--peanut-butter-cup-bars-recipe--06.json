@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup milk chocolate chips (or chopped chocolate)",
+  "expected": {
+    "item": "milk chocolate chips",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or chopped chocolate"
+  }
+}

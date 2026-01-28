@@ -1,0 +1,17 @@
+{
+  "raw": "2 bunches rainbow Swiss chard, coarsely chopped (about 16 cups)",
+  "expected": {
+    "item": "rainbow Swiss chard",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      },
+      {
+        "amount": "16",
+        "unit": "cups"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

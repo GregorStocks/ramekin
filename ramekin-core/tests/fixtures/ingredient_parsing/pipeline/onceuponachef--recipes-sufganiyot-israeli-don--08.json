@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons  vegetable oil, plus about 2 quarts more for frying",
+  "expected": {
+    "item": "vegetable oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus about 2 quarts more for frying"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 cup Dashi",
+  "expected": {
+    "item": "Dashi",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

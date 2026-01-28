@@ -1,0 +1,13 @@
+{
+  "raw": "1 inch piece fresh ginger, peeled",
+  "expected": {
+    "item": "inch piece fresh ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
+  }
+}

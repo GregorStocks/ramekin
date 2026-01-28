@@ -1,0 +1,17 @@
+{
+  "raw": "1 teaspoon (5ml) Sugar (or 1/2 oz. simple syrup, or to taste)",
+  "expected": {
+    "item": "Sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "5",
+        "unit": "ml"
+      }
+    ],
+    "note": "or 1/2 oz. simple syrup, or to taste"
+  }
+}

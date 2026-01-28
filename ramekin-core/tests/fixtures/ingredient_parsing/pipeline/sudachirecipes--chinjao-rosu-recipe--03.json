@@ -1,0 +1,13 @@
+{
+  "raw": "15 g ginger root (peeled)",
+  "expected": {
+    "item": "ginger root",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
+  }
+}

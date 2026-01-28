@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups water (about 1 litter)",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

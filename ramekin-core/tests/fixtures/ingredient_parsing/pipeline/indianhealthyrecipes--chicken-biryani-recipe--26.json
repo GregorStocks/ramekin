@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon fried onions ((optional))",
+  "expected": {
+    "item": "fried onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

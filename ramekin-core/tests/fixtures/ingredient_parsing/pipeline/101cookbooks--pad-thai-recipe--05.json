@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons vegetarian \"fish\" sauce or soy sauce",
+  "expected": {
+    "item": "vegetarian \"fish\" sauce or soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups milk (use whole milk for best creamiest results)",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "use whole milk for best creamiest results"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup arrowroot powder (plus more as needed)",
+  "expected": {
+    "item": "arrowroot powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
+  }
+}

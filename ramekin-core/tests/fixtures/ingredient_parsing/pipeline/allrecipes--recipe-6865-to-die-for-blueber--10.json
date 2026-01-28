@@ -1,0 +1,13 @@
+{
+  "raw": "0.33333334326744 cup all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "0.33333334326744",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

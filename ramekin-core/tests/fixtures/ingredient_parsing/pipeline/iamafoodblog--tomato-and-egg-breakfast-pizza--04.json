@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tablespoons pizza sauce or crushed tomatoes",
+  "expected": {
+    "item": "pizza sauce or crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

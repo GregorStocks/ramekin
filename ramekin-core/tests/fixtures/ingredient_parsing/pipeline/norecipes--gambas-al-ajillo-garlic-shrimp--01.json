@@ -1,0 +1,13 @@
+{
+  "raw": "320 grams large shrimp",
+  "expected": {
+    "item": "large shrimp",
+    "measurements": [
+      {
+        "amount": "320",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb fresh salmon filet*",
+  "expected": {
+    "item": "fresh salmon filet*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

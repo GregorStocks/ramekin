@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon mung bean starch ((9g))",
+  "expected": {
+    "item": "mung bean starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "9",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

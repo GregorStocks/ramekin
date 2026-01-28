@@ -1,0 +1,13 @@
+{
+  "raw": "1⅔ cups whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 packages (3 ounces each) orange gelatin",
+  "expected": {
+    "item": "orange gelatin",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "packages"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

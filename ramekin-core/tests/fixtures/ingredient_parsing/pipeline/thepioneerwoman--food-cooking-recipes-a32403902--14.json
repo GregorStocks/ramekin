@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 c. grated parmesan cheese, plus more for serving",
+  "expected": {
+    "item": "grated parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "c"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

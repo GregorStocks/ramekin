@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups / 22 oz / 620g cooked white beans",
+  "expected": {
+    "item": "/ 22 oz / 620g cooked white beans",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

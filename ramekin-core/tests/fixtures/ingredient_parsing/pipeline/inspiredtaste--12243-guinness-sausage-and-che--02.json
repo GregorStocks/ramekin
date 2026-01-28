@@ -1,0 +1,13 @@
+{
+  "raw": "6 bratwurst sausages",
+  "expected": {
+    "item": "bratwurst sausages",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

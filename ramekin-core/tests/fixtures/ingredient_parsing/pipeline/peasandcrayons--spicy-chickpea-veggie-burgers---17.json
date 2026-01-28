@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 TBSP honey",
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons finely grated Parmigiano-Reggiano cheese, divided",
+  "expected": {
+    "item": "finely grated Parmigiano-Reggiano cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

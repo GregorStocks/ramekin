@@ -1,0 +1,17 @@
+{
+  "raw": "6 tablespoons black or golden caviar (3 ounces)",
+  "expected": {
+    "item": "black or golden caviar",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

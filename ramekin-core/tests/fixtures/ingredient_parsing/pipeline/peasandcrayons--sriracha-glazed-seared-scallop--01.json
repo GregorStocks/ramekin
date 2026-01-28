@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 lb sea scallops ((fresh or thawed if frozen))",
+  "expected": {
+    "item": "sea scallops",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "fresh or thawed if frozen"
+  }
+}

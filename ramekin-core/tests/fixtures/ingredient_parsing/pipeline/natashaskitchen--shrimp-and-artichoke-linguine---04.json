@@ -1,0 +1,13 @@
+{
+  "raw": "3  large or 4 medium garlic cloves (pressed or minced (about 1 1/2 Tbsp))",
+  "expected": {
+    "item": "or 4 medium garlic cloves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": "pressed or minced (about 1 1/2 Tbsp"
+  }
+}

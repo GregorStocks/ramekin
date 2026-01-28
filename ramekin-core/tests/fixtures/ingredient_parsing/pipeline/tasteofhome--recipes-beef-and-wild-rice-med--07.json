@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup julienned green pepper",
+  "expected": {
+    "item": "julienned green pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

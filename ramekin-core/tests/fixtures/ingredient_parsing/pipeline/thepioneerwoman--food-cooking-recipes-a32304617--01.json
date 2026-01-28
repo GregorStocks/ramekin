@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 gal. apple cider",
+  "expected": {
+    "item": "apple cider",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "gal"
+      }
+    ],
+    "note": null
+  }
+}

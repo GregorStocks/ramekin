@@ -1,0 +1,13 @@
+{
+  "raw": "¼-½ cup sour cream",
+  "expected": {
+    "item": "sour cream",
+    "measurements": [
+      {
+        "amount": "1/4-1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

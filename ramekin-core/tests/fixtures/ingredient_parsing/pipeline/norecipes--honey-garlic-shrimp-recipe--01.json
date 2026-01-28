@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons dry white wine",
+  "expected": {
+    "item": "dry white wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

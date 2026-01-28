@@ -1,0 +1,13 @@
+{
+  "raw": "2  chicken breasts (cut into small cubes)",
+  "expected": {
+    "item": "chicken breasts (cut into small cubes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

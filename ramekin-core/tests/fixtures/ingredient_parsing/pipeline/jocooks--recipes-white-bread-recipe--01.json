@@ -1,0 +1,17 @@
+{
+  "raw": "¼ ounce instant yeast (2 ¼ tsp)",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "ounce"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

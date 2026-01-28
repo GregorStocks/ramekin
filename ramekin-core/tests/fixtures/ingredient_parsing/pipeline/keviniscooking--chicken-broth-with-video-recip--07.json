@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  bunch parsley (whole)",
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": "whole"
+  }
+}

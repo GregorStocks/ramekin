@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup potato starch",
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

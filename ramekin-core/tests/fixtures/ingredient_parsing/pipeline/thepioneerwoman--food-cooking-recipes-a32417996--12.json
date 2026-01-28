@@ -1,0 +1,13 @@
+{
+  "raw": "1 4-ounce log goat cheese, crumbled",
+  "expected": {
+    "item": "4-ounce log goat cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "crumbled"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "4 slices Swiss cheese (about 3/4 ounce; 21 g each)",
+  "expected": {
+    "item": "Swiss cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      },
+      {
+        "amount": "3/4",
+        "unit": "ounce each"
+      },
+      {
+        "amount": "21",
+        "unit": "g each"
+      }
+    ],
+    "note": null
+  }
+}

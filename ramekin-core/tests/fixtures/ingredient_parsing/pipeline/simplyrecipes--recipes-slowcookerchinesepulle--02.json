@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 teaspoons of Chinese 5-spice powder*",
+  "expected": {
+    "item": "Chinese 5-spice powder*",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

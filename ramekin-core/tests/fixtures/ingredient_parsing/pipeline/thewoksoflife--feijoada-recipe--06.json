@@ -1,0 +1,13 @@
+{
+  "raw": "2  smoked ham hocks",
+  "expected": {
+    "item": "smoked ham hocks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

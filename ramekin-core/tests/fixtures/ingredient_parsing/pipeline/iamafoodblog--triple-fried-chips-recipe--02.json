@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups of beef drippings",
+  "expected": {
+    "item": "beef drippings",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

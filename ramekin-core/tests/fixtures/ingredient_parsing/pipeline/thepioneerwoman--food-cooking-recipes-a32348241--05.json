@@ -1,0 +1,13 @@
+{
+  "raw": "8 radishes, diced",
+  "expected": {
+    "item": "radishes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

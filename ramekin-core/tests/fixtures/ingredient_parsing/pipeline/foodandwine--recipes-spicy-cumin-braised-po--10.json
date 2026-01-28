@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium plum tomato, roughly chopped",
+  "expected": {
+    "item": "plum tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

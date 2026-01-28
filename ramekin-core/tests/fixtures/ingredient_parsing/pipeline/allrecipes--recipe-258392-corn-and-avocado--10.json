@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 teaspoon ground cumin",
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2  large eggs (50 g each w/o shell)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

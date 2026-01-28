@@ -1,0 +1,13 @@
+{
+  "raw": "2 c. shredded lettuce",
+  "expected": {
+    "item": "shredded lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

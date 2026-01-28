@@ -1,0 +1,17 @@
+{
+  "raw": "570 grams tomatoes ((~5 small tomatoes))",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "570",
+        "unit": "grams"
+      },
+      {
+        "amount": "5",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 2/3 cups dairy-free chocolate chips (or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets))",
+  "expected": {
+    "item": "dairy-free chocolate chips",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cups"
+      }
+    ],
+    "note": "or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 2/3 cups (215 grams) all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cups"
+      },
+      {
+        "amount": "215",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

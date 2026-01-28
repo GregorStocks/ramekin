@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz cheese, grated",
+  "expected": {
+    "item": "cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "grated"
+  }
+}

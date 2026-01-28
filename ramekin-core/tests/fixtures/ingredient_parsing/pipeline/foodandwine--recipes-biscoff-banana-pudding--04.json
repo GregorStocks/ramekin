@@ -1,0 +1,17 @@
+{
+  "raw": ".5 cup powdered sugar (about 2 ounce)",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

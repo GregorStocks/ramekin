@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces reduced-fat&nbsp;cream cheese",
+  "expected": {
+    "item": "reduced-fat cream cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

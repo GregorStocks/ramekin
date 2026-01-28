@@ -1,0 +1,17 @@
+{
+  "raw": "2 cans (15 ounces each) chickpeas or 3 cups cooked chickpeas",
+  "expected": {
+    "item": "chickpeas or 3 cups cooked chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

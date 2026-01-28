@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups elbow macaroni ((one 12oz box))",
+  "expected": {
+    "item": "elbow macaroni (one 12oz box)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

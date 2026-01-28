@@ -1,0 +1,13 @@
+{
+  "raw": "2 lemons, 1 juiced, 1 sliced into half-moons",
+  "expected": {
+    "item": "lemons, 1 juiced",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "1 sliced into half-moons"
+  }
+}

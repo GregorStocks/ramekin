@@ -1,0 +1,13 @@
+{
+  "raw": "1  TBPS dijon mustard",
+  "expected": {
+    "item": "TBPS dijon mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

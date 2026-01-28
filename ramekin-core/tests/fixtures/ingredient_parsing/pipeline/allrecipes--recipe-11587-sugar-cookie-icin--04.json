@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 teaspoon almond extract",
+  "expected": {
+    "item": "almond extract",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

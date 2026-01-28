@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound uncooked shrimp (large, prawns, peeled and deveined with tails on)",
+  "expected": {
+    "item": "uncooked shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "large, prawns, peeled and deveined with tails on"
+  }
+}

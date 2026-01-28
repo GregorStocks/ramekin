@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons brandy or bourbon, (optional)",
+  "expected": {
+    "item": "brandy or bourbon,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "optional"
+  }
+}

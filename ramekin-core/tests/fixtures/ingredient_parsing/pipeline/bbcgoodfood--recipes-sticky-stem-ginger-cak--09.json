@@ -1,0 +1,13 @@
+{
+  "raw": "115g golden syrup",
+  "expected": {
+    "item": "golden syrup",
+    "measurements": [
+      {
+        "amount": "115",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

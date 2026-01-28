@@ -1,0 +1,13 @@
+{
+  "raw": "3 poblano peppers, diced (see Tip)",
+  "expected": {
+    "item": "poblano peppers",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "diced (see Tip)"
+  }
+}

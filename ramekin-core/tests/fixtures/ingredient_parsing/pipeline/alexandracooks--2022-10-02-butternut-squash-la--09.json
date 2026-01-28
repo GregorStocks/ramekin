@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. Swiss Chard, leaves removed from stems to yield 8 to 9 ounces, roughly chopped",
+  "expected": {
+    "item": "Swiss Chard, leaves removed from stems to yield 8 to 9 ounces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons chili flakes",
+  "expected": {
+    "item": "chili flakes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

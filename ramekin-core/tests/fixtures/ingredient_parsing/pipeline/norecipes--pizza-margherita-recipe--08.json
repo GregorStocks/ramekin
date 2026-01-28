@@ -1,0 +1,13 @@
+{
+  "raw": "1 bunch basil ((leaves only))",
+  "expected": {
+    "item": "basil (leaves only)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
+  }
+}

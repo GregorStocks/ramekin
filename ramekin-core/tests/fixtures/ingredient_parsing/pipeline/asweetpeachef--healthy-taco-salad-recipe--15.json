@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp. lime juice",
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

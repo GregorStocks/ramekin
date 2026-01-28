@@ -1,0 +1,13 @@
+{
+  "raw": "1  tablespoon  almond butter",
+  "expected": {
+    "item": "almond butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

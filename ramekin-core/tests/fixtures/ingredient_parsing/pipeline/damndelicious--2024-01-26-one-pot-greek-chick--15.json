@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups chopped baby spinach",
+  "expected": {
+    "item": "chopped baby spinach",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

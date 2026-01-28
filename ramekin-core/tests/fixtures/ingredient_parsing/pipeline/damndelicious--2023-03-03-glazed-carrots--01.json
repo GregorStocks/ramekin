@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds medium carrots (scrubbed)",
+  "expected": {
+    "item": "medium carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "scrubbed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 lb fresh button mushrooms (white or brown, sliced)",
+  "expected": {
+    "item": "fresh button mushrooms",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": "white or brown, sliced"
+  }
+}

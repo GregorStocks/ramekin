@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15-ounce)  cans fruit cocktail,  (drained with juice discarded)",
+  "expected": {
+    "item": "fruit cocktail,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "drained with juice discarded"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup butter, cut into 8 pieces",
+  "expected": {
+    "item": "butter, cut into 8 pieces",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  large or 3 medium carrots",
+  "expected": {
+    "item": "or 3 medium carrots",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups low-fat Milk (, or more if needed)",
+  "expected": {
+    "item": "low-fat Milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": ", or more if needed"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce ranch dressing mix ((1 oz package))",
+  "expected": {
+    "item": "ranch dressing mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

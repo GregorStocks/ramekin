@@ -1,0 +1,17 @@
+{
+  "raw": "2 sticks (16 tablespoons) unsalted butter, melted",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "16",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "melted"
+  }
+}

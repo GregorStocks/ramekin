@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups chopped ham",
+  "expected": {
+    "item": "chopped ham",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

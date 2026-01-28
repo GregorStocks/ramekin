@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams shallots (finely minced)",
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": "finely minced"
+  }
+}

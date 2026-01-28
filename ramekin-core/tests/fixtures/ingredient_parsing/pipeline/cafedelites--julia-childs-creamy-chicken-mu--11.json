@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz reduced fat cream cheese (at room temperature, original recipe: 1 cup whipping cream)",
+  "expected": {
+    "item": "reduced fat cream cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature, original recipe: 1 cup whipping cream"
+  }
+}

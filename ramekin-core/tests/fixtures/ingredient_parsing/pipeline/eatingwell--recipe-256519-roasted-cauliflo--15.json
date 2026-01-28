@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14 ounce) can no-salt-added tomato sauce",
+  "expected": {
+    "item": "no-salt-added tomato sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

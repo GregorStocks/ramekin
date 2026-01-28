@@ -1,0 +1,13 @@
+{
+  "raw": "1 large avocado, diced",
+  "expected": {
+    "item": "avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "diced"
+  }
+}

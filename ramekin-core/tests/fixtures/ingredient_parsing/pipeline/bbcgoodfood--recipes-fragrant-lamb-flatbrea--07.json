@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp natural yogurt",
+  "expected": {
+    "item": "natural yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

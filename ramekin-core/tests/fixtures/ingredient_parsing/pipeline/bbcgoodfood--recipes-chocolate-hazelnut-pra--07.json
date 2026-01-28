@@ -1,0 +1,13 @@
+{
+  "raw": "50g golden caster sugar",
+  "expected": {
+    "item": "golden caster sugar",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

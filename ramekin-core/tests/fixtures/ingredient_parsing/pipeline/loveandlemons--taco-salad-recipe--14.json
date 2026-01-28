@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces shiitake mushrooms (stemmed and diced)",
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "stemmed and diced"
+  }
+}

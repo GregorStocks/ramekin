@@ -1,0 +1,17 @@
+{
+  "raw": "2 bone-in chicken breasts, skin removed (1 to 1 1/2 pounds)",
+  "expected": {
+    "item": "bone-in chicken breasts, skin removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

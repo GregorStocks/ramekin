@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces good quality bittersweet chocolate, finely chopped",
+  "expected": {
+    "item": "good quality bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

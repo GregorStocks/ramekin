@@ -1,0 +1,13 @@
+{
+  "raw": "2.5 oz can sliced black olives (drained)",
+  "expected": {
+    "item": "can sliced black olives",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "50 grams dried currants",
+  "expected": {
+    "item": "dried currants",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

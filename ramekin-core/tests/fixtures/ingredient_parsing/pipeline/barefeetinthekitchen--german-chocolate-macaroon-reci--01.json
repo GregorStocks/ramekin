@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounces  shredded sweetened coconut",
+  "expected": {
+    "item": "shredded sweetened coconut",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

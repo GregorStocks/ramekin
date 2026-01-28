@@ -1,0 +1,17 @@
+{
+  "raw": "2 (8 ounce) packages cream cheese, softened",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "8",
+        "unit": "ounce"
+      }
+    ],
+    "note": "softened"
+  }
+}

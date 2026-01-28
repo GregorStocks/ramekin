@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon sesame oil",
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 lb beef chuck roast",
+  "expected": {
+    "item": "beef chuck roast",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

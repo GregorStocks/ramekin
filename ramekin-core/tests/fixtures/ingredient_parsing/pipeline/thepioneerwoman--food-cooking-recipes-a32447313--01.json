@@ -1,0 +1,13 @@
+{
+  "raw": "12 tbsp. cold unsalted butter, cut into pieces",
+  "expected": {
+    "item": "cold unsalted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

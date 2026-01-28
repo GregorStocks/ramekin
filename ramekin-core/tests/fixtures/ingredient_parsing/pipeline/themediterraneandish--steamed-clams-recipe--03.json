@@ -1,0 +1,13 @@
+{
+  "raw": "½  green pepper (cored and chopped (about ½ cup chopped green pepper))",
+  "expected": {
+    "item": "green pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "cored and chopped (about 1/2 cup chopped green pepper"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon vanilla",
+  "expected": {
+    "item": "vanilla",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

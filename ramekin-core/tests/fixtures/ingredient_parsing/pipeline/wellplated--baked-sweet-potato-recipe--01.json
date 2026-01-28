@@ -1,0 +1,17 @@
+{
+  "raw": "4  small/medium sweet potatoes (8 to 10 ounces)",
+  "expected": {
+    "item": "small/medium sweet potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "8 to 10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

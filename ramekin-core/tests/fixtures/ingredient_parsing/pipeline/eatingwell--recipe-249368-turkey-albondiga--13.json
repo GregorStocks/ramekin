@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups reduced-sodium chicken broth",
+  "expected": {
+    "item": "reduced-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

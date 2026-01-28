@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup broccoli floret",
+  "expected": {
+    "item": "broccoli floret",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

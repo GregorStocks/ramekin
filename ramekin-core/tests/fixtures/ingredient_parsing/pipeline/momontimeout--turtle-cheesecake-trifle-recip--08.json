@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz hot fudge ice cream topping",
+  "expected": {
+    "item": "hot fudge ice cream topping",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

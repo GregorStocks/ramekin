@@ -1,0 +1,17 @@
+{
+  "raw": "1 &amp;amp; 1/2 cups (300g) granulated sugar",
+  "expected": {
+    "item": "&amp; 1/2 cups granulated sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

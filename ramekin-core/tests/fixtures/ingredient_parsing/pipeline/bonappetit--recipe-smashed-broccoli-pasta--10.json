@@ -1,0 +1,17 @@
+{
+  "raw": "2 oz. Parmesan, finely grated (about 1 cup), divided",
+  "expected": {
+    "item": "Parmesan, finely grated",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 (8 oz) pkg cream cheese,  ( chilled)",
+  "expected": {
+    "item": "cream cheese,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pkg"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "chilled"
+  }
+}

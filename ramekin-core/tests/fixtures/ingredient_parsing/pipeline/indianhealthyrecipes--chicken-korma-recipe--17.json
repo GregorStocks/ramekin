@@ -1,0 +1,13 @@
+{
+  "raw": "1  cardamom ((optional))",
+  "expected": {
+    "item": "cardamom",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

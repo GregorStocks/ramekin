@@ -1,0 +1,13 @@
+{
+  "raw": "6 slices baguette (1/2 inch thick and day old, toasted)",
+  "expected": {
+    "item": "baguette",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slices"
+      }
+    ],
+    "note": "1/2 inch thick and day old, toasted"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups powdered sugar (4 to 5 cups)",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "4 to 5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  cherries ((fresh or jarred))",
+  "expected": {
+    "item": "cherries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "fresh or jarred"
+  }
+}

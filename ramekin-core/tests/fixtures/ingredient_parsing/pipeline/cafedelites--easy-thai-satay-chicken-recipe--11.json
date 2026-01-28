@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup creamy peanut butter (all natural preferable)",
+  "expected": {
+    "item": "creamy peanut butter (all natural preferable)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups Rice Chex Cereal",
+  "expected": {
+    "item": "Rice Chex Cereal",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (2.25-ounce) can sliced black olives,  (drained)",
+  "expected": {
+    "item": "sliced black olives,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "2.25",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

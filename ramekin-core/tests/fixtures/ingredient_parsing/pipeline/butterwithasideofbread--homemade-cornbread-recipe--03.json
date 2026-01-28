@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp baking powder",
+  "expected": {
+    "item": "baking powder",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

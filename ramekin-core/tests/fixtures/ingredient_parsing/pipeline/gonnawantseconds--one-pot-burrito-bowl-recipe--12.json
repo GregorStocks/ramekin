@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14.5-ounce) can  diced tomatoes, (drained)",
+  "expected": {
+    "item": "diced tomatoes,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14.5",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

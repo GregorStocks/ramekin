@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounce can olive oil packed tuna, drained and flaked",
+  "expected": {
+    "item": "can olive oil packed tuna",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained and flaked"
+  }
+}

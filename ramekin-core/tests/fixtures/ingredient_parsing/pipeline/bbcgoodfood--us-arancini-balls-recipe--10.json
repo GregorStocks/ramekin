@@ -1,0 +1,13 @@
+{
+  "raw": "5 oz fresh mozzarella cut into 18 small pieces",
+  "expected": {
+    "item": "fresh mozzarella cut into 18 small pieces",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

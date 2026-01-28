@@ -1,0 +1,13 @@
+{
+  "raw": "100g artichoke heart from a jar",
+  "expected": {
+    "item": "artichoke heart from a jar",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

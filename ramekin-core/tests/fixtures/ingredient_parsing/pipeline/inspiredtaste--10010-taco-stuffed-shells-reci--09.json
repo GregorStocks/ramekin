@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup frozen corn, thawed",
+  "expected": {
+    "item": "frozen corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
+  }
+}

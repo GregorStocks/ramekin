@@ -1,0 +1,13 @@
+{
+  "raw": "1 Granny Smith apple, diced",
+  "expected": {
+    "item": "Granny Smith apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

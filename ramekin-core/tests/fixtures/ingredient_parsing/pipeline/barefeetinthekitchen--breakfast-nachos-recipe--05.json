@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups cooked pinto beans or 1 can (drained and rinsed)",
+  "expected": {
+    "item": "cooked pinto beans or 1 can",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 cups crunchy lettuce (chopped small)",
+  "expected": {
+    "item": "crunchy lettuce",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped small"
+  }
+}

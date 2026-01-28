@@ -1,0 +1,17 @@
+{
+  "raw": "1 pork tenderloin (1 to 1 1/4 pounds)",
+  "expected": {
+    "item": "pork tenderloin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1 to 1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound Jarlsberg or Swiss cheese, shredded",
+  "expected": {
+    "item": "Jarlsberg or Swiss cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "shredded"
+  }
+}

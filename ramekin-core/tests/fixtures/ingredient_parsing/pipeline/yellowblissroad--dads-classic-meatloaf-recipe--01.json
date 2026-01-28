@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds ground beef (85/15)",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "85/15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

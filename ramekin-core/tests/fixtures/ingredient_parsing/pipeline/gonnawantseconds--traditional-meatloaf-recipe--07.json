@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound ground beef,  (80/20)",
+  "expected": {
+    "item": "ground beef,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "80/20",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

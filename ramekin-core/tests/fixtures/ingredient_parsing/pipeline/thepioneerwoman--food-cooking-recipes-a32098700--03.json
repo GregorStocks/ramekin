@@ -1,0 +1,13 @@
+{
+  "raw": "3 c. all-purpose flour, plus more for dusting",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "c"
+      }
+    ],
+    "note": "plus more for dusting"
+  }
+}

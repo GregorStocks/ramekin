@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb Italian sausage* ((can use mild or hot))",
+  "expected": {
+    "item": "Italian sausage*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces frozen or freshly shelled peas (, about 2 cups)",
+  "expected": {
+    "item": "frozen or freshly shelled peas",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 fluid ounces (45 ml) ice-cold vodka",
+  "expected": {
+    "item": "ice-cold vodka",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "fluid ounces"
+      },
+      {
+        "amount": "45",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

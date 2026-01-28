@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp. paprika",
+  "expected": {
+    "item": "paprika",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

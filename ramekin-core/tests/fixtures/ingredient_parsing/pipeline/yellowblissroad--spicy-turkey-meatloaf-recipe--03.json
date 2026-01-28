@@ -1,0 +1,13 @@
+{
+  "raw": "1 4-ounce can green chiles (drained)",
+  "expected": {
+    "item": "4-ounce can green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

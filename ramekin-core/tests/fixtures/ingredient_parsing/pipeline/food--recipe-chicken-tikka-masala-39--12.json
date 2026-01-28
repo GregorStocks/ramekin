@@ -1,0 +1,13 @@
+{
+  "raw": "1   teaspoon    cumin seed",
+  "expected": {
+    "item": "cumin seed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

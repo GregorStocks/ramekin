@@ -1,0 +1,13 @@
+{
+  "raw": "1  bay leaf, 2 green cardamoms, 1 black cardamom",
+  "expected": {
+    "item": "bay leaf, 2 green cardamoms, 1 black cardamom",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

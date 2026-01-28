@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup brandy* or 2 ounces gin (both are good! gin is dryer)",
+  "expected": {
+    "item": "brandy* or 2 ounces gin (both are good! gin is dryer)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

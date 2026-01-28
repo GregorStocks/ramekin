@@ -1,0 +1,13 @@
+{
+  "raw": ".5 pound fresh crabmeat, picked over",
+  "expected": {
+    "item": "fresh crabmeat, picked over",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

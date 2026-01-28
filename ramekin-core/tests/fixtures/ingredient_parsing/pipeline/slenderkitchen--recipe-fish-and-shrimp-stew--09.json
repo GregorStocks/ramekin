@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz. fish stock",
+  "expected": {
+    "item": "fish stock",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

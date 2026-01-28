@@ -1,0 +1,13 @@
+{
+  "raw": "1.33 lbs boneless skinless chicken breasts, chopped",
+  "expected": {
+    "item": "boneless skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lbs"
+      }
+    ],
+    "note": "chopped"
+  }
+}

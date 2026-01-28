@@ -1,0 +1,17 @@
+{
+  "raw": "1 (4-pound) beef chuck roast, trimmed of excess fat and cut into 1½-inch cubes (see note below)",
+  "expected": {
+    "item": "beef chuck roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "trimmed of excess fat and cut into 1 1/2-inch cubes (see note below)"
+  }
+}

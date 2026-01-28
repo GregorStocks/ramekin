@@ -1,0 +1,13 @@
+{
+  "raw": "12  lasagna noodles",
+  "expected": {
+    "item": "lasagna noodles",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

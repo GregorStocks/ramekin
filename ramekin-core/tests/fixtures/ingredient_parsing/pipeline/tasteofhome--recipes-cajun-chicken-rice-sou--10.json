@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (10 ounces) diced tomatoes and green chiles, drained",
+  "expected": {
+    "item": "diced tomatoes and green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained"
+  }
+}

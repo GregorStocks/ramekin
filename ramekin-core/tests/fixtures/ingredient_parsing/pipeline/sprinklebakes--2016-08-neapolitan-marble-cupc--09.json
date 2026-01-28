@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces semisweet chocolate (melted and cooled slightly)",
+  "expected": {
+    "item": "semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "melted and cooled slightly"
+  }
+}

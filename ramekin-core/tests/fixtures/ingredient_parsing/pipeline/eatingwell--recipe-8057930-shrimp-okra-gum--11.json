@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound raw Gulf shrimp (31-40 count), peeled and deveined",
+  "expected": {
+    "item": "raw Gulf shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "31-40",
+        "unit": null
+      }
+    ],
+    "note": "peeled and deveined"
+  }
+}

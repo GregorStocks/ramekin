@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound ricotta cheese",
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

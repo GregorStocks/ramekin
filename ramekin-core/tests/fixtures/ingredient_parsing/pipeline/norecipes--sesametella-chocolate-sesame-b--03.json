@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon powdered sugar ((to taste))",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "to taste"
+  }
+}

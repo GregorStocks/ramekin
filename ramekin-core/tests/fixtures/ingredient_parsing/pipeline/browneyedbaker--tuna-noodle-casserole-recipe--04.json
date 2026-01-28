@@ -1,0 +1,13 @@
+{
+  "raw": "2 slices white sandwich bread, torn into 1-inch pieces",
+  "expected": {
+    "item": "white sandwich bread, torn into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

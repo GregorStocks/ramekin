@@ -1,0 +1,13 @@
+{
+  "raw": "8  strawberries trimmed (hulled, quartered)",
+  "expected": {
+    "item": "strawberries trimmed",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": "hulled, quartered"
+  }
+}

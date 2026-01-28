@@ -1,0 +1,13 @@
+{
+  "raw": "Two 6-rib pork loin roasts (8 1/2 pounds total)",
+  "expected": {
+    "item": "Two 6-rib pork loin roasts",
+    "measurements": [
+      {
+        "amount": "8 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

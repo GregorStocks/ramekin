@@ -1,0 +1,13 @@
+{
+  "raw": "8 fluid ounces buttermilk",
+  "expected": {
+    "item": "buttermilk",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

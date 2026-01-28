@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups Champagne or sparkling wine",
+  "expected": {
+    "item": "Champagne or sparkling wine",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

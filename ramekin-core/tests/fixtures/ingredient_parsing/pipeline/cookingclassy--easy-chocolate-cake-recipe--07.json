@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup vegetable oil (or canola oil)",
+  "expected": {
+    "item": "vegetable oil (or canola oil)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

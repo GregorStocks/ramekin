@@ -1,0 +1,17 @@
+{
+  "raw": "4-6 tablespoons fresh lemon juice (2 lemons)",
+  "expected": {
+    "item": "fresh lemon juice",
+    "measurements": [
+      {
+        "amount": "4-6",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

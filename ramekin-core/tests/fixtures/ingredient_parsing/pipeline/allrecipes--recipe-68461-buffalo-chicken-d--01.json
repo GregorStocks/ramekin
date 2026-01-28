@@ -1,0 +1,17 @@
+{
+  "raw": "2 (10 ounce) cans chunk chicken, drained",
+  "expected": {
+    "item": "chunk chicken",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "10",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

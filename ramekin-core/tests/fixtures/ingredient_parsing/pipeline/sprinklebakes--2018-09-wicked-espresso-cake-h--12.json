@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 480ml/16 oz. buttermilk",
+  "expected": {
+    "item": "480ml/16 oz. buttermilk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

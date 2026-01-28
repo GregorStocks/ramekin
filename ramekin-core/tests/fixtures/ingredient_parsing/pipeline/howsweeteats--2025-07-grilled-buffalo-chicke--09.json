@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 6 slices sharp cheddar cheese, (or however many thighs you have)",
+  "expected": {
+    "item": "sharp cheddar cheese, (or however many thighs you have)",
+    "measurements": [
+      {
+        "amount": "4 to 6",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

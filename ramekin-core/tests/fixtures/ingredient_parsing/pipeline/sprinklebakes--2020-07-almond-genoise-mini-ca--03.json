@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup 50g almond flour",
+  "expected": {
+    "item": "50g almond flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

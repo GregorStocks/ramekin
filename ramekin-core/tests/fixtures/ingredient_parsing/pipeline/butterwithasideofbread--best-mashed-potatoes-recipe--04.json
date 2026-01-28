@@ -1,0 +1,13 @@
+{
+  "raw": "1  cube butter (divided)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cube"
+      }
+    ],
+    "note": "divided"
+  }
+}

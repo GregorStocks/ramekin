@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. beef broth",
+  "expected": {
+    "item": "beef broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

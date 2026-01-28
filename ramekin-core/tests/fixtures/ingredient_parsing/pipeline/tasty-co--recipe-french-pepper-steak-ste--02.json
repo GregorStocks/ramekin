@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz new york strip steak, or other good-quality steak",
+  "expected": {
+    "item": "new york strip steak, or other good-quality steak",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

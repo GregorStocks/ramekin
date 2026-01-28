@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 tbsp coriander seeds",
+  "expected": {
+    "item": "coriander seeds",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

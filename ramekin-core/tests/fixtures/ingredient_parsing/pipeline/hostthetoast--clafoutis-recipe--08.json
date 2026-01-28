@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups fresh cherries or other fruit, pitted",
+  "expected": {
+    "item": "fresh cherries or other fruit, pitted",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

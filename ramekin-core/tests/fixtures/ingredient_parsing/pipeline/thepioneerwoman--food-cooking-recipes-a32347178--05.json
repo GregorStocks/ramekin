@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/2 lb. small Yukon Gold potatoes, cut into 3/4-inch chunks",
+  "expected": {
+    "item": "small Yukon Gold potatoes, cut into 3/4-inch chunks",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

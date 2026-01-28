@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound powdered sugar ((about 4 3/4 cups))",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "4 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

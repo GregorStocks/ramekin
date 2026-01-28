@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (113 g) unsalted butter, (brought to room temperature)",
+  "expected": {
+    "item": "unsalted butter,",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "brought to room temperature"
+  }
+}

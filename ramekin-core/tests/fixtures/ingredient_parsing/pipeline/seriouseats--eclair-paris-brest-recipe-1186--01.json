@@ -1,0 +1,13 @@
+{
+  "raw": "1 recipe&nbsp;Choux Pastry&nbsp;(made with milk and water and the optional sugar), transferred to a pastry bag fitted with a 3/4-inch star tip",
+  "expected": {
+    "item": "recipe Choux Pastry , transferred to a pastry bag fitted with a 3/4-inch star tip",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "made with milk and water and the optional sugar"
+  }
+}

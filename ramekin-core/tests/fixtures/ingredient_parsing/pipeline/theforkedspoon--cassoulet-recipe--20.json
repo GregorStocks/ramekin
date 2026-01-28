@@ -1,0 +1,13 @@
+{
+  "raw": "1 stalk celery",
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "stalk"
+      }
+    ],
+    "note": null
+  }
+}

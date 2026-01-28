@@ -1,0 +1,13 @@
+{
+  "raw": "1 head broccoli, cut into small florets (peel and thinly slice the stalks, too)",
+  "expected": {
+    "item": "broccoli, cut into small florets (peel and thinly slice the stalks, too)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": null
+  }
+}

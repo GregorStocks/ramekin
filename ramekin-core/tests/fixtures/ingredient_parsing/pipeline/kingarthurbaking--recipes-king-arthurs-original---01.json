@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (180g) King Arthur Unbleached All-Purpose Flour",
+  "expected": {
+    "item": "King Arthur Unbleached All-Purpose Flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "180",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

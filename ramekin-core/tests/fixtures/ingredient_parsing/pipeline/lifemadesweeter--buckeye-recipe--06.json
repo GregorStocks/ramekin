@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon plant-based protein powder",
+  "expected": {
+    "item": "plant-based protein powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

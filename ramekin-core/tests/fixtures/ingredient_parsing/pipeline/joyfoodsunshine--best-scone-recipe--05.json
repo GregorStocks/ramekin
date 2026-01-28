@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup salted butter (frozen)",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "frozen"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup plus 2 tablespoons extra-virgin olive oil",
+  "expected": {
+    "item": "1 cup plus 2 tablespoons extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons extra-virgin olive oil"
+  }
+}

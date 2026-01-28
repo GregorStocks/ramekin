@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 of head of iceberg lettuce, finely shredded",
+  "expected": {
+    "item": "of head of iceberg lettuce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "finely shredded"
+  }
+}

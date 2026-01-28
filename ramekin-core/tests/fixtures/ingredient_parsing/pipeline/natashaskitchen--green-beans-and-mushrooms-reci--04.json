@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz fresh button mushrooms (cleaned and sliced)",
+  "expected": {
+    "item": "fresh button mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "cleaned and sliced"
+  }
+}

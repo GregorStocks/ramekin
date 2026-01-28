@@ -1,0 +1,13 @@
+{
+  "raw": "150 ml water (for cooking)",
+  "expected": {
+    "item": "water (for cooking)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

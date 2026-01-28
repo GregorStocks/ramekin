@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounce jar pimento (undrained)",
+  "expected": {
+    "item": "jar pimento",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounce"
+      }
+    ],
+    "note": "undrained"
+  }
+}

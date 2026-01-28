@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 to 1/2 head of cabbage, thinly sliced",
+  "expected": {
+    "item": "cabbage",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/2",
+        "unit": "head"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "8 tablespoons (115 grams or 1 stick) cold unsalted butter",
+  "expected": {
+    "item": "cold unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "115",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": null
+  }
+}

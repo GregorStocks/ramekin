@@ -1,0 +1,13 @@
+{
+  "raw": "1 oz. fresh lime juice, plus 3 lime wedges",
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": "plus 3 lime wedges"
+  }
+}

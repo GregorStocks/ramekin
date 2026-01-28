@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon flakey sea salt ((such as Maldon))",
+  "expected": {
+    "item": "flakey sea salt (such as Maldon)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

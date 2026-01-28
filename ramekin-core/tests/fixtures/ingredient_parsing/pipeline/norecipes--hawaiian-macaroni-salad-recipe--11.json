@@ -1,0 +1,13 @@
+{
+  "raw": "70 grams celery ((~1 rib, finely chopped))",
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1 rib, finely chopped"
+  }
+}

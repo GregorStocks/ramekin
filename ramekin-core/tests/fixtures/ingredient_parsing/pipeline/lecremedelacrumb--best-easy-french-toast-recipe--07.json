@@ -1,0 +1,13 @@
+{
+  "raw": "½-1 teaspoon cinnamon (optional)",
+  "expected": {
+    "item": "cinnamon",
+    "measurements": [
+      {
+        "amount": "1/2-1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

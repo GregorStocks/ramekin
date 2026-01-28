@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup crumbled feta",
+  "expected": {
+    "item": "crumbled feta",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

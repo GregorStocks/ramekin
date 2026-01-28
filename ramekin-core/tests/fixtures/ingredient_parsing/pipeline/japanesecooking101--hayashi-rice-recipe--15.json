@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup port wine",
+  "expected": {
+    "item": "port wine",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

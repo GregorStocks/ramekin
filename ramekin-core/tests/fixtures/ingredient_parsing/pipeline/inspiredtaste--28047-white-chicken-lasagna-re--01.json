@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons (115 grams) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "115",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

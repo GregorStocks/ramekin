@@ -1,0 +1,17 @@
+{
+  "raw": "3  (2-inch) pieces of kombu",
+  "expected": {
+    "item": "kombu",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pieces"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

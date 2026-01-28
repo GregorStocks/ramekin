@@ -1,0 +1,13 @@
+{
+  "raw": "1 4-ounce can tuna, in water, drained",
+  "expected": {
+    "item": "4-ounce can tuna, in water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

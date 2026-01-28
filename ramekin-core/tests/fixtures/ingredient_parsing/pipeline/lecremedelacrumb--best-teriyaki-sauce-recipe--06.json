@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon crushed red pepper flakes (or 1-2 teaspoons sriracha sauce, to taste)",
+  "expected": {
+    "item": "crushed red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or 1-2 teaspoons sriracha sauce, to taste"
+  }
+}

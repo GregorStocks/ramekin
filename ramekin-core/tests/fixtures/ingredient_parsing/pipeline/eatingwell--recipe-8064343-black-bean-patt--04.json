@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons vegan Worcestershire sauce",
+  "expected": {
+    "item": "vegan Worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

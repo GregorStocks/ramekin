@@ -1,0 +1,13 @@
+{
+  "raw": "64 fluid ounces cold water",
+  "expected": {
+    "item": "cold water",
+    "measurements": [
+      {
+        "amount": "64",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams pork belly (thinly sliced and chopped)",
+  "expected": {
+    "item": "pork belly",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "thinly sliced and chopped"
+  }
+}

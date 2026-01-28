@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon shaoxing wine",
+  "expected": {
+    "item": "shaoxing wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

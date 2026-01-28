@@ -1,0 +1,13 @@
+{
+  "raw": "32 ounces plain full-fat yogurt",
+  "expected": {
+    "item": "plain full-fat yogurt",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

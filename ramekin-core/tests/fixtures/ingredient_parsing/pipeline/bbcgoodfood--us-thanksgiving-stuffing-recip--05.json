@@ -1,0 +1,13 @@
+{
+  "raw": "handful of sage leaves finely chopped",
+  "expected": {
+    "item": "sage leaves finely chopped",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
+  }
+}

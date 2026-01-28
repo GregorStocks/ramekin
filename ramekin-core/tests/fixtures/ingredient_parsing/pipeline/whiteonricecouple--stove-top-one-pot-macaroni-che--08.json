@@ -1,0 +1,13 @@
+{
+  "raw": "generous dash of Nutmeg",
+  "expected": {
+    "item": "Nutmeg",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous dash"
+      }
+    ],
+    "note": null
+  }
+}

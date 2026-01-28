@@ -1,0 +1,13 @@
+{
+  "raw": "2 heaping tablespoons chocolate-hazelnut spread&nbsp;(such as Nutella)",
+  "expected": {
+    "item": "chocolate-hazelnut spread (such as Nutella)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaping tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

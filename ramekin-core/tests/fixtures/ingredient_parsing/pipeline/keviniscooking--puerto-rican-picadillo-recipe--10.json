@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups cooked potatoes (diced (See Note 2))",
+  "expected": {
+    "item": "cooked potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "diced (See Note 2"
+  }
+}

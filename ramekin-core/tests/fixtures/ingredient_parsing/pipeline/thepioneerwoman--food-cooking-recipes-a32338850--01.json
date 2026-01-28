@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 c. of your favorite barbecue sauce",
+  "expected": {
+    "item": "your favorite barbecue sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

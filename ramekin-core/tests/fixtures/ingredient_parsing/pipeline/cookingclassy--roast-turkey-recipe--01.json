@@ -1,0 +1,13 @@
+{
+  "raw": "10 - 14 lb. turkey* ((fresh or frozen and fully thawed))",
+  "expected": {
+    "item": "- 14 lb. turkey*",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "fresh or frozen and fully thawed"
+  }
+}

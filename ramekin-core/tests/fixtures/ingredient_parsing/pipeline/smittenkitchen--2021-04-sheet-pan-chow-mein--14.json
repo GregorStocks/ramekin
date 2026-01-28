@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon vegetarian stir-fry sauce, such as vegetarian oyster or hoisin sauce (optional)",
+  "expected": {
+    "item": "vegetarian stir-fry sauce, such as vegetarian oyster or hoisin sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

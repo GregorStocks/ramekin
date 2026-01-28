@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon pickled jalapeño slices (diced fine)",
+  "expected": {
+    "item": "pickled jalapeño slices",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "diced fine"
+  }
+}

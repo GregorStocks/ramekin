@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb spaghetti",
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

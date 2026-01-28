@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 pound&nbsp;shiitake mushrooms, stems removed and reserved, caps quartered, divided",
+  "expected": {
+    "item": "shiitake mushrooms, stems removed and reserved, caps quartered",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "pound"
+      }
+    ],
+    "note": "divided"
+  }
+}

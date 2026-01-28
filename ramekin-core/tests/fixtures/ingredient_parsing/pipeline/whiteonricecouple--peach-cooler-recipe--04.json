@@ -1,0 +1,17 @@
+{
+  "raw": "2 Tablespoons Gin or Vodka ((1 ounce) , optional)",
+  "expected": {
+    "item": "Gin or Vodka",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "optional)"
+  }
+}

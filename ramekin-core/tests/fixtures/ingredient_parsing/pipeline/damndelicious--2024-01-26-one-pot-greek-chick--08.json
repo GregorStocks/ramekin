@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon dried paprika",
+  "expected": {
+    "item": "dried paprika",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

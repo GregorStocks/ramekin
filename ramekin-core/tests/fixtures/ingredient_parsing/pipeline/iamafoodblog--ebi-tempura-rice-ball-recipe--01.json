@@ -1,0 +1,13 @@
+{
+  "raw": "8 large prawns, de-veined and shelled, tail left on",
+  "expected": {
+    "item": "prawns, de-veined and shelled, tail left on",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

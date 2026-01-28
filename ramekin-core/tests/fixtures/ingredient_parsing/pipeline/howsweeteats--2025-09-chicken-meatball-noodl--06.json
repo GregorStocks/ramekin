@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup chopped fresh herbs, (like parsley, basil and chives)",
+  "expected": {
+    "item": "chopped fresh herbs, (like parsley, basil and chives)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

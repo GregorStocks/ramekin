@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces fresh baby spinach ((or arugula))",
+  "expected": {
+    "item": "fresh baby spinach (or arugula)",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

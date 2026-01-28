@@ -1,0 +1,21 @@
+{
+  "raw": "280g bread or high-protein all-purpose flour (about 9 3/4 ounces; 2 cups plus 2 tablespoons)",
+  "expected": {
+    "item": "bread or high-protein all-purpose flour",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "g"
+      },
+      {
+        "amount": "9 3/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

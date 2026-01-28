@@ -1,0 +1,13 @@
+{
+  "raw": "4-8  chiles de arbol (optional, if you want a spicier broth)",
+  "expected": {
+    "item": "chiles de arbol",
+    "measurements": [
+      {
+        "amount": "4-8",
+        "unit": null
+      }
+    ],
+    "note": "optional, if you want a spicier broth"
+  }
+}

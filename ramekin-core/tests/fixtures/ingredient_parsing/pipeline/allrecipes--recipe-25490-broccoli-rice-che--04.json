@@ -1,0 +1,17 @@
+{
+  "raw": "1 (16 ounce) package frozen chopped broccoli",
+  "expected": {
+    "item": "frozen chopped broccoli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

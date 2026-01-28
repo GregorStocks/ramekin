@@ -1,0 +1,13 @@
+{
+  "raw": "Generous sprinkle Sumac&nbsp;",
+  "expected": {
+    "item": "sprinkle Sumac",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous"
+      }
+    ],
+    "note": null
+  }
+}

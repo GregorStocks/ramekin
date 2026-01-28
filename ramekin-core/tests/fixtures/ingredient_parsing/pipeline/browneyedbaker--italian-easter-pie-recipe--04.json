@@ -1,0 +1,13 @@
+{
+  "raw": "13 tablespoons unsalted butter, cold, cut into ¼-inch cubes",
+  "expected": {
+    "item": "unsalted butter, cold, cut into 1/4-inch cubes",
+    "measurements": [
+      {
+        "amount": "13",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

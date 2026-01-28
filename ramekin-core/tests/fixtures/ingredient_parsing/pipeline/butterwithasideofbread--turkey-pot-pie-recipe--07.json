@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tsp fresh rosemary, fine chop",
+  "expected": {
+    "item": "fresh rosemary, fine chop",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

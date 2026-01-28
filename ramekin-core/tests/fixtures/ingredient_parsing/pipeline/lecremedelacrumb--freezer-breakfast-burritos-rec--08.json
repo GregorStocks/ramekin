@@ -1,0 +1,13 @@
+{
+  "raw": "8  strips bacon or turkey bacon",
+  "expected": {
+    "item": "strips bacon or turkey bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

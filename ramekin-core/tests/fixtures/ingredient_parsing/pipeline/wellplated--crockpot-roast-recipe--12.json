@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound baby red potatoes (scrubbed and left whole)",
+  "expected": {
+    "item": "baby red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "scrubbed and left whole"
+  }
+}

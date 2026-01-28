@@ -1,0 +1,13 @@
+{
+  "raw": "100 g bean sprouts",
+  "expected": {
+    "item": "bean sprouts",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

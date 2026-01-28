@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup / 5 oz / 140 g whole wheat flour",
+  "expected": {
+    "item": "/ 5 oz / 140 g whole wheat flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

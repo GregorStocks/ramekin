@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (450g) oxtail with separated joints",
+  "expected": {
+    "item": "oxtail with separated joints",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

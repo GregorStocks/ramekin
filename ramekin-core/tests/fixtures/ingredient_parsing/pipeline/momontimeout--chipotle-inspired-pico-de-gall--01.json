@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups Roma tomatoes (chopped (seeds removed))",
+  "expected": {
+    "item": "Roma tomatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped (seeds removed"
+  }
+}

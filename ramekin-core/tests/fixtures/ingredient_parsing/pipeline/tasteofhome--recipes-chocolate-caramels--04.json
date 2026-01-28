@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces unsweetened chocolate, chopped",
+  "expected": {
+    "item": "unsweetened chocolate",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

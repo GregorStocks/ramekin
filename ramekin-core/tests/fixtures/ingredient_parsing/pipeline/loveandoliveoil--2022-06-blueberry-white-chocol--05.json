@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 oz white chocolate*",
+  "expected": {
+    "item": "white chocolate*",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

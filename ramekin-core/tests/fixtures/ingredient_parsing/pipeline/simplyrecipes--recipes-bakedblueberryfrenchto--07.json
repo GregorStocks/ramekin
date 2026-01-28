@@ -1,0 +1,13 @@
+{
+  "raw": "8 tablespoons sugar, divided",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "divided"
+  }
+}

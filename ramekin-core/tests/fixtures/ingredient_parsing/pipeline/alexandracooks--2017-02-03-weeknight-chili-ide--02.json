@@ -1,0 +1,17 @@
+{
+  "raw": "1 to 2 onions, chopped fine (about 2 cups)",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped fine"
+  }
+}

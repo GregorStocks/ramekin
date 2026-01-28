@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces Belgian semisweet chocolate (chopped)",
+  "expected": {
+    "item": "Belgian semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

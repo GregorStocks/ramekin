@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound uncooked potato gnocchi (the dry packaged gnocchi - not fresh)",
+  "expected": {
+    "item": "uncooked potato gnocchi",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "the dry packaged gnocchi - not fresh"
+  }
+}

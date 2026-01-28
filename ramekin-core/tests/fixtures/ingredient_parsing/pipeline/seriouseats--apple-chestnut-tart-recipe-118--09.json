@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons unsalted butter (113 g), cut into 1/2-inch pieces and chilled",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "cut into 1/2-inch pieces and chilled"
+  }
+}

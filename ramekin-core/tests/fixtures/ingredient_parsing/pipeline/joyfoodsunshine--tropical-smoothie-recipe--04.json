@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups mango (frozen (12 oz frozen mango))",
+  "expected": {
+    "item": "mango",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "frozen (12 oz frozen mango"
+  }
+}

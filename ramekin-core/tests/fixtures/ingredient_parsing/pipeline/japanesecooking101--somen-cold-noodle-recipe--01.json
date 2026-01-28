@@ -1,0 +1,13 @@
+{
+  "raw": "2 bunches somen noodles",
+  "expected": {
+    "item": "somen noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      }
+    ],
+    "note": null
+  }
+}

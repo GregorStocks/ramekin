@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz good quality white chocolate (finely chopped)",
+  "expected": {
+    "item": "good quality white chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

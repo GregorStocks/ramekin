@@ -1,0 +1,13 @@
+{
+  "raw": "1/3 cup crisp white wine",
+  "expected": {
+    "item": "crisp white wine",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

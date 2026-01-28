@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cup heavy cream ((42% butterfat))",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "42",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

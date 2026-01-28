@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz  asparagus, (ends removed, cut into bite-size pieces)",
+  "expected": {
+    "item": "asparagus, (ends removed, cut into bite-size pieces)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

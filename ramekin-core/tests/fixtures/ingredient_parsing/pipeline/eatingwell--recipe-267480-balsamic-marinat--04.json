@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup olive oil",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

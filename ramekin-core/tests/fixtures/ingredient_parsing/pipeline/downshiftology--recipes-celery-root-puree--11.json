@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups celery root (peeled and diced into 1/2 inch cubes)",
+  "expected": {
+    "item": "celery root",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "peeled and diced into 1/2 inch cubes"
+  }
+}

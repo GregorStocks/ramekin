@@ -1,0 +1,13 @@
+{
+  "raw": "2 jars marinara sauce",
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "jars"
+      }
+    ],
+    "note": null
+  }
+}

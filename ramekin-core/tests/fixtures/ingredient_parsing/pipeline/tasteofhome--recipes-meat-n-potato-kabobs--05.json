@@ -1,0 +1,17 @@
+{
+  "raw": "3 small red potatoes (about 8 ounces), cubed",
+  "expected": {
+    "item": "red potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "small"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cubed"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "24 ounces fresh cranberries (2 packages)",
+  "expected": {
+    "item": "fresh cranberries",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "packages"
+      }
+    ],
+    "note": null
+  }
+}

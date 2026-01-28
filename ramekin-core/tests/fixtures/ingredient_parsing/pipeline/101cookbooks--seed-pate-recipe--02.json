@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups raw pumpkin seeds",
+  "expected": {
+    "item": "raw pumpkin seeds",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

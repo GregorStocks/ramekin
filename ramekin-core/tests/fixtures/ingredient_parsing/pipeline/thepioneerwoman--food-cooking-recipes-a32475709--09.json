@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp. salted butter, softened",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened"
+  }
+}

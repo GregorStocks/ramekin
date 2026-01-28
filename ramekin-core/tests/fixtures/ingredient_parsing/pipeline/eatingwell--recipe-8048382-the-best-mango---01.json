@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups kale, stemmed and roughly chopped",
+  "expected": {
+    "item": "kale",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "stemmed and roughly chopped"
+  }
+}

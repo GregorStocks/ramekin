@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 dashes aromatic bitters, we use Angostura",
+  "expected": {
+    "item": "aromatic bitters, we use Angostura",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "dashes"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 peaches, sliced thinly (1/4-inch or smaller)",
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced thinly"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon red wine or white wine vinegar",
+  "expected": {
+    "item": "red wine or white wine vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

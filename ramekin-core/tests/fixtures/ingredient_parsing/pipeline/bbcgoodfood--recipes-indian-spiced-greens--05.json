@@ -1,0 +1,13 @@
+{
+  "raw": "large piece of ginger grated",
+  "expected": {
+    "item": "piece of ginger grated",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

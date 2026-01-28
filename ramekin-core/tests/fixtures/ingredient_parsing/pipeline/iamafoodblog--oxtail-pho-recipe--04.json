@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon whole cloves",
+  "expected": {
+    "item": "whole cloves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

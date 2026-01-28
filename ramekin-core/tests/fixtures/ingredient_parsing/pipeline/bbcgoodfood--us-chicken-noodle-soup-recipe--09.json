@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp soy sauce plus extra for serving",
+  "expected": {
+    "item": "soy sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus extra for serving"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup frozen English peas, thawed",
+  "expected": {
+    "item": "frozen English peas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "thawed"
+  }
+}

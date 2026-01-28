@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  cup    butter (or margarine)",
+  "expected": {
+    "item": "butter (or margarine)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

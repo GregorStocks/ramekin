@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups kiwi chunks",
+  "expected": {
+    "item": "kiwi chunks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

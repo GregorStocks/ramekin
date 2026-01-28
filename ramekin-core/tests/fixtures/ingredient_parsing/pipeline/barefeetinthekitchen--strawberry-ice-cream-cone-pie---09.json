@@ -1,0 +1,13 @@
+{
+  "raw": "8  ice cream sugar cones (broken into pieces)",
+  "expected": {
+    "item": "ice cream sugar cones (broken into pieces)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

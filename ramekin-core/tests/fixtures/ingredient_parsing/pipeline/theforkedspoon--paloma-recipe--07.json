@@ -1,0 +1,13 @@
+{
+  "raw": "2 fluid ounces fresh grapefruit juice",
+  "expected": {
+    "item": "fresh grapefruit juice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

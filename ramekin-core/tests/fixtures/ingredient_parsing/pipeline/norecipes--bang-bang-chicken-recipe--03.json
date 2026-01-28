@@ -1,0 +1,17 @@
+{
+  "raw": "220 grams cucumber ((2 Japanese cucumbers))",
+  "expected": {
+    "item": "cucumber",
+    "measurements": [
+      {
+        "amount": "220",
+        "unit": "grams"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

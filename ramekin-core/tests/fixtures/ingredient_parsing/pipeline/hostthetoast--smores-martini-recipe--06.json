@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce chocolate syrup, plus more to drizzle in the glass",
+  "expected": {
+    "item": "chocolate syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": "plus more to drizzle in the glass"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  dried red chili pepper (optional)",
+  "expected": {
+    "item": "dried red chili pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

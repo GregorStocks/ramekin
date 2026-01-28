@@ -1,0 +1,17 @@
+{
+  "raw": "2  cut-up chickens, (2½ lbs (1.1 k) each, quartered, bone-in, skin-on (see note))",
+  "expected": {
+    "item": "cut-up chickens, each, quartered, bone-in, skin-on (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon pure orange extract",
+  "expected": {
+    "item": "pure orange extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

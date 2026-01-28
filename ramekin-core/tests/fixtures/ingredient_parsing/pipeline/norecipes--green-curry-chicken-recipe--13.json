@@ -1,0 +1,13 @@
+{
+  "raw": "25 grams Thai basil ((leaves picked from stems))",
+  "expected": {
+    "item": "Thai basil (leaves picked from stems)",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

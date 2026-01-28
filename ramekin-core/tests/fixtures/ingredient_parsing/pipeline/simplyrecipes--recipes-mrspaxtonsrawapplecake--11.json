@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup of chopped nuts - walnuts or pecans",
+  "expected": {
+    "item": "chopped nuts - walnuts or pecans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 tsp. kosher salt, plus more for the pasta",
+  "expected": {
+    "item": "kosher salt",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "plus more for the pasta"
+  }
+}

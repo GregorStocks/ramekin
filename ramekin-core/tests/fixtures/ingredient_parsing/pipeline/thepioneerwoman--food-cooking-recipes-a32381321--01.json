@@ -1,0 +1,17 @@
+{
+  "raw": "6 boneless pork chops (about 2 pounds)",
+  "expected": {
+    "item": "boneless pork chops",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

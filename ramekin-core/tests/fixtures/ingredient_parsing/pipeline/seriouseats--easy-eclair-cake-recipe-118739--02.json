@@ -1,0 +1,21 @@
+{
+  "raw": "1/4 cup powdered sugar (1 ounce; 28g)",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "28",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

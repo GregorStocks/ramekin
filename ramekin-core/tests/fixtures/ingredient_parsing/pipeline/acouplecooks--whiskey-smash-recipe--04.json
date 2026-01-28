@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce (2 tablespoons) simple syrup or maple syrup",
+  "expected": {
+    "item": "simple syrup or maple syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

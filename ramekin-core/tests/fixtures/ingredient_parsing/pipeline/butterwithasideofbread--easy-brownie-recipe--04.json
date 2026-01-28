@@ -1,0 +1,17 @@
+{
+  "raw": "16 oz  Hershey's chocolate syrup ((1 1/2 cups))",
+  "expected": {
+    "item": "Hershey's chocolate syrup",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

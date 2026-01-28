@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 540g plain unsweet yogurt, at room temperature",
+  "expected": {
+    "item": "540g plain unsweet yogurt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

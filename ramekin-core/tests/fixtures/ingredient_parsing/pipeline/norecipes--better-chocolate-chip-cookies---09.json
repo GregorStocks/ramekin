@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams unsweetened chocolate ((~1 cup, chopped))",
+  "expected": {
+    "item": "unsweetened chocolate",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1 cup, chopped"
+  }
+}

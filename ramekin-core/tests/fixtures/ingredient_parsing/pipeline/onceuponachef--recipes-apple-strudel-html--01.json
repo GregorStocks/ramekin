@@ -1,0 +1,17 @@
+{
+  "raw": "3  large baking apples (about 1½ lbs), (peeled, cored and sliced ⅛-in (3-mm) thick (see note))",
+  "expected": {
+    "item": "baking apples , thick (see note)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "large"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled, cored and sliced 1/8-in (3-mm"
+  }
+}

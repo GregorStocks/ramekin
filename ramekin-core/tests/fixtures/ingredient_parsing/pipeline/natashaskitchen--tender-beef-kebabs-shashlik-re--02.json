@@ -1,0 +1,13 @@
+{
+  "raw": "2  Bell peppers (any color, sliced into 1 1/2\" wide pieces)",
+  "expected": {
+    "item": "Bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "any color, sliced into 1 1/2\" wide pieces"
+  }
+}

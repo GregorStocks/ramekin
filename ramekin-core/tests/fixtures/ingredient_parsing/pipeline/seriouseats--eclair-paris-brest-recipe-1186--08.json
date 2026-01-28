@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15g) light corn syrup",
+  "expected": {
+    "item": "light corn syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

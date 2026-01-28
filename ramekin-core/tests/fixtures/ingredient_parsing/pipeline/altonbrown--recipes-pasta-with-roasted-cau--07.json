@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces penne or rigatoni pasta",
+  "expected": {
+    "item": "penne or rigatoni pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

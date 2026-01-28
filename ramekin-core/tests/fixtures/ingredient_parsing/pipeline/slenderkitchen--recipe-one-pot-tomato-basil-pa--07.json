@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. high fiber pasta",
+  "expected": {
+    "item": "high fiber pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

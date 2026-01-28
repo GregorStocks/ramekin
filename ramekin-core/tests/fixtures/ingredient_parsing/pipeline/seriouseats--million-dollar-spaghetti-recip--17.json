@@ -1,0 +1,21 @@
+{
+  "raw": "3 1/2 cups (830 ml; 850g) whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "830",
+        "unit": "ml"
+      },
+      {
+        "amount": "850",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

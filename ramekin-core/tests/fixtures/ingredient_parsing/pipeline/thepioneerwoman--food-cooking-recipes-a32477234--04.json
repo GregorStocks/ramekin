@@ -1,0 +1,17 @@
+{
+  "raw": "1 c. chopped ham steak (6 to 8 ounces)",
+  "expected": {
+    "item": "chopped ham steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      },
+      {
+        "amount": "6 to 8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

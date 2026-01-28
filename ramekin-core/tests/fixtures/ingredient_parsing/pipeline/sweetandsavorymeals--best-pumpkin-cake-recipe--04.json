@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 cups flour",
+  "expected": {
+    "item": "flour",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

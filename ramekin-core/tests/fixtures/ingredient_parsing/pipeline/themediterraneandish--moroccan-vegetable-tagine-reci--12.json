@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups canned whole peeled tomatoes",
+  "expected": {
+    "item": "canned whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

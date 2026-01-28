@@ -1,0 +1,21 @@
+{
+  "raw": "8 ounces thick-cut bacon (226 g; about 5 slices), chopped&nbsp;",
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "226",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "slices"
+      }
+    ],
+    "note": "chopped"
+  }
+}

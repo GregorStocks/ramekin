@@ -1,0 +1,13 @@
+{
+  "raw": "1 recipe Sushi Rice",
+  "expected": {
+    "item": "recipe Sushi Rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

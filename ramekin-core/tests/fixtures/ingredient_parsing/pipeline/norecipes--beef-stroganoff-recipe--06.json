@@ -1,0 +1,13 @@
+{
+  "raw": "125 grams onions ((1/2 medium onion diced))",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "125",
+        "unit": "grams"
+      }
+    ],
+    "note": "1/2 medium onion diced"
+  }
+}

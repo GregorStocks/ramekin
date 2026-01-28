@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium chile peppers, such as poblano, New Mexico or Anaheim, diced",
+  "expected": {
+    "item": "chile peppers, such as poblano, New Mexico or Anaheim",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "diced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 sticks unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "sticks"
+      }
+    ],
+    "note": null
+  }
+}

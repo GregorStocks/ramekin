@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 c. mini marshmallows",
+  "expected": {
+    "item": "mini marshmallows",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

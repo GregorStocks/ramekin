@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 tsp cayenne pepper (optional)",
+  "expected": {
+    "item": "cayenne pepper",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "tsp"
+      }
+    ],
+    "note": "optional"
+  }
+}

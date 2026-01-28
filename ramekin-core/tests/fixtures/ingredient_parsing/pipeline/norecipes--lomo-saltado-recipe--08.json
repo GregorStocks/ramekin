@@ -1,0 +1,13 @@
+{
+  "raw": "290 grams potatoes ((cut into 1/2-inch thick strips))",
+  "expected": {
+    "item": "potatoes (cut into 1/2-inch thick strips)",
+    "measurements": [
+      {
+        "amount": "290",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

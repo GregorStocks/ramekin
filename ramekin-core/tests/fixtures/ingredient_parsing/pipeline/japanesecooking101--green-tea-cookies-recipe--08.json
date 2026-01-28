@@ -1,0 +1,13 @@
+{
+  "raw": "4 tsp Matcha powder",
+  "expected": {
+    "item": "Matcha powder",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

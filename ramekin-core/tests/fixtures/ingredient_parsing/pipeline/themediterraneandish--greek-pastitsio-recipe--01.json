@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/2 cups uncooked Penne pasta",
+  "expected": {
+    "item": "uncooked Penne pasta",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

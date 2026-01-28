@@ -1,0 +1,13 @@
+{
+  "raw": "3 cubes vegetable bouillon",
+  "expected": {
+    "item": "vegetable bouillon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cubes"
+      }
+    ],
+    "note": null
+  }
+}

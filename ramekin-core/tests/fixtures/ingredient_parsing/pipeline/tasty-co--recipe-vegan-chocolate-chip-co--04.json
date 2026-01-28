@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup refined coconut oil, melted",
+  "expected": {
+    "item": "refined coconut oil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
+  }
+}

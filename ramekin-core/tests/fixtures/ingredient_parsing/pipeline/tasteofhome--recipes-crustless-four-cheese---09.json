@@ -1,0 +1,17 @@
+{
+  "raw": "2 packages (3 ounces each) cream cheese, cubed",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces each"
+      }
+    ],
+    "note": "cubed"
+  }
+}

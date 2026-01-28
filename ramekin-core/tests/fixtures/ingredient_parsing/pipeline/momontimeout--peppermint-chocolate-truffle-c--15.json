@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz bittersweet or semi-sweet chocolate (chopped)",
+  "expected": {
+    "item": "bittersweet or semi-sweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "chopped"
+  }
+}

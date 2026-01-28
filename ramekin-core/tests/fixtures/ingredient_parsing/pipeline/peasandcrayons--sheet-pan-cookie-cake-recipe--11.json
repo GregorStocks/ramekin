@@ -1,0 +1,13 @@
+{
+  "raw": "8 TBSP 1 stick butter, softened",
+  "expected": {
+    "item": "1 stick butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "softened"
+  }
+}

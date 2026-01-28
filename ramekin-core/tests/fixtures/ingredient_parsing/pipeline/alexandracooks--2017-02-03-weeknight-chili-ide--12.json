@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 to 2&nbsp;cups cooked beans, any kind you like, or one 15-oz can beans, drained and rinsed",
+  "expected": {
+    "item": "to 2 cups cooked beans, any kind you like, or one 15-oz can beans",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": null
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

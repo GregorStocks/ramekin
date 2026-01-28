@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon sprinkles, plus more for topping",
+  "expected": {
+    "item": "sprinkles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "plus more for topping"
+  }
+}

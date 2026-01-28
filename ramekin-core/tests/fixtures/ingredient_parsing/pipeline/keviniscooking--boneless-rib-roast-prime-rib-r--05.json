@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp salt (divided)",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
+  }
+}

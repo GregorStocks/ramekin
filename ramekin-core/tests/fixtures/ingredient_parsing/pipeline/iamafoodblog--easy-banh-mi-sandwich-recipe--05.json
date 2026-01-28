@@ -1,0 +1,13 @@
+{
+  "raw": "8-12 thin slices of ham",
+  "expected": {
+    "item": "thin slices of ham",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

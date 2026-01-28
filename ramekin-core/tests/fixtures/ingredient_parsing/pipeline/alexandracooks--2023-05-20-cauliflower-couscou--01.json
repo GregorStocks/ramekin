@@ -1,0 +1,17 @@
+{
+  "raw": "3 ounces (1/2&nbsp; to 3/4 cup) dried tart cherries or dried cranberries",
+  "expected": {
+    "item": "dried tart cherries or dried cranberries",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/2 to 3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

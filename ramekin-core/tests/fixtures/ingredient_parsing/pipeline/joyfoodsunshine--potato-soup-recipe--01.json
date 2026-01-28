@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz bacon ((diced small))",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "diced small"
+  }
+}

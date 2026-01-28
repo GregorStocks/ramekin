@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 pound thinly sliced deli ham, finely chopped",
+  "expected": {
+    "item": "thinly sliced deli ham",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "pound"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 small yellow summer squash, sliced",
+  "expected": {
+    "item": "yellow summer squash",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 g salt",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

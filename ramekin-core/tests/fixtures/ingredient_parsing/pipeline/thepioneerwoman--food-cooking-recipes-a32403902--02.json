@@ -1,0 +1,13 @@
+{
+  "raw": "2 9-ounce packages cheese or spinach ravioli",
+  "expected": {
+    "item": "9-ounce packages cheese or spinach ravioli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

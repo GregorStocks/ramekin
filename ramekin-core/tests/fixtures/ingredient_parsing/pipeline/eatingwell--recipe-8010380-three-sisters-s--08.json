@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15 ounce) cans no-salt-added pinto beans, rinsed",
+  "expected": {
+    "item": "no-salt-added pinto beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": "ounce"
+      }
+    ],
+    "note": "rinsed"
+  }
+}

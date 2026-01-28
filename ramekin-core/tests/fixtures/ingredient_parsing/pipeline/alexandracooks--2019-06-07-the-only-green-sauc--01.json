@@ -1,0 +1,21 @@
+{
+  "raw": "1 bunch (about 3 cups, 3 ounces) fresh parsley, cilantro, arugula, mustard greens or a mix, roughly chopped",
+  "expected": {
+    "item": "fresh parsley, cilantro, arugula, mustard greens or a mix",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces ground lamb shoulder",
+  "expected": {
+    "item": "ground lamb shoulder",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

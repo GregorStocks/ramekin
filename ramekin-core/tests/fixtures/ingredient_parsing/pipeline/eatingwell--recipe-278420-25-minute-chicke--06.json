@@ -1,0 +1,17 @@
+{
+  "raw": "1.5 cups shredded, cooked chicken breast (about 4 1/2 oz.)",
+  "expected": {
+    "item": "shredded",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      },
+      {
+        "amount": "4 1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": "cooked chicken breast"
+  }
+}

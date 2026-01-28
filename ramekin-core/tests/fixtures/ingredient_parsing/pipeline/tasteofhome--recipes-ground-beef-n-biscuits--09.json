@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (10 ounces) frozen peas",
+  "expected": {
+    "item": "frozen peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

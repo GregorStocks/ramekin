@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 Tbsp Soy Sauce",
+  "expected": {
+    "item": "Soy Sauce",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

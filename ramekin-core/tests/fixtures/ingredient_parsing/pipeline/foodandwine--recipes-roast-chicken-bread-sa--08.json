@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon dried currants",
+  "expected": {
+    "item": "dried currants",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

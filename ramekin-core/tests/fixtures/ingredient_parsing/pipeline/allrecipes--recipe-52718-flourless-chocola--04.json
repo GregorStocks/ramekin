@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup cocoa powder",
+  "expected": {
+    "item": "cocoa powder",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

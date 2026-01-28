@@ -1,0 +1,13 @@
+{
+  "raw": "2 pinches ground cumin",
+  "expected": {
+    "item": "ground cumin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinches"
+      }
+    ],
+    "note": null
+  }
+}

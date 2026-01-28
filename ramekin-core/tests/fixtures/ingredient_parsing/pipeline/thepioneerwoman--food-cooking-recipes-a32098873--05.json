@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 c. all-purpose flour&nbsp;",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

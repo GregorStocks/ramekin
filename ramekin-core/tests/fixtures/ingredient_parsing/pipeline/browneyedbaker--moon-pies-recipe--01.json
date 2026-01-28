@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces  unsalted butter, at room temperature ((1 cup))",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

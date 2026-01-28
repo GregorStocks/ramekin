@@ -1,0 +1,17 @@
+{
+  "raw": "1  container (15.8 oz. pomegranate bursting boba)",
+  "expected": {
+    "item": "container",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "15.8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

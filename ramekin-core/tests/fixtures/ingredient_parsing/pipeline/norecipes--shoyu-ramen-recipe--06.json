@@ -1,0 +1,13 @@
+{
+  "raw": "1/16 teaspoon baking soda",
+  "expected": {
+    "item": "baking soda",
+    "measurements": [
+      {
+        "amount": "1/16",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

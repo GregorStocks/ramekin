@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 ounces shiitake mushrooms (diced)",
+  "expected": {
+    "item": "shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "diced"
+  }
+}

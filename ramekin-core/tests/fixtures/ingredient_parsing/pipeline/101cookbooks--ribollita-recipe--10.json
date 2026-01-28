@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound / 8 oz / 225g crustless loaf of bread",
+  "expected": {
+    "item": "/ 8 oz / 225g crustless loaf of bread",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

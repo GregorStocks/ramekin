@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce simple syrup, or more to taste (2 tablespoons)",
+  "expected": {
+    "item": "simple syrup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "or more to taste"
+  }
+}

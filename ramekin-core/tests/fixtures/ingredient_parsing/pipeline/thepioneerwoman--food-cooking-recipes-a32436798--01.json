@@ -1,0 +1,17 @@
+{
+  "raw": "1 (2 1/2-lb.) piece&nbsp;beef chuck roast",
+  "expected": {
+    "item": "beef chuck roast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "piece"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

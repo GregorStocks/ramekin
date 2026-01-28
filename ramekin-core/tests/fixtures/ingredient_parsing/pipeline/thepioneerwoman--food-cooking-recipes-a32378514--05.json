@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp. pine nuts",
+  "expected": {
+    "item": "pine nuts",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

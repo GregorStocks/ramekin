@@ -1,0 +1,17 @@
+{
+  "raw": "1½ cups (3 sticks) chilled unsalted butter, cut into pieces",
+  "expected": {
+    "item": "chilled unsalted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "3",
+        "unit": "sticks"
+      }
+    ],
+    "note": null
+  }
+}

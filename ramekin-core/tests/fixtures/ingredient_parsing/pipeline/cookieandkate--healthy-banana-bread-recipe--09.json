@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;frac12; teaspoon ground cinnamon, plus more to swirl on top",
+  "expected": {
+    "item": "ground cinnamon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more to swirl on top"
+  }
+}

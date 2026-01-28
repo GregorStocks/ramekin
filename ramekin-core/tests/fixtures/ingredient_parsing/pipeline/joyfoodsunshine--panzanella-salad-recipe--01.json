@@ -1,0 +1,13 @@
+{
+  "raw": "4  cups sourdough bread* ((about half a loaf - diced or torn into ½&amp;quot; cubes))",
+  "expected": {
+    "item": "sourdough bread*",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "about half a loaf - diced or torn into 1/2\" cubes"
+  }
+}

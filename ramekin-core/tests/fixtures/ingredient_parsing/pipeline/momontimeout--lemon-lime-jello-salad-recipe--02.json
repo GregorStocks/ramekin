@@ -1,0 +1,13 @@
+{
+  "raw": "3 oz lime JELLO",
+  "expected": {
+    "item": "lime JELLO",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

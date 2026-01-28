@@ -1,0 +1,17 @@
+{
+  "raw": "14 ounces tomato sauce&nbsp; ((about 1 3/4 cups))",
+  "expected": {
+    "item": "tomato sauce",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

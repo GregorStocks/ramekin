@@ -1,0 +1,17 @@
+{
+  "raw": "1  carrot, chopped (1 cup)",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

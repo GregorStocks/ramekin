@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 pound walnut halves (about 2 cups)",
+  "expected": {
+    "item": "walnut halves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

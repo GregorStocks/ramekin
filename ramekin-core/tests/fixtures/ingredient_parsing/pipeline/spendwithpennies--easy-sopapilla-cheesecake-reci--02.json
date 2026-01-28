@@ -1,0 +1,17 @@
+{
+  "raw": "4 (8 ounce each) box cream cheese (at room temperature)",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "box"
+      },
+      {
+        "amount": "8",
+        "unit": "ounce each"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

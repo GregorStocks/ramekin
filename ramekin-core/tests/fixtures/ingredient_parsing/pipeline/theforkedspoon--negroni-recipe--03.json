@@ -1,0 +1,13 @@
+{
+  "raw": "1 fluid ounce Red Vermouth (sweet or semi-sweet)",
+  "expected": {
+    "item": "Red Vermouth (sweet or semi-sweet)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "fluid ounce"
+      }
+    ],
+    "note": null
+  }
+}

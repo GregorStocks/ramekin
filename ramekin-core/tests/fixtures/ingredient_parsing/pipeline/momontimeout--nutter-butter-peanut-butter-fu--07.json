@@ -1,0 +1,13 @@
+{
+  "raw": "15  Nutter Butter cookies (coarsely chopped)",
+  "expected": {
+    "item": "Nutter Butter cookies",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

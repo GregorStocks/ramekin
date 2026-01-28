@@ -1,0 +1,13 @@
+{
+  "raw": "90 grams shallots",
+  "expected": {
+    "item": "shallots",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

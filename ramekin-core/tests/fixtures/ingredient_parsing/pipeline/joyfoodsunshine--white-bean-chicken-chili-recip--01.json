@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds chicken breasts",
+  "expected": {
+    "item": "chicken breasts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

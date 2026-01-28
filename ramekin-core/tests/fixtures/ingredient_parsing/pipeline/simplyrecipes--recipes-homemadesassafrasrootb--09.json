@@ -1,0 +1,13 @@
+{
+  "raw": "2 quarts soda water",
+  "expected": {
+    "item": "soda water",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quarts"
+      }
+    ],
+    "note": null
+  }
+}

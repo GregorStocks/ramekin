@@ -1,0 +1,17 @@
+{
+  "raw": "1.33 lbs boneless skinless chicken breast (4 pieces, pounded thin)",
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lbs"
+      },
+      {
+        "amount": "4",
+        "unit": "pieces"
+      }
+    ],
+    "note": null
+  }
+}

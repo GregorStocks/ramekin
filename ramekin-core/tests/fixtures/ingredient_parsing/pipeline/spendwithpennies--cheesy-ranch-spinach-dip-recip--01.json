@@ -1,0 +1,13 @@
+{
+  "raw": "2 bunches fresh spinach (washed)",
+  "expected": {
+    "item": "fresh spinach",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      }
+    ],
+    "note": "washed"
+  }
+}

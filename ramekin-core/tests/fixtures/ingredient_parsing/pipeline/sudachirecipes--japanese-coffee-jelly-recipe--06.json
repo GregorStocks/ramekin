@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 tbsp sugar (or to taste)",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

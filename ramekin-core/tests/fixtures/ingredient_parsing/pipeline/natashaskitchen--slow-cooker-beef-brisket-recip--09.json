@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 Tbsp Worcestershire sauce",
+  "expected": {
+    "item": "Worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

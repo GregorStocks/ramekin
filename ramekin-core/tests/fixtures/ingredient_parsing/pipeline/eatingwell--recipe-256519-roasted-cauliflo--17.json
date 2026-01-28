@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups diced peeled russet potatoes (1/2-inch)",
+  "expected": {
+    "item": "diced peeled russet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams Bucatini",
+  "expected": {
+    "item": "Bucatini",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

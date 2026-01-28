@@ -1,0 +1,13 @@
+{
+  "raw": "6 slices peach (canned or fresh)",
+  "expected": {
+    "item": "peach",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slices"
+      }
+    ],
+    "note": "canned or fresh"
+  }
+}

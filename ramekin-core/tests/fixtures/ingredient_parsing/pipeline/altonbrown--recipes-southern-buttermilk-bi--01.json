@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups plus 6 tablespoons all-purpose flour, plus an additional 1/2 cup for dusting",
+  "expected": {
+    "item": "plus 6 tablespoons all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus an additional 1/2 cup for dusting"
+  }
+}

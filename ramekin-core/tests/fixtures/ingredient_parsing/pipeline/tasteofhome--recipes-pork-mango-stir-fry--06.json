@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (8 ounces) fresh sugar snap peas",
+  "expected": {
+    "item": "fresh sugar snap peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

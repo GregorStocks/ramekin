@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups hot cooked jasmine rice",
+  "expected": {
+    "item": "hot cooked jasmine rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

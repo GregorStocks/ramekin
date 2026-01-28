@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium head bok choy, torn into 2-inch pieces",
+  "expected": {
+    "item": "head bok choy, torn into 2-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

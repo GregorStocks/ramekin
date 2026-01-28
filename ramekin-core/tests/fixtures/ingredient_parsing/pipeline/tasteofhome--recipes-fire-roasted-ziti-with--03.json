@@ -1,0 +1,17 @@
+{
+  "raw": "1 jar (24 ounces) fire-roasted tomato and garlic pasta sauce",
+  "expected": {
+    "item": "fire-roasted tomato and garlic pasta sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

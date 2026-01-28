@@ -1,0 +1,17 @@
+{
+  "raw": "1  can pure pumpkin puree (15 ounces)",
+  "expected": {
+    "item": "pure pumpkin puree",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

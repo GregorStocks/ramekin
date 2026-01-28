@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. medium pasta shells",
+  "expected": {
+    "item": "medium pasta shells",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

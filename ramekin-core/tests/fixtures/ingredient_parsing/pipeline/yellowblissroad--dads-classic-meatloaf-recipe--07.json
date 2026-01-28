@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons Porterhouse seasoning",
+  "expected": {
+    "item": "Porterhouse seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

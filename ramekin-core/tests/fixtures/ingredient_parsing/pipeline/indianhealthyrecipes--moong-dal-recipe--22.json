@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon red chilli powder",
+  "expected": {
+    "item": "red chilli powder",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

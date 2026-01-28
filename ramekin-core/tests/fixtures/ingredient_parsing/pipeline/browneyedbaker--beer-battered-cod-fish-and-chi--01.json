@@ -1,0 +1,13 @@
+{
+  "raw": "2 quarts canola or vegetable oil",
+  "expected": {
+    "item": "canola or vegetable oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "quarts"
+      }
+    ],
+    "note": null
+  }
+}

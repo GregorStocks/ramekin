@@ -1,0 +1,17 @@
+{
+  "raw": "16 tablespoons (2 sticks) unsalted butter, cold, chopped into small pieces",
+  "expected": {
+    "item": "unsalted butter, cold",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "chopped into small pieces"
+  }
+}

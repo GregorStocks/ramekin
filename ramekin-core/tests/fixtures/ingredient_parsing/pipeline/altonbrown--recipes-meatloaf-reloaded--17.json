@@ -1,0 +1,13 @@
+{
+  "raw": "18 ounces chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
+  "expected": {
+    "item": "chuck roast, trimmed of excess gristle and silver skin",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cut into 1 1/2-inch cubes and chilled"
+  }
+}

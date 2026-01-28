@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (14 g) extra-virgin olive oil",
+  "expected": {
+    "item": "extra-virgin olive oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

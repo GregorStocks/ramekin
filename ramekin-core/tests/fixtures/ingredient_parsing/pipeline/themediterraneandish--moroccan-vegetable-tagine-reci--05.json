@@ -1,0 +1,13 @@
+{
+  "raw": "2  large russet potatoes, (peeled and cubed)",
+  "expected": {
+    "item": "russet potatoes,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "peeled and cubed"
+  }
+}

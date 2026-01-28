@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces uncooked ziti or  rigatoni (about 3 cups)",
+  "expected": {
+    "item": "uncooked ziti or  rigatoni",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

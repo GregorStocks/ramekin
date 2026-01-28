@@ -1,0 +1,13 @@
+{
+  "raw": "4 grams lime zest (zest of 1 lime)",
+  "expected": {
+    "item": "lime zest (zest of 1 lime)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup chopped fresh cilantro",
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

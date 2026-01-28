@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup creamy peanut butter (melted and cooled slightly)",
+  "expected": {
+    "item": "creamy peanut butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted and cooled slightly"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "11 tablespoons heavy cream",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "11",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

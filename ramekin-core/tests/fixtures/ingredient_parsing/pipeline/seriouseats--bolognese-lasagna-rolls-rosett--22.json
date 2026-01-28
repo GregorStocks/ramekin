@@ -1,0 +1,13 @@
+{
+  "raw": "1 large sprig fresh basil",
+  "expected": {
+    "item": "sprig fresh basil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

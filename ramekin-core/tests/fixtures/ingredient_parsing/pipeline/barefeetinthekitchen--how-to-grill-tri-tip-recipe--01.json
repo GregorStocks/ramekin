@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds beef tri-tip steak",
+  "expected": {
+    "item": "beef tri-tip steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

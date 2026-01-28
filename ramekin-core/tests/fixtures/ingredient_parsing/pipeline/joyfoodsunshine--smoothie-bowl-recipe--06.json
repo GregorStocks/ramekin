@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup greens ((optional))",
+  "expected": {
+    "item": "greens",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

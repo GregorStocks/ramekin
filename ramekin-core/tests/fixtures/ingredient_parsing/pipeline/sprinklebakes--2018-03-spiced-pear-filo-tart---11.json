@@ -1,0 +1,13 @@
+{
+  "raw": "1  small branch rosemary (optional)",
+  "expected": {
+    "item": "branch rosemary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 pinches cayenne pepper",
+  "expected": {
+    "item": "cayenne pepper",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinches"
+      }
+    ],
+    "note": null
+  }
+}

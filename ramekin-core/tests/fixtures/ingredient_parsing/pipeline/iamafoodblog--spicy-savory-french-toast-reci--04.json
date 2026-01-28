@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon chopped basil",
+  "expected": {
+    "item": "chopped basil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

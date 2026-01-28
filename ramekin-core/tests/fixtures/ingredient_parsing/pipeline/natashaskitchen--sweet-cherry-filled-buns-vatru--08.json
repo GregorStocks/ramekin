@@ -1,0 +1,13 @@
+{
+  "raw": "1  egg (beaten with fork (for egg wash))",
+  "expected": {
+    "item": "egg",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "beaten with fork (for egg wash"
+  }
+}

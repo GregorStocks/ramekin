@@ -1,0 +1,13 @@
+{
+  "raw": "4 c. shredded cheddar",
+  "expected": {
+    "item": "shredded cheddar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

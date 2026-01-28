@@ -1,0 +1,17 @@
+{
+  "raw": "2 cans (11 ounces each) mandarin oranges, drained",
+  "expected": {
+    "item": "mandarin oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "11",
+        "unit": "ounces each"
+      }
+    ],
+    "note": "drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup mozzarella cheese (shredded)",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
+  }
+}

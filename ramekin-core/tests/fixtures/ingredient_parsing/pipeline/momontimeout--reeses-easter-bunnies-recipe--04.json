@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz white candy coating",
+  "expected": {
+    "item": "white candy coating",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

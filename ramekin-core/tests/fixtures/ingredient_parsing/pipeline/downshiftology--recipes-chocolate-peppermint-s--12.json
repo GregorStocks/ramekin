@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp coconut oil (melted)",
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "melted"
+  }
+}

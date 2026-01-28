@@ -1,0 +1,17 @@
+{
+  "raw": "0.75 cup raisins (8 ounces)",
+  "expected": {
+    "item": "raisins",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

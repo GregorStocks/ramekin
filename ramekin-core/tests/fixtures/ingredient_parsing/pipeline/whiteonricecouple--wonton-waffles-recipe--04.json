@@ -1,0 +1,13 @@
+{
+  "raw": "3 stalks green onions  (, finely minced )",
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "stalks"
+      }
+    ],
+    "note": ", finely minced"
+  }
+}

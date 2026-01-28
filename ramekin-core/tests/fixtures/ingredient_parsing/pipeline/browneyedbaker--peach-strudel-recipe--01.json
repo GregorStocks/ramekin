@@ -1,0 +1,13 @@
+{
+  "raw": "20 ounces fresh peaches (peeled, pitted and cut into 1/8-inch slices)",
+  "expected": {
+    "item": "fresh peaches",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ounces"
+      }
+    ],
+    "note": "peeled, pitted and cut into 1/8-inch slices"
+  }
+}

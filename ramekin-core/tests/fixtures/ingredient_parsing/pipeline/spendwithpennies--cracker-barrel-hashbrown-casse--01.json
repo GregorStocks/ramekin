@@ -1,0 +1,13 @@
+{
+  "raw": "32 ounces frozen shredded hash browns (thawed)",
+  "expected": {
+    "item": "frozen shredded hash browns",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thawed"
+  }
+}

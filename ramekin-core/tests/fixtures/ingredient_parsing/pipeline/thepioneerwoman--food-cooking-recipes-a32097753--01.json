@@ -1,0 +1,17 @@
+{
+  "raw": "3 c. fresh Bing or other sweet cherries, pitted&nbsp;(about 1 pound)",
+  "expected": {
+    "item": "fresh Bing or other sweet cherries, pitted",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "c"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

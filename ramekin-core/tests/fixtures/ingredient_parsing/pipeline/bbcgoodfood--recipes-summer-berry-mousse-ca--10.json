@@ -1,0 +1,13 @@
+{
+  "raw": "284ml carton  double cream",
+  "expected": {
+    "item": "carton  double cream",
+    "measurements": [
+      {
+        "amount": "284",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

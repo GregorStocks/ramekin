@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces ground beef round",
+  "expected": {
+    "item": "ground beef round",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

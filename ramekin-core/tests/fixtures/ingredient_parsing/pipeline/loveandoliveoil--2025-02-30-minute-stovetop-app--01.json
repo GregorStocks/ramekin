@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/2 pounds apples (about 4 medium or 3 large apples*)",
+  "expected": {
+    "item": "apples",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "4",
+        "unit": "medium"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

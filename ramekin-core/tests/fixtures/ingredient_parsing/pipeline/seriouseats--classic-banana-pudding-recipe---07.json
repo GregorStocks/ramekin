@@ -1,0 +1,21 @@
+{
+  "raw": "56g unsalted butter (about 2 ounces; 2 tablespoons)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "56",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

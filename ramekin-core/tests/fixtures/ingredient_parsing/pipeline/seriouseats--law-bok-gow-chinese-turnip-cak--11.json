@@ -1,0 +1,13 @@
+{
+  "raw": "1 bunch cilantro, leaves and tender stems only, chopped",
+  "expected": {
+    "item": "cilantro, leaves and tender stems only",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10  snow peas (thinly sliced)",
+  "expected": {
+    "item": "snow peas",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

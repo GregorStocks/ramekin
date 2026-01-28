@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups of snow peas or snap peas, de-stringed",
+  "expected": {
+    "item": "snow peas or snap peas, de-stringed",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

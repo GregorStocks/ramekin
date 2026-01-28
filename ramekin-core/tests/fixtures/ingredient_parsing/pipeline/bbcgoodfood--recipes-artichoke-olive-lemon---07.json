@@ -1,0 +1,13 @@
+{
+  "raw": "100g bag wild rocket",
+  "expected": {
+    "item": "bag wild rocket",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

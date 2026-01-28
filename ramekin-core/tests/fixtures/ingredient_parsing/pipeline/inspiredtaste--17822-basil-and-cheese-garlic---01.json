@@ -1,0 +1,13 @@
+{
+  "raw": "1 baguette",
+  "expected": {
+    "item": "baguette",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

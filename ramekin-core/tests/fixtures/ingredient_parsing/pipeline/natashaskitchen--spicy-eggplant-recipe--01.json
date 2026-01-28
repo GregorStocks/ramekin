@@ -1,0 +1,13 @@
+{
+  "raw": "4 1/2 lbs 2 kg eggplant",
+  "expected": {
+    "item": "2 kg eggplant",
+    "measurements": [
+      {
+        "amount": "4 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

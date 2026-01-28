@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (480 ml)  hot water ( (to add later))",
+  "expected": {
+    "item": "hot water ( (to add later)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

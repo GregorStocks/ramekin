@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups diced onions, from 2 medium to large",
+  "expected": {
+    "item": "diced onions, from 2 medium to large",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

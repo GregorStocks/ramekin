@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 sticks (6 ounces) cold unsalted butter, cut into small pieces",
+  "expected": {
+    "item": "cold unsalted butter, cut into small pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

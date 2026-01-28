@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 pounds ground chicken",
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

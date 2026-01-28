@@ -1,0 +1,13 @@
+{
+  "raw": "20 oz cheese tortellini (fresh)",
+  "expected": {
+    "item": "cheese tortellini",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      }
+    ],
+    "note": "fresh"
+  }
+}

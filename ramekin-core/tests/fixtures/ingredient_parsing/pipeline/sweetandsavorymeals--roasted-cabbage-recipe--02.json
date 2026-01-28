@@ -1,0 +1,17 @@
+{
+  "raw": "1  large green cabbage (about 2 lbs)",
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

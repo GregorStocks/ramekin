@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup chocolate, melted",
+  "expected": {
+    "item": "chocolate",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
+  }
+}

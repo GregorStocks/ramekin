@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz. prosecco",
+  "expected": {
+    "item": "prosecco",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

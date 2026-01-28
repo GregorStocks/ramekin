@@ -1,0 +1,13 @@
+{
+  "raw": "6 lemon slices, 1/8 inch thick",
+  "expected": {
+    "item": "lemon slices, 1/8 inch thick",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

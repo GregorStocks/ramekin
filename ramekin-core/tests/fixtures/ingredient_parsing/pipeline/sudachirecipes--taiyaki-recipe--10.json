@@ -1,0 +1,13 @@
+{
+  "raw": "1 drop vanilla essence",
+  "expected": {
+    "item": "vanilla essence",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "drop"
+      }
+    ],
+    "note": null
+  }
+}

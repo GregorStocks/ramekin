@@ -1,0 +1,13 @@
+{
+  "raw": "29 ounce beef broth (two 14.5 cans)",
+  "expected": {
+    "item": "beef broth (two 14.5 cans)",
+    "measurements": [
+      {
+        "amount": "29",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

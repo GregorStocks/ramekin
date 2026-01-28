@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup parmesan",
+  "expected": {
+    "item": "parmesan",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

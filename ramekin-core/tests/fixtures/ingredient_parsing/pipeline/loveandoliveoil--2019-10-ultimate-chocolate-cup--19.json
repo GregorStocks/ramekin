@@ -1,0 +1,17 @@
+{
+  "raw": "5 ounces dark chocolate (60-70%), melted and cooled to lukewarm",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "60",
+        "unit": null
+      }
+    ],
+    "note": "melted and cooled to lukewarm"
+  }
+}

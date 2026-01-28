@@ -1,0 +1,13 @@
+{
+  "raw": "100 g glutinous rice flour",
+  "expected": {
+    "item": "glutinous rice flour",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

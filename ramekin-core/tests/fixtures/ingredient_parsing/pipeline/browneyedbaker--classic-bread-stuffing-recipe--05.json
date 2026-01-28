@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon minced fresh sage leaves (or 1 teaspoon dried)",
+  "expected": {
+    "item": "minced fresh sage leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or 1 teaspoon dried"
+  }
+}

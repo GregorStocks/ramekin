@@ -1,0 +1,13 @@
+{
+  "raw": "220 grams fresh ramen noodles",
+  "expected": {
+    "item": "fresh ramen noodles",
+    "measurements": [
+      {
+        "amount": "220",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

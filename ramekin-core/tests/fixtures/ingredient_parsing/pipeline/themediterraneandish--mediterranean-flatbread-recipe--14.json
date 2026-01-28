@@ -1,0 +1,13 @@
+{
+  "raw": "Handful toasted pine nuts, optional",
+  "expected": {
+    "item": "toasted pine nuts",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 teaspoons whole milk (as needed)",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "as needed"
+  }
+}

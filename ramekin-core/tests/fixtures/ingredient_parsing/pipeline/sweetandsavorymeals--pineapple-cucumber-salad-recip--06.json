@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup thinly sliced radishes",
+  "expected": {
+    "item": "thinly sliced radishes",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

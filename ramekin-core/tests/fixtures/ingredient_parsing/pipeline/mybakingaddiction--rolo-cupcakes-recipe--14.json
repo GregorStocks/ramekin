@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
+  "expected": {
+    "item": "bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "chopped into very small pieces"
+  }
+}

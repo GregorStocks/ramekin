@@ -1,0 +1,13 @@
+{
+  "raw": "40g grated mature cheddar",
+  "expected": {
+    "item": "grated mature cheddar",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

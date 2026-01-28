@@ -1,0 +1,21 @@
+{
+  "raw": "113g blanched or natural almond flour (4 ounces; 1 cup), see notes",
+  "expected": {
+    "item": "blanched or natural almond flour , see notes",
+    "measurements": [
+      {
+        "amount": "113",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

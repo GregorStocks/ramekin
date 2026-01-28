@@ -1,0 +1,13 @@
+{
+  "raw": "2-4  stalks of green onion",
+  "expected": {
+    "item": "green onion",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "stalks"
+      }
+    ],
+    "note": null
+  }
+}

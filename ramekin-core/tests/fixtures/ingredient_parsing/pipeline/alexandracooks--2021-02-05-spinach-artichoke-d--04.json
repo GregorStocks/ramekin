@@ -1,0 +1,13 @@
+{
+  "raw": "10 &amp;#8211; 14 ounces artichoke hearts, see notes above, I love the grilled artichoke hearts from Trader Joe&amp;#8217;s",
+  "expected": {
+    "item": "&#8211; 14 ounces artichoke hearts, see notes above, I love the grilled artichoke hearts from Trader Joe&#8217;s",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "40 grams gari ((finely chopped))",
+  "expected": {
+    "item": "gari",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "grams"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

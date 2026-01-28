@@ -1,0 +1,17 @@
+{
+  "raw": "3 ounces tomatoes, chopped (about 1/2 cup)",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

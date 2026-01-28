@@ -1,0 +1,13 @@
+{
+  "raw": "4 sheets sushi nori",
+  "expected": {
+    "item": "sheets sushi nori",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp sweet vermouth",
+  "expected": {
+    "item": "sweet vermouth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup bell pepper  ((capsicum chopped fine) (optional))",
+  "expected": {
+    "item": "bell pepper (optional)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "capsicum chopped fine"
+  }
+}

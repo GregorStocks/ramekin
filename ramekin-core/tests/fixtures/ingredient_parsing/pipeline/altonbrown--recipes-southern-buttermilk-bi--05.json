@@ -1,0 +1,13 @@
+{
+  "raw": "1/3 cup leaf lard, chilled",
+  "expected": {
+    "item": "leaf lard",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "chilled"
+  }
+}

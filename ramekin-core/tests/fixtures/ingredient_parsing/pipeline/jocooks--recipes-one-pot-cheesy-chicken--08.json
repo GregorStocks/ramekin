@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces cream of chicken soup ((1 can))",
+  "expected": {
+    "item": "cream of chicken soup",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

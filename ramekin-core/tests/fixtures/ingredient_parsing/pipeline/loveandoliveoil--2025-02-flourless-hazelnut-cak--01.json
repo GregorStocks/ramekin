@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups lightly packed hazelnut flour*",
+  "expected": {
+    "item": "lightly packed hazelnut flour*",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

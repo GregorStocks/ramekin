@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounce lo mein noodles (or any other Asian style noodles)",
+  "expected": {
+    "item": "lo mein noodles (or any other Asian style noodles)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

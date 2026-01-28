@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz fresh spinach (*see note on substitutions for using frozen)",
+  "expected": {
+    "item": "fresh spinach",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "*see note on substitutions for using frozen"
+  }
+}

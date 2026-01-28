@@ -1,0 +1,21 @@
+{
+  "raw": "2 small poblano chiles (2 ounces; 57 g each), stemmed, seeded, and chopped",
+  "expected": {
+    "item": "poblano chiles , stemmed, seeded",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces each"
+      },
+      {
+        "amount": "57",
+        "unit": "g each"
+      }
+    ],
+    "note": "and chopped"
+  }
+}

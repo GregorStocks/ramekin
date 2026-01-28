@@ -1,0 +1,13 @@
+{
+  "raw": "4 fluid ounces dark rum",
+  "expected": {
+    "item": "dark rum",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": null
+  }
+}

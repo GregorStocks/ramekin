@@ -1,0 +1,17 @@
+{
+  "raw": "38g (3 tablespoons) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "38",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

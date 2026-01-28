@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons peanut butter ( or other nut butter of choice, optional but delicious)",
+  "expected": {
+    "item": "peanut butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "or other nut butter of choice, optional but delicious"
+  }
+}

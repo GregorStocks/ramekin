@@ -1,0 +1,13 @@
+{
+  "raw": "4 grams ground nutmeg",
+  "expected": {
+    "item": "ground nutmeg",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

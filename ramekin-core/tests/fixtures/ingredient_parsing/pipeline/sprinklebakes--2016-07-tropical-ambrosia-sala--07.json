@@ -1,0 +1,13 @@
+{
+  "raw": "1  fresh papaya peeled (seeded and cubed)",
+  "expected": {
+    "item": "fresh papaya peeled",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeded and cubed"
+  }
+}

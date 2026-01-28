@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon runny honey",
+  "expected": {
+    "item": "runny honey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

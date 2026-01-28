@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons basil pesto",
+  "expected": {
+    "item": "basil pesto",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

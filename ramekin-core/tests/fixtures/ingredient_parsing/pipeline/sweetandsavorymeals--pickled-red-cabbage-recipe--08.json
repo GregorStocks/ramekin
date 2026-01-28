@@ -1,0 +1,13 @@
+{
+  "raw": "1  red chili pepper (sliced and seeded)",
+  "expected": {
+    "item": "red chili pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced and seeded"
+  }
+}

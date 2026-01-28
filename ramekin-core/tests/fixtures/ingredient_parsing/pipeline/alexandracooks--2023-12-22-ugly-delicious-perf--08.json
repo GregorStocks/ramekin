@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons (4 g) ginger",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "4",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

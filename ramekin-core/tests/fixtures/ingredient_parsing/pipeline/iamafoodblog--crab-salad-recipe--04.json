@@ -1,0 +1,13 @@
+{
+  "raw": "handful of salt and vinegar kettle chips",
+  "expected": {
+    "item": "salt and vinegar kettle chips",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
+  }
+}

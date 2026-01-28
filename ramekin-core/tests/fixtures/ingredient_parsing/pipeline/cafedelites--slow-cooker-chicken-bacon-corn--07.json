@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces red potatoes (chopped into 1 1/2 inch pieces)",
+  "expected": {
+    "item": "red potatoes",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped into 1 1/2 inch pieces"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (12-oz.) jar pepperoncini",
+  "expected": {
+    "item": "pepperoncini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

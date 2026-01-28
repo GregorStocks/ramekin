@@ -1,0 +1,13 @@
+{
+  "raw": "150 g ground chicken",
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

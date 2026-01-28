@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup soju or sake",
+  "expected": {
+    "item": "soju or sake",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

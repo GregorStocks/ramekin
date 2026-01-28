@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon cracked black pepper (or to taste)",
+  "expected": {
+    "item": "cracked black pepper",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

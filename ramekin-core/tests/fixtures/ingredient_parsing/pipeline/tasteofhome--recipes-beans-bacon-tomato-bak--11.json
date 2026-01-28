@@ -1,0 +1,17 @@
+{
+  "raw": "8 cups frozen lima beans (about 42 ounces), thawed",
+  "expected": {
+    "item": "frozen lima beans",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      },
+      {
+        "amount": "42",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thawed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp. sugar, plus more for sprinkling",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "plus more for sprinkling"
+  }
+}

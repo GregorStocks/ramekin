@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz pineapple juice",
+  "expected": {
+    "item": "pineapple juice",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

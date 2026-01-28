@@ -1,0 +1,13 @@
+{
+  "raw": "1 ¼ cups brown lentils",
+  "expected": {
+    "item": "brown lentils",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

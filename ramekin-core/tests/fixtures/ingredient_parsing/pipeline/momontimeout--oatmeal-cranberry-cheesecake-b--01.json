@@ -1,0 +1,17 @@
+{
+  "raw": "15.25 oz yellow cake mix (1 box)",
+  "expected": {
+    "item": "yellow cake mix",
+    "measurements": [
+      {
+        "amount": "15.25",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "box"
+      }
+    ],
+    "note": null
+  }
+}

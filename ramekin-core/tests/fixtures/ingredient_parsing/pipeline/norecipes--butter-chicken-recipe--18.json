@@ -1,0 +1,17 @@
+{
+  "raw": "40 grams raw cashew nuts ((about 1/4 cup))",
+  "expected": {
+    "item": "raw cashew nuts",
+    "measurements": [
+      {
+        "amount": "40",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

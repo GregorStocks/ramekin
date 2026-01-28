@@ -1,0 +1,13 @@
+{
+  "raw": "1 large daikon",
+  "expected": {
+    "item": "daikon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

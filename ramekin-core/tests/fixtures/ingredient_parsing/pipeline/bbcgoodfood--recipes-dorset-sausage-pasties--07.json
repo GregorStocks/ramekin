@@ -1,0 +1,13 @@
+{
+  "raw": "50g frozen pea or petit pois",
+  "expected": {
+    "item": "frozen pea or petit pois",
+    "measurements": [
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

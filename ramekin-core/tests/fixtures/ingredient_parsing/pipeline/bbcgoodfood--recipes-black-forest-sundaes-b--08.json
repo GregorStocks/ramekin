@@ -1,0 +1,13 @@
+{
+  "raw": "148ml double cream",
+  "expected": {
+    "item": "double cream",
+    "measurements": [
+      {
+        "amount": "148",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

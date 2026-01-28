@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pasta such as bow tie, penne or spiral",
+  "expected": {
+    "item": "pasta such as bow tie, penne or spiral",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

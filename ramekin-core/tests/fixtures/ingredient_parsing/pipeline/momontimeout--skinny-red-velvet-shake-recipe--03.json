@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup Red Velvet cake mix",
+  "expected": {
+    "item": "Red Velvet cake mix",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

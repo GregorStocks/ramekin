@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz vegan semi-sweet chocolate, chunks",
+  "expected": {
+    "item": "vegan semi-sweet chocolate, chunks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

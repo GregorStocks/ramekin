@@ -1,0 +1,17 @@
+{
+  "raw": "12 tablespoons (1 1/2 Sticks)  butter (cut into 24 thin slices)",
+  "expected": {
+    "item": "butter (cut into 24 thin slices)",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "sticks"
+      }
+    ],
+    "note": null
+  }
+}

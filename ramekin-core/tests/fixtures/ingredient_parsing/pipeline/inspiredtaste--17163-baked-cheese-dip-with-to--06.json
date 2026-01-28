@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup basil leaves, chopped, plus more for serving",
+  "expected": {
+    "item": "basil leaves, chopped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for serving"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound egg noodles",
+  "expected": {
+    "item": "egg noodles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

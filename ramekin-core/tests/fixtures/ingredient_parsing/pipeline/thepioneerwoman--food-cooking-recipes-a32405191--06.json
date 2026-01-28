@@ -1,0 +1,13 @@
+{
+  "raw": "2 4-ounce jars diced pimientos, drained",
+  "expected": {
+    "item": "4-ounce jars diced pimientos",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

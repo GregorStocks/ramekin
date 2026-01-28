@@ -1,0 +1,13 @@
+{
+  "raw": "90 g Shiratamako",
+  "expected": {
+    "item": "Shiratamako",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

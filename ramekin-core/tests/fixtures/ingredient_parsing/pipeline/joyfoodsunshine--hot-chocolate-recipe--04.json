@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz  bittersweet chocolate  ((or semisweet, milk, etc.))",
+  "expected": {
+    "item": "bittersweet chocolate  (or semisweet, milk, etc.)",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

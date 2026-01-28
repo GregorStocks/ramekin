@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  cup    water or 1/2  cup    beef broth",
+  "expected": {
+    "item": "water or 1/2  cup    beef broth",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

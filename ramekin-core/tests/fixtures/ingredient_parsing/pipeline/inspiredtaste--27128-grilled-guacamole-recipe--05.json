@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup chopped tomatoes (1 large or 2 medium)",
+  "expected": {
+    "item": "chopped tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

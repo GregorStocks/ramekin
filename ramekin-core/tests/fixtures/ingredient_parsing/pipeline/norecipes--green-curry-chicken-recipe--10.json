@@ -1,0 +1,13 @@
+{
+  "raw": "80 grams baby corn",
+  "expected": {
+    "item": "baby corn",
+    "measurements": [
+      {
+        "amount": "80",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

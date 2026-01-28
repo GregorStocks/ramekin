@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 small seedless watermelon, cut into 1-inch chunks (about 12 c.)",
+  "expected": {
+    "item": "seedless watermelon, cut into 1-inch chunks",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "small"
+      },
+      {
+        "amount": "12",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

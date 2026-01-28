@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 tablespoons unsweetened pineapple juice",
+  "expected": {
+    "item": "unsweetened pineapple juice",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

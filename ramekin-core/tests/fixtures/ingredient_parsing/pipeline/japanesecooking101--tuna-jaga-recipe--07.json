@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp ginger root, grated",
+  "expected": {
+    "item": "ginger root",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": "grated"
+  }
+}

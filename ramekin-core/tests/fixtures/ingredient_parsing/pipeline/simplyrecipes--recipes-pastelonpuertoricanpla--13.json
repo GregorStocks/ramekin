@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups Monterey jack, cheddar, or mozzarella cheese, divided",
+  "expected": {
+    "item": "Monterey jack, cheddar, or mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

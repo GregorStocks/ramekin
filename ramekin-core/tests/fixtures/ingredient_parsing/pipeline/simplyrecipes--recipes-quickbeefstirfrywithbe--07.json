@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 yellow onion, thinly sliced lengthwise (root to top)",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "thinly sliced lengthwise (root to top)"
+  }
+}

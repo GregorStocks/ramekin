@@ -1,0 +1,13 @@
+{
+  "raw": "3½ ounces Monterey Jack cheese (shredded)",
+  "expected": {
+    "item": "Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "shredded"
+  }
+}

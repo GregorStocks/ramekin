@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 c. maple syrup",
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

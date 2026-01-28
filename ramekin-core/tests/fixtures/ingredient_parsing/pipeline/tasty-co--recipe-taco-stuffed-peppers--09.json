@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz medium chunky salsa",
+  "expected": {
+    "item": "medium chunky salsa",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

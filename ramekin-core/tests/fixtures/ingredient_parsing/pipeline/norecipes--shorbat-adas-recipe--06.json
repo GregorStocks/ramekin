@@ -1,0 +1,13 @@
+{
+  "raw": "200 grams red lentils ((~1 cup, thoroughly washed))",
+  "expected": {
+    "item": "red lentils",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1 cup, thoroughly washed"
+  }
+}

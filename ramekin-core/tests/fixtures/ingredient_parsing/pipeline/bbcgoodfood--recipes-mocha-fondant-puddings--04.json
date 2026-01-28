@@ -1,0 +1,13 @@
+{
+  "raw": "4 large free-range eggs",
+  "expected": {
+    "item": "free-range eggs",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

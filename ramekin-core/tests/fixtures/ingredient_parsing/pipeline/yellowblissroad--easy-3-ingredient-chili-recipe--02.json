@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounce can of chili beans (undrained)",
+  "expected": {
+    "item": "can of chili beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounce"
+      }
+    ],
+    "note": "undrained"
+  }
+}

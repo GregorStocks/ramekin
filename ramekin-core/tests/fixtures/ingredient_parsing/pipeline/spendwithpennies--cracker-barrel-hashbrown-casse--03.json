@@ -1,0 +1,17 @@
+{
+  "raw": "10.5 ounces condensed cream of chicken soup (1 can, or cream of cheddar)",
+  "expected": {
+    "item": "condensed cream of chicken soup",
+    "measurements": [
+      {
+        "amount": "10.5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

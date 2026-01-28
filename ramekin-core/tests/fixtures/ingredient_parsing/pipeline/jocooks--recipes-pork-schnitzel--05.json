@@ -1,0 +1,13 @@
+{
+  "raw": "2 large eggs (or more if needed)",
+  "expected": {
+    "item": "eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "or more if needed"
+  }
+}

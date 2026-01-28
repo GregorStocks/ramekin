@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon peppermint extract **",
+  "expected": {
+    "item": "peppermint extract **",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 lb boneless, skinless chicken thighs, cubed",
+  "expected": {
+    "item": "boneless, skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": "cubed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup 175g canned pumpkin",
+  "expected": {
+    "item": "175g canned pumpkin",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

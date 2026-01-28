@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoon honey or maple syrup",
+  "expected": {
+    "item": "honey or maple syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

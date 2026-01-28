@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon Italian Seasoning ((Optional for extra flavor))",
+  "expected": {
+    "item": "Italian Seasoning",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "Optional for extra flavor"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "100g warm filtered water",
+  "expected": {
+    "item": "warm filtered water",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

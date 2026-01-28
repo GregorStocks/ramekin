@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup fresh tomatoes,  (seeded and chopped)",
+  "expected": {
+    "item": "fresh tomatoes,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "seeded and chopped"
+  }
+}

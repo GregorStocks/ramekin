@@ -1,0 +1,13 @@
+{
+  "raw": "2 pound&nbsp; bacon (&nbsp;cooked until crisp, crumbled or chopped small)",
+  "expected": {
+    "item": "bacon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pound"
+      }
+    ],
+    "note": "cooked until crisp, crumbled or chopped small"
+  }
+}

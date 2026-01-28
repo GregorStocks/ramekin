@@ -1,0 +1,13 @@
+{
+  "raw": "2  medium carrots or equiv. winter squash, chopped",
+  "expected": {
+    "item": "carrots or equiv. winter squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "chopped"
+  }
+}

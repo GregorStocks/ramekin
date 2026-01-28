@@ -1,0 +1,13 @@
+{
+  "raw": "15&nbsp;ounces can crushed tomatoes or tomato sauce",
+  "expected": {
+    "item": "can crushed tomatoes or tomato sauce",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

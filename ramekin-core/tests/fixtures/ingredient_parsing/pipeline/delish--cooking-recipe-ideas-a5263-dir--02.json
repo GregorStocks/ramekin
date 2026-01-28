@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. loose ground pork sausage",
+  "expected": {
+    "item": "loose ground pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

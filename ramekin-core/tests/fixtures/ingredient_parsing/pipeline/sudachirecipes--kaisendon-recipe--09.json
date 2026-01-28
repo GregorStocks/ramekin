@@ -1,0 +1,13 @@
+{
+  "raw": "200 g seafood of your choice",
+  "expected": {
+    "item": "seafood of your choice",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

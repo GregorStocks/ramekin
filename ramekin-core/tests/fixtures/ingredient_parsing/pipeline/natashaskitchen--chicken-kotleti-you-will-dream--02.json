@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Panko bread crumbs",
+  "expected": {
+    "item": "Panko bread crumbs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

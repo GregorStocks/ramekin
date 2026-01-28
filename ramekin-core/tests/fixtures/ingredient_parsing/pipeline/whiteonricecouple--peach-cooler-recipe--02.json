@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup fresh Orange Juice",
+  "expected": {
+    "item": "fresh Orange Juice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

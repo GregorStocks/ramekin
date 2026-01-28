@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounces smoked sausage (kielbasa or andouille, sliced into rounds)",
+  "expected": {
+    "item": "smoked sausage",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": "kielbasa or andouille, sliced into rounds"
+  }
+}

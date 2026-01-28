@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup chopped toasted pecans",
+  "expected": {
+    "item": "chopped toasted pecans",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

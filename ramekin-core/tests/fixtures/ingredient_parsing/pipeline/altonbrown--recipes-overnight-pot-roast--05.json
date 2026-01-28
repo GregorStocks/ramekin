@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounces carrots, peeled and chopped into 1-inch chunks, divided",
+  "expected": {
+    "item": "carrots, peeled and chopped into 1-inch chunks",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ to ½ teaspoon garam masala  ((omit if you don’t like))",
+  "expected": {
+    "item": "garam masala (omit if you don’t like)",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

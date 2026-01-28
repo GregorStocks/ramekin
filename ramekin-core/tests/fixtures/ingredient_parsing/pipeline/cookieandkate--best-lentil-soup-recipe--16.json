@@ -1,0 +1,17 @@
+{
+  "raw": "1 to 2 tablespoons lemon juice (&amp;frac12; to 1 medium lemon), to taste",
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1/2 to 1",
+        "unit": "medium"
+      }
+    ],
+    "note": "to taste"
+  }
+}

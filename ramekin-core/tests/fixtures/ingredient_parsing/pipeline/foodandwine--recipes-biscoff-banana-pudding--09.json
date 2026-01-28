@@ -1,0 +1,17 @@
+{
+  "raw": "10 medium bananas, cut into 1/4-inch-thick slices (about 10 cups), divided",
+  "expected": {
+    "item": "bananas, cut into 1/4-inch-thick slices",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "medium"
+      },
+      {
+        "amount": "10",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

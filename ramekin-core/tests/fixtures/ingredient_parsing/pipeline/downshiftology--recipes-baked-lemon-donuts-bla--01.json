@@ -1,0 +1,13 @@
+{
+  "raw": "1  egg white (room temperature)",
+  "expected": {
+    "item": "egg white",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "room temperature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces Peanuts (roasted, unsalted)",
+  "expected": {
+    "item": "Peanuts",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roasted, unsalted"
+  }
+}

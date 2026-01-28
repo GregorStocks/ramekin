@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon herbs de Provence (optional)",
+  "expected": {
+    "item": "herbs de Provence",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

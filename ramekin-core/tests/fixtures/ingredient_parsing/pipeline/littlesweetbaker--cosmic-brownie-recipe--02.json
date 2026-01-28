@@ -1,0 +1,17 @@
+{
+  "raw": "180 g (3/4 cup plus 2 tsp) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "180",
+        "unit": "g"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

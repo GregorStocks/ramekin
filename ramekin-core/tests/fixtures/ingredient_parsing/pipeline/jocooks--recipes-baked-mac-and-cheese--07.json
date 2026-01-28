@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups provolone cheese (shredded)",
+  "expected": {
+    "item": "provolone cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

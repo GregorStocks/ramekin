@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon pickling spice",
+  "expected": {
+    "item": "pickling spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

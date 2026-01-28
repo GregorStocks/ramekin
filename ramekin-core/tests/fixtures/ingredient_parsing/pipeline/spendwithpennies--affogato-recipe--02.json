@@ -1,0 +1,13 @@
+{
+  "raw": "2 shots espresso",
+  "expected": {
+    "item": "shots espresso",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

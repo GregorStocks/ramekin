@@ -1,0 +1,13 @@
+{
+  "raw": "4.5 pounds plums, pitted and diced",
+  "expected": {
+    "item": "plums",
+    "measurements": [
+      {
+        "amount": "4.5",
+        "unit": "pounds"
+      }
+    ],
+    "note": "pitted and diced"
+  }
+}

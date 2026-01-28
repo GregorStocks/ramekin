@@ -1,0 +1,17 @@
+{
+  "raw": "30 oz refrigerated chocolate chip cookie dough (1 roll)",
+  "expected": {
+    "item": "refrigerated chocolate chip cookie dough",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. dry white wine",
+  "expected": {
+    "item": "dry white wine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

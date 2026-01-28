@@ -1,0 +1,17 @@
+{
+  "raw": "2 (1 lb each) pork tenderloins*,",
+  "expected": {
+    "item": "pork tenderloins*,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb each"
+      }
+    ],
+    "note": null
+  }
+}

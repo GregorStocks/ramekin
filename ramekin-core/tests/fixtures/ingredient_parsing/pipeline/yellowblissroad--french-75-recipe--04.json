@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces champagne",
+  "expected": {
+    "item": "champagne",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

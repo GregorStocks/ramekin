@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup diced celery ((about 2 small))",
+  "expected": {
+    "item": "diced celery",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

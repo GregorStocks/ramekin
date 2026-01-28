@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium yellow squash, cut into 1/2-inch pieces",
+  "expected": {
+    "item": "yellow squash, cut into 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

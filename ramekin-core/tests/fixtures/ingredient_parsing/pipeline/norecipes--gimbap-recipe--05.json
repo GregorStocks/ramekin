@@ -1,0 +1,13 @@
+{
+  "raw": "4 whole spinach ((thoroughly washed))",
+  "expected": {
+    "item": "whole spinach",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "thoroughly washed"
+  }
+}

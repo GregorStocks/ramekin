@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups quick-cooking oats",
+  "expected": {
+    "item": "quick-cooking oats",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

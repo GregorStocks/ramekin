@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds stewing beef (trimmed and cubed)",
+  "expected": {
+    "item": "stewing beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "trimmed and cubed"
+  }
+}

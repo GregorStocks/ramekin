@@ -1,0 +1,13 @@
+{
+  "raw": "1   tablespoon    italian seasoning or 1   tablespoon    fresh parsley leaves",
+  "expected": {
+    "item": "italian seasoning or 1   tablespoon    fresh parsley leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

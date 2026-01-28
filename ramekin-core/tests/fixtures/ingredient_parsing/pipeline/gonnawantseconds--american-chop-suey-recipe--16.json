@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces Mozzarella (shredded)",
+  "expected": {
+    "item": "Mozzarella",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "shredded"
+  }
+}

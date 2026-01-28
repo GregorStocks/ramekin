@@ -1,0 +1,13 @@
+{
+  "raw": "17 oz ground beef (or minced beef)",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "17",
+        "unit": "oz"
+      }
+    ],
+    "note": "or minced beef"
+  }
+}

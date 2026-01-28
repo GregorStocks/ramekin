@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups mashed potatoes",
+  "expected": {
+    "item": "mashed potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

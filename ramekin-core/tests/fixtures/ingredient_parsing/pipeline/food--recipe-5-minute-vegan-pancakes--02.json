@@ -1,0 +1,13 @@
+{
+  "raw": "1   tablespoon    sugar (I used organic cane sugar)",
+  "expected": {
+    "item": "sugar (I used organic cane sugar)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

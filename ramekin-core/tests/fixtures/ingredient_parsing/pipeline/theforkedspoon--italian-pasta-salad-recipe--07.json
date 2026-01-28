@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fusilli pasta (cooked to al dente (may also use rotini pasta or bowtie pasta))",
+  "expected": {
+    "item": "fusilli pasta",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "cooked to al dente (may also use rotini pasta or bowtie pasta"
+  }
+}

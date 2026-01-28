@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 tablespoons butter  (softened or melted)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "softened or melted"
+  }
+}

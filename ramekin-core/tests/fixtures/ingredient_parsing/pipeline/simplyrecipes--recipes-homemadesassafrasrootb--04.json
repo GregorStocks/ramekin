@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 teaspoon anise seeds (can sub fennel)",
+  "expected": {
+    "item": "anise seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": null,
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

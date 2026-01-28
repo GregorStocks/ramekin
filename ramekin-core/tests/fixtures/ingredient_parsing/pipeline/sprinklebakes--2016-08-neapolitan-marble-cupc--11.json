@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups 510g confectioners’ sugar, sifted",
+  "expected": {
+    "item": "510g confectioners’ sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "sifted"
+  }
+}

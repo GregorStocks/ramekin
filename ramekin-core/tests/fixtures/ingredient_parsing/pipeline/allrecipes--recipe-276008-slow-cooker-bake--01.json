@@ -1,0 +1,13 @@
+{
+  "raw": "4 large apples - peeled, cored, and sliced",
+  "expected": {
+    "item": "apples - peeled, cored",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "and sliced"
+  }
+}

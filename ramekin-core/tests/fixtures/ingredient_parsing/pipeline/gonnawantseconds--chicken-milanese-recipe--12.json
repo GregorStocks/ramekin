@@ -1,0 +1,17 @@
+{
+  "raw": "1  lemon (slices)",
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": null,
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

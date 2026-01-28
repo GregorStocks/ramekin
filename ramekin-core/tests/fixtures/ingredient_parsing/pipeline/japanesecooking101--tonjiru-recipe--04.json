@@ -1,0 +1,13 @@
+{
+  "raw": "2 inches Daikon",
+  "expected": {
+    "item": "inches Daikon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

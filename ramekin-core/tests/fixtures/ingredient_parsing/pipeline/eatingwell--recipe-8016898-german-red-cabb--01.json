@@ -1,0 +1,17 @@
+{
+  "raw": "1 small head red cabbage (about 2 pounds), shredded",
+  "expected": {
+    "item": "head red cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "shredded"
+  }
+}

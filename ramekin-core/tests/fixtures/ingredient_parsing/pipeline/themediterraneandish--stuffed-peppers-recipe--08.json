@@ -1,0 +1,13 @@
+{
+  "raw": "1  small bunch fresh parsley (chopped ( about 1 cup packed fresh parsley. Or a mixture of chopped fresh parsley and fresh dill))",
+  "expected": {
+    "item": "bunch fresh parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "chopped ( about 1 cup packed fresh parsley. Or a mixture of chopped fresh parsley and fresh dill"
+  }
+}

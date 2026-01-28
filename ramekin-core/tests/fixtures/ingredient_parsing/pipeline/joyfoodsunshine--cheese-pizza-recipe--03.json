@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups mozzarella cheese ((16 ounces))",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

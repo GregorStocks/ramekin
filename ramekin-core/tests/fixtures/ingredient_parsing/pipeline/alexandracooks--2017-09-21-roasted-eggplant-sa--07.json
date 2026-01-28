@@ -1,0 +1,17 @@
+{
+  "raw": "4&nbsp;ounces&nbsp;Parmigiano Reggiano, grated (about 1 cup)",
+  "expected": {
+    "item": "Parmigiano Reggiano",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "grated"
+  }
+}

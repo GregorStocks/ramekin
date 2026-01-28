@@ -1,0 +1,13 @@
+{
+  "raw": "1 apple, cored and sliced into 1/4 inch matchsticks",
+  "expected": {
+    "item": "apple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "cored and sliced into 1/4 inch matchsticks"
+  }
+}

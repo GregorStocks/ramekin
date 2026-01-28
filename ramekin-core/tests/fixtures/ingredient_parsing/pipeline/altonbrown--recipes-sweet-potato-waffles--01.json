@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups sweet potatoes, peeled and cubed",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "peeled and cubed"
+  }
+}

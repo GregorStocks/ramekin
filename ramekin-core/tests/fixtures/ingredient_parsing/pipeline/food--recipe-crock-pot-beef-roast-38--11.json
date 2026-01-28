@@ -1,0 +1,17 @@
+{
+  "raw": "1 (10 3/4  ounce) can   cream of mushroom soup",
+  "expected": {
+    "item": "cream of mushroom soup",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "10 3/4",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

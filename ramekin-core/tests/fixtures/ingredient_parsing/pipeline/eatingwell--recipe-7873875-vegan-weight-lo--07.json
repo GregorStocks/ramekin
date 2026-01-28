@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups lower-sodium vegetable broth",
+  "expected": {
+    "item": "lower-sodium vegetable broth",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

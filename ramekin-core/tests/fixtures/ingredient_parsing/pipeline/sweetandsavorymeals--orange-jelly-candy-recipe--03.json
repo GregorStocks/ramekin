@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 oz agar agar (this is 7 grams)",
+  "expected": {
+    "item": "agar agar (this is 7 grams)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

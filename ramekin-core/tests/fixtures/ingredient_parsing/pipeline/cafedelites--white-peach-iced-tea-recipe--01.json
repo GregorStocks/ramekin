@@ -1,0 +1,13 @@
+{
+  "raw": "3  peaches (ripe white, sliced)",
+  "expected": {
+    "item": "peaches",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "ripe white, sliced"
+  }
+}

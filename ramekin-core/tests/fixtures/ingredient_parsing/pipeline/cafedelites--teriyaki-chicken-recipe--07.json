@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon sesame oil (optional, adds a wonderful flavour)",
+  "expected": {
+    "item": "sesame oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional, adds a wonderful flavour"
+  }
+}

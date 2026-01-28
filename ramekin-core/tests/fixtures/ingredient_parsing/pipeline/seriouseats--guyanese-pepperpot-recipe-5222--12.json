@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (24g) light brown sugar",
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "24",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

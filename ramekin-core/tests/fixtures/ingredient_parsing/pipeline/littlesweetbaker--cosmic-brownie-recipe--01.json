@@ -1,0 +1,13 @@
+{
+  "raw": "200 g dark chocolate (coarsely chopped)",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

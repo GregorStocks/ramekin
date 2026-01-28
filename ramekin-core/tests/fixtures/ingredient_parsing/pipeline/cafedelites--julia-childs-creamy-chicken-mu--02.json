@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon lemon juice (original recipe: 1/2 teaspoon)",
+  "expected": {
+    "item": "lemon juice (original recipe: 1/2 teaspoon)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

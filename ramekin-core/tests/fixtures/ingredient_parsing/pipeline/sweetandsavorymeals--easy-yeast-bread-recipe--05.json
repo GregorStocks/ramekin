@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups very warm tap water (about 130°F)",
+  "expected": {
+    "item": "very warm tap water",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "130",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

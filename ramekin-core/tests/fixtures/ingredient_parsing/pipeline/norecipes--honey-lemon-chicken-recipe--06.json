@@ -1,0 +1,13 @@
+{
+  "raw": "700 grams boneless skin-on chicken thighs",
+  "expected": {
+    "item": "boneless skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "700",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

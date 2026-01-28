@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. white American cheese slices, torn into pieces",
+  "expected": {
+    "item": "white American cheese slices, torn into pieces",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fresh green beans (trimmed and halved)",
+  "expected": {
+    "item": "fresh green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed and halved"
+  }
+}

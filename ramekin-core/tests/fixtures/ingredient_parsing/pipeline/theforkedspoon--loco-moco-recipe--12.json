@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces baby portabella mushrooms (sliced)",
+  "expected": {
+    "item": "baby portabella mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced"
+  }
+}

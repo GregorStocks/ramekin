@@ -1,0 +1,17 @@
+{
+  "raw": "4 dried shiitake mushrooms (1/2 oz.)",
+  "expected": {
+    "item": "dried shiitake mushrooms",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

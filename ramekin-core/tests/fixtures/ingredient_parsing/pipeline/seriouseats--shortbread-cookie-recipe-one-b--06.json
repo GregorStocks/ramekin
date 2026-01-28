@@ -1,0 +1,21 @@
+{
+  "raw": "454g unsalted butter (1 pound; 2 cups)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "454",
+        "unit": "g"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

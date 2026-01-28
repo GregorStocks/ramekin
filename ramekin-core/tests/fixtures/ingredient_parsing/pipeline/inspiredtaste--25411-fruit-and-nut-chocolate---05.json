@@ -1,0 +1,21 @@
+{
+  "raw": "18 tablespoons (255 grams or 2 1/4 sticks) unsalted butter, at room temperature",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "255",
+        "unit": "grams"
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "sticks"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

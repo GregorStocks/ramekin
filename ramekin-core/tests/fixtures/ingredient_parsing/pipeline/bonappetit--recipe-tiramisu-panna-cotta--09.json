@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. mascarpone",
+  "expected": {
+    "item": "mascarpone",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

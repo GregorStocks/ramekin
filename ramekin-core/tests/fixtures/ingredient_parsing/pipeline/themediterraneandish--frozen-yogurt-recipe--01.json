@@ -1,0 +1,13 @@
+{
+  "raw": "4  cups sliced frozen strawberries,  (or other frozen fruit of your choice (see notes) )",
+  "expected": {
+    "item": "sliced frozen strawberries, )",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "or other frozen fruit of your choice (see notes"
+  }
+}

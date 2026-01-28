@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup red bell pepper (diced)",
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "diced"
+  }
+}

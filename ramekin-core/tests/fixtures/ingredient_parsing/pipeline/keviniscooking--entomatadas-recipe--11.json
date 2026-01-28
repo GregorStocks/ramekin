@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces queso fresco",
+  "expected": {
+    "item": "queso fresco",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

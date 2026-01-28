@@ -1,0 +1,13 @@
+{
+  "raw": "2-4  fried eggs ((I like adding 2 to each bowl))",
+  "expected": {
+    "item": "fried eggs (I like adding 2 to each bowl)",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

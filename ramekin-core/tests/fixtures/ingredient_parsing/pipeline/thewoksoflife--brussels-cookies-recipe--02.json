@@ -1,0 +1,13 @@
+{
+  "raw": "7 tablespoons butter ((at room temperature))",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

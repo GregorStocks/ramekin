@@ -1,0 +1,13 @@
+{
+  "raw": "2 ripe tomatoes (quartered)",
+  "expected": {
+    "item": "ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
+  }
+}

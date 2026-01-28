@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons date syrup",
+  "expected": {
+    "item": "date syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

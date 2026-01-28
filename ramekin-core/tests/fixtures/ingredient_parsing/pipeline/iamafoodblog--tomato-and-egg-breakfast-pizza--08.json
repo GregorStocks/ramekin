@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 tablespoons grated parmesan",
+  "expected": {
+    "item": "grated parmesan",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

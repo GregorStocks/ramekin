@@ -1,0 +1,17 @@
+{
+  "raw": "1 (7.5-oz.) jar marshmallow crème",
+  "expected": {
+    "item": "marshmallow crème",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "7.5",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

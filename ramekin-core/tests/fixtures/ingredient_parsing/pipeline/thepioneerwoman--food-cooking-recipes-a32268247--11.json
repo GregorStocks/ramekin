@@ -1,0 +1,13 @@
+{
+  "raw": "3 3-ounce packages ramen noodles&nbsp;(seasoning packets, discarded)",
+  "expected": {
+    "item": "3-ounce packages ramen noodles (seasoning packets, discarded)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

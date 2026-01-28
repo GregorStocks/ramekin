@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound flank steak (trimmed of fat and sliced thin against the grain)",
+  "expected": {
+    "item": "flank steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "trimmed of fat and sliced thin against the grain"
+  }
+}

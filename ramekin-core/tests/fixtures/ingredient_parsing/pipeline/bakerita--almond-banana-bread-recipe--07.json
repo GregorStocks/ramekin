@@ -1,0 +1,17 @@
+{
+  "raw": "½ cup (2 oz.) coconut flour",
+  "expected": {
+    "item": "coconut flour",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

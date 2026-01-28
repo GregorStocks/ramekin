@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound shrimp (small or medium sized shrimp, thawed, peeled, deveined, with the tails off)",
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "small or medium sized shrimp, thawed, peeled, deveined, with the tails off"
+  }
+}

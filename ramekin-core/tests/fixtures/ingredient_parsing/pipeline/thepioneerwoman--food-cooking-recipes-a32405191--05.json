@@ -1,0 +1,13 @@
+{
+  "raw": "2 c. grated cheddar cheese",
+  "expected": {
+    "item": "grated cheddar cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

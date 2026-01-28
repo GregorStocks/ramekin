@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium yellow squash, halved and sliced (1/4 inch)",
+  "expected": {
+    "item": "yellow squash",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "halved and sliced"
+  }
+}

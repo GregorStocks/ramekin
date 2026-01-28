@@ -1,0 +1,13 @@
+{
+  "raw": "3 red and/or yellow bell peppers, sliced 1/4 inch thick",
+  "expected": {
+    "item": "red and/or yellow bell peppers",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "sliced 1/4 inch thick"
+  }
+}

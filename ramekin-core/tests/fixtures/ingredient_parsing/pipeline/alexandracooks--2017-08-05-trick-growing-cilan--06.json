@@ -1,0 +1,13 @@
+{
+  "raw": "16 large mint leaves, coarsely chopped",
+  "expected": {
+    "item": "mint leaves",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "large"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  Medium cauliflower",
+  "expected": {
+    "item": "cauliflower",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

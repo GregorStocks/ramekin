@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoons soy milk",
+  "expected": {
+    "item": "soy milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 jalapeno pepper, sliced in half length wise (optional)",
+  "expected": {
+    "item": "jalapeno pepper, sliced in half length wise",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

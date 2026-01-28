@@ -1,0 +1,13 @@
+{
+  "raw": "2&nbsp;heads Belgian endive",
+  "expected": {
+    "item": "Belgian endive",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": null
+  }
+}

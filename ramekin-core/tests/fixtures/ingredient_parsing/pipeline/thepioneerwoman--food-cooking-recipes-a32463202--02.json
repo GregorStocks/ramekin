@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. creamy peanut butter",
+  "expected": {
+    "item": "creamy peanut butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

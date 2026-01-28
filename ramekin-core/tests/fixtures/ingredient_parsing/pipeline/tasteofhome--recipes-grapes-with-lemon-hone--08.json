@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons sliced almonds, toasted",
+  "expected": {
+    "item": "sliced almonds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "toasted"
+  }
+}

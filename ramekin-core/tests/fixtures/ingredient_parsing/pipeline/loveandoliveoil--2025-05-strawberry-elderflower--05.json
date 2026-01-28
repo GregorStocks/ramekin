@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz mascarpone (cold)",
+  "expected": {
+    "item": "mascarpone",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "cold"
+  }
+}

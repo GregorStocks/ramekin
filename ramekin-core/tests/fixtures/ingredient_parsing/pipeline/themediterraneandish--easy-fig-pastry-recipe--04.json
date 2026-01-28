@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup walnuts, roughly chopped; more for garnish if desired",
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped; more for garnish if desired"
+  }
+}

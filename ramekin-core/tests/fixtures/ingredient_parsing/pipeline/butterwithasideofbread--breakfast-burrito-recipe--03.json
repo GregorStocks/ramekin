@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb cooked pork sausage",
+  "expected": {
+    "item": "cooked pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

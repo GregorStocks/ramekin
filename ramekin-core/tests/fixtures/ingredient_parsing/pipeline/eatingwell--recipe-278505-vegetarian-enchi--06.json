@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium zucchini, halved and sliced (1/4 inch)",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": "halved and sliced"
+  }
+}

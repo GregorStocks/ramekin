@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp shelled pistachios",
+  "expected": {
+    "item": "shelled pistachios",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

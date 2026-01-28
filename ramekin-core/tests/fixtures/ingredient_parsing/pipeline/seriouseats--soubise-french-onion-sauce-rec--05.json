@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon curry powder or vadouvan spice, optional (see note)",
+  "expected": {
+    "item": "curry powder or vadouvan spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional (see note)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 small head butter lettuce ((leaves separated))",
+  "expected": {
+    "item": "head butter lettuce (leaves separated)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

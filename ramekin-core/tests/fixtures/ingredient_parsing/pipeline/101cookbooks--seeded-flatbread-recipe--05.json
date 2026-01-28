@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons mustard seeds, toasted and crushed",
+  "expected": {
+    "item": "mustard seeds",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "toasted and crushed"
+  }
+}

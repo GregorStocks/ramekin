@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds assorted fresh mushrooms (sliced or chopped into bite-size pieces)",
+  "expected": {
+    "item": "assorted fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "sliced or chopped into bite-size pieces"
+  }
+}

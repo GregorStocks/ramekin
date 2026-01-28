@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 teaspoon round turmeric (optional)",
+  "expected": {
+    "item": "round turmeric",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

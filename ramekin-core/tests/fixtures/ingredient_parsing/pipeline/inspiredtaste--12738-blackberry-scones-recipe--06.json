@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons very cold unsalted butter (114g)",
+  "expected": {
+    "item": "very cold unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "114",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

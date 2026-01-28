@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups chopped sun-dried tomatoes",
+  "expected": {
+    "item": "chopped sun-dried tomatoes",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

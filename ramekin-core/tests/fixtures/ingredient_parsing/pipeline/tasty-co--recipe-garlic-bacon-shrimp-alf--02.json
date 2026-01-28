@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb shrimp, peeled and deveined",
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "peeled and deveined"
+  }
+}

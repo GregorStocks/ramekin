@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup pesto",
+  "expected": {
+    "item": "pesto",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

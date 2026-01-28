@@ -1,0 +1,13 @@
+{
+  "raw": "3 to 4 tbsp extra virgin olive oil",
+  "expected": {
+    "item": "extra virgin olive oil",
+    "measurements": [
+      {
+        "amount": "3 to 4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

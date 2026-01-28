@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. chorizo sausage*",
+  "expected": {
+    "item": "chorizo sausage*",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

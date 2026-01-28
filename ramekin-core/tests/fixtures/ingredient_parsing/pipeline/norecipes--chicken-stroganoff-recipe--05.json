@@ -1,0 +1,13 @@
+{
+  "raw": "175 grams onions ((1 small onion, finely diced))",
+  "expected": {
+    "item": "onions",
+    "measurements": [
+      {
+        "amount": "175",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 small onion, finely diced"
+  }
+}

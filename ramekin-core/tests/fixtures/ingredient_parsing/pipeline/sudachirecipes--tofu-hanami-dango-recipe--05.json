@@ -1,0 +1,13 @@
+{
+  "raw": "120 g silken tofu",
+  "expected": {
+    "item": "silken tofu",
+    "measurements": [
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

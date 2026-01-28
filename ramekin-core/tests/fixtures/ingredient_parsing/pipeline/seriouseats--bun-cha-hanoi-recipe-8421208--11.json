@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30ml) fish sauce (see note)",
+  "expected": {
+    "item": "fish sauce (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

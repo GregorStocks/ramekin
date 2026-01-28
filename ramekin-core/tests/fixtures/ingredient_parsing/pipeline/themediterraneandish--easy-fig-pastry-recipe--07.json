@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup fresh mint leaves, roughly chopped (optional)",
+  "expected": {
+    "item": "fresh mint leaves, roughly chopped",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

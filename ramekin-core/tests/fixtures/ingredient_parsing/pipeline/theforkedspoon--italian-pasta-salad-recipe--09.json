@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces salami (sliced and quartered)",
+  "expected": {
+    "item": "salami",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced and quartered"
+  }
+}

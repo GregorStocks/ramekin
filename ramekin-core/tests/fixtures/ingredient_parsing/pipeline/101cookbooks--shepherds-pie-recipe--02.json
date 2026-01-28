@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup full-fat coconut milk",
+  "expected": {
+    "item": "full-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

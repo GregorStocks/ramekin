@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp Balsamic Vinegar",
+  "expected": {
+    "item": "Balsamic Vinegar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound lean ground beef mince",
+  "expected": {
+    "item": "lean ground beef mince",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/3 cup (57g) semisweet chocolate wafers or semisweet chocolate chips",
+  "expected": {
+    "item": "semisweet chocolate wafers or semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

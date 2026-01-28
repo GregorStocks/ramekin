@@ -1,0 +1,13 @@
+{
+  "raw": "14 ounces chocolate chips",
+  "expected": {
+    "item": "chocolate chips",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

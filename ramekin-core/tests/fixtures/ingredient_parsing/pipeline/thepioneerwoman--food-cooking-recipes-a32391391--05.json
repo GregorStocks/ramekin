@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp. packed dark brown sugar",
+  "expected": {
+    "item": "packed dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

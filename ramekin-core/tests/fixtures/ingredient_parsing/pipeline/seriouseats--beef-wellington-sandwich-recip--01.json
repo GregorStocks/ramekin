@@ -1,0 +1,13 @@
+{
+  "raw": "4 large croissants, homemade or store-bought, split",
+  "expected": {
+    "item": "croissants, homemade or store-bought, split",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6  heaping cups of sliced strawberries",
+  "expected": {
+    "item": "sliced strawberries",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "heaping cups"
+      }
+    ],
+    "note": null
+  }
+}

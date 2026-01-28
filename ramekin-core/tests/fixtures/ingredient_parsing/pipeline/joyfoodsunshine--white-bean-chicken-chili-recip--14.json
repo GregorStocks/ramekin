@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounces great northern beans (drained and rinsed)",
+  "expected": {
+    "item": "great northern beans",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound russet potatoes (peeled and diced into small 1/2\" pieces, this was 1 extra large potato)",
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and diced into small 1/2\" pieces, this was 1 extra large potato"
+  }
+}

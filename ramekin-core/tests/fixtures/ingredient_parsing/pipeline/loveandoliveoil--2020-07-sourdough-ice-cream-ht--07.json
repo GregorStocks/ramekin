@@ -1,0 +1,13 @@
+{
+  "raw": "2 slices stale sourdough bread",
+  "expected": {
+    "item": "stale sourdough bread",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

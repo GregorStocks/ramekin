@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (35 g) crushed roasted salted peanuts&nbsp;",
+  "expected": {
+    "item": "crushed roasted salted peanuts",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "35",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (16 ounce) can white frosting",
+  "expected": {
+    "item": "white frosting",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

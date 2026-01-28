@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup chickpeas, drained",
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
+  }
+}

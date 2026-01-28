@@ -1,0 +1,13 @@
+{
+  "raw": "1.33 lbs 95% lean ground beef",
+  "expected": {
+    "item": "95% lean ground beef",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

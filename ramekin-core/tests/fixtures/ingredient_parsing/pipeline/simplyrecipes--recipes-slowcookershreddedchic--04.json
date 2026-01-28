@@ -1,0 +1,21 @@
+{
+  "raw": "2 (15-ounce) cans tomato puree (about 3 cups)",
+  "expected": {
+    "item": "tomato puree",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

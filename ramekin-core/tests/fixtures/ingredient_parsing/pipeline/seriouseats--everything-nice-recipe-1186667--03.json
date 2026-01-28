@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 tablespoons (15g) dark brown sugar",
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

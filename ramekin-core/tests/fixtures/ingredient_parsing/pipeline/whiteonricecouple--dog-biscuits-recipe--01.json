@@ -1,0 +1,17 @@
+{
+  "raw": "2 3/4 cups Whole Wheat Flour ((340g))",
+  "expected": {
+    "item": "Whole Wheat Flour",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

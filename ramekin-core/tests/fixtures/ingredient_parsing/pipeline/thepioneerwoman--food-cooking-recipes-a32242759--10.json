@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz. sharp cheddar cheese, grated",
+  "expected": {
+    "item": "sharp cheddar cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "grated"
+  }
+}

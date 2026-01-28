@@ -1,0 +1,13 @@
+{
+  "raw": "6-8 ounces spring mix",
+  "expected": {
+    "item": "spring mix",
+    "measurements": [
+      {
+        "amount": "6-8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

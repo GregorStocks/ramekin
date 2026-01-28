@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon Earl grey tea leaves, optional (if you really like tea!)",
+  "expected": {
+    "item": "Earl grey tea leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional (if you really like tea!)"
+  }
+}

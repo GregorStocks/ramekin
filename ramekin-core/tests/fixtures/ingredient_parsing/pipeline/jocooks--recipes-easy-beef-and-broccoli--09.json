@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon Sriracha sauce (or to taste)",
+  "expected": {
+    "item": "Sriracha sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

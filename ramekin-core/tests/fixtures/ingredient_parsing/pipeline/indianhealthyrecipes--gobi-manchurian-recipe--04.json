@@ -1,0 +1,17 @@
+{
+  "raw": "¼ cup (32 grams)  cornstarch ((white corn flour or yellow corn flour))",
+  "expected": {
+    "item": "cornstarch (white corn flour or yellow corn flour)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "32",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

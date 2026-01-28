@@ -1,0 +1,13 @@
+{
+  "raw": "2 3.4 oz instant pistachio pudding mix",
+  "expected": {
+    "item": "3.4 oz instant pistachio pudding mix",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

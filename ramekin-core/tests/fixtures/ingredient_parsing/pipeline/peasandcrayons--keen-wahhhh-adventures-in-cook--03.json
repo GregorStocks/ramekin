@@ -1,0 +1,13 @@
+{
+  "raw": "2-4 tsp low sodium soy sauce (add a little to start and extra to taste!)",
+  "expected": {
+    "item": "low sodium soy sauce",
+    "measurements": [
+      {
+        "amount": "2-4",
+        "unit": "tsp"
+      }
+    ],
+    "note": "add a little to start and extra to taste!"
+  }
+}

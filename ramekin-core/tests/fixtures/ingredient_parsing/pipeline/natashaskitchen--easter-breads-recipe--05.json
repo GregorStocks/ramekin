@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp 5 grams salt",
+  "expected": {
+    "item": "5 grams salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

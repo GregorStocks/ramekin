@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  teaspoon    dried fenugreek leaves, crushed  (kasoori methi)",
+  "expected": {
+    "item": "dried fenugreek leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "crushed  (kasoori methi)"
+  }
+}

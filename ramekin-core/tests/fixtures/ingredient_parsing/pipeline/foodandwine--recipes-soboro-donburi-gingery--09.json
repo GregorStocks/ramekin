@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon beni shoga (Japanese pickled ginger) or 1 large tomato, sliced",
+  "expected": {
+    "item": "beni shoga (Japanese pickled ginger) or 1 large tomato",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "sliced"
+  }
+}

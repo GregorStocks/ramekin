@@ -1,0 +1,17 @@
+{
+  "raw": "2 (16 ounce) cans chili beans, drained",
+  "expected": {
+    "item": "chili beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup water (or more, depending on thickness)",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "or more, depending on thickness"
+  }
+}

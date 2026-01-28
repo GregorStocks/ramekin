@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pasta (rigatoni, penne, or spaghetti)",
+  "expected": {
+    "item": "pasta (rigatoni, penne, or spaghetti)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

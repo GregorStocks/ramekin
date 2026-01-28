@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz. processed cheese (Velveeta), cut into cubes",
+  "expected": {
+    "item": "processed cheese (Velveeta), cut into cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

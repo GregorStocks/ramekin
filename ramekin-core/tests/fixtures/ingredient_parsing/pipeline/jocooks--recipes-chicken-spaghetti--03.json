@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups cheddar cheese (shredded )",
+  "expected": {
+    "item": "cheddar cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

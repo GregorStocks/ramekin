@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams sesame seeds ((toasted))",
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": "toasted"
+  }
+}

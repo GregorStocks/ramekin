@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces small peeled, deveined raw shrimp",
+  "expected": {
+    "item": "small peeled",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "deveined raw shrimp"
+  }
+}

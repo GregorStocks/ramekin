@@ -1,0 +1,17 @@
+{
+  "raw": "1 (12 fluid ounce) can beer",
+  "expected": {
+    "item": "beer",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "12",
+        "unit": "fluid ounce"
+      }
+    ],
+    "note": null
+  }
+}

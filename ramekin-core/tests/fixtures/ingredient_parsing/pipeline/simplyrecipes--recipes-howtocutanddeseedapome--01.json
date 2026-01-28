@@ -1,0 +1,13 @@
+{
+  "raw": "1 pomegranate",
+  "expected": {
+    "item": "pomegranate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

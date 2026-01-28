@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound uncooked bulk sausage",
+  "expected": {
+    "item": "uncooked bulk sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

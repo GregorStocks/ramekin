@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp tamarind paste",
+  "expected": {
+    "item": "tamarind paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

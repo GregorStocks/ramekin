@@ -1,0 +1,21 @@
+{
+  "raw": "1/4 cup grated Parmigiano-Reggiano cheese (2 ounces; 55g)",
+  "expected": {
+    "item": "grated Parmigiano-Reggiano cheese",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

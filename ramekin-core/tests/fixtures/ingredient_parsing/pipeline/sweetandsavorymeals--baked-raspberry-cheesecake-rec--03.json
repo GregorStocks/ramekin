@@ -1,0 +1,13 @@
+{
+  "raw": "3 1/2 cups raspberries (fresh or frozen)",
+  "expected": {
+    "item": "raspberries",
+    "measurements": [
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "fresh or frozen"
+  }
+}

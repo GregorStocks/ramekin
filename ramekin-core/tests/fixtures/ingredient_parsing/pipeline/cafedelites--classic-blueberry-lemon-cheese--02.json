@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups warm milk (almond, skim, full fat or 2%)",
+  "expected": {
+    "item": "warm milk",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

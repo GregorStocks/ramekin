@@ -1,0 +1,17 @@
+{
+  "raw": "2 packages (1/4 ounce each) active dry yeast",
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "1/4",
+        "unit": "ounce each"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 ounces shredded Gruyère cheese, shredded (1 cup)",
+  "expected": {
+    "item": "shredded Gruyère cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "shredded"
+  }
+}

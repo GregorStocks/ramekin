@@ -1,0 +1,13 @@
+{
+  "raw": "2  mangoes (peeled and diced)",
+  "expected": {
+    "item": "mangoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and diced"
+  }
+}

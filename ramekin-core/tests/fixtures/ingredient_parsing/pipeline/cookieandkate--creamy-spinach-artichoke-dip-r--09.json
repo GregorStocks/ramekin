@@ -1,0 +1,17 @@
+{
+  "raw": "½ cup (4 ounces) chopped artichoke, canned or marinated",
+  "expected": {
+    "item": "chopped artichoke, canned or marinated",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

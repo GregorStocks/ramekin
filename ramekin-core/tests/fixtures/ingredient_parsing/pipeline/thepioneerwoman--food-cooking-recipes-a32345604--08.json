@@ -1,0 +1,17 @@
+{
+  "raw": "4 oz. feta cheese, crumbled&nbsp;(about 1 c.)",
+  "expected": {
+    "item": "feta cheese",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

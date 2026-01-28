@@ -1,0 +1,17 @@
+{
+  "raw": "1 (28 ounce) jar pasta sauce",
+  "expected": {
+    "item": "pasta sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "jar"
+      },
+      {
+        "amount": "28",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

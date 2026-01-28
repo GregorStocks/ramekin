@@ -1,0 +1,17 @@
+{
+  "raw": "1 large diced avocado  (about 1 cup)",
+  "expected": {
+    "item": "diced avocado",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

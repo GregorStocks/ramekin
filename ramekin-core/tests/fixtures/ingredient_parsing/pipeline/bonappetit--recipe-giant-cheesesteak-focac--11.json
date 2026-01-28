@@ -1,0 +1,13 @@
+{
+  "raw": "1 large green bell pepper, ribs and seeds removed, thinly sliced",
+  "expected": {
+    "item": "green bell pepper, ribs and seeds removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

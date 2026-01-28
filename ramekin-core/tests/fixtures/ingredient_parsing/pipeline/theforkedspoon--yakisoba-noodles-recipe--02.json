@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon oyster sauce",
+  "expected": {
+    "item": "oyster sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

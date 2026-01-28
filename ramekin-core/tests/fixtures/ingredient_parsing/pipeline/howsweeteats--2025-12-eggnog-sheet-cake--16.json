@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons eggnog",
+  "expected": {
+    "item": "eggnog",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

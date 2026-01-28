@@ -1,0 +1,17 @@
+{
+  "raw": "170 grams corn ((1 ear, kernels removed from cob))",
+  "expected": {
+    "item": "corn",
+    "measurements": [
+      {
+        "amount": "170",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

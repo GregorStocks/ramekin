@@ -1,0 +1,17 @@
+{
+  "raw": "1 (6 ounce) bag milk chocolate candy kisses, unwrapped",
+  "expected": {
+    "item": "milk chocolate candy kisses, unwrapped",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bag"
+      },
+      {
+        "amount": "6",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

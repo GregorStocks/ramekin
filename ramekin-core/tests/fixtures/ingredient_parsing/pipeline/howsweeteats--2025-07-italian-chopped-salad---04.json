@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams honey",
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

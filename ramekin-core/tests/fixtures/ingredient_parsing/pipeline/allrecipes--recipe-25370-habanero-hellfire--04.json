@@ -1,0 +1,17 @@
+{
+  "raw": "2 (16 ounce) cans whole peeled tomatoes, drained",
+  "expected": {
+    "item": "whole peeled tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

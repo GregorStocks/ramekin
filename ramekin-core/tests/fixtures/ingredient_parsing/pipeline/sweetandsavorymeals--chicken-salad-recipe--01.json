@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cooked chicken breast (chopped into small cubes and some shredded)",
+  "expected": {
+    "item": "cooked chicken breast",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped into small cubes and some shredded"
+  }
+}

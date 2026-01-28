@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  teaspoon    lemon extract",
+  "expected": {
+    "item": "lemon extract",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

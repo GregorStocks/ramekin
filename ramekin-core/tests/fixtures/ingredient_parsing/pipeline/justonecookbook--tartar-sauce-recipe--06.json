@@ -1,0 +1,13 @@
+{
+  "raw": "½  lemon ((more or less, according to your taste))",
+  "expected": {
+    "item": "lemon",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "more or less, according to your taste"
+  }
+}

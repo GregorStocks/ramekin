@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces baby spinach",
+  "expected": {
+    "item": "baby spinach",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

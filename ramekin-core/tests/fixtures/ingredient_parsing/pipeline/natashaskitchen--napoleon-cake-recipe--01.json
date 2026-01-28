@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb package of Puff Pastry (Pepperidge Farm brand, thawed according to package instructions.)",
+  "expected": {
+    "item": "package of Puff Pastry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "Pepperidge Farm brand, thawed according to package instructions."
+  }
+}

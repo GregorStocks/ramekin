@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups mozarella",
+  "expected": {
+    "item": "mozarella",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

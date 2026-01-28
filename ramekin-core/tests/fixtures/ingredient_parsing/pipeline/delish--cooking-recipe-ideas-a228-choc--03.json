@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz. chocolate liqueur&amp;nbsp;&amp;nbsp;",
+  "expected": {
+    "item": "chocolate liqueur",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (20 grams) sesame seeds, optional",
+  "expected": {
+    "item": "sesame seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "20",
+        "unit": "grams"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cup (350 ml) milk",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "350",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

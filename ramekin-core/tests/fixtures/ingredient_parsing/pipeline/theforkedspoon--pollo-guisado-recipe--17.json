@@ -1,0 +1,13 @@
+{
+  "raw": "1½ pounds yellow potatoes (cut into 1-inch chunks)",
+  "expected": {
+    "item": "yellow potatoes (cut into 1-inch chunks)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

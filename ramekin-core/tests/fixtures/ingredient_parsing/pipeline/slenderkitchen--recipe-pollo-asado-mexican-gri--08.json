@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp oregano (Mexican is best)",
+  "expected": {
+    "item": "oregano (Mexican is best)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

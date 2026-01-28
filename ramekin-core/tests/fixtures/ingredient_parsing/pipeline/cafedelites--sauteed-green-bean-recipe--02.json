@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb green beans (ends trimmed)",
+  "expected": {
+    "item": "green beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "ends trimmed"
+  }
+}

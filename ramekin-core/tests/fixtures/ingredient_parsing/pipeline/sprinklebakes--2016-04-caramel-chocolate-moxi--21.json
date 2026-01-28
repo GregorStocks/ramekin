@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup 120ml heavy cream",
+  "expected": {
+    "item": "120ml heavy cream",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

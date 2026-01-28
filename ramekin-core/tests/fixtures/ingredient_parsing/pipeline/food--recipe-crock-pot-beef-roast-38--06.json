@@ -1,0 +1,13 @@
+{
+  "raw": "1   tablespoon    chives, chopped",
+  "expected": {
+    "item": "chives",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "chopped"
+  }
+}

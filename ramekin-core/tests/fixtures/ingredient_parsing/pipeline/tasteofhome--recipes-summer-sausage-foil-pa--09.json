@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound chicken tenderloins, cut into 1-inch pieces",
+  "expected": {
+    "item": "chicken tenderloins, cut into 1-inch pieces",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

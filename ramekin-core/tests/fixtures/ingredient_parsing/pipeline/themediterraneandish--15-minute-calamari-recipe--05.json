@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 tbsp white wine",
+  "expected": {
+    "item": "white wine",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

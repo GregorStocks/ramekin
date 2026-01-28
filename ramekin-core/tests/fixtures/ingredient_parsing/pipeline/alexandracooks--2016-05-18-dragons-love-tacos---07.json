@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound chicken thighs, ground or finely chopped or 1 lb. ground beef",
+  "expected": {
+    "item": "chicken thighs",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "ground or finely chopped or 1 lb. ground beef"
+  }
+}

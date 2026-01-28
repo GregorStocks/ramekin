@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces semisweet chocolate chips",
+  "expected": {
+    "item": "semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

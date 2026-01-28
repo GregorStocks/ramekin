@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups vegetables ((bell peppers, broccoli, zucchini, etc.))",
+  "expected": {
+    "item": "vegetables (bell peppers, broccoli, zucchini, etc.)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

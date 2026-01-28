@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces mozzarella cheese, cut into 1/2 inch cubes",
+  "expected": {
+    "item": "mozzarella cheese, cut into 1/2 inch cubes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds flank steak (sliced against the grain into thin ¼ inch thick slices)",
+  "expected": {
+    "item": "flank steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "sliced against the grain into thin 1/4 inch thick slices"
+  }
+}

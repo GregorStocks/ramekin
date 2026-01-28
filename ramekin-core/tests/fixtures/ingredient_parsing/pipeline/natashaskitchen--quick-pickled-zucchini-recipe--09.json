@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup white vinegar (5% acidity)",
+  "expected": {
+    "item": "white vinegar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

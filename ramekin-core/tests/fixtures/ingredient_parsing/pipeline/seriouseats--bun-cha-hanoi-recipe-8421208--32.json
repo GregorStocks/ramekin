@@ -1,0 +1,21 @@
+{
+  "raw": "8 cloves (50g) garlic, chopped (1/4 cup)",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cloves"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

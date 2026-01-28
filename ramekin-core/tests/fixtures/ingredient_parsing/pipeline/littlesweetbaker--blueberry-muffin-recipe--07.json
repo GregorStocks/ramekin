@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cup (188ml) milk",
+  "expected": {
+    "item": "milk",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "188",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

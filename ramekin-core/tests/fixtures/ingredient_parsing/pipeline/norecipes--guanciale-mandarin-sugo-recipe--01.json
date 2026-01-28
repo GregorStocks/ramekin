@@ -1,0 +1,13 @@
+{
+  "raw": "280 grams Guanciale",
+  "expected": {
+    "item": "Guanciale",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

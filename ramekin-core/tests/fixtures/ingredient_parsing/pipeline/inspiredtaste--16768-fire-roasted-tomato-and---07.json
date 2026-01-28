@@ -1,0 +1,13 @@
+{
+  "raw": "3 cloves garlic, smashed",
+  "expected": {
+    "item": "garlic, smashed",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cloves"
+      }
+    ],
+    "note": null
+  }
+}

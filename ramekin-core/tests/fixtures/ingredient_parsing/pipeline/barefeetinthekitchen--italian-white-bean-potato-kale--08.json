@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons chicken or vegetable base",
+  "expected": {
+    "item": "chicken or vegetable base",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 pork tenderloins (2 pounds total)",
+  "expected": {
+    "item": "pork tenderloins",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

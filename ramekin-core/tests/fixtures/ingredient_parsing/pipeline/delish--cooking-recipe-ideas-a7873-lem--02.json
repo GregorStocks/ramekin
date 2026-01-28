@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 c. (100 g.)&nbsp;granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

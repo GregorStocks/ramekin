@@ -1,0 +1,13 @@
+{
+  "raw": "2 o 3 cloves peeled garlic, optional",
+  "expected": {
+    "item": "o 3 cloves peeled garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

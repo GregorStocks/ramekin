@@ -1,0 +1,13 @@
+{
+  "raw": "4  hamburger buns  ((preferably brioche buns) )",
+  "expected": {
+    "item": "hamburger buns  (preferably brioche buns) )",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

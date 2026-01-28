@@ -1,0 +1,13 @@
+{
+  "raw": "350g piece  bacon with rind",
+  "expected": {
+    "item": "piece  bacon with rind",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

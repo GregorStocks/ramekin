@@ -1,0 +1,21 @@
+{
+  "raw": "150g dark brown sugar (5 1/4 ounces; 3/4 cup)",
+  "expected": {
+    "item": "dark brown sugar",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      },
+      {
+        "amount": "5 1/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

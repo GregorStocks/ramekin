@@ -1,0 +1,17 @@
+{
+  "raw": "16 ounces Cream Cheese ((455g), room temp.)",
+  "expected": {
+    "item": "Cream Cheese , room temp.)",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

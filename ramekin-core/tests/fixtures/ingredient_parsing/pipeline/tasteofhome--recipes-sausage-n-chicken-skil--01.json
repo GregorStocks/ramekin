@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound boneless skinless chicken breasts, cubed",
+  "expected": {
+    "item": "boneless skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "cubed"
+  }
+}

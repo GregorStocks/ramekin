@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces short pasta noodles such as penne, ziti, or cellentani",
+  "expected": {
+    "item": "short pasta noodles such as penne, ziti, or cellentani",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

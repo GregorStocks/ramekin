@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (355 ml) homemade or store-bought low-sodium chicken or beef broth",
+  "expected": {
+    "item": "homemade or store-bought low-sodium chicken or beef broth",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "355",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

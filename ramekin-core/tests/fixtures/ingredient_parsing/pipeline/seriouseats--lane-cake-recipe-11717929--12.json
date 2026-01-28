@@ -1,0 +1,21 @@
+{
+  "raw": "12 large egg yolks (7 ounces; 200g)",
+  "expected": {
+    "item": "egg yolks",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "large"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

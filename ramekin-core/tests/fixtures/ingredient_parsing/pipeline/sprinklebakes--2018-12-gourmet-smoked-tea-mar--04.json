@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup 190 grams corn starch",
+  "expected": {
+    "item": "190 grams corn starch",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

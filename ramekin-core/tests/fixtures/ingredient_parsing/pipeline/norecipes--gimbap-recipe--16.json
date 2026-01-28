@@ -1,0 +1,13 @@
+{
+  "raw": "90 grams  Danmuji ((yellow pickled radish, cut into strips))",
+  "expected": {
+    "item": "Danmuji (yellow pickled radish, cut into strips)",
+    "measurements": [
+      {
+        "amount": "90",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

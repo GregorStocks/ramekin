@@ -1,0 +1,21 @@
+{
+  "raw": "128g all-purpose flour (4 1/2 ounces; 1 cup)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "128",
+        "unit": "g"
+      },
+      {
+        "amount": "4 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

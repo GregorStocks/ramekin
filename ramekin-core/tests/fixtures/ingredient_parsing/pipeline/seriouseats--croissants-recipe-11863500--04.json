@@ -1,0 +1,21 @@
+{
+  "raw": "10 g instant yeast (1/3 ounce; 1 tablespoon)",
+  "expected": {
+    "item": "instant yeast",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      },
+      {
+        "amount": "1/3",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

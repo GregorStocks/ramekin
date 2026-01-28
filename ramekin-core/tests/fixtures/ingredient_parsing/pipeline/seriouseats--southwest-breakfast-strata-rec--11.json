@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (20 g) chopped fresh cilantro, plus more for garnish&nbsp;",
+  "expected": {
+    "item": "chopped fresh cilantro",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "plus more for garnish"
+  }
+}

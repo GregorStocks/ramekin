@@ -1,0 +1,13 @@
+{
+  "raw": "8-10 oz shrimp (thawed if frozen)",
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "8-10",
+        "unit": "oz"
+      }
+    ],
+    "note": "thawed if frozen"
+  }
+}

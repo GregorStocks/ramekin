@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon coarse sugar (optional)",
+  "expected": {
+    "item": "coarse sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

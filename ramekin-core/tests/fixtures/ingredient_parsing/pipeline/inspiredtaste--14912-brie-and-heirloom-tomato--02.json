@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces Brie or Camembert cheese, cut into slices",
+  "expected": {
+    "item": "Brie or Camembert cheese, cut into slices",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

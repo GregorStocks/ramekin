@@ -1,0 +1,17 @@
+{
+  "raw": "8 cups (960g) confectioners&amp;#039; sugar (, sifted)",
+  "expected": {
+    "item": "confectioners&#039; sugar",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      },
+      {
+        "amount": "960",
+        "unit": "g"
+      }
+    ],
+    "note": ", sifted"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp ginger",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

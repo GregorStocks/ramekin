@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons finely ground espresso beans",
+  "expected": {
+    "item": "finely ground espresso beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

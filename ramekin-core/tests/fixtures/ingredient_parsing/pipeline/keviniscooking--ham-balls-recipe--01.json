@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb ground ham",
+  "expected": {
+    "item": "ground ham",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

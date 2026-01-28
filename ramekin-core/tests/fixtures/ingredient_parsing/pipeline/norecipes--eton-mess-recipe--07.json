@@ -1,0 +1,13 @@
+{
+  "raw": "300 grams strawberries ((hulled and quartered))",
+  "expected": {
+    "item": "strawberries",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      }
+    ],
+    "note": "hulled and quartered"
+  }
+}

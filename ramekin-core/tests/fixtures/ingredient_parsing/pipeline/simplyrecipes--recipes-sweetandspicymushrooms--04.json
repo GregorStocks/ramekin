@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup chicken or vegetable stock (use vegetable stock for vegetarian option)",
+  "expected": {
+    "item": "chicken or vegetable stock (use vegetable stock for vegetarian option)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

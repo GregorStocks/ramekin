@@ -1,0 +1,13 @@
+{
+  "raw": "16 uncooked medium shrimp, peeled and deveined",
+  "expected": {
+    "item": "uncooked medium shrimp",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": "peeled and deveined"
+  }
+}

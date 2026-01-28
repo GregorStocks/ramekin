@@ -1,0 +1,17 @@
+{
+  "raw": "8 oz (1 1/3 cups) dry orzo pasta",
+  "expected": {
+    "item": "dry orzo pasta",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "1 1/3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

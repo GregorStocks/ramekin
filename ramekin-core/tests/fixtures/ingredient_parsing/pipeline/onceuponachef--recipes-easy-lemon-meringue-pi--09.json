@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 cups cake flour ((or all-purpose flour-156g))",
+  "expected": {
+    "item": "cake flour (or all-purpose flour-156g)",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

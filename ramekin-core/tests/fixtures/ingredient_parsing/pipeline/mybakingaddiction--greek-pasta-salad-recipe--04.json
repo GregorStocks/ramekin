@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons dried basil",
+  "expected": {
+    "item": "dried basil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup cinnamon chips",
+  "expected": {
+    "item": "cinnamon chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

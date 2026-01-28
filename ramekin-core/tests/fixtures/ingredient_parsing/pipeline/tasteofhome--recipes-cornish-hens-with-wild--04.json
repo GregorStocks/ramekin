@@ -1,0 +1,17 @@
+{
+  "raw": "2 packages (6.2 ounces each) fast-cooking long grain and wild rice mix",
+  "expected": {
+    "item": "fast-cooking long grain and wild rice mix",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "packages"
+      },
+      {
+        "amount": "6.2",
+        "unit": "ounces each"
+      }
+    ],
+    "note": null
+  }
+}

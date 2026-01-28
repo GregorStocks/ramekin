@@ -1,0 +1,17 @@
+{
+  "raw": "375 grams bread flour ((~3 cups))",
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "375",
+        "unit": "grams"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

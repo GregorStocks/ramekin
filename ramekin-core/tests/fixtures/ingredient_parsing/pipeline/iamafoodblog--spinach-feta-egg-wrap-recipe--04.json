@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 tablespoons feta cheese",
+  "expected": {
+    "item": "feta cheese",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

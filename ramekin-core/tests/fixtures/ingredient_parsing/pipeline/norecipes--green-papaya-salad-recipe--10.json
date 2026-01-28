@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams dried shrimp ((optional))",
+  "expected": {
+    "item": "dried shrimp",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": "optional"
+  }
+}

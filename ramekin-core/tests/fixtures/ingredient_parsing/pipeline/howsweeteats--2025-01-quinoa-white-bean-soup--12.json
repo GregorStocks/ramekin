@@ -1,0 +1,13 @@
+{
+  "raw": "28 ounces cannellini beans, (drained and rinsed)",
+  "expected": {
+    "item": "cannellini beans,",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

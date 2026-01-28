@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 cup medium salsa",
+  "expected": {
+    "item": "medium salsa",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

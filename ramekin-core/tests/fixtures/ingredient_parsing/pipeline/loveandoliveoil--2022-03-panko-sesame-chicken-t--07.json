@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons black sesame seeds",
+  "expected": {
+    "item": "black sesame seeds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

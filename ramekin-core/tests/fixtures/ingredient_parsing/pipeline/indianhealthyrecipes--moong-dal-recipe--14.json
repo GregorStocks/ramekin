@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon amchur ((optional, dried mango powder or 1 tbsp lemon juice))",
+  "expected": {
+    "item": "amchur",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional, dried mango powder or 1 tbsp lemon juice"
+  }
+}

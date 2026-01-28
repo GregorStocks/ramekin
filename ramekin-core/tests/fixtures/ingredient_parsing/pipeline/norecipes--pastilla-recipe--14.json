@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 pounds bone-in skin-on chicken thighs",
+  "expected": {
+    "item": "bone-in skin-on chicken thighs",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

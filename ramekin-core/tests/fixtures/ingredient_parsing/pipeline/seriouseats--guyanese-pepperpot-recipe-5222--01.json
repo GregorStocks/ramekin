@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds (900g) cow foot, cut into roughly 1- by 2-inch pieces (see note)",
+  "expected": {
+    "item": "cow foot, cut into roughly 1- by 2-inch pieces (see note)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "900",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

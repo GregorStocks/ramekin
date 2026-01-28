@@ -1,0 +1,13 @@
+{
+  "raw": "3 lbs yukon gold potatoes",
+  "expected": {
+    "item": "yukon gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

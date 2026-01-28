@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound medium shrimp, shelled and deveined",
+  "expected": {
+    "item": "medium shrimp, shelled and deveined",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

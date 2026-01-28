@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup / 7 oz / 200g yellow split peas",
+  "expected": {
+    "item": "/ 7 oz / 200g yellow split peas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

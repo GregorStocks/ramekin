@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces 80/20 ground beef",
+  "expected": {
+    "item": "80/20 ground beef",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

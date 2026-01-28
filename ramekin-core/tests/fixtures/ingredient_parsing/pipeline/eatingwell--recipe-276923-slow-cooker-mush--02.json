@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups dried porcini mushrooms (about 1 1/2 ounces)",
+  "expected": {
+    "item": "dried porcini mushrooms",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

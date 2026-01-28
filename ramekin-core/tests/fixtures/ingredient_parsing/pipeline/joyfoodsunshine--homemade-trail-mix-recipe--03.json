@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces peanuts (roasted &amp;amp; salted (2 cups))",
+  "expected": {
+    "item": "peanuts",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "roasted &amp; salted (2 cups"
+  }
+}

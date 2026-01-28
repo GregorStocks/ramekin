@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Dole crushed pineapple (not drained! {use the pineapple in JUICE not syrup})",
+  "expected": {
+    "item": "Dole crushed pineapple",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "not drained! {use the pineapple in JUICE not syrup}"
+  }
+}

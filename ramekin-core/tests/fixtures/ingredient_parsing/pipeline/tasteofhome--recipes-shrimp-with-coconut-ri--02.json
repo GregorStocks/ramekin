@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup uncooked long grain rice",
+  "expected": {
+    "item": "uncooked long grain rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 Tablespoons raw turbinado sugar",
+  "expected": {
+    "item": "raw turbinado sugar",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

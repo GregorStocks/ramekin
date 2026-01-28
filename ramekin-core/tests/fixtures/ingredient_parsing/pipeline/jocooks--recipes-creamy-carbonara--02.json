@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounce pancetta (chopped)",
+  "expected": {
+    "item": "pancetta",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounce"
+      }
+    ],
+    "note": "chopped"
+  }
+}

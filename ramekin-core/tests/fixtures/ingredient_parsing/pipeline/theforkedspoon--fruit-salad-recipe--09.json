@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces blackberries",
+  "expected": {
+    "item": "blackberries",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

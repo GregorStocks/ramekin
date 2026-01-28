@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium (125 grams) ripe banana, 1 cup chopped",
+  "expected": {
+    "item": "ripe banana",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "125",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 cup chopped"
+  }
+}

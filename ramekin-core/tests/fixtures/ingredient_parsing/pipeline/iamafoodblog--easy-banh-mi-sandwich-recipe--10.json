@@ -1,0 +1,13 @@
+{
+  "raw": "2” piece of daikon, julienned",
+  "expected": {
+    "item": "” piece of daikon",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "julienned"
+  }
+}

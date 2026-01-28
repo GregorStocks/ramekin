@@ -1,0 +1,17 @@
+{
+  "raw": "2 scallions, white and green parts, thinly sliced (about 20g)",
+  "expected": {
+    "item": "scallions, white and green parts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons Mexican oregano",
+  "expected": {
+    "item": "Mexican oregano",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

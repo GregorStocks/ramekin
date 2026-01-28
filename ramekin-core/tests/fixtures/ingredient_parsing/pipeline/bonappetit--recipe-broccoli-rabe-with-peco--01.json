@@ -1,0 +1,17 @@
+{
+  "raw": "2 bunches of broccoli rabe (about 2 lb.), bottom 1\" removed",
+  "expected": {
+    "item": "broccoli rabe , bottom 1\" removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "bunches"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

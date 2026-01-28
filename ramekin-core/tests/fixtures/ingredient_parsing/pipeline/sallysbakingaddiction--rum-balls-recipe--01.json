@@ -1,0 +1,17 @@
+{
+  "raw": "1 and 1/4 cups (150g) pecans",
+  "expected": {
+    "item": "pecans",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

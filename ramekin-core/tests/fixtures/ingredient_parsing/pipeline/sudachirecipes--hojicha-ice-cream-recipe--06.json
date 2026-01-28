@@ -1,0 +1,13 @@
+{
+  "raw": "200 ml heavy cream",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

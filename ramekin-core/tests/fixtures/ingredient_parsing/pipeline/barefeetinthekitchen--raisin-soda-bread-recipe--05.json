@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces buttermilk, or 2 cups, divided (reserve 1/4 cup)",
+  "expected": {
+    "item": "buttermilk, or 2 cups",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "divided (reserve 1/4 cup)"
+  }
+}

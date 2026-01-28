@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup powdered sugar (sifted if lumpy)",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "sifted if lumpy"
+  }
+}

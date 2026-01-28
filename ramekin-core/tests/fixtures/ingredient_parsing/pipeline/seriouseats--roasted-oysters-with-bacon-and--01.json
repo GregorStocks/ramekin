@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices thick-cut bacon, finely chopped",
+  "expected": {
+    "item": "thick-cut bacon",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

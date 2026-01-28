@@ -1,0 +1,13 @@
+{
+  "raw": "8  large lasagna sheets (broken into bite size pieces)",
+  "expected": {
+    "item": "lasagna sheets (broken into bite size pieces)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

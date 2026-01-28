@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. torn basil leaves",
+  "expected": {
+    "item": "torn basil leaves",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups orange juice (750 mL)",
+  "expected": {
+    "item": "orange juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "750",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

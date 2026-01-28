@@ -1,0 +1,13 @@
+{
+  "raw": "250g bunch asparagus",
+  "expected": {
+    "item": "bunch asparagus",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

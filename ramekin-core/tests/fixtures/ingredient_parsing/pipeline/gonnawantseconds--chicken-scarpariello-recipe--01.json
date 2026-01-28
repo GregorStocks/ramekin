@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds fingerling potatoes (halved lengthwise)",
+  "expected": {
+    "item": "fingerling potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "halved lengthwise"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces medium shrimp, peeled and deveined",
+  "expected": {
+    "item": "medium shrimp",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "peeled and deveined"
+  }
+}

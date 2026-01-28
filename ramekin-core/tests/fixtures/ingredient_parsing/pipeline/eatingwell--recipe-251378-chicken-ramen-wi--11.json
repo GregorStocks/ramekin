@@ -1,0 +1,17 @@
+{
+  "raw": "3 bone-in chicken leg quarters (about 2 1/4 pounds)",
+  "expected": {
+    "item": "bone-in chicken leg quarters",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "2 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

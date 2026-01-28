@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup worcestershire sauce",
+  "expected": {
+    "item": "worcestershire sauce",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

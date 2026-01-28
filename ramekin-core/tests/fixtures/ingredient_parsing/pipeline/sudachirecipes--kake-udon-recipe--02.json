@@ -1,0 +1,13 @@
+{
+  "raw": "10 g dried kelp (kombu)",
+  "expected": {
+    "item": "dried kelp (kombu)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

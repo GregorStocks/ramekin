@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 cups 274 grams dark or semisweet chocolate chips, melted",
+  "expected": {
+    "item": "274 grams dark or semisweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "melted"
+  }
+}

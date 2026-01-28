@@ -1,0 +1,13 @@
+{
+  "raw": "1  green pepper (seeds and membranes removed, diced)",
+  "expected": {
+    "item": "green pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "seeds and membranes removed, diced"
+  }
+}

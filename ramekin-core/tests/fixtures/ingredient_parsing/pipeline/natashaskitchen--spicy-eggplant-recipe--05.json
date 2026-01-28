@@ -1,0 +1,13 @@
+{
+  "raw": "7  large (or 10 medium garlic cloves, peeled and pressed/minced)",
+  "expected": {
+    "item": "7  large (or 10 medium garlic cloves, peeled and pressed/minced)",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "large"
+      }
+    ],
+    "note": "or 10 medium garlic cloves, peeled and pressed/minced"
+  }
+}

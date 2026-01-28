@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp jalapeño peppers (or ortega chiles, for milder heat, finely chopped)",
+  "expected": {
+    "item": "jalapeño peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or ortega chiles, for milder heat, finely chopped"
+  }
+}

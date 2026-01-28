@@ -1,0 +1,17 @@
+{
+  "raw": "2  medium spaghetti squash ((about 2½ lbs/1.1 kg each))",
+  "expected": {
+    "item": "spaghetti squash",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "2 1/2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds baby bok choy (halved or quartered)",
+  "expected": {
+    "item": "baby bok choy",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "halved or quartered"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tablespoon nutritional yeast",
+  "expected": {
+    "item": "nutritional yeast",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

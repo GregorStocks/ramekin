@@ -1,0 +1,13 @@
+{
+  "raw": "1/3 cup chopped red onions, PLUS a few onion slices for garnish",
+  "expected": {
+    "item": "chopped red onions",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "PLUS a few onion slices for garnish"
+  }
+}

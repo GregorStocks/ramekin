@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 4 ounces arugula",
+  "expected": {
+    "item": "arugula",
+    "measurements": [
+      {
+        "amount": "2 to 4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

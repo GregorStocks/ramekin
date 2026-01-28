@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (60ml) coconut cream",
+  "expected": {
+    "item": "coconut cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

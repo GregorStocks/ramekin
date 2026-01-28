@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces small red potatoes, scrubbed and halved",
+  "expected": {
+    "item": "small red potatoes",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "scrubbed and halved"
+  }
+}

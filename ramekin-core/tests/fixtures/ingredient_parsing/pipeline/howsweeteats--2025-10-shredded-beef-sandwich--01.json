@@ -1,0 +1,13 @@
+{
+  "raw": "4 to 5 pound boneless chuck roast",
+  "expected": {
+    "item": "boneless chuck roast",
+    "measurements": [
+      {
+        "amount": "4 to 5",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces Irish whiskey",
+  "expected": {
+    "item": "Irish whiskey",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz. canned artichoke hearts, drained and rinsed, chopped (or frozen)",
+  "expected": {
+    "item": "canned artichoke hearts, drained and rinsed, chopped",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": "or frozen"
+  }
+}

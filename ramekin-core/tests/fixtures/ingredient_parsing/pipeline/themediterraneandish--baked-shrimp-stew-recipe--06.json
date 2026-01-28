@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp sumac",
+  "expected": {
+    "item": "sumac",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "4 (3/4-inch-thick) slices high-quality bread, such as country French or sourdough",
+  "expected": {
+    "item": "high-quality bread, such as country French or sourdough",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      },
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "14 oz sweetened condensed milk (1 can)",
+  "expected": {
+    "item": "sweetened condensed milk",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "can"
+      }
+    ],
+    "note": null
+  }
+}

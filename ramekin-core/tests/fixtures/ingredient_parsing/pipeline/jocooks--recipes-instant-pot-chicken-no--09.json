@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon oregano (fresh, chopped, 1 tsp if using dry)",
+  "expected": {
+    "item": "oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "fresh, chopped, 1 tsp if using dry"
+  }
+}

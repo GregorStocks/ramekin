@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces  unsalted butter, room temperature ((1¼ cups))",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

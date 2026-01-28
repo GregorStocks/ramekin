@@ -1,0 +1,17 @@
+{
+  "raw": "1 (2 inch) cinnamon stick",
+  "expected": {
+    "item": "cinnamon stick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

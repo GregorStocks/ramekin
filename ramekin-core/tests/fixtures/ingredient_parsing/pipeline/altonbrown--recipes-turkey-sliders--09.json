@@ -1,0 +1,13 @@
+{
+  "raw": "2 large portobello mushrooms, stems and gills removed, finely chopped",
+  "expected": {
+    "item": "portobello mushrooms, stems and gills removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

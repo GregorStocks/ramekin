@@ -1,0 +1,13 @@
+{
+  "raw": "2  cans cannelini beans (or great northern beans)",
+  "expected": {
+    "item": "cannelini beans (or great northern beans)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb of cucumbers (4-5)",
+  "expected": {
+    "item": "cucumbers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

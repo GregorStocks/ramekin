@@ -1,0 +1,17 @@
+{
+  "raw": ".5 grams Mexican oregano ((~1/2 teaspoon))",
+  "expected": {
+    "item": "Mexican oregano",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "grams"
+      },
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

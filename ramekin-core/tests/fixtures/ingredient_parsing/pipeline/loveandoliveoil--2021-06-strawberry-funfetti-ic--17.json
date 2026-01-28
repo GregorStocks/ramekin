@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup confetti quin sprinkles",
+  "expected": {
+    "item": "confetti quin sprinkles",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

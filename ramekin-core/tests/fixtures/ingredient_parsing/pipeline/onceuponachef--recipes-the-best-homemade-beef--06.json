@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon unseasoned meat tenderizer (see note)",
+  "expected": {
+    "item": "unseasoned meat tenderizer (see note)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

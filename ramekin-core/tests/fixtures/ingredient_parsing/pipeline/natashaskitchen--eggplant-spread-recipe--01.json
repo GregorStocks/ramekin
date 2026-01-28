@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs eggplant (peeled and diced)",
+  "expected": {
+    "item": "eggplant",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled and diced"
+  }
+}

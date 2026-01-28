@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium-to-large clove garlic, roughly chopped",
+  "expected": {
+    "item": "medium-to-large clove garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

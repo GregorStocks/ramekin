@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound Monterey jack cheese, grated (do not buy pre-grated, it won't melt properly)",
+  "expected": {
+    "item": "Monterey jack cheese, grated",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "do not buy pre-grated, it won't melt properly"
+  }
+}

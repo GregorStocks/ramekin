@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces Monterey Jack cheese (grated (about 3 cups))",
+  "expected": {
+    "item": "Monterey Jack cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "grated (about 3 cups"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 13.5 ounce cans full-fat coconut milk  (chilled 24-48 hours)",
+  "expected": {
+    "item": "13.5 ounce cans full-fat coconut milk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "chilled 24-48 hours"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (16- to 17-ounce) package frozen puff pastry, thawed",
+  "expected": {
+    "item": "frozen puff pastry",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "16",
+        "unit": null
+      }
+    ],
+    "note": "thawed"
+  }
+}

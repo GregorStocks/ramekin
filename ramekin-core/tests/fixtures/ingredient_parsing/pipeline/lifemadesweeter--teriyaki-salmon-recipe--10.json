@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 tablespoons water (, as needed to thin out sauce)",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": ", as needed to thin out sauce"
+  }
+}

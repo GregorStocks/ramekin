@@ -1,0 +1,17 @@
+{
+  "raw": "2 (15 oz) cans chickpeas, drained and rinsed",
+  "expected": {
+    "item": "chickpeas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

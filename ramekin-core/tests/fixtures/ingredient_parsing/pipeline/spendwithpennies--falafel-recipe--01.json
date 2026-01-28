@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounces canned chickpeas (1 can, drained &amp;amp; rinsed)",
+  "expected": {
+    "item": "canned chickpeas",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounces"
+      }
+    ],
+    "note": "1 can, drained &amp; rinsed"
+  }
+}

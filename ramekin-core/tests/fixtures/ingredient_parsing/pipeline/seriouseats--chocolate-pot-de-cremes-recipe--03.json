@@ -1,0 +1,17 @@
+{
+  "raw": "3/4 cups (180ml) heavy cream",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "180",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

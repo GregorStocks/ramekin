@@ -1,0 +1,13 @@
+{
+  "raw": "70 grams red bell pepper ((~ 1/2 pepper, chopped))",
+  "expected": {
+    "item": "red bell pepper",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "grams"
+      }
+    ],
+    "note": "~ 1/2 pepper, chopped"
+  }
+}

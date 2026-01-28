@@ -1,0 +1,13 @@
+{
+  "raw": "5oz dry white wine",
+  "expected": {
+    "item": "dry white wine",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

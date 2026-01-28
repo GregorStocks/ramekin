@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons hoisin sauce",
+  "expected": {
+    "item": "hoisin sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

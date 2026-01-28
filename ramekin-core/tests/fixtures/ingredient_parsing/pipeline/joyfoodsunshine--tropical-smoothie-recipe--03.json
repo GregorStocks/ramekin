@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups pineapple (frozen (12 oz frozen pineapple))",
+  "expected": {
+    "item": "pineapple",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "frozen (12 oz frozen pineapple"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 pounds bone-in, skinless chicken breasts",
+  "expected": {
+    "item": "bone-in, skinless chicken breasts",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

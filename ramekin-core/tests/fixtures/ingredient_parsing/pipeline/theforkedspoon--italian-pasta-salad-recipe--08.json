@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces mozzarella balls (drained and sliced in half)",
+  "expected": {
+    "item": "mozzarella balls",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and sliced in half"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound fresh basket cheese (drained and cut into bite-size pieces)",
+  "expected": {
+    "item": "fresh basket cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "drained and cut into bite-size pieces"
+  }
+}

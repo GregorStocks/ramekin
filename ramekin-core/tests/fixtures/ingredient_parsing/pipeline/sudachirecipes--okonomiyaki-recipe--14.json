@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp tempura flakes (tenkasu) (optional, or crushed plain potato chips)",
+  "expected": {
+    "item": "tempura flakes (tenkasu) (optional",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or crushed plain potato chips)"
+  }
+}

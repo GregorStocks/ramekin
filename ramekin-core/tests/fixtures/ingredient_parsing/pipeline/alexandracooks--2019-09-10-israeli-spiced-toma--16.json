@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon vinegar (white balsamic, red wine, white wine, champagne)",
+  "expected": {
+    "item": "vinegar (white balsamic, red wine, white wine, champagne)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

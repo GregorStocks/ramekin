@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. red candy discs",
+  "expected": {
+    "item": "red candy discs",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

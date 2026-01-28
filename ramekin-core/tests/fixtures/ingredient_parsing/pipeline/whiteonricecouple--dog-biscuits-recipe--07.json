@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup Water ((240ml))",
+  "expected": {
+    "item": "Water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "240",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

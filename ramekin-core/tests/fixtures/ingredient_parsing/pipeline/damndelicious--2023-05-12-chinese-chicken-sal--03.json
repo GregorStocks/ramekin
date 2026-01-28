@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups leftover shredded rotisserie chicken",
+  "expected": {
+    "item": "leftover shredded rotisserie chicken",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

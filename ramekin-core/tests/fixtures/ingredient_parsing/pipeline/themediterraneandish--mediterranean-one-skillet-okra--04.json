@@ -1,0 +1,13 @@
+{
+  "raw": "2  small green chiles such as jalapeno (chopped)",
+  "expected": {
+    "item": "green chiles such as jalapeno",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "chopped"
+  }
+}

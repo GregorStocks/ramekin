@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup of butter (1 stick), room temperature",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1",
+        "unit": "stick"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

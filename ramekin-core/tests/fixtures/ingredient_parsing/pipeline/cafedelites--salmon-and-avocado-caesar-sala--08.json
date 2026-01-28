@@ -1,0 +1,13 @@
+{
+  "raw": "2 heads cos lettuce (washed and dried)",
+  "expected": {
+    "item": "cos lettuce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": "washed and dried"
+  }
+}

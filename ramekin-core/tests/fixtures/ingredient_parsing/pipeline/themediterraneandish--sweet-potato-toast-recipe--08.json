@@ -1,0 +1,13 @@
+{
+  "raw": "Handful cherry tomatoes, halved",
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "halved"
+  }
+}

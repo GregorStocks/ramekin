@@ -1,0 +1,13 @@
+{
+  "raw": "2 slices high-quality sandwich bread, such as shokupan",
+  "expected": {
+    "item": "high-quality sandwich bread, such as shokupan",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

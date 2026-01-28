@@ -1,0 +1,13 @@
+{
+  "raw": "1  large green bell pepper",
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

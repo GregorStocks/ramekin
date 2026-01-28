@@ -1,0 +1,13 @@
+{
+  "raw": "1.33 cups alfalfa sprouts",
+  "expected": {
+    "item": "alfalfa sprouts",
+    "measurements": [
+      {
+        "amount": "1.33",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

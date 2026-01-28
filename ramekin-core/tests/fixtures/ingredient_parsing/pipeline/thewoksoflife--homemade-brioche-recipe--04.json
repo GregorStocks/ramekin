@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon active dry yeast ((9g))",
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "9",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

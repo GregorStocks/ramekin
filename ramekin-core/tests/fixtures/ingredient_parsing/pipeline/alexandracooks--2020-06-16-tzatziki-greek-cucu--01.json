@@ -1,0 +1,21 @@
+{
+  "raw": "1 large or 3 small cucumbers (about 8 &amp;#8211; 10 oz)",
+  "expected": {
+    "item": "or 3 small cucumbers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "8",
+        "unit": null
+      },
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

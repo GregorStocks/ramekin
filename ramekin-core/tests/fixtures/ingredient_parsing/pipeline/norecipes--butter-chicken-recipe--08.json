@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon saffron ((threads crushed))",
+  "expected": {
+    "item": "saffron",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "threads crushed"
+  }
+}

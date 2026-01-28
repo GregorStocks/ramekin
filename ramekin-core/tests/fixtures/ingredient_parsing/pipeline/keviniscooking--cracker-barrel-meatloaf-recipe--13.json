@@ -1,0 +1,13 @@
+{
+  "raw": "1 tsp prepared yellow mustard",
+  "expected": {
+    "item": "prepared yellow mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

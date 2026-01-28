@@ -1,0 +1,13 @@
+{
+  "raw": "1  avocado,  (diced (optional)**)",
+  "expected": {
+    "item": "avocado, **)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced (optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 bay leaf",
+  "expected": {
+    "item": "bay leaf",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

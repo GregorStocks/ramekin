@@ -1,0 +1,13 @@
+{
+  "raw": "12 tostada shells",
+  "expected": {
+    "item": "tostada shells",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

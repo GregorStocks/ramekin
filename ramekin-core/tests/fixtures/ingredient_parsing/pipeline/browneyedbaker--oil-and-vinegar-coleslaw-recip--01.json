@@ -1,0 +1,13 @@
+{
+  "raw": "1  head green cabbage (thinly sliced or shredded)",
+  "expected": {
+    "item": "green cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "head"
+      }
+    ],
+    "note": "thinly sliced or shredded"
+  }
+}

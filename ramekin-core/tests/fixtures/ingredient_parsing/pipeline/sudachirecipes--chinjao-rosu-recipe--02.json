@@ -1,0 +1,13 @@
+{
+  "raw": "150 g canned bamboo shoots (water-packed, or king oyster mushrooms, celery, or broccoli stems.)",
+  "expected": {
+    "item": "canned bamboo shoots",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": "water-packed, or king oyster mushrooms, celery, or broccoli stems."
+  }
+}

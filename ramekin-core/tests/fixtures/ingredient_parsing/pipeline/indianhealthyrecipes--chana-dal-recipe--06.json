@@ -1,0 +1,13 @@
+{
+  "raw": "½ tablespoon ginger  (minced/grated (6 grams from ¾ inch root))",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "minced/grated (6 grams from 3/4 inch root"
+  }
+}

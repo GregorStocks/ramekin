@@ -1,0 +1,13 @@
+{
+  "raw": "lb. total)",
+  "expected": {
+    "item": "total)",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

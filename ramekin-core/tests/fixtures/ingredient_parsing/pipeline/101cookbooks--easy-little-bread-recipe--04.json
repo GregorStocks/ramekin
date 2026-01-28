@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup / 4.5 oz / 125 g unbleached all-purpose flour",
+  "expected": {
+    "item": "/ 4.5 oz / 125 g unbleached all-purpose flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

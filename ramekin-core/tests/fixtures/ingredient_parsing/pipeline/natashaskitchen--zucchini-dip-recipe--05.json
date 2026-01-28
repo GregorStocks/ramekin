@@ -1,0 +1,13 @@
+{
+  "raw": "2 cloves of garlic or 1 tsp garlic powder",
+  "expected": {
+    "item": "garlic or 1 tsp garlic powder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cloves"
+      }
+    ],
+    "note": null
+  }
+}

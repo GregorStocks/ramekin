@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp freshly squeezed lime juice",
+  "expected": {
+    "item": "freshly squeezed lime juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

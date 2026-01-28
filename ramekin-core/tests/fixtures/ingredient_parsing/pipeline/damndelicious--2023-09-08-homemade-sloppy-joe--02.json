@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds lean ground beef (90/10)",
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "90/10",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

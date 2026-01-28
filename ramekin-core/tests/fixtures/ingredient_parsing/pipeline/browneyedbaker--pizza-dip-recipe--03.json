@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces Parmesan cheese (shredded (about 1 cup), divided)",
+  "expected": {
+    "item": "Parmesan cheese , divided)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "shredded (about 1 cup"
+  }
+}

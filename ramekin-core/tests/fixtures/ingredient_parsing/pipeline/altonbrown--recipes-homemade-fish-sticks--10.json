@@ -1,0 +1,13 @@
+{
+  "raw": "1 quart peanut oil",
+  "expected": {
+    "item": "peanut oil",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "quart"
+      }
+    ],
+    "note": null
+  }
+}

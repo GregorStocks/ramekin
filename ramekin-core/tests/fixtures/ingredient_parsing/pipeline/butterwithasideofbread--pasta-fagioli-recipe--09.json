@@ -1,0 +1,13 @@
+{
+  "raw": "15 oz petite diced tomatoes",
+  "expected": {
+    "item": "petite diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

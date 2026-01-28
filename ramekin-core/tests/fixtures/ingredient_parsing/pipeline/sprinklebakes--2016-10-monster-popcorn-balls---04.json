@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 teaspoon neon green food color",
+  "expected": {
+    "item": "neon green food color",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

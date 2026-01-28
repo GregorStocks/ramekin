@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp red wine (dry type)",
+  "expected": {
+    "item": "red wine (dry type)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

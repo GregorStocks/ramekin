@@ -1,0 +1,13 @@
+{
+  "raw": "5 oz sausages",
+  "expected": {
+    "item": "sausages",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

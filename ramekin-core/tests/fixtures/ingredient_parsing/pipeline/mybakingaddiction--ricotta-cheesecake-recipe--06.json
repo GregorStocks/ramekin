@@ -1,0 +1,13 @@
+{
+  "raw": "32 ounces ricotta cheese (room temperature)",
+  "expected": {
+    "item": "ricotta cheese",
+    "measurements": [
+      {
+        "amount": "32",
+        "unit": "ounces"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

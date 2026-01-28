@@ -1,0 +1,17 @@
+{
+  "raw": "15 to 20 flour tortillas (8 inches)",
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "15 to 20",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

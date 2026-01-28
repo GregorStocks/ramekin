@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound extra-sharp cheddar cheese, shredded (about 4 cups)",
+  "expected": {
+    "item": "extra-sharp cheddar cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "shredded"
+  }
+}

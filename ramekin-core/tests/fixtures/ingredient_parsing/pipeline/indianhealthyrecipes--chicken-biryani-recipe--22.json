@@ -1,0 +1,13 @@
+{
+  "raw": "¼ to ½ teaspoon red chili powder  ((optional, for heat))",
+  "expected": {
+    "item": "red chili powder",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional, for heat"
+  }
+}

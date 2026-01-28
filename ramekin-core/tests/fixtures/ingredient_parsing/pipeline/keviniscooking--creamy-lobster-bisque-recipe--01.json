@@ -1,0 +1,13 @@
+{
+  "raw": "3 lbs lobster (including shells (See Note 1))",
+  "expected": {
+    "item": "lobster (including shells (See Note 1)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

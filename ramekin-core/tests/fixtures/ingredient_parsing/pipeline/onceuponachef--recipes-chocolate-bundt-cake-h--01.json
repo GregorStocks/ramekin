@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup coffee ((any temperature is fine))",
+  "expected": {
+    "item": "coffee (any temperature is fine)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds (about 6-7) boneless skinless chicken thighs",
+  "expected": {
+    "item": "boneless skinless chicken thighs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

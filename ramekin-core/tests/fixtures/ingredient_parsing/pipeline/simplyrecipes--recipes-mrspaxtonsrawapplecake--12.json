@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 stick sweet butter",
+  "expected": {
+    "item": "sweet butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "stick"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  cup watermelon vodka",
+  "expected": {
+    "item": "watermelon vodka",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

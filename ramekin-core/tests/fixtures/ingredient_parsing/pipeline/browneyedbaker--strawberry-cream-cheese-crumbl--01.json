@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons slivered almonds",
+  "expected": {
+    "item": "slivered almonds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

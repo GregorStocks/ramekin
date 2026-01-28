@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons sriracha",
+  "expected": {
+    "item": "sriracha",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

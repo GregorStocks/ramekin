@@ -1,0 +1,13 @@
+{
+  "raw": "8 cups apples (peeled and sliced 1/4\" thick (about 6 large apples))",
+  "expected": {
+    "item": "apples",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      }
+    ],
+    "note": "peeled and sliced 1/4\" thick (about 6 large apples"
+  }
+}

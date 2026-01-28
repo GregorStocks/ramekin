@@ -1,0 +1,13 @@
+{
+  "raw": "200 g salmon fillets (skin-on)",
+  "expected": {
+    "item": "salmon fillets (skin-on)",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

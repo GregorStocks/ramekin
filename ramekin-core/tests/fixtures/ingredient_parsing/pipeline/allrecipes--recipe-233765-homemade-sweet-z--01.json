@@ -1,0 +1,13 @@
+{
+  "raw": "10 small zucchini, ends trimmed",
+  "expected": {
+    "item": "zucchini",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "small"
+      }
+    ],
+    "note": "ends trimmed"
+  }
+}

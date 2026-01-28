@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb ground lamb or beef (I used beef here), cold",
+  "expected": {
+    "item": "ground lamb or beef (I used beef here)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cold"
+  }
+}

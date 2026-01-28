@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon fenugreek seeds",
+  "expected": {
+    "item": "fenugreek seeds",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 TBSP ground flax",
+  "expected": {
+    "item": "ground flax",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

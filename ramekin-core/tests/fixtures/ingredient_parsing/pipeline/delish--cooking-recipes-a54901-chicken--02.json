@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz. fresh or frozen breaded chicken",
+  "expected": {
+    "item": "fresh or frozen breaded chicken",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

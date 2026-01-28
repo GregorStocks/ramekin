@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tablespoon jam of choice",
+  "expected": {
+    "item": "jam of choice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

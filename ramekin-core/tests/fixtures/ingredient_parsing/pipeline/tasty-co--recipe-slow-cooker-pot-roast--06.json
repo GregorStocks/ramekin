@@ -1,0 +1,13 @@
+{
+  "raw": "3 gold potatoes, diced",
+  "expected": {
+    "item": "gold potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

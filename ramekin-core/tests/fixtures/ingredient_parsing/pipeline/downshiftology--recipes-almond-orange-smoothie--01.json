@@ -1,0 +1,13 @@
+{
+  "raw": "2  navel oranges (peeled)",
+  "expected": {
+    "item": "navel oranges",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "peeled"
+  }
+}

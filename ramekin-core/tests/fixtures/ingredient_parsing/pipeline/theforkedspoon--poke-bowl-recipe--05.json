@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+  "expected": {
+    "item": "sushi-grade ahi tuna or salmon (cut into 1/2-inch cubes)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

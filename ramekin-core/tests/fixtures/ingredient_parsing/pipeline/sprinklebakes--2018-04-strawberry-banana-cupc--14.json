@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
+  "expected": {
+    "item": "95g finely chopped fresh strawberries (generous 1/2 cup)",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

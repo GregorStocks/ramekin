@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 15 grams loose lapsang souchong tea leaves",
+  "expected": {
+    "item": "15 grams loose lapsang souchong tea leaves",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

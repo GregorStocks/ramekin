@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces cremini mushrooms (halved)",
+  "expected": {
+    "item": "cremini mushrooms",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "halved"
+  }
+}

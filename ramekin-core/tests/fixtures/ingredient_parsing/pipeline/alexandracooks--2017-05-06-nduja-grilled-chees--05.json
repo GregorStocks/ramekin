@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces ‘nduja, see notes above",
+  "expected": {
+    "item": "‘nduja, see notes above",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

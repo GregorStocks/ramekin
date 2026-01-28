@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams milk chocolate",
+  "expected": {
+    "item": "milk chocolate",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

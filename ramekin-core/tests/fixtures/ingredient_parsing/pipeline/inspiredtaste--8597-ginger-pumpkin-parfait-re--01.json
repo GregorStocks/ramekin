@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups cold heavy cream or heavy whipping cream (480ml)",
+  "expected": {
+    "item": "cold heavy cream or heavy whipping cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "480",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

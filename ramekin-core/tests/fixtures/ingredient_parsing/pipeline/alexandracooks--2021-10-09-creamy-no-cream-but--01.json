@@ -1,0 +1,13 @@
+{
+  "raw": "1 3/4 pounds Yukon Gold potatoes, peeled and cut into 2-inch chunks (you’ll have about 1 1/2 pounds of potatoes post peeling)&nbsp;",
+  "expected": {
+    "item": "Yukon Gold potatoes",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": "peeled and cut into 2-inch chunks (you’ll have about 1 1/2 pounds of potatoes post peeling)"
+  }
+}

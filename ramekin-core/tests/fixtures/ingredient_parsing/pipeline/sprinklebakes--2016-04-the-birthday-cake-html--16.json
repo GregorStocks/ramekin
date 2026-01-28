@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces 225 semisweet chocolate, melted and cooled",
+  "expected": {
+    "item": "225 semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "melted and cooled"
+  }
+}

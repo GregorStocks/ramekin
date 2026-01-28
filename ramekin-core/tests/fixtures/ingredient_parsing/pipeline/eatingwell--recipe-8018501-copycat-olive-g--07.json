@@ -1,0 +1,13 @@
+{
+  "raw": "0.75 cup matchstick carrots",
+  "expected": {
+    "item": "matchstick carrots",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounces whole milk ricotta cheese",
+  "expected": {
+    "item": "whole milk ricotta cheese",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

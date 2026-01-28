@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp full-fat milk",
+  "expected": {
+    "item": "full-fat milk",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

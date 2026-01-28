@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb paneer cut into 1in cubes",
+  "expected": {
+    "item": "paneer cut into 1in cubes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

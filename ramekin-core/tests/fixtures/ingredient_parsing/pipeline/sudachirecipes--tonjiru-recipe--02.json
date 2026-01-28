@@ -1,0 +1,13 @@
+{
+  "raw": "350 g daikon radish (peeled, thickly sliced and quartered)",
+  "expected": {
+    "item": "daikon radish",
+    "measurements": [
+      {
+        "amount": "350",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled, thickly sliced and quartered"
+  }
+}

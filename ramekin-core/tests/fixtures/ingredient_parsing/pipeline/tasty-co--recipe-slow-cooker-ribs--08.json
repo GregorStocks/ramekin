@@ -1,0 +1,13 @@
+{
+  "raw": "3 lb baby back pork rib",
+  "expected": {
+    "item": "baby back pork rib",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

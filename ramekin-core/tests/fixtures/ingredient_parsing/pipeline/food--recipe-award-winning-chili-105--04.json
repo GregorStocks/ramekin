@@ -1,0 +1,13 @@
+{
+  "raw": "1   tablespoon    jalapeno, finely chopped",
+  "expected": {
+    "item": "jalapeno",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

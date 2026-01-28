@@ -1,0 +1,13 @@
+{
+  "raw": "16 cups spinach leaves",
+  "expected": {
+    "item": "spinach leaves",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

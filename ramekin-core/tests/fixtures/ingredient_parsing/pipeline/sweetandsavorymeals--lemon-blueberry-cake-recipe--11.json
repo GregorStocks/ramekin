@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups blueberries (fresh or frozen - if frozen do NOT Thaw)",
+  "expected": {
+    "item": "blueberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "fresh or frozen - if frozen do NOT Thaw"
+  }
+}

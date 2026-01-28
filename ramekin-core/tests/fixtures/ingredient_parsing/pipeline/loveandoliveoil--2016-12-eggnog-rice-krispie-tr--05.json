@@ -1,0 +1,17 @@
+{
+  "raw": "8 cups (16 oz) mini marshmallows, divided",
+  "expected": {
+    "item": "mini marshmallows",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      },
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": "divided"
+  }
+}

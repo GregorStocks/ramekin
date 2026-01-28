@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups shredded Fontina cheese (10 ounces)",
+  "expected": {
+    "item": "shredded Fontina cheese",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

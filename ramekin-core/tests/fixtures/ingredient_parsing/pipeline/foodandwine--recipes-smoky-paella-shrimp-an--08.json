@@ -1,0 +1,13 @@
+{
+  "raw": "1 small pinch of saffron, crumbled",
+  "expected": {
+    "item": "pinch of saffron",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

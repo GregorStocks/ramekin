@@ -1,0 +1,13 @@
+{
+  "raw": "1 ounce chile paste",
+  "expected": {
+    "item": "chile paste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 3/4 sticks (7 oz) unsalted butter, at room temperature",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 3/4",
+        "unit": "sticks"
+      },
+      {
+        "amount": "7",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

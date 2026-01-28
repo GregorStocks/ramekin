@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (4 tablespoons) whiskey",
+  "expected": {
+    "item": "whiskey",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

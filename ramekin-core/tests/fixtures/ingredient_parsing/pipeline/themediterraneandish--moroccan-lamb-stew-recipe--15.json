@@ -1,0 +1,13 @@
+{
+  "raw": "2 ½ cups low-sodium beef broth",
+  "expected": {
+    "item": "low-sodium beef broth",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

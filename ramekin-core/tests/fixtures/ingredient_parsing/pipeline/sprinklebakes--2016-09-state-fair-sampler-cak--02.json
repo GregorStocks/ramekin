@@ -1,0 +1,13 @@
+{
+  "raw": "4 tablespoons 57g unsalted butter, softened",
+  "expected": {
+    "item": "57g unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "softened"
+  }
+}

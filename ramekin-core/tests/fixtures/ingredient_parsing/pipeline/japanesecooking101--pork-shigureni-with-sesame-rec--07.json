@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp Mirin",
+  "expected": {
+    "item": "Mirin",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

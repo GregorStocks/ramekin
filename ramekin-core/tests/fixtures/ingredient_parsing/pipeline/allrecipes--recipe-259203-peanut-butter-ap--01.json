@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups peeled and sliced apples",
+  "expected": {
+    "item": "peeled and sliced apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

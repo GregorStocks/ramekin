@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb fettuccine, cooked",
+  "expected": {
+    "item": "fettuccine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cooked"
+  }
+}

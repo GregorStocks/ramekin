@@ -1,0 +1,13 @@
+{
+  "raw": "15 grams garlic ((2 very large cloves, finely chopped))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "grams"
+      }
+    ],
+    "note": "2 very large cloves, finely chopped"
+  }
+}

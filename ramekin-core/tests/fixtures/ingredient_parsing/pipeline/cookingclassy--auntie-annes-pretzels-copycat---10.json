@@ -1,0 +1,17 @@
+{
+  "raw": "6 Tbsp (56g) butter (, melted)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
+      }
+    ],
+    "note": ", melted"
+  }
+}

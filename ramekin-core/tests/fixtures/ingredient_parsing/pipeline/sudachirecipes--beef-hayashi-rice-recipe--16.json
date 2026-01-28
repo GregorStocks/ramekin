@@ -1,0 +1,13 @@
+{
+  "raw": "½ tsp instant coffee powder",
+  "expected": {
+    "item": "instant coffee powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

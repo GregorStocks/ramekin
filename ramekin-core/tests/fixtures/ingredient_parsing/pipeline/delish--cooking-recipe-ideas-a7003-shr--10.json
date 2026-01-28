@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. ketchup",
+  "expected": {
+    "item": "ketchup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

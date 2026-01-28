@@ -1,0 +1,13 @@
+{
+  "raw": "900 grams chicken wings ((wingtips and drumlets))",
+  "expected": {
+    "item": "chicken wings (wingtips and drumlets)",
+    "measurements": [
+      {
+        "amount": "900",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

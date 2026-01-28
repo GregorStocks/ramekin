@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 cup panko breadcrumbs (about 1 1/4 ounces; 40g)&nbsp;",
+  "expected": {
+    "item": "panko breadcrumbs",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "40",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

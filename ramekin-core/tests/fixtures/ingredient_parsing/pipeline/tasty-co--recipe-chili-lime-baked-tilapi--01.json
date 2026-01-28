@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb tilapia fillet",
+  "expected": {
+    "item": "tilapia fillet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

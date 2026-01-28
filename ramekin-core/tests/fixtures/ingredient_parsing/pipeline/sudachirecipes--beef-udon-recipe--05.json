@@ -1,0 +1,13 @@
+{
+  "raw": "½ tsp light brown sugar",
+  "expected": {
+    "item": "light brown sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "12 oz. (about 2 cups/340 g) Parmesan rinds",
+  "expected": {
+    "item": "Parmesan rinds",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

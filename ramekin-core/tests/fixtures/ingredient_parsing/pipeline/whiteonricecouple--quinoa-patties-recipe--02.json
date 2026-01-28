@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 medium  onion (, finely minced (@ 1 cup) (the smaller the mince is, the easier it will be to mold the patties))",
+  "expected": {
+    "item": "onion (the smaller the mince is, the easier it will be to mold the patties)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": ", finely minced (@ 1 cup"
+  }
+}

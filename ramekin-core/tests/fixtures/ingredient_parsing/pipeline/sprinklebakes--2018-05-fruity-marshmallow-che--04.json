@@ -1,0 +1,17 @@
+{
+  "raw": "1  package (.25 oz./3 teaspoons powdered gelatin)",
+  "expected": {
+    "item": "1  package (.25 oz./3 teaspoons powdered gelatin)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": ".25",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

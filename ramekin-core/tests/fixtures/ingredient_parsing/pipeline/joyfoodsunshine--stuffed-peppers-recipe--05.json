@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup yellow onion (finely diced (about half of a medium onion))",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "finely diced (about half of a medium onion"
+  }
+}

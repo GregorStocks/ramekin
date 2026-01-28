@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 lb Sweet Peas (, Asparagus, Cucumbers&nbsp;or other Vegetables, well cleaned)",
+  "expected": {
+    "item": "Sweet Peas",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": ", Asparagus, Cucumbers or other Vegetables, well cleaned"
+  }
+}

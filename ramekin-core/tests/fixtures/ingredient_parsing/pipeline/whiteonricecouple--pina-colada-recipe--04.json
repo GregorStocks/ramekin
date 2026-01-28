@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  oz fresh lime juice ( (optional))",
+  "expected": {
+    "item": "fresh lime juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "oz"
+      }
+    ],
+    "note": "(optional"
+  }
+}

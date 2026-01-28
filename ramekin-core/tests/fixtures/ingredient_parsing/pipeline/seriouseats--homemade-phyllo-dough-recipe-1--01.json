@@ -1,0 +1,21 @@
+{
+  "raw": "255 g bread flour (9 ounces; 2 cups), plus more for dusting",
+  "expected": {
+    "item": "bread flour",
+    "measurements": [
+      {
+        "amount": "255",
+        "unit": "g"
+      },
+      {
+        "amount": "9",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus more for dusting"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces walnuts, toasted",
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "toasted"
+  }
+}

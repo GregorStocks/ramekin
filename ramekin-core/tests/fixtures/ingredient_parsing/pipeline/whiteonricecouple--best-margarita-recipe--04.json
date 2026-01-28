@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 ounce Simple Syrup (, or to taste *see headnote)",
+  "expected": {
+    "item": "Simple Syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      }
+    ],
+    "note": ", or to taste *see headnote"
+  }
+}

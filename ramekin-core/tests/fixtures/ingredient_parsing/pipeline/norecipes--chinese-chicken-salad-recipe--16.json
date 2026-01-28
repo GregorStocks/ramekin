@@ -1,0 +1,13 @@
+{
+  "raw": "250 grams chicken tenders",
+  "expected": {
+    "item": "chicken tenders",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

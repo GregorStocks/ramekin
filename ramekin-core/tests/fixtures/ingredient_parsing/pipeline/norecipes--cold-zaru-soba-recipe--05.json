@@ -1,0 +1,13 @@
+{
+  "raw": "2 servings soba noodles",
+  "expected": {
+    "item": "servings soba noodles",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

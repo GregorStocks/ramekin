@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp Za&amp;#8217;atar, divided",
+  "expected": {
+    "item": "Za&#8217;atar",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "divided"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1  pkg golden oreos ((36 cookies))",
+  "expected": {
+    "item": "golden oreos",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pkg"
+      },
+      {
+        "amount": "36",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

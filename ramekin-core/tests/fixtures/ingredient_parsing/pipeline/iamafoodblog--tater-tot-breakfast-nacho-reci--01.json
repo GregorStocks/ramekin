@@ -1,0 +1,13 @@
+{
+  "raw": "1 package tater tots",
+  "expected": {
+    "item": "tater tots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

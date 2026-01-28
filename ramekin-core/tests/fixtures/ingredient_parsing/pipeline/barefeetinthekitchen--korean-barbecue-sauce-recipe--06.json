@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup mild honey",
+  "expected": {
+    "item": "mild honey",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

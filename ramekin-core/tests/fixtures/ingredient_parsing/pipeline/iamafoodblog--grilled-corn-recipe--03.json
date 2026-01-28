@@ -1,0 +1,13 @@
+{
+  "raw": "1 bunch of green onions, thinly sliced",
+  "expected": {
+    "item": "green onions",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

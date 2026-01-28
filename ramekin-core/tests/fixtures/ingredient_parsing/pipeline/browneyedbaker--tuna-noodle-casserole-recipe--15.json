@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces white mushrooms (sliced ¼-inch thick)",
+  "expected": {
+    "item": "white mushrooms",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced 1/4-inch thick"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup chocolate sprinkles, for decorating",
+  "expected": {
+    "item": "chocolate sprinkles, for decorating",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

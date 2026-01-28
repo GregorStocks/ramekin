@@ -1,0 +1,13 @@
+{
+  "raw": "6  chicken thighs (bone in, skin on, trimmed of excess fat)",
+  "expected": {
+    "item": "chicken thighs",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "bone in, skin on, trimmed of excess fat"
+  }
+}

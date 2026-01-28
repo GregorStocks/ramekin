@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup red wine (optional)",
+  "expected": {
+    "item": "red wine",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

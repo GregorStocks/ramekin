@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons ground nutmeg",
+  "expected": {
+    "item": "ground nutmeg",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

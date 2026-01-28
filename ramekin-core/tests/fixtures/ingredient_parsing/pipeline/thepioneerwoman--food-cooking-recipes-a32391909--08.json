@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz. soft blue cheese, crumbled",
+  "expected": {
+    "item": "soft blue cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds sirloin steak (about 1 inch thick)",
+  "expected": {
+    "item": "sirloin steak",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 cup (3.5 ounces) granulated sugar",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "3.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

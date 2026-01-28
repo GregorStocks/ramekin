@@ -1,0 +1,17 @@
+{
+  "raw": "1 (20-ounce) can pineapple tidbits (well-drained)",
+  "expected": {
+    "item": "pineapple tidbits",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": "well-drained"
+  }
+}

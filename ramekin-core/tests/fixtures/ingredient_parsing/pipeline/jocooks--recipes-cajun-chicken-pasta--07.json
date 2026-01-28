@@ -1,0 +1,17 @@
+{
+  "raw": "2 links smoked sausage (cut into slices, about 8 ounces)",
+  "expected": {
+    "item": "links smoked sausage",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

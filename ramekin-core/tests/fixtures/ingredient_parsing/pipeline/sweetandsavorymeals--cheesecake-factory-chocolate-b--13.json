@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces Belgian dark chocolate (melted)",
+  "expected": {
+    "item": "Belgian dark chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "melted"
+  }
+}

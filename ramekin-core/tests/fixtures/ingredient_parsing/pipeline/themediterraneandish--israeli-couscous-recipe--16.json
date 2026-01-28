@@ -1,0 +1,13 @@
+{
+  "raw": "3 oz fresh baby mozzarella (or feta cheese), optional",
+  "expected": {
+    "item": "fresh baby mozzarella (or feta cheese)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "oz"
+      }
+    ],
+    "note": "optional"
+  }
+}

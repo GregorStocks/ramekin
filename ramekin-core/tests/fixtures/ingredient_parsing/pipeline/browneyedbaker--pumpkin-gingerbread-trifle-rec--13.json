@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounce canned pumpkin",
+  "expected": {
+    "item": "canned pumpkin",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

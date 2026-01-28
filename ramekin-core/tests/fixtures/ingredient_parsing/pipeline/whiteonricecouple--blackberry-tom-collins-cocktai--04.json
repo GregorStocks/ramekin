@@ -1,0 +1,17 @@
+{
+  "raw": "2 ounces (60ml) Gin",
+  "expected": {
+    "item": "Gin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

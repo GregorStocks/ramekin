@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups rice (using 240ml cup)",
+  "expected": {
+    "item": "rice (using 240ml cup)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "7 tablespoons vegetable shortening",
+  "expected": {
+    "item": "vegetable shortening",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

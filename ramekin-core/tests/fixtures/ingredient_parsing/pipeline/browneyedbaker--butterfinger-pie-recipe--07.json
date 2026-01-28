@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces Cool Whip",
+  "expected": {
+    "item": "Cool Whip",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "9  \" wide cake pan with 2\" tall sides.",
+  "expected": {
+    "item": "\" wide cake pan with 2\" tall sides.",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

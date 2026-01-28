@@ -1,0 +1,17 @@
+{
+  "raw": "2  TCHO chocolate bars (70 grams each)",
+  "expected": {
+    "item": "TCHO chocolate bars",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "70",
+        "unit": "grams each"
+      }
+    ],
+    "note": null
+  }
+}

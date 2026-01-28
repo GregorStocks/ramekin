@@ -1,0 +1,13 @@
+{
+  "raw": "15 cups cubed watermelon",
+  "expected": {
+    "item": "cubed watermelon",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

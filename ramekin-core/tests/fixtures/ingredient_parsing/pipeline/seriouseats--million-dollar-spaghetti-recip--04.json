@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (227 g) mild Italian sausage (bulk )",
+  "expected": {
+    "item": "mild Italian sausage (bulk )",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

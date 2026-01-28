@@ -1,0 +1,17 @@
+{
+  "raw": "4 teaspoons finely minced fresh garlic&nbsp;(about 3 cloves)",
+  "expected": {
+    "item": "finely minced fresh garlic",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "3",
+        "unit": "cloves"
+      }
+    ],
+    "note": null
+  }
+}

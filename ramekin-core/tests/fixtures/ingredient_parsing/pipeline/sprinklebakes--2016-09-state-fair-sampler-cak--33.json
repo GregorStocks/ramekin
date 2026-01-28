@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup 2 tablespoons (145g all-purpose flour)",
+  "expected": {
+    "item": "2 tablespoons",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "145",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

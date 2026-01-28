@@ -1,0 +1,13 @@
+{
+  "raw": "1  large red pepper (cored and roughly chopped)",
+  "expected": {
+    "item": "red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": "cored and roughly chopped"
+  }
+}

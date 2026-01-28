@@ -1,0 +1,17 @@
+{
+  "raw": "3 cups (710 ml) whole milk, (divided)",
+  "expected": {
+    "item": "whole milk,",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      },
+      {
+        "amount": "710",
+        "unit": "ml"
+      }
+    ],
+    "note": "divided"
+  }
+}

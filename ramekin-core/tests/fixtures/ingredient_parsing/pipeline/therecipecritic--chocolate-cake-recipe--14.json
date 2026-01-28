@@ -1,0 +1,13 @@
+{
+  "raw": "4 Cups powdered sugar",
+  "expected": {
+    "item": "powdered sugar",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

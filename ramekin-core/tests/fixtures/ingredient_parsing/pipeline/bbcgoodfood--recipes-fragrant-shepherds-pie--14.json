@@ -1,0 +1,13 @@
+{
+  "raw": "large bunch coriander leaves only, roughly chopped",
+  "expected": {
+    "item": "bunch coriander leaves only",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "large"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

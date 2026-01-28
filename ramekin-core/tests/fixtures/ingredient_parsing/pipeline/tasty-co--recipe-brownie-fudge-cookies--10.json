@@ -1,0 +1,13 @@
+{
+  "raw": "⅔ cup white chocolate chip",
+  "expected": {
+    "item": "white chocolate chip",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

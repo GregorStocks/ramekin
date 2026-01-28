@@ -1,0 +1,13 @@
+{
+  "raw": "200g chopped cooked chicken",
+  "expected": {
+    "item": "chopped cooked chicken",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 large flour tortillas",
+  "expected": {
+    "item": "flour tortillas",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

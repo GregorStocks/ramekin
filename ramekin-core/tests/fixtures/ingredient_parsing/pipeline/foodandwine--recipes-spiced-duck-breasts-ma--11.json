@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup fresh flat-leaf parsley, coarsely chopped",
+  "expected": {
+    "item": "fresh flat-leaf parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped"
+  }
+}

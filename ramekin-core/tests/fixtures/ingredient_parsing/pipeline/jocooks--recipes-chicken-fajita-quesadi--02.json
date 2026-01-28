@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons fajita seasoning",
+  "expected": {
+    "item": "fajita seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

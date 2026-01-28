@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds collard greens, stemmed and torn (about 32 loosely packed cups)",
+  "expected": {
+    "item": "collard greens, stemmed and torn",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "about 32 loosely packed cups"
+  }
+}

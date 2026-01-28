@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (28 ounces) frozen steak fries",
+  "expected": {
+    "item": "frozen steak fries",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "28",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

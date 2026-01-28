@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces green chilies (undrained)",
+  "expected": {
+    "item": "green chilies",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "undrained"
+  }
+}

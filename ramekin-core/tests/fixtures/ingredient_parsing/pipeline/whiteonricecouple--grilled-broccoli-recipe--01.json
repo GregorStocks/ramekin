@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound broccoli (, cut into thick slices)",
+  "expected": {
+    "item": "broccoli (, cut into thick slices)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

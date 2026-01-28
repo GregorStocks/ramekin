@@ -1,0 +1,17 @@
+{
+  "raw": "Handful of chopped chives (about 1/4 cup)",
+  "expected": {
+    "item": "chopped chives",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      },
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

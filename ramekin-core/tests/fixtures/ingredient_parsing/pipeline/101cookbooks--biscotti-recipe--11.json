@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon crushed chamomile (optional)",
+  "expected": {
+    "item": "crushed chamomile",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

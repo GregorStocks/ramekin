@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups uncooked sushi rice",
+  "expected": {
+    "item": "uncooked sushi rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

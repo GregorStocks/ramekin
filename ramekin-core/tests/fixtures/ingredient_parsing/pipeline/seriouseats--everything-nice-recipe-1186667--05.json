@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces (175ml) hot black coffee",
+  "expected": {
+    "item": "hot black coffee",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "175",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

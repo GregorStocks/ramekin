@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lbs granny smith apples (peeled, sliced in half, cored and stemed)",
+  "expected": {
+    "item": "granny smith apples",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled, sliced in half, cored and stemed"
+  }
+}

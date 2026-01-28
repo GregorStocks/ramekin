@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups shredded zucchini (drained and water squeezed out)",
+  "expected": {
+    "item": "shredded zucchini",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "drained and water squeezed out"
+  }
+}

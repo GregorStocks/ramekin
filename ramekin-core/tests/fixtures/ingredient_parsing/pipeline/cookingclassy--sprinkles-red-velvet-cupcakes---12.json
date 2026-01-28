@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup salted butter (, firm but not cold (if using unsalted add 1/8 tsp salt))",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": ", firm but not cold (if using unsalted add 1/8 tsp salt"
+  }
+}

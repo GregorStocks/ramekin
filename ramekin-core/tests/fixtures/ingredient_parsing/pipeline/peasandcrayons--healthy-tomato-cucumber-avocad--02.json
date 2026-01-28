@@ -1,0 +1,13 @@
+{
+  "raw": "1.5 cups cherry tomatoes ((quartered))",
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1.5",
+        "unit": "cups"
+      }
+    ],
+    "note": "quartered"
+  }
+}

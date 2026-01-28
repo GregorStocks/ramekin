@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons corn starch (+ ¼ cup water or soy sauce, see note)",
+  "expected": {
+    "item": "corn starch (+ 1/4 cup water or soy sauce, see note)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

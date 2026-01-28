@@ -1,0 +1,13 @@
+{
+  "raw": "300g vegetable stock",
+  "expected": {
+    "item": "vegetable stock",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

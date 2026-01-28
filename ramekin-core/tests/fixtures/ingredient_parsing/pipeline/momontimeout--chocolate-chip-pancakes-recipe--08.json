@@ -1,0 +1,13 @@
+{
+  "raw": "4 tbsp butter (margarine, or coconut oil, melted)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "margarine, or coconut oil, melted"
+  }
+}

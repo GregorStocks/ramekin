@@ -1,0 +1,13 @@
+{
+  "raw": "5 tablespoon all-purpose flour",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

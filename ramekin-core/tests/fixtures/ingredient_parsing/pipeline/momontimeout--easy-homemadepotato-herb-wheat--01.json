@@ -1,0 +1,17 @@
+{
+  "raw": "2 1/4 tsp active dry yeast  (1 packet)",
+  "expected": {
+    "item": "active dry yeast",
+    "measurements": [
+      {
+        "amount": "2 1/4",
+        "unit": "tsp"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon flaxseed",
+  "expected": {
+    "item": "flaxseed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

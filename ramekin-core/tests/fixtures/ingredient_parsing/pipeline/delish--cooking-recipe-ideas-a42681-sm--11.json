@@ -1,0 +1,13 @@
+{
+  "raw": "2 Hershey's chocolate bars, broken into squares",
+  "expected": {
+    "item": "Hershey's chocolate bars, broken into squares",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

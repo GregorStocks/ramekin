@@ -1,0 +1,13 @@
+{
+  "raw": "3  handfuls tortilla chips",
+  "expected": {
+    "item": "tortilla chips",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "handfuls"
+      }
+    ],
+    "note": null
+  }
+}

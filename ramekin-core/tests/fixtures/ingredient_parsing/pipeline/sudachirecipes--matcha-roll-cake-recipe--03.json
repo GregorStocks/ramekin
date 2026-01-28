@@ -1,0 +1,13 @@
+{
+  "raw": "20 ml cooking oil (neutral flavor like canola etc.)",
+  "expected": {
+    "item": "cooking oil (neutral flavor like canola etc.)",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

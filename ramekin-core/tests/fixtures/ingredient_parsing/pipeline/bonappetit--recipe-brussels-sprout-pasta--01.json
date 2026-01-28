@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb. brussels sprouts",
+  "expected": {
+    "item": "brussels sprouts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

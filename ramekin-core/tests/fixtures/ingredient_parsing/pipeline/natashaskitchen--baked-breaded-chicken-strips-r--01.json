@@ -1,0 +1,17 @@
+{
+  "raw": "2 lbs chicken breast (about 3 large chicken breasts)",
+  "expected": {
+    "item": "chicken breast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

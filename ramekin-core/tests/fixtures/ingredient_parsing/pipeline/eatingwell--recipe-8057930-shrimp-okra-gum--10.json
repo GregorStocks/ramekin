@@ -1,0 +1,13 @@
+{
+  "raw": "5.5 cups low-sodium chicken, vegetable or seafood broth or stock",
+  "expected": {
+    "item": "low-sodium chicken, vegetable or seafood broth or stock",
+    "measurements": [
+      {
+        "amount": "5.5",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

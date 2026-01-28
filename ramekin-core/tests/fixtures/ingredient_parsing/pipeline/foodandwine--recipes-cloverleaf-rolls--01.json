@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium baking potato ( 1/2 pound), peeled and cut into 1-inch dice",
+  "expected": {
+    "item": "baking potato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and cut into 1-inch dice"
+  }
+}

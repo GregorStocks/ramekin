@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup yellow mustard",
+  "expected": {
+    "item": "yellow mustard",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

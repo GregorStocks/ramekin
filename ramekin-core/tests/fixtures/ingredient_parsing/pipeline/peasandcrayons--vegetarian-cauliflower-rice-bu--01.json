@@ -1,0 +1,13 @@
+{
+  "raw": "2 TBSP avocado oil (or olive oil (divided))",
+  "expected": {
+    "item": "avocado oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or olive oil (divided"
+  }
+}

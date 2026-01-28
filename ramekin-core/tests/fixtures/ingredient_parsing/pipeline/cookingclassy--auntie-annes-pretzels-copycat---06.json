@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp fine salt",
+  "expected": {
+    "item": "fine salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

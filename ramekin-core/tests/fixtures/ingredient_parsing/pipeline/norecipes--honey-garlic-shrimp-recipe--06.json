@@ -1,0 +1,17 @@
+{
+  "raw": "300 grams shrimp ((15 jumbo))",
+  "expected": {
+    "item": "shrimp",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "grams"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

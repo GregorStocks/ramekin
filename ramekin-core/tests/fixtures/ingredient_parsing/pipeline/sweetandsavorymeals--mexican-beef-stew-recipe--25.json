@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound mini red potatoes (peeled and cut into halves)",
+  "expected": {
+    "item": "mini red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and cut into halves"
+  }
+}

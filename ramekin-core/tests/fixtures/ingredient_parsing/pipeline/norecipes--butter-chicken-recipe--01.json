@@ -1,0 +1,13 @@
+{
+  "raw": "30 grams garlic ((~ 5 large cloves, peeled))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": "~ 5 large cloves, peeled"
+  }
+}

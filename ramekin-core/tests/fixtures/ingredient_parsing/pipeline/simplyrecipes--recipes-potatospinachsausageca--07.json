@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons unsalted butter, plus extra to grease the baking dish",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus extra to grease the baking dish"
+  }
+}

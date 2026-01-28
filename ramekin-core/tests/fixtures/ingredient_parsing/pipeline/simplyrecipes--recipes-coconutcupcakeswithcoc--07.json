@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup of canned coconut milk (full fat is best)",
+  "expected": {
+    "item": "canned coconut milk (full fat is best)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

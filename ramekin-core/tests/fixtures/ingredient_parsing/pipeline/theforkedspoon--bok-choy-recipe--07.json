@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon crushed red pepper (optional)",
+  "expected": {
+    "item": "crushed red pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

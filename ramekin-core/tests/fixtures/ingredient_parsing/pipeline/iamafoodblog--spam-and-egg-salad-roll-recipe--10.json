@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon light soy sauce",
+  "expected": {
+    "item": "light soy sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

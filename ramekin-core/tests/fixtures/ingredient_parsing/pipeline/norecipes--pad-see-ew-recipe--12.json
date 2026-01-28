@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 teaspoon ground white pepper",
+  "expected": {
+    "item": "ground white pepper",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

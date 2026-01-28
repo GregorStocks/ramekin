@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 pounds chopped cabbage",
+  "expected": {
+    "item": "chopped cabbage",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups potatoes (peel &amp;amp; cube to ¾ inch (2 large) (or sweet potatoes))",
+  "expected": {
+    "item": "potatoes (or sweet potatoes)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": null,
+        "unit": "cube"
+      }
+    ],
+    "note": null
+  }
+}

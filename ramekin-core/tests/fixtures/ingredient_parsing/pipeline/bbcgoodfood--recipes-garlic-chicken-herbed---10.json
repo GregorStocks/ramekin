@@ -1,0 +1,13 @@
+{
+  "raw": "1kg salad potatoes such as Charlotte or Nicola",
+  "expected": {
+    "item": "salad potatoes such as Charlotte or Nicola",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "kg"
+      }
+    ],
+    "note": null
+  }
+}

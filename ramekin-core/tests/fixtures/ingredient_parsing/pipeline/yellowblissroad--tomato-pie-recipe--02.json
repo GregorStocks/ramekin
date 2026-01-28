@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 pounds tomatoes (sliced ¼ to ½-inch thick)",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      }
+    ],
+    "note": "sliced 1/4 to 1/2-inch thick"
+  }
+}

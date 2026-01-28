@@ -1,0 +1,13 @@
+{
+  "raw": "2  small red bell peppers (cored and sliced)",
+  "expected": {
+    "item": "red bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "cored and sliced"
+  }
+}

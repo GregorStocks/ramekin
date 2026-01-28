@@ -1,0 +1,13 @@
+{
+  "raw": "6 tbsp cold butter (cubed)",
+  "expected": {
+    "item": "cold butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "cubed"
+  }
+}

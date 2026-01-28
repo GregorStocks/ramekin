@@ -1,0 +1,17 @@
+{
+  "raw": ".5 cup all-purpose flour (about 2 1/8 ounces)",
+  "expected": {
+    "item": "all-purpose flour",
+    "measurements": [
+      {
+        "amount": ".5",
+        "unit": "cup"
+      },
+      {
+        "amount": "2 1/8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

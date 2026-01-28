@@ -1,0 +1,17 @@
+{
+  "raw": "5 fully cooked bratwurst links (about 1-1/4 pounds), chopped",
+  "expected": {
+    "item": "fully cooked bratwurst links",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      },
+      {
+        "amount": "1-1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": "chopped"
+  }
+}

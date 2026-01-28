@@ -1,0 +1,17 @@
+{
+  "raw": "3 pounds russet potatoes (about 5 large)",
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      },
+      {
+        "amount": "5",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

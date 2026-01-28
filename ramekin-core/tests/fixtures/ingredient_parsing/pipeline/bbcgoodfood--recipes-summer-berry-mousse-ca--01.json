@@ -1,0 +1,13 @@
+{
+  "raw": "200g digestive biscuit",
+  "expected": {
+    "item": "digestive biscuit",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

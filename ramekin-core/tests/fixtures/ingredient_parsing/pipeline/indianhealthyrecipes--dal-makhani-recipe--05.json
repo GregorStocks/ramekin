@@ -1,0 +1,17 @@
+{
+  "raw": "3 tablespoons (42 grams)  unsalted butter  ((cultured butter if you can))",
+  "expected": {
+    "item": "unsalted butter  (cultured butter if you can)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "42",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

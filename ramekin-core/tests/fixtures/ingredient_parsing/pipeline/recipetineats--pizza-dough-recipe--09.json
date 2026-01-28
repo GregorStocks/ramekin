@@ -1,0 +1,13 @@
+{
+  "raw": "130g / 1 1/3 cups  mozzarella cheese, freshly grated (per pizza, (Note 8))",
+  "expected": {
+    "item": "/ 1 1/3 cups  mozzarella cheese, freshly grated (per pizza, (Note 8)",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

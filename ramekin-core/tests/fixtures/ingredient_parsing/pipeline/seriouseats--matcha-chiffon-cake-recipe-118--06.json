@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (5 g) matcha powder",
+  "expected": {
+    "item": "matcha powder",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

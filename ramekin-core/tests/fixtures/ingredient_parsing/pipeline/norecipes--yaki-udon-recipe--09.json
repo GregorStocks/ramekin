@@ -1,0 +1,13 @@
+{
+  "raw": "60 grams carrot ((~1/2 carrot, julienned))",
+  "expected": {
+    "item": "carrot",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "grams"
+      }
+    ],
+    "note": "~1/2 carrot, julienned"
+  }
+}

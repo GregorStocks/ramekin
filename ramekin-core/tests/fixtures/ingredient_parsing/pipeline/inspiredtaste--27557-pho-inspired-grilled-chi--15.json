@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons Sriracha hot sauce",
+  "expected": {
+    "item": "Sriracha hot sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

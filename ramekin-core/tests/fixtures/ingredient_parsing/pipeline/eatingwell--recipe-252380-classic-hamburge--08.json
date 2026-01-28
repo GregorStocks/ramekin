@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon Worcestershire sauce or steak sauce",
+  "expected": {
+    "item": "Worcestershire sauce or steak sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

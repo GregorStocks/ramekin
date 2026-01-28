@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon lemon zest (optional or use orange zest)",
+  "expected": {
+    "item": "lemon zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional or use orange zest"
+  }
+}

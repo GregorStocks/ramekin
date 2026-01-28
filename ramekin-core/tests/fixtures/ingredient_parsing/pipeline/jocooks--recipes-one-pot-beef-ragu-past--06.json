@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon dried oregano  (or 1 tbsp fresh oregano chopped)",
+  "expected": {
+    "item": "dried oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or 1 tbsp fresh oregano chopped"
+  }
+}

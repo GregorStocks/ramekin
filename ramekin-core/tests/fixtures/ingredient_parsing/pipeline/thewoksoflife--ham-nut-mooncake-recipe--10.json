@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams walnuts ((toasted))",
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "toasted"
+  }
+}

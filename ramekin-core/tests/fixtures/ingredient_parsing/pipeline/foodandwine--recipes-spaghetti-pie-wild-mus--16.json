@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon thyme leaves",
+  "expected": {
+    "item": "thyme leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

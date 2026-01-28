@@ -1,0 +1,13 @@
+{
+  "raw": "2  thousand year-old eggs",
+  "expected": {
+    "item": "thousand year-old eggs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

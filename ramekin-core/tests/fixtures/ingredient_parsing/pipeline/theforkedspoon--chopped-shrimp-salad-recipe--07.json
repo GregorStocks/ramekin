@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound large shrimp (peeled and deveined with tail on)",
+  "expected": {
+    "item": "large shrimp",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and deveined with tail on"
+  }
+}

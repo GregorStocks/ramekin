@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. red curry paste",
+  "expected": {
+    "item": "red curry paste",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

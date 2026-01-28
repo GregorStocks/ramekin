@@ -1,0 +1,13 @@
+{
+  "raw": "1.75 lbs pork tenderloin (you can use two)",
+  "expected": {
+    "item": "pork tenderloin (you can use two)",
+    "measurements": [
+      {
+        "amount": "1.75",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

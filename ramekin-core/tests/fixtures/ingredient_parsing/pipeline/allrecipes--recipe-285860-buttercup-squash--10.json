@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 teaspoon white sugar",
+  "expected": {
+    "item": "white sugar",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

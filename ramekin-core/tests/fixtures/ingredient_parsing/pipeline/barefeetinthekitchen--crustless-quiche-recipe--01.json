@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 lb breakfast sausage or hot sausage (whichever you like best)",
+  "expected": {
+    "item": "breakfast sausage or hot sausage (whichever you like best)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

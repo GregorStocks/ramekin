@@ -1,0 +1,13 @@
+{
+  "raw": "1 large and thick slice white bread (crust removed)",
+  "expected": {
+    "item": "and thick slice white bread (crust removed)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

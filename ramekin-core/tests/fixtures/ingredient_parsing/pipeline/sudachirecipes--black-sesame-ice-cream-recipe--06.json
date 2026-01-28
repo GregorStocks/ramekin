@@ -1,0 +1,13 @@
+{
+  "raw": "¼ tsp vanilla essence",
+  "expected": {
+    "item": "vanilla essence",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

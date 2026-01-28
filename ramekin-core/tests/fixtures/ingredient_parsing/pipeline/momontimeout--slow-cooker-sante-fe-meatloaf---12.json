@@ -1,0 +1,13 @@
+{
+  "raw": "2 lbs lean ground beef",
+  "expected": {
+    "item": "lean ground beef",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

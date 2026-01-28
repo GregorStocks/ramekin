@@ -1,0 +1,13 @@
+{
+  "raw": "6 oz. sliced havarti or Swiss cheese",
+  "expected": {
+    "item": "sliced havarti or Swiss cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

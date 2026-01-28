@@ -1,0 +1,13 @@
+{
+  "raw": "2  bell peppers ((diced))",
+  "expected": {
+    "item": "bell peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

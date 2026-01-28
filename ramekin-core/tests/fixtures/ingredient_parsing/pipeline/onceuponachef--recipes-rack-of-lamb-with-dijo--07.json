@@ -1,0 +1,13 @@
+{
+  "raw": "¼ teaspoon  dried thyme (or ¾ teaspoon finely chopped fresh thyme)",
+  "expected": {
+    "item": "dried thyme",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "or 3/4 teaspoon finely chopped fresh thyme"
+  }
+}

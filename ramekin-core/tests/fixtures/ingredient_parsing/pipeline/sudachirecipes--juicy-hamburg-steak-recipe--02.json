@@ -1,0 +1,13 @@
+{
+  "raw": "½  onion (finely minced to ~5mm, 100-150g per 300g meat)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": null
+      }
+    ],
+    "note": "finely minced to ~5mm, 100-150g per 300g meat"
+  }
+}

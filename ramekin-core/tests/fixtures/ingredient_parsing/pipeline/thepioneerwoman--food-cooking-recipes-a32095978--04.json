@@ -1,0 +1,13 @@
+{
+  "raw": "6 tbsp. salted butter, at room temperature",
+  "expected": {
+    "item": "salted butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "½ pound sliced white American cheese (roughly torn or chopped into 1\" pieces)",
+  "expected": {
+    "item": "sliced white American cheese",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "roughly torn or chopped into 1\" pieces"
+  }
+}

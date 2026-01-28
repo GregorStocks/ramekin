@@ -1,0 +1,13 @@
+{
+  "raw": "130 grams canned mandarins ((drained))",
+  "expected": {
+    "item": "canned mandarins",
+    "measurements": [
+      {
+        "amount": "130",
+        "unit": "grams"
+      }
+    ],
+    "note": "drained"
+  }
+}

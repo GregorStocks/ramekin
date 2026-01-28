@@ -1,0 +1,13 @@
+{
+  "raw": "juice of 3 large   lemons (about 200ml/7fl oz)",
+  "expected": {
+    "item": "juice of 3 large   lemons",
+    "measurements": [
+      {
+        "amount": "200",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

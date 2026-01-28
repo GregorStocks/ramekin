@@ -1,0 +1,13 @@
+{
+  "raw": "4 teaspoons pepper",
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

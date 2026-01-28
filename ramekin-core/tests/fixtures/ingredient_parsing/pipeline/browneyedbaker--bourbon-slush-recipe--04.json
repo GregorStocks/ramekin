@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounce canned frozen lemonade concentrate",
+  "expected": {
+    "item": "canned frozen lemonade concentrate",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

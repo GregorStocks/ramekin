@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces Prosciutto (optional), sliced into thin ribbons",
+  "expected": {
+    "item": "Prosciutto , sliced into thin ribbons",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": "optional"
+  }
+}

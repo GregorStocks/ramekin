@@ -1,0 +1,13 @@
+{
+  "raw": "1 7- ounce pepperoni stick (sliced)",
+  "expected": {
+    "item": "7- ounce pepperoni stick",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
+  }
+}

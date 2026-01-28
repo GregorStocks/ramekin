@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups fresh pomegranate juice",
+  "expected": {
+    "item": "fresh pomegranate juice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

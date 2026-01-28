@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30 ml) fresh lime juice (from 1 lime)",
+  "expected": {
+    "item": "fresh lime juice (from 1 lime)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

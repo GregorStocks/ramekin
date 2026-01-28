@@ -1,0 +1,13 @@
+{
+  "raw": "20 oz. 1 1/4 lb. package vanilla almond bark",
+  "expected": {
+    "item": "1 1/4 lb. package vanilla almond bark",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb flank steak",
+  "expected": {
+    "item": "flank steak",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

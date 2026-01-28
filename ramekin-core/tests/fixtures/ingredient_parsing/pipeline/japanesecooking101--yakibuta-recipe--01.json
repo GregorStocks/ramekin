@@ -1,0 +1,13 @@
+{
+  "raw": "2 lb pork shoulder butt",
+  "expected": {
+    "item": "pork shoulder butt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lb"
+      }
+    ],
+    "note": null
+  }
+}

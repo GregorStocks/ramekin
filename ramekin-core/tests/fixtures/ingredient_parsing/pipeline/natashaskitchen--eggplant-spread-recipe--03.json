@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3  medium carrots (grated)",
+  "expected": {
+    "item": "carrots",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "medium"
+      }
+    ],
+    "note": "grated"
+  }
+}

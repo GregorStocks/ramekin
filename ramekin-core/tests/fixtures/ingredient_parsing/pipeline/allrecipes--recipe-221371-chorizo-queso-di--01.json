@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces bulk chorizo sausage",
+  "expected": {
+    "item": "bulk chorizo sausage",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "142g raw pecan halves (5 ounces; about 1 1/4 cups)",
+  "expected": {
+    "item": "raw pecan halves",
+    "measurements": [
+      {
+        "amount": "142",
+        "unit": "g"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

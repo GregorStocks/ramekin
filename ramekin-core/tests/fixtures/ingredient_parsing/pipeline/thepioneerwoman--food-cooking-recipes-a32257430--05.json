@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp. dried dill",
+  "expected": {
+    "item": "dried dill",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

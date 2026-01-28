@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 sticks (12 tablespoons)&nbsp;cold salted butter, cut into pieces",
+  "expected": {
+    "item": "cold salted butter, cut into pieces",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "12",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

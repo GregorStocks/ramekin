@@ -1,0 +1,17 @@
+{
+  "raw": "2 small sweet potatoes (about 1 pound), peeled and cut into 1/2-inch pieces",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "peeled and cut into 1/2-inch pieces"
+  }
+}

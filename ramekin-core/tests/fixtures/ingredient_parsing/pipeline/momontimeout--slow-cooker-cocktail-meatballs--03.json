@@ -1,0 +1,17 @@
+{
+  "raw": "12 oz chil sauce (1 bottle )",
+  "expected": {
+    "item": "chil sauce",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "1",
+        "unit": "bottle"
+      }
+    ],
+    "note": null
+  }
+}

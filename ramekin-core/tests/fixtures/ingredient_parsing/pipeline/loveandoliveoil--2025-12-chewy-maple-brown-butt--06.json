@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon maple extract",
+  "expected": {
+    "item": "maple extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

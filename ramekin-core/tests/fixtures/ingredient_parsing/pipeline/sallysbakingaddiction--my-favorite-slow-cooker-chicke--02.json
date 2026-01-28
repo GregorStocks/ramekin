@@ -1,0 +1,17 @@
+{
+  "raw": "1 (15-ounce/425g) can tomato sauce",
+  "expected": {
+    "item": "tomato sauce",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "15",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

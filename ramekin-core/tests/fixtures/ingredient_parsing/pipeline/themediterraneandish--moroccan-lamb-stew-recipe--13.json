@@ -1,0 +1,13 @@
+{
+  "raw": "½ tsp ground ginger",
+  "expected": {
+    "item": "ground ginger",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

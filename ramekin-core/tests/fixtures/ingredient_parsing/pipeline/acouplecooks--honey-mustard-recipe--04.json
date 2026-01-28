@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons BBQ sauce (optional but recommended)",
+  "expected": {
+    "item": "BBQ sauce",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "optional but recommended"
+  }
+}

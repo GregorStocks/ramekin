@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon mustard",
+  "expected": {
+    "item": "mustard",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

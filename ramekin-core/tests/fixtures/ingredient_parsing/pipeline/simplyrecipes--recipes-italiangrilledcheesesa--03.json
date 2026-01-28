@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces Genoa salami",
+  "expected": {
+    "item": "Genoa salami",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

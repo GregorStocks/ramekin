@@ -1,0 +1,13 @@
+{
+  "raw": "4 tablespoon  maple syrup, honey or other sweetener",
+  "expected": {
+    "item": "maple syrup, honey or other sweetener",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

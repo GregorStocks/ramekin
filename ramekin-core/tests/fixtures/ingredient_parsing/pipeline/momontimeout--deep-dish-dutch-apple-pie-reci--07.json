@@ -1,0 +1,13 @@
+{
+  "raw": "6 cups apple pie filling",
+  "expected": {
+    "item": "apple pie filling",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

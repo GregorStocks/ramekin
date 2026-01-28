@@ -1,0 +1,13 @@
+{
+  "raw": "14 tablespoons coconut cream",
+  "expected": {
+    "item": "coconut cream",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

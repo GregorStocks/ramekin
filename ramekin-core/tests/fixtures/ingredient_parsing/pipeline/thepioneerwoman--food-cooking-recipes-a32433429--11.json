@@ -1,0 +1,13 @@
+{
+  "raw": "1 10-ounce package cremini mushrooms, trimmed, halved if large",
+  "expected": {
+    "item": "10-ounce package cremini mushrooms, trimmed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "halved if large"
+  }
+}

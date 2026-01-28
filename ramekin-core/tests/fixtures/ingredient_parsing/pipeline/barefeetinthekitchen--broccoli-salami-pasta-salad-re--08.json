@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces salami (thinly sliced and cut into strips)",
+  "expected": {
+    "item": "salami",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thinly sliced and cut into strips"
+  }
+}

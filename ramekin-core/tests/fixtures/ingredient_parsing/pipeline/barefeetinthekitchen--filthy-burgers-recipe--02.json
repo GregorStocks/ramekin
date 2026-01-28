@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups cooked&nbsp;barbecue pulled pork (roughly chopped)",
+  "expected": {
+    "item": "cooked barbecue pulled pork",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp maple syrup",
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

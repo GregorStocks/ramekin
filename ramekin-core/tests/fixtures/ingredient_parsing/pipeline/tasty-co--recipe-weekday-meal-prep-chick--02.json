@@ -1,0 +1,13 @@
+{
+  "raw": "3 bell peppers, any color, sliced",
+  "expected": {
+    "item": "bell peppers, any color",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": "sliced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "18 oz. 500g cream cheese, at room temperature",
+  "expected": {
+    "item": "500g cream cheese",
+    "measurements": [
+      {
+        "amount": "18",
+        "unit": "oz"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces fine-quality semisweet chocolate (chips are fine, too)",
+  "expected": {
+    "item": "fine-quality semisweet chocolate (chips are fine, too)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

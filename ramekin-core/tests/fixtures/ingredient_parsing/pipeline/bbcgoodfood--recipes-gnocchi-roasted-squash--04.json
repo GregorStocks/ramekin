@@ -1,0 +1,13 @@
+{
+  "raw": "500g pack  gnocchi",
+  "expected": {
+    "item": "pack  gnocchi",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

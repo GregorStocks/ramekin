@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces vodka",
+  "expected": {
+    "item": "vodka",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

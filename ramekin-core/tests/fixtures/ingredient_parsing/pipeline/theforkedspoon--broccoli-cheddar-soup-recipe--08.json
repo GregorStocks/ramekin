@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups vegetable broth ((or chicken broth, chicken stock, or bone broth))",
+  "expected": {
+    "item": "vegetable broth (or chicken broth, chicken stock, or bone broth)",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

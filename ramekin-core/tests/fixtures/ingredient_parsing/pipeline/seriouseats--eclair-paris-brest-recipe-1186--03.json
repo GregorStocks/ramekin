@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15ml) water",
+  "expected": {
+    "item": "water",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

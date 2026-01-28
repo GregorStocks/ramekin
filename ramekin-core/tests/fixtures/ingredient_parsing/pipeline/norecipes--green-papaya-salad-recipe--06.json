@@ -1,0 +1,17 @@
+{
+  "raw": "500 grams green papaya ((~1 small ))",
+  "expected": {
+    "item": "green papaya",
+    "measurements": [
+      {
+        "amount": "500",
+        "unit": "grams"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

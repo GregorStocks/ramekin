@@ -1,0 +1,13 @@
+{
+  "raw": "250 ml pork stock (from part 1)",
+  "expected": {
+    "item": "pork stock (from part 1)",
+    "measurements": [
+      {
+        "amount": "250",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

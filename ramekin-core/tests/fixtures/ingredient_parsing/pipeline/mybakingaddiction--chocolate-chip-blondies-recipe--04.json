@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup unsalted butter (melted and cooled)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted and cooled"
+  }
+}

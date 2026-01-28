@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. pickled jalapeño peppers, chopped",
+  "expected": {
+    "item": "pickled jalapeño peppers",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": "chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb fresh mushrooms (rinsed, dried, sliced)",
+  "expected": {
+    "item": "fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "rinsed, dried, sliced"
+  }
+}

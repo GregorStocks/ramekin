@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces salad macaroni",
+  "expected": {
+    "item": "salad macaroni",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

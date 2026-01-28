@@ -1,0 +1,13 @@
+{
+  "raw": "4 allspice berries",
+  "expected": {
+    "item": "allspice berries",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

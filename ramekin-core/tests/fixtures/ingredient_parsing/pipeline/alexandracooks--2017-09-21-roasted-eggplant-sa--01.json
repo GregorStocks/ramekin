@@ -1,0 +1,17 @@
+{
+  "raw": "2 to 3&nbsp;small-ish eggplant (about 2 to 3 pounds)",
+  "expected": {
+    "item": "small-ish eggplant",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": null
+      },
+      {
+        "amount": "2 to 3",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

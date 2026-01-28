@@ -1,0 +1,13 @@
+{
+  "raw": "1  beef bouillon cube (crushed)",
+  "expected": {
+    "item": "beef bouillon cube",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "crushed"
+  }
+}

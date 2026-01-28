@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces wax beans or green beans, trimmed",
+  "expected": {
+    "item": "wax beans or green beans",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "trimmed"
+  }
+}

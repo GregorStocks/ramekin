@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 pounds (680 g) russet potatoes, peeled",
+  "expected": {
+    "item": "russet potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "680",
+        "unit": "g"
+      }
+    ],
+    "note": "peeled"
+  }
+}

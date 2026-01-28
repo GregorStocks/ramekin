@@ -1,0 +1,21 @@
+{
+  "raw": "&amp;frac12; cup&nbsp;honey (168 grams) or maple syrup (155 grams)",
+  "expected": {
+    "item": "honey or maple syrup",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "168",
+        "unit": "grams"
+      },
+      {
+        "amount": "155",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 teaspoons (7 1/2 ml) fresh lemon juice (from 1 lemon)",
+  "expected": {
+    "item": "fresh lemon juice (from 1 lemon)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "7 1/2",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

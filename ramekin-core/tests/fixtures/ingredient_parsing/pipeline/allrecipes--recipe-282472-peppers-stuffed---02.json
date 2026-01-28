@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound mild Italian pork sausage",
+  "expected": {
+    "item": "mild Italian pork sausage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

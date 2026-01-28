@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces Guittard semisweet chocolate",
+  "expected": {
+    "item": "Guittard semisweet chocolate",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

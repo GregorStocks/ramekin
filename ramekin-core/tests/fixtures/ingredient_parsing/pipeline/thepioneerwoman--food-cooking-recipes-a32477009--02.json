@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 c. olive oil, plus more for drizzling",
+  "expected": {
+    "item": "olive oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "c"
+      }
+    ],
+    "note": "plus more for drizzling"
+  }
+}

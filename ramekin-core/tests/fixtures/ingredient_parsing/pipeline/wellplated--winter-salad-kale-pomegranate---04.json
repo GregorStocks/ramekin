@@ -1,0 +1,13 @@
+{
+  "raw": "1  small pomegranate (to yield 1/2 cup&nbsp;seeds)",
+  "expected": {
+    "item": "pomegranate (to yield 1/2 cup seeds)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

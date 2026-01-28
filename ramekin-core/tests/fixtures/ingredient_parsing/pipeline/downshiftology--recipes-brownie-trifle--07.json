@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons cacao powder",
+  "expected": {
+    "item": "cacao powder",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

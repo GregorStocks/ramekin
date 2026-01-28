@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces spaghetti (uncooked)",
+  "expected": {
+    "item": "spaghetti",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "uncooked"
+  }
+}

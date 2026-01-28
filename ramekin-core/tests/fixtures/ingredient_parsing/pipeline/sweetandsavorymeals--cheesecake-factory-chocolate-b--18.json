@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup strong brewed coffee",
+  "expected": {
+    "item": "strong brewed coffee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 c. low-sodium chicken broth&nbsp;",
+  "expected": {
+    "item": "low-sodium chicken broth",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

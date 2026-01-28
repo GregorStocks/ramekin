@@ -1,0 +1,17 @@
+{
+  "raw": "2 (14.5-ounce) cans fire roasted diced  tomatoes",
+  "expected": {
+    "item": "fire roasted diced  tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "14.5",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

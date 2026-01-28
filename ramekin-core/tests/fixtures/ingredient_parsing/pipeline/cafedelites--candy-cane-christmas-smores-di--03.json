@@ -1,0 +1,13 @@
+{
+  "raw": "4  candy canes (roughly chopped)",
+  "expected": {
+    "item": "candy canes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "10 oz pkg frozen chopped spinach (thawed and well drained (squeeze it out))",
+  "expected": {
+    "item": "pkg frozen chopped spinach",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "oz"
+      }
+    ],
+    "note": "thawed and well drained (squeeze it out"
+  }
+}

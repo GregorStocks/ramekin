@@ -1,0 +1,13 @@
+{
+  "raw": "8-12 ounces grilled steak (warm or room temperature)",
+  "expected": {
+    "item": "grilled steak",
+    "measurements": [
+      {
+        "amount": "8-12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "warm or room temperature"
+  }
+}

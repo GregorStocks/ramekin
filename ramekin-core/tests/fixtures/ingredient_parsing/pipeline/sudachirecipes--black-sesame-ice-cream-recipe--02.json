@@ -1,0 +1,13 @@
+{
+  "raw": "½ tbsp freshly boiled water",
+  "expected": {
+    "item": "freshly boiled water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

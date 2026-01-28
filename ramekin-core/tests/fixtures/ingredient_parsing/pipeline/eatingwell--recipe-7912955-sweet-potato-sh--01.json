@@ -1,0 +1,17 @@
+{
+  "raw": "2 pounds sweet potatoes, peeled and chopped (6 cups)",
+  "expected": {
+    "item": "sweet potatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "6",
+        "unit": "cups"
+      }
+    ],
+    "note": "peeled and chopped"
+  }
+}

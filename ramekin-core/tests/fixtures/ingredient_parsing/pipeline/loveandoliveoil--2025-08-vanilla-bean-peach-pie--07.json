@@ -1,0 +1,13 @@
+{
+  "raw": "1  plump vanilla bean",
+  "expected": {
+    "item": "plump vanilla bean",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

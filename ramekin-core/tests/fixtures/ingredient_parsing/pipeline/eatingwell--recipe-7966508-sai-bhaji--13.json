@@ -1,0 +1,13 @@
+{
+  "raw": "0.25 cup fresh dill leaves, chopped",
+  "expected": {
+    "item": "fresh dill leaves",
+    "measurements": [
+      {
+        "amount": "0.25",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped"
+  }
+}

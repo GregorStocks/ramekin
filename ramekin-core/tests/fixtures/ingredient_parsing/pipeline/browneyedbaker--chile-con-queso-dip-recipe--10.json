@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces cheddar cheese (grated (about 3 cups))",
+  "expected": {
+    "item": "cheddar cheese",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "grated (about 3 cups"
+  }
+}

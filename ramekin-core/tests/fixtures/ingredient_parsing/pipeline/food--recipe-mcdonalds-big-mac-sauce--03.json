@@ -1,0 +1,13 @@
+{
+  "raw": "2   tablespoons    French dressing",
+  "expected": {
+    "item": "French dressing",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

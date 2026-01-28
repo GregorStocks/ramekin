@@ -1,0 +1,13 @@
+{
+  "raw": "4 lbs potatoes (peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best))",
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best"
+  }
+}

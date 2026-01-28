@@ -1,0 +1,17 @@
+{
+  "raw": "15 ounce canned diced tomatoes, drained (about 1 cup)",
+  "expected": {
+    "item": "canned diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
+  }
+}

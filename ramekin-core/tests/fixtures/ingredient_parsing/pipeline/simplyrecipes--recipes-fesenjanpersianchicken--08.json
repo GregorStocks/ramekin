@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons plus 2 teaspoons of sugar",
+  "expected": {
+    "item": "2 tablespoons plus 2 teaspoons of sugar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus 2 teaspoons of sugar"
+  }
+}

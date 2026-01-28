@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup wild rice (5 ounces)",
+  "expected": {
+    "item": "wild rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

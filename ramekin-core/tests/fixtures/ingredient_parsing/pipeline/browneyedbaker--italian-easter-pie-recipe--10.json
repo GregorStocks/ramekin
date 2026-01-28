@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces hard salami (chopped)",
+  "expected": {
+    "item": "hard salami",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

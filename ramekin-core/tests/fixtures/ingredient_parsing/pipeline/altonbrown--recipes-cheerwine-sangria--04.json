@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon cherry bitters",
+  "expected": {
+    "item": "cherry bitters",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

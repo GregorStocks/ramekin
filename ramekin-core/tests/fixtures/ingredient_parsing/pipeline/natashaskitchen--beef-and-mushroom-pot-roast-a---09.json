@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups reduced sodium vegetable or beef broth",
+  "expected": {
+    "item": "reduced sodium vegetable or beef broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

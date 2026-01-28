@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup  coconut oil, butter or ghee (melted )",
+  "expected": {
+    "item": "coconut oil, butter or ghee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
+  }
+}

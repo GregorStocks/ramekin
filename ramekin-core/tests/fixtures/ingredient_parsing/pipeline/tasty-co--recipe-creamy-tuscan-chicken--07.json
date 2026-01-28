@@ -1,0 +1,13 @@
+{
+  "raw": "1 tomato, diced",
+  "expected": {
+    "item": "tomato",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "diced"
+  }
+}

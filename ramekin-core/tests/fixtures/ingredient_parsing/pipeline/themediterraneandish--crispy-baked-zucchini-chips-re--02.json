@@ -1,0 +1,13 @@
+{
+  "raw": "4 zucchini squash, sliced into 1/8-inch rounds using a mandoline",
+  "expected": {
+    "item": "zucchini squash",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "sliced into 1/8-inch rounds using a mandoline"
+  }
+}

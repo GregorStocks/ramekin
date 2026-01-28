@@ -1,0 +1,17 @@
+{
+  "raw": "1 (14 ounce) can diced/crushed tomatoes",
+  "expected": {
+    "item": "diced/crushed tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "14",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

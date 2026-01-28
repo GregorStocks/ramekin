@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. chocolate melting wafers&nbsp;",
+  "expected": {
+    "item": "chocolate melting wafers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": null
+  }
+}

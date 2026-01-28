@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces salami, (chopped)",
+  "expected": {
+    "item": "salami,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

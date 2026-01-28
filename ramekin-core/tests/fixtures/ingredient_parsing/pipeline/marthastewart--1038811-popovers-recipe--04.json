@@ -1,0 +1,13 @@
+{
+  "raw": "1.25 teaspoons coarse salt",
+  "expected": {
+    "item": "coarse salt",
+    "measurements": [
+      {
+        "amount": "1.25",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

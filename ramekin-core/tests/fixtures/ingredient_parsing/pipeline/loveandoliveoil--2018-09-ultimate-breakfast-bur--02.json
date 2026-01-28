@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 pound fresh chorizo sausage",
+  "expected": {
+    "item": "fresh chorizo sausage",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

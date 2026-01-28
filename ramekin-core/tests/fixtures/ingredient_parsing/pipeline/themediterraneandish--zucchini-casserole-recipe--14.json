@@ -1,0 +1,13 @@
+{
+  "raw": "Generous handful chopped fresh parsley for garnish",
+  "expected": {
+    "item": "chopped fresh parsley for garnish",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "generous handful"
+      }
+    ],
+    "note": null
+  }
+}

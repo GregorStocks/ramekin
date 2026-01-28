@@ -1,0 +1,13 @@
+{
+  "raw": "10 grams mint ((leaves only))",
+  "expected": {
+    "item": "mint (leaves only)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

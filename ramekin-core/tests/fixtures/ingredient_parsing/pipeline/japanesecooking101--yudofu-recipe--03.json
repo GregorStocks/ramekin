@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz Tofu",
+  "expected": {
+    "item": "Tofu",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

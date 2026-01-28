@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (10 to 12 ounces) white baking chips, divided",
+  "expected": {
+    "item": "white baking chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "10 to 12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "divided"
+  }
+}

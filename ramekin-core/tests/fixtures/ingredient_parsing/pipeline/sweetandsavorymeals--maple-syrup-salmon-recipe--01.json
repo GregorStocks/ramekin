@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds salmon (cut into fillets)",
+  "expected": {
+    "item": "salmon (cut into fillets)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

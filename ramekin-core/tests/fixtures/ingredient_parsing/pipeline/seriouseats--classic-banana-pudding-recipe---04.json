@@ -1,0 +1,21 @@
+{
+  "raw": "60g cornstarch (2 ounces; 6 tablespoons)",
+  "expected": {
+    "item": "cornstarch",
+    "measurements": [
+      {
+        "amount": "60",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

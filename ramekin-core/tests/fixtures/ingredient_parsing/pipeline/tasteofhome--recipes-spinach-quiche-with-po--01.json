@@ -1,0 +1,17 @@
+{
+  "raw": "1 package (24 ounces) refrigerated mashed potatoes",
+  "expected": {
+    "item": "refrigerated mashed potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

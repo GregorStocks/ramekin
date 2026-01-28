@@ -1,0 +1,13 @@
+{
+  "raw": "5 oz. baby arugula, baby spinach, or spring greens",
+  "expected": {
+    "item": "baby arugula, baby spinach, or spring greens",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

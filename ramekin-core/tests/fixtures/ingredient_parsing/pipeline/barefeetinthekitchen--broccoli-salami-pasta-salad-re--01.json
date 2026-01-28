@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces small bite-size pasta",
+  "expected": {
+    "item": "small bite-size pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

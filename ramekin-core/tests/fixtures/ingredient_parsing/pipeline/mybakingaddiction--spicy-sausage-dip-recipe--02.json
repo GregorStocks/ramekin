@@ -1,0 +1,13 @@
+{
+  "raw": "1  10 ounce can diced tomatoes with mild green chilies, undrained",
+  "expected": {
+    "item": "10 ounce can diced tomatoes with mild green chilies",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "undrained"
+  }
+}

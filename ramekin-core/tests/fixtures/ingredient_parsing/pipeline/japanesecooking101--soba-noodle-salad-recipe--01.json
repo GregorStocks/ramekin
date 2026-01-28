@@ -1,0 +1,13 @@
+{
+  "raw": "9 oz. dried Soba noodles",
+  "expected": {
+    "item": "dried Soba noodles",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

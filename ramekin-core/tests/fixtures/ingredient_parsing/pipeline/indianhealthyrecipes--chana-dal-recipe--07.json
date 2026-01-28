@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon garlic  (minced/ grated (11 grams from 4 to 5 medium cloves))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "minced/ grated (11 grams from 4 to 5 medium cloves"
+  }
+}

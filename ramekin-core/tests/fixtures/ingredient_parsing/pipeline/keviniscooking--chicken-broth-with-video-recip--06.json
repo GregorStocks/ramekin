@@ -1,0 +1,13 @@
+{
+  "raw": "20  black peppercorns",
+  "expected": {
+    "item": "black peppercorns",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

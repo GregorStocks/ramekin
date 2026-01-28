@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces pepperoni",
+  "expected": {
+    "item": "pepperoni",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

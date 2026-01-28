@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds spicy ground pork",
+  "expected": {
+    "item": "spicy ground pork",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

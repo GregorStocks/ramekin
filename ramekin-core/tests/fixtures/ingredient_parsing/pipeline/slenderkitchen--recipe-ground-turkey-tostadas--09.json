@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz canned refried beans",
+  "expected": {
+    "item": "canned refried beans",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

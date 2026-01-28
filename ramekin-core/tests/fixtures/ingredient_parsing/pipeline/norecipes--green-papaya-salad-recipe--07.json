@@ -1,0 +1,17 @@
+{
+  "raw": "150 grams tomatoes ((~2 small cut into bite-size pieces))",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "grams"
+      },
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

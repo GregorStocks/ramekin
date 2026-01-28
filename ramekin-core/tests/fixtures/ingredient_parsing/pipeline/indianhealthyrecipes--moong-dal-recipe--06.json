@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon ginger  ((peeled &amp;amp; fine chopped))",
+  "expected": {
+    "item": "ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "peeled &amp; fine chopped"
+  }
+}

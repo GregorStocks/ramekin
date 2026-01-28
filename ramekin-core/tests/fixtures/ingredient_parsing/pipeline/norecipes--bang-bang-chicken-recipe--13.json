@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon ground Sichuan pepper",
+  "expected": {
+    "item": "ground Sichuan pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

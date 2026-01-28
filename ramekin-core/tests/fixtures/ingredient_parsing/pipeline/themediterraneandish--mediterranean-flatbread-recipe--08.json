@@ -1,0 +1,13 @@
+{
+  "raw": "Scant 1 pint/400 g&nbsp; cherry tomatoes, halved",
+  "expected": {
+    "item": "pint/400 g  cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant"
+      }
+    ],
+    "note": "halved"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup maraschino cherry juice",
+  "expected": {
+    "item": "maraschino cherry juice",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

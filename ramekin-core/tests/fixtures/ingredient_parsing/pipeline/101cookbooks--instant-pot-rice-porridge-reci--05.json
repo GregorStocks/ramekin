@@ -1,0 +1,13 @@
+{
+  "raw": "1/4  pound+ chopped spinach",
+  "expected": {
+    "item": "pound+ chopped spinach",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

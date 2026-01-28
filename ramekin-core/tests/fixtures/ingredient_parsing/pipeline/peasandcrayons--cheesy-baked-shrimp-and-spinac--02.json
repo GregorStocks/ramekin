@@ -1,0 +1,13 @@
+{
+  "raw": "9 oz frozen creamed spinach (thawed)",
+  "expected": {
+    "item": "frozen creamed spinach",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "oz"
+      }
+    ],
+    "note": "thawed"
+  }
+}

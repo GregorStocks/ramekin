@@ -1,0 +1,13 @@
+{
+  "raw": "280 grams ground pork",
+  "expected": {
+    "item": "ground pork",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

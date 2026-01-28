@@ -1,0 +1,25 @@
+{
+  "raw": "1 &amp;amp; 1/2  cups (340g) overripe mashed bananas ((about 3 large or 4 medium))",
+  "expected": {
+    "item": "&amp; 1/2  cups overripe mashed bananas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "340",
+        "unit": "g"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      },
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

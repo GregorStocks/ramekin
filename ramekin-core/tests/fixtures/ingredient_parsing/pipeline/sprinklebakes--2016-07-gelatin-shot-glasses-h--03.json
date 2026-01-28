@@ -1,0 +1,17 @@
+{
+  "raw": "7  packets (.25 ounces each unflavored powdered gelatin)",
+  "expected": {
+    "item": "packets",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": null
+      },
+      {
+        "amount": ".25",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

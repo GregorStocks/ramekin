@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium red onions (quartered)",
+  "expected": {
+    "item": "red onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "quartered"
+  }
+}

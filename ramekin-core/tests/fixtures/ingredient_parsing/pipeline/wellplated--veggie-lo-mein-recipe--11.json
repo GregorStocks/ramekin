@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups sugar snap peas",
+  "expected": {
+    "item": "sugar snap peas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2  deep dish 9” pie shells",
+  "expected": {
+    "item": "deep dish 9” pie shells",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

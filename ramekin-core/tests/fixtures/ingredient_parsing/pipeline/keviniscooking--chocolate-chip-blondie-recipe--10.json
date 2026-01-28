@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup walnuts (coarsely chopped (optional))",
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "coarsely chopped (optional"
+  }
+}

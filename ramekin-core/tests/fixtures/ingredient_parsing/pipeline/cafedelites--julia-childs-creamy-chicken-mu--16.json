@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 cups broccoli (extra addition, cut into florets and steamed - optional)",
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "cups"
+      }
+    ],
+    "note": "extra addition, cut into florets and steamed - optional"
+  }
+}

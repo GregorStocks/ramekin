@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon fresh mint leaves (, thinly sliced (optional))",
+  "expected": {
+    "item": "fresh mint leaves",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": ", thinly sliced (optional"
+  }
+}

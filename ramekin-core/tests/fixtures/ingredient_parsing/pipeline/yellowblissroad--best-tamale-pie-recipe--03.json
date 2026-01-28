@@ -1,0 +1,13 @@
+{
+  "raw": "15 ounce can diced tomatoes (drained (or 15 oz can tomato sauce))",
+  "expected": {
+    "item": "can diced tomatoes",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained (or 15 oz can tomato sauce"
+  }
+}

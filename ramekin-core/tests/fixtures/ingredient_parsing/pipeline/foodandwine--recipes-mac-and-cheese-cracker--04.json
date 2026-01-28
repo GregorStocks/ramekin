@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound aged extra-sharp cheddar, preferably Tillamook, shredded",
+  "expected": {
+    "item": "aged extra-sharp cheddar, preferably Tillamook",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "shredded"
+  }
+}

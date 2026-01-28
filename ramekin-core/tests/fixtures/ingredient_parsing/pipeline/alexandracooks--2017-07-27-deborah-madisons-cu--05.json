@@ -1,0 +1,13 @@
+{
+  "raw": "1&nbsp;teaspoon coriander seeds or ground coriander",
+  "expected": {
+    "item": "coriander seeds or ground coriander",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

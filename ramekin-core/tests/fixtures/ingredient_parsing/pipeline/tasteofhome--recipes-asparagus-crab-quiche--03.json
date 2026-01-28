@@ -1,0 +1,17 @@
+{
+  "raw": "1 can (6 ounces) crabmeat, drained and flaked",
+  "expected": {
+    "item": "crabmeat",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": "drained and flaked"
+  }
+}

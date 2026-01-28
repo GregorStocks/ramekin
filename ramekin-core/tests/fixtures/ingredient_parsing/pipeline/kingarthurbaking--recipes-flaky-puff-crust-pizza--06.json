@@ -1,0 +1,21 @@
+{
+  "raw": "3/4 cup (170g) water, lukewarm (98°F to 110°F)",
+  "expected": {
+    "item": "water, lukewarm",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "170",
+        "unit": "g"
+      },
+      {
+        "amount": "98",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

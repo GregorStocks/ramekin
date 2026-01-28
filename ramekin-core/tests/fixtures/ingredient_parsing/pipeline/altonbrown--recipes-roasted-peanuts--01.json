@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds raw peanuts in their shells",
+  "expected": {
+    "item": "raw peanuts in their shells",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

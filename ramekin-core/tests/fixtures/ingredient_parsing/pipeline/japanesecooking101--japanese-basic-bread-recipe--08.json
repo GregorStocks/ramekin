@@ -1,0 +1,13 @@
+{
+  "raw": "30 g butter (room temperature)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": "room temperature"
+  }
+}

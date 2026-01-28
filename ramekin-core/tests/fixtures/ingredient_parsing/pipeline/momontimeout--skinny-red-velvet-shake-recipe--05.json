@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz light cream cheese (softened)",
+  "expected": {
+    "item": "light cream cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": "softened"
+  }
+}

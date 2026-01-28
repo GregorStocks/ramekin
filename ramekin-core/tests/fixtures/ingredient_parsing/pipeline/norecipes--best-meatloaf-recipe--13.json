@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon pimentón ((smoked paprika))",
+  "expected": {
+    "item": "pimentón (smoked paprika)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

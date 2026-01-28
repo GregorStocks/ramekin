@@ -1,0 +1,17 @@
+{
+  "raw": "6 ounces mild to medium cheddar cheese, grated (2 cups)*",
+  "expected": {
+    "item": "mild to medium cheddar cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "grated *"
+  }
+}

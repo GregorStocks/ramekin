@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup nonfat or whole milk vanilla yogurt",
+  "expected": {
+    "item": "nonfat or whole milk vanilla yogurt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

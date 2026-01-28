@@ -1,0 +1,13 @@
+{
+  "raw": "1  package tofu (cut 1\" width)",
+  "expected": {
+    "item": "tofu (cut 1\" width)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      }
+    ],
+    "note": null
+  }
+}

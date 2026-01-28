@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon dried minced onion, or to taste",
+  "expected": {
+    "item": "dried minced onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

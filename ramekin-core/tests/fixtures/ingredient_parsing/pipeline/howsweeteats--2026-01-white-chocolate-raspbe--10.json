@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup mini white chocolate chips",
+  "expected": {
+    "item": "mini white chocolate chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

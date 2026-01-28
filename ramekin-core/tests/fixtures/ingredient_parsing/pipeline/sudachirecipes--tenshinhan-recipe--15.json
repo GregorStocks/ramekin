@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp Japanese mayonnaise",
+  "expected": {
+    "item": "Japanese mayonnaise",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

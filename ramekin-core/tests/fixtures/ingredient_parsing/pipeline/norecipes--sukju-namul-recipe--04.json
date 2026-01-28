@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 teaspoon garlic ((finely grated))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "finely grated"
+  }
+}

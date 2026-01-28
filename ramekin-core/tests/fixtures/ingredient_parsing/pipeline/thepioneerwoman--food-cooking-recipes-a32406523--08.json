@@ -1,0 +1,13 @@
+{
+  "raw": "1 c. chicken broth, or more as needed",
+  "expected": {
+    "item": "chicken broth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "c"
+      }
+    ],
+    "note": "or more as needed"
+  }
+}

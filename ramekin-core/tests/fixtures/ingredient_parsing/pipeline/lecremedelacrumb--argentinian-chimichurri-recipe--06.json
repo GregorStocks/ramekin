@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon garlic",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

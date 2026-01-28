@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cup (180 g) of all purpose flour",
+  "expected": {
+    "item": "all purpose flour",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": "180",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

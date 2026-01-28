@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup (33 g) cornstarch ((scoop and level to measure))",
+  "expected": {
+    "item": "cornstarch (scoop and level to measure)",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "33",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

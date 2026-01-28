@@ -1,0 +1,17 @@
+{
+  "raw": "1 (4-ounce) can chopped mild or hot green chiles, drained",
+  "expected": {
+    "item": "chopped mild or hot green chiles",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "drained"
+  }
+}

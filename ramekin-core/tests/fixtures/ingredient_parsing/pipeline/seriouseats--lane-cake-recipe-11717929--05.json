@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 ounce baking powder (16 g; 4 teaspoons)",
+  "expected": {
+    "item": "baking powder",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "16",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1  red beet (medium, trimmed, cut into 2-inch chunks)",
+  "expected": {
+    "item": "red beet",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "medium, trimmed, cut into 2-inch chunks"
+  }
+}

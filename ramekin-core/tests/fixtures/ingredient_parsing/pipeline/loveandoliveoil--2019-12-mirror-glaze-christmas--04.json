@@ -1,0 +1,13 @@
+{
+  "raw": "1/8 teaspoon sea salt or fleur de sel",
+  "expected": {
+    "item": "sea salt or fleur de sel",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

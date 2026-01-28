@@ -1,0 +1,13 @@
+{
+  "raw": "scant 2 teaspoons rosewater, or to taste",
+  "expected": {
+    "item": "rosewater",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "scant teaspoons"
+      }
+    ],
+    "note": "or to taste"
+  }
+}

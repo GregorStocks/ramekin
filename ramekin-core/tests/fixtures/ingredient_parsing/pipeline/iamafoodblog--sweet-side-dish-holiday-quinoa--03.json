@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 teaspoons oil",
+  "expected": {
+    "item": "oil",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

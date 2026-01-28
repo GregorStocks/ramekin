@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons potato starch",
+  "expected": {
+    "item": "potato starch",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

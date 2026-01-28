@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon ground black pepper, plus more for cooking vegetables",
+  "expected": {
+    "item": "ground black pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "plus more for cooking vegetables"
+  }
+}

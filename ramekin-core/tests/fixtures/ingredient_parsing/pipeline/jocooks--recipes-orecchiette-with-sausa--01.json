@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound broccoli florets",
+  "expected": {
+    "item": "broccoli florets",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

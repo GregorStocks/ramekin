@@ -1,0 +1,13 @@
+{
+  "raw": "1½ cups uncooked long-grain white rice (rinsed and drained thoroughly)",
+  "expected": {
+    "item": "uncooked long-grain white rice",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "rinsed and drained thoroughly"
+  }
+}

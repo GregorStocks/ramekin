@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound ground beef (85% lean)",
+  "expected": {
+    "item": "ground beef",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "85",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

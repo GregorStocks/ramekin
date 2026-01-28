@@ -1,0 +1,17 @@
+{
+  "raw": "3 Russet potatoes, peeled and sliced lengthwise (1/2-inch in thickness)",
+  "expected": {
+    "item": "Russet potatoes",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced lengthwise"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 bananas, peeled and sliced",
+  "expected": {
+    "item": "bananas",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "peeled and sliced"
+  }
+}

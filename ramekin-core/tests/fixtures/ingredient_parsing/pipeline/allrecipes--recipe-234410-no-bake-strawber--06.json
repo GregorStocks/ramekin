@@ -1,0 +1,17 @@
+{
+  "raw": "1 (5 ounce) can cold evaporated milk",
+  "expected": {
+    "item": "cold evaporated milk",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "5",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "6 slices pepper jack cheese",
+  "expected": {
+    "item": "pepper jack cheese",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

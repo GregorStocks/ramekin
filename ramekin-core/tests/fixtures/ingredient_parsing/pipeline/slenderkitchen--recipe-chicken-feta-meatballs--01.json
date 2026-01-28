@@ -1,0 +1,17 @@
+{
+  "raw": "1 lb. ground chicken (99% lean for WW)",
+  "expected": {
+    "item": "ground chicken",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "99",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

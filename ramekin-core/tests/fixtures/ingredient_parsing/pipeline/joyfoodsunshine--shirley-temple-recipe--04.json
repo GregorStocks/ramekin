@@ -1,0 +1,13 @@
+{
+  "raw": "3  maraschino cherries",
+  "expected": {
+    "item": "maraschino cherries",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "Handful chopped fresh herbs like chives, basil, parsley or cilantro",
+  "expected": {
+    "item": "chopped fresh herbs like chives, basil, parsley or cilantro",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": null
+  }
+}

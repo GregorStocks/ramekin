@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons peanut oil",
+  "expected": {
+    "item": "peanut oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

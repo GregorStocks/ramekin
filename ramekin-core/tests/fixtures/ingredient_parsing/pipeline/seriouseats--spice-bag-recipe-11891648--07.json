@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon MSG",
+  "expected": {
+    "item": "MSG",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 mini cucumbers, shredded",
+  "expected": {
+    "item": "mini cucumbers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "shredded"
+  }
+}

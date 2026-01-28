@@ -1,0 +1,13 @@
+{
+  "raw": "5 grams garlic ((1 large clove, minced))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "grams"
+      }
+    ],
+    "note": "1 large clove, minced"
+  }
+}

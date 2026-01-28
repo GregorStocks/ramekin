@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz tomato sauce",
+  "expected": {
+    "item": "tomato sauce",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

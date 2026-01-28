@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoon fresh oregano leaves (packed)",
+  "expected": {
+    "item": "fresh oregano leaves",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "packed"
+  }
+}

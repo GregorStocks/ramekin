@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup canned crushed fire roasted tomatoes",
+  "expected": {
+    "item": "canned crushed fire roasted tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

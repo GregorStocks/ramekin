@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups frozen chopped broccoli, thawed and drained",
+  "expected": {
+    "item": "frozen chopped broccoli",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "thawed and drained"
+  }
+}

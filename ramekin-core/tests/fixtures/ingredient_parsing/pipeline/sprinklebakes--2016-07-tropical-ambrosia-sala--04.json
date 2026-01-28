@@ -1,0 +1,13 @@
+{
+  "raw": "16 ounce jar maraschino cherries (drained)",
+  "expected": {
+    "item": "jar maraschino cherries",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "ounce"
+      }
+    ],
+    "note": "drained"
+  }
+}

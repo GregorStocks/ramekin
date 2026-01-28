@@ -1,0 +1,13 @@
+{
+  "raw": "1 pt. cherry tomatoes",
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pt"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 tablespoons 1/2 cup or 113g unsalted butter, at room temperature",
+  "expected": {
+    "item": "1/2 cup or 113g unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

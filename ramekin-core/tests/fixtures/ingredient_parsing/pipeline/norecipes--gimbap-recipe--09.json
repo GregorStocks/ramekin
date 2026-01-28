@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon evaporated cane sugar",
+  "expected": {
+    "item": "evaporated cane sugar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

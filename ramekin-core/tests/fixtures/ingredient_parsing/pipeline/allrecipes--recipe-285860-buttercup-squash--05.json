@@ -1,0 +1,13 @@
+{
+  "raw": "2.5 pounds buttercup squash - seeded, peeled, and cubed",
+  "expected": {
+    "item": "buttercup squash - seeded, peeled",
+    "measurements": [
+      {
+        "amount": "2.5",
+        "unit": "pounds"
+      }
+    ],
+    "note": "and cubed"
+  }
+}

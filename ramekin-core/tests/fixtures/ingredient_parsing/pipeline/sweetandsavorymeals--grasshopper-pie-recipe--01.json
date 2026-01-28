@@ -1,0 +1,13 @@
+{
+  "raw": "14.3 oz package Oreos",
+  "expected": {
+    "item": "package Oreos",
+    "measurements": [
+      {
+        "amount": "14.3",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

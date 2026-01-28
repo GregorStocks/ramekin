@@ -1,0 +1,13 @@
+{
+  "raw": "⅛ teaspoon fine sea salt",
+  "expected": {
+    "item": "fine sea salt",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

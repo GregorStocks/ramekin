@@ -1,0 +1,13 @@
+{
+  "raw": "6 fluid ounces whole milk, for serving",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "fluid ounces"
+      }
+    ],
+    "note": "for serving"
+  }
+}

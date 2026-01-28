@@ -1,0 +1,13 @@
+{
+  "raw": "8 oz firm tofu, drained",
+  "expected": {
+    "item": "firm tofu",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained"
+  }
+}

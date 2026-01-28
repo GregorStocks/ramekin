@@ -1,0 +1,13 @@
+{
+  "raw": "2 teaspoons fresh sage leaves, (chopped)",
+  "expected": {
+    "item": "fresh sage leaves,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "chopped"
+  }
+}

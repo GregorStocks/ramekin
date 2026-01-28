@@ -1,0 +1,17 @@
+{
+  "raw": "1  recipe cold Memphis Coleslaw (about 4 cups worth)",
+  "expected": {
+    "item": "recipe cold Memphis Coleslaw",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

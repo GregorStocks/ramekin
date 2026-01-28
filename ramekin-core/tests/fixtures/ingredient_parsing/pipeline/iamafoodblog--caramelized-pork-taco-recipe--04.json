@@ -1,0 +1,13 @@
+{
+  "raw": "1 Thai chili, sliced (optional)",
+  "expected": {
+    "item": "Thai chili, sliced",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional"
+  }
+}

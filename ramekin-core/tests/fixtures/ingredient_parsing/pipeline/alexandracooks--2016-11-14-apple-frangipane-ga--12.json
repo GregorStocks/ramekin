@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 apples, I like Honey Crisp or Fuji, peeled and thinly sliced",
+  "expected": {
+    "item": "apples, I like Honey Crisp or Fuji",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": "peeled and thinly sliced"
+  }
+}

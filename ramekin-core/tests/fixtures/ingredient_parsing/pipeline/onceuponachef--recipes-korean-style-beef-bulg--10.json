@@ -1,0 +1,13 @@
+{
+  "raw": "5  hamburger buns",
+  "expected": {
+    "item": "hamburger buns",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces pate de foie gras",
+  "expected": {
+    "item": "pate de foie gras",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

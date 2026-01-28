@@ -1,0 +1,21 @@
+{
+  "raw": "1-2 celery ribs (about 4 ounces; 120g); finely minced (see notes)",
+  "expected": {
+    "item": "celery ribs ; finely minced (see notes)",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": null
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "120",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

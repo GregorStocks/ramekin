@@ -1,0 +1,13 @@
+{
+  "raw": "300 ml beef bouillon (or other bouillon)",
+  "expected": {
+    "item": "beef bouillon (or other bouillon)",
+    "measurements": [
+      {
+        "amount": "300",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

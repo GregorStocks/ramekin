@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
+  "expected": {
+    "item": "chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

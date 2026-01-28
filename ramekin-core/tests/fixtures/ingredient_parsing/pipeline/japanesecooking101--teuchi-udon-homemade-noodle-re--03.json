@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz all purpose flour",
+  "expected": {
+    "item": "all purpose flour",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

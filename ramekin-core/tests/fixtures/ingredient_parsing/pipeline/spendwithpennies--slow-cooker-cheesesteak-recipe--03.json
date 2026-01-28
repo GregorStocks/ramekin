@@ -1,0 +1,13 @@
+{
+  "raw": "10.5 ounces beef broth (low sodium)",
+  "expected": {
+    "item": "beef broth (low sodium)",
+    "measurements": [
+      {
+        "amount": "10.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

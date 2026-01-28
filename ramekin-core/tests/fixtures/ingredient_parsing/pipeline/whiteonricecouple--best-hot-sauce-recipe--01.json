@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup chopped Chili Peppers ((about 100 grams). *for a more mild hot sauce, start with less chilies)",
+  "expected": {
+    "item": "chopped Chili Peppers . *for a more mild hot sauce, start with less chilies)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces frozen corn,  (thawed, drained, and heated)",
+  "expected": {
+    "item": "frozen corn,",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "thawed, drained, and heated"
+  }
+}

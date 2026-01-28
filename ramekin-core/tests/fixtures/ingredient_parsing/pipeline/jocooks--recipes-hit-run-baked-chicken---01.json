@@ -1,0 +1,13 @@
+{
+  "raw": "2 pounds chicken (breasts, thighs or drumsticks)",
+  "expected": {
+    "item": "chicken (breasts, thighs or drumsticks)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

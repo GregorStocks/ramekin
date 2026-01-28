@@ -1,0 +1,13 @@
+{
+  "raw": "2½ teaspoons pumpkin pie spice, or 1 teaspoon cinnamon, ½ teaspoon ginger, ½ teaspoon nutmeg, &amp;amp; 1/8 teaspoon cloves",
+  "expected": {
+    "item": "pumpkin pie spice, or 1 teaspoon cinnamon, 1/2 teaspoon ginger, 1/2 teaspoon nutmeg, &amp; 1/8 teaspoon cloves",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

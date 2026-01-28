@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz chocolate, milk or dark, broken into small pieces",
+  "expected": {
+    "item": "chocolate, milk or dark, broken into small pieces",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "85 grams green bell pepper ((1/2 pepper, sliced))",
+  "expected": {
+    "item": "green bell pepper",
+    "measurements": [
+      {
+        "amount": "85",
+        "unit": "grams"
+      }
+    ],
+    "note": "1/2 pepper, sliced"
+  }
+}

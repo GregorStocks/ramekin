@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon mustard seeds ((optional))",
+  "expected": {
+    "item": "mustard seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1&nbsp; cup (250g) whole milk ricotta cheese",
+  "expected": {
+    "item": "whole milk ricotta cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "250",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

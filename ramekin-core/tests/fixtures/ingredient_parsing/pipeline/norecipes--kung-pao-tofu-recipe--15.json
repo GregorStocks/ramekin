@@ -1,0 +1,13 @@
+{
+  "raw": "6  dried chili peppers",
+  "expected": {
+    "item": "dried chili peppers",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

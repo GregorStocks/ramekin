@@ -1,0 +1,13 @@
+{
+  "raw": "1 oz. Sweet Vermouth",
+  "expected": {
+    "item": "Sweet Vermouth",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

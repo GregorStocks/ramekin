@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 heaping tablespoons sugar, plus more for sprinkling",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "heaping tablespoons"
+      }
+    ],
+    "note": "plus more for sprinkling"
+  }
+}

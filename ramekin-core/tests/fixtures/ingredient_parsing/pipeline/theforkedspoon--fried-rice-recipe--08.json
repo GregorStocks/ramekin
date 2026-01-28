@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups cooked white rice (preferably cold, day-old rice)",
+  "expected": {
+    "item": "cooked white rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": "preferably cold, day-old rice"
+  }
+}

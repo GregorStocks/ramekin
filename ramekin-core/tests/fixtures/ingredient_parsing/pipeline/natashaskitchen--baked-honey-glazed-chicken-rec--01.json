@@ -1,0 +1,13 @@
+{
+  "raw": "5 lbs chicken drumsticks",
+  "expected": {
+    "item": "chicken drumsticks",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "lbs"
+      }
+    ],
+    "note": null
+  }
+}

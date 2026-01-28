@@ -1,0 +1,17 @@
+{
+  "raw": "1 8.5-oz. (241-g) can creamed corn",
+  "expected": {
+    "item": "8.5-oz. can creamed corn",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "241",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

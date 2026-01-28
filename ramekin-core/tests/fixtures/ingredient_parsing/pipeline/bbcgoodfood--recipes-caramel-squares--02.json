@@ -1,0 +1,13 @@
+{
+  "raw": "25g cornflour",
+  "expected": {
+    "item": "cornflour",
+    "measurements": [
+      {
+        "amount": "25",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

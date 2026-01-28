@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces bittersweet or semisweet chocolate* ((1 ½ cups) )",
+  "expected": {
+    "item": "bittersweet or semisweet chocolate* )",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

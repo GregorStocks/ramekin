@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon pumpkin pie spice",
+  "expected": {
+    "item": "pumpkin pie spice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

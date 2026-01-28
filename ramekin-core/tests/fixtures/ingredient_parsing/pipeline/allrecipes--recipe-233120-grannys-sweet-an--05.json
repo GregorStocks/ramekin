@@ -1,0 +1,13 @@
+{
+  "raw": "0.75 teaspoon ground cinnamon",
+  "expected": {
+    "item": "ground cinnamon",
+    "measurements": [
+      {
+        "amount": "0.75",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

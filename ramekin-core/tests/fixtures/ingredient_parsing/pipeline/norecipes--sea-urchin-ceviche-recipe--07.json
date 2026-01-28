@@ -1,0 +1,13 @@
+{
+  "raw": "6 leaves green shiso ((minced))",
+  "expected": {
+    "item": "leaves green shiso",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "minced"
+  }
+}

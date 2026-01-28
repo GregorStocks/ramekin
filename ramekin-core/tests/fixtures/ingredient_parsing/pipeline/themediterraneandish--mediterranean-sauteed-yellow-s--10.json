@@ -1,0 +1,13 @@
+{
+  "raw": "Handful chopped fresh parsley (optional)",
+  "expected": {
+    "item": "chopped fresh parsley",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "handful"
+      }
+    ],
+    "note": "optional"
+  }
+}

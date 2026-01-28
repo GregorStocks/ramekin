@@ -1,0 +1,13 @@
+{
+  "raw": "2  ham hocks",
+  "expected": {
+    "item": "ham hocks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

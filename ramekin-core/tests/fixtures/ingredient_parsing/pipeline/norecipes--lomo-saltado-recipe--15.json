@@ -1,0 +1,13 @@
+{
+  "raw": "100 grams red onion ((sliced into wedges))",
+  "expected": {
+    "item": "red onion",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "grams"
+      }
+    ],
+    "note": "sliced into wedges"
+  }
+}

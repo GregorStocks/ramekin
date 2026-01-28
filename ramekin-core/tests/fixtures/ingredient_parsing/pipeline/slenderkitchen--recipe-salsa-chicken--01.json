@@ -1,0 +1,17 @@
+{
+  "raw": "2 lbs boneless skinless chicken breast (4 filets)",
+  "expected": {
+    "item": "boneless skinless chicken breast",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "lbs"
+      },
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

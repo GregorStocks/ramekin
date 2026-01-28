@@ -1,0 +1,13 @@
+{
+  "raw": "1 pint mixed cherry or grape tomatoes, sliced or cut into quarters",
+  "expected": {
+    "item": "mixed cherry or grape tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      }
+    ],
+    "note": "sliced or cut into quarters"
+  }
+}

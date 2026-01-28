@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups all-purpose unbleached flour",
+  "expected": {
+    "item": "all-purpose unbleached flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

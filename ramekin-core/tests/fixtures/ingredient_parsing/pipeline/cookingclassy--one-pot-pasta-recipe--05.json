@@ -1,0 +1,13 @@
+{
+  "raw": "2 3/4 cups vegetable broth, (or more as needed)",
+  "expected": {
+    "item": "vegetable broth,",
+    "measurements": [
+      {
+        "amount": "2 3/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "or more as needed"
+  }
+}

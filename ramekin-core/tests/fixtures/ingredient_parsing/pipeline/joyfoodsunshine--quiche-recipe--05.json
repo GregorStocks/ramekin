@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups add ins ((veggies, meat, etc))",
+  "expected": {
+    "item": "add ins (veggies, meat, etc)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

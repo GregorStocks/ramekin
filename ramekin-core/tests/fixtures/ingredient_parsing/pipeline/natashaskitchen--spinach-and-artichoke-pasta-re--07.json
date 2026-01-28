@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz can diced jalapeños (drained (optional))",
+  "expected": {
+    "item": "can diced jalapeños",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained (optional"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 tablespoons creamy peanut butter",
+  "expected": {
+    "item": "creamy peanut butter",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

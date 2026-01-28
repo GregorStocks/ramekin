@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoons pomegranate arils",
+  "expected": {
+    "item": "pomegranate arils",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

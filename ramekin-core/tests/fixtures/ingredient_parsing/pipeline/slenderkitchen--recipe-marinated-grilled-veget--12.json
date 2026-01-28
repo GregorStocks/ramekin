@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp honey (or maple syrup, optional, marinade)",
+  "expected": {
+    "item": "honey",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or maple syrup, optional, marinade"
+  }
+}

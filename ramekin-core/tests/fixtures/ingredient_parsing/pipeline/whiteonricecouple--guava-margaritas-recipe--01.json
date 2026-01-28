@@ -1,0 +1,13 @@
+{
+  "raw": "3 ounces Guava Juice",
+  "expected": {
+    "item": "Guava Juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

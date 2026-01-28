@@ -1,0 +1,13 @@
+{
+  "raw": "1 small  aubergine about 250g/9oz, roughly chopped",
+  "expected": {
+    "item": "aubergine about 250g/9oz",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

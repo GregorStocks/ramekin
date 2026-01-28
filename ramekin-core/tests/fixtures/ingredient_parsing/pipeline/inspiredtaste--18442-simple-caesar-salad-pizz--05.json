@@ -1,0 +1,17 @@
+{
+  "raw": "4 cups chopped Romaine lettuce (about 1 romaine heart)",
+  "expected": {
+    "item": "chopped Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

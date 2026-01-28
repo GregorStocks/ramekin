@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces* mango nectar",
+  "expected": {
+    "item": "ounces* mango nectar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 teaspoon very finely minced garlic (about 1/2 medium clove)",
+  "expected": {
+    "item": "very finely minced garlic",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

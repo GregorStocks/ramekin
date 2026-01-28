@@ -1,0 +1,17 @@
+{
+  "raw": "2 teaspoons Vanilla Extract ((10ml) )",
+  "expected": {
+    "item": "Vanilla Extract )",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      },
+      {
+        "amount": "10",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

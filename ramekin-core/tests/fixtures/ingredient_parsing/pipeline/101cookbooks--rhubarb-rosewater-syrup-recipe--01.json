@@ -1,0 +1,13 @@
+{
+  "raw": "4  large / 500 g / 1 pound rhubarb stalks, chopped",
+  "expected": {
+    "item": "/ 500 g / 1 pound rhubarb stalks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "large"
+      }
+    ],
+    "note": "chopped"
+  }
+}

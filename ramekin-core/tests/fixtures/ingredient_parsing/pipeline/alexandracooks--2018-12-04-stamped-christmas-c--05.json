@@ -1,0 +1,17 @@
+{
+  "raw": "1 tablespoon (15 ml) real vanilla extract",
+  "expected": {
+    "item": "real vanilla extract",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "15",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

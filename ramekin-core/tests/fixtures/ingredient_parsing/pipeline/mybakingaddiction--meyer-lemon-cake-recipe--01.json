@@ -1,0 +1,13 @@
+{
+  "raw": "2 1/2 cups granulated sugar, divided use",
+  "expected": {
+    "item": "granulated sugar",
+    "measurements": [
+      {
+        "amount": "2 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided use"
+  }
+}

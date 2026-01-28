@@ -1,0 +1,13 @@
+{
+  "raw": "0.5 small cucumber, halved, seeded and thinly sliced",
+  "expected": {
+    "item": "cucumber, halved",
+    "measurements": [
+      {
+        "amount": "0.5",
+        "unit": "small"
+      }
+    ],
+    "note": "seeded and thinly sliced"
+  }
+}

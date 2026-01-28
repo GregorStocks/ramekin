@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455g) desiccated coconut ( (or shredded sweetened coconut if you can&amp;#039;t get desiccated coconut))",
+  "expected": {
+    "item": "desiccated coconut",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "g"
+      }
+    ],
+    "note": "(or shredded sweetened coconut if you can&#039;t get desiccated coconut"
+  }
+}

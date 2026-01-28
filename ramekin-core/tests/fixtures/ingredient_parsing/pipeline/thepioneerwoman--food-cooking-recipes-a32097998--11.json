@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 c. plus 1 tablespoon&nbsp;water",
+  "expected": {
+    "item": "1/2 c. plus 1 tablespoon&nbsp;water",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "c"
+      }
+    ],
+    "note": "plus 1 tablespoon water"
+  }
+}

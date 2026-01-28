@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces cream cheese, softened",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "softened"
+  }
+}

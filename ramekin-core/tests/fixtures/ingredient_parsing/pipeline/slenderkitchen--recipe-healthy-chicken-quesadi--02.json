@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup canned diced tomatoes with green chilies (drained)",
+  "expected": {
+    "item": "canned diced tomatoes with green chilies",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained"
+  }
+}

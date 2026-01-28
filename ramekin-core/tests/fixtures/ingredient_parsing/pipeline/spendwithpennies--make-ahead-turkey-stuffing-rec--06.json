@@ -1,0 +1,13 @@
+{
+  "raw": "1 ½ teaspoons poultry seasoning",
+  "expected": {
+    "item": "poultry seasoning",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

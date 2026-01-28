@@ -1,0 +1,13 @@
+{
+  "raw": "⅓ cup golden raisins",
+  "expected": {
+    "item": "golden raisins",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

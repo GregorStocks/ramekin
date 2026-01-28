@@ -1,0 +1,21 @@
+{
+  "raw": "99 g Rice Krispies (3 1/2 ounces; 3 1/2 cups), see notes",
+  "expected": {
+    "item": "Rice Krispies , see notes",
+    "measurements": [
+      {
+        "amount": "99",
+        "unit": "g"
+      },
+      {
+        "amount": "3 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "3 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup shredded carrots",
+  "expected": {
+    "item": "shredded carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

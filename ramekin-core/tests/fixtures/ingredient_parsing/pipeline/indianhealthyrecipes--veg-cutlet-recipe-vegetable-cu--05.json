@@ -1,0 +1,13 @@
+{
+  "raw": "3 tablespoon coriander leaves (or cilantro finely chopped)",
+  "expected": {
+    "item": "coriander leaves",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": "or cilantro finely chopped"
+  }
+}

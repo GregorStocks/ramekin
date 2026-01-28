@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound tomatoes, diced (about 3 cups)",
+  "expected": {
+    "item": "tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": "diced"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "160 grams rice vermicelli (dried (a.k.a. mai fun or bee hoon))",
+  "expected": {
+    "item": "rice vermicelli",
+    "measurements": [
+      {
+        "amount": "160",
+        "unit": "grams"
+      }
+    ],
+    "note": "dried (a.k.a. mai fun or bee hoon"
+  }
+}

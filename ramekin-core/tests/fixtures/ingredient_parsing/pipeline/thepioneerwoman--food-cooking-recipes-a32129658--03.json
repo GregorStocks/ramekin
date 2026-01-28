@@ -1,0 +1,13 @@
+{
+  "raw": "45 brown M&amp;amp;Ms",
+  "expected": {
+    "item": "brown M&amp;Ms",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

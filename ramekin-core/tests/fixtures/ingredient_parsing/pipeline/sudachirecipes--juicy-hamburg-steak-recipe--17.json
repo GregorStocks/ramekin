@@ -1,0 +1,13 @@
+{
+  "raw": "½ tsp smooth Dijon mustard (avoid whole-grain)",
+  "expected": {
+    "item": "smooth Dijon mustard",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "avoid whole-grain"
+  }
+}

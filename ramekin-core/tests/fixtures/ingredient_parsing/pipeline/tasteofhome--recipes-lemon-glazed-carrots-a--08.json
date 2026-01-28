@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon dill weed",
+  "expected": {
+    "item": "dill weed",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "8 bags caffeinated tea, or 4 tablespoons looseleaf tea (black, green, or white)",
+  "expected": {
+    "item": "caffeinated tea, or 4 tablespoons looseleaf tea (black, green, or white)",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "bags"
+      }
+    ],
+    "note": null
+  }
+}

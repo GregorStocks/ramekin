@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups heavy cream, room temperature (65-68ºF)",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "65",
+        "unit": null
+      }
+    ],
+    "note": "room temperature"
+  }
+}

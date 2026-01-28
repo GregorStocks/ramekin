@@ -1,0 +1,13 @@
+{
+  "raw": "6 to 8 tablespoons Frank&amp;#8217;s cayenne pepper hot sauce",
+  "expected": {
+    "item": "Frank&#8217;s cayenne pepper hot sauce",
+    "measurements": [
+      {
+        "amount": "6 to 8",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

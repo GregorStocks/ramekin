@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp garlic owder",
+  "expected": {
+    "item": "garlic owder",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

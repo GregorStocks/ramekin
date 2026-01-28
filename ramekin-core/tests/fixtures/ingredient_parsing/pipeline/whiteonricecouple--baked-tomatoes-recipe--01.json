@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium ripe tomatoes",
+  "expected": {
+    "item": "ripe tomatoes",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

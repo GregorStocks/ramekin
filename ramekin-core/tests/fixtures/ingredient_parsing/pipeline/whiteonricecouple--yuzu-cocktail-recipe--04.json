@@ -1,0 +1,13 @@
+{
+  "raw": "dash of orange bitters (, optional )",
+  "expected": {
+    "item": "orange bitters",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": ", optional"
+  }
+}

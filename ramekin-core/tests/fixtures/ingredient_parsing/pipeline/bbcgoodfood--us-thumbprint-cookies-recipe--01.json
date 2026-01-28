@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups plus 1 tbsp all-purpose flour",
+  "expected": {
+    "item": "2 cups plus 1 tbsp all-purpose flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus 1 tbsp all-purpose flour"
+  }
+}

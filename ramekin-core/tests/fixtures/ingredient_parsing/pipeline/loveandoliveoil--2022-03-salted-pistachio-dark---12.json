@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup dark chocolate chunks (plus more for topping)",
+  "expected": {
+    "item": "dark chocolate chunks",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more for topping"
+  }
+}

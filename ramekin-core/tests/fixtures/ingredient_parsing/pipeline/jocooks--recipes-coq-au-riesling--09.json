@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Riesling wine",
+  "expected": {
+    "item": "Riesling wine",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

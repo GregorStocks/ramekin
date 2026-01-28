@@ -1,0 +1,13 @@
+{
+  "raw": "Scant 1 teaspoon salt",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

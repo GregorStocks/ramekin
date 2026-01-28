@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup sliced fresh mushrooms",
+  "expected": {
+    "item": "sliced fresh mushrooms",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

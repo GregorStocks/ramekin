@@ -1,0 +1,13 @@
+{
+  "raw": "150 g carrot (roughly cut into bitesize pieces)",
+  "expected": {
+    "item": "carrot (roughly cut into bitesize pieces)",
+    "measurements": [
+      {
+        "amount": "150",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 (3oz) bar firecracker chocolate",
+  "expected": {
+    "item": "bar firecracker chocolate",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

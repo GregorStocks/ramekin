@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp. cumin",
+  "expected": {
+    "item": "cumin",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

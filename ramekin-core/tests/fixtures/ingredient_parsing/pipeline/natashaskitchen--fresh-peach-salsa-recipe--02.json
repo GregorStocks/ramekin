@@ -1,0 +1,13 @@
+{
+  "raw": "1  bell pepper (4 oz, seeded and finely diced)",
+  "expected": {
+    "item": "bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "4 oz, seeded and finely diced"
+  }
+}

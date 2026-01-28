@@ -1,0 +1,13 @@
+{
+  "raw": "2  teaspoons light flavored olive oil",
+  "expected": {
+    "item": "light flavored olive oil",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

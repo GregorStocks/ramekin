@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp. taco seasoning",
+  "expected": {
+    "item": "taco seasoning",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 tbsp salt (1% the weight of cooking water)",
+  "expected": {
+    "item": "salt",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

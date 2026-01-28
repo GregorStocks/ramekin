@@ -1,0 +1,13 @@
+{
+  "raw": "5 stalks celery, sliced on an angle",
+  "expected": {
+    "item": "celery",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "stalks"
+      }
+    ],
+    "note": "sliced on an angle"
+  }
+}

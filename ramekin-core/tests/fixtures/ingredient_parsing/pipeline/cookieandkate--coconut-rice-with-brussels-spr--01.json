@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup brown jasmine rice or regular jasmine rice*, rinsed",
+  "expected": {
+    "item": "brown jasmine rice or regular jasmine rice*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "rinsed"
+  }
+}

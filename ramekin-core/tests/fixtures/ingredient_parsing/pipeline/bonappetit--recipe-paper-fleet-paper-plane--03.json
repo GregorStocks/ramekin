@@ -1,0 +1,13 @@
+{
+  "raw": "1¼ cups bourbon",
+  "expected": {
+    "item": "bourbon",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

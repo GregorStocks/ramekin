@@ -1,0 +1,13 @@
+{
+  "raw": "1/3 cup sugar (or brown sugar)",
+  "expected": {
+    "item": "sugar (or brown sugar)",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

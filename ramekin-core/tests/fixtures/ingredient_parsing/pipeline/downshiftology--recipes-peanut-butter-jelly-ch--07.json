@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp chopped pistachios (for garnish)",
+  "expected": {
+    "item": "chopped pistachios",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "for garnish"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2-3 ounces mixed sprinkles",
+  "expected": {
+    "item": "mixed sprinkles",
+    "measurements": [
+      {
+        "amount": "2-3",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups shredded carrot (6 oz.)",
+  "expected": {
+    "item": "shredded carrot",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

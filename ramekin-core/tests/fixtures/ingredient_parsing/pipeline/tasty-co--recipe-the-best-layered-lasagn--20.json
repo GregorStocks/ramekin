@@ -1,0 +1,13 @@
+{
+  "raw": "1 lb lasagna noodle, cooked",
+  "expected": {
+    "item": "lasagna noodle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "lb"
+      }
+    ],
+    "note": "cooked"
+  }
+}

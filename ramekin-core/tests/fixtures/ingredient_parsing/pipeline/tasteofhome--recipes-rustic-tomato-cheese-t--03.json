@@ -1,0 +1,13 @@
+{
+  "raw": "7 tablespoons crumbled goat cheese",
+  "expected": {
+    "item": "crumbled goat cheese",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "280 grams thin Chinese wonton noodles",
+  "expected": {
+    "item": "thin Chinese wonton noodles",
+    "measurements": [
+      {
+        "amount": "280",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}
