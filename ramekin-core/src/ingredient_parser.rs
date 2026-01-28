@@ -663,7 +663,14 @@ fn extract_unit(s: &str) -> (Option<String>, String) {
                 || after.starts_with(|c: char| c.is_whitespace() || c == '.' || c == ',')
             {
                 // Skip any trailing period or whitespace
-                let remaining = after.trim_start_matches('.').trim();
+                let mut remaining = after.trim_start_matches('.').trim();
+
+                // Strip "of " if present after the unit (e.g., "cloves of garlic" -> "garlic")
+                let remaining_lower = remaining.to_lowercase();
+                if remaining_lower.starts_with("of ") || remaining_lower == "of" {
+                    remaining = remaining[2..].trim_start();
+                }
+
                 return (Some(unit.to_string()), remaining.to_string());
             }
         }
