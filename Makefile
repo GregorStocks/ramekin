@@ -150,6 +150,7 @@ pipeline-test: ## Run pipeline for test URLs (offline by default, use OFFLINE=fa
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
 		$(if $(OFFLINE),--offline=$(OFFLINE),) \
+		$(if $(FORCE_REFETCH),--force-refetch,) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
 		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),)
 

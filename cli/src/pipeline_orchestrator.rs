@@ -28,6 +28,7 @@ pub struct OrchestratorConfig {
     pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
+    pub force_refetch: bool,
     pub on_fetch_fail: OnFetchFail,
     pub tags_file: PathBuf,
 }
@@ -41,6 +42,7 @@ impl Default for OrchestratorConfig {
             site_filter: None,
             delay_ms: 1000,
             offline: true,
+            force_refetch: false,
             on_fetch_fail: OnFetchFail::Continue,
             tags_file: PathBuf::from("data/eval-tags.json"),
         }
@@ -82,6 +84,7 @@ pub struct ManifestConfig {
     pub site_filter: Option<String>,
     pub delay_ms: u64,
     pub offline: bool,
+    pub force_refetch: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -217,6 +220,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             site_filter: config.site_filter.clone(),
             delay_ms: config.delay_ms,
             offline: config.offline,
+            force_refetch: config.force_refetch,
         },
         status: RunStatus::Running,
     };
@@ -270,10 +274,12 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
         let progress = format!("[{}/{}]", idx + 1, total_urls);
 
         // Check if we need to fetch (for rate limiting purposes)
-        let needs_fetch = !config.offline && !client.is_cached(url);
+        let needs_fetch = config.force_refetch || (!config.offline && !client.is_cached(url));
 
         // Print progress
-        if needs_fetch {
+        if config.force_refetch {
+            println!("{} {} (force refetch)", progress, truncate_url(url, 60));
+        } else if needs_fetch {
             println!("{} {} (fetching...)", progress, truncate_url(url, 60));
         } else {
             println!("{} {} (cached)", progress, truncate_url(url, 60));
@@ -284,7 +290,7 @@ pub async fn run_pipeline_test(config: OrchestratorConfig) -> Result<PipelineRes
             url,
             Arc::clone(&client),
             &run_dir,
-            false, // force parameter for run_fetch_html - we handle caching via offline flag
+            config.force_refetch,
             user_tags.clone(),
         )
         .await;
