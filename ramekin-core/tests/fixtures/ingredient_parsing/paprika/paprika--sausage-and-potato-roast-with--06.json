@@ -1,8 +1,13 @@
 {
   "raw": "One 5-ounce package of baby arugula or one 8-ounce bundle, stemmed and chopped",
   "expected": {
-    "item": "One 5-ounce package of baby arugula or one 8-ounce bundle",
-    "measurements": [],
+    "item": "5-ounce package of baby arugula or one 8-ounce bundle",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": "stemmed and chopped"
   }
 }

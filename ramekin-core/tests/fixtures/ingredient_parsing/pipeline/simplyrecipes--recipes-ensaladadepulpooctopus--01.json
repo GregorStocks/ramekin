@@ -1,8 +1,13 @@
 {
   "raw": "One 2 pound octopus, cleaned",
   "expected": {
-    "item": "One 2 pound octopus",
-    "measurements": [],
+    "item": "2 pound octopus",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": "cleaned"
   }
 }

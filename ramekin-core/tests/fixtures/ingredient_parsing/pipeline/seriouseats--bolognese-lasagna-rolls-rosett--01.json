@@ -1,8 +1,12 @@
 {
   "raw": "One 1/4-ounce (7g) packet unflavored gelatin (about 1 1/2 teaspoons)",
   "expected": {
-    "item": "One 1/4-ounce packet unflavored gelatin",
+    "item": "1/4-ounce packet unflavored gelatin",
     "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      },
       {
         "amount": "7",
         "unit": "g"

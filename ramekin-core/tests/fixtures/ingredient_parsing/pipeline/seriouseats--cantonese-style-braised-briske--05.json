@@ -1,8 +1,13 @@
 {
   "raw": "One 3-inch piece ginger, peeled and thinly sliced3 star anise pods",
   "expected": {
-    "item": "One 3-inch piece ginger",
-    "measurements": [],
+    "item": "3-inch piece ginger",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": "peeled and thinly sliced3 star anise pods"
   }
 }

@@ -1,8 +1,13 @@
 {
   "raw": "Two pinches fine sea salt",
   "expected": {
-    "item": "Two pinches fine sea salt",
-    "measurements": [],
+    "item": "fine sea salt",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pinches"
+      }
+    ],
     "note": null
   }
 }

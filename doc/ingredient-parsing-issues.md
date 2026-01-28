@@ -48,7 +48,15 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Slash-separated metrics** - "3.5 oz / 100g celery root" now correctly extracts both measurements. Step 4.6 checks if remaining text starts with "/ " followed by a measurement, similar to "or" handling. 32 pipeline fixtures updated.
 
+- [x] **Word numbers at start** - "One teaspoon of baking powder" and "Two pinches of salt" now parse correctly. Added `normalize_word_numbers()` to convert word numbers (one through twelve) to digits at the start of the string. 70 fixtures updated.
+
 ### Open Issues
+
+#### Medium Impact
+
+- [ ] **"N X-ounce container" pattern** - "1 14 ounce can coconut milk" parses as amount=1, item="14 ounce can coconut milk" instead of recognizing "14 ounce can" as a compound unit. ~24 fixtures affected.
+
+- [ ] **Leading comma after size unit** - "2 large, boneless chicken breasts" leaves ", boneless" in item name. 4 fixtures affected.
 
 #### Low Impact / Edge Cases
 
@@ -96,3 +104,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5)** - Gregor asked me to investigate unicode issues. After a thorough exploration with three parallel agents, I found that most concerns were theoretical - the export filename issue turned out to be a non-bug (Rust's `is_alphanumeric()` includes unicode), and the byte/char index concerns don't manifest in practice since all search patterns are ASCII. But I did find one real bug: en-dashes (–) and em-dashes (—) in ranges like "1–2 cups" weren't being parsed. Added `normalize_dashes()` right after `normalize_unicode_fractions()` in the pipeline. 14 fixtures fixed. The codebase continues to impress with its thoughtful architecture - normalizing unicode early means downstream code can stay simple.
 
 **2026-01-28 (Claude Opus 4.5, cont'd)** - Fixed slash-separated metrics as predicted! Almost a copy-paste of the "or" logic - just check for "/ " instead of "or ". 32 fixtures updated. 101cookbooks and sugarfreelondoner love this format. The only remaining open issue is double-encoded HTML entities which... honestly might be "give up" territory. Future Claude: if you're feeling adventurous, you could look for new issues in the pipeline fixtures, but the parser's looking pretty solid now!
+
+**2026-01-28 (Claude Opus 4.5)** - Gregor scaled up the fixtures to 45k+ and asked me to reassess priorities. After analyzing the new data, I found "word numbers" was a bigger issue than I expected - 70 fixtures had "One", "Two", etc. at the start that weren't being parsed at all. The fix was simple: `normalize_word_numbers()` converts them to digits early in the pipeline, matching the pattern of unicode fractions and dashes. I also documented two new issues I found during exploration: the "N X-ounce container" pattern (24 fixtures) and leading commas after size units (4 fixtures). The former is the trickier one - would need to recognize compound units like "14 ounce can". Future Claude: the container pattern might be worth tackling if you're feeling ambitious!

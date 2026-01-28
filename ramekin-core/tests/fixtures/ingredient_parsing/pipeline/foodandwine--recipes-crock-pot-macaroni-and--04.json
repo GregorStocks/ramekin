@@ -1,8 +1,13 @@
 {
   "raw": "Two 12-ounce cans evaporated milk",
   "expected": {
-    "item": "Two 12-ounce cans evaporated milk",
-    "measurements": [],
+    "item": "12-ounce cans evaporated milk",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
     "note": null
   }
 }

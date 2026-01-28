@@ -1,8 +1,13 @@
 {
   "raw": "One 28-ounce can whole tomatoes",
   "expected": {
-    "item": "One 28-ounce can whole tomatoes",
-    "measurements": [],
+    "item": "28-ounce can whole tomatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
     "note": null
   }
 }

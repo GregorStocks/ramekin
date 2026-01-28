@@ -1,8 +1,13 @@
 {
   "raw": "Two 15-oz cans artichoke hearts (not marinated, well drained and quartered)",
   "expected": {
-    "item": "Two 15-oz cans artichoke hearts",
-    "measurements": [],
+    "item": "15-oz cans artichoke hearts",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
     "note": "not marinated, well drained and quartered"
   }
 }
