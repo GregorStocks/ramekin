@@ -10,7 +10,7 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 1. Look at the curated test fixtures in `ramekin-core/tests/fixtures/ingredient_parsing/curated/`
 2. These fixtures document both working behavior and known issues
-3. Pick an issue that seems worth fixing (see criteria below)
+3. Pick an issue that seems worth fixing (see criteria below - you can add new issues that you discover, past and future Claudes have access to this file.)
 4. Implement the fix in `ingredient_parser.rs`
 5. Update the curated fixture to expect the correct behavior
 6. Run `make ingredient-tests-update` to update bulk fixtures
@@ -18,13 +18,7 @@ The ingredient parser in `ramekin-core/src/ingredient_parser.rs` converts raw in
 
 ### Is It Worth Fixing?
 
-Not every parsing quirk deserves a fix. Consider:
-
-- **Frequency**: How often does this pattern appear in real recipes? Check the bulk fixtures.
-- **Severity**: Is the item name unusable, or just slightly awkward?
-- **Complexity**: Will the fix break other things or add significant complexity?
-
-Sometimes the right answer is "just give up on parsing this" - the raw text is always preserved, so users can still see what the original said.
+Not every parsing quirk deserves a fix. For issues that seem one-in-a-million (e.g. an uncommon typo) or where it's not realistically possible to determine the original author's intent, it's fine to give up and say "we parse the entire ingredient string into `ingredient` and leave the amount, note, etc, blank". That's better than being _wrong_. Our #1 goal is not to be wrong.
 
 ### Curated vs Bulk Fixtures
 
