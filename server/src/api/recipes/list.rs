@@ -11,6 +11,7 @@ use axum::{
     Json,
 };
 use chrono::{DateTime, NaiveDate, Utc};
+use diesel::dsl::count_star;
 use diesel::prelude::*;
 use diesel::sql_types::{Array, Nullable, Uuid as SqlUuid};
 use serde::{Deserialize, Serialize};
@@ -336,7 +337,7 @@ pub async fn list_recipes(
             recipe_versions::description,
             recipe_versions::photo_ids,
             recipe_versions::created_at,
-            raw_sql::count_over(),
+            count_star().over(),
             raw_sql::tags_subquery(),
         ))
         .limit(limit)
