@@ -676,6 +676,18 @@ fn extract_amount(s: &str) -> (Option<String>, String) {
             return (Some(amount), remaining_after_range);
         }
 
+        // Check for range with "or": "3 or 4" (meaning 3-4, not alternatives)
+        // This handles "3 or 4 drops of Tabasco" → amount="3 or 4", unit="drops"
+        if words.len() >= 3
+            && words[1].eq_ignore_ascii_case("or")
+            && is_amount_like(words[0])
+            && is_amount_like(words[2])
+        {
+            let amount = format!("{} or {}", words[0], words[2]);
+            let remaining_after_range = words[3..].join(" ");
+            return (Some(amount), remaining_after_range);
+        }
+
         // Check for hyphenated range: "6-8"
         if first.contains('-') && !first.starts_with('-') {
             let parts: Vec<&str> = first.split('-').collect();
@@ -1282,5 +1294,15 @@ mod tests {
         assert_eq!(result.measurements[0].unit, Some("ounces".to_string()));
         assert_eq!(result.measurements[1].amount, Some("225".to_string()));
         assert_eq!(result.measurements[1].unit, Some("grams".to_string()));
+    }
+
+    #[test]
+    fn test_or_range_not_alternative() {
+        // "3 or 4 drops" is a range (3-4 drops), not two alternative measurements
+        let result = parse_ingredient("3 or 4 drops of Tabasco sauce");
+        assert_eq!(result.item, "Tabasco sauce");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("3 or 4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("drops".to_string()));
     }
 }
