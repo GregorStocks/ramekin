@@ -103,7 +103,7 @@ impl<C: HttpClient + Send + Sync> PipelineStep for FetchImagesStep<C> {
             }),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("save_recipe".to_string()),
+            next_step: Some("parse_ingredients".to_string()),
         }
     }
 }

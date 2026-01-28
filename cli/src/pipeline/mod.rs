@@ -16,7 +16,7 @@ use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::http::HttpClient;
 use ramekin_core::pipeline::steps::{
     EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
-    FetchHtmlStep,
+    FetchHtmlStep, ParseIngredientsStep,
 };
 use ramekin_core::pipeline::StepRegistry;
 
@@ -39,6 +39,7 @@ pub fn build_registry<C: HttpClient + Clone + Send + Sync + 'static>(
     registry.register(Box::new(FetchHtmlStep::new(client.clone())));
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(client)));
+    registry.register(Box::new(ParseIngredientsStep));
     registry.register(Box::new(SaveRecipeStep));
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
