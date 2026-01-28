@@ -25,29 +25,7 @@ jobs:
       - name: Find available simulator
         id: simulator
         run: |
-          # Find an available iPhone simulator
-          SIMULATOR=$(xcrun simctl list devices available -j | python3 -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          for runtime, devices in data['devices'].items():
-              if 'iOS' not in runtime:
-                  continue
-              for dev in devices:
-                  name = dev['name']
-                  if 'iPhone' in name and '16' in name:
-                      print(name)
-                      sys.exit(0)
-          # Fallback: any iPhone
-          for runtime, devices in data['devices'].items():
-              if 'iOS' not in runtime:
-                  continue
-              for dev in devices:
-                  name = dev['name']
-                  if 'iPhone' in name:
-                      print(name)
-                      sys.exit(0)
-          print('iPhone SE (3rd generation)')
-          ")
+          SIMULATOR=$(xcrun simctl list devices available -j | python3 scripts/find-ios-simulator.py)
           echo "Found simulator: $SIMULATOR"
           echo "name=$SIMULATOR" >> $GITHUB_OUTPUT
 
