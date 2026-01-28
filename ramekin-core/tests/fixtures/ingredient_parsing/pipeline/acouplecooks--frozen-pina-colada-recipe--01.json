@@ -1,11 +1,15 @@
 {
   "raw": "1 pound or 3 heaping cups frozen pineapple chunks",
   "expected": {
-    "item": "or 3 heaping cups frozen pineapple chunks",
+    "item": "frozen pineapple chunks",
     "measurements": [
       {
         "amount": "1",
         "unit": "pound"
+      },
+      {
+        "amount": "3",
+        "unit": "heaping cups"
       }
     ],
     "note": null
