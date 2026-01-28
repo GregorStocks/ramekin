@@ -1,11 +1,11 @@
 {
   "raw": "2 6-ounce cans tomato paste",
   "expected": {
-    "item": "6-ounce cans tomato paste",
+    "item": "tomato paste",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "6-ounce cans"
       }
     ],
     "note": null

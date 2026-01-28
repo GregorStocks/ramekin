@@ -1,11 +1,11 @@
 {
   "raw": "1 6-ounce can tuna packed in olive oil",
   "expected": {
-    "item": "6-ounce can tuna packed in olive oil",
+    "item": "tuna packed in olive oil",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "6-ounce can"
       }
     ],
     "note": null

@@ -1,11 +1,11 @@
 {
   "raw": "1 16-ounce package of cherry tomatoes  ((about 4 cups))",
   "expected": {
-    "item": "16-ounce package of cherry tomatoes",
+    "item": "of cherry tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "16-ounce package"
       },
       {
         "amount": "4",

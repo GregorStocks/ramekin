@@ -1,11 +1,11 @@
 {
   "raw": "1 8-ounce package halloumi, at room temperature so it’s easier to slice",
   "expected": {
-    "item": "8-ounce package halloumi",
+    "item": "halloumi",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce package"
       }
     ],
     "note": "at room temperature so it’s easier to slice"

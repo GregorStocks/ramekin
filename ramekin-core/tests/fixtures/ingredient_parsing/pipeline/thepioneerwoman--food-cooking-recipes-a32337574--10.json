@@ -1,11 +1,11 @@
 {
   "raw": "1 16-ounce can refried beans, heated",
   "expected": {
-    "item": "16-ounce can refried beans, heated",
+    "item": "refried beans, heated",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "16-ounce can"
       }
     ],
     "note": null

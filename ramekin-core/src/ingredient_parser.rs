@@ -932,18 +932,52 @@ const WEIGHT_UNITS_FOR_COMPOUND: &[&str] = &[
 ];
 
 /// Try to extract a compound unit like "14 ounce can" or "10 oz bag".
+/// Also handles hyphenated forms like "28-oz. can" or "14-ounce can".
 /// Returns (compound_unit, remaining) if found, None otherwise.
 fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
     let s = s.trim();
     let words: Vec<&str> = s.split_whitespace().collect();
 
+    if words.is_empty() {
+        return None;
+    }
+
+    // Check for hyphenated form first: "28-oz." or "14-ounce" followed by container
+    // Pattern: FIRST_WORD contains hyphen with NUMBER-UNIT format
+    let first = words[0];
+    if let Some(hyphen_pos) = first.find('-') {
+        let before_hyphen = &first[..hyphen_pos];
+        let after_hyphen = &first[hyphen_pos + 1..];
+
+        // Before hyphen must be a number
+        if is_amount_like(before_hyphen) {
+            // After hyphen must be a weight unit (possibly with trailing period)
+            let after_lower = after_hyphen.to_lowercase();
+            let after_no_dot = after_lower.trim_end_matches('.');
+            let is_weight = WEIGHT_UNITS_FOR_COMPOUND.iter().any(|&u| after_no_dot == u);
+
+            if is_weight && words.len() >= 2 {
+                // Second word must be a container
+                let second_lower = words[1].to_lowercase();
+                let is_container = CONTAINERS.iter().any(|&c| second_lower == c);
+
+                if is_container {
+                    // Build compound unit preserving original format
+                    let compound_unit = format!("{} {}", first, words[1]);
+                    let remaining = words[2..].join(" ");
+                    return Some((compound_unit, remaining));
+                }
+            }
+        }
+    }
+
+    // Fall back to spaced form: NUMBER UNIT CONTAINER
     // Need at least 3 words: NUMBER UNIT CONTAINER
     if words.len() < 3 {
         return None;
     }
 
     // First word must be a number (integer or decimal)
-    let first = words[0];
     if !is_amount_like(first) {
         return None;
     }

@@ -1,11 +1,11 @@
 {
   "raw": "1 12-ounce bag frozen black-eyed peas",
   "expected": {
-    "item": "12-ounce bag frozen black-eyed peas",
+    "item": "frozen black-eyed peas",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "12-ounce bag"
       }
     ],
     "note": null

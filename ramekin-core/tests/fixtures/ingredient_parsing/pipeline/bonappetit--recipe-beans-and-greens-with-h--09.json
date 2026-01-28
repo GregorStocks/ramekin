@@ -1,11 +1,11 @@
 {
   "raw": "2 15-oz. cans chickpeas or white beans, rinsed",
   "expected": {
-    "item": "15-oz. cans chickpeas or white beans",
+    "item": "chickpeas or white beans",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "15-oz. cans"
       }
     ],
     "note": "rinsed"

@@ -1,11 +1,11 @@
 {
   "raw": "1 16-ounce can chickpeas (or 2 cups homemade chickpeas )",
   "expected": {
-    "item": "16-ounce can chickpeas (or 2 cups homemade chickpeas )",
+    "item": "chickpeas (or 2 cups homemade chickpeas )",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "16-ounce can"
       }
     ],
     "note": null

@@ -1,11 +1,11 @@
 {
   "raw": "1 10-ounce package mixed lettuce",
   "expected": {
-    "item": "10-ounce package mixed lettuce",
+    "item": "mixed lettuce",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "10-ounce package"
       }
     ],
     "note": null

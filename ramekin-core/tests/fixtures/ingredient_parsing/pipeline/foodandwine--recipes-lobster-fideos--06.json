@@ -1,11 +1,11 @@
 {
   "raw": "One 35-ounce can peeled whole tomatoes, drained and chopped",
   "expected": {
-    "item": "35-ounce can peeled whole tomatoes",
+    "item": "peeled whole tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "35-ounce can"
       }
     ],
     "note": "drained and chopped"

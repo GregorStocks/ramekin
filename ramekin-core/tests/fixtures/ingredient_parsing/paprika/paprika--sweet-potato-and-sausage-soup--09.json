@@ -1,11 +1,11 @@
 {
   "raw": "1 16-oz can white beans",
   "expected": {
-    "item": "16-oz can white beans",
+    "item": "white beans",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "16-oz can"
       }
     ],
     "note": null

@@ -1,11 +1,11 @@
 {
   "raw": "2 13-ounce jars pizza sauce, warmed",
   "expected": {
-    "item": "13-ounce jars pizza sauce, warmed",
+    "item": "pizza sauce, warmed",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "13-ounce jars"
       }
     ],
     "note": null

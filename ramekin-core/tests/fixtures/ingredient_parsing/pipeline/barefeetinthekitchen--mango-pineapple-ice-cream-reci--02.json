@@ -1,11 +1,11 @@
 {
   "raw": "1 14-ounce can diced mangoes, drained",
   "expected": {
-    "item": "14-ounce can diced mangoes",
+    "item": "diced mangoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "14-ounce can"
       }
     ],
     "note": "drained"

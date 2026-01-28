@@ -1,11 +1,11 @@
 {
   "raw": "1  8-ounce can diced pineapples with juice",
   "expected": {
-    "item": "8-ounce can diced pineapples with juice",
+    "item": "diced pineapples with juice",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce can"
       }
     ],
     "note": null

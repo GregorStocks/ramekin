@@ -1,11 +1,11 @@
 {
   "raw": "1 15-ounce (425g) can pumpkin puree (not pumpkin pie filling)*",
   "expected": {
-    "item": "15-ounce can pumpkin puree (not pumpkin pie filling)*",
+    "item": "pumpkin puree (not pumpkin pie filling)*",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "15-ounce can"
       },
       {
         "amount": "425",

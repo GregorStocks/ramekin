@@ -1,11 +1,11 @@
 {
   "raw": "1 8-ounce bottle pomegranate juice, chilled",
   "expected": {
-    "item": "8-ounce bottle pomegranate juice",
+    "item": "pomegranate juice",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce bottle"
       }
     ],
     "note": "chilled"

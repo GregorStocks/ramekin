@@ -1,11 +1,11 @@
 {
   "raw": "1 8-ounce package of cream cheese, slightly cold",
   "expected": {
-    "item": "8-ounce package of cream cheese",
+    "item": "of cream cheese",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce package"
       }
     ],
     "note": "slightly cold"

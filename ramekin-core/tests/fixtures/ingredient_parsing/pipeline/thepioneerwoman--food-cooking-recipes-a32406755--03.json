@@ -1,11 +1,11 @@
 {
   "raw": "1 15-ounce can green enchilada sauce",
   "expected": {
-    "item": "15-ounce can green enchilada sauce",
+    "item": "green enchilada sauce",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "15-ounce can"
       }
     ],
     "note": null
