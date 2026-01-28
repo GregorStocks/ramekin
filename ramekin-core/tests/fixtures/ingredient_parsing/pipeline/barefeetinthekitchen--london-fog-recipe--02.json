@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup or 2 ounces hot milk",
   "expected": {
-    "item": "or 2 ounces hot milk",
+    "item": "hot milk",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "2",
+        "unit": "ounces"
       }
     ],
     "note": null

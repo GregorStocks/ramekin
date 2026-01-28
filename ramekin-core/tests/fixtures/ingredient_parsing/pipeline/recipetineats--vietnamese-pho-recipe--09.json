@@ -1,11 +1,15 @@
 {
   "raw": "1kg / 2lb   meaty beef bones",
   "expected": {
-    "item": "/ 2lb   meaty beef bones",
+    "item": "meaty beef bones",
     "measurements": [
       {
         "amount": "1",
         "unit": "kg"
+      },
+      {
+        "amount": "2",
+        "unit": "lb"
       }
     ],
     "note": null

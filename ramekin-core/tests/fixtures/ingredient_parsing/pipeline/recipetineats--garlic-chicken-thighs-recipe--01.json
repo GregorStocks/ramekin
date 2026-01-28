@@ -1,7 +1,7 @@
 {
   "raw": "700 g / 1.2 lb   skinless boneless chicken thighs ((5 to 6))",
   "expected": {
-    "item": "/ 1.2 lb   skinless boneless chicken thighs",
+    "item": "skinless boneless chicken thighs",
     "measurements": [
       {
         "amount": "700",
@@ -10,6 +10,10 @@
       {
         "amount": "5 to 6",
         "unit": null
+      },
+      {
+        "amount": "1.2",
+        "unit": "lb"
       }
     ],
     "note": null

@@ -1,11 +1,19 @@
 {
   "raw": "1 3/4 cup / 14 oz / 400 ml buttermilk",
   "expected": {
-    "item": "/ 14 oz / 400 ml buttermilk",
+    "item": "buttermilk",
     "measurements": [
       {
         "amount": "1 3/4",
         "unit": "cup"
+      },
+      {
+        "amount": "14",
+        "unit": "oz"
+      },
+      {
+        "amount": "400",
+        "unit": "ml"
       }
     ],
     "note": null

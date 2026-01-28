@@ -1,11 +1,15 @@
 {
   "raw": "2 small or 1 large onion, thinly sliced",
   "expected": {
-    "item": "or 1 large onion",
+    "item": "onion",
     "measurements": [
       {
         "amount": "2",
         "unit": "small"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
       }
     ],
     "note": "thinly sliced"

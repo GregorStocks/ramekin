@@ -1,11 +1,11 @@
 {
   "raw": "1/2 - 1 tablespoon sea salt flakes (adjust to your taste)",
   "expected": {
-    "item": "- 1 tablespoon sea salt flakes (adjust to your taste)",
+    "item": "sea salt flakes (adjust to your taste)",
     "measurements": [
       {
-        "amount": "1/2",
-        "unit": null
+        "amount": "1/2-1",
+        "unit": "tablespoon"
       }
     ],
     "note": null

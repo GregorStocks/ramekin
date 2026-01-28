@@ -1,11 +1,15 @@
 {
   "raw": "4 1/2 cups / 1 lb. 6.5 oz / 640 g White Whole Wheat Flour",
   "expected": {
-    "item": "/ 1 lb. 6.5 oz / 640 g White Whole Wheat Flour",
+    "item": "6.5 oz / 640 g White Whole Wheat Flour",
     "measurements": [
       {
         "amount": "4 1/2",
         "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "lb"
       }
     ],
     "note": null

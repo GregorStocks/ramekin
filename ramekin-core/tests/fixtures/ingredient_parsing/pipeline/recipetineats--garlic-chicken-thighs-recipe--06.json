@@ -1,11 +1,15 @@
 {
   "raw": "25 g / 2 tbsp   unsalted butter",
   "expected": {
-    "item": "/ 2 tbsp   unsalted butter",
+    "item": "unsalted butter",
     "measurements": [
       {
         "amount": "25",
         "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
       }
     ],
     "note": null

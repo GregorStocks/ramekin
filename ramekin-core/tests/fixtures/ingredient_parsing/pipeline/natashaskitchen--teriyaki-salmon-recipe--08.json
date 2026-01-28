@@ -1,11 +1,15 @@
 {
   "raw": "2  large or 3 medium garlic cloves (minced)",
   "expected": {
-    "item": "or 3 medium garlic cloves",
+    "item": "garlic cloves",
     "measurements": [
       {
         "amount": "2",
         "unit": "large"
+      },
+      {
+        "amount": "3",
+        "unit": "medium"
       }
     ],
     "note": "minced"

@@ -1,11 +1,11 @@
 {
   "raw": "1 or 2 small cucumbers",
   "expected": {
-    "item": "or 2 small cucumbers",
+    "item": "cucumbers",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1 or 2",
+        "unit": "small"
       }
     ],
     "note": null

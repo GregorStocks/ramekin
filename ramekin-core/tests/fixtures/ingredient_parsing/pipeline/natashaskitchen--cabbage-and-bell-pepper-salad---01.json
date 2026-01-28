@@ -1,11 +1,15 @@
 {
   "raw": "1/2  large or 1 small cabbage",
   "expected": {
-    "item": "or 1 small cabbage",
+    "item": "cabbage",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "large"
+      },
+      {
+        "amount": "1",
+        "unit": "small"
       }
     ],
     "note": null

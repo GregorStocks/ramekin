@@ -1,11 +1,11 @@
 {
   "raw": "1/3 - 2/3 cups nut milk or water",
   "expected": {
-    "item": "- 2/3 cups nut milk or water",
+    "item": "nut milk or water",
     "measurements": [
       {
-        "amount": "1/3",
-        "unit": null
+        "amount": "1/3-2/3",
+        "unit": "cups"
       }
     ],
     "note": null

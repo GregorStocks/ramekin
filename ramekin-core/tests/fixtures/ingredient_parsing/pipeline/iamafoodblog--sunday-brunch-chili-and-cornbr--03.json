@@ -1,11 +1,11 @@
 {
   "raw": "3/4 – 1 lb boneless beef shank cut into 1/2 inch cubes",
   "expected": {
-    "item": "– 1 lb boneless beef shank cut into 1/2 inch cubes",
+    "item": "boneless beef shank cut into 1/2 inch cubes",
     "measurements": [
       {
-        "amount": "3/4",
-        "unit": null
+        "amount": "3/4-1",
+        "unit": "lb"
       }
     ],
     "note": null

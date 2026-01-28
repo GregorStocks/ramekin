@@ -1,11 +1,15 @@
 {
   "raw": "8 cups or 1-16 ounce bag coleslaw cabbage (finely diced)",
   "expected": {
-    "item": "or 1-16 ounce bag coleslaw cabbage",
+    "item": "bag coleslaw cabbage",
     "measurements": [
       {
         "amount": "8",
         "unit": "cups"
+      },
+      {
+        "amount": "1-16",
+        "unit": "ounce"
       }
     ],
     "note": "finely diced"

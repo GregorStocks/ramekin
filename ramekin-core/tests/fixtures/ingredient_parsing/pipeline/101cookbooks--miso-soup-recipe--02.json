@@ -1,11 +1,11 @@
 {
   "raw": "2 - 4 tablespoons miso paste (to taste)",
   "expected": {
-    "item": "- 4 tablespoons miso paste",
+    "item": "miso paste",
     "measurements": [
       {
-        "amount": "2",
-        "unit": null
+        "amount": "2-4",
+        "unit": "tablespoons"
       }
     ],
     "note": "to taste"

@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup / 60ml extra-virgin olive oil",
   "expected": {
-    "item": "/ 60ml extra-virgin olive oil",
+    "item": "extra-virgin olive oil",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
       }
     ],
     "note": null

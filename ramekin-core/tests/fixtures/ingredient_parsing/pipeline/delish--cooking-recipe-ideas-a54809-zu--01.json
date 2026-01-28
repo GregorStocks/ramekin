@@ -1,7 +1,7 @@
 {
   "raw": "3 large or 4 small zucchini (about 2 lb.)",
   "expected": {
-    "item": "or 4 small zucchini",
+    "item": "zucchini",
     "measurements": [
       {
         "amount": "3",
@@ -10,6 +10,10 @@
       {
         "amount": "2",
         "unit": "lb"
+      },
+      {
+        "amount": "4",
+        "unit": "small"
       }
     ],
     "note": null

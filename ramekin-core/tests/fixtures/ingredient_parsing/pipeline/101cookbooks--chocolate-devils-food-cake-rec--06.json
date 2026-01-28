@@ -1,11 +1,15 @@
 {
   "raw": "2 1/4 cups / 450g sugar",
   "expected": {
-    "item": "/ 450g sugar",
+    "item": "sugar",
     "measurements": [
       {
         "amount": "2 1/4",
         "unit": "cups"
+      },
+      {
+        "amount": "450",
+        "unit": "g"
       }
     ],
     "note": null

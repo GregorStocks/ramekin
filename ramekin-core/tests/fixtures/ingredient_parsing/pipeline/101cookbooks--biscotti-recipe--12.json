@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup / 60g toasted sesame seeds, plus more for coating",
   "expected": {
-    "item": "/ 60g toasted sesame seeds",
+    "item": "toasted sesame seeds",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "60",
+        "unit": "g"
       }
     ],
     "note": "plus more for coating"
