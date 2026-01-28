@@ -251,55 +251,60 @@ fn decode_html_entities(s: &str) -> String {
     // e.g., "&amp;#8531;" -> "&#8531;" -> "⅓"
     let decoded = html_escape::decode_html_entities(&decoded);
 
-    // Normalize non-breaking space to regular space
-    decoded.replace('\u{a0}', " ")
+    decoded.into_owned()
 }
 
-/// Convert unicode fractions to ASCII equivalents.
-/// Adds a space before the fraction if preceded by a digit (e.g., "1½" -> "1 1/2").
-fn normalize_unicode_fractions(s: &str) -> String {
+/// Normalize unicode characters to their ASCII equivalents.
+/// This handles:
+/// - Non-breaking spaces → regular spaces
+/// - Unicode fractions (½, ⅓, etc.) → ASCII fractions (1/2, 1/3, etc.)
+/// - Unicode dashes (en-dash, em-dash) → ASCII hyphen
+fn normalize_unicode(s: &str) -> String {
     let mut result = String::with_capacity(s.len() + 10);
     let chars: Vec<char> = s.chars().collect();
 
     for (i, &c) in chars.iter().enumerate() {
-        let fraction = match c {
-            '½' => Some("1/2"),
-            '⅓' => Some("1/3"),
-            '⅔' => Some("2/3"),
-            '¼' => Some("1/4"),
-            '¾' => Some("3/4"),
-            '⅕' => Some("1/5"),
-            '⅖' => Some("2/5"),
-            '⅗' => Some("3/5"),
-            '⅘' => Some("4/5"),
-            '⅙' => Some("1/6"),
-            '⅚' => Some("5/6"),
-            '⅛' => Some("1/8"),
-            '⅜' => Some("3/8"),
-            '⅝' => Some("5/8"),
-            '⅞' => Some("7/8"),
-            _ => None,
-        };
+        match c {
+            // Non-breaking space → regular space
+            '\u{a0}' => result.push(' '),
 
-        if let Some(frac) = fraction {
-            // Add space if preceded by a digit
-            if i > 0 && chars[i - 1].is_ascii_digit() {
-                result.push(' ');
+            // En-dash and em-dash → ASCII hyphen
+            '–' | '—' => result.push('-'),
+
+            // Unicode fractions → ASCII fractions
+            // Add space if preceded by a digit (e.g., "1½" -> "1 1/2")
+            '½' | '⅓' | '⅔' | '¼' | '¾' | '⅕' | '⅖' | '⅗' | '⅘' | '⅙' | '⅚' | '⅛' | '⅜' | '⅝'
+            | '⅞' => {
+                let frac = match c {
+                    '½' => "1/2",
+                    '⅓' => "1/3",
+                    '⅔' => "2/3",
+                    '¼' => "1/4",
+                    '¾' => "3/4",
+                    '⅕' => "1/5",
+                    '⅖' => "2/5",
+                    '⅗' => "3/5",
+                    '⅘' => "4/5",
+                    '⅙' => "1/6",
+                    '⅚' => "5/6",
+                    '⅛' => "1/8",
+                    '⅜' => "3/8",
+                    '⅝' => "5/8",
+                    '⅞' => "7/8",
+                    _ => unreachable!(),
+                };
+                if i > 0 && chars[i - 1].is_ascii_digit() {
+                    result.push(' ');
+                }
+                result.push_str(frac);
             }
-            result.push_str(frac);
-        } else {
-            result.push(c);
+
+            // All other characters pass through unchanged
+            _ => result.push(c),
         }
     }
 
     result
-}
-
-/// Normalize unicode dashes to ASCII hyphen for consistent range parsing.
-/// Recipes often use en-dashes (–) or em-dashes (—) for ranges like "1–2 cups".
-fn normalize_dashes(s: &str) -> String {
-    s.replace('–', "-") // en-dash (U+2013)
-        .replace('—', "-") // em-dash (U+2014)
 }
 
 /// Convert word numbers to digits at the start of the string.
@@ -351,9 +356,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
     // Decode HTML entities and normalize unicode before processing
     let decoded = decode_html_entities(raw);
-    let normalized = normalize_unicode_fractions(&decoded);
-    let after_dashes = normalize_dashes(&normalized);
-    let mut remaining = normalize_word_numbers(&after_dashes);
+    let normalized = normalize_unicode(&decoded);
+    let mut remaining = normalize_word_numbers(&normalized);
     let mut measurements = Vec::new();
     let mut note = None;
 
