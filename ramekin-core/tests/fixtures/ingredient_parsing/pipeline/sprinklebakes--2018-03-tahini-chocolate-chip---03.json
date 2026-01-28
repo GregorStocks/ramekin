@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 100g granulated sugar",
   "expected": {
-    "item": "100g granulated sugar",
+    "item": "granulated sugar",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
       }
     ],
     "note": null

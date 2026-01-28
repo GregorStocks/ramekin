@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 56g unsalted butter, melted and cooled slightly",
   "expected": {
-    "item": "56g unsalted butter",
+    "item": "unsalted butter",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "56",
+        "unit": "g"
       }
     ],
     "note": "melted and cooled slightly"

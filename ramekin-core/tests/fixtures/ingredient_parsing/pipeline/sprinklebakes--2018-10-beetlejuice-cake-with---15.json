@@ -1,11 +1,15 @@
 {
   "raw": "1 cup 85g toasted coconut",
   "expected": {
-    "item": "85g toasted coconut",
+    "item": "toasted coconut",
     "measurements": [
       {
         "amount": "1",
         "unit": "cup"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
       }
     ],
     "note": null

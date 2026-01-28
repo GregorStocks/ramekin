@@ -1,11 +1,15 @@
 {
   "raw": "1 1/4 cup 166g all-purpose flour",
   "expected": {
-    "item": "166g all-purpose flour",
+    "item": "all-purpose flour",
     "measurements": [
       {
         "amount": "1 1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "166",
+        "unit": "g"
       }
     ],
     "note": null

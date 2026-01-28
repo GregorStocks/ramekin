@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 55g butter, softened",
   "expected": {
-    "item": "55g butter",
+    "item": "butter",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
       }
     ],
     "note": "softened"

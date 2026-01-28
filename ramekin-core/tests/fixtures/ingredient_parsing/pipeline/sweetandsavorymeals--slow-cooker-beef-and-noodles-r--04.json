@@ -1,11 +1,15 @@
 {
   "raw": "1 10.5oz  can cream of mushroom soup",
   "expected": {
-    "item": "10.5oz  can cream of mushroom soup",
+    "item": "can cream of mushroom soup",
     "measurements": [
       {
         "amount": "1",
         "unit": null
+      },
+      {
+        "amount": "10.5",
+        "unit": "oz"
       }
     ],
     "note": null

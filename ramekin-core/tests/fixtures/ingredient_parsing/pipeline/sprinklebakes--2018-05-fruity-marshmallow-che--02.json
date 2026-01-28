@@ -1,11 +1,15 @@
 {
   "raw": "2/3 cup 150g unsalted butter, melted",
   "expected": {
-    "item": "150g unsalted butter",
+    "item": "unsalted butter",
     "measurements": [
       {
         "amount": "2/3",
         "unit": "cup"
+      },
+      {
+        "amount": "150",
+        "unit": "g"
       }
     ],
     "note": "melted"

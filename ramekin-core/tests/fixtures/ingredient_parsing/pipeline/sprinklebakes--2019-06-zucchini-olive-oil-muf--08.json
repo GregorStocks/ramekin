@@ -1,11 +1,15 @@
 {
   "raw": "1 cup 200g dark brown sugar lightly packed",
   "expected": {
-    "item": "200g dark brown sugar lightly packed",
+    "item": "dark brown sugar lightly packed",
     "measurements": [
       {
         "amount": "1",
         "unit": "cup"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
       }
     ],
     "note": null

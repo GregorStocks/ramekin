@@ -1,11 +1,15 @@
 {
   "raw": "3/4 cup 175ml heavy whipping cream",
   "expected": {
-    "item": "175ml heavy whipping cream",
+    "item": "heavy whipping cream",
     "measurements": [
       {
         "amount": "3/4",
         "unit": "cup"
+      },
+      {
+        "amount": "175",
+        "unit": "ml"
       }
     ],
     "note": null

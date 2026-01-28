@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 127g unsweetened applesauce",
   "expected": {
-    "item": "127g unsweetened applesauce",
+    "item": "unsweetened applesauce",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "127",
+        "unit": "g"
       }
     ],
     "note": null

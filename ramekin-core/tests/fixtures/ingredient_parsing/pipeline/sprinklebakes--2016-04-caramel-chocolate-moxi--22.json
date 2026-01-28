@@ -1,11 +1,15 @@
 {
   "raw": "1/4  85g cup dark corn syrup",
   "expected": {
-    "item": "85g cup dark corn syrup",
+    "item": "cup dark corn syrup",
     "measurements": [
       {
         "amount": "1/4",
         "unit": null
+      },
+      {
+        "amount": "85",
+        "unit": "g"
       }
     ],
     "note": null

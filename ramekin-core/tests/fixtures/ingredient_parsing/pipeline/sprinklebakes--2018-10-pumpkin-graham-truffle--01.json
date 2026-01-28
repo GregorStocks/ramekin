@@ -1,11 +1,15 @@
 {
   "raw": "1 cup 260g pumpkin pie filling",
   "expected": {
-    "item": "260g pumpkin pie filling",
+    "item": "pumpkin pie filling",
     "measurements": [
       {
         "amount": "1",
         "unit": "cup"
+      },
+      {
+        "amount": "260",
+        "unit": "g"
       }
     ],
     "note": null

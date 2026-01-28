@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 70g confectioners’ sugar",
   "expected": {
-    "item": "70g confectioners’ sugar",
+    "item": "confectioners’ sugar",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "70",
+        "unit": "g"
       }
     ],
     "note": null

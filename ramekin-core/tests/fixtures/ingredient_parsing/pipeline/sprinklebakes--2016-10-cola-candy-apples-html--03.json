@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 155g light corn syrup",
   "expected": {
-    "item": "155g light corn syrup",
+    "item": "light corn syrup",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "155",
+        "unit": "g"
       }
     ],
     "note": null

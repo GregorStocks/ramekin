@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 75g maple syrup",
   "expected": {
-    "item": "75g maple syrup",
+    "item": "maple syrup",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "75",
+        "unit": "g"
       }
     ],
     "note": null

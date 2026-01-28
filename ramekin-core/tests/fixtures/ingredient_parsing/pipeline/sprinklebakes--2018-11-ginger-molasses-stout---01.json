@@ -1,11 +1,15 @@
 {
   "raw": "2 cups 500ml Guinness extra stout",
   "expected": {
-    "item": "500ml Guinness extra stout",
+    "item": "Guinness extra stout",
     "measurements": [
       {
         "amount": "2",
         "unit": "cups"
+      },
+      {
+        "amount": "500",
+        "unit": "ml"
       }
     ],
     "note": null

@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 57g ground ginger",
   "expected": {
-    "item": "57g ground ginger",
+    "item": "ground ginger",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
       }
     ],
     "note": null

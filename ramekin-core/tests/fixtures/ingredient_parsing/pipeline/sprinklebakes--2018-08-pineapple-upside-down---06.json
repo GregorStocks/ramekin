@@ -1,11 +1,15 @@
 {
   "raw": "2 1/4 cups 550g dark brown sugar",
   "expected": {
-    "item": "550g dark brown sugar",
+    "item": "dark brown sugar",
     "measurements": [
       {
         "amount": "2 1/4",
         "unit": "cups"
+      },
+      {
+        "amount": "550",
+        "unit": "g"
       }
     ],
     "note": null
