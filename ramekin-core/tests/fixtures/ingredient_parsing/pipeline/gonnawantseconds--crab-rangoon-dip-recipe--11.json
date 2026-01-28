@@ -1,11 +1,11 @@
 {
   "raw": "2  6 Ounce Cans Fancy Crabmeat-Drained",
   "expected": {
-    "item": "6 Ounce Cans Fancy Crabmeat-Drained",
+    "item": "Fancy Crabmeat-Drained",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "6 Ounce Cans"
       }
     ],
     "note": null

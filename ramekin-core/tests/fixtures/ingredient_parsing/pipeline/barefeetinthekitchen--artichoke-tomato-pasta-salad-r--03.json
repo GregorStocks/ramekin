@@ -1,11 +1,11 @@
 {
   "raw": "1 14 ounce can whole artichoke hearts (plain, not marinated, about 8 hearts drained and quartered)",
   "expected": {
-    "item": "14 ounce can whole artichoke hearts",
+    "item": "whole artichoke hearts",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "14 ounce can"
       }
     ],
     "note": "plain, not marinated, about 8 hearts drained and quartered"

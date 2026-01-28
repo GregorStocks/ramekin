@@ -1,11 +1,11 @@
 {
   "raw": "1  7 Ounce Jar Duck Sauce or Sweet and Sour Sauce",
   "expected": {
-    "item": "7 Ounce Jar Duck Sauce or Sweet and Sour Sauce",
+    "item": "Duck Sauce or Sweet and Sour Sauce",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "7 Ounce Jar"
       }
     ],
     "note": null
