@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 57g unsalted butter, cold",
   "expected": {
-    "item": "57g unsalted butter",
+    "item": "unsalted butter",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "57",
+        "unit": "g"
       }
     ],
     "note": "cold"

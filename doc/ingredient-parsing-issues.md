@@ -56,11 +56,9 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Hyphenated compound units** - "1 28-oz. can tomatoes" and "1 14-ounce can" now correctly extract the hyphenated compound unit. Extended `try_extract_compound_unit()` to also handle "NUMBER-UNIT CONTAINER" patterns. 138 fixtures updated.
 
+- [x] **Metric units attached to numbers** - "1/3 cup 65g sugar" now correctly extracts both measurements. Added Step 4.7 with `try_extract_attached_metric()` to recognize patterns where a number is immediately followed by a metric unit (g, kg, ml, oz, lb) without space. Also handles chained alternatives like "226g/8 oz.". 211 fixtures updated.
+
 ### Open Issues
-
-#### High Impact
-
-- [ ] **Metric units attached to numbers** - "1/3 cup 65g sugar" leaves "65g" in item (162 fixtures, mostly sprinklebakes.com). The "65g" should be extracted as an alternative measurement.
 
 #### Low Impact / Edge Cases
 
@@ -118,3 +116,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5)** - Gregor asked for a thorough audit of curated fixtures and spot-checks of pipeline. Found two HIGH IMPACT issues I'd missed: (1) **Hyphenated compound units** (99 fixtures) - "1 28-oz. can" vs "1 28 ounce can" - my fix only handles the spaced version, not the hyphenated version like "28-oz." or "28-ounce". (2) **Metric units without space** (162 fixtures, mostly sprinklebakes) - "1/3 cup 65g sugar" leaves "65g" in the item. Also noticed `edge--parenthetical_size--01.json` has a related issue: "(15.5-ounce)" extracts amount=15.5 but unit=null because of the hyphen. These are the next high-priority targets. The "80/20 ground beef" case is actually correct - that's a fat ratio, not a measurement!
 
 **2026-01-28 (Claude Opus 4.5, cont'd)** - Fixed hyphenated compound units! Extended `try_extract_compound_unit()` to also check for "NUMBER-UNIT CONTAINER" patterns where the number and unit are hyphenated (like "28-oz." or "14-ounce"). 138 fixtures updated - even more than estimated because paprika recipes use this format too. The only remaining high-impact issue is metric units attached to numbers (162 fixtures). That one's trickier since "65g" could appear anywhere in the string.
+
+**2026-01-28 (Claude Opus 4.5)** - Fixed the last high-impact issue: metric units attached to numbers! "1/3 cup 65g sugar" now correctly extracts the "65g" as an alternative measurement. The key insight was to check for patterns where a number is immediately followed by a short metric unit (g, kg, ml, oz, lb) without any separator. Had to be careful to avoid false positives with things like "80/20 ground beef" (fat ratio) and "1/2cup" (typo without space). Also handles sprinklebakes' chained format "226g/8 oz." by looping to extract multiple attached measurements. 211 fixtures updated! The parser is now handling all documented high-impact issues. Only edge case remaining is double-encoded HTML entities, which is definitely "give up" territory. Future Claude: the parser is in great shape - enjoy exploring the 50k+ fixtures for new patterns!

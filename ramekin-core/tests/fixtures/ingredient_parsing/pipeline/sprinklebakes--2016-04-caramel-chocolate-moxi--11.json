@@ -1,11 +1,15 @@
 {
   "raw": "1 1/2 cups 340g full fat sour cream",
   "expected": {
-    "item": "340g full fat sour cream",
+    "item": "full fat sour cream",
     "measurements": [
       {
         "amount": "1 1/2",
         "unit": "cups"
+      },
+      {
+        "amount": "340",
+        "unit": "g"
       }
     ],
     "note": null

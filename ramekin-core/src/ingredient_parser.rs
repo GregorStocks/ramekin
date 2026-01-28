@@ -568,6 +568,45 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 4.7: Handle metric units attached to numbers without separator
+    // e.g., remaining = "65g granulated sugar" (after parsing "1/3 cup")
+    // This handles sprinklebakes-style "1/3 cup 65g sugar"
+    // Also handles "120g/2.75 oz." format with slash-separated alternatives
+    // Loop to handle multiple attached measurements, including slash patterns
+    let mut found_attached_metric = false;
+    loop {
+        let remaining_trimmed = remaining.trim_start();
+
+        // Check for slash-separated alternative (e.g., "/8 oz." after "226g")
+        // Only do this AFTER we've found at least one attached metric, to avoid
+        // false positives like "1/2cup" being parsed as "1" then "/2 cup"
+        if found_attached_metric && remaining_trimmed.starts_with('/') {
+            let after_slash = remaining_trimmed[1..].trim_start();
+            let (slash_amount, after_slash_amount) = extract_amount(after_slash);
+            let (slash_unit, after_slash_unit) = extract_unit(&after_slash_amount);
+
+            if slash_amount.is_some() && slash_unit.is_some() {
+                alt_measurements.push(Measurement {
+                    amount: slash_amount,
+                    unit: slash_unit,
+                });
+                remaining = after_slash_unit;
+                continue;
+            }
+        }
+
+        // Check for attached metric (e.g., "65g" at start of remaining)
+        if let Some((attached_measurement, after_attached)) =
+            try_extract_attached_metric(&remaining)
+        {
+            alt_measurements.push(attached_measurement);
+            remaining = after_attached;
+            found_attached_metric = true;
+        } else {
+            break;
+        }
+    }
+
     // Step 5: Extract note from the end (after comma), if not already set
     if note.is_none() {
         if let Some(comma_idx) = remaining.rfind(',') {
@@ -1005,6 +1044,92 @@ fn try_extract_compound_unit(s: &str) -> Option<(String, String)> {
     let remaining = words[3..].join(" ");
 
     Some((compound_unit, remaining))
+}
+
+/// Metric units that can be attached to numbers without space (e.g., "65g", "100ml")
+const ATTACHED_METRIC_UNITS: &[&str] = &["kg", "g", "mg", "ml", "l", "oz", "lb", "lbs"];
+
+/// Try to extract a metric measurement attached to a number at the start of the string.
+/// e.g., "65g granulated sugar" -> Some((Measurement{amount: "65", unit: "g"}, "granulated sugar"))
+/// Also handles "120g/2.75 oz." format - extracts "120g" and leaves "/2.75 oz." for next iteration.
+/// Returns None if no attached metric is found.
+fn try_extract_attached_metric(s: &str) -> Option<(Measurement, String)> {
+    let s = s.trim();
+    if s.is_empty() {
+        return None;
+    }
+
+    // Must start with a digit
+    if !s
+        .chars()
+        .next()
+        .map(|c| c.is_ascii_digit())
+        .unwrap_or(false)
+    {
+        return None;
+    }
+
+    // Find where the number ends and look for attached unit
+    let mut num_end = 0;
+    let mut has_digit = false;
+    let mut has_dot = false;
+
+    for (i, c) in s.char_indices() {
+        if c.is_ascii_digit() {
+            has_digit = true;
+            num_end = i + 1;
+        } else if c == '.' && !has_dot && has_digit {
+            // Allow one decimal point
+            has_dot = true;
+            num_end = i + 1;
+        } else {
+            break;
+        }
+    }
+
+    if !has_digit || num_end == 0 {
+        return None;
+    }
+
+    // Check if trailing dot should be excluded (e.g., "65." is not a valid amount by itself
+    // unless followed by digits)
+    let amount_str = s[..num_end].trim_end_matches('.');
+    if amount_str.is_empty() {
+        return None;
+    }
+
+    // Now check if immediately followed by a metric unit (no space)
+    let after_num = &s[num_end..];
+
+    // Check each metric unit (longest first would be ideal, but these are short)
+    for &unit in ATTACHED_METRIC_UNITS {
+        let after_lower = after_num.to_lowercase();
+        if after_lower.starts_with(unit) {
+            // Check for word boundary after unit
+            let after_unit = &after_num[unit.len()..];
+            // Valid boundaries: end of string, space, comma, slash, period (abbreviation)
+            if after_unit.is_empty()
+                || after_unit.starts_with(char::is_whitespace)
+                || after_unit.starts_with(',')
+                || after_unit.starts_with('/')
+                || after_unit.starts_with('.')
+            {
+                // Skip any trailing period (abbreviation like "oz.")
+                let unit_with_case = &after_num[..unit.len()];
+                let remaining = after_unit.trim_start_matches('.').trim_start();
+
+                return Some((
+                    Measurement {
+                        amount: Some(amount_str.to_string()),
+                        unit: Some(unit_with_case.to_string()),
+                    },
+                    remaining.to_string(),
+                ));
+            }
+        }
+    }
+
+    None
 }
 
 /// Check if a string looks like a preparation note.
@@ -1524,5 +1649,42 @@ mod tests {
         assert_eq!(result.measurements[1].unit, Some("oz".to_string()));
         assert_eq!(result.measurements[2].amount, Some("115".to_string()));
         assert_eq!(result.measurements[2].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_attached_metric_unit() {
+        // "1/3 cup 65g sugar" - metric unit attached to number without space
+        let result = parse_ingredient("1/3 cup 65g granulated sugar");
+        assert_eq!(result.item, "granulated sugar");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1/3".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("65".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+    }
+
+    #[test]
+    fn test_attached_metric_with_slash_alternatives() {
+        // "1 cup 226g/8 oz. unsalted butter" - attached metric with slash alternatives
+        let result = parse_ingredient("1 cup 226g/8 oz. unsalted butter, softened");
+        assert_eq!(result.item, "unsalted butter");
+        assert_eq!(result.measurements.len(), 3);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("226".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
+        assert_eq!(result.measurements[2].amount, Some("8".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("oz".to_string()));
+        assert_eq!(result.note, Some("softened".to_string()));
+    }
+
+    #[test]
+    fn test_fat_ratio_not_attached_metric() {
+        // "80/20 ground beef" - the 80/20 is a fat ratio, not a measurement
+        let result = parse_ingredient("1 pound 80/20 ground beef");
+        assert_eq!(result.item, "80/20 ground beef");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("pound".to_string()));
     }
 }

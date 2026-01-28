@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 55g moscovado sugar or dark brown sugar",
   "expected": {
-    "item": "55g moscovado sugar or dark brown sugar",
+    "item": "moscovado sugar or dark brown sugar",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
       }
     ],
     "note": null

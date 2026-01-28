@@ -1,11 +1,15 @@
 {
   "raw": "1 1/4 cups 300ml boiling water",
   "expected": {
-    "item": "300ml boiling water",
+    "item": "boiling water",
     "measurements": [
       {
         "amount": "1 1/4",
         "unit": "cups"
+      },
+      {
+        "amount": "300",
+        "unit": "ml"
       }
     ],
     "note": null

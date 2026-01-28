@@ -1,11 +1,15 @@
 {
   "raw": "1 1/4 cups 283g whole milk, at room temperature",
   "expected": {
-    "item": "283g whole milk",
+    "item": "whole milk",
     "measurements": [
       {
         "amount": "1 1/4",
         "unit": "cups"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
       }
     ],
     "note": "at room temperature"

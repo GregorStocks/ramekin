@@ -1,11 +1,15 @@
 {
   "raw": "1/2 cup 113g unsalted butter (one stick)",
   "expected": {
-    "item": "113g unsalted butter (one stick)",
+    "item": "unsalted butter (one stick)",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
       }
     ],
     "note": null

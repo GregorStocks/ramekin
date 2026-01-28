@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 20g loose leaf Lapsang Souchong tea, plus 2 tablespoons more for dipping",
   "expected": {
-    "item": "20g loose leaf Lapsang Souchong tea",
+    "item": "loose leaf Lapsang Souchong tea",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
       }
     ],
     "note": "plus 2 tablespoons more for dipping"

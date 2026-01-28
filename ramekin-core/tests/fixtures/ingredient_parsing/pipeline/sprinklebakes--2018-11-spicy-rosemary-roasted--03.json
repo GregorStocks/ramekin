@@ -1,11 +1,15 @@
 {
   "raw": "1 cup 116g walnut halves",
   "expected": {
-    "item": "116g walnut halves",
+    "item": "walnut halves",
     "measurements": [
       {
         "amount": "1",
         "unit": "cup"
+      },
+      {
+        "amount": "116",
+        "unit": "g"
       }
     ],
     "note": null

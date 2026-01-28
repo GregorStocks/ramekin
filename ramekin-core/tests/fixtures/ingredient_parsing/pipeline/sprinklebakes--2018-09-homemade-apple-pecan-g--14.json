@@ -1,11 +1,15 @@
 {
   "raw": "1/4 cup 36g light brown sugar",
   "expected": {
-    "item": "36g light brown sugar",
+    "item": "light brown sugar",
     "measurements": [
       {
         "amount": "1/4",
         "unit": "cup"
+      },
+      {
+        "amount": "36",
+        "unit": "g"
       }
     ],
     "note": null

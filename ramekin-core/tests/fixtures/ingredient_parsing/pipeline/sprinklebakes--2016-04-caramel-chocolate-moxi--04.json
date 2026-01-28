@@ -1,11 +1,15 @@
 {
   "raw": "3 cups 600g granulated sugar",
   "expected": {
-    "item": "600g granulated sugar",
+    "item": "granulated sugar",
     "measurements": [
       {
         "amount": "3",
         "unit": "cups"
+      },
+      {
+        "amount": "600",
+        "unit": "g"
       }
     ],
     "note": null
