@@ -23,8 +23,6 @@ export function instanceOfScrapeJobResponse(value) {
         return false;
     if (!('status' in value) || value['status'] === undefined)
         return false;
-    if (!('url' in value) || value['url'] === undefined)
-        return false;
     return true;
 }
 export function ScrapeJobResponseFromJSON(json) {
@@ -42,7 +40,7 @@ export function ScrapeJobResponseFromJSONTyped(json, ignoreDiscriminator) {
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
         'retryCount': json['retry_count'],
         'status': json['status'],
-        'url': json['url'],
+        'url': json['url'] == null ? undefined : json['url'],
     };
 }
 export function ScrapeJobResponseToJSON(json) {

@@ -50,7 +50,6 @@ class TestScrapeJobResponse(unittest.TestCase):
                 id = '',
                 retry_count = 56,
                 status = '',
-                url = '',
         )
         """
 

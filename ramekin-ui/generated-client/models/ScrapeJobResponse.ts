@@ -62,11 +62,11 @@ export interface ScrapeJobResponse {
      */
     status: string;
     /**
-     * URL being scraped
+     * URL being scraped (optional for imports)
      * @type {string}
      * @memberof ScrapeJobResponse
      */
-    url: string;
+    url?: string | null;
 }
 
 /**
@@ -77,7 +77,6 @@ export function instanceOfScrapeJobResponse(value: object): value is ScrapeJobRe
     if (!('id' in value) || value['id'] === undefined) return false;
     if (!('retryCount' in value) || value['retryCount'] === undefined) return false;
     if (!('status' in value) || value['status'] === undefined) return false;
-    if (!('url' in value) || value['url'] === undefined) return false;
     return true;
 }
 
@@ -98,7 +97,7 @@ export function ScrapeJobResponseFromJSONTyped(json: any, ignoreDiscriminator: b
         'recipeId': json['recipe_id'] == null ? undefined : json['recipe_id'],
         'retryCount': json['retry_count'],
         'status': json['status'],
-        'url': json['url'],
+        'url': json['url'] == null ? undefined : json['url'],
     };
 }
 

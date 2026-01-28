@@ -22,6 +22,10 @@ from ramekin_client.models.create_tag_request import CreateTagRequest
 from ramekin_client.models.create_tag_response import CreateTagResponse
 from ramekin_client.models.direction import Direction
 from ramekin_client.models.error_response import ErrorResponse
+from ramekin_client.models.import_extraction_method import ImportExtractionMethod
+from ramekin_client.models.import_raw_recipe import ImportRawRecipe
+from ramekin_client.models.import_recipe_request import ImportRecipeRequest
+from ramekin_client.models.import_recipe_response import ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest

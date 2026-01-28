@@ -20,6 +20,7 @@ __version__ = "1.0.0"
 __all__ = [
     "AuthApi",
     "EnrichApi",
+    "ImportApi",
     "PhotosApi",
     "RecipesApi",
     "ScrapeApi",
@@ -43,6 +44,10 @@ __all__ = [
     "CreateTagResponse",
     "Direction",
     "ErrorResponse",
+    "ImportExtractionMethod",
+    "ImportRawRecipe",
+    "ImportRecipeRequest",
+    "ImportRecipeResponse",
     "Ingredient",
     "ListRecipesResponse",
     "LoginRequest",
@@ -73,6 +78,7 @@ __all__ = [
 # import apis into sdk package
 from ramekin_client.api.auth_api import AuthApi as AuthApi
 from ramekin_client.api.enrich_api import EnrichApi as EnrichApi
+from ramekin_client.api.import_api import ImportApi as ImportApi
 from ramekin_client.api.photos_api import PhotosApi as PhotosApi
 from ramekin_client.api.recipes_api import RecipesApi as RecipesApi
 from ramekin_client.api.scrape_api import ScrapeApi as ScrapeApi
@@ -100,6 +106,10 @@ from ramekin_client.models.create_tag_request import CreateTagRequest as CreateT
 from ramekin_client.models.create_tag_response import CreateTagResponse as CreateTagResponse
 from ramekin_client.models.direction import Direction as Direction
 from ramekin_client.models.error_response import ErrorResponse as ErrorResponse
+from ramekin_client.models.import_extraction_method import ImportExtractionMethod as ImportExtractionMethod
+from ramekin_client.models.import_raw_recipe import ImportRawRecipe as ImportRawRecipe
+from ramekin_client.models.import_recipe_request import ImportRecipeRequest as ImportRecipeRequest
+from ramekin_client.models.import_recipe_response import ImportRecipeResponse as ImportRecipeResponse
 from ramekin_client.models.ingredient import Ingredient as Ingredient
 from ramekin_client.models.list_recipes_response import ListRecipesResponse as ListRecipesResponse
 from ramekin_client.models.login_request import LoginRequest as LoginRequest

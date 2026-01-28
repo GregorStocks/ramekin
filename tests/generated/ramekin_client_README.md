@@ -66,6 +66,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**login**](ramekin_client/docs/AuthApi.md#login) | **POST** /api/auth/login | 
 *AuthApi* | [**signup**](ramekin_client/docs/AuthApi.md#signup) | **POST** /api/auth/signup | 
 *EnrichApi* | [**enrich_recipe**](ramekin_client/docs/EnrichApi.md#enrich_recipe) | **POST** /api/enrich | Enrich a recipe using AI
+*ImportApi* | [**import_recipe**](ramekin_client/docs/ImportApi.md#import_recipe) | **POST** /api/import/recipe | 
 *PhotosApi* | [**get_photo**](ramekin_client/docs/PhotosApi.md#get_photo) | **GET** /api/photos/{id} | 
 *PhotosApi* | [**get_photo_thumbnail**](ramekin_client/docs/PhotosApi.md#get_photo_thumbnail) | **GET** /api/photos/{id}/thumbnail | 
 *PhotosApi* | [**upload**](ramekin_client/docs/PhotosApi.md#upload) | **POST** /api/photos | 
@@ -101,6 +102,10 @@ Class | Method | HTTP request | Description
  - [CreateTagResponse](ramekin_client/docs/CreateTagResponse.md)
  - [Direction](ramekin_client/docs/Direction.md)
  - [ErrorResponse](ramekin_client/docs/ErrorResponse.md)
+ - [ImportExtractionMethod](ramekin_client/docs/ImportExtractionMethod.md)
+ - [ImportRawRecipe](ramekin_client/docs/ImportRawRecipe.md)
+ - [ImportRecipeRequest](ramekin_client/docs/ImportRecipeRequest.md)
+ - [ImportRecipeResponse](ramekin_client/docs/ImportRecipeResponse.md)
  - [Ingredient](ramekin_client/docs/Ingredient.md)
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)

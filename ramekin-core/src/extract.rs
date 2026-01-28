@@ -190,8 +190,17 @@ fn extract_recipe_data(
         ingredients,
         instructions,
         image_urls,
-        source_url: source_url.to_string(),
+        source_url: Some(source_url.to_string()),
         source_name,
+        servings: None,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
+        categories: None,
     })
 }
 
@@ -380,8 +389,17 @@ fn extract_recipe_from_microdata(
         ingredients: ingredients.join("\n"),
         instructions,
         image_urls,
-        source_url: source_url.to_string(),
+        source_url: Some(source_url.to_string()),
         source_name,
+        servings: None,
+        prep_time: None,
+        cook_time: None,
+        total_time: None,
+        rating: None,
+        difficulty: None,
+        nutritional_info: None,
+        notes: None,
+        categories: None,
     })
 }
 

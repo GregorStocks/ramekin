@@ -168,6 +168,61 @@
         ]
       }
     },
+    "/api/import/recipe": {
+      "post": {
+        "tags": [
+          "import"
+        ],
+        "operationId": "import_recipe",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportRecipeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Import job created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ImportRecipeResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearer_auth": []
+          }
+        ]
+      }
+    },
     "/api/photos": {
       "post": {
         "tags": [
@@ -1532,6 +1587,167 @@
           }
         }
       },
+      "ImportExtractionMethod": {
+        "type": "string",
+        "description": "Extraction method for imported recipes (mirrors ramekin_core::ExtractionMethod)",
+        "enum": [
+          "json_ld",
+          "microdata",
+          "paprika"
+        ]
+      },
+      "ImportRawRecipe": {
+        "type": "object",
+        "description": "Raw recipe data for import (mirrors ramekin_core::RawRecipe)",
+        "required": [
+          "title",
+          "ingredients",
+          "instructions"
+        ],
+        "properties": {
+          "categories": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            }
+          },
+          "cook_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "difficulty": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "image_urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Image URLs found in the recipe (not used for imports with pre-uploaded photos)"
+          },
+          "ingredients": {
+            "type": "string",
+            "description": "Ingredients as a newline-separated blob"
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Instructions as a blob (could be HTML or plain text)"
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "nutritional_info": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "prep_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rating": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32"
+          },
+          "servings": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Source URL (optional for imports without a web source)"
+          },
+          "title": {
+            "type": "string"
+          },
+          "total_time": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      },
+      "ImportRecipeRequest": {
+        "type": "object",
+        "description": "Request body for importing a recipe",
+        "required": [
+          "raw_recipe",
+          "photo_ids",
+          "extraction_method"
+        ],
+        "properties": {
+          "extraction_method": {
+            "$ref": "#/components/schemas/ImportExtractionMethod",
+            "description": "The extraction/import method used"
+          },
+          "photo_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Photo IDs that have already been uploaded via POST /api/photos"
+          },
+          "raw_recipe": {
+            "$ref": "#/components/schemas/ImportRawRecipe",
+            "description": "The raw recipe data (converted from import source by client)"
+          }
+        }
+      },
+      "ImportRecipeResponse": {
+        "type": "object",
+        "description": "Response from recipe import",
+        "required": [
+          "job_id",
+          "status"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The created job ID"
+          },
+          "status": {
+            "type": "string",
+            "description": "Current job status"
+          }
+        }
+      },
       "Ingredient": {
         "type": "object",
         "description": "Ingredient structure for JSONB storage",
@@ -2006,7 +2222,6 @@
         "required": [
           "id",
           "status",
-          "url",
           "can_retry",
           "retry_count"
         ],
@@ -2052,8 +2267,11 @@
             "description": "Current job status (pending, scraping, parsing, completed, failed)"
           },
           "url": {
-            "type": "string",
-            "description": "URL being scraped"
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "URL being scraped (optional for imports)"
           }
         }
       },

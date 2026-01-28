@@ -15,7 +15,7 @@ use ramekin_core::pipeline::{
     steps::{FetchImagesStepMeta, SaveRecipeStepMeta},
     PipelineStep, StepContext, StepMetadata, StepResult,
 };
-use ramekin_core::{FailedImageFetch, FetchImagesOutput, RawRecipe};
+use ramekin_core::{ExtractionMethod, FailedImageFetch, FetchImagesOutput, RawRecipe};
 
 use crate::db::DbPool;
 use crate::models::{Ingredient, NewPhoto, NewRecipe, NewRecipeVersion};
@@ -281,6 +281,20 @@ impl PipelineStep for SaveRecipeStep {
             }
         };
 
+        // Parse extraction method to determine version_source
+        let extraction_method: Option<ExtractionMethod> = extract_output
+            .get("method_used")
+            .and_then(|v| serde_json::from_value(v.clone()).ok());
+
+        // Determine version_source based on extraction method
+        let version_source = match extraction_method {
+            Some(ExtractionMethod::Paprika) => "import",
+            _ => match self.existing_recipe_id {
+                Some(_) => "rescrape",
+                None => "scrape",
+            },
+        };
+
         // Get photo IDs from fetch_images output
         let photo_ids: Vec<Uuid> = ctx
             .outputs
@@ -313,10 +327,16 @@ impl PipelineStep for SaveRecipeStep {
 
         // Create or update recipe in database
         let result = match self.existing_recipe_id {
-            Some(recipe_id) => {
-                self.update_recipe(recipe_id, &raw_recipe, &photo_ids, &parsed_ingredients)
+            Some(recipe_id) => self.update_recipe(
+                recipe_id,
+                &raw_recipe,
+                &photo_ids,
+                &parsed_ingredients,
+                version_source,
+            ),
+            None => {
+                self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients, version_source)
             }
-            None => self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients),
         };
 
         match result {
@@ -346,6 +366,7 @@ impl SaveRecipeStep {
         raw: &RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
+        version_source: &str,
     ) -> Result<Uuid, String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
@@ -367,25 +388,25 @@ impl SaveRecipeStep {
                 .returning(recipes::id)
                 .get_result(conn)?;
 
-            // 2. Create the initial version with source='scrape'
+            // 2. Create the initial version
             let new_version = NewRecipeVersion {
                 recipe_id,
                 title: &raw.title,
                 description: raw.description.as_deref(),
                 ingredients: ingredients_json.clone(),
                 instructions: &raw.instructions,
-                source_url: Some(&raw.source_url),
+                source_url: raw.source_url.as_deref(),
                 source_name: raw.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                servings: None,
-                prep_time: None,
-                cook_time: None,
-                total_time: None,
-                rating: None,
-                difficulty: None,
-                nutritional_info: None,
-                notes: None,
-                version_source: "scrape",
+                servings: raw.servings.as_deref(),
+                prep_time: raw.prep_time.as_deref(),
+                cook_time: raw.cook_time.as_deref(),
+                total_time: raw.total_time.as_deref(),
+                rating: raw.rating,
+                difficulty: raw.difficulty.as_deref(),
+                nutritional_info: raw.nutritional_info.as_deref(),
+                notes: raw.notes.as_deref(),
+                version_source,
             };
 
             let version_id: Uuid = diesel::insert_into(recipe_versions::table)
@@ -409,6 +430,7 @@ impl SaveRecipeStep {
         raw: &RawRecipe,
         photo_ids: &[Uuid],
         parsed_ingredients: &[Ingredient],
+        version_source: &str,
     ) -> Result<Uuid, String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
@@ -420,25 +442,25 @@ impl SaveRecipeStep {
 
         // Use a transaction to create new version and update recipe
         conn.transaction(|conn| {
-            // Create a new version with source='rescrape'
+            // Create a new version
             let new_version = NewRecipeVersion {
                 recipe_id,
                 title: &raw.title,
                 description: raw.description.as_deref(),
                 ingredients: ingredients_json.clone(),
                 instructions: &raw.instructions,
-                source_url: Some(&raw.source_url),
+                source_url: raw.source_url.as_deref(),
                 source_name: raw.source_name.as_deref(),
                 photo_ids: &photo_ids_nullable,
-                servings: None,
-                prep_time: None,
-                cook_time: None,
-                total_time: None,
-                rating: None,
-                difficulty: None,
-                nutritional_info: None,
+                servings: raw.servings.as_deref(),
+                prep_time: raw.prep_time.as_deref(),
+                cook_time: raw.cook_time.as_deref(),
+                total_time: raw.total_time.as_deref(),
+                rating: raw.rating,
+                difficulty: raw.difficulty.as_deref(),
+                nutritional_info: raw.nutritional_info.as_deref(),
                 notes: None,
-                version_source: "rescrape",
+                version_source,
             };
 
             let version_id: Uuid = diesel::insert_into(recipe_versions::table)

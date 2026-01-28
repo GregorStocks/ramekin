@@ -49,9 +49,14 @@ pub struct ScrapeJobResponse {
     /// Current job status (pending, scraping, parsing, completed, failed)
     #[serde(rename = "status")]
     pub status: String,
-    /// URL being scraped
-    #[serde(rename = "url")]
-    pub url: String,
+    /// URL being scraped (optional for imports)
+    #[serde(
+        rename = "url",
+        default,
+        with = "::serde_with::rust::double_option",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub url: Option<Option<String>>,
 }
 
 impl ScrapeJobResponse {
@@ -60,7 +65,6 @@ impl ScrapeJobResponse {
         id: uuid::Uuid,
         retry_count: i32,
         status: String,
-        url: String,
     ) -> ScrapeJobResponse {
         ScrapeJobResponse {
             can_retry,
@@ -70,7 +74,7 @@ impl ScrapeJobResponse {
             recipe_id: None,
             retry_count,
             status,
-            url,
+            url: None,
         }
     }
 }

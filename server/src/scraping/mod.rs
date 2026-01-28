@@ -12,7 +12,9 @@ use ramekin_core::pipeline::steps::{
     FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
-use ramekin_core::{FetchHtmlOutput, BUILD_ID};
+use ramekin_core::{
+    ExtractRecipeOutput, ExtractionMethod, FetchHtmlOutput, FetchImagesOutput, RawRecipe, BUILD_ID,
+};
 use std::env;
 use std::sync::Arc;
 use thiserror::Error;
@@ -151,7 +153,10 @@ pub fn create_job(pool: &DbPool, user_id: Uuid, url: &str) -> Result<ScrapeJob, 
         .get()
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
-    let new_job = NewScrapeJob { user_id, url };
+    let new_job = NewScrapeJob {
+        user_id,
+        url: Some(url),
+    };
 
     diesel::insert_into(scrape_jobs::table)
         .values(&new_job)
@@ -195,7 +200,10 @@ pub fn create_job_with_html(
         .map_err(|e| ScrapeError::Database(e.to_string()))?;
 
     // Create the job
-    let new_job = NewScrapeJob { user_id, url };
+    let new_job = NewScrapeJob {
+        user_id,
+        url: Some(url),
+    };
     let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
         .values(&new_job)
         .get_result(&mut conn)
@@ -221,6 +229,82 @@ pub fn create_job_with_html(
 
     // Return the updated job
     get_job(pool, job.id)
+}
+
+/// Create an import job with pre-populated extract_recipe and fetch_images outputs.
+/// This allows imports to skip the fetch and extract steps and start directly at parse_ingredients.
+pub fn create_import_job(
+    pool: &DbPool,
+    user_id: Uuid,
+    source_url: Option<&str>,
+    raw_recipe: &RawRecipe,
+    extraction_method: ExtractionMethod,
+    photo_ids: Vec<Uuid>,
+) -> Result<ScrapeJob, ScrapeError> {
+    let mut conn = pool
+        .get()
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Create the job (url is optional for imports)
+    let new_job = NewScrapeJob {
+        user_id,
+        url: source_url,
+    };
+    let job: ScrapeJob = diesel::insert_into(scrape_jobs::table)
+        .values(&new_job)
+        .get_result(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Store the extract_recipe step output
+    let extract_output = ExtractRecipeOutput {
+        raw_recipe: raw_recipe.clone(),
+        method_used: extraction_method,
+        all_attempts: vec![],
+    };
+    let extract_json =
+        serde_json::to_value(&extract_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
+    save_step_output(pool, job.id, ExtractRecipeStep::NAME, extract_json)?;
+
+    // Store the fetch_images step output (photos already uploaded)
+    let images_output = FetchImagesOutput {
+        photo_ids,
+        failed_urls: vec![],
+    };
+    let images_json =
+        serde_json::to_value(&images_output).map_err(|e| ScrapeError::Database(e.to_string()))?;
+    save_step_output(pool, job.id, FetchImagesStepMeta::NAME, images_json)?;
+
+    // Update the job to start from parse_ingredients (skip fetch_html, extract_recipe, fetch_images)
+    diesel::update(scrape_jobs::table.find(job.id))
+        .set((
+            scrape_jobs::status.eq(STATUS_PARSING),
+            scrape_jobs::current_step.eq(Some(ParseIngredientsStep::NAME)),
+            scrape_jobs::updated_at.eq(Utc::now()),
+        ))
+        .execute(&mut conn)
+        .map_err(|e| ScrapeError::Database(e.to_string()))?;
+
+    // Return the updated job
+    get_job(pool, job.id)
+}
+
+/// Spawn an import job (same as scrape job, but no URL for tracing).
+pub fn spawn_import_job(pool: Arc<DbPool>, job_id: Uuid) {
+    let span = tracing::info_span!(
+        "import_job",
+        otel.name = "import_job",
+        job.id = %job_id,
+        job.operation = "import",
+        job.status = tracing::field::Empty,
+        job.error = tracing::field::Empty,
+    );
+
+    tokio::spawn(
+        async move {
+            run_scrape_job(pool, job_id).await;
+        }
+        .instrument(span),
+    );
 }
 
 /// Get a scrape job by ID.
@@ -414,6 +498,9 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
     let registry = build_registry(pool.clone(), job.user_id, job.recipe_id);
     let mut store = DbOutputStore::new(&pool, job_id);
 
+    // URL for context (empty string for imports without a URL)
+    let url = job.url.as_deref().unwrap_or("");
+
     // Run pipeline with status updates and OpenTelemetry instrumentation
     let mut current_step_name: Option<String> = Some(first_step.to_string());
     let mut failed_at_status = STATUS_SCRAPING;
@@ -440,7 +527,7 @@ async fn run_scrape_job_inner(pool: Arc<DbPool>, job_id: Uuid) -> Result<(), Scr
         update_status_and_step(&pool, job_id, step_status, Some(&step_name))?;
 
         // Execute step with OpenTelemetry span
-        let result = execute_step_with_tracing(step, &job.url, &store, &step_name).await;
+        let result = execute_step_with_tracing(step, url, &store, &step_name).await;
 
         // Save output (for both success and failure - useful for debugging)
         if let Err(e) = store.save_output(&step_name, &result.output) {

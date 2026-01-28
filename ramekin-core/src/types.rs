@@ -101,6 +101,8 @@ pub struct EnrichGeneratePhotoOutput {
 pub enum ExtractionMethod {
     JsonLd,
     Microdata,
+    /// Imported from Paprika app
+    Paprika,
 }
 
 /// Result of attempting a single extraction method
@@ -112,7 +114,7 @@ pub struct ExtractionAttempt {
     pub error: Option<String>,
 }
 
-/// Recipe extracted from a page - fields are raw blobs, not parsed.
+/// Recipe extracted from a page or imported - fields are raw blobs, not parsed.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RawRecipe {
     pub title: String,
@@ -123,8 +125,36 @@ pub struct RawRecipe {
     pub instructions: String,
     /// Image URLs found in the recipe (not yet fetched)
     pub image_urls: Vec<String>,
-    pub source_url: String,
+    /// Source URL (optional for imports that don't have a web source)
+    pub source_url: Option<String>,
     pub source_name: Option<String>,
+    /// Servings (e.g., "4 servings", "6-8")
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub servings: Option<String>,
+    /// Prep time (e.g., "15 minutes")
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub prep_time: Option<String>,
+    /// Cook time (e.g., "30 minutes")
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub cook_time: Option<String>,
+    /// Total time (e.g., "45 minutes")
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub total_time: Option<String>,
+    /// Rating (1-5)
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub rating: Option<i32>,
+    /// Difficulty level
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub difficulty: Option<String>,
+    /// Nutritional information
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub nutritional_info: Option<String>,
+    /// Additional notes
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub notes: Option<String>,
+    /// Categories/tags from import source
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub categories: Option<Vec<String>>,
 }
 
 /// Output from a pipeline step, stored in step_data
