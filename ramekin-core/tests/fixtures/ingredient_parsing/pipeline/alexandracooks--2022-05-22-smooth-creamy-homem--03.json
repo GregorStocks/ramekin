@@ -1,11 +1,11 @@
 {
   "raw": "1 &amp;#8211; 1.5 teaspoons (4 to 6 g) kosher salt&nbsp;",
   "expected": {
-    "item": "&#8211; 1.5 teaspoons kosher salt",
+    "item": "kosher salt",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1-1.5",
+        "unit": "teaspoons"
       },
       {
         "amount": "4 to 6",

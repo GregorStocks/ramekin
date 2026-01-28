@@ -1,8 +1,13 @@
 {
   "raw": "&amp;#8531; cup lemon juice",
   "expected": {
-    "item": "&#8531; cup lemon juice",
-    "measurements": [],
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1/3",
+        "unit": "cup"
+      }
+    ],
     "note": null
   }
 }

@@ -243,31 +243,37 @@ fn strip_measurement_modifier(s: &str) -> (Option<String>, String) {
 
 /// Decode common HTML entities.
 fn decode_html_entities(s: &str) -> String {
+    // First, decode &amp; to & so that double-encoded entities like &amp;#8531; become &#8531;
+    let s = s.replace("&amp;", "&");
+
     s
         // Named entities for fractions
         .replace("&frac14;", "1/4")
         .replace("&frac12;", "1/2")
         .replace("&frac34;", "3/4")
-        // Ampersand-encoded versions (double encoded)
-        .replace("&amp;frac14;", "1/4")
-        .replace("&amp;frac12;", "1/2")
-        .replace("&amp;frac34;", "3/4")
+        // Numeric entities for fractions (used by cookieandkate.com)
+        .replace("&#8531;", "1/3") // ⅓
+        .replace("&#8532;", "2/3") // ⅔
+        .replace("&#188;", "1/4") // ¼
+        .replace("&#189;", "1/2") // ½
+        .replace("&#190;", "3/4") // ¾
         // Non-breaking space
         .replace("&nbsp;", " ")
-        .replace("&amp;nbsp;", " ")
+        .replace("&#160;", " ")
         // Apostrophe / single quote
         .replace("&#39;", "'")
-        .replace("&amp;#39;", "'")
         .replace("&#x27;", "'")
         .replace("&apos;", "'")
-        // Ampersand
-        .replace("&amp;", "&")
+        .replace("&#8217;", "'") // Right single quote (')
         // Quotes
         .replace("&quot;", "\"")
         .replace("&#34;", "\"")
         // Less/greater than
         .replace("&lt;", "<")
         .replace("&gt;", ">")
+        // En-dash and em-dash (also handled by normalize_dashes, but decode here too)
+        .replace("&#8211;", "-") // en-dash
+        .replace("&#8212;", "-") // em-dash
 }
 
 /// Convert unicode fractions to ASCII equivalents.

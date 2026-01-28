@@ -1,11 +1,11 @@
 {
   "raw": "1.25 &amp;#8211; 1.5 lbs. boneless skinless chicken thighs, about 4",
   "expected": {
-    "item": "&#8211; 1.5 lbs. boneless skinless chicken thighs, about 4",
+    "item": "boneless skinless chicken thighs, about 4",
     "measurements": [
       {
-        "amount": "1.25",
-        "unit": null
+        "amount": "1.25-1.5",
+        "unit": "lbs"
       }
     ],
     "note": null

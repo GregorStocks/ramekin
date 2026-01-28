@@ -1,8 +1,13 @@
 {
   "raw": "&amp;#8532; cup dried fruit, chopped if large (I used dried cranberries)",
   "expected": {
-    "item": "&#8532; cup dried fruit, chopped if large",
-    "measurements": [],
+    "item": "dried fruit, chopped if large",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
     "note": "I used dried cranberries"
   }
 }
