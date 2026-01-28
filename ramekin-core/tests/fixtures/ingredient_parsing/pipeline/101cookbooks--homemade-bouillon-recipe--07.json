@@ -1,11 +1,15 @@
 {
   "raw": "3.5 ounces / 100g shallots, peeled",
   "expected": {
-    "item": "/ 100g shallots",
+    "item": "shallots",
     "measurements": [
       {
         "amount": "3.5",
         "unit": "ounces"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
       }
     ],
     "note": "peeled"

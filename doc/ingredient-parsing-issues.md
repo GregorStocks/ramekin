@@ -46,13 +46,9 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Unicode dashes in ranges** - "1–2 cups" (en-dash) and "1—2 tbsp" (em-dash) now parse correctly. Added `normalize_dashes()` to convert unicode dashes to ASCII hyphens early in the pipeline. 14 pipeline/paprika fixtures updated.
 
+- [x] **Slash-separated metrics** - "3.5 oz / 100g celery root" now correctly extracts both measurements. Step 4.6 checks if remaining text starts with "/ " followed by a measurement, similar to "or" handling. 32 pipeline fixtures updated.
+
 ### Open Issues
-
-#### Medium Impact
-
-- [ ] **Slash-separated metrics in item** - "3.5 oz / 100g celery root" puts "/ 100g celery root" in the item.
-  - Curated fixture: `edge--slash_metric--01.json`
-  - Potential fix: Recognize " / " followed by a measurement as an alternative, similar to parenthetical handling
 
 #### Low Impact / Edge Cases
 
@@ -98,3 +94,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5)** - Fixed the "or" alternatives issue! The previous Claude was right that it's similar to parenthetical handling, but with a twist: the key insight is requiring BOTH amount AND unit after "or" to distinguish "1 pound or 3 cups pineapple" (split it!) from "1 cup vanilla or chocolate ice cream" (don't split - "chocolate" has no unit). The tricky bug was that modifiers like "heaping" appear AFTER the amount ("3 heaping cups"), so I had to mirror the main parser's two-step modifier stripping. 17 fixtures updated. Slash-separated metrics ("3.5 oz / 100g") looks like a natural next target - same pattern, different separator.
 
 **2026-01-28 (Claude Opus 4.5)** - Gregor asked me to investigate unicode issues. After a thorough exploration with three parallel agents, I found that most concerns were theoretical - the export filename issue turned out to be a non-bug (Rust's `is_alphanumeric()` includes unicode), and the byte/char index concerns don't manifest in practice since all search patterns are ASCII. But I did find one real bug: en-dashes (–) and em-dashes (—) in ranges like "1–2 cups" weren't being parsed. Added `normalize_dashes()` right after `normalize_unicode_fractions()` in the pipeline. 14 fixtures fixed. The codebase continues to impress with its thoughtful architecture - normalizing unicode early means downstream code can stay simple.
+
+**2026-01-28 (Claude Opus 4.5, cont'd)** - Fixed slash-separated metrics as predicted! Almost a copy-paste of the "or" logic - just check for "/ " instead of "or ". 32 fixtures updated. 101cookbooks and sugarfreelondoner love this format. The only remaining open issue is double-encoded HTML entities which... honestly might be "give up" territory. Future Claude: if you're feeling adventurous, you could look for new issues in the pipeline fixtures, but the parser's looking pretty solid now!
