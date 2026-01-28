@@ -1,11 +1,15 @@
 {
   "raw": "2 slices or 1/2 cup shredded cheese (just about any cheese will work!)",
   "expected": {
-    "item": "or 1/2 cup shredded cheese (just about any cheese will work!)",
+    "item": "shredded cheese (just about any cheese will work!)",
     "measurements": [
       {
         "amount": "2",
         "unit": "slices"
+      },
+      {
+        "amount": "1/2",
+        "unit": "cup"
       }
     ],
     "note": null

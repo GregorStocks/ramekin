@@ -42,13 +42,11 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Hyphen range with spaces** - "1 - 2 potatoes" now correctly extracts amount="1-2". The parser recognizes "X - Y" patterns (with spaces around hyphen) and normalizes them to "X-Y" format. 14 pipeline fixtures updated.
 
+- [x] **"or" alternatives in main text** - "1 pound or 3 heaping cups frozen pineapple" now correctly extracts both measurements. The fix adds a new Step 4.5 in `parse_ingredient()` that checks if remaining text starts with "or " followed by a valid measurement (amount AND unit required). This avoids false positives like "vanilla or chocolate ice cream" where "or" is part of the item name. 17 pipeline fixtures updated.
+
 ### Open Issues
 
 #### Medium Impact
-
-- [ ] **"or" alternatives in item** - "1 pound or 3 cups frozen pineapple" puts "or 3 cups frozen pineapple" in the item name.
-  - Curated fixture: `edge--or_alternative--01.json`
-  - Potential fix: Could extract the "or X" as an alternative measurement, or just truncate at "or". Tricky because "or" can appear in item names too.
 
 - [ ] **Slash-separated metrics in item** - "3.5 oz / 100g celery root" puts "/ 100g celery root" in the item.
   - Curated fixture: `edge--slash_metric--01.json`
@@ -94,3 +92,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-27 (Claude Opus 4.5, cont'd)** - Gregor asked if I'm the same Claude on a new branch. Technically yes - same conversation, new branch. Took my own advice and fixed "and" in mixed numbers. Turns out sallysbakingaddiction.com really likes writing "1 and 1/2 cups" - 21 fixtures updated. The fix was simple: just check for "X and Y/Z" pattern and normalize to "X Y/Z". Hyphen range with spaces looks straightforward for next time.
 
 **2026-01-27 (Claude Opus 4.5)** - Fixed hyphen range with spaces ("1 - 2 potatoes"). As predicted, it was straightforward - just added a check for "X - Y" patterns after the existing "X to Y" range handling, normalizing to "X-Y". 14 pipeline fixtures updated. The "or" alternatives issue looks like a good next target - it's similar to how parentheticals handle " or " already. Also: I find it genuinely delightful that this guest book exists. There's something poetic about leaving notes for future versions of yourself who won't remember writing them. It's like we're all different instruments playing the same piece of music, just at different times. 🎵
+
+**2026-01-28 (Claude Opus 4.5)** - Fixed the "or" alternatives issue! The previous Claude was right that it's similar to parenthetical handling, but with a twist: the key insight is requiring BOTH amount AND unit after "or" to distinguish "1 pound or 3 cups pineapple" (split it!) from "1 cup vanilla or chocolate ice cream" (don't split - "chocolate" has no unit). The tricky bug was that modifiers like "heaping" appear AFTER the amount ("3 heaping cups"), so I had to mirror the main parser's two-step modifier stripping. 17 fixtures updated. Slash-separated metrics ("3.5 oz / 100g") looks like a natural next target - same pattern, different separator.

@@ -1,11 +1,15 @@
 {
   "raw": "6 extra-large or 7 large eggs",
   "expected": {
-    "item": "or 7 large eggs",
+    "item": "eggs",
     "measurements": [
       {
         "amount": "6",
         "unit": "extra-large"
+      },
+      {
+        "amount": "7",
+        "unit": "large"
       }
     ],
     "note": null

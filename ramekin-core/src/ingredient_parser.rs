@@ -435,6 +435,49 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         (None, u) => u,
     };
 
+    // Step 4.5: Handle " or " alternatives in remaining text
+    // e.g., remaining = " or 3 heaping cups frozen pineapple"
+    // Only split if what follows "or" is a valid measurement (has amount AND unit)
+    // This avoids false positives like "vanilla or chocolate ice cream"
+    let remaining_trimmed = remaining.trim_start();
+    let remaining_lower = remaining_trimmed.to_lowercase();
+    if remaining_lower.starts_with("or ") {
+        // Find the byte position after "or " (safe since "or " is ASCII)
+        let after_or = remaining_trimmed[3..].trim_start();
+
+        // Try to parse as measurement, following the same flow as main parsing:
+        // 1. Strip pre-amount modifier (e.g., "scant 1 cup")
+        let (or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
+
+        // 2. Extract amount
+        let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
+
+        // 3. Strip pre-unit modifier (e.g., "3 heaping cups")
+        let (or_pre_unit_modifier, after_or_pre_unit) =
+            strip_measurement_modifier(&after_or_amount);
+
+        // 4. Extract unit
+        let (or_base_unit, after_or_unit) = extract_unit(&after_or_pre_unit);
+
+        // Only treat as alternative if we got BOTH amount AND unit
+        if or_amount.is_some() && or_base_unit.is_some() {
+            // Combine modifiers with unit (prefer pre-unit, fall back to pre-amount)
+            let or_modifier = or_pre_unit_modifier.or(or_pre_amount_modifier);
+            let or_unit = match (or_modifier, or_base_unit) {
+                (Some(m), Some(u)) => Some(format!("{} {}", m, u)),
+                (None, u) => u,
+                _ => None,
+            };
+
+            alt_measurements.push(Measurement {
+                amount: or_amount,
+                unit: or_unit,
+            });
+
+            remaining = after_or_unit;
+        }
+    }
+
     // Step 5: Extract note from the end (after comma), if not already set
     if note.is_none() {
         if let Some(comma_idx) = remaining.rfind(',') {
@@ -1201,5 +1244,43 @@ mod tests {
             "Note should contain 'plus' info: {:?}",
             result.note
         );
+    }
+
+    #[test]
+    fn test_or_alternative() {
+        // Test that "or" alternatives are parsed as separate measurements
+        let result = parse_ingredient("1 pound or 3 heaping cups frozen pineapple chunks");
+        assert_eq!(result.item, "frozen pineapple chunks");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("pound".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("3".to_string()));
+        assert_eq!(
+            result.measurements[1].unit,
+            Some("heaping cups".to_string())
+        );
+    }
+
+    #[test]
+    fn test_or_alternative_not_split_when_no_unit() {
+        // "or" should NOT split when what follows has no recognized unit
+        // "chocolate ice cream" has no unit, so keep as part of item name
+        let result = parse_ingredient("1 cup vanilla or chocolate ice cream");
+        assert_eq!(result.item, "vanilla or chocolate ice cream");
+        assert_eq!(result.measurements.len(), 1);
+        assert_eq!(result.measurements[0].amount, Some("1".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+    }
+
+    #[test]
+    fn test_or_alternative_weights() {
+        // Test weight-to-weight alternatives
+        let result = parse_ingredient("8 ounces or 225 grams cheese");
+        assert_eq!(result.item, "cheese");
+        assert_eq!(result.measurements.len(), 2);
+        assert_eq!(result.measurements[0].amount, Some("8".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("ounces".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("225".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("grams".to_string()));
     }
 }
