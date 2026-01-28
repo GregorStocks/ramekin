@@ -481,8 +481,12 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Step 4.6: Handle " / " alternatives in remaining text
     // e.g., remaining = " / 100g celery root" (after parsing "3.5 ounces")
     // This handles metric/imperial alternatives like "3.5 oz / 100g"
-    let remaining_trimmed = remaining.trim_start();
-    if remaining_trimmed.starts_with("/ ") {
+    // Loop to handle multiple: "3/4 cup / 4 oz / 115g toasted sunflower seeds"
+    loop {
+        let remaining_trimmed = remaining.trim_start();
+        if !remaining_trimmed.starts_with("/ ") {
+            break;
+        }
         let after_slash = remaining_trimmed[2..].trim_start();
 
         // Try to parse as measurement
@@ -508,6 +512,8 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             });
 
             remaining = after_slash_unit;
+        } else {
+            break;
         }
     }
 
@@ -1350,5 +1356,19 @@ mod tests {
         assert_eq!(result.measurements[1].amount, Some("100".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
         assert_eq!(result.note, Some("peeled".to_string()));
+    }
+
+    #[test]
+    fn test_multiple_slash_alternatives() {
+        // "3/4 cup / 4 oz / 115g" should parse all three measurements
+        let result = parse_ingredient("3/4 cup / 4 oz / 115g toasted sunflower seeds");
+        assert_eq!(result.item, "toasted sunflower seeds");
+        assert_eq!(result.measurements.len(), 3);
+        assert_eq!(result.measurements[0].amount, Some("3/4".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
+        assert_eq!(result.measurements[1].amount, Some("4".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("oz".to_string()));
+        assert_eq!(result.measurements[2].amount, Some("115".to_string()));
+        assert_eq!(result.measurements[2].unit, Some("g".to_string()));
     }
 }
