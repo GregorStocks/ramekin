@@ -1,7 +1,7 @@
 {
   "raw": "1 &amp;amp; 3/4  cups (220g) all-purpose flour",
   "expected": {
-    "item": "&amp; 3/4  cups all-purpose flour",
+    "item": "& 3/4  cups all-purpose flour",
     "measurements": [
       {
         "amount": "1",

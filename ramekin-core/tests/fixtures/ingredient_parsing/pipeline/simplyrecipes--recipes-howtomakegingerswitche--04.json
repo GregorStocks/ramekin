@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup &amp;#43; 2 tablespoons honey",
   "expected": {
-    "item": "&#43; 2 tablespoons honey",
+    "item": "+ 2 tablespoons honey",
     "measurements": [
       {
         "amount": "1/2",
