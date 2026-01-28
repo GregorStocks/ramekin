@@ -1,6 +1,7 @@
 mod export;
 mod generate_test_urls;
 mod import;
+mod ingredient_tests;
 mod load_test;
 mod parse_html;
 mod pipeline;
@@ -223,6 +224,21 @@ enum Commands {
         #[arg(short, long)]
         output: Option<PathBuf>,
     },
+    /// Generate ingredient parsing test fixtures from pipeline run
+    IngredientTestsGenerate {
+        /// Directory containing pipeline run results
+        #[arg(long, default_value = "data/pipeline-runs")]
+        runs_dir: PathBuf,
+        /// Fixtures directory (default: ramekin-core/tests/fixtures/ingredient_parsing)
+        #[arg(long)]
+        fixtures_dir: Option<PathBuf>,
+    },
+    /// Update ingredient parsing test fixtures to match current parser output
+    IngredientTestsUpdate {
+        /// Fixtures directory (default: ramekin-core/tests/fixtures/ingredient_parsing)
+        #[arg(long)]
+        fixtures_dir: Option<PathBuf>,
+    },
 }
 
 #[tokio::main]
@@ -363,6 +379,15 @@ async fn main() -> Result<()> {
                 println!("Run: {}\n", run_id);
                 print!("{}", report);
             }
+        }
+        Commands::IngredientTestsGenerate {
+            runs_dir,
+            fixtures_dir,
+        } => {
+            ingredient_tests::generate_from_pipeline(&runs_dir, fixtures_dir.as_deref())?;
+        }
+        Commands::IngredientTestsUpdate { fixtures_dir } => {
+            ingredient_tests::update_fixtures(fixtures_dir.as_deref())?;
         }
     }
 
