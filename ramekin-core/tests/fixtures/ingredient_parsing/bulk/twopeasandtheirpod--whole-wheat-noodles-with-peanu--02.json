@@ -1,0 +1,13 @@
+{
+  "raw": "1  small piece of lemon grass (chopped)",
+  "expected": {
+    "item": "piece of lemon grass",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "chopped"
+  }
+}

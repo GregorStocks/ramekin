@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup dark chocolate chunks (a mix of chocolates between 50 and 70% works best, plus more for topping)",
+  "expected": {
+    "item": "dark chocolate chunks",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "a mix of chocolates between 50 and 70% works best, plus more for topping"
+  }
+}

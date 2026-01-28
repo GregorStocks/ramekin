@@ -1,0 +1,13 @@
+{
+  "raw": "16 oz. Asian vegetable mix",
+  "expected": {
+    "item": "Asian vegetable mix",
+    "measurements": [
+      {
+        "amount": "16",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

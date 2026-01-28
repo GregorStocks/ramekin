@@ -1,0 +1,13 @@
+{
+  "raw": "1&nbsp;small bundle sage",
+  "expected": {
+    "item": "bundle sage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

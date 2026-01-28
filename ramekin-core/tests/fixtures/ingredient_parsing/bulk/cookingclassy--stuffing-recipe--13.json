@@ -1,0 +1,13 @@
+{
+  "raw": "1 Tbsp chopped fresh rosemary, (or 1 tsp dried, crushed)",
+  "expected": {
+    "item": "chopped fresh rosemary,",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or 1 tsp dried, crushed"
+  }
+}

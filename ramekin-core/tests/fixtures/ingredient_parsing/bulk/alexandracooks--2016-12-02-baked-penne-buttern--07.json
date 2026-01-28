@@ -1,0 +1,13 @@
+{
+  "raw": "1&nbsp;pound&nbsp;penne",
+  "expected": {
+    "item": "penne",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

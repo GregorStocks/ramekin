@@ -1,0 +1,13 @@
+{
+  "raw": "2/3 cup corn syrup or glucose syrup",
+  "expected": {
+    "item": "corn syrup or glucose syrup",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup finely chopped fennel from 1 large bulb (about 5 ounces; 142 g)",
+  "expected": {
+    "item": "finely chopped fennel from 1 large bulb",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "5",
+        "unit": "ounces"
+      },
+      {
+        "amount": "142",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups clam broth (See Note 3)",
+  "expected": {
+    "item": "clam broth (See Note 3)",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

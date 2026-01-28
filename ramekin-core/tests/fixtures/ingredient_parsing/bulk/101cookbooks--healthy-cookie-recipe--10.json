@@ -1,0 +1,13 @@
+{
+  "raw": "6 - 7 ounces chocolate chips or dark chocolate bar chopped",
+  "expected": {
+    "item": "- 7 ounces chocolate chips or dark chocolate bar chopped",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

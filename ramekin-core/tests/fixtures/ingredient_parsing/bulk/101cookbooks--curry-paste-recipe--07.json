@@ -1,0 +1,13 @@
+{
+  "raw": "small splash of (thin) soy sauce, to taste",
+  "expected": {
+    "item": "splash of (thin) soy sauce",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "small"
+      }
+    ],
+    "note": "to taste"
+  }
+}

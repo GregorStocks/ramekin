@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup cooked white beans (drained and rinsed)",
+  "expected": {
+    "item": "cooked white beans",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

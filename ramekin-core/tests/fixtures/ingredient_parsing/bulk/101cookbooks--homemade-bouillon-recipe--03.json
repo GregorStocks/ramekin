@@ -1,0 +1,13 @@
+{
+  "raw": "7 ounces / 200g carrot, well scrubbed and chopped",
+  "expected": {
+    "item": "/ 200g carrot",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": "well scrubbed and chopped"
+  }
+}

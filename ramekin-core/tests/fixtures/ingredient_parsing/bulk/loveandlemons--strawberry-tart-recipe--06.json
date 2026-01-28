@@ -1,0 +1,13 @@
+{
+  "raw": "1-2 tablespoons lemon juice, optional, depending on thickness of your cream",
+  "expected": {
+    "item": "lemon juice, optional, depending on thickness of your cream",
+    "measurements": [
+      {
+        "amount": "1-2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

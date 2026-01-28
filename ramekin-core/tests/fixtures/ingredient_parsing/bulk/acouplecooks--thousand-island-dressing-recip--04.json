@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup plain whole milk yogurt*",
+  "expected": {
+    "item": "plain whole milk yogurt*",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

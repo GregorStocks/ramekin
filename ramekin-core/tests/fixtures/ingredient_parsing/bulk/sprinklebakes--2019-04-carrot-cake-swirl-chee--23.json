@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup 1 oz. chopped pecans, for garnish",
+  "expected": {
+    "item": "1 oz. chopped pecans",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "for garnish"
+  }
+}

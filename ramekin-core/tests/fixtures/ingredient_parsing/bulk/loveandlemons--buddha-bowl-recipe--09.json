@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup cooked chickpeas or cooked lentils",
+  "expected": {
+    "item": "cooked chickpeas or cooked lentils",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

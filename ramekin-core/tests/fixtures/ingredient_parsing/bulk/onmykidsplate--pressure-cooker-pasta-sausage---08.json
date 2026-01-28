@@ -1,0 +1,13 @@
+{
+  "raw": "24 ounces marinara sauce",
+  "expected": {
+    "item": "marinara sauce",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups sliced rhubarb",
+  "expected": {
+    "item": "sliced rhubarb",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

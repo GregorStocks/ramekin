@@ -1,0 +1,13 @@
+{
+  "raw": "1½ cups spaghetti sauce (divided)",
+  "expected": {
+    "item": "spaghetti sauce",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

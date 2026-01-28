@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30 grams) unsalted butter",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

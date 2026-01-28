@@ -1,0 +1,13 @@
+{
+  "raw": "6  cherry tomatoes (diced or salsa (65g))",
+  "expected": {
+    "item": "cherry tomatoes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "diced or salsa (65g"
+  }
+}

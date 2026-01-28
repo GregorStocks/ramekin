@@ -1,0 +1,13 @@
+{
+  "raw": "2 large banana",
+  "expected": {
+    "item": "banana",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

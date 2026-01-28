@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound / 16 ounces spinach or kale, washed and trimmed",
+  "expected": {
+    "item": "/ 16 ounces spinach or kale",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "washed and trimmed"
+  }
+}

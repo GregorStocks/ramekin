@@ -1,0 +1,21 @@
+{
+  "raw": "192g cake flour (6 3/4 ounces; 1 1/2 cups), plus more for dusting",
+  "expected": {
+    "item": "cake flour",
+    "measurements": [
+      {
+        "amount": "192",
+        "unit": "g"
+      },
+      {
+        "amount": "6 3/4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus more for dusting"
+  }
+}

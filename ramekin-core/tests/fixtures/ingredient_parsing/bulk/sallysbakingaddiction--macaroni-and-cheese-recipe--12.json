@@ -1,0 +1,13 @@
+{
+  "raw": "optional: 1/2 cup (45g) breadcrumbs, such as Panko",
+  "expected": {
+    "item": "optional: 1/2 cup breadcrumbs, such as Panko",
+    "measurements": [
+      {
+        "amount": "45",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

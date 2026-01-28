@@ -1,0 +1,13 @@
+{
+  "raw": "3  cans diced tomatoes with green chiles",
+  "expected": {
+    "item": "diced tomatoes with green chiles",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cans"
+      }
+    ],
+    "note": null
+  }
+}

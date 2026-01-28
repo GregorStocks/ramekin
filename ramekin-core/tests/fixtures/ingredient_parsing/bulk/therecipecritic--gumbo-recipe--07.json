@@ -1,0 +1,17 @@
+{
+  "raw": "1 ½ cups chopped green bell pepper (about 1 large bell pepper)",
+  "expected": {
+    "item": "chopped green bell pepper",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

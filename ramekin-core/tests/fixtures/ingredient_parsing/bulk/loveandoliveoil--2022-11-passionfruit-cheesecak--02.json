@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 cup shredded unsweetened coconut",
+  "expected": {
+    "item": "shredded unsweetened coconut",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup clam juice, plus more as needed",
+  "expected": {
+    "item": "clam juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus more as needed"
+  }
+}

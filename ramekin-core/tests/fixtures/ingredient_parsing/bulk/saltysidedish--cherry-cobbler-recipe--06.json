@@ -1,0 +1,17 @@
+{
+  "raw": "1  can (21 oz, cherry pie filling)",
+  "expected": {
+    "item": "1  can (21 oz, cherry pie filling)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "can"
+      },
+      {
+        "amount": "21",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

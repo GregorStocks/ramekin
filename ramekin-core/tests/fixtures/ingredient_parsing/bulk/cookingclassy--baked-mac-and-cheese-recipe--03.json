@@ -1,0 +1,17 @@
+{
+  "raw": "12 oz. (3 cups) dry macaroni pasta",
+  "expected": {
+    "item": "dry macaroni pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      },
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "24  ladyfinger cookies, (7-ounce package)",
+  "expected": {
+    "item": "ladyfinger cookies,",
+    "measurements": [
+      {
+        "amount": "24",
+        "unit": null
+      },
+      {
+        "amount": "7",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

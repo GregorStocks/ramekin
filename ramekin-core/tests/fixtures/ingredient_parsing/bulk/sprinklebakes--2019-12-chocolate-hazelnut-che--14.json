@@ -1,0 +1,13 @@
+{
+  "raw": "2 oz. chocolate shavings",
+  "expected": {
+    "item": "chocolate shavings",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

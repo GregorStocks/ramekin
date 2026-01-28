@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/4 cups (250 grams) granulated sugar + 3 tablespoons (40 grams) for rolling",
+  "expected": {
+    "item": "granulated sugar + 3 tablespoons for rolling",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "250",
+        "unit": "grams"
+      },
+      {
+        "amount": "40",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

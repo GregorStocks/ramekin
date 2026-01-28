@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon baking soda&nbsp;(NOT baking powder; they aren’t the same!)",
+  "expected": {
+    "item": "baking soda (NOT baking powder; they aren’t the same!)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

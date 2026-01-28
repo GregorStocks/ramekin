@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounce bottle mild lager, such as Budweiser",
+  "expected": {
+    "item": "bottle mild lager, such as Budweiser",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

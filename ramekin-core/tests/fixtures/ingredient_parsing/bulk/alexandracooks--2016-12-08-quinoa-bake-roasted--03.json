@@ -1,0 +1,13 @@
+{
+  "raw": "6&nbsp;tablespoons extra-virgin olive oil, divided plus more for greasing",
+  "expected": {
+    "item": "extra-virgin olive oil, divided",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": "plus more for greasing"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (135 grams) firmly packed almond flour",
+  "expected": {
+    "item": "firmly packed almond flour",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "135",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

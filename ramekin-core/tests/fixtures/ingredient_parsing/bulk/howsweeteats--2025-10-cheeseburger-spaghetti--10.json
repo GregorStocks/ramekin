@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup chopped tomatoes, (for topping)",
+  "expected": {
+    "item": "chopped tomatoes, (for topping)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3 cups 350g cake flour",
+  "expected": {
+    "item": "350g cake flour",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

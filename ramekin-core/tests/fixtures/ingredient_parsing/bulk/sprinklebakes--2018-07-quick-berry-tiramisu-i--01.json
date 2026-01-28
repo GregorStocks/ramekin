@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces fresh strawberries (or frozen, thawed)",
+  "expected": {
+    "item": "fresh strawberries",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "or frozen, thawed"
+  }
+}

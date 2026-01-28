@@ -1,0 +1,17 @@
+{
+  "raw": "2/3 cup&nbsp;(55g) natural unsweetened&nbsp;cocoa powder",
+  "expected": {
+    "item": "natural unsweetened cocoa powder",
+    "measurements": [
+      {
+        "amount": "2/3",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

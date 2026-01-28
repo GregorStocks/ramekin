@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;frac12; cup mayonnaise",
+  "expected": {
+    "item": "mayonnaise",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

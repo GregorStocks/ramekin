@@ -1,0 +1,13 @@
+{
+  "raw": "4  canned artichokes (quartered)",
+  "expected": {
+    "item": "canned artichokes",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": null
+      }
+    ],
+    "note": "quartered"
+  }
+}

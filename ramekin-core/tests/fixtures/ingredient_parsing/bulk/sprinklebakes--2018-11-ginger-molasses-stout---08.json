@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups 560g all-purpose flour",
+  "expected": {
+    "item": "560g all-purpose flour",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

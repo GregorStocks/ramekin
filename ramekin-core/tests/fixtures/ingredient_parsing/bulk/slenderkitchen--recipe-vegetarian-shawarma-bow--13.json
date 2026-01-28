@@ -1,0 +1,13 @@
+{
+  "raw": "8 cups Romaine lettuce",
+  "expected": {
+    "item": "Romaine lettuce",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

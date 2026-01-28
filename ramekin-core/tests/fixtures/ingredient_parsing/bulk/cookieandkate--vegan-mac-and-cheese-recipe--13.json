@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup water, more as necessary",
+  "expected": {
+    "item": "water, more as necessary",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

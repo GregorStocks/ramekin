@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium bell pepper",
+  "expected": {
+    "item": "bell pepper",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

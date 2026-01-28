@@ -1,0 +1,13 @@
+{
+  "raw": "5 ounces arugula (about 5 cups, packed)",
+  "expected": {
+    "item": "arugula",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "about 5 cups, packed"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 2/3 cups (6.7 oz) macaroni pasta",
+  "expected": {
+    "item": "macaroni pasta",
+    "measurements": [
+      {
+        "amount": "1 2/3",
+        "unit": "cups"
+      },
+      {
+        "amount": "6.7",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

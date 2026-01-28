@@ -1,0 +1,17 @@
+{
+  "raw": "1 pint (2 cups) heavy cream&nbsp;",
+  "expected": {
+    "item": "heavy cream",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pint"
+      },
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

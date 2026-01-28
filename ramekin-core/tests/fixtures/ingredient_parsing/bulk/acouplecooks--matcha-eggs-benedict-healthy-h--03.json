@@ -1,0 +1,13 @@
+{
+  "raw": "Juice from 1 lemon (3 tablespoons)",
+  "expected": {
+    "item": "Juice from 1 lemon",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

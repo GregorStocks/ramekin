@@ -1,0 +1,17 @@
+{
+  "raw": "1 ounce lemon juice (about &amp;frac12; medium lemon)",
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1/2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

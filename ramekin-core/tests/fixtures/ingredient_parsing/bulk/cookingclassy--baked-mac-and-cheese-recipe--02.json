@@ -1,0 +1,17 @@
+{
+  "raw": "6 Tbsp (3 oz) butter*, divided",
+  "expected": {
+    "item": "butter*",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "3",
+        "unit": "oz"
+      }
+    ],
+    "note": "divided"
+  }
+}

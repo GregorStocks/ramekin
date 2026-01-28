@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30 ml) fresh lemon juice, from 1 medium lemonc",
+  "expected": {
+    "item": "fresh lemon juice, from 1 medium lemonc",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

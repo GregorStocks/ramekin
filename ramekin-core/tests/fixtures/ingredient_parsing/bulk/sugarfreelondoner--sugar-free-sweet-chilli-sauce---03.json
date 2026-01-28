@@ -1,0 +1,13 @@
+{
+  "raw": "2 tsp garlic  (chopped (2 cloves))",
+  "expected": {
+    "item": "garlic",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tsp"
+      }
+    ],
+    "note": "chopped (2 cloves"
+  }
+}

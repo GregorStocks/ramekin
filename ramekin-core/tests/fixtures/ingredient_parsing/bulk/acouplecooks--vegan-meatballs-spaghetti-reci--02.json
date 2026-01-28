@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound medium red potatoes (about 2 medium potatoes)",
+  "expected": {
+    "item": "medium red potatoes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

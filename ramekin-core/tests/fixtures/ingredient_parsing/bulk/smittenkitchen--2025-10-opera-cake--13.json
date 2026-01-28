@@ -1,0 +1,21 @@
+{
+  "raw": "8 ounces (225 grams or 1 1/3 cups chocolate chips) semisweet or bittersweet chocolate, finely chopped",
+  "expected": {
+    "item": "semisweet or bittersweet chocolate",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      },
+      {
+        "amount": "1 1/3",
+        "unit": "cups"
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "½ teaspoon dried parsley",
+  "expected": {
+    "item": "dried parsley",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

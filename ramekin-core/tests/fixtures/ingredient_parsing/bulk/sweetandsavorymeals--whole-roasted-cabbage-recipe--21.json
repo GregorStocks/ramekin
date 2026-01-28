@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon freshly chopped oregano",
+  "expected": {
+    "item": "freshly chopped oregano",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

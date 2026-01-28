@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon thyme (minced)",
+  "expected": {
+    "item": "thyme",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "minced"
+  }
+}

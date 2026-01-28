@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 cup 113g butter, melted",
+  "expected": {
+    "item": "113g butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "melted"
+  }
+}

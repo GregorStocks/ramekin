@@ -1,0 +1,17 @@
+{
+  "raw": "6 oz dark chocolate (50-60%) (finely chopped)",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      },
+      {
+        "amount": "50",
+        "unit": null
+      }
+    ],
+    "note": "finely chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "5 cups confectioners&amp;#039; sugar, divided",
+  "expected": {
+    "item": "confectioners&#039; sugar",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

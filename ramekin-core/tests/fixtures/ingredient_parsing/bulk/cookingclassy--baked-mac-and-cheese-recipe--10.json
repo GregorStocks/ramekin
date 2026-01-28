@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (7.5 oz) Gruyere cheese, (shredded, divided (I like to use Murray&amp;#x27;s))",
+  "expected": {
+    "item": "Gruyere cheese,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "7.5",
+        "unit": "oz"
+      }
+    ],
+    "note": "shredded, divided (I like to use Murray&#x27;s"
+  }
+}

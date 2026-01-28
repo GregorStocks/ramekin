@@ -1,0 +1,13 @@
+{
+  "raw": "1 tbsp hemp hearts (for garnish)",
+  "expected": {
+    "item": "hemp hearts",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "for garnish"
+  }
+}

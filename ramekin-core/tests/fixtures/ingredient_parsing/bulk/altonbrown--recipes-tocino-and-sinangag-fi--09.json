@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups  leftover cooked white rice",
+  "expected": {
+    "item": "leftover cooked white rice",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

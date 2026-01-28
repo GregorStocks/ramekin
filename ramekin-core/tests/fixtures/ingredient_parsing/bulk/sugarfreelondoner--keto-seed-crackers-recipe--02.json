@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  cup / 65g pumpkin seeds",
+  "expected": {
+    "item": "/ 65g pumpkin seeds",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

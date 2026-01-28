@@ -1,0 +1,17 @@
+{
+  "raw": "2  medium spring onions / scallions ((30g))",
+  "expected": {
+    "item": "spring onions / scallions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "30",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2&nbsp;tablespoons finely minced herbs, any combination of thyme, sage, and rosemary",
+  "expected": {
+    "item": "finely minced herbs, any combination of thyme, sage, and rosemary",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

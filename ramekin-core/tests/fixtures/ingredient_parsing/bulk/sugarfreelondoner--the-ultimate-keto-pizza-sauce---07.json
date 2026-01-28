@@ -1,0 +1,13 @@
+{
+  "raw": "1  small onion (finely chopped (50g) or 1 tsp onion powder)",
+  "expected": {
+    "item": "onion or 1 tsp onion powder)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      }
+    ],
+    "note": "finely chopped (50g"
+  }
+}

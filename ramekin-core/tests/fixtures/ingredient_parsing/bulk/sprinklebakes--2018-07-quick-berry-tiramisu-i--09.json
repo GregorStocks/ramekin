@@ -1,0 +1,13 @@
+{
+  "raw": "6 ounces fresh blueberries",
+  "expected": {
+    "item": "fresh blueberries",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "½ cup unsalted butter (at cool room temperature)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      }
+    ],
+    "note": "at cool room temperature"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "12 slices buttermilk bread",
+  "expected": {
+    "item": "buttermilk bread",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 Tablespoons raspberry jam",
+  "expected": {
+    "item": "raspberry jam",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

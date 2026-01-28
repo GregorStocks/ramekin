@@ -1,0 +1,13 @@
+{
+  "raw": "8&nbsp;ounces dried fettuccine",
+  "expected": {
+    "item": "dried fettuccine",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

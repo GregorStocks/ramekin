@@ -1,0 +1,13 @@
+{
+  "raw": "2 14- ounce cans pinto beans (rinsed OR 3 1/2 cups cooked pinto beans)",
+  "expected": {
+    "item": "14- ounce cans pinto beans",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "rinsed OR 3 1/2 cups cooked pinto beans"
+  }
+}

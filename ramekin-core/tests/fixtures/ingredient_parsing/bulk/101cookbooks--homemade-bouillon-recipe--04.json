@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 ounces / 100 g celery",
+  "expected": {
+    "item": "/ 100 g celery",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons honey, warmed in microwave for 20 seconds",
+  "expected": {
+    "item": "honey, warmed in microwave for 20 seconds",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

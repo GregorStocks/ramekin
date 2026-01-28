@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup (52g) wheat bran",
+  "expected": {
+    "item": "wheat bran",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "52",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

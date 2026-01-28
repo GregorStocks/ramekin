@@ -1,0 +1,13 @@
+{
+  "raw": "3 pounds walnuts (finely ground)",
+  "expected": {
+    "item": "walnuts",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "pounds"
+      }
+    ],
+    "note": "finely ground"
+  }
+}

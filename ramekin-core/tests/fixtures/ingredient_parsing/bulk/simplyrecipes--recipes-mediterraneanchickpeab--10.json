@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tablespoon paprika (either sweet or hot)",
+  "expected": {
+    "item": "paprika (either sweet or hot)",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

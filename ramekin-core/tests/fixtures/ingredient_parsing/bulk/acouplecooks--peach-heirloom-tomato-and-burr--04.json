@@ -1,0 +1,13 @@
+{
+  "raw": "2 4-ounce balls burrata cheese",
+  "expected": {
+    "item": "4-ounce balls burrata cheese",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

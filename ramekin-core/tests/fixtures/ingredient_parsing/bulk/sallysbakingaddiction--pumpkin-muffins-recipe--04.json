@@ -1,0 +1,13 @@
+{
+  "raw": "1 and 1/2 teaspoons pumpkin pie spice*",
+  "expected": {
+    "item": "and 1/2 teaspoons pumpkin pie spice*",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

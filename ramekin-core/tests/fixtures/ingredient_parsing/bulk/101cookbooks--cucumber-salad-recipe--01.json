@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound cucumbers, unpeeled unless waxed",
+  "expected": {
+    "item": "cucumbers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "unpeeled unless waxed"
+  }
+}

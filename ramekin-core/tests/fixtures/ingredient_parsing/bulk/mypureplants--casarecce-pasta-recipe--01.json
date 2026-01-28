@@ -1,0 +1,13 @@
+{
+  "raw": "12 oz Casarecce pasta",
+  "expected": {
+    "item": "Casarecce pasta",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

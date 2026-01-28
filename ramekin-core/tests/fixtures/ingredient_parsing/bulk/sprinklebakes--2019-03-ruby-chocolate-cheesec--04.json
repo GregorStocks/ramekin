@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 343g/12 oz. ruby chocolate callets (or bars finely chopped)",
+  "expected": {
+    "item": "343g/12 oz. ruby chocolate callets",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "or bars finely chopped"
+  }
+}

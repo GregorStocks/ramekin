@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup Guinness extra stout",
+  "expected": {
+    "item": "Guinness extra stout",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

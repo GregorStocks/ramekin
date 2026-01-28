@@ -1,0 +1,13 @@
+{
+  "raw": "2 heads broccoli (approximately two cups chopped)",
+  "expected": {
+    "item": "broccoli",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heads"
+      }
+    ],
+    "note": "approximately two cups chopped"
+  }
+}

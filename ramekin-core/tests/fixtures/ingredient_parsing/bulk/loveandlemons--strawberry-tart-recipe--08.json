@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups plus 2 tablespoons almond flour",
+  "expected": {
+    "item": "2 cups plus 2 tablespoons almond flour",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "plus 2 tablespoons almond flour"
+  }
+}

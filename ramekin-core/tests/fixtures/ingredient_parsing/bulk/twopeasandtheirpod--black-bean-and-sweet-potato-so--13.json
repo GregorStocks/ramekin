@@ -1,0 +1,13 @@
+{
+  "raw": "1/2  bunch of cilantro (chopped)",
+  "expected": {
+    "item": "of cilantro",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "bunch"
+      }
+    ],
+    "note": "chopped"
+  }
+}

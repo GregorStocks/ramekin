@@ -1,0 +1,13 @@
+{
+  "raw": "3.5 ounces dark chocolate (chopped)",
+  "expected": {
+    "item": "dark chocolate",
+    "measurements": [
+      {
+        "amount": "3.5",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

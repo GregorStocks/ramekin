@@ -1,0 +1,17 @@
+{
+  "raw": "10 ounces (283 g) cauliflower, cut into 1-inch florets (from 1 medium head)",
+  "expected": {
+    "item": "cauliflower, cut into 1-inch florets (from 1 medium head)",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      },
+      {
+        "amount": "283",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

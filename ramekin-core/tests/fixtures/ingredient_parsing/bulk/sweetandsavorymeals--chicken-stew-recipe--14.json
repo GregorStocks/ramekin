@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 lbs baby potatoes (peeled and cut into cubes)",
+  "expected": {
+    "item": "baby potatoes",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "lbs"
+      }
+    ],
+    "note": "peeled and cut into cubes"
+  }
+}

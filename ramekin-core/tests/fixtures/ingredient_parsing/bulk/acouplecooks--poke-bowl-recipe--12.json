@@ -1,0 +1,13 @@
+{
+  "raw": "1 watermelon radish or 2 radishes",
+  "expected": {
+    "item": "watermelon radish or 2 radishes",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

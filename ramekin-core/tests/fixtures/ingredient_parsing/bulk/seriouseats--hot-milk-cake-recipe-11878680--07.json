@@ -1,0 +1,21 @@
+{
+  "raw": "3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil",
+  "expected": {
+    "item": "milk 1/4 cup vegetable oil",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "180",
+        "unit": "ml"
+      },
+      {
+        "amount": "60",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

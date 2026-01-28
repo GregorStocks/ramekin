@@ -1,0 +1,17 @@
+{
+  "raw": "8 tablespoons cubed cold butter, (¼-inch pieces)",
+  "expected": {
+    "item": "cubed cold butter,",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

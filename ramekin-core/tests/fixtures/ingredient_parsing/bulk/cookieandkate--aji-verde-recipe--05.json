@@ -1,0 +1,13 @@
+{
+  "raw": "&amp;#8531; cup (1 ounce) grated Cotija or Parmesan cheese",
+  "expected": {
+    "item": "&#8531; cup grated Cotija or Parmesan cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium yellow onion, peeled and quartered",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "peeled and quartered"
+  }
+}

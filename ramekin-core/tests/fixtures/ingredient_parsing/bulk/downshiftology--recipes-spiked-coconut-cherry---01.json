@@ -1,0 +1,13 @@
+{
+  "raw": "28 oz coconut cream",
+  "expected": {
+    "item": "coconut cream",
+    "measurements": [
+      {
+        "amount": "28",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "1 large or two small sweet bell peppers, diced (red or yellow, about 1/2 pound)",
+  "expected": {
+    "item": "or two small sweet bell peppers",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      },
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      }
+    ],
+    "note": "diced"
+  }
+}

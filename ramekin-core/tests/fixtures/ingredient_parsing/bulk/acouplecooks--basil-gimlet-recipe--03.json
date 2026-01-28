@@ -1,0 +1,17 @@
+{
+  "raw": "1/2 ounce (1 tablespoon) lime juice",
+  "expected": {
+    "item": "lime juice",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "ounce"
+      },
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

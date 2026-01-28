@@ -1,0 +1,13 @@
+{
+  "raw": "2 medium jalapeños, ribs and seeds removed, thinly sliced",
+  "expected": {
+    "item": "jalapeños, ribs and seeds removed",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "medium"
+      }
+    ],
+    "note": "thinly sliced"
+  }
+}

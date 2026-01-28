@@ -1,0 +1,17 @@
+{
+  "raw": "1 (12 oz.) pkg. semi-sweet chocolate chips",
+  "expected": {
+    "item": "semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pkg"
+      },
+      {
+        "amount": "12",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

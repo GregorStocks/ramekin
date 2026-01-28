@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 tablespoons olive or avocado oil",
+  "expected": {
+    "item": "olive or avocado oil",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

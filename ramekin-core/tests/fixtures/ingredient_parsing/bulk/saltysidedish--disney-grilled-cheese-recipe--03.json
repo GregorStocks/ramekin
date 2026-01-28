@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tsp coarse sea salt",
+  "expected": {
+    "item": "coarse sea salt",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

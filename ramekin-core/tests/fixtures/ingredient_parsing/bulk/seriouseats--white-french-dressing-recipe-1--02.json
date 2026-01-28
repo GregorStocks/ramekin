@@ -1,0 +1,17 @@
+{
+  "raw": "1 medium clove garlic (about 5 g), roughly chopped",
+  "expected": {
+    "item": "clove garlic",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      },
+      {
+        "amount": "5",
+        "unit": "g"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "¼ to ⅓ cup green goddess dressing",
+  "expected": {
+    "item": "green goddess dressing",
+    "measurements": [
+      {
+        "amount": "1/4 to 1/3",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

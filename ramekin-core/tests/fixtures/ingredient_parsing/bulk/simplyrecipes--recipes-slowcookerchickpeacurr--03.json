@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound dried chickpeas, rinsed",
+  "expected": {
+    "item": "dried chickpeas",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "rinsed"
+  }
+}

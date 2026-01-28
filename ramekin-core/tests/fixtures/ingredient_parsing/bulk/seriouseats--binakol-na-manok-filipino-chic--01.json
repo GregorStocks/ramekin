@@ -1,0 +1,21 @@
+{
+  "raw": "1 1/4 cups (3 1/2 ounces; 100g) shredded unsweetened coconut",
+  "expected": {
+    "item": "shredded unsweetened coconut",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      },
+      {
+        "amount": "3 1/2",
+        "unit": "ounces"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

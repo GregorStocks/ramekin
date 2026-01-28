@@ -1,0 +1,17 @@
+{
+  "raw": "1 tbsp butter (14g, salted or unsalted. Use olive oil or coconut oil for dairy-free)",
+  "expected": {
+    "item": "butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "14",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

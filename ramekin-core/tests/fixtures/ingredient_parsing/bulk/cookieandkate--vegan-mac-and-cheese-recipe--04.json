@@ -1,0 +1,17 @@
+{
+  "raw": "1 small yellow onion, chopped (about 1 &amp;frac12; cups)",
+  "expected": {
+    "item": "yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      }
+    ],
+    "note": "chopped"
+  }
+}

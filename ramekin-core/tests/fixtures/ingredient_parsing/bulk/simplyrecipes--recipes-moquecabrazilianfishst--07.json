@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup chopped spring onion, or 1 medium yellow onion, chopped or sliced",
+  "expected": {
+    "item": "chopped spring onion, or 1 medium yellow onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "chopped or sliced"
+  }
+}

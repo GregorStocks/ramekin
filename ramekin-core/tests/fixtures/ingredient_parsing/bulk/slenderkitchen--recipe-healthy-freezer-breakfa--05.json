@@ -1,0 +1,13 @@
+{
+  "raw": "14 oz. canned black beans, drained and rinsed",
+  "expected": {
+    "item": "canned black beans",
+    "measurements": [
+      {
+        "amount": "14",
+        "unit": "oz"
+      }
+    ],
+    "note": "drained and rinsed"
+  }
+}

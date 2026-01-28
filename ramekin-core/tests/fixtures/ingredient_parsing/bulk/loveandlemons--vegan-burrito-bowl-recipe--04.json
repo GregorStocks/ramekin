@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup cooked white, brown, or cilantro lime rice",
+  "expected": {
+    "item": "cooked white, brown, or cilantro lime rice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

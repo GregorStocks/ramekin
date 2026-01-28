@@ -1,0 +1,13 @@
+{
+  "raw": "1 green pepper, stem, ribbing and seeds removed, sliced into strips",
+  "expected": {
+    "item": "green pepper, stem, ribbing and seeds removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "sliced into strips"
+  }
+}

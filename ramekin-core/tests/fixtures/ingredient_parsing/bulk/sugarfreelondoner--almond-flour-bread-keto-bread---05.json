@@ -1,0 +1,21 @@
+{
+  "raw": "4 tbsp psyllium husks ( 20g OR 2 tbsp psyllium husk powder)",
+  "expected": {
+    "item": "psyllium husks",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "20",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

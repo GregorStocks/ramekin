@@ -1,0 +1,21 @@
+{
+  "raw": "1/4 cup honey or sugar ((85g honey, 50g sugar))",
+  "expected": {
+    "item": "honey or sugar",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      },
+      {
+        "amount": "50",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

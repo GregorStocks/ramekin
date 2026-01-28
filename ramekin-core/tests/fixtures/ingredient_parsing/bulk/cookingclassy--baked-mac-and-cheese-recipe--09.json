@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups (8 oz) extra sharp cheddar, (shredded (I like to use Cracker Barrel))",
+  "expected": {
+    "item": "extra sharp cheddar,",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "shredded (I like to use Cracker Barrel"
+  }
+}

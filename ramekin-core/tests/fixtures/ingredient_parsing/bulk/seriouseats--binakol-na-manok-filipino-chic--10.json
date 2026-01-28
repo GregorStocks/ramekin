@@ -1,0 +1,13 @@
+{
+  "raw": "Four 3-inch knobs fresh ginger (70g), quartered&nbsp;",
+  "expected": {
+    "item": "Four 3-inch knobs fresh ginger",
+    "measurements": [
+      {
+        "amount": "70",
+        "unit": "g"
+      }
+    ],
+    "note": "quartered"
+  }
+}

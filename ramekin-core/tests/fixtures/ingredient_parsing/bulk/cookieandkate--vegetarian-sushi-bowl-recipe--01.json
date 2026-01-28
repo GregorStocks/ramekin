@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups short-grain brown rice, rinsed well",
+  "expected": {
+    "item": "short-grain brown rice",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": "rinsed well"
+  }
+}

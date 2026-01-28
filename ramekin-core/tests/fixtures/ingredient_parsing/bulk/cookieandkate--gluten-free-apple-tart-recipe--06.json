@@ -1,0 +1,17 @@
+{
+  "raw": "2 large Honeycrisp or 3 medium Granny Smith apples (about 1 &amp;frac14; pounds)",
+  "expected": {
+    "item": "Honeycrisp or 3 medium Granny Smith apples",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "3/4 cup of butter",
+  "expected": {
+    "item": "of butter",
+    "measurements": [
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

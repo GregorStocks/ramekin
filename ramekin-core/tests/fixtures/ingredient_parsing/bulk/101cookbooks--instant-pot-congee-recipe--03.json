@@ -1,0 +1,13 @@
+{
+  "raw": "9 cups water or mushroom broth",
+  "expected": {
+    "item": "water or mushroom broth",
+    "measurements": [
+      {
+        "amount": "9",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

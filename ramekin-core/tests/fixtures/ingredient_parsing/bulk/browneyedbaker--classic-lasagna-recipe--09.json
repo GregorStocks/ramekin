@@ -1,0 +1,13 @@
+{
+  "raw": "20 ounces mozzarella cheese (shredded (5 cups))",
+  "expected": {
+    "item": "mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "20",
+        "unit": "ounces"
+      }
+    ],
+    "note": "shredded (5 cups"
+  }
+}

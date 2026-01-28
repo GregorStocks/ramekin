@@ -1,0 +1,13 @@
+{
+  "raw": "5  medium sage leaves",
+  "expected": {
+    "item": "sage leaves",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups full fat sour cream",
+  "expected": {
+    "item": "full fat sour cream",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

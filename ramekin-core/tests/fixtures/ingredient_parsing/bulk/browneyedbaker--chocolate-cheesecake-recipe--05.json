@@ -1,0 +1,13 @@
+{
+  "raw": "1¼ cups + 2 tablespoons granulated sugar",
+  "expected": {
+    "item": "+ 2 tablespoons granulated sugar",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

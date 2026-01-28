@@ -1,0 +1,17 @@
+{
+  "raw": "6 Tablespoons (85g) unsalted butter,&nbsp;cold and cubed",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "85",
+        "unit": "g"
+      }
+    ],
+    "note": "cold and cubed"
+  }
+}

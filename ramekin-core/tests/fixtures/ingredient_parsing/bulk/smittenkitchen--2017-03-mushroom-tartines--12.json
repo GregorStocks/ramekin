@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (225 grams) coarsely grated gruyere or comte",
+  "expected": {
+    "item": "coarsely grated gruyere or comte",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "225",
+        "unit": "grams"
+      }
+    ],
+    "note": null
+  }
+}

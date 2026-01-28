@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 teaspoons vanilla extract or vanilla bean paste",
+  "expected": {
+    "item": "vanilla extract or vanilla bean paste",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

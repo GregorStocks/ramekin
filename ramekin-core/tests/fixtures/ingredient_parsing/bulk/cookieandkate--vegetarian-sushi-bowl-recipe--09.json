@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups frozen edamame",
+  "expected": {
+    "item": "frozen edamame",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

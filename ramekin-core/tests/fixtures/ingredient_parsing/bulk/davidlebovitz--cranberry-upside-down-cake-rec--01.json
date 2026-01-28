@@ -1,0 +1,17 @@
+{
+  "raw": "4 tablespoons (55g/2 ounces) unsalted butter (cubed)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "55",
+        "unit": null
+      }
+    ],
+    "note": "cubed"
+  }
+}

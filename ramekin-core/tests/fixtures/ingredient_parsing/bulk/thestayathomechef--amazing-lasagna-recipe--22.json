@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound thinly sliced mozzarella cheese (about 24 slices)",
+  "expected": {
+    "item": "thinly sliced mozzarella cheese",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "24",
+        "unit": "slices"
+      }
+    ],
+    "note": null
+  }
+}

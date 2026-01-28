@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 stalks finely diced celery, optional",
+  "expected": {
+    "item": "finely diced celery",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "stalks"
+      }
+    ],
+    "note": "optional"
+  }
+}

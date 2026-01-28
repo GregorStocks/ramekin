@@ -1,0 +1,13 @@
+{
+  "raw": "1 to 2 teaspoons maple syrup, to taste",
+  "expected": {
+    "item": "maple syrup",
+    "measurements": [
+      {
+        "amount": "1 to 2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": "to taste"
+  }
+}

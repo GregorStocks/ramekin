@@ -1,0 +1,13 @@
+{
+  "raw": "1¼ cups Guinness Draught, divided",
+  "expected": {
+    "item": "Guinness Draught",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": "divided"
+  }
+}

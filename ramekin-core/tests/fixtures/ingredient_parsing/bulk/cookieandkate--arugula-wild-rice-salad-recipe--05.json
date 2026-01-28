@@ -1,0 +1,17 @@
+{
+  "raw": "&amp;frac12; cup coarsely chopped fresh basil (from one &amp;#8532; ounce container)",
+  "expected": {
+    "item": "coarsely chopped fresh basil",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "cup"
+      },
+      {
+        "amount": null,
+        "unit": "ounce"
+      }
+    ],
+    "note": null
+  }
+}

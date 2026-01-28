@@ -1,0 +1,17 @@
+{
+  "raw": "1/4 cup coconut oil (55g)",
+  "expected": {
+    "item": "coconut oil",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      },
+      {
+        "amount": "55",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

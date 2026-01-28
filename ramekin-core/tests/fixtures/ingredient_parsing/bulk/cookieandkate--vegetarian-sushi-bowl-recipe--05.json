@@ -1,0 +1,13 @@
+{
+  "raw": "1 tablespoon sugar or agave nectar",
+  "expected": {
+    "item": "sugar or agave nectar",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      }
+    ],
+    "note": null
+  }
+}

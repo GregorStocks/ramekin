@@ -1,0 +1,13 @@
+{
+  "raw": "optional: 1 cup (180g) semi-sweet chocolate chips",
+  "expected": {
+    "item": "optional: 1 cup semi-sweet chocolate chips",
+    "measurements": [
+      {
+        "amount": "180",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

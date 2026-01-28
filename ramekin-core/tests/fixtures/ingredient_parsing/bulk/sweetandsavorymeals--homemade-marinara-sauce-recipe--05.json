@@ -1,0 +1,13 @@
+{
+  "raw": "14.5 oz can whole tomatoes",
+  "expected": {
+    "item": "can whole tomatoes",
+    "measurements": [
+      {
+        "amount": "14.5",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

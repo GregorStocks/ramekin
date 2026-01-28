@@ -1,0 +1,13 @@
+{
+  "raw": "2 ounces / 60g cilantro (coriander), loosely chopped",
+  "expected": {
+    "item": "/ 60g cilantro (coriander)",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "ounces"
+      }
+    ],
+    "note": "loosely chopped"
+  }
+}

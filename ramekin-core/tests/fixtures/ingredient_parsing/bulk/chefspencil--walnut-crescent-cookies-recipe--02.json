@@ -1,0 +1,13 @@
+{
+  "raw": "100 g ground walnuts",
+  "expected": {
+    "item": "ground walnuts",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

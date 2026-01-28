@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/4 pounds high-quality bittersweet (around 70% cocoa) chocolate, in couverture discs or finely chopped",
+  "expected": {
+    "item": "high-quality bittersweet (around 70% cocoa) chocolate",
+    "measurements": [
+      {
+        "amount": "1 1/4",
+        "unit": "pounds"
+      }
+    ],
+    "note": "in couverture discs or finely chopped"
+  }
+}

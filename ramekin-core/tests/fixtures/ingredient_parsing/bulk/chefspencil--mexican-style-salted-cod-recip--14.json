@@ -1,0 +1,13 @@
+{
+  "raw": "1 bunch parsley",
+  "expected": {
+    "item": "parsley",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "bunch"
+      }
+    ],
+    "note": null
+  }
+}

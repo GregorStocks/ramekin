@@ -1,0 +1,13 @@
+{
+  "raw": "4 handfuls  arugula or other mixed greens",
+  "expected": {
+    "item": "arugula or other mixed greens",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "handfuls"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "15 g / 1/2 cup dried porcini mushrooms",
+  "expected": {
+    "item": "/ 1/2 cup dried porcini mushrooms",
+    "measurements": [
+      {
+        "amount": "15",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

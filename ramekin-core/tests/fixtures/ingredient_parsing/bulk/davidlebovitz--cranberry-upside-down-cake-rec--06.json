@@ -1,0 +1,13 @@
+{
+  "raw": "1 1/2 teaspoons baking powder (preferably aluminum-free)",
+  "expected": {
+    "item": "baking powder (preferably aluminum-free)",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

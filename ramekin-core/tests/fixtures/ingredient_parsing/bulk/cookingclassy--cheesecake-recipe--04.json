@@ -1,0 +1,17 @@
+{
+  "raw": "4 (8 oz) pkgs. cream cheese, (softened through or at room temperature (preferably Philadelphia))",
+  "expected": {
+    "item": "cream cheese,",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "pkgs"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      }
+    ],
+    "note": "softened through or at room temperature (preferably Philadelphia"
+  }
+}

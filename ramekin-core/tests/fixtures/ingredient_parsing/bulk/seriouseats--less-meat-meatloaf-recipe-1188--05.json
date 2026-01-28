@@ -1,0 +1,25 @@
+{
+  "raw": "1 small onion (4 ounces; 110 g), roughly chopped (about 3/4 cup)",
+  "expected": {
+    "item": "onion",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "small"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      },
+      {
+        "amount": "110",
+        "unit": "g"
+      },
+      {
+        "amount": "3/4",
+        "unit": "cup"
+      }
+    ],
+    "note": "roughly chopped"
+  }
+}

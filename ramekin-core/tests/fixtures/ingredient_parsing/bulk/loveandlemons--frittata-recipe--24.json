@@ -1,0 +1,13 @@
+{
+  "raw": "¼ cup chopped tarragon",
+  "expected": {
+    "item": "chopped tarragon",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

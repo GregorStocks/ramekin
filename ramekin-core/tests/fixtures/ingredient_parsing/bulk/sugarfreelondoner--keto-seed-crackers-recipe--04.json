@@ -1,0 +1,13 @@
+{
+  "raw": "3 tbsp / 24g chia seeds",
+  "expected": {
+    "item": "/ 24g chia seeds",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

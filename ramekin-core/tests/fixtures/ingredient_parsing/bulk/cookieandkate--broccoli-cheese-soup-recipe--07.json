@@ -1,0 +1,21 @@
+{
+  "raw": "2 pounds broccoli with stalks (3 large or 4 medium)",
+  "expected": {
+    "item": "broccoli with stalks",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "3",
+        "unit": "large"
+      },
+      {
+        "amount": "4",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

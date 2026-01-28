@@ -1,0 +1,17 @@
+{
+  "raw": "1 Tablespoon packed lemon zest (about 1 lemon)",
+  "expected": {
+    "item": "packed lemon zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "tablespoon"
+      },
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": null
+  }
+}

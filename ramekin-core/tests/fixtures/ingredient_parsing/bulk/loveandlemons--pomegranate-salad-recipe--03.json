@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces halloumi, cubed",
+  "expected": {
+    "item": "halloumi",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "cubed"
+  }
+}

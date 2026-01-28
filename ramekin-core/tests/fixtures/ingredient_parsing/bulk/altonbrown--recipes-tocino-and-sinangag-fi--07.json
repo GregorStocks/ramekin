@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound pork belly, tough skin removed, sliced 1/4 inch thick",
+  "expected": {
+    "item": "pork belly, tough skin removed",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": "sliced 1/4 inch thick"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "29 ounces canned diced tomatoes (29 ounces is two 14.5 ounce cans or about 4 cups of diced tomatoes with juices)",
+  "expected": {
+    "item": "canned diced tomatoes",
+    "measurements": [
+      {
+        "amount": "29",
+        "unit": "ounces"
+      }
+    ],
+    "note": "29 ounces is two 14.5 ounce cans or about 4 cups of diced tomatoes with juices"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "1/2 tsp  xanthan gum",
+  "expected": {
+    "item": "xanthan gum",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "tsp"
+      }
+    ],
+    "note": null
+  }
+}

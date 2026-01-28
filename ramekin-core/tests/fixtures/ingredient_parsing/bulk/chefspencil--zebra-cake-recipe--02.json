@@ -1,0 +1,13 @@
+{
+  "raw": "100 g cream cheese",
+  "expected": {
+    "item": "cream cheese",
+    "measurements": [
+      {
+        "amount": "100",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

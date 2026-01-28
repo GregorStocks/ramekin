@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup peanut butter (smooth)",
+  "expected": {
+    "item": "peanut butter (smooth)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

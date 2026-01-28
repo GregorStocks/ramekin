@@ -1,0 +1,13 @@
+{
+  "raw": "2  Anaheim peppers (seeded and finely chopped)",
+  "expected": {
+    "item": "Anaheim peppers",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": null
+      }
+    ],
+    "note": "seeded and finely chopped"
+  }
+}

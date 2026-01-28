@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 233g graham cracker crumbs",
+  "expected": {
+    "item": "233g graham cracker crumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

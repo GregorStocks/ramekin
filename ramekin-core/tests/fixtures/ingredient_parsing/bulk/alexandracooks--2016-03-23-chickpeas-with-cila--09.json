@@ -1,0 +1,13 @@
+{
+  "raw": "2 to 3 teaspoons sugar",
+  "expected": {
+    "item": "sugar",
+    "measurements": [
+      {
+        "amount": "2 to 3",
+        "unit": "teaspoons"
+      }
+    ],
+    "note": null
+  }
+}

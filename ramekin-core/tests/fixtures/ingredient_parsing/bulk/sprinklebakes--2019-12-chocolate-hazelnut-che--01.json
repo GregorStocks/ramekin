@@ -1,0 +1,17 @@
+{
+  "raw": "1  package (9 oz. chocolate wafer cookies (such as Nabisco))",
+  "expected": {
+    "item": "1  package (9 oz. chocolate wafer cookies (such as Nabisco))",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "package"
+      },
+      {
+        "amount": "9",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

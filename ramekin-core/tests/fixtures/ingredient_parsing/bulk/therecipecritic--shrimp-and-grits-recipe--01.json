@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces chopped uncooked bacon",
+  "expected": {
+    "item": "chopped uncooked bacon",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

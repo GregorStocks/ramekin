@@ -1,0 +1,13 @@
+{
+  "raw": "7 ounces / 200g fennel bulb, chopped",
+  "expected": {
+    "item": "/ 200g fennel bulb",
+    "measurements": [
+      {
+        "amount": "7",
+        "unit": "ounces"
+      }
+    ],
+    "note": "chopped"
+  }
+}

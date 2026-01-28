@@ -1,0 +1,21 @@
+{
+  "raw": "1/2 pound (2 sticks, 225 g) cold, unsalted butter",
+  "expected": {
+    "item": "cold, unsalted butter",
+    "measurements": [
+      {
+        "amount": "1/2",
+        "unit": "pound"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

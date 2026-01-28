@@ -1,0 +1,13 @@
+{
+  "raw": "1 pound parsnips",
+  "expected": {
+    "item": "parsnips",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      }
+    ],
+    "note": null
+  }
+}

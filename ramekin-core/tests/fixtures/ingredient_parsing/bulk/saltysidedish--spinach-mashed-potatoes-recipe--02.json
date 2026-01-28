@@ -1,0 +1,13 @@
+{
+  "raw": "6  potatoes (peeled and chopped into 1\" cubes)",
+  "expected": {
+    "item": "potatoes",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "peeled and chopped into 1\" cubes"
+  }
+}

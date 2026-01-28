@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup small diced ham,** ((optional))",
+  "expected": {
+    "item": "small diced ham,**",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "optional"
+  }
+}

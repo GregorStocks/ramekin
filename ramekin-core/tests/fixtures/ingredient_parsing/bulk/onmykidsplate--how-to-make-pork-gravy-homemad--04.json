@@ -1,0 +1,13 @@
+{
+  "raw": "1/4 teaspoon pepper (add more or less to taste)",
+  "expected": {
+    "item": "pepper",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "add more or less to taste"
+  }
+}

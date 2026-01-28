@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon honey, maple syrup, or sweetener of your choice, to taste (optional)",
+  "expected": {
+    "item": "honey, maple syrup, or sweetener of your choice, to taste",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "optional"
+  }
+}

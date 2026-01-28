@@ -1,0 +1,13 @@
+{
+  "raw": "12 ounces smoked turkey sausage, (sliced into rounds)",
+  "expected": {
+    "item": "smoked turkey sausage,",
+    "measurements": [
+      {
+        "amount": "12",
+        "unit": "ounces"
+      }
+    ],
+    "note": "sliced into rounds"
+  }
+}

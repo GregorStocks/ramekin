@@ -1,0 +1,13 @@
+{
+  "raw": "10 ounces baby bok choy, well cleaned and quartered lengthwise",
+  "expected": {
+    "item": "baby bok choy",
+    "measurements": [
+      {
+        "amount": "10",
+        "unit": "ounces"
+      }
+    ],
+    "note": "well cleaned and quartered lengthwise"
+  }
+}

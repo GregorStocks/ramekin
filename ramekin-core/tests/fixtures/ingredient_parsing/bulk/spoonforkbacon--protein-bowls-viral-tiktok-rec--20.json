@@ -1,0 +1,13 @@
+{
+  "raw": "2 tablespoons pepitas",
+  "expected": {
+    "item": "pepitas",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "2 oz. frozen strawberries ((about 2 large or 6 small))",
+  "expected": {
+    "item": "frozen strawberries",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "oz"
+      },
+      {
+        "amount": "2",
+        "unit": "large"
+      },
+      {
+        "amount": "6",
+        "unit": "small"
+      }
+    ],
+    "note": null
+  }
+}

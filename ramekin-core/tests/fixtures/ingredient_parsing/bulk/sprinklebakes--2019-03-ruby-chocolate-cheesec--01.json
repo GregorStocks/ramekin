@@ -1,0 +1,13 @@
+{
+  "raw": "2 cups 255g, or 9 oz. cookies shortbread cookie crumbs",
+  "expected": {
+    "item": "255g, or 9 oz. cookies shortbread cookie crumbs",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

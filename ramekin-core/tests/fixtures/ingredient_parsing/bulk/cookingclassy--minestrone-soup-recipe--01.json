@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz. pancetta*, (diced into 1/4-inch pieces)",
+  "expected": {
+    "item": "pancetta*,",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "diced into 1/4-inch pieces"
+  }
+}

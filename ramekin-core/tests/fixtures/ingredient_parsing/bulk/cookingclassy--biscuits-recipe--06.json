@@ -1,0 +1,17 @@
+{
+  "raw": "8 Tbsp (113g) unsalted butter, (divided, 7 Tbsp very cold, 1 Tbsp melted)",
+  "expected": {
+    "item": "unsalted butter,",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tbsp"
+      },
+      {
+        "amount": "113",
+        "unit": "g"
+      }
+    ],
+    "note": "divided, 7 Tbsp very cold, 1 Tbsp melted"
+  }
+}

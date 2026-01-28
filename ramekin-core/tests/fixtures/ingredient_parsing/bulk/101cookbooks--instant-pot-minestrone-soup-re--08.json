@@ -1,0 +1,13 @@
+{
+  "raw": "5  medium waxy potatoes, (the size of an egg, halved)",
+  "expected": {
+    "item": "waxy potatoes,",
+    "measurements": [
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": "the size of an egg, halved"
+  }
+}

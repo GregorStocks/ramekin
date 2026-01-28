@@ -1,0 +1,17 @@
+{
+  "raw": "8 ounces (1 1/4 cups) dried chickpeas",
+  "expected": {
+    "item": "dried chickpeas",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      },
+      {
+        "amount": "1 1/4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

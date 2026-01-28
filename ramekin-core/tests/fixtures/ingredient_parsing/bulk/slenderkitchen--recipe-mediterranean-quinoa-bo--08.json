@@ -1,0 +1,13 @@
+{
+  "raw": "4 cups arugula",
+  "expected": {
+    "item": "arugula",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "cups"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "4 slices bread, whatever kind you like, about 1/2-inch thick, toasted",
+  "expected": {
+    "item": "bread, whatever kind you like, about 1/2-inch thick",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "slices"
+      }
+    ],
+    "note": "toasted"
+  }
+}

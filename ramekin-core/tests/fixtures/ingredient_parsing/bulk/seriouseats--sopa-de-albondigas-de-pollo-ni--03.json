@@ -1,0 +1,13 @@
+{
+  "raw": "1 medium green bell pepper, stemmed, seeded, and quartered",
+  "expected": {
+    "item": "green bell pepper, stemmed, seeded",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": "and quartered"
+  }
+}

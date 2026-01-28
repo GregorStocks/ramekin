@@ -1,0 +1,13 @@
+{
+  "raw": "dash crushed red pepper (optional)",
+  "expected": {
+    "item": "crushed red pepper",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "dash"
+      }
+    ],
+    "note": "optional"
+  }
+}

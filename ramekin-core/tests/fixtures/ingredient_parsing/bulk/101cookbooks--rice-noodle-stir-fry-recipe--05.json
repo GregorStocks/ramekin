@@ -1,0 +1,13 @@
+{
+  "raw": "4 ounces extra firm tofu, crumbled",
+  "expected": {
+    "item": "extra firm tofu",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "crumbled"
+  }
+}

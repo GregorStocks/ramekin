@@ -1,0 +1,13 @@
+{
+  "raw": "6  Luxardo cherries, for serving",
+  "expected": {
+    "item": "Luxardo cherries",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": null
+      }
+    ],
+    "note": "for serving"
+  }
+}

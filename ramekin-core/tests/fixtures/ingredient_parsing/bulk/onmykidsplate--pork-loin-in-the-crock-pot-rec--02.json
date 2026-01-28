@@ -1,0 +1,13 @@
+{
+  "raw": "1 large onion  (I prefer sweet onion or Vidalia)",
+  "expected": {
+    "item": "onion  (I prefer sweet onion or Vidalia)",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

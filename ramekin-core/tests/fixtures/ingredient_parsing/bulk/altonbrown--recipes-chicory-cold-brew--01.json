@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup plus 2 tablespoons coarsely ground coffee",
+  "expected": {
+    "item": "1 cup plus 2 tablespoons coarsely ground coffee",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": "plus 2 tablespoons coarsely ground coffee"
+  }
+}

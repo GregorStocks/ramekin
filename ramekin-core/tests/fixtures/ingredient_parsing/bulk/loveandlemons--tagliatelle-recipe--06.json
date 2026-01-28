@@ -1,0 +1,17 @@
+{
+  "raw": "¼ teaspoon (1 mL) red pepper flakes",
+  "expected": {
+    "item": "red pepper flakes",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "teaspoon"
+      },
+      {
+        "amount": "1",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

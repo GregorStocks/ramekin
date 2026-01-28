@@ -1,0 +1,17 @@
+{
+  "raw": "1 pound (455 grams) baby carrots, the peeled and bagged kind",
+  "expected": {
+    "item": "baby carrots",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "pound"
+      },
+      {
+        "amount": "455",
+        "unit": "grams"
+      }
+    ],
+    "note": "the peeled and bagged kind"
+  }
+}

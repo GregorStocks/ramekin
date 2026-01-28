@@ -1,0 +1,13 @@
+{
+  "raw": "8 drops caramel stevia",
+  "expected": {
+    "item": "caramel stevia",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "drops"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "raw": "4 stalks lemongrass (7 ounces; 200g), bottoms smashed under the flat side of a knife&nbsp;",
+  "expected": {
+    "item": "lemongrass , bottoms smashed under the flat side of a knife",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "stalks"
+      },
+      {
+        "amount": "7",
+        "unit": "ounces"
+      },
+      {
+        "amount": "200",
+        "unit": "g"
+      }
+    ],
+    "note": null
+  }
+}

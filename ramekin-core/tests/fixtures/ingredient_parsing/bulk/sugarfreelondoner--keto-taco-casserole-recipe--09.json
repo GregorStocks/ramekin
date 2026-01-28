@@ -1,0 +1,13 @@
+{
+  "raw": "1 - 2  diced green jalapeño chilli (optional (14g))",
+  "expected": {
+    "item": "- 2  diced green jalapeño chilli",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": null
+      }
+    ],
+    "note": "optional (14g"
+  }
+}

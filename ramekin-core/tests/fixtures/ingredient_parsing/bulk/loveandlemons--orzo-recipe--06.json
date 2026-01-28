@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon herbs de Provence",
+  "expected": {
+    "item": "herbs de Provence",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

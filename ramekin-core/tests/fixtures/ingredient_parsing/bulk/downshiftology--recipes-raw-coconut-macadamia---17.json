@@ -1,0 +1,13 @@
+{
+  "raw": "2 tbsp shredded coconut",
+  "expected": {
+    "item": "shredded coconut",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "⅛ teaspoon ground allspice",
+  "expected": {
+    "item": "ground allspice",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}

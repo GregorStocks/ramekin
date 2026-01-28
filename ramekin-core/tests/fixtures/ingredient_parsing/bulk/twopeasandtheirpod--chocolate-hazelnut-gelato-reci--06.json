@@ -1,0 +1,13 @@
+{
+  "raw": "4 oz milk chocolate (at least 30% cacao solids, chopped)",
+  "expected": {
+    "item": "milk chocolate",
+    "measurements": [
+      {
+        "amount": "4",
+        "unit": "oz"
+      }
+    ],
+    "note": "at least 30% cacao solids, chopped"
+  }
+}

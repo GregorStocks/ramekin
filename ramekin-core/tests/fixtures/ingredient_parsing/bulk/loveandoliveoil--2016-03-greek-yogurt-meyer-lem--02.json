@@ -1,0 +1,17 @@
+{
+  "raw": "1 1/2 cups (6 ounces) cake flour*",
+  "expected": {
+    "item": "cake flour*",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "6",
+        "unit": "ounces"
+      }
+    ],
+    "note": null
+  }
+}

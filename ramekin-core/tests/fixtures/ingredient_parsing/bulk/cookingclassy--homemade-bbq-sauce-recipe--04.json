@@ -1,0 +1,13 @@
+{
+  "raw": "3 Tbsp apple juice (or apple juice concentrate, thawed)",
+  "expected": {
+    "item": "apple juice",
+    "measurements": [
+      {
+        "amount": "3",
+        "unit": "tbsp"
+      }
+    ],
+    "note": "or apple juice concentrate, thawed"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "raw": "2 pounds (910 grams) yellow onions (4 large or 5 medium), sliced",
+  "expected": {
+    "item": "yellow onions",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "pounds"
+      },
+      {
+        "amount": "910",
+        "unit": "grams"
+      },
+      {
+        "amount": "4",
+        "unit": "large"
+      },
+      {
+        "amount": "5",
+        "unit": "medium"
+      }
+    ],
+    "note": "sliced"
+  }
+}

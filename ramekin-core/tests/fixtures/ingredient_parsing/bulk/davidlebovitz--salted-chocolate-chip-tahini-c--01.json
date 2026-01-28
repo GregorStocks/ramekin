@@ -1,0 +1,21 @@
+{
+  "raw": "8 tablespoons (115g, 4 ounces) unsalted butter (at room temperature)",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "115",
+        "unit": "g"
+      },
+      {
+        "amount": "4",
+        "unit": "ounces"
+      }
+    ],
+    "note": "at room temperature"
+  }
+}

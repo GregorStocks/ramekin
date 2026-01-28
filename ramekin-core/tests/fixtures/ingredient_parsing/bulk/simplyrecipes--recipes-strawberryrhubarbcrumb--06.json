@@ -1,0 +1,21 @@
+{
+  "raw": "1 cup (225 g or 2 sticks) unsalted butter, cold",
+  "expected": {
+    "item": "unsalted butter",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "225",
+        "unit": "g"
+      },
+      {
+        "amount": "2",
+        "unit": "sticks"
+      }
+    ],
+    "note": "cold"
+  }
+}

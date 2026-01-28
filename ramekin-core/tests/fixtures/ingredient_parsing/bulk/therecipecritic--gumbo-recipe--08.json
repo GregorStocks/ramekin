@@ -1,0 +1,17 @@
+{
+  "raw": "1 cup chopped celery (about 3-4 large ribs)",
+  "expected": {
+    "item": "chopped celery",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      },
+      {
+        "amount": "3-4",
+        "unit": "large"
+      }
+    ],
+    "note": null
+  }
+}

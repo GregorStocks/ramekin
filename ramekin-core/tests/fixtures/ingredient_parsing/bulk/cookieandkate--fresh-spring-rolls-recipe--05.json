@@ -1,0 +1,13 @@
+{
+  "raw": "1 cup very thinly sliced red cabbage",
+  "expected": {
+    "item": "very thinly sliced red cabbage",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "cup"
+      }
+    ],
+    "note": null
+  }
+}

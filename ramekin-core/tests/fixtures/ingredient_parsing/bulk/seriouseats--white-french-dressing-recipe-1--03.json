@@ -1,0 +1,17 @@
+{
+  "raw": "2 tablespoons (30 ml) apple cider vinegar",
+  "expected": {
+    "item": "apple cider vinegar",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tablespoons"
+      },
+      {
+        "amount": "30",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

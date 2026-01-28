@@ -1,0 +1,17 @@
+{
+  "raw": "2 cups finely grated cucumber  (about 1 medium cucumber )",
+  "expected": {
+    "item": "finely grated cucumber",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cups"
+      },
+      {
+        "amount": "1",
+        "unit": "medium"
+      }
+    ],
+    "note": null
+  }
+}

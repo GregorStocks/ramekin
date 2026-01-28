@@ -1,0 +1,17 @@
+{
+  "raw": "1½ cups (375 mL) chopped carrots",
+  "expected": {
+    "item": "chopped carrots",
+    "measurements": [
+      {
+        "amount": "1 1/2",
+        "unit": "cups"
+      },
+      {
+        "amount": "375",
+        "unit": "ml"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "raw": "2  cans low sodium vegetable broth (15 oz. size)",
+  "expected": {
+    "item": "low sodium vegetable broth",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "cans"
+      },
+      {
+        "amount": "15",
+        "unit": "oz"
+      }
+    ],
+    "note": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "raw": "2 small hot chilies, halved lengthwise",
+  "expected": {
+    "item": "hot chilies",
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "small"
+      }
+    ],
+    "note": "halved lengthwise"
+  }
+}

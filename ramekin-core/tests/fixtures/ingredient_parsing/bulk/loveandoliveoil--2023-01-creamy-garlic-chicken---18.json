@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon lemon juice (more or less to taste)",
+  "expected": {
+    "item": "lemon juice",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": "more or less to taste"
+  }
+}

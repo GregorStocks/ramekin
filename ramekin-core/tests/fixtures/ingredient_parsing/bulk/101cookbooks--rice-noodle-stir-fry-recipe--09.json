@@ -1,0 +1,13 @@
+{
+  "raw": "8 ounces mushrooms, chopped in 1/2-inch pieces (optional)",
+  "expected": {
+    "item": "mushrooms, chopped in 1/2-inch pieces",
+    "measurements": [
+      {
+        "amount": "8",
+        "unit": "ounces"
+      }
+    ],
+    "note": "optional"
+  }
+}

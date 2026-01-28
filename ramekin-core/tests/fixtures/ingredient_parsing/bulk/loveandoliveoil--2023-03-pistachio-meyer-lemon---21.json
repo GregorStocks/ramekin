@@ -1,0 +1,13 @@
+{
+  "raw": "6 tablespoons whole milk",
+  "expected": {
+    "item": "whole milk",
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "tablespoons"
+      }
+    ],
+    "note": null
+  }
+}

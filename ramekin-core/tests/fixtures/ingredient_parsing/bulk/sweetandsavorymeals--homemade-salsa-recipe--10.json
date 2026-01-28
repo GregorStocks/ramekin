@@ -1,0 +1,13 @@
+{
+  "raw": "1 teaspoon lime zest",
+  "expected": {
+    "item": "lime zest",
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "teaspoon"
+      }
+    ],
+    "note": null
+  }
+}
