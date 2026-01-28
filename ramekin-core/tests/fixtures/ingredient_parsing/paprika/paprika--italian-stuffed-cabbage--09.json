@@ -1,11 +1,11 @@
 {
   "raw": "1 28-ounce can peeled plum tomatoes",
   "expected": {
-    "item": "28-ounce can peeled plum tomatoes",
+    "item": "peeled plum tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "28-ounce can"
       }
     ],
     "note": null

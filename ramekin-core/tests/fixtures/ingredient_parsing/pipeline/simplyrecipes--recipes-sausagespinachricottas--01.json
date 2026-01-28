@@ -1,11 +1,11 @@
 {
   "raw": "1 12-ounce package jumbo pasta shells",
   "expected": {
-    "item": "12-ounce package jumbo pasta shells",
+    "item": "jumbo pasta shells",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "12-ounce package"
       }
     ],
     "note": null

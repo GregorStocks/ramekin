@@ -1,11 +1,11 @@
 {
   "raw": "1 15-ounce can cannellini beans",
   "expected": {
-    "item": "15-ounce can cannellini beans",
+    "item": "cannellini beans",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "15-ounce can"
       }
     ],
     "note": null

@@ -1,11 +1,11 @@
 {
   "raw": "One 28-ounce (794g) can whole peeled tomatoes, crushed by hand into 1/2-inch chunks",
   "expected": {
-    "item": "28-ounce can whole peeled tomatoes",
+    "item": "whole peeled tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "28-ounce can"
       },
       {
         "amount": "794",

@@ -1,11 +1,11 @@
 {
   "raw": "1 8-ounce package cream cheese, at room temperature",
   "expected": {
-    "item": "8-ounce package cream cheese",
+    "item": "cream cheese",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce package"
       }
     ],
     "note": "at room temperature"

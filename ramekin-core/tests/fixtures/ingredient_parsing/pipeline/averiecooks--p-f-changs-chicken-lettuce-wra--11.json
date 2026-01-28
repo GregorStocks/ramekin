@@ -1,11 +1,11 @@
 {
   "raw": "one 8-ounce can water chestnut (drained and diced small)",
   "expected": {
-    "item": "8-ounce can water chestnut",
+    "item": "water chestnut",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce can"
       }
     ],
     "note": "drained and diced small"

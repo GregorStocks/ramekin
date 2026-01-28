@@ -1,11 +1,11 @@
 {
   "raw": "1 750-ml bottle red wine",
   "expected": {
-    "item": "750-ml bottle red wine",
+    "item": "red wine",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "750-ml bottle"
       }
     ],
     "note": null

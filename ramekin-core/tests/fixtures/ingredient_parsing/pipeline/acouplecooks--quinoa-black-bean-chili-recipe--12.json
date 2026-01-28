@@ -1,11 +1,11 @@
 {
   "raw": "2 28-ounce cans tomatoes (we used crushed Muir Glen-brand tomatoes)",
   "expected": {
-    "item": "28-ounce cans tomatoes",
+    "item": "tomatoes",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "28-ounce cans"
       }
     ],
     "note": "we used crushed Muir Glen-brand tomatoes"

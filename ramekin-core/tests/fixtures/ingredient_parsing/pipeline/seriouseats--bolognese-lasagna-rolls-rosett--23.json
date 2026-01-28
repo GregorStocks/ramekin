@@ -1,11 +1,11 @@
 {
   "raw": "One 28-ounce (794g) can whole peeled tomatoes in the juices, blended, or one 24-ounce (700g) bottle tomato passata",
   "expected": {
-    "item": "28-ounce can whole peeled tomatoes in the juices, blended, or one 24-ounce bottle tomato passata",
+    "item": "whole peeled tomatoes in the juices, blended, or one 24-ounce bottle tomato passata",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "28-ounce can"
       },
       {
         "amount": "794",

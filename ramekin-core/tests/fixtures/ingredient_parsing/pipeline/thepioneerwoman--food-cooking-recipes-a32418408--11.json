@@ -1,11 +1,11 @@
 {
   "raw": "1 8-ounce bag shredded monterey jack cheese (about 2 cups)",
   "expected": {
-    "item": "8-ounce bag shredded monterey jack cheese",
+    "item": "shredded monterey jack cheese",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "8-ounce bag"
       },
       {
         "amount": "2",

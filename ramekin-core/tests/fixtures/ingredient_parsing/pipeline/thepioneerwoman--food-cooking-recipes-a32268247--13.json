@@ -1,11 +1,11 @@
 {
   "raw": "1 7-ounce bag bean sprouts (3 cups)",
   "expected": {
-    "item": "7-ounce bag bean sprouts",
+    "item": "bean sprouts",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "7-ounce bag"
       },
       {
         "amount": "3",

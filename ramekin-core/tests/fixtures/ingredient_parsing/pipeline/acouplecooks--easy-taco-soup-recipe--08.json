@@ -1,11 +1,11 @@
 {
   "raw": "1 28-ounce can crushed tomatoes, fire roasted if possible",
   "expected": {
-    "item": "28-ounce can crushed tomatoes",
+    "item": "crushed tomatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "28-ounce can"
       }
     ],
     "note": "fire roasted if possible"

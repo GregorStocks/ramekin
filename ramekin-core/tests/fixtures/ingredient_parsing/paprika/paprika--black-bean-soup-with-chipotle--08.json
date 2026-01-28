@@ -1,11 +1,11 @@
 {
   "raw": "1 16-ounce package dried black beans",
   "expected": {
-    "item": "16-ounce package dried black beans",
+    "item": "dried black beans",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "16-ounce package"
       }
     ],
     "note": null

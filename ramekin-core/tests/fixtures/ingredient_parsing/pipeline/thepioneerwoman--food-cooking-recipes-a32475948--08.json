@@ -1,11 +1,11 @@
 {
   "raw": "1 30-ounce bag frozen, shredded hash brown potatoes, thawed",
   "expected": {
-    "item": "30-ounce bag frozen, shredded hash brown potatoes",
+    "item": "frozen, shredded hash brown potatoes",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "30-ounce bag"
       }
     ],
     "note": "thawed"

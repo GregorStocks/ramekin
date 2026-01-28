@@ -1,11 +1,11 @@
 {
   "raw": "One 11-ounce box Nilla Wafers or other vanilla wafer cookies",
   "expected": {
-    "item": "11-ounce box Nilla Wafers or other vanilla wafer cookies",
+    "item": "Nilla Wafers or other vanilla wafer cookies",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "11-ounce box"
       }
     ],
     "note": null

@@ -1,11 +1,11 @@
 {
   "raw": "2 12-ounce bags frozen cut okra",
   "expected": {
-    "item": "12-ounce bags frozen cut okra",
+    "item": "frozen cut okra",
     "measurements": [
       {
         "amount": "2",
-        "unit": null
+        "unit": "12-ounce bags"
       }
     ],
     "note": null

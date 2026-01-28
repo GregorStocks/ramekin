@@ -1,11 +1,11 @@
 {
   "raw": "1 5-ounce package baby kale",
   "expected": {
-    "item": "5-ounce package baby kale",
+    "item": "baby kale",
     "measurements": [
       {
         "amount": "1",
-        "unit": null
+        "unit": "5-ounce package"
       }
     ],
     "note": null
