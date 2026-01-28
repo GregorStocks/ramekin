@@ -1,11 +1,11 @@
 {
   "raw": "2 – 3 tbsp vegetable or canola oil",
   "expected": {
-    "item": "– 3 tbsp vegetable or canola oil",
+    "item": "vegetable or canola oil",
     "measurements": [
       {
-        "amount": "2",
-        "unit": null
+        "amount": "2-3",
+        "unit": "tbsp"
       }
     ],
     "note": null
