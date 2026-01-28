@@ -184,9 +184,9 @@ enum Commands {
         /// Delay in milliseconds between URL fetches
         #[arg(long, default_value = "1000")]
         delay_ms: u64,
-        /// Re-fetch all HTML even if cached
-        #[arg(long)]
-        force_fetch: bool,
+        /// Run in offline mode (cache only, no network requests)
+        #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+        offline: bool,
         /// What to do when fetch fails: continue (default), skip, or prompt
         #[arg(long, value_enum, default_value = "continue")]
         on_fetch_fail: OnFetchFail,
@@ -330,7 +330,7 @@ async fn main() -> Result<()> {
             limit,
             site,
             delay_ms,
-            force_fetch,
+            offline,
             on_fetch_fail,
             tags_file,
         } => {
@@ -340,7 +340,7 @@ async fn main() -> Result<()> {
                 limit,
                 site_filter: site,
                 delay_ms,
-                force_fetch,
+                offline,
                 on_fetch_fail,
                 tags_file,
             };

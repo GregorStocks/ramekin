@@ -143,13 +143,13 @@ screenshots: check-deps $(CLIENT_MARKER) ## Take screenshots for visual testing
 generate-test-urls: ## Generate test URL list from top recipe sites
 	@cargo run -q --manifest-path cli/Cargo.toml -- generate-test-urls -o data/test-urls.json
 
-pipeline-test: ## Run pipeline for test URLs (uses HTML cache). Uses data/eval-tags.json by default.
+pipeline-test: ## Run pipeline for test URLs (offline by default, use OFFLINE=false to enable network)
 	@set -a && [ -f cli.env ] && . ./cli.env; set +a && \
 	cargo run -q --manifest-path cli/Cargo.toml -- pipeline-test \
 		$(if $(LIMIT),--limit $(LIMIT),) \
 		$(if $(SITE),--site $(SITE),) \
 		$(if $(DELAY),--delay-ms $(DELAY),) \
-		$(if $(FORCE_FETCH),--force-fetch,) \
+		$(if $(OFFLINE),--offline=$(OFFLINE),) \
 		$(if $(ON_FETCH_FAIL),--on-fetch-fail $(ON_FETCH_FAIL),) \
 		$(if $(TAGS_FILE),--tags-file $(TAGS_FILE),)
 
