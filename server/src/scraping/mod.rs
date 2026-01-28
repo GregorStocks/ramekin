@@ -133,17 +133,27 @@ pub fn build_registry(
 
     registry.register(Box::new(EnrichNormalizeIngredientsStep));
 
-    // Create AI client and fetch user tags for auto-tagging
-    let ai_client: Arc<dyn AiClient> =
-        Arc::new(CachingAiClient::from_env().expect("OPENROUTER_API_KEY must be set"));
-    let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
-        tracing::warn!("Failed to fetch user tags: {}", e);
-        vec![]
-    });
+    // AI-based enrichment steps are optional - they require OPENROUTER_API_KEY
+    // When not available, the pipeline completes without AI enrichment
+    match CachingAiClient::from_env() {
+        Ok(ai_client) => {
+            let ai_client: Arc<dyn AiClient> = Arc::new(ai_client);
+            let user_tags = fetch_user_tags(&pool, user_id).unwrap_or_else(|e| {
+                tracing::warn!("Failed to fetch user tags: {}", e);
+                vec![]
+            });
 
-    registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
-    registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
-    registry.register(Box::new(EnrichGeneratePhotoStep));
+            registry.register(Box::new(EnrichAutoTagStep::new(ai_client, user_tags)));
+            registry.register(Box::new(ApplyAutoTagsStep::new(pool.clone())));
+            registry.register(Box::new(EnrichGeneratePhotoStep));
+        }
+        Err(e) => {
+            tracing::info!(
+                "AI enrichment disabled: {}. Set OPENROUTER_API_KEY to enable auto-tagging.",
+                e
+            );
+        }
+    }
     registry
 }
 
