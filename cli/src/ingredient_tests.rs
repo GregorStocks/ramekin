@@ -51,7 +51,8 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     let mut total_cases = 0;
 
     // Walk through all URL directories in the run
-    for entry in fs::read_dir(&run_dir)? {
+    let urls_dir = run_dir.join("urls");
+    for entry in fs::read_dir(&urls_dir)? {
         let entry = entry?;
         let url_dir = entry.path();
 
@@ -181,17 +182,20 @@ fn find_latest_run(runs_dir: &Path) -> Result<(String, PathBuf)> {
 
 /// Extract site name from URL directory name
 fn extract_site_from_url(url: &str) -> String {
-    // URL format is typically: https___www.site.com_path_to_recipe
-    // Extract the domain part
-    let parts: Vec<&str> = url.split("___").collect();
-    if parts.len() >= 2 {
-        let domain = parts[1].split('_').next().unwrap_or("unknown");
-        domain
-            .replace("www.", "")
-            .split('.')
-            .next()
-            .unwrap_or("unknown")
-            .to_string()
+    // URL format is: site-com_recipe-slug (e.g., "101cookbooks-com_coleslaw-recipe")
+    // Extract the site part before the first underscore
+    if let Some(site_part) = url.split('_').next() {
+        // Remove the TLD suffix (e.g., "-com", "-co-uk")
+        let site = site_part
+            .trim_end_matches("-com")
+            .trim_end_matches("-co-uk")
+            .trim_end_matches("-org")
+            .trim_end_matches("-net");
+        if site.is_empty() {
+            "unknown".to_string()
+        } else {
+            site.to_string()
+        }
     } else {
         "unknown".to_string()
     }
@@ -199,16 +203,16 @@ fn extract_site_from_url(url: &str) -> String {
 
 /// Extract recipe slug from URL directory name
 fn extract_recipe_slug(url: &str) -> String {
-    // Take last path component, clean it up
-    let parts: Vec<&str> = url.split('_').collect();
-    if parts.len() >= 2 {
-        let slug = parts.last().unwrap_or(&"recipe");
+    // URL format is: site-com_recipe-slug (e.g., "101cookbooks-com_coleslaw-recipe")
+    // Extract everything after the first underscore
+    if let Some(idx) = url.find('_') {
+        let slug = &url[idx + 1..];
         // Limit length and clean up
-        let cleaned = slug
+        let cleaned: String = slug
             .chars()
             .filter(|c| c.is_alphanumeric() || *c == '-')
             .take(30)
-            .collect::<String>();
+            .collect();
         if cleaned.is_empty() {
             "recipe".to_string()
         } else {
