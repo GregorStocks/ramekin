@@ -1,8 +1,13 @@
 {
   "raw": "heaping ¼ teaspoon sea salt",
   "expected": {
-    "item": "heaping 1/4 teaspoon sea salt",
-    "measurements": [],
+    "item": "sea salt",
+    "measurements": [
+      {
+        "amount": "1/4",
+        "unit": "heaping teaspoon"
+      }
+    ],
     "note": null
   }
 }

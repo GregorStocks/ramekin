@@ -1,8 +1,13 @@
 {
   "raw": "Good pinch of flaked sea salt",
   "expected": {
-    "item": "Good pinch of flaked sea salt",
-    "measurements": [],
+    "item": "flaked sea salt",
+    "measurements": [
+      {
+        "amount": null,
+        "unit": "good pinch"
+      }
+    ],
     "note": null
   }
 }
