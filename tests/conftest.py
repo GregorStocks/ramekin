@@ -10,7 +10,20 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "generated"))
 from query_thresholds import get_thresholds
 from ramekin_client import ApiClient, Configuration
 from ramekin_client.api import AuthApi, PhotosApi, TestingApi
-from ramekin_client.models import SignupRequest
+from ramekin_client.models import Ingredient, Measurement, SignupRequest
+
+
+def make_ingredient(
+    item: str,
+    amount: str | None = None,
+    unit: str | None = None,
+    note: str | None = None,
+) -> Ingredient:
+    """Create an Ingredient with the new measurements structure."""
+    measurements = []
+    if amount is not None or unit is not None:
+        measurements.append(Measurement(amount=amount, unit=unit))
+    return Ingredient(item=item, measurements=measurements, note=note)
 
 
 @pytest.fixture

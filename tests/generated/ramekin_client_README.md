@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
  - [ListRecipesResponse](ramekin_client/docs/ListRecipesResponse.md)
  - [LoginRequest](ramekin_client/docs/LoginRequest.md)
  - [LoginResponse](ramekin_client/docs/LoginResponse.md)
+ - [Measurement](ramekin_client/docs/Measurement.md)
  - [PaginationMetadata](ramekin_client/docs/PaginationMetadata.md)
  - [PingResponse](ramekin_client/docs/PingResponse.md)
  - [RecipeContent](ramekin_client/docs/RecipeContent.md)

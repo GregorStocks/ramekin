@@ -11,11 +11,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { MeasurementFromJSON, MeasurementToJSON, } from './Measurement';
 /**
  * Check if a given object implements the Ingredient interface.
  */
 export function instanceOfIngredient(value) {
     if (!('item' in value) || value['item'] === undefined)
+        return false;
+    if (!('measurements' in value) || value['measurements'] === undefined)
         return false;
     return true;
 }
@@ -27,10 +30,10 @@ export function IngredientFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'amount': json['amount'] == null ? undefined : json['amount'],
         'item': json['item'],
+        'measurements': (json['measurements'].map(MeasurementFromJSON)),
         'note': json['note'] == null ? undefined : json['note'],
-        'unit': json['unit'] == null ? undefined : json['unit'],
+        'raw': json['raw'] == null ? undefined : json['raw'],
     };
 }
 export function IngredientToJSON(json) {
@@ -41,9 +44,9 @@ export function IngredientToJSONTyped(value, ignoreDiscriminator = false) {
         return value;
     }
     return {
-        'amount': value['amount'],
         'item': value['item'],
+        'measurements': (value['measurements'].map(MeasurementToJSON)),
         'note': value['note'],
-        'unit': value['unit'],
+        'raw': value['raw'],
     };
 }

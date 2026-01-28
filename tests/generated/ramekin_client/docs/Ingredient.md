@@ -1,14 +1,15 @@
 # Ingredient
 
+Ingredient structure for JSONB storage
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **str** |  | [optional] 
-**item** | **str** |  | 
-**note** | **str** |  | [optional] 
-**unit** | **str** |  | [optional] 
+**item** | **str** | The ingredient name (e.g., \&quot;butter\&quot;, \&quot;all-purpose flour\&quot;) | 
+**measurements** | [**List[Measurement]**](Measurement.md) | Measurements - first is primary, rest are alternatives (e.g., \&quot;1 stick\&quot; then \&quot;113g\&quot;) | 
+**note** | **str** | Preparation notes (e.g., \&quot;chopped\&quot;, \&quot;softened\&quot;, \&quot;optional\&quot;) | [optional] 
+**raw** | **str** | Original unparsed text for debugging | [optional] 
 
 ## Example
 

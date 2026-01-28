@@ -587,11 +587,29 @@ export default function ViewRecipePage() {
                       <For each={r().ingredients}>
                         {(ing) => (
                           <li>
-                            <Show when={ing.amount}>
-                              <span class="amount">{ing.amount}</span>{" "}
+                            <Show when={ing.measurements[0]?.amount}>
+                              <span class="amount">
+                                {ing.measurements[0]?.amount}
+                              </span>{" "}
                             </Show>
-                            <Show when={ing.unit}>
-                              <span class="unit">{ing.unit}</span>{" "}
+                            <Show when={ing.measurements[0]?.unit}>
+                              <span class="unit">
+                                {ing.measurements[0]?.unit}
+                              </span>{" "}
+                            </Show>
+                            <Show when={ing.measurements.length > 1}>
+                              <span class="alt-measurement">
+                                (
+                                {ing.measurements
+                                  .slice(1)
+                                  .map((m) =>
+                                    [m.amount, m.unit]
+                                      .filter(Boolean)
+                                      .join(" "),
+                                  )
+                                  .join(", ")}
+                                ){" "}
+                              </span>
                             </Show>
                             <span class="item">{ing.item}</span>
                             <Show when={ing.note}>

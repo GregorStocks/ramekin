@@ -4,6 +4,7 @@ pub mod extract;
 pub mod fetch;
 pub mod http;
 pub mod image;
+pub mod ingredient_parser;
 pub mod pipeline;
 pub mod types;
 
@@ -18,7 +19,8 @@ pub use image::{fetch_and_validate_image, validate_image, FetchedImage, MAX_FILE
 pub use types::{
     EnrichAutoTagOutput, EnrichGeneratePhotoOutput, EnrichNormalizeIngredientsOutput,
     ExtractRecipeOutput, ExtractionAttempt, ExtractionMethod, FailedImageFetch, FetchHtmlOutput,
-    FetchImagesOutput, PipelineStep, RawRecipe, SaveRecipeOutput, StepOutput,
+    FetchImagesOutput, ParseIngredientsOutput, PipelineStep, RawRecipe, SaveRecipeOutput,
+    StepOutput,
 };
 
 /// Unique identifier for this build, generated at compile time.

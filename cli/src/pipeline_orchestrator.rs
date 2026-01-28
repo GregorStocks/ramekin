@@ -512,8 +512,8 @@ fn determine_final_status(steps: &[StepResult]) -> FinalStatus {
                 PipelineStep::FetchHtml => return FinalStatus::FailedAtFetch,
                 PipelineStep::ExtractRecipe => return FinalStatus::FailedAtExtract,
                 PipelineStep::SaveRecipe => return FinalStatus::FailedAtSave,
-                PipelineStep::FetchImages => {
-                    // FetchImages is skipped in CLI, but handle it for completeness
+                PipelineStep::FetchImages | PipelineStep::ParseIngredients => {
+                    // FetchImages is skipped in CLI, ParseIngredients runs before save
                     return FinalStatus::FailedAtSave;
                 }
                 PipelineStep::EnrichNormalizeIngredients

@@ -44,13 +44,24 @@ pub struct NewSession<'a> {
     pub expires_at: DateTime<Utc>,
 }
 
-// Ingredient structure for JSONB storage
+/// A single measurement (amount + unit pair)
 #[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
-pub struct Ingredient {
-    pub item: String,
+pub struct Measurement {
     pub amount: Option<String>,
     pub unit: Option<String>,
+}
+
+/// Ingredient structure for JSONB storage
+#[derive(Debug, Clone, Serialize, Deserialize, utoipa::ToSchema)]
+pub struct Ingredient {
+    /// The ingredient name (e.g., "butter", "all-purpose flour")
+    pub item: String,
+    /// Measurements - first is primary, rest are alternatives (e.g., "1 stick" then "113g")
+    pub measurements: Vec<Measurement>,
+    /// Preparation notes (e.g., "chopped", "softened", "optional")
     pub note: Option<String>,
+    /// Original unparsed text for debugging
+    pub raw: Option<String>,
 }
 
 #[derive(Queryable, Selectable, Debug)]

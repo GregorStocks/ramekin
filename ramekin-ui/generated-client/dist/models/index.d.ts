@@ -11,6 +11,7 @@ export * from './Ingredient';
 export * from './ListRecipesResponse';
 export * from './LoginRequest';
 export * from './LoginResponse';
+export * from './Measurement';
 export * from './PaginationMetadata';
 export * from './PingResponse';
 export * from './RecipeContent';

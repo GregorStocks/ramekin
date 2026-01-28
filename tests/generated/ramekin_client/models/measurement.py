@@ -17,21 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from ramekin_client.models.measurement import Measurement
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Ingredient(BaseModel):
+class Measurement(BaseModel):
     """
-    Ingredient structure for JSONB storage
+    A single measurement (amount + unit pair)
     """ # noqa: E501
-    item: StrictStr = Field(description="The ingredient name (e.g., \"butter\", \"all-purpose flour\")")
-    measurements: List[Measurement] = Field(description="Measurements - first is primary, rest are alternatives (e.g., \"1 stick\" then \"113g\")")
-    note: Optional[StrictStr] = Field(default=None, description="Preparation notes (e.g., \"chopped\", \"softened\", \"optional\")")
-    raw: Optional[StrictStr] = Field(default=None, description="Original unparsed text for debugging")
-    __properties: ClassVar[List[str]] = ["item", "measurements", "note", "raw"]
+    amount: Optional[StrictStr] = None
+    unit: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["amount", "unit"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +48,7 @@ class Ingredient(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Ingredient from a JSON string"""
+        """Create an instance of Measurement from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,28 +69,21 @@ class Ingredient(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in measurements (list)
-        _items = []
-        if self.measurements:
-            for _item_measurements in self.measurements:
-                if _item_measurements:
-                    _items.append(_item_measurements.to_dict())
-            _dict['measurements'] = _items
-        # set to None if note (nullable) is None
+        # set to None if amount (nullable) is None
         # and model_fields_set contains the field
-        if self.note is None and "note" in self.model_fields_set:
-            _dict['note'] = None
+        if self.amount is None and "amount" in self.model_fields_set:
+            _dict['amount'] = None
 
-        # set to None if raw (nullable) is None
+        # set to None if unit (nullable) is None
         # and model_fields_set contains the field
-        if self.raw is None and "raw" in self.model_fields_set:
-            _dict['raw'] = None
+        if self.unit is None and "unit" in self.model_fields_set:
+            _dict['unit'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Ingredient from a dict"""
+        """Create an instance of Measurement from a dict"""
         if obj is None:
             return None
 
@@ -101,10 +91,8 @@ class Ingredient(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "item": obj.get("item"),
-            "measurements": [Measurement.from_dict(_item) for _item in obj["measurements"]] if obj.get("measurements") is not None else None,
-            "note": obj.get("note"),
-            "raw": obj.get("raw")
+            "amount": obj.get("amount"),
+            "unit": obj.get("unit")
         })
         return _obj
 

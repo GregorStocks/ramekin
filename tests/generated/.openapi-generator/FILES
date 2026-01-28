@@ -26,6 +26,7 @@ ramekin_client/docs/Ingredient.md
 ramekin_client/docs/ListRecipesResponse.md
 ramekin_client/docs/LoginRequest.md
 ramekin_client/docs/LoginResponse.md
+ramekin_client/docs/Measurement.md
 ramekin_client/docs/PaginationMetadata.md
 ramekin_client/docs/PhotosApi.md
 ramekin_client/docs/PingResponse.md
@@ -66,6 +67,7 @@ ramekin_client/models/ingredient.py
 ramekin_client/models/list_recipes_response.py
 ramekin_client/models/login_request.py
 ramekin_client/models/login_response.py
+ramekin_client/models/measurement.py
 ramekin_client/models/pagination_metadata.py
 ramekin_client/models/ping_response.py
 ramekin_client/models/recipe_content.py
@@ -103,6 +105,7 @@ ramekin_client/test/test_ingredient.py
 ramekin_client/test/test_list_recipes_response.py
 ramekin_client/test/test_login_request.py
 ramekin_client/test/test_login_response.py
+ramekin_client/test/test_measurement.py
 ramekin_client/test/test_pagination_metadata.py
 ramekin_client/test/test_photos_api.py
 ramekin_client/test/test_ping_response.py

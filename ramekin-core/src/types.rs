@@ -8,6 +8,7 @@ pub enum PipelineStep {
     FetchHtml,
     ExtractRecipe,
     FetchImages,
+    ParseIngredients,
     SaveRecipe,
     EnrichNormalizeIngredients,
     EnrichAutoTag,
@@ -20,6 +21,7 @@ impl PipelineStep {
         PipelineStep::FetchHtml,
         PipelineStep::ExtractRecipe,
         PipelineStep::FetchImages,
+        PipelineStep::ParseIngredients,
         PipelineStep::SaveRecipe,
         PipelineStep::EnrichNormalizeIngredients,
         PipelineStep::EnrichAutoTag,
@@ -46,6 +48,7 @@ impl PipelineStep {
             PipelineStep::FetchHtml => "fetch_html",
             PipelineStep::ExtractRecipe => "extract_recipe",
             PipelineStep::FetchImages => "fetch_images",
+            PipelineStep::ParseIngredients => "parse_ingredients",
             PipelineStep::SaveRecipe => "save_recipe",
             PipelineStep::EnrichNormalizeIngredients => "enrich_normalize_ingredients",
             PipelineStep::EnrichAutoTag => "enrich_auto_tag",
@@ -58,6 +61,7 @@ impl PipelineStep {
             "fetch_html" => Some(PipelineStep::FetchHtml),
             "extract_recipe" => Some(PipelineStep::ExtractRecipe),
             "fetch_images" => Some(PipelineStep::FetchImages),
+            "parse_ingredients" => Some(PipelineStep::ParseIngredients),
             "save_recipe" => Some(PipelineStep::SaveRecipe),
             "enrich_normalize_ingredients" => Some(PipelineStep::EnrichNormalizeIngredients),
             "enrich_auto_tag" => Some(PipelineStep::EnrichAutoTag),
@@ -169,4 +173,10 @@ pub struct FetchImagesOutput {
 pub struct FailedImageFetch {
     pub url: String,
     pub error: String,
+}
+
+/// Output from the parse_ingredients step
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ParseIngredientsOutput {
+    pub ingredients: Vec<crate::ingredient_parser::ParsedIngredient>,
 }

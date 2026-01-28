@@ -163,7 +163,7 @@ impl PipelineStep for FetchImagesStep {
             output: serde_json::to_value(&output).unwrap_or_default(),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("save_recipe".to_string()),
+            next_step: Some("parse_ingredients".to_string()),
         }
     }
 }
@@ -289,10 +289,34 @@ impl PipelineStep for SaveRecipeStep {
             .and_then(|v| serde_json::from_value(v).ok())
             .unwrap_or_default();
 
+        // Get parsed ingredients from parse_ingredients output, or fall back to
+        // simple line-by-line parsing if the step failed or is missing
+        let parsed_ingredients: Vec<Ingredient> = ctx
+            .outputs
+            .get_output("parse_ingredients")
+            .and_then(|o| o.get("ingredients").cloned())
+            .and_then(|v| serde_json::from_value(v).ok())
+            .unwrap_or_else(|| {
+                // Fallback: split by newlines, put each line in the item field
+                raw_recipe
+                    .ingredients
+                    .lines()
+                    .filter(|line| !line.trim().is_empty())
+                    .map(|line| Ingredient {
+                        item: line.trim().to_string(),
+                        measurements: vec![],
+                        note: None,
+                        raw: None,
+                    })
+                    .collect()
+            });
+
         // Create or update recipe in database
         let result = match self.existing_recipe_id {
-            Some(recipe_id) => self.update_recipe(recipe_id, &raw_recipe, &photo_ids),
-            None => self.create_recipe(&raw_recipe, &photo_ids),
+            Some(recipe_id) => {
+                self.update_recipe(recipe_id, &raw_recipe, &photo_ids, &parsed_ingredients)
+            }
+            None => self.create_recipe(&raw_recipe, &photo_ids, &parsed_ingredients),
         };
 
         match result {
@@ -317,23 +341,16 @@ impl PipelineStep for SaveRecipeStep {
 }
 
 impl SaveRecipeStep {
-    fn create_recipe(&self, raw: &RawRecipe, photo_ids: &[Uuid]) -> Result<Uuid, String> {
+    fn create_recipe(
+        &self,
+        raw: &RawRecipe,
+        photo_ids: &[Uuid],
+        parsed_ingredients: &[Ingredient],
+    ) -> Result<Uuid, String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
-        // Convert raw ingredients to our Ingredient JSON format
-        let ingredients: Vec<Ingredient> = raw
-            .ingredients
-            .lines()
-            .filter(|line| !line.trim().is_empty())
-            .map(|line| Ingredient {
-                item: line.trim().to_string(),
-                amount: None,
-                unit: None,
-                note: None,
-            })
-            .collect();
-
-        let ingredients_json = serde_json::to_value(&ingredients).map_err(|e| e.to_string())?;
+        let ingredients_json =
+            serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
 
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();
@@ -391,23 +408,12 @@ impl SaveRecipeStep {
         recipe_id: Uuid,
         raw: &RawRecipe,
         photo_ids: &[Uuid],
+        parsed_ingredients: &[Ingredient],
     ) -> Result<Uuid, String> {
         let mut conn = self.pool.get().map_err(|e| e.to_string())?;
 
-        // Convert raw ingredients to our Ingredient JSON format
-        let ingredients: Vec<Ingredient> = raw
-            .ingredients
-            .lines()
-            .filter(|line| !line.trim().is_empty())
-            .map(|line| Ingredient {
-                item: line.trim().to_string(),
-                amount: None,
-                unit: None,
-                note: None,
-            })
-            .collect();
-
-        let ingredients_json = serde_json::to_value(&ingredients).map_err(|e| e.to_string())?;
+        let ingredients_json =
+            serde_json::to_value(parsed_ingredients).map_err(|e| e.to_string())?;
 
         // Convert photo IDs to Option<Uuid> for the database
         let photo_ids_nullable: Vec<Option<Uuid>> = photo_ids.iter().map(|id| Some(*id)).collect();

@@ -2,12 +2,12 @@ import uuid
 
 import pytest
 
+from conftest import make_ingredient
 from ramekin_client.api import RecipesApi, TagsApi
 from ramekin_client.exceptions import ApiException
 from ramekin_client.models import (
     CreateRecipeRequest,
     CreateTagRequest,
-    Ingredient,
     RenameTagRequest,
     UpdateRecipeRequest,
 )
@@ -169,7 +169,7 @@ def test_delete_tag_removes_from_recipes(authed_api_client):
         CreateRecipeRequest(
             title="Recipe with tag",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["deletable-tag"],
         )
     )
@@ -197,7 +197,7 @@ def test_recipe_auto_creates_tag(authed_api_client):
         CreateRecipeRequest(
             title="Auto-tag recipe",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["auto-created-tag"],
         )
     )
@@ -246,7 +246,7 @@ def test_update_recipe_creates_new_tags(authed_api_client):
         CreateRecipeRequest(
             title="Update tag recipe",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=[],
         )
     )
@@ -257,7 +257,7 @@ def test_update_recipe_creates_new_tags(authed_api_client):
         UpdateRecipeRequest(
             title="Update tag recipe",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["new-update-tag"],
         ),
     )
@@ -281,7 +281,7 @@ def test_list_tags_includes_recipe_count(authed_api_client):
         CreateRecipeRequest(
             title="Recipe 1",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["counted-tag"],
         )
     )
@@ -289,7 +289,7 @@ def test_list_tags_includes_recipe_count(authed_api_client):
         CreateRecipeRequest(
             title="Recipe 2",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["counted-tag"],
         )
     )
@@ -323,7 +323,7 @@ def test_list_tags_count_excludes_deleted_recipes(authed_api_client):
         CreateRecipeRequest(
             title="Keep Recipe",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["delete-test-tag"],
         )
     )
@@ -331,7 +331,7 @@ def test_list_tags_count_excludes_deleted_recipes(authed_api_client):
         CreateRecipeRequest(
             title="Delete Recipe",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["delete-test-tag"],
         )
     )
@@ -477,7 +477,7 @@ def test_rename_tag_preserves_recipe_associations(authed_api_client):
         CreateRecipeRequest(
             title="Recipe with renamed tag",
             instructions="Cook it",
-            ingredients=[Ingredient(item="food")],
+            ingredients=[make_ingredient(item="food")],
             tags=["original-name"],
         )
     )

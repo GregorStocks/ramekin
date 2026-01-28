@@ -9,7 +9,12 @@ import type { Ingredient } from "ramekin-client";
 import {
   addIngredient,
   removeIngredient,
-  updateIngredient,
+  updateIngredientItem,
+  updateIngredientNote,
+  updateIngredientAmount,
+  updateIngredientUnit,
+  getAmount,
+  getUnit,
 } from "../utils/recipeFormHelpers";
 
 export interface RecipeFormProps {
@@ -183,11 +188,10 @@ export default function RecipeForm(props: RecipeFormProps) {
               <input
                 type="text"
                 placeholder="Amount"
-                value={ing().amount || ""}
+                value={getAmount(ing())}
                 onInput={(e) =>
-                  updateIngredient(
+                  updateIngredientAmount(
                     index,
-                    "amount",
                     e.currentTarget.value,
                     props.setIngredients,
                   )
@@ -197,11 +201,10 @@ export default function RecipeForm(props: RecipeFormProps) {
               <input
                 type="text"
                 placeholder="Unit"
-                value={ing().unit || ""}
+                value={getUnit(ing())}
                 onInput={(e) =>
-                  updateIngredient(
+                  updateIngredientUnit(
                     index,
-                    "unit",
                     e.currentTarget.value,
                     props.setIngredients,
                   )
@@ -213,9 +216,8 @@ export default function RecipeForm(props: RecipeFormProps) {
                 placeholder="Ingredient *"
                 value={ing().item}
                 onInput={(e) =>
-                  updateIngredient(
+                  updateIngredientItem(
                     index,
-                    "item",
                     e.currentTarget.value,
                     props.setIngredients,
                   )
@@ -227,9 +229,8 @@ export default function RecipeForm(props: RecipeFormProps) {
                 placeholder="Note"
                 value={ing().note || ""}
                 onInput={(e) =>
-                  updateIngredient(
+                  updateIngredientNote(
                     index,
-                    "note",
                     e.currentTarget.value,
                     props.setIngredients,
                   )

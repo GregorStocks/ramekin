@@ -1,29 +1,25 @@
 
-# Ingredient
+# Measurement
 
-Ingredient structure for JSONB storage
+A single measurement (amount + unit pair)
 
 ## Properties
 
 Name | Type
 ------------ | -------------
-`item` | string
-`measurements` | [Array&lt;Measurement&gt;](Measurement.md)
-`note` | string
-`raw` | string
+`amount` | string
+`unit` | string
 
 ## Example
 
 ```typescript
-import type { Ingredient } from ''
+import type { Measurement } from ''
 
 // TODO: Update the object below with actual values
 const example = {
-  "item": null,
-  "measurements": null,
-  "note": null,
-  "raw": null,
-} satisfies Ingredient
+  "amount": null,
+  "unit": null,
+} satisfies Measurement
 
 console.log(example)
 
@@ -32,7 +28,7 @@ const exampleJSON: string = JSON.stringify(example)
 console.log(exampleJSON)
 
 // Parse the JSON string back to an object
-const exampleParsed = JSON.parse(exampleJSON) as Ingredient
+const exampleParsed = JSON.parse(exampleJSON) as Measurement
 console.log(exampleParsed)
 ```
 

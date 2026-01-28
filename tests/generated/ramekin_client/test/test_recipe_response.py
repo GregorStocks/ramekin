@@ -42,10 +42,14 @@ class TestRecipeResponse(unittest.TestCase):
                 id = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
-                        amount = '', 
                         item = '', 
+                        measurements = [
+                            ramekin_client.models.measurement.Measurement(
+                                amount = '', 
+                                unit = '', )
+                            ], 
                         note = '', 
-                        unit = '', )
+                        raw = '', )
                     ],
                 instructions = '',
                 notes = '',
@@ -73,10 +77,14 @@ class TestRecipeResponse(unittest.TestCase):
                 id = '',
                 ingredients = [
                     ramekin_client.models.ingredient.Ingredient(
-                        amount = '', 
                         item = '', 
+                        measurements = [
+                            ramekin_client.models.measurement.Measurement(
+                                amount = '', 
+                                unit = '', )
+                            ], 
                         note = '', 
-                        unit = '', )
+                        raw = '', )
                     ],
                 instructions = '',
                 photo_ids = [
