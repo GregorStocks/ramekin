@@ -152,7 +152,7 @@ pub async fn upload_photo_with_client(
 }
 
 /// Convert a Paprika recipe to RawRecipe format for the import endpoint
-fn convert_to_raw_recipe(recipe: &PaprikaRecipe) -> ImportRawRecipe {
+fn convert_to_raw_recipe(recipe: &PaprikaRecipe, preserve_tags: bool) -> ImportRawRecipe {
     ImportRawRecipe {
         title: recipe.name.clone(),
         description: recipe.description.clone(),
@@ -170,7 +170,11 @@ fn convert_to_raw_recipe(recipe: &PaprikaRecipe) -> ImportRawRecipe {
         difficulty: recipe.difficulty.clone(),
         nutritional_info: recipe.nutritional_info.clone(),
         notes: recipe.notes.clone(),
-        categories: recipe.categories.clone(),
+        categories: if preserve_tags {
+            recipe.categories.clone()
+        } else {
+            None
+        },
     }
 }
 
@@ -223,7 +227,13 @@ async fn import_recipe(
     Ok(import_response)
 }
 
-pub async fn import(server: &str, username: &str, password: &str, file_path: &Path) -> Result<()> {
+pub async fn import(
+    server: &str,
+    username: &str,
+    password: &str,
+    preserve_tags: bool,
+    file_path: &Path,
+) -> Result<()> {
     // Authenticate
     let mut config = Configuration::new();
     config.base_path = server.to_string();
@@ -335,7 +345,7 @@ pub async fn import(server: &str, username: &str, password: &str, file_path: &Pa
         }
 
         // Convert to RawRecipe format and call the import endpoint
-        let raw_recipe = convert_to_raw_recipe(&recipe);
+        let raw_recipe = convert_to_raw_recipe(&recipe, preserve_tags);
 
         match import_recipe(&config, raw_recipe, photo_ids).await {
             Ok(response) => {

@@ -55,6 +55,12 @@ enum Commands {
         /// Password for the seed user
         #[arg(long)]
         password: String,
+        /// Path to a JSON file with tags to create before importing
+        #[arg(long)]
+        tags_file: Option<PathBuf>,
+        /// Whether to preserve categories/tags from the input file (default: true)
+        #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+        preserve_tags: bool,
         /// Path to the .paprikarecipes file
         #[arg(value_name = "FILE")]
         file: PathBuf,
@@ -70,6 +76,9 @@ enum Commands {
         /// Password for authentication
         #[arg(long)]
         password: String,
+        /// Whether to preserve categories/tags from the input file (default: true)
+        #[arg(long, default_value_t = true, action = clap::ArgAction::Set)]
+        preserve_tags: bool,
         /// Path to the .paprikarecipes file
         #[arg(value_name = "FILE")]
         file: PathBuf,
@@ -280,17 +289,28 @@ async fn main() -> Result<()> {
             server_url,
             username,
             password,
+            tags_file,
+            preserve_tags,
             file,
         } => {
-            seed::seed(&server_url, &username, &password, &file).await?;
+            seed::seed(
+                &server_url,
+                &username,
+                &password,
+                tags_file.as_deref(),
+                preserve_tags,
+                &file,
+            )
+            .await?;
         }
         Commands::Import {
             server_url,
             username,
             password,
+            preserve_tags,
             file,
         } => {
-            import::import(&server_url, &username, &password, &file).await?;
+            import::import(&server_url, &username, &password, preserve_tags, &file).await?;
         }
         Commands::LoadTest {
             server_url,
