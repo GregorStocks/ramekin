@@ -1,13 +1,13 @@
 {
   "raw": "2 Thai chilies, diced, or &amp;frac12; teaspoon red pepper flakes",
   "expected": {
-    "item": "Thai chilies, diced, or 1/2 teaspoon red pepper flakes",
+    "item": "Thai chilies, diced,",
     "measurements": [
       {
         "amount": "2",
         "unit": null
       }
     ],
-    "note": null
+    "note": "or 1/2 teaspoon red pepper flakes"
   }
 }

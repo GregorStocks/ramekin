@@ -1,13 +1,13 @@
 {
   "raw": "2/3 cup fresh bread crumbs or 1/2 cup panko",
   "expected": {
-    "item": "fresh bread crumbs or 1/2 cup panko",
+    "item": "fresh bread crumbs",
     "measurements": [
       {
         "amount": "2/3",
         "unit": "cup"
       }
     ],
-    "note": null
+    "note": "or 1/2 cup panko"
   }
 }

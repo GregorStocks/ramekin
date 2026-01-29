@@ -1,13 +1,13 @@
 {
   "raw": "2 Tbsp fresh parsley or 1 Tbsp dried parsley",
   "expected": {
-    "item": "fresh parsley or 1 Tbsp dried parsley",
+    "item": "fresh parsley",
     "measurements": [
       {
         "amount": "2",
         "unit": "tbsp"
       }
     ],
-    "note": null
+    "note": "or 1 Tbsp dried parsley"
   }
 }

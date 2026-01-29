@@ -1,7 +1,7 @@
 {
   "raw": "4 cups (960ml) whole milk1 vanilla bean, split and scraped, or 1 teaspoon vanilla paste226g granulated sugar (8 ounces; 1 cup plus 2 tablespoons)60g cornstarch (2 ounces; 6 tablespoons)",
   "expected": {
-    "item": "whole milk1 vanilla bean, split and scraped, or 1 teaspoon vanilla paste226g granulated sugar 60g cornstarch",
+    "item": "whole milk1 vanilla bean, split and scraped,",
     "measurements": [
       {
         "amount": "4",
@@ -28,6 +28,6 @@
         "unit": "tablespoons"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon vanilla paste226g granulated sugar 60g cornstarch"
   }
 }

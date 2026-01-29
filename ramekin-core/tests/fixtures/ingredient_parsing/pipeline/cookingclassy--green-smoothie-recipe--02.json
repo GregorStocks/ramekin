@@ -1,13 +1,13 @@
 {
   "raw": "2 Tbsp sliced almonds or 1 Tbsp almond butter",
   "expected": {
-    "item": "sliced almonds or 1 Tbsp almond butter",
+    "item": "sliced almonds",
     "measurements": [
       {
         "amount": "2",
         "unit": "tbsp"
       }
     ],
-    "note": null
+    "note": "or 1 Tbsp almond butter"
   }
 }

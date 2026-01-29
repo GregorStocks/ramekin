@@ -616,6 +616,33 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         }
     }
 
+    // Step 5.5: Handle " or " alternatives in the MIDDLE of remaining text
+    // e.g., remaining = "fresh dill or 1 teaspoon dried dill"
+    // This handles fresh/dried herb alternatives like "1 tbsp fresh basil or 1 tsp dried basil"
+    // The text before " or " becomes the item, and "or [measurement] [item]" goes into the note
+    // Only apply if note isn't already set
+    if note.is_none() {
+        if let Some(or_idx) = remaining.to_lowercase().find(" or ") {
+            let before_or = remaining[..or_idx].trim();
+            let after_or = remaining[or_idx + 4..].trim(); // Skip " or "
+
+            // Try to parse what's after "or" as a measurement
+            let (_or_pre_amount_modifier, after_or_modifier) = strip_measurement_modifier(after_or);
+            let (or_amount, after_or_amount) = extract_amount(&after_or_modifier);
+            let (_or_pre_unit_modifier, after_or_pre_unit) =
+                strip_measurement_modifier(&after_or_amount);
+            let (or_base_unit, _after_or_unit) = extract_unit(&after_or_pre_unit);
+
+            // Only treat as alternative if we got BOTH amount AND unit
+            // This avoids false positives like "vanilla or chocolate ice cream"
+            if or_amount.is_some() && or_base_unit.is_some() {
+                // Move the alternative to the note and keep just the item before "or"
+                note = Some(format!("or {}", after_or));
+                remaining = before_or.to_string();
+            }
+        }
+    }
+
     // Step 6: Build measurements list
     if primary_amount.is_some() || primary_unit.is_some() {
         measurements.push(Measurement {

@@ -1,13 +1,13 @@
 {
   "raw": "1/2  teaspoon    ground red pepper or 1/2  teaspoon    cayenne pepper",
   "expected": {
-    "item": "ground red pepper or 1/2  teaspoon    cayenne pepper",
+    "item": "ground red pepper",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "teaspoon"
       }
     ],
-    "note": null
+    "note": "or 1/2  teaspoon    cayenne pepper"
   }
 }

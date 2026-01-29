@@ -1,13 +1,13 @@
 {
   "raw": "2 tsp simple syrup or 1 tsp granulated sugar",
   "expected": {
-    "item": "simple syrup or 1 tsp granulated sugar",
+    "item": "simple syrup",
     "measurements": [
       {
         "amount": "2",
         "unit": "tsp"
       }
     ],
-    "note": null
+    "note": "or 1 tsp granulated sugar"
   }
 }

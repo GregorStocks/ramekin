@@ -1,13 +1,13 @@
 {
   "raw": "1 tablespoon fresh lime juice or 1 teaspoon red-wine vinegar",
   "expected": {
-    "item": "fresh lime juice or 1 teaspoon red-wine vinegar",
+    "item": "fresh lime juice",
     "measurements": [
       {
         "amount": "1",
         "unit": "tablespoon"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon red-wine vinegar"
   }
 }

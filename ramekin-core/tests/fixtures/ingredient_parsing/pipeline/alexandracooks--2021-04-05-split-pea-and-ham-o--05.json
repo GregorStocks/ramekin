@@ -1,13 +1,13 @@
 {
   "raw": "1 tablespoon cumin seeds or 2 teaspoons ground cumin",
   "expected": {
-    "item": "cumin seeds or 2 teaspoons ground cumin",
+    "item": "cumin seeds",
     "measurements": [
       {
         "amount": "1",
         "unit": "tablespoon"
       }
     ],
-    "note": null
+    "note": "or 2 teaspoons ground cumin"
   }
 }

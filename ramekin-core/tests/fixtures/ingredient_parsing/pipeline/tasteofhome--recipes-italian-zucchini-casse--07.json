@@ -1,13 +1,13 @@
 {
   "raw": "1-1/2 teaspoons minced fresh oregano or 1/2 teaspoon dried oregano",
   "expected": {
-    "item": "minced fresh oregano or 1/2 teaspoon dried oregano",
+    "item": "minced fresh oregano",
     "measurements": [
       {
         "amount": "1-1/2",
         "unit": "teaspoons"
       }
     ],
-    "note": null
+    "note": "or 1/2 teaspoon dried oregano"
   }
 }

@@ -1,13 +1,13 @@
 {
   "raw": "8 ounces of burrata or 1 cup fresh ricotta",
   "expected": {
-    "item": "burrata or 1 cup fresh ricotta",
+    "item": "burrata",
     "measurements": [
       {
         "amount": "8",
         "unit": "ounces"
       }
     ],
-    "note": null
+    "note": "or 1 cup fresh ricotta"
   }
 }
