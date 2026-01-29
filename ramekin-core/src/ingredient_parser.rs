@@ -382,7 +382,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             if is_prep_note(paren_content) && note.is_none() {
                 note = Some(paren_content.trim().to_string());
                 // Remove the parenthetical from remaining
-                let before = remaining[..start].trim_end();
+                // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
+                let before = remaining[..start]
+                    .trim_end()
+                    .trim_end_matches(',')
+                    .trim_end();
                 let after = remaining[start + end + 1..].trim_start();
                 remaining = if before.is_empty() {
                     after.to_string()
@@ -401,7 +405,11 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
             if !parsed_measurements.is_empty() {
                 alt_measurements.extend(parsed_measurements);
                 // Remove the parenthetical from remaining, preserving space
-                let before = remaining[..start].trim_end();
+                // Also strip trailing comma before the parenthetical
+                let before = remaining[..start]
+                    .trim_end()
+                    .trim_end_matches(',')
+                    .trim_end();
                 let after = remaining[start + end + 1..].trim_start();
                 remaining = if before.is_empty() {
                     after.to_string()

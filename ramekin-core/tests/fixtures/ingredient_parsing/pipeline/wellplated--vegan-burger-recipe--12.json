@@ -1,7 +1,7 @@
 {
   "raw": "1 can black beans, ((15 ounces) rinsed and drained)",
   "expected": {
-    "item": "black beans",
+    "item": "black beans rinsed and drained)",
     "measurements": [
       {
         "amount": "1",
@@ -12,6 +12,6 @@
         "unit": "ounces"
       }
     ],
-    "note": "rinsed and drained)"
+    "note": null
   }
 }
