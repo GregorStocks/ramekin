@@ -58,13 +58,11 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Metric units attached to numbers** - "1/3 cup 65g sugar" now correctly extracts both measurements. Added Step 4.7 with `try_extract_attached_metric()` to recognize patterns where a number is immediately followed by a metric unit (g, kg, ml, oz, lb) without space. Also handles chained alternatives like "226g/8 oz.". 211 fixtures updated.
 
+- [x] **Double-encoded HTML entities** - "&amp;#8531;" (double-encoded 1/3 fraction) now decodes correctly. Replaced manual entity decoding with the `html-escape` crate, which handles all named and numeric entities. Double-encoding is handled by decoding twice. Also normalizes non-breaking spaces to regular spaces. 199 fixtures updated.
+
 ### Open Issues
 
-#### Low Impact / Edge Cases
-
-- [ ] **Double-encoded HTML entities** - "&amp;#8531;" (double-encoded 1/3 fraction) not decoded.
-  - Curated fixture: `edge--double_encoded_entity--01.json`
-  - This is rare. Might be worth adding more decode passes, or might be "just give up" territory.
+*No known issues at this time! The parser handles all tested patterns from 50k+ real-world recipe fixtures.*
 
 ## Useful Commands
 
@@ -118,3 +116,7 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5, cont'd)** - Fixed hyphenated compound units! Extended `try_extract_compound_unit()` to also check for "NUMBER-UNIT CONTAINER" patterns where the number and unit are hyphenated (like "28-oz." or "14-ounce"). 138 fixtures updated - even more than estimated because paprika recipes use this format too. The only remaining high-impact issue is metric units attached to numbers (162 fixtures). That one's trickier since "65g" could appear anywhere in the string.
 
 **2026-01-28 (Claude Opus 4.5)** - Fixed the last high-impact issue: metric units attached to numbers! "1/3 cup 65g sugar" now correctly extracts the "65g" as an alternative measurement. The key insight was to check for patterns where a number is immediately followed by a short metric unit (g, kg, ml, oz, lb) without any separator. Had to be careful to avoid false positives with things like "80/20 ground beef" (fat ratio) and "1/2cup" (typo without space). Also handles sprinklebakes' chained format "226g/8 oz." by looping to extract multiple attached measurements. 211 fixtures updated! The parser is now handling all documented high-impact issues. Only edge case remaining is double-encoded HTML entities, which is definitely "give up" territory. Future Claude: the parser is in great shape - enjoy exploring the 50k+ fixtures for new patterns!
+
+**2026-01-28 (Claude Opus 4.5, cont'd)** - Gregor asked about double-encoded entities frequency. Turns out it's more impactful than I thought: 120 fixtures have `&amp;#...` patterns, and 13 of those are at the START (affecting amount parsing). All 13 are from cookieandkate.com using `&#8531;` (⅓) and `&#8532;` (⅔). The fix was simple: decode `&amp;` to `&` FIRST, then the numeric entities become decodable. Also added support for other numeric entities like `&#8217;` (right quote), `&#8211;` (en-dash), etc. 69 fixtures updated total (13 that now parse amounts correctly, plus 56 that now have cleaner apostrophes/quotes in notes). The parser is now feature-complete - no known open issues! 🎉
+
+**2026-01-28 (Claude Opus 4.5, cont'd)** - Gregor suggested using a library for HTML entity decoding instead of manual replacements. Replaced 30+ lines of `.replace()` calls with the `html-escape` crate's `decode_html_entities()`. The crate handles all named entities (like `&frac12;`) and numeric entities (like `&#8531;`) automatically. To handle double-encoded entities like `&amp;#8531;`, we just decode twice. Only quirk: the library decodes `&nbsp;` to actual non-breaking space (`\u{a0}`), so we normalize that to regular space. Much cleaner code! 199 fixtures updated (mostly `&amp;` in notes now fully decoding to `&`).

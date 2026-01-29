@@ -1,8 +1,13 @@
 {
   "raw": "&amp;frac18; teaspoon ground nutmeg",
   "expected": {
-    "item": "&frac18; teaspoon ground nutmeg",
-    "measurements": [],
+    "item": "ground nutmeg",
+    "measurements": [
+      {
+        "amount": "1/8",
+        "unit": "teaspoon"
+      }
+    ],
     "note": null
   }
 }

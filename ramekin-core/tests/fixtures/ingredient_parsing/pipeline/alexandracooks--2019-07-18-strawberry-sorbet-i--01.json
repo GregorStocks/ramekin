@@ -1,11 +1,11 @@
 {
   "raw": "1 &amp;#8211; 1.5 lbs. strawberries, washed, hulled, and chopped",
   "expected": {
-    "item": "&#8211; 1.5 lbs. strawberries, washed, hulled",
+    "item": "strawberries, washed, hulled",
     "measurements": [
       {
-        "amount": "1",
-        "unit": null
+        "amount": "1-1.5",
+        "unit": "lbs"
       }
     ],
     "note": "and chopped"

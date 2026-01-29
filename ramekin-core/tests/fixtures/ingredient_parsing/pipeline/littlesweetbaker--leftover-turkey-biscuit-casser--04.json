@@ -1,7 +1,7 @@
 {
   "raw": "1 &amp;amp; 1/2 cups milk",
   "expected": {
-    "item": "&amp; 1/2 cups milk",
+    "item": "& 1/2 cups milk",
     "measurements": [
       {
         "amount": "1",
