@@ -26,7 +26,8 @@ processes:
   seed:
     command: >-
       cargo run -q -- seed --server-url http://localhost:${PORT}
-      --username t --password t ../data/dev/seed.paprikarecipes
+      --username t --password t --tags-file ../data/eval-tags.json
+      --preserve-tags=false ../data/dev/seed.paprikarecipes
     working_dir: ./cli
     depends_on:
       server:
