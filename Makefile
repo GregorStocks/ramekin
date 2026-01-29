@@ -19,12 +19,12 @@ help: ## Show this help message
 	@echo 'Available targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "  %-20s %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-dev: check-deps $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
+dev: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment (server + UI via process-compose)
 	@echo "Starting dev environment (Ctrl+C to stop)..."
 	@mkdir -p logs
 	@process-compose up -e dev.env --port 8180
 
-dev-headless: check-deps $(CLIENT_MARKER) ## Start local dev environment without TUI
+dev-headless: check-deps db-up $(CLIENT_MARKER) ## Start local dev environment without TUI
 	@echo "Starting dev environment (headless)..."
 	@mkdir -p logs
 	@process-compose up -e dev.env -t=false --port 8180
@@ -109,13 +109,17 @@ db-up: ## Start postgres container with dev and test databases
 	@if [ -f dev.env ]; then \
 	  DEV_DB=$$(grep '^DATABASE_URL=' dev.env | sed 's|.*/||'); \
 	  if [ -n "$$DEV_DB" ]; then \
-	    docker exec ramekin-db createdb -U ramekin "$$DEV_DB" 2>/dev/null || true; \
+	    if docker exec ramekin-db createdb -U ramekin "$$DEV_DB" 2>/dev/null; then \
+	      echo "Created database: $$DEV_DB"; \
+	    fi; \
 	  fi; \
 	fi
 	@if [ -f test.env ]; then \
 	  TEST_DB=$$(grep '^DATABASE_URL=' test.env | sed 's|.*/||'); \
 	  if [ -n "$$TEST_DB" ]; then \
-	    docker exec ramekin-db createdb -U ramekin "$$TEST_DB" 2>/dev/null || true; \
+	    if docker exec ramekin-db createdb -U ramekin "$$TEST_DB" 2>/dev/null; then \
+	      echo "Created database: $$TEST_DB"; \
+	    fi; \
 	  fi; \
 	fi
 
