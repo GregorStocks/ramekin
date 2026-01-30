@@ -1,7 +1,7 @@
 {
   "raw": "4 cups cold water or 2 cups (473 milliliters) each water and whole milk",
   "expected": {
-    "item": "cold water or 2 cups each water and whole milk",
+    "item": "cold water",
     "measurements": [
       {
         "amount": "4",
@@ -12,6 +12,6 @@
         "unit": "milliliters"
       }
     ],
-    "note": null
+    "note": "or 2 cups each water and whole milk"
   }
 }

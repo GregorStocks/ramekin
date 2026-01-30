@@ -1,13 +1,13 @@
 {
   "raw": "2 tablespoons fresh dill or 2 teaspoons dried dill weed",
   "expected": {
-    "item": "fresh dill or 2 teaspoons dried dill weed",
+    "item": "fresh dill",
     "measurements": [
       {
         "amount": "2",
         "unit": "tablespoons"
       }
     ],
-    "note": null
+    "note": "or 2 teaspoons dried dill weed"
   }
 }

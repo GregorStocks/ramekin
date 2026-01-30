@@ -1,7 +1,7 @@
 {
   "raw": "1 fluid ounce (30 ml) fresh espresso or 1 1/2 fluid ounces (45 ml) fresh strong coffee from a moka pot or cold brew concentrate",
   "expected": {
-    "item": "fresh espresso or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate",
+    "item": "fresh espresso",
     "measurements": [
       {
         "amount": "1",
@@ -16,6 +16,6 @@
         "unit": "ml"
       }
     ],
-    "note": null
+    "note": "or 1 1/2 fluid ounces fresh strong coffee from a moka pot or cold brew concentrate"
   }
 }

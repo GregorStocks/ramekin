@@ -1,13 +1,13 @@
 {
   "raw": "1 teaspoon table salt or 2 teaspoons of a coarse sea salt",
   "expected": {
-    "item": "table salt or 2 teaspoons of a coarse sea salt",
+    "item": "table salt",
     "measurements": [
       {
         "amount": "1",
         "unit": "teaspoon"
       }
     ],
-    "note": null
+    "note": "or 2 teaspoons of a coarse sea salt"
   }
 }

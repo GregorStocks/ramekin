@@ -1,13 +1,13 @@
 {
   "raw": "2 teaspoons arrowroot starch or 1 teaspoon corn starch",
   "expected": {
-    "item": "arrowroot starch or 1 teaspoon corn starch",
+    "item": "arrowroot starch",
     "measurements": [
       {
         "amount": "2",
         "unit": "teaspoons"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon corn starch"
   }
 }

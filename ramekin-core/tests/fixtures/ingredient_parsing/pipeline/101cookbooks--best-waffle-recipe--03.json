@@ -1,13 +1,13 @@
 {
   "raw": "1/2 cup | 1.75 oz | 50 g rolled oats or 1/2 cup | 1.5 oz | 40 g wheat germ",
   "expected": {
-    "item": "| 1.75 oz | 50 g rolled oats or 1/2 cup | 1.5 oz | 40 g wheat germ",
+    "item": "| 1.75 oz | 50 g rolled oats",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
       }
     ],
-    "note": null
+    "note": "or 1/2 cup | 1.5 oz | 40 g wheat germ"
   }
 }

@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup (63g) all-purpose flour OR&nbsp;1/4 cup&nbsp;instant tapioca",
   "expected": {
-    "item": "all-purpose flour OR 1/4 cup instant tapioca",
+    "item": "all-purpose flour",
     "measurements": [
       {
         "amount": "1/2",
@@ -12,6 +12,6 @@
         "unit": "g"
       }
     ],
-    "note": null
+    "note": "or 1/4 cup instant tapioca"
   }
 }

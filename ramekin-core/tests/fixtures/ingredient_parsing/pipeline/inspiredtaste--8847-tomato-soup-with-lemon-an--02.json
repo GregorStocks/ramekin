@@ -1,13 +1,13 @@
 {
   "raw": "4 sprigs fresh thyme or 2 teaspoons dried",
   "expected": {
-    "item": "fresh thyme or 2 teaspoons dried",
+    "item": "fresh thyme",
     "measurements": [
       {
         "amount": "4",
         "unit": "sprigs"
       }
     ],
-    "note": null
+    "note": "or 2 teaspoons dried"
   }
 }

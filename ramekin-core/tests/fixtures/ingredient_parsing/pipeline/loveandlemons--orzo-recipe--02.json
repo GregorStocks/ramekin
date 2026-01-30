@@ -1,7 +1,7 @@
 {
   "raw": "½ cup finely diced scallions or 1 small shallot (1/4 cup)",
   "expected": {
-    "item": "finely diced scallions or 1 small shallot",
+    "item": "finely diced scallions",
     "measurements": [
       {
         "amount": "1/2",
@@ -12,6 +12,6 @@
         "unit": "cup"
       }
     ],
-    "note": null
+    "note": "or 1 small shallot"
   }
 }

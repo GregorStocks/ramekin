@@ -1,13 +1,13 @@
 {
   "raw": "1 tablespoon minced fresh basil or 1 teaspoon dried basil",
   "expected": {
-    "item": "minced fresh basil or 1 teaspoon dried basil",
+    "item": "minced fresh basil",
     "measurements": [
       {
         "amount": "1",
         "unit": "tablespoon"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon dried basil"
   }
 }

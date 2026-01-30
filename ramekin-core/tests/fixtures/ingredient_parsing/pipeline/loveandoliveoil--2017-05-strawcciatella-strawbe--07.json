@@ -1,13 +1,13 @@
 {
   "raw": "1 tablespoon limoncello liqueur or 1 teaspoon lemon juice",
   "expected": {
-    "item": "limoncello liqueur or 1 teaspoon lemon juice",
+    "item": "limoncello liqueur",
     "measurements": [
       {
         "amount": "1",
         "unit": "tablespoon"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon lemon juice"
   }
 }

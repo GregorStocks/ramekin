@@ -1,13 +1,13 @@
 {
   "raw": "1 tablespoon minced fresh thyme or 1 teaspoon dried thyme",
   "expected": {
-    "item": "minced fresh thyme or 1 teaspoon dried thyme",
+    "item": "minced fresh thyme",
     "measurements": [
       {
         "amount": "1",
         "unit": "tablespoon"
       }
     ],
-    "note": null
+    "note": "or 1 teaspoon dried thyme"
   }
 }

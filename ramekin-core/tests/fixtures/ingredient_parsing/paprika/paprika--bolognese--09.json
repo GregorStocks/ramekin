@@ -1,13 +1,13 @@
 {
   "raw": "1/2 cup whole milk, or 3/4 cup of a low-fat one",
   "expected": {
-    "item": "whole milk, or 3/4 cup of a low-fat one",
+    "item": "whole milk,",
     "measurements": [
       {
         "amount": "1/2",
         "unit": "cup"
       }
     ],
-    "note": null
+    "note": "or 3/4 cup of a low-fat one"
   }
 }

@@ -1,7 +1,7 @@
 {
   "raw": "1 (28-ounce) can diced tomatoes, or 2 to 3 cans Rotel",
   "expected": {
-    "item": "diced tomatoes, or 2 to 3 cans Rotel",
+    "item": "diced tomatoes,",
     "measurements": [
       {
         "amount": "1",
@@ -12,6 +12,6 @@
         "unit": null
       }
     ],
-    "note": null
+    "note": "or 2 to 3 cans Rotel"
   }
 }

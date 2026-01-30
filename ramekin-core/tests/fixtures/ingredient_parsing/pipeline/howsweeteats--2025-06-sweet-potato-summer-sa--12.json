@@ -1,13 +1,13 @@
 {
   "raw": "3 tablespoons fresh chives or 1 tablespoon dried chives",
   "expected": {
-    "item": "fresh chives or 1 tablespoon dried chives",
+    "item": "fresh chives",
     "measurements": [
       {
         "amount": "3",
         "unit": "tablespoons"
       }
     ],
-    "note": null
+    "note": "or 1 tablespoon dried chives"
   }
 }
