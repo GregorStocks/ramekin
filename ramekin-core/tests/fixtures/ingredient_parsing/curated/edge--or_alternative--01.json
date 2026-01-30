@@ -3,8 +3,14 @@
   "expected": {
     "item": "frozen pineapple chunks",
     "measurements": [
-      {"amount": "1", "unit": "pound"},
-      {"amount": "3", "unit": "heaping cups"}
+      {
+        "amount": "1",
+        "unit": "lb"
+      },
+      {
+        "amount": "3",
+        "unit": "heaping cup"
+      }
     ],
     "note": null
   }

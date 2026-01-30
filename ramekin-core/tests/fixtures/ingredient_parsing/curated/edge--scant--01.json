@@ -2,7 +2,12 @@
   "raw": "scant 1 teaspoon fine grain sea salt",
   "expected": {
     "item": "fine grain sea salt",
-    "measurements": [{"amount": "1", "unit": "scant teaspoon"}],
+    "measurements": [
+      {
+        "amount": "1",
+        "unit": "scant tsp"
+      }
+    ],
     "note": null
   }
 }

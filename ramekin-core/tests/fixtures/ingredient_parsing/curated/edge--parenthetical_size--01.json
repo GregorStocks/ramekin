@@ -3,8 +3,14 @@
   "expected": {
     "item": "chickpeas",
     "measurements": [
-      {"amount": "2", "unit": "cans"},
-      {"amount": "15.5", "unit": null}
+      {
+        "amount": "2",
+        "unit": "can"
+      },
+      {
+        "amount": "15.5",
+        "unit": null
+      }
     ],
     "note": null
   }

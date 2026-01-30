@@ -3,9 +3,18 @@
   "expected": {
     "item": "russet potatoes",
     "measurements": [
-      {"amount": "4", "unit": null},
-      {"amount": "8", "unit": "ounces each"},
-      {"amount": "225", "unit": "grams each"}
+      {
+        "amount": "4",
+        "unit": null
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      },
+      {
+        "amount": "225",
+        "unit": "g each"
+      }
     ],
     "note": "scrubbed clean"
   }
