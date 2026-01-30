@@ -17,7 +17,7 @@ processes:
       restart: "no"
 
   ui:
-    command: npm install && npm run dev
+    command: npm install && npm run dev -- --port ${UI_PORT} --strictPort
     working_dir: ./ramekin-ui
     depends_on:
       certs:
