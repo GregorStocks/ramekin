@@ -22,7 +22,7 @@ processes:
         condition: process_healthy
 
   ui:
-    command: npm run dev -- --port ${UI_PORT}
+    command: npm run dev -- --port ${UI_PORT} --strictPort
     working_dir: ./ramekin-ui
     environment:
       - PORT=${PORT}
