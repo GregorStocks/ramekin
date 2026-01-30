@@ -1,21 +1,41 @@
 {
   "raw": "1 cup (113g) King Arthur Rolled Oats or 1 cup (89g) old-fashioned rolled oats",
-  "expected": {
-    "item": "King Arthur Rolled Oats",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      },
-      {
-        "amount": "89",
-        "unit": "g"
-      }
-    ],
-    "note": "or 1 cup old-fashioned rolled oats"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "King Arthur Rolled Oats",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "89",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1 cup old-fashioned rolled oats"
+    },
+    "enrich_metric_weights": {
+      "item": "King Arthur Rolled Oats",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "89",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1 cup old-fashioned rolled oats"
+    }
   }
 }

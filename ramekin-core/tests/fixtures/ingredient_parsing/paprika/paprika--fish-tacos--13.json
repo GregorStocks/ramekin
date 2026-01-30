@@ -1,8 +1,15 @@
 {
   "raw": "Serving:",
-  "expected": {
-    "item": "Serving:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Serving:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Serving:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

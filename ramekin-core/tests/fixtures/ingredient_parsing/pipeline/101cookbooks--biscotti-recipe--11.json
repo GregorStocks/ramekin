@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon crushed chamomile (optional)",
-  "expected": {
-    "item": "crushed chamomile",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed chamomile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "crushed chamomile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

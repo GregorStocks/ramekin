@@ -1,17 +1,33 @@
 {
   "raw": "2/3&nbsp; cup (100g) flour",
-  "expected": {
-    "item": "flour",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons corn syrup or glucose syrup",
-  "expected": {
-    "item": "corn syrup or glucose syrup",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn syrup or glucose syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "corn syrup or glucose syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "zest of 1 large orange",
-  "expected": {
-    "item": "zest of 1 large orange",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zest of 1 large orange",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "zest of 1 large orange",
+      "measurements": [],
+      "note": null
+    }
   }
 }

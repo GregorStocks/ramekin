@@ -1,13 +1,25 @@
 {
   "raw": "1 cup plain full-fat yogurt",
-  "expected": {
-    "item": "plain full-fat yogurt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plain full-fat yogurt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "plain full-fat yogurt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup (packed) dark brown sugar",
-  "expected": {
-    "item": "dark brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "packed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    },
+    "parse_ingredients": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    }
   }
 }

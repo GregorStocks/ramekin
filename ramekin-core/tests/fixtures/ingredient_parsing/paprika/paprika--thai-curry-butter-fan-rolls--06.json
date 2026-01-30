@@ -1,17 +1,33 @@
 {
   "raw": "3½ cups (17½ ounces/496 grams) all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "3 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "17 1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "17 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "17 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

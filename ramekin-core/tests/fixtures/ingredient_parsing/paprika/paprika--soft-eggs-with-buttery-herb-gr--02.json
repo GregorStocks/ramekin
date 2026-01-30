@@ -1,17 +1,37 @@
 {
   "raw": "4 tablespoons (2 ounces) unsalted butter, melted",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

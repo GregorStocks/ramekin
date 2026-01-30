@@ -1,17 +1,37 @@
 {
   "raw": "2 c. shredded pepper jack cheese (about 8 ounces)",
-  "expected": {
-    "item": "shredded pepper jack cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded pepper jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded pepper jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

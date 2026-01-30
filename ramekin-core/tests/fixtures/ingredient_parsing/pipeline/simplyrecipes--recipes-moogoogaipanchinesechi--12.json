@@ -1,13 +1,25 @@
 {
   "raw": "3 carrots, peeled and sliced thinly on a diagonal",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "peeled and sliced thinly on a diagonal"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced thinly on a diagonal"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced thinly on a diagonal"
+    }
   }
 }

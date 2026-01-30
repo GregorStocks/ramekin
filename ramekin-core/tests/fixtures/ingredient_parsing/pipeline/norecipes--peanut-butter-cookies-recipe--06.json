@@ -1,17 +1,33 @@
 {
   "raw": "70 grams rice syrup ((~ 1/4 cup))",
-  "expected": {
-    "item": "rice syrup",
-    "measurements": [
-      {
-        "amount": "70",
-        "unit": "g"
-      },
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rice syrup",
+      "measurements": [
+        {
+          "amount": "70",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "rice syrup",
+      "measurements": [
+        {
+          "amount": "70",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

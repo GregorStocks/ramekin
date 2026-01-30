@@ -1,13 +1,25 @@
 {
   "raw": "4 medium plum tomatoes, sliced",
-  "expected": {
-    "item": "plum tomatoes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Gummy ring",
-  "expected": {
-    "item": "Gummy ring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gummy ring",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Gummy ring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

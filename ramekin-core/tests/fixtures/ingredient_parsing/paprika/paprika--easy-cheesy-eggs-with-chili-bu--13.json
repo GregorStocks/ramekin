@@ -1,8 +1,15 @@
 {
   "raw": "fresh herbs (optional)",
-  "expected": {
-    "item": "fresh herbs",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh herbs",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh herbs",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp. black peppercorns",
-  "expected": {
-    "item": "black peppercorns",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black peppercorns",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "black peppercorns",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

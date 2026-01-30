@@ -1,8 +1,15 @@
 {
   "raw": "Hot sauce, preferably Louisiana or Crystal (optional)",
-  "expected": {
-    "item": "Hot sauce, preferably Louisiana or Crystal",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Hot sauce, preferably Louisiana or Crystal",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Hot sauce, preferably Louisiana or Crystal",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

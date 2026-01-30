@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon Chef&amp;#39;s Choice Organic Culinary Matcha",
-  "expected": {
-    "item": "Chef's Choice Organic Culinary Matcha",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chef's Choice Organic Culinary Matcha",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chef's Choice Organic Culinary Matcha",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

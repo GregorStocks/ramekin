@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp salt ($0.03)",
-  "expected": {
-    "item": "salt ($0.03)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt ($0.03)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt ($0.03)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

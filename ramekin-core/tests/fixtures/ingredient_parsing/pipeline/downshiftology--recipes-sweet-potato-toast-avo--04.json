@@ -1,13 +1,25 @@
 {
   "raw": "4 slices prosciutto",
-  "expected": {
-    "item": "prosciutto",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "prosciutto",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "prosciutto",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

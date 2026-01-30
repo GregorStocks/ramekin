@@ -1,17 +1,33 @@
 {
   "raw": "2 (15.5-ounce) cans chickpeas",
-  "expected": {
-    "item": "chickpeas",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "15.5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15.5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15.5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

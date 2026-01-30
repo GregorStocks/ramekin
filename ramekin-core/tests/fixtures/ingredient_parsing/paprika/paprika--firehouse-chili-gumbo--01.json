@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons neutral oil, like canola or grapeseed",
-  "expected": {
-    "item": "neutral oil, like canola or grapeseed",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "neutral oil, like canola or grapeseed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "neutral oil, like canola or grapeseed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

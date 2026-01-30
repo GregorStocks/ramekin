@@ -1,8 +1,15 @@
 {
   "raw": "Curry and Rice recipe",
-  "expected": {
-    "item": "Curry and Rice recipe",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Curry and Rice recipe",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Curry and Rice recipe",
+      "measurements": [],
+      "note": null
+    }
   }
 }

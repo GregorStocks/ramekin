@@ -1,8 +1,15 @@
 {
   "raw": "Follow the link in the post",
-  "expected": {
-    "item": "Follow the link in the post",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Follow the link in the post",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Follow the link in the post",
+      "measurements": [],
+      "note": null
+    }
   }
 }

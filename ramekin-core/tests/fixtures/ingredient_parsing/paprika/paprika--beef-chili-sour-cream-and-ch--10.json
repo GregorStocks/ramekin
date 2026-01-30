@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon crumbled dry oregano",
-  "expected": {
-    "item": "crumbled dry oregano",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crumbled dry oregano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crumbled dry oregano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

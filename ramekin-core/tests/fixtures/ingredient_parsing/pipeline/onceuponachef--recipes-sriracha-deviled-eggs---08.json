@@ -1,13 +1,25 @@
 {
   "raw": "⅛ teaspoon sugar",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

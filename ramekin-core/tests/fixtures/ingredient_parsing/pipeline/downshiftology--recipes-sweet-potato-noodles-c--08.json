@@ -1,13 +1,25 @@
 {
   "raw": "4 leaves Swiss chard (sliced)",
-  "expected": {
-    "item": "leaves Swiss chard",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "leaves Swiss chard",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "leaves Swiss chard",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

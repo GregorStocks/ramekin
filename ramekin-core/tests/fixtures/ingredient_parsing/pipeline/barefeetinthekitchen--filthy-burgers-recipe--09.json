@@ -1,8 +1,15 @@
 {
   "raw": "toasted burger buns",
-  "expected": {
-    "item": "toasted burger buns",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted burger buns",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted burger buns",
+      "measurements": [],
+      "note": null
+    }
   }
 }

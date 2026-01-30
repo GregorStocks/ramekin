@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tsp avocado oil or olive oil",
-  "expected": {
-    "item": "avocado oil or olive oil",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocado oil or olive oil",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "avocado oil or olive oil",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

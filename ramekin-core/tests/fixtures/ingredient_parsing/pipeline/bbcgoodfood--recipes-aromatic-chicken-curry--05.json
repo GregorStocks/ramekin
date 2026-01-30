@@ -1,13 +1,25 @@
 {
   "raw": "2-3 tsp hot  chilli powder (depending on how you like your curries)",
-  "expected": {
-    "item": "hot chilli powder (depending on how you like your curries)",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot chilli powder (depending on how you like your curries)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "hot chilli powder (depending on how you like your curries)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup balsamic vinegar",
-  "expected": {
-    "item": "balsamic vinegar",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "balsamic vinegar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "balsamic vinegar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

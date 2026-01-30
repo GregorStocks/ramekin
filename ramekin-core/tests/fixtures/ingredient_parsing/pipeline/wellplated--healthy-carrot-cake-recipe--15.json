@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup buttermilk (at room temperature)",
-  "expected": {
-    "item": "buttermilk",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "buttermilk",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "buttermilk",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

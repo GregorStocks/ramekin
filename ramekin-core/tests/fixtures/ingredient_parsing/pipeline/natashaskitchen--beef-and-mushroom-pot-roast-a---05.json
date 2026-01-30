@@ -1,17 +1,33 @@
 {
   "raw": "1/2  head of garlic (6 cloves, pressed)",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "head"
-      },
-      {
-        "amount": "6",
-        "unit": "clove"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        },
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        },
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¾ cups water or chicken stock",
-  "expected": {
-    "item": "water or chicken stock",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water or chicken stock",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water or chicken stock",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

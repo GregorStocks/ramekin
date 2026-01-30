@@ -1,13 +1,25 @@
 {
   "raw": "1  ripe mango (peeled, cored and diced small (about 2 cups))",
-  "expected": {
-    "item": "ripe mango",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled, cored and diced small (about 2 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe mango",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored and diced small (about 2 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "ripe mango",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored and diced small (about 2 cups"
+    }
   }
 }

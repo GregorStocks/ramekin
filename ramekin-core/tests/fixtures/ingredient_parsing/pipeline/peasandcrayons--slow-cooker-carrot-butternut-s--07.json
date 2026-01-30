@@ -1,8 +1,15 @@
 {
   "raw": "grated gouda or cheddar cheese ((skip for vegan/dairy-free))",
-  "expected": {
-    "item": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated gouda or cheddar cheese (skip for vegan/dairy-free)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "4 oz. (113 g) bacon (about 3 thick slices), chopped",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

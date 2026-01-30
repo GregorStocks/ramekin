@@ -1,8 +1,15 @@
 {
   "raw": "flakey sea salt (optional)",
-  "expected": {
-    "item": "flakey sea salt",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flakey sea salt",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "flakey sea salt",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

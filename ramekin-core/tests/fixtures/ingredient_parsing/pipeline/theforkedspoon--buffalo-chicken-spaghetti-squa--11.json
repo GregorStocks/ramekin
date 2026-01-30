@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup Frank's Red Hot Sauce",
-  "expected": {
-    "item": "Frank's Red Hot Sauce",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Frank's Red Hot Sauce",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Frank's Red Hot Sauce",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

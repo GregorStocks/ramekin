@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds beef tri-tip steak",
-  "expected": {
-    "item": "beef tri-tip steak",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef tri-tip steak",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "beef tri-tip steak",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

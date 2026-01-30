@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon soy sauce (use gluten-free soy sauce if cooking gluten-free)",
-  "expected": {
-    "item": "soy sauce (use gluten-free soy sauce if cooking gluten-free)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "soy sauce (use gluten-free soy sauce if cooking gluten-free)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

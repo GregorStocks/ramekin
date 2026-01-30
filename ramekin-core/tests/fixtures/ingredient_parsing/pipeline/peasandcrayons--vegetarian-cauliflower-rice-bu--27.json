@@ -1,8 +1,15 @@
 {
   "raw": "fresh squeezed lime juice (to taste (approx 1/4 a lime))",
-  "expected": {
-    "item": "fresh squeezed lime juice",
-    "measurements": [],
-    "note": "to taste (approx 1/4 a lime"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh squeezed lime juice",
+      "measurements": [],
+      "note": "to taste (approx 1/4 a lime"
+    },
+    "parse_ingredients": {
+      "item": "fresh squeezed lime juice",
+      "measurements": [],
+      "note": "to taste (approx 1/4 a lime"
+    }
   }
 }

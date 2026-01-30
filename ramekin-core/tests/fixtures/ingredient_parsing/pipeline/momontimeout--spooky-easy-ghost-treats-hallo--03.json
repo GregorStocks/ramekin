@@ -1,13 +1,25 @@
 {
   "raw": "4 cups powdered sugar (divided)",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Picada",
-  "expected": {
-    "item": "Picada",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Picada",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Picada",
+      "measurements": [],
+      "note": null
+    }
   }
 }

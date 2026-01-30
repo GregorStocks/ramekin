@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds baby bok choy (halved or quartered)",
-  "expected": {
-    "item": "baby bok choy",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "halved or quartered"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby bok choy",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved or quartered"
+    },
+    "parse_ingredients": {
+      "item": "baby bok choy",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved or quartered"
+    }
   }
 }

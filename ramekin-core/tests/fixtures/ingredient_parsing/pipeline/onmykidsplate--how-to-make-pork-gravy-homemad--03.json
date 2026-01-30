@@ -1,13 +1,25 @@
 {
   "raw": "2 cups pan drippings liquid (If you don&amp;#39;t have a full two cups, supplement with broth or use all boxed broth)",
-  "expected": {
-    "item": "pan drippings liquid (If you don't have a full two cups, supplement with broth or use all boxed broth)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pan drippings liquid (If you don't have a full two cups, supplement with broth or use all boxed broth)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pan drippings liquid (If you don't have a full two cups, supplement with broth or use all boxed broth)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

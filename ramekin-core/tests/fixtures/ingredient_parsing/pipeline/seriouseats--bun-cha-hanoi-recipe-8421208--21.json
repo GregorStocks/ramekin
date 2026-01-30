@@ -1,21 +1,41 @@
 {
   "raw": "1 small kohlrabi (68g), thinly sliced, then cut into small pieces (1/2 cup), see note",
-  "expected": {
-    "item": "kohlrabi , thinly sliced, then cut into small pieces , see note",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "68",
-        "unit": "g"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kohlrabi , thinly sliced, then cut into small pieces , see note",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "68",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kohlrabi , thinly sliced, then cut into small pieces , see note",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "68",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

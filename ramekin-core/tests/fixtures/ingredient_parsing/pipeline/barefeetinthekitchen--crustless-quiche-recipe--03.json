@@ -1,13 +1,25 @@
 {
   "raw": "8  crimini or button mushrooms (sliced very thin, about 2 cups worth)",
-  "expected": {
-    "item": "crimini or button mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "sliced very thin, about 2 cups worth"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crimini or button mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced very thin, about 2 cups worth"
+    },
+    "parse_ingredients": {
+      "item": "crimini or button mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced very thin, about 2 cups worth"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon paprika (Hungarian sweet)",
-  "expected": {
-    "item": "paprika (Hungarian sweet)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "paprika (Hungarian sweet)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "paprika (Hungarian sweet)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

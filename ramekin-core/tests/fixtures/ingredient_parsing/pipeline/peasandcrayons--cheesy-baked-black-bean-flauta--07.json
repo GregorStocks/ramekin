@@ -1,17 +1,33 @@
 {
   "raw": "7  large flour tortillas ((8-9 inch diameter))",
-  "expected": {
-    "item": "flour tortillas",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "large"
-      },
-      {
-        "amount": "8-9",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour tortillas",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "large"
+        },
+        {
+          "amount": "8-9",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour tortillas",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "large"
+        },
+        {
+          "amount": "8-9",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

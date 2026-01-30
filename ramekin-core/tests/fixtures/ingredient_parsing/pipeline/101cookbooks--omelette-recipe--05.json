@@ -1,8 +1,15 @@
 {
   "raw": "a bit of goat cheese or feta",
-  "expected": {
-    "item": "a bit of goat cheese or feta",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a bit of goat cheese or feta",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a bit of goat cheese or feta",
+      "measurements": [],
+      "note": null
+    }
   }
 }

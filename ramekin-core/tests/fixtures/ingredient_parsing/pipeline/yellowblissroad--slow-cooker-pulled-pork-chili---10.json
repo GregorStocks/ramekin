@@ -1,8 +1,15 @@
 {
   "raw": "Corn chips (cheese, sour cream)",
-  "expected": {
-    "item": "Corn chips (cheese, sour cream)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Corn chips (cheese, sour cream)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Corn chips (cheese, sour cream)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup olive oil (divided)",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

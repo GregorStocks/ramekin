@@ -1,13 +1,25 @@
 {
   "raw": "20  serrano peppers (stems removed)",
-  "expected": {
-    "item": "serrano peppers (stems removed)",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serrano peppers (stems removed)",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "serrano peppers (stems removed)",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

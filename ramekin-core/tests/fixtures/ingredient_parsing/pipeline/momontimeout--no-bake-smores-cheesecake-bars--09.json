@@ -1,17 +1,37 @@
 {
   "raw": "9.3 oz milk chocolate bars (6 - 1.55 oz bars)",
-  "expected": {
-    "item": "milk chocolate bars",
-    "measurements": [
-      {
-        "amount": "9.3",
-        "unit": "oz"
-      },
-      {
-        "amount": "6-1.55",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk chocolate bars",
+      "measurements": [
+        {
+          "amount": "9.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "6-1.55",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "milk chocolate bars",
+      "measurements": [
+        {
+          "amount": "9.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "6-1.55",
+          "unit": "oz"
+        },
+        {
+          "amount": "264",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

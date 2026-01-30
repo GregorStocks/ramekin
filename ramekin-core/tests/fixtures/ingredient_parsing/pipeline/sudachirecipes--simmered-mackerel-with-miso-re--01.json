@@ -1,13 +1,25 @@
 {
   "raw": "2-4  mackerel fillets (depending on the size)",
-  "expected": {
-    "item": "mackerel fillets (depending on the size)",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mackerel fillets (depending on the size)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mackerel fillets (depending on the size)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

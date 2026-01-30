@@ -1,13 +1,25 @@
 {
   "raw": "1/3 cup Triple Sec",
-  "expected": {
-    "item": "Triple Sec",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Triple Sec",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Triple Sec",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "serve with tomatillo salsa, store-bought or the one from this recipe",
-  "expected": {
-    "item": "serve with tomatillo salsa, store-bought or the one from this recipe",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serve with tomatillo salsa, store-bought or the one from this recipe",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "serve with tomatillo salsa, store-bought or the one from this recipe",
+      "measurements": [],
+      "note": null
+    }
   }
 }

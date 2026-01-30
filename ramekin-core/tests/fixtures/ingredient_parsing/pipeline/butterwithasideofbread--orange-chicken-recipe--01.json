@@ -1,13 +1,25 @@
 {
   "raw": "2 lbs  chicken tenders cut up into bite size pieces",
-  "expected": {
-    "item": "chicken tenders cut up into bite size pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken tenders cut up into bite size pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken tenders cut up into bite size pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Carrots (grated)",
-  "expected": {
-    "item": "Carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "grated"
+    },
+    "enrich_metric_weights": {
+      "item": "Carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

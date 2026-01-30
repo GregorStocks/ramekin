@@ -1,13 +1,25 @@
 {
   "raw": "2  sheets edible rice paper",
-  "expected": {
-    "item": "sheets edible rice paper",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets edible rice paper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sheets edible rice paper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

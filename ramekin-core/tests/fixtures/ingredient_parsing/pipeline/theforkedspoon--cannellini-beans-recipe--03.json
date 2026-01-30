@@ -1,13 +1,25 @@
 {
   "raw": "4 leaves fresh sage",
-  "expected": {
-    "item": "leaves fresh sage",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leaves fresh sage",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "leaves fresh sage",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

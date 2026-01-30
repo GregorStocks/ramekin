@@ -1,13 +1,29 @@
 {
   "raw": "3.4  ounce package instant vanilla pudding mix",
-  "expected": {
-    "item": "package instant vanilla pudding mix",
-    "measurements": [
-      {
-        "amount": "3.4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "package instant vanilla pudding mix",
+      "measurements": [
+        {
+          "amount": "3.4",
+          "unit": "oz"
+        },
+        {
+          "amount": "96",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "package instant vanilla pudding mix",
+      "measurements": [
+        {
+          "amount": "3.4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cups cooked rice, for serving",
-  "expected": {
-    "item": "cooked rice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "cooked rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "for serving"
+    }
   }
 }

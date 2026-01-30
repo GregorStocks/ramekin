@@ -1,13 +1,25 @@
 {
   "raw": "1 cup walnuts, toasted and crushed, see notes above",
-  "expected": {
-    "item": "walnuts, toasted and crushed, see notes above",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "walnuts, toasted and crushed, see notes above",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "walnuts, toasted and crushed, see notes above",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

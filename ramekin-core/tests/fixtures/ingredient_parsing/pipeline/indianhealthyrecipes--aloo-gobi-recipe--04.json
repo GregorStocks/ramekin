@@ -1,17 +1,33 @@
 {
   "raw": "¾ to 1 cup (2 medium)  tomatoes ((finely chopped) or ¼ cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
-  "expected": {
-    "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
-    "measurements": [
-      {
-        "amount": "3/4 to 1",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+      "measurements": [
+        {
+          "amount": "3/4 to 1",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "tomatoes or 1/4 cup tomato puree or 2 tbsp tomato paste mixed with 3 tbsps water)",
+      "measurements": [
+        {
+          "amount": "3/4 to 1",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

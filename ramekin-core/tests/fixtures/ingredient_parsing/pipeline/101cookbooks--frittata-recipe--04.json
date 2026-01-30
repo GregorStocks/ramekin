@@ -1,13 +1,25 @@
 {
   "raw": "1  small bunch cilantro",
-  "expected": {
-    "item": "bunch cilantro",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bunch cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bunch cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

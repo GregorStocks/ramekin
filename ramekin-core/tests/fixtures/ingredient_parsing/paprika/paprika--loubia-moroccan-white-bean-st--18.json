@@ -1,21 +1,41 @@
 {
   "raw": "2 large tomatoes (about 10 ounces; 285 g), halved and grated on the large holes of a box grater, with their juices (alternatively use 7 ounces canned chopped tomatoes)",
-  "expected": {
-    "item": "tomatoes , halved and grated on the large holes of a box grater, with their juices",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "10",
-        "unit": "oz"
-      },
-      {
-        "amount": "285",
-        "unit": "g"
-      }
-    ],
-    "note": "alternatively use 7 ounces canned chopped tomatoes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomatoes , halved and grated on the large holes of a box grater, with their juices",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "285",
+          "unit": "g"
+        }
+      ],
+      "note": "alternatively use 7 ounces canned chopped tomatoes"
+    },
+    "enrich_metric_weights": {
+      "item": "tomatoes , halved and grated on the large holes of a box grater, with their juices",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "285",
+          "unit": "g"
+        }
+      ],
+      "note": "alternatively use 7 ounces canned chopped tomatoes"
+    }
   }
 }

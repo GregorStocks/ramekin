@@ -1,13 +1,25 @@
 {
   "raw": "4 sticks unsalted butter; room temperature",
-  "expected": {
-    "item": "unsalted butter; room temperature",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter; room temperature",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter; room temperature",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Many grinds of black pepper",
-  "expected": {
-    "item": "Many grinds of black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Many grinds of black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Many grinds of black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

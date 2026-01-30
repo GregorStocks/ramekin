@@ -1,13 +1,25 @@
 {
   "raw": "1/2 medium-size onion, quartered and thinly sliced",
-  "expected": {
-    "item": "medium-size onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "quartered and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium-size onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "quartered and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "medium-size onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "quartered and thinly sliced"
+    }
   }
 }

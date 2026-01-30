@@ -1,8 +1,15 @@
 {
   "raw": "Disposable piping bags",
-  "expected": {
-    "item": "Disposable piping bags",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Disposable piping bags",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Disposable piping bags",
+      "measurements": [],
+      "note": null
+    }
   }
 }

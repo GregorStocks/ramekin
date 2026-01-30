@@ -1,13 +1,25 @@
 {
   "raw": "1 medium broccoli head (cut into florets)",
-  "expected": {
-    "item": "broccoli head (cut into florets)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli head (cut into florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli head (cut into florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

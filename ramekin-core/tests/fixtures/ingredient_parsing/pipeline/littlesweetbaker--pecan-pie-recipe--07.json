@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (250ml) light or dark corn syrup",
-  "expected": {
-    "item": "light or dark corn syrup",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "250",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "light or dark corn syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "250",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "light or dark corn syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "250",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

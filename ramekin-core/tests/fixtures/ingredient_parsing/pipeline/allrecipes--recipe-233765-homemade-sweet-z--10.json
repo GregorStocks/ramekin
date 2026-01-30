@@ -1,13 +1,25 @@
 {
   "raw": "12 half pint canning jars with lids and rings",
-  "expected": {
-    "item": "half pint canning jars with lids and rings",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "half pint canning jars with lids and rings",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "half pint canning jars with lids and rings",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

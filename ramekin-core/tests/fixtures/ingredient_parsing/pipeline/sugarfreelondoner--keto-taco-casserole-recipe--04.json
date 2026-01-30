@@ -1,17 +1,33 @@
 {
   "raw": "2/3 cup water (160 ml, or beef stock)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "160",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

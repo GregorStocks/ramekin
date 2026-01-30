@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ cups jasmine rice, uncooked, rinsed",
-  "expected": {
-    "item": "jasmine rice, uncooked",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jasmine rice, uncooked",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "jasmine rice, uncooked",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 large red onion (about 3/4 lb), peeled and sliced thin",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled and sliced thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and sliced thin"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and sliced thin"
+    }
   }
 }

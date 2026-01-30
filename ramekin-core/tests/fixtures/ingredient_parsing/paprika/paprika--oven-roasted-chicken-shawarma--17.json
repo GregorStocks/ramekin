@@ -1,8 +1,15 @@
 {
   "raw": "Cucumbers",
-  "expected": {
-    "item": "Cucumbers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cucumbers",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cucumbers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

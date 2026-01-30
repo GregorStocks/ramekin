@@ -1,13 +1,29 @@
 {
   "raw": "2 ounces  lime juice",
-  "expected": {
-    "item": "lime juice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

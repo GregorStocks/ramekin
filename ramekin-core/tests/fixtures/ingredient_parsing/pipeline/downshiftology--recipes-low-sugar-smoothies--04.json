@@ -1,13 +1,25 @@
 {
   "raw": "1  small piece fresh ginger  (approx 1 teaspoon minced or chopped)",
-  "expected": {
-    "item": "piece fresh ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "approx 1 teaspoon minced or chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "piece fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "approx 1 teaspoon minced or chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "piece fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "approx 1 teaspoon minced or chopped"
+    }
   }
 }

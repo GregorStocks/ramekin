@@ -1,8 +1,15 @@
 {
   "raw": "Lemon wedges for garnish",
-  "expected": {
-    "item": "Lemon wedges for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lemon wedges for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Lemon wedges for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

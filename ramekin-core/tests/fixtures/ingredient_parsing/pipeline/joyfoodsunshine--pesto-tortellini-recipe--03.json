@@ -1,13 +1,25 @@
 {
   "raw": "1 pint baby tomatoes (optional)",
-  "expected": {
-    "item": "baby tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pint"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "baby tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

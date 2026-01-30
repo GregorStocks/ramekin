@@ -1,13 +1,25 @@
 {
   "raw": "1  red bell pepper (seeded and diced)",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and diced"
+    },
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cloves garlic, peeled and smashed",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "clove"
-      }
-    ],
-    "note": "peeled and smashed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "clove"
+        }
+      ],
+      "note": "peeled and smashed"
+    },
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "clove"
+        }
+      ],
+      "note": "peeled and smashed"
+    }
   }
 }

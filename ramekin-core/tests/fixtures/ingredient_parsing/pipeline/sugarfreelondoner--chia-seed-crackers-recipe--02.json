@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup chia seeds ( 30g, ground)",
-  "expected": {
-    "item": "chia seeds",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "30g, ground"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chia seeds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "30g, ground"
+    },
+    "parse_ingredients": {
+      "item": "chia seeds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "30g, ground"
+    }
   }
 }

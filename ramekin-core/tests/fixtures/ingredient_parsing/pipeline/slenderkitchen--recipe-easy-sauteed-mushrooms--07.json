@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp fresh thyme, chopped (optional)",
-  "expected": {
-    "item": "fresh thyme, chopped",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh thyme, chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "fresh thyme, chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

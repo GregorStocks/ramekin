@@ -1,8 +1,15 @@
 {
   "raw": "corn (pan-fried with butter and salt)",
-  "expected": {
-    "item": "corn (pan-fried with butter and salt)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "corn (pan-fried with butter and salt)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "corn (pan-fried with butter and salt)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

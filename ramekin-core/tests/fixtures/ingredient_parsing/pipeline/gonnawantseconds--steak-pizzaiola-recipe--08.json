@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup sun-dried tomatoes (in oil, drained and finely chopped)",
-  "expected": {
-    "item": "sun-dried tomatoes",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "in oil, drained and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sun-dried tomatoes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "in oil, drained and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "sun-dried tomatoes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "in oil, drained and finely chopped"
+    }
   }
 }

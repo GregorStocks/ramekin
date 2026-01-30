@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon cinnamon (plus extra for sprinkling)",
-  "expected": {
-    "item": "cinnamon (plus extra for sprinkling)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cinnamon (plus extra for sprinkling)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cinnamon (plus extra for sprinkling)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

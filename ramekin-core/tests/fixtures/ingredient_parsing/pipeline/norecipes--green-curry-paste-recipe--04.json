@@ -1,13 +1,25 @@
 {
   "raw": "20 grams lemongrass (3 stalks, finely minced)",
-  "expected": {
-    "item": "lemongrass",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": "3 stalks, finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemongrass",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "3 stalks, finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "lemongrass",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "3 stalks, finely minced"
+    }
   }
 }

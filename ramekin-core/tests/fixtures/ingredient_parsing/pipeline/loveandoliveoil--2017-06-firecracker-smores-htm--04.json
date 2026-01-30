@@ -1,8 +1,15 @@
 {
   "raw": "red and blue pop rocks candy, for topping",
-  "expected": {
-    "item": "red and blue pop rocks candy, for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red and blue pop rocks candy, for topping",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red and blue pop rocks candy, for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

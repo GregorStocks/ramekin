@@ -1,8 +1,15 @@
 {
   "raw": "dill (for garnishment)",
-  "expected": {
-    "item": "dill",
-    "measurements": [],
-    "note": "for garnishment"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dill",
+      "measurements": [],
+      "note": "for garnishment"
+    },
+    "parse_ingredients": {
+      "item": "dill",
+      "measurements": [],
+      "note": "for garnishment"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound frozen mixed berries",
-  "expected": {
-    "item": "frozen mixed berries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen mixed berries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen mixed berries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

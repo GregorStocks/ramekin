@@ -1,13 +1,25 @@
 {
   "raw": "0.5 cup coarsely chopped fresh chives, plus more for garnish",
-  "expected": {
-    "item": "coarsely chopped fresh chives",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely chopped fresh chives",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely chopped fresh chives",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

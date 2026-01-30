@@ -1,13 +1,25 @@
 {
   "raw": "0.25 pound ground pork",
-  "expected": {
-    "item": "ground pork",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground pork",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground pork",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

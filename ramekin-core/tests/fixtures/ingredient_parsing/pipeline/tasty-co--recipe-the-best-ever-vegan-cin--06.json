@@ -1,13 +1,25 @@
 {
   "raw": "5 ½ cups flour, divided",
-  "expected": {
-    "item": "flour",
-    "measurements": [
-      {
-        "amount": "5 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "5 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "5 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

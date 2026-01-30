@@ -1,8 +1,15 @@
 {
   "raw": "red pepper flakes or other spices",
-  "expected": {
-    "item": "red pepper flakes or other spices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red pepper flakes or other spices",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "red pepper flakes or other spices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

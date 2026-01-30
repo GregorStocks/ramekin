@@ -1,8 +1,15 @@
 {
   "raw": "cooking oil (for shallow frying)",
-  "expected": {
-    "item": "cooking oil (for shallow frying)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooking oil (for shallow frying)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooking oil (for shallow frying)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

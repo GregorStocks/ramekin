@@ -1,8 +1,15 @@
 {
   "raw": "Pepperoni and/or Italian chicken or turkey sausage",
-  "expected": {
-    "item": "Pepperoni and/or Italian chicken or turkey sausage",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pepperoni and/or Italian chicken or turkey sausage",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pepperoni and/or Italian chicken or turkey sausage",
+      "measurements": [],
+      "note": null
+    }
   }
 }

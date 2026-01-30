@@ -1,13 +1,25 @@
 {
   "raw": "2 small cucumbers, cut in 1/4-inch half moons",
-  "expected": {
-    "item": "cucumbers, cut in 1/4-inch half moons",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumbers, cut in 1/4-inch half moons",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cucumbers, cut in 1/4-inch half moons",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

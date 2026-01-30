@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp balsamic vinegar, (or more to taste)",
-  "expected": {
-    "item": "balsamic vinegar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "balsamic vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "balsamic vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons fresh lime juice, (from 1 lime)",
-  "expected": {
-    "item": "fresh lime juice, (from 1 lime)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh lime juice, (from 1 lime)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh lime juice, (from 1 lime)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 heaped cup  potato boiled &amp;amp; crumbled ((about 2 large))",
-  "expected": {
-    "item": "potato boiled & crumbled",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaped cup"
-      },
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "potato boiled & crumbled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaped cup"
+        },
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "potato boiled & crumbled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaped cup"
+        },
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

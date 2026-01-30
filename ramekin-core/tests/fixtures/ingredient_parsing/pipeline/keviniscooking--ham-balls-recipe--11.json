@@ -1,17 +1,37 @@
 {
   "raw": "1  can condensed tomato soup (10.75 oz)",
-  "expected": {
-    "item": "condensed tomato soup",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "10.75",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "condensed tomato soup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10.75",
+          "unit": "oz"
+        },
+        {
+          "amount": "305",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "condensed tomato soup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10.75",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

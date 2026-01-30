@@ -1,13 +1,25 @@
 {
   "raw": "6 bone-in or boneless chicken thighs",
-  "expected": {
-    "item": "bone-in or boneless chicken thighs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bone-in or boneless chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bone-in or boneless chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  French baguette for serving (thickly sliced (optional))",
-  "expected": {
-    "item": "French baguette for serving",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thickly sliced (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "French baguette for serving",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thickly sliced (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "French baguette for serving",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thickly sliced (optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup extra virgin olive oil",
-  "expected": {
-    "item": "extra virgin olive oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

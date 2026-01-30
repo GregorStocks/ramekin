@@ -1,13 +1,25 @@
 {
   "raw": "8 cups cabbage, (cut into bite-size pieces)",
-  "expected": {
-    "item": "cabbage, (cut into bite-size pieces)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cabbage, (cut into bite-size pieces)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cabbage, (cut into bite-size pieces)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

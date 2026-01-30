@@ -1,8 +1,15 @@
 {
   "raw": "pico de gallo (optional)",
-  "expected": {
-    "item": "pico de gallo",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pico de gallo",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "pico de gallo",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Grated pecorino, for serving",
-  "expected": {
-    "item": "Grated pecorino",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Grated pecorino",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Grated pecorino",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

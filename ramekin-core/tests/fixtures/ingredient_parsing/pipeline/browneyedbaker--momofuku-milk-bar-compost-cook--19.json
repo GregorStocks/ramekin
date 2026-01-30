@@ -1,8 +1,15 @@
 {
   "raw": "Prepared graham mixture",
-  "expected": {
-    "item": "Prepared graham mixture",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Prepared graham mixture",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Prepared graham mixture",
+      "measurements": [],
+      "note": null
+    }
   }
 }

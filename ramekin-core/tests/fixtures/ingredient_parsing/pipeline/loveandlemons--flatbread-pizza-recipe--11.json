@@ -1,13 +1,25 @@
 {
   "raw": "2 cups loose-packed spinach",
-  "expected": {
-    "item": "loose-packed spinach",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loose-packed spinach",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "loose-packed spinach",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

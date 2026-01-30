@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons pesto, see our homemade pesto recipe",
-  "expected": {
-    "item": "pesto, see our homemade pesto recipe",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pesto, see our homemade pesto recipe",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pesto, see our homemade pesto recipe",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "Two 5- to 6-inch Cubanelle chiles or banana peppers (3 ounces each; 85g each)",
-  "expected": {
-    "item": "5- to 6-inch Cubanelle chiles or banana peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "oz each"
-      },
-      {
-        "amount": "85",
-        "unit": "g each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "5- to 6-inch Cubanelle chiles or banana peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "oz each"
+        },
+        {
+          "amount": "85",
+          "unit": "g each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "5- to 6-inch Cubanelle chiles or banana peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "oz each"
+        },
+        {
+          "amount": "85",
+          "unit": "g each"
+        }
+      ],
+      "note": null
+    }
   }
 }

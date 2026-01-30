@@ -1,13 +1,29 @@
 {
   "raw": "8 oz. white candy coating or almond bark (melted)",
-  "expected": {
-    "item": "white candy coating or almond bark",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white candy coating or almond bark",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "white candy coating or almond bark",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

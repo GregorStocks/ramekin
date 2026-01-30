@@ -1,13 +1,25 @@
 {
   "raw": "100 grams milk chocolate",
-  "expected": {
-    "item": "milk chocolate",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk chocolate",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "milk chocolate",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

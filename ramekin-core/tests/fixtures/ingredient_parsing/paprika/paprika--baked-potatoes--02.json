@@ -1,17 +1,33 @@
 {
   "raw": "4 (7- to 9-ounce) russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
-  "expected": {
-    "item": "russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "7",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "russet potatoes, unpeeled, each lightly pricked with fork in 6 places",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

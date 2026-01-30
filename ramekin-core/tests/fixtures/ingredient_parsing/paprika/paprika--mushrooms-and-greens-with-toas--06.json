@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon white wine vinegar, or more to taste (I used 2)",
-  "expected": {
-    "item": "white wine vinegar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste (I used 2)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white wine vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste (I used 2)"
+    },
+    "enrich_metric_weights": {
+      "item": "white wine vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste (I used 2)"
+    }
   }
 }

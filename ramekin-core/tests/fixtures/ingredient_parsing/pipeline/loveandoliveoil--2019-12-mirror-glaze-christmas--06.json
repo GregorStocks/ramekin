@@ -1,13 +1,25 @@
 {
   "raw": "12 g caramelized white chocolate (like Valhrona dulcey, optional)",
-  "expected": {
-    "item": "caramelized white chocolate",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "g"
-      }
-    ],
-    "note": "like Valhrona dulcey, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "caramelized white chocolate",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": "like Valhrona dulcey, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "caramelized white chocolate",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": "like Valhrona dulcey, optional"
+    }
   }
 }

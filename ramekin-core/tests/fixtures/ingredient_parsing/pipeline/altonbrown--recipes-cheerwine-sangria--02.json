@@ -1,13 +1,25 @@
 {
   "raw": "4 fluid ounces triple sec or other orange liqueur",
-  "expected": {
-    "item": "triple sec or other orange liqueur",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "triple sec or other orange liqueur",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "triple sec or other orange liqueur",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

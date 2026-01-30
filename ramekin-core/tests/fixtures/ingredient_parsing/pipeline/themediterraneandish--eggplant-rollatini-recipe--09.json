@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp basil pesto (homemade or store-bought, more for later)",
-  "expected": {
-    "item": "basil pesto (homemade or store-bought, more for later)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basil pesto (homemade or store-bought, more for later)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "basil pesto (homemade or store-bought, more for later)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

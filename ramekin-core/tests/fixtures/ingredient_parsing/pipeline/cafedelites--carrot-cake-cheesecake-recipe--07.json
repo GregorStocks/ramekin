@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup oil (you can use melted coconut oil)",
-  "expected": {
-    "item": "oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "you can use melted coconut oil"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "you can use melted coconut oil"
+    },
+    "parse_ingredients": {
+      "item": "oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "you can use melted coconut oil"
+    }
   }
 }

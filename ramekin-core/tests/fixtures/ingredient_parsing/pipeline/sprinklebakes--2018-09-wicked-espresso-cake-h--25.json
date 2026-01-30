@@ -1,21 +1,41 @@
 {
   "raw": "2/3 cup 85g/ 5 oz. water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "85",
-        "unit": "g"
-      },
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

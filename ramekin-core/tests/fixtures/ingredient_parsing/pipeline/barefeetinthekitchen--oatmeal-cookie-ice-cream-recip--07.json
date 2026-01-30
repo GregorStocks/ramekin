@@ -1,17 +1,33 @@
 {
   "raw": "6-8  oatmeal raisin cookies ((about 3 cups worth, broken into bite-size pieces))",
-  "expected": {
-    "item": "oatmeal raisin cookies",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oatmeal raisin cookies",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "oatmeal raisin cookies",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

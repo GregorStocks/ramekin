@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup whole milk, or 3/4 cup of a low-fat one",
-  "expected": {
-    "item": "whole milk,",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or 3/4 cup of a low-fat one"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk,",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or 3/4 cup of a low-fat one"
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk,",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or 3/4 cup of a low-fat one"
+    }
   }
 }

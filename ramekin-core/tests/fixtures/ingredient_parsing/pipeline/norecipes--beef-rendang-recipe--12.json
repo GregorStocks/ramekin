@@ -1,13 +1,25 @@
 {
   "raw": "2.5 centimeters galangal ((sliced into coins))",
-  "expected": {
-    "item": "centimeters galangal",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": null
-      }
-    ],
-    "note": "sliced into coins"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "centimeters galangal",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": null
+        }
+      ],
+      "note": "sliced into coins"
+    },
+    "enrich_metric_weights": {
+      "item": "centimeters galangal",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": null
+        }
+      ],
+      "note": "sliced into coins"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces egg noodles (cooked according to package instructions)",
-  "expected": {
-    "item": "egg noodles",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked according to package instructions"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg noodles",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked according to package instructions"
+    },
+    "enrich_metric_weights": {
+      "item": "egg noodles",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked according to package instructions"
+    }
   }
 }

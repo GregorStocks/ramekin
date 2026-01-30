@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoons chopped or sliced almonds, cashews, walnuts or other nut of your choice",
-  "expected": {
-    "item": "chopped or sliced almonds, cashews, walnuts or other nut of your choice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped or sliced almonds, cashews, walnuts or other nut of your choice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped or sliced almonds, cashews, walnuts or other nut of your choice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

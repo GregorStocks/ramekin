@@ -1,13 +1,25 @@
 {
   "raw": "4  mini ice cream cones",
-  "expected": {
-    "item": "mini ice cream cones",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mini ice cream cones",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mini ice cream cones",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

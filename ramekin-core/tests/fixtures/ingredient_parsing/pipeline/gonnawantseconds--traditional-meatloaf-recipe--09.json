@@ -1,13 +1,25 @@
 {
   "raw": "1 large   yolk",
-  "expected": {
-    "item": "yolk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yolk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "yolk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

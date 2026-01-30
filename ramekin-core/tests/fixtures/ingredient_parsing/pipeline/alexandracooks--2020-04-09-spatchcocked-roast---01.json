@@ -1,17 +1,33 @@
 {
   "raw": "2 small or 1 large onion, thinly sliced",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      },
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

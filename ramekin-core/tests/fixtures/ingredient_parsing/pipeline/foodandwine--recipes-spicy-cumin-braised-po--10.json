@@ -1,13 +1,25 @@
 {
   "raw": "1 medium plum tomato, roughly chopped",
-  "expected": {
-    "item": "plum tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plum tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "plum tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cups chicken stock (or broth)",
-  "expected": {
-    "item": "chicken stock (or broth)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken stock (or broth)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken stock (or broth)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

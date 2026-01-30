@@ -1,17 +1,37 @@
 {
   "raw": "1 cup (6 oz) couscous ((not pearl couscous))",
-  "expected": {
-    "item": "couscous (not pearl couscous)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "couscous (not pearl couscous)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "couscous (not pearl couscous)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

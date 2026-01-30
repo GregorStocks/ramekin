@@ -1,17 +1,37 @@
 {
   "raw": "1  package (.25 ounce powdered gelatin)",
-  "expected": {
-    "item": "1  package (.25 ounce powdered gelatin)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": ".25",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1  package (.25 ounce powdered gelatin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": ".25",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1  package (.25 ounce powdered gelatin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": ".25",
+          "unit": "oz"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

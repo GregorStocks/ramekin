@@ -1,13 +1,25 @@
 {
   "raw": "1/4 to 1/4 cup lightly packed mint leaves, (chopped)",
-  "expected": {
-    "item": "lightly packed mint leaves",
-    "measurements": [
-      {
-        "amount": "1/4 to 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lightly packed mint leaves",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "lightly packed mint leaves",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

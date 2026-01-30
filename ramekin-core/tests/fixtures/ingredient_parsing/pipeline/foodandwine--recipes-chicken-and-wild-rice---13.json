@@ -1,13 +1,25 @@
 {
   "raw": "4 cups bite-size pieces of roasted chicken or turkey",
-  "expected": {
-    "item": "bite-size pieces of roasted chicken or turkey",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bite-size pieces of roasted chicken or turkey",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bite-size pieces of roasted chicken or turkey",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

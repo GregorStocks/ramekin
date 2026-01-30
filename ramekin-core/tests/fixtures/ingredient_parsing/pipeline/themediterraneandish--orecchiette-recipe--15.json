@@ -1,8 +1,15 @@
 {
   "raw": "Feta cheese for garnish (optional)",
-  "expected": {
-    "item": "Feta cheese for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Feta cheese for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Feta cheese for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

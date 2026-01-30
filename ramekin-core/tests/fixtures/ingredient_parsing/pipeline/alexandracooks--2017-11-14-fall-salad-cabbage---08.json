@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4 scallions, white and light green parts, thinly sliced",
-  "expected": {
-    "item": "scallions, white and light green parts",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "scallions, white and light green parts",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "scallions, white and light green parts",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

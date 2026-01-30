@@ -1,8 +1,15 @@
 {
   "raw": "Chocolate sauce",
-  "expected": {
-    "item": "Chocolate sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chocolate sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chocolate sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

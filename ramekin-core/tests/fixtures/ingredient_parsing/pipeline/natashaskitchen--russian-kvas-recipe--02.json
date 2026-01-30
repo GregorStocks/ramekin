@@ -1,13 +1,25 @@
 {
   "raw": "10 Tbsp Kvas Concentrate",
-  "expected": {
-    "item": "Kvas Concentrate",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kvas Concentrate",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Kvas Concentrate",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

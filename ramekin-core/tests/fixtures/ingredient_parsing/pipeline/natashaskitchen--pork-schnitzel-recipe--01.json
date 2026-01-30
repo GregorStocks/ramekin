@@ -1,13 +1,25 @@
 {
   "raw": "2 lbs boneless pork chops (trimmed and sliced into 1/2\" thick cutlets)",
-  "expected": {
-    "item": "boneless pork chops",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed and sliced into 1/2\" thick cutlets"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless pork chops",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced into 1/2\" thick cutlets"
+    },
+    "enrich_metric_weights": {
+      "item": "boneless pork chops",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced into 1/2\" thick cutlets"
+    }
   }
 }

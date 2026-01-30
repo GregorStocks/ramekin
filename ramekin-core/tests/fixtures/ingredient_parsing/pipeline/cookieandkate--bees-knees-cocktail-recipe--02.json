@@ -1,17 +1,37 @@
 {
   "raw": "1 ounce lemon juice (about &amp;frac12; medium lemon)",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

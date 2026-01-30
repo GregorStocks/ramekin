@@ -1,13 +1,25 @@
 {
   "raw": "1 lb ground beef",
-  "expected": {
-    "item": "ground beef",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

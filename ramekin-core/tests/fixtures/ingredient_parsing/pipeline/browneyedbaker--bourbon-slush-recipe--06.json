@@ -1,8 +1,15 @@
 {
   "raw": "Fresca (Sprite or 7UP for serving)",
-  "expected": {
-    "item": "Fresca",
-    "measurements": [],
-    "note": "Sprite or 7UP for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresca",
+      "measurements": [],
+      "note": "Sprite or 7UP for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Fresca",
+      "measurements": [],
+      "note": "Sprite or 7UP for serving"
+    }
   }
 }

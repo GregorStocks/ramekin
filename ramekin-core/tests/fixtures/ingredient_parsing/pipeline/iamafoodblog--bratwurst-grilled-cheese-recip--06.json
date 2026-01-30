@@ -1,8 +1,15 @@
 {
   "raw": "beer mustard, to taste",
-  "expected": {
-    "item": "beer mustard",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beer mustard",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "beer mustard",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

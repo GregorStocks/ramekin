@@ -1,17 +1,33 @@
 {
   "raw": "160 g dry spaghetti (1.8mm)",
-  "expected": {
-    "item": "dry spaghetti",
-    "measurements": [
-      {
-        "amount": "160",
-        "unit": "g"
-      },
-      {
-        "amount": "1.8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry spaghetti",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        },
+        {
+          "amount": "1.8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dry spaghetti",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        },
+        {
+          "amount": "1.8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

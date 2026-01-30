@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons butter, melted",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

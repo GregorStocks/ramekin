@@ -1,13 +1,25 @@
 {
   "raw": "2 medium carrots (diced)",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

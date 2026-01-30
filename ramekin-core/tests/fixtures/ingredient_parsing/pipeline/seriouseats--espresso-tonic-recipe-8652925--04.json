@@ -1,8 +1,15 @@
 {
   "raw": "Lemon peel (optional, see notes)",
-  "expected": {
-    "item": "Lemon peel",
-    "measurements": [],
-    "note": "optional, see notes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lemon peel",
+      "measurements": [],
+      "note": "optional, see notes"
+    },
+    "parse_ingredients": {
+      "item": "Lemon peel",
+      "measurements": [],
+      "note": "optional, see notes"
+    }
   }
 }

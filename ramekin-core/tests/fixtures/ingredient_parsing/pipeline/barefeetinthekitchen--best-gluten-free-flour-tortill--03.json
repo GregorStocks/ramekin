@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons xanthan gum",
-  "expected": {
-    "item": "xanthan gum",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "xanthan gum",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "xanthan gum",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

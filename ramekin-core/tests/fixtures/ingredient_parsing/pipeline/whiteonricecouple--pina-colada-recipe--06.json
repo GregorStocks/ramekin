@@ -1,8 +1,15 @@
 {
   "raw": "garnish: pineapple spears",
-  "expected": {
-    "item": "garnish: pineapple spears",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garnish: pineapple spears",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garnish: pineapple spears",
+      "measurements": [],
+      "note": null
+    }
   }
 }

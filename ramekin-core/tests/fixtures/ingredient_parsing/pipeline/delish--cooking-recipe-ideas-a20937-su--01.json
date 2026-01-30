@@ -1,13 +1,25 @@
 {
   "raw": "2 sheets nori (dried seaweed)",
-  "expected": {
-    "item": "sheets nori",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "dried seaweed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets nori",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "dried seaweed"
+    },
+    "parse_ingredients": {
+      "item": "sheets nori",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "dried seaweed"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sea Salt ( to taste (@ 1 teaspoon (5 g)))",
-  "expected": {
-    "item": "Sea Salt",
-    "measurements": [],
-    "note": "to taste (@ 1 teaspoon (5 g"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sea Salt",
+      "measurements": [],
+      "note": "to taste (@ 1 teaspoon (5 g"
+    },
+    "parse_ingredients": {
+      "item": "Sea Salt",
+      "measurements": [],
+      "note": "to taste (@ 1 teaspoon (5 g"
+    }
   }
 }

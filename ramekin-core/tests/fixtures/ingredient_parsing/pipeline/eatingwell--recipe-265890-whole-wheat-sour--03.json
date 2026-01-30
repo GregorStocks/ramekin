@@ -1,17 +1,37 @@
 {
   "raw": "2/3 cup plus 2 tablespoons all-purpose flour (4 ounces), divided, plus more as needed for feeding",
-  "expected": {
-    "item": "plus 2 tablespoons all-purpose flour , divided",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "plus more as needed for feeding"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plus 2 tablespoons all-purpose flour , divided",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "plus more as needed for feeding"
+    },
+    "enrich_metric_weights": {
+      "item": "plus 2 tablespoons all-purpose flour , divided",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more as needed for feeding"
+    }
   }
 }

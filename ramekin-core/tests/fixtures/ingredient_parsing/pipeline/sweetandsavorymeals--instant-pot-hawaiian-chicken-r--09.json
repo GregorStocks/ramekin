@@ -1,13 +1,25 @@
 {
   "raw": "1  yellow bell pepper (cut into 1-inch chunks)",
-  "expected": {
-    "item": "yellow bell pepper (cut into 1-inch chunks)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow bell pepper (cut into 1-inch chunks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "yellow bell pepper (cut into 1-inch chunks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

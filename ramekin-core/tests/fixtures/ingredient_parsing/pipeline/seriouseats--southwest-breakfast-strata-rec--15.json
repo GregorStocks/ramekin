@@ -1,21 +1,41 @@
 {
   "raw": "1 large plum tomato (5 ounces; 142 g), chopped",
-  "expected": {
-    "item": "plum tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "amount": "142",
-        "unit": "g"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plum tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "plum tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

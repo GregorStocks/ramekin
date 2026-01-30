@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon garlic paste or freshly grated garlic",
-  "expected": {
-    "item": "garlic paste or freshly grated garlic",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic paste or freshly grated garlic",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garlic paste or freshly grated garlic",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

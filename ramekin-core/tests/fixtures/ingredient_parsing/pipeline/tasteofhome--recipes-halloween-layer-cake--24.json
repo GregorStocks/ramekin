@@ -1,8 +1,15 @@
 {
   "raw": "Candy corn for garnish",
-  "expected": {
-    "item": "Candy corn for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Candy corn for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Candy corn for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

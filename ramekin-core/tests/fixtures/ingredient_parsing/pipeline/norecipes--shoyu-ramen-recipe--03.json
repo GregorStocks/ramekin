@@ -1,13 +1,25 @@
 {
   "raw": "6 grams ginger ((grated))",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "g"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

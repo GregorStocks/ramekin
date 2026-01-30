@@ -1,17 +1,37 @@
 {
   "raw": "8 oz (1 1/2 cups) fresh or frozen blueberries",
-  "expected": {
-    "item": "fresh or frozen blueberries",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh or frozen blueberries",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh or frozen blueberries",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

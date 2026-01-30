@@ -1,13 +1,25 @@
 {
   "raw": "½ to ¾ teaspoon salt ( as needed)",
-  "expected": {
-    "item": "salt",
-    "measurements": [
-      {
-        "amount": "1/2 to 3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "1/2 to 3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "as needed"
+    },
+    "parse_ingredients": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "1/2 to 3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "as needed"
+    }
   }
 }

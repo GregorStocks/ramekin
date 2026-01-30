@@ -1,17 +1,33 @@
 {
   "raw": "1/2  cup warm water (120ml)",
-  "expected": {
-    "item": "warm water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

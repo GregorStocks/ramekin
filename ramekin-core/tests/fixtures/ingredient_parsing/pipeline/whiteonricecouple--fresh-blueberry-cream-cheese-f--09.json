@@ -1,13 +1,25 @@
 {
   "raw": "pinch kosher salt ( or sea salt)",
-  "expected": {
-    "item": "kosher salt ( or sea salt)",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kosher salt ( or sea salt)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kosher salt ( or sea salt)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

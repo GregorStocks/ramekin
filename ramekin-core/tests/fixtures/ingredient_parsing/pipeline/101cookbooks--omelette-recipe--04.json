@@ -1,8 +1,15 @@
 {
   "raw": "a dollop of pesto",
-  "expected": {
-    "item": "a dollop of pesto",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a dollop of pesto",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a dollop of pesto",
+      "measurements": [],
+      "note": null
+    }
   }
 }

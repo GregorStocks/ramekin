@@ -1,13 +1,25 @@
 {
   "raw": "5  sheets phyllo dough (thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels))",
-  "expected": {
-    "item": "sheets phyllo dough",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sheets phyllo dough",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels"
+    },
+    "enrich_metric_weights": {
+      "item": "sheets phyllo dough",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "thawed (use 14x18-inch phyllo for 1 large strudel; use 9x14-inch phyllo for 2 small strudels"
+    }
   }
 }

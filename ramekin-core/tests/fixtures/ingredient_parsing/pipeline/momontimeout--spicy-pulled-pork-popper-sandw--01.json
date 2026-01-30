@@ -1,8 +1,15 @@
 {
   "raw": "sliced sourdough bread",
-  "expected": {
-    "item": "sliced sourdough bread",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced sourdough bread",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced sourdough bread",
+      "measurements": [],
+      "note": null
+    }
   }
 }

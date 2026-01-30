@@ -1,8 +1,15 @@
 {
   "raw": "Fresh herbs, for serving",
-  "expected": {
-    "item": "Fresh herbs",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh herbs",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Fresh herbs",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

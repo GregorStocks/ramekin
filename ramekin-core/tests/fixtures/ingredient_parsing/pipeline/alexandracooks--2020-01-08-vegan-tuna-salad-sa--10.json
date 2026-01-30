@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 teaspoon capers, drained and loosely chopped (I like 2 tsp)",
-  "expected": {
-    "item": "capers",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "drained and loosely chopped (I like 2 tsp)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "capers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "drained and loosely chopped (I like 2 tsp)"
+    },
+    "enrich_metric_weights": {
+      "item": "capers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "drained and loosely chopped (I like 2 tsp)"
+    }
   }
 }

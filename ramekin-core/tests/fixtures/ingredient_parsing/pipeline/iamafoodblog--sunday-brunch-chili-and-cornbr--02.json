@@ -1,8 +1,15 @@
 {
   "raw": "oil, as needed",
-  "expected": {
-    "item": "oil",
-    "measurements": [],
-    "note": "as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oil",
+      "measurements": [],
+      "note": "as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "oil",
+      "measurements": [],
+      "note": "as needed"
+    }
   }
 }

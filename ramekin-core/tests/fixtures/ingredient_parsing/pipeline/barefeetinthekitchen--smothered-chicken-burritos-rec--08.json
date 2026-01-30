@@ -1,13 +1,25 @@
 {
   "raw": "6-8  flour tortillas (or 12-16 corn tortillas)",
-  "expected": {
-    "item": "flour tortillas (or 12-16 corn tortillas)",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour tortillas (or 12-16 corn tortillas)",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour tortillas (or 12-16 corn tortillas)",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

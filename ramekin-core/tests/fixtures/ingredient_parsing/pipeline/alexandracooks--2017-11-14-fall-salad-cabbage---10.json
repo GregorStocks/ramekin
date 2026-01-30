@@ -1,8 +1,15 @@
 {
   "raw": "candied pepitas, optional",
-  "expected": {
-    "item": "candied pepitas",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "candied pepitas",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "candied pepitas",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

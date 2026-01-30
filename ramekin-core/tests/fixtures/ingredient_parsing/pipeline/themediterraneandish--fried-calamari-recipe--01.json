@@ -1,13 +1,25 @@
 {
   "raw": "1 pound frozen calamari tubes (thawed)",
-  "expected": {
-    "item": "frozen calamari tubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen calamari tubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thawed"
+    },
+    "parse_ingredients": {
+      "item": "frozen calamari tubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

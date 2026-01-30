@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons extra-virgin olive oil, plus more as needed",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

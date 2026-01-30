@@ -1,13 +1,25 @@
 {
   "raw": "1 pinch salt and pepper  (for seasoning)",
-  "expected": {
-    "item": "salt and pepper  (for seasoning)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salt and pepper  (for seasoning)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "salt and pepper  (for seasoning)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

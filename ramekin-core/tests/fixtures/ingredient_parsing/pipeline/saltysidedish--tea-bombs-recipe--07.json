@@ -1,8 +1,15 @@
 {
   "raw": "candy thermometer",
-  "expected": {
-    "item": "candy thermometer",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "candy thermometer",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "candy thermometer",
+      "measurements": [],
+      "note": null
+    }
   }
 }

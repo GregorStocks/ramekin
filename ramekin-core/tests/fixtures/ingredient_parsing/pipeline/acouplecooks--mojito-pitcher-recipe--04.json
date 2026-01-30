@@ -1,17 +1,33 @@
 {
   "raw": "1 cup lime juice (about 8 limes), plus 1 lime for the garnish",
-  "expected": {
-    "item": "lime juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "plus 1 lime for the garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 lime for the garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 lime for the garnish"
+    }
   }
 }

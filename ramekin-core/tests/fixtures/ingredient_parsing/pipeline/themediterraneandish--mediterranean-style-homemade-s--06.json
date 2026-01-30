@@ -1,13 +1,25 @@
 {
   "raw": "6 to 7&nbsp; pitted kalamata olives, chopped (optional)",
-  "expected": {
-    "item": "pitted kalamata olives, chopped",
-    "measurements": [
-      {
-        "amount": "6 to 7",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted kalamata olives, chopped",
+      "measurements": [
+        {
+          "amount": "6 to 7",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted kalamata olives, chopped",
+      "measurements": [
+        {
+          "amount": "6 to 7",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

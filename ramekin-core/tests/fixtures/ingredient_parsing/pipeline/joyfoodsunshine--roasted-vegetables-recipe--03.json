@@ -1,13 +1,25 @@
 {
   "raw": "1  red pepper (cut into 1” squares (about 1 cup))",
-  "expected": {
-    "item": "red pepper (cut into 1” squares (about 1 cup)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper (cut into 1” squares (about 1 cup)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper (cut into 1” squares (about 1 cup)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

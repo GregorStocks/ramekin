@@ -1,13 +1,25 @@
 {
   "raw": "One 4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
-  "expected": {
-    "item": "4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "4 pound pork shoulder roast, preferably Boston butt, boneless or bone-in (you can easily make two 4 pound roasts in about the same amount of time if your grill is big enough to accommodate them both)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

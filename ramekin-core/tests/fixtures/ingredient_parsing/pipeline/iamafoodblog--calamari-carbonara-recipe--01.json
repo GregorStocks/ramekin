@@ -1,13 +1,25 @@
 {
   "raw": "1 lb clean calamari bodies (tubes)",
-  "expected": {
-    "item": "clean calamari bodies (tubes)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "clean calamari bodies (tubes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "clean calamari bodies (tubes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

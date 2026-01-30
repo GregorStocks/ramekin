@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 pounds apples (about 4 medium or 3 large apples*)",
-  "expected": {
-    "item": "apples",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "4",
-        "unit": "medium"
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apples",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "apples",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

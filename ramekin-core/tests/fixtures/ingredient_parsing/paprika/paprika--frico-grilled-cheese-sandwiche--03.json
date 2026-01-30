@@ -1,17 +1,37 @@
 {
   "raw": "1/2 cup (2 ounces) coarsely grated cheddar",
-  "expected": {
-    "item": "coarsely grated cheddar",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely grated cheddar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely grated cheddar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

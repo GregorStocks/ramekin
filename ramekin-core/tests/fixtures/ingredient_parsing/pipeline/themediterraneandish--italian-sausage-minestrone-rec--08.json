@@ -1,13 +1,25 @@
 {
   "raw": "2 15 oz cans diced tomatoes",
-  "expected": {
-    "item": "diced tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "15 oz cans"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15 oz cans"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15 oz cans"
+        }
+      ],
+      "note": null
+    }
   }
 }

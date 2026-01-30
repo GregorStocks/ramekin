@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces fresh button or wild mushrooms, thinly sliced",
-  "expected": {
-    "item": "fresh button or wild mushrooms",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh button or wild mushrooms",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "fresh button or wild mushrooms",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

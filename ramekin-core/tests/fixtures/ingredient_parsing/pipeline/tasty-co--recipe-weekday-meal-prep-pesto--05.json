@@ -1,13 +1,25 @@
 {
   "raw": "1 lb green beans",
-  "expected": {
-    "item": "green beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

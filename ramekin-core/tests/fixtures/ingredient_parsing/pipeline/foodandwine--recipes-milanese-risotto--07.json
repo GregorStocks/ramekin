@@ -1,13 +1,25 @@
 {
   "raw": "Pinch of saffron threads",
-  "expected": {
-    "item": "saffron threads",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "saffron threads",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "saffron threads",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

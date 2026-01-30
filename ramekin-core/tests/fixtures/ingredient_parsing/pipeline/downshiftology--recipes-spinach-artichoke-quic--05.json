@@ -1,13 +1,25 @@
 {
   "raw": "5 tbsp cold butter (or organic palm shortening for dairy-free)",
-  "expected": {
-    "item": "cold butter (or organic palm shortening for dairy-free)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cold butter (or organic palm shortening for dairy-free)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cold butter (or organic palm shortening for dairy-free)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

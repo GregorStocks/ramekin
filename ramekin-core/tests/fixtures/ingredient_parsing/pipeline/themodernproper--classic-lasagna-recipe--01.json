@@ -1,13 +1,25 @@
 {
   "raw": "1 pound dried lasagna noodles",
-  "expected": {
-    "item": "dried lasagna noodles",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried lasagna noodles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried lasagna noodles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

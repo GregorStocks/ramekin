@@ -1,17 +1,33 @@
 {
   "raw": "2 ripe bananas, mashed (about 3/4 cup)",
-  "expected": {
-    "item": "ripe bananas, mashed",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ripe bananas, mashed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ripe bananas, mashed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

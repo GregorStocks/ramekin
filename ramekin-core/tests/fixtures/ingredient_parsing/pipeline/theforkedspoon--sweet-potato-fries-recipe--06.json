@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon sweet paprika (divided)",
-  "expected": {
-    "item": "sweet paprika",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet paprika",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "sweet paprika",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

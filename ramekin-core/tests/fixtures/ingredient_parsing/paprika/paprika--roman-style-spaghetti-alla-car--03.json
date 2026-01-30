@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup (120 ml) extra-virgin olive oil, divided, plus more for finishing pasta",
-  "expected": {
-    "item": "extra-virgin olive oil, divided",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "ml"
-      }
-    ],
-    "note": "plus more for finishing pasta"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil, divided",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus more for finishing pasta"
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil, divided",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus more for finishing pasta"
+    }
   }
 }

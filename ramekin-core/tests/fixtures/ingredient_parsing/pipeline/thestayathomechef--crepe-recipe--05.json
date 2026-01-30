@@ -1,13 +1,25 @@
 {
   "raw": "5 tablespoons butter (for cooking)",
-  "expected": {
-    "item": "butter (for cooking)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter (for cooking)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "butter (for cooking)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

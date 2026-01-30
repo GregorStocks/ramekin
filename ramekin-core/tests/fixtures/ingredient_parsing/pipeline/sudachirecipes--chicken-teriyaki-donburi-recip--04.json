@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp potato starch (katakuriko) (or cornstarch/tapioca starch)",
-  "expected": {
-    "item": "potato starch (katakuriko) (or cornstarch/tapioca starch)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "potato starch (katakuriko) (or cornstarch/tapioca starch)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "potato starch (katakuriko) (or cornstarch/tapioca starch)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

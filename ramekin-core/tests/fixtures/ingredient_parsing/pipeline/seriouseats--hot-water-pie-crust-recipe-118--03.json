@@ -1,21 +1,41 @@
 {
   "raw": "180 g lard or beef suet (6 1/3 ounces; 3/4 cup plus 1 tablespoon)",
-  "expected": {
-    "item": "lard or beef suet",
-    "measurements": [
-      {
-        "amount": "180",
-        "unit": "g"
-      },
-      {
-        "amount": "6 1/3",
-        "unit": "oz"
-      },
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lard or beef suet",
+      "measurements": [
+        {
+          "amount": "180",
+          "unit": "g"
+        },
+        {
+          "amount": "6 1/3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lard or beef suet",
+      "measurements": [
+        {
+          "amount": "180",
+          "unit": "g"
+        },
+        {
+          "amount": "6 1/3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

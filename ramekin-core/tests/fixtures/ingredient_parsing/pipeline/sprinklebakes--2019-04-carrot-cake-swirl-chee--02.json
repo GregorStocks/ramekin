@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cup 180g all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "180",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "24 ounces 80/20 ground beef",
-  "expected": {
-    "item": "80/20 ground beef",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "80/20 ground beef",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "80/20 ground beef",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

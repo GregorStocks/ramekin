@@ -1,13 +1,25 @@
 {
   "raw": "2 medium onions (diced)",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

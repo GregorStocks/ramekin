@@ -1,13 +1,25 @@
 {
   "raw": "1 large Spanish or sweet onion, chopped small",
-  "expected": {
-    "item": "Spanish or sweet onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Spanish or sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "Spanish or sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

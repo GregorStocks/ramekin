@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 tablespoons olive oil",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

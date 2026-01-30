@@ -1,17 +1,33 @@
 {
   "raw": "1 cup whole milk ((warm, 105 degrees F))",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "105",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "105",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "105",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

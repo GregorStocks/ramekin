@@ -1,8 +1,15 @@
 {
   "raw": "Curry-Lime Yogurt:",
-  "expected": {
-    "item": "Curry-Lime Yogurt:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Curry-Lime Yogurt:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Curry-Lime Yogurt:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

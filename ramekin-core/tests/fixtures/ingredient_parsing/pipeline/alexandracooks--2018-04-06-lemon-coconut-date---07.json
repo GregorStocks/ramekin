@@ -1,13 +1,25 @@
 {
   "raw": "1 whole vanilla bean, minced or 1 teaspoon vanilla extract",
-  "expected": {
-    "item": "whole vanilla bean",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "minced or 1 teaspoon vanilla extract"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole vanilla bean",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "minced or 1 teaspoon vanilla extract"
+    },
+    "parse_ingredients": {
+      "item": "whole vanilla bean",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "minced or 1 teaspoon vanilla extract"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "to serve (opt): dollops of salted creme fraiche, sprigs of basil leaves and flowers",
-  "expected": {
-    "item": "to serve (opt): dollops of salted creme fraiche, sprigs of basil leaves and flowers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "to serve (opt): dollops of salted creme fraiche, sprigs of basil leaves and flowers",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "to serve (opt): dollops of salted creme fraiche, sprigs of basil leaves and flowers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

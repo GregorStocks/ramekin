@@ -1,17 +1,33 @@
 {
   "raw": "1 quart or 5 cups of no churn vanilla ice cream ((or use your favorite brand), softened)",
-  "expected": {
-    "item": "no churn vanilla ice cream (or use your favorite brand)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "quart"
-      },
-      {
-        "amount": "5",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "no churn vanilla ice cream (or use your favorite brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened)"
+    },
+    "enrich_metric_weights": {
+      "item": "no churn vanilla ice cream (or use your favorite brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened)"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Prepared brown rice",
-  "expected": {
-    "item": "Prepared brown rice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Prepared brown rice",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Prepared brown rice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

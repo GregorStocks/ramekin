@@ -1,13 +1,25 @@
 {
   "raw": "4  Green Onions or 1 Negi (Japanese Leek) (, sliced on angle in 2&amp;quot; pieces)",
-  "expected": {
-    "item": "Green Onions or 1 Negi (Japanese Leek) (",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "sliced on angle in 2\" pieces)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Green Onions or 1 Negi (Japanese Leek) (",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced on angle in 2\" pieces)"
+    },
+    "parse_ingredients": {
+      "item": "Green Onions or 1 Negi (Japanese Leek) (",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced on angle in 2\" pieces)"
+    }
   }
 }

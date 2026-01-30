@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
-  "expected": {
-    "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cubed beef (chuck roast, sirloin, or other types of stewing beef.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

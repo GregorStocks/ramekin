@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp simple syrup or 1 tsp granulated sugar",
-  "expected": {
-    "item": "simple syrup",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1 tsp granulated sugar"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "simple syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1 tsp granulated sugar"
+    },
+    "enrich_metric_weights": {
+      "item": "simple syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1 tsp granulated sugar"
+    }
   }
 }

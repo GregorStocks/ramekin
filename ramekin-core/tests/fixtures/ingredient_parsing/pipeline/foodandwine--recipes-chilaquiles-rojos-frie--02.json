@@ -1,13 +1,25 @@
 {
   "raw": "1 medium-size white onion, cut into 1-inch wedges",
-  "expected": {
-    "item": "medium-size white onion, cut into 1-inch wedges",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium-size white onion, cut into 1-inch wedges",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "medium-size white onion, cut into 1-inch wedges",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

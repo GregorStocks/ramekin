@@ -1,13 +1,25 @@
 {
   "raw": "6 large eggs",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

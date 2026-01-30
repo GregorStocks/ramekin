@@ -1,13 +1,25 @@
 {
   "raw": "1 pound&nbsp;skinless white fish fillets, such as bass or cod, cut into 12 strips",
-  "expected": {
-    "item": "skinless white fish fillets, such as bass or cod, cut into 12 strips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless white fish fillets, such as bass or cod, cut into 12 strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless white fish fillets, such as bass or cod, cut into 12 strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

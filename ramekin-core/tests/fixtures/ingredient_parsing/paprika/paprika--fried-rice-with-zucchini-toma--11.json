@@ -1,13 +1,25 @@
 {
   "raw": "2 large eggs (for scrambled method) or 4 large eggs (for an egg on top of each portion)",
-  "expected": {
-    "item": "eggs (for scrambled method)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "or 4 large eggs (for an egg on top of each portion)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs (for scrambled method)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "or 4 large eggs (for an egg on top of each portion)"
+    },
+    "enrich_metric_weights": {
+      "item": "eggs (for scrambled method)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "or 4 large eggs (for an egg on top of each portion)"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds small red potatoes, quartered",
-  "expected": {
-    "item": "small red potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "small red potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "small red potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

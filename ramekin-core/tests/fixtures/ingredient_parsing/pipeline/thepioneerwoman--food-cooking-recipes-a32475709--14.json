@@ -1,13 +1,25 @@
 {
   "raw": "2 13-ounce jars pizza sauce, warmed",
-  "expected": {
-    "item": "pizza sauce, warmed",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "13-ounce jars"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pizza sauce, warmed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "13-ounce jars"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pizza sauce, warmed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "13-ounce jars"
+        }
+      ],
+      "note": null
+    }
   }
 }

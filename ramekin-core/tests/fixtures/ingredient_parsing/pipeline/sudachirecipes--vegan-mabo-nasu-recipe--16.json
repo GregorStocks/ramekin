@@ -1,13 +1,25 @@
 {
   "raw": "300 ml vegetable bouillon",
-  "expected": {
-    "item": "vegetable bouillon",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vegetable bouillon",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vegetable bouillon",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

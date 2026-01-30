@@ -1,13 +1,25 @@
 {
   "raw": "½ cup refined coconut oil, melted",
-  "expected": {
-    "item": "refined coconut oil",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "refined coconut oil",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "refined coconut oil",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

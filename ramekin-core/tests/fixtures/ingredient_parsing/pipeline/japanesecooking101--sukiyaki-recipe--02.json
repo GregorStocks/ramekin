@@ -1,13 +1,25 @@
 {
   "raw": "1 lb beef (thinly sliced)",
-  "expected": {
-    "item": "beef",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

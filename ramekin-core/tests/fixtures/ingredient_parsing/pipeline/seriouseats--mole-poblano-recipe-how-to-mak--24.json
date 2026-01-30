@@ -1,13 +1,25 @@
 {
   "raw": "1 cup ﬁnely chopped Mexican chocolate",
-  "expected": {
-    "item": "ﬁnely chopped Mexican chocolate",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ﬁnely chopped Mexican chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ﬁnely chopped Mexican chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

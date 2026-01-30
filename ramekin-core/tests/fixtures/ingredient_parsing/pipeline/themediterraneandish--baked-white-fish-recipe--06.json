@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces pitted olives, (halved (I used a combination of kalamata olives and green olives) )",
-  "expected": {
-    "item": "pitted olives",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": "halved (I used a combination of kalamata olives and green olives"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted olives",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": "halved (I used a combination of kalamata olives and green olives"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted olives",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "halved (I used a combination of kalamata olives and green olives"
+    }
   }
 }

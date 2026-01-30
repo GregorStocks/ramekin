@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons tapioca starch",
-  "expected": {
-    "item": "tapioca starch",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tapioca starch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tapioca starch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

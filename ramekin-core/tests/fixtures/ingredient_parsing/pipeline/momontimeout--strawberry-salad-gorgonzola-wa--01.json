@@ -1,13 +1,29 @@
 {
   "raw": "5 ounces spring mix ( (I like the 50/50 mix with half spring mix and half spinach)",
-  "expected": {
-    "item": "spring mix ( (I like the 50/50 mix with half spring mix and half spinach)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "spring mix ( (I like the 50/50 mix with half spring mix and half spinach)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "spring mix ( (I like the 50/50 mix with half spring mix and half spinach)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

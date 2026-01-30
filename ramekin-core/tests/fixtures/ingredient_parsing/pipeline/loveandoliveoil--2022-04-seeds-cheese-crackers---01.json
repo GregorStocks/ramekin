@@ -1,13 +1,29 @@
 {
   "raw": "4 oz finely shredded fontina cheese  (about 1 packed cup or 1½ cups loosely packed)",
-  "expected": {
-    "item": "finely shredded fontina cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "about 1 packed cup or 1 1/2 cups loosely packed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely shredded fontina cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "about 1 packed cup or 1 1/2 cups loosely packed"
+    },
+    "enrich_metric_weights": {
+      "item": "finely shredded fontina cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "about 1 packed cup or 1 1/2 cups loosely packed"
+    }
   }
 }

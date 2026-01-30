@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon white pepper powder",
-  "expected": {
-    "item": "white pepper powder",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white pepper powder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "white pepper powder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

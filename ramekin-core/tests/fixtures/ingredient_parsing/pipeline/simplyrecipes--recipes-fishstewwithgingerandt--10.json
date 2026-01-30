@@ -1,17 +1,33 @@
 {
   "raw": "3 cups (700 ml) chicken stock",
-  "expected": {
-    "item": "chicken stock",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      },
-      {
-        "amount": "700",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken stock",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "700",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken stock",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "700",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "5 oz Renkon (Lotus Root, boiled, sliced 1\" thick)",
-  "expected": {
-    "item": "Renkon",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": "Lotus Root, boiled, sliced 1\" thick"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Renkon",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "Lotus Root, boiled, sliced 1\" thick"
+    },
+    "parse_ingredients": {
+      "item": "Renkon",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": "Lotus Root, boiled, sliced 1\" thick"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "6 cups (1.4 liters) water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      },
-      {
-        "amount": "1.4",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.4",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.4",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

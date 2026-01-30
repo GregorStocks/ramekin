@@ -1,8 +1,15 @@
 {
   "raw": "Optional – ½ cup dry white wine ((see step 4))",
-  "expected": {
-    "item": "Optional - 1/2 cup dry white wine (see step 4)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional - 1/2 cup dry white wine (see step 4)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Optional - 1/2 cup dry white wine (see step 4)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

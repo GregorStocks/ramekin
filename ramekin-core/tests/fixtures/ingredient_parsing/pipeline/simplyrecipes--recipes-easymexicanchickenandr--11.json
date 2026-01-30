@@ -1,8 +1,15 @@
 {
   "raw": "Leaves from 1/2 bunch fresh cilantro sprigs, for garnish",
-  "expected": {
-    "item": "Leaves from 1/2 bunch fresh cilantro sprigs",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Leaves from 1/2 bunch fresh cilantro sprigs",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Leaves from 1/2 bunch fresh cilantro sprigs",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

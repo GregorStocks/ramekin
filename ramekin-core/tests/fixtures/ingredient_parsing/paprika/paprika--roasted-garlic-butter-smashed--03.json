@@ -1,17 +1,33 @@
 {
   "raw": "1 stick (8 tablespoons) salted butter",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      },
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

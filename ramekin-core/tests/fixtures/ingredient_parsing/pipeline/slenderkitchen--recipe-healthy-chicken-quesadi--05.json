@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup cilantro, chopped",
-  "expected": {
-    "item": "cilantro",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

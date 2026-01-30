@@ -1,13 +1,25 @@
 {
   "raw": "2  Roma tomatoes (diced)",
-  "expected": {
-    "item": "Roma tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 heaping cup chopped shallots",
-  "expected": {
-    "item": "chopped shallots",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaping cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds boneless, skinless chicken thighs, trimmed",
-  "expected": {
-    "item": "boneless, skinless chicken thighs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless, skinless chicken thighs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    },
+    "parse_ingredients": {
+      "item": "boneless, skinless chicken thighs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

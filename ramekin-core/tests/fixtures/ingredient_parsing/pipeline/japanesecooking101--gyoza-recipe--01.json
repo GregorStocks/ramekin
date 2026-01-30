@@ -1,13 +1,25 @@
 {
   "raw": "1 cup cabbage (cooked and minced)",
-  "expected": {
-    "item": "cabbage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "cooked and minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "cooked and minced"
+    },
+    "parse_ingredients": {
+      "item": "cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "cooked and minced"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "12 oz diced ham",
-  "expected": {
-    "item": "diced ham",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced ham",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced ham",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

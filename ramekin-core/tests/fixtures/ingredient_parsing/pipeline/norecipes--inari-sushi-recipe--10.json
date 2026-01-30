@@ -1,13 +1,25 @@
 {
   "raw": "40 grams gari ((finely chopped))",
-  "expected": {
-    "item": "gari",
-    "measurements": [
-      {
-        "amount": "40",
-        "unit": "g"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gari",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "g"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "gari",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "g"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

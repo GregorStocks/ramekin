@@ -1,13 +1,25 @@
 {
   "raw": "½ cup beans (chopped (6 to 8))",
-  "expected": {
-    "item": "beans",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped (6 to 8"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped (6 to 8"
+    },
+    "parse_ingredients": {
+      "item": "beans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped (6 to 8"
+    }
   }
 }

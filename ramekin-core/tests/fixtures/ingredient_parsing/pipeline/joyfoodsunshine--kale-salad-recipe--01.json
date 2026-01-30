@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch  kale (stems removed, chopped thin (8 cups))",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "stems removed, chopped thin (8 cups"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "stems removed, chopped thin (8 cups"
+    },
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "stems removed, chopped thin (8 cups"
+    }
   }
 }

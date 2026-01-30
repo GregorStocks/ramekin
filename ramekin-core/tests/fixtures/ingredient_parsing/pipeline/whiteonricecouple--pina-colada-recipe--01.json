@@ -1,17 +1,37 @@
 {
   "raw": "3 ounces (90ml) light Rum",
-  "expected": {
-    "item": "light Rum",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      },
-      {
-        "amount": "90",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "light Rum",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "light Rum",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "90",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

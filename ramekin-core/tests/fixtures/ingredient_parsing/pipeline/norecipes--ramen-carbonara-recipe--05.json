@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon Parmesan cheese (more for topping)",
-  "expected": {
-    "item": "Parmesan cheese (more for topping)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parmesan cheese (more for topping)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Parmesan cheese (more for topping)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

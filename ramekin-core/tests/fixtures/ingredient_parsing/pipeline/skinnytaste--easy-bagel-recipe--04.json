@@ -1,13 +1,25 @@
 {
   "raw": "1 cup non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield))",
-  "expected": {
-    "item": "non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "non-fat Greek yogurt (not regular yogurt, it will be too sticky (Stonyfield)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

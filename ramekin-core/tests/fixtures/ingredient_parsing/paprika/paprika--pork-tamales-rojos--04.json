@@ -1,13 +1,25 @@
 {
   "raw": "3 dried guajillo chiles, stems and seeds removed",
-  "expected": {
-    "item": "dried guajillo chiles, stems and seeds removed",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried guajillo chiles, stems and seeds removed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried guajillo chiles, stems and seeds removed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

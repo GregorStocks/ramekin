@@ -1,13 +1,25 @@
 {
   "raw": "1 pt. grape tomatoes, halved if large",
-  "expected": {
-    "item": "grape tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pint"
-      }
-    ],
-    "note": "halved if large"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "halved if large"
+    },
+    "enrich_metric_weights": {
+      "item": "grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "halved if large"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup + Oil (, preferably peanut oil, grape seed oil, or other high flash point oil)",
-  "expected": {
-    "item": "+ Oil (, preferably peanut oil, grape seed oil, or other high flash point oil)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ Oil (, preferably peanut oil, grape seed oil, or other high flash point oil)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "+ Oil (, preferably peanut oil, grape seed oil, or other high flash point oil)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

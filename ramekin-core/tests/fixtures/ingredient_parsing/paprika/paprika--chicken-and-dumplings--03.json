@@ -1,8 +1,15 @@
 {
   "raw": "Table salt and ground black pepper",
-  "expected": {
-    "item": "Table salt and ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Table salt and ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Table salt and ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

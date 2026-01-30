@@ -1,13 +1,25 @@
 {
   "raw": "1/2  medium shallot (diced)",
-  "expected": {
-    "item": "shallot",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

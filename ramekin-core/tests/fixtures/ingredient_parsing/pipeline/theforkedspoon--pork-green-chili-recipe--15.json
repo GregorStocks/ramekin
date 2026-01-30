@@ -1,8 +1,15 @@
 {
   "raw": "Cotija cheese (to serve)",
-  "expected": {
-    "item": "Cotija cheese (to serve)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cotija cheese (to serve)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cotija cheese (to serve)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

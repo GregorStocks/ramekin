@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup walnuts (or pecans, toasted and roughly chopped )",
-  "expected": {
-    "item": "walnuts",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or pecans, toasted and roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or pecans, toasted and roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or pecans, toasted and roughly chopped"
+    }
   }
 }

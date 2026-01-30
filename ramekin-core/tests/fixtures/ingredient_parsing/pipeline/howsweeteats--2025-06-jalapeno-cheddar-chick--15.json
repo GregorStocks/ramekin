@@ -1,13 +1,25 @@
 {
   "raw": "pinch of kosher salt and pepper",
-  "expected": {
-    "item": "kosher salt and pepper",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher salt and pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kosher salt and pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

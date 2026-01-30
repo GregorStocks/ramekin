@@ -1,13 +1,25 @@
 {
   "raw": "2 sheets usuyaki tamago (sliced into thin threads)",
-  "expected": {
-    "item": "sheets usuyaki tamago",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced into thin threads"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sheets usuyaki tamago",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into thin threads"
+    },
+    "enrich_metric_weights": {
+      "item": "sheets usuyaki tamago",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into thin threads"
+    }
   }
 }

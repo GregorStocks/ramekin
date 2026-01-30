@@ -1,8 +1,15 @@
 {
   "raw": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey, light sprinkle of ground cinnamon&amp;#8230;",
-  "expected": {
-    "item": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
-    "measurements": [],
-    "note": "light sprinkle of ground cinnamon…"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
+      "measurements": [],
+      "note": "light sprinkle of ground cinnamon…"
+    },
+    "parse_ingredients": {
+      "item": "Optional toppings: swirl of nut butter (pecan butter, almond butter or peanut butter), toasted pecans or pepitas, chopped fresh apples, dried cranberries, drizzle of additional maple syrup or honey",
+      "measurements": [],
+      "note": "light sprinkle of ground cinnamon…"
+    }
   }
 }

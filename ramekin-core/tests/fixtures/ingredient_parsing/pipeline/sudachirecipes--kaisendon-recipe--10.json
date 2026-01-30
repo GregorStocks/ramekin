@@ -1,13 +1,25 @@
 {
   "raw": "2  perilla leaves (shiso) (or nori / chopped green onion)",
-  "expected": {
-    "item": "perilla leaves (shiso) (or nori / chopped green onion)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "perilla leaves (shiso) (or nori / chopped green onion)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "perilla leaves (shiso) (or nori / chopped green onion)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

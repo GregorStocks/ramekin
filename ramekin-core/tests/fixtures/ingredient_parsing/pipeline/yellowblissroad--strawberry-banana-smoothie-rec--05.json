@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup apple juice (or milk, more or less to taste)",
-  "expected": {
-    "item": "apple juice",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or milk, more or less to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apple juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or milk, more or less to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "apple juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or milk, more or less to taste"
+    }
   }
 }

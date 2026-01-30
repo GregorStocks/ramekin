@@ -1,13 +1,25 @@
 {
   "raw": "One 1-ounce envelope ranch dressing mix",
-  "expected": {
-    "item": "1-ounce envelope ranch dressing mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1-ounce envelope ranch dressing mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1-ounce envelope ranch dressing mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

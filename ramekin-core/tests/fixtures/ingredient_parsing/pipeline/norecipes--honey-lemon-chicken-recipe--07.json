@@ -1,8 +1,15 @@
 {
   "raw": "Salt",
-  "expected": {
-    "item": "Salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

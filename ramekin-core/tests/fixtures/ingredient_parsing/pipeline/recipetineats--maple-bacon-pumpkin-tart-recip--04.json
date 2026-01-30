@@ -1,8 +1,15 @@
 {
   "raw": "Oil spray",
-  "expected": {
-    "item": "Oil spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Oil spray",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Oil spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

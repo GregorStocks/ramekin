@@ -1,13 +1,25 @@
 {
   "raw": "1 fresh hot green chili, chopped (more or less to taste)",
-  "expected": {
-    "item": "fresh hot green chili, chopped",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "more or less to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh hot green chili, chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "more or less to taste"
+    },
+    "parse_ingredients": {
+      "item": "fresh hot green chili, chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "more or less to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 slices Swiss cheese",
-  "expected": {
-    "item": "Swiss cheese",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Swiss cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Swiss cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

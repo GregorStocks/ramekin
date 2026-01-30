@@ -1,8 +1,15 @@
 {
   "raw": "A little water",
-  "expected": {
-    "item": "A little water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "A little water",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "A little water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

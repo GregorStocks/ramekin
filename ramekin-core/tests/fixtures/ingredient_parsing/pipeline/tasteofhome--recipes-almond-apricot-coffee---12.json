@@ -1,8 +1,15 @@
 {
   "raw": "Confectioners' sugar, optional",
-  "expected": {
-    "item": "Confectioners' sugar",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Confectioners' sugar",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Confectioners' sugar",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

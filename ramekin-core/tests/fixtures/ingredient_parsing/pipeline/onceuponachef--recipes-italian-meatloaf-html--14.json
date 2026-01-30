@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup marinara sauce, plus more for serving",
-  "expected": {
-    "item": "marinara sauce",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "marinara sauce",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "marinara sauce",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

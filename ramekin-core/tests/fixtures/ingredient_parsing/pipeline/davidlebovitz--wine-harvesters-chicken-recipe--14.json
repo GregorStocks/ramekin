@@ -1,17 +1,33 @@
 {
   "raw": "2 cups (315g) stemmed grapes",
-  "expected": {
-    "item": "stemmed grapes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "315",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "stemmed grapes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "315",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "stemmed grapes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "315",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

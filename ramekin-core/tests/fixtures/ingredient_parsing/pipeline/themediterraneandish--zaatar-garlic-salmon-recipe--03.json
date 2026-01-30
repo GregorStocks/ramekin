@@ -1,13 +1,29 @@
 {
   "raw": "6 oz broccoli florets",
-  "expected": {
-    "item": "broccoli florets",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli florets",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli florets",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

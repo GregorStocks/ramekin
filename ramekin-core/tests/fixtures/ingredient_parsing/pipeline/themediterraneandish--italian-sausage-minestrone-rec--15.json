@@ -1,13 +1,25 @@
 {
   "raw": "7  large fresh basil leaves, (torn)",
-  "expected": {
-    "item": "fresh basil leaves, (torn)",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh basil leaves, (torn)",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh basil leaves, (torn)",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

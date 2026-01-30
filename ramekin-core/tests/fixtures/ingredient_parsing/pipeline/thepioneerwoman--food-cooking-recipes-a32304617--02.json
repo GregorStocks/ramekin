@@ -1,13 +1,25 @@
 {
   "raw": "1 Granny Smith apple, diced",
-  "expected": {
-    "item": "Granny Smith apple",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Granny Smith apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "Granny Smith apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

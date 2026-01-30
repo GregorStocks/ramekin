@@ -1,8 +1,15 @@
 {
   "raw": "about 10 sprigs Italian parsley",
-  "expected": {
-    "item": "about 10 sprigs Italian parsley",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "about 10 sprigs Italian parsley",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "about 10 sprigs Italian parsley",
+      "measurements": [],
+      "note": null
+    }
   }
 }

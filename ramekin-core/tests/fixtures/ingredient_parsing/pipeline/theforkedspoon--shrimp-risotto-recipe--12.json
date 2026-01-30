@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoon salted butter (divided)",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "About 1/4 cup nam pla (fish sauce)",
-  "expected": {
-    "item": "About 1/4 cup nam pla (fish sauce)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "About 1/4 cup nam pla (fish sauce)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "About 1/4 cup nam pla (fish sauce)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

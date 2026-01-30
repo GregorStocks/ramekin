@@ -1,17 +1,33 @@
 {
   "raw": "&amp;frac12; bunch (&amp;frac12; pound) thin asparagus, tough ends removed and cut into 2-inch long pieces",
-  "expected": {
-    "item": "thin asparagus, tough ends removed and cut into 2-inch long pieces",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "bunch"
-      },
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thin asparagus, tough ends removed and cut into 2-inch long pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "bunch"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "thin asparagus, tough ends removed and cut into 2-inch long pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "bunch"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

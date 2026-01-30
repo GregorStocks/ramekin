@@ -1,13 +1,29 @@
 {
   "raw": "15.5 oz can organic black beans, drained and rinsed",
-  "expected": {
-    "item": "can organic black beans",
-    "measurements": [
-      {
-        "amount": "15.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can organic black beans",
+      "measurements": [
+        {
+          "amount": "15.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "can organic black beans",
+      "measurements": [
+        {
+          "amount": "15.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "439",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

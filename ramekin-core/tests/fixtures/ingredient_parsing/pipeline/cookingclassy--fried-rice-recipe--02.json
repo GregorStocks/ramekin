@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp soy sauce, (then more to taste)",
-  "expected": {
-    "item": "soy sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "then more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "then more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "then more to taste"
+    }
   }
 }

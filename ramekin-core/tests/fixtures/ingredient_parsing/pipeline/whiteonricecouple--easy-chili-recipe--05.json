@@ -1,13 +1,29 @@
 {
   "raw": "30 ounces tomato sauce (, (two 15oz. cans or @ 4 cups) crushed, diced or regular depending on what texture you want)",
-  "expected": {
-    "item": "tomato sauce (, (two 15oz. cans or @ 4 cups) crushed",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": "oz"
-      }
-    ],
-    "note": "diced or regular depending on what texture you want)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tomato sauce (, (two 15oz. cans or @ 4 cups) crushed",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        },
+        {
+          "amount": "850",
+          "unit": "g"
+        }
+      ],
+      "note": "diced or regular depending on what texture you want)"
+    },
+    "parse_ingredients": {
+      "item": "tomato sauce (, (two 15oz. cans or @ 4 cups) crushed",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        }
+      ],
+      "note": "diced or regular depending on what texture you want)"
+    }
   }
 }

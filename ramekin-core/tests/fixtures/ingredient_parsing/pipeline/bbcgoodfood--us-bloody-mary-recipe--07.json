@@ -1,13 +1,25 @@
 {
   "raw": "pinch of celery salt",
-  "expected": {
-    "item": "celery salt",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "celery salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces baby portabella mushrooms (sliced)",
-  "expected": {
-    "item": "baby portabella mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby portabella mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "baby portabella mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

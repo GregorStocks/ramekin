@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup crumbled Cotija cheese (can sub crumbled feta)",
-  "expected": {
-    "item": "crumbled Cotija cheese",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "can sub crumbled feta"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crumbled Cotija cheese",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "can sub crumbled feta"
+    },
+    "enrich_metric_weights": {
+      "item": "crumbled Cotija cheese",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "can sub crumbled feta"
+    }
   }
 }

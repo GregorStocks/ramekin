@@ -1,17 +1,37 @@
 {
   "raw": "1 (10.75 ounce) can condensed cream of mushroom soup",
-  "expected": {
-    "item": "condensed cream of mushroom soup",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "10.75",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "condensed cream of mushroom soup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10.75",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "condensed cream of mushroom soup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10.75",
+          "unit": "oz"
+        },
+        {
+          "amount": "305",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound ground pork sausage, at room temperature",
-  "expected": {
-    "item": "ground pork sausage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground pork sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "ground pork sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

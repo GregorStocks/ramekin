@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon table salt, or more to taste*",
-  "expected": {
-    "item": "table salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or more to taste*"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "table salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste*"
+    },
+    "parse_ingredients": {
+      "item": "table salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste*"
+    }
   }
 }

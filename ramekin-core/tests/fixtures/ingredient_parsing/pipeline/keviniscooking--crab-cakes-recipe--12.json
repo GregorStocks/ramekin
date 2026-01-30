@@ -1,8 +1,15 @@
 {
   "raw": "Cajun Remoulade",
-  "expected": {
-    "item": "Cajun Remoulade",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cajun Remoulade",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cajun Remoulade",
+      "measurements": [],
+      "note": null
+    }
   }
 }

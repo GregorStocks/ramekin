@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons wholegrain mustard",
-  "expected": {
-    "item": "wholegrain mustard",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "wholegrain mustard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "wholegrain mustard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

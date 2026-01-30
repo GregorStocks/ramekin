@@ -1,13 +1,25 @@
 {
   "raw": "6 slices baguette (1/2 inch thick and day old, toasted)",
-  "expected": {
-    "item": "baguette",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": "1/2 inch thick and day old, toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baguette",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "1/2 inch thick and day old, toasted"
+    },
+    "parse_ingredients": {
+      "item": "baguette",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "1/2 inch thick and day old, toasted"
+    }
   }
 }

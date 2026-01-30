@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 tsp smoked Spanish paprika",
-  "expected": {
-    "item": "smoked Spanish paprika",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "smoked Spanish paprika",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "smoked Spanish paprika",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

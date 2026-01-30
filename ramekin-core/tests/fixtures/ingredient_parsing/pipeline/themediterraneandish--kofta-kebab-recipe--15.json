@@ -1,8 +1,15 @@
 {
   "raw": "Tahini Sauce",
-  "expected": {
-    "item": "Tahini Sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tahini Sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tahini Sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

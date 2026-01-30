@@ -1,13 +1,25 @@
 {
   "raw": "5  rolls (I like to use French Rolls)",
-  "expected": {
-    "item": "rolls (I like to use French Rolls)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rolls (I like to use French Rolls)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "rolls (I like to use French Rolls)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

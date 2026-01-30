@@ -1,8 +1,15 @@
 {
   "raw": "Juice of 1/2 lime, plus wedges for serving",
-  "expected": {
-    "item": "Juice of 1/2 lime",
-    "measurements": [],
-    "note": "plus wedges for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Juice of 1/2 lime",
+      "measurements": [],
+      "note": "plus wedges for serving"
+    },
+    "parse_ingredients": {
+      "item": "Juice of 1/2 lime",
+      "measurements": [],
+      "note": "plus wedges for serving"
+    }
   }
 }

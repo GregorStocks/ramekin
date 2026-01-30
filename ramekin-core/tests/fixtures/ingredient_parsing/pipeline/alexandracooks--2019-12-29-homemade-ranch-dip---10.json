@@ -1,8 +1,15 @@
 {
   "raw": "Romaine leaves",
-  "expected": {
-    "item": "Romaine leaves",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Romaine leaves",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Romaine leaves",
+      "measurements": [],
+      "note": null
+    }
   }
 }

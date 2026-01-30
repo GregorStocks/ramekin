@@ -1,13 +1,25 @@
 {
   "raw": "¼ teaspoon dried sage",
-  "expected": {
-    "item": "dried sage",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried sage",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried sage",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

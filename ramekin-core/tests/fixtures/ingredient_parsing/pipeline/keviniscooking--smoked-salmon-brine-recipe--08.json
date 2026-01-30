@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp red pepper flakes (or freshly ground black pepper)",
-  "expected": {
-    "item": "red pepper flakes",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or freshly ground black pepper"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or freshly ground black pepper"
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or freshly ground black pepper"
+    }
   }
 }

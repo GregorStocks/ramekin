@@ -1,8 +1,15 @@
 {
   "raw": "Bee pollen (we love the confetti look)",
-  "expected": {
-    "item": "Bee pollen (we love the confetti look)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Bee pollen (we love the confetti look)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Bee pollen (we love the confetti look)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

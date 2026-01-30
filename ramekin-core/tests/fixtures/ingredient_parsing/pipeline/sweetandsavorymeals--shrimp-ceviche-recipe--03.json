@@ -1,13 +1,25 @@
 {
   "raw": "2  jalapenos (seeds removed then minced)",
-  "expected": {
-    "item": "jalapenos",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "seeds removed then minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapenos",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeds removed then minced"
+    },
+    "parse_ingredients": {
+      "item": "jalapenos",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeds removed then minced"
+    }
   }
 }

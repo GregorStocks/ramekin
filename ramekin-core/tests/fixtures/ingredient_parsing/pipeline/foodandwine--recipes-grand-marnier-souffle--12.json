@@ -1,8 +1,15 @@
 {
   "raw": "Powdered sugar, for garnish",
-  "expected": {
-    "item": "Powdered sugar",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Powdered sugar",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Powdered sugar",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

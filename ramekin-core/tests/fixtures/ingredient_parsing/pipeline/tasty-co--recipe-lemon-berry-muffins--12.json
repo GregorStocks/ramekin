@@ -1,8 +1,15 @@
 {
   "raw": "muffin tin liner",
-  "expected": {
-    "item": "muffin tin liner",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "muffin tin liner",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "muffin tin liner",
+      "measurements": [],
+      "note": null
+    }
   }
 }

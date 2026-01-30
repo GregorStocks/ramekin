@@ -1,13 +1,25 @@
 {
   "raw": "4  lemons, scrubbed and dried, plus the juice of 1 lemon",
-  "expected": {
-    "item": "lemons, scrubbed and dried",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "plus the juice of 1 lemon"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemons, scrubbed and dried",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "plus the juice of 1 lemon"
+    },
+    "enrich_metric_weights": {
+      "item": "lemons, scrubbed and dried",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "plus the juice of 1 lemon"
+    }
   }
 }

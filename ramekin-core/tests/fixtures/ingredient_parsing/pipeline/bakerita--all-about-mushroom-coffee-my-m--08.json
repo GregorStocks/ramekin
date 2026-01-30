@@ -1,8 +1,15 @@
 {
   "raw": "Cinnamon and spice, to taste, optional",
-  "expected": {
-    "item": "Cinnamon and spice, to taste",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cinnamon and spice, to taste",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Cinnamon and spice, to taste",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

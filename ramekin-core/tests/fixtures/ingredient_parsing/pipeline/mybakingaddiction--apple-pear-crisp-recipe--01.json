@@ -1,17 +1,33 @@
 {
   "raw": "6 cups peeled, cored, and thinly sliced baking apples  (about 6 large)",
-  "expected": {
-    "item": "peeled, cored",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      },
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": "and thinly sliced baking apples"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peeled, cored",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": "and thinly sliced baking apples"
+    },
+    "parse_ingredients": {
+      "item": "peeled, cored",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": "and thinly sliced baking apples"
+    }
   }
 }

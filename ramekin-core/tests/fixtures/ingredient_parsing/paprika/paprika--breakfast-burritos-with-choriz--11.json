@@ -1,13 +1,25 @@
 {
   "raw": "2 cups frozen tater tots, thawed and patted dry",
-  "expected": {
-    "item": "frozen tater tots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed and patted dry"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen tater tots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed and patted dry"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen tater tots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed and patted dry"
+    }
   }
 }

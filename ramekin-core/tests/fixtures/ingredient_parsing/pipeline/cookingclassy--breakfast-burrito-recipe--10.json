@@ -1,8 +1,15 @@
 {
   "raw": "Mexican hot sauce, (such as Cholula or Tapatio, for serving (optional))",
-  "expected": {
-    "item": "Mexican hot sauce",
-    "measurements": [],
-    "note": "such as Cholula or Tapatio, for serving (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mexican hot sauce",
+      "measurements": [],
+      "note": "such as Cholula or Tapatio, for serving (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Mexican hot sauce",
+      "measurements": [],
+      "note": "such as Cholula or Tapatio, for serving (optional"
+    }
   }
 }

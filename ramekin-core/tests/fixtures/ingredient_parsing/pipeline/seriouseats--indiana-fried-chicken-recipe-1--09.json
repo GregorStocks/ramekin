@@ -1,8 +1,15 @@
 {
   "raw": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls, for serving",
-  "expected": {
-    "item": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Coleslaw, mashed potatoes, braised green beans, and warm dinner rolls",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

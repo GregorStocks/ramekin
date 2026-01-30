@@ -1,13 +1,25 @@
 {
   "raw": "2 medium Italian eggplants, sliced into ½-inch rounds",
-  "expected": {
-    "item": "Italian eggplants",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced into 1/2-inch rounds"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Italian eggplants",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 1/2-inch rounds"
+    },
+    "parse_ingredients": {
+      "item": "Italian eggplants",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 1/2-inch rounds"
+    }
   }
 }

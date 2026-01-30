@@ -1,17 +1,33 @@
 {
   "raw": "0.5 cup butter (1 stick), melted",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

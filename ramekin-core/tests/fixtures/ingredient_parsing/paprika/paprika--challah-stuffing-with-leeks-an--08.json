@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup packed, chopped flat-leaf parsley",
-  "expected": {
-    "item": "packed",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped flat-leaf parsley"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped flat-leaf parsley"
+    },
+    "enrich_metric_weights": {
+      "item": "packed",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped flat-leaf parsley"
+    }
   }
 }

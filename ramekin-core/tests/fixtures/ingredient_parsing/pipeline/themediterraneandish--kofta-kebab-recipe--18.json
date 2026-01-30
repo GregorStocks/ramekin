@@ -1,8 +1,15 @@
 {
   "raw": "More parsley",
-  "expected": {
-    "item": "More parsley",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "More parsley",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "More parsley",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 tbsp basil pesto (more or less depending on preference)",
-  "expected": {
-    "item": "basil pesto",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "more or less depending on preference"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "basil pesto",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more or less depending on preference"
+    },
+    "parse_ingredients": {
+      "item": "basil pesto",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more or less depending on preference"
+    }
   }
 }

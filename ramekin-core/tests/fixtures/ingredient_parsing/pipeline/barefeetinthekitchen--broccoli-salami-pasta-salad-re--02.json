@@ -1,13 +1,25 @@
 {
   "raw": "2  medium size broccoli crowns (trimmed into small florets, about 4-5 cups worth)",
-  "expected": {
-    "item": "size broccoli crowns",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "trimmed into small florets, about 4-5 cups worth"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "size broccoli crowns",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "trimmed into small florets, about 4-5 cups worth"
+    },
+    "parse_ingredients": {
+      "item": "size broccoli crowns",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "trimmed into small florets, about 4-5 cups worth"
+    }
   }
 }

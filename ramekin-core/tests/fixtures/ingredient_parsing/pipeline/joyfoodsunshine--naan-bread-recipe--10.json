@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup salted butter (melted (for brushing))",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted (for brushing"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted (for brushing"
+    },
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted (for brushing"
+    }
   }
 }

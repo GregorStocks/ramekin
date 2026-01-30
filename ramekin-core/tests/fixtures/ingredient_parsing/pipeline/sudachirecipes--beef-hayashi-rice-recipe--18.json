@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp unsalted butter (cold)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "cold"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "cold"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "cold"
+    }
   }
 }

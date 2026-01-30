@@ -1,13 +1,25 @@
 {
   "raw": "4 small shallots, minced",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "small"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    },
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "italian vinaigrette",
-  "expected": {
-    "item": "italian vinaigrette",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "italian vinaigrette",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "italian vinaigrette",
+      "measurements": [],
+      "note": null
+    }
   }
 }

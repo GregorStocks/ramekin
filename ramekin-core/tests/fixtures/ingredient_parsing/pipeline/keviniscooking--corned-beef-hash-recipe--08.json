@@ -1,17 +1,33 @@
 {
   "raw": "4 cups cooked corned beef (1-inch cubes)",
-  "expected": {
-    "item": "cooked corned beef",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked corned beef",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooked corned beef",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

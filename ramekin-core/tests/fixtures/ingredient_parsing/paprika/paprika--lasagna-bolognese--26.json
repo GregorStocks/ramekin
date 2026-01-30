@@ -1,8 +1,15 @@
 {
   "raw": "Freshly grated nutmeg, to taste",
-  "expected": {
-    "item": "Freshly grated nutmeg",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Freshly grated nutmeg",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Freshly grated nutmeg",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

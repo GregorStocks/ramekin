@@ -1,13 +1,25 @@
 {
   "raw": "1/8 cup chopped dill",
-  "expected": {
-    "item": "chopped dill",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped dill",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped dill",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

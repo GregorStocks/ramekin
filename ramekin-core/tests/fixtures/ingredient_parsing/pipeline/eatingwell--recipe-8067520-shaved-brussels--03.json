@@ -1,13 +1,25 @@
 {
   "raw": "0.33 cup sweetened dried cherries, finely chopped",
-  "expected": {
-    "item": "sweetened dried cherries",
-    "measurements": [
-      {
-        "amount": "0.33",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweetened dried cherries",
+      "measurements": [
+        {
+          "amount": "0.33",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "sweetened dried cherries",
+      "measurements": [
+        {
+          "amount": "0.33",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

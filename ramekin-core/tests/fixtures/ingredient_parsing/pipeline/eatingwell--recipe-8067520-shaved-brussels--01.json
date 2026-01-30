@@ -1,17 +1,33 @@
 {
   "raw": "1 pound Brussels sprouts, thinly sliced (about 6 cups)",
-  "expected": {
-    "item": "Brussels sprouts",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Brussels sprouts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "Brussels sprouts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

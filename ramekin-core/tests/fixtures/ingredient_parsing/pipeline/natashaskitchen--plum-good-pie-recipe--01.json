@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds of plums (use 2 lb plums &amp;amp; 1/4 cup more sugar if you are using a deep dish pie plate)",
-  "expected": {
-    "item": "plums (use 2 lb plums & 1/4 cup more sugar if you are using a deep dish pie plate)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plums (use 2 lb plums & 1/4 cup more sugar if you are using a deep dish pie plate)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "plums (use 2 lb plums & 1/4 cup more sugar if you are using a deep dish pie plate)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

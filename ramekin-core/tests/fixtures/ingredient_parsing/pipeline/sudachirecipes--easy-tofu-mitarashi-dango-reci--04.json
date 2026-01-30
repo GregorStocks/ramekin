@@ -1,8 +1,15 @@
 {
   "raw": "ice water",
-  "expected": {
-    "item": "ice water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ice water",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ice water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

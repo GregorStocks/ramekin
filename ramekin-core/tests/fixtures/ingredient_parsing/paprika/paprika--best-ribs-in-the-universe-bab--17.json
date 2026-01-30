@@ -1,13 +1,25 @@
 {
   "raw": "4 teaspoons Accent (MSG)",
-  "expected": {
-    "item": "Accent (MSG)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Accent (MSG)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Accent (MSG)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

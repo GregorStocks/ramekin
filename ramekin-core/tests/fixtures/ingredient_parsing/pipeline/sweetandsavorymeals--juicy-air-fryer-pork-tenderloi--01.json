@@ -1,13 +1,25 @@
 {
   "raw": "1.75 lbs pork tenderloin (you can use two)",
-  "expected": {
-    "item": "pork tenderloin (you can use two)",
-    "measurements": [
-      {
-        "amount": "1.75",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork tenderloin (you can use two)",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pork tenderloin (you can use two)",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

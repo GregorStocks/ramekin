@@ -1,13 +1,25 @@
 {
   "raw": "1/2 vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
-  "expected": {
-    "item": "vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vanilla bean pod, seeds scraped (or use 1/2 teaspoon vanilla bean paste or extract)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

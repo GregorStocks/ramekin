@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces spaghetti",
-  "expected": {
-    "item": "spaghetti",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

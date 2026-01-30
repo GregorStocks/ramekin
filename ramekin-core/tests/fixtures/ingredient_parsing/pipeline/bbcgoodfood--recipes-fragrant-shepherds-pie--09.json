@@ -1,13 +1,25 @@
 {
   "raw": "6 large tomatoes roughly chopped",
-  "expected": {
-    "item": "tomatoes roughly chopped",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomatoes roughly chopped",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tomatoes roughly chopped",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

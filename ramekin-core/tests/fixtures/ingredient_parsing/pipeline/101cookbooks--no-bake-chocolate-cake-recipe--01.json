@@ -1,8 +1,15 @@
 {
   "raw": "butter, to grease pan",
-  "expected": {
-    "item": "butter, to grease pan",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter, to grease pan",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "butter, to grease pan",
+      "measurements": [],
+      "note": null
+    }
   }
 }

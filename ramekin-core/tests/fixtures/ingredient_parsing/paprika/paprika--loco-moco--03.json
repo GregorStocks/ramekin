@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (12 g) panko breadcrumbs",
-  "expected": {
-    "item": "panko breadcrumbs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "12",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "panko breadcrumbs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "panko breadcrumbs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

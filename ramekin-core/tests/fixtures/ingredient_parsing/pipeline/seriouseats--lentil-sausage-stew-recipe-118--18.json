@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh flat-leaf parsley leaves and tender stems, for serving",
-  "expected": {
-    "item": "Chopped fresh flat-leaf parsley leaves and tender stems",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped fresh flat-leaf parsley leaves and tender stems",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped fresh flat-leaf parsley leaves and tender stems",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 tsp dried dill ((fresh works too!))",
-  "expected": {
-    "item": "dried dill",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "fresh works too!"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried dill",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "fresh works too!"
+    },
+    "parse_ingredients": {
+      "item": "dried dill",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "fresh works too!"
+    }
   }
 }

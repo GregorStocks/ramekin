@@ -1,13 +1,25 @@
 {
   "raw": "Handful of toasted slivered almonds",
-  "expected": {
-    "item": "toasted slivered almonds",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted slivered almonds",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted slivered almonds",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

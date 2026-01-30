@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon (15 ml) Asian fish sauce",
-  "expected": {
-    "item": "Asian fish sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "15",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Asian fish sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Asian fish sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

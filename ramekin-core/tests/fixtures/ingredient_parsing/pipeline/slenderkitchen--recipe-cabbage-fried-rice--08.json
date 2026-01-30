@@ -1,13 +1,25 @@
 {
   "raw": "3 tbsp. soy sauce (GF if needed, coconut aminos for Whole30®)",
-  "expected": {
-    "item": "soy sauce",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "GF if needed, coconut aminos for Whole30®"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "GF if needed, coconut aminos for Whole30®"
+    },
+    "parse_ingredients": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "GF if needed, coconut aminos for Whole30®"
+    }
   }
 }

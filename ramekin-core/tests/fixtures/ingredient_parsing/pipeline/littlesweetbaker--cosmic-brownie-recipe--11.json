@@ -1,17 +1,33 @@
 {
   "raw": "25 g (5 tbsp) unsweetened cocoa powder",
-  "expected": {
-    "item": "unsweetened cocoa powder",
-    "measurements": [
-      {
-        "amount": "25",
-        "unit": "g"
-      },
-      {
-        "amount": "5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsweetened cocoa powder",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsweetened cocoa powder",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

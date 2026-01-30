@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil and butter as needed",
-  "expected": {
-    "item": "Olive oil and butter as needed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Olive oil and butter as needed",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Olive oil and butter as needed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

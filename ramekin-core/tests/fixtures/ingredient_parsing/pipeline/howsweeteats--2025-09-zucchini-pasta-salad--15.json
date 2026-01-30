@@ -1,13 +1,25 @@
 {
   "raw": "1  shallot, (finely minced)",
-  "expected": {
-    "item": "shallot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely minced"
+    }
   }
 }

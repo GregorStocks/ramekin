@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp peppermint extract (optional, for peppermint mocha)",
-  "expected": {
-    "item": "peppermint extract",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional, for peppermint mocha"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peppermint extract",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, for peppermint mocha"
+    },
+    "parse_ingredients": {
+      "item": "peppermint extract",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, for peppermint mocha"
+    }
   }
 }

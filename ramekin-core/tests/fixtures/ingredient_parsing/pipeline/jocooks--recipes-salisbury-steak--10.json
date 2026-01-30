@@ -1,13 +1,29 @@
 {
   "raw": "8 ounce cremini mushrooms (optional)",
-  "expected": {
-    "item": "cremini mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

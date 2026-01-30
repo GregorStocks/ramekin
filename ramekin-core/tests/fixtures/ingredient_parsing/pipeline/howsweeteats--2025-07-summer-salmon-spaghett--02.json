@@ -1,13 +1,25 @@
 {
   "raw": "1  medium yellow summer squash, (thinly sliced)",
-  "expected": {
-    "item": "yellow summer squash",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow summer squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "yellow summer squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

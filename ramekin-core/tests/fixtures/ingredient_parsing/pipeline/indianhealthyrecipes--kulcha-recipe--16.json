@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon white sesame seeds ((optional + 1 teaspoon kalonji/ onion seeds))",
-  "expected": {
-    "item": "white sesame seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional + 1 teaspoon kalonji/ onion seeds"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional + 1 teaspoon kalonji/ onion seeds"
+    },
+    "parse_ingredients": {
+      "item": "white sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional + 1 teaspoon kalonji/ onion seeds"
+    }
   }
 }

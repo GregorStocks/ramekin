@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ pounds medium raw shrimp (peeled, deveined, and tail-off (26/30))",
-  "expected": {
-    "item": "medium raw shrimp",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled, deveined, and tail-off (26/30"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium raw shrimp",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined, and tail-off (26/30"
+    },
+    "enrich_metric_weights": {
+      "item": "medium raw shrimp",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined, and tail-off (26/30"
+    }
   }
 }

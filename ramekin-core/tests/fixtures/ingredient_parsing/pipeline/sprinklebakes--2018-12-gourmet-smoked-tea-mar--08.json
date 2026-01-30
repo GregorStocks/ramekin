@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup 167 grams light corn syrup, divided",
-  "expected": {
-    "item": "167 grams light corn syrup",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "167 grams light corn syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "167 grams light corn syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

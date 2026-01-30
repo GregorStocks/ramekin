@@ -1,13 +1,25 @@
 {
   "raw": "1  blood orange (peeled and sliced in to wheels)",
-  "expected": {
-    "item": "blood orange",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and sliced in to wheels"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "blood orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced in to wheels"
+    },
+    "parse_ingredients": {
+      "item": "blood orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced in to wheels"
+    }
   }
 }

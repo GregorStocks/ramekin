@@ -1,13 +1,25 @@
 {
   "raw": "2 large eggplants (sliced into 1/2-inch thick rounds)",
-  "expected": {
-    "item": "eggplants",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "sliced into 1/2-inch thick rounds"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "eggplants",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced into 1/2-inch thick rounds"
+    },
+    "parse_ingredients": {
+      "item": "eggplants",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced into 1/2-inch thick rounds"
+    }
   }
 }

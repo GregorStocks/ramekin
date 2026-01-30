@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds boneless beef chuck, ground coarse or 3 pounds ground beef",
-  "expected": {
-    "item": "boneless beef chuck",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": "ground coarse or 3 pounds ground beef"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless beef chuck",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "ground coarse or 3 pounds ground beef"
+    },
+    "parse_ingredients": {
+      "item": "boneless beef chuck",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "ground coarse or 3 pounds ground beef"
+    }
   }
 }

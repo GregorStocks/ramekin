@@ -1,13 +1,25 @@
 {
   "raw": "140 grams boneless skin-on chicken thighs",
-  "expected": {
-    "item": "boneless skin-on chicken thighs",
-    "measurements": [
-      {
-        "amount": "140",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boneless skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

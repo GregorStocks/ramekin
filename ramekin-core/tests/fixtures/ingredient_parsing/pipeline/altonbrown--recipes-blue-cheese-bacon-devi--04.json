@@ -1,13 +1,25 @@
 {
   "raw": "7 slices bacon (not thick-cut), cut into 3-inch lengths",
-  "expected": {
-    "item": "bacon (not thick-cut), cut into 3-inch lengths",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon (not thick-cut), cut into 3-inch lengths",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon (not thick-cut), cut into 3-inch lengths",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

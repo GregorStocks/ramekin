@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon ginger ((minced, optional))",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "minced, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "minced, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "minced, optional"
+    }
   }
 }

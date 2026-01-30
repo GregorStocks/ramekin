@@ -1,13 +1,25 @@
 {
   "raw": "¾-1 cup finely diced white onion",
-  "expected": {
-    "item": "finely diced white onion",
-    "measurements": [
-      {
-        "amount": "3/4-1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely diced white onion",
+      "measurements": [
+        {
+          "amount": "3/4-1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely diced white onion",
+      "measurements": [
+        {
+          "amount": "3/4-1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

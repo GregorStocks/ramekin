@@ -1,13 +1,25 @@
 {
   "raw": "2 cups shredded Cheddar Jack cheese",
-  "expected": {
-    "item": "shredded Cheddar Jack cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded Cheddar Jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded Cheddar Jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

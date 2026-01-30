@@ -1,13 +1,25 @@
 {
   "raw": "2 cups leftover turkey (diced or shredded)",
-  "expected": {
-    "item": "leftover turkey",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced or shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leftover turkey",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced or shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "leftover turkey",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced or shredded"
+    }
   }
 }

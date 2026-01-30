@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup white sugar, or to taste",
-  "expected": {
-    "item": "white sugar",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

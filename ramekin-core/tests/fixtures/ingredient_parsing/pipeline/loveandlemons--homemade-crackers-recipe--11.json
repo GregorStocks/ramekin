@@ -1,8 +1,15 @@
 {
   "raw": "Alouette Petit Fromage",
-  "expected": {
-    "item": "Alouette Petit Fromage",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Alouette Petit Fromage",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Alouette Petit Fromage",
+      "measurements": [],
+      "note": null
+    }
   }
 }

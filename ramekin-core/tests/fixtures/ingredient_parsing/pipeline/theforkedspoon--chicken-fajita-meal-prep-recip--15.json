@@ -1,8 +1,15 @@
 {
   "raw": "sour cream or guacamole (optional)",
-  "expected": {
-    "item": "sour cream or guacamole",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sour cream or guacamole",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "sour cream or guacamole",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

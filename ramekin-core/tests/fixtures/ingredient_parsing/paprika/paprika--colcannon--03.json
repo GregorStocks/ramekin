@@ -1,17 +1,33 @@
 {
   "raw": "6 tablespoons (85 g) unsalted butter, plus more for serving",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "85",
-        "unit": "g"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

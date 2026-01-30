@@ -1,13 +1,25 @@
 {
   "raw": "15  cremini mushrooms (whole)",
-  "expected": {
-    "item": "cremini mushrooms",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": "whole"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "whole"
+    },
+    "parse_ingredients": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "whole"
+    }
   }
 }

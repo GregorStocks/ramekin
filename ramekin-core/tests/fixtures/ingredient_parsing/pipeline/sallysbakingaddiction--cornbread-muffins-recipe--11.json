@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (240ml) buttermilk, at room temperature*",
-  "expected": {
-    "item": "buttermilk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "ml"
-      }
-    ],
-    "note": "at room temperature*"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "buttermilk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": "at room temperature*"
+    },
+    "enrich_metric_weights": {
+      "item": "buttermilk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": "at room temperature*"
+    }
   }
 }

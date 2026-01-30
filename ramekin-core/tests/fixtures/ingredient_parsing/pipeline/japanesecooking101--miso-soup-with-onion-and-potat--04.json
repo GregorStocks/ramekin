@@ -1,13 +1,25 @@
 {
   "raw": "4-5 Tbsp miso paste",
-  "expected": {
-    "item": "miso paste",
-    "measurements": [
-      {
-        "amount": "4-5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "miso paste",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "miso paste",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

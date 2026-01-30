@@ -1,17 +1,33 @@
 {
   "raw": "2 ptns dry soba noodles (80g-100g per portion)",
-  "expected": {
-    "item": "ptns dry soba noodles",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "80",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ptns dry soba noodles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "80",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ptns dry soba noodles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "80",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

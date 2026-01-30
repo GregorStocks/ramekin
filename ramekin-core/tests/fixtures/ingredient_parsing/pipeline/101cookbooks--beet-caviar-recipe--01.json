@@ -1,13 +1,25 @@
 {
   "raw": "4  medium beets, washed and trimmed",
-  "expected": {
-    "item": "beets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "washed and trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "washed and trimmed"
+    },
+    "parse_ingredients": {
+      "item": "beets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "washed and trimmed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 teaspoons ground chili powder (to taste)",
-  "expected": {
-    "item": "ground chili powder",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "tsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground chili powder",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "ground chili powder",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

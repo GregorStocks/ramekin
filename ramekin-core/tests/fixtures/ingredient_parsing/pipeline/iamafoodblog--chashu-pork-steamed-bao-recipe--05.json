@@ -1,13 +1,25 @@
 {
   "raw": "300 grams Asian bread flour",
-  "expected": {
-    "item": "Asian bread flour",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Asian bread flour",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Asian bread flour",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "optional topping: salted caramel, maple icing, or any listed below",
-  "expected": {
-    "item": "optional topping: salted caramel, maple icing, or any listed below",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "optional topping: salted caramel, maple icing, or any listed below",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "optional topping: salted caramel, maple icing, or any listed below",
+      "measurements": [],
+      "note": null
+    }
   }
 }

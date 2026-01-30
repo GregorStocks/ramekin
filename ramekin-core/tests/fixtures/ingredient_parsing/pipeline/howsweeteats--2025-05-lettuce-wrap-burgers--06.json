@@ -1,13 +1,25 @@
 {
   "raw": "1  head iceberg lettuce, (leaves pulled off and washed)",
-  "expected": {
-    "item": "iceberg lettuce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "leaves pulled off and washed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "iceberg lettuce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "leaves pulled off and washed"
+    },
+    "parse_ingredients": {
+      "item": "iceberg lettuce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "leaves pulled off and washed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound Purple Majesty or other purple potatoes, washed",
-  "expected": {
-    "item": "Purple Majesty or other purple potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "washed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Purple Majesty or other purple potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed"
+    },
+    "enrich_metric_weights": {
+      "item": "Purple Majesty or other purple potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 carton (8 ounces) frozen whipped topping, thawed",
-  "expected": {
-    "item": "carton frozen whipped topping",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carton frozen whipped topping",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed"
+    },
+    "parse_ingredients": {
+      "item": "carton frozen whipped topping",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

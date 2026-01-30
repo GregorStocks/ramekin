@@ -1,13 +1,25 @@
 {
   "raw": "1/4 fluid ounce cola syrup",
-  "expected": {
-    "item": "cola syrup",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cola syrup",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cola syrup",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

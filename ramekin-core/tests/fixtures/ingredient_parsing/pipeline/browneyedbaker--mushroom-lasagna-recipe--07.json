@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces white mushrooms (finely minced)",
-  "expected": {
-    "item": "white mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "white mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sour cream, melted butter or vinegar to serve",
-  "expected": {
-    "item": "Sour cream",
-    "measurements": [],
-    "note": "melted butter or vinegar to serve"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sour cream",
+      "measurements": [],
+      "note": "melted butter or vinegar to serve"
+    },
+    "enrich_metric_weights": {
+      "item": "Sour cream",
+      "measurements": [],
+      "note": "melted butter or vinegar to serve"
+    }
   }
 }

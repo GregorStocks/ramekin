@@ -1,8 +1,15 @@
 {
   "raw": "Several handfuls of fresh spinach",
-  "expected": {
-    "item": "Several handfuls of fresh spinach",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Several handfuls of fresh spinach",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Several handfuls of fresh spinach",
+      "measurements": [],
+      "note": null
+    }
   }
 }

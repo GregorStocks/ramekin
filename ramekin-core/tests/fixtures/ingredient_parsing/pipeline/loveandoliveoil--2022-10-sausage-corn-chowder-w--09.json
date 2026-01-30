@@ -1,13 +1,25 @@
 {
   "raw": "1  medium carrot (coarsely chopped)",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

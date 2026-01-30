@@ -1,13 +1,25 @@
 {
   "raw": "½ teaspoon mustard seeds ((optional))",
-  "expected": {
-    "item": "mustard seeds",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mustard seeds",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "mustard seeds",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

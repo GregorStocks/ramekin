@@ -1,17 +1,33 @@
 {
   "raw": "1 cup Guinness Stout beer (about 3/4 bottle)",
-  "expected": {
-    "item": "Guinness Stout beer",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "3/4",
-        "unit": "bottle"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Guinness Stout beer",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "3/4",
+          "unit": "bottle"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Guinness Stout beer",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "3/4",
+          "unit": "bottle"
+        }
+      ],
+      "note": null
+    }
   }
 }

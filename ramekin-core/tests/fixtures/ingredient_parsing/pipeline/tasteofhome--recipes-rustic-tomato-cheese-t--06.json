@@ -1,13 +1,25 @@
 {
   "raw": "4 plum tomatoes, thinly sliced",
-  "expected": {
-    "item": "plum tomatoes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

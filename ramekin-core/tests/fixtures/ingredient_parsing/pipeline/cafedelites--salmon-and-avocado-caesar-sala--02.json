@@ -1,13 +1,29 @@
 {
   "raw": "5 oz x 2 fresh salmon fillets (skin off)",
-  "expected": {
-    "item": "x 2 fresh salmon fillets (skin off)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "x 2 fresh salmon fillets (skin off)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "x 2 fresh salmon fillets (skin off)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

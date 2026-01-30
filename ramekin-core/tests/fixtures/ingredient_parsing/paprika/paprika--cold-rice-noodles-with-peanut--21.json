@@ -1,13 +1,25 @@
 {
   "raw": "2 medium carrots, cut in thin julienne",
-  "expected": {
-    "item": "carrots, cut in thin julienne",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots, cut in thin julienne",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "carrots, cut in thin julienne",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

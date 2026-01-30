@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons hot water",
-  "expected": {
-    "item": "hot water",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot water",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "hot water",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

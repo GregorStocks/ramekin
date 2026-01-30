@@ -1,13 +1,25 @@
 {
   "raw": "½ teaspoon red pepper flakes (more or less to taste)",
-  "expected": {
-    "item": "red pepper flakes",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "more or less to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "more or less to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "more or less to taste"
+    }
   }
 }

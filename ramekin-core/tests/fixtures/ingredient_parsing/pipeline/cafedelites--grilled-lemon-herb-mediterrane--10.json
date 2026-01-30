@@ -1,8 +1,15 @@
 {
   "raw": "cracked pepper (to taste)",
-  "expected": {
-    "item": "cracked pepper",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cracked pepper",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "cracked pepper",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

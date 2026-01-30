@@ -1,13 +1,25 @@
 {
   "raw": "1  large head of cauliflower ((Note 1))",
-  "expected": {
-    "item": "head of cauliflower (Note 1)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "head of cauliflower (Note 1)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "head of cauliflower (Note 1)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

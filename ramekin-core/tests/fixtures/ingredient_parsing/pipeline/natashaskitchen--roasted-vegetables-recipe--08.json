@@ -1,8 +1,15 @@
 {
   "raw": "Freshly grated black pepper (to taste)",
-  "expected": {
-    "item": "Freshly grated black pepper",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Freshly grated black pepper",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "Freshly grated black pepper",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

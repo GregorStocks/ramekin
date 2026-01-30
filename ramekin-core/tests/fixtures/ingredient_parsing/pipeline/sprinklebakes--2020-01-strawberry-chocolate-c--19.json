@@ -1,13 +1,25 @@
 {
   "raw": "1 pint strawberries (sliced)",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pint"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

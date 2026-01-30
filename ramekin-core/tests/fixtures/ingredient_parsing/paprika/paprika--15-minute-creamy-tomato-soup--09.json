@@ -1,8 +1,15 @@
 {
   "raw": "Minced chives, basil, or parsley as garnish",
-  "expected": {
-    "item": "Minced chives, basil, or parsley as garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Minced chives, basil, or parsley as garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Minced chives, basil, or parsley as garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

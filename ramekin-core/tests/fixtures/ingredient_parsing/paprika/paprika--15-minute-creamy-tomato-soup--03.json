@@ -1,17 +1,33 @@
 {
   "raw": "1 small onion, finely sliced (about 1 cup)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely sliced"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely sliced"
+    }
   }
 }

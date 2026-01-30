@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon fresh cracked black pepper (for sauce) (, or more to taste + additional for seasoning chicken)",
-  "expected": {
-    "item": "fresh cracked black pepper (for sauce) (",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or more to taste + additional for seasoning chicken)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh cracked black pepper (for sauce) (",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste + additional for seasoning chicken)"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh cracked black pepper (for sauce) (",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste + additional for seasoning chicken)"
+    }
   }
 }

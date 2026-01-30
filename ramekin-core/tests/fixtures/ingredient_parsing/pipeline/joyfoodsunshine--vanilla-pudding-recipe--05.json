@@ -1,8 +1,15 @@
 {
   "raw": "Seeds from one vanilla bean",
-  "expected": {
-    "item": "Seeds from one vanilla bean",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Seeds from one vanilla bean",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Seeds from one vanilla bean",
+      "measurements": [],
+      "note": null
+    }
   }
 }

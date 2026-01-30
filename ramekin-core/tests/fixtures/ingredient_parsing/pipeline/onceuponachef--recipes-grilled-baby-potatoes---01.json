@@ -1,13 +1,25 @@
 {
   "raw": "1 pound baby Yukon Gold potatoes",
-  "expected": {
-    "item": "baby Yukon Gold potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby Yukon Gold potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baby Yukon Gold potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

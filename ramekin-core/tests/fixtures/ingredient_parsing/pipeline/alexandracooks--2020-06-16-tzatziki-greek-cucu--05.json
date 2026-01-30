@@ -1,13 +1,25 @@
 {
   "raw": "1.5 tablespoons fresh-squeeze lemon juice (from about 1/2 a lemon)",
-  "expected": {
-    "item": "fresh-squeeze lemon juice (from about 1/2 a lemon)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh-squeeze lemon juice (from about 1/2 a lemon)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh-squeeze lemon juice (from about 1/2 a lemon)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

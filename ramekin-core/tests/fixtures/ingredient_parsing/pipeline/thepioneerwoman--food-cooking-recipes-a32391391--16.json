@@ -1,8 +1,15 @@
 {
   "raw": "Mixed greens and vinaigrette, for serving",
-  "expected": {
-    "item": "Mixed greens and vinaigrette",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mixed greens and vinaigrette",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Mixed greens and vinaigrette",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

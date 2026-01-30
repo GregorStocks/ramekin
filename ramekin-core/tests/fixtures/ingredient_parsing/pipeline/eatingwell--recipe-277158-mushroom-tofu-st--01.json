@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons peanut oil or canola oil, divided",
-  "expected": {
-    "item": "peanut oil or canola oil",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peanut oil or canola oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "peanut oil or canola oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

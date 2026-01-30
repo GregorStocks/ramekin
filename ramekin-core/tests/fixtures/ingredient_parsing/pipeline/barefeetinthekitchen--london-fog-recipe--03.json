@@ -1,8 +1,15 @@
 {
   "raw": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
-  "expected": {
-    "item": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Optional: sweetener of your choice (or shot of Vanilla Coffee Syrup)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

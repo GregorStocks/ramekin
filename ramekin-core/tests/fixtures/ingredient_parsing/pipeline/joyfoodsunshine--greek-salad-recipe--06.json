@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces feta cheese",
-  "expected": {
-    "item": "feta cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "feta cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "feta cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

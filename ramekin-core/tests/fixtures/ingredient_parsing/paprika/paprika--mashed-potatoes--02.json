@@ -1,8 +1,15 @@
 {
   "raw": "Milk",
-  "expected": {
-    "item": "Milk",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Milk",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Milk",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4  cup butter (cold, 60g)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "cold, 60g"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cold, 60g"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cold, 60g"
+    }
   }
 }

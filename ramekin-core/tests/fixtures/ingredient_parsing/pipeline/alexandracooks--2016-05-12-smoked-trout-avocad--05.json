@@ -1,13 +1,25 @@
 {
   "raw": "2&nbsp;heads Belgian endive",
-  "expected": {
-    "item": "Belgian endive",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Belgian endive",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Belgian endive",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

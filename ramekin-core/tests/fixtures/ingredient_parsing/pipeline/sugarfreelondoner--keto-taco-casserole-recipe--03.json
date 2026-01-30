@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp taco seasoning (or more, to taste)",
-  "expected": {
-    "item": "taco seasoning",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more, to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "taco seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more, to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "taco seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more, to taste"
+    }
   }
 }

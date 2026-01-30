@@ -1,8 +1,15 @@
 {
   "raw": "Queso",
-  "expected": {
-    "item": "Queso",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Queso",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Queso",
+      "measurements": [],
+      "note": null
+    }
   }
 }

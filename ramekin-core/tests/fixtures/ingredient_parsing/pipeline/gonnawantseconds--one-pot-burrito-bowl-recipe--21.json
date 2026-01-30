@@ -1,8 +1,15 @@
 {
   "raw": "cheddar cheese,",
-  "expected": {
-    "item": "cheddar cheese,",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cheddar cheese,",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cheddar cheese,",
+      "measurements": [],
+      "note": null
+    }
   }
 }

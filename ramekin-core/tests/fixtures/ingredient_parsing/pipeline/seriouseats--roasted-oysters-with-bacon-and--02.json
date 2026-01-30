@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (28 g) unsalted butter, divided",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "28",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

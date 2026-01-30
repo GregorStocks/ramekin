@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2  jalapeno peppers, (seeded and diced)",
-  "expected": {
-    "item": "jalapeno peppers",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": null
-      }
-    ],
-    "note": "seeded and diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapeno peppers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and diced"
+    },
+    "parse_ingredients": {
+      "item": "jalapeno peppers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and diced"
+    }
   }
 }

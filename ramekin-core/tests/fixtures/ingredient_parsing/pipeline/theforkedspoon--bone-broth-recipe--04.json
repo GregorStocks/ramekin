@@ -1,13 +1,25 @@
 {
   "raw": "2 whole heads garlic (halved crosswise)",
-  "expected": {
-    "item": "whole heads garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "halved crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole heads garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "whole heads garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved crosswise"
+    }
   }
 }

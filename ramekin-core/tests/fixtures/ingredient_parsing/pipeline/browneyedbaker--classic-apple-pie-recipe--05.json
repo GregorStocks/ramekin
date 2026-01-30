@@ -1,13 +1,25 @@
 {
   "raw": "½ cup chilled solid vegetable shortening, cut into 2 pieces",
-  "expected": {
-    "item": "chilled solid vegetable shortening, cut into 2 pieces",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chilled solid vegetable shortening, cut into 2 pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chilled solid vegetable shortening, cut into 2 pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

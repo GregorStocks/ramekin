@@ -1,13 +1,25 @@
 {
   "raw": "One 11-ounce box Nilla Wafers or other vanilla wafer cookies",
-  "expected": {
-    "item": "Nilla Wafers or other vanilla wafer cookies",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "11-ounce box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Nilla Wafers or other vanilla wafer cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "11-ounce box"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Nilla Wafers or other vanilla wafer cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "11-ounce box"
+        }
+      ],
+      "note": null
+    }
   }
 }

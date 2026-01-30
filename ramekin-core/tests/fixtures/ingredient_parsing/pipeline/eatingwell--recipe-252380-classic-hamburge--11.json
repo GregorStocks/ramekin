@@ -1,13 +1,25 @@
 {
   "raw": "2 slices tomato",
-  "expected": {
-    "item": "tomato",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

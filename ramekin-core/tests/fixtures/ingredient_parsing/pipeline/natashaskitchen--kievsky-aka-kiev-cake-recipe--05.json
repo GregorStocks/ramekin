@@ -1,13 +1,25 @@
 {
   "raw": "6  egg whites (at room temperature)",
-  "expected": {
-    "item": "egg whites",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "8 cups whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
-  "expected": {
-    "item": "whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole wheat, country or French bread in 1-inch cubes (weight will vary from 10 to 14 ounces, depending on bread type)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

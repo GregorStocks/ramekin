@@ -1,17 +1,33 @@
 {
   "raw": "16 ounces (454 g) shredded whole milk low-moisture mozzarella cheese&nbsp;",
-  "expected": {
-    "item": "shredded whole milk low-moisture mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      },
-      {
-        "amount": "454",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded whole milk low-moisture mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded whole milk low-moisture mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

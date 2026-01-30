@@ -1,13 +1,25 @@
 {
   "raw": "¼ to ½ teaspoon Kashmiri red chili powder ((use up to ¾ for heat, adjust to taste))",
-  "expected": {
-    "item": "Kashmiri red chili powder",
-    "measurements": [
-      {
-        "amount": "1/4 to 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "use up to 3/4 for heat, adjust to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kashmiri red chili powder",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "use up to 3/4 for heat, adjust to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Kashmiri red chili powder",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "use up to 3/4 for heat, adjust to taste"
+    }
   }
 }

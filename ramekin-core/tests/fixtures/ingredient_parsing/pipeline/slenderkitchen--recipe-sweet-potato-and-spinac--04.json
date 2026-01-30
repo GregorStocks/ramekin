@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp fresh chives (or green onions, optional)",
-  "expected": {
-    "item": "fresh chives",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or green onions, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or green onions, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or green onions, optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "kiwi",
-  "expected": {
-    "item": "kiwi",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kiwi",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kiwi",
+      "measurements": [],
+      "note": null
+    }
   }
 }

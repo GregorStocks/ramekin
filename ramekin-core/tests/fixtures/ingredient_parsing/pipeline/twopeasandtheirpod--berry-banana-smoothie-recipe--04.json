@@ -1,13 +1,25 @@
 {
   "raw": "5  frozen strawberries",
-  "expected": {
-    "item": "frozen strawberries",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen strawberries",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen strawberries",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Shredded Coconut",
-  "expected": {
-    "item": "Shredded Coconut",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shredded Coconut",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Shredded Coconut",
+      "measurements": [],
+      "note": null
+    }
   }
 }

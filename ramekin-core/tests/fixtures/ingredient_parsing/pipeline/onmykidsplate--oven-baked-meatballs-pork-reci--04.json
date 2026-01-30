@@ -1,17 +1,33 @@
 {
   "raw": "1 cup breadcrumbs (regular or Italian breadcrumbs, can use panko bread crumbs which also makes the recipe gluten free.)",
-  "expected": {
-    "item": "breadcrumbs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": null,
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": null,
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": null,
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

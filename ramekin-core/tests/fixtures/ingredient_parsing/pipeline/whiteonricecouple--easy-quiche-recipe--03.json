@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup Half &amp;amp; Half ( or whole milk)",
-  "expected": {
-    "item": "Half & Half",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or whole milk"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Half & Half",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or whole milk"
+    },
+    "parse_ingredients": {
+      "item": "Half & Half",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or whole milk"
+    }
   }
 }

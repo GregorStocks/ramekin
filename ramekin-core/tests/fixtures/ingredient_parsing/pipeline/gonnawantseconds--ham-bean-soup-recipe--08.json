@@ -1,13 +1,25 @@
 {
   "raw": "8 cups cold water",
-  "expected": {
-    "item": "cold water",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cold water",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cold water",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

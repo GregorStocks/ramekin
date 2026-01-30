@@ -1,13 +1,25 @@
 {
   "raw": "1/2 medium red bell pepper, seeded and cut into large pieces",
-  "expected": {
-    "item": "red bell pepper, seeded and cut into large pieces",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper, seeded and cut into large pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper, seeded and cut into large pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon black pepper (or to taste)",
-  "expected": {
-    "item": "black pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "parse_ingredients": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

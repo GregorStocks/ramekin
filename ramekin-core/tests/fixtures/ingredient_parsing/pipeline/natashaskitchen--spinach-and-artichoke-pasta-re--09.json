@@ -1,13 +1,29 @@
 {
   "raw": "16 oz penne pasta with 1 cup reserved pasta cooking liquid",
-  "expected": {
-    "item": "penne pasta with 1 cup reserved pasta cooking liquid",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "penne pasta with 1 cup reserved pasta cooking liquid",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "penne pasta with 1 cup reserved pasta cooking liquid",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

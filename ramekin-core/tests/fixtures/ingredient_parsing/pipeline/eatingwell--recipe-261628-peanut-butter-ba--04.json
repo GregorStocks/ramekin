@@ -1,8 +1,15 @@
 {
   "raw": "Cinnamon, to taste",
-  "expected": {
-    "item": "Cinnamon",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cinnamon",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "Cinnamon",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

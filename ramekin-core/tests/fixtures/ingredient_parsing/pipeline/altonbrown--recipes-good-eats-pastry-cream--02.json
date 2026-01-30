@@ -1,13 +1,25 @@
 {
   "raw": "2 large eggs, plus 1 large yolk",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "plus 1 large yolk"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1 large yolk"
+    },
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1 large yolk"
+    }
   }
 }

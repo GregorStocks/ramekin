@@ -1,13 +1,25 @@
 {
   "raw": "1 cup shelled fresh (from 1 pound&nbsp;unshelled English peapods ) or frozen peas",
-  "expected": {
-    "item": "shelled fresh (from 1 pound unshelled English peapods ) or frozen peas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shelled fresh (from 1 pound unshelled English peapods ) or frozen peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shelled fresh (from 1 pound unshelled English peapods ) or frozen peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

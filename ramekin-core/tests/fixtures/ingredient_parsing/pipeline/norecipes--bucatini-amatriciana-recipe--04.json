@@ -1,13 +1,25 @@
 {
   "raw": "60 grams red onion ((sliced thinly))",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "60",
-        "unit": "g"
-      }
-    ],
-    "note": "sliced thinly"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced thinly"
+    },
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced thinly"
+    }
   }
 }

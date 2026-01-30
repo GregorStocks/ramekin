@@ -1,13 +1,25 @@
 {
   "raw": "2 cups Gruyere cheese (shredded)",
-  "expected": {
-    "item": "Gruyere cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

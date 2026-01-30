@@ -1,8 +1,15 @@
 {
   "raw": "Freshly ground white pepper",
-  "expected": {
-    "item": "Freshly ground white pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Freshly ground white pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Freshly ground white pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

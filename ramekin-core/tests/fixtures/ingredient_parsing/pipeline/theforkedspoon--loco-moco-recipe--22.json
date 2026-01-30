@@ -1,13 +1,25 @@
 {
   "raw": "2-3 cups cooked white rice",
-  "expected": {
-    "item": "cooked white rice",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked white rice",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooked white rice",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

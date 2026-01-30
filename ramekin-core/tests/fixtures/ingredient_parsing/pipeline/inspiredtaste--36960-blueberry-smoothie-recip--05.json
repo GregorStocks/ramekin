@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tablespoon chopped ginger",
-  "expected": {
-    "item": "chopped ginger",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

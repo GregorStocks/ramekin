@@ -1,13 +1,25 @@
 {
   "raw": "4 1/2  cups   hot cooked penne",
-  "expected": {
-    "item": "hot cooked penne",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot cooked penne",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot cooked penne",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

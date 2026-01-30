@@ -1,13 +1,29 @@
 {
   "raw": "12 oz. Beef Tri Tip, Strip Loin, or Rib Eye (, sliced 1/8\" thick *see note 1 below)",
-  "expected": {
-    "item": "Beef Tri Tip, Strip Loin, or Rib Eye",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced 1/8\" thick *see note 1 below"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Beef Tri Tip, Strip Loin, or Rib Eye",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced 1/8\" thick *see note 1 below"
+    },
+    "enrich_metric_weights": {
+      "item": "Beef Tri Tip, Strip Loin, or Rib Eye",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced 1/8\" thick *see note 1 below"
+    }
   }
 }

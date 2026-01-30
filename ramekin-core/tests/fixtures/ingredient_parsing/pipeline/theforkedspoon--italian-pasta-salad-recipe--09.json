@@ -1,13 +1,29 @@
 {
   "raw": "6 ounces salami (sliced and quartered)",
-  "expected": {
-    "item": "salami",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salami",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "salami",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced and quartered"
+    }
   }
 }

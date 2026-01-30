@@ -1,8 +1,15 @@
 {
   "raw": "sliced tomatoes",
-  "expected": {
-    "item": "sliced tomatoes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced tomatoes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced tomatoes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

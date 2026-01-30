@@ -1,13 +1,25 @@
 {
   "raw": "1 lb lasagna noodle, cooked",
-  "expected": {
-    "item": "lasagna noodle",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "cooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lasagna noodle",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked"
+    },
+    "enrich_metric_weights": {
+      "item": "lasagna noodle",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked"
+    }
   }
 }

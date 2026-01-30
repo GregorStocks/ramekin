@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup plain Greek yogurt",
-  "expected": {
-    "item": "plain Greek yogurt",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plain Greek yogurt",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "plain Greek yogurt",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

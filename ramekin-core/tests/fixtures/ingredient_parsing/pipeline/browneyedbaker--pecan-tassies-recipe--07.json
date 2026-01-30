@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unsalted butter (melted)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

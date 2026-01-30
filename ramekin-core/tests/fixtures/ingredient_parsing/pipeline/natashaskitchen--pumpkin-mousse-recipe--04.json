@@ -1,13 +1,29 @@
 {
   "raw": "15 oz can pumpkin puree",
-  "expected": {
-    "item": "can pumpkin puree",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "can pumpkin puree",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "can pumpkin puree",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

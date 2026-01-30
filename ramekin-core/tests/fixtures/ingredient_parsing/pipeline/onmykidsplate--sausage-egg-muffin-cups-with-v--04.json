@@ -1,13 +1,25 @@
 {
   "raw": "¼ medium bell pepper (diced)",
-  "expected": {
-    "item": "bell pepper",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bell pepper",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "bell pepper",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup blue cheese crumbles (more or less to taste)",
-  "expected": {
-    "item": "blue cheese crumbles",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "more or less to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "blue cheese crumbles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "more or less to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "blue cheese crumbles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "more or less to taste"
+    }
   }
 }

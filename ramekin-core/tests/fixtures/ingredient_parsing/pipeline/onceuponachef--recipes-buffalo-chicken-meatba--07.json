@@ -1,13 +1,25 @@
 {
   "raw": "1 pound ground chicken, (preferably Purdue &amp;quot;Fresh &amp;amp; Lean&amp;quot; (avoid the one that is 98% lean))",
-  "expected": {
-    "item": "ground chicken",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground chicken",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean"
+    },
+    "parse_ingredients": {
+      "item": "ground chicken",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "preferably Purdue \"Fresh & Lean\" (avoid the one that is 98% lean"
+    }
   }
 }

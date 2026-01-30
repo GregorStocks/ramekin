@@ -1,8 +1,15 @@
 {
   "raw": "optional other toppings: rose petals, cacao nibs",
-  "expected": {
-    "item": "optional other toppings: rose petals, cacao nibs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "optional other toppings: rose petals, cacao nibs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "optional other toppings: rose petals, cacao nibs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

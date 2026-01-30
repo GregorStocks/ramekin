@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 tablespoons pink Himalayan salt",
-  "expected": {
-    "item": "pink Himalayan salt",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pink Himalayan salt",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pink Himalayan salt",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

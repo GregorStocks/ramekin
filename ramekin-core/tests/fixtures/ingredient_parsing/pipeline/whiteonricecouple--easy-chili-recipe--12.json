@@ -1,8 +1,15 @@
 {
   "raw": "grated cheese",
-  "expected": {
-    "item": "grated cheese",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated cheese",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated cheese",
+      "measurements": [],
+      "note": null
+    }
   }
 }

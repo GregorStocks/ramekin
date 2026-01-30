@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 teaspoons baking powder (preferably aluminium-free)",
-  "expected": {
-    "item": "baking powder (preferably aluminium-free)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baking powder (preferably aluminium-free)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baking powder (preferably aluminium-free)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

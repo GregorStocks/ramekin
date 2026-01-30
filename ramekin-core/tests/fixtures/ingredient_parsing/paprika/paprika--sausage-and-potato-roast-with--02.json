@@ -1,17 +1,33 @@
 {
   "raw": "10 medium (about 1/2 pound) unpeeled shallots, halved",
-  "expected": {
-    "item": "unpeeled shallots",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "medium"
-      },
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unpeeled shallots",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "medium"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved"
+    },
+    "enrich_metric_weights": {
+      "item": "unpeeled shallots",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "medium"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

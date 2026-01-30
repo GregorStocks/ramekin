@@ -1,13 +1,25 @@
 {
   "raw": "4&nbsp;tablespoons&nbsp;unsalted butter, plus more for greasing",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for greasing"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing"
+    }
   }
 }

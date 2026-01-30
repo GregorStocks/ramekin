@@ -1,21 +1,41 @@
 {
   "raw": "1½ pounds sweet potatoes ((about 2 small), peeled and chopped into 1-inch (2.5-cm) pieces)",
-  "expected": {
-    "item": "sweet potatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": "small"
-      },
-      {
-        "amount": "2.5",
-        "unit": null
-      }
-    ],
-    "note": "peeled and chopped into 1-inch pieces)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "small"
+        },
+        {
+          "amount": "2.5",
+          "unit": null
+        }
+      ],
+      "note": "peeled and chopped into 1-inch pieces)"
+    },
+    "parse_ingredients": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "small"
+        },
+        {
+          "amount": "2.5",
+          "unit": null
+        }
+      ],
+      "note": "peeled and chopped into 1-inch pieces)"
+    }
   }
 }

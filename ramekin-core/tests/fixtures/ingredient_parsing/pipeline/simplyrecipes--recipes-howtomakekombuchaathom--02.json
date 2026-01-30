@@ -1,13 +1,25 @@
 {
   "raw": "1 cup sugar (table sugar, turbinado, demerara, sugar in the raw, or brown sugar)",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "table sugar, turbinado, demerara, sugar in the raw, or brown sugar"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "table sugar, turbinado, demerara, sugar in the raw, or brown sugar"
+    },
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "table sugar, turbinado, demerara, sugar in the raw, or brown sugar"
+    }
   }
 }

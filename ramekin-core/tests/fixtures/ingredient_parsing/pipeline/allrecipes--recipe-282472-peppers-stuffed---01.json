@@ -1,13 +1,25 @@
 {
   "raw": "4 large Cubanelle peppers, stemmed and seeded",
-  "expected": {
-    "item": "Cubanelle peppers, stemmed and seeded",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cubanelle peppers, stemmed and seeded",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cubanelle peppers, stemmed and seeded",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

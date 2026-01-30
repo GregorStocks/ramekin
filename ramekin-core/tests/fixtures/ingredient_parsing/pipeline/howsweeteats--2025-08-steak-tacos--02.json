@@ -1,13 +1,25 @@
 {
   "raw": "⅔ cup fresh parsley",
-  "expected": {
-    "item": "fresh parsley",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

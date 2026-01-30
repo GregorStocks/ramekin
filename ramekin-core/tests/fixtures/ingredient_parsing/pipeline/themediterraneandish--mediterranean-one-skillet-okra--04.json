@@ -1,13 +1,25 @@
 {
   "raw": "2  small green chiles such as jalapeno (chopped)",
-  "expected": {
-    "item": "green chiles such as jalapeno",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green chiles such as jalapeno",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "green chiles such as jalapeno",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

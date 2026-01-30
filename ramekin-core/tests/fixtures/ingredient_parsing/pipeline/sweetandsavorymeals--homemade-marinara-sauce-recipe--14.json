@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh basil (finely minced)",
-  "expected": {
-    "item": "Chopped fresh basil",
-    "measurements": [],
-    "note": "finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped fresh basil",
+      "measurements": [],
+      "note": "finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped fresh basil",
+      "measurements": [],
+      "note": "finely minced"
+    }
   }
 }

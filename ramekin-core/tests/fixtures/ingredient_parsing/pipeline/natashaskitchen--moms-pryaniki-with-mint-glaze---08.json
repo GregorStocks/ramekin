@@ -1,8 +1,15 @@
 {
   "raw": "*5 cups all-purpose flour ((or 4 1/2 cups if using Canadian flour) plus more flour for hands)",
-  "expected": {
-    "item": "*5 cups all-purpose flour (or 4 1/2 cups if using Canadian flour)",
-    "measurements": [],
-    "note": "plus more flour for hands)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "*5 cups all-purpose flour (or 4 1/2 cups if using Canadian flour)",
+      "measurements": [],
+      "note": "plus more flour for hands)"
+    },
+    "parse_ingredients": {
+      "item": "*5 cups all-purpose flour (or 4 1/2 cups if using Canadian flour)",
+      "measurements": [],
+      "note": "plus more flour for hands)"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "2.5 ounces blue Curaçao liqueur",
-  "expected": {
-    "item": "blue Curaçao liqueur",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "blue Curaçao liqueur",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "blue Curaçao liqueur",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "cilantro sprigs",
-  "expected": {
-    "item": "cilantro sprigs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro sprigs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro sprigs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

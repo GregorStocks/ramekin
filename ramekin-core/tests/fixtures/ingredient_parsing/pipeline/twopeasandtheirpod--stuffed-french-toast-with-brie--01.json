@@ -1,13 +1,25 @@
 {
   "raw": "8 slices of bread-brioche (white, or French)",
-  "expected": {
-    "item": "bread-brioche (white, or French)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bread-brioche (white, or French)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bread-brioche (white, or French)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

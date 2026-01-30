@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup 120g full fat sour cream",
-  "expected": {
-    "item": "full fat sour cream",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "full fat sour cream",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "full fat sour cream",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon grainy Dijon mustard",
-  "expected": {
-    "item": "grainy Dijon mustard",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grainy Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grainy Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 gallon vegetable broth",
-  "expected": {
-    "item": "vegetable broth",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "gallon"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vegetable broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vegetable broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    }
   }
 }

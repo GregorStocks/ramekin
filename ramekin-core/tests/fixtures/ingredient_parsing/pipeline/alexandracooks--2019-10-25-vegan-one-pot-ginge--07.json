@@ -1,13 +1,25 @@
 {
   "raw": "pinch crushed red pepper flakes or more to taste",
-  "expected": {
-    "item": "crushed red pepper flakes or more to taste",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crushed red pepper flakes or more to taste",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crushed red pepper flakes or more to taste",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 cups plus 3 tablespoons (290 grams) all-purpose flour",
-  "expected": {
-    "item": "2 cups plus 3 tablespoons (290 grams) all-purpose flour",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "290",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 3 tablespoons all-purpose flour"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "2 cups plus 3 tablespoons (290 grams) all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "290",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 3 tablespoons all-purpose flour"
+    },
+    "parse_ingredients": {
+      "item": "2 cups plus 3 tablespoons (290 grams) all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "290",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 3 tablespoons all-purpose flour"
+    }
   }
 }

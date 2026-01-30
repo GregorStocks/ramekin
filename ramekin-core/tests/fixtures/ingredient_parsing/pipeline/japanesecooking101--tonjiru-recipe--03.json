@@ -1,13 +1,25 @@
 {
   "raw": "6 inches Gobo (burdock root)",
-  "expected": {
-    "item": "inches Gobo (burdock root)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "inches Gobo (burdock root)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "inches Gobo (burdock root)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

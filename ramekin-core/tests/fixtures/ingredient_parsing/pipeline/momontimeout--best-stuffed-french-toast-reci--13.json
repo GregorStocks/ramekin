@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp fresh lemon juice  (about half of one lemon)",
-  "expected": {
-    "item": "fresh lemon juice  (about half of one lemon)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh lemon juice  (about half of one lemon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh lemon juice  (about half of one lemon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

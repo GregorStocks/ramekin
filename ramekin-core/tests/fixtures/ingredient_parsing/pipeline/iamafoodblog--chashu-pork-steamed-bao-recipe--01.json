@@ -1,17 +1,33 @@
 {
   "raw": "140 grams warm water (100°F), about 2/3 cup",
-  "expected": {
-    "item": "warm water , about 2/3 cup",
-    "measurements": [
-      {
-        "amount": "140",
-        "unit": "g"
-      },
-      {
-        "amount": "100",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "warm water , about 2/3 cup",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "warm water , about 2/3 cup",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

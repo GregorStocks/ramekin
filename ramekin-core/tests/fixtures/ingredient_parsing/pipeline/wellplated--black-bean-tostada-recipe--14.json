@@ -1,8 +1,15 @@
 {
   "raw": "Jalapeño slices",
-  "expected": {
-    "item": "Jalapeño slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Jalapeño slices",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Jalapeño slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

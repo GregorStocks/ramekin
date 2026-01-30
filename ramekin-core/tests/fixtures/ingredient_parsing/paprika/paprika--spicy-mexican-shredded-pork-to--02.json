@@ -1,8 +1,15 @@
 {
   "raw": "Tinga",
-  "expected": {
-    "item": "Tinga",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tinga",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tinga",
+      "measurements": [],
+      "note": null
+    }
   }
 }

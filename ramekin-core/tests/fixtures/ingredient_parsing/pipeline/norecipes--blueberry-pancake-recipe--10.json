@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup fresh blueberries ((washed and dried))",
-  "expected": {
-    "item": "fresh blueberries",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "washed and dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh blueberries",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "washed and dried"
+    },
+    "parse_ingredients": {
+      "item": "fresh blueberries",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "washed and dried"
+    }
   }
 }

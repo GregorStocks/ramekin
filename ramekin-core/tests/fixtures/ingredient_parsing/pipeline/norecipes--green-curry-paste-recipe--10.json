@@ -1,13 +1,25 @@
 {
   "raw": "50 grams shallots (finely minced)",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    }
   }
 }

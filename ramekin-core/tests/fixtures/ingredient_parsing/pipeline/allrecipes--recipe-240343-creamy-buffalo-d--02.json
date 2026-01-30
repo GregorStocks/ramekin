@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
-  "expected": {
-    "item": "hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot Buffalo wing sauce (such as Frank's® REDHOT Buffalo Wing Sauce)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

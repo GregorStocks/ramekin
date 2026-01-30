@@ -1,17 +1,33 @@
 {
   "raw": "2/3 cup (160ml) orange juice from 2 medium oranges",
-  "expected": {
-    "item": "orange juice from 2 medium oranges",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "160",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange juice from 2 medium oranges",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange juice from 2 medium oranges",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  yellow onions (peeled and diced)",
-  "expected": {
-    "item": "yellow onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "peeled and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "peeled and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "peeled and diced"
+    }
   }
 }

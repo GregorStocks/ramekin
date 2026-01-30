@@ -1,21 +1,41 @@
 {
   "raw": "1 small yellow onion (6 ounces; 170g), peeled",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "6",
-        "unit": "oz"
-      },
-      {
-        "amount": "170",
-        "unit": "g"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "11.38&nbsp;x 16.5 lipped baking&nbsp;pan",
-  "expected": {
-    "item": "x 16.5 lipped baking pan",
-    "measurements": [
-      {
-        "amount": "11.38",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "x 16.5 lipped baking pan",
+      "measurements": [
+        {
+          "amount": "11.38",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "x 16.5 lipped baking pan",
+      "measurements": [
+        {
+          "amount": "11.38",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

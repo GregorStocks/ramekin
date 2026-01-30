@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon fresh mint (finely chopped)",
-  "expected": {
-    "item": "fresh mint",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh mint",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh mint",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

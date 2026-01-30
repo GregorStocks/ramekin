@@ -1,8 +1,15 @@
 {
   "raw": "Mustard and/or hot sauce",
-  "expected": {
-    "item": "Mustard and/or hot sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mustard and/or hot sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Mustard and/or hot sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

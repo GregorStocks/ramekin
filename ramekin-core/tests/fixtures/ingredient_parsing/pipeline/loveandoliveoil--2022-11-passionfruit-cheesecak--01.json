@@ -1,13 +1,29 @@
 {
   "raw": "5 oz vanilla wafer cookies (finely ground (1 cup crumbs))",
-  "expected": {
-    "item": "vanilla wafer cookies",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": "finely ground (1 cup crumbs"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla wafer cookies",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "finely ground (1 cup crumbs"
+    },
+    "parse_ingredients": {
+      "item": "vanilla wafer cookies",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": "finely ground (1 cup crumbs"
+    }
   }
 }

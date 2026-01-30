@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 cups (6 ounces or 170 grams) coarsely grated sharp white cheddar cheese",
-  "expected": {
-    "item": "coarsely grated sharp white cheddar cheese",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "6",
-        "unit": "oz"
-      },
-      {
-        "amount": "170",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely grated sharp white cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely grated sharp white cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

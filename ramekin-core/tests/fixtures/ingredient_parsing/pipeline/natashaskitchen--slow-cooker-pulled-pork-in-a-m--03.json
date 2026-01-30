@@ -1,13 +1,25 @@
 {
   "raw": "1 to 1 1/2 lb fresh mushrooms (thickly sliced)",
-  "expected": {
-    "item": "1/2 lb fresh mushrooms",
-    "measurements": [
-      {
-        "amount": "1 to 1",
-        "unit": null
-      }
-    ],
-    "note": "thickly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2 lb fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": "thickly sliced"
+    },
+    "parse_ingredients": {
+      "item": "1/2 lb fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": "thickly sliced"
+    }
   }
 }

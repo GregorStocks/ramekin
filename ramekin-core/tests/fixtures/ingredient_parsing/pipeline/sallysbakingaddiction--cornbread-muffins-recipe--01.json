@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (120g) cornmeal (fine or medium ground)",
-  "expected": {
-    "item": "cornmeal",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": "fine or medium ground"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cornmeal",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": "fine or medium ground"
+    },
+    "parse_ingredients": {
+      "item": "cornmeal",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": "fine or medium ground"
+    }
   }
 }

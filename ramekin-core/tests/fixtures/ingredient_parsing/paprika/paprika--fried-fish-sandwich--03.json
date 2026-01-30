@@ -1,13 +1,25 @@
 {
   "raw": "1 small shallot, finely chopped",
-  "expected": {
-    "item": "shallot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

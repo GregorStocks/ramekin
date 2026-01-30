@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons sherry vinegar (or red wine vinegar)",
-  "expected": {
-    "item": "sherry vinegar (or red wine vinegar)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sherry vinegar (or red wine vinegar)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sherry vinegar (or red wine vinegar)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 a red chili pepper, thinly sliced",
-  "expected": {
-    "item": "a red chili pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a red chili pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "a red chili pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

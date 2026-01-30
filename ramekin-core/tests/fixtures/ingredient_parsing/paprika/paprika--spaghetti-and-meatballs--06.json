@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons coarse or kosher salt, divided",
-  "expected": {
-    "item": "coarse or kosher salt",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coarse or kosher salt",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "coarse or kosher salt",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

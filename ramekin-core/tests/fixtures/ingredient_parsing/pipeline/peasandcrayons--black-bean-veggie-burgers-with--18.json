@@ -1,13 +1,25 @@
 {
   "raw": "3 TBSP quality or homemade mayo",
-  "expected": {
-    "item": "quality or homemade mayo",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "quality or homemade mayo",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "quality or homemade mayo",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

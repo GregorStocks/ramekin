@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons green curry paste",
-  "expected": {
-    "item": "green curry paste",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green curry paste",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "green curry paste",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

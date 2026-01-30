@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves (optional)",
-  "expected": {
-    "item": "thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "thinly-sliced sage leaves or 1 teaspoons chopped thyme leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

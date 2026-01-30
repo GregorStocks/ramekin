@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha (for dipping)",
-  "expected": {
-    "item": "Sriracha (for dipping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sriracha (for dipping)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sriracha (for dipping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

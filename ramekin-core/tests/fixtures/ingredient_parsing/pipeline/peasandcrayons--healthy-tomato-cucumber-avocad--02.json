@@ -1,13 +1,25 @@
 {
   "raw": "1.5 cups cherry tomatoes ((quartered))",
-  "expected": {
-    "item": "cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

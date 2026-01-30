@@ -1,8 +1,15 @@
 {
   "raw": "cilantro  (about half a bunch)",
-  "expected": {
-    "item": "cilantro  (about half a bunch)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro  (about half a bunch)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro  (about half a bunch)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

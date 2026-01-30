@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil cooking spray or 2 tablespoons olive oil",
-  "expected": {
-    "item": "Olive oil cooking spray",
-    "measurements": [],
-    "note": "or 2 tablespoons olive oil"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Olive oil cooking spray",
+      "measurements": [],
+      "note": "or 2 tablespoons olive oil"
+    },
+    "parse_ingredients": {
+      "item": "Olive oil cooking spray",
+      "measurements": [],
+      "note": "or 2 tablespoons olive oil"
+    }
   }
 }

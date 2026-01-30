@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
-  "expected": {
-    "item": "coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coarse sea or kosher salt (what I used for lightly salted broth, use more for unsalted, less for salted or canned beans)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

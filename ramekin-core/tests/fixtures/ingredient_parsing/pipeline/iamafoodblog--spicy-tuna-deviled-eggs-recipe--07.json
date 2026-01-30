@@ -1,8 +1,15 @@
 {
   "raw": "basil, to garnish",
-  "expected": {
-    "item": "basil, to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basil, to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "basil, to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

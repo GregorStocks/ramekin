@@ -1,8 +1,15 @@
 {
   "raw": "smoked paprika, more olive oil, creme fraiche (optional)",
-  "expected": {
-    "item": "smoked paprika, more olive oil, creme fraiche",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "smoked paprika, more olive oil, creme fraiche",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "smoked paprika, more olive oil, creme fraiche",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

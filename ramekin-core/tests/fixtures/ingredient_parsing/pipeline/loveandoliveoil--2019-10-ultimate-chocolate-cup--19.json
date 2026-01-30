@@ -1,17 +1,37 @@
 {
   "raw": "5 ounces dark chocolate (60-70%), melted and cooled to lukewarm",
-  "expected": {
-    "item": "dark chocolate",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "amount": "60",
-        "unit": null
-      }
-    ],
-    "note": "melted and cooled to lukewarm"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark chocolate",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "60",
+          "unit": null
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "melted and cooled to lukewarm"
+    },
+    "parse_ingredients": {
+      "item": "dark chocolate",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "60",
+          "unit": null
+        }
+      ],
+      "note": "melted and cooled to lukewarm"
+    }
   }
 }

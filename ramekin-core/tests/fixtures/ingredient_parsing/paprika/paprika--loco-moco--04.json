@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon (15 ml) Worcestershire sauce",
-  "expected": {
-    "item": "Worcestershire sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "15",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

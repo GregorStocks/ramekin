@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup pecans (chopped, for topping)",
-  "expected": {
-    "item": "pecans",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped, for topping"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped, for topping"
+    },
+    "enrich_metric_weights": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped, for topping"
+    }
   }
 }

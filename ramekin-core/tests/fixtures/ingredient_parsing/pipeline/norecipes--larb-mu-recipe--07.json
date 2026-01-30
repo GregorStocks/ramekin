@@ -1,13 +1,25 @@
 {
   "raw": "20 grams Thai shallots ((3-4 grape-sized , sliced))",
-  "expected": {
-    "item": "Thai shallots",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": "3-4 grape-sized , sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thai shallots",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "3-4 grape-sized , sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "Thai shallots",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "3-4 grape-sized , sliced"
+    }
   }
 }

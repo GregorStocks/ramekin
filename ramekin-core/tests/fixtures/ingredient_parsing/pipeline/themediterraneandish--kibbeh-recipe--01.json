@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 cups fine bulgur wheat",
-  "expected": {
-    "item": "fine bulgur wheat",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fine bulgur wheat",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fine bulgur wheat",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

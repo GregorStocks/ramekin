@@ -1,13 +1,25 @@
 {
   "raw": "1  green pepper (seeded and finely chopped)",
-  "expected": {
-    "item": "green pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    }
   }
 }

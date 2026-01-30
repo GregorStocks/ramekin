@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons Grand Marnier (rum or brandy (optional))",
-  "expected": {
-    "item": "Grand Marnier",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "rum or brandy (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Grand Marnier",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "rum or brandy (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Grand Marnier",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "rum or brandy (optional"
+    }
   }
 }

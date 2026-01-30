@@ -1,17 +1,33 @@
 {
   "raw": "4  bone-in pork chops (1 - 1 1/2 inches thick)",
-  "expected": {
-    "item": "bone-in pork chops",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "1-1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bone-in pork chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1-1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bone-in pork chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1-1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

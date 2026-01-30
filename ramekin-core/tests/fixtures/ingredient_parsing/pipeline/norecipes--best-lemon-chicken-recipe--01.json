@@ -1,13 +1,25 @@
 {
   "raw": "350 grams boneless skin-on chicken thighs ((cut into 1 1/2-inch pieces))",
-  "expected": {
-    "item": "boneless skin-on chicken thighs (cut into 1 1/2-inch pieces)",
-    "measurements": [
-      {
-        "amount": "350",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless skin-on chicken thighs (cut into 1 1/2-inch pieces)",
+      "measurements": [
+        {
+          "amount": "350",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless skin-on chicken thighs (cut into 1 1/2-inch pieces)",
+      "measurements": [
+        {
+          "amount": "350",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

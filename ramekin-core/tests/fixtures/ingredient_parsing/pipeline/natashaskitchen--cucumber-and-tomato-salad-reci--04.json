@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp Sunflower or Extra virgin olive oil",
-  "expected": {
-    "item": "Sunflower or Extra virgin olive oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sunflower or Extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sunflower or Extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

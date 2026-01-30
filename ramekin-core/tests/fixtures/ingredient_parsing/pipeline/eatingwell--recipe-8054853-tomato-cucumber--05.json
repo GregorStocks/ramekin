@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
-  "expected": {
-    "item": "unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unrefined Ukrainian sunflower oil (see Note) or extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

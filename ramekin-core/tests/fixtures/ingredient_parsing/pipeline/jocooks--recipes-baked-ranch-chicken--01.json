@@ -1,13 +1,29 @@
 {
   "raw": "1 ounce ranch dressing mix",
-  "expected": {
-    "item": "ranch dressing mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ranch dressing mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ranch dressing mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

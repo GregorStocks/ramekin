@@ -1,17 +1,33 @@
 {
   "raw": "2 cups milk (2% or full fat)",
-  "expected": {
-    "item": "milk",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

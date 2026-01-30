@@ -1,13 +1,25 @@
 {
   "raw": "40 grams Gruyere cheese ((grated))",
-  "expected": {
-    "item": "Gruyere cheese",
-    "measurements": [
-      {
-        "amount": "40",
-        "unit": "g"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "parse_ingredients": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

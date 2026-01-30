@@ -1,17 +1,37 @@
 {
   "raw": "2 (8 oz) pkgs. cream cheese, (softened but still slightly firm)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "package"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "softened but still slightly firm"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "softened but still slightly firm"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "softened but still slightly firm"
+    }
   }
 }

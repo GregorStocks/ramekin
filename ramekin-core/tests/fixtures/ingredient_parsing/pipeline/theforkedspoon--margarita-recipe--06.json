@@ -1,8 +1,15 @@
 {
   "raw": "Kosher salt (to rim each glass (optional))",
-  "expected": {
-    "item": "Kosher salt",
-    "measurements": [],
-    "note": "to rim each glass (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kosher salt",
+      "measurements": [],
+      "note": "to rim each glass (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Kosher salt",
+      "measurements": [],
+      "note": "to rim each glass (optional"
+    }
   }
 }

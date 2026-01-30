@@ -1,8 +1,15 @@
 {
   "raw": "fresh fruit, for serving",
-  "expected": {
-    "item": "fresh fruit",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh fruit",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "fresh fruit",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "hot water as needed to thin the sauce (see notes)",
-  "expected": {
-    "item": "hot water as needed to thin the sauce (see notes)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot water as needed to thin the sauce (see notes)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot water as needed to thin the sauce (see notes)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

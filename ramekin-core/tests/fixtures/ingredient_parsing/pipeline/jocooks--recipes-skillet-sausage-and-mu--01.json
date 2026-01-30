@@ -1,13 +1,29 @@
 {
   "raw": "14 ounces smoked sausage (kielbasa or andouille, sliced into rounds)",
-  "expected": {
-    "item": "smoked sausage",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "kielbasa or andouille, sliced into rounds"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked sausage",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "kielbasa or andouille, sliced into rounds"
+    },
+    "enrich_metric_weights": {
+      "item": "smoked sausage",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "kielbasa or andouille, sliced into rounds"
+    }
   }
 }

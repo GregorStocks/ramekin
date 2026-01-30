@@ -1,13 +1,25 @@
 {
   "raw": "1/2  green bell pepper (seeded and chopped)",
-  "expected": {
-    "item": "green bell pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "seeded and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green bell pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    },
+    "parse_ingredients": {
+      "item": "green bell pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    }
   }
 }

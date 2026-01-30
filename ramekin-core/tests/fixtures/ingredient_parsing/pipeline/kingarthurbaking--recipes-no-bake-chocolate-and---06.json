@@ -1,21 +1,41 @@
 {
   "raw": "2 tablespoons (42g) honey or 2 tablespoons (39g) maple syrup",
-  "expected": {
-    "item": "honey",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "42",
-        "unit": "g"
-      },
-      {
-        "amount": "39",
-        "unit": "g"
-      }
-    ],
-    "note": "or 2 tablespoons maple syrup"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        },
+        {
+          "amount": "39",
+          "unit": "g"
+        }
+      ],
+      "note": "or 2 tablespoons maple syrup"
+    },
+    "parse_ingredients": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        },
+        {
+          "amount": "39",
+          "unit": "g"
+        }
+      ],
+      "note": "or 2 tablespoons maple syrup"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup shredded mozzarella (57g (or use 1/4 cup mozzarella and 2 tbsp cream cheese))",
-  "expected": {
-    "item": "shredded mozzarella",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "57",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded mozzarella",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded mozzarella",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

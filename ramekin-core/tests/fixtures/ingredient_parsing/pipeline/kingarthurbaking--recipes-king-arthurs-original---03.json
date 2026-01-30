@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (21g) unsweetened cocoa, Dutch-process or natural*",
-  "expected": {
-    "item": "unsweetened cocoa, Dutch-process or natural*",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "21",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsweetened cocoa, Dutch-process or natural*",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "21",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsweetened cocoa, Dutch-process or natural*",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "21",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

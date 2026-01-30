@@ -1,8 +1,15 @@
 {
   "raw": "tabbouleh salad",
-  "expected": {
-    "item": "tabbouleh salad",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tabbouleh salad",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tabbouleh salad",
+      "measurements": [],
+      "note": null
+    }
   }
 }

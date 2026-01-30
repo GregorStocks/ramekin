@@ -1,13 +1,25 @@
 {
   "raw": "2 bunches Tuscan kale, ribs and stems removed, leaves thinly",
-  "expected": {
-    "item": "Tuscan kale, ribs and stems removed, leaves thinly",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "bunch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tuscan kale, ribs and stems removed, leaves thinly",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tuscan kale, ribs and stems removed, leaves thinly",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    }
   }
 }

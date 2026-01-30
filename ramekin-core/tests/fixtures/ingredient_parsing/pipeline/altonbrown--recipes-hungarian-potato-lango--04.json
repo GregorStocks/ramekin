@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon plus 1 teaspoon neutral oil, plus 5 to 7 cups (1.2 to 1.7 liters) for frying ((such as sunflower or peanut))",
-  "expected": {
-    "item": "plus 1 teaspoon neutral oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1.2 to 1.7",
-        "unit": "l"
-      }
-    ],
-    "note": "plus 5 to 7 cups for frying (such as sunflower or peanut)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plus 1 teaspoon neutral oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1.2 to 1.7",
+          "unit": "l"
+        }
+      ],
+      "note": "plus 5 to 7 cups for frying (such as sunflower or peanut)"
+    },
+    "enrich_metric_weights": {
+      "item": "plus 1 teaspoon neutral oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1.2 to 1.7",
+          "unit": "l"
+        }
+      ],
+      "note": "plus 5 to 7 cups for frying (such as sunflower or peanut)"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 cans (15 ounces each) chickpeas or 3 cups cooked chickpeas",
-  "expected": {
-    "item": "chickpeas",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz each"
-      }
-    ],
-    "note": "or 3 cups cooked chickpeas"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz each"
+        }
+      ],
+      "note": "or 3 cups cooked chickpeas"
+    },
+    "enrich_metric_weights": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz each"
+        }
+      ],
+      "note": "or 3 cups cooked chickpeas"
+    }
   }
 }

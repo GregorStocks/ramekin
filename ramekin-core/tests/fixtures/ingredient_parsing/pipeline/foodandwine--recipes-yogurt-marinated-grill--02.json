@@ -1,13 +1,25 @@
 {
   "raw": "1 cup lightly packed cilantro, finely chopped",
-  "expected": {
-    "item": "lightly packed cilantro",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lightly packed cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "lightly packed cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

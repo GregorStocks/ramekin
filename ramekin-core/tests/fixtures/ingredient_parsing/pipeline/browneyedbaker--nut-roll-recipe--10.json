@@ -1,13 +1,25 @@
 {
   "raw": "9 to 10 cups grams all-purpose flour",
-  "expected": {
-    "item": "grams all-purpose flour",
-    "measurements": [
-      {
-        "amount": "9 to 10",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grams all-purpose flour",
+      "measurements": [
+        {
+          "amount": "9 to 10",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grams all-purpose flour",
+      "measurements": [
+        {
+          "amount": "9 to 10",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

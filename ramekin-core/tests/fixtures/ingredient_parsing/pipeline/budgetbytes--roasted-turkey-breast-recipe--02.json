@@ -1,13 +1,25 @@
 {
   "raw": "2  cloves of garlic, pressed ($0.16)",
-  "expected": {
-    "item": "garlic, pressed ($0.16)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "clove"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic, pressed ($0.16)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "garlic, pressed ($0.16)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cups peeled and chopped Granny Smith Apples",
-  "expected": {
-    "item": "peeled and chopped Granny Smith Apples",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peeled and chopped Granny Smith Apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "peeled and chopped Granny Smith Apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

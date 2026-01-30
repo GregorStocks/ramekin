@@ -1,13 +1,25 @@
 {
   "raw": "1 cup onion (diced (about ½ a medium-sized onion))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced (about 1/2 a medium-sized onion"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced (about 1/2 a medium-sized onion"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced (about 1/2 a medium-sized onion"
+    }
   }
 }

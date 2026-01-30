@@ -1,13 +1,25 @@
 {
   "raw": "¼  teaspoon turmeric ((haldi, optional))",
-  "expected": {
-    "item": "turmeric",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "haldi, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "turmeric",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "haldi, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "turmeric",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "haldi, optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 lb flank steak, sliced into strips",
-  "expected": {
-    "item": "flank steak",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced into strips"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flank steak",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced into strips"
+    },
+    "parse_ingredients": {
+      "item": "flank steak",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced into strips"
+    }
   }
 }

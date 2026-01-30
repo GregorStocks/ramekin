@@ -1,13 +1,25 @@
 {
   "raw": "6 garlic cloves, 3 finely grated, 3 smashed",
-  "expected": {
-    "item": "garlic cloves, 3 finely grated, 3 smashed",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic cloves, 3 finely grated, 3 smashed",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "garlic cloves, 3 finely grated, 3 smashed",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

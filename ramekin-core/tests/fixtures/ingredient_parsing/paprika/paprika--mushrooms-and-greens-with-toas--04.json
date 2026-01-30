@@ -1,13 +1,25 @@
 {
   "raw": "2 thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
-  "expected": {
-    "item": "thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "thick slices bread from a large, crusty loaf (I’d use 4 from a smaller loaf)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

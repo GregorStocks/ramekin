@@ -1,8 +1,15 @@
 {
   "raw": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
-  "expected": {
-    "item": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "perilla leaves (shiso) (shredded, or substitute with kizami nori)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

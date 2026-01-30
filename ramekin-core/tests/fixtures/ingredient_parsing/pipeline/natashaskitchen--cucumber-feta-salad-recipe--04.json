@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup Feta Cheese (or to taste)",
-  "expected": {
-    "item": "Feta Cheese",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Feta Cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Feta Cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Candy monster eyeballs",
-  "expected": {
-    "item": "Candy monster eyeballs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Candy monster eyeballs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Candy monster eyeballs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

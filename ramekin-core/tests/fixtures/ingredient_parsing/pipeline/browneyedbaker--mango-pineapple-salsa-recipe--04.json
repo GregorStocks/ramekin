@@ -1,13 +1,25 @@
 {
   "raw": "1  jalapeno pepper (seeded and minced)",
-  "expected": {
-    "item": "jalapeno pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapeno pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    },
+    "parse_ingredients": {
+      "item": "jalapeno pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    }
   }
 }

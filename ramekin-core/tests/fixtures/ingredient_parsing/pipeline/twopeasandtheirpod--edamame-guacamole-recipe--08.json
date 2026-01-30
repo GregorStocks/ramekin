@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 tablespoons water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

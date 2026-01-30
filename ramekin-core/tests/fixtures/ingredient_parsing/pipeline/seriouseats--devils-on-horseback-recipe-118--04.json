@@ -1,8 +1,15 @@
 {
   "raw": "Metal or wooden toothpicks (see notes)",
-  "expected": {
-    "item": "Metal or wooden toothpicks (see notes)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Metal or wooden toothpicks (see notes)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Metal or wooden toothpicks (see notes)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

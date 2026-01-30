@@ -1,17 +1,33 @@
 {
   "raw": "4-6 tablespoons fresh lemon juice (2 lemons)",
-  "expected": {
-    "item": "fresh lemon juice",
-    "measurements": [
-      {
-        "amount": "4-6",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh lemon juice",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh lemon juice",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

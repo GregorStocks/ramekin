@@ -1,13 +1,29 @@
 {
   "raw": "7 oz gingerbread cookies",
-  "expected": {
-    "item": "gingerbread cookies",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gingerbread cookies",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "gingerbread cookies",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

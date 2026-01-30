@@ -1,21 +1,41 @@
 {
   "raw": "10 ounces unsalted butter (284 g; 20 tablespoons), softened cut into 1-inch size pieces",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      },
-      {
-        "amount": "284",
-        "unit": "g"
-      },
-      {
-        "amount": "20",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "softened cut into 1-inch size pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "284",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened cut into 1-inch size pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "284",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened cut into 1-inch size pieces"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Burger buns or lettuce wraps",
-  "expected": {
-    "item": "Burger buns or lettuce wraps",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Burger buns or lettuce wraps",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Burger buns or lettuce wraps",
+      "measurements": [],
+      "note": null
+    }
   }
 }

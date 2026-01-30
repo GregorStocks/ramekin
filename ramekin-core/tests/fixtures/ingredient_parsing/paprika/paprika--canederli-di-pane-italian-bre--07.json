@@ -1,21 +1,41 @@
 {
   "raw": "1/4 cup grated Parmigiano-Reggiano (1 ounce; 30 g), plus more for serving",
-  "expected": {
-    "item": "grated Parmigiano-Reggiano",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "30",
-        "unit": "g"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grated Parmigiano-Reggiano",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "grated Parmigiano-Reggiano",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

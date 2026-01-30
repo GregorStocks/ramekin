@@ -1,17 +1,33 @@
 {
   "raw": "2 cans (14-1/2 ounces each) reduced-sodium chicken broth",
-  "expected": {
-    "item": "reduced-sodium chicken broth",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "14-1/2",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "reduced-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "14-1/2",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "reduced-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "14-1/2",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

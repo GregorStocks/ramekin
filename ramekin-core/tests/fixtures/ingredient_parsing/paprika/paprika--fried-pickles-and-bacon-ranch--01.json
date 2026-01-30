@@ -1,8 +1,15 @@
 {
   "raw": "For the Bacon Ranch:",
-  "expected": {
-    "item": "For the Bacon Ranch:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "For the Bacon Ranch:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "For the Bacon Ranch:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

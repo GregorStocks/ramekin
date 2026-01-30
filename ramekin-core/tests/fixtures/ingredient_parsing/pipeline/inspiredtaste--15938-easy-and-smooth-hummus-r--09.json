@@ -1,13 +1,25 @@
 {
   "raw": "Dash ground paprika, sumac, or Za&amp;#8217;atar for serving",
-  "expected": {
-    "item": "ground paprika, sumac",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": "or Za’atar for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground paprika, sumac",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": "or Za’atar for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "ground paprika, sumac",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": "or Za’atar for serving"
+    }
   }
 }

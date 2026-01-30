@@ -1,13 +1,25 @@
 {
   "raw": "2 cups cooked and shredded chicken (See Recipe Note)",
-  "expected": {
-    "item": "cooked and shredded chicken (See Recipe Note)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked and shredded chicken (See Recipe Note)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked and shredded chicken (See Recipe Note)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

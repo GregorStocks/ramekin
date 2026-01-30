@@ -1,8 +1,15 @@
 {
   "raw": "Lime wedges, chopped fresh cilantro, sour cream, avocado&nbsp; and/or &nbsp;pico de gallo for serving",
-  "expected": {
-    "item": "Lime wedges, chopped fresh cilantro, sour cream",
-    "measurements": [],
-    "note": "avocado  and/or  pico de gallo for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lime wedges, chopped fresh cilantro, sour cream",
+      "measurements": [],
+      "note": "avocado  and/or  pico de gallo for serving"
+    },
+    "parse_ingredients": {
+      "item": "Lime wedges, chopped fresh cilantro, sour cream",
+      "measurements": [],
+      "note": "avocado  and/or  pico de gallo for serving"
+    }
   }
 }

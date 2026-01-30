@@ -1,13 +1,25 @@
 {
   "raw": "1 chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
-  "expected": {
-    "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped poblano pepper (for some spice) or red bell pepper (for mild flavor)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

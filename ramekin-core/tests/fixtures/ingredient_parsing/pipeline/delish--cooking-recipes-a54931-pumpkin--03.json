@@ -1,17 +1,33 @@
 {
   "raw": "1 (10-oz.) jar caramel",
-  "expected": {
-    "item": "caramel",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "jar"
-      },
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "caramel",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "caramel",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

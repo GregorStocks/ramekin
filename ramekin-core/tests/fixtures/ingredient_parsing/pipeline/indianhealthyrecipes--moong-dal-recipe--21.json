@@ -1,13 +1,25 @@
 {
   "raw": "⅛ teaspoon hing  ((asafoetida, optional))",
-  "expected": {
-    "item": "hing",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": "asafoetida, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hing",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "asafoetida, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "hing",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "asafoetida, optional"
+    }
   }
 }

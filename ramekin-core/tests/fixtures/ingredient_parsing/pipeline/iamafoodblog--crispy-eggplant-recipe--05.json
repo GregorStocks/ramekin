@@ -1,8 +1,15 @@
 {
   "raw": "Tabasco, to taste",
-  "expected": {
-    "item": "Tabasco",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tabasco",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Tabasco",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

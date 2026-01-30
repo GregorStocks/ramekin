@@ -1,8 +1,15 @@
 {
   "raw": "Sponge:",
-  "expected": {
-    "item": "Sponge:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sponge:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sponge:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

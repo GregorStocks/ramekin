@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets))",
-  "expected": {
-    "item": "Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Asian chili sauce, (such as Sambal Oelek (available in Asian aisle of most supermarkets)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

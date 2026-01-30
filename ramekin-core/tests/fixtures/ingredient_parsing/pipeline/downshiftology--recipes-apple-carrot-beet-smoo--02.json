@@ -1,13 +1,25 @@
 {
   "raw": "1  apple (any variety, cut into 2-inch chunks)",
-  "expected": {
-    "item": "apple (any variety, cut into 2-inch chunks)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "apple (any variety, cut into 2-inch chunks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "apple (any variety, cut into 2-inch chunks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

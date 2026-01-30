@@ -1,13 +1,25 @@
 {
   "raw": "4-5 pound pork loin roast (trimmed of skin and fat)",
-  "expected": {
-    "item": "pork loin roast",
-    "measurements": [
-      {
-        "amount": "4-5",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed of skin and fat"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork loin roast",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed of skin and fat"
+    },
+    "parse_ingredients": {
+      "item": "pork loin roast",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed of skin and fat"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "5 pitted Medjool dates, thinly sliced",
-  "expected": {
-    "item": "pitted Medjool dates",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pitted Medjool dates",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "pitted Medjool dates",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

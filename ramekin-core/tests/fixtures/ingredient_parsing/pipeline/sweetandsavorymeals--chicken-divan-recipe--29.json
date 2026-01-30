@@ -1,13 +1,25 @@
 {
   "raw": "2 cup corn flakes (crushed)",
-  "expected": {
-    "item": "corn flakes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn flakes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "crushed"
+    },
+    "parse_ingredients": {
+      "item": "corn flakes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

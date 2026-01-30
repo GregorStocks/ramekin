@@ -1,13 +1,25 @@
 {
   "raw": "small flour or corn tortillas (warmed)",
-  "expected": {
-    "item": "flour or corn tortillas (warmed)",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour or corn tortillas (warmed)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour or corn tortillas (warmed)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

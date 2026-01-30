@@ -1,13 +1,25 @@
 {
   "raw": "1 cup butter, softened",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

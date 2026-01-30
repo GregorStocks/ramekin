@@ -1,13 +1,25 @@
 {
   "raw": "1 cup strong black coffee (chilled)",
-  "expected": {
-    "item": "strong black coffee",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "strong black coffee",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    },
+    "parse_ingredients": {
+      "item": "strong black coffee",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "room temperature butter, about 1 tablespoons",
-  "expected": {
-    "item": "room temperature butter, about 1 tablespoons",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "room temperature butter, about 1 tablespoons",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "room temperature butter, about 1 tablespoons",
+      "measurements": [],
+      "note": null
+    }
   }
 }

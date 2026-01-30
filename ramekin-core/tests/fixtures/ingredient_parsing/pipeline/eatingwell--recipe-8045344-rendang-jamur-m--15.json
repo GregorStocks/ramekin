@@ -1,17 +1,33 @@
 {
   "raw": "2 (1/2-inch) slices galangal (see Notes) or fresh ginger",
-  "expected": {
-    "item": "galangal (see Notes) or fresh ginger",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "galangal (see Notes) or fresh ginger",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "galangal (see Notes) or fresh ginger",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 clove garlic, peeled",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "clove"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

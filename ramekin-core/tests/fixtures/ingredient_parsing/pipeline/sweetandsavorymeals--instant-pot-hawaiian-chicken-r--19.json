@@ -1,8 +1,15 @@
 {
   "raw": "Slivered almonds",
-  "expected": {
-    "item": "Slivered almonds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Slivered almonds",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Slivered almonds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

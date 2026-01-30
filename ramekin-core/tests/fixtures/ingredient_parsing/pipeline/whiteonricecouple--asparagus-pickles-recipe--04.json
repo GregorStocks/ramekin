@@ -1,13 +1,25 @@
 {
   "raw": "4 sprigs fresh Tarragon or Dill",
-  "expected": {
-    "item": "fresh Tarragon or Dill",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh Tarragon or Dill",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh Tarragon or Dill",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

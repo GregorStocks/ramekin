@@ -1,13 +1,25 @@
 {
   "raw": "Pinch of salt, smoked flaky sea salt is wonderful here if you have it",
-  "expected": {
-    "item": "salt, smoked flaky sea salt is wonderful here if you have it",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt, smoked flaky sea salt is wonderful here if you have it",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt, smoked flaky sea salt is wonderful here if you have it",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

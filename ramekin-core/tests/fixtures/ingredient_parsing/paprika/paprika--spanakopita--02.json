@@ -1,13 +1,25 @@
 {
   "raw": "1 cup red onion (from 1 small or half a large), finely chopped",
-  "expected": {
-    "item": "red onion (from 1 small or half a large)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion (from 1 small or half a large)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion (from 1 small or half a large)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces Parmesan cheese (shredded (about 1 cup), divided)",
-  "expected": {
-    "item": "Parmesan cheese , divided)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded (about 1 cup"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parmesan cheese , divided)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded (about 1 cup"
+    },
+    "parse_ingredients": {
+      "item": "Parmesan cheese , divided)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded (about 1 cup"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "dash of kosher salt",
-  "expected": {
-    "item": "kosher salt",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

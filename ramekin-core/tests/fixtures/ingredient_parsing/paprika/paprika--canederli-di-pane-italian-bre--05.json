@@ -1,21 +1,41 @@
 {
   "raw": "1/4 pound (113 g) minced speck or sweet Italian sausage (about 1 large link), casing removed",
-  "expected": {
-    "item": "minced speck or sweet Italian sausage , casing removed",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "lb"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced speck or sweet Italian sausage , casing removed",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced speck or sweet Italian sausage , casing removed",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

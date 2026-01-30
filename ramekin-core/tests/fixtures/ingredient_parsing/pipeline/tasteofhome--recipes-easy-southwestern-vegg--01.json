@@ -1,17 +1,37 @@
 {
   "raw": "1 can (15 ounces) black beans, rinsed and drained",
-  "expected": {
-    "item": "black beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed and drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed and drained"
+    },
+    "enrich_metric_weights": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed and drained"
+    }
   }
 }

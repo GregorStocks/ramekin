@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds tomatoes (sliced ¼ to ½-inch thick)",
-  "expected": {
-    "item": "tomatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced 1/4 to 1/2-inch thick"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced 1/4 to 1/2-inch thick"
+    },
+    "enrich_metric_weights": {
+      "item": "tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced 1/4 to 1/2-inch thick"
+    }
   }
 }

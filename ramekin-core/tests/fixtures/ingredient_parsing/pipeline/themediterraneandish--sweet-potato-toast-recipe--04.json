@@ -1,13 +1,25 @@
 {
   "raw": "Generous sprinkle Za&amp;#8217;atar",
-  "expected": {
-    "item": "sprinkle Za’atar",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "generous"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sprinkle Za’atar",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "generous"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sprinkle Za’atar",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "generous"
+        }
+      ],
+      "note": null
+    }
   }
 }

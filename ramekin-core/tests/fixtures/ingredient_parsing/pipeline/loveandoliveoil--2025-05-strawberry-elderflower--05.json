@@ -1,13 +1,29 @@
 {
   "raw": "8 oz mascarpone (cold)",
-  "expected": {
-    "item": "mascarpone",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "cold"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mascarpone",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "cold"
+    },
+    "enrich_metric_weights": {
+      "item": "mascarpone",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "cold"
+    }
   }
 }

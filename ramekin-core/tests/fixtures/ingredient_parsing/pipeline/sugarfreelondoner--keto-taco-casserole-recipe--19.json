@@ -1,13 +1,25 @@
 {
   "raw": "10  black olives (sliced (30g))",
-  "expected": {
-    "item": "black olives",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": "sliced (30g"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black olives",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "sliced (30g"
+    },
+    "enrich_metric_weights": {
+      "item": "black olives",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "sliced (30g"
+    }
   }
 }

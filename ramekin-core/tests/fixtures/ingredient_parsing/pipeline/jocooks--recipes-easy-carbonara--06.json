@@ -1,8 +1,15 @@
 {
   "raw": "salt (for pasta water)",
-  "expected": {
-    "item": "salt (for pasta water)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salt (for pasta water)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "salt (for pasta water)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

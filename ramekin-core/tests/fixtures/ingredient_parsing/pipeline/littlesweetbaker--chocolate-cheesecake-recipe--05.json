@@ -1,17 +1,37 @@
 {
   "raw": "24 oz (3 blocks) cream cheese (softened)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": "oz"
-      },
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

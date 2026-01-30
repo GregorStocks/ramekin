@@ -1,8 +1,15 @@
 {
   "raw": "Dried fruit (favorites: reduced-sugar dried cranberries, raisins, chopped dates)",
-  "expected": {
-    "item": "Dried fruit",
-    "measurements": [],
-    "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dried fruit",
+      "measurements": [],
+      "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates"
+    },
+    "parse_ingredients": {
+      "item": "Dried fruit",
+      "measurements": [],
+      "note": "favorites: reduced-sugar dried cranberries, raisins, chopped dates"
+    }
   }
 }

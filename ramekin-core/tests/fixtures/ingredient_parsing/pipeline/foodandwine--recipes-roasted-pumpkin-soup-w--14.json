@@ -1,8 +1,15 @@
 {
   "raw": "Roasted pumpkin seeds, for garnish (optional)",
-  "expected": {
-    "item": "Roasted pumpkin seeds, for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Roasted pumpkin seeds, for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Roasted pumpkin seeds, for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "¾ cup brewed coffee (175ml)",
-  "expected": {
-    "item": "brewed coffee",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "175",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brewed coffee",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "175",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "brewed coffee",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "175",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

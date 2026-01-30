@@ -1,13 +1,29 @@
 {
   "raw": "4 ounce can olive oil packed tuna, drained and flaked",
-  "expected": {
-    "item": "can olive oil packed tuna",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and flaked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can olive oil packed tuna",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and flaked"
+    },
+    "enrich_metric_weights": {
+      "item": "can olive oil packed tuna",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and flaked"
+    }
   }
 }

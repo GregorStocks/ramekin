@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh cilantro, pico de gallo, crumbled queso fresco and diced avocado, for topping",
-  "expected": {
-    "item": "Chopped fresh cilantro, pico de gallo, crumbled queso fresco and diced avocado, for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped fresh cilantro, pico de gallo, crumbled queso fresco and diced avocado, for topping",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped fresh cilantro, pico de gallo, crumbled queso fresco and diced avocado, for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

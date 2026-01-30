@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup coarsely grated gruyère, comte, or baby swiss cheese",
-  "expected": {
-    "item": "coarsely grated gruyère, comte, or baby swiss cheese",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely grated gruyère, comte, or baby swiss cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely grated gruyère, comte, or baby swiss cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

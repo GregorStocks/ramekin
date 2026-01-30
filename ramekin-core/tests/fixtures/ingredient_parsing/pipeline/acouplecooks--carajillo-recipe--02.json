@@ -1,13 +1,29 @@
 {
   "raw": "1 1/2 ounce Licor 43",
-  "expected": {
-    "item": "Licor 43",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Licor 43",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Licor 43",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

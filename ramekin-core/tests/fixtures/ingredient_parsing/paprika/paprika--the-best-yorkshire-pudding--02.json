@@ -1,21 +1,41 @@
 {
   "raw": "150 g all-purpose flour (5.25 ounces; about 1 cup plus 2 teaspoons)",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "g"
-      },
-      {
-        "amount": "5.25",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        },
+        {
+          "amount": "5.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        },
+        {
+          "amount": "5.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

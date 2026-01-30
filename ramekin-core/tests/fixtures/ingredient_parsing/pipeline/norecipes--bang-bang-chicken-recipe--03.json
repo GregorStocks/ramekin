@@ -1,17 +1,33 @@
 {
   "raw": "220 grams cucumber ((2 Japanese cucumbers))",
-  "expected": {
-    "item": "cucumber",
-    "measurements": [
-      {
-        "amount": "220",
-        "unit": "g"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "220",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "220",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

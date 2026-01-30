@@ -1,13 +1,25 @@
 {
   "raw": "2  oranges (or 3 clementines, peeled)",
-  "expected": {
-    "item": "oranges",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "or 3 clementines, peeled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oranges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 3 clementines, peeled"
+    },
+    "enrich_metric_weights": {
+      "item": "oranges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 3 clementines, peeled"
+    }
   }
 }

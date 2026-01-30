@@ -1,13 +1,25 @@
 {
   "raw": "2 slices seedy bread, lightly toasted",
-  "expected": {
-    "item": "seedy bread",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": "lightly toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "seedy bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": "lightly toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "seedy bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": "lightly toasted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
-  "expected": {
-    "item": "Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Bean Salad with Lemon-Cumin Dressing (see Associated Recipes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

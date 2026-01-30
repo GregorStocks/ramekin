@@ -1,17 +1,33 @@
 {
   "raw": "8 tablespoons (1 stick) unsalted butter",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

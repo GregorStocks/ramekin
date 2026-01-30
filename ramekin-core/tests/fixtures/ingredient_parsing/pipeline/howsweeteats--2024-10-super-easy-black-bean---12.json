@@ -1,17 +1,37 @@
 {
   "raw": "2 (4 ounce)  cans diced green chiles",
-  "expected": {
-    "item": "diced green chiles",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced green chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced green chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

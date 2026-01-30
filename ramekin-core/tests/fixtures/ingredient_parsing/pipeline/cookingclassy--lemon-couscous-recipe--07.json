@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp chopped fresh parsley, (or more to taste (optional)*)",
-  "expected": {
-    "item": "chopped fresh parsley *)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh parsley *)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste (optional"
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh parsley *)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste (optional"
+    }
   }
 }

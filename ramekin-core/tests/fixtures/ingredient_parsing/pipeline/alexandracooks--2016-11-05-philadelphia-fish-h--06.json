@@ -1,17 +1,37 @@
 {
   "raw": "2 oz (1/4 cup) peach brandy* or 1/4 cup Cognac, which is how I always make it now",
-  "expected": {
-    "item": "peach brandy*",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or 1/4 cup Cognac, which is how I always make it now"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peach brandy*",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or 1/4 cup Cognac, which is how I always make it now"
+    },
+    "enrich_metric_weights": {
+      "item": "peach brandy*",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1/4 cup Cognac, which is how I always make it now"
+    }
   }
 }

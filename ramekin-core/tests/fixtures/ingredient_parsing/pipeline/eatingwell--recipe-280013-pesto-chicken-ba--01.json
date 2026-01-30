@@ -1,17 +1,37 @@
 {
   "raw": "8 (4 ounce) chicken cutlets",
-  "expected": {
-    "item": "chicken cutlets",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken cutlets",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken cutlets",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

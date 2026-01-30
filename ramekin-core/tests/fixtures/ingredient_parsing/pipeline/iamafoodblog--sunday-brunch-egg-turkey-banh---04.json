@@ -1,8 +1,15 @@
 {
   "raw": "quick-pickled daikon and carrots",
-  "expected": {
-    "item": "quick-pickled daikon and carrots",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "quick-pickled daikon and carrots",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "quick-pickled daikon and carrots",
+      "measurements": [],
+      "note": null
+    }
   }
 }

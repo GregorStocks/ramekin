@@ -1,13 +1,25 @@
 {
   "raw": "3-4  sprigs fresh herbs (Thyme, Parsley, Oregano, Basil etc) (*see head note, or 1 teaspoon dried herbs)",
-  "expected": {
-    "item": "fresh herbs (Thyme, Parsley, Oregano, Basil etc) (*see head note",
-    "measurements": [
-      {
-        "amount": "3-4",
-        "unit": "sprig"
-      }
-    ],
-    "note": "or 1 teaspoon dried herbs)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh herbs (Thyme, Parsley, Oregano, Basil etc) (*see head note",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": "sprig"
+        }
+      ],
+      "note": "or 1 teaspoon dried herbs)"
+    },
+    "parse_ingredients": {
+      "item": "fresh herbs (Thyme, Parsley, Oregano, Basil etc) (*see head note",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": "sprig"
+        }
+      ],
+      "note": "or 1 teaspoon dried herbs)"
+    }
   }
 }

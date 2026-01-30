@@ -1,13 +1,29 @@
 {
   "raw": "21 oz lemon pie filling",
-  "expected": {
-    "item": "lemon pie filling",
-    "measurements": [
-      {
-        "amount": "21",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon pie filling",
+      "measurements": [
+        {
+          "amount": "21",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon pie filling",
+      "measurements": [
+        {
+          "amount": "21",
+          "unit": "oz"
+        },
+        {
+          "amount": "595",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

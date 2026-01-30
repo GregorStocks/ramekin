@@ -1,13 +1,25 @@
 {
   "raw": "0.5 pound bacon",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups whole pitted fresh sweet cherries (about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed&nbsp;pitted&nbsp;cherries)",
-  "expected": {
-    "item": "whole pitted fresh sweet cherries",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed pitted cherries"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole pitted fresh sweet cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed pitted cherries"
+    },
+    "parse_ingredients": {
+      "item": "whole pitted fresh sweet cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 2 pounds with pits or 1 1/2 pounds pitted or frozen, thawed pitted cherries"
+    }
   }
 }

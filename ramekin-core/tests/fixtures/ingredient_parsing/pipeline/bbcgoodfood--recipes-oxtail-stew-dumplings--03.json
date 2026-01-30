@@ -1,13 +1,25 @@
 {
   "raw": "4 tbsp sunflower oil for frying",
-  "expected": {
-    "item": "sunflower oil for frying",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sunflower oil for frying",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sunflower oil for frying",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

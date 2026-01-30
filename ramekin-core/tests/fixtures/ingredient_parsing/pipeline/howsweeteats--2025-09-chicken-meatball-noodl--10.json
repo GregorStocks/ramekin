@@ -1,13 +1,25 @@
 {
   "raw": "2  carrots, (finely grated)",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "finely grated"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "20 oz. canned diced fire roasted tomatoes",
-  "expected": {
-    "item": "canned diced fire roasted tomatoes",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "canned diced fire roasted tomatoes",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "canned diced fire roasted tomatoes",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

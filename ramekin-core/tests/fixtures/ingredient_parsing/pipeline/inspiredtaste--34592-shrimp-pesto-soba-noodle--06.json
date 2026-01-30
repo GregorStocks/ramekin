@@ -1,8 +1,15 @@
 {
   "raw": "Half of a seedless (English or hothouse) cucumber",
-  "expected": {
-    "item": "Half of a seedless (English or hothouse) cucumber",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Half of a seedless (English or hothouse) cucumber",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Half of a seedless (English or hothouse) cucumber",
+      "measurements": [],
+      "note": null
+    }
   }
 }

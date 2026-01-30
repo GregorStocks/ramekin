@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup Franks Hot Sauce",
-  "expected": {
-    "item": "Franks Hot Sauce",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Franks Hot Sauce",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Franks Hot Sauce",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

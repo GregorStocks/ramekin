@@ -1,13 +1,25 @@
 {
   "raw": "1/2 avocado, finely diced",
-  "expected": {
-    "item": "avocado",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

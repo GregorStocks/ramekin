@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces fresh cranberries (rinsed and dried)",
-  "expected": {
-    "item": "fresh cranberries",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed and dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh cranberries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed and dried"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh cranberries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed and dried"
+    }
   }
 }

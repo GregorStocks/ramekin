@@ -1,17 +1,33 @@
 {
   "raw": "4 Japanese eggplants (about 1 1/4 pound total)",
-  "expected": {
-    "item": "Japanese eggplants",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "1 1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Japanese eggplants",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Japanese eggplants",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

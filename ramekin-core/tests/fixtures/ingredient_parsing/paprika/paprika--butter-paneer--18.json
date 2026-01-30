@@ -1,8 +1,15 @@
 {
   "raw": "Naan (optional)",
-  "expected": {
-    "item": "Naan",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Naan",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Naan",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

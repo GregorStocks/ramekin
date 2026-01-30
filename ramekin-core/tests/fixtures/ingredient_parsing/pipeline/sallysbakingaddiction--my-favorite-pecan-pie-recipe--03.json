@@ -1,17 +1,33 @@
 {
   "raw": "2 and 1/2 cups (250g) shelled pecans (pecan halves)",
-  "expected": {
-    "item": "shelled pecans (pecan halves)",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "250",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shelled pecans (pecan halves)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shelled pecans (pecan halves)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

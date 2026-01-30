@@ -1,8 +1,15 @@
 {
   "raw": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
-  "expected": {
-    "item": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Thinly sliced pickles, celery, pickled onions [more suggestions in Notes]",
+      "measurements": [],
+      "note": null
+    }
   }
 }

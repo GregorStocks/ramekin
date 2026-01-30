@@ -1,13 +1,25 @@
 {
   "raw": "1.5 pounds chicken breast (cut into small bite-size chunks)",
-  "expected": {
-    "item": "chicken breast (cut into small bite-size chunks)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken breast (cut into small bite-size chunks)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken breast (cut into small bite-size chunks)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

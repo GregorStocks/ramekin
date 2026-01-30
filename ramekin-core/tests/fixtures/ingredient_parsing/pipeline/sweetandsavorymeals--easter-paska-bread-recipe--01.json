@@ -1,17 +1,33 @@
 {
   "raw": "1  envelope Instant Yeast (7 grams)",
-  "expected": {
-    "item": "envelope Instant Yeast",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "7",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "envelope Instant Yeast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "envelope Instant Yeast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

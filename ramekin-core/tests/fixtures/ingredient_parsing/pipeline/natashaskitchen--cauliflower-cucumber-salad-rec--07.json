@@ -1,8 +1,15 @@
 {
   "raw": "Add a clove of garlic to the dressing for a little extra zing (if you like :))",
-  "expected": {
-    "item": "Add a clove of garlic to the dressing for a little extra zing (if you like :)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Add a clove of garlic to the dressing for a little extra zing (if you like :)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Add a clove of garlic to the dressing for a little extra zing (if you like :)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

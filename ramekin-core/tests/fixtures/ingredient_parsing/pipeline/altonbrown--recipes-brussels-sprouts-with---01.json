@@ -1,13 +1,25 @@
 {
   "raw": "1 pound Brussels sprouts, rinsed and trimmed",
-  "expected": {
-    "item": "Brussels sprouts",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "rinsed and trimmed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Brussels sprouts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "rinsed and trimmed"
+    },
+    "enrich_metric_weights": {
+      "item": "Brussels sprouts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "rinsed and trimmed"
+    }
   }
 }

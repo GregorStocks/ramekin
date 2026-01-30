@@ -1,13 +1,25 @@
 {
   "raw": "2 slices thick cut bread",
-  "expected": {
-    "item": "thick cut bread",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thick cut bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thick cut bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

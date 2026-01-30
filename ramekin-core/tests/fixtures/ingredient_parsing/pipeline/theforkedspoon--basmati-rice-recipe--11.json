@@ -1,8 +1,15 @@
 {
   "raw": "Fresh lemon juice (to taste)",
-  "expected": {
-    "item": "Fresh lemon juice",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh lemon juice",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh lemon juice",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

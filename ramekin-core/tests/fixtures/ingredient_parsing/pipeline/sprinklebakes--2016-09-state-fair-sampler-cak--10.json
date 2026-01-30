@@ -1,8 +1,15 @@
 {
   "raw": "Serves 10",
-  "expected": {
-    "item": "Serves 10",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Serves 10",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Serves 10",
+      "measurements": [],
+      "note": null
+    }
   }
 }

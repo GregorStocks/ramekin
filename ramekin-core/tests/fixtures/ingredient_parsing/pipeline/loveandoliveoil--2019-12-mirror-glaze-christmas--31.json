@@ -1,8 +1,15 @@
 {
   "raw": "gel or powdered food coloring",
-  "expected": {
-    "item": "gel or powdered food coloring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gel or powdered food coloring",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "gel or powdered food coloring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

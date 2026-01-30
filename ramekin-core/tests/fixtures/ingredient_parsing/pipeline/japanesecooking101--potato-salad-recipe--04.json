@@ -1,13 +1,25 @@
 {
   "raw": "2  small cucumbers",
-  "expected": {
-    "item": "cucumbers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

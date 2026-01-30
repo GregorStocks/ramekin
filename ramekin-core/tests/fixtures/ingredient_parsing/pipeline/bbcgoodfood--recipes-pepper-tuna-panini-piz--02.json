@@ -1,13 +1,25 @@
 {
   "raw": "jar  roasted pepper drained",
-  "expected": {
-    "item": "roasted pepper drained",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "jar"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roasted pepper drained",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "jar"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "roasted pepper drained",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "jar"
+        }
+      ],
+      "note": null
+    }
   }
 }

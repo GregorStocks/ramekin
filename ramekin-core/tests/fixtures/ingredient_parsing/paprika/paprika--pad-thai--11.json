@@ -1,13 +1,25 @@
 {
   "raw": "150 g/5oz chicken breast (or thigh) , thinly sliced",
-  "expected": {
-    "item": "g/5oz chicken breast (or thigh)",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "g/5oz chicken breast (or thigh)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "g/5oz chicken breast (or thigh)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

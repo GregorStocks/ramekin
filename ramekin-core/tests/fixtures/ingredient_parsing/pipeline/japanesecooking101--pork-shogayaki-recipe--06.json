@@ -1,13 +1,29 @@
 {
   "raw": "7 oz pork loin, chunk or sliced",
-  "expected": {
-    "item": "pork loin",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "oz"
-      }
-    ],
-    "note": "chunk or sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork loin",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": "chunk or sliced"
+    },
+    "parse_ingredients": {
+      "item": "pork loin",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        }
+      ],
+      "note": "chunk or sliced"
+    }
   }
 }

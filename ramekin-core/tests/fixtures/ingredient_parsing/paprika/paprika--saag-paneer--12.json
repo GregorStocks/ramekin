@@ -1,8 +1,15 @@
 {
   "raw": "Steamed rice and Indian flatbread, for serving",
-  "expected": {
-    "item": "Steamed rice and Indian flatbread",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Steamed rice and Indian flatbread",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Steamed rice and Indian flatbread",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

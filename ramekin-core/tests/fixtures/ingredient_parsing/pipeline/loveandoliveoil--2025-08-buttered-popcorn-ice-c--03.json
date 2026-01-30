@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon guar gum or locust bean gum",
-  "expected": {
-    "item": "guar gum or locust bean gum",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "guar gum or locust bean gum",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "guar gum or locust bean gum",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

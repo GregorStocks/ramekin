@@ -1,13 +1,25 @@
 {
   "raw": "4 tbsp Challenge unsalted butter (room temperature)",
-  "expected": {
-    "item": "Challenge unsalted butter",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Challenge unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "Challenge unsalted butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

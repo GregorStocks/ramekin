@@ -1,8 +1,15 @@
 {
   "raw": "flake sea salt (Maldon, for garnish)",
-  "expected": {
-    "item": "flake sea salt",
-    "measurements": [],
-    "note": "Maldon, for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flake sea salt",
+      "measurements": [],
+      "note": "Maldon, for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "flake sea salt",
+      "measurements": [],
+      "note": "Maldon, for garnish"
+    }
   }
 }

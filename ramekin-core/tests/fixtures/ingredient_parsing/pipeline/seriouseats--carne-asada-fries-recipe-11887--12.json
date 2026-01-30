@@ -1,17 +1,33 @@
 {
   "raw": "2 quarts (1.9 L) neutral oil, such as peanut, vegetable, or canola, for frying",
-  "expected": {
-    "item": "neutral oil, such as peanut, vegetable, or canola, for frying",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "quart"
-      },
-      {
-        "amount": "1.9",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "neutral oil, such as peanut, vegetable, or canola, for frying",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "neutral oil, such as peanut, vegetable, or canola, for frying",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

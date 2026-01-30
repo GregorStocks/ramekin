@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha and lime wedges, for serving",
-  "expected": {
-    "item": "Sriracha and lime wedges",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sriracha and lime wedges",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Sriracha and lime wedges",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

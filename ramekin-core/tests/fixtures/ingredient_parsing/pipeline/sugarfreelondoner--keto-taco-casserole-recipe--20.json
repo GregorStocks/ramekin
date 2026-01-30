@@ -1,13 +1,25 @@
 {
   "raw": "6  cherry tomatoes (diced or salsa (65g))",
-  "expected": {
-    "item": "cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "diced or salsa (65g"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "diced or salsa (65g"
+    },
+    "parse_ingredients": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "diced or salsa (65g"
+    }
   }
 }

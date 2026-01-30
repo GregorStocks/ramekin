@@ -1,8 +1,15 @@
 {
   "raw": "Flatbread or toasted pita wedges (gluten-free, if needed), for serving",
-  "expected": {
-    "item": "Flatbread or toasted pita wedges (gluten-free, if needed)",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Flatbread or toasted pita wedges (gluten-free, if needed)",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Flatbread or toasted pita wedges (gluten-free, if needed)",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

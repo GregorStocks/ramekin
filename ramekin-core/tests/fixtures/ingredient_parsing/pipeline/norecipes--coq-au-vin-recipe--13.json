@@ -1,13 +1,25 @@
 {
   "raw": "225 grams button mushrooms ((trimmed and halved))",
-  "expected": {
-    "item": "button mushrooms",
-    "measurements": [
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": "trimmed and halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and halved"
+    },
+    "parse_ingredients": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and halved"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 bunches of kale, rinsed and dried, ribs and stems removed, leaves thinly sliced crosswise",
-  "expected": {
-    "item": "kale, rinsed and dried, ribs and stems removed",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "bunch"
-      }
-    ],
-    "note": "leaves thinly sliced crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kale, rinsed and dried, ribs and stems removed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "leaves thinly sliced crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "kale, rinsed and dried, ribs and stems removed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "leaves thinly sliced crosswise"
+    }
   }
 }

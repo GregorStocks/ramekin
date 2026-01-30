@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups chopped prunes",
-  "expected": {
-    "item": "chopped prunes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped prunes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped prunes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

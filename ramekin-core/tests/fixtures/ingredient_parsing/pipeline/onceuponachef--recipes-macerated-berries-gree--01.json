@@ -1,13 +1,25 @@
 {
   "raw": "1 lb strawberries, hulled and halved (or quartered if very large)",
-  "expected": {
-    "item": "strawberries, hulled and halved",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "or quartered if very large"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "strawberries, hulled and halved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "or quartered if very large"
+    },
+    "parse_ingredients": {
+      "item": "strawberries, hulled and halved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "or quartered if very large"
+    }
   }
 }

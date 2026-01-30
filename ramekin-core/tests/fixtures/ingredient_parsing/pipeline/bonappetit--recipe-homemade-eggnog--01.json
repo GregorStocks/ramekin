@@ -1,13 +1,25 @@
 {
   "raw": "6 large eggs*, separated",
-  "expected": {
-    "item": "eggs*, separated",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs*, separated",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "eggs*, separated",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

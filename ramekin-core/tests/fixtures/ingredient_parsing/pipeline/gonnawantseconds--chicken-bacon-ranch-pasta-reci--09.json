@@ -1,13 +1,25 @@
 {
   "raw": "6 slices cooked bacon (chopped)",
-  "expected": {
-    "item": "cooked bacon",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked bacon",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "cooked bacon",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

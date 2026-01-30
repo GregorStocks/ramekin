@@ -1,8 +1,15 @@
 {
   "raw": "Remaining Southern Succor Rub (See note)",
-  "expected": {
-    "item": "Remaining Southern Succor Rub (See note)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Remaining Southern Succor Rub (See note)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Remaining Southern Succor Rub (See note)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

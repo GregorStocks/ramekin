@@ -1,17 +1,33 @@
 {
   "raw": "1 (13 by 9-inch) disposable aluminum pan",
-  "expected": {
-    "item": "disposable aluminum pan",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "13",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "disposable aluminum pan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "13",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "disposable aluminum pan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "13",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

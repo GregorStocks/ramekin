@@ -1,13 +1,25 @@
 {
   "raw": "10       chicken wings, tips removed",
-  "expected": {
-    "item": "chicken wings, tips removed",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken wings, tips removed",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken wings, tips removed",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

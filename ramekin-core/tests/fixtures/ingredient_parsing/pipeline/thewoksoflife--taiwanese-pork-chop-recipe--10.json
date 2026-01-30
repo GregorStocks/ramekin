@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon potato starch ((Plus ½ cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch))",
-  "expected": {
-    "item": "potato starch",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "Plus 1/2 cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "potato starch",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "Plus 1/2 cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch"
+    },
+    "parse_ingredients": {
+      "item": "potato starch",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "Plus 1/2 cup, divided. Traditionally, sweet potato starch is used; you can also use that, or cornstarch"
+    }
   }
 }

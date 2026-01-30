@@ -1,8 +1,15 @@
 {
   "raw": "Aji Amarillo ((or other spicy chili pepper, optional))",
-  "expected": {
-    "item": "Aji Amarillo",
-    "measurements": [],
-    "note": "or other spicy chili pepper, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Aji Amarillo",
+      "measurements": [],
+      "note": "or other spicy chili pepper, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Aji Amarillo",
+      "measurements": [],
+      "note": "or other spicy chili pepper, optional"
+    }
   }
 }

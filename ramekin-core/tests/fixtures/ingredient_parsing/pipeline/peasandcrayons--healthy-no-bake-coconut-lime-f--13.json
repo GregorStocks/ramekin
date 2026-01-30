@@ -1,8 +1,15 @@
 {
   "raw": "pineapple",
-  "expected": {
-    "item": "pineapple",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pineapple",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pineapple",
+      "measurements": [],
+      "note": null
+    }
   }
 }

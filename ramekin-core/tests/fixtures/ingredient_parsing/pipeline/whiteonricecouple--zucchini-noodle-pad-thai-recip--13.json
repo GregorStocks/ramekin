@@ -1,17 +1,33 @@
 {
   "raw": "2 Tablespoons fish sauce ((30ml), or to taste)",
-  "expected": {
-    "item": "fish sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "30",
-        "unit": "ml"
-      }
-    ],
-    "note": "or to taste)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": "or to taste)"
+    },
+    "enrich_metric_weights": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": "or to taste)"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds sweet Italian sausage, cut into 3-inch lengths",
-  "expected": {
-    "item": "sweet Italian sausage, cut into 3-inch lengths",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet Italian sausage, cut into 3-inch lengths",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet Italian sausage, cut into 3-inch lengths",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

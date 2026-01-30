@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups fresh diced strawberries (divided)",
-  "expected": {
-    "item": "fresh diced strawberries",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh diced strawberries",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "fresh diced strawberries",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

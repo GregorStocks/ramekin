@@ -1,13 +1,25 @@
 {
   "raw": "4  cups sourdough bread* ((about half a loaf - diced or torn into ½&amp;quot; cubes))",
-  "expected": {
-    "item": "sourdough bread*",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "about half a loaf - diced or torn into 1/2\" cubes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sourdough bread*",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "about half a loaf - diced or torn into 1/2\" cubes"
+    },
+    "enrich_metric_weights": {
+      "item": "sourdough bread*",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "about half a loaf - diced or torn into 1/2\" cubes"
+    }
   }
 }

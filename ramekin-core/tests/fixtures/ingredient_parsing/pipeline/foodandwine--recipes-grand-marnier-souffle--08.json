@@ -1,8 +1,15 @@
 {
   "raw": "Unsalted butter, softened, for greasing",
-  "expected": {
-    "item": "Unsalted butter, softened, for greasing",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Unsalted butter, softened, for greasing",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Unsalted butter, softened, for greasing",
+      "measurements": [],
+      "note": null
+    }
   }
 }

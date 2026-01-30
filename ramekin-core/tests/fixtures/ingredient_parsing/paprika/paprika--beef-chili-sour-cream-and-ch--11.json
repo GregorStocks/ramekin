@@ -1,8 +1,15 @@
 {
   "raw": "Dried red pepper flakes, to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)",
-  "expected": {
-    "item": "Dried red pepper flakes",
-    "measurements": [],
-    "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dried red pepper flakes",
+      "measurements": [],
+      "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)"
+    },
+    "enrich_metric_weights": {
+      "item": "Dried red pepper flakes",
+      "measurements": [],
+      "note": "to taste (Gourmet suggests 1 tablespoon; I used 1 teaspoon knowing that my flakes are very hot)"
+    }
   }
 }

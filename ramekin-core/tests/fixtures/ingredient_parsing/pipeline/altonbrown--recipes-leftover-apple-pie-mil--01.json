@@ -1,13 +1,25 @@
 {
   "raw": "1 slice apple pie",
-  "expected": {
-    "item": "apple pie",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apple pie",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "apple pie",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Fried eggs",
-  "expected": {
-    "item": "Fried eggs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fried eggs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fried eggs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sour Cream Topping Ingredients:",
-  "expected": {
-    "item": "Sour Cream Topping Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sour Cream Topping Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sour Cream Topping Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

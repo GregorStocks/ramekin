@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup honey* (I prefer to use raw honey)",
-  "expected": {
-    "item": "honey*",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "I prefer to use raw honey"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "honey*",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "I prefer to use raw honey"
+    },
+    "parse_ingredients": {
+      "item": "honey*",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "I prefer to use raw honey"
+    }
   }
 }

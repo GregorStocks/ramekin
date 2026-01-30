@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds mashing potatoes, peeled and cut into quarters",
-  "expected": {
-    "item": "mashing potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled and cut into quarters"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mashing potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and cut into quarters"
+    },
+    "parse_ingredients": {
+      "item": "mashing potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and cut into quarters"
+    }
   }
 }

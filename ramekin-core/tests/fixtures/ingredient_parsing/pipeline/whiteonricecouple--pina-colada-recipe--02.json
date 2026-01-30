@@ -1,17 +1,37 @@
 {
   "raw": "6 ounces (180ml) pineapple juice ( (fresh or canned))",
-  "expected": {
-    "item": "pineapple juice",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      },
-      {
-        "amount": "180",
-        "unit": "ml"
-      }
-    ],
-    "note": "(fresh or canned"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pineapple juice",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "180",
+          "unit": "ml"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "(fresh or canned"
+    },
+    "parse_ingredients": {
+      "item": "pineapple juice",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "180",
+          "unit": "ml"
+        }
+      ],
+      "note": "(fresh or canned"
+    }
   }
 }

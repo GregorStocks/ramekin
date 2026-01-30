@@ -1,8 +1,15 @@
 {
   "raw": "Gold luster dust",
-  "expected": {
-    "item": "Gold luster dust",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Gold luster dust",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Gold luster dust",
+      "measurements": [],
+      "note": null
+    }
   }
 }

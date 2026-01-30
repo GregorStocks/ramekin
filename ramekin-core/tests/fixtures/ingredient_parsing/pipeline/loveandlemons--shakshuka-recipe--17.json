@@ -1,8 +1,15 @@
 {
   "raw": "Microgreens (for garnish, optional)",
-  "expected": {
-    "item": "Microgreens",
-    "measurements": [],
-    "note": "for garnish, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Microgreens",
+      "measurements": [],
+      "note": "for garnish, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Microgreens",
+      "measurements": [],
+      "note": "for garnish, optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  red bell pepper (stemmed, seeded, and finely chopped)",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "stemmed, seeded, and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stemmed, seeded, and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stemmed, seeded, and finely chopped"
+    }
   }
 }

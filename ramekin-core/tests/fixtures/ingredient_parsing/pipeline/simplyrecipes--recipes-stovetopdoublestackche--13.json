@@ -1,8 +1,15 @@
 {
   "raw": "Red onion slices",
-  "expected": {
-    "item": "Red onion slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Red onion slices",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Red onion slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons butter (unsalted, softened, or margarine)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "unsalted, softened, or margarine"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, softened, or margarine"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, softened, or margarine"
+    }
   }
 }

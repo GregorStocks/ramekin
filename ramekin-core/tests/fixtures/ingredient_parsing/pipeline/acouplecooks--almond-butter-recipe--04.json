@@ -1,8 +1,15 @@
 {
   "raw": "Other ideas: Chai Spices&nbsp;or Pumpkin Spices, to taste",
-  "expected": {
-    "item": "Other ideas: Chai Spices or Pumpkin Spices",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Other ideas: Chai Spices or Pumpkin Spices",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Other ideas: Chai Spices or Pumpkin Spices",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

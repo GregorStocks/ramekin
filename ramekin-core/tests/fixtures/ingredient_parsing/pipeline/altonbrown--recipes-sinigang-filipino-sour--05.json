@@ -1,13 +1,25 @@
 {
   "raw": "3 whole Roma tomatoes, diced",
-  "expected": {
-    "item": "whole Roma tomatoes",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "whole Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Tuscan kale, however many heads you need, stems removed, leaves finely chopped",
-  "expected": {
-    "item": "Tuscan kale, however many heads you need, stems removed",
-    "measurements": [],
-    "note": "leaves finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tuscan kale, however many heads you need, stems removed",
+      "measurements": [],
+      "note": "leaves finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "Tuscan kale, however many heads you need, stems removed",
+      "measurements": [],
+      "note": "leaves finely chopped"
+    }
   }
 }

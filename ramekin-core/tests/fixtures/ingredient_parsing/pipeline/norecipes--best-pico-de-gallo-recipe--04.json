@@ -1,13 +1,25 @@
 {
   "raw": "30 grams jalapeño peppers ((~1 pepper, seeded and minced))",
-  "expected": {
-    "item": "jalapeño peppers",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": "g"
-      }
-    ],
-    "note": "~1 pepper, seeded and minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeño peppers",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 pepper, seeded and minced"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeño peppers",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 pepper, seeded and minced"
+    }
   }
 }

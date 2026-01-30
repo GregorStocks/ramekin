@@ -1,8 +1,15 @@
 {
   "raw": "a light sprinkling of paprika",
-  "expected": {
-    "item": "a light sprinkling of paprika",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a light sprinkling of paprika",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a light sprinkling of paprika",
+      "measurements": [],
+      "note": null
+    }
   }
 }

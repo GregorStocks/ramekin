@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons instant or rapid-rise yeast",
-  "expected": {
-    "item": "instant or rapid-rise yeast",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant or rapid-rise yeast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant or rapid-rise yeast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

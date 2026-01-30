@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 quarts water, enough to cover",
-  "expected": {
-    "item": "water, enough to cover",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "quart"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water, enough to cover",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water, enough to cover",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    }
   }
 }

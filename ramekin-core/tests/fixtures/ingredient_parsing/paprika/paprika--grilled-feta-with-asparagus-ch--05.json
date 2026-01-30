@@ -1,13 +1,29 @@
 {
   "raw": "4 ounce bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
-  "expected": {
-    "item": "bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bundle flat-leaf parsley [or 1/2 cup finely-chopped leaves]",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

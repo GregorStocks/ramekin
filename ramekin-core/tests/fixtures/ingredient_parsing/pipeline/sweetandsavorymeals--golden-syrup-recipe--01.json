@@ -1,13 +1,25 @@
 {
   "raw": "2 3/4 cup granulated white sugar (divided)",
-  "expected": {
-    "item": "granulated white sugar",
-    "measurements": [
-      {
-        "amount": "2 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated white sugar",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "granulated white sugar",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

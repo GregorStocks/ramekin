@@ -1,8 +1,15 @@
 {
   "raw": "Cheddar or Pepper Jack cheese (optional)",
-  "expected": {
-    "item": "Cheddar or Pepper Jack cheese",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cheddar or Pepper Jack cheese",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Cheddar or Pepper Jack cheese",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

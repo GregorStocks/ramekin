@@ -1,17 +1,33 @@
 {
   "raw": "2 (3- x 1/2-inch) grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
-  "expected": {
-    "item": "grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grapefruit peel strips (from 1 grapefruit; white pith completely removed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

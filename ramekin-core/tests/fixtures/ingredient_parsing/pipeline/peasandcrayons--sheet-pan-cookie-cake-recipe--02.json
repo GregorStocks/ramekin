@@ -1,17 +1,33 @@
 {
   "raw": "2 + ¼ cups light brown sugar ((450 grams))",
-  "expected": {
-    "item": "+ 1/4 cups light brown sugar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ 1/4 cups light brown sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "+ 1/4 cups light brown sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

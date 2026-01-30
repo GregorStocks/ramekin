@@ -1,13 +1,25 @@
 {
   "raw": "1 pint raspberries, washed and dried",
-  "expected": {
-    "item": "raspberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pint"
-      }
-    ],
-    "note": "washed and dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "raspberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "washed and dried"
+    },
+    "parse_ingredients": {
+      "item": "raspberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "washed and dried"
+    }
   }
 }

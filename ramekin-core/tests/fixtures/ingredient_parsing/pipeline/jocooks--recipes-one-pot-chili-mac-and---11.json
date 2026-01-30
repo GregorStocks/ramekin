@@ -1,13 +1,25 @@
 {
   "raw": "1 cup kidney beans (drained and rinsed)",
-  "expected": {
-    "item": "kidney beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kidney beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "kidney beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3-pound chicken, in parts or 3 pounds chicken pieces of your choice",
-  "expected": {
-    "item": "-pound chicken, in parts",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "or 3 pounds chicken pieces of your choice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "-pound chicken, in parts",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "or 3 pounds chicken pieces of your choice"
+    },
+    "parse_ingredients": {
+      "item": "-pound chicken, in parts",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "or 3 pounds chicken pieces of your choice"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Vanilla ice cream (optional)",
-  "expected": {
-    "item": "Vanilla ice cream",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vanilla ice cream",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Vanilla ice cream",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

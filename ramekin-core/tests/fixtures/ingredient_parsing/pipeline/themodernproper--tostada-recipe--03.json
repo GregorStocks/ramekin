@@ -1,17 +1,33 @@
 {
   "raw": "8 (6-inch) tostada shells",
-  "expected": {
-    "item": "tostada shells",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tostada shells",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tostada shells",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

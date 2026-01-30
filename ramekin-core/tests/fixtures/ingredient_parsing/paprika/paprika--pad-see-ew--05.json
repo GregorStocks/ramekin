@@ -1,8 +1,15 @@
 {
   "raw": "For the Noodles:",
-  "expected": {
-    "item": "For the Noodles:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For the Noodles:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For the Noodles:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

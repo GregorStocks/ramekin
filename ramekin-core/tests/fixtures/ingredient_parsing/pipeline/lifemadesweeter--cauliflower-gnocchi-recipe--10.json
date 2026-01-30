@@ -1,8 +1,15 @@
 {
   "raw": "dried herbs",
-  "expected": {
-    "item": "dried herbs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried herbs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried herbs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

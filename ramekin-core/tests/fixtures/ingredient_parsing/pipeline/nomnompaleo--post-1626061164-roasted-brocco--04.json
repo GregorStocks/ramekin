@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons extra virgin olive oil (avocado oil, melted ghee, or melted lard)",
-  "expected": {
-    "item": "extra virgin olive oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "avocado oil, melted ghee, or melted lard"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "avocado oil, melted ghee, or melted lard"
+    },
+    "enrich_metric_weights": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "avocado oil, melted ghee, or melted lard"
+    }
   }
 }

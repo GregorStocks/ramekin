@@ -1,17 +1,37 @@
 {
   "raw": "50 wonton wrappers (about 12 ounces), thawed if frozen, thinnest ones you can find",
-  "expected": {
-    "item": "wonton wrappers , thawed if frozen, thinnest ones you can find",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": null
-      },
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "wonton wrappers , thawed if frozen, thinnest ones you can find",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": null
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "wonton wrappers , thawed if frozen, thinnest ones you can find",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": null
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

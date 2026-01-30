@@ -1,17 +1,37 @@
 {
   "raw": "1 (15 ounce) can red kidney beans (drained)",
-  "expected": {
-    "item": "red kidney beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red kidney beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "red kidney beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

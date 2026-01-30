@@ -1,17 +1,33 @@
 {
   "raw": "1/4 red onion, finely diced (about 2 tablespoons)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

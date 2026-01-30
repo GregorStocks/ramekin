@@ -1,13 +1,25 @@
 {
   "raw": "1/2  tsp ground cinnamon (to garnish)",
-  "expected": {
-    "item": "ground cinnamon (to garnish)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground cinnamon (to garnish)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground cinnamon (to garnish)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

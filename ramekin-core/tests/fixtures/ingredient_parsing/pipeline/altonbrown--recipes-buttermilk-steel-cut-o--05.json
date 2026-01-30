@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup plus 1 tablespoon low-fat buttermilk, divided",
-  "expected": {
-    "item": "1/2 cup plus 1 tablespoon low-fat buttermilk, divided",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon low-fat buttermilk, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1/2 cup plus 1 tablespoon low-fat buttermilk, divided",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon low-fat buttermilk, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "1/2 cup plus 1 tablespoon low-fat buttermilk, divided",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon low-fat buttermilk, divided"
+    }
   }
 }

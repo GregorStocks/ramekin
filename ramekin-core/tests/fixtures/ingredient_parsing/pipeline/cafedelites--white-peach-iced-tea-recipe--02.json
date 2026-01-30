@@ -1,13 +1,25 @@
 {
   "raw": "1 cup granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
-  "expected": {
-    "item": "granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "granulated sugar (or a a granulated natural sweetener that measures 1:1 with sugar)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

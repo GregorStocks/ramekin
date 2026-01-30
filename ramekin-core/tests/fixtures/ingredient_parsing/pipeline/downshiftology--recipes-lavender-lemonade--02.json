@@ -1,13 +1,25 @@
 {
   "raw": "4 cups  water (divided)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

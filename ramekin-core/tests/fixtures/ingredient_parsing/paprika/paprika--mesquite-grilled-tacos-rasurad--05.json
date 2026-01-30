@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon lime juice, plus extra as needed",
-  "expected": {
-    "item": "lime juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus extra as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra as needed"
+    },
+    "parse_ingredients": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra as needed"
+    }
   }
 }

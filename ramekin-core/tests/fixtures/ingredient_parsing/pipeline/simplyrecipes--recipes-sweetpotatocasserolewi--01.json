@@ -1,17 +1,33 @@
 {
   "raw": "8 sweet potatoes (about 4 pounds)",
-  "expected": {
-    "item": "sweet potatoes",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      },
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

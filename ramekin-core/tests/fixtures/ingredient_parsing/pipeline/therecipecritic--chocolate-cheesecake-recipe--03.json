@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces bittersweet chocolate (melted)",
-  "expected": {
-    "item": "bittersweet chocolate",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

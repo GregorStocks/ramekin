@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha (to taste)",
-  "expected": {
-    "item": "Sriracha",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sriracha",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "Sriracha",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

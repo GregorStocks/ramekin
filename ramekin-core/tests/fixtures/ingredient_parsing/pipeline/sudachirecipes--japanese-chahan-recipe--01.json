@@ -1,13 +1,25 @@
 {
   "raw": "½ tbsp lard",
-  "expected": {
-    "item": "lard",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lard",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lard",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

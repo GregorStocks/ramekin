@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds fresh coarse-grind corn masa for tamales (unprepared)",
-  "expected": {
-    "item": "fresh coarse-grind corn masa for tamales (unprepared)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh coarse-grind corn masa for tamales (unprepared)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh coarse-grind corn masa for tamales (unprepared)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

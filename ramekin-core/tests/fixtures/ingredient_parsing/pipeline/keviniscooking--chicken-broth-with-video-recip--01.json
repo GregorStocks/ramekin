@@ -1,13 +1,25 @@
 {
   "raw": "1  rotisserie chicken carcass (bones and skin)",
-  "expected": {
-    "item": "rotisserie chicken carcass (bones and skin)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rotisserie chicken carcass (bones and skin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "rotisserie chicken carcass (bones and skin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

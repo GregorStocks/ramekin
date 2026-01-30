@@ -1,13 +1,25 @@
 {
   "raw": "3 cups garlic-flavored crutons",
-  "expected": {
-    "item": "garlic-flavored crutons",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic-flavored crutons",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garlic-flavored crutons",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

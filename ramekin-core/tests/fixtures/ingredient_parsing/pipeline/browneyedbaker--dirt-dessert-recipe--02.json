@@ -1,13 +1,29 @@
 {
   "raw": "7.8 ounce instant chocolate pudding",
-  "expected": {
-    "item": "instant chocolate pudding",
-    "measurements": [
-      {
-        "amount": "7.8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "instant chocolate pudding",
+      "measurements": [
+        {
+          "amount": "7.8",
+          "unit": "oz"
+        },
+        {
+          "amount": "221",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "instant chocolate pudding",
+      "measurements": [
+        {
+          "amount": "7.8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

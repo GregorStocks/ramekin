@@ -1,13 +1,25 @@
 {
   "raw": "1 12-ounce can Dr Pepper (or any other cola-type soda you prefer)",
-  "expected": {
-    "item": "Dr Pepper (or any other cola-type soda you prefer)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "12-ounce can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dr Pepper (or any other cola-type soda you prefer)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Dr Pepper (or any other cola-type soda you prefer)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce can"
+        }
+      ],
+      "note": null
+    }
   }
 }

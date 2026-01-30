@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup white vinegar (5% acidity)",
-  "expected": {
-    "item": "white vinegar",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white vinegar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "white vinegar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

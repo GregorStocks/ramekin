@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons chili crisp, such as Lao Gan Ma, plus more as needed",
-  "expected": {
-    "item": "chili crisp, such as Lao Gan Ma",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chili crisp, such as Lao Gan Ma",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "parse_ingredients": {
+      "item": "chili crisp, such as Lao Gan Ma",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

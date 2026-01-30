@@ -1,17 +1,33 @@
 {
   "raw": "1 lb yellow onions (2 medium) (sliced into thick strips)",
-  "expected": {
-    "item": "yellow onions",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced into thick strips"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into thick strips"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into thick strips"
+    }
   }
 }

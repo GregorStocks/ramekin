@@ -1,13 +1,25 @@
 {
   "raw": "1 cup milk (whole, 2%, or 1%)",
-  "expected": {
-    "item": "milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "whole, 2%, or 1%"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "whole, 2%, or 1%"
+    },
+    "parse_ingredients": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "whole, 2%, or 1%"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "okonomiyaki sauce",
-  "expected": {
-    "item": "okonomiyaki sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "okonomiyaki sauce",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "okonomiyaki sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

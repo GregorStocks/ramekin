@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup pistachio butter (at room temperature)",
-  "expected": {
-    "item": "pistachio butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pistachio butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "pistachio butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

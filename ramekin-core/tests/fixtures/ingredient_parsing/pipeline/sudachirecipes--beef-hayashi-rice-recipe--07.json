@@ -1,13 +1,25 @@
 {
   "raw": "½ tbsp all-purpose flour (for light coating, or cake flour)",
-  "expected": {
-    "item": "all-purpose flour (for light coating, or cake flour)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour (for light coating, or cake flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour (for light coating, or cake flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

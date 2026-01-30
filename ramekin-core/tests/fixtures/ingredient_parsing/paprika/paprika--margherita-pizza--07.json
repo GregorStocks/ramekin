@@ -1,13 +1,25 @@
 {
   "raw": "2 12-inch round or 9×13 rectangular pizza doughs",
-  "expected": {
-    "item": "12-inch round or 9×13 rectangular pizza doughs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "12-inch round or 9×13 rectangular pizza doughs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "12-inch round or 9×13 rectangular pizza doughs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

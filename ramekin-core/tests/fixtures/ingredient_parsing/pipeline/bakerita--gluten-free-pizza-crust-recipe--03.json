@@ -1,13 +1,25 @@
 {
   "raw": "20g&nbsp;maple syrup,&nbsp;honey&nbsp;or&nbsp;cane sugar",
-  "expected": {
-    "item": "maple syrup, honey or cane sugar",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "maple syrup, honey or cane sugar",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "maple syrup, honey or cane sugar",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

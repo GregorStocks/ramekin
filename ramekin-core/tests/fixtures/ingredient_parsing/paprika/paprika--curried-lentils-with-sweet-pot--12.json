@@ -1,13 +1,25 @@
 {
   "raw": "1 pound Swiss chard, center ribs removed, leaves thinly sliced",
-  "expected": {
-    "item": "Swiss chard, center ribs removed",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "leaves thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Swiss chard, center ribs removed",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "leaves thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "Swiss chard, center ribs removed",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "leaves thinly sliced"
+    }
   }
 }

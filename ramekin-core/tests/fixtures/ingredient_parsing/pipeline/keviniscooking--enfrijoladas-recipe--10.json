@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces queso fresco (Oaxaca cheese or Monterey Jack cheese (crumbled or shredded))",
-  "expected": {
-    "item": "queso fresco",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "queso fresco",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded"
+    },
+    "parse_ingredients": {
+      "item": "queso fresco",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "Oaxaca cheese or Monterey Jack cheese (crumbled or shredded"
+    }
   }
 }

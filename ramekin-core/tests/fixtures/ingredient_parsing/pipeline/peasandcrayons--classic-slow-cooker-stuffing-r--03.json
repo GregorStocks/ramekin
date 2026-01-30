@@ -1,13 +1,29 @@
 {
   "raw": "12-18 oz button mushrooms ((3 cups minced))",
-  "expected": {
-    "item": "button mushrooms",
-    "measurements": [
-      {
-        "amount": "12-18",
-        "unit": "oz"
-      }
-    ],
-    "note": "3 cups minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "12-18",
+          "unit": "oz"
+        }
+      ],
+      "note": "3 cups minced"
+    },
+    "enrich_metric_weights": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "12-18",
+          "unit": "oz"
+        },
+        {
+          "amount": "340-510",
+          "unit": "g"
+        }
+      ],
+      "note": "3 cups minced"
+    }
   }
 }

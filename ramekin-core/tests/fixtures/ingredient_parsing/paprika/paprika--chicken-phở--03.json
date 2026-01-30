@@ -1,13 +1,25 @@
 {
   "raw": "Three 1/2-inch-thick slices of unpeeled fresh ginger, smashed",
-  "expected": {
-    "item": "1/2-inch-thick slices of unpeeled fresh ginger, smashed",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2-inch-thick slices of unpeeled fresh ginger, smashed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "1/2-inch-thick slices of unpeeled fresh ginger, smashed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "For the Marinated Pork:",
-  "expected": {
-    "item": "For the Marinated Pork:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "For the Marinated Pork:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "For the Marinated Pork:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

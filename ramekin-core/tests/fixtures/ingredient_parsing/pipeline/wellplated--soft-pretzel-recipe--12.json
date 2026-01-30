@@ -1,8 +1,15 @@
 {
   "raw": "Everything bagel seasoning",
-  "expected": {
-    "item": "Everything bagel seasoning",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Everything bagel seasoning",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Everything bagel seasoning",
+      "measurements": [],
+      "note": null
+    }
   }
 }

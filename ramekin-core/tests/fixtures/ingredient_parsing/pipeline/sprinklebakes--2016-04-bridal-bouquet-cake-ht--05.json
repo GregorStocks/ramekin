@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup plus 2 tablespoons (98g all-purpose flour)",
-  "expected": {
-    "item": "1/2 cup plus 2 tablespoons (98g all-purpose flour)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "98",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 2 tablespoons"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2 cup plus 2 tablespoons (98g all-purpose flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "98",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons"
+    },
+    "parse_ingredients": {
+      "item": "1/2 cup plus 2 tablespoons (98g all-purpose flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "98",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons"
+    }
   }
 }

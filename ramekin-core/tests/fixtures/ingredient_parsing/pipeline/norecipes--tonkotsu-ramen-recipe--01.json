@@ -1,13 +1,25 @@
 {
   "raw": "2  pig trotters ((cut in half lengthwise))",
-  "expected": {
-    "item": "pig trotters (cut in half lengthwise)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pig trotters (cut in half lengthwise)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pig trotters (cut in half lengthwise)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

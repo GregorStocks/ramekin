@@ -1,17 +1,33 @@
 {
   "raw": "1 large green or Savoy cabbage (2 pounds), cored and thickly shredded",
-  "expected": {
-    "item": "green or Savoy cabbage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cored and thickly shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green or Savoy cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cored and thickly shredded"
+    },
+    "parse_ingredients": {
+      "item": "green or Savoy cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cored and thickly shredded"
+    }
   }
 }

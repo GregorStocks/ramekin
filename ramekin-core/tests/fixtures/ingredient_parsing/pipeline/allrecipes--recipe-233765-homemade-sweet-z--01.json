@@ -1,13 +1,25 @@
 {
   "raw": "10 small zucchini, ends trimmed",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "small"
-      }
-    ],
-    "note": "ends trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "small"
+        }
+      ],
+      "note": "ends trimmed"
+    },
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "small"
+        }
+      ],
+      "note": "ends trimmed"
+    }
   }
 }

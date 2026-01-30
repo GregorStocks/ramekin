@@ -1,13 +1,25 @@
 {
   "raw": "1 clove garlic (, crushed or minced (optional))",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "clove"
-      }
-    ],
-    "note": "crushed or minced (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "crushed or minced (optional"
+    },
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "crushed or minced (optional"
+    }
   }
 }

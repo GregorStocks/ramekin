@@ -1,8 +1,15 @@
 {
   "raw": "Several sprigs of fresh mint",
-  "expected": {
-    "item": "Several sprigs of fresh mint",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Several sprigs of fresh mint",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Several sprigs of fresh mint",
+      "measurements": [],
+      "note": null
+    }
   }
 }

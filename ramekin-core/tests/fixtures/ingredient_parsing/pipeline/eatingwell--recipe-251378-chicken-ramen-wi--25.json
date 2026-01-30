@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons thin matchsticks peeled fresh ginger",
-  "expected": {
-    "item": "thin matchsticks peeled fresh ginger",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thin matchsticks peeled fresh ginger",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thin matchsticks peeled fresh ginger",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

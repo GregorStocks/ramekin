@@ -1,8 +1,15 @@
 {
   "raw": "Green gel icing",
-  "expected": {
-    "item": "Green gel icing",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Green gel icing",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Green gel icing",
+      "measurements": [],
+      "note": null
+    }
   }
 }

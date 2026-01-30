@@ -1,13 +1,25 @@
 {
   "raw": "1 cup halved cipollini onions or shallot wedges",
-  "expected": {
-    "item": "halved cipollini onions or shallot wedges",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "halved cipollini onions or shallot wedges",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "halved cipollini onions or shallot wedges",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

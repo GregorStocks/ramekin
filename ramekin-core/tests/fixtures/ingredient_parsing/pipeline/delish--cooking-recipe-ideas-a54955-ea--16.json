@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp. Thinly sliced scallions, for garnish",
-  "expected": {
-    "item": "Thinly sliced scallions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thinly sliced scallions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Thinly sliced scallions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish"
+    }
   }
 }

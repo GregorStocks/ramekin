@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp ground nutmeg  (OR 1 whole nutmeg)",
-  "expected": {
-    "item": "ground nutmeg",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "OR 1 whole nutmeg"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground nutmeg",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "OR 1 whole nutmeg"
+    },
+    "enrich_metric_weights": {
+      "item": "ground nutmeg",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "OR 1 whole nutmeg"
+    }
   }
 }

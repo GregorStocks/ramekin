@@ -1,8 +1,15 @@
 {
   "raw": "Juice from one lemon",
-  "expected": {
-    "item": "Juice from one lemon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Juice from one lemon",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Juice from one lemon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

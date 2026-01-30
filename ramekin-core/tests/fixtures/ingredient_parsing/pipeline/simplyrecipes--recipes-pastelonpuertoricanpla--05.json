@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 teaspoons sazón flavoring blend,&nbsp;store-bought&nbsp;or&nbsp;homemade,&nbsp;optional",
-  "expected": {
-    "item": "sazón flavoring blend, store-bought or homemade",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sazón flavoring blend, store-bought or homemade",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "sazón flavoring blend, store-bought or homemade",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

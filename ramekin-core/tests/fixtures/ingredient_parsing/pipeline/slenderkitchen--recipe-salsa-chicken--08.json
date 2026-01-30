@@ -1,13 +1,29 @@
 {
   "raw": "2 oz pepper jack cheese (slices or shredded)",
-  "expected": {
-    "item": "pepper jack cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "slices or shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pepper jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "slices or shredded"
+    },
+    "parse_ingredients": {
+      "item": "pepper jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "slices or shredded"
+    }
   }
 }

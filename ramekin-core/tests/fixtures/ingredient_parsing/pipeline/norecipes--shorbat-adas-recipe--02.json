@@ -1,13 +1,25 @@
 {
   "raw": "260 grams onion ((~1 small , finely minced))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "260",
-        "unit": "g"
-      }
-    ],
-    "note": "~1 small , finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "260",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 small , finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "260",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 small , finely minced"
+    }
   }
 }

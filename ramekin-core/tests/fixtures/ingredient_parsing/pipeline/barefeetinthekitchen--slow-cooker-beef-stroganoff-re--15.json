@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces fresh white button or crimini mushrooms (sliced very thin)",
-  "expected": {
-    "item": "fresh white button or crimini mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced very thin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh white button or crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced very thin"
+    },
+    "parse_ingredients": {
+      "item": "fresh white button or crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced very thin"
+    }
   }
 }

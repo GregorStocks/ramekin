@@ -1,8 +1,15 @@
 {
   "raw": "Chia jams: cherry chai, rhubarb or cranberry",
-  "expected": {
-    "item": "Chia jams: cherry chai, rhubarb or cranberry",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chia jams: cherry chai, rhubarb or cranberry",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chia jams: cherry chai, rhubarb or cranberry",
+      "measurements": [],
+      "note": null
+    }
   }
 }

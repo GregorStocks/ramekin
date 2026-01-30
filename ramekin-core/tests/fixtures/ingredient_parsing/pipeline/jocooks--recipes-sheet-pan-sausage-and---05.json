@@ -1,13 +1,25 @@
 {
   "raw": "1 pound smoked sausage (chicken, turkey, pork, or beef sliced into ¼-inch slices)",
-  "expected": {
-    "item": "smoked sausage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "chicken, turkey, pork, or beef sliced into 1/4-inch slices"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "chicken, turkey, pork, or beef sliced into 1/4-inch slices"
+    },
+    "enrich_metric_weights": {
+      "item": "smoked sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "chicken, turkey, pork, or beef sliced into 1/4-inch slices"
+    }
   }
 }

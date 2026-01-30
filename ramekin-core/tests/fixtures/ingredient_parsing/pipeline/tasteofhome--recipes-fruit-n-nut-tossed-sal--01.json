@@ -1,13 +1,25 @@
 {
   "raw": "1 head romaine, torn",
-  "expected": {
-    "item": "romaine, torn",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "romaine, torn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "romaine, torn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

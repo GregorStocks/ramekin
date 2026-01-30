@@ -1,8 +1,15 @@
 {
   "raw": "parsley (dried or finely chopped fresh, for color)",
-  "expected": {
-    "item": "parsley",
-    "measurements": [],
-    "note": "dried or finely chopped fresh, for color"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "dried or finely chopped fresh, for color"
+    },
+    "enrich_metric_weights": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "dried or finely chopped fresh, for color"
+    }
   }
 }

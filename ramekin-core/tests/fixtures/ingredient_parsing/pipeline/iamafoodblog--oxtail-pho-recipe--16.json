@@ -1,8 +1,15 @@
 {
   "raw": "red chilis",
-  "expected": {
-    "item": "red chilis",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red chilis",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red chilis",
+      "measurements": [],
+      "note": null
+    }
   }
 }

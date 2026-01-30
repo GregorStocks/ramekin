@@ -1,17 +1,37 @@
 {
   "raw": "1½ cups beer, cold ((12 ounces ))",
-  "expected": {
-    "item": "beer",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "cold"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beer",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "cold"
+    },
+    "enrich_metric_weights": {
+      "item": "beer",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "cold"
+    }
   }
 }

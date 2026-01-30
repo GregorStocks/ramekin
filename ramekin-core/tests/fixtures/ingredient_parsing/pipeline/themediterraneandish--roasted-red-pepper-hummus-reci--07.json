@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp to 1 tsp smoked paprika (adjust to your liking)",
-  "expected": {
-    "item": "to 1 tsp smoked paprika (adjust to your liking)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "to 1 tsp smoked paprika (adjust to your liking)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "to 1 tsp smoked paprika (adjust to your liking)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

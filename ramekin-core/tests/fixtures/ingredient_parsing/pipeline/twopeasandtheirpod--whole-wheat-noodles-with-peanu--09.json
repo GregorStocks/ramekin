@@ -1,8 +1,15 @@
 {
   "raw": "Broccoli",
-  "expected": {
-    "item": "Broccoli",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Broccoli",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Broccoli",
+      "measurements": [],
+      "note": null
+    }
   }
 }

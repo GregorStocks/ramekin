@@ -1,17 +1,33 @@
 {
   "raw": "30  mini phyllo tart shells (2 boxes)",
-  "expected": {
-    "item": "mini phyllo tart shells",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mini phyllo tart shells",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mini phyllo tart shells",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    }
   }
 }

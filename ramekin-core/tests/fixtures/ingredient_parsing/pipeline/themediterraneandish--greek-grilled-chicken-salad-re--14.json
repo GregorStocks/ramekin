@@ -1,8 +1,15 @@
 {
   "raw": "Homemade Greek dressing,",
-  "expected": {
-    "item": "Homemade Greek dressing,",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Homemade Greek dressing,",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Homemade Greek dressing,",
+      "measurements": [],
+      "note": null
+    }
   }
 }

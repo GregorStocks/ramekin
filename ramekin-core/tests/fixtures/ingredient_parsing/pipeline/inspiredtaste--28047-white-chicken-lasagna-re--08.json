@@ -1,21 +1,41 @@
 {
   "raw": "1 (12-ounce) package pre-cooked chicken sausage, thinly sliced into discs (5 to 6 sausages)",
-  "expected": {
-    "item": "pre-cooked chicken sausage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "12",
-        "unit": null
-      },
-      {
-        "amount": "5 to 6",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced into discs"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pre-cooked chicken sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "5 to 6",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced into discs"
+    },
+    "enrich_metric_weights": {
+      "item": "pre-cooked chicken sausage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "5 to 6",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced into discs"
+    }
   }
 }

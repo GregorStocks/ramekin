@@ -1,13 +1,25 @@
 {
   "raw": "1 cup orzo, whole wheat if you wish",
-  "expected": {
-    "item": "orzo",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "whole wheat if you wish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orzo",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "whole wheat if you wish"
+    },
+    "parse_ingredients": {
+      "item": "orzo",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "whole wheat if you wish"
+    }
   }
 }

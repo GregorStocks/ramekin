@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces frozen corn",
-  "expected": {
-    "item": "frozen corn",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

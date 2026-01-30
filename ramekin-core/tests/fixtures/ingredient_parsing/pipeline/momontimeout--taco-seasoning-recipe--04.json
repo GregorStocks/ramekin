@@ -1,13 +1,25 @@
 {
   "raw": "3 tsp onion powder",
-  "expected": {
-    "item": "onion powder",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion powder",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "onion powder",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

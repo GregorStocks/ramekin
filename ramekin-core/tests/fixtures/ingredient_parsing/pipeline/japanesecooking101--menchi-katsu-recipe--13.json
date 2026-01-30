@@ -1,8 +1,15 @@
 {
   "raw": "Tonkatsu sauce",
-  "expected": {
-    "item": "Tonkatsu sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tonkatsu sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tonkatsu sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

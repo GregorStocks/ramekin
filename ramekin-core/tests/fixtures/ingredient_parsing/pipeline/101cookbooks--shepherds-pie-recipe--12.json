@@ -1,8 +1,15 @@
 {
   "raw": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
-  "expected": {
-    "item": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "To serve: a drizzle of melted coconut oil with chopped serrano chiles, micro greens, scallions",
+      "measurements": [],
+      "note": null
+    }
   }
 }

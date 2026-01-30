@@ -1,13 +1,25 @@
 {
   "raw": "4 Slices of your favorite cheese (for topping)",
-  "expected": {
-    "item": "your favorite cheese (for topping)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "your favorite cheese (for topping)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "your favorite cheese (for topping)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

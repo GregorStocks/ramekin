@@ -1,13 +1,25 @@
 {
   "raw": "110 grams Cheddar cheese",
-  "expected": {
-    "item": "Cheddar cheese",
-    "measurements": [
-      {
-        "amount": "110",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "110",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "110",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

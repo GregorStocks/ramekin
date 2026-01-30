@@ -1,13 +1,25 @@
 {
   "raw": "10 fat green garlic cloves, peeled, sliced 1/4-inch thick or use 8 regular garlic cloves",
-  "expected": {
-    "item": "fat green garlic cloves, peeled",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": "sliced 1/4-inch thick or use 8 regular garlic cloves"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fat green garlic cloves, peeled",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/4-inch thick or use 8 regular garlic cloves"
+    },
+    "enrich_metric_weights": {
+      "item": "fat green garlic cloves, peeled",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/4-inch thick or use 8 regular garlic cloves"
+    }
   }
 }

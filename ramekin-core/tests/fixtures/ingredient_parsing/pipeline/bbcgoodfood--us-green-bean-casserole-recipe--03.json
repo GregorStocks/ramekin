@@ -1,13 +1,25 @@
 {
   "raw": "2¾ cups  sliced cremini or button mushrooms",
-  "expected": {
-    "item": "sliced cremini or button mushrooms",
-    "measurements": [
-      {
-        "amount": "2 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced cremini or button mushrooms",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced cremini or button mushrooms",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

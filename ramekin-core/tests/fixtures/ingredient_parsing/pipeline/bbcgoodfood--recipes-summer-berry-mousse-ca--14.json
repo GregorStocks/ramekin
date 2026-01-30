@@ -1,8 +1,15 @@
 {
   "raw": "mixture of  strawberries (some halved), raspberries and blueberries",
-  "expected": {
-    "item": "mixture of  strawberries , raspberries and blueberries",
-    "measurements": [],
-    "note": "some halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mixture of  strawberries , raspberries and blueberries",
+      "measurements": [],
+      "note": "some halved"
+    },
+    "parse_ingredients": {
+      "item": "mixture of  strawberries , raspberries and blueberries",
+      "measurements": [],
+      "note": "some halved"
+    }
   }
 }

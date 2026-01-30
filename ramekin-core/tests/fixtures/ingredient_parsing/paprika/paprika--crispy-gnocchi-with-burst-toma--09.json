@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces fresh mozzarella, cut or torn into 1/2-inch pieces",
-  "expected": {
-    "item": "fresh mozzarella, cut or torn into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh mozzarella, cut or torn into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh mozzarella, cut or torn into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

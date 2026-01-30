@@ -1,13 +1,25 @@
 {
   "raw": "6 large pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
-  "expected": {
-    "item": "pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pitas, cut into eight wedges each, then each wedge split into two layers (for small chips) cut into six wedges and split (for large, scoopable chips)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

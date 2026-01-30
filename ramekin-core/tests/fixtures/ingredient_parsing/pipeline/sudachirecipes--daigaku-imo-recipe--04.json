@@ -1,8 +1,15 @@
 {
   "raw": "cooking oil (for deep frying)",
-  "expected": {
-    "item": "cooking oil (for deep frying)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooking oil (for deep frying)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooking oil (for deep frying)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

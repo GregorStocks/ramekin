@@ -1,8 +1,15 @@
 {
   "raw": "romaine lettuce, (for topping)",
-  "expected": {
-    "item": "romaine lettuce, (for topping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "romaine lettuce, (for topping)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "romaine lettuce, (for topping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

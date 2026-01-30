@@ -1,17 +1,37 @@
 {
   "raw": "1 (14.5 ounce) can chicken broth",
-  "expected": {
-    "item": "chicken broth",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "14.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "411",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

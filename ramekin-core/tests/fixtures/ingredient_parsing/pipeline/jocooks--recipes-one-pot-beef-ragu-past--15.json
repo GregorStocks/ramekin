@@ -1,8 +1,15 @@
 {
   "raw": "Parmesan cheese (grated, for serving)",
-  "expected": {
-    "item": "Parmesan cheese",
-    "measurements": [],
-    "note": "grated, for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parmesan cheese",
+      "measurements": [],
+      "note": "grated, for serving"
+    },
+    "parse_ingredients": {
+      "item": "Parmesan cheese",
+      "measurements": [],
+      "note": "grated, for serving"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 Tablespoons oil from the sun-dried tomatoes jar",
-  "expected": {
-    "item": "oil from the sun-dried tomatoes jar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oil from the sun-dried tomatoes jar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "oil from the sun-dried tomatoes jar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

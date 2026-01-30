@@ -1,13 +1,25 @@
 {
   "raw": "2 sprigs basil, plus more for serving",
-  "expected": {
-    "item": "basil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "sprig"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "basil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "basil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

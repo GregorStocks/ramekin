@@ -1,13 +1,25 @@
 {
   "raw": "1 small tomato (, diced)",
-  "expected": {
-    "item": "tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp ginger (peeled and finely grated)",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "peeled and finely grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "peeled and finely grated"
+    },
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "peeled and finely grated"
+    }
   }
 }

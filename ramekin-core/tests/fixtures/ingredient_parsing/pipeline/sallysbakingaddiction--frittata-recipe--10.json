@@ -1,17 +1,33 @@
 {
   "raw": "1 heaping cup (130g) sliced zucchini",
-  "expected": {
-    "item": "sliced zucchini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaping cup"
-      },
-      {
-        "amount": "130",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

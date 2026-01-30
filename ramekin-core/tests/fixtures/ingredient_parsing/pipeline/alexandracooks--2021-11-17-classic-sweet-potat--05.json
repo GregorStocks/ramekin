@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons brown sugar, optional, see notes above",
-  "expected": {
-    "item": "brown sugar, optional, see notes above",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brown sugar, optional, see notes above",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "brown sugar, optional, see notes above",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

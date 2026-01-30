@@ -1,8 +1,15 @@
 {
   "raw": "toppings of your choice (cream, ice cream, flavored syrups, chopped nuts etc)",
-  "expected": {
-    "item": "toppings of your choice",
-    "measurements": [],
-    "note": "cream, ice cream, flavored syrups, chopped nuts etc"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toppings of your choice",
+      "measurements": [],
+      "note": "cream, ice cream, flavored syrups, chopped nuts etc"
+    },
+    "enrich_metric_weights": {
+      "item": "toppings of your choice",
+      "measurements": [],
+      "note": "cream, ice cream, flavored syrups, chopped nuts etc"
+    }
   }
 }

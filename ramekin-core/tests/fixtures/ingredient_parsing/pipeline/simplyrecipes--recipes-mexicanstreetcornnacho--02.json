@@ -1,17 +1,33 @@
 {
   "raw": "1 pound frozen corn (about 3 cups), still frozen",
-  "expected": {
-    "item": "frozen corn",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "still frozen"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "still frozen"
+    },
+    "parse_ingredients": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "still frozen"
+    }
   }
 }

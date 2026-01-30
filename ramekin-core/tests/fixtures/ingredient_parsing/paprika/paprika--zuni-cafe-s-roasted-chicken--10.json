@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon dried currants plumped in 1 tablespoon red wine vinegar and 1 tablespoon warm water for ten minutes or so",
-  "expected": {
-    "item": "dried currants plumped in 1 tablespoon red wine vinegar and 1 tablespoon warm water for ten minutes or so",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried currants plumped in 1 tablespoon red wine vinegar and 1 tablespoon warm water for ten minutes or so",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried currants plumped in 1 tablespoon red wine vinegar and 1 tablespoon warm water for ten minutes or so",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

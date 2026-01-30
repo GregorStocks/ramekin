@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound cauliflower (from half a small head)",
-  "expected": {
-    "item": "cauliflower (from half a small head)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cauliflower (from half a small head)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cauliflower (from half a small head)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

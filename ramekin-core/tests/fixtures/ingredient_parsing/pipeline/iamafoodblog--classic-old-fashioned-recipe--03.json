@@ -1,8 +1,15 @@
 {
   "raw": "Angostura bitters",
-  "expected": {
-    "item": "Angostura bitters",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Angostura bitters",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Angostura bitters",
+      "measurements": [],
+      "note": null
+    }
   }
 }

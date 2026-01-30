@@ -1,8 +1,15 @@
 {
   "raw": "Pitted Kalamata olives,  (to your liking)",
-  "expected": {
-    "item": "Pitted Kalamata olives,  (to your liking)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Pitted Kalamata olives,  (to your liking)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Pitted Kalamata olives,  (to your liking)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

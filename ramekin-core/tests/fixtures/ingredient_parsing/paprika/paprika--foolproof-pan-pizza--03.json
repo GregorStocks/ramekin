@@ -1,21 +1,41 @@
 {
   "raw": "4 g instant yeast (0.15 ounces; about 1 teaspoon), such as SAF Instant Yeast",
-  "expected": {
-    "item": "instant yeast , such as SAF Instant Yeast",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "g"
-      },
-      {
-        "amount": "0.15",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant yeast , such as SAF Instant Yeast",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "g"
+        },
+        {
+          "amount": "0.15",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant yeast , such as SAF Instant Yeast",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "g"
+        },
+        {
+          "amount": "0.15",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

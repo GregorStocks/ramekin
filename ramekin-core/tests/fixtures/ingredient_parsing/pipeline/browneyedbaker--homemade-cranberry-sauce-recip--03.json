@@ -1,13 +1,25 @@
 {
   "raw": "1  Granny Smith apple (peeled, cored and finely chopped)",
-  "expected": {
-    "item": "Granny Smith apple",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled, cored and finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Granny Smith apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored and finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "Granny Smith apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored and finely chopped"
+    }
   }
 }

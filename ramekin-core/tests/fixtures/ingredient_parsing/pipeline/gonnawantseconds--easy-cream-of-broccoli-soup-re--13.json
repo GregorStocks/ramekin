@@ -1,13 +1,25 @@
 {
   "raw": "4 Cups Broccoli Florets (Chopped)",
-  "expected": {
-    "item": "Broccoli Florets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "Chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Broccoli Florets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped"
+    },
+    "parse_ingredients": {
+      "item": "Broccoli Florets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "0.5 cup instant brown rice, or cooked brown rice",
-  "expected": {
-    "item": "instant brown rice",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "or cooked brown rice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "instant brown rice",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "or cooked brown rice"
+    },
+    "parse_ingredients": {
+      "item": "instant brown rice",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "or cooked brown rice"
+    }
   }
 }

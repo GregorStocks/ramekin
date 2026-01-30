@@ -1,13 +1,25 @@
 {
   "raw": "3 cups quick-cooking oats",
-  "expected": {
-    "item": "quick-cooking oats",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "quick-cooking oats",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "quick-cooking oats",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

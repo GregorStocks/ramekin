@@ -1,17 +1,33 @@
 {
   "raw": "3      ripe bananas, smashed  (about 1 cup)",
-  "expected": {
-    "item": "ripe bananas, smashed",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe bananas, smashed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ripe bananas, smashed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

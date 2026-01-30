@@ -1,8 +1,15 @@
 {
   "raw": "flat leaf parsley to garnish",
-  "expected": {
-    "item": "flat leaf parsley to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flat leaf parsley to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flat leaf parsley to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

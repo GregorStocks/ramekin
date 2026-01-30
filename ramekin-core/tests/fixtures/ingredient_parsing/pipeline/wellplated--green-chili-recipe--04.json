@@ -1,13 +1,25 @@
 {
   "raw": "1  medium yellow onion (chopped into 1/4- to 1/2-inch pieces (about 1 cup))",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped into 1/4- to 1/2-inch pieces (about 1 cup"
+    }
   }
 }

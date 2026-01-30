@@ -1,13 +1,25 @@
 {
   "raw": "6  or 7 hard boiled eggs (diced)",
-  "expected": {
-    "item": "hard boiled eggs",
-    "measurements": [
-      {
-        "amount": "6 or 7",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hard boiled eggs",
+      "measurements": [
+        {
+          "amount": "6 or 7",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "hard boiled eggs",
+      "measurements": [
+        {
+          "amount": "6 or 7",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  small handful mint leaves",
-  "expected": {
-    "item": "handful mint leaves",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "handful mint leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "handful mint leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

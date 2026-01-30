@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup caramel sauce (microwaved for 15 seconds)",
-  "expected": {
-    "item": "caramel sauce (microwaved for 15 seconds)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "caramel sauce (microwaved for 15 seconds)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "caramel sauce (microwaved for 15 seconds)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

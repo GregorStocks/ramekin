@@ -1,13 +1,25 @@
 {
   "raw": "2  packages Chuka Men (Chinese style noodles)",
-  "expected": {
-    "item": "Chuka Men (Chinese style noodles)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chuka Men (Chinese style noodles)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chuka Men (Chinese style noodles)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

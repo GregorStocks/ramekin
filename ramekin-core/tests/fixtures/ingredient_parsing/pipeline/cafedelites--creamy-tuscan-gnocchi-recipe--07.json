@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups heavy cream (thickened cream or half andf half)",
-  "expected": {
-    "item": "heavy cream (thickened cream or half andf half)",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "heavy cream (thickened cream or half andf half)",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "heavy cream (thickened cream or half andf half)",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup solid vegetable shortening, chilled",
-  "expected": {
-    "item": "solid vegetable shortening",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "solid vegetable shortening",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "solid vegetable shortening",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

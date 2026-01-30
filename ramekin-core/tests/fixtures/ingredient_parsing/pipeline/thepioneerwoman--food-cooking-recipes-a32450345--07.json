@@ -1,13 +1,25 @@
 {
   "raw": "3 c. shredded rotisserie chicken",
-  "expected": {
-    "item": "shredded rotisserie chicken",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded rotisserie chicken",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded rotisserie chicken",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

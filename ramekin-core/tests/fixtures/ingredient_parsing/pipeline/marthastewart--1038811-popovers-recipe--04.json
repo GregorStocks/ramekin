@@ -1,13 +1,25 @@
 {
   "raw": "1.25 teaspoons coarse salt",
-  "expected": {
-    "item": "coarse salt",
-    "measurements": [
-      {
-        "amount": "1.25",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coarse salt",
+      "measurements": [
+        {
+          "amount": "1.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coarse salt",
+      "measurements": [
+        {
+          "amount": "1.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

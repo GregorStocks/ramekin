@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup lettuce (shredded)",
-  "expected": {
-    "item": "lettuce",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lettuce",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "lettuce",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

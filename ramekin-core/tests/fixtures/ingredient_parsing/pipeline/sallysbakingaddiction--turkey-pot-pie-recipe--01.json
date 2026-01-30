@@ -1,13 +1,25 @@
 {
   "raw": "1 unbaked pie crust (what I used) or&nbsp;all butter pie crust*",
-  "expected": {
-    "item": "unbaked pie crust (what I used) or all butter pie crust*",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unbaked pie crust (what I used) or all butter pie crust*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unbaked pie crust (what I used) or all butter pie crust*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

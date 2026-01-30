@@ -1,13 +1,25 @@
 {
   "raw": "2 liters Lemon-Lime Soda",
-  "expected": {
-    "item": "Lemon-Lime Soda",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lemon-Lime Soda",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Lemon-Lime Soda",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

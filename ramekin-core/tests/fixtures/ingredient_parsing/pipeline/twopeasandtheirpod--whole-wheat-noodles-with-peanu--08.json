@@ -1,8 +1,15 @@
 {
   "raw": "Whole Wheat Spaghetti (Soba noodles would work too)",
-  "expected": {
-    "item": "Whole Wheat Spaghetti (Soba noodles would work too)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Whole Wheat Spaghetti (Soba noodles would work too)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Whole Wheat Spaghetti (Soba noodles would work too)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

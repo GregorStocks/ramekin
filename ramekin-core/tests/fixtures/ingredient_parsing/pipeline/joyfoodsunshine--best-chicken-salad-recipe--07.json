@@ -1,13 +1,25 @@
 {
   "raw": "1 cup celery ((finely diced, about 3 stalks celery))",
-  "expected": {
-    "item": "celery",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely diced, about 3 stalks celery"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced, about 3 stalks celery"
+    },
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced, about 3 stalks celery"
+    }
   }
 }

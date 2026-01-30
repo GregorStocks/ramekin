@@ -1,13 +1,25 @@
 {
   "raw": "2 cups fresh strawberries (hulled and cut in half)",
-  "expected": {
-    "item": "fresh strawberries (hulled and cut in half)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh strawberries (hulled and cut in half)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh strawberries (hulled and cut in half)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

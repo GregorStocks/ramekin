@@ -1,8 +1,15 @@
 {
   "raw": "semolina flour or cornmeal for dusting baking sheet",
-  "expected": {
-    "item": "semolina flour or cornmeal for dusting baking sheet",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "semolina flour or cornmeal for dusting baking sheet",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "semolina flour or cornmeal for dusting baking sheet",
+      "measurements": [],
+      "note": null
+    }
   }
 }

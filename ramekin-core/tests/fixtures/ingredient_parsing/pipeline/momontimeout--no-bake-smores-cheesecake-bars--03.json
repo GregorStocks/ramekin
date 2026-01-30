@@ -1,13 +1,25 @@
 {
   "raw": "8 tbsp unsalted butter",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

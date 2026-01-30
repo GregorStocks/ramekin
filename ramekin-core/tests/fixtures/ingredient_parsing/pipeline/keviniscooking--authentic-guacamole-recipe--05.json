@@ -1,13 +1,25 @@
 {
   "raw": "2-3  serrano chilis (seeded and minced)",
-  "expected": {
-    "item": "serrano chilis",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": null
-      }
-    ],
-    "note": "seeded and minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "serrano chilis",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    },
+    "parse_ingredients": {
+      "item": "serrano chilis",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    }
   }
 }

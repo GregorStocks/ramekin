@@ -1,8 +1,15 @@
 {
   "raw": "Grated parmesan or pecorino cheese, to serve",
-  "expected": {
-    "item": "Grated parmesan or pecorino cheese, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Grated parmesan or pecorino cheese, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Grated parmesan or pecorino cheese, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

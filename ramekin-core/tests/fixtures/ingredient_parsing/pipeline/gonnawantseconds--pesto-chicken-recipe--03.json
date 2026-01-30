@@ -1,13 +1,25 @@
 {
   "raw": "2  Roma tomatoes (sliced into rounds)",
-  "expected": {
-    "item": "Roma tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced into rounds"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into rounds"
+    },
+    "enrich_metric_weights": {
+      "item": "Roma tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into rounds"
+    }
   }
 }

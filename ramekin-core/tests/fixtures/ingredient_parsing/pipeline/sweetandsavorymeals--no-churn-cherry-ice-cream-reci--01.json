@@ -1,13 +1,29 @@
 {
   "raw": "12 oz cherries (frozen or fresh, pitted)",
-  "expected": {
-    "item": "cherries",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "frozen or fresh, pitted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "frozen or fresh, pitted"
+    },
+    "parse_ingredients": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "frozen or fresh, pitted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 ahi tuna (yellowfin tuna) steaks (about 4 oz. each, 1\" thick - see notes for thinner or thicker)",
-  "expected": {
-    "item": "ahi tuna (yellowfin tuna) steaks (about 4 oz. each, 1\" thick - see notes for thinner or thicker)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ahi tuna (yellowfin tuna) steaks (about 4 oz. each, 1\" thick - see notes for thinner or thicker)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ahi tuna (yellowfin tuna) steaks (about 4 oz. each, 1\" thick - see notes for thinner or thicker)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

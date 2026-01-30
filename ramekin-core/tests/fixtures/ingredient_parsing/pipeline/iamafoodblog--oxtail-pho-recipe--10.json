@@ -1,13 +1,25 @@
 {
   "raw": "1 small daikon, peeled and cut into large chunks",
-  "expected": {
-    "item": "daikon",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "peeled and cut into large chunks"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "daikon",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "peeled and cut into large chunks"
+    },
+    "enrich_metric_weights": {
+      "item": "daikon",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "peeled and cut into large chunks"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 cup plus 2 tablespoons (225g granulated sugar)",
-  "expected": {
-    "item": "1 cup plus 2 tablespoons (225g granulated sugar)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 2 tablespoons"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons"
+    },
+    "enrich_metric_weights": {
+      "item": "1 cup plus 2 tablespoons (225g granulated sugar)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons"
+    }
   }
 }

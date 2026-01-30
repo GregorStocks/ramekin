@@ -1,13 +1,25 @@
 {
   "raw": "¼ tsp. dried thyme, crumbled",
-  "expected": {
-    "item": "dried thyme",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried thyme",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "dried thyme",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

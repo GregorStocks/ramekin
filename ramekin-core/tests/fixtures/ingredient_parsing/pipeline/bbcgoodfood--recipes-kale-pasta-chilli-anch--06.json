@@ -1,13 +1,25 @@
 {
   "raw": "200g young kale shredded",
-  "expected": {
-    "item": "young kale shredded",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "young kale shredded",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "young kale shredded",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

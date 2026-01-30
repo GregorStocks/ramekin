@@ -1,13 +1,25 @@
 {
   "raw": "6 sheets leaf gelatin or 2 tablespoons powdered gelatin",
-  "expected": {
-    "item": "sheets leaf gelatin",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "or 2 tablespoons powdered gelatin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets leaf gelatin",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "or 2 tablespoons powdered gelatin"
+    },
+    "parse_ingredients": {
+      "item": "sheets leaf gelatin",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "or 2 tablespoons powdered gelatin"
+    }
   }
 }

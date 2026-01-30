@@ -1,8 +1,15 @@
 {
   "raw": "kosher salt and pepper",
-  "expected": {
-    "item": "kosher salt and pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kosher salt and pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kosher salt and pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

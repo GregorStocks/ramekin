@@ -1,8 +1,15 @@
 {
   "raw": "sprinkles (jimmies, etc for decoration (optional))",
-  "expected": {
-    "item": "sprinkles",
-    "measurements": [],
-    "note": "jimmies, etc for decoration (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sprinkles",
+      "measurements": [],
+      "note": "jimmies, etc for decoration (optional"
+    },
+    "parse_ingredients": {
+      "item": "sprinkles",
+      "measurements": [],
+      "note": "jimmies, etc for decoration (optional"
+    }
   }
 }

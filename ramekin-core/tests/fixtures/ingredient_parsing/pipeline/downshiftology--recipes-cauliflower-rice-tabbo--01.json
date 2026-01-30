@@ -1,13 +1,25 @@
 {
   "raw": "1/2  medium head of cauliflower (riced (approx 4 cups))",
-  "expected": {
-    "item": "head of cauliflower (riced (approx 4 cups)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "head of cauliflower (riced (approx 4 cups)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "head of cauliflower (riced (approx 4 cups)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

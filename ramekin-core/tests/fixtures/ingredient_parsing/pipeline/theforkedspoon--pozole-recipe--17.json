@@ -1,8 +1,15 @@
 {
   "raw": "Chopped cilantro (recommended)",
-  "expected": {
-    "item": "Chopped cilantro (recommended)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped cilantro (recommended)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped cilantro (recommended)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

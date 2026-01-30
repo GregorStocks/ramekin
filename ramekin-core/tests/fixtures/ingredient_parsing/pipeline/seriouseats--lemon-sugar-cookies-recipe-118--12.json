@@ -1,8 +1,15 @@
 {
   "raw": "Lemon zest, for garnish&nbsp;",
-  "expected": {
-    "item": "Lemon zest",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lemon zest",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Lemon zest",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

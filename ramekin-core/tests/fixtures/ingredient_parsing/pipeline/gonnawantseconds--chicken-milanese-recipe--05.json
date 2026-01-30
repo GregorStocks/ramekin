@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup parmesan cheese (grated)",
-  "expected": {
-    "item": "parmesan cheese",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parmesan cheese",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "grated"
+    },
+    "enrich_metric_weights": {
+      "item": "parmesan cheese",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

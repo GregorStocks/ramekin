@@ -1,17 +1,37 @@
 {
   "raw": "8 ounces bacon ((8 pieces - oven baked bacon))",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "8",
-        "unit": "piece"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "8",
+          "unit": "piece"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "8",
+          "unit": "piece"
+        }
+      ],
+      "note": null
+    }
   }
 }

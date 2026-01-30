@@ -1,13 +1,29 @@
 {
   "raw": "15 ounces creamed corn (canned)",
-  "expected": {
-    "item": "creamed corn (canned)",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "creamed corn (canned)",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "creamed corn (canned)",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

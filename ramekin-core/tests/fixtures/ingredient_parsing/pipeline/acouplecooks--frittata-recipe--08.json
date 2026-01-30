@@ -1,17 +1,37 @@
 {
   "raw": "5 ounces (about 6 cups) packed spinach leaves",
-  "expected": {
-    "item": "packed spinach leaves",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed spinach leaves",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed spinach leaves",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

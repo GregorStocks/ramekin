@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup chopped red onion, (rinsed under cold water to remove harsh bite and drained well)",
-  "expected": {
-    "item": "chopped red onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed under cold water to remove harsh bite and drained well"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed under cold water to remove harsh bite and drained well"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed under cold water to remove harsh bite and drained well"
+    }
   }
 }

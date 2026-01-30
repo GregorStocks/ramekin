@@ -1,13 +1,25 @@
 {
   "raw": "8 large flour tortillas",
-  "expected": {
-    "item": "flour tortillas",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour tortillas",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour tortillas",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

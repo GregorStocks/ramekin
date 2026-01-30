@@ -1,17 +1,33 @@
 {
   "raw": "1 (24-ounce) jar lower-sodium marinara sauce",
-  "expected": {
-    "item": "lower-sodium marinara sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "jar"
-      },
-      {
-        "amount": "24",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lower-sodium marinara sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lower-sodium marinara sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

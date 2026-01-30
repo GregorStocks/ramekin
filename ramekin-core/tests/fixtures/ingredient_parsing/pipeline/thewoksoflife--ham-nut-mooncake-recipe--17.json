@@ -1,17 +1,33 @@
 {
   "raw": "⅓ cup peanut oil ((or corn oil, about 75 ml))",
-  "expected": {
-    "item": "peanut oil",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "75",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peanut oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "peanut oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

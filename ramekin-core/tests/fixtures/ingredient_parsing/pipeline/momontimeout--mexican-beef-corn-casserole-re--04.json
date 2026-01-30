@@ -1,13 +1,29 @@
 {
   "raw": "11 oz Mexicorn (1 can -  drained well)",
-  "expected": {
-    "item": "Mexicorn",
-    "measurements": [
-      {
-        "amount": "11",
-        "unit": "oz"
-      }
-    ],
-    "note": "1 can -  drained well"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mexicorn",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": "oz"
+        }
+      ],
+      "note": "1 can -  drained well"
+    },
+    "enrich_metric_weights": {
+      "item": "Mexicorn",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": "oz"
+        },
+        {
+          "amount": "312",
+          "unit": "g"
+        }
+      ],
+      "note": "1 can -  drained well"
+    }
   }
 }

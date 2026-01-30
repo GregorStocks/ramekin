@@ -1,21 +1,41 @@
 {
   "raw": "1/2 oz unflavored gelatin  ((2 packets or 14 grams total))",
-  "expected": {
-    "item": "unflavored gelatin",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "14",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unflavored gelatin",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unflavored gelatin",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

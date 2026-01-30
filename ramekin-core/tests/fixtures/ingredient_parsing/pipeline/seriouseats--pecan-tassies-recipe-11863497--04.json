@@ -1,21 +1,41 @@
 {
   "raw": "28g unsalted butter, melted (1 ounce; 2 tablespoons)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

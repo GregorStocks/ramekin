@@ -1,13 +1,25 @@
 {
   "raw": "2  beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
-  "expected": {
-    "item": "beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "beef steaks (sirloin, fillet or similar. Thick cuts work best.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

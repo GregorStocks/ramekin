@@ -1,13 +1,29 @@
 {
   "raw": "8-12 ounces cooked egg noodles or pappardelle (for serving)",
-  "expected": {
-    "item": "cooked egg noodles or pappardelle",
-    "measurements": [
-      {
-        "amount": "8-12",
-        "unit": "oz"
-      }
-    ],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked egg noodles or pappardelle",
+      "measurements": [
+        {
+          "amount": "8-12",
+          "unit": "oz"
+        },
+        {
+          "amount": "227-340",
+          "unit": "g"
+        }
+      ],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "cooked egg noodles or pappardelle",
+      "measurements": [
+        {
+          "amount": "8-12",
+          "unit": "oz"
+        }
+      ],
+      "note": "for serving"
+    }
   }
 }

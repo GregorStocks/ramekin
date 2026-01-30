@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds strawberries (halved)",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved"
+    },
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

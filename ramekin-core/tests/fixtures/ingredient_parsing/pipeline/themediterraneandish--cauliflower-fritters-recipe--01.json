@@ -1,8 +1,15 @@
 {
   "raw": "For the Mint Yogurt",
-  "expected": {
-    "item": "For the Mint Yogurt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For the Mint Yogurt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For the Mint Yogurt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 pieces sourdough or whole grain bread, toasted",
-  "expected": {
-    "item": "sourdough or whole grain bread",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "piece"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sourdough or whole grain bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "piece"
+        }
+      ],
+      "note": "toasted"
+    },
+    "parse_ingredients": {
+      "item": "sourdough or whole grain bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "piece"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

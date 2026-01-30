@@ -1,13 +1,25 @@
 {
   "raw": "6-8 cups beef broth (divided )",
-  "expected": {
-    "item": "beef broth",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef broth",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "beef broth",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

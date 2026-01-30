@@ -1,8 +1,15 @@
 {
   "raw": "To assemble:",
-  "expected": {
-    "item": "To assemble:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "To assemble:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "To assemble:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

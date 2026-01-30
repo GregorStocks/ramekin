@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon finely snipped chives or scallion greens, for garnish (optional)",
-  "expected": {
-    "item": "finely snipped chives or scallion greens, for garnish",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely snipped chives or scallion greens, for garnish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "finely snipped chives or scallion greens, for garnish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

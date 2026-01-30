@@ -1,8 +1,15 @@
 {
   "raw": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
-  "expected": {
-    "item": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Salsa, pickled jalapeños and crumbled Cotija cheese, for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

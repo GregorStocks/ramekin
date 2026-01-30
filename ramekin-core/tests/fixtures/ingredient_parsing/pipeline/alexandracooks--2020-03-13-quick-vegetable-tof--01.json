@@ -1,8 +1,15 @@
 {
   "raw": "a 14-oz block of firm tofu",
-  "expected": {
-    "item": "a 14-oz block of firm tofu",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a 14-oz block of firm tofu",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a 14-oz block of firm tofu",
+      "measurements": [],
+      "note": null
+    }
   }
 }

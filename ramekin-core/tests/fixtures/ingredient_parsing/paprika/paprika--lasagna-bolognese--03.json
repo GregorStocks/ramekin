@@ -1,13 +1,25 @@
 {
   "raw": "1 large or 2 slim carrots, coarsely chopped",
-  "expected": {
-    "item": "or 2 slim carrots",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "or 2 slim carrots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "or 2 slim carrots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

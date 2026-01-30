@@ -1,13 +1,25 @@
 {
   "raw": "2 quarts soda water",
-  "expected": {
-    "item": "soda water",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "quart"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soda water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "soda water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    }
   }
 }

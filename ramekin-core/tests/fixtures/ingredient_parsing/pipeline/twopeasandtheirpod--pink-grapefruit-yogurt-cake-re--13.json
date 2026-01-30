@@ -1,8 +1,15 @@
 {
   "raw": "Grapefruit Glaze",
-  "expected": {
-    "item": "Grapefruit Glaze",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Grapefruit Glaze",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Grapefruit Glaze",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 (8 ounce) package processed cheese (such as Velveeta®), cubed",
-  "expected": {
-    "item": "processed cheese (such as Velveeta®)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "processed cheese (such as Velveeta®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "processed cheese (such as Velveeta®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

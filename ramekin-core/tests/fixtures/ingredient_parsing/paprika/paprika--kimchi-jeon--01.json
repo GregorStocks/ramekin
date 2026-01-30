@@ -1,8 +1,15 @@
 {
   "raw": "Dipping Sauce:",
-  "expected": {
-    "item": "Dipping Sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dipping Sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Dipping Sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

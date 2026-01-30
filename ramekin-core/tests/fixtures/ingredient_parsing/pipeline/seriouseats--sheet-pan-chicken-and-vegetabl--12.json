@@ -1,17 +1,33 @@
 {
   "raw": "4 teaspoons (20 ml) fresh lime juice from 1 lime",
-  "expected": {
-    "item": "fresh lime juice from 1 lime",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tsp"
-      },
-      {
-        "amount": "20",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh lime juice from 1 lime",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh lime juice from 1 lime",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "20",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

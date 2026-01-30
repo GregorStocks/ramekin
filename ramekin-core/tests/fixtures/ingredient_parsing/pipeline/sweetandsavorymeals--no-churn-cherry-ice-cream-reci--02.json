@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup cherries (frozen or fresh, chopped)",
-  "expected": {
-    "item": "cherries",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "frozen or fresh, chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen or fresh, chopped"
+    },
+    "parse_ingredients": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen or fresh, chopped"
+    }
   }
 }

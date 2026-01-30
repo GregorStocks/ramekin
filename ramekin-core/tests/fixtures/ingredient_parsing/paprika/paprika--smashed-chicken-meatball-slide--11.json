@@ -1,8 +1,15 @@
 {
   "raw": "SLAW",
-  "expected": {
-    "item": "SLAW",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "SLAW",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "SLAW",
+      "measurements": [],
+      "note": null
+    }
   }
 }

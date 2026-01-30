@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cups half &amp;amp; half ((360ml))",
-  "expected": {
-    "item": "half & half",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "360",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "half & half",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "360",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "half & half",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "360",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

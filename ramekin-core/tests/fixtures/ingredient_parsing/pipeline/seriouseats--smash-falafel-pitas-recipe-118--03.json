@@ -1,17 +1,33 @@
 {
   "raw": "3 Tbsp. (45ml) olive oil, divided",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "45",
-        "unit": "ml"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

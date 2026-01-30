@@ -1,13 +1,25 @@
 {
   "raw": "1  kiwifruit (peeled and cut into wheels)",
-  "expected": {
-    "item": "kiwifruit",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and cut into wheels"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kiwifruit",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and cut into wheels"
+    },
+    "parse_ingredients": {
+      "item": "kiwifruit",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and cut into wheels"
+    }
   }
 }

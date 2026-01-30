@@ -1,13 +1,25 @@
 {
   "raw": "1 fluid ounce Red Vermouth (sweet or semi-sweet)",
-  "expected": {
-    "item": "Red Vermouth (sweet or semi-sweet)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Red Vermouth (sweet or semi-sweet)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Red Vermouth (sweet or semi-sweet)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

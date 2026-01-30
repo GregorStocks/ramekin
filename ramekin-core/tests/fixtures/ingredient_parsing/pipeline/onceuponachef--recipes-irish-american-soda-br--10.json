@@ -1,13 +1,25 @@
 {
   "raw": "1½ cups dried currants",
-  "expected": {
-    "item": "dried currants",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried currants",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dried currants",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

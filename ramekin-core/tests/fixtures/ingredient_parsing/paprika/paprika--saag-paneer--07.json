@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons grated garlic (from about 3 cloves)",
-  "expected": {
-    "item": "grated garlic (from about 3 cloves)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grated garlic (from about 3 cloves)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "grated garlic (from about 3 cloves)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "16-ounces ricotta cheese",
-  "expected": {
-    "item": "-ounces ricotta cheese",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "-ounces ricotta cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "-ounces ricotta cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "20  mini M&amp;amp;M's (blue, green, brown)",
-  "expected": {
-    "item": "mini M&M's (blue, green, brown)",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mini M&M's (blue, green, brown)",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mini M&M's (blue, green, brown)",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

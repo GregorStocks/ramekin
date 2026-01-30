@@ -1,13 +1,25 @@
 {
   "raw": "1 large onion, chopped small",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

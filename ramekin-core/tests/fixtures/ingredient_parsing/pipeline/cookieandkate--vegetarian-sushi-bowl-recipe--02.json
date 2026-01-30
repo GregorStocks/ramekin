@@ -1,17 +1,33 @@
 {
   "raw": "1 sheet dried nori (about 8&amp;#8243; square)",
-  "expected": {
-    "item": "sheet dried nori",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sheet dried nori",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sheet dried nori",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

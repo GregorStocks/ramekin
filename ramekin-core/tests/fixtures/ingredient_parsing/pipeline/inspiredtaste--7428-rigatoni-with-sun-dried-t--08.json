@@ -1,17 +1,33 @@
 {
   "raw": "4 ounces (113g) fresh goat cheese, use a soft cheese like chèvre",
-  "expected": {
-    "item": "fresh goat cheese, use a soft cheese like chèvre",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh goat cheese, use a soft cheese like chèvre",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh goat cheese, use a soft cheese like chèvre",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

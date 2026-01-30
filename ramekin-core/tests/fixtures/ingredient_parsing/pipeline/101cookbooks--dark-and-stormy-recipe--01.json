@@ -1,13 +1,29 @@
 {
   "raw": "2 ounces Gosling's Black Seal rum, or other dark rum",
-  "expected": {
-    "item": "Gosling's Black Seal rum, or other dark rum",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gosling's Black Seal rum, or other dark rum",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Gosling's Black Seal rum, or other dark rum",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

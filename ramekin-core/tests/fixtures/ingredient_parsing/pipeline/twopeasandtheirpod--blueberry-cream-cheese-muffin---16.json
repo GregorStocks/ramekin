@@ -1,8 +1,15 @@
 {
   "raw": "Turbinado sugar-for sprinkling on muffins before baking",
-  "expected": {
-    "item": "Turbinado sugar-for sprinkling on muffins before baking",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Turbinado sugar-for sprinkling on muffins before baking",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Turbinado sugar-for sprinkling on muffins before baking",
+      "measurements": [],
+      "note": null
+    }
   }
 }

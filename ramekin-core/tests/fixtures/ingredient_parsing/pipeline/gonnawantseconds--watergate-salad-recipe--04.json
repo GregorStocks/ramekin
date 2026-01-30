@@ -1,13 +1,25 @@
 {
   "raw": "1 cup pecans (Chopped~Divided)",
-  "expected": {
-    "item": "pecans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "Chopped~Divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped~Divided"
+    },
+    "enrich_metric_weights": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped~Divided"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Rosemary sprigs (minced)",
-  "expected": {
-    "item": "Rosemary sprigs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "Rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

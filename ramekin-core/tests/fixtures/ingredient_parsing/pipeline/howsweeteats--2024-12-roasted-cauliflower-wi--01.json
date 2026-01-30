@@ -1,13 +1,25 @@
 {
   "raw": "1  head cauliflower, (cut into florets)",
-  "expected": {
-    "item": "cauliflower, (cut into florets)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cauliflower, (cut into florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cauliflower, (cut into florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

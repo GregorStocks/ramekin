@@ -1,17 +1,33 @@
 {
   "raw": "100 grams Riceberry (about 1 US cup)",
-  "expected": {
-    "item": "Riceberry",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Riceberry",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Riceberry",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "kewpie mayonnaise (or regular mayonnaise mixed with a little lime juice)",
-  "expected": {
-    "item": "kewpie mayonnaise",
-    "measurements": [],
-    "note": "or regular mayonnaise mixed with a little lime juice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kewpie mayonnaise",
+      "measurements": [],
+      "note": "or regular mayonnaise mixed with a little lime juice"
+    },
+    "enrich_metric_weights": {
+      "item": "kewpie mayonnaise",
+      "measurements": [],
+      "note": "or regular mayonnaise mixed with a little lime juice"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "10 g dry milk powder",
-  "expected": {
-    "item": "dry milk powder",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry milk powder",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dry milk powder",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "turkey neck (optional)",
-  "expected": {
-    "item": "turkey neck",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "turkey neck",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "turkey neck",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

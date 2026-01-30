@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup pepperoncini — stemmed, seeded and finely chopped",
-  "expected": {
-    "item": "pepperoncini - stemmed",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "seeded and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pepperoncini - stemmed",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "seeded and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "pepperoncini - stemmed",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "seeded and finely chopped"
+    }
   }
 }

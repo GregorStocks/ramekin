@@ -1,8 +1,15 @@
 {
   "raw": "Edible orchid, for garnish",
-  "expected": {
-    "item": "Edible orchid",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Edible orchid",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Edible orchid",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

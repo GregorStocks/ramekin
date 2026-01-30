@@ -1,13 +1,25 @@
 {
   "raw": "1 cup fresh corn kernels (from 2 ears)",
-  "expected": {
-    "item": "fresh corn kernels (from 2 ears)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh corn kernels (from 2 ears)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh corn kernels (from 2 ears)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

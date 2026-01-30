@@ -1,17 +1,33 @@
 {
   "raw": "200 g ground beef (or 50% beef and 50% pork, ~20% fat content recommended)",
-  "expected": {
-    "item": "ground beef",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

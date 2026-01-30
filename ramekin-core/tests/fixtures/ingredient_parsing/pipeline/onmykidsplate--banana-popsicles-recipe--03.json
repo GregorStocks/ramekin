@@ -1,8 +1,15 @@
 {
   "raw": "sprinkles (optional)",
-  "expected": {
-    "item": "sprinkles",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sprinkles",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "sprinkles",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

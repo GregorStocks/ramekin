@@ -1,17 +1,33 @@
 {
   "raw": "2¼ teaspoons instant/rapid-rise yeast (1 package)",
-  "expected": {
-    "item": "instant/rapid-rise yeast",
-    "measurements": [
-      {
-        "amount": "2 1/4",
-        "unit": "tsp"
-      },
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant/rapid-rise yeast",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant/rapid-rise yeast",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 tablespoons adobo sauce (from 1 can chipotle peppers in adobo sauce)",
-  "expected": {
-    "item": "adobo sauce (from 1 can chipotle peppers in adobo sauce)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "adobo sauce (from 1 can chipotle peppers in adobo sauce)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "adobo sauce (from 1 can chipotle peppers in adobo sauce)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

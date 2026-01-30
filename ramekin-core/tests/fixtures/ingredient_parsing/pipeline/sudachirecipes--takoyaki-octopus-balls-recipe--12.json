@@ -1,13 +1,25 @@
 {
   "raw": "120 g boiled octopus (or steamed)",
-  "expected": {
-    "item": "boiled octopus (or steamed)",
-    "measurements": [
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boiled octopus (or steamed)",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boiled octopus (or steamed)",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

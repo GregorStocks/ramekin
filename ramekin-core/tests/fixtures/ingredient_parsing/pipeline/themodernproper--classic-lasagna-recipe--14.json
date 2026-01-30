@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup loosely packed fresh basil, minced (optional)",
-  "expected": {
-    "item": "loosely packed fresh basil, minced",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loosely packed fresh basil, minced",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "loosely packed fresh basil, minced",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

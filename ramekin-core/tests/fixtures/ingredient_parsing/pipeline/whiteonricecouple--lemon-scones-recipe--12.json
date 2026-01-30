@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup Fresh Meyer Lemon Juice ((@ 2 meyer lemons))",
-  "expected": {
-    "item": "Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fresh Meyer Lemon Juice (@ 2 meyer lemons)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

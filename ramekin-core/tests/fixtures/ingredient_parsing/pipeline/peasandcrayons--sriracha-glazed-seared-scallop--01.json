@@ -1,13 +1,25 @@
 {
   "raw": "1/2 lb sea scallops ((fresh or thawed if frozen))",
-  "expected": {
-    "item": "sea scallops",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "fresh or thawed if frozen"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea scallops",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or thawed if frozen"
+    },
+    "enrich_metric_weights": {
+      "item": "sea scallops",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or thawed if frozen"
+    }
   }
 }

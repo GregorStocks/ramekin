@@ -1,8 +1,15 @@
 {
   "raw": "Freshly grated Parmesan or pecorino cheese, optional",
-  "expected": {
-    "item": "Freshly grated Parmesan or pecorino cheese",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Freshly grated Parmesan or pecorino cheese",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Freshly grated Parmesan or pecorino cheese",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

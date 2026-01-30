@@ -1,13 +1,25 @@
 {
   "raw": "1  serrano pepper, sliced 1/8-inch thinly",
-  "expected": {
-    "item": "serrano pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced 1/8-inch thinly"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serrano pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/8-inch thinly"
+    },
+    "enrich_metric_weights": {
+      "item": "serrano pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/8-inch thinly"
+    }
   }
 }

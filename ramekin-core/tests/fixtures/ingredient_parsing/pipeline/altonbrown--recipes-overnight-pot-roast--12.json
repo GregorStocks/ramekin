@@ -1,13 +1,29 @@
 {
   "raw": "15 ounces baby red potatoes, cut into 1 1/2-inch pieces",
-  "expected": {
-    "item": "baby red potatoes, cut into 1 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby red potatoes, cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baby red potatoes, cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

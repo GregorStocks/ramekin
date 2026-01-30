@@ -1,17 +1,37 @@
 {
   "raw": "1 can (28 ounces) Italian diced tomatoes, drained",
-  "expected": {
-    "item": "Italian diced tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Italian diced tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "Italian diced tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

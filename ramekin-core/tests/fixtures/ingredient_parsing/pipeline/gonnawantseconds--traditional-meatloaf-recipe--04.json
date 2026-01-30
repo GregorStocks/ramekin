@@ -1,17 +1,33 @@
 {
   "raw": "2/3 cup (about 17 crackers) Saltine crackers, (coarsely crushed )",
-  "expected": {
-    "item": "Saltine crackers",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "17",
-        "unit": null
-      }
-    ],
-    "note": "coarsely crushed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Saltine crackers",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "17",
+          "unit": null
+        }
+      ],
+      "note": "coarsely crushed"
+    },
+    "enrich_metric_weights": {
+      "item": "Saltine crackers",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "17",
+          "unit": null
+        }
+      ],
+      "note": "coarsely crushed"
+    }
   }
 }

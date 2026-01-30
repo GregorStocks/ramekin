@@ -1,8 +1,15 @@
 {
   "raw": "Tzatziki",
-  "expected": {
-    "item": "Tzatziki",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tzatziki",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tzatziki",
+      "measurements": [],
+      "note": null
+    }
   }
 }

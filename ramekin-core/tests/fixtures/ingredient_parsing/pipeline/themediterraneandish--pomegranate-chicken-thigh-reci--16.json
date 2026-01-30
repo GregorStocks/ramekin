@@ -1,8 +1,15 @@
 {
   "raw": "seasoned salt to taste",
-  "expected": {
-    "item": "seasoned salt to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "seasoned salt to taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "seasoned salt to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

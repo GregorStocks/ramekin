@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon salt (optional - adjust to your tastes)",
-  "expected": {
-    "item": "salt",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional - adjust to your tastes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional - adjust to your tastes"
+    },
+    "enrich_metric_weights": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional - adjust to your tastes"
+    }
   }
 }

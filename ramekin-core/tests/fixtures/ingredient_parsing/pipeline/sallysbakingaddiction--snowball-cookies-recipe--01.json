@@ -1,21 +1,41 @@
 {
   "raw": "1 cup (16 Tbsp; 226g) unsalted butter, softened to room temperature",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "16",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "226",
-        "unit": "g"
-      }
-    ],
-    "note": "softened to room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "16",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "softened to room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "16",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "softened to room temperature"
+    }
   }
 }

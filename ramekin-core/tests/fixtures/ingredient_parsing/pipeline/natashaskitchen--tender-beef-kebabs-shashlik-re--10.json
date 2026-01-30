@@ -1,13 +1,25 @@
 {
   "raw": "3 Tbsp fresh or frozen dill (chopped (or 1 Tbsp dry dill weed))",
-  "expected": {
-    "item": "fresh or frozen dill",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "chopped (or 1 Tbsp dry dill weed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh or frozen dill",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "chopped (or 1 Tbsp dry dill weed"
+    },
+    "parse_ingredients": {
+      "item": "fresh or frozen dill",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "chopped (or 1 Tbsp dry dill weed"
+    }
   }
 }

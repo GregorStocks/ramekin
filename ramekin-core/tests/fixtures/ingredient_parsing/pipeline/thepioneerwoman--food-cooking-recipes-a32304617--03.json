@@ -1,8 +1,15 @@
 {
   "raw": "Peel of 1 orange, torn into pieces",
-  "expected": {
-    "item": "Peel of 1 orange, torn into pieces",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Peel of 1 orange, torn into pieces",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Peel of 1 orange, torn into pieces",
+      "measurements": [],
+      "note": null
+    }
   }
 }

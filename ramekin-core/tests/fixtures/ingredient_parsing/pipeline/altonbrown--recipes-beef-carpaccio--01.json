@@ -1,17 +1,33 @@
 {
   "raw": "1 (8- to 10-ounce) beef tenderloin, from the tip end of the roast",
-  "expected": {
-    "item": "beef tenderloin, from the tip end of the roast",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef tenderloin, from the tip end of the roast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "beef tenderloin, from the tip end of the roast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "fresh mint and raspberries to garnish",
-  "expected": {
-    "item": "fresh mint and raspberries to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh mint and raspberries to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh mint and raspberries to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

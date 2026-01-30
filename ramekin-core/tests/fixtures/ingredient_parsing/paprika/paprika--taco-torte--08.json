@@ -1,21 +1,45 @@
 {
   "raw": "1 can (14 ounces) or 1 1/2 cups chopped tomatoes, drained, with 1/3 cup juice reserved",
-  "expected": {
-    "item": "chopped tomatoes, drained, with 1/3 cup juice reserved",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "14",
-        "unit": "oz"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped tomatoes, drained, with 1/3 cup juice reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped tomatoes, drained, with 1/3 cup juice reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

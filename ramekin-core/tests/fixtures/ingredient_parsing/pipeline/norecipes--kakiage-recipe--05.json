@@ -1,17 +1,33 @@
 {
   "raw": "80 grams all-purpose flour ((about 2/3 cup))",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "80",
-        "unit": "g"
-      },
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "80",
+          "unit": "g"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "80",
+          "unit": "g"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

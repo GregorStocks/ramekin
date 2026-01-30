@@ -1,8 +1,15 @@
 {
   "raw": "Tamari (for serving)",
-  "expected": {
-    "item": "Tamari",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tamari",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Tamari",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

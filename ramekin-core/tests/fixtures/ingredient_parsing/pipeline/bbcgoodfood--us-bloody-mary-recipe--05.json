@@ -1,8 +1,15 @@
 {
   "raw": "few shakes of Worcestershire sauce",
-  "expected": {
-    "item": "few shakes of Worcestershire sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "few shakes of Worcestershire sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "few shakes of Worcestershire sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

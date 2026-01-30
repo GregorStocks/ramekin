@@ -1,13 +1,29 @@
 {
   "raw": "16 ounces Barilla No Boil Lasagna Noodles",
-  "expected": {
-    "item": "Barilla No Boil Lasagna Noodles",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Barilla No Boil Lasagna Noodles",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Barilla No Boil Lasagna Noodles",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

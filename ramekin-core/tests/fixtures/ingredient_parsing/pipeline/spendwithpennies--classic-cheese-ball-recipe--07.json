@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup bacon bits (or crumbled bacon, divided)",
-  "expected": {
-    "item": "bacon bits",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or crumbled bacon, divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon bits",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or crumbled bacon, divided"
+    },
+    "parse_ingredients": {
+      "item": "bacon bits",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or crumbled bacon, divided"
+    }
   }
 }

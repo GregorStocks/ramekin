@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup thinly sliced scallions, for garnish",
-  "expected": {
-    "item": "thinly sliced scallions",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thinly sliced scallions",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "thinly sliced scallions",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "for garnish"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
-  "expected": {
-    "item": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped black olives, a dollop of pesto, a drizzle of lemon olive oil, or a big squeeze of lemon juice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

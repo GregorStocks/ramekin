@@ -1,8 +1,15 @@
 {
   "raw": "Fresh fruit (or frozen and thawed fruit)",
-  "expected": {
-    "item": "Fresh fruit",
-    "measurements": [],
-    "note": "or frozen and thawed fruit"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh fruit",
+      "measurements": [],
+      "note": "or frozen and thawed fruit"
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh fruit",
+      "measurements": [],
+      "note": "or frozen and thawed fruit"
+    }
   }
 }

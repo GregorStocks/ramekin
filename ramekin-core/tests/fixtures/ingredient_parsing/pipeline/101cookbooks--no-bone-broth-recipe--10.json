@@ -1,13 +1,25 @@
 {
   "raw": "1  head garlic, unpeeled, halved crosswise",
-  "expected": {
-    "item": "garlic, unpeeled",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "halved crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic, unpeeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "halved crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic, unpeeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "halved crosswise"
+    }
   }
 }

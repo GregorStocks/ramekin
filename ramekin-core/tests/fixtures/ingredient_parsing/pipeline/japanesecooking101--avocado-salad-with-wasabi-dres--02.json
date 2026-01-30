@@ -1,8 +1,15 @@
 {
   "raw": "Roasted Seaweed (Sushi Nori, cut thinly)",
-  "expected": {
-    "item": "Roasted Seaweed (Sushi Nori, cut thinly)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roasted Seaweed (Sushi Nori, cut thinly)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Roasted Seaweed (Sushi Nori, cut thinly)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

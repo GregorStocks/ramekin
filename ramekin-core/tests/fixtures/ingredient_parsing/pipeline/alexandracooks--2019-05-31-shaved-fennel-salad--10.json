@@ -1,8 +1,15 @@
 {
   "raw": "salt, I&amp;#8217;ve been using Maldon sea salt",
-  "expected": {
-    "item": "salt, I’ve been using Maldon sea salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt, I’ve been using Maldon sea salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt, I’ve been using Maldon sea salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

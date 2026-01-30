@@ -1,13 +1,25 @@
 {
   "raw": "6  frozen soft pretzels with salt (baked)",
-  "expected": {
-    "item": "frozen soft pretzels with salt (baked)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen soft pretzels with salt (baked)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "frozen soft pretzels with salt (baked)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

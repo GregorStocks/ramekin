@@ -1,17 +1,37 @@
 {
   "raw": "5.3 oz container (about 2/3 cup vanilla Greek yogurt (I used Tillamook 2%))",
-  "expected": {
-    "item": "container",
-    "measurements": [
-      {
-        "amount": "5.3",
-        "unit": "oz"
-      },
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "container",
+      "measurements": [
+        {
+          "amount": "5.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "container",
+      "measurements": [
+        {
+          "amount": "5.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

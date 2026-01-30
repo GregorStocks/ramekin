@@ -1,13 +1,29 @@
 {
   "raw": "½ ounce fresh lime juice (fresh)",
-  "expected": {
-    "item": "fresh lime juice",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": "fresh"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh lime juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": "fresh"
+    },
+    "parse_ingredients": {
+      "item": "fresh lime juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": "fresh"
+    }
   }
 }

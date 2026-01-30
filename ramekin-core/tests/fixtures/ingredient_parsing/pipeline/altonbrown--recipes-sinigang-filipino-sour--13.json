@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces baby bok choy, well cleaned and quartered lengthwise",
-  "expected": {
-    "item": "baby bok choy",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "well cleaned and quartered lengthwise"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby bok choy",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "well cleaned and quartered lengthwise"
+    },
+    "parse_ingredients": {
+      "item": "baby bok choy",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "well cleaned and quartered lengthwise"
+    }
   }
 }

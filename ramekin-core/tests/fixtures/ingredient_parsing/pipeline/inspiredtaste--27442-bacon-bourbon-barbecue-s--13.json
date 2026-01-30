@@ -1,13 +1,25 @@
 {
   "raw": "4 to 5 dashes hot sauce, optional",
-  "expected": {
-    "item": "hot sauce",
-    "measurements": [
-      {
-        "amount": "4 to 5",
-        "unit": "dash"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot sauce",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "dash"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "hot sauce",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "dash"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

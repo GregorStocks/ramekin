@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups palm shortening or butter, (room temperature or slightly chilled)",
-  "expected": {
-    "item": "palm shortening or butter",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "room temperature or slightly chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "palm shortening or butter",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "room temperature or slightly chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "palm shortening or butter",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "room temperature or slightly chilled"
+    }
   }
 }

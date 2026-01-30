@@ -1,17 +1,33 @@
 {
   "raw": "8 cups (about 1.4kg) peeled chopped peaches, cut into 1-inch chunks",
-  "expected": {
-    "item": "peeled chopped peaches, cut into 1-inch chunks",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      },
-      {
-        "amount": "1.4",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peeled chopped peaches, cut into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.4",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "peeled chopped peaches, cut into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.4",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

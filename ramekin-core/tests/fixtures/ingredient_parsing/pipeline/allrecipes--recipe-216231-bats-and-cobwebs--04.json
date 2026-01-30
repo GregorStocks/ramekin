@@ -1,17 +1,37 @@
 {
   "raw": "1 (28 ounce) jar pasta sauce",
-  "expected": {
-    "item": "pasta sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "jar"
-      },
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pasta sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pasta sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

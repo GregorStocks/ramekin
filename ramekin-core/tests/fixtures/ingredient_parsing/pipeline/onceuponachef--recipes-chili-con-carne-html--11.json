@@ -1,13 +1,25 @@
 {
   "raw": "2  small yellow onions, cut into 1-inch chunks",
-  "expected": {
-    "item": "yellow onions, cut into 1-inch chunks",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onions, cut into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onions, cut into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "bonito flakes (katsuobushi) (optional garnish)",
-  "expected": {
-    "item": "bonito flakes (katsuobushi) (optional garnish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bonito flakes (katsuobushi) (optional garnish)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bonito flakes (katsuobushi) (optional garnish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

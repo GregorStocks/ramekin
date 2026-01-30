@@ -1,17 +1,37 @@
 {
   "raw": "2 cooked boneless chicken breast pieces, shredded ( about 6 to 8 oz store-bought rotisserie chicken will work)",
-  "expected": {
-    "item": "cooked boneless chicken breast pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "6 to 8",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked boneless chicken breast pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "6 to 8",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked boneless chicken breast pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "6 to 8",
+          "unit": "oz"
+        },
+        {
+          "amount": "170 to 227",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 lbs Country Style Ribs Baby Back Ribs or Pork Spare Ribs",
-  "expected": {
-    "item": "Country Style Ribs Baby Back Ribs or Pork Spare Ribs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Country Style Ribs Baby Back Ribs or Pork Spare Ribs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Country Style Ribs Baby Back Ribs or Pork Spare Ribs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

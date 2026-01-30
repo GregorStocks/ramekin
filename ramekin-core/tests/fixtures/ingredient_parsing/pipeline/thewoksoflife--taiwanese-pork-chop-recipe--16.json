@@ -1,13 +1,25 @@
 {
   "raw": "2-2.5 cups pickled mustard greens ((chopped))",
-  "expected": {
-    "item": "pickled mustard greens",
-    "measurements": [
-      {
-        "amount": "2-2.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pickled mustard greens",
+      "measurements": [
+        {
+          "amount": "2-2.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "pickled mustard greens",
+      "measurements": [
+        {
+          "amount": "2-2.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

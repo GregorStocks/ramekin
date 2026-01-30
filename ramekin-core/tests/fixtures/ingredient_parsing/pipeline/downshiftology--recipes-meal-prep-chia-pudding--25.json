@@ -1,8 +1,15 @@
 {
   "raw": "Candied Ginger",
-  "expected": {
-    "item": "Candied Ginger",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Candied Ginger",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Candied Ginger",
+      "measurements": [],
+      "note": null
+    }
   }
 }

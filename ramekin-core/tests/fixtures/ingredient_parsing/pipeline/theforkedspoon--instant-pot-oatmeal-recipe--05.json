@@ -1,8 +1,15 @@
 {
   "raw": "Fresh fruit",
-  "expected": {
-    "item": "Fresh fruit",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh fruit",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh fruit",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "50 grams peanuts ((crushed))",
-  "expected": {
-    "item": "peanuts",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "crushed"
+    },
+    "enrich_metric_weights": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

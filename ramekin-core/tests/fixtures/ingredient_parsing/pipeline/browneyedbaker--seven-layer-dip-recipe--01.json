@@ -1,13 +1,29 @@
 {
   "raw": "15 ounce can refried beans",
-  "expected": {
-    "item": "can refried beans",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can refried beans",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "can refried beans",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

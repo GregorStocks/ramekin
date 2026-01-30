@@ -1,13 +1,25 @@
 {
   "raw": "1  egg (room temperature)",
-  "expected": {
-    "item": "egg",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

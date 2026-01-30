@@ -1,8 +1,15 @@
 {
   "raw": "half an english cucumber, sliced thin on the bias",
-  "expected": {
-    "item": "half an english cucumber",
-    "measurements": [],
-    "note": "sliced thin on the bias"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "half an english cucumber",
+      "measurements": [],
+      "note": "sliced thin on the bias"
+    },
+    "enrich_metric_weights": {
+      "item": "half an english cucumber",
+      "measurements": [],
+      "note": "sliced thin on the bias"
+    }
   }
 }

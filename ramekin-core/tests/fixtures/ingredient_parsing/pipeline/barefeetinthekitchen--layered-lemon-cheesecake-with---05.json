@@ -1,8 +1,15 @@
 {
   "raw": "Filling Ingredients:",
-  "expected": {
-    "item": "Filling Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Filling Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Filling Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

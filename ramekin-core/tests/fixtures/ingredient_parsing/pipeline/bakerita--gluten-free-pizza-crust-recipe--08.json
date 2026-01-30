@@ -1,13 +1,25 @@
 {
   "raw": "10g&nbsp;sea salt",
-  "expected": {
-    "item": "sea salt",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

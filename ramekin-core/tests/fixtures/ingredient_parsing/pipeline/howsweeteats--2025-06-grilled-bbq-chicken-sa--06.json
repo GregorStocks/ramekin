@@ -1,13 +1,25 @@
 {
   "raw": "4 slices sharp cheddar cheese",
-  "expected": {
-    "item": "sharp cheddar cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  medium yellow onions (finely chopped)",
-  "expected": {
-    "item": "yellow onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "cocoa powder, powdered sugar, grated coconut, or chocolate sprinkles (for rolling)",
-  "expected": {
-    "item": "cocoa powder, powdered sugar, grated coconut, or chocolate sprinkles (for rolling)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cocoa powder, powdered sugar, grated coconut, or chocolate sprinkles (for rolling)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cocoa powder, powdered sugar, grated coconut, or chocolate sprinkles (for rolling)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

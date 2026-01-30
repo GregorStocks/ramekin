@@ -1,8 +1,15 @@
 {
   "raw": "butter or clean tasting oil for cooking pancakes",
-  "expected": {
-    "item": "butter or clean tasting oil for cooking pancakes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter or clean tasting oil for cooking pancakes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "butter or clean tasting oil for cooking pancakes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

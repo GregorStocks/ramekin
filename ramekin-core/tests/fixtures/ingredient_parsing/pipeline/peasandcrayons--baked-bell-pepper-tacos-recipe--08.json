@@ -1,8 +1,15 @@
 {
   "raw": "b. 3-4 cups Lentil Veggie Taco Filling",
-  "expected": {
-    "item": "b. 3-4 cups Lentil Veggie Taco Filling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "b. 3-4 cups Lentil Veggie Taco Filling",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "b. 3-4 cups Lentil Veggie Taco Filling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

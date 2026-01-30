@@ -1,21 +1,41 @@
 {
   "raw": "4 (5- to 7-ounce each; 140 to 200 g each) bone-in, skin-on chicken thighs, trimmed",
-  "expected": {
-    "item": "bone-in, skin-on chicken thighs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "5",
-        "unit": null
-      },
-      {
-        "amount": "140 to 200",
-        "unit": "g each"
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bone-in, skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "140 to 200",
+          "unit": "g each"
+        }
+      ],
+      "note": "trimmed"
+    },
+    "parse_ingredients": {
+      "item": "bone-in, skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "140 to 200",
+          "unit": "g each"
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

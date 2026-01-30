@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup turkey drippings or melted unsalted butter, plus more for greasing pan",
-  "expected": {
-    "item": "turkey drippings or melted unsalted butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for greasing pan"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "turkey drippings or melted unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for greasing pan"
+    },
+    "parse_ingredients": {
+      "item": "turkey drippings or melted unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for greasing pan"
+    }
   }
 }

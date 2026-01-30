@@ -1,13 +1,25 @@
 {
   "raw": "1  scoop of protein powder (optional, use chocolate or vanilla)",
-  "expected": {
-    "item": "scoop of protein powder",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "optional, use chocolate or vanilla"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "scoop of protein powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional, use chocolate or vanilla"
+    },
+    "enrich_metric_weights": {
+      "item": "scoop of protein powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional, use chocolate or vanilla"
+    }
   }
 }

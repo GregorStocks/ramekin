@@ -1,13 +1,25 @@
 {
   "raw": "⅓ cup Sieved tomato puree aka Tomato sauce",
-  "expected": {
-    "item": "Sieved tomato puree aka Tomato sauce",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sieved tomato puree aka Tomato sauce",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sieved tomato puree aka Tomato sauce",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

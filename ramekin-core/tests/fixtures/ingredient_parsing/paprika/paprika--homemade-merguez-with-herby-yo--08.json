@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons harissa paste (I just used a small squeeze) or another hot sauce",
-  "expected": {
-    "item": "harissa paste (I just used a small squeeze) or another hot sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "harissa paste (I just used a small squeeze) or another hot sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "harissa paste (I just used a small squeeze) or another hot sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

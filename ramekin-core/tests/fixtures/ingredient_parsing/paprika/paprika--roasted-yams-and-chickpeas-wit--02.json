@@ -1,17 +1,33 @@
 {
   "raw": "1 to 2 tablespoons honey (I used 1; 2 are called for)",
-  "expected": {
-    "item": "honey",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

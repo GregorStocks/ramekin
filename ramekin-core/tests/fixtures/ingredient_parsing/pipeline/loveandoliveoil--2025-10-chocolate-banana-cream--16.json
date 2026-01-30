@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup dark chocolate (50-70%) (finely chopped)",
-  "expected": {
-    "item": "dark chocolate",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "50",
-        "unit": null
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark chocolate",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": null
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "dark chocolate",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": null
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

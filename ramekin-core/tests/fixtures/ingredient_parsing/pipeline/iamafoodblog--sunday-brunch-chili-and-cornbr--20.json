@@ -1,8 +1,15 @@
 {
   "raw": "shredded cheese, to garnish",
-  "expected": {
-    "item": "shredded cheese, to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded cheese, to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded cheese, to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

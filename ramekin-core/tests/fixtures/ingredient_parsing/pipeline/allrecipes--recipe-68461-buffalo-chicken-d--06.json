@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch celery, cut into 4-inch pieces",
-  "expected": {
-    "item": "celery, cut into 4-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "celery, cut into 4-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "celery, cut into 4-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    }
   }
 }

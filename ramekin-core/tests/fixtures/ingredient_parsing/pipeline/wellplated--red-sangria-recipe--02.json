@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup brandy* or 2 ounces gin (both are good! gin is dryer)",
-  "expected": {
-    "item": "brandy*",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or 2 ounces gin (both are good! gin is dryer)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brandy*",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or 2 ounces gin (both are good! gin is dryer)"
+    },
+    "parse_ingredients": {
+      "item": "brandy*",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or 2 ounces gin (both are good! gin is dryer)"
+    }
   }
 }

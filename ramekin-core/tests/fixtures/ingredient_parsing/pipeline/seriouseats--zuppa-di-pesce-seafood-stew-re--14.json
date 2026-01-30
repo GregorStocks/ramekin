@@ -1,21 +1,41 @@
 {
   "raw": "1 (1-pound; 454 g) skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
-  "expected": {
-    "item": "skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "454",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "skinless cod fillet, 3/4 to 1 inch thick, cut into 2-inch by 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

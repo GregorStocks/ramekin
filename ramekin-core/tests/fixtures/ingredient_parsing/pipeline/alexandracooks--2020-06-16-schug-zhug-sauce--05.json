@@ -1,13 +1,25 @@
 {
   "raw": "2 cups lightly packed cilantro leaves and stems",
-  "expected": {
-    "item": "lightly packed cilantro leaves and stems",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lightly packed cilantro leaves and stems",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lightly packed cilantro leaves and stems",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

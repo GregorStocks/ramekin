@@ -1,8 +1,15 @@
 {
   "raw": "Fine sea or table salt",
-  "expected": {
-    "item": "Fine sea or table salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fine sea or table salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fine sea or table salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "4 c. fresh Bing or other sweet cherries, pitted and halved&nbsp;(about 1 1/2 pounds)",
-  "expected": {
-    "item": "fresh Bing or other sweet cherries",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "pitted and halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh Bing or other sweet cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "pitted and halved"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh Bing or other sweet cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "pitted and halved"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "75 grams celery ((1 small rib, diced))",
-  "expected": {
-    "item": "celery",
-    "measurements": [
-      {
-        "amount": "75",
-        "unit": "g"
-      }
-    ],
-    "note": "1 small rib, diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "1 small rib, diced"
+    },
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "1 small rib, diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 sweet potatoes, each cut into 6 wedges&nbsp;",
-  "expected": {
-    "item": "sweet potatoes, each cut into 6 wedges",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet potatoes, each cut into 6 wedges",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sweet potatoes, each cut into 6 wedges",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

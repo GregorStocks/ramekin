@@ -1,17 +1,33 @@
 {
   "raw": "4 packages (3 ounces each) orange gelatin",
-  "expected": {
-    "item": "orange gelatin",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "package"
-      },
-      {
-        "amount": "3",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orange gelatin",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "package"
+        },
+        {
+          "amount": "3",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "orange gelatin",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "package"
+        },
+        {
+          "amount": "3",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

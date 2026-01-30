@@ -1,13 +1,25 @@
 {
   "raw": "1/2 c. semisweet chocolate chips, melted",
-  "expected": {
-    "item": "semisweet chocolate chips",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "semisweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "semisweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

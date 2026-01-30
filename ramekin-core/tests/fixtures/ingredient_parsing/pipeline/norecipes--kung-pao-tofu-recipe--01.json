@@ -1,13 +1,25 @@
 {
   "raw": "400 grams firm tofu ((cut into 1-inch cubes))",
-  "expected": {
-    "item": "firm tofu (cut into 1-inch cubes)",
-    "measurements": [
-      {
-        "amount": "400",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "firm tofu (cut into 1-inch cubes)",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "firm tofu (cut into 1-inch cubes)",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "frech minced parsley (for garnish, if desired)",
-  "expected": {
-    "item": "frech minced parsley",
-    "measurements": [],
-    "note": "for garnish, if desired"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frech minced parsley",
+      "measurements": [],
+      "note": "for garnish, if desired"
+    },
+    "parse_ingredients": {
+      "item": "frech minced parsley",
+      "measurements": [],
+      "note": "for garnish, if desired"
+    }
   }
 }

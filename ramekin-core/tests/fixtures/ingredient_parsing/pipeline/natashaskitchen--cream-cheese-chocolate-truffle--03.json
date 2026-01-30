@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups semi-sweet chocolate chips (melted)",
-  "expected": {
-    "item": "semi-sweet chocolate chips",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "semi-sweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "semi-sweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

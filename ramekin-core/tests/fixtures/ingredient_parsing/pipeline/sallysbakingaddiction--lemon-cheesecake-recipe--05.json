@@ -1,17 +1,33 @@
 {
   "raw": "1 Tablespoon packed lemon zest (about 1 lemon)",
-  "expected": {
-    "item": "packed lemon zest",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

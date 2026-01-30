@@ -1,13 +1,25 @@
 {
   "raw": "1 ¼ cups brown lentils",
-  "expected": {
-    "item": "brown lentils",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brown lentils",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "brown lentils",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

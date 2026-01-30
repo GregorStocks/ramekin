@@ -1,21 +1,41 @@
 {
   "raw": "1.5 lbs. (about 680g) zucchini (about 3–4 medium)",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      },
-      {
-        "amount": "680",
-        "unit": "g"
-      },
-      {
-        "amount": "3-4",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "3-4",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "3-4",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

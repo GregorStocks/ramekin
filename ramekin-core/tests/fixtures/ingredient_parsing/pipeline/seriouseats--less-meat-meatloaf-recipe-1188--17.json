@@ -1,21 +1,41 @@
 {
   "raw": "4 ounces (115 g) cheddar, provolone, Monterey Jack, and/or Muenster cheese, finely shredded (about 1 cup)",
-  "expected": {
-    "item": "cheddar, provolone, Monterey Jack, and/or Muenster cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheddar, provolone, Monterey Jack, and/or Muenster cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely shredded"
+    },
+    "parse_ingredients": {
+      "item": "cheddar, provolone, Monterey Jack, and/or Muenster cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely shredded"
+    }
   }
 }

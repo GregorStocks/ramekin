@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon unseasoned meat tenderizer (see note)",
-  "expected": {
-    "item": "unseasoned meat tenderizer (see note)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unseasoned meat tenderizer (see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unseasoned meat tenderizer (see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

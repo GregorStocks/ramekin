@@ -1,8 +1,15 @@
 {
   "raw": "Garlic Salt - I use Lawry's brand",
-  "expected": {
-    "item": "Garlic Salt - I use Lawry's brand",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Garlic Salt - I use Lawry's brand",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Garlic Salt - I use Lawry's brand",
+      "measurements": [],
+      "note": null
+    }
   }
 }

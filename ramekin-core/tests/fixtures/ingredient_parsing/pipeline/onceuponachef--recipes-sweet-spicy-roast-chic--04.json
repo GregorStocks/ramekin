@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons freshly squeezed orange juice, from 2 oranges",
-  "expected": {
-    "item": "freshly squeezed orange juice, from 2 oranges",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly squeezed orange juice, from 2 oranges",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly squeezed orange juice, from 2 oranges",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

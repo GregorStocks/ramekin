@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons water (ice cold)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "ice cold"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "ice cold"
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "ice cold"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 small hot chilies, halved lengthwise",
-  "expected": {
-    "item": "hot chilies",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": "halved lengthwise"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "halved lengthwise"
+    },
+    "parse_ingredients": {
+      "item": "hot chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "halved lengthwise"
+    }
   }
 }

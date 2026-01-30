@@ -1,13 +1,25 @@
 {
   "raw": "5  ancho chiles (dried)",
-  "expected": {
-    "item": "ancho chiles",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": "dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ancho chiles",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    },
+    "enrich_metric_weights": {
+      "item": "ancho chiles",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "4 ounces green chilies (1 small can)",
-  "expected": {
-    "item": "green chilies",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green chilies",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "green chilies",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup toasted sliced almonds (optional)",
-  "expected": {
-    "item": "toasted sliced almonds",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted sliced almonds",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "toasted sliced almonds",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

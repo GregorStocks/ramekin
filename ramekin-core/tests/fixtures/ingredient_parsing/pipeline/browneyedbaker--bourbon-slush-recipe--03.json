@@ -1,13 +1,29 @@
 {
   "raw": "12 ounce canned frozen orange juice concentrate",
-  "expected": {
-    "item": "canned frozen orange juice concentrate",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canned frozen orange juice concentrate",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "canned frozen orange juice concentrate",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

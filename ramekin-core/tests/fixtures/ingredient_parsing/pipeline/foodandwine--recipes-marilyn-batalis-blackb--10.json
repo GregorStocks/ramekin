@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon cold unsalted butter, cut into cubes",
-  "expected": {
-    "item": "cold unsalted butter, cut into cubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cold unsalted butter, cut into cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cold unsalted butter, cut into cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

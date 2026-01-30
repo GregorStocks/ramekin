@@ -1,13 +1,25 @@
 {
   "raw": "1 15-ounce can black or small red beans, drained and rinsed",
-  "expected": {
-    "item": "black or small red beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "15-ounce can"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black or small red beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "15-ounce can"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "black or small red beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "15-ounce can"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

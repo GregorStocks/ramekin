@@ -1,13 +1,25 @@
 {
   "raw": "2-3 tbsp extra-virgin olive oil (OR avocado oil)",
-  "expected": {
-    "item": "extra-virgin olive oil (OR avocado oil)",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil (OR avocado oil)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil (OR avocado oil)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

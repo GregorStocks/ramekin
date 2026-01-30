@@ -1,8 +1,15 @@
 {
   "raw": "Confectioners’ sugar, for dusting, and mint leaves, for garnish (both optional)",
-  "expected": {
-    "item": "Confectioners’ sugar, for dusting, and mint leaves, for garnish",
-    "measurements": [],
-    "note": "both optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Confectioners’ sugar, for dusting, and mint leaves, for garnish",
+      "measurements": [],
+      "note": "both optional"
+    },
+    "parse_ingredients": {
+      "item": "Confectioners’ sugar, for dusting, and mint leaves, for garnish",
+      "measurements": [],
+      "note": "both optional"
+    }
   }
 }

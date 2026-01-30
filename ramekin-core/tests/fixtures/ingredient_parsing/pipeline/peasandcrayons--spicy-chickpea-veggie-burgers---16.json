@@ -1,13 +1,25 @@
 {
   "raw": "1/2  a fresh jalapeño (sliced thin (optional))",
-  "expected": {
-    "item": "a fresh jalapeño",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "sliced thin (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a fresh jalapeño",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "a fresh jalapeño",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin (optional"
+    }
   }
 }

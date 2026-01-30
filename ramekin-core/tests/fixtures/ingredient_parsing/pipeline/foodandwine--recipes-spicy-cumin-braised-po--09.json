@@ -1,17 +1,33 @@
 {
   "raw": "1 (3-pound) boneless pork shoulder (Boston butt), cut into 1 1/2-inch pieces",
-  "expected": {
-    "item": "boneless pork shoulder (Boston butt), cut into 1 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless pork shoulder (Boston butt), cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless pork shoulder (Boston butt), cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

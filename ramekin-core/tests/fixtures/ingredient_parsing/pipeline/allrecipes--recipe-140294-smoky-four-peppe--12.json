@@ -1,13 +1,25 @@
 {
   "raw": "0.25 teaspoon mesquite flavored liquid smoke concentrate",
-  "expected": {
-    "item": "mesquite flavored liquid smoke concentrate",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mesquite flavored liquid smoke concentrate",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mesquite flavored liquid smoke concentrate",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

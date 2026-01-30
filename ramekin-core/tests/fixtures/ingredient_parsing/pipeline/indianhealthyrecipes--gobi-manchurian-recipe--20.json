@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon sugar ((adjust to taste))",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "adjust to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "adjust to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "adjust to taste"
+    }
   }
 }

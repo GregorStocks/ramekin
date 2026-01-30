@@ -1,8 +1,15 @@
 {
   "raw": "to serve: a favorite salsa, grated cheese",
-  "expected": {
-    "item": "to serve: a favorite salsa",
-    "measurements": [],
-    "note": "grated cheese"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "to serve: a favorite salsa",
+      "measurements": [],
+      "note": "grated cheese"
+    },
+    "enrich_metric_weights": {
+      "item": "to serve: a favorite salsa",
+      "measurements": [],
+      "note": "grated cheese"
+    }
   }
 }

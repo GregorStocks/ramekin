@@ -1,13 +1,25 @@
 {
   "raw": "3 dried chile arbol (ends removed and deseeded)",
-  "expected": {
-    "item": "dried chile arbol (ends removed and deseeded)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried chile arbol (ends removed and deseeded)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dried chile arbol (ends removed and deseeded)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

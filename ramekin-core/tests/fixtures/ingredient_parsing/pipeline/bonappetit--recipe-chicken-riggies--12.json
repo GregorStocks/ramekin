@@ -1,8 +1,15 @@
 {
   "raw": "Basil leaves (for serving; optional)",
-  "expected": {
-    "item": "Basil leaves",
-    "measurements": [],
-    "note": "for serving; optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Basil leaves",
+      "measurements": [],
+      "note": "for serving; optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Basil leaves",
+      "measurements": [],
+      "note": "for serving; optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup well-stirred tahini, see notes above",
-  "expected": {
-    "item": "well-stirred tahini, see notes above",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "well-stirred tahini, see notes above",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "well-stirred tahini, see notes above",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 pound large whole, head-on shrimp ((450g))",
-  "expected": {
-    "item": "large whole, head-on shrimp",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "large whole, head-on shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "large whole, head-on shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/2 medium onion, cut in 1/2-inch dice (about 3/4 cup)",
-  "expected": {
-    "item": "onion, cut in 1/2-inch dice",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      },
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion, cut in 1/2-inch dice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "onion, cut in 1/2-inch dice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

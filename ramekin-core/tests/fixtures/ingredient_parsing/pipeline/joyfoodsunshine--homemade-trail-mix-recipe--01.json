@@ -1,17 +1,37 @@
 {
   "raw": "10 ounces dry roasted &amp; salted almonds ((2 cups))",
-  "expected": {
-    "item": "dry roasted & salted almonds",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry roasted & salted almonds",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dry roasted & salted almonds",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

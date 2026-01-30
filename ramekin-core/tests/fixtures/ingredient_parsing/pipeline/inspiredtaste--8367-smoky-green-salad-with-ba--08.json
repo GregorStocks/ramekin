@@ -1,13 +1,25 @@
 {
   "raw": "8 slices cooked bacon, see how we cook bacon",
-  "expected": {
-    "item": "cooked bacon, see how we cook bacon",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked bacon, see how we cook bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked bacon, see how we cook bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

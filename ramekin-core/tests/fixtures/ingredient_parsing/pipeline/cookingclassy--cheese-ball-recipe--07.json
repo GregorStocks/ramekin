@@ -1,13 +1,25 @@
 {
   "raw": "1 cup Fisher Pecans, (chopped small)",
-  "expected": {
-    "item": "Fisher Pecans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fisher Pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "Fisher Pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

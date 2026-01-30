@@ -1,13 +1,25 @@
 {
   "raw": "12  Spring roll wrappers",
-  "expected": {
-    "item": "Spring roll wrappers",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Spring roll wrappers",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Spring roll wrappers",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

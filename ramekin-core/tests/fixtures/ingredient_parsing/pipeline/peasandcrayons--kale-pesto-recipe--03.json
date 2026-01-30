@@ -1,13 +1,25 @@
 {
   "raw": "2 cups torn kale leaves ((removed from stem))",
-  "expected": {
-    "item": "torn kale leaves (removed from stem)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "torn kale leaves (removed from stem)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "torn kale leaves (removed from stem)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

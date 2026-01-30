@@ -1,13 +1,25 @@
 {
   "raw": "2  medium cloves garlic, (minced)",
-  "expected": {
-    "item": "cloves garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cloves garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "minced"
+    },
+    "parse_ingredients": {
+      "item": "cloves garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

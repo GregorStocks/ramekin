@@ -1,13 +1,25 @@
 {
   "raw": "1 pound shelled and deveined medium shrimp",
-  "expected": {
-    "item": "shelled and deveined medium shrimp",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shelled and deveined medium shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shelled and deveined medium shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

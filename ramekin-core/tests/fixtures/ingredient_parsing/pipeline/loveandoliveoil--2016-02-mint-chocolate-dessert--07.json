@@ -1,8 +1,15 @@
 {
   "raw": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
-  "expected": {
-    "item": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vanilla ice cream, warm fudge sauce, and mint leaves, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

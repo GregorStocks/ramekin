@@ -1,8 +1,15 @@
 {
   "raw": "d. 2 cups Refried Beans or black beans + 1-2 cups sautéed veggies",
-  "expected": {
-    "item": "d. 2 cups Refried Beans or black beans + 1-2 cups sautéed veggies",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "d. 2 cups Refried Beans or black beans + 1-2 cups sautéed veggies",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "d. 2 cups Refried Beans or black beans + 1-2 cups sautéed veggies",
+      "measurements": [],
+      "note": null
+    }
   }
 }

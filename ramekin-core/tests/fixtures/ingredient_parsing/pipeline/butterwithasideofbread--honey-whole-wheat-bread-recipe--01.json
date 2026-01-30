@@ -1,13 +1,25 @@
 {
   "raw": "1 pkg dry active yeast",
-  "expected": {
-    "item": "dry active yeast",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dry active yeast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dry active yeast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

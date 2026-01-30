@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh tomatoes and cilantro",
-  "expected": {
-    "item": "Chopped fresh tomatoes and cilantro",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped fresh tomatoes and cilantro",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped fresh tomatoes and cilantro",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
-  "expected": {
-    "item": "Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Italian sausage (we like 1/2 sweet and 1/2 hot Italian sausage), out of casing, broken into small pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

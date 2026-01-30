@@ -1,13 +1,25 @@
 {
   "raw": "1 pound chicken breasts (skinless and boneless, cut into small pieces)",
-  "expected": {
-    "item": "chicken breasts (skinless and boneless, cut into small pieces)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken breasts (skinless and boneless, cut into small pieces)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken breasts (skinless and boneless, cut into small pieces)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

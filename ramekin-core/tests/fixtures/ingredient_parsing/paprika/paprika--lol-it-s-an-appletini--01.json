@@ -1,13 +1,25 @@
 {
   "raw": "6 drops 20 percent saline solution*",
-  "expected": {
-    "item": "20 percent saline solution*",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "drop"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "20 percent saline solution*",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "20 percent saline solution*",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    }
   }
 }

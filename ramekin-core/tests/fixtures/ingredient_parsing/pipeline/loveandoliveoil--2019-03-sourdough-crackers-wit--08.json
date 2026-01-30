@@ -1,8 +1,15 @@
 {
   "raw": "maldon flake salt (for topping)",
-  "expected": {
-    "item": "maldon flake salt (for topping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "maldon flake salt (for topping)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "maldon flake salt (for topping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

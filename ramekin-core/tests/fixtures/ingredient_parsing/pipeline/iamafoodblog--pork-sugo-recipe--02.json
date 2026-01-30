@@ -1,13 +1,25 @@
 {
   "raw": "1/2 rack pork spareribs",
-  "expected": {
-    "item": "rack pork spareribs",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rack pork spareribs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "rack pork spareribs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

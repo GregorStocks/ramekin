@@ -1,17 +1,37 @@
 {
   "raw": "1  box Kashi wheat biscuits (16 ounce)",
-  "expected": {
-    "item": "Kashi wheat biscuits",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      },
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kashi wheat biscuits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Kashi wheat biscuits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

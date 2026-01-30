@@ -1,13 +1,25 @@
 {
   "raw": "1 pinch cracked pepper (to taste, optional)",
-  "expected": {
-    "item": "cracked pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pinch"
-      }
-    ],
-    "note": "to taste, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cracked pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": "to taste, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "cracked pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": "to taste, optional"
+    }
   }
 }

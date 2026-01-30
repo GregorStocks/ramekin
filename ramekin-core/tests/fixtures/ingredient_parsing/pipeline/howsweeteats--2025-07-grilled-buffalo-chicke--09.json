@@ -1,13 +1,25 @@
 {
   "raw": "4 to 6 slices sharp cheddar cheese, (or however many thighs you have)",
-  "expected": {
-    "item": "sharp cheddar cheese, (or however many thighs you have)",
-    "measurements": [
-      {
-        "amount": "4 to 6",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sharp cheddar cheese, (or however many thighs you have)",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sharp cheddar cheese, (or however many thighs you have)",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound frozen french fries, preferably shoestring, or homemade shoestring fries",
-  "expected": {
-    "item": "frozen french fries, preferably shoestring, or homemade shoestring fries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen french fries, preferably shoestring, or homemade shoestring fries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen french fries, preferably shoestring, or homemade shoestring fries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

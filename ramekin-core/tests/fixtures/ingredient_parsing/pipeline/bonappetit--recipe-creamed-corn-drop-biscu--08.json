@@ -1,17 +1,33 @@
 {
   "raw": "60 g (¼ cup) sour cream",
-  "expected": {
-    "item": "sour cream",
-    "measurements": [
-      {
-        "amount": "60",
-        "unit": "g"
-      },
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sour cream",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sour cream",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

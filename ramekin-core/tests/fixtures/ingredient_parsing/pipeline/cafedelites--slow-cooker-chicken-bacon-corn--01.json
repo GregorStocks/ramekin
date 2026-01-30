@@ -1,13 +1,25 @@
 {
   "raw": "1 pound chicken thighs (diced into 1-inch pieces)",
-  "expected": {
-    "item": "chicken thighs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "diced into 1-inch pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken thighs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced into 1-inch pieces"
+    },
+    "parse_ingredients": {
+      "item": "chicken thighs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced into 1-inch pieces"
+    }
   }
 }

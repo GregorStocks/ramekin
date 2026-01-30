@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup fresh parsley (roughly chopped)",
-  "expected": {
-    "item": "fresh parsley",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

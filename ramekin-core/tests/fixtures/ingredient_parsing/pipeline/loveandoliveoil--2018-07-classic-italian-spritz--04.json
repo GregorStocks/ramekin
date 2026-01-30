@@ -1,8 +1,15 @@
 {
   "raw": "club soda or sparkling water (optional, to taste)",
-  "expected": {
-    "item": "club soda or sparkling water",
-    "measurements": [],
-    "note": "optional, to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "club soda or sparkling water",
+      "measurements": [],
+      "note": "optional, to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "club soda or sparkling water",
+      "measurements": [],
+      "note": "optional, to taste"
+    }
   }
 }

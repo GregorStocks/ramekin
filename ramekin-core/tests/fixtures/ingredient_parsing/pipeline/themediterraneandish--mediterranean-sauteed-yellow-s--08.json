@@ -1,8 +1,15 @@
 {
   "raw": "Crumbled feta cheese (optional)",
-  "expected": {
-    "item": "Crumbled feta cheese",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crumbled feta cheese",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Crumbled feta cheese",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

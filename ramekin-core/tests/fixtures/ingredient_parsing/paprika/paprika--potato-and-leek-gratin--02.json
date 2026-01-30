@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 pounds yukon gold potatoes, unpeeled, scrubbed, thinly sliced",
-  "expected": {
-    "item": "yukon gold potatoes, unpeeled, scrubbed",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yukon gold potatoes, unpeeled, scrubbed",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "yukon gold potatoes, unpeeled, scrubbed",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

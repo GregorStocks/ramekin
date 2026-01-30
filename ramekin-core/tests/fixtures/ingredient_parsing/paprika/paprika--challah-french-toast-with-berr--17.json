@@ -1,8 +1,15 @@
 {
   "raw": "Butter for the pan, salted (my preference) or unsalted",
-  "expected": {
-    "item": "Butter for the pan, salted (my preference) or unsalted",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Butter for the pan, salted (my preference) or unsalted",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Butter for the pan, salted (my preference) or unsalted",
+      "measurements": [],
+      "note": null
+    }
   }
 }

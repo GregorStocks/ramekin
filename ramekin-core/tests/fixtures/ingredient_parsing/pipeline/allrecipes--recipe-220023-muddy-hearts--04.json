@@ -1,17 +1,37 @@
 {
   "raw": "1 (12 ounce) package milk chocolate chips",
-  "expected": {
-    "item": "milk chocolate chips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk chocolate chips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "milk chocolate chips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

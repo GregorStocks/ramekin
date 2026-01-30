@@ -1,13 +1,25 @@
 {
   "raw": "1 8 oz pkg cream cheese",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "8 oz pkg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "8 oz pkg"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "8 oz pkg"
+        }
+      ],
+      "note": null
+    }
   }
 }

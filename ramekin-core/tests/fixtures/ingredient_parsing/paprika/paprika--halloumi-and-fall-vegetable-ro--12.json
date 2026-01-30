@@ -1,17 +1,33 @@
 {
   "raw": "One 8-ounce (225-gram) block halloumi, in 1-inch cubes",
-  "expected": {
-    "item": "8-ounce block halloumi, in 1-inch cubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "225",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "8-ounce block halloumi, in 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "225",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "8-ounce block halloumi, in 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "225",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

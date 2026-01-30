@@ -1,13 +1,25 @@
 {
   "raw": "4 cups low sodium chicken stock",
-  "expected": {
-    "item": "low sodium chicken stock",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "low sodium chicken stock",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "low sodium chicken stock",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

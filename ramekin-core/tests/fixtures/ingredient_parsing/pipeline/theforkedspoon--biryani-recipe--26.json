@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup fresh mint leaves (chopped )",
-  "expected": {
-    "item": "fresh mint leaves",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh mint leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh mint leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

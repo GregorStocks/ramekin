@@ -1,8 +1,15 @@
 {
   "raw": "Dragee",
-  "expected": {
-    "item": "Dragee",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dragee",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dragee",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "½ cup large capers ((drained))",
-  "expected": {
-    "item": "large capers",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "large capers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "large capers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

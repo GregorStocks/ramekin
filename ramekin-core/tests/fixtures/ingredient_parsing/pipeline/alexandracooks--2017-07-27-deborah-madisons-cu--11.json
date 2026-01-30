@@ -1,8 +1,15 @@
 {
   "raw": "Juice of 1 lime, or more to taste",
-  "expected": {
-    "item": "Juice of 1 lime",
-    "measurements": [],
-    "note": "or more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Juice of 1 lime",
+      "measurements": [],
+      "note": "or more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Juice of 1 lime",
+      "measurements": [],
+      "note": "or more to taste"
+    }
   }
 }

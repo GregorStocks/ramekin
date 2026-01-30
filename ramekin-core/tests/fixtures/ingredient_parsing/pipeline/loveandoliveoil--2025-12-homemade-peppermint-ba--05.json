@@ -1,8 +1,15 @@
 {
   "raw": "peppermint flavoring oil or oil-based peppermint extract*",
-  "expected": {
-    "item": "peppermint flavoring oil or oil-based peppermint extract*",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peppermint flavoring oil or oil-based peppermint extract*",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "peppermint flavoring oil or oil-based peppermint extract*",
+      "measurements": [],
+      "note": null
+    }
   }
 }

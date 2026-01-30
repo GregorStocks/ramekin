@@ -1,13 +1,25 @@
 {
   "raw": "1 inch knob fresh ginger ((sliced thin))",
-  "expected": {
-    "item": "inch knob fresh ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced thin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "inch knob fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    },
+    "parse_ingredients": {
+      "item": "inch knob fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    }
   }
 }

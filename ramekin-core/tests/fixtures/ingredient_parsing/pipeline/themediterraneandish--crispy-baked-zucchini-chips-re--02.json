@@ -1,13 +1,25 @@
 {
   "raw": "4 zucchini squash, sliced into 1/8-inch rounds using a mandoline",
-  "expected": {
-    "item": "zucchini squash",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "sliced into 1/8-inch rounds using a mandoline"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini squash",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 1/8-inch rounds using a mandoline"
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini squash",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 1/8-inch rounds using a mandoline"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  red pepper (deseeded and diced)",
-  "expected": {
-    "item": "red pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "deseeded and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "deseeded and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "deseeded and diced"
+    }
   }
 }

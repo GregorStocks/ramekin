@@ -1,13 +1,25 @@
 {
   "raw": "1 lb ground meat (beef, lamb, or bison)",
-  "expected": {
-    "item": "ground meat (beef, lamb, or bison)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground meat (beef, lamb, or bison)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground meat (beef, lamb, or bison)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

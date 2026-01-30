@@ -1,13 +1,25 @@
 {
   "raw": "1/2  loaf of Rye Bread (cut into 1\" squares and toasted)",
-  "expected": {
-    "item": "loaf of Rye Bread",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "cut into 1\" squares and toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loaf of Rye Bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cut into 1\" squares and toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "loaf of Rye Bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cut into 1\" squares and toasted"
+    }
   }
 }

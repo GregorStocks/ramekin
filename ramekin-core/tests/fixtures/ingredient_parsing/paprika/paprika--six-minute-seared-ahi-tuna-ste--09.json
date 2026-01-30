@@ -1,8 +1,15 @@
 {
   "raw": "green onions, toasted sesame seeds, and lime wedges for serving (optional)",
-  "expected": {
-    "item": "green onions, toasted sesame seeds, and lime wedges for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions, toasted sesame seeds, and lime wedges for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions, toasted sesame seeds, and lime wedges for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Optional - extra zest from 1 meyer lemon zest",
-  "expected": {
-    "item": "Optional - extra zest from 1 meyer lemon zest",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional - extra zest from 1 meyer lemon zest",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Optional - extra zest from 1 meyer lemon zest",
+      "measurements": [],
+      "note": null
+    }
   }
 }

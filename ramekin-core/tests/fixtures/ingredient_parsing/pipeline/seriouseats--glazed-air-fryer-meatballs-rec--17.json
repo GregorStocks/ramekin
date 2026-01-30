@@ -1,8 +1,15 @@
 {
   "raw": "Pomegranate seeds (arils), for garnish",
-  "expected": {
-    "item": "Pomegranate seeds (arils)",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pomegranate seeds (arils)",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Pomegranate seeds (arils)",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

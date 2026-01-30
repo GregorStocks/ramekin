@@ -1,13 +1,25 @@
 {
   "raw": "1 cup chopped onion, from 1 medium onion",
-  "expected": {
-    "item": "chopped onion, from 1 medium onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped onion, from 1 medium onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped onion, from 1 medium onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

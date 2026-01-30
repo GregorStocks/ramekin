@@ -1,13 +1,25 @@
 {
   "raw": "1 cup taco meat, (cooled (see recipe above))",
-  "expected": {
-    "item": "taco meat, (cooled (see recipe above)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "taco meat, (cooled (see recipe above)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "taco meat, (cooled (see recipe above)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

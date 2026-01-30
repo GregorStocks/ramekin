@@ -1,17 +1,33 @@
 {
   "raw": "1 (17 1/2-ounce) can chestnut spread (such as Clement Faugier)",
-  "expected": {
-    "item": "chestnut spread (such as Clement Faugier)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "17",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chestnut spread (such as Clement Faugier)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "17",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chestnut spread (such as Clement Faugier)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "17",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

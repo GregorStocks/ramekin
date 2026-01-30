@@ -1,13 +1,25 @@
 {
   "raw": "10  white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
-  "expected": {
-    "item": "white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white chocolate Reese's peanut butter cups or regularRees'es peanut butter cups",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "8  basil leaves (sliced very thin)",
-  "expected": {
-    "item": "basil leaves",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "sliced very thin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "basil leaves",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced very thin"
+    },
+    "parse_ingredients": {
+      "item": "basil leaves",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced very thin"
+    }
   }
 }

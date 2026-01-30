@@ -1,13 +1,25 @@
 {
   "raw": "2 cup  steamed rice (using 8 oz-cup)",
-  "expected": {
-    "item": "steamed rice (using 8 oz-cup)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "steamed rice (using 8 oz-cup)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "steamed rice (using 8 oz-cup)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

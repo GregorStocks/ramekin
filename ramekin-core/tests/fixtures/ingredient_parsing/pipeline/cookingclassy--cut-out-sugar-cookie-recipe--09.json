@@ -1,8 +1,15 @@
 {
   "raw": "Icing ((see below))",
-  "expected": {
-    "item": "Icing (see below)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Icing (see below)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Icing (see below)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

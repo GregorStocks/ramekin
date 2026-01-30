@@ -1,17 +1,33 @@
 {
   "raw": "1 (10-ounce) box frozen chopped spinach, (thawed, drained, and squeezed dry)",
-  "expected": {
-    "item": "frozen chopped spinach",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      },
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": "thawed, drained, and squeezed dry"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen chopped spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "thawed, drained, and squeezed dry"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen chopped spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "thawed, drained, and squeezed dry"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/8 teaspoon chipotle chili powder (can use regular chili powder or smoked paprika)",
-  "expected": {
-    "item": "chipotle chili powder",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      },
-      {
-        "amount": null,
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chipotle chili powder",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        },
+        {
+          "amount": null,
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chipotle chili powder",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        },
+        {
+          "amount": null,
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

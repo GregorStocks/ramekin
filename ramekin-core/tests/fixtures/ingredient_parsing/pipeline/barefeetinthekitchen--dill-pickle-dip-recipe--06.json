@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon granulated garlic or garlic powder",
-  "expected": {
-    "item": "granulated garlic or garlic powder",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated garlic or garlic powder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "granulated garlic or garlic powder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 3/4 cups chicken broth (or chicken stock)",
-  "expected": {
-    "item": "chicken broth (or chicken stock)",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken broth (or chicken stock)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken broth (or chicken stock)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

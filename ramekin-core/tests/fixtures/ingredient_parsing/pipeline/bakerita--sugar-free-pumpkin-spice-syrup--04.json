@@ -1,13 +1,25 @@
 {
   "raw": "½ cup sugar-free maple syrup (I used Wholesome Yum Zero Sugar Maple Syrup &amp;#8211; you may need more or less based on how sweet your syrup replacement is. Different types of sugar-free sweeteners vary in sweetness levels.)",
-  "expected": {
-    "item": "sugar-free maple syrup",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "I used Wholesome Yum Zero Sugar Maple Syrup - you may need more or less based on how sweet your syrup replacement is. Different types of sugar-free sweeteners vary in sweetness levels."
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sugar-free maple syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "I used Wholesome Yum Zero Sugar Maple Syrup - you may need more or less based on how sweet your syrup replacement is. Different types of sugar-free sweeteners vary in sweetness levels."
+    },
+    "parse_ingredients": {
+      "item": "sugar-free maple syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "I used Wholesome Yum Zero Sugar Maple Syrup - you may need more or less based on how sweet your syrup replacement is. Different types of sugar-free sweeteners vary in sweetness levels."
+    }
   }
 }

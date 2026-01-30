@@ -1,8 +1,15 @@
 {
   "raw": "Katsuobushi (Dried Bonito Flakes)",
-  "expected": {
-    "item": "Katsuobushi",
-    "measurements": [],
-    "note": "Dried Bonito Flakes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Katsuobushi",
+      "measurements": [],
+      "note": "Dried Bonito Flakes"
+    },
+    "enrich_metric_weights": {
+      "item": "Katsuobushi",
+      "measurements": [],
+      "note": "Dried Bonito Flakes"
+    }
   }
 }

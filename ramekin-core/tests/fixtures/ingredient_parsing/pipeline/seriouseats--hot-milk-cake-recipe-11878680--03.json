@@ -1,21 +1,41 @@
 {
   "raw": "300g granulated sugar (10 1/2 ounces; 1 1/2 cups)",
-  "expected": {
-    "item": "granulated sugar",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "g"
-      },
-      {
-        "amount": "10 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        },
+        {
+          "amount": "10 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        },
+        {
+          "amount": "10 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

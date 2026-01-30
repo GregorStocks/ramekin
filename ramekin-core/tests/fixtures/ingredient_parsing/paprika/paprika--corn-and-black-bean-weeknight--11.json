@@ -1,8 +1,15 @@
 {
   "raw": "Thinly sliced radishes (I used 2 medium)",
-  "expected": {
-    "item": "Thinly sliced radishes (I used 2 medium)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thinly sliced radishes (I used 2 medium)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Thinly sliced radishes (I used 2 medium)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

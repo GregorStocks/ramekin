@@ -1,17 +1,33 @@
 {
   "raw": "1 Tbsp (15g) baking powder",
-  "expected": {
-    "item": "baking powder",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "15",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baking powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baking powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

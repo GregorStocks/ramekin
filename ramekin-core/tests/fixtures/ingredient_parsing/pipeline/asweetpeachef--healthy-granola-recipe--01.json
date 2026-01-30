@@ -1,13 +1,25 @@
 {
   "raw": "3 cups uncooked rolled oats (not instant)",
-  "expected": {
-    "item": "uncooked rolled oats (not instant)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "uncooked rolled oats (not instant)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "uncooked rolled oats (not instant)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

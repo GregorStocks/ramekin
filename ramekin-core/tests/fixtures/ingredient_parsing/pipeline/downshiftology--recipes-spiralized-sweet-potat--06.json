@@ -1,8 +1,15 @@
 {
   "raw": "microgreens",
-  "expected": {
-    "item": "microgreens",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "microgreens",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "microgreens",
+      "measurements": [],
+      "note": null
+    }
   }
 }

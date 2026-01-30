@@ -1,13 +1,25 @@
 {
   "raw": "4 sheets gim ((Korean nori))",
-  "expected": {
-    "item": "sheets gim (Korean nori)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets gim (Korean nori)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sheets gim (Korean nori)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "50 g sugar (1/4 cup)",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "g"
-      },
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "shredded lettuce/cabbage, for serving",
-  "expected": {
-    "item": "shredded lettuce/cabbage",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded lettuce/cabbage",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "shredded lettuce/cabbage",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

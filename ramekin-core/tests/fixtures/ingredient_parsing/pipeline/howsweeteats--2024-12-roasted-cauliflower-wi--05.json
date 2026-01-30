@@ -1,13 +1,25 @@
 {
   "raw": "8 cups torn tuscan kale",
-  "expected": {
-    "item": "torn tuscan kale",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "torn tuscan kale",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "torn tuscan kale",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

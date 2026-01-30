@@ -1,8 +1,15 @@
 {
   "raw": "Green food coloring (for marzipan)",
-  "expected": {
-    "item": "Green food coloring (for marzipan)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Green food coloring (for marzipan)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Green food coloring (for marzipan)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

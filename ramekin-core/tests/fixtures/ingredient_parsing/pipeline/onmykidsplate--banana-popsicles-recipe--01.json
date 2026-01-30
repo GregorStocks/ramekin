@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
-  "expected": {
-    "item": "almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "almond milk  (milk, coconut milk or any other dairy alternative can easily be used in these pops!)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "4 1/2 tablespoons (63 g) unsalted butter, divided",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "63",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "63",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "63",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

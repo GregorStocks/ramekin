@@ -1,21 +1,41 @@
 {
   "raw": "1 freshly brewed shot espresso (about 1 fluid ounce; 30ml)",
-  "expected": {
-    "item": "freshly brewed shot espresso",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "fl oz"
-      },
-      {
-        "amount": "30",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly brewed shot espresso",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "fl oz"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly brewed shot espresso",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "fl oz"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

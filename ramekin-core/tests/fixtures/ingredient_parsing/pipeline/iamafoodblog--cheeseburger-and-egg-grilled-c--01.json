@@ -1,13 +1,29 @@
 {
   "raw": "6 oz lean ground beef",
-  "expected": {
-    "item": "lean ground beef",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lean ground beef",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lean ground beef",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

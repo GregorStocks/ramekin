@@ -1,13 +1,25 @@
 {
   "raw": "3 quarter-sized coins fresh ginger, crushed with the side of a large knife",
-  "expected": {
-    "item": "quarter-sized coins fresh ginger",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "crushed with the side of a large knife"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "quarter-sized coins fresh ginger",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "crushed with the side of a large knife"
+    },
+    "enrich_metric_weights": {
+      "item": "quarter-sized coins fresh ginger",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "crushed with the side of a large knife"
+    }
   }
 }

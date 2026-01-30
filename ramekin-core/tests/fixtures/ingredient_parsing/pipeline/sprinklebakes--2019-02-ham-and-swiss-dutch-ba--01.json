@@ -1,17 +1,33 @@
 {
   "raw": "1 cup and 2 tablespoons (144g all-purpose flour)",
-  "expected": {
-    "item": "and 2 tablespoons",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "144",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "and 2 tablespoons",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "144",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "and 2 tablespoons",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "144",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

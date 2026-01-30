@@ -1,13 +1,25 @@
 {
   "raw": "½ cup shredded cheddar cheese (divided)",
-  "expected": {
-    "item": "shredded cheddar cheese",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

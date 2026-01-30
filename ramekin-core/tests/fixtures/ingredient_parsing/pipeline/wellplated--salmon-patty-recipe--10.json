@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons finely chopped fresh parsley (plus additional for serving)",
-  "expected": {
-    "item": "finely chopped fresh parsley",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus additional for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus additional for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "finely chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus additional for serving"
+    }
   }
 }

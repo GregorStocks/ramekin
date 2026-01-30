@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp Benishoga (pickled red ginger, chopped)",
-  "expected": {
-    "item": "Benishoga",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "pickled red ginger, chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Benishoga",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "pickled red ginger, chopped"
+    },
+    "parse_ingredients": {
+      "item": "Benishoga",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "pickled red ginger, chopped"
+    }
   }
 }

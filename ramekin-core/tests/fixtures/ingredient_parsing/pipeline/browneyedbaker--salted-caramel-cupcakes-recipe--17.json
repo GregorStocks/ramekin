@@ -1,8 +1,15 @@
 {
   "raw": "Fleur de Sel (or other flaky sea salt)",
-  "expected": {
-    "item": "Fleur de Sel (or other flaky sea salt)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fleur de Sel (or other flaky sea salt)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fleur de Sel (or other flaky sea salt)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

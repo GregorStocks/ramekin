@@ -1,13 +1,25 @@
 {
   "raw": "2  chilies (thai (sliced in half lengthwise))",
-  "expected": {
-    "item": "chilies",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "thai (sliced in half lengthwise"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "thai (sliced in half lengthwise"
+    },
+    "parse_ingredients": {
+      "item": "chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "thai (sliced in half lengthwise"
+    }
   }
 }

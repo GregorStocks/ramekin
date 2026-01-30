@@ -1,17 +1,33 @@
 {
   "raw": "120 ml extra-virgin olive oil (approx ½ cup)",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "120",
-        "unit": "ml"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "ml"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "ml"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup 100-proof grain alcohol (such as moonshine)",
-  "expected": {
-    "item": "100-proof grain alcohol (such as moonshine)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "100-proof grain alcohol (such as moonshine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "100-proof grain alcohol (such as moonshine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

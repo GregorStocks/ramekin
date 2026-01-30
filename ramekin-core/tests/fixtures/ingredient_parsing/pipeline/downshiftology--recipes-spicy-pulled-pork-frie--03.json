@@ -1,13 +1,25 @@
 {
   "raw": "1/3 cup pulled pork",
-  "expected": {
-    "item": "pulled pork",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pulled pork",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pulled pork",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

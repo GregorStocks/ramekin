@@ -1,17 +1,37 @@
 {
   "raw": "16 oz Pillsbury Crescent Rolls (2 cans)",
-  "expected": {
-    "item": "Pillsbury Crescent Rolls",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Pillsbury Crescent Rolls",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Pillsbury Crescent Rolls",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

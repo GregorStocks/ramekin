@@ -1,13 +1,25 @@
 {
   "raw": "1 16-ounce package dried black beans",
-  "expected": {
-    "item": "dried black beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "16-ounce package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-ounce package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-ounce package"
+        }
+      ],
+      "note": null
+    }
   }
 }

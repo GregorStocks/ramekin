@@ -1,8 +1,15 @@
 {
   "raw": "A handful of fresh dill",
-  "expected": {
-    "item": "A handful of fresh dill",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "A handful of fresh dill",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "A handful of fresh dill",
+      "measurements": [],
+      "note": null
+    }
   }
 }

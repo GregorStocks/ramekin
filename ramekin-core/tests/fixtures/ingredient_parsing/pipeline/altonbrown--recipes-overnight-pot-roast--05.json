@@ -1,13 +1,29 @@
 {
   "raw": "15 ounces carrots, peeled and chopped into 1-inch chunks, divided",
-  "expected": {
-    "item": "carrots, peeled and chopped into 1-inch chunks",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots, peeled and chopped into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots, peeled and chopped into 1-inch chunks",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

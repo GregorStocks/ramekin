@@ -1,13 +1,25 @@
 {
   "raw": "400 grams Banh Pho Noodles ((dried flat rice noodles))",
-  "expected": {
-    "item": "Banh Pho Noodles",
-    "measurements": [
-      {
-        "amount": "400",
-        "unit": "g"
-      }
-    ],
-    "note": "dried flat rice noodles"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Banh Pho Noodles",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": "dried flat rice noodles"
+    },
+    "parse_ingredients": {
+      "item": "Banh Pho Noodles",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": "dried flat rice noodles"
+    }
   }
 }

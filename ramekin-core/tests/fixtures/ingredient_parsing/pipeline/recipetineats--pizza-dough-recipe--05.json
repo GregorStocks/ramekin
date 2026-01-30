@@ -1,13 +1,25 @@
 {
   "raw": "4 tbsp extra virgin olive oil",
-  "expected": {
-    "item": "extra virgin olive oil",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra virgin olive oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

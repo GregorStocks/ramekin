@@ -1,8 +1,15 @@
 {
   "raw": "Gummy worms (optional)",
-  "expected": {
-    "item": "Gummy worms",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gummy worms",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Gummy worms",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

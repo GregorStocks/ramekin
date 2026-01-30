@@ -1,13 +1,25 @@
 {
   "raw": "3 cup packed kale, tough stems and ribs removed",
-  "expected": {
-    "item": "packed kale, tough stems and ribs removed",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed kale, tough stems and ribs removed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed kale, tough stems and ribs removed",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

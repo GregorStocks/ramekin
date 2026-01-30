@@ -1,13 +1,25 @@
 {
   "raw": "4 sprigs fresh thyme or 2 teaspoons dried",
-  "expected": {
-    "item": "fresh thyme",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "sprig"
-      }
-    ],
-    "note": "or 2 teaspoons dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": "or 2 teaspoons dried"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": "or 2 teaspoons dried"
+    }
   }
 }

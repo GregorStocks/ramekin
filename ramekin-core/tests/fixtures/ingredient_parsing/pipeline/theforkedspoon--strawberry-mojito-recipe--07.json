@@ -1,8 +1,15 @@
 {
   "raw": "club soda",
-  "expected": {
-    "item": "club soda",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "club soda",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "club soda",
+      "measurements": [],
+      "note": null
+    }
   }
 }

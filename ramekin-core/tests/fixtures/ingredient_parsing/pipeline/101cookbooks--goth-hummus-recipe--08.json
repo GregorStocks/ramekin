@@ -1,8 +1,15 @@
 {
   "raw": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
-  "expected": {
-    "item": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "to serve: edible flowers (sage, chive, thyme, etc.), and sesame seeds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

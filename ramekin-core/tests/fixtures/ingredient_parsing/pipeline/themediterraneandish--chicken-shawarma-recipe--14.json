@@ -1,8 +1,15 @@
 {
   "raw": "Tahini sauce or Greek Tzatziki sauce",
-  "expected": {
-    "item": "Tahini sauce or Greek Tzatziki sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tahini sauce or Greek Tzatziki sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tahini sauce or Greek Tzatziki sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

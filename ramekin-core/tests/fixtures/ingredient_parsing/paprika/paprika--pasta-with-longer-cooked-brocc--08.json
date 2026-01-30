@@ -1,8 +1,15 @@
 {
   "raw": "Glug of white wine (optional)",
-  "expected": {
-    "item": "Glug of white wine",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Glug of white wine",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Glug of white wine",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

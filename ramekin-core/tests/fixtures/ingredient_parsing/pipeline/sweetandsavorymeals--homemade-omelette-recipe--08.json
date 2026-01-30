@@ -1,13 +1,25 @@
 {
   "raw": "1/3 cup cubed ham",
-  "expected": {
-    "item": "cubed ham",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cubed ham",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cubed ham",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

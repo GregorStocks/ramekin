@@ -1,8 +1,15 @@
 {
   "raw": "TOASTS AND ASSEMBLY",
-  "expected": {
-    "item": "TOASTS AND ASSEMBLY",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "TOASTS AND ASSEMBLY",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "TOASTS AND ASSEMBLY",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 teaspoons shichimi togarashi",
-  "expected": {
-    "item": "shichimi togarashi",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shichimi togarashi",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shichimi togarashi",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "ghee (butter or coconut oil (to coat skillet))",
-  "expected": {
-    "item": "ghee (butter or coconut oil (to coat skillet)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ghee (butter or coconut oil (to coat skillet)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ghee (butter or coconut oil (to coat skillet)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

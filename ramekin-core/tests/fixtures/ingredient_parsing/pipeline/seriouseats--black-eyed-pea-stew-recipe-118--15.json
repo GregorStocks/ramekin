@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (30 ml) fresh lemon juice, from 1 medium lemonc",
-  "expected": {
-    "item": "fresh lemon juice, from 1 medium lemonc",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "30",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh lemon juice, from 1 medium lemonc",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh lemon juice, from 1 medium lemonc",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

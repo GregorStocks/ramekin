@@ -1,13 +1,29 @@
 {
   "raw": "8.81 oz mushrooms (250 g, thinly sliced)",
-  "expected": {
-    "item": "mushrooms",
-    "measurements": [
-      {
-        "amount": "8.81",
-        "unit": "oz"
-      }
-    ],
-    "note": "250 g, thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mushrooms",
+      "measurements": [
+        {
+          "amount": "8.81",
+          "unit": "oz"
+        }
+      ],
+      "note": "250 g, thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "mushrooms",
+      "measurements": [
+        {
+          "amount": "8.81",
+          "unit": "oz"
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": "250 g, thinly sliced"
+    }
   }
 }

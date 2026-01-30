@@ -1,8 +1,15 @@
 {
   "raw": "For Serving (Optional):",
-  "expected": {
-    "item": "For Serving :",
-    "measurements": [],
-    "note": "Optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For Serving :",
+      "measurements": [],
+      "note": "Optional"
+    },
+    "enrich_metric_weights": {
+      "item": "For Serving :",
+      "measurements": [],
+      "note": "Optional"
+    }
   }
 }

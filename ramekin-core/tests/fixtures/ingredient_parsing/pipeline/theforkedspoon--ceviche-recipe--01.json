@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds white fish fillet ((cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
-  "expected": {
-    "item": "white fish fillet (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white fish fillet (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white fish fillet (cod, halibut, mahi mahi, tilapia, snapper, sea bass) chopped into small, bite-size square pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

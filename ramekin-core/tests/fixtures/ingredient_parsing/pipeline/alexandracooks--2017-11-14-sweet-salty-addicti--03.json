@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon flaky sea salt such as Maldon or 1/4 teaspoon kosher salt",
-  "expected": {
-    "item": "flaky sea salt such as Maldon",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1/4 teaspoon kosher salt"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flaky sea salt such as Maldon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/4 teaspoon kosher salt"
+    },
+    "parse_ingredients": {
+      "item": "flaky sea salt such as Maldon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/4 teaspoon kosher salt"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "big handfuls fresh baby spinach, about 2 cups",
-  "expected": {
-    "item": "big handfuls fresh baby spinach, about 2 cups",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "big handfuls fresh baby spinach, about 2 cups",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "big handfuls fresh baby spinach, about 2 cups",
+      "measurements": [],
+      "note": null
+    }
   }
 }

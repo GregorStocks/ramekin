@@ -1,8 +1,15 @@
 {
   "raw": "whipped cream and caramel sauce, optional, for garnish",
-  "expected": {
-    "item": "whipped cream and caramel sauce, optional",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whipped cream and caramel sauce, optional",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "whipped cream and caramel sauce, optional",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

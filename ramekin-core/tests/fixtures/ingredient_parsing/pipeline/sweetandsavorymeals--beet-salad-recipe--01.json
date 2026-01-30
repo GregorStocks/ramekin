@@ -1,13 +1,29 @@
 {
   "raw": "6 oz baby spinach (fresh)",
-  "expected": {
-    "item": "baby spinach",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": "fresh"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby spinach",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "fresh"
+    },
+    "parse_ingredients": {
+      "item": "baby spinach",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": "fresh"
+    }
   }
 }

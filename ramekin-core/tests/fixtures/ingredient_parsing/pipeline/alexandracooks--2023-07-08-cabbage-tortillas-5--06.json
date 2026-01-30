@@ -1,13 +1,25 @@
 {
   "raw": "1 heaping cup sliced scallions (from 4 to 6, whites and light greens), optional",
-  "expected": {
-    "item": "sliced scallions (from 4 to 6, whites and light greens)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaping cup"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced scallions (from 4 to 6, whites and light greens)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "sliced scallions (from 4 to 6, whites and light greens)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

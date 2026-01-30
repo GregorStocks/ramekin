@@ -1,13 +1,25 @@
 {
   "raw": "1 17.5-oz. package shelf-stable potato gnocchi",
-  "expected": {
-    "item": "shelf-stable potato gnocchi",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "17.5-oz. package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shelf-stable potato gnocchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "17.5-oz. package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shelf-stable potato gnocchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "17.5-oz. package"
+        }
+      ],
+      "note": null
+    }
   }
 }

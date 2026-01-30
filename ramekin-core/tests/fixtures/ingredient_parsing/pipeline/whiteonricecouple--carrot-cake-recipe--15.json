@@ -1,21 +1,41 @@
 {
   "raw": "2 cups (240g) confectioners sugar ((1/2 pound))",
-  "expected": {
-    "item": "confectioners sugar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "g"
-      },
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "confectioners sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "confectioners sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

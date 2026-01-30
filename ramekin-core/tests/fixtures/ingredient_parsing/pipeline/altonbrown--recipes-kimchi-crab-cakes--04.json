@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces kimchi, drained and finely chopped",
-  "expected": {
-    "item": "kimchi",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kimchi",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "kimchi",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and finely chopped"
+    }
   }
 }

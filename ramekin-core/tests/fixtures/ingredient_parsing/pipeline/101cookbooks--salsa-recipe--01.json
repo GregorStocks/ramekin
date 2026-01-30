@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds Roma tomatoes (or similar), cut in half lengthwise",
-  "expected": {
-    "item": "Roma tomatoes (or similar), cut in half lengthwise",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roma tomatoes (or similar), cut in half lengthwise",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Roma tomatoes (or similar), cut in half lengthwise",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

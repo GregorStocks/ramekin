@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons water ((plus 1/2 cup, divided))",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus 1/2 cup, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1/2 cup, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1/2 cup, divided"
+    }
   }
 }

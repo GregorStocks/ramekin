@@ -1,8 +1,15 @@
 {
   "raw": "wasabi (optional for dipping)",
-  "expected": {
-    "item": "wasabi",
-    "measurements": [],
-    "note": "optional for dipping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "wasabi",
+      "measurements": [],
+      "note": "optional for dipping"
+    },
+    "parse_ingredients": {
+      "item": "wasabi",
+      "measurements": [],
+      "note": "optional for dipping"
+    }
   }
 }

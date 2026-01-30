@@ -1,13 +1,29 @@
 {
   "raw": "10 oz. frozen spinach ( frozen chopped spinach, thawed, drained)",
-  "expected": {
-    "item": "frozen spinach",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "frozen chopped spinach, thawed, drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "frozen chopped spinach, thawed, drained"
+    },
+    "parse_ingredients": {
+      "item": "frozen spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "frozen chopped spinach, thawed, drained"
+    }
   }
 }

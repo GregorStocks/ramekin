@@ -1,8 +1,15 @@
 {
   "raw": "Chopped nuts, like pecans, pistachios, walnuts, or almonds",
-  "expected": {
-    "item": "Chopped nuts, like pecans, pistachios, walnuts, or almonds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped nuts, like pecans, pistachios, walnuts, or almonds",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped nuts, like pecans, pistachios, walnuts, or almonds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

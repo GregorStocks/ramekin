@@ -1,13 +1,25 @@
 {
   "raw": "1/4 pound smoked ham, minced",
-  "expected": {
-    "item": "smoked ham",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked ham",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "smoked ham",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

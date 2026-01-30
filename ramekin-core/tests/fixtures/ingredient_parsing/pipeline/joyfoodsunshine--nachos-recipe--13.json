@@ -1,13 +1,29 @@
 {
   "raw": "16 ounces cheddar cheese (shredded)",
-  "expected": {
-    "item": "cheddar cheese",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

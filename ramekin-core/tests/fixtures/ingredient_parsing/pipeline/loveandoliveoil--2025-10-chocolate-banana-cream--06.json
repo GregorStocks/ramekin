@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unflavored vegetable shortening* (chilled and cut into cubes)",
-  "expected": {
-    "item": "unflavored vegetable shortening*",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "chilled and cut into cubes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unflavored vegetable shortening*",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "chilled and cut into cubes"
+    },
+    "enrich_metric_weights": {
+      "item": "unflavored vegetable shortening*",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "chilled and cut into cubes"
+    }
   }
 }

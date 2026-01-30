@@ -1,13 +1,25 @@
 {
   "raw": "1.5 teaspoon mild chili powder",
-  "expected": {
-    "item": "mild chili powder",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mild chili powder",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mild chili powder",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
-  "expected": {
-    "item": "a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "a white onion, minced (you can toss it with a little lime juice and salt to lightly pickle it, if desired)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

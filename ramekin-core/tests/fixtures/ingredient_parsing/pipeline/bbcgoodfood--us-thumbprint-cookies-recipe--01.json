@@ -1,13 +1,25 @@
 {
   "raw": "2 cups plus 1 tbsp all-purpose flour",
-  "expected": {
-    "item": "2 cups plus 1 tbsp all-purpose flour",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tbsp all-purpose flour"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "2 cups plus 1 tbsp all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tbsp all-purpose flour"
+    },
+    "enrich_metric_weights": {
+      "item": "2 cups plus 1 tbsp all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tbsp all-purpose flour"
+    }
   }
 }

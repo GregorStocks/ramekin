@@ -1,17 +1,37 @@
 {
   "raw": "1 round (8 ounces) Brie cheese, cubed",
-  "expected": {
-    "item": "round Brie cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "round Brie cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "round Brie cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

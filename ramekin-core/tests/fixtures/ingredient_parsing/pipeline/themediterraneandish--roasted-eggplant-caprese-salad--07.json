@@ -1,8 +1,15 @@
 {
   "raw": "Basil Vinaigrette (optional)",
-  "expected": {
-    "item": "Basil Vinaigrette",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Basil Vinaigrette",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Basil Vinaigrette",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

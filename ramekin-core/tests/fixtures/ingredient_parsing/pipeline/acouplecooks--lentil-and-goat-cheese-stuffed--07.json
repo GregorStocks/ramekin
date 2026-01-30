@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces goat cheese, divided",
-  "expected": {
-    "item": "goat cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

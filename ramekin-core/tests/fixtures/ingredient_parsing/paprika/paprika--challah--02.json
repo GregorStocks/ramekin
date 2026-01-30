@@ -1,13 +1,25 @@
 {
   "raw": "7/8 cup lukewarm water",
-  "expected": {
-    "item": "lukewarm water",
-    "measurements": [
-      {
-        "amount": "7/8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lukewarm water",
+      "measurements": [
+        {
+          "amount": "7/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lukewarm water",
+      "measurements": [
+        {
+          "amount": "7/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

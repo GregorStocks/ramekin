@@ -1,8 +1,15 @@
 {
   "raw": "sriracha, if desired",
-  "expected": {
-    "item": "sriracha, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sriracha, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sriracha, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

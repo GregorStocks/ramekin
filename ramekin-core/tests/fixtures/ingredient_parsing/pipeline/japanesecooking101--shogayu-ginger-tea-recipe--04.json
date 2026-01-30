@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp Katakuriko (or cornstarch)",
-  "expected": {
-    "item": "Katakuriko (or cornstarch)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Katakuriko (or cornstarch)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Katakuriko (or cornstarch)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

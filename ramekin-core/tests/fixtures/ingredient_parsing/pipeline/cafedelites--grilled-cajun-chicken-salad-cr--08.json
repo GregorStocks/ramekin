@@ -1,13 +1,25 @@
 {
   "raw": "1-2 teaspoons cayenne pepper (adjust to your taste)",
-  "expected": {
-    "item": "cayenne pepper (adjust to your taste)",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cayenne pepper (adjust to your taste)",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cayenne pepper (adjust to your taste)",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

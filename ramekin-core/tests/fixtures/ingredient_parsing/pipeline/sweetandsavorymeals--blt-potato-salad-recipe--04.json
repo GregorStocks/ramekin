@@ -1,13 +1,25 @@
 {
   "raw": "12 slices thick cut bacon (cut into 1 inch pieces)",
-  "expected": {
-    "item": "thick cut bacon (cut into 1 inch pieces)",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thick cut bacon (cut into 1 inch pieces)",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thick cut bacon (cut into 1 inch pieces)",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

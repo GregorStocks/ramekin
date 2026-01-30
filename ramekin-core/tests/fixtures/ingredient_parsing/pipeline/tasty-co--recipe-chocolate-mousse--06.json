@@ -1,13 +1,25 @@
 {
   "raw": "2 sprigs mint, to garnish",
-  "expected": {
-    "item": "mint, to garnish",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mint, to garnish",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mint, to garnish",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

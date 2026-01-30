@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon lemon zest (optional or use orange zest)",
-  "expected": {
-    "item": "lemon zest",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional or use orange zest"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional or use orange zest"
+    },
+    "parse_ingredients": {
+      "item": "lemon zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional or use orange zest"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 (3 to 3 1/2 pound) chicken, cut into pieces or use a mix of thighs and drumsticks",
-  "expected": {
-    "item": "chicken, cut into pieces or use a mix of thighs and drumsticks",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "3 to 3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken, cut into pieces or use a mix of thighs and drumsticks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3 to 3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken, cut into pieces or use a mix of thighs and drumsticks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3 to 3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

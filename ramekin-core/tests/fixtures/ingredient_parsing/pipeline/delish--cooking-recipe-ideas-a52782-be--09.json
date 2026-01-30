@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. asparagus, trimmed, cut into thirds, quartered if large",
-  "expected": {
-    "item": "asparagus, trimmed, cut into thirds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "quartered if large"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "asparagus, trimmed, cut into thirds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered if large"
+    },
+    "enrich_metric_weights": {
+      "item": "asparagus, trimmed, cut into thirds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered if large"
+    }
   }
 }

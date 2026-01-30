@@ -1,13 +1,25 @@
 {
   "raw": "1  basket of tiny cherry tomatoes, washed and quartered",
-  "expected": {
-    "item": "basket of tiny cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "washed and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basket of tiny cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "washed and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "basket of tiny cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "washed and quartered"
+    }
   }
 }

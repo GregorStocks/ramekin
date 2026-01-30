@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp chili threads (optional, to garnish)",
-  "expected": {
-    "item": "chili threads",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional, to garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chili threads",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, to garnish"
+    },
+    "parse_ingredients": {
+      "item": "chili threads",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, to garnish"
+    }
   }
 }

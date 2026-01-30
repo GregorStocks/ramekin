@@ -1,8 +1,15 @@
 {
   "raw": "Mayonnaise, for serving",
-  "expected": {
-    "item": "Mayonnaise",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mayonnaise",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Mayonnaise",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

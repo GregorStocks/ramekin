@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 teaspoons hot smoked paprika",
-  "expected": {
-    "item": "hot smoked paprika",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot smoked paprika",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "hot smoked paprika",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

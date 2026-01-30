@@ -1,8 +1,15 @@
 {
   "raw": "ground black pepper ((to taste))",
-  "expected": {
-    "item": "ground black pepper",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground black pepper",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "ground black pepper",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

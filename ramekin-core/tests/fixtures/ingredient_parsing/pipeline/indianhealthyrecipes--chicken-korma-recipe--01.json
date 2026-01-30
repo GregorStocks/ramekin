@@ -1,17 +1,33 @@
 {
   "raw": "½ kg (1.2 lbs)  chicken  ((bone-in preferred but boneless is ok) )",
-  "expected": {
-    "item": "chicken  (bone-in preferred but boneless is ok)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "kg"
-      },
-      {
-        "amount": "1.2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken  (bone-in preferred but boneless is ok)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "kg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken  (bone-in preferred but boneless is ok)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "kg"
+        },
+        {
+          "amount": "1.2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

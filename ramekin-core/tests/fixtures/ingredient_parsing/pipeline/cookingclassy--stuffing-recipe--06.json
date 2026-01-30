@@ -1,13 +1,25 @@
 {
   "raw": "1 cup unsalted butter, (diced into 1 Tbsp pieces)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced into 1 Tbsp pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced into 1 Tbsp pieces"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced into 1 Tbsp pieces"
+    }
   }
 }

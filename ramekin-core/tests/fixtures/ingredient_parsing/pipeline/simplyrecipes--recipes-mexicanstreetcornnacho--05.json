@@ -1,13 +1,25 @@
 {
   "raw": "1 pound Monterey jack cheese, grated (do not buy pre-grated, it won't melt properly)",
-  "expected": {
-    "item": "Monterey jack cheese, grated",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "do not buy pre-grated, it won't melt properly"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Monterey jack cheese, grated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "do not buy pre-grated, it won't melt properly"
+    },
+    "enrich_metric_weights": {
+      "item": "Monterey jack cheese, grated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "do not buy pre-grated, it won't melt properly"
+    }
   }
 }

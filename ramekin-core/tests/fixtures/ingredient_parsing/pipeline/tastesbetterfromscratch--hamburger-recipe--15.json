@@ -1,8 +1,15 @@
 {
   "raw": "Other topping ideas: sautéed mushrooms, grilled onions, jalapeños, bacon, onion rings",
-  "expected": {
-    "item": "Other topping ideas: sautéed mushrooms, grilled onions, jalapeños, bacon, onion rings",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Other topping ideas: sautéed mushrooms, grilled onions, jalapeños, bacon, onion rings",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Other topping ideas: sautéed mushrooms, grilled onions, jalapeños, bacon, onion rings",
+      "measurements": [],
+      "note": null
+    }
   }
 }

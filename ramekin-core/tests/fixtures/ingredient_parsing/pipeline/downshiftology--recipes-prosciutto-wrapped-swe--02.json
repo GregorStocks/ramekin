@@ -1,13 +1,25 @@
 {
   "raw": "8 slices prosciutto (halved lengthwise)",
-  "expected": {
-    "item": "prosciutto",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "slice"
-      }
-    ],
-    "note": "halved lengthwise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "prosciutto",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": "halved lengthwise"
+    },
+    "enrich_metric_weights": {
+      "item": "prosciutto",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": "halved lengthwise"
+    }
   }
 }

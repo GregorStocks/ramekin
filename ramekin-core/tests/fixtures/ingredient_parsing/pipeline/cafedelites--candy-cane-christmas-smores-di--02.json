@@ -1,13 +1,25 @@
 {
   "raw": "10 large marshmallows",
-  "expected": {
-    "item": "marshmallows",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "marshmallows",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "marshmallows",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

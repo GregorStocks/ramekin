@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons elderflower syrup (optional, or other flavored syrup of your choice)",
-  "expected": {
-    "item": "elderflower syrup",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional, or other flavored syrup of your choice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "elderflower syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, or other flavored syrup of your choice"
+    },
+    "enrich_metric_weights": {
+      "item": "elderflower syrup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, or other flavored syrup of your choice"
+    }
   }
 }

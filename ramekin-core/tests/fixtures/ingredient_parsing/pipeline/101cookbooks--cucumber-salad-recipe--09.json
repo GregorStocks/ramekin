@@ -1,13 +1,25 @@
 {
   "raw": "1  tiny handful rose petals, fresh or dried (from unsprayed roses)",
-  "expected": {
-    "item": "tiny handful rose petals",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "fresh or dried (from unsprayed roses)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tiny handful rose petals",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "fresh or dried (from unsprayed roses)"
+    },
+    "parse_ingredients": {
+      "item": "tiny handful rose petals",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "fresh or dried (from unsprayed roses)"
+    }
   }
 }

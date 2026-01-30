@@ -1,8 +1,15 @@
 {
   "raw": "Confectioners&amp;amp;#8217; sugar for garnish",
-  "expected": {
-    "item": "Confectioners&#8217; sugar for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Confectioners&#8217; sugar for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Confectioners&#8217; sugar for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

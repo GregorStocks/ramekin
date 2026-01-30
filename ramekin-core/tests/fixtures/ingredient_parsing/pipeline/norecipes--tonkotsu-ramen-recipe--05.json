@@ -1,13 +1,25 @@
 {
   "raw": "1 small head garlic ((trimmed but whole))",
-  "expected": {
-    "item": "head garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "trimmed but whole"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "head garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "trimmed but whole"
+    },
+    "enrich_metric_weights": {
+      "item": "head garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "trimmed but whole"
+    }
   }
 }

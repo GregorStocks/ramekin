@@ -1,13 +1,25 @@
 {
   "raw": "1-2 TBSP green onion ((white + green portions))",
-  "expected": {
-    "item": "green onion (white + green portions)",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onion (white + green portions)",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "green onion (white + green portions)",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

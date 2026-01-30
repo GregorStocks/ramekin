@@ -1,8 +1,15 @@
 {
   "raw": "Nut Butters",
-  "expected": {
-    "item": "Nut Butters",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Nut Butters",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Nut Butters",
+      "measurements": [],
+      "note": null
+    }
   }
 }

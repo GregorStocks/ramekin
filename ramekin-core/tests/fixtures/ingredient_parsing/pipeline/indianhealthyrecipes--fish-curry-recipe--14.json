@@ -1,13 +1,25 @@
 {
   "raw": "½ tsp fennel seeds ((optional) (saunf))",
-  "expected": {
-    "item": "fennel seeds (saunf)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fennel seeds (saunf)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "fennel seeds (saunf)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

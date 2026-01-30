@@ -1,13 +1,25 @@
 {
   "raw": "3  sheets (1 1/2 boxes puff pastry, thawed)",
-  "expected": {
-    "item": "sheets",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "1 1/2 boxes puff pastry, thawed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "1 1/2 boxes puff pastry, thawed"
+    },
+    "parse_ingredients": {
+      "item": "sheets",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "1 1/2 boxes puff pastry, thawed"
+    }
   }
 }

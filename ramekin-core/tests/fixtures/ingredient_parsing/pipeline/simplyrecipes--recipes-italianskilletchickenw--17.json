@@ -1,8 +1,15 @@
 {
   "raw": "Crusty bread, to serve",
-  "expected": {
-    "item": "Crusty bread, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crusty bread, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Crusty bread, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

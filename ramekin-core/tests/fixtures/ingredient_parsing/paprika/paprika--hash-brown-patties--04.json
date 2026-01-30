@@ -1,8 +1,15 @@
 {
   "raw": "Neutral, high-heat oil for frying",
-  "expected": {
-    "item": "Neutral, high-heat oil for frying",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Neutral, high-heat oil for frying",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Neutral, high-heat oil for frying",
+      "measurements": [],
+      "note": null
+    }
   }
 }

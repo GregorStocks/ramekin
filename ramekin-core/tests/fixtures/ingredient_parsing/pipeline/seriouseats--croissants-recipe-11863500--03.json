@@ -1,21 +1,41 @@
 {
   "raw": "15 g Diamond Crystal kosher salt (1/2 ounce; 1 tablespoon plus 2 teaspoons); for table salt, use the same weight or half as much by volume",
-  "expected": {
-    "item": "Diamond Crystal kosher salt ; for table salt, use the same weight or half as much by volume",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "g"
-      },
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Diamond Crystal kosher salt ; for table salt, use the same weight or half as much by volume",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal kosher salt ; for table salt, use the same weight or half as much by volume",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

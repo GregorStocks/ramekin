@@ -1,17 +1,33 @@
 {
   "raw": "2  (12-ounce) cans or bottles beers",
-  "expected": {
-    "item": "or bottles beers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "or bottles beers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "or bottles beers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

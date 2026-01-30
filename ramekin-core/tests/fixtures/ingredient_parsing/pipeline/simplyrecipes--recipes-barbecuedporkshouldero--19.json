@@ -1,13 +1,25 @@
 {
   "raw": "5 to 6 cups of wood chips, hickory, oak, apple, or other fruit wood",
-  "expected": {
-    "item": "wood chips, hickory, oak, apple, or other fruit wood",
-    "measurements": [
-      {
-        "amount": "5 to 6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "wood chips, hickory, oak, apple, or other fruit wood",
+      "measurements": [
+        {
+          "amount": "5 to 6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "wood chips, hickory, oak, apple, or other fruit wood",
+      "measurements": [
+        {
+          "amount": "5 to 6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

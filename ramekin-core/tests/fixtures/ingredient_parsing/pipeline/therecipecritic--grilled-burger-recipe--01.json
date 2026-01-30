@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds 80/20 ground beef (cold)",
-  "expected": {
-    "item": "80/20 ground beef",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cold"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "80/20 ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cold"
+    },
+    "parse_ingredients": {
+      "item": "80/20 ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cold"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Crumbled cotija cheese",
-  "expected": {
-    "item": "Crumbled cotija cheese",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crumbled cotija cheese",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Crumbled cotija cheese",
+      "measurements": [],
+      "note": null
+    }
   }
 }

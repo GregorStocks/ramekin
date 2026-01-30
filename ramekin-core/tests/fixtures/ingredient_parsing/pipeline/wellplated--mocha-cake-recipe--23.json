@@ -1,8 +1,15 @@
 {
   "raw": "Chopped chocolate covered espresso beans (for decorating)",
-  "expected": {
-    "item": "Chopped chocolate covered espresso beans (for decorating)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped chocolate covered espresso beans (for decorating)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped chocolate covered espresso beans (for decorating)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

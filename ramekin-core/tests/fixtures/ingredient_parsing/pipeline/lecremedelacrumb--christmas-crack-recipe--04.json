@@ -1,13 +1,25 @@
 {
   "raw": "2 cups milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
-  "expected": {
-    "item": "milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "milk chocolate chips or dark chocolate chips (one 12-ounce bag)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

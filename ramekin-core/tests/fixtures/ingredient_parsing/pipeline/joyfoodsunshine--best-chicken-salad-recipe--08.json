@@ -1,13 +1,25 @@
 {
   "raw": "2 Tablespoons onion ((finely diced))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

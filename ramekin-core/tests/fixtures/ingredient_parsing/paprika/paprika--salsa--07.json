@@ -1,13 +1,25 @@
 {
   "raw": "Juice of half a lime (2 to 3 tablespoons)",
-  "expected": {
-    "item": "Juice of half a lime",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Juice of half a lime",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Juice of half a lime",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

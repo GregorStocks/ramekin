@@ -1,13 +1,25 @@
 {
   "raw": "⅓ cup sugar",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

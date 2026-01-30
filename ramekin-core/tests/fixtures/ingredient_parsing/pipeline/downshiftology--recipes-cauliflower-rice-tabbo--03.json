@@ -1,13 +1,25 @@
 {
   "raw": "1/2  cucumber (finely diced)",
-  "expected": {
-    "item": "cucumber",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

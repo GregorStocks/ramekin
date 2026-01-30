@@ -1,8 +1,15 @@
 {
   "raw": "kosher salt and freshly ground black pepper to taste",
-  "expected": {
-    "item": "kosher salt and freshly ground black pepper to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher salt and freshly ground black pepper to taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kosher salt and freshly ground black pepper to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

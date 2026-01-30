@@ -1,13 +1,25 @@
 {
   "raw": "2 fresh red chiles, thinly sliced, plus extra for serving",
-  "expected": {
-    "item": "fresh red chiles, thinly sliced",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "plus extra for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh red chiles, thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus extra for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh red chiles, thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus extra for serving"
+    }
   }
 }

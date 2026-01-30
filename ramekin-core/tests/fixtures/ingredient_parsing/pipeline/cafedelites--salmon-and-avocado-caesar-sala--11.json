@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons whole egg mayo (full fat or reduced fat)",
-  "expected": {
-    "item": "whole egg mayo (full fat or reduced fat)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole egg mayo (full fat or reduced fat)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole egg mayo (full fat or reduced fat)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

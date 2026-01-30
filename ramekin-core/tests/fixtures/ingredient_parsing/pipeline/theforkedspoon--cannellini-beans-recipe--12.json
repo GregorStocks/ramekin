@@ -1,8 +1,15 @@
 {
   "raw": "freshly ground black pepper (to season)",
-  "expected": {
-    "item": "freshly ground black pepper (to season)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly ground black pepper (to season)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly ground black pepper (to season)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

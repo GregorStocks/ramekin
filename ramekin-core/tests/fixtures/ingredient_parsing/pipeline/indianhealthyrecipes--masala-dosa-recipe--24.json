@@ -1,8 +1,15 @@
 {
   "raw": "Butter as needed  ((preferably unsalted cultured butter))",
-  "expected": {
-    "item": "Butter as needed  (preferably unsalted cultured butter)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Butter as needed  (preferably unsalted cultured butter)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Butter as needed  (preferably unsalted cultured butter)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "olive oil for drizzling",
-  "expected": {
-    "item": "olive oil for drizzling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "olive oil for drizzling",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "olive oil for drizzling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

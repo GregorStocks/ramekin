@@ -1,13 +1,25 @@
 {
   "raw": "6-8 garlic cloves, chopped roughly",
-  "expected": {
-    "item": "garlic cloves",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": null
-      }
-    ],
-    "note": "chopped roughly"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": "chopped roughly"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": "chopped roughly"
+    }
   }
 }

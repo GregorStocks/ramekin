@@ -1,13 +1,25 @@
 {
   "raw": "1 cup basil pesto, homemade or store bought, divided",
-  "expected": {
-    "item": "basil pesto, homemade or store bought",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basil pesto, homemade or store bought",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "basil pesto, homemade or store bought",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

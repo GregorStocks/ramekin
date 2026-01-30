@@ -1,8 +1,15 @@
 {
   "raw": "pink food coloring",
-  "expected": {
-    "item": "pink food coloring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pink food coloring",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pink food coloring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

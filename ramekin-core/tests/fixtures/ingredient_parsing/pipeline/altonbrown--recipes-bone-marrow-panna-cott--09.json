@@ -1,13 +1,25 @@
 {
   "raw": "6  Luxardo cherries, for serving",
-  "expected": {
-    "item": "Luxardo cherries",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Luxardo cherries",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Luxardo cherries",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "for serving"
+    }
   }
 }

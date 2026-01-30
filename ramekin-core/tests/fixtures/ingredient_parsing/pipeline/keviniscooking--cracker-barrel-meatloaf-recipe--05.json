@@ -1,13 +1,29 @@
 {
   "raw": "4 oz sharp cheddar cheese (shredded)",
-  "expected": {
-    "item": "sharp cheddar cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

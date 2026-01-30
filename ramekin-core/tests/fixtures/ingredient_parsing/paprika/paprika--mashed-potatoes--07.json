@@ -1,8 +1,15 @@
 {
   "raw": "Egg yolk",
-  "expected": {
-    "item": "Egg yolk",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Egg yolk",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Egg yolk",
+      "measurements": [],
+      "note": null
+    }
   }
 }

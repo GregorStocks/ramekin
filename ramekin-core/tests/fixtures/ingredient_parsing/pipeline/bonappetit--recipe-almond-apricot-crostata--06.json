@@ -1,17 +1,33 @@
 {
   "raw": "1½ cups (3 sticks) chilled unsalted butter, cut into pieces",
-  "expected": {
-    "item": "chilled unsalted butter, cut into pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "3",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chilled unsalted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "3",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chilled unsalted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "3",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

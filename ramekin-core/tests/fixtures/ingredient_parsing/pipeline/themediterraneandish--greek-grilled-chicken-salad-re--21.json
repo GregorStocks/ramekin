@@ -1,8 +1,15 @@
 {
   "raw": "Quality Greek feta blocks,  (to your liking)",
-  "expected": {
-    "item": "Quality Greek feta blocks,  (to your liking)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Quality Greek feta blocks,  (to your liking)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Quality Greek feta blocks,  (to your liking)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

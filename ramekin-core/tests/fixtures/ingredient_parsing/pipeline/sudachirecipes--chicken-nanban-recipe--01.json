@@ -1,13 +1,25 @@
 {
   "raw": "450 g chicken breast (skin on, or boneless chicken thigh)",
-  "expected": {
-    "item": "chicken breast (skin on, or boneless chicken thigh)",
-    "measurements": [
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast (skin on, or boneless chicken thigh)",
+      "measurements": [
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast (skin on, or boneless chicken thigh)",
+      "measurements": [
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

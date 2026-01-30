@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tilapia filets, trimmed into 2 squares",
-  "expected": {
-    "item": "tilapia filets",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": null
-      }
-    ],
-    "note": "trimmed into 2 squares"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tilapia filets",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed into 2 squares"
+    },
+    "enrich_metric_weights": {
+      "item": "tilapia filets",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed into 2 squares"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 grams cilantro roots (3 thick roots, finely minced)",
-  "expected": {
-    "item": "cilantro roots",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "g"
-      }
-    ],
-    "note": "3 thick roots, finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro roots",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": "3 thick roots, finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro roots",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": "3 thick roots, finely minced"
+    }
   }
 }

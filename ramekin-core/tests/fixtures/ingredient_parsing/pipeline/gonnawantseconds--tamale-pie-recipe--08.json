@@ -1,17 +1,33 @@
 {
   "raw": "1 (15-ounces) can petite diced tomatoes with green chilies,  (including juices)",
-  "expected": {
-    "item": "petite diced tomatoes with green chilies,  (including juices)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "petite diced tomatoes with green chilies,  (including juices)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "petite diced tomatoes with green chilies,  (including juices)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

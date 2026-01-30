@@ -1,17 +1,33 @@
 {
   "raw": "2 medium shallots ( 80 g total), peeled",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      },
-      {
-        "amount": "80",
-        "unit": "g"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

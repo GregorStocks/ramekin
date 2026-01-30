@@ -1,8 +1,15 @@
 {
   "raw": "Jellied cranberry sauce:",
-  "expected": {
-    "item": "Jellied cranberry sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Jellied cranberry sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Jellied cranberry sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

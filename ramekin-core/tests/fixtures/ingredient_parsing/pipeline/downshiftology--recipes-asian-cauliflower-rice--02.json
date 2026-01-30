@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds medium shrimp (peeled, deveined and rinsed)",
-  "expected": {
-    "item": "medium shrimp",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled, deveined and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium shrimp",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "medium shrimp",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined and rinsed"
+    }
   }
 }

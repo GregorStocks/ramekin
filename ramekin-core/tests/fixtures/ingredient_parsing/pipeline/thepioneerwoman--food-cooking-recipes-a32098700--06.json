@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp. sugar, plus more for sprinkling",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for sprinkling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for sprinkling"
+    },
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for sprinkling"
+    }
   }
 }

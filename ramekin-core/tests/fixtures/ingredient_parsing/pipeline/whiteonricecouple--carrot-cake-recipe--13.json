@@ -1,21 +1,41 @@
 {
   "raw": "1/2 cup (1 stick or 113g) unsalted butter (, softened)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

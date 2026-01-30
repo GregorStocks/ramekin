@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup freshly grated aged Cheddar, plus more for topping",
-  "expected": {
-    "item": "freshly grated aged Cheddar",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly grated aged Cheddar",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    },
+    "parse_ingredients": {
+      "item": "freshly grated aged Cheddar",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    }
   }
 }

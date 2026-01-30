@@ -1,8 +1,15 @@
 {
   "raw": "kewpie mayo and sriracha to taste",
-  "expected": {
-    "item": "kewpie mayo and sriracha to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kewpie mayo and sriracha to taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kewpie mayo and sriracha to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

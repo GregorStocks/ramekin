@@ -1,13 +1,25 @@
 {
   "raw": "1 lb kale,  (thick stems and veins removed, chopped)",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "thick stems and veins removed, chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thick stems and veins removed, chopped"
+    },
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thick stems and veins removed, chopped"
+    }
   }
 }

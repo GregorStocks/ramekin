@@ -1,13 +1,25 @@
 {
   "raw": "200g Kabanos Polish sausage chopped",
-  "expected": {
-    "item": "Kabanos Polish sausage chopped",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kabanos Polish sausage chopped",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Kabanos Polish sausage chopped",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

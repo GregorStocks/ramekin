@@ -1,13 +1,25 @@
 {
   "raw": "2  cherries ((fresh or jarred))",
-  "expected": {
-    "item": "cherries",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "fresh or jarred"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "fresh or jarred"
+    },
+    "enrich_metric_weights": {
+      "item": "cherries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "fresh or jarred"
+    }
   }
 }

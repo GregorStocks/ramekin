@@ -1,13 +1,25 @@
 {
   "raw": "2-3 cups small heirloom tomatoes (cherry tomato sized)",
-  "expected": {
-    "item": "small heirloom tomatoes (cherry tomato sized)",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "small heirloom tomatoes (cherry tomato sized)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "small heirloom tomatoes (cherry tomato sized)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

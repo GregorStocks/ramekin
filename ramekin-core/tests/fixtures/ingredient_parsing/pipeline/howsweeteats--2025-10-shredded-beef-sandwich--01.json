@@ -1,13 +1,25 @@
 {
   "raw": "4 to 5 pound boneless chuck roast",
-  "expected": {
-    "item": "boneless chuck roast",
-    "measurements": [
-      {
-        "amount": "4 to 5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless chuck roast",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boneless chuck roast",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

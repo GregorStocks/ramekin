@@ -1,13 +1,25 @@
 {
   "raw": "2  poblano peppers (seeded and finely chopped)",
-  "expected": {
-    "item": "poblano peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "seeded and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "poblano peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "poblano peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    }
   }
 }

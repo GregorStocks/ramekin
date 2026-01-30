@@ -1,13 +1,25 @@
 {
   "raw": "8 tablespoons granulated sugar (divided)",
-  "expected": {
-    "item": "granulated sugar",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

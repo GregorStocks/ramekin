@@ -1,13 +1,25 @@
 {
   "raw": "1 package instant ramen (curly flash-fried type)",
-  "expected": {
-    "item": "instant ramen (curly flash-fried type)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant ramen (curly flash-fried type)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant ramen (curly flash-fried type)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

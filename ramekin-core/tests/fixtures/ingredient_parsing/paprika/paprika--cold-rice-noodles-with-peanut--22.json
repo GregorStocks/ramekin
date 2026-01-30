@@ -1,8 +1,15 @@
 {
   "raw": "Additional vegetables, as suggested above",
-  "expected": {
-    "item": "Additional vegetables, as suggested above",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Additional vegetables, as suggested above",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Additional vegetables, as suggested above",
+      "measurements": [],
+      "note": null
+    }
   }
 }

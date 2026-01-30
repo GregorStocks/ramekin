@@ -1,13 +1,29 @@
 {
   "raw": "10 oz hot fudge ice cream topping",
-  "expected": {
-    "item": "hot fudge ice cream topping",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot fudge ice cream topping",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot fudge ice cream topping",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

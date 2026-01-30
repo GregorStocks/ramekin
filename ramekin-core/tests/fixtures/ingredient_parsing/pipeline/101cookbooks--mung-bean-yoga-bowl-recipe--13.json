@@ -1,8 +1,15 @@
 {
   "raw": "lots of freshly squeezed lime juice",
-  "expected": {
-    "item": "lots of freshly squeezed lime juice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lots of freshly squeezed lime juice",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lots of freshly squeezed lime juice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

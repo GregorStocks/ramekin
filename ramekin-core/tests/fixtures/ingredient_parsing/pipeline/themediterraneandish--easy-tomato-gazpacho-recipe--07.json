@@ -1,13 +1,25 @@
 {
   "raw": "2  green onions, (trimmed, roughly chopped, more for garnish)",
-  "expected": {
-    "item": "green onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "trimmed, roughly chopped, more for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed, roughly chopped, more for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed, roughly chopped, more for garnish"
+    }
   }
 }

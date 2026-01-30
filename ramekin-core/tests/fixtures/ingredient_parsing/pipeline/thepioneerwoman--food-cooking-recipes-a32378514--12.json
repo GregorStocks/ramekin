@@ -1,13 +1,29 @@
 {
   "raw": "4 oz. goat cheese, crumbled",
-  "expected": {
-    "item": "goat cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "parse_ingredients": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

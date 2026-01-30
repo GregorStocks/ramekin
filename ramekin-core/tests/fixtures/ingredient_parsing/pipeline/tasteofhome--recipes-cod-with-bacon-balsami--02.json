@@ -1,17 +1,33 @@
 {
   "raw": "4 cod fillets (5 ounces each)",
-  "expected": {
-    "item": "cod fillets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "5",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cod fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cod fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

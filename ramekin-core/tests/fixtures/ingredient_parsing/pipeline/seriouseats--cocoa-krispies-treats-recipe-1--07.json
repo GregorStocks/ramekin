@@ -1,21 +1,41 @@
 {
   "raw": "1/2 cup malted milk powder (about 2 1/3 ounces; 65 g)",
-  "expected": {
-    "item": "malted milk powder",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2 1/3",
-        "unit": "oz"
-      },
-      {
-        "amount": "65",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "malted milk powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2 1/3",
+          "unit": "oz"
+        },
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "malted milk powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2 1/3",
+          "unit": "oz"
+        },
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

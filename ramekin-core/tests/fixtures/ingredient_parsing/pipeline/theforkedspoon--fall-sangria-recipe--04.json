@@ -1,17 +1,33 @@
 {
   "raw": "1 bottle white wine (750ml of Pinot Grigio, Sauvignon Blanc, or Chardonnay)",
-  "expected": {
-    "item": "white wine",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      },
-      {
-        "amount": "750",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "750",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "750",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

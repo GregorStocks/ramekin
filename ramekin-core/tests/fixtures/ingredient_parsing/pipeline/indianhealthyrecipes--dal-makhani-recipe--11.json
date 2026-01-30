@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon sea salt ( (adjust as needed))",
-  "expected": {
-    "item": "sea salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "(adjust as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "(adjust as needed"
+    },
+    "parse_ingredients": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "(adjust as needed"
+    }
   }
 }

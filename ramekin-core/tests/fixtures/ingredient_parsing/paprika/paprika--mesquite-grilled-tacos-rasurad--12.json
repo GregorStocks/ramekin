@@ -1,13 +1,25 @@
 {
   "raw": "½ small onion, halved through root end into 2 wedges",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "small"
-      }
-    ],
-    "note": "halved through root end into 2 wedges"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": "halved through root end into 2 wedges"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": "halved through root end into 2 wedges"
+    }
   }
 }

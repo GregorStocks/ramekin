@@ -1,8 +1,15 @@
 {
   "raw": "Blueberries, blackberries",
-  "expected": {
-    "item": "Blueberries, blackberries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Blueberries, blackberries",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Blueberries, blackberries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

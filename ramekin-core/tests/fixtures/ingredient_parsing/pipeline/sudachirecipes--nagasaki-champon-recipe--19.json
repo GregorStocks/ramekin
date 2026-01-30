@@ -1,8 +1,15 @@
 {
   "raw": "ground white pepper (sprinkle at the end, optional)",
-  "expected": {
-    "item": "ground white pepper",
-    "measurements": [],
-    "note": "sprinkle at the end, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground white pepper",
+      "measurements": [],
+      "note": "sprinkle at the end, optional"
+    },
+    "parse_ingredients": {
+      "item": "ground white pepper",
+      "measurements": [],
+      "note": "sprinkle at the end, optional"
+    }
   }
 }

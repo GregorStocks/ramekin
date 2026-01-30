@@ -1,13 +1,25 @@
 {
   "raw": "½ cup red onion (finely sliced or diced)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely sliced or diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely sliced or diced"
+    },
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely sliced or diced"
+    }
   }
 }

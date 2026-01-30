@@ -1,17 +1,33 @@
 {
   "raw": "2  (8.5-ounce) boxes Jiffy Corn Muffin Mix",
-  "expected": {
-    "item": "Jiffy Corn Muffin Mix",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "box"
-      },
-      {
-        "amount": "8.5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Jiffy Corn Muffin Mix",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "box"
+        },
+        {
+          "amount": "8.5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Jiffy Corn Muffin Mix",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "box"
+        },
+        {
+          "amount": "8.5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

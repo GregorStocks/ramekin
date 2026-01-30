@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons brandy or bourbon, (optional)",
-  "expected": {
-    "item": "brandy or bourbon",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brandy or bourbon",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "brandy or bourbon",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 tablespoons (7 g) matcha powder",
-  "expected": {
-    "item": "matcha powder",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "7",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "matcha powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "matcha powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

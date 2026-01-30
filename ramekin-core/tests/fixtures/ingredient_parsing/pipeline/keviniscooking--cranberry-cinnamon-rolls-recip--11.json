@@ -1,17 +1,33 @@
 {
   "raw": "7 g instant yeast (2 1/4 tsp)",
-  "expected": {
-    "item": "instant yeast",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "g"
-      },
-      {
-        "amount": "2 1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant yeast",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "g"
+        },
+        {
+          "amount": "2 1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant yeast",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "g"
+        },
+        {
+          "amount": "2 1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

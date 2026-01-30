@@ -1,13 +1,25 @@
 {
   "raw": "1/4 medium onion, thinly sliced",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "medium"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

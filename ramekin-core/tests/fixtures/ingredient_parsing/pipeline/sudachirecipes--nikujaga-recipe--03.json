@@ -1,13 +1,25 @@
 {
   "raw": "100 g onion",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

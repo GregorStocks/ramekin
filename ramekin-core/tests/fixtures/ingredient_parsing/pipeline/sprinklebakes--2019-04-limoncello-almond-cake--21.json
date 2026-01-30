@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoons vegetable shortening or coconut oil (plus more for greasing egg shells)",
-  "expected": {
-    "item": "vegetable shortening or coconut oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for greasing egg shells"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable shortening or coconut oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing egg shells"
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable shortening or coconut oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing egg shells"
+    }
   }
 }

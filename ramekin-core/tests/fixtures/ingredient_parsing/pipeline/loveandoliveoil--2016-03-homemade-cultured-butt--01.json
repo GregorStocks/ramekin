@@ -1,17 +1,33 @@
 {
   "raw": "2 cups heavy cream, room temperature (65-68ºF)",
-  "expected": {
-    "item": "heavy cream",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "65",
-        "unit": null
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "65",
+          "unit": null
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "65",
+          "unit": null
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

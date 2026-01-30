@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. crimini mushrooms, sliced ¼\" thick",
-  "expected": {
-    "item": "crimini mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced 1/4\" thick"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced 1/4\" thick"
+    },
+    "parse_ingredients": {
+      "item": "crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced 1/4\" thick"
+    }
   }
 }

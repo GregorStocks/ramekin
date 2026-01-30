@@ -1,8 +1,15 @@
 {
   "raw": "Baker’s rose gel food color",
-  "expected": {
-    "item": "Baker’s rose gel food color",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Baker’s rose gel food color",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Baker’s rose gel food color",
+      "measurements": [],
+      "note": null
+    }
   }
 }

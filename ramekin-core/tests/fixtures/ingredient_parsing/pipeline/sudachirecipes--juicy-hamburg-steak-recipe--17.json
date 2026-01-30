@@ -1,13 +1,25 @@
 {
   "raw": "½ tsp smooth Dijon mustard (avoid whole-grain)",
-  "expected": {
-    "item": "smooth Dijon mustard",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "avoid whole-grain"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smooth Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "avoid whole-grain"
+    },
+    "enrich_metric_weights": {
+      "item": "smooth Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "avoid whole-grain"
+    }
   }
 }

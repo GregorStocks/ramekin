@@ -1,8 +1,15 @@
 {
   "raw": "beef tenderloin ((sliced paper thin))",
-  "expected": {
-    "item": "beef tenderloin",
-    "measurements": [],
-    "note": "sliced paper thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef tenderloin",
+      "measurements": [],
+      "note": "sliced paper thin"
+    },
+    "enrich_metric_weights": {
+      "item": "beef tenderloin",
+      "measurements": [],
+      "note": "sliced paper thin"
+    }
   }
 }

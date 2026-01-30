@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tsp rice vinegar ((optional but tasty))",
-  "expected": {
-    "item": "rice vinegar",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional but tasty"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rice vinegar",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but tasty"
+    },
+    "enrich_metric_weights": {
+      "item": "rice vinegar",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but tasty"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "10.5 ounces condensed French onion soup (or condensed onion soup)",
-  "expected": {
-    "item": "condensed French onion soup (or condensed onion soup)",
-    "measurements": [
-      {
-        "amount": "10.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "condensed French onion soup (or condensed onion soup)",
+      "measurements": [
+        {
+          "amount": "10.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "298",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "condensed French onion soup (or condensed onion soup)",
+      "measurements": [
+        {
+          "amount": "10.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

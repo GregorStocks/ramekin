@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound baby potatoes ((quartered or sliced small to cook quickly))",
-  "expected": {
-    "item": "baby potatoes",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "quartered or sliced small to cook quickly"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby potatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered or sliced small to cook quickly"
+    },
+    "parse_ingredients": {
+      "item": "baby potatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered or sliced small to cook quickly"
+    }
   }
 }

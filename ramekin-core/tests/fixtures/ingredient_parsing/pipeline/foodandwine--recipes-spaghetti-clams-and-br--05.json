@@ -1,13 +1,25 @@
 {
   "raw": "2 jarred roasted red peppers, drained",
-  "expected": {
-    "item": "jarred roasted red peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jarred roasted red peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "jarred roasted red peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

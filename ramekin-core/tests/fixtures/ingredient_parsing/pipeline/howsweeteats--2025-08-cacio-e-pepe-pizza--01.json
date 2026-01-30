@@ -1,13 +1,25 @@
 {
   "raw": "325 grams water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "325",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "325",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "325",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

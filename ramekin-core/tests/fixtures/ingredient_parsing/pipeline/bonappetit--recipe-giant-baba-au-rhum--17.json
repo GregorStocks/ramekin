@@ -1,8 +1,15 @@
 {
   "raw": "A 12-cup Bundt pan, a pastry bag, and a large star tip",
-  "expected": {
-    "item": "A 12-cup Bundt pan, a pastry bag, and a large star tip",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "A 12-cup Bundt pan, a pastry bag, and a large star tip",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "A 12-cup Bundt pan, a pastry bag, and a large star tip",
+      "measurements": [],
+      "note": null
+    }
   }
 }

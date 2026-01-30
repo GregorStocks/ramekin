@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 teaspoons minced rosemary",
-  "expected": {
-    "item": "minced rosemary",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced rosemary",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced rosemary",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

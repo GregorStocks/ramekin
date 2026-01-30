@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces cheddar cheese (grated (about 3 cups))",
-  "expected": {
-    "item": "cheddar cheese",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "grated (about 3 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "grated (about 3 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "grated (about 3 cups"
+    }
   }
 }

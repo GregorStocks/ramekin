@@ -1,13 +1,25 @@
 {
   "raw": "1 cup bacon (crumbled)",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

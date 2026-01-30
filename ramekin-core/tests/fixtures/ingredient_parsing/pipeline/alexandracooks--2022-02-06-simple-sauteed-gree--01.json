@@ -1,13 +1,25 @@
 {
   "raw": "1 head escarole, 1.25-1.5 lbs",
-  "expected": {
-    "item": "escarole, 1.25-1.5 lbs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "escarole, 1.25-1.5 lbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "escarole, 1.25-1.5 lbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

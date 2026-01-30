@@ -1,13 +1,25 @@
 {
   "raw": "1  small serrano chile (stemmed and sliced lengthwise)",
-  "expected": {
-    "item": "serrano chile",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "stemmed and sliced lengthwise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serrano chile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "stemmed and sliced lengthwise"
+    },
+    "enrich_metric_weights": {
+      "item": "serrano chile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "stemmed and sliced lengthwise"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2  large Napa cabbage head (sliced (6 1/2 cups))",
-  "expected": {
-    "item": "Napa cabbage head",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "large"
-      }
-    ],
-    "note": "sliced (6 1/2 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Napa cabbage head",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced (6 1/2 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "Napa cabbage head",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced (6 1/2 cups"
+    }
   }
 }

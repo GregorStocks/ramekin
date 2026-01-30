@@ -1,13 +1,25 @@
 {
   "raw": "1  medium zucchini squash, (thinly sliced)",
-  "expected": {
-    "item": "zucchini squash",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "zucchini squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

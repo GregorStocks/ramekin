@@ -1,13 +1,25 @@
 {
   "raw": "2  sweet potatoes, (peeled and chopped)",
-  "expected": {
-    "item": "sweet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "peeled and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "peeled and chopped"
+    },
+    "parse_ingredients": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "peeled and chopped"
+    }
   }
 }

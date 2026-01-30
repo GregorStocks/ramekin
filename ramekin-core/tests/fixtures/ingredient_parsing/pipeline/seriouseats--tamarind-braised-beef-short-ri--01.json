@@ -1,17 +1,33 @@
 {
   "raw": "5 pounds (2.3 kg) beef short ribs, English- or flanken-cut (see note)",
-  "expected": {
-    "item": "beef short ribs, English- or flanken-cut (see note)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "lb"
-      },
-      {
-        "amount": "2.3",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef short ribs, English- or flanken-cut (see note)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "lb"
+        },
+        {
+          "amount": "2.3",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "beef short ribs, English- or flanken-cut (see note)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "lb"
+        },
+        {
+          "amount": "2.3",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

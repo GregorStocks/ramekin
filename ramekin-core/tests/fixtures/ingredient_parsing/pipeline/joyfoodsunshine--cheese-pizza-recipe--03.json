@@ -1,17 +1,37 @@
 {
   "raw": "4 cups mozzarella cheese ((16 ounces))",
-  "expected": {
-    "item": "mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

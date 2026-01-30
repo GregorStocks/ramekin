@@ -1,13 +1,29 @@
 {
   "raw": "14 ounces graham crackers (28 whole crackers), finely ground",
-  "expected": {
-    "item": "graham crackers , finely ground",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "28 whole crackers"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "graham crackers , finely ground",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "28 whole crackers"
+    },
+    "parse_ingredients": {
+      "item": "graham crackers , finely ground",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "28 whole crackers"
+    }
   }
 }

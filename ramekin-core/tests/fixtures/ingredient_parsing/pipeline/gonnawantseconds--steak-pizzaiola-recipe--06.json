@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces cremini mushrooms (trimmed and sliced)",
-  "expected": {
-    "item": "cremini mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "trimmed and sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and sliced"
+    },
+    "parse_ingredients": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "trimmed and sliced"
+    }
   }
 }

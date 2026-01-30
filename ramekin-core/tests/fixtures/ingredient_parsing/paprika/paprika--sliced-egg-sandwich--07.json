@@ -1,8 +1,15 @@
 {
   "raw": "Butter, for toasting",
-  "expected": {
-    "item": "Butter, for toasting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Butter, for toasting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Butter, for toasting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

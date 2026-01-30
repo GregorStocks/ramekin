@@ -1,17 +1,37 @@
 {
   "raw": "1 ounce (2 tablespoons) simple syrup or maple syrup",
-  "expected": {
-    "item": "simple syrup or maple syrup",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "simple syrup or maple syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "simple syrup or maple syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

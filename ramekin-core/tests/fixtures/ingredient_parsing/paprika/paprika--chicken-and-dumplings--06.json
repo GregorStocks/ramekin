@@ -1,13 +1,25 @@
 {
   "raw": "2 medium leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
-  "expected": {
-    "item": "leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "leeks , white and llight green parts only, cut in half lengthwise and then into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

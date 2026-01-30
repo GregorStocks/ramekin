@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
-  "expected": {
-    "item": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon coffee, ground medium in a burr grinder"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon coffee, ground medium in a burr grinder"
+    },
+    "parse_ingredients": {
+      "item": "1/4 cup plus 1 tablespoon coffee, ground medium in a burr grinder",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon coffee, ground medium in a burr grinder"
+    }
   }
 }

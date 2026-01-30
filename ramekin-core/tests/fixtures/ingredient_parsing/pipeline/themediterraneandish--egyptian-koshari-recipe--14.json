@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cup medium-grain rice, rinsed, soaked in water for 15 minutes, drained",
-  "expected": {
-    "item": "medium-grain rice, rinsed, soaked in water for 15 minutes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium-grain rice, rinsed, soaked in water for 15 minutes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "medium-grain rice, rinsed, soaked in water for 15 minutes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

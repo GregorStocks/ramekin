@@ -1,8 +1,15 @@
 {
   "raw": "Flour based cooking spray (recommend Baker’s Joy)",
-  "expected": {
-    "item": "Flour based cooking spray (recommend Baker’s Joy)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Flour based cooking spray (recommend Baker’s Joy)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Flour based cooking spray (recommend Baker’s Joy)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

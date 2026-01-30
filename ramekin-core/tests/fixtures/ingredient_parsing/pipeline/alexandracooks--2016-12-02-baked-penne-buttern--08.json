@@ -1,13 +1,29 @@
 {
   "raw": "4&nbsp;ounces&nbsp;fresh mozzarella or fontina, cubed",
-  "expected": {
-    "item": "fresh mozzarella or fontina",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh mozzarella or fontina",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh mozzarella or fontina",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

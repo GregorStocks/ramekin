@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces Cremini (or other) mushrooms, see notes above",
-  "expected": {
-    "item": "Cremini (or other) mushrooms, see notes above",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cremini (or other) mushrooms, see notes above",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cremini (or other) mushrooms, see notes above",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

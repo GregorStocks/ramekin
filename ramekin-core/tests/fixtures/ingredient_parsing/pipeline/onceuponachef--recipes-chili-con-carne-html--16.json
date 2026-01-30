@@ -1,13 +1,25 @@
 {
   "raw": "1¼ cups lager beer",
-  "expected": {
-    "item": "lager beer",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lager beer",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lager beer",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 green pepper, sliced thin",
-  "expected": {
-    "item": "green pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced thin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    },
+    "parse_ingredients": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    }
   }
 }

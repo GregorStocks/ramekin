@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds beef chuck, in 1-inch cubes",
-  "expected": {
-    "item": "beef chuck, in 1-inch cubes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef chuck, in 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "beef chuck, in 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

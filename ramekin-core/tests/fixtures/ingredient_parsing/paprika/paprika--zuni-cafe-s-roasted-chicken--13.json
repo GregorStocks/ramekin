@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup slivered scallions (about 4 scallions), including a little of the green part",
-  "expected": {
-    "item": "slivered scallions , including a little of the green part",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "slivered scallions , including a little of the green part",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "slivered scallions , including a little of the green part",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (100 grams) finely grated parmesan, divided",
-  "expected": {
-    "item": "finely grated parmesan",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely grated parmesan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "finely grated parmesan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

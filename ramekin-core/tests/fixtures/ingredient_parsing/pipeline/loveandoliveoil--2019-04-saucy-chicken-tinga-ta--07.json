@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons chopped chipotle peppers in adobo sauce",
-  "expected": {
-    "item": "chopped chipotle peppers in adobo sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped chipotle peppers in adobo sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped chipotle peppers in adobo sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

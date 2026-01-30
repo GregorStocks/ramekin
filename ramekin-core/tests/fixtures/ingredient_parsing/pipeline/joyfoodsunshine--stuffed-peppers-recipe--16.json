@@ -1,13 +1,25 @@
 {
   "raw": "1 Tabelspoon Worcestershire sauce",
-  "expected": {
-    "item": "Tabelspoon Worcestershire sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tabelspoon Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tabelspoon Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

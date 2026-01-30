@@ -1,17 +1,37 @@
 {
   "raw": "15.25 oz yellow cake mix (1 box)",
-  "expected": {
-    "item": "yellow cake mix",
-    "measurements": [
-      {
-        "amount": "15.25",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow cake mix",
+      "measurements": [
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "432",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "yellow cake mix",
+      "measurements": [
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    }
   }
 }

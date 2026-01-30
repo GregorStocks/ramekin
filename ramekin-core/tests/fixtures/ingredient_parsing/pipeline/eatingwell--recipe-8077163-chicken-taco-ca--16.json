@@ -1,13 +1,25 @@
 {
   "raw": "0.66 cup chopped avocado",
-  "expected": {
-    "item": "chopped avocado",
-    "measurements": [
-      {
-        "amount": "0.66",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped avocado",
+      "measurements": [
+        {
+          "amount": "0.66",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped avocado",
+      "measurements": [
+        {
+          "amount": "0.66",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

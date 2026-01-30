@@ -1,17 +1,33 @@
 {
   "raw": "3  large or 4 medium garlic cloves (pressed or minced (about 1 1/2 Tbsp))",
-  "expected": {
-    "item": "garlic cloves",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "large"
-      },
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "pressed or minced (about 1 1/2 Tbsp"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "pressed or minced (about 1 1/2 Tbsp"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "pressed or minced (about 1 1/2 Tbsp"
+    }
   }
 }

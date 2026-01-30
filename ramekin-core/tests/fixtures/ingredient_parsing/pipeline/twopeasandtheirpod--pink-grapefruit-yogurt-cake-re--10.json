@@ -1,8 +1,15 @@
 {
   "raw": "Grapefruit Syrup",
-  "expected": {
-    "item": "Grapefruit Syrup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Grapefruit Syrup",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Grapefruit Syrup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

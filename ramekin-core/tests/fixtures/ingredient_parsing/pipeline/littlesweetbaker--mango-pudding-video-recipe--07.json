@@ -1,8 +1,15 @@
 {
   "raw": "some diced mangoes and shredded coconut to garnish",
-  "expected": {
-    "item": "some diced mangoes and shredded coconut to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "some diced mangoes and shredded coconut to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "some diced mangoes and shredded coconut to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

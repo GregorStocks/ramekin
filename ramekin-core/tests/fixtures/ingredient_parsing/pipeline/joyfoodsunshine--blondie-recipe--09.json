@@ -1,13 +1,25 @@
 {
   "raw": "1 cup mix-ins ((chocolate chips, white chocolate chips, pecans, walnuts, dried fruit, etc.))",
-  "expected": {
-    "item": "mix-ins",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chocolate chips, white chocolate chips, pecans, walnuts, dried fruit, etc."
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mix-ins",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chocolate chips, white chocolate chips, pecans, walnuts, dried fruit, etc."
+    },
+    "enrich_metric_weights": {
+      "item": "mix-ins",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chocolate chips, white chocolate chips, pecans, walnuts, dried fruit, etc."
+    }
   }
 }

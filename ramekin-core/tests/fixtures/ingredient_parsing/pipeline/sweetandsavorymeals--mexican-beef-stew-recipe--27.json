@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh cilantro (for garnish)",
-  "expected": {
-    "item": "Chopped fresh cilantro",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped fresh cilantro",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Chopped fresh cilantro",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

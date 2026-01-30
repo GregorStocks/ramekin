@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds swordfish steaks, cut 1/2 inch thick",
-  "expected": {
-    "item": "swordfish steaks, cut 1/2 inch thick",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "swordfish steaks, cut 1/2 inch thick",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "swordfish steaks, cut 1/2 inch thick",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

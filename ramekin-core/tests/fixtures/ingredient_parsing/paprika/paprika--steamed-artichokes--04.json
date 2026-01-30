@@ -1,8 +1,15 @@
 {
   "raw": "A big pat of butter (optional)",
-  "expected": {
-    "item": "A big pat of butter",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "A big pat of butter",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "A big pat of butter",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

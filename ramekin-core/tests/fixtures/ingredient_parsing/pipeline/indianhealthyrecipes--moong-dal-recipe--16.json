@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3  garlic cloves (crushed )",
-  "expected": {
-    "item": "garlic cloves",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": null
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    },
+    "parse_ingredients": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

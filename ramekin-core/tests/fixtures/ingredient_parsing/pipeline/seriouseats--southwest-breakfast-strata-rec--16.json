@@ -1,21 +1,41 @@
 {
   "raw": "4 ounces (113 g) sharp cheddar cheese, shredded (about 1 cup)",
-  "expected": {
-    "item": "sharp cheddar cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "4 oz salmon fillet, 2 fillets",
-  "expected": {
-    "item": "salmon fillet, 2 fillets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salmon fillet, 2 fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "salmon fillet, 2 fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

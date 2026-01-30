@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tablespoons lime juice (freshly squeezed)",
-  "expected": {
-    "item": "lime juice",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "freshly squeezed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "freshly squeezed"
+    },
+    "parse_ingredients": {
+      "item": "lime juice",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "freshly squeezed"
+    }
   }
 }

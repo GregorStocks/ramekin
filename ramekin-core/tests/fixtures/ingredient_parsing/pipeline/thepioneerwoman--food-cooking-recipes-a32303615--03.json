@@ -1,13 +1,29 @@
 {
   "raw": "1/4 oz. crème de violette",
-  "expected": {
-    "item": "crème de violette",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crème de violette",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crème de violette",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

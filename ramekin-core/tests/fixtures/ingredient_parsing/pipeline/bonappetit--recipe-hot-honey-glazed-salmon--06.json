@@ -1,13 +1,25 @@
 {
   "raw": "3 Tbsp. chili sauce (such as sriracha)",
-  "expected": {
-    "item": "chili sauce (such as sriracha)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chili sauce (such as sriracha)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chili sauce (such as sriracha)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

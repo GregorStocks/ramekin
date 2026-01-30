@@ -1,13 +1,25 @@
 {
   "raw": "1 cup chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds))",
-  "expected": {
-    "item": "chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped Nuts ( (walnuts, pecans, hazelnuts, or almonds)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

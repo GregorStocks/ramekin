@@ -1,13 +1,25 @@
 {
   "raw": "¼-⅓ cup thinly sliced red onion",
-  "expected": {
-    "item": "thinly sliced red onion",
-    "measurements": [
-      {
-        "amount": "1/4-1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thinly sliced red onion",
+      "measurements": [
+        {
+          "amount": "1/4-1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thinly sliced red onion",
+      "measurements": [
+        {
+          "amount": "1/4-1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

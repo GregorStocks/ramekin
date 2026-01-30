@@ -1,8 +1,15 @@
 {
   "raw": "cotija or feta cheese for topping",
-  "expected": {
-    "item": "cotija or feta cheese for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cotija or feta cheese for topping",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cotija or feta cheese for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

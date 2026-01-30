@@ -1,13 +1,25 @@
 {
   "raw": "1  carrot (peeled and cut into 1 inch pieces)",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and cut into 1 inch pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and cut into 1 inch pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and cut into 1 inch pieces"
+    }
   }
 }

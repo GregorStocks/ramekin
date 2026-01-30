@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces bittersweet or semisweet chocolate, (finely chopped)",
-  "expected": {
-    "item": "bittersweet or semisweet chocolate",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bittersweet or semisweet chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "bittersweet or semisweet chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

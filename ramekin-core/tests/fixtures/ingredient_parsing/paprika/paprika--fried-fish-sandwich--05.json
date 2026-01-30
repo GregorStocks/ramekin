@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons (drained) capers, coarsely chopped",
-  "expected": {
-    "item": "capers, coarsely chopped",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "capers, coarsely chopped",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "capers, coarsely chopped",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

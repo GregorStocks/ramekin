@@ -1,13 +1,25 @@
 {
   "raw": "4  gherkin pickles, diced fine&nbsp;",
-  "expected": {
-    "item": "gherkin pickles",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "diced fine"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "gherkin pickles",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "diced fine"
+    },
+    "enrich_metric_weights": {
+      "item": "gherkin pickles",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "diced fine"
+    }
   }
 }

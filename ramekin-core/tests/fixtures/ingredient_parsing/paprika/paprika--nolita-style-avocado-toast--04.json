@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon lemon juice, or more to taste",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    },
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    }
   }
 }

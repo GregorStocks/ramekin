@@ -1,17 +1,33 @@
 {
   "raw": "8 tablespoons (114g) cold, cubed butter, salted or unsalted",
-  "expected": {
-    "item": "cold, cubed butter, salted or unsalted",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "114",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold, cubed butter, salted or unsalted",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "114",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold, cubed butter, salted or unsalted",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "114",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

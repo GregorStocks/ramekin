@@ -1,13 +1,25 @@
 {
   "raw": "1½ cups unsalted cashews (or the nut of your choice)",
-  "expected": {
-    "item": "unsalted cashews (or the nut of your choice)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted cashews (or the nut of your choice)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted cashews (or the nut of your choice)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

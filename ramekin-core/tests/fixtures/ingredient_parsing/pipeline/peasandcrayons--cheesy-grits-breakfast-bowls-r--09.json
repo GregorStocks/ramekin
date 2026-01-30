@@ -1,13 +1,25 @@
 {
   "raw": "2-4  fried eggs ((I like adding 2 to each bowl))",
-  "expected": {
-    "item": "fried eggs (I like adding 2 to each bowl)",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fried eggs (I like adding 2 to each bowl)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fried eggs (I like adding 2 to each bowl)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

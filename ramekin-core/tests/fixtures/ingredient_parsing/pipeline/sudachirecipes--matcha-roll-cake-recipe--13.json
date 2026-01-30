@@ -1,8 +1,15 @@
 {
   "raw": "powdered sugar (or matcha powder for dusting)",
-  "expected": {
-    "item": "powdered sugar (or matcha powder for dusting)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "powdered sugar (or matcha powder for dusting)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "powdered sugar (or matcha powder for dusting)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

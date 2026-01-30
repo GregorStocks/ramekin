@@ -1,17 +1,33 @@
 {
   "raw": "6 cups green beans (about 1 pound), trimmed",
-  "expected": {
-    "item": "green beans",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    },
+    "parse_ingredients": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup snap peas (steamed and chopped)",
-  "expected": {
-    "item": "snap peas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "steamed and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "snap peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "steamed and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "snap peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "steamed and chopped"
+    }
   }
 }

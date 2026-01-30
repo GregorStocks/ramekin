@@ -1,17 +1,33 @@
 {
   "raw": "5  large ripe tomatoes, (about 2 pounds)",
-  "expected": {
-    "item": "ripe tomatoes",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "large"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe tomatoes",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ripe tomatoes",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

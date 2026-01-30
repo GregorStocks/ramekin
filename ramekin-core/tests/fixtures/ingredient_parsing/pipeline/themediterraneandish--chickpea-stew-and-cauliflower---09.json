@@ -1,13 +1,25 @@
 {
   "raw": "5 medium-sized bulk carrots, peeled, cut into 1 1/2&amp;#8243; pieces",
-  "expected": {
-    "item": "medium-sized bulk carrots, peeled, cut into 1 1/2″ pieces",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium-sized bulk carrots, peeled, cut into 1 1/2″ pieces",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "medium-sized bulk carrots, peeled, cut into 1 1/2″ pieces",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

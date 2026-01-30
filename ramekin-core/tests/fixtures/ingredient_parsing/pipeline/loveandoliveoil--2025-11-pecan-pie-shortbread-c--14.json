@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups chopped pecans (lightly toasted)",
-  "expected": {
-    "item": "chopped pecans",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "lightly toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped pecans",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped pecans",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    }
   }
 }

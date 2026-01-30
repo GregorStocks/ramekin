@@ -1,13 +1,25 @@
 {
   "raw": "2  bell peppers (preferably red, yellow, or orange, diced)",
-  "expected": {
-    "item": "bell peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "preferably red, yellow, or orange, diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "preferably red, yellow, or orange, diced"
+    },
+    "parse_ingredients": {
+      "item": "bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "preferably red, yellow, or orange, diced"
+    }
   }
 }

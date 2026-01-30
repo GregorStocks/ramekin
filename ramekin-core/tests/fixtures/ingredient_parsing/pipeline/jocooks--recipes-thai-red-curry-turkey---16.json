@@ -1,17 +1,37 @@
 {
   "raw": "14 ounce coconut milk ((1 can))",
-  "expected": {
-    "item": "coconut milk",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coconut milk",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coconut milk",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

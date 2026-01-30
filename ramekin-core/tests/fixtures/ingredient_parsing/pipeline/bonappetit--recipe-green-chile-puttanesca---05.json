@@ -1,13 +1,25 @@
 {
   "raw": "3 Tbsp. extra-virgin olive oil, divided",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

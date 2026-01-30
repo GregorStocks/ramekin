@@ -1,13 +1,29 @@
 {
   "raw": "10 ounce frozen chopped spinach, thawed and squeezed dry",
-  "expected": {
-    "item": "frozen chopped spinach",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed and squeezed dry"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen chopped spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed and squeezed dry"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen chopped spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed and squeezed dry"
+    }
   }
 }

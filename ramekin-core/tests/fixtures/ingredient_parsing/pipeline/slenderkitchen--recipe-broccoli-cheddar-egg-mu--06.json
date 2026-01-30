@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup reduced fat shredded cheddar cheese",
-  "expected": {
-    "item": "reduced fat shredded cheddar cheese",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "reduced fat shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "reduced fat shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

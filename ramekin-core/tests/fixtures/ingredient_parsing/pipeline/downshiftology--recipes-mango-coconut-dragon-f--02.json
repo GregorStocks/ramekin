@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2  bananas (sliced and frozen, divided)",
-  "expected": {
-    "item": "bananas",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": null
-      }
-    ],
-    "note": "sliced and frozen, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bananas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced and frozen, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "bananas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced and frozen, divided"
+    }
   }
 }

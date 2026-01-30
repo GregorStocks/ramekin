@@ -1,13 +1,25 @@
 {
   "raw": "1 recipe Seasoned Cauliflower Rice",
-  "expected": {
-    "item": "recipe Seasoned Cauliflower Rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "recipe Seasoned Cauliflower Rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "recipe Seasoned Cauliflower Rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "tomato",
-  "expected": {
-    "item": "tomato",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tomato",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tomato",
+      "measurements": [],
+      "note": null
+    }
   }
 }

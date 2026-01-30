@@ -1,21 +1,41 @@
 {
   "raw": "4 thin slices aged provolone or Swiss cheese (about 2 ounces; 56 g total weight)",
-  "expected": {
-    "item": "thin slices aged provolone or Swiss cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      },
-      {
-        "amount": "56",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thin slices aged provolone or Swiss cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "56",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "thin slices aged provolone or Swiss cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "56",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 large yellow onion (quartered with skin and root end in tact)",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "quartered with skin and root end in tact"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "quartered with skin and root end in tact"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "quartered with skin and root end in tact"
+    }
   }
 }

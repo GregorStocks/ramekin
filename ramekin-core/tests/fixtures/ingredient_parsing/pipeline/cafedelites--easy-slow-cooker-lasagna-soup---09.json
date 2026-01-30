@@ -1,13 +1,29 @@
 {
   "raw": "14 oz crushed tomatoes (canned)",
-  "expected": {
-    "item": "crushed tomatoes (canned)",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed tomatoes (canned)",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crushed tomatoes (canned)",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

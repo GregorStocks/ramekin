@@ -1,8 +1,15 @@
 {
   "raw": "Apricots",
-  "expected": {
-    "item": "Apricots",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Apricots",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Apricots",
+      "measurements": [],
+      "note": null
+    }
   }
 }

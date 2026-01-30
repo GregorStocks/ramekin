@@ -1,17 +1,33 @@
 {
   "raw": "16 ounces cream cheese ((454g), softened)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      },
-      {
-        "amount": "454",
-        "unit": "g"
-      }
-    ],
-    "note": "softened)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "softened)"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "softened)"
+    }
   }
 }

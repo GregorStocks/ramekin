@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil (, for baking dish)",
-  "expected": {
-    "item": "Olive oil (, for baking dish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Olive oil (, for baking dish)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Olive oil (, for baking dish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

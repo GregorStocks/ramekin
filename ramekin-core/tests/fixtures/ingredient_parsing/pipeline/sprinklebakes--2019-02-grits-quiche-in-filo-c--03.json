@@ -1,13 +1,29 @@
 {
   "raw": "10 oz. frozen chopped kale (thawed)",
-  "expected": {
-    "item": "frozen chopped kale",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen chopped kale",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen chopped kale",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

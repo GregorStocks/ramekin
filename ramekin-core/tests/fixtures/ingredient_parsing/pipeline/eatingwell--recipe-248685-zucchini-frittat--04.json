@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup grape tomatoes, or cherry tomatoes, halved",
-  "expected": {
-    "item": "grape tomatoes, or cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grape tomatoes, or cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    },
+    "enrich_metric_weights": {
+      "item": "grape tomatoes, or cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

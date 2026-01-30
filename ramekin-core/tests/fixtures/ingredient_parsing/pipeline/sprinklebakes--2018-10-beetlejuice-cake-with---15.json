@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 85g toasted coconut",
-  "expected": {
-    "item": "toasted coconut",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "85",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted coconut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted coconut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

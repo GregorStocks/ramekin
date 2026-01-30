@@ -1,8 +1,15 @@
 {
   "raw": "Coconut Whipped Cream",
-  "expected": {
-    "item": "Coconut Whipped Cream",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Coconut Whipped Cream",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Coconut Whipped Cream",
+      "measurements": [],
+      "note": null
+    }
   }
 }

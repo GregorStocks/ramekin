@@ -1,13 +1,29 @@
 {
   "raw": "7 oz. almond paste",
-  "expected": {
-    "item": "almond paste",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "almond paste",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "almond paste",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

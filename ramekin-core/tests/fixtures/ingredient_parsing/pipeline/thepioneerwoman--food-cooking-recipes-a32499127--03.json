@@ -1,13 +1,25 @@
 {
   "raw": "5 stalks celery, sliced on an angle",
-  "expected": {
-    "item": "celery",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "stalk"
-      }
-    ],
-    "note": "sliced on an angle"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "stalk"
+        }
+      ],
+      "note": "sliced on an angle"
+    },
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "stalk"
+        }
+      ],
+      "note": "sliced on an angle"
+    }
   }
 }

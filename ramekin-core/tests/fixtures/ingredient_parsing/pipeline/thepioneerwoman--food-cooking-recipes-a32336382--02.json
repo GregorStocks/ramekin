@@ -1,13 +1,25 @@
 {
   "raw": "1 stick softened salted butter&nbsp;",
-  "expected": {
-    "item": "softened salted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "softened salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "softened salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

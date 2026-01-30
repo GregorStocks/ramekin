@@ -1,13 +1,25 @@
 {
   "raw": "1 packet mushroom coffee skip if you&amp;#8217;re using brewed mushroom coffee instead",
-  "expected": {
-    "item": "packet mushroom coffee skip if you’re using brewed mushroom coffee instead",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "packet mushroom coffee skip if you’re using brewed mushroom coffee instead",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "packet mushroom coffee skip if you’re using brewed mushroom coffee instead",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

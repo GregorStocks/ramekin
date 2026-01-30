@@ -1,17 +1,33 @@
 {
   "raw": "4 2/3 cups all-purpose flour, plus up to 1/2 cup (75 grams) more, if needed",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "4 2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "75",
-        "unit": "g"
-      }
-    ],
-    "note": "plus up to 1/2 cup more, if needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "plus up to 1/2 cup more, if needed"
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "plus up to 1/2 cup more, if needed"
+    }
   }
 }

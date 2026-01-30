@@ -1,13 +1,25 @@
 {
   "raw": "1  red bell pepper (thinly sliced)",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

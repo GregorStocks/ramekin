@@ -1,8 +1,15 @@
 {
   "raw": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
-  "expected": {
-    "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "to serve (some or all of the following): salted yogurt with saffron, toasted walnuts, chopped olives, herbs, lemon wedges",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Pickled jalalpenos",
-  "expected": {
-    "item": "Pickled jalalpenos",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pickled jalalpenos",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pickled jalalpenos",
+      "measurements": [],
+      "note": null
+    }
   }
 }

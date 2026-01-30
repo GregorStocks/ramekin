@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon minced fresh basil or 1 teaspoon dried basil",
-  "expected": {
-    "item": "minced fresh basil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1 teaspoon dried basil"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced fresh basil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried basil"
+    },
+    "enrich_metric_weights": {
+      "item": "minced fresh basil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried basil"
+    }
   }
 }

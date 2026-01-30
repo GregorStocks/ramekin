@@ -1,13 +1,25 @@
 {
   "raw": "½ cup dry quinoa, (rinsed well)",
-  "expected": {
-    "item": "dry quinoa",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed well"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry quinoa",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed well"
+    },
+    "enrich_metric_weights": {
+      "item": "dry quinoa",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed well"
+    }
   }
 }

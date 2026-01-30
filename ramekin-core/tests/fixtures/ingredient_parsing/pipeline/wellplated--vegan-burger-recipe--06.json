@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
-  "expected": {
-    "item": "ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground flaxseed meal (chia seeds, or additional hemp seed hearts)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

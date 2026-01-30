@@ -1,13 +1,25 @@
 {
   "raw": "1/2 Tbsp sea salt for the lamb plus 1 tsp for stew",
-  "expected": {
-    "item": "sea salt for the lamb",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus 1 tsp for stew"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea salt for the lamb",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 tsp for stew"
+    },
+    "enrich_metric_weights": {
+      "item": "sea salt for the lamb",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 tsp for stew"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1cup mango, diced (or avocado or pineapple, optional)",
-  "expected": {
-    "item": "mango, diced",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "or avocado or pineapple, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mango, diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "or avocado or pineapple, optional"
+    },
+    "parse_ingredients": {
+      "item": "mango, diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "or avocado or pineapple, optional"
+    }
   }
 }

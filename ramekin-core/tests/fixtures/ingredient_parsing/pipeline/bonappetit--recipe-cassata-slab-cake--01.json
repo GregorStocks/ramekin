@@ -1,8 +1,15 @@
 {
   "raw": "Nonstick vegetable oil spray (for pan)",
-  "expected": {
-    "item": "Nonstick vegetable oil spray (for pan)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Nonstick vegetable oil spray (for pan)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Nonstick vegetable oil spray (for pan)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

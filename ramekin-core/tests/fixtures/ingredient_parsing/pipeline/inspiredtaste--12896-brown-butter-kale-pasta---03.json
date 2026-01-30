@@ -1,8 +1,15 @@
 {
   "raw": "Boiling water",
-  "expected": {
-    "item": "Boiling water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Boiling water",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Boiling water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

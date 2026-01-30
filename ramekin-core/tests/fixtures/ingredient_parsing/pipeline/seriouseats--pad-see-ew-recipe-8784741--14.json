@@ -1,13 +1,25 @@
 {
   "raw": "Small pinch kosher salt",
-  "expected": {
-    "item": "pinch kosher salt",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pinch kosher salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pinch kosher salt",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Monterey Jack cheese",
-  "expected": {
-    "item": "Monterey Jack cheese",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Monterey Jack cheese",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Monterey Jack cheese",
+      "measurements": [],
+      "note": null
+    }
   }
 }

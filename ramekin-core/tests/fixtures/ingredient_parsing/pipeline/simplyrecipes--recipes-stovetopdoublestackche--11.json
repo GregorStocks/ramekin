@@ -1,8 +1,15 @@
 {
   "raw": "Fresh lettuce",
-  "expected": {
-    "item": "Fresh lettuce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh lettuce",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fresh lettuce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

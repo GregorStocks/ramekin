@@ -1,13 +1,25 @@
 {
   "raw": "6  bell peppers (cut in half lengthwise (4 if they are very large))",
-  "expected": {
-    "item": "bell peppers (cut in half lengthwise (4 if they are very large)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bell peppers (cut in half lengthwise (4 if they are very large)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bell peppers (cut in half lengthwise (4 if they are very large)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

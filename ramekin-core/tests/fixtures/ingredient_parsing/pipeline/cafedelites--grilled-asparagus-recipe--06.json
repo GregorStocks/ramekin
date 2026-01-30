@@ -1,13 +1,25 @@
 {
   "raw": "2-4 tablespoons parmesan cheese (fresh grated)",
-  "expected": {
-    "item": "parmesan cheese",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "fresh grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parmesan cheese",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh grated"
+    },
+    "enrich_metric_weights": {
+      "item": "parmesan cheese",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh grated"
+    }
   }
 }

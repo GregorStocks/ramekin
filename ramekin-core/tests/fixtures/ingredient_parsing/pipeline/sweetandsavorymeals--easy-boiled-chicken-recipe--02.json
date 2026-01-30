@@ -1,13 +1,25 @@
 {
   "raw": "2  medium onions (quartered)",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "quartered"
+    },
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

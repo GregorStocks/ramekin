@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup chopped salted pistachios, for garnish",
-  "expected": {
-    "item": "chopped salted pistachios",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped salted pistachios",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "chopped salted pistachios",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "for garnish"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon Cointreau or Grand Marnier liquor (optional, this keeps the sorbet from getting icy)",
-  "expected": {
-    "item": "Cointreau or Grand Marnier liquor",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional, this keeps the sorbet from getting icy"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cointreau or Grand Marnier liquor",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, this keeps the sorbet from getting icy"
+    },
+    "parse_ingredients": {
+      "item": "Cointreau or Grand Marnier liquor",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, this keeps the sorbet from getting icy"
+    }
   }
 }

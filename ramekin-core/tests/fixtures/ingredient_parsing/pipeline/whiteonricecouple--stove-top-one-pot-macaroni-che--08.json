@@ -1,13 +1,25 @@
 {
   "raw": "generous dash of Nutmeg",
-  "expected": {
-    "item": "Nutmeg",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "generous dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Nutmeg",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "generous dash"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Nutmeg",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "generous dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup Vidalia onion,  (finely chopped)",
-  "expected": {
-    "item": "Vidalia onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vidalia onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "Vidalia onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon minced jalapeño peppers, (from 1 pepper (seeded; see note))",
-  "expected": {
-    "item": "minced jalapeño peppers, (from 1 pepper (seeded; see note)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced jalapeño peppers, (from 1 pepper (seeded; see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced jalapeño peppers, (from 1 pepper (seeded; see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

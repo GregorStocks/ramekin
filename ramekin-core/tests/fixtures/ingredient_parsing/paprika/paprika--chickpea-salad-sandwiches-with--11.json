@@ -1,13 +1,25 @@
 {
   "raw": "2 hard-cooked eggs, sliced thin",
-  "expected": {
-    "item": "hard-cooked eggs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hard-cooked eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    },
+    "enrich_metric_weights": {
+      "item": "hard-cooked eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced thin"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 large onion  (finely chopped or grated)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "finely chopped or grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped or grated"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped or grated"
+    }
   }
 }

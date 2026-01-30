@@ -1,13 +1,25 @@
 {
   "raw": "8  burger buns (, warmed or toasted)",
-  "expected": {
-    "item": "burger buns",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "warmed or toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "burger buns",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "warmed or toasted"
+    },
+    "parse_ingredients": {
+      "item": "burger buns",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "warmed or toasted"
+    }
   }
 }

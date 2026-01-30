@@ -1,17 +1,33 @@
 {
   "raw": "12 (6-inch) pitas or flour tortillas, warmed",
-  "expected": {
-    "item": "pitas or flour tortillas, warmed",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pitas or flour tortillas, warmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pitas or flour tortillas, warmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

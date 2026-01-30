@@ -1,13 +1,25 @@
 {
   "raw": "1/4 medium red onion, chopped small",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "medium"
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped small"
+    },
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

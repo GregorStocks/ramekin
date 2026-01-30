@@ -1,13 +1,25 @@
 {
   "raw": "1 sheet puff, thawed",
-  "expected": {
-    "item": "sheet puff",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheet puff",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    },
+    "parse_ingredients": {
+      "item": "sheet puff",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

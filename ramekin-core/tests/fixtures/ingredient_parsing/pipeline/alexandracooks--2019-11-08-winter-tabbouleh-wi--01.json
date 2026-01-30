@@ -1,13 +1,25 @@
 {
   "raw": "1 cup&nbsp;bulgur, extra-coarse if possible",
-  "expected": {
-    "item": "bulgur, extra-coarse if possible",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bulgur, extra-coarse if possible",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bulgur, extra-coarse if possible",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

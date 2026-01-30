@@ -1,17 +1,33 @@
 {
   "raw": "150 ml heavy cream (36% or higher)",
-  "expected": {
-    "item": "heavy cream",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "ml"
-      },
-      {
-        "amount": "36",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "ml"
+        },
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "ml"
+        },
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

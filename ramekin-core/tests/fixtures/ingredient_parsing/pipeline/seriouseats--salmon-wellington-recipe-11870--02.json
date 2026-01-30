@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup (120 ml) full-fat plain yogurt",
-  "expected": {
-    "item": "full-fat plain yogurt",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "full-fat plain yogurt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "full-fat plain yogurt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

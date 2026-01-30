@@ -1,13 +1,25 @@
 {
   "raw": "1 lb 10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
-  "expected": {
-    "item": "10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "10 oz  pie pumpkin or butternut squash, peeled, deseeded and cut into chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

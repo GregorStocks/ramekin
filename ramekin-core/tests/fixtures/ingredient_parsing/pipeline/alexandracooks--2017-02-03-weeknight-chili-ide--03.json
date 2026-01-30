@@ -1,13 +1,25 @@
 {
   "raw": "1&nbsp;red or green bell pepper, stemmed, seeded, and cut into 1/2-inch pieces, optional",
-  "expected": {
-    "item": "red or green bell pepper, stemmed, seeded, and cut into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red or green bell pepper, stemmed, seeded, and cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "red or green bell pepper, stemmed, seeded, and cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

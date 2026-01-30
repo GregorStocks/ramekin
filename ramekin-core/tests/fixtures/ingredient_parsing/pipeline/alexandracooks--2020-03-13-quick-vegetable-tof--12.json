@@ -1,8 +1,15 @@
 {
   "raw": "lime for serving, optional",
-  "expected": {
-    "item": "lime for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "lime for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

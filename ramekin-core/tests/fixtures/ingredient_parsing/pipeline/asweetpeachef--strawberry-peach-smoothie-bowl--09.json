@@ -1,8 +1,15 @@
 {
   "raw": "flaked coconut (unsweetened)",
-  "expected": {
-    "item": "flaked coconut (unsweetened)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flaked coconut (unsweetened)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "flaked coconut (unsweetened)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

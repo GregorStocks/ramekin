@@ -1,17 +1,33 @@
 {
   "raw": "1 (28-ounce) can whole peeled tomatoes, drained and diced",
-  "expected": {
-    "item": "whole peeled tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": null
-      }
-    ],
-    "note": "drained and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole peeled tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": "drained and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "whole peeled tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": "drained and diced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Thinly sliced scallions (for serving)",
-  "expected": {
-    "item": "Thinly sliced scallions",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thinly sliced scallions",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Thinly sliced scallions",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

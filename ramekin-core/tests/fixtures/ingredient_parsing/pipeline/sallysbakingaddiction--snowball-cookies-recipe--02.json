@@ -1,17 +1,33 @@
 {
   "raw": "3/4 cup (90g) confectioners&amp;#8217; sugar",
-  "expected": {
-    "item": "confectioners’ sugar",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "90",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "confectioners’ sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "confectioners’ sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

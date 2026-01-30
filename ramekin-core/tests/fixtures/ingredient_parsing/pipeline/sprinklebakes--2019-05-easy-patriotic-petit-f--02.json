@@ -1,17 +1,37 @@
 {
   "raw": "3  tubs (16 oz. each ready-made classic vanilla frosting (not the whipped variety))",
-  "expected": {
-    "item": "tubs",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      },
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tubs",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tubs",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha chili sauce",
-  "expected": {
-    "item": "Sriracha chili sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sriracha chili sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sriracha chili sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

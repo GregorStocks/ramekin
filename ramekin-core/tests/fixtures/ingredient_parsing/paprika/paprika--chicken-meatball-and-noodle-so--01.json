@@ -1,8 +1,15 @@
 {
   "raw": "MEATBALLS",
-  "expected": {
-    "item": "MEATBALLS",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "MEATBALLS",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "MEATBALLS",
+      "measurements": [],
+      "note": null
+    }
   }
 }

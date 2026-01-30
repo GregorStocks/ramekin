@@ -1,8 +1,15 @@
 {
   "raw": "fresh rosemary (to garnish)",
-  "expected": {
-    "item": "fresh rosemary (to garnish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh rosemary (to garnish)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh rosemary (to garnish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

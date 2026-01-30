@@ -1,13 +1,25 @@
 {
   "raw": "1 12-ounce bag frozen black-eyed peas",
-  "expected": {
-    "item": "frozen black-eyed peas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "12-ounce bag"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen black-eyed peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce bag"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen black-eyed peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce bag"
+        }
+      ],
+      "note": null
+    }
   }
 }

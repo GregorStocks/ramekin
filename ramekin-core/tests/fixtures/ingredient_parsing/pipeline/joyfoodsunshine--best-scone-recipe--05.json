@@ -1,13 +1,25 @@
 {
   "raw": "½ cup salted butter (frozen)",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "frozen"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen"
+    },
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen"
+    }
   }
 }

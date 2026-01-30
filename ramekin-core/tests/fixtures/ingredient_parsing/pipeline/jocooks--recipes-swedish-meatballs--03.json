@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds ground beef (or mixed with ground chicken)",
-  "expected": {
-    "item": "ground beef",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "or mixed with ground chicken"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "or mixed with ground chicken"
+    },
+    "enrich_metric_weights": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "or mixed with ground chicken"
+    }
   }
 }

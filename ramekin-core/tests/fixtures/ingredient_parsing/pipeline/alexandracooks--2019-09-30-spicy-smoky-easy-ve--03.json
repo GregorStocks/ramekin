@@ -1,13 +1,25 @@
 {
   "raw": "2 onions, diced to yield about 4 cups",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "diced to yield about 4 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced to yield about 4 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced to yield about 4 cups"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "sea salt",
-  "expected": {
-    "item": "sea salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sea salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sea salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

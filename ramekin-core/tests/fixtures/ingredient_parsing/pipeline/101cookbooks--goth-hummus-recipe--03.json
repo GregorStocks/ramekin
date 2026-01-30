@@ -1,13 +1,25 @@
 {
   "raw": "4  medium garlic cloves (black, optional)",
-  "expected": {
-    "item": "garlic cloves",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "black, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "black, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "black, optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 3/4 teaspoon active dry yeast",
-  "expected": {
-    "item": "active dry yeast",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "active dry yeast",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "active dry yeast",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

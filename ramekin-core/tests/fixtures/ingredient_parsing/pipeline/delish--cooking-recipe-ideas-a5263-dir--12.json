@@ -1,8 +1,15 @@
 {
   "raw": "Tabasco sauce, for serving",
-  "expected": {
-    "item": "Tabasco sauce",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tabasco sauce",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Tabasco sauce",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

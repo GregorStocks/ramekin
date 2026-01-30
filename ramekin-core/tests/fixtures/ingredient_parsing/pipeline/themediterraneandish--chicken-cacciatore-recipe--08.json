@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces mushrooms (white or baby bella)  (cleaned and sliced)",
-  "expected": {
-    "item": "mushrooms (white or baby bella)  (cleaned and sliced)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mushrooms (white or baby bella)  (cleaned and sliced)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mushrooms (white or baby bella)  (cleaned and sliced)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

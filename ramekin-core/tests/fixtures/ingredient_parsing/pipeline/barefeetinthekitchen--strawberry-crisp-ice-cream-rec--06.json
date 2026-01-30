@@ -1,13 +1,25 @@
 {
   "raw": "½  recipe Strawberry Rhubarb Crunch (baked and chilled overnight in the refrigerator)",
-  "expected": {
-    "item": "recipe Strawberry Rhubarb Crunch",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "baked and chilled overnight in the refrigerator"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "recipe Strawberry Rhubarb Crunch",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "baked and chilled overnight in the refrigerator"
+    },
+    "parse_ingredients": {
+      "item": "recipe Strawberry Rhubarb Crunch",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "baked and chilled overnight in the refrigerator"
+    }
   }
 }

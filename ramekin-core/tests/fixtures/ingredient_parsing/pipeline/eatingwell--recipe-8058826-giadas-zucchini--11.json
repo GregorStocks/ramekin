@@ -1,13 +1,25 @@
 {
   "raw": "1 pound long pasta, such as spaghetti chitarra or bucatini",
-  "expected": {
-    "item": "long pasta, such as spaghetti chitarra or bucatini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "long pasta, such as spaghetti chitarra or bucatini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "long pasta, such as spaghetti chitarra or bucatini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

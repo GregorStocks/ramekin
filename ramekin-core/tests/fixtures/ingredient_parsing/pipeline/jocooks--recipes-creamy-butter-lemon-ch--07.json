@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons butter (unsalted, divided)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "unsalted, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, divided"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Ice, for shaking",
-  "expected": {
-    "item": "Ice, for shaking",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Ice, for shaking",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Ice, for shaking",
+      "measurements": [],
+      "note": null
+    }
   }
 }

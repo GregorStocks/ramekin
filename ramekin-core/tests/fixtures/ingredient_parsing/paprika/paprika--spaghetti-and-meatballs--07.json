@@ -1,8 +1,15 @@
 {
   "raw": "Red pepper flakes and/or freshly ground black pepper",
-  "expected": {
-    "item": "Red pepper flakes and/or freshly ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Red pepper flakes and/or freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Red pepper flakes and/or freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

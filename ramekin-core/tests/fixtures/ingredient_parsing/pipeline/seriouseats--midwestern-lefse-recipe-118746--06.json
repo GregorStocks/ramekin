@@ -1,17 +1,33 @@
 {
   "raw": "150 g (1 1/4 cups) all-purpose flour, plus more for rolling",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "g"
-      },
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for rolling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for rolling"
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for rolling"
+    }
   }
 }

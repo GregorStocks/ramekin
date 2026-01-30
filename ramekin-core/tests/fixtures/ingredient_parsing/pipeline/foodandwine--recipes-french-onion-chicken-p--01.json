@@ -1,17 +1,33 @@
 {
   "raw": "6 (about 2 1/2 pounds total) bone-in, skin-on chicken thighs",
-  "expected": {
-    "item": "bone-in, skin-on chicken thighs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      },
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bone-in, skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bone-in, skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

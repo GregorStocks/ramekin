@@ -1,8 +1,15 @@
 {
   "raw": "a large handful of roasted cashews",
-  "expected": {
-    "item": "a large handful of roasted cashews",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a large handful of roasted cashews",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a large handful of roasted cashews",
+      "measurements": [],
+      "note": null
+    }
   }
 }

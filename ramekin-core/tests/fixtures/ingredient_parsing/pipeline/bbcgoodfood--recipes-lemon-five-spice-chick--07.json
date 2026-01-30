@@ -1,8 +1,15 @@
 {
   "raw": "splash dry sherry or dry white wine",
-  "expected": {
-    "item": "splash dry sherry or dry white wine",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "splash dry sherry or dry white wine",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "splash dry sherry or dry white wine",
+      "measurements": [],
+      "note": null
+    }
   }
 }

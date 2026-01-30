@@ -1,13 +1,25 @@
 {
   "raw": "4 grams Sichuan pepper",
-  "expected": {
-    "item": "Sichuan pepper",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sichuan pepper",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sichuan pepper",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

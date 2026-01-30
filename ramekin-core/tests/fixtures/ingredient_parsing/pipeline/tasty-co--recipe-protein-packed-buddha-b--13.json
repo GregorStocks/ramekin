@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup shredded carrots, shredded",
-  "expected": {
-    "item": "shredded carrots",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded carrots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "shredded carrots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "grape seed oil",
-  "expected": {
-    "item": "grape seed oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grape seed oil",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grape seed oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

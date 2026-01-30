@@ -1,17 +1,33 @@
 {
   "raw": "1 small white onion, minced (about 1 cup)",
-  "expected": {
-    "item": "white onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

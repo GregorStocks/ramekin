@@ -1,8 +1,15 @@
 {
   "raw": "Optional: Mayonnaise, additional Dijon mustard and thinly sliced dill pickles",
-  "expected": {
-    "item": "Optional: Mayonnaise",
-    "measurements": [],
-    "note": "additional Dijon mustard and thinly sliced dill pickles"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional: Mayonnaise",
+      "measurements": [],
+      "note": "additional Dijon mustard and thinly sliced dill pickles"
+    },
+    "enrich_metric_weights": {
+      "item": "Optional: Mayonnaise",
+      "measurements": [],
+      "note": "additional Dijon mustard and thinly sliced dill pickles"
+    }
   }
 }

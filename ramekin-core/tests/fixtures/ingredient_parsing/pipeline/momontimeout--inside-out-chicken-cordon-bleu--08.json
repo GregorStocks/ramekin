@@ -1,13 +1,25 @@
 {
   "raw": "4 to 8 slices ham",
-  "expected": {
-    "item": "ham",
-    "measurements": [
-      {
-        "amount": "4 to 8",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ham",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ham",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

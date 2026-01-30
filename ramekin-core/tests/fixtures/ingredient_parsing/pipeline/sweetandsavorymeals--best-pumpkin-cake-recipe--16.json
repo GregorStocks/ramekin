@@ -1,13 +1,25 @@
 {
   "raw": "1 cup pecans (toasted finely chopped)",
-  "expected": {
-    "item": "pecans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "toasted finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted finely chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 package taco seasoning",
-  "expected": {
-    "item": "taco seasoning",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "taco seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "taco seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

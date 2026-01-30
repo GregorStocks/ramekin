@@ -1,17 +1,33 @@
 {
   "raw": "250 grams burdock root ((2 medium roots))",
-  "expected": {
-    "item": "burdock root",
-    "measurements": [
-      {
-        "amount": "250",
-        "unit": "g"
-      },
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "burdock root",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "burdock root",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

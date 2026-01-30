@@ -1,13 +1,25 @@
 {
   "raw": "4  hardboiled eggs (chopped small)",
-  "expected": {
-    "item": "hardboiled eggs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hardboiled eggs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "chopped small"
+    },
+    "parse_ingredients": {
+      "item": "hardboiled eggs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

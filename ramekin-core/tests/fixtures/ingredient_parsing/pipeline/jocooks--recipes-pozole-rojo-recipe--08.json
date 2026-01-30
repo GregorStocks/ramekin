@@ -1,13 +1,25 @@
 {
   "raw": "2  chiles de arbol (dried)",
-  "expected": {
-    "item": "chiles de arbol",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chiles de arbol",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    },
+    "parse_ingredients": {
+      "item": "chiles de arbol",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    }
   }
 }

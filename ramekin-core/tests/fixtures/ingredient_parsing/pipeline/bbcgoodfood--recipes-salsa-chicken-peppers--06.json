@@ -1,13 +1,25 @@
 {
   "raw": "200g can red kidney beans drained",
-  "expected": {
-    "item": "can red kidney beans drained",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can red kidney beans drained",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "can red kidney beans drained",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

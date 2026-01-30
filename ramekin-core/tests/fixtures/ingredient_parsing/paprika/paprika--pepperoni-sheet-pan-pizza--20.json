@@ -1,21 +1,41 @@
 {
   "raw": "12 ounces (340 grams) whole-milk block mozzarella cheese, shredded (3 cups)",
-  "expected": {
-    "item": "whole-milk block mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      },
-      {
-        "amount": "340",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole-milk block mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "whole-milk block mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

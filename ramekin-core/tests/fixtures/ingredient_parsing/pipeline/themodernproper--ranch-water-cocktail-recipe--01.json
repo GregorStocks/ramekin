@@ -1,13 +1,29 @@
 {
   "raw": "2½ ounces tequila blanco",
-  "expected": {
-    "item": "tequila blanco",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tequila blanco",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tequila blanco",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 to 6  burrito-size tortillas",
-  "expected": {
-    "item": "burrito-size tortillas",
-    "measurements": [
-      {
-        "amount": "4 to 6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "burrito-size tortillas",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "burrito-size tortillas",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

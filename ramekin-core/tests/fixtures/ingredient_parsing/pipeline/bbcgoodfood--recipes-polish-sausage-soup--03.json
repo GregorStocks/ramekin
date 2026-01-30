@@ -1,13 +1,25 @@
 {
   "raw": "2 garlic cloves thinly sliced",
-  "expected": {
-    "item": "garlic cloves thinly sliced",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic cloves thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "garlic cloves thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

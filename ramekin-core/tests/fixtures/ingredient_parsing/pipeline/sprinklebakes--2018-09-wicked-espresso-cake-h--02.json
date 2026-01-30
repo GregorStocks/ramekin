@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons finely ground espresso (Wicked Joe’sWicked French Roast beans)",
-  "expected": {
-    "item": "finely ground espresso (Wicked Joe’sWicked French Roast beans)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely ground espresso (Wicked Joe’sWicked French Roast beans)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely ground espresso (Wicked Joe’sWicked French Roast beans)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

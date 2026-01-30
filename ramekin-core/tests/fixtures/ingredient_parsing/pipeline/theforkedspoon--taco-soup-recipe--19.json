@@ -1,13 +1,25 @@
 {
   "raw": "2  limes (juiced, plus more for serving)",
-  "expected": {
-    "item": "limes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "juiced, plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "limes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "juiced, plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "limes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "juiced, plus more for serving"
+    }
   }
 }

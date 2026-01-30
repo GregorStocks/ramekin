@@ -1,13 +1,25 @@
 {
   "raw": "¼ to ½ teaspoon red chili powder  ((optional, for heat))",
-  "expected": {
-    "item": "red chili powder",
-    "measurements": [
-      {
-        "amount": "1/4 to 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional, for heat"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red chili powder",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, for heat"
+    },
+    "enrich_metric_weights": {
+      "item": "red chili powder",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional, for heat"
+    }
   }
 }

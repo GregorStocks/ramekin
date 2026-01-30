@@ -1,8 +1,15 @@
 {
   "raw": "whipped cream and cinnamon, if desired",
-  "expected": {
-    "item": "whipped cream and cinnamon, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whipped cream and cinnamon, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whipped cream and cinnamon, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

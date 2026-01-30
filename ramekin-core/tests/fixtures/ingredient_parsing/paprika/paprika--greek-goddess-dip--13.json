@@ -1,8 +1,15 @@
 {
   "raw": "Raw chopped vegetables or pita chips, for serving",
-  "expected": {
-    "item": "Raw chopped vegetables or pita chips",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Raw chopped vegetables or pita chips",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Raw chopped vegetables or pita chips",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

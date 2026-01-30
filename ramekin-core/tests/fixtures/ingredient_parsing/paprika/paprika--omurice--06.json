@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons ketchup, plus more for serving",
-  "expected": {
-    "item": "ketchup",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ketchup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "ketchup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

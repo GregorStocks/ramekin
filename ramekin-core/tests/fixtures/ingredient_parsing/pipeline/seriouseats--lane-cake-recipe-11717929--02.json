@@ -1,21 +1,41 @@
 {
   "raw": "8 large egg whites (8 1/2 ounces; 240 g), at room temperature",
-  "expected": {
-    "item": "egg whites",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      },
-      {
-        "amount": "8 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "240",
-        "unit": "g"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        },
+        {
+          "amount": "8 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        },
+        {
+          "amount": "8 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

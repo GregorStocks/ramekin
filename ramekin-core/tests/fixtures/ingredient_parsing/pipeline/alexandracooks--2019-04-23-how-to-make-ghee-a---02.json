@@ -1,8 +1,15 @@
 {
   "raw": "cheesecloth",
-  "expected": {
-    "item": "cheesecloth",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheesecloth",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cheesecloth",
+      "measurements": [],
+      "note": null
+    }
   }
 }

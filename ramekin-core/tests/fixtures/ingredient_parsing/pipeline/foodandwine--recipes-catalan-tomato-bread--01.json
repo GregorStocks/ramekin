@@ -1,13 +1,25 @@
 {
   "raw": "8 large slices country-style bread, about 1/2 inch thick",
-  "expected": {
-    "item": "slices country-style bread, about 1/2 inch thick",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "slices country-style bread, about 1/2 inch thick",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "slices country-style bread, about 1/2 inch thick",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

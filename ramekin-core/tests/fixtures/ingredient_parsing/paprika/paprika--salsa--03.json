@@ -1,13 +1,25 @@
 {
   "raw": "1 fresh jalapeño, trimmed",
-  "expected": {
-    "item": "fresh jalapeño",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh jalapeño",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    },
+    "parse_ingredients": {
+      "item": "fresh jalapeño",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

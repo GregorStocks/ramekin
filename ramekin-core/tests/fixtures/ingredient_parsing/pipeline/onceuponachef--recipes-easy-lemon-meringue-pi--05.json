@@ -1,17 +1,33 @@
 {
   "raw": "1  (14-oz) can Eagle sweetened condensed milk (see note)",
-  "expected": {
-    "item": "Eagle sweetened condensed milk (see note)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "14",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Eagle sweetened condensed milk (see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Eagle sweetened condensed milk (see note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

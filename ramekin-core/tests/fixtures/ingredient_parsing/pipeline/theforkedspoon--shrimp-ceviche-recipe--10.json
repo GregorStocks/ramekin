@@ -1,13 +1,25 @@
 {
   "raw": "10  limes (juiced)",
-  "expected": {
-    "item": "limes (juiced)",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "limes (juiced)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "limes (juiced)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "ice cubes (for cooling)",
-  "expected": {
-    "item": "ice cubes (for cooling)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ice cubes (for cooling)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ice cubes (for cooling)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

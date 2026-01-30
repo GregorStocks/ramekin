@@ -1,17 +1,33 @@
 {
   "raw": "8 cups (1.9 liters) beef broth or stock",
-  "expected": {
-    "item": "beef broth or stock",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      },
-      {
-        "amount": "1.9",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef broth or stock",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "beef broth or stock",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

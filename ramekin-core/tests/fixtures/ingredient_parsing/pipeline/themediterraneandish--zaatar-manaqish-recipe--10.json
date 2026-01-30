@@ -1,8 +1,15 @@
 {
   "raw": "Fresh garden vegetables (tomato, cucumbers, radish)",
-  "expected": {
-    "item": "Fresh garden vegetables (tomato, cucumbers, radish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh garden vegetables (tomato, cucumbers, radish)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fresh garden vegetables (tomato, cucumbers, radish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

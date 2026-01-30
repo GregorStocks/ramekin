@@ -1,13 +1,25 @@
 {
   "raw": "2 stalks celery, thinly sliced",
-  "expected": {
-    "item": "celery",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "stalk"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

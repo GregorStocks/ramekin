@@ -1,8 +1,15 @@
 {
   "raw": "Shredded cheese ((I used queso fresco))",
-  "expected": {
-    "item": "Shredded cheese (I used queso fresco)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Shredded cheese (I used queso fresco)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Shredded cheese (I used queso fresco)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

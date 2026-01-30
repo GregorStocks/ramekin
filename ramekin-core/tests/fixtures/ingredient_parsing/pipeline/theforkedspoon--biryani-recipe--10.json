@@ -1,13 +1,25 @@
 {
   "raw": "2½ lbs lamb shoulder  (boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb))",
-  "expected": {
-    "item": "lamb shoulder",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lamb shoulder",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb"
+    },
+    "enrich_metric_weights": {
+      "item": "lamb shoulder",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "boneless or bone-in, chopped into large chunks (you may also use lamb chops or leg of lamb"
+    }
   }
 }

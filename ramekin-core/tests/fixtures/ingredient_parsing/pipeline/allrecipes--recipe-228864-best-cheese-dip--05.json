@@ -1,17 +1,37 @@
 {
   "raw": "1 (28 ounce) can diced tomatoes with green chile peppers (such as RO*TEL®)",
-  "expected": {
-    "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "diced tomatoes with green chile peppers (such as RO*TEL®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

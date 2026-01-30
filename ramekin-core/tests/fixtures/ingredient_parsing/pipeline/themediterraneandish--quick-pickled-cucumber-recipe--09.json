@@ -1,13 +1,25 @@
 {
   "raw": "4  green onions (trimmed and chopped (both white and green parts))",
-  "expected": {
-    "item": "green onions",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "trimmed and chopped (both white and green parts"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "trimmed and chopped (both white and green parts"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "trimmed and chopped (both white and green parts"
+    }
   }
 }

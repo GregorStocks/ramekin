@@ -1,8 +1,15 @@
 {
   "raw": "Lemon ((sliced for garnish))",
-  "expected": {
-    "item": "Lemon",
-    "measurements": [],
-    "note": "sliced for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lemon",
+      "measurements": [],
+      "note": "sliced for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Lemon",
+      "measurements": [],
+      "note": "sliced for garnish"
+    }
   }
 }

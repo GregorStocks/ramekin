@@ -1,17 +1,33 @@
 {
   "raw": "1  cup plus 2 tablespoons (150g) flour",
-  "expected": {
-    "item": "1  cup plus 2 tablespoons (150g) flour",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "150",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 2 tablespoons flour"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1  cup plus 2 tablespoons (150g) flour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons flour"
+    },
+    "enrich_metric_weights": {
+      "item": "1  cup plus 2 tablespoons (150g) flour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 2 tablespoons flour"
+    }
   }
 }

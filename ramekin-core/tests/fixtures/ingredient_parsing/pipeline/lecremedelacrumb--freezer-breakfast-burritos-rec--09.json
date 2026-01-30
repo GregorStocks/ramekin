@@ -1,13 +1,25 @@
 {
   "raw": "8  extra large burrito-size flour tortillas",
-  "expected": {
-    "item": "extra large burrito-size flour tortillas",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra large burrito-size flour tortillas",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "extra large burrito-size flour tortillas",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

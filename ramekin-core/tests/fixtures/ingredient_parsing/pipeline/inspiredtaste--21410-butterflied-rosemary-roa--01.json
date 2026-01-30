@@ -1,13 +1,25 @@
 {
   "raw": "1 whole chicken, 5 to 6 pounds",
-  "expected": {
-    "item": "whole chicken, 5 to 6 pounds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole chicken, 5 to 6 pounds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole chicken, 5 to 6 pounds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

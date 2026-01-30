@@ -1,17 +1,37 @@
 {
   "raw": "1 large can (28 ounces) diced tomatoes, lightly drained",
-  "expected": {
-    "item": "can diced tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": "lightly drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can diced tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": "lightly drained"
+    },
+    "enrich_metric_weights": {
+      "item": "can diced tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": "lightly drained"
+    }
   }
 }

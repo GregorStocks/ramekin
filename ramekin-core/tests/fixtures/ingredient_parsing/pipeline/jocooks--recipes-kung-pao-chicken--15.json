@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup peanuts (dry-roasted, unsalted)",
-  "expected": {
-    "item": "peanuts",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "dry-roasted, unsalted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "dry-roasted, unsalted"
+    },
+    "parse_ingredients": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "dry-roasted, unsalted"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces sharp cheddar cheese, (freshly grated)",
-  "expected": {
-    "item": "sharp cheddar cheese",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "freshly grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "freshly grated"
+    },
+    "parse_ingredients": {
+      "item": "sharp cheddar cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "freshly grated"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4  chicken breasts (boneless and skinless, cut into bite size pieces)",
-  "expected": {
-    "item": "chicken breasts (boneless and skinless, cut into bite size pieces)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken breasts (boneless and skinless, cut into bite size pieces)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken breasts (boneless and skinless, cut into bite size pieces)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Garlicky or gruyere croutons",
-  "expected": {
-    "item": "Garlicky or gruyere croutons",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Garlicky or gruyere croutons",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Garlicky or gruyere croutons",
+      "measurements": [],
+      "note": null
+    }
   }
 }

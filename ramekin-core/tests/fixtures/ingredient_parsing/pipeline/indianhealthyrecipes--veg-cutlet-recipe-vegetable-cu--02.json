@@ -1,13 +1,25 @@
 {
   "raw": "½ cup green peas ((frozen or fresh))",
-  "expected": {
-    "item": "green peas",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "frozen or fresh"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green peas",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen or fresh"
+    },
+    "parse_ingredients": {
+      "item": "green peas",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "frozen or fresh"
+    }
   }
 }

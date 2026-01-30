@@ -1,17 +1,33 @@
 {
   "raw": "4 (6-ounces) pieces sturgeon, whitefish, carp, or walleye",
-  "expected": {
-    "item": "sturgeon, whitefish, carp, or walleye",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "piece"
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sturgeon, whitefish, carp, or walleye",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "piece"
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sturgeon, whitefish, carp, or walleye",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "piece"
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

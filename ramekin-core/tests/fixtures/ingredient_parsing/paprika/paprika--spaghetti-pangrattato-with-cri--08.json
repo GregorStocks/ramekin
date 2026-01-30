@@ -1,8 +1,15 @@
 {
   "raw": "Crispy Egg",
-  "expected": {
-    "item": "Crispy Egg",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crispy Egg",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Crispy Egg",
+      "measurements": [],
+      "note": null
+    }
   }
 }

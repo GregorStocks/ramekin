@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon baking powder  ((or ½ tsp baking powder + ½ tsp instant yeast, read notes))",
-  "expected": {
-    "item": "baking powder  (or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baking powder  (or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baking powder  (or 1/2 tsp baking powder + 1/2 tsp instant yeast, read notes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

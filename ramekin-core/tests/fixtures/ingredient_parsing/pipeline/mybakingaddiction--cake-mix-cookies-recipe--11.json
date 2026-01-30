@@ -1,8 +1,15 @@
 {
   "raw": "sprinkles or nonpareils for topping",
-  "expected": {
-    "item": "sprinkles or nonpareils for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sprinkles or nonpareils for topping",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sprinkles or nonpareils for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

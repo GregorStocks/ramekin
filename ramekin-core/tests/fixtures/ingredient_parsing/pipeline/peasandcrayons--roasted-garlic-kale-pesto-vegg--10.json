@@ -1,13 +1,25 @@
 {
   "raw": "pinch of black pepper (if desired)",
-  "expected": {
-    "item": "black pepper (if desired)",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "black pepper (if desired)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "black pepper (if desired)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

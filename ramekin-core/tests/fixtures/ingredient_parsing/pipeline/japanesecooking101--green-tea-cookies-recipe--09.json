@@ -1,8 +1,15 @@
 {
   "raw": "white chocolate",
-  "expected": {
-    "item": "white chocolate",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white chocolate",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white chocolate",
+      "measurements": [],
+      "note": null
+    }
   }
 }

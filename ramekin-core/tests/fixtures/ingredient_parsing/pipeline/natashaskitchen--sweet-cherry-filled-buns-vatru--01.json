@@ -1,17 +1,33 @@
 {
   "raw": "1 cup warm milk (about 100˚F, not hot!)",
-  "expected": {
-    "item": "warm milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "100",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "warm milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "warm milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

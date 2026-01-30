@@ -1,13 +1,25 @@
 {
   "raw": "~2 cups / 150 g coarsely grated carrot (2 large)",
-  "expected": {
-    "item": "~2 cups / 150 g coarsely grated carrot",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "~2 cups / 150 g coarsely grated carrot",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "~2 cups / 150 g coarsely grated carrot",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

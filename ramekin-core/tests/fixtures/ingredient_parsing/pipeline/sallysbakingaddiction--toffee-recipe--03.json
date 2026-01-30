@@ -1,21 +1,45 @@
 {
   "raw": "1/2 cup (120ml; 4 ounces) warm water",
-  "expected": {
-    "item": "warm water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "ml"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

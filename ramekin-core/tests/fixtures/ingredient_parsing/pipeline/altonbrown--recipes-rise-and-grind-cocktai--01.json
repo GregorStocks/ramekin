@@ -1,17 +1,33 @@
 {
   "raw": "1 (12-ounce) bottle cola",
-  "expected": {
-    "item": "cola",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      },
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cola",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cola",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "14.3 ounce Oreo Cookies",
-  "expected": {
-    "item": "Oreo Cookies",
-    "measurements": [
-      {
-        "amount": "14.3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Oreo Cookies",
+      "measurements": [
+        {
+          "amount": "14.3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Oreo Cookies",
+      "measurements": [
+        {
+          "amount": "14.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "405",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

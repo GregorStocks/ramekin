@@ -1,13 +1,25 @@
 {
   "raw": "1/2 c. mild chili sauce, such as Heinz",
-  "expected": {
-    "item": "mild chili sauce, such as Heinz",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mild chili sauce, such as Heinz",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mild chili sauce, such as Heinz",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

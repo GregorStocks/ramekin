@@ -1,8 +1,15 @@
 {
   "raw": "Flour Mixture:",
-  "expected": {
-    "item": "Flour Mixture:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Flour Mixture:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Flour Mixture:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

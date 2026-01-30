@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon baking soda (for canned chickpeas only)",
-  "expected": {
-    "item": "baking soda (for canned chickpeas only)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baking soda (for canned chickpeas only)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baking soda (for canned chickpeas only)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

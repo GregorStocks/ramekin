@@ -1,13 +1,25 @@
 {
   "raw": "50ml stock or water",
-  "expected": {
-    "item": "stock or water",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "stock or water",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "stock or water",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

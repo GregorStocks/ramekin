@@ -1,8 +1,15 @@
 {
   "raw": "Mushrooms ((optional, see notes))",
-  "expected": {
-    "item": "Mushrooms",
-    "measurements": [],
-    "note": "optional, see notes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Mushrooms",
+      "measurements": [],
+      "note": "optional, see notes"
+    },
+    "parse_ingredients": {
+      "item": "Mushrooms",
+      "measurements": [],
+      "note": "optional, see notes"
+    }
   }
 }

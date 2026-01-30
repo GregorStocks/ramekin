@@ -1,8 +1,15 @@
 {
   "raw": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
-  "expected": {
-    "item": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "banana slices, blueberries, maple syrup, vegan chocolate chips or plant-based yogurt, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

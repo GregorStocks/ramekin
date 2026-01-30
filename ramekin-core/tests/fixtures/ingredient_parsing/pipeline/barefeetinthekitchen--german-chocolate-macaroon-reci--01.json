@@ -1,13 +1,29 @@
 {
   "raw": "14 ounces  shredded sweetened coconut",
-  "expected": {
-    "item": "shredded sweetened coconut",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded sweetened coconut",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded sweetened coconut",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

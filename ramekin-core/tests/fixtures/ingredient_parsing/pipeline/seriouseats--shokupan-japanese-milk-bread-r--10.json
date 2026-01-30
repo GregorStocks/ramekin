@@ -1,17 +1,33 @@
 {
   "raw": "14g (1 tablespoon) unsalted butter, melted, for brushing loaf",
-  "expected": {
-    "item": "unsalted butter, melted, for brushing loaf",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter, melted, for brushing loaf",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter, melted, for brushing loaf",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

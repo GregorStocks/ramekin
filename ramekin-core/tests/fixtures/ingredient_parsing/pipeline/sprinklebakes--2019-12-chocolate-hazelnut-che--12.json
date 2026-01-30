@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup chocolate-hazelnut spread (such as Nutella)",
-  "expected": {
-    "item": "chocolate-hazelnut spread (such as Nutella)",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chocolate-hazelnut spread (such as Nutella)",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chocolate-hazelnut spread (such as Nutella)",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

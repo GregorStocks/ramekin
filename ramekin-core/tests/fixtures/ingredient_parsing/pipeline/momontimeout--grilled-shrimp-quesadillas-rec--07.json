@@ -1,8 +1,15 @@
 {
   "raw": "cilantro (optional)",
-  "expected": {
-    "item": "cilantro",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

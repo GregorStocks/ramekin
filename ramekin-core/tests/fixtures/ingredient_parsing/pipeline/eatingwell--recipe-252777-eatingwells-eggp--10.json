@@ -1,17 +1,37 @@
 {
   "raw": "1 (24 ounce) jar no-salt-added tomato sauce",
-  "expected": {
-    "item": "no-salt-added tomato sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "jar"
-      },
-      {
-        "amount": "24",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "no-salt-added tomato sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "24",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "no-salt-added tomato sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "jar"
+        },
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

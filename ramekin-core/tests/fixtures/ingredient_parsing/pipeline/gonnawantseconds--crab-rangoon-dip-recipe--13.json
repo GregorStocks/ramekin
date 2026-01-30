@@ -1,13 +1,25 @@
 {
   "raw": "1  14 Ounce Package Wonton Wrappers",
-  "expected": {
-    "item": "Wonton Wrappers",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "14 Ounce Package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Wonton Wrappers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "14 Ounce Package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Wonton Wrappers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "14 Ounce Package"
+        }
+      ],
+      "note": null
+    }
   }
 }

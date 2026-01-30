@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon honey, maple syrup, or sweetener of your choice, to taste (optional)",
-  "expected": {
-    "item": "honey, maple syrup, or sweetener of your choice, to taste",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "honey, maple syrup, or sweetener of your choice, to taste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "honey, maple syrup, or sweetener of your choice, to taste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

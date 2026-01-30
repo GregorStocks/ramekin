@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon vanilla or 1 vanilla bean (scraped)",
-  "expected": {
-    "item": "vanilla or 1 vanilla bean (scraped)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla or 1 vanilla bean (scraped)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vanilla or 1 vanilla bean (scraped)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

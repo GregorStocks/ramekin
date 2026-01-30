@@ -1,17 +1,33 @@
 {
   "raw": "1 pound Swiss chard or collard greens, stemmed and chopped (8 cups)",
-  "expected": {
-    "item": "Swiss chard or collard greens",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": "stemmed and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Swiss chard or collard greens",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": "stemmed and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "Swiss chard or collard greens",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": "stemmed and chopped"
+    }
   }
 }

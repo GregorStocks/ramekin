@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound hickory-smoked bacon  (chopped)",
-  "expected": {
-    "item": "hickory-smoked bacon",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hickory-smoked bacon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "hickory-smoked bacon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup white sugar, or as needed",
-  "expected": {
-    "item": "white sugar",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": "or as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "or as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "or as needed"
+    }
   }
 }

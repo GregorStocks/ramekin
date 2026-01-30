@@ -1,13 +1,25 @@
 {
   "raw": "2  beef bouillon cubes (, crumbled or 2 tsp beef powder (Note 2))",
-  "expected": {
-    "item": "beef bouillon cubes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "crumbled or 2 tsp beef powder (Note 2"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef bouillon cubes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "crumbled or 2 tsp beef powder (Note 2"
+    },
+    "enrich_metric_weights": {
+      "item": "beef bouillon cubes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "crumbled or 2 tsp beef powder (Note 2"
+    }
   }
 }

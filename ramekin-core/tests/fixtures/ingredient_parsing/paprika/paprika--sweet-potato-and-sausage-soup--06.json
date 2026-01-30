@@ -1,13 +1,25 @@
 {
   "raw": "1 pound white-skinned potatoes, peeled, halved lengthwise, cut crosswise into 1/4-inch-thick slices",
-  "expected": {
-    "item": "white-skinned potatoes, peeled, halved lengthwise, cut crosswise into 1/4-inch-thick slices",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white-skinned potatoes, peeled, halved lengthwise, cut crosswise into 1/4-inch-thick slices",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "white-skinned potatoes, peeled, halved lengthwise, cut crosswise into 1/4-inch-thick slices",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

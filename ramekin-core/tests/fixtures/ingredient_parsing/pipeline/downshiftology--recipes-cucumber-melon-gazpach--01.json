@@ -1,13 +1,25 @@
 {
   "raw": "12  large shrimp (peeled and deveined)",
-  "expected": {
-    "item": "shrimp",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled and deveined"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and deveined"
+    },
+    "enrich_metric_weights": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and deveined"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "olive oil, to taste",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

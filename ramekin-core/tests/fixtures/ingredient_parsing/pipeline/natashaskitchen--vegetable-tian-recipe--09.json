@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp dill; fresh or frozen (or 1/2 tbsp dried dill)",
-  "expected": {
-    "item": "dill; fresh or frozen",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1/2 tbsp dried dill"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dill; fresh or frozen",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1/2 tbsp dried dill"
+    },
+    "parse_ingredients": {
+      "item": "dill; fresh or frozen",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1/2 tbsp dried dill"
+    }
   }
 }

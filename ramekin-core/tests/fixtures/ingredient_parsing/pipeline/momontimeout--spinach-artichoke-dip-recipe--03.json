@@ -1,13 +1,29 @@
 {
   "raw": "10 oz frozen spinach (thawed, drained, excess liquid squeezed out)",
-  "expected": {
-    "item": "frozen spinach",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed, drained, excess liquid squeezed out"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed, drained, excess liquid squeezed out"
+    },
+    "parse_ingredients": {
+      "item": "frozen spinach",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed, drained, excess liquid squeezed out"
+    }
   }
 }

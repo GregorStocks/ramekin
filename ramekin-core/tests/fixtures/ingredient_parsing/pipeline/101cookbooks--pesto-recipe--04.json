@@ -1,8 +1,15 @@
 {
   "raw": "roughly 3/4 cup Parmesan, (loosely packed and freshly grated)",
-  "expected": {
-    "item": "roughly 3/4 cup Parmesan",
-    "measurements": [],
-    "note": "loosely packed and freshly grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roughly 3/4 cup Parmesan",
+      "measurements": [],
+      "note": "loosely packed and freshly grated"
+    },
+    "enrich_metric_weights": {
+      "item": "roughly 3/4 cup Parmesan",
+      "measurements": [],
+      "note": "loosely packed and freshly grated"
+    }
   }
 }

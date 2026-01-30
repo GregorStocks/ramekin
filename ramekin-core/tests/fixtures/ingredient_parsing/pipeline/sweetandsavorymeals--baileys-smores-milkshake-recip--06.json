@@ -1,8 +1,15 @@
 {
   "raw": "Mini marshmallow",
-  "expected": {
-    "item": "Mini marshmallow",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mini marshmallow",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Mini marshmallow",
+      "measurements": [],
+      "note": null
+    }
   }
 }

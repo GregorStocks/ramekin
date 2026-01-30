@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup miniature peanut butter cups (halved)",
-  "expected": {
-    "item": "miniature peanut butter cups",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "miniature peanut butter cups",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    },
+    "parse_ingredients": {
+      "item": "miniature peanut butter cups",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

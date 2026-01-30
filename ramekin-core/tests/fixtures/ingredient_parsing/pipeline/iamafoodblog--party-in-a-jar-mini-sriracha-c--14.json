@@ -1,8 +1,15 @@
 {
   "raw": "fresh thyme, if desired",
-  "expected": {
-    "item": "fresh thyme, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

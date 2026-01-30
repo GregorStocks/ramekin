@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon poultry seasoning (ground sage and thyme)",
-  "expected": {
-    "item": "poultry seasoning",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "ground sage and thyme"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "poultry seasoning",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "ground sage and thyme"
+    },
+    "parse_ingredients": {
+      "item": "poultry seasoning",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "ground sage and thyme"
+    }
   }
 }

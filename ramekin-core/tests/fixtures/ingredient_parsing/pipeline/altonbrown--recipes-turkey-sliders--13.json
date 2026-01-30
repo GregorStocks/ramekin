@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon brown miso paste, at room temperature",
-  "expected": {
-    "item": "brown miso paste",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown miso paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "brown miso paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

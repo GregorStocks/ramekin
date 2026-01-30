@@ -1,13 +1,25 @@
 {
   "raw": "1.5 pounds fresh cherries (, un-pitted (about 5 cups) or 4 cups pitted)",
-  "expected": {
-    "item": "fresh cherries (, un-pitted (about 5 cups)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": "or 4 cups pitted)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh cherries (, un-pitted (about 5 cups)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "or 4 cups pitted)"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh cherries (, un-pitted (about 5 cups)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "or 4 cups pitted)"
+    }
   }
 }

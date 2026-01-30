@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp dill (fresh or frozen, chopped)",
-  "expected": {
-    "item": "dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "fresh or frozen, chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh or frozen, chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh or frozen, chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup honey (plus additional to taste (if using tart cherries, you may need to add a bit more))",
-  "expected": {
-    "item": "honey",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus additional to taste (if using tart cherries, you may need to add a bit more"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus additional to taste (if using tart cherries, you may need to add a bit more"
+    },
+    "enrich_metric_weights": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus additional to taste (if using tart cherries, you may need to add a bit more"
+    }
   }
 }

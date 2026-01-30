@@ -1,8 +1,15 @@
 {
   "raw": "WONTONS",
-  "expected": {
-    "item": "WONTONS",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "WONTONS",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "WONTONS",
+      "measurements": [],
+      "note": null
+    }
   }
 }

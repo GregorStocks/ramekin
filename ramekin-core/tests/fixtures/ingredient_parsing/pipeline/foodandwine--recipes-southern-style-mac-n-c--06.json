@@ -1,13 +1,25 @@
 {
   "raw": "0.75 teaspoon black pepper, divided",
-  "expected": {
-    "item": "black pepper",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

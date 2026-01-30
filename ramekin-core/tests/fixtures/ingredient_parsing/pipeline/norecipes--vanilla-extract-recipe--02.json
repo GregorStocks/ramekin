@@ -1,13 +1,25 @@
 {
   "raw": "1  mini bottle liquor ((such as bourbon, vodka or rum))",
-  "expected": {
-    "item": "mini bottle liquor (such as bourbon, vodka or rum)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mini bottle liquor (such as bourbon, vodka or rum)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mini bottle liquor (such as bourbon, vodka or rum)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

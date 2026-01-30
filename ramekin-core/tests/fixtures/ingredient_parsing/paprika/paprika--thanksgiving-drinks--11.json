@@ -1,13 +1,25 @@
 {
   "raw": "1 dash Angostura Aromatic bitters",
-  "expected": {
-    "item": "Angostura Aromatic bitters",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Angostura Aromatic bitters",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Angostura Aromatic bitters",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

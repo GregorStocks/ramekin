@@ -1,13 +1,25 @@
 {
   "raw": "1  scallion ((thinly sliced for garnish))",
-  "expected": {
-    "item": "scallion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "scallion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced for garnish"
+    },
+    "parse_ingredients": {
+      "item": "scallion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced for garnish"
+    }
   }
 }

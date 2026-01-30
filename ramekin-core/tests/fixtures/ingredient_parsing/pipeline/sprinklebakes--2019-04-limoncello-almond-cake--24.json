@@ -1,8 +1,15 @@
 {
   "raw": "Speckled candy almond eggs",
-  "expected": {
-    "item": "Speckled candy almond eggs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Speckled candy almond eggs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Speckled candy almond eggs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

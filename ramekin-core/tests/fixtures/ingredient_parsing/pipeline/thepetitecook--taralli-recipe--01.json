@@ -1,17 +1,33 @@
 {
   "raw": "550 g all purpose flour or 00 flour (approx 4 ½ cups)",
-  "expected": {
-    "item": "all purpose flour or 00 flour",
-    "measurements": [
-      {
-        "amount": "550",
-        "unit": "g"
-      },
-      {
-        "amount": "4 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all purpose flour or 00 flour",
+      "measurements": [
+        {
+          "amount": "550",
+          "unit": "g"
+        },
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all purpose flour or 00 flour",
+      "measurements": [
+        {
+          "amount": "550",
+          "unit": "g"
+        },
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

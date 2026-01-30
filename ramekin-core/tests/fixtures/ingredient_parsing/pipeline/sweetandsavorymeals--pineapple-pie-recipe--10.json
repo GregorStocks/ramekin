@@ -1,8 +1,15 @@
 {
   "raw": "Zest of 1 lime",
-  "expected": {
-    "item": "Zest of 1 lime",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Zest of 1 lime",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Zest of 1 lime",
+      "measurements": [],
+      "note": null
+    }
   }
 }

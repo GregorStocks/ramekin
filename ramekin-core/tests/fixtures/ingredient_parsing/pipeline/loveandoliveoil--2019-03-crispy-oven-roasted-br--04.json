@@ -1,8 +1,15 @@
 {
   "raw": "coarse flake sea salt or fleur de sel (for finishing)",
-  "expected": {
-    "item": "coarse flake sea salt or fleur de sel (for finishing)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarse flake sea salt or fleur de sel (for finishing)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarse flake sea salt or fleur de sel (for finishing)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

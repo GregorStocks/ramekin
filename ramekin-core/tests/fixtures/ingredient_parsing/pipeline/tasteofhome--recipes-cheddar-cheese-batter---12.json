@@ -1,8 +1,15 @@
 {
   "raw": "TOPPING:",
-  "expected": {
-    "item": "TOPPING:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "TOPPING:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "TOPPING:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

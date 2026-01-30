@@ -1,17 +1,37 @@
 {
   "raw": "6  dried ancho chiles (about 1¾ ounces, stems and seeds removed, and flesh torn into 1-inch pieces)",
-  "expected": {
-    "item": "dried ancho chiles",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      },
-      {
-        "amount": "1 3/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried ancho chiles",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried ancho chiles",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

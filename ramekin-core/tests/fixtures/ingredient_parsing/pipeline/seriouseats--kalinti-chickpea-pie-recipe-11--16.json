@@ -1,8 +1,15 @@
 {
   "raw": "Sweet paprika or cayenne&nbsp;",
-  "expected": {
-    "item": "Sweet paprika or cayenne",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sweet paprika or cayenne",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sweet paprika or cayenne",
+      "measurements": [],
+      "note": null
+    }
   }
 }

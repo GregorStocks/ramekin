@@ -1,8 +1,15 @@
 {
   "raw": "freshly snipped chives for garnish",
-  "expected": {
-    "item": "freshly snipped chives for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "freshly snipped chives for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "freshly snipped chives for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

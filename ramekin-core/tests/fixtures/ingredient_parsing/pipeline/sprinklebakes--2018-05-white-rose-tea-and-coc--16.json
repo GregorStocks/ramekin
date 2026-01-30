@@ -1,8 +1,15 @@
 {
   "raw": "Cream puffs",
-  "expected": {
-    "item": "Cream puffs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cream puffs",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cream puffs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

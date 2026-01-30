@@ -1,13 +1,25 @@
 {
   "raw": "¼ pound mortadella, thin-sliced (or other soft salami)",
-  "expected": {
-    "item": "mortadella",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "thin-sliced (or other soft salami)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mortadella",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "thin-sliced (or other soft salami)"
+    },
+    "parse_ingredients": {
+      "item": "mortadella",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "thin-sliced (or other soft salami)"
+    }
   }
 }

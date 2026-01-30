@@ -1,21 +1,45 @@
 {
   "raw": "1 small (7 ounces) red onion, thinly sliced (about 2 cups)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "7",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

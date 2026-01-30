@@ -1,13 +1,25 @@
 {
   "raw": "6–7 pieces shrimp",
-  "expected": {
-    "item": "shrimp",
-    "measurements": [
-      {
-        "amount": "6-7",
-        "unit": "piece"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "6-7",
+          "unit": "piece"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "6-7",
+          "unit": "piece"
+        }
+      ],
+      "note": null
+    }
   }
 }

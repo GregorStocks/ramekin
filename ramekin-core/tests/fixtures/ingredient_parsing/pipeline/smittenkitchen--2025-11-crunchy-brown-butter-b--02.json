@@ -1,17 +1,33 @@
 {
   "raw": "5 tablespoons (75 grams) unsalted butter, divided",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "75",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

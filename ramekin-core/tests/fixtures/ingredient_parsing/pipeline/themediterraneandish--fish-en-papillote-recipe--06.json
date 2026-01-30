@@ -1,13 +1,25 @@
 {
   "raw": "Handful pitted green olives (optional)",
-  "expected": {
-    "item": "pitted green olives",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted green olives",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted green olives",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

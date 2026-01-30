@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup dry white wine (optional, substitute with extra broth)",
-  "expected": {
-    "item": "dry white wine",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional, substitute with extra broth"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry white wine",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, substitute with extra broth"
+    },
+    "enrich_metric_weights": {
+      "item": "dry white wine",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, substitute with extra broth"
+    }
   }
 }

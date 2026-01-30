@@ -1,8 +1,15 @@
 {
   "raw": "smoked salmon, to serve",
-  "expected": {
-    "item": "smoked salmon, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked salmon, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "smoked salmon, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Eggs (Beaten)",
-  "expected": {
-    "item": "Eggs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "Beaten"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "Beaten"
+    },
+    "parse_ingredients": {
+      "item": "Eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "Beaten"
+    }
   }
 }

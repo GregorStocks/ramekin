@@ -1,8 +1,15 @@
 {
   "raw": "Steamed jasmine rice and sesame seeds (for serving)",
-  "expected": {
-    "item": "Steamed jasmine rice and sesame seeds",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Steamed jasmine rice and sesame seeds",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Steamed jasmine rice and sesame seeds",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

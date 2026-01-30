@@ -1,8 +1,15 @@
 {
   "raw": "bonito flakes",
-  "expected": {
-    "item": "bonito flakes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bonito flakes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bonito flakes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

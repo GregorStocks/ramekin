@@ -1,8 +1,15 @@
 {
   "raw": "grilled peppers and onions (optional)",
-  "expected": {
-    "item": "grilled peppers and onions",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grilled peppers and onions",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "grilled peppers and onions",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

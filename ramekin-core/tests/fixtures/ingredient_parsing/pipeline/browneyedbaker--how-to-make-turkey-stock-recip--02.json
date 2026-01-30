@@ -1,13 +1,25 @@
 {
   "raw": "1  large yellow onion (halved (unpeeled))",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "halved (unpeeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved (unpeeled"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved (unpeeled"
+    }
   }
 }

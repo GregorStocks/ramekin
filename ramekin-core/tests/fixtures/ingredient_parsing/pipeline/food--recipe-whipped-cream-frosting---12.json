@@ -1,13 +1,25 @@
 {
   "raw": "1 -2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
-  "expected": {
-    "item": "-2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "-2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "-2   tablespoon    rum or 1 -2   tablespoon    Bourbon, in place of the vanilla  (For extra tipsy, pierce the cake layers and dribble with more of the same type of liquor and let sta)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

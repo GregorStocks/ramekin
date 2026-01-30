@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup slivered almonds (coarsely chopped)",
-  "expected": {
-    "item": "slivered almonds",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "slivered almonds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "slivered almonds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

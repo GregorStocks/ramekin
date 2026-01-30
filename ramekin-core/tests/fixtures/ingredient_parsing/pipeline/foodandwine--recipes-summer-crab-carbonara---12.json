@@ -1,8 +1,15 @@
 {
   "raw": "Fine sea salt or kosher salt",
-  "expected": {
-    "item": "Fine sea salt or kosher salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fine sea salt or kosher salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fine sea salt or kosher salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

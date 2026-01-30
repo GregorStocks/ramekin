@@ -1,17 +1,33 @@
 {
   "raw": "4 cups (2 pounds) pure, non-hydrogenated lard",
-  "expected": {
-    "item": "pure, non-hydrogenated lard",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pure, non-hydrogenated lard",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pure, non-hydrogenated lard",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

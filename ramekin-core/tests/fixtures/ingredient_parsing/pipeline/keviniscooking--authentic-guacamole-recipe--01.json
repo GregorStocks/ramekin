@@ -1,17 +1,33 @@
 {
   "raw": "4  medium avocados ((about 2 lbs))",
-  "expected": {
-    "item": "avocados",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

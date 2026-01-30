@@ -1,17 +1,33 @@
 {
   "raw": "3 cups diced peeled sweet potatoes (1/2-inch)",
-  "expected": {
-    "item": "diced peeled sweet potatoes",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced peeled sweet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "diced peeled sweet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

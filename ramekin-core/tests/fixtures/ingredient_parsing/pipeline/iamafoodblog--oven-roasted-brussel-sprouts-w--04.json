@@ -1,8 +1,15 @@
 {
   "raw": "juice of a 1/4 lime",
-  "expected": {
-    "item": "juice of a 1/4 lime",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "juice of a 1/4 lime",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "juice of a 1/4 lime",
+      "measurements": [],
+      "note": null
+    }
   }
 }

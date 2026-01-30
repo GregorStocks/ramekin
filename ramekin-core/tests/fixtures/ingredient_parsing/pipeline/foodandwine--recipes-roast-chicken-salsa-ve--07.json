@@ -1,13 +1,25 @@
 {
   "raw": "4 anchovy fillets in oil, drained",
-  "expected": {
-    "item": "anchovy fillets in oil",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "anchovy fillets in oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "anchovy fillets in oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

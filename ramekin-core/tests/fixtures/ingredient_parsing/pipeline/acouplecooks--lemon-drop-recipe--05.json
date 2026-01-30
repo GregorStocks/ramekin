@@ -1,8 +1,15 @@
 {
   "raw": "Superfine sugar, for the rim (or substitute granulated)",
-  "expected": {
-    "item": "Superfine sugar, for the rim (or substitute granulated)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Superfine sugar, for the rim (or substitute granulated)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Superfine sugar, for the rim (or substitute granulated)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

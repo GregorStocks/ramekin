@@ -1,13 +1,25 @@
 {
   "raw": "1 unbaked Flaky Pie Crust&nbsp;(what I used) or&nbsp;All Butter Pie Crust*",
-  "expected": {
-    "item": "unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unbaked Flaky Pie Crust (what I used) or All Butter Pie Crust*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

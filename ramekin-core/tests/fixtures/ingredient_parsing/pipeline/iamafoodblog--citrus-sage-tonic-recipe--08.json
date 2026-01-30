@@ -1,8 +1,15 @@
 {
   "raw": "gin, to serve, optional",
-  "expected": {
-    "item": "gin, to serve",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "gin, to serve",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "gin, to serve",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

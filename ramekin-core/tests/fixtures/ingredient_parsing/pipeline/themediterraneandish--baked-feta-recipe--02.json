@@ -1,13 +1,25 @@
 {
   "raw": "½  green bell pepper (sliced into rounds)",
-  "expected": {
-    "item": "green bell pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "sliced into rounds"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green bell pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into rounds"
+    },
+    "enrich_metric_weights": {
+      "item": "green bell pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into rounds"
+    }
   }
 }

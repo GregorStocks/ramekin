@@ -1,13 +1,25 @@
 {
   "raw": "5 black tea bags, such as English Breakfast",
-  "expected": {
-    "item": "black tea bags, such as English Breakfast",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black tea bags, such as English Breakfast",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "black tea bags, such as English Breakfast",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

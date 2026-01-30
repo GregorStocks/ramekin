@@ -1,13 +1,25 @@
 {
   "raw": "4 pounds pork shoulder",
-  "expected": {
-    "item": "pork shoulder",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

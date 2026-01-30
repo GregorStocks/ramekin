@@ -1,13 +1,25 @@
 {
   "raw": "4  chicken breasts (halves, boneless and skinless)",
-  "expected": {
-    "item": "chicken breasts (halves, boneless and skinless)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breasts (halves, boneless and skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breasts (halves, boneless and skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

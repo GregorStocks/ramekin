@@ -1,13 +1,25 @@
 {
   "raw": "300 grams strawberries ((hulled and quartered))",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "g"
-      }
-    ],
-    "note": "hulled and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": "hulled and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": "hulled and quartered"
+    }
   }
 }

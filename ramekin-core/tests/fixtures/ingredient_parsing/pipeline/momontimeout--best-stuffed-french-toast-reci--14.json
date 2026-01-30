@@ -1,13 +1,25 @@
 {
   "raw": "8 tbsp butter (for frying (bacon fat is also good here))",
-  "expected": {
-    "item": "butter (for frying (bacon fat is also good here)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter (for frying (bacon fat is also good here)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "butter (for frying (bacon fat is also good here)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

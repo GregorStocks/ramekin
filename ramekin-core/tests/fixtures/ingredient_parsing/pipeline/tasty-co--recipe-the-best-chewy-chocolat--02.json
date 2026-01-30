@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup brown sugar, packed",
-  "expected": {
-    "item": "brown sugar",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "packed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    },
+    "parse_ingredients": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    }
   }
 }

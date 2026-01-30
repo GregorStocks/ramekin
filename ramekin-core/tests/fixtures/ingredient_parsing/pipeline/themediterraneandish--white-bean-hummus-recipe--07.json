@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon Aleppo pepper or 1/2 teaspoon crushed red pepper flakes,  (more to your liking)",
-  "expected": {
-    "item": "Aleppo pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1/2 teaspoon crushed red pepper flakes,  (more to your liking)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Aleppo pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon crushed red pepper flakes,  (more to your liking)"
+    },
+    "enrich_metric_weights": {
+      "item": "Aleppo pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon crushed red pepper flakes,  (more to your liking)"
+    }
   }
 }

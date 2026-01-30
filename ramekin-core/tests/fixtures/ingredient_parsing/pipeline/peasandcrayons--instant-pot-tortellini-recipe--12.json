@@ -1,8 +1,15 @@
 {
   "raw": "fresh topped basil for topping (dried basil works in a pinch)",
-  "expected": {
-    "item": "fresh topped basil for topping",
-    "measurements": [],
-    "note": "dried basil works in a pinch"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh topped basil for topping",
+      "measurements": [],
+      "note": "dried basil works in a pinch"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh topped basil for topping",
+      "measurements": [],
+      "note": "dried basil works in a pinch"
+    }
   }
 }

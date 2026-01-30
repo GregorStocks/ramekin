@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds McIntosh apples (about 4 medium apples, peeled, cored and sliced&nbsp;¼-inch thick)",
-  "expected": {
-    "item": "McIntosh apples",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "about 4 medium apples, peeled, cored and sliced 1/4-inch thick"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "McIntosh apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 medium apples, peeled, cored and sliced 1/4-inch thick"
+    },
+    "enrich_metric_weights": {
+      "item": "McIntosh apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 medium apples, peeled, cored and sliced 1/4-inch thick"
+    }
   }
 }

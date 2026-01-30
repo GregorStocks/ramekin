@@ -1,8 +1,15 @@
 {
   "raw": "toasted cumin seeds to serve",
-  "expected": {
-    "item": "toasted cumin seeds to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "toasted cumin seeds to serve",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "toasted cumin seeds to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

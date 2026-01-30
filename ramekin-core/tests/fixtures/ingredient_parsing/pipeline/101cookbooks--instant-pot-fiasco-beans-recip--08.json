@@ -1,13 +1,25 @@
 {
   "raw": "4-5  big handfuls of kale, torn into bite-sized pieces",
-  "expected": {
-    "item": "big handfuls of kale, torn into bite-sized pieces",
-    "measurements": [
-      {
-        "amount": "4-5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "big handfuls of kale, torn into bite-sized pieces",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "big handfuls of kale, torn into bite-sized pieces",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

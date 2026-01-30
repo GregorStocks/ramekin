@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces shiitake mushrooms (stemmed and diced)",
-  "expected": {
-    "item": "shiitake mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "stemmed and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "stemmed and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "stemmed and diced"
+    }
   }
 }

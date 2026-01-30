@@ -1,13 +1,25 @@
 {
   "raw": "1  orange ((quartered and unpeeled))",
-  "expected": {
-    "item": "orange",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "quartered and unpeeled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "quartered and unpeeled"
+    },
+    "enrich_metric_weights": {
+      "item": "orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "quartered and unpeeled"
+    }
   }
 }

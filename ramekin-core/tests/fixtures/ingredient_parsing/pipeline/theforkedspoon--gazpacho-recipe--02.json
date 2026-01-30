@@ -1,13 +1,25 @@
 {
   "raw": "1 large and thick slice white bread (crust removed)",
-  "expected": {
-    "item": "and thick slice white bread (crust removed)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "and thick slice white bread (crust removed)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "and thick slice white bread (crust removed)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

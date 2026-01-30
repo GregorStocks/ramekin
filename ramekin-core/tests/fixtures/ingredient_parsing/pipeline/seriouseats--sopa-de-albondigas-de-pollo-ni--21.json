@@ -1,8 +1,15 @@
 {
   "raw": "Cilantro and mint leaves for garnish",
-  "expected": {
-    "item": "Cilantro and mint leaves for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cilantro and mint leaves for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cilantro and mint leaves for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

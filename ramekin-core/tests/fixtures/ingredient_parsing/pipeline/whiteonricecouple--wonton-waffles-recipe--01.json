@@ -1,13 +1,25 @@
 {
   "raw": "24-30  Wonton Wrappers (or Skins&nbsp;)",
-  "expected": {
-    "item": "Wonton Wrappers (or Skins",
-    "measurements": [
-      {
-        "amount": "24-30",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Wonton Wrappers (or Skins",
+      "measurements": [
+        {
+          "amount": "24-30",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Wonton Wrappers (or Skins",
+      "measurements": [
+        {
+          "amount": "24-30",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

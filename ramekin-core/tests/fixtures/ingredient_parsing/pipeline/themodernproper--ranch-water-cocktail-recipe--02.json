@@ -1,13 +1,29 @@
 {
   "raw": "1½ ounces freshly squeezed lime juice (from 2 limes)",
-  "expected": {
-    "item": "freshly squeezed lime juice (from 2 limes)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly squeezed lime juice (from 2 limes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly squeezed lime juice (from 2 limes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

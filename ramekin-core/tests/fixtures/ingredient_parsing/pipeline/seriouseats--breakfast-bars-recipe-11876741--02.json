@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 cups uncooked old-fashioned rolled oats (5 1/2 ounces; 156g)",
-  "expected": {
-    "item": "uncooked old-fashioned rolled oats",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "5 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "156",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "uncooked old-fashioned rolled oats",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "5 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "156",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "uncooked old-fashioned rolled oats",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "5 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "156",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

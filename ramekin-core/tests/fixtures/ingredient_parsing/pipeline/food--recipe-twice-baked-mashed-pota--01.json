@@ -1,17 +1,37 @@
 {
   "raw": "1 (22   ounce) package  frozen mashed potatoes",
-  "expected": {
-    "item": "frozen mashed potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "22",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen mashed potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "22",
+          "unit": "oz"
+        },
+        {
+          "amount": "624",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen mashed potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "22",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

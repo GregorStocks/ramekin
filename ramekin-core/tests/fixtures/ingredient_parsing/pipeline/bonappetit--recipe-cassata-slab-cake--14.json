@@ -1,17 +1,33 @@
 {
   "raw": "¾ cup (83 g) powdered sugar",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "83",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "83",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "83",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

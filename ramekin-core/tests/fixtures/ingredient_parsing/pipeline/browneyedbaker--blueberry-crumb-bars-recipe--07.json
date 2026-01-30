@@ -1,17 +1,37 @@
 {
   "raw": "4 cups fresh blueberries ((20 ounces))",
-  "expected": {
-    "item": "fresh blueberries",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh blueberries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh blueberries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

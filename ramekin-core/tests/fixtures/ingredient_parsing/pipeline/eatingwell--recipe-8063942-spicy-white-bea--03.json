@@ -1,13 +1,25 @@
 {
   "raw": "0.75 teaspoon ras el hanout",
-  "expected": {
-    "item": "ras el hanout",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ras el hanout",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ras el hanout",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

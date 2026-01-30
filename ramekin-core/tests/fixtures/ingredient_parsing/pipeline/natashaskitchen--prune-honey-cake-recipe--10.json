@@ -1,8 +1,15 @@
 {
   "raw": "Melting Chocolate or Chocolate chips to melt for decor",
-  "expected": {
-    "item": "Melting Chocolate or Chocolate chips to melt for decor",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Melting Chocolate or Chocolate chips to melt for decor",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Melting Chocolate or Chocolate chips to melt for decor",
+      "measurements": [],
+      "note": null
+    }
   }
 }

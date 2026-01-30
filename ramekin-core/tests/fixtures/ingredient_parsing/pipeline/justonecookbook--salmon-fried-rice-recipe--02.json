@@ -1,13 +1,25 @@
 {
   "raw": "¼ tsp Diamond Crystal kosher salt",
-  "expected": {
-    "item": "Diamond Crystal kosher salt",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

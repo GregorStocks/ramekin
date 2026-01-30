@@ -1,8 +1,15 @@
 {
   "raw": "optional: drizzle of 1 tsp honey",
-  "expected": {
-    "item": "optional: drizzle of 1 tsp honey",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "optional: drizzle of 1 tsp honey",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "optional: drizzle of 1 tsp honey",
+      "measurements": [],
+      "note": null
+    }
   }
 }

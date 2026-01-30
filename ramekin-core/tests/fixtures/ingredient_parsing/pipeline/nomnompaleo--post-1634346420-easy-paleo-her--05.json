@@ -1,8 +1,15 @@
 {
   "raw": "Diamond Crystal kosher salt&nbsp;",
-  "expected": {
-    "item": "Diamond Crystal kosher salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

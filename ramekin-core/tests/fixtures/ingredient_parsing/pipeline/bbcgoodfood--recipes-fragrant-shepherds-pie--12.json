@@ -1,13 +1,25 @@
 {
   "raw": "550ml lamb or beef stock",
-  "expected": {
-    "item": "lamb or beef stock",
-    "measurements": [
-      {
-        "amount": "550",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lamb or beef stock",
+      "measurements": [
+        {
+          "amount": "550",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lamb or beef stock",
+      "measurements": [
+        {
+          "amount": "550",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

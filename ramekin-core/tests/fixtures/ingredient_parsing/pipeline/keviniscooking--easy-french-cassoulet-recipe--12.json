@@ -1,13 +1,29 @@
 {
   "raw": "4-15 oz cans white cannellini beans (drained)",
-  "expected": {
-    "item": "cans white cannellini beans",
-    "measurements": [
-      {
-        "amount": "4-15",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cans white cannellini beans",
+      "measurements": [
+        {
+          "amount": "4-15",
+          "unit": "oz"
+        },
+        {
+          "amount": "113-425",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "cans white cannellini beans",
+      "measurements": [
+        {
+          "amount": "4-15",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Wilton fern mold",
-  "expected": {
-    "item": "Wilton fern mold",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Wilton fern mold",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Wilton fern mold",
+      "measurements": [],
+      "note": null
+    }
   }
 }

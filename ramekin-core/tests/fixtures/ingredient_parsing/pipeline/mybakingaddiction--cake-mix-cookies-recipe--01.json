@@ -1,13 +1,25 @@
 {
   "raw": "1 box French Vanilla Cake Mix (I used Duncan Hines)",
-  "expected": {
-    "item": "French Vanilla Cake Mix (I used Duncan Hines)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "French Vanilla Cake Mix (I used Duncan Hines)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "French Vanilla Cake Mix (I used Duncan Hines)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    }
   }
 }

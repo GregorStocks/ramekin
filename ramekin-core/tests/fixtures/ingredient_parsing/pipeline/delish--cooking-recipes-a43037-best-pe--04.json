@@ -1,13 +1,25 @@
 {
   "raw": "3 peaches, sliced",
-  "expected": {
-    "item": "peaches",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

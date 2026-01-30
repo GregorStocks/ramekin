@@ -1,13 +1,25 @@
 {
   "raw": "90 grams onion ((1/2 small onion, diced))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "90",
-        "unit": "g"
-      }
-    ],
-    "note": "1/2 small onion, diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": "1/2 small onion, diced"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": "1/2 small onion, diced"
+    }
   }
 }

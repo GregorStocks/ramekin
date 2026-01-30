@@ -1,8 +1,15 @@
 {
   "raw": "Finely chopped parsley (, optional)",
-  "expected": {
-    "item": "Finely chopped parsley",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Finely chopped parsley",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Finely chopped parsley",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

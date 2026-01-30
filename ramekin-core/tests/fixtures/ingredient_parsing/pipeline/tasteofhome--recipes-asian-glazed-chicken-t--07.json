@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon minced fresh gingerroot or 1/2 teaspoon ground ginger",
-  "expected": {
-    "item": "minced fresh gingerroot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1/2 teaspoon ground ginger"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced fresh gingerroot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon ground ginger"
+    },
+    "enrich_metric_weights": {
+      "item": "minced fresh gingerroot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon ground ginger"
+    }
   }
 }

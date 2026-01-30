@@ -1,13 +1,25 @@
 {
   "raw": "7/8 cup passionfruit juice or strained passionfruit pulp",
-  "expected": {
-    "item": "passionfruit juice or strained passionfruit pulp",
-    "measurements": [
-      {
-        "amount": "7/8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "passionfruit juice or strained passionfruit pulp",
+      "measurements": [
+        {
+          "amount": "7/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "passionfruit juice or strained passionfruit pulp",
+      "measurements": [
+        {
+          "amount": "7/8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

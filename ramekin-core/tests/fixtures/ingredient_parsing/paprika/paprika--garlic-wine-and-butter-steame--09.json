@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon chopped fresh herbs — parsley, cilantro, chives or a mix",
-  "expected": {
-    "item": "chopped fresh herbs - parsley, cilantro, chives or a mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh herbs - parsley, cilantro, chives or a mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh herbs - parsley, cilantro, chives or a mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 cups cooked French green lentils",
-  "expected": {
-    "item": "cooked French green lentils",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked French green lentils",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked French green lentils",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

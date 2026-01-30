@@ -1,13 +1,25 @@
 {
   "raw": "5 dried guajillo chiles, stemmed and seeded",
-  "expected": {
-    "item": "dried guajillo chiles, stemmed and seeded",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried guajillo chiles, stemmed and seeded",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried guajillo chiles, stemmed and seeded",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup plus 2 tablespoons (packed) light brown sugar",
-  "expected": {
-    "item": "¼ cup plus 2 tablespoons (packed) light brown sugar",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "packed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "¼ cup plus 2 tablespoons (packed) light brown sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    },
+    "parse_ingredients": {
+      "item": "¼ cup plus 2 tablespoons (packed) light brown sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    }
   }
 }

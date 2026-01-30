@@ -1,8 +1,15 @@
 {
   "raw": "splash of beer about 2 tbsp (optional)",
-  "expected": {
-    "item": "splash of beer about 2 tbsp",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "splash of beer about 2 tbsp",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "splash of beer about 2 tbsp",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

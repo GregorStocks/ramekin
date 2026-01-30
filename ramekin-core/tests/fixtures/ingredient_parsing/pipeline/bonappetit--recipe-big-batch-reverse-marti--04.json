@@ -1,8 +1,15 @@
 {
   "raw": "Green olives or lemon twists (for serving; optional)",
-  "expected": {
-    "item": "Green olives or lemon twists",
-    "measurements": [],
-    "note": "for serving; optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Green olives or lemon twists",
+      "measurements": [],
+      "note": "for serving; optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Green olives or lemon twists",
+      "measurements": [],
+      "note": "for serving; optional"
+    }
   }
 }

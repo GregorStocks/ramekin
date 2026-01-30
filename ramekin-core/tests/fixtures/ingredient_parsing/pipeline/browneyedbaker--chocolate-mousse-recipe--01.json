@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces bittersweet chocolate (60% cacao, finely chopped)",
-  "expected": {
-    "item": "bittersweet chocolate",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "60% cacao, finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "60% cacao, finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "60% cacao, finely chopped"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "2 cups (8 ounces) shredded Monterey Jack or cheddar cheese (I used a mix)",
-  "expected": {
-    "item": "shredded Monterey Jack or cheddar cheese (I used a mix)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded Monterey Jack or cheddar cheese (I used a mix)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded Monterey Jack or cheddar cheese (I used a mix)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

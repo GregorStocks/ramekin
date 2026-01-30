@@ -1,13 +1,25 @@
 {
   "raw": "4 large cloves garlic ((unpeeled))",
-  "expected": {
-    "item": "cloves garlic",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "large"
-      }
-    ],
-    "note": "unpeeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cloves garlic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": "unpeeled"
+    },
+    "parse_ingredients": {
+      "item": "cloves garlic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": "unpeeled"
+    }
   }
 }

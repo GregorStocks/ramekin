@@ -1,13 +1,25 @@
 {
   "raw": "1  head of broccoli, trimmed into small florets",
-  "expected": {
-    "item": "broccoli",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "trimmed into small florets"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "trimmed into small florets"
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "trimmed into small florets"
+    }
   }
 }

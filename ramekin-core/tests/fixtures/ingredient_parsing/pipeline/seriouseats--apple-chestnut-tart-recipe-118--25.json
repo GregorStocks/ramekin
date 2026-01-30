@@ -1,8 +1,15 @@
 {
   "raw": "Flaky sea salt (such as Maldon), for serving",
-  "expected": {
-    "item": "Flaky sea salt (such as Maldon)",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Flaky sea salt (such as Maldon)",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Flaky sea salt (such as Maldon)",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

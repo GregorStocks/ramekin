@@ -1,8 +1,15 @@
 {
   "raw": "Coriander/cilantro (, finely chopped)",
-  "expected": {
-    "item": "Coriander/cilantro",
-    "measurements": [],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coriander/cilantro",
+      "measurements": [],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "Coriander/cilantro",
+      "measurements": [],
+      "note": "finely chopped"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds pork tenderloins (2 loins), trimmed",
-  "expected": {
-    "item": "pork tenderloins",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork tenderloins",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    },
+    "enrich_metric_weights": {
+      "item": "pork tenderloins",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

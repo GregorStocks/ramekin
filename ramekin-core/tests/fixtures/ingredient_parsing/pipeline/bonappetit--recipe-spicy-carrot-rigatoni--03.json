@@ -1,17 +1,33 @@
 {
   "raw": "½ cup (55 g) grated Pecorino Romano, plus more for serving",
-  "expected": {
-    "item": "grated Pecorino Romano",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "55",
-        "unit": "g"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated Pecorino Romano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "55",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "grated Pecorino Romano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "55",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

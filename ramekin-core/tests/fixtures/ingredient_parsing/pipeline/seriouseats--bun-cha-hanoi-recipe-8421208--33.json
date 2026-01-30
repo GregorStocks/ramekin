@@ -1,13 +1,25 @@
 {
   "raw": "2 bird’s eye chiles, thinly sliced",
-  "expected": {
-    "item": "bird’s eye chiles",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bird’s eye chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "bird’s eye chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

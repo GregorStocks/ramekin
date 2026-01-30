@@ -1,8 +1,15 @@
 {
   "raw": "About 8 cups peanut oil",
-  "expected": {
-    "item": "About 8 cups peanut oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "About 8 cups peanut oil",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "About 8 cups peanut oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

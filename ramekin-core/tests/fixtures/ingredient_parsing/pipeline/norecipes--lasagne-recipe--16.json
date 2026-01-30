@@ -1,13 +1,25 @@
 {
   "raw": "9 small sheets lasagne",
-  "expected": {
-    "item": "sheets lasagne",
-    "measurements": [
-      {
-        "amount": "9",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheets lasagne",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sheets lasagne",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

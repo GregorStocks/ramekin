@@ -1,13 +1,25 @@
 {
   "raw": "1 quart vanilla ice cream, softened",
-  "expected": {
-    "item": "vanilla ice cream",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "quart"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla ice cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "vanilla ice cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

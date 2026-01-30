@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tbsp granulated erythritol",
-  "expected": {
-    "item": "granulated erythritol",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated erythritol",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "granulated erythritol",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

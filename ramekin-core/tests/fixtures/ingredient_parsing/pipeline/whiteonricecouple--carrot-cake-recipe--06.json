@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon ground nutmeg ((or 1/2 teaspoon freshly grated nutmeg))",
-  "expected": {
-    "item": "ground nutmeg",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1/2 teaspoon freshly grated nutmeg"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground nutmeg",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon freshly grated nutmeg"
+    },
+    "parse_ingredients": {
+      "item": "ground nutmeg",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 teaspoon freshly grated nutmeg"
+    }
   }
 }

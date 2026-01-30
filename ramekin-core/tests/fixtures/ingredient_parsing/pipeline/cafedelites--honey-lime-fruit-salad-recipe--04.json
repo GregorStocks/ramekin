@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces blueberries (washed)",
-  "expected": {
-    "item": "blueberries",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "washed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "blueberries",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "washed"
+    },
+    "enrich_metric_weights": {
+      "item": "blueberries",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "washed"
+    }
   }
 }

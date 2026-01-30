@@ -1,13 +1,25 @@
 {
   "raw": "1 pinch asafoetida  ((hing)(optional))",
-  "expected": {
-    "item": "asafoetida  (hing)(optional)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "asafoetida  (hing)(optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "asafoetida  (hing)(optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

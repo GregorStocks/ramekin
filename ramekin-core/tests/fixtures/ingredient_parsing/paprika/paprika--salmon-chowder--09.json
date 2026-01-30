@@ -1,17 +1,33 @@
 {
   "raw": "1 pound russet or Yukon Gold potatoes, peeled and cut into 1/2-inch cubes (450g)",
-  "expected": {
-    "item": "russet or Yukon Gold potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": "peeled and cut into 1/2-inch cubes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet or Yukon Gold potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled and cut into 1/2-inch cubes"
+    },
+    "parse_ingredients": {
+      "item": "russet or Yukon Gold potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled and cut into 1/2-inch cubes"
+    }
   }
 }

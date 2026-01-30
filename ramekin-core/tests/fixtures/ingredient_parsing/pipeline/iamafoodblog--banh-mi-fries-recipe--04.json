@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup store bought Chinese barbecue pork, roughly chopped",
-  "expected": {
-    "item": "store bought Chinese barbecue pork",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "store bought Chinese barbecue pork",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "store bought Chinese barbecue pork",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

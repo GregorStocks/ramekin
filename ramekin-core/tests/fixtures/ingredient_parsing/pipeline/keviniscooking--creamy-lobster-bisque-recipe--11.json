@@ -1,13 +1,25 @@
 {
   "raw": "1/8 tsp cayenne pepper (optional)",
-  "expected": {
-    "item": "cayenne pepper",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

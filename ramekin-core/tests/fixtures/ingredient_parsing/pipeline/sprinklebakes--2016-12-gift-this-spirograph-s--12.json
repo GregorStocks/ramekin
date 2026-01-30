@@ -1,8 +1,15 @@
 {
   "raw": "Spirograph drawing tool (ring and circle)",
-  "expected": {
-    "item": "Spirograph drawing tool (ring and circle)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Spirograph drawing tool (ring and circle)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Spirograph drawing tool (ring and circle)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

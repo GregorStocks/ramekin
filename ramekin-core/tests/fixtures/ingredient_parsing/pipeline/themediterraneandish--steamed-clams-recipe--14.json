@@ -1,13 +1,25 @@
 {
   "raw": "1  green onion (trimmed and chopped (both white and green parts))",
-  "expected": {
-    "item": "green onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "trimmed and chopped (both white and green parts"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "trimmed and chopped (both white and green parts"
+    },
+    "enrich_metric_weights": {
+      "item": "green onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "trimmed and chopped (both white and green parts"
+    }
   }
 }

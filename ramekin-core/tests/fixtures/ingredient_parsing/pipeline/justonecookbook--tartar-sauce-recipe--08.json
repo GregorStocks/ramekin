@@ -1,8 +1,15 @@
 {
   "raw": "parsley ((optional))",
-  "expected": {
-    "item": "parsley",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

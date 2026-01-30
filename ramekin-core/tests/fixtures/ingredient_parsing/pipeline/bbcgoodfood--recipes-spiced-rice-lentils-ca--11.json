@@ -1,8 +1,15 @@
 {
   "raw": "mango chutney to serve",
-  "expected": {
-    "item": "mango chutney to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mango chutney to serve",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mango chutney to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

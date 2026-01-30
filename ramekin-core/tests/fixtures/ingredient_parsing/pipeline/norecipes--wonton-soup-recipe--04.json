@@ -1,13 +1,25 @@
 {
   "raw": "15 grams dried pollock ((or dried flounder))",
-  "expected": {
-    "item": "dried pollock",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "g"
-      }
-    ],
-    "note": "or dried flounder"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried pollock",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "or dried flounder"
+    },
+    "parse_ingredients": {
+      "item": "dried pollock",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "or dried flounder"
+    }
   }
 }

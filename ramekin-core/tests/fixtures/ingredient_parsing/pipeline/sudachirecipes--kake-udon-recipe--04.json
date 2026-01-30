@@ -1,13 +1,25 @@
 {
   "raw": "1000 ml water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1000",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1000",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1000",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

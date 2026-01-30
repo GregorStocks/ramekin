@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (20g) pine nuts, lightly toasted and roughly chopped",
-  "expected": {
-    "item": "pine nuts",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": "lightly toasted and roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pine nuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "lightly toasted and roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "pine nuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "lightly toasted and roughly chopped"
+    }
   }
 }

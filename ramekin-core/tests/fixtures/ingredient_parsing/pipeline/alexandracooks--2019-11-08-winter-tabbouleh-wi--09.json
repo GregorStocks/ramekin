@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup extra-virgin olive oil, plus 2 tablespoons for the squash",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 2 tablespoons for the squash"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons for the squash"
+    },
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons for the squash"
+    }
   }
 }

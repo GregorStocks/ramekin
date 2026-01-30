@@ -1,8 +1,15 @@
 {
   "raw": "nonstick cooking spray, for greasing",
-  "expected": {
-    "item": "nonstick cooking spray, for greasing",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "nonstick cooking spray, for greasing",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "nonstick cooking spray, for greasing",
+      "measurements": [],
+      "note": null
+    }
   }
 }

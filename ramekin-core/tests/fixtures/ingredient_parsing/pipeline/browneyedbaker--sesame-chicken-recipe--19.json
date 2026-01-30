@@ -1,8 +1,15 @@
 {
   "raw": "Sesame seeds (to garnish)",
-  "expected": {
-    "item": "Sesame seeds (to garnish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sesame seeds (to garnish)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sesame seeds (to garnish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

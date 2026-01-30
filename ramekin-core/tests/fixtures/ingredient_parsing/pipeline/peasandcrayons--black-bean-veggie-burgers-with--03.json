@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cup black beans (divided)",
-  "expected": {
-    "item": "black beans",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "6 ounces  crimini mushrooms (sliced)",
-  "expected": {
-    "item": "crimini mushrooms",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "crimini mushrooms",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

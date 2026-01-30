@@ -1,13 +1,25 @@
 {
   "raw": "1 cup sauerkraut, plus around 4 tablespoons juice",
-  "expected": {
-    "item": "sauerkraut",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus around 4 tablespoons juice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sauerkraut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus around 4 tablespoons juice"
+    },
+    "enrich_metric_weights": {
+      "item": "sauerkraut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus around 4 tablespoons juice"
+    }
   }
 }

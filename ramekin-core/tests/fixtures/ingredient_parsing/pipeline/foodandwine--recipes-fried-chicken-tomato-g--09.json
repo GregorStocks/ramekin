@@ -1,8 +1,15 @@
 {
   "raw": "ground black pepper",
-  "expected": {
-    "item": "ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

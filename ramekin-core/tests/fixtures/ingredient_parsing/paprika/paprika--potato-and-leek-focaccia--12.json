@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup finely grated Parmesan or pecorino",
-  "expected": {
-    "item": "finely grated Parmesan or pecorino",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely grated Parmesan or pecorino",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely grated Parmesan or pecorino",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

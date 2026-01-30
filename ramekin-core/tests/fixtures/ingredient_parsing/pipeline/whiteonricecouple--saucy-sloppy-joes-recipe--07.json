@@ -1,13 +1,25 @@
 {
   "raw": "2 Tablespoons fish sauce (, soy sauce, or Worcestershire sauce)",
-  "expected": {
-    "item": "fish sauce (, soy sauce, or Worcestershire sauce)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fish sauce (, soy sauce, or Worcestershire sauce)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fish sauce (, soy sauce, or Worcestershire sauce)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

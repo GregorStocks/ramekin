@@ -1,17 +1,33 @@
 {
   "raw": "1  large or 2 medium zucchini (sliced into 3/4\" thick rounds)",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced into 3/4\" thick rounds"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 3/4\" thick rounds"
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 3/4\" thick rounds"
+    }
   }
 }

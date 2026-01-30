@@ -1,13 +1,25 @@
 {
   "raw": "6 fluid ounces whole milk, for serving",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "fl oz"
-      }
-    ],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "fl oz"
+        }
+      ],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "fl oz"
+        }
+      ],
+      "note": "for serving"
+    }
   }
 }

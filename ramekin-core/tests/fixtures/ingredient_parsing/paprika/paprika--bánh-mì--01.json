@@ -1,8 +1,15 @@
 {
   "raw": "For The Pickled Vegetables:",
-  "expected": {
-    "item": "For The Pickled Vegetables:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For The Pickled Vegetables:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For The Pickled Vegetables:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "8 to 12  small corn or flour tortillas",
-  "expected": {
-    "item": "corn or flour tortillas",
-    "measurements": [
-      {
-        "amount": "8 to 12",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn or flour tortillas",
+      "measurements": [
+        {
+          "amount": "8 to 12",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "corn or flour tortillas",
+      "measurements": [
+        {
+          "amount": "8 to 12",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

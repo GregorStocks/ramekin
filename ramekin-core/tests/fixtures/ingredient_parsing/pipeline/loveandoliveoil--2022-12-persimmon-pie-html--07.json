@@ -1,13 +1,25 @@
 {
   "raw": "8  large ripe Fuyu* persimmons (enough to make 2 cups of puree)",
-  "expected": {
-    "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ripe Fuyu* persimmons (enough to make 2 cups of puree)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

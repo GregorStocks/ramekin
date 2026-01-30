@@ -1,13 +1,25 @@
 {
   "raw": "2 stalks celery, halved lengthwise and very thinly sliced",
-  "expected": {
-    "item": "celery",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "stalk"
-      }
-    ],
-    "note": "halved lengthwise and very thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": "halved lengthwise and very thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": "halved lengthwise and very thinly sliced"
+    }
   }
 }

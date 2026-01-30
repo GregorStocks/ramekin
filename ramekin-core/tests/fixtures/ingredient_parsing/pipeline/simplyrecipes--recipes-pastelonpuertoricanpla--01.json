@@ -1,13 +1,25 @@
 {
   "raw": "4 ripe plantains, about 3 to 3 1/4 pounds",
-  "expected": {
-    "item": "ripe plantains, about 3 to 3 1/4 pounds",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe plantains, about 3 to 3 1/4 pounds",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ripe plantains, about 3 to 3 1/4 pounds",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

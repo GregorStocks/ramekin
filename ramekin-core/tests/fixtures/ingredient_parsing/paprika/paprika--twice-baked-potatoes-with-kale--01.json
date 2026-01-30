@@ -1,13 +1,25 @@
 {
   "raw": "3 russet potatoes (mine were 9 to 10 ounces each)",
-  "expected": {
-    "item": "russet potatoes (mine were 9 to 10 ounces each)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potatoes (mine were 9 to 10 ounces each)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "russet potatoes (mine were 9 to 10 ounces each)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

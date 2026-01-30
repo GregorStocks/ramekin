@@ -1,8 +1,15 @@
 {
   "raw": "arugula",
-  "expected": {
-    "item": "arugula",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "arugula",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "arugula",
+      "measurements": [],
+      "note": null
+    }
   }
 }

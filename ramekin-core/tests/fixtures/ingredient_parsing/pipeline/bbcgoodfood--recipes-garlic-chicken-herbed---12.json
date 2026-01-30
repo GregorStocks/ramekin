@@ -1,8 +1,15 @@
 {
   "raw": "green vegetables or salad to serve",
-  "expected": {
-    "item": "green vegetables or salad to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green vegetables or salad to serve",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "green vegetables or salad to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

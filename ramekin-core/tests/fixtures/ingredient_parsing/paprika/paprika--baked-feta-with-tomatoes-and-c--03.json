@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 to 2 pints (3 to 4 cups) cherry or grape tomatoes",
-  "expected": {
-    "item": "to 2 pints cherry or grape tomatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": null
-      },
-      {
-        "amount": "3 to 4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "to 2 pints cherry or grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        },
+        {
+          "amount": "3 to 4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "to 2 pints cherry or grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        },
+        {
+          "amount": "3 to 4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

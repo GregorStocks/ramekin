@@ -1,8 +1,15 @@
 {
   "raw": "sour cream, optional",
-  "expected": {
-    "item": "sour cream",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sour cream",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "sour cream",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

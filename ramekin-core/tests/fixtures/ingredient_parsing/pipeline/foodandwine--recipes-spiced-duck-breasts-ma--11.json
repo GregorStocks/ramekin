@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup fresh flat-leaf parsley, coarsely chopped",
-  "expected": {
-    "item": "fresh flat-leaf parsley",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh flat-leaf parsley",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh flat-leaf parsley",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

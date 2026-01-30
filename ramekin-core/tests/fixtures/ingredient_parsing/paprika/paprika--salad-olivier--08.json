@@ -1,13 +1,29 @@
 {
   "raw": "4-6 oz baloney (or mortadella)",
-  "expected": {
-    "item": "baloney (or mortadella)",
-    "measurements": [
-      {
-        "amount": "4-6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baloney (or mortadella)",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": "oz"
+        },
+        {
+          "amount": "113-170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baloney (or mortadella)",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

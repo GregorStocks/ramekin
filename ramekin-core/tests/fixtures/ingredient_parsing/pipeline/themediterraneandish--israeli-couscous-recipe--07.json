@@ -1,8 +1,15 @@
 {
   "raw": "Private Reserve extra virgin olive oil",
-  "expected": {
-    "item": "Private Reserve extra virgin olive oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Private Reserve extra virgin olive oil",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Private Reserve extra virgin olive oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

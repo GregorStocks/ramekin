@@ -1,8 +1,15 @@
 {
   "raw": "a little extra flour for dusting",
-  "expected": {
-    "item": "a little extra flour for dusting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a little extra flour for dusting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a little extra flour for dusting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

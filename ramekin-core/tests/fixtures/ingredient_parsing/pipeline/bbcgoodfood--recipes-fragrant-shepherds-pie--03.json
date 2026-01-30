@@ -1,8 +1,15 @@
 {
   "raw": "finger length piece fresh root ginger",
-  "expected": {
-    "item": "finger length piece fresh root ginger",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finger length piece fresh root ginger",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finger length piece fresh root ginger",
+      "measurements": [],
+      "note": null
+    }
   }
 }

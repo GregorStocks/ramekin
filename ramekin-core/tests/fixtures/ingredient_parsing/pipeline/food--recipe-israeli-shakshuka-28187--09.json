@@ -1,13 +1,25 @@
 {
   "raw": "6   large    eggs (or as many as will fit on your sautÃƒ pan)",
-  "expected": {
-    "item": "eggs (or as many as will fit on your sautÃƒ pan)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs (or as many as will fit on your sautÃƒ pan)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "eggs (or as many as will fit on your sautÃƒ pan)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

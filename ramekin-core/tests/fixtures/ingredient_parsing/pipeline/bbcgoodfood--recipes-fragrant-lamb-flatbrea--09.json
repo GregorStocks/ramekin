@@ -1,13 +1,25 @@
 {
   "raw": "handful mint chopped (or use a sprinkling of dried)",
-  "expected": {
-    "item": "mint chopped",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": "or use a sprinkling of dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mint chopped",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "or use a sprinkling of dried"
+    },
+    "enrich_metric_weights": {
+      "item": "mint chopped",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "or use a sprinkling of dried"
+    }
   }
 }

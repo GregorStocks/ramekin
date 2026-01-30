@@ -1,13 +1,25 @@
 {
   "raw": "4 ½\"-thick pork rib chops (look for the most marbled ones you",
-  "expected": {
-    "item": "1/2\"-thick pork rib chops (look for the most marbled ones you",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2\"-thick pork rib chops (look for the most marbled ones you",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "1/2\"-thick pork rib chops (look for the most marbled ones you",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

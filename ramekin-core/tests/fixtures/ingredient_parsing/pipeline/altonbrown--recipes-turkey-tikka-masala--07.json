@@ -1,13 +1,25 @@
 {
   "raw": "7  green cardamom pods",
-  "expected": {
-    "item": "green cardamom pods",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green cardamom pods",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "green cardamom pods",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

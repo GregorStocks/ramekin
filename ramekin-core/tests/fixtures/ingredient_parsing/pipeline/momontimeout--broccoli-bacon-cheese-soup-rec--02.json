@@ -1,13 +1,25 @@
 {
   "raw": "5 slices of bacon",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

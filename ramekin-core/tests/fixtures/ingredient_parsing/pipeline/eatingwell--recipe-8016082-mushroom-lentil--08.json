@@ -1,13 +1,25 @@
 {
   "raw": "2 cups finely chopped scrubbed russet potatoes",
-  "expected": {
-    "item": "finely chopped scrubbed russet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely chopped scrubbed russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely chopped scrubbed russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

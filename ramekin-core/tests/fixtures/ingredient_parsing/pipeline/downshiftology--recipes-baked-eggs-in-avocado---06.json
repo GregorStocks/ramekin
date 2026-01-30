@@ -1,8 +1,15 @@
 {
   "raw": "bacon",
-  "expected": {
-    "item": "bacon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

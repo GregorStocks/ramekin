@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon olive oil (for frying the meatballs)",
-  "expected": {
-    "item": "olive oil (for frying the meatballs)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil (for frying the meatballs)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil (for frying the meatballs)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

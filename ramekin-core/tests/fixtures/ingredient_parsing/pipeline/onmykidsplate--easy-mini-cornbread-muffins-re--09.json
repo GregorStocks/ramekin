@@ -1,8 +1,15 @@
 {
   "raw": "pan spray",
-  "expected": {
-    "item": "pan spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pan spray",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pan spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

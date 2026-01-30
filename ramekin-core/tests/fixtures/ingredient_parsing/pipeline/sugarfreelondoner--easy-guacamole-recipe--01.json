@@ -1,17 +1,33 @@
 {
   "raw": "2  medium avocados (280g flesh)",
-  "expected": {
-    "item": "avocados",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      },
-      {
-        "amount": "280",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "280",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "280",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

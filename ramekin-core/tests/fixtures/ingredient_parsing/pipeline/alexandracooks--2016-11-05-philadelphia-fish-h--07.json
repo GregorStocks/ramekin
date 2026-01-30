@@ -1,8 +1,15 @@
 {
   "raw": "Garnish: lemon slices",
-  "expected": {
-    "item": "Garnish: lemon slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Garnish: lemon slices",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Garnish: lemon slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

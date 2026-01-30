@@ -1,17 +1,33 @@
 {
   "raw": "6g (1 1/2 teaspoons) Diamond Crystal kosher salt",
-  "expected": {
-    "item": "Diamond Crystal kosher salt",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "g"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Diamond Crystal kosher salt",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

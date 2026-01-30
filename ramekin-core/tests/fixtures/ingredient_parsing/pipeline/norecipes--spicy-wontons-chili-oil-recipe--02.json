@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon sweet soy sauce ((Kecap Manis will work))",
-  "expected": {
-    "item": "sweet soy sauce (Kecap Manis will work)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet soy sauce (Kecap Manis will work)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sweet soy sauce (Kecap Manis will work)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

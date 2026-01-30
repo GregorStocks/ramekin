@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons reserved chicken fat or vegetable oil",
-  "expected": {
-    "item": "reserved chicken fat or vegetable oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "reserved chicken fat or vegetable oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "reserved chicken fat or vegetable oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

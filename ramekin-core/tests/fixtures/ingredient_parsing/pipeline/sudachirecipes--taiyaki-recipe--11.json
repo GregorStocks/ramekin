@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp cooking oil (+ extra for greasing)",
-  "expected": {
-    "item": "cooking oil (+ extra for greasing)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooking oil (+ extra for greasing)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooking oil (+ extra for greasing)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

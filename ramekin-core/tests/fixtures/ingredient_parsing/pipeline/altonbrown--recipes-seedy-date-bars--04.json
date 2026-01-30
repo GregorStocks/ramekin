@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon orange zest, from 1/2 orange",
-  "expected": {
-    "item": "orange zest, from 1/2 orange",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange zest, from 1/2 orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange zest, from 1/2 orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

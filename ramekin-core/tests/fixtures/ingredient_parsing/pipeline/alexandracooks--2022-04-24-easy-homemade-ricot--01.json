@@ -1,17 +1,33 @@
 {
   "raw": "15 oz (430 g) whole milk ricotta, see notes above",
-  "expected": {
-    "item": "whole milk ricotta, see notes above",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "oz"
-      },
-      {
-        "amount": "430",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk ricotta, see notes above",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "430",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk ricotta, see notes above",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "430",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

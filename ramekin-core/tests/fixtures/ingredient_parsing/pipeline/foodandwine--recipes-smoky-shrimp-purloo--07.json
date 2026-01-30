@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces smoked trout or catfish, skinned and flaked",
-  "expected": {
-    "item": "smoked trout or catfish, skinned and flaked",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "smoked trout or catfish, skinned and flaked",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "smoked trout or catfish, skinned and flaked",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

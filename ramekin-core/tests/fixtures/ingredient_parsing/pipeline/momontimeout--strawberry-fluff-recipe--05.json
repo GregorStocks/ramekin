@@ -1,13 +1,25 @@
 {
   "raw": "2 cups mini marshmallows (use the multi-colored ones if possible)",
-  "expected": {
-    "item": "mini marshmallows (use the multi-colored ones if possible)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mini marshmallows (use the multi-colored ones if possible)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mini marshmallows (use the multi-colored ones if possible)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

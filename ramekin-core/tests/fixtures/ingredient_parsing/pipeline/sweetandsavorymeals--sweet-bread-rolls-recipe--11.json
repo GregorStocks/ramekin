@@ -1,8 +1,15 @@
 {
   "raw": "sesame seeds (optional)",
-  "expected": {
-    "item": "sesame seeds",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sesame seeds",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "sesame seeds",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

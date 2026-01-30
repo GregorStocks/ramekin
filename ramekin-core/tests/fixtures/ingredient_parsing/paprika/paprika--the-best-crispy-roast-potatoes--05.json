@@ -1,13 +1,25 @@
 {
   "raw": "Small handful picked fresh rosemary leaves, finely chopped",
-  "expected": {
-    "item": "handful picked fresh rosemary leaves",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "handful picked fresh rosemary leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "handful picked fresh rosemary leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

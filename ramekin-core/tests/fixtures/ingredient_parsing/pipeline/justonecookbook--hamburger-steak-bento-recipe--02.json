@@ -1,8 +1,15 @@
 {
   "raw": "hambagu (hamburger steak)",
-  "expected": {
-    "item": "hambagu (hamburger steak)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hambagu (hamburger steak)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hambagu (hamburger steak)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

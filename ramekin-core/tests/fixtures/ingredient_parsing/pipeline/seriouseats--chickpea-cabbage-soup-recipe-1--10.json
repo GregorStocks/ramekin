@@ -1,21 +1,41 @@
 {
   "raw": "1/2 head green cabbage (about 2 pounds; 907 g), cut into 3/4-inch pieces",
-  "expected": {
-    "item": "green cabbage , cut into 3/4-inch pieces",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "head"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "907",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green cabbage , cut into 3/4-inch pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "green cabbage , cut into 3/4-inch pieces",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

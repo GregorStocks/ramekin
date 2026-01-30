@@ -1,13 +1,25 @@
 {
   "raw": "3+ cups sugar, mixed types (see headnotes)",
-  "expected": {
-    "item": "+ cups sugar",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "mixed types (see headnotes)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ cups sugar",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "mixed types (see headnotes)"
+    },
+    "enrich_metric_weights": {
+      "item": "+ cups sugar",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "mixed types (see headnotes)"
+    }
   }
 }

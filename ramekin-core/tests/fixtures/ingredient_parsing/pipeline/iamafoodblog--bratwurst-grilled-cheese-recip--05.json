@@ -1,13 +1,25 @@
 {
   "raw": "1 pretzel roll, sliced lengthwise",
-  "expected": {
-    "item": "pretzel roll",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced lengthwise"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pretzel roll",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced lengthwise"
+    },
+    "parse_ingredients": {
+      "item": "pretzel roll",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced lengthwise"
+    }
   }
 }

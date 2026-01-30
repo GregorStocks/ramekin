@@ -1,17 +1,33 @@
 {
   "raw": "1 (8.8-ounce) package crisp gourmet cookies (such as Biscoff), divided",
-  "expected": {
-    "item": "crisp gourmet cookies (such as Biscoff)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "8.8",
-        "unit": null
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crisp gourmet cookies (such as Biscoff)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8.8",
+          "unit": null
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "crisp gourmet cookies (such as Biscoff)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8.8",
+          "unit": null
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

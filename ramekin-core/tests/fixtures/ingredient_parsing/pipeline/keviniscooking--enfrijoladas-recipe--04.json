@@ -1,13 +1,25 @@
 {
   "raw": "1/2  white onion (quartered)",
-  "expected": {
-    "item": "white onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    },
+    "parse_ingredients": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

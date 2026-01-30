@@ -1,8 +1,15 @@
 {
   "raw": "shredded cabbage",
-  "expected": {
-    "item": "shredded cabbage",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded cabbage",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded cabbage",
+      "measurements": [],
+      "note": null
+    }
   }
 }

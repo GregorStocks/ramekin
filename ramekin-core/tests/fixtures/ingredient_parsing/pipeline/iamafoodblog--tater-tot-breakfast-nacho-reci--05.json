@@ -1,13 +1,25 @@
 {
   "raw": "1 jalapeño, sliced",
-  "expected": {
-    "item": "jalapeño",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeño",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeño",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

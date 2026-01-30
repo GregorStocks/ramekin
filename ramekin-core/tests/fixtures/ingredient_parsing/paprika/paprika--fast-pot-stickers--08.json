@@ -1,13 +1,25 @@
 {
   "raw": "1 egg, lightly beaten in a bowl",
-  "expected": {
-    "item": "egg",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "lightly beaten in a bowl"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten in a bowl"
+    },
+    "enrich_metric_weights": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten in a bowl"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 onion , sliced (brown, yellow)",
-  "expected": {
-    "item": "onion , sliced (brown, yellow)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion , sliced (brown, yellow)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "onion , sliced (brown, yellow)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

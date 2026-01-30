@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp oil ((+1 tbsp to fry the fish))",
-  "expected": {
-    "item": "oil (+1 tbsp to fry the fish)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oil (+1 tbsp to fry the fish)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "oil (+1 tbsp to fry the fish)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

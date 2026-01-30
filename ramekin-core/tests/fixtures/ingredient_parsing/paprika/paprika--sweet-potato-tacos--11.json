@@ -1,13 +1,25 @@
 {
   "raw": "1 15-ounce can refried black beans",
-  "expected": {
-    "item": "refried black beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "15-ounce can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "refried black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "15-ounce can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "refried black beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "15-ounce can"
+        }
+      ],
+      "note": null
+    }
   }
 }

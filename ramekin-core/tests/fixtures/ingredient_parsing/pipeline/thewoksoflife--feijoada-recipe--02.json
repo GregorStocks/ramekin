@@ -1,17 +1,33 @@
 {
   "raw": "4 pounds bone-in pork shoulder ((1.8 kg, cut into 2-inch chunks))",
-  "expected": {
-    "item": "bone-in pork shoulder",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      },
-      {
-        "amount": "1.8",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bone-in pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1.8",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bone-in pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1.8",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

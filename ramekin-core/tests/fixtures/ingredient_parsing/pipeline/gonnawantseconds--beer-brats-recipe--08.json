@@ -1,13 +1,25 @@
 {
   "raw": "10  bratwurst sausages",
-  "expected": {
-    "item": "bratwurst sausages",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bratwurst sausages",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bratwurst sausages",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

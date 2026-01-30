@@ -1,8 +1,15 @@
 {
   "raw": "orange slice",
-  "expected": {
-    "item": "orange slice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orange slice",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "orange slice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "250ml whole milk",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "250",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

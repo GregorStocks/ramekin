@@ -1,13 +1,25 @@
 {
   "raw": "1 carrot, peeled and roughly chopped, optional",
-  "expected": {
-    "item": "carrot, peeled and roughly chopped",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot, peeled and roughly chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "carrot, peeled and roughly chopped",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

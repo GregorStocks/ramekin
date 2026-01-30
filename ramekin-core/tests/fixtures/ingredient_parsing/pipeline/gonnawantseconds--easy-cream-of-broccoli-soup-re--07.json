@@ -1,13 +1,25 @@
 {
   "raw": "1  Heaping Tablespoon Better than Bouillon~Chicken Flavor",
-  "expected": {
-    "item": "Better than Bouillon~Chicken Flavor",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaping tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Better than Bouillon~Chicken Flavor",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Better than Bouillon~Chicken Flavor",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

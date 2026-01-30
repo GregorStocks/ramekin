@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch dill sprigs",
-  "expected": {
-    "item": "dill sprigs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dill sprigs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dill sprigs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    }
   }
 }

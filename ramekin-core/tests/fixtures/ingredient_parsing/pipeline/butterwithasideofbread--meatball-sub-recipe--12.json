@@ -1,13 +1,25 @@
 {
   "raw": "10 slices provolone cheese",
-  "expected": {
-    "item": "provolone cheese",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "provolone cheese",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "provolone cheese",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

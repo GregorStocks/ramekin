@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds chuck roast (, cut into bite sized pieces or beef stew meat)",
-  "expected": {
-    "item": "chuck roast (, cut into bite sized pieces or beef stew meat)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chuck roast (, cut into bite sized pieces or beef stew meat)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chuck roast (, cut into bite sized pieces or beef stew meat)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

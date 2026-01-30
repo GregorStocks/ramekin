@@ -1,13 +1,25 @@
 {
   "raw": "1  ripe peach (peeled and thinly sliced)",
-  "expected": {
-    "item": "ripe peach",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe peach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "ripe peach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and thinly sliced"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "12 oz light cream cheese (Neufchâtel cheese, softened)",
-  "expected": {
-    "item": "light cream cheese",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "Neufchâtel cheese, softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "light cream cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "Neufchâtel cheese, softened"
+    },
+    "enrich_metric_weights": {
+      "item": "light cream cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "Neufchâtel cheese, softened"
+    }
   }
 }

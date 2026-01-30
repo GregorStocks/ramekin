@@ -1,17 +1,33 @@
 {
   "raw": "2  medium sweet potatoes (approx 1.5 lbs)",
-  "expected": {
-    "item": "sweet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      },
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

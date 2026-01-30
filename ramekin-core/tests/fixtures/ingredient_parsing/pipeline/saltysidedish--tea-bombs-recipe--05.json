@@ -1,8 +1,15 @@
 {
   "raw": "tea bags",
-  "expected": {
-    "item": "tea bags",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tea bags",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tea bags",
+      "measurements": [],
+      "note": null
+    }
   }
 }

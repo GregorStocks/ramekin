@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon fresh orange juice (plus 1 teaspoon zest)",
-  "expected": {
-    "item": "fresh orange juice (plus 1 teaspoon zest)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh orange juice (plus 1 teaspoon zest)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh orange juice (plus 1 teaspoon zest)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

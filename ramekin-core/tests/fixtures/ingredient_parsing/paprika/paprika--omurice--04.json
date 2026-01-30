@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 slices deli ham, cut into 1/2-inch pieces",
-  "expected": {
-    "item": "deli ham, cut into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "deli ham, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "deli ham, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

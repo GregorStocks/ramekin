@@ -1,8 +1,15 @@
 {
   "raw": "Cilantro ((for garnish))",
-  "expected": {
-    "item": "Cilantro",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cilantro",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Cilantro",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

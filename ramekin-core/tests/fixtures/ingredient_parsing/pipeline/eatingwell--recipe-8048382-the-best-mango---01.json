@@ -1,13 +1,25 @@
 {
   "raw": "4 cups kale, stemmed and roughly chopped",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "stemmed and roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "stemmed and roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "stemmed and roughly chopped"
+    }
   }
 }

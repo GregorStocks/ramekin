@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons minced fresh flat-leaf parsley",
-  "expected": {
-    "item": "minced fresh flat-leaf parsley",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced fresh flat-leaf parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced fresh flat-leaf parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

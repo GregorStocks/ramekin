@@ -1,13 +1,25 @@
 {
   "raw": "1.5 lbs fresh salmon filets ( skin on 1&amp;quot; thick (See Note 1))",
-  "expected": {
-    "item": "fresh salmon filets ( skin on 1\" thick (See Note 1)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh salmon filets ( skin on 1\" thick (See Note 1)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh salmon filets ( skin on 1\" thick (See Note 1)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

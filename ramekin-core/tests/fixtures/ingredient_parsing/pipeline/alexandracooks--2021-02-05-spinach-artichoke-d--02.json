@@ -1,13 +1,25 @@
 {
   "raw": "2 shallots minced, to yield 1/2 to 1 cup",
-  "expected": {
-    "item": "shallots minced, to yield 1/2 to 1 cup",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallots minced, to yield 1/2 to 1 cup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shallots minced, to yield 1/2 to 1 cup",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

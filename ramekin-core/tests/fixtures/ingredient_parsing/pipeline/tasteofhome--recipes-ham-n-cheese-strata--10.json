@@ -1,13 +1,25 @@
 {
   "raw": "Dash cayenne pepper",
-  "expected": {
-    "item": "cayenne pepper",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

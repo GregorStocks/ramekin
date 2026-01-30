@@ -1,13 +1,29 @@
 {
   "raw": "½ ounce egg white",
-  "expected": {
-    "item": "egg white",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg white",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "egg white",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

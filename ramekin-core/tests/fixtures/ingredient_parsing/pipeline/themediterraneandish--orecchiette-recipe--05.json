@@ -1,13 +1,25 @@
 {
   "raw": "½  large red onion (chopped)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "large"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

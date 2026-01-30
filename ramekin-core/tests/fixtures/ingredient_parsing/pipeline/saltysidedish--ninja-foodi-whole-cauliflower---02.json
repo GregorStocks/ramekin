@@ -1,8 +1,15 @@
 {
   "raw": "Olive Oil - either spritz or to baste",
-  "expected": {
-    "item": "Olive Oil - either spritz or to baste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Olive Oil - either spritz or to baste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Olive Oil - either spritz or to baste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

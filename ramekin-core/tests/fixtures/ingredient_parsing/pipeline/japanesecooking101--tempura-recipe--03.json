@@ -1,13 +1,25 @@
 {
   "raw": "4 slices sweet potato",
-  "expected": {
-    "item": "sweet potato",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet potato",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet potato",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

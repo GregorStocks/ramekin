@@ -1,8 +1,15 @@
 {
   "raw": "Paneer",
-  "expected": {
-    "item": "Paneer",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Paneer",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Paneer",
+      "measurements": [],
+      "note": null
+    }
   }
 }

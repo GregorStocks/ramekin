@@ -1,8 +1,15 @@
 {
   "raw": "Pocketless Pita",
-  "expected": {
-    "item": "Pocketless Pita",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pocketless Pita",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pocketless Pita",
+      "measurements": [],
+      "note": null
+    }
   }
 }

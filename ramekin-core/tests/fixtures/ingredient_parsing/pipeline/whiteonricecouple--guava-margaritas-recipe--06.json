@@ -1,8 +1,15 @@
 {
   "raw": "flaky salt (, optional to salt the glass rim)",
-  "expected": {
-    "item": "flaky salt",
-    "measurements": [],
-    "note": "optional to salt the glass rim"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flaky salt",
+      "measurements": [],
+      "note": "optional to salt the glass rim"
+    },
+    "enrich_metric_weights": {
+      "item": "flaky salt",
+      "measurements": [],
+      "note": "optional to salt the glass rim"
+    }
   }
 }

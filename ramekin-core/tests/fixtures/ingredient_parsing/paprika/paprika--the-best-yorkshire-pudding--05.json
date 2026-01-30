@@ -1,21 +1,41 @@
 {
   "raw": "25 g water (0.85 ounces; 1 tablespoon plus 2 teaspoons) (see notes)",
-  "expected": {
-    "item": "water (see notes)",
-    "measurements": [
-      {
-        "amount": "25",
-        "unit": "g"
-      },
-      {
-        "amount": "0.85",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water (see notes)",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "0.85",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water (see notes)",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "0.85",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ to ½ teaspoon pepper corn  ((crushed coarsely))",
-  "expected": {
-    "item": "pepper corn",
-    "measurements": [
-      {
-        "amount": "1/4 to 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "crushed coarsely"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pepper corn",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "crushed coarsely"
+    },
+    "enrich_metric_weights": {
+      "item": "pepper corn",
+      "measurements": [
+        {
+          "amount": "1/4 to 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "crushed coarsely"
+    }
   }
 }

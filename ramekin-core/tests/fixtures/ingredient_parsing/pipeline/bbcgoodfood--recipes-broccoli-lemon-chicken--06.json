@@ -1,13 +1,25 @@
 {
   "raw": "1 heaped tsp cornflour",
-  "expected": {
-    "item": "cornflour",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaped tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cornflour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaped tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cornflour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaped tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

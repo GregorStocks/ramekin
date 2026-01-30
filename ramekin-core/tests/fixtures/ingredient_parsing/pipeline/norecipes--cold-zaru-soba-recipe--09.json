@@ -1,13 +1,25 @@
 {
   "raw": "1/2 sheet nori ((cut into thin strips with scissors))",
-  "expected": {
-    "item": "sheet nori (cut into thin strips with scissors)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheet nori (cut into thin strips with scissors)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sheet nori (cut into thin strips with scissors)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

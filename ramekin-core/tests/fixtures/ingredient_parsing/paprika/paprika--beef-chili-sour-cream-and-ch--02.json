@@ -1,17 +1,33 @@
 {
   "raw": "2 large onions, chopped (about 3 cups)",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

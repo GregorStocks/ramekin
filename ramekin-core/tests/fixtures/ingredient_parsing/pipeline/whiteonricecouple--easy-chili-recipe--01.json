@@ -1,17 +1,33 @@
 {
   "raw": "1 lb. lean ground beef ((85-90% lean) (or whatever ground meat you like - chicken, turkey, pork, lamb, etc.)",
-  "expected": {
-    "item": "lean ground beef",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "85",
-        "unit": null
-      }
-    ],
-    "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc."
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lean ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "85",
+          "unit": null
+        }
+      ],
+      "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc."
+    },
+    "parse_ingredients": {
+      "item": "lean ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "85",
+          "unit": null
+        }
+      ],
+      "note": "or whatever ground meat you like - chicken, turkey, pork, lamb, etc."
+    }
   }
 }

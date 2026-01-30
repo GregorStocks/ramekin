@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon urad dal ((skinned black gram) (optional))",
-  "expected": {
-    "item": "urad dal (skinned black gram) (optional)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "urad dal (skinned black gram) (optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "urad dal (skinned black gram) (optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

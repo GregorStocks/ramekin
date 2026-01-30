@@ -1,13 +1,25 @@
 {
   "raw": "3 1/2 pound boneless pork shoulder roast, cut into two pieces",
-  "expected": {
-    "item": "boneless pork shoulder roast, cut into two pieces",
-    "measurements": [
-      {
-        "amount": "3 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless pork shoulder roast, cut into two pieces",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless pork shoulder roast, cut into two pieces",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

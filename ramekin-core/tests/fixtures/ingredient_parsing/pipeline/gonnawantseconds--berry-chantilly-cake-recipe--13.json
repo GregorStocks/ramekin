@@ -1,13 +1,25 @@
 {
   "raw": "1 cup strawberries (hulled, cut into chunks the size of the raspberries)",
-  "expected": {
-    "item": "strawberries (hulled, cut into chunks the size of the raspberries)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strawberries (hulled, cut into chunks the size of the raspberries)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "strawberries (hulled, cut into chunks the size of the raspberries)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

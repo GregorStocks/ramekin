@@ -1,13 +1,25 @@
 {
   "raw": "1/2 Cups Carrot (Peeled and Diced)",
-  "expected": {
-    "item": "Carrot",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "Peeled and Diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Carrot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "Peeled and Diced"
+    },
+    "parse_ingredients": {
+      "item": "Carrot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "Peeled and Diced"
+    }
   }
 }

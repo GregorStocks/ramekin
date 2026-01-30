@@ -1,13 +1,25 @@
 {
   "raw": "2  granny smith apples (cored and julienned or shredded)",
-  "expected": {
-    "item": "granny smith apples",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "cored and julienned or shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granny smith apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "cored and julienned or shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "granny smith apples",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "cored and julienned or shredded"
+    }
   }
 }

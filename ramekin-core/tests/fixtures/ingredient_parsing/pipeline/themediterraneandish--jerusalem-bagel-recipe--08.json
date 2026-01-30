@@ -1,13 +1,25 @@
 {
   "raw": "1 cup sesame seeds (I used raw white sesame seeds)",
-  "expected": {
-    "item": "sesame seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "I used raw white sesame seeds"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "I used raw white sesame seeds"
+    },
+    "parse_ingredients": {
+      "item": "sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "I used raw white sesame seeds"
+    }
   }
 }

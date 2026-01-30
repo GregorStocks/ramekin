@@ -1,8 +1,15 @@
 {
   "raw": "Bolognese sauce:",
-  "expected": {
-    "item": "Bolognese sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Bolognese sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Bolognese sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

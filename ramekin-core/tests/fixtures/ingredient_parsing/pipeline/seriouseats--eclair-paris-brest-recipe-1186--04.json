@@ -1,21 +1,41 @@
 {
   "raw": "226g (8 ounces) unsalted butter, softened to about 68°F (20°C)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "226",
-        "unit": "g"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": "softened to about 68°F"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "226",
+          "unit": "g"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "softened to about 68°F"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "226",
+          "unit": "g"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "softened to about 68°F"
+    }
   }
 }

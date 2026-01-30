@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon (14g) ghee or unsalted butter",
-  "expected": {
-    "item": "ghee or unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "14",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ghee or unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ghee or unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

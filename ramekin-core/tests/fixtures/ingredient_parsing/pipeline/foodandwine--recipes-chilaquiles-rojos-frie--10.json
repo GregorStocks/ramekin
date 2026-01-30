@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch fresh cilantro, leaves and stems separated, divided",
-  "expected": {
-    "item": "fresh cilantro, leaves and stems separated",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh cilantro, leaves and stems separated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "fresh cilantro, leaves and stems separated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

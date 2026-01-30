@@ -1,13 +1,25 @@
 {
   "raw": "4 pounds beef chuck roast (cut into 1-inch cubes)",
-  "expected": {
-    "item": "beef chuck roast (cut into 1-inch cubes)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef chuck roast (cut into 1-inch cubes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "beef chuck roast (cut into 1-inch cubes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

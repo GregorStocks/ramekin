@@ -1,13 +1,25 @@
 {
   "raw": "8 large egg yolks",
-  "expected": {
-    "item": "egg yolks",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg yolks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "egg yolks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "2 (19 ounce) cans kidney beans, rinsed and drained",
-  "expected": {
-    "item": "kidney beans",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "19",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed and drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kidney beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "19",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed and drained"
+    },
+    "enrich_metric_weights": {
+      "item": "kidney beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "19",
+          "unit": "oz"
+        },
+        {
+          "amount": "539",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed and drained"
+    }
   }
 }

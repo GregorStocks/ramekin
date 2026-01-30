@@ -1,13 +1,25 @@
 {
   "raw": "1½ pounds glutinous rice flour ((one and a half bags, as they generally come in 1-pound bags))",
-  "expected": {
-    "item": "glutinous rice flour (one and a half bags, as they generally come in 1-pound bags)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "glutinous rice flour (one and a half bags, as they generally come in 1-pound bags)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "glutinous rice flour (one and a half bags, as they generally come in 1-pound bags)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

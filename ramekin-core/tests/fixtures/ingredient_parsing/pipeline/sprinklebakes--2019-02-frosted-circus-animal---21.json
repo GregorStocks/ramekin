@@ -1,8 +1,15 @@
 {
   "raw": "Scalloped edging fondant cutter (see blog post for sources)",
-  "expected": {
-    "item": "Scalloped edging fondant cutter (see blog post for sources)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Scalloped edging fondant cutter (see blog post for sources)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Scalloped edging fondant cutter (see blog post for sources)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

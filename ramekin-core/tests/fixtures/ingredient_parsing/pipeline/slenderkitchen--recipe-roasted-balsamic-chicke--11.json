@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp Italian seasoning (more to taste)",
-  "expected": {
-    "item": "Italian seasoning",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Italian seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Italian seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more to taste"
+    }
   }
 }

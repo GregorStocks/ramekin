@@ -1,13 +1,25 @@
 {
   "raw": "1 box vanilla cake mix",
-  "expected": {
-    "item": "vanilla cake mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vanilla cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    }
   }
 }

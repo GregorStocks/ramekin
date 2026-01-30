@@ -1,8 +1,15 @@
 {
   "raw": "zest of two oranges",
-  "expected": {
-    "item": "zest of two oranges",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zest of two oranges",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "zest of two oranges",
+      "measurements": [],
+      "note": null
+    }
   }
 }

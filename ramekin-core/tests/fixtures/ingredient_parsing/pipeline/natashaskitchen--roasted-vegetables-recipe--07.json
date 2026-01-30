@@ -1,13 +1,25 @@
 {
   "raw": "1.5 Tbsp garlic salt (or to taste)",
-  "expected": {
-    "item": "garlic salt",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic salt",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic salt",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

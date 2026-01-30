@@ -1,13 +1,29 @@
 {
   "raw": "14.5 oz can petite diced tomatoes",
-  "expected": {
-    "item": "can petite diced tomatoes",
-    "measurements": [
-      {
-        "amount": "14.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "can petite diced tomatoes",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "411",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "can petite diced tomatoes",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 medium peach, pitted and sliced, for garnish (optional)",
-  "expected": {
-    "item": "peach, pitted and sliced, for garnish",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peach, pitted and sliced, for garnish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "peach, pitted and sliced, for garnish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup cider vinegar, divided",
-  "expected": {
-    "item": "cider vinegar",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cider vinegar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "cider vinegar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

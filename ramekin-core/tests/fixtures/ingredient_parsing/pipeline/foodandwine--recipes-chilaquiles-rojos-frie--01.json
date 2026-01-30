@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 pounds plum tomatoes (about 8 medium), halved lengthwise",
-  "expected": {
-    "item": "plum tomatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "8",
-        "unit": "medium"
-      }
-    ],
-    "note": "halved lengthwise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved lengthwise"
+    },
+    "enrich_metric_weights": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved lengthwise"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "500 grams green papaya ((~1 small ))",
-  "expected": {
-    "item": "green papaya",
-    "measurements": [
-      {
-        "amount": "500",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green papaya",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "green papaya",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

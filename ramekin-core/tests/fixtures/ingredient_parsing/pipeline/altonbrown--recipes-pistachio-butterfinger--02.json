@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups plus 1 1/2 teaspoons sugar",
-  "expected": {
-    "item": "1 1/4 cups plus 1 1/2 teaspoons sugar",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 1/2 teaspoons sugar"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 1/4 cups plus 1 1/2 teaspoons sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 1/2 teaspoons sugar"
+    },
+    "enrich_metric_weights": {
+      "item": "1 1/4 cups plus 1 1/2 teaspoons sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 1/2 teaspoons sugar"
+    }
   }
 }

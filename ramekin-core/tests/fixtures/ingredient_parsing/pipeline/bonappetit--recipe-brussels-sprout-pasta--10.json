@@ -1,17 +1,37 @@
 {
   "raw": "1 oz. Pecorino, finely grated (about ½ cup), plus more for serving",
-  "expected": {
-    "item": "Pecorino, finely grated",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pecorino, finely grated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Pecorino, finely grated",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

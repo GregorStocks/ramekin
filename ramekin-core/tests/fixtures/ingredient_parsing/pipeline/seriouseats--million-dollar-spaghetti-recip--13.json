@@ -1,21 +1,41 @@
 {
   "raw": "1 (28-ounce; 794 g) can crushed tomatoes",
-  "expected": {
-    "item": "crushed tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": null
-      },
-      {
-        "amount": "794",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

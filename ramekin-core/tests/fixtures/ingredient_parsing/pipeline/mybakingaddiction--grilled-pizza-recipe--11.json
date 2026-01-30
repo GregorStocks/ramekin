@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup roasted red peppers, drained and sliced",
-  "expected": {
-    "item": "roasted red peppers",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "roasted red peppers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and sliced"
+    },
+    "parse_ingredients": {
+      "item": "roasted red peppers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and sliced"
+    }
   }
 }

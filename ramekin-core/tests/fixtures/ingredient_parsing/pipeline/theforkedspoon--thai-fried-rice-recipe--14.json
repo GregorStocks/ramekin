@@ -1,8 +1,15 @@
 {
   "raw": "mung bean sprouts",
-  "expected": {
-    "item": "mung bean sprouts",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mung bean sprouts",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mung bean sprouts",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Breyers Natural Vanilla ice cream, for serving",
-  "expected": {
-    "item": "Breyers Natural Vanilla ice cream",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Breyers Natural Vanilla ice cream",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Breyers Natural Vanilla ice cream",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

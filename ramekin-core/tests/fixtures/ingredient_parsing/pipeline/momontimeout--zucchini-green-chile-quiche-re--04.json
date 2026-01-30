@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup shallots (diced )",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

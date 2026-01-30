@@ -1,8 +1,15 @@
 {
   "raw": "cracked black pepper",
-  "expected": {
-    "item": "cracked black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cracked black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cracked black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

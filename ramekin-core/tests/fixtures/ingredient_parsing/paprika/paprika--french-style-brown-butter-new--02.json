@@ -1,17 +1,33 @@
 {
   "raw": "1 pound (450 g) small new potatoes, rinsed (see notes)",
-  "expected": {
-    "item": "small new potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": "rinsed (see notes)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "small new potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed (see notes)"
+    },
+    "parse_ingredients": {
+      "item": "small new potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed (see notes)"
+    }
   }
 }

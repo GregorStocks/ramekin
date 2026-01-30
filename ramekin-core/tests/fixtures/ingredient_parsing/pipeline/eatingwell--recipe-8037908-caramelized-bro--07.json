@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup chopped hazelnuts, toasted (see Tip)",
-  "expected": {
-    "item": "chopped hazelnuts",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": "toasted (see Tip)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped hazelnuts",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted (see Tip)"
+    },
+    "parse_ingredients": {
+      "item": "chopped hazelnuts",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted (see Tip)"
+    }
   }
 }

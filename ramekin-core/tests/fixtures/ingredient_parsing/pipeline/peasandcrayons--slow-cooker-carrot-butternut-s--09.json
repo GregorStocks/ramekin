@@ -1,8 +1,15 @@
 {
   "raw": "roasted pepitas",
-  "expected": {
-    "item": "roasted pepitas",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roasted pepitas",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "roasted pepitas",
+      "measurements": [],
+      "note": null
+    }
   }
 }

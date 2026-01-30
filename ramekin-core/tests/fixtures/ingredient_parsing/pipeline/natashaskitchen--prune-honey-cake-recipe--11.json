@@ -1,8 +1,15 @@
 {
   "raw": "Chocolate block for shavings",
-  "expected": {
-    "item": "Chocolate block for shavings",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chocolate block for shavings",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chocolate block for shavings",
+      "measurements": [],
+      "note": null
+    }
   }
 }

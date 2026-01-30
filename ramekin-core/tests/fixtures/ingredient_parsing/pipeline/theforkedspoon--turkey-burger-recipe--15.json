@@ -1,8 +1,15 @@
 {
   "raw": "Mayonnaise",
-  "expected": {
-    "item": "Mayonnaise",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mayonnaise",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Mayonnaise",
+      "measurements": [],
+      "note": null
+    }
   }
 }

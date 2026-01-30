@@ -1,8 +1,15 @@
 {
   "raw": "More water or milk if needed",
-  "expected": {
-    "item": "More water or milk if needed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "More water or milk if needed",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "More water or milk if needed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

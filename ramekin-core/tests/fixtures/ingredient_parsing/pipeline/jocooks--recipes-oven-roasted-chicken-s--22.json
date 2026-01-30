@@ -1,8 +1,15 @@
 {
   "raw": "pita wraps",
-  "expected": {
-    "item": "pita wraps",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pita wraps",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pita wraps",
+      "measurements": [],
+      "note": null
+    }
   }
 }

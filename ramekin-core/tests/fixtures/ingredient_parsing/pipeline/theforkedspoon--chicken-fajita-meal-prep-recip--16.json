@@ -1,8 +1,15 @@
 {
   "raw": "fresh green onion (chopped)",
-  "expected": {
-    "item": "fresh green onion",
-    "measurements": [],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh green onion",
+      "measurements": [],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh green onion",
+      "measurements": [],
+      "note": "chopped"
+    }
   }
 }

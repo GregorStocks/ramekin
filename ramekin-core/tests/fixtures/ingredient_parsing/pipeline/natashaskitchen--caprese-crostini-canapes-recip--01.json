@@ -1,13 +1,25 @@
 {
   "raw": "1  long baguette (sliced into 1/2\" thick rings)",
-  "expected": {
-    "item": "long baguette",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced into 1/2\" thick rings"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "long baguette",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 1/2\" thick rings"
+    },
+    "parse_ingredients": {
+      "item": "long baguette",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 1/2\" thick rings"
+    }
   }
 }

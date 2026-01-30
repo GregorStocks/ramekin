@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp. freshly chopped&nbsp;chives, for garnish",
-  "expected": {
-    "item": "freshly chopped chives",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly chopped chives",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "freshly chopped chives",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish"
+    }
   }
 }

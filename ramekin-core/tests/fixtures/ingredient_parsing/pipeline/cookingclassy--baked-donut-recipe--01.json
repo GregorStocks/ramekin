@@ -1,17 +1,33 @@
 {
   "raw": "1 2/3 cups (236g) all-purpose flour ((preferably unbleached, scoop and level to measure))",
-  "expected": {
-    "item": "all-purpose flour (preferably unbleached, scoop and level to measure)",
-    "measurements": [
-      {
-        "amount": "1 2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "236",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour (preferably unbleached, scoop and level to measure)",
+      "measurements": [
+        {
+          "amount": "1 2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "236",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour (preferably unbleached, scoop and level to measure)",
+      "measurements": [
+        {
+          "amount": "1 2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "236",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 black teabags (such as ceylon, assam or English breakfast)",
-  "expected": {
-    "item": "black teabags (such as ceylon, assam or English breakfast)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black teabags (such as ceylon, assam or English breakfast)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "black teabags (such as ceylon, assam or English breakfast)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

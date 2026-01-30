@@ -1,13 +1,25 @@
 {
   "raw": "1 cup chopped shallots (from 4 medium shallots)",
-  "expected": {
-    "item": "chopped shallots (from 4 medium shallots)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped shallots (from 4 medium shallots)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped shallots (from 4 medium shallots)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

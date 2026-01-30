@@ -1,8 +1,15 @@
 {
   "raw": "Fresh arugula",
-  "expected": {
-    "item": "Fresh arugula",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh arugula",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fresh arugula",
+      "measurements": [],
+      "note": null
+    }
   }
 }

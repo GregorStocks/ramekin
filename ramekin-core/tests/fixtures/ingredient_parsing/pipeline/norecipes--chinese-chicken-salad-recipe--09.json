@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon orange juice ((or syrup from mandarins))",
-  "expected": {
-    "item": "orange juice (or syrup from mandarins)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange juice (or syrup from mandarins)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange juice (or syrup from mandarins)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

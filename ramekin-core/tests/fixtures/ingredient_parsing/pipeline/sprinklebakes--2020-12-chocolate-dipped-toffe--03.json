@@ -1,13 +1,25 @@
 {
   "raw": "24  graham cracker squares",
-  "expected": {
-    "item": "graham cracker squares",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "graham cracker squares",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "graham cracker squares",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

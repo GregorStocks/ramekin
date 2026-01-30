@@ -1,13 +1,25 @@
 {
   "raw": "2 large eggs (plus ¼ cup water, whisked)",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "plus 1/4 cup water, whisked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1/4 cup water, whisked"
+    },
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1/4 cup water, whisked"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sweetened whipped cream and sprinkles for garnish",
-  "expected": {
-    "item": "Sweetened whipped cream and sprinkles for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sweetened whipped cream and sprinkles for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sweetened whipped cream and sprinkles for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

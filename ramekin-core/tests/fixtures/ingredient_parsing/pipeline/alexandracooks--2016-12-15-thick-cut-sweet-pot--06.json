@@ -1,13 +1,25 @@
 {
   "raw": "good sea salt, like Maldon or Fleur de Sel, for sprinkling at the end",
-  "expected": {
-    "item": "sea salt, like Maldon or Fleur de Sel, for sprinkling at the end",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "good"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea salt, like Maldon or Fleur de Sel, for sprinkling at the end",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "good"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sea salt, like Maldon or Fleur de Sel, for sprinkling at the end",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "good"
+        }
+      ],
+      "note": null
+    }
   }
 }

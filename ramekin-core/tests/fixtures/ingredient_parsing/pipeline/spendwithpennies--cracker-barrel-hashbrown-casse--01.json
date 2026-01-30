@@ -1,13 +1,29 @@
 {
   "raw": "32 ounces frozen shredded hash browns (thawed)",
-  "expected": {
-    "item": "frozen shredded hash browns",
-    "measurements": [
-      {
-        "amount": "32",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen shredded hash browns",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen shredded hash browns",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

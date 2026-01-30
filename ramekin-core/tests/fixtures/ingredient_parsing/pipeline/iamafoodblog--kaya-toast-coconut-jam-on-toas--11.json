@@ -1,8 +1,15 @@
 {
   "raw": "dark soy sauce and white pepper, if desired",
-  "expected": {
-    "item": "dark soy sauce and white pepper, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark soy sauce and white pepper, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dark soy sauce and white pepper, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

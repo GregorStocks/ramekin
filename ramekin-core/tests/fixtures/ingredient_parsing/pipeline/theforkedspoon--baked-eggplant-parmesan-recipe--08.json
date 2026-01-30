@@ -1,13 +1,25 @@
 {
   "raw": "2 jars marinara sauce",
-  "expected": {
-    "item": "marinara sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "jar"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "marinara sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "jar"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "marinara sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "jar"
+        }
+      ],
+      "note": null
+    }
   }
 }

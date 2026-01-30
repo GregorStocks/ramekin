@@ -1,17 +1,33 @@
 {
   "raw": "1 (8-ounce) container cool whip (thawed)",
-  "expected": {
-    "item": "container cool whip",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "container cool whip",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    },
+    "enrich_metric_weights": {
+      "item": "container cool whip",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

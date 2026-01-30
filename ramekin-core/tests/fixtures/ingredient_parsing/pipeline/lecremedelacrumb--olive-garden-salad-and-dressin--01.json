@@ -1,13 +1,25 @@
 {
   "raw": "6 cups chopped lettuce",
-  "expected": {
-    "item": "chopped lettuce",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped lettuce",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped lettuce",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

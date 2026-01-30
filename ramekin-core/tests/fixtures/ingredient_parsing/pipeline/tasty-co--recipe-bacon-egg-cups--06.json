@@ -1,8 +1,15 @@
 {
   "raw": "chive, to taste",
-  "expected": {
-    "item": "chive",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chive",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "chive",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

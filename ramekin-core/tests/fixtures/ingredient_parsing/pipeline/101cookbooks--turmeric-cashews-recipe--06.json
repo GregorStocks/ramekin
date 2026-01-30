@@ -1,13 +1,25 @@
 {
   "raw": "scant 1/4 teaspoon cayenne",
-  "expected": {
-    "item": "cayenne",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "scant tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cayenne",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "scant tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cayenne",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "scant tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces fresh grapefruit juice (freshly squeezed)",
-  "expected": {
-    "item": "fresh grapefruit juice",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": "freshly squeezed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh grapefruit juice",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": "freshly squeezed"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh grapefruit juice",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "freshly squeezed"
+    }
   }
 }

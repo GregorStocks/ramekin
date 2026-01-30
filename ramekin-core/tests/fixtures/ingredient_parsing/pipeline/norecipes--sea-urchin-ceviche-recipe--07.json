@@ -1,13 +1,25 @@
 {
   "raw": "6 leaves green shiso ((minced))",
-  "expected": {
-    "item": "leaves green shiso",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "leaves green shiso",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    },
+    "parse_ingredients": {
+      "item": "leaves green shiso",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

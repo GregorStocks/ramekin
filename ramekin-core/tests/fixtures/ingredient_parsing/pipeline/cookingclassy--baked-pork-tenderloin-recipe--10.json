@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp light olive oil (or vegetable oil)",
-  "expected": {
-    "item": "light olive oil (or vegetable oil)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "light olive oil (or vegetable oil)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "light olive oil (or vegetable oil)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

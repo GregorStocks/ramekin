@@ -1,8 +1,15 @@
 {
   "raw": "pearl sugar",
-  "expected": {
-    "item": "pearl sugar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pearl sugar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pearl sugar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

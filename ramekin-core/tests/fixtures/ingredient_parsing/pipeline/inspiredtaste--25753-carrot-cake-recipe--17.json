@@ -1,17 +1,33 @@
 {
   "raw": "½ cup&nbsp; coarsely chopped pecans, for topping cake (50g)",
-  "expected": {
-    "item": "coarsely chopped pecans, for topping cake",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely chopped pecans, for topping cake",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely chopped pecans, for topping cake",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil, avocado oil, or vegetable oil, (for brushing on tortillas)",
-  "expected": {
-    "item": "Olive oil, avocado oil, or vegetable oil, (for brushing on tortillas)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Olive oil, avocado oil, or vegetable oil, (for brushing on tortillas)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Olive oil, avocado oil, or vegetable oil, (for brushing on tortillas)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

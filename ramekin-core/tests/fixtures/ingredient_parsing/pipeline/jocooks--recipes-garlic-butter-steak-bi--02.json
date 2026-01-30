@@ -1,13 +1,25 @@
 {
   "raw": "1½ pound sirloin steak (cut into bite size pieces, or strip loin, tenderloin, strip steak or rib eye)",
-  "expected": {
-    "item": "sirloin steak (cut into bite size pieces, or strip loin, tenderloin, strip steak or rib eye)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sirloin steak (cut into bite size pieces, or strip loin, tenderloin, strip steak or rib eye)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sirloin steak (cut into bite size pieces, or strip loin, tenderloin, strip steak or rib eye)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

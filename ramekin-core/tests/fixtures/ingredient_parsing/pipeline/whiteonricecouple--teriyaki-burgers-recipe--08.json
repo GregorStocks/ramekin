@@ -1,8 +1,15 @@
 {
   "raw": "lettuce, tomato, pickles ( and other desired trimmings)",
-  "expected": {
-    "item": "lettuce, tomato, pickles ( and other desired trimmings)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lettuce, tomato, pickles ( and other desired trimmings)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lettuce, tomato, pickles ( and other desired trimmings)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

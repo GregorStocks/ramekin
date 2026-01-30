@@ -1,13 +1,25 @@
 {
   "raw": "6 cups sour cherries (pitted (See note below.))",
-  "expected": {
-    "item": "sour cherries (pitted (See note below.)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sour cherries (pitted (See note below.)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sour cherries (pitted (See note below.)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

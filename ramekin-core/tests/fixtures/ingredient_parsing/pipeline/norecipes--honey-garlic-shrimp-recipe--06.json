@@ -1,17 +1,33 @@
 {
   "raw": "300 grams shrimp ((15 jumbo))",
-  "expected": {
-    "item": "shrimp",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "g"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shrimp",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

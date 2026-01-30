@@ -1,13 +1,25 @@
 {
   "raw": "1 cup short grain brown rice (rinsed well)",
-  "expected": {
-    "item": "short grain brown rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed well"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "short grain brown rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed well"
+    },
+    "enrich_metric_weights": {
+      "item": "short grain brown rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed well"
+    }
   }
 }

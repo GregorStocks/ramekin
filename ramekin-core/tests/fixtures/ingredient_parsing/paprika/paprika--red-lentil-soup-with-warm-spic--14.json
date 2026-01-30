@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons lemon juice, plus extra for seasoning",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus extra for seasoning"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for seasoning"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for seasoning"
+    }
   }
 }

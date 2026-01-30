@@ -1,8 +1,15 @@
 {
   "raw": "Cinnamon and Confectioners’ sugar, for dusting (optional)",
-  "expected": {
-    "item": "Cinnamon and Confectioners’ sugar, for dusting",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cinnamon and Confectioners’ sugar, for dusting",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Cinnamon and Confectioners’ sugar, for dusting",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "To finish (all optional):",
-  "expected": {
-    "item": "To finish :",
-    "measurements": [],
-    "note": "all optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "To finish :",
+      "measurements": [],
+      "note": "all optional"
+    },
+    "enrich_metric_weights": {
+      "item": "To finish :",
+      "measurements": [],
+      "note": "all optional"
+    }
   }
 }

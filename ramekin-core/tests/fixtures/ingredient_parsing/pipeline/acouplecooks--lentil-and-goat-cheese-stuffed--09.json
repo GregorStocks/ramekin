@@ -1,8 +1,15 @@
 {
   "raw": "Fresh ground black pepper",
-  "expected": {
-    "item": "Fresh ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

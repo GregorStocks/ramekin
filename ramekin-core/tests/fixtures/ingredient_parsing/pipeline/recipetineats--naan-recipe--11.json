@@ -1,8 +1,15 @@
 {
   "raw": "Nigella seeds",
-  "expected": {
-    "item": "Nigella seeds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Nigella seeds",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Nigella seeds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

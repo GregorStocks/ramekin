@@ -1,13 +1,25 @@
 {
   "raw": "1/2 lb/ 226 g white mushrooms, cleaned and halved",
-  "expected": {
-    "item": "lb/ 226 g white mushrooms",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "cleaned and halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lb/ 226 g white mushrooms",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cleaned and halved"
+    },
+    "enrich_metric_weights": {
+      "item": "lb/ 226 g white mushrooms",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cleaned and halved"
+    }
   }
 }

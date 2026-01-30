@@ -1,17 +1,33 @@
 {
   "raw": "1/3 cup (75g) coconut oil, melted",
-  "expected": {
-    "item": "coconut oil",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "75",
-        "unit": "g"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coconut oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "coconut oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

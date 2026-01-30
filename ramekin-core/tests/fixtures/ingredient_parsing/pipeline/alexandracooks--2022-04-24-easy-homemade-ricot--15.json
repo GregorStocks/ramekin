@@ -1,8 +1,15 @@
 {
   "raw": "lemon zest",
-  "expected": {
-    "item": "lemon zest",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon zest",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon zest",
+      "measurements": [],
+      "note": null
+    }
   }
 }

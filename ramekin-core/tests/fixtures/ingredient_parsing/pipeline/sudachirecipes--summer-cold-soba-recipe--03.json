@@ -1,17 +1,33 @@
 {
   "raw": "4  okra (about 12g each)",
-  "expected": {
-    "item": "okra",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "12",
-        "unit": "g each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "okra",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "12",
+          "unit": "g each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "okra",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "12",
+          "unit": "g each"
+        }
+      ],
+      "note": null
+    }
   }
 }

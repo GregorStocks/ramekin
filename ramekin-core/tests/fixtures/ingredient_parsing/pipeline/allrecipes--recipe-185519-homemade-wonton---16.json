@@ -1,13 +1,25 @@
 {
   "raw": "1 dash sesame oil, to taste",
-  "expected": {
-    "item": "sesame oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "dash"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sesame oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "dash"
+        }
+      ],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "sesame oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "dash"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

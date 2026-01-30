@@ -1,8 +1,15 @@
 {
   "raw": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
-  "expected": {
-    "item": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped avocado, thinly sliced radishes, crumbled queso fresco, and sliced scallions, for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

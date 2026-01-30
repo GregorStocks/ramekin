@@ -1,8 +1,15 @@
 {
   "raw": "SEMI-INSTANT PANCAKES:",
-  "expected": {
-    "item": "SEMI-INSTANT PANCAKES:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "SEMI-INSTANT PANCAKES:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "SEMI-INSTANT PANCAKES:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

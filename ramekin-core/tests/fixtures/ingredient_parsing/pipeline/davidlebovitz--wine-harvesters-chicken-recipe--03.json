@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 tablespoons olive oil (plus a tablespoon or more for frying the bacon)",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus a tablespoon or more for frying the bacon"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus a tablespoon or more for frying the bacon"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus a tablespoon or more for frying the bacon"
+    }
   }
 }

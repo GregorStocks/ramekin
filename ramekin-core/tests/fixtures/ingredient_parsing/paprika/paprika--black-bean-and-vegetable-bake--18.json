@@ -1,8 +1,15 @@
 {
   "raw": "Tortilla chips",
-  "expected": {
-    "item": "Tortilla chips",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tortilla chips",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tortilla chips",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  poblano chile (seeded and sliced in half)",
-  "expected": {
-    "item": "poblano chile",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and sliced in half"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "poblano chile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and sliced in half"
+    },
+    "parse_ingredients": {
+      "item": "poblano chile",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and sliced in half"
+    }
   }
 }

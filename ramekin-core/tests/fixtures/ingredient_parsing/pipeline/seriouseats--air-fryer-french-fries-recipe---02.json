@@ -1,17 +1,33 @@
 {
   "raw": "3/4 cup (180 ml) water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "180",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

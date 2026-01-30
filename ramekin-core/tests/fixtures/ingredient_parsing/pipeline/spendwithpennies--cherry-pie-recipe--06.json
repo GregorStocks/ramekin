@@ -1,13 +1,25 @@
 {
   "raw": "5 cups cherries ( pitted)",
-  "expected": {
-    "item": "cherries ( pitted)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cherries ( pitted)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cherries ( pitted)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

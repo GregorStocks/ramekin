@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup chopped pineapples (, can also use crushed, drain or leave out water if using the juice. Leave out for low carb or keto. )",
-  "expected": {
-    "item": "chopped pineapples",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "can also use crushed, drain or leave out water if using the juice. Leave out for low carb or keto."
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped pineapples",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "can also use crushed, drain or leave out water if using the juice. Leave out for low carb or keto."
+    },
+    "parse_ingredients": {
+      "item": "chopped pineapples",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "can also use crushed, drain or leave out water if using the juice. Leave out for low carb or keto."
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 small onions, peeled and quartered",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": "peeled and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "peeled and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "peeled and quartered"
+    }
   }
 }

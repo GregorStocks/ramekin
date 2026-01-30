@@ -1,8 +1,15 @@
 {
   "raw": "Parmesan shavings for serving",
-  "expected": {
-    "item": "Parmesan shavings for serving",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parmesan shavings for serving",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Parmesan shavings for serving",
+      "measurements": [],
+      "note": null
+    }
   }
 }

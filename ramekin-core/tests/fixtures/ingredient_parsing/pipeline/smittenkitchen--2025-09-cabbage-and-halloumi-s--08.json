@@ -1,13 +1,25 @@
 {
   "raw": "1 8-ounce package halloumi, at room temperature so it’s easier to slice",
-  "expected": {
-    "item": "halloumi",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "8-ounce package"
-      }
-    ],
-    "note": "at room temperature so it’s easier to slice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "halloumi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "8-ounce package"
+        }
+      ],
+      "note": "at room temperature so it’s easier to slice"
+    },
+    "parse_ingredients": {
+      "item": "halloumi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "8-ounce package"
+        }
+      ],
+      "note": "at room temperature so it’s easier to slice"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "optional add-ins: 1–2 chopped jalapeño peppers (or see Note below)",
-  "expected": {
-    "item": "optional add-ins: 1-2 chopped jalapeño peppers (or see Note below)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "optional add-ins: 1-2 chopped jalapeño peppers (or see Note below)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "optional add-ins: 1-2 chopped jalapeño peppers (or see Note below)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

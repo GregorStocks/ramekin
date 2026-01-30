@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4 tablespoons house sauce, (recipe below, plus more for topping)",
-  "expected": {
-    "item": "house sauce",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "recipe below, plus more for topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "house sauce",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "recipe below, plus more for topping"
+    },
+    "parse_ingredients": {
+      "item": "house sauce",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "recipe below, plus more for topping"
+    }
   }
 }

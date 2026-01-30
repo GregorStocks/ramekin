@@ -1,8 +1,15 @@
 {
   "raw": "Homemade Marshmallows",
-  "expected": {
-    "item": "Homemade Marshmallows",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Homemade Marshmallows",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Homemade Marshmallows",
+      "measurements": [],
+      "note": null
+    }
   }
 }

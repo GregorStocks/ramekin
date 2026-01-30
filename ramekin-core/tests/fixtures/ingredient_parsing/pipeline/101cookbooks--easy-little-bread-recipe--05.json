@@ -1,21 +1,41 @@
 {
   "raw": "1 cup / 5 oz / 140 g whole wheat flour",
-  "expected": {
-    "item": "whole wheat flour",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "amount": "140",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole wheat flour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole wheat flour",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

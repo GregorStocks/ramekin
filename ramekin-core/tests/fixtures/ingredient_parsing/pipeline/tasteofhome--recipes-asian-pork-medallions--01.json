@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup dry sherry or reduced-sodium chicken broth",
-  "expected": {
-    "item": "dry sherry or reduced-sodium chicken broth",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry sherry or reduced-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dry sherry or reduced-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

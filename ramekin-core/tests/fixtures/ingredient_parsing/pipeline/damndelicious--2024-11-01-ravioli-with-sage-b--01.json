@@ -1,17 +1,33 @@
 {
   "raw": "2 (9-ounce) packages refrigerated ravioli",
-  "expected": {
-    "item": "refrigerated ravioli",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "package"
-      },
-      {
-        "amount": "9",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "refrigerated ravioli",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "refrigerated ravioli",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "package"
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

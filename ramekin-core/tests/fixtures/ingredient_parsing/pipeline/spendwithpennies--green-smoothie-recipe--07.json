@@ -1,8 +1,15 @@
 {
   "raw": "honey (to taste, optional)",
-  "expected": {
-    "item": "honey",
-    "measurements": [],
-    "note": "to taste, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "honey",
+      "measurements": [],
+      "note": "to taste, optional"
+    },
+    "parse_ingredients": {
+      "item": "honey",
+      "measurements": [],
+      "note": "to taste, optional"
+    }
   }
 }

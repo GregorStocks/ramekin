@@ -1,17 +1,37 @@
 {
   "raw": "2 (1 ounce) squares semisweet chocolate chips",
-  "expected": {
-    "item": "squares semisweet chocolate chips",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "squares semisweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "squares semisweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

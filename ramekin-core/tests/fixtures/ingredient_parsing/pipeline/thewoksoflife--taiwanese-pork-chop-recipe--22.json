@@ -1,13 +1,25 @@
 {
   "raw": "4-6  tea eggs",
-  "expected": {
-    "item": "tea eggs",
-    "measurements": [
-      {
-        "amount": "4-6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tea eggs",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tea eggs",
+      "measurements": [
+        {
+          "amount": "4-6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

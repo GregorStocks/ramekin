@@ -1,13 +1,25 @@
 {
   "raw": "½ cup water (FOR OVEN METHOD ONLY)",
-  "expected": {
-    "item": "water (FOR OVEN METHOD ONLY)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water (FOR OVEN METHOD ONLY)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water (FOR OVEN METHOD ONLY)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

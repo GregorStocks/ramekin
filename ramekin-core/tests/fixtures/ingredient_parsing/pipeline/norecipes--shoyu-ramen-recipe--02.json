@@ -1,13 +1,25 @@
 {
   "raw": "60 grams onion ((grated))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "60",
-        "unit": "g"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

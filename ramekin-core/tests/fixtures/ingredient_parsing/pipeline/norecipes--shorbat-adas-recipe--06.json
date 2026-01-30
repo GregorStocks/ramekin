@@ -1,13 +1,25 @@
 {
   "raw": "200 grams red lentils ((~1 cup, thoroughly washed))",
-  "expected": {
-    "item": "red lentils",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "~1 cup, thoroughly washed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red lentils",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup, thoroughly washed"
+    },
+    "enrich_metric_weights": {
+      "item": "red lentils",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup, thoroughly washed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 lb ground beef (any ground meat will work)",
-  "expected": {
-    "item": "ground beef",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "any ground meat will work"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "any ground meat will work"
+    },
+    "parse_ingredients": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "any ground meat will work"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
-  "expected": {
-    "item": "ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground meat of your choice (I used pork but have in the past used beef, veal, chicken, turkey or a blend thereof)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

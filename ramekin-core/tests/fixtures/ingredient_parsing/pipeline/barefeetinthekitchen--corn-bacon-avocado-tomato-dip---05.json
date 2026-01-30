@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound bacon (cooked and chopped or crumbled)",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cooked and chopped or crumbled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked and chopped or crumbled"
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked and chopped or crumbled"
+    }
   }
 }

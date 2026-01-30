@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons shredded coconut (finely, optional)",
-  "expected": {
-    "item": "shredded coconut",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded coconut",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely, optional"
+    },
+    "parse_ingredients": {
+      "item": "shredded coconut",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely, optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "150 g bell pepper (I used green piman and red bell pepper)",
-  "expected": {
-    "item": "bell pepper (I used green piman and red bell pepper)",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bell pepper (I used green piman and red bell pepper)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bell pepper (I used green piman and red bell pepper)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "15  medium bamboo or wood skewers",
-  "expected": {
-    "item": "bamboo or wood skewers",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bamboo or wood skewers",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bamboo or wood skewers",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

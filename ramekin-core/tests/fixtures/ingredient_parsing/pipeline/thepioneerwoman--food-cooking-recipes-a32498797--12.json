@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp. coarse sugar, like sugar in the raw",
-  "expected": {
-    "item": "coarse sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "like sugar in the raw"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarse sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "like sugar in the raw"
+    },
+    "enrich_metric_weights": {
+      "item": "coarse sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "like sugar in the raw"
+    }
   }
 }

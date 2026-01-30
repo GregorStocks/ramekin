@@ -1,13 +1,25 @@
 {
   "raw": "Scant 1 pint/400 g&nbsp; cherry tomatoes, halved",
-  "expected": {
-    "item": "pint/400 g  cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "scant"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pint/400 g  cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "scant"
+        }
+      ],
+      "note": "halved"
+    },
+    "parse_ingredients": {
+      "item": "pint/400 g  cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "scant"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups cooked pinto beans or 1 can (drained and rinsed)",
-  "expected": {
-    "item": "cooked pinto beans or 1 can",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked pinto beans or 1 can",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked pinto beans or 1 can",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

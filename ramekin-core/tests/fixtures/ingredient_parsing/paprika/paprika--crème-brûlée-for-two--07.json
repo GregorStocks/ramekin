@@ -1,13 +1,25 @@
 {
   "raw": "2 - 4 teaspoons turbinado sugar or Demerara sugar",
-  "expected": {
-    "item": "turbinado sugar or Demerara sugar",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "turbinado sugar or Demerara sugar",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "turbinado sugar or Demerara sugar",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

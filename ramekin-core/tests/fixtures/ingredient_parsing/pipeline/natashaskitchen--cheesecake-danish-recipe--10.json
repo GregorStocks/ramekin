@@ -1,8 +1,15 @@
 {
   "raw": "Powdered sugar - optional",
-  "expected": {
-    "item": "Powdered sugar - optional",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Powdered sugar - optional",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Powdered sugar - optional",
+      "measurements": [],
+      "note": null
+    }
   }
 }

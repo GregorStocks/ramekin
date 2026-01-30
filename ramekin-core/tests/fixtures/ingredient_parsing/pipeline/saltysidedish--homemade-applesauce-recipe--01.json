@@ -1,13 +1,25 @@
 {
   "raw": "6 large Gala apples ((also 12 small galas work) )",
-  "expected": {
-    "item": "Gala apples (also 12 small galas work)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gala apples (also 12 small galas work)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Gala apples (also 12 small galas work)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

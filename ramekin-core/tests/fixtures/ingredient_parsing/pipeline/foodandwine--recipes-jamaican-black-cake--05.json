@@ -1,13 +1,25 @@
 {
   "raw": "2.5 cups white rum, divided",
-  "expected": {
-    "item": "white rum",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white rum",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "white rum",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

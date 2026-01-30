@@ -1,8 +1,15 @@
 {
   "raw": "A squeeze or two of fresh lime juice, to taste",
-  "expected": {
-    "item": "A squeeze or two of fresh lime juice",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "A squeeze or two of fresh lime juice",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "A squeeze or two of fresh lime juice",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup dry Marsala wine ( not cooking wine; or more chicken stock)",
-  "expected": {
-    "item": "dry Marsala wine",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "not cooking wine; or more chicken stock"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dry Marsala wine",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "not cooking wine; or more chicken stock"
+    },
+    "parse_ingredients": {
+      "item": "dry Marsala wine",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "not cooking wine; or more chicken stock"
+    }
   }
 }

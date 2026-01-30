@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2  hot peppers, (chopped (jalapenos will work here))",
-  "expected": {
-    "item": "hot peppers",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": null
-      }
-    ],
-    "note": "chopped (jalapenos will work here"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot peppers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (jalapenos will work here"
+    },
+    "enrich_metric_weights": {
+      "item": "hot peppers",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (jalapenos will work here"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 small white onion, finely chopped",
-  "expected": {
-    "item": "white onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "small"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

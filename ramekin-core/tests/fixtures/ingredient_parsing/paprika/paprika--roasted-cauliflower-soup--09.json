@@ -1,17 +1,33 @@
 {
   "raw": "1 quart (1L) homemade chicken or vegetable stock or store-bought low-sodium broth, plus more as needed (see notes)",
-  "expected": {
-    "item": "homemade chicken or vegetable stock or store-bought low-sodium broth",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "quart"
-      },
-      {
-        "amount": "1",
-        "unit": "l"
-      }
-    ],
-    "note": "plus more as needed (see notes)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "homemade chicken or vegetable stock or store-bought low-sodium broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "1",
+          "unit": "l"
+        }
+      ],
+      "note": "plus more as needed (see notes)"
+    },
+    "parse_ingredients": {
+      "item": "homemade chicken or vegetable stock or store-bought low-sodium broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "1",
+          "unit": "l"
+        }
+      ],
+      "note": "plus more as needed (see notes)"
+    }
   }
 }

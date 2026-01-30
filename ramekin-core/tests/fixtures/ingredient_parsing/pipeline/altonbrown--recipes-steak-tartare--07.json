@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup celery leaves, finely chopped and divided",
-  "expected": {
-    "item": "celery leaves",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped and divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "celery leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped and divided"
+    },
+    "parse_ingredients": {
+      "item": "celery leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped and divided"
+    }
   }
 }

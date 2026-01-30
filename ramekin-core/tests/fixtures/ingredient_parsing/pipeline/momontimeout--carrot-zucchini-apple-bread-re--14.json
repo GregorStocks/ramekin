@@ -1,13 +1,25 @@
 {
   "raw": "1 cup shredded zucchini (unpeeled)",
-  "expected": {
-    "item": "shredded zucchini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "unpeeled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "unpeeled"
+    },
+    "enrich_metric_weights": {
+      "item": "shredded zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "unpeeled"
+    }
   }
 }

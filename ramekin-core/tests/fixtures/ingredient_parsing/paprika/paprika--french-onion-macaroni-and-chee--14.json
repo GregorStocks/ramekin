@@ -1,17 +1,37 @@
 {
   "raw": "12 ounces white Cheddar, grated (about 4 cups)",
-  "expected": {
-    "item": "white Cheddar",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      },
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white Cheddar",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "grated"
+    },
+    "enrich_metric_weights": {
+      "item": "white Cheddar",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

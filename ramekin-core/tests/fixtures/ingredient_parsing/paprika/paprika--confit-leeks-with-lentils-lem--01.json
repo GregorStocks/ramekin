@@ -1,21 +1,41 @@
 {
   "raw": "5 medium leeks (about 2 1/2 pounds/1 kilogram), trimmed and washed, white and light greens cut into 2-centimeter-thick rounds (about 6 cups/620 grams)",
-  "expected": {
-    "item": "leeks , trimmed and washed, white and light greens cut into 2-centimeter-thick rounds",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "medium"
-      },
-      {
-        "amount": "2 1/2",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leeks , trimmed and washed, white and light greens cut into 2-centimeter-thick rounds",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "medium"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "leeks , trimmed and washed, white and light greens cut into 2-centimeter-thick rounds",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "medium"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

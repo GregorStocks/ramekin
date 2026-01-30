@@ -1,8 +1,15 @@
 {
   "raw": "Tortilla chips and celery sticks, for serving",
-  "expected": {
-    "item": "Tortilla chips and celery sticks",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tortilla chips and celery sticks",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Tortilla chips and celery sticks",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

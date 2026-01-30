@@ -1,13 +1,25 @@
 {
   "raw": "350 g daikon radish (peeled, thickly sliced and quartered)",
-  "expected": {
-    "item": "daikon radish",
-    "measurements": [
-      {
-        "amount": "350",
-        "unit": "g"
-      }
-    ],
-    "note": "peeled, thickly sliced and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "daikon radish",
+      "measurements": [
+        {
+          "amount": "350",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled, thickly sliced and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "daikon radish",
+      "measurements": [
+        {
+          "amount": "350",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled, thickly sliced and quartered"
+    }
   }
 }

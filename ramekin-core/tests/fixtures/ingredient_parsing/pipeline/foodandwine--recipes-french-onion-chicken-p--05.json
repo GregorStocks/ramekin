@@ -1,13 +1,25 @@
 {
   "raw": "1 frozen puff pastry sheet, thawed (from 1 [17.3-ounce] package)",
-  "expected": {
-    "item": "frozen puff pastry sheet",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thawed (from 1 [17.3-ounce] package)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen puff pastry sheet",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed (from 1 [17.3-ounce] package)"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen puff pastry sheet",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed (from 1 [17.3-ounce] package)"
+    }
   }
 }

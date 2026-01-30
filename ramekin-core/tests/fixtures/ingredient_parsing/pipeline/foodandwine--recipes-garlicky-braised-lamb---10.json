@@ -1,13 +1,25 @@
 {
   "raw": "1 medium-size yellow bell pepper, cut into 1/4-inch strips",
-  "expected": {
-    "item": "medium-size yellow bell pepper, cut into 1/4-inch strips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium-size yellow bell pepper, cut into 1/4-inch strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "medium-size yellow bell pepper, cut into 1/4-inch strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

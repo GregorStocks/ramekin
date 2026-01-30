@@ -1,13 +1,25 @@
 {
   "raw": "1 6-ounce package sliced pepperoni, cut into quarters",
-  "expected": {
-    "item": "sliced pepperoni, cut into quarters",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "6-ounce package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced pepperoni, cut into quarters",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "6-ounce package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sliced pepperoni, cut into quarters",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "6-ounce package"
+        }
+      ],
+      "note": null
+    }
   }
 }

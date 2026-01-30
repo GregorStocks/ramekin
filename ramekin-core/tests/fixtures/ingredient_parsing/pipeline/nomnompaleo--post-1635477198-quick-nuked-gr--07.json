@@ -1,8 +1,15 @@
 {
   "raw": "Splash of vinegar",
-  "expected": {
-    "item": "Splash of vinegar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Splash of vinegar",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Splash of vinegar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

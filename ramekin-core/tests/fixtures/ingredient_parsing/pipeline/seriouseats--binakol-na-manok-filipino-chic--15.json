@@ -1,17 +1,33 @@
 {
   "raw": "8 ounces (225g) fresh spinach, rinsed&nbsp;",
-  "expected": {
-    "item": "fresh spinach",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

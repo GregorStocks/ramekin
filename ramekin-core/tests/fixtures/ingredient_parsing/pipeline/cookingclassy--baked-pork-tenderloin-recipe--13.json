@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp cornstarch (mixed with 1 Tbsp low-sodium chicken broth)",
-  "expected": {
-    "item": "cornstarch",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "mixed with 1 Tbsp low-sodium chicken broth"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cornstarch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "mixed with 1 Tbsp low-sodium chicken broth"
+    },
+    "parse_ingredients": {
+      "item": "cornstarch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "mixed with 1 Tbsp low-sodium chicken broth"
+    }
   }
 }

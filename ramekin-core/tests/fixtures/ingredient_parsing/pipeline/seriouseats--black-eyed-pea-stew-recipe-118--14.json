@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (5 g) chopped fresh dill, plus more for serving&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
-  "expected": {
-    "item": "chopped fresh dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "5",
-        "unit": "g"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

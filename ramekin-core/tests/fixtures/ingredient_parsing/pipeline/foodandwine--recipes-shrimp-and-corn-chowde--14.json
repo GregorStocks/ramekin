@@ -1,13 +1,25 @@
 {
   "raw": "3 plum tomatoes—peeled, seeded and finely chopped",
-  "expected": {
-    "item": "plum tomatoes-peeled",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "seeded and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plum tomatoes-peeled",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "plum tomatoes-peeled",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  small branch rosemary (optional)",
-  "expected": {
-    "item": "branch rosemary",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "branch rosemary",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "branch rosemary",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups cooked chickpeas, from above, or two 15-oz cans, drained and rinsed",
-  "expected": {
-    "item": "cooked chickpeas, from above, or two 15-oz cans",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked chickpeas, from above, or two 15-oz cans",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "cooked chickpeas, from above, or two 15-oz cans",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

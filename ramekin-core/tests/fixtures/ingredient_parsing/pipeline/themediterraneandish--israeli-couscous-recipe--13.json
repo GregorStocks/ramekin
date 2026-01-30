@@ -1,13 +1,29 @@
 {
   "raw": "14 oz can artichoke hearts, roughly chopped if needed",
-  "expected": {
-    "item": "can artichoke hearts",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "roughly chopped if needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "can artichoke hearts",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped if needed"
+    },
+    "parse_ingredients": {
+      "item": "can artichoke hearts",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "roughly chopped if needed"
+    }
   }
 }

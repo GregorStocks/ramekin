@@ -1,8 +1,15 @@
 {
   "raw": "Pecorino Romano cheese (finely grated for topping)",
-  "expected": {
-    "item": "Pecorino Romano cheese",
-    "measurements": [],
-    "note": "finely grated for topping"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pecorino Romano cheese",
+      "measurements": [],
+      "note": "finely grated for topping"
+    },
+    "enrich_metric_weights": {
+      "item": "Pecorino Romano cheese",
+      "measurements": [],
+      "note": "finely grated for topping"
+    }
   }
 }

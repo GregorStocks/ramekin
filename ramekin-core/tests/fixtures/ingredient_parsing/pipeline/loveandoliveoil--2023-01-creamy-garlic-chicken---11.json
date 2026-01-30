@@ -1,13 +1,25 @@
 {
   "raw": "6 to 8  large garlic cloves (finely chopped (about 3 tablespoons))",
-  "expected": {
-    "item": "garlic cloves",
-    "measurements": [
-      {
-        "amount": "6 to 8",
-        "unit": "large"
-      }
-    ],
-    "note": "finely chopped (about 3 tablespoons"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "6 to 8",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped (about 3 tablespoons"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic cloves",
+      "measurements": [
+        {
+          "amount": "6 to 8",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped (about 3 tablespoons"
+    }
   }
 }

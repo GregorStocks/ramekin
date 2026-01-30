@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (30 ml) apple cider vinegar",
-  "expected": {
-    "item": "apple cider vinegar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "30",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apple cider vinegar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "apple cider vinegar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

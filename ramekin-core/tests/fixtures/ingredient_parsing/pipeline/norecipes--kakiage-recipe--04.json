@@ -1,17 +1,33 @@
 {
   "raw": "10 grams mitsuba ((1 small bunch))",
-  "expected": {
-    "item": "mitsuba",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mitsuba",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mitsuba",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

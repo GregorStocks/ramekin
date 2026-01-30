@@ -1,17 +1,33 @@
 {
   "raw": "2 lbs chicken breast (about 3 large chicken breasts)",
-  "expected": {
-    "item": "chicken breast",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

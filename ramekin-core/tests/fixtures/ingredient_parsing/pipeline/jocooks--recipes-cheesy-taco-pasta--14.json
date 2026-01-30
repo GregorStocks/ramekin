@@ -1,8 +1,15 @@
 {
   "raw": "black olives (sliced)",
-  "expected": {
-    "item": "black olives",
-    "measurements": [],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black olives",
+      "measurements": [],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "black olives",
+      "measurements": [],
+      "note": "sliced"
+    }
   }
 }

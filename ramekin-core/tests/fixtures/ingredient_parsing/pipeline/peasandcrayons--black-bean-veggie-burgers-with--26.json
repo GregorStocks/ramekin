@@ -1,8 +1,15 @@
 {
   "raw": "sliced ripe tomato",
-  "expected": {
-    "item": "sliced ripe tomato",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced ripe tomato",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sliced ripe tomato",
+      "measurements": [],
+      "note": null
+    }
   }
 }

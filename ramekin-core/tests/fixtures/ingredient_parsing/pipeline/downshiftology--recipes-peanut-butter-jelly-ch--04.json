@@ -1,13 +1,25 @@
 {
   "raw": "1 pint blueberries (plus more for garnish)",
-  "expected": {
-    "item": "blueberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pint"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "blueberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "blueberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pint"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

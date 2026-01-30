@@ -1,13 +1,25 @@
 {
   "raw": "1 5-ounce package mixed greens",
-  "expected": {
-    "item": "mixed greens",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "5-ounce package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mixed greens",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "5-ounce package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mixed greens",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "5-ounce package"
+        }
+      ],
+      "note": null
+    }
   }
 }

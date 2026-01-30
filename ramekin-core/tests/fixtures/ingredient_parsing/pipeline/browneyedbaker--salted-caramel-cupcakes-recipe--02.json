@@ -1,13 +1,25 @@
 {
   "raw": "½ cup plus 1 tablespoon hot water",
-  "expected": {
-    "item": "½ cup plus 1 tablespoon hot water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon hot water"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "½ cup plus 1 tablespoon hot water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon hot water"
+    },
+    "enrich_metric_weights": {
+      "item": "½ cup plus 1 tablespoon hot water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon hot water"
+    }
   }
 }

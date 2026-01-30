@@ -1,8 +1,15 @@
 {
   "raw": "Steamed couscous, for serving (directions here and elsewhere on the web)",
-  "expected": {
-    "item": "Steamed couscous",
-    "measurements": [],
-    "note": "for serving (directions here and elsewhere on the web)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Steamed couscous",
+      "measurements": [],
+      "note": "for serving (directions here and elsewhere on the web)"
+    },
+    "enrich_metric_weights": {
+      "item": "Steamed couscous",
+      "measurements": [],
+      "note": "for serving (directions here and elsewhere on the web)"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Scallions ((chopped, for garnish))",
-  "expected": {
-    "item": "Scallions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "chopped, for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Scallions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped, for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Scallions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped, for garnish"
+    }
   }
 }

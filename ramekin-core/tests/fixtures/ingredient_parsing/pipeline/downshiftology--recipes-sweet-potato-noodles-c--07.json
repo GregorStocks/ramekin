@@ -1,13 +1,25 @@
 {
   "raw": "1/2  yellow onion (sliced)",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

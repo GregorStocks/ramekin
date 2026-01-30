@@ -1,21 +1,41 @@
 {
   "raw": "1/2 cup (120g/ml) room-temperature water (about 70°F (21°C))",
-  "expected": {
-    "item": "room-temperature water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": null
-      },
-      {
-        "amount": "70",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "room-temperature water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": null
+        },
+        {
+          "amount": "70",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "room-temperature water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": null
+        },
+        {
+          "amount": "70",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

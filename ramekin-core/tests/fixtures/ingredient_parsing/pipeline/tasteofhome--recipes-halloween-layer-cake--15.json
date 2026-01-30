@@ -1,8 +1,15 @@
 {
   "raw": "FROSTING:",
-  "expected": {
-    "item": "FROSTING:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "FROSTING:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "FROSTING:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "6&nbsp;ounces Swiss chard, leaves removed from stems, torn into small pieces",
-  "expected": {
-    "item": "Swiss chard, leaves removed from stems, torn into small pieces",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Swiss chard, leaves removed from stems, torn into small pieces",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Swiss chard, leaves removed from stems, torn into small pieces",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

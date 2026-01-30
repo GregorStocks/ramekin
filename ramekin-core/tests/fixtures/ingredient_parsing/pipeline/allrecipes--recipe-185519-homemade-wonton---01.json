@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch green onions, cut into 1/2-inch pieces, divided",
-  "expected": {
-    "item": "green onions, cut into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

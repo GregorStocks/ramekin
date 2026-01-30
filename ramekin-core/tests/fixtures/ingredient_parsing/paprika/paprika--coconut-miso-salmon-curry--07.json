@@ -1,13 +1,25 @@
 {
   "raw": "1 cup unsweetened, full-fat canned coconut milk",
-  "expected": {
-    "item": "unsweetened, full-fat canned coconut milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsweetened, full-fat canned coconut milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsweetened, full-fat canned coconut milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

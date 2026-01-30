@@ -1,13 +1,25 @@
 {
   "raw": "220 grams spaghetti",
-  "expected": {
-    "item": "spaghetti",
-    "measurements": [
-      {
-        "amount": "220",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "220",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "220",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

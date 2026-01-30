@@ -1,8 +1,15 @@
 {
   "raw": "Brown petal dust or cocoa powder",
-  "expected": {
-    "item": "Brown petal dust or cocoa powder",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Brown petal dust or cocoa powder",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Brown petal dust or cocoa powder",
+      "measurements": [],
+      "note": null
+    }
   }
 }

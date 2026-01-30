@@ -1,21 +1,41 @@
 {
   "raw": "3 tablespoons unsalted butter (1 1/2 ounces; 42 g), melted and slightly cooled",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "42",
-        "unit": "g"
-      }
-    ],
-    "note": "melted and slightly cooled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        }
+      ],
+      "note": "melted and slightly cooled"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        }
+      ],
+      "note": "melted and slightly cooled"
+    }
   }
 }

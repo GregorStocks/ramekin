@@ -1,17 +1,33 @@
 {
   "raw": "1 pound chicken breast or thigh meat ((455g) , diced small)",
-  "expected": {
-    "item": "chicken breast or thigh meat",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "455",
-        "unit": "g"
-      }
-    ],
-    "note": "diced small)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast or thigh meat",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": "diced small)"
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast or thigh meat",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": "diced small)"
+    }
   }
 }

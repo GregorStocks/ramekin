@@ -1,13 +1,25 @@
 {
   "raw": "1kg pack boneless skinless chicken thighs",
-  "expected": {
-    "item": "pack boneless skinless chicken thighs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pack boneless skinless chicken thighs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pack boneless skinless chicken thighs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

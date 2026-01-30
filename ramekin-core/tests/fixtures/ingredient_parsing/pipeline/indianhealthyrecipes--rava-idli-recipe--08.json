@@ -1,13 +1,25 @@
 {
   "raw": "2  green chilies  (chopped (skip if making for kids))",
-  "expected": {
-    "item": "green chilies",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "chopped (skip if making for kids"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (skip if making for kids"
+    },
+    "parse_ingredients": {
+      "item": "green chilies",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (skip if making for kids"
+    }
   }
 }

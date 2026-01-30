@@ -1,8 +1,15 @@
 {
   "raw": "Black Beans or Pinto Beans",
-  "expected": {
-    "item": "Black Beans or Pinto Beans",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Black Beans or Pinto Beans",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Black Beans or Pinto Beans",
+      "measurements": [],
+      "note": null
+    }
   }
 }

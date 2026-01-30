@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (30 g) jarred diced pimentos, drained",
-  "expected": {
-    "item": "jarred diced pimentos",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "30",
-        "unit": "g"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jarred diced pimentos",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "jarred diced pimentos",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

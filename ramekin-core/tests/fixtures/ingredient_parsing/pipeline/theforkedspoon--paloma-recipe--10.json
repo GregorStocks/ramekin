@@ -1,13 +1,25 @@
 {
   "raw": "2 fluid ounces club soda (or grapefruit soda)",
-  "expected": {
-    "item": "club soda (or grapefruit soda)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "club soda (or grapefruit soda)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "club soda (or grapefruit soda)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

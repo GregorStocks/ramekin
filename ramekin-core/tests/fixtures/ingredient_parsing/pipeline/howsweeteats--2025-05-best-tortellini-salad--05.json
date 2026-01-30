@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces salami, (chopped)",
-  "expected": {
-    "item": "salami",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salami",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "salami",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

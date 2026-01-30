@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces peanuts (roasted &amp;amp; salted (2 cups))",
-  "expected": {
-    "item": "peanuts",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "roasted & salted (2 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "roasted & salted (2 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "roasted & salted (2 cups"
+    }
   }
 }

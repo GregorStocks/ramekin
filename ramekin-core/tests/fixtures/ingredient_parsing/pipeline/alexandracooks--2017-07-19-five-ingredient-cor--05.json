@@ -1,8 +1,15 @@
 {
   "raw": "vinegar (optional) to taste — I used white balsamic, but white wine vinegar would be good, too, or lime juice",
-  "expected": {
-    "item": "vinegar to taste - I used white balsamic, but white wine vinegar would be good, too, or lime juice",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vinegar to taste - I used white balsamic, but white wine vinegar would be good, too, or lime juice",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "vinegar to taste - I used white balsamic, but white wine vinegar would be good, too, or lime juice",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

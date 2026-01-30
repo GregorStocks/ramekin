@@ -1,13 +1,25 @@
 {
   "raw": "1 cup fresh spinach (roughly chopped)",
-  "expected": {
-    "item": "fresh spinach",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

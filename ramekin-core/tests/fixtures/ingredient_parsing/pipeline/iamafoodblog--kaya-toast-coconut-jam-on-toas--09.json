@@ -1,8 +1,15 @@
 {
   "raw": "kaya",
-  "expected": {
-    "item": "kaya",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kaya",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kaya",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "handful mint leaves, roughly chopped",
-  "expected": {
-    "item": "mint leaves",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mint leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "mint leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

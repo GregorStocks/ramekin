@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
-  "expected": {
-    "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "1/4 cup, plus extra for garnish green onions (thinly sliced)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

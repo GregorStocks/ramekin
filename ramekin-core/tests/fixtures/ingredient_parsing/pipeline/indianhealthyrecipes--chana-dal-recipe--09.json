@@ -1,13 +1,25 @@
 {
   "raw": "1  Indian bay leaf ( (optional))",
-  "expected": {
-    "item": "Indian bay leaf",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "(optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Indian bay leaf",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "(optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Indian bay leaf",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "(optional"
+    }
   }
 }

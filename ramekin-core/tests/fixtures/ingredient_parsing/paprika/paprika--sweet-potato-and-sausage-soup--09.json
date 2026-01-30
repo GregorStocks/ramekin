@@ -1,13 +1,25 @@
 {
   "raw": "1 16-oz can white beans",
-  "expected": {
-    "item": "white beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "16-oz can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-oz can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-oz can"
+        }
+      ],
+      "note": null
+    }
   }
 }

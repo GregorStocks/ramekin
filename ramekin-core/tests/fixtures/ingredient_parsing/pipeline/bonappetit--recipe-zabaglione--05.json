@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp. (or more) fresh lemon juice",
-  "expected": {
-    "item": "fresh lemon juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or more"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more"
+    },
+    "parse_ingredients": {
+      "item": "fresh lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup toasted almonds (coarsely chopped)",
-  "expected": {
-    "item": "toasted almonds",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "toasted almonds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "toasted almonds",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

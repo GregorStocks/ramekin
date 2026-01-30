@@ -1,8 +1,15 @@
 {
   "raw": "Shallot and Parsley Butter",
-  "expected": {
-    "item": "Shallot and Parsley Butter",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shallot and Parsley Butter",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Shallot and Parsley Butter",
+      "measurements": [],
+      "note": null
+    }
   }
 }

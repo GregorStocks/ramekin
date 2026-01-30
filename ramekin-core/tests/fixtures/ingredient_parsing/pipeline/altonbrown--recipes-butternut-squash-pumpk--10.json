@@ -1,13 +1,25 @@
 {
   "raw": "1 pound fresh butternut squash, peeled and seeded, cut into chunks",
-  "expected": {
-    "item": "fresh butternut squash, peeled and seeded, cut into chunks",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh butternut squash, peeled and seeded, cut into chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh butternut squash, peeled and seeded, cut into chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

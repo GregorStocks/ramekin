@@ -1,8 +1,15 @@
 {
   "raw": "TO FINISH:",
-  "expected": {
-    "item": "TO FINISH:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "TO FINISH:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "TO FINISH:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

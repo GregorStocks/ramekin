@@ -1,8 +1,15 @@
 {
   "raw": "Egg noodles, for serving",
-  "expected": {
-    "item": "Egg noodles",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Egg noodles",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Egg noodles",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

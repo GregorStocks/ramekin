@@ -1,13 +1,25 @@
 {
   "raw": "1 cup black (white, and silver sprinkle medley)",
-  "expected": {
-    "item": "black (white, and silver sprinkle medley)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "black (white, and silver sprinkle medley)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "black (white, and silver sprinkle medley)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "8 pitted prunes (about 2 ounces), roughly chopped",
-  "expected": {
-    "item": "pitted prunes",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pitted prunes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "pitted prunes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

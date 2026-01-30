@@ -1,13 +1,25 @@
 {
   "raw": "2  medium shallots (finely diced and sauteed)",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "finely diced and sauteed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely diced and sauteed"
+    },
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely diced and sauteed"
+    }
   }
 }

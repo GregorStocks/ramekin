@@ -1,8 +1,15 @@
 {
   "raw": "orange (lemon, lime, maraschino cherries - for garnish)",
-  "expected": {
-    "item": "orange",
-    "measurements": [],
-    "note": "lemon, lime, maraschino cherries - for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange",
+      "measurements": [],
+      "note": "lemon, lime, maraschino cherries - for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "orange",
+      "measurements": [],
+      "note": "lemon, lime, maraschino cherries - for garnish"
+    }
   }
 }

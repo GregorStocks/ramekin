@@ -1,8 +1,15 @@
 {
   "raw": "Thinly-sliced pickles",
-  "expected": {
-    "item": "Thinly-sliced pickles",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Thinly-sliced pickles",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Thinly-sliced pickles",
+      "measurements": [],
+      "note": null
+    }
   }
 }

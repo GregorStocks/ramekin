@@ -1,13 +1,25 @@
 {
   "raw": "6 skin-on, bone-in chicken breasts",
-  "expected": {
-    "item": "skin-on, bone-in chicken breasts",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skin-on, bone-in chicken breasts",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skin-on, bone-in chicken breasts",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

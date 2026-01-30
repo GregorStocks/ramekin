@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 tablespoon light brown sugar (packed, omit for keto)",
-  "expected": {
-    "item": "light brown sugar",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "packed, omit for keto"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "packed, omit for keto"
+    },
+    "enrich_metric_weights": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "packed, omit for keto"
+    }
   }
 }

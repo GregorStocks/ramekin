@@ -1,13 +1,25 @@
 {
   "raw": "1 1-inch piece fresh ginger, peeled and thinly sliced",
-  "expected": {
-    "item": "1-inch piece fresh ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1-inch piece fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "1-inch piece fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and thinly sliced"
+    }
   }
 }

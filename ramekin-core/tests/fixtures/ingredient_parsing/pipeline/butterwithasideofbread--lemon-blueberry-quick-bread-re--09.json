@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 cups frozen blueberries (thawed, rinsed)",
-  "expected": {
-    "item": "frozen blueberries",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed, rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen blueberries",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed, rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen blueberries",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed, rinsed"
+    }
   }
 }

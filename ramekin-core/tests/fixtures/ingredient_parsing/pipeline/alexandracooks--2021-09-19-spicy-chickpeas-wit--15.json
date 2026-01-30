@@ -1,8 +1,15 @@
 {
   "raw": "coconut rice, see notes above",
-  "expected": {
-    "item": "coconut rice, see notes above",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coconut rice, see notes above",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coconut rice, see notes above",
+      "measurements": [],
+      "note": null
+    }
   }
 }

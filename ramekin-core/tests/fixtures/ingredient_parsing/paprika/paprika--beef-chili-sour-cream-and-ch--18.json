@@ -1,8 +1,15 @@
 {
   "raw": "Sour Cream and Cheddar Biscuits:",
-  "expected": {
-    "item": "Sour Cream and Cheddar Biscuits:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sour Cream and Cheddar Biscuits:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sour Cream and Cheddar Biscuits:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Browned Butter Steak Sauce",
-  "expected": {
-    "item": "Browned Butter Steak Sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Browned Butter Steak Sauce",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Browned Butter Steak Sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

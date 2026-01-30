@@ -1,8 +1,15 @@
 {
   "raw": "LUXURIOUS POTATO FILLING:",
-  "expected": {
-    "item": "LUXURIOUS POTATO FILLING:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "LUXURIOUS POTATO FILLING:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "LUXURIOUS POTATO FILLING:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "icing sugar for dusting",
-  "expected": {
-    "item": "icing sugar for dusting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "icing sugar for dusting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "icing sugar for dusting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

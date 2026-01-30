@@ -1,13 +1,25 @@
 {
   "raw": "1 jalapeño or other small hot chili pepper, seeded and chopped",
-  "expected": {
-    "item": "jalapeño or other small hot chili pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeño or other small hot chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeño or other small hot chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    }
   }
 }

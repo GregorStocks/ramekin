@@ -1,13 +1,25 @@
 {
   "raw": "2 cups | 9 oz | 225 g all-purpose flour",
-  "expected": {
-    "item": "| 9 oz | 225 g all-purpose flour",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "| 9 oz | 225 g all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "| 9 oz | 225 g all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

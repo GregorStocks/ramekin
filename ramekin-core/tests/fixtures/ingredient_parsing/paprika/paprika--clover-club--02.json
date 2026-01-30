@@ -1,17 +1,37 @@
 {
   "raw": "½ ounce rich (2:1) syrup",
-  "expected": {
-    "item": "rich syrup",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rich syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "rich syrup",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

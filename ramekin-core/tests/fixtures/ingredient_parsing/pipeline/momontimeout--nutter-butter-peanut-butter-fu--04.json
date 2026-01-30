@@ -1,13 +1,29 @@
 {
   "raw": "10 oz Reese&amp;#x27;s peanut butter chips (1 package - coarsely chopped)",
-  "expected": {
-    "item": "Reese's peanut butter chips",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "1 package - coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Reese's peanut butter chips",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "1 package - coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "Reese's peanut butter chips",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "1 package - coarsely chopped"
+    }
   }
 }

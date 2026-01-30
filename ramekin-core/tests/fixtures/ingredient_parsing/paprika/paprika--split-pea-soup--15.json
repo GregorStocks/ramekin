@@ -1,13 +1,25 @@
 {
   "raw": "Two slices of crumbled crisp bacon (obviously would no longer be vegetarian)",
-  "expected": {
-    "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crumbled crisp bacon (obviously would no longer be vegetarian)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

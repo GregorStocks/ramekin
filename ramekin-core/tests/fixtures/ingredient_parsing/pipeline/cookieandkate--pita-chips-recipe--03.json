@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon flaky sea salt or kosher salt",
-  "expected": {
-    "item": "flaky sea salt or kosher salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flaky sea salt or kosher salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flaky sea salt or kosher salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

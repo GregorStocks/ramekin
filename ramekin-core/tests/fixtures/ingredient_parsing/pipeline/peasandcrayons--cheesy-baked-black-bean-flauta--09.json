@@ -1,13 +1,29 @@
 {
   "raw": "4 oz grated cheese (cheddar, colby, gouda, mozz)",
-  "expected": {
-    "item": "grated cheese (cheddar, colby, gouda, mozz)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated cheese (cheddar, colby, gouda, mozz)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated cheese (cheddar, colby, gouda, mozz)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

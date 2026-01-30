@@ -1,8 +1,15 @@
 {
   "raw": "Baking cocoa, optional",
-  "expected": {
-    "item": "Baking cocoa",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Baking cocoa",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Baking cocoa",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

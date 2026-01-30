@@ -1,13 +1,25 @@
 {
   "raw": "1.5 lbs chicken breast or tenders (thinly sliced )",
-  "expected": {
-    "item": "chicken breast or tenders",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast or tenders",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast or tenders",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

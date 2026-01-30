@@ -1,8 +1,15 @@
 {
   "raw": "toasted sesame oil (for cooking)",
-  "expected": {
-    "item": "toasted sesame oil (for cooking)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted sesame oil (for cooking)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted sesame oil (for cooking)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

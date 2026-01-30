@@ -1,8 +1,15 @@
 {
   "raw": "fish sauce vinaigrette to serve, if desired",
-  "expected": {
-    "item": "fish sauce vinaigrette to serve, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fish sauce vinaigrette to serve, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fish sauce vinaigrette to serve, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

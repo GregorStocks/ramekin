@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon hot honey. (plus more for drizzling)",
-  "expected": {
-    "item": "hot honey.",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for drizzling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot honey.",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for drizzling"
+    },
+    "enrich_metric_weights": {
+      "item": "hot honey.",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for drizzling"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¾ teaspoon ginger (grated or paste)",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "grated or paste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "grated or paste"
+    },
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "grated or paste"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Ginger ale or your bubbly of choice: sparkling water; sparkling wine",
-  "expected": {
-    "item": "Ginger ale or your bubbly of choice: sparkling water; sparkling wine",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Ginger ale or your bubbly of choice: sparkling water; sparkling wine",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Ginger ale or your bubbly of choice: sparkling water; sparkling wine",
+      "measurements": [],
+      "note": null
+    }
   }
 }

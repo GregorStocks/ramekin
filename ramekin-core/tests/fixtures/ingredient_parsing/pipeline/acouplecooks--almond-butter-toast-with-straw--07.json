@@ -1,8 +1,15 @@
 {
   "raw": "Sliced bananas or green apples",
-  "expected": {
-    "item": "Sliced bananas or green apples",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sliced bananas or green apples",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sliced bananas or green apples",
+      "measurements": [],
+      "note": null
+    }
   }
 }

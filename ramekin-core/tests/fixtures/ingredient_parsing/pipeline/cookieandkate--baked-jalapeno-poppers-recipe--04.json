@@ -1,13 +1,25 @@
 {
   "raw": "&amp;frac14; cup chopped green onion, plus 1 tablespoon for garnish",
-  "expected": {
-    "item": "chopped green onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped green onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon for garnish"
+    },
+    "parse_ingredients": {
+      "item": "chopped green onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon for garnish"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup soft cheese, like cream cheese, brie, Boursin, or Laughing Cow",
-  "expected": {
-    "item": "soft cheese, like cream cheese, brie, Boursin, or Laughing Cow",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "soft cheese, like cream cheese, brie, Boursin, or Laughing Cow",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "soft cheese, like cream cheese, brie, Boursin, or Laughing Cow",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Nectarines",
-  "expected": {
-    "item": "Nectarines",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Nectarines",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Nectarines",
+      "measurements": [],
+      "note": null
+    }
   }
 }

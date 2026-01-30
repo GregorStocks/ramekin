@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup finely chopped dill, plus more for garnish",
-  "expected": {
-    "item": "finely chopped dill",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely chopped dill",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "parse_ingredients": {
+      "item": "finely chopped dill",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

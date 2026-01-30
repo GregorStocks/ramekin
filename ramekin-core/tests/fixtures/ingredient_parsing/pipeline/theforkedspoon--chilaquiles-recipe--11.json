@@ -1,13 +1,25 @@
 {
   "raw": "30  corn tortillas (each cut into 9 pieces)",
-  "expected": {
-    "item": "corn tortillas (each cut into 9 pieces)",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "corn tortillas (each cut into 9 pieces)",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "corn tortillas (each cut into 9 pieces)",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

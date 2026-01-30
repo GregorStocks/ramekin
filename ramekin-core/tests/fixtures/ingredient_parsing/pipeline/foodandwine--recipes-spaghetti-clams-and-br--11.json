@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unsalted butter, cubed and chilled",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "cubed and chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "cubed and chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "cubed and chilled"
+    }
   }
 }

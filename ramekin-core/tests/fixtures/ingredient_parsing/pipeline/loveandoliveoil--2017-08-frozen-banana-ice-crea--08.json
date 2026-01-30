@@ -1,8 +1,15 @@
 {
   "raw": "sprinkles or chopped nuts, for decoration",
-  "expected": {
-    "item": "sprinkles or chopped nuts, for decoration",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sprinkles or chopped nuts, for decoration",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sprinkles or chopped nuts, for decoration",
+      "measurements": [],
+      "note": null
+    }
   }
 }

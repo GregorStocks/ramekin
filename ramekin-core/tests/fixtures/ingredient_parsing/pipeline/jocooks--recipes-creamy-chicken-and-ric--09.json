@@ -1,13 +1,25 @@
 {
   "raw": "1 cup rice (long grain, such as Jasmine)",
-  "expected": {
-    "item": "rice (long grain, such as Jasmine)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rice (long grain, such as Jasmine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "rice (long grain, such as Jasmine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

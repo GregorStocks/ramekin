@@ -1,13 +1,25 @@
 {
   "raw": "12 cherry tomatoes, halved, or 1 large tomato, roughly chopped",
-  "expected": {
-    "item": "cherry tomatoes, halved, or 1 large tomato",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cherry tomatoes, halved, or 1 large tomato",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "cherry tomatoes, halved, or 1 large tomato",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

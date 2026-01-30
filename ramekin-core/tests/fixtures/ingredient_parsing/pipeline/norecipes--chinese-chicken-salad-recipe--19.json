@@ -1,13 +1,25 @@
 {
   "raw": "100 grams red cabbage ((shredded))",
-  "expected": {
-    "item": "red cabbage",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red cabbage",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "red cabbage",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

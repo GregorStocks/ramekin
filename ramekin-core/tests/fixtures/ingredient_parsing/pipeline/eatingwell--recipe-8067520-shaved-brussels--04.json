@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unsalted dry-roasted pistachios, finely chopped",
-  "expected": {
-    "item": "unsalted dry-roasted pistachios",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted dry-roasted pistachios",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "unsalted dry-roasted pistachios",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

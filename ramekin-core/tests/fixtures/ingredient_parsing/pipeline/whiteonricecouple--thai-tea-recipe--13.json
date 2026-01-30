@@ -1,8 +1,15 @@
 {
   "raw": "ice",
-  "expected": {
-    "item": "ice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ice",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

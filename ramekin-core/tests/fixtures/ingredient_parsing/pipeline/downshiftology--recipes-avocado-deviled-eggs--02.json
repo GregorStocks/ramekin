@@ -1,13 +1,25 @@
 {
   "raw": "1  avocado (peeled and pitted)",
-  "expected": {
-    "item": "avocado",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and pitted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and pitted"
+    },
+    "parse_ingredients": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and pitted"
+    }
   }
 }

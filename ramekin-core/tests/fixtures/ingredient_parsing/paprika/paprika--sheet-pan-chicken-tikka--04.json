@@ -1,13 +1,25 @@
 {
   "raw": "1 fresh green chili (I used a jalapeno), seeded and minced",
-  "expected": {
-    "item": "fresh green chili (I used a jalapeno)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh green chili (I used a jalapeno)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh green chili (I used a jalapeno)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    }
   }
 }

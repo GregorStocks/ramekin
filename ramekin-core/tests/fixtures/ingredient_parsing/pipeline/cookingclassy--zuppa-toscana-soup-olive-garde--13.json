@@ -1,8 +1,15 @@
 {
   "raw": "Finely shredded Romano cheese for serving, (optional)",
-  "expected": {
-    "item": "Finely shredded Romano cheese for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Finely shredded Romano cheese for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Finely shredded Romano cheese for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

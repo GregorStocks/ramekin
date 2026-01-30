@@ -1,17 +1,33 @@
 {
   "raw": "1  medium organic apple finely diced (about 105 g)",
-  "expected": {
-    "item": "organic apple finely diced",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      },
-      {
-        "amount": "105",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "organic apple finely diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "105",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "organic apple finely diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "105",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

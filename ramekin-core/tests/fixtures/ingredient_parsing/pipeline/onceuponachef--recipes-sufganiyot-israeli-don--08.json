@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons  vegetable oil, plus about 2 quarts more for frying",
-  "expected": {
-    "item": "vegetable oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus about 2 quarts more for frying"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus about 2 quarts more for frying"
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus about 2 quarts more for frying"
+    }
   }
 }

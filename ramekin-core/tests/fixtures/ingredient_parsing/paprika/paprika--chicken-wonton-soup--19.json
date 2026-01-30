@@ -1,8 +1,15 @@
 {
   "raw": "Toasted sesame oil and soy sauce, to taste",
-  "expected": {
-    "item": "Toasted sesame oil and soy sauce",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Toasted sesame oil and soy sauce",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Toasted sesame oil and soy sauce",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

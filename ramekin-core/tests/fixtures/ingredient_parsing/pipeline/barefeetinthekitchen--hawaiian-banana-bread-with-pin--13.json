@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup shredded coconut (plus more for topping)",
-  "expected": {
-    "item": "shredded coconut",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded coconut",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    },
+    "parse_ingredients": {
+      "item": "shredded coconut",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    }
   }
 }

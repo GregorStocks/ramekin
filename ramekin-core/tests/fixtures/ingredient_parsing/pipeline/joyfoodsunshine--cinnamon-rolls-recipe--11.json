@@ -1,13 +1,25 @@
 {
   "raw": "2 ½ Tablespoons ground cinnamon",
-  "expected": {
-    "item": "ground cinnamon",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground cinnamon",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground cinnamon",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

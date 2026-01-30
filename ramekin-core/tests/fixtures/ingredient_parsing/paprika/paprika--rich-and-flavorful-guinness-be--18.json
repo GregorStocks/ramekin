@@ -1,21 +1,41 @@
 {
   "raw": "8 ounces small waxy potatoes (225 g; about 20), such as baby Yukon Golds",
-  "expected": {
-    "item": "small waxy potatoes , such as baby Yukon Golds",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "225",
-        "unit": "g"
-      },
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "small waxy potatoes , such as baby Yukon Golds",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "small waxy potatoes , such as baby Yukon Golds",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

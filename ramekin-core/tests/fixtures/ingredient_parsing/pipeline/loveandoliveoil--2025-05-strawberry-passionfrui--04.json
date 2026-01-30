@@ -1,13 +1,25 @@
 {
   "raw": "1/8 teaspoon butter (optional)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

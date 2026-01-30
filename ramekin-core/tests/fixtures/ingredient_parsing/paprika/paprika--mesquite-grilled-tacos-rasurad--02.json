@@ -1,8 +1,15 @@
 {
   "raw": "Aguamole",
-  "expected": {
-    "item": "Aguamole",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Aguamole",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Aguamole",
+      "measurements": [],
+      "note": null
+    }
   }
 }

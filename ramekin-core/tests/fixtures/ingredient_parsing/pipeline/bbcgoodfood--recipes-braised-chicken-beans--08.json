@@ -1,13 +1,25 @@
 {
   "raw": "handful  parsley leaves",
-  "expected": {
-    "item": "parsley leaves",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parsley leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "parsley leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

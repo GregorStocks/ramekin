@@ -1,21 +1,41 @@
 {
   "raw": "1 (15-ounce) can pure pumpkin puree or 1 ¾ cups homemade pumpkin puree (420g)",
-  "expected": {
-    "item": "pure pumpkin puree",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      },
-      {
-        "amount": "420",
-        "unit": "g"
-      }
-    ],
-    "note": "or 1 3/4 cups homemade pumpkin puree"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pure pumpkin puree",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": "420",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1 3/4 cups homemade pumpkin puree"
+    },
+    "parse_ingredients": {
+      "item": "pure pumpkin puree",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": "420",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1 3/4 cups homemade pumpkin puree"
+    }
   }
 }

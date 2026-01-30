@@ -1,17 +1,33 @@
 {
   "raw": "1 medium apple, peeled and cut into small dice (about 1 cup)",
-  "expected": {
-    "item": "apple",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "peeled and cut into small dice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and cut into small dice"
+    },
+    "enrich_metric_weights": {
+      "item": "apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and cut into small dice"
+    }
   }
 }

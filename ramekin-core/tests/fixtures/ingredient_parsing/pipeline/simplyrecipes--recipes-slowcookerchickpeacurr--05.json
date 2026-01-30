@@ -1,13 +1,25 @@
 {
   "raw": "1 large white-fleshed sweet potato, peeled and diced (See Recipe Note)",
-  "expected": {
-    "item": "white-fleshed sweet potato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled and diced (See Recipe Note)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white-fleshed sweet potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and diced (See Recipe Note)"
+    },
+    "enrich_metric_weights": {
+      "item": "white-fleshed sweet potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and diced (See Recipe Note)"
+    }
   }
 }

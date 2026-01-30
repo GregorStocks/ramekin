@@ -1,8 +1,15 @@
 {
   "raw": "Short Ribs",
-  "expected": {
-    "item": "Short Ribs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Short Ribs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Short Ribs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

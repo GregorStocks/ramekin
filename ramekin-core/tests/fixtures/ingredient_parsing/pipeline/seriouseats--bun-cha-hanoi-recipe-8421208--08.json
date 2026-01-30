@@ -1,17 +1,33 @@
 {
   "raw": "1 pound (456g) skin-on pork belly, frozen for 45 to 50 minutes",
-  "expected": {
-    "item": "skin-on pork belly",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "456",
-        "unit": "g"
-      }
-    ],
-    "note": "frozen for 45 to 50 minutes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "skin-on pork belly",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "456",
+          "unit": "g"
+        }
+      ],
+      "note": "frozen for 45 to 50 minutes"
+    },
+    "parse_ingredients": {
+      "item": "skin-on pork belly",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "456",
+          "unit": "g"
+        }
+      ],
+      "note": "frozen for 45 to 50 minutes"
+    }
   }
 }

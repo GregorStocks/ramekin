@@ -1,8 +1,15 @@
 {
   "raw": "Dried Fruit",
-  "expected": {
-    "item": "Dried Fruit",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dried Fruit",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Dried Fruit",
+      "measurements": [],
+      "note": null
+    }
   }
 }

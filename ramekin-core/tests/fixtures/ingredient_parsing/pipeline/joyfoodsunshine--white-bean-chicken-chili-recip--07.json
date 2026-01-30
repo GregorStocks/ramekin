@@ -1,13 +1,25 @@
 {
   "raw": "1  green pepper (diced)",
-  "expected": {
-    "item": "green pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

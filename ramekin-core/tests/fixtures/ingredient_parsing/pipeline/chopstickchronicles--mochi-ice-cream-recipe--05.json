@@ -1,13 +1,25 @@
 {
   "raw": "300 g Ice cream of your choice",
-  "expected": {
-    "item": "Ice cream of your choice",
-    "measurements": [
-      {
-        "amount": "300",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ice cream of your choice",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Ice cream of your choice",
+      "measurements": [
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

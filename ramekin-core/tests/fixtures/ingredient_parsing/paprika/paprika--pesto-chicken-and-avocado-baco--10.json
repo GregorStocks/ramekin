@@ -1,8 +1,15 @@
 {
   "raw": "Wraps:",
-  "expected": {
-    "item": "Wraps:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Wraps:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Wraps:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

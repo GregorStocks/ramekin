@@ -1,13 +1,25 @@
 {
   "raw": "60 grams shiitake mushrooms ((3 mushrooms, sliced))",
-  "expected": {
-    "item": "shiitake mushrooms",
-    "measurements": [
-      {
-        "amount": "60",
-        "unit": "g"
-      }
-    ],
-    "note": "3 mushrooms, sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "3 mushrooms, sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "3 mushrooms, sliced"
+    }
   }
 }

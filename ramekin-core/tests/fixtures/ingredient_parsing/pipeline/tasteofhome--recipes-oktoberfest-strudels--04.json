@@ -1,17 +1,37 @@
 {
   "raw": "1 can (14 ounces) sauerkraut, rinsed and well-drained",
-  "expected": {
-    "item": "sauerkraut",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed and well-drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sauerkraut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed and well-drained"
+    },
+    "enrich_metric_weights": {
+      "item": "sauerkraut",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed and well-drained"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp butter (or ghee for Whole30)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or ghee for Whole30"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or ghee for Whole30"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or ghee for Whole30"
+    }
   }
 }

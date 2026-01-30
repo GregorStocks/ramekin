@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon chopped fresh basil or 1 teaspoon dried basil",
-  "expected": {
-    "item": "chopped fresh basil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1 teaspoon dried basil"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh basil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried basil"
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh basil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried basil"
+    }
   }
 }

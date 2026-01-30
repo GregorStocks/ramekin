@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon fennel seeds, lightly crushed",
-  "expected": {
-    "item": "fennel seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "lightly crushed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fennel seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "lightly crushed"
+    },
+    "enrich_metric_weights": {
+      "item": "fennel seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "lightly crushed"
+    }
   }
 }

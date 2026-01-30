@@ -1,13 +1,25 @@
 {
   "raw": "1 pinch saffron ((optional)(soaked in 2 tbsps hot milk))",
-  "expected": {
-    "item": "saffron (soaked in 2 tbsps hot milk)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pinch"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "saffron (soaked in 2 tbsps hot milk)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "saffron (soaked in 2 tbsps hot milk)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

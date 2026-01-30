@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon coconut sugar or brown sugar, to taste",
-  "expected": {
-    "item": "coconut sugar or brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coconut sugar or brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "coconut sugar or brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

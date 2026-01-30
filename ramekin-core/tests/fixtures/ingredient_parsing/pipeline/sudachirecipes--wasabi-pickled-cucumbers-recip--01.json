@@ -1,13 +1,25 @@
 {
   "raw": "500 g Japanese cucumber (or Persian cucumber (if using English cucumber, cut in half lengthways and scrape out the seeds first))",
-  "expected": {
-    "item": "Japanese cucumber (or Persian cucumber (if using English cucumber, cut in half lengthways and scrape out the seeds first)",
-    "measurements": [
-      {
-        "amount": "500",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Japanese cucumber (or Persian cucumber (if using English cucumber, cut in half lengthways and scrape out the seeds first)",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Japanese cucumber (or Persian cucumber (if using English cucumber, cut in half lengthways and scrape out the seeds first)",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "11 tablespoons heavy cream",
-  "expected": {
-    "item": "heavy cream",
-    "measurements": [
-      {
-        "amount": "11",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

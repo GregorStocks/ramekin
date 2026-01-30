@@ -1,13 +1,25 @@
 {
   "raw": "1 pound small elbow macaroni (, uncooked)",
-  "expected": {
-    "item": "small elbow macaroni",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "small elbow macaroni",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "enrich_metric_weights": {
+      "item": "small elbow macaroni",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

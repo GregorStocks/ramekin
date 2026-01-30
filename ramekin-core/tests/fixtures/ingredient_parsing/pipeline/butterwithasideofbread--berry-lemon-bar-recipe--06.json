@@ -1,13 +1,25 @@
 {
   "raw": "2 cups Mixed berries (blueberries, raspberries and strawberries are a perfect combination for this recipe)",
-  "expected": {
-    "item": "Mixed berries",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "blueberries, raspberries and strawberries are a perfect combination for this recipe"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mixed berries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "blueberries, raspberries and strawberries are a perfect combination for this recipe"
+    },
+    "enrich_metric_weights": {
+      "item": "Mixed berries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "blueberries, raspberries and strawberries are a perfect combination for this recipe"
+    }
   }
 }

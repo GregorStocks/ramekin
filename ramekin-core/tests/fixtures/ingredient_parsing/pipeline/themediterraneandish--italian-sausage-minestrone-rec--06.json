@@ -1,13 +1,29 @@
 {
   "raw": "8 oz french green beans, (trimmed and cut)",
-  "expected": {
-    "item": "french green beans",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "trimmed and cut"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "french green beans",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and cut"
+    },
+    "parse_ingredients": {
+      "item": "french green beans",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "trimmed and cut"
+    }
   }
 }

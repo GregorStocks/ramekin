@@ -1,13 +1,25 @@
 {
   "raw": "1  medium honeycrisp apple (diced)",
-  "expected": {
-    "item": "honeycrisp apple",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "honeycrisp apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "honeycrisp apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

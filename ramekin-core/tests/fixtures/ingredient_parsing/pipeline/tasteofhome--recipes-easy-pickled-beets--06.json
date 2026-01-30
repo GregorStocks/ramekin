@@ -1,17 +1,33 @@
 {
   "raw": "4 cans (16 ounces each) sliced beets",
-  "expected": {
-    "item": "sliced beets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "can"
-      },
-      {
-        "amount": "16",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced beets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "can"
+        },
+        {
+          "amount": "16",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sliced beets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "can"
+        },
+        {
+          "amount": "16",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

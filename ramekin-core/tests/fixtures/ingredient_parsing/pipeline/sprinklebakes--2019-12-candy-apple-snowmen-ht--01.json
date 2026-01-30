@@ -1,13 +1,25 @@
 {
   "raw": "4  small apples",
-  "expected": {
-    "item": "apples",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "apples",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "apples",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

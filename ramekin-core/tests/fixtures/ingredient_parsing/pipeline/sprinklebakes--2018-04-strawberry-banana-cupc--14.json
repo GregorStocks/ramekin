@@ -1,17 +1,33 @@
 {
   "raw": "3.5 ounces 95g finely chopped fresh strawberries (generous 1/2 cup)",
-  "expected": {
-    "item": "finely chopped fresh strawberries (generous 1/2 cup)",
-    "measurements": [
-      {
-        "amount": "3.5",
-        "unit": "oz"
-      },
-      {
-        "amount": "95",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely chopped fresh strawberries (generous 1/2 cup)",
+      "measurements": [
+        {
+          "amount": "3.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "95",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely chopped fresh strawberries (generous 1/2 cup)",
+      "measurements": [
+        {
+          "amount": "3.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "95",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

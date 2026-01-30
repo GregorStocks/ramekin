@@ -1,13 +1,25 @@
 {
   "raw": "10 cups rice and/or corn cereal (such as Chex or Crispix)",
-  "expected": {
-    "item": "rice and/or corn cereal (such as Chex or Crispix)",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rice and/or corn cereal (such as Chex or Crispix)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "rice and/or corn cereal (such as Chex or Crispix)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Onion wedges",
-  "expected": {
-    "item": "Onion wedges",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Onion wedges",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Onion wedges",
+      "measurements": [],
+      "note": null
+    }
   }
 }

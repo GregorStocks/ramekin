@@ -1,8 +1,15 @@
 {
   "raw": "Tortilla strips",
-  "expected": {
-    "item": "Tortilla strips",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tortilla strips",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tortilla strips",
+      "measurements": [],
+      "note": null
+    }
   }
 }

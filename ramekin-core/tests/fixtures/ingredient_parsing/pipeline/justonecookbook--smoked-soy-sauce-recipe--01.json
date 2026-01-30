@@ -1,8 +1,15 @@
 {
   "raw": "soy sauce ((amount specified in the instructions))",
-  "expected": {
-    "item": "soy sauce (amount specified in the instructions)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soy sauce (amount specified in the instructions)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "soy sauce (amount specified in the instructions)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

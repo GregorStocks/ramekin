@@ -1,13 +1,25 @@
 {
   "raw": "2 medium carrots, peeled and cut into matchsticks or sliced into strips with a julienne peeler",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "peeled and cut into matchsticks or sliced into strips with a julienne peeler"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut into matchsticks or sliced into strips with a julienne peeler"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut into matchsticks or sliced into strips with a julienne peeler"
+    }
   }
 }

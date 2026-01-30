@@ -1,8 +1,15 @@
 {
   "raw": "Thinly sliced romaine lettuce",
-  "expected": {
-    "item": "Thinly sliced romaine lettuce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Thinly sliced romaine lettuce",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Thinly sliced romaine lettuce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

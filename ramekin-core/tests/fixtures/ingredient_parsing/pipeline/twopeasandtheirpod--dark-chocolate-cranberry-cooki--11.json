@@ -1,13 +1,25 @@
 {
   "raw": "1 cup dark chocolate chips (I used Nestle Special Dark)",
-  "expected": {
-    "item": "dark chocolate chips (I used Nestle Special Dark)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dark chocolate chips (I used Nestle Special Dark)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dark chocolate chips (I used Nestle Special Dark)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

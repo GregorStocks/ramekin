@@ -1,8 +1,15 @@
 {
   "raw": "Vanilla extract",
-  "expected": {
-    "item": "Vanilla extract",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vanilla extract",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Vanilla extract",
+      "measurements": [],
+      "note": null
+    }
   }
 }

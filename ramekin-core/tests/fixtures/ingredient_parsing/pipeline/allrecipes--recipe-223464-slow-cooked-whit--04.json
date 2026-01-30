@@ -1,17 +1,37 @@
 {
   "raw": "2 (14 ounce) cans white corn, drained",
-  "expected": {
-    "item": "white corn",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white corn",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "white corn",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

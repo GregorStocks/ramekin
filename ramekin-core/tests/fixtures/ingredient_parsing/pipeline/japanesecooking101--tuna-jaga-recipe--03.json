@@ -1,13 +1,25 @@
 {
   "raw": "1 can tuna",
-  "expected": {
-    "item": "tuna",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tuna",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tuna",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

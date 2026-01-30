@@ -1,13 +1,25 @@
 {
   "raw": "handful of coriander leaves and some lime wedges, to serve",
-  "expected": {
-    "item": "coriander leaves and some lime wedges, to serve",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coriander leaves and some lime wedges, to serve",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coriander leaves and some lime wedges, to serve",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

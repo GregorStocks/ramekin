@@ -1,8 +1,15 @@
 {
   "raw": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
-  "expected": {
-    "item": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Taco toppings, such as shredded lettuce, cheese, onion, guacamole or sour cream",
+      "measurements": [],
+      "note": null
+    }
   }
 }

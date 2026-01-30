@@ -1,13 +1,25 @@
 {
   "raw": "1 kg tahini",
-  "expected": {
-    "item": "tahini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tahini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tahini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

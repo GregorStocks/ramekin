@@ -1,21 +1,41 @@
 {
   "raw": "2 tablespoons (30 g) unsalted butter, plus 4 additional tablespoons (60 g) if making optional frizzled sage",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "amount": "60",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 4 additional tablespoons if making optional frizzled sage"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        },
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 4 additional tablespoons if making optional frizzled sage"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        },
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 4 additional tablespoons if making optional frizzled sage"
+    }
   }
 }

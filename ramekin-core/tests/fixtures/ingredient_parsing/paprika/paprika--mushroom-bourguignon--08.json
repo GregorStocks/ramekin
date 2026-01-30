@@ -1,13 +1,25 @@
 {
   "raw": "2 cups beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
-  "expected": {
-    "item": "beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "beef or vegetable broth (beef broth is traditional but vegetable to make it vegetarian; it works with either)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

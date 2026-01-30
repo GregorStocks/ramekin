@@ -1,13 +1,25 @@
 {
   "raw": "1/4 package instant ramen noodles or fried Chinese noodles, crumbled",
-  "expected": {
-    "item": "instant ramen noodles or fried Chinese noodles",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "package"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant ramen noodles or fried Chinese noodles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "package"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "instant ramen noodles or fried Chinese noodles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "package"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

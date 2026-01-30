@@ -1,13 +1,25 @@
 {
   "raw": "2 fluid ounces tequila",
-  "expected": {
-    "item": "tequila",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tequila",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tequila",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

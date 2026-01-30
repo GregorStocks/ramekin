@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp dried mint leaves, crushed",
-  "expected": {
-    "item": "dried mint leaves",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried mint leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "crushed"
+    },
+    "enrich_metric_weights": {
+      "item": "dried mint leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 large head (2 1/2 pounds) green cabbage",
-  "expected": {
-    "item": "head green cabbage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "head green cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "head green cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

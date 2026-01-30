@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon apple-cider vinegar, or to taste",
-  "expected": {
-    "item": "apple-cider vinegar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "apple-cider vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "apple-cider vinegar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

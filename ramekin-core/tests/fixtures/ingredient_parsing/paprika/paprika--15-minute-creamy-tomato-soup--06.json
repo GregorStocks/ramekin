@@ -1,13 +1,25 @@
 {
   "raw": "2 slices white bread, crusts removed, torn into rough 1/2-inch pieces",
-  "expected": {
-    "item": "white bread, crusts removed, torn into rough 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white bread, crusts removed, torn into rough 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white bread, crusts removed, torn into rough 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

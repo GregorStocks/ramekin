@@ -1,21 +1,41 @@
 {
   "raw": "1 (2 3/4-ounce) white chocolate baking bar, chopped (about&nbsp;1/2&nbsp;cup)",
-  "expected": {
-    "item": "white chocolate baking bar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white chocolate baking bar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "white chocolate baking bar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

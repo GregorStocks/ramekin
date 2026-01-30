@@ -1,17 +1,33 @@
 {
   "raw": "8 ounces (225g) unsalted butter (cubed, at room temperature)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": "cubed, at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed, at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed, at room temperature"
+    }
   }
 }

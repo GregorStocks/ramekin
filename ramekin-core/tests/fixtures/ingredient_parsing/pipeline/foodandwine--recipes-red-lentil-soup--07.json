@@ -1,17 +1,37 @@
 {
   "raw": "1 rounded cup red lentils (8 ounces)",
-  "expected": {
-    "item": "red lentils",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "rounded cup"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red lentils",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "rounded cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red lentils",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "rounded cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

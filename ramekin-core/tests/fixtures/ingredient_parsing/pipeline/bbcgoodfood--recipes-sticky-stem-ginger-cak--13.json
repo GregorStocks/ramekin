@@ -1,13 +1,25 @@
 {
   "raw": "50g icing sugar, sifted",
-  "expected": {
-    "item": "icing sugar",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "icing sugar",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "sifted"
+    },
+    "enrich_metric_weights": {
+      "item": "icing sugar",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

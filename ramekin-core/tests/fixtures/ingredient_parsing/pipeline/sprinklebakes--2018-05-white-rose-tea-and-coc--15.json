@@ -1,8 +1,15 @@
 {
   "raw": "Garnish",
-  "expected": {
-    "item": "Garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

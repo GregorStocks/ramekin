@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon popcorn salt (or finely ground kosher salt)",
-  "expected": {
-    "item": "popcorn salt",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or finely ground kosher salt"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "popcorn salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or finely ground kosher salt"
+    },
+    "enrich_metric_weights": {
+      "item": "popcorn salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or finely ground kosher salt"
+    }
   }
 }

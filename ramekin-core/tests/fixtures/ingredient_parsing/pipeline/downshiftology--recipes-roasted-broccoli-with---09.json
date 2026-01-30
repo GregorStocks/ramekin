@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup unsalted butter or ghee (melted and hot)",
-  "expected": {
-    "item": "unsalted butter or ghee",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted and hot"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter or ghee",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted and hot"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter or ghee",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted and hot"
+    }
   }
 }

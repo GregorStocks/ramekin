@@ -1,13 +1,25 @@
 {
   "raw": "225ml hot vegetable stock",
-  "expected": {
-    "item": "hot vegetable stock",
-    "measurements": [
-      {
-        "amount": "225",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot vegetable stock",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot vegetable stock",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

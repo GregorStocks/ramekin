@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces paneer, cut into 1-by-1/2-inch pieces",
-  "expected": {
-    "item": "paneer, cut into 1-by-1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "paneer, cut into 1-by-1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "paneer, cut into 1-by-1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

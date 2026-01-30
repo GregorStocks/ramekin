@@ -1,8 +1,15 @@
 {
   "raw": "icing to decorate",
-  "expected": {
-    "item": "icing to decorate",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "icing to decorate",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "icing to decorate",
+      "measurements": [],
+      "note": null
+    }
   }
 }

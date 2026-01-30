@@ -1,13 +1,25 @@
 {
   "raw": "1 cup mozarella cheese (shredded)",
-  "expected": {
-    "item": "mozarella cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozarella cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "mozarella cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

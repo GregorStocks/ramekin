@@ -1,8 +1,15 @@
 {
   "raw": "Optional Frosting Ingredients:",
-  "expected": {
-    "item": "Optional Frosting Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional Frosting Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Optional Frosting Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

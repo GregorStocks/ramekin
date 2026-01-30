@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup loosely packed fresh basil leaves",
-  "expected": {
-    "item": "loosely packed fresh basil leaves",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loosely packed fresh basil leaves",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "loosely packed fresh basil leaves",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

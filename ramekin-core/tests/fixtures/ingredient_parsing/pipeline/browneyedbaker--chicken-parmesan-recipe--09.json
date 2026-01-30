@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces mozzarella cheese (sliced or shredded)",
-  "expected": {
-    "item": "mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced or shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced or shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced or shredded"
+    }
   }
 }

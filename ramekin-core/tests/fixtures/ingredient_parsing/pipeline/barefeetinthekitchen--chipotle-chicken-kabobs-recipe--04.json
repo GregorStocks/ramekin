@@ -1,13 +1,25 @@
 {
   "raw": "1  chipotle pepper in adobo sauce (seeded and minced)",
-  "expected": {
-    "item": "chipotle pepper in adobo sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chipotle pepper in adobo sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    },
+    "enrich_metric_weights": {
+      "item": "chipotle pepper in adobo sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and minced"
+    }
   }
 }

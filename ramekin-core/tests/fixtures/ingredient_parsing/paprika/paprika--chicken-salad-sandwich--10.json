@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup finely diced celery (from 1 to 2 stalks)",
-  "expected": {
-    "item": "finely diced celery (from 1 to 2 stalks)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely diced celery (from 1 to 2 stalks)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely diced celery (from 1 to 2 stalks)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "½ cup cooked black beans (drained and rinsed)",
-  "expected": {
-    "item": "cooked black beans",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked black beans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "cooked black beans",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

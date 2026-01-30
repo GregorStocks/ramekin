@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup peanuts, roasted (salted are fine)",
-  "expected": {
-    "item": "peanuts",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "roasted (salted are fine)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "roasted (salted are fine)"
+    },
+    "parse_ingredients": {
+      "item": "peanuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "roasted (salted are fine)"
+    }
   }
 }

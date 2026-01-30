@@ -1,13 +1,25 @@
 {
   "raw": "4  canned artichokes (quartered)",
-  "expected": {
-    "item": "canned artichokes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "canned artichokes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "canned artichokes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

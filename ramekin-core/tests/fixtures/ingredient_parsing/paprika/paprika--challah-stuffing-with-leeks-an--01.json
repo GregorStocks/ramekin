@@ -1,17 +1,33 @@
 {
   "raw": "1.5 pounds challah bread (storebought or 3/4 of one of these), cut into generous 1-inch cubes",
-  "expected": {
-    "item": "challah bread , cut into generous 1-inch cubes",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      },
-      {
-        "amount": "3/4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "challah bread , cut into generous 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "3/4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "challah bread , cut into generous 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "3/4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "couscous",
-  "expected": {
-    "item": "couscous",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "couscous",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "couscous",
+      "measurements": [],
+      "note": null
+    }
   }
 }

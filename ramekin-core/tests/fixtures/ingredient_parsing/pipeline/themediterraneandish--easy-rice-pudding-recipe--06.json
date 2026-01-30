@@ -1,13 +1,25 @@
 {
   "raw": "1 cup medium grain rice ((like Arborio, unrinsed))",
-  "expected": {
-    "item": "medium grain rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "like Arborio, unrinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium grain rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "like Arborio, unrinsed"
+    },
+    "parse_ingredients": {
+      "item": "medium grain rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "like Arborio, unrinsed"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon (9 g) toasted sesame seeds, optional",
-  "expected": {
-    "item": "toasted sesame seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "9",
-        "unit": "g"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "toasted sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "9",
+          "unit": "g"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "toasted sesame seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "9",
+          "unit": "g"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

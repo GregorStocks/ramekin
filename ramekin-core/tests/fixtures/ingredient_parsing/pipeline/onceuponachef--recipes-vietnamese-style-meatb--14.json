@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
-  "expected": {
-    "item": "Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Asian chili sauce, such as Sambal Oelek, or Asian chili garlic sauce (available in Asian aisle of most supermarkets)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "Two 15-ounce cans cannellini or other white beans, drained and rinsed",
-  "expected": {
-    "item": "cannellini or other white beans",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "15-ounce cans"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cannellini or other white beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15-ounce cans"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "cannellini or other white beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15-ounce cans"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 cups bread flour (plus more for work surface)",
-  "expected": {
-    "item": "bread flour",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for work surface"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bread flour",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for work surface"
+    },
+    "enrich_metric_weights": {
+      "item": "bread flour",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for work surface"
+    }
   }
 }

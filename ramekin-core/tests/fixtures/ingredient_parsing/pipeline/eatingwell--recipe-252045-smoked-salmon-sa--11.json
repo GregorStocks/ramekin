@@ -1,13 +1,25 @@
 {
   "raw": "0.5 small cucumber, halved, seeded and thinly sliced",
-  "expected": {
-    "item": "cucumber, halved",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "small"
-      }
-    ],
-    "note": "seeded and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cucumber, halved",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "cucumber, halved",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and thinly sliced"
+    }
   }
 }

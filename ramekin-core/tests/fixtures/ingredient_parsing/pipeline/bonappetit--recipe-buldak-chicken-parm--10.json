@@ -1,8 +1,15 @@
 {
   "raw": "Kosher salt, freshly ground pepper",
-  "expected": {
-    "item": "Kosher salt",
-    "measurements": [],
-    "note": "freshly ground pepper"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kosher salt",
+      "measurements": [],
+      "note": "freshly ground pepper"
+    },
+    "parse_ingredients": {
+      "item": "Kosher salt",
+      "measurements": [],
+      "note": "freshly ground pepper"
+    }
   }
 }

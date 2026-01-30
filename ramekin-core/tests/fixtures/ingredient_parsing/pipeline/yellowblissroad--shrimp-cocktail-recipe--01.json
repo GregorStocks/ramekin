@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds raw, tail on large shrimp (16-20 per pound, peeled and deveined)",
-  "expected": {
-    "item": "raw, tail on large shrimp",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "16-20 per pound, peeled and deveined"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raw, tail on large shrimp",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "16-20 per pound, peeled and deveined"
+    },
+    "enrich_metric_weights": {
+      "item": "raw, tail on large shrimp",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "16-20 per pound, peeled and deveined"
+    }
   }
 }

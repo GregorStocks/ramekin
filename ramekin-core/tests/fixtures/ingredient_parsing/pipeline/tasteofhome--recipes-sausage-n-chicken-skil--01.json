@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound boneless skinless chicken breasts, cubed",
-  "expected": {
-    "item": "boneless skinless chicken breasts",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "boneless skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

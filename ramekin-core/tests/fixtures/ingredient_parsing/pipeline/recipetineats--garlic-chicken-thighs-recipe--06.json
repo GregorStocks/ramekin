@@ -1,17 +1,33 @@
 {
   "raw": "25 g / 2 tbsp   unsalted butter",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "25",
-        "unit": "g"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "25",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

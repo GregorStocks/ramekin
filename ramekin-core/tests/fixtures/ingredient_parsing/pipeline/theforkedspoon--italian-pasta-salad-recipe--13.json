@@ -1,17 +1,37 @@
 {
   "raw": "1 (6.5 ounce) can black olives (drained and chopped)",
-  "expected": {
-    "item": "black olives",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "6.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "black olives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "6.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "184",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and chopped"
+    },
+    "parse_ingredients": {
+      "item": "black olives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "6.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and chopped"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 pound top sirloin or chuck steaks (about 1/2 inch thick), trimmed",
-  "expected": {
-    "item": "top sirloin or chuck steaks",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "top sirloin or chuck steaks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    },
+    "enrich_metric_weights": {
+      "item": "top sirloin or chuck steaks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "10 leaves fresh basil, (plus more for garnishing soup)",
-  "expected": {
-    "item": "leaves fresh basil",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": "plus more for garnishing soup"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leaves fresh basil",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "plus more for garnishing soup"
+    },
+    "enrich_metric_weights": {
+      "item": "leaves fresh basil",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": "plus more for garnishing soup"
+    }
   }
 }

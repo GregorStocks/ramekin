@@ -1,13 +1,25 @@
 {
   "raw": "1 14- ounce / 400 ml can crushed tomatoes",
-  "expected": {
-    "item": "14- ounce / 400 ml can crushed tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "14- ounce / 400 ml can crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "14- ounce / 400 ml can crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

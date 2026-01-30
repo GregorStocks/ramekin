@@ -1,13 +1,25 @@
 {
   "raw": "1 medium sweet red pepper, cut into strips",
-  "expected": {
-    "item": "sweet red pepper, cut into strips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet red pepper, cut into strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet red pepper, cut into strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

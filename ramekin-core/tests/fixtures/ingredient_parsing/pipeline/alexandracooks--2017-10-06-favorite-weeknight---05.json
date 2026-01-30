@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 pounds greens, soaked in water to allow dirt to settle",
-  "expected": {
-    "item": "greens, soaked in water to allow dirt to settle",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "greens, soaked in water to allow dirt to settle",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "greens, soaked in water to allow dirt to settle",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

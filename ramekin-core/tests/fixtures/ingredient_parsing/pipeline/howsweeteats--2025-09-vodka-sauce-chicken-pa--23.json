@@ -1,8 +1,15 @@
 {
   "raw": "flakey salt",
-  "expected": {
-    "item": "flakey salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flakey salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flakey salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

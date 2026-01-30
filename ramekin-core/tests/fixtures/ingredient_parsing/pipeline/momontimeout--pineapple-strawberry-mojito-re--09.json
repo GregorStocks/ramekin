@@ -1,8 +1,15 @@
 {
   "raw": "soda water (club soda, lemon-lime soda)",
-  "expected": {
-    "item": "soda water (club soda, lemon-lime soda)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soda water (club soda, lemon-lime soda)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "soda water (club soda, lemon-lime soda)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

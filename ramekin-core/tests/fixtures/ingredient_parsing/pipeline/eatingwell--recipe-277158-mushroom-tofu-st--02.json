@@ -1,13 +1,25 @@
 {
   "raw": "1 pound mixed mushrooms, sliced",
-  "expected": {
-    "item": "mixed mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mixed mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "mixed mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

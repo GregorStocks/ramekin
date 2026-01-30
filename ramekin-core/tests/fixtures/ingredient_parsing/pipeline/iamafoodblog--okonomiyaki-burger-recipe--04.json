@@ -1,8 +1,15 @@
 {
   "raw": "Kewpie mayo",
-  "expected": {
-    "item": "Kewpie mayo",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kewpie mayo",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Kewpie mayo",
+      "measurements": [],
+      "note": null
+    }
   }
 }

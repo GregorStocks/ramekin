@@ -1,13 +1,29 @@
 {
   "raw": "1 oz Gomame (tiny dried sardines)",
-  "expected": {
-    "item": "Gomame",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": "tiny dried sardines"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Gomame",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "tiny dried sardines"
+    },
+    "parse_ingredients": {
+      "item": "Gomame",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": "tiny dried sardines"
+    }
   }
 }

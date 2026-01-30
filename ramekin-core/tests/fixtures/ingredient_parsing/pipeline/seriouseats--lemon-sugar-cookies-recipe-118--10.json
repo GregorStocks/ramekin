@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons fresh lemon juice from 1 large lemon",
-  "expected": {
-    "item": "fresh lemon juice from 1 large lemon",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh lemon juice from 1 large lemon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh lemon juice from 1 large lemon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

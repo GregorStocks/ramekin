@@ -1,13 +1,25 @@
 {
   "raw": "4 scallions, thinly sliced on an angle",
-  "expected": {
-    "item": "scallions",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced on an angle"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced on an angle"
+    },
+    "enrich_metric_weights": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced on an angle"
+    }
   }
 }

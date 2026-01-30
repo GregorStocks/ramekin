@@ -1,17 +1,33 @@
 {
   "raw": "45g (3 tablespoons) cold whole milk1 large egg yolk",
-  "expected": {
-    "item": "cold whole milk1 large egg yolk",
-    "measurements": [
-      {
-        "amount": "45",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold whole milk1 large egg yolk",
+      "measurements": [
+        {
+          "amount": "45",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold whole milk1 large egg yolk",
+      "measurements": [
+        {
+          "amount": "45",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

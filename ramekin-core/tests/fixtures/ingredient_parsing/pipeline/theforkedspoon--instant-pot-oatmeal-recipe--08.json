@@ -1,8 +1,15 @@
 {
   "raw": "Nut Butter (peanut butter, almond butter)",
-  "expected": {
-    "item": "Nut Butter (peanut butter, almond butter)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Nut Butter (peanut butter, almond butter)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Nut Butter (peanut butter, almond butter)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

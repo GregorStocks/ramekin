@@ -1,17 +1,33 @@
 {
   "raw": "2 tsp (6g)  rapid rise or instant yeast ((Note 2))",
-  "expected": {
-    "item": "rapid rise or instant yeast (Note 2)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "6",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rapid rise or instant yeast (Note 2)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "rapid rise or instant yeast (Note 2)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "6",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

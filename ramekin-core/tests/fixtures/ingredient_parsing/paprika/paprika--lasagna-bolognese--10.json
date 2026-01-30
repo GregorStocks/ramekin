@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups tomato paste (from 2 6-ounce cans)",
-  "expected": {
-    "item": "tomato paste (from 2 6-ounce cans)",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato paste (from 2 6-ounce cans)",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tomato paste (from 2 6-ounce cans)",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

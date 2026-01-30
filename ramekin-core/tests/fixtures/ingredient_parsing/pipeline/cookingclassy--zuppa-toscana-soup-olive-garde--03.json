@@ -1,17 +1,37 @@
 {
   "raw": "4 oz bacon ((about 4 slices), diced into small pieces*)",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": "diced into small pieces*)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "4",
+          "unit": "slice"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "diced into small pieces*)"
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": "diced into small pieces*)"
+    }
   }
 }

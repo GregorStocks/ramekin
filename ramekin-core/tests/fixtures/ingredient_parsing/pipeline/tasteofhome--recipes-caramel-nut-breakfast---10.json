@@ -1,8 +1,15 @@
 {
   "raw": "DRIZZLE:",
-  "expected": {
-    "item": "DRIZZLE:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "DRIZZLE:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "DRIZZLE:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

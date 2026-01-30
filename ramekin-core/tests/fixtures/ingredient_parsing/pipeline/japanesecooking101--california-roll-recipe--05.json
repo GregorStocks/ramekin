@@ -1,13 +1,25 @@
 {
   "raw": "1  cucumber (cut into 1/2\" sticks)",
-  "expected": {
-    "item": "cucumber (cut into 1/2\" sticks)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumber (cut into 1/2\" sticks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cucumber (cut into 1/2\" sticks)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

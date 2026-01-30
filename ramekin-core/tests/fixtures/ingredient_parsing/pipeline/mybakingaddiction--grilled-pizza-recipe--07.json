@@ -1,8 +1,15 @@
 {
   "raw": "Additional flour for rolling",
-  "expected": {
-    "item": "Additional flour for rolling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Additional flour for rolling",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Additional flour for rolling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Fresh herbs or fresh grated Parmesan cheese for serving",
-  "expected": {
-    "item": "Fresh herbs or fresh grated Parmesan cheese for serving",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh herbs or fresh grated Parmesan cheese for serving",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh herbs or fresh grated Parmesan cheese for serving",
+      "measurements": [],
+      "note": null
+    }
   }
 }

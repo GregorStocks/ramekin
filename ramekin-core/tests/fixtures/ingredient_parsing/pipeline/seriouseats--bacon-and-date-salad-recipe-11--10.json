@@ -1,21 +1,41 @@
 {
   "raw": "12 ounces pitted Medjool dates (340 g; about 3 cups), halved lengthwise or quartered if large",
-  "expected": {
-    "item": "pitted Medjool dates",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      },
-      {
-        "amount": "340",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "halved lengthwise or quartered if large"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted Medjool dates",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved lengthwise or quartered if large"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted Medjool dates",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved lengthwise or quartered if large"
+    }
   }
 }

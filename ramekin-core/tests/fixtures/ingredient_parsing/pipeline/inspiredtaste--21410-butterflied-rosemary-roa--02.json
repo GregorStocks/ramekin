@@ -1,8 +1,15 @@
 {
   "raw": "Extra-virgin olive oil",
-  "expected": {
-    "item": "Extra-virgin olive oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Extra-virgin olive oil",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Extra-virgin olive oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

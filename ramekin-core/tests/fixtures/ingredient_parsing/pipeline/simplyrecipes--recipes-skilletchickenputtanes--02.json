@@ -1,13 +1,25 @@
 {
   "raw": "4 anchovy fillets, coarsely chopped (optional)",
-  "expected": {
-    "item": "anchovy fillets, coarsely chopped",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "anchovy fillets, coarsely chopped",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "anchovy fillets, coarsely chopped",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

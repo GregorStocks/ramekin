@@ -1,17 +1,33 @@
 {
   "raw": "¼ cup extra-virgin olive oil (60ml)",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "60",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 small tomato, seeded and chopped",
-  "expected": {
-    "item": "tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "seeded and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and chopped"
+    }
   }
 }

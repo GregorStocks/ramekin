@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon olive oil, plus more for fingertips",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for fingertips"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for fingertips"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for fingertips"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Lettuce",
-  "expected": {
-    "item": "Lettuce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lettuce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Lettuce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

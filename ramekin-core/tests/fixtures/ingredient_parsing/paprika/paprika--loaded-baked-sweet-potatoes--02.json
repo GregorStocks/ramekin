@@ -1,8 +1,15 @@
 {
   "raw": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
-  "expected": {
-    "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Canola, vegetable, or extra-virgin olive oil, for rubbing",
+      "measurements": [],
+      "note": null
+    }
   }
 }

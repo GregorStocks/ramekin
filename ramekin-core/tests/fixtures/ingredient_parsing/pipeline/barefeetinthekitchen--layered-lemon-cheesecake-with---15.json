@@ -1,8 +1,15 @@
 {
   "raw": "Glaze Ingredients:",
-  "expected": {
-    "item": "Glaze Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Glaze Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Glaze Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

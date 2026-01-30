@@ -1,8 +1,15 @@
 {
   "raw": "to make a bread bowl, follow this peasant bread recipe",
-  "expected": {
-    "item": "to make a bread bowl, follow this peasant bread recipe",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "to make a bread bowl, follow this peasant bread recipe",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "to make a bread bowl, follow this peasant bread recipe",
+      "measurements": [],
+      "note": null
+    }
   }
 }

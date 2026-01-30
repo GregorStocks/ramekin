@@ -1,13 +1,25 @@
 {
   "raw": "10 grams garlic ((minced))",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

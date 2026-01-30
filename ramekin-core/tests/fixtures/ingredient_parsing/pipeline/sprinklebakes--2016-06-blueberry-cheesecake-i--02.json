@@ -1,17 +1,33 @@
 {
   "raw": "2 cups 540g plain unsweet yogurt, at room temperature",
-  "expected": {
-    "item": "plain unsweet yogurt",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "540",
-        "unit": "g"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plain unsweet yogurt",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "540",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "plain unsweet yogurt",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "540",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

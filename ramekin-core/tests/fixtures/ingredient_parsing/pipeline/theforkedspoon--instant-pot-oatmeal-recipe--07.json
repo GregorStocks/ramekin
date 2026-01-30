@@ -1,8 +1,15 @@
 {
   "raw": "Nuts &amp;amp; Seeds",
-  "expected": {
-    "item": "Nuts & Seeds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Nuts & Seeds",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Nuts & Seeds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

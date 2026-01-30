@@ -1,13 +1,25 @@
 {
   "raw": "4 teaspoons salt (or to taste, divided)",
-  "expected": {
-    "item": "salt",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or to taste, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste, divided"
+    }
   }
 }

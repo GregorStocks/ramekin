@@ -1,13 +1,25 @@
 {
   "raw": "4  medium cloves of garlic, (finely chopped)",
-  "expected": {
-    "item": "cloves of garlic",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cloves of garlic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "cloves of garlic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

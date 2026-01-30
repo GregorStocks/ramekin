@@ -1,8 +1,15 @@
 {
   "raw": "natural yogurt to serve",
-  "expected": {
-    "item": "natural yogurt to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "natural yogurt to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "natural yogurt to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

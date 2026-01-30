@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces sliced cremini (shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover))",
-  "expected": {
-    "item": "sliced cremini",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced cremini",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover"
+    },
+    "parse_ingredients": {
+      "item": "sliced cremini",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "shiitake, or mixed wild mushrooms (increase to up to 16 ounces if you are a mushroom lover"
+    }
   }
 }

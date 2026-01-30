@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup dried wood ear mushrooms, soaked in hot water and finely chopped",
-  "expected": {
-    "item": "dried wood ear mushrooms",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "soaked in hot water and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried wood ear mushrooms",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "soaked in hot water and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "dried wood ear mushrooms",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "soaked in hot water and finely chopped"
+    }
   }
 }

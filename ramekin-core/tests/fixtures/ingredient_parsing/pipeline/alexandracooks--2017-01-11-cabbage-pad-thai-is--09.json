@@ -1,13 +1,29 @@
 {
   "raw": "7 to 8&nbsp;ounces shiitake mushrooms, thinly sliced",
-  "expected": {
-    "item": "shiitake mushrooms",
-    "measurements": [
-      {
-        "amount": "7 to 8",
-        "unit": "oz"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "7 to 8",
+          "unit": "oz"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "7 to 8",
+          "unit": "oz"
+        },
+        {
+          "amount": "198 to 227",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

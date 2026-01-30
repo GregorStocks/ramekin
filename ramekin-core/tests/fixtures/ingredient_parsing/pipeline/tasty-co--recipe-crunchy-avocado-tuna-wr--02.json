@@ -1,13 +1,25 @@
 {
   "raw": "1 large avocado, diced",
-  "expected": {
-    "item": "avocado",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "avocado",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 cups mixed salad greens",
-  "expected": {
-    "item": "mixed salad greens",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mixed salad greens",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mixed salad greens",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

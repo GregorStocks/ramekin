@@ -1,13 +1,25 @@
 {
   "raw": "1 medium jalapeno (sliced, or pickled jalapenos)",
-  "expected": {
-    "item": "jalapeno",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced, or pickled jalapenos"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapeno",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced, or pickled jalapenos"
+    },
+    "parse_ingredients": {
+      "item": "jalapeno",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced, or pickled jalapenos"
+    }
   }
 }

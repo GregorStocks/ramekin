@@ -1,8 +1,15 @@
 {
   "raw": "A 14-ounce can of crushed tomatoes",
-  "expected": {
-    "item": "A 14-ounce can of crushed tomatoes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "A 14-ounce can of crushed tomatoes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "A 14-ounce can of crushed tomatoes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

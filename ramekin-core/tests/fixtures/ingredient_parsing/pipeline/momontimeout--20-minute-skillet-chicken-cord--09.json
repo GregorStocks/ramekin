@@ -1,8 +1,15 @@
 {
   "raw": "additional Parmesan cheese and chopped parsley can be used to garnish",
-  "expected": {
-    "item": "additional Parmesan cheese and chopped parsley can be used to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "additional Parmesan cheese and chopped parsley can be used to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "additional Parmesan cheese and chopped parsley can be used to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

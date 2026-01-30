@@ -1,13 +1,25 @@
 {
   "raw": "1 egg, beaten",
-  "expected": {
-    "item": "egg",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "beaten"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten"
+    },
+    "parse_ingredients": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten"
+    }
   }
 }

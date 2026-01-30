@@ -1,13 +1,25 @@
 {
   "raw": "1  bell pepper any color, (cored and chopped)",
-  "expected": {
-    "item": "bell pepper any color",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "cored and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bell pepper any color",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cored and chopped"
+    },
+    "parse_ingredients": {
+      "item": "bell pepper any color",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cored and chopped"
+    }
   }
 }

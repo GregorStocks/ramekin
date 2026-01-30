@@ -1,8 +1,15 @@
 {
   "raw": "Extra jalapeño slice, pineapple wedges, and lime wedges for garnish",
-  "expected": {
-    "item": "Extra jalapeño slice, pineapple wedges",
-    "measurements": [],
-    "note": "and lime wedges for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Extra jalapeño slice, pineapple wedges",
+      "measurements": [],
+      "note": "and lime wedges for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "Extra jalapeño slice, pineapple wedges",
+      "measurements": [],
+      "note": "and lime wedges for garnish"
+    }
   }
 }

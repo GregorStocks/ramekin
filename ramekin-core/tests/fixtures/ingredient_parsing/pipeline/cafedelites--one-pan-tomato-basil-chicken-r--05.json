@@ -1,13 +1,25 @@
 {
   "raw": "1  red bell pepper (deseeded and chopped)",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "deseeded and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "deseeded and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "deseeded and chopped"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Kinshi Tamago",
-  "expected": {
-    "item": "Kinshi Tamago",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kinshi Tamago",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Kinshi Tamago",
+      "measurements": [],
+      "note": null
+    }
   }
 }

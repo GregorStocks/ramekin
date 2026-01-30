@@ -1,13 +1,25 @@
 {
   "raw": "1-2  large eggs (optional)",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "large"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "large"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "large"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

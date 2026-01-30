@@ -1,13 +1,25 @@
 {
   "raw": "2 green onions, sliced diagonally into 1/2 inch pieces",
-  "expected": {
-    "item": "green onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced diagonally into 1/2 inch pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced diagonally into 1/2 inch pieces"
+    },
+    "parse_ingredients": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced diagonally into 1/2 inch pieces"
+    }
   }
 }

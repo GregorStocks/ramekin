@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons fresh cracked coarse Black Pepper",
-  "expected": {
-    "item": "fresh cracked coarse Black Pepper",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh cracked coarse Black Pepper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh cracked coarse Black Pepper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

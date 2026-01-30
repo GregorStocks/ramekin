@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp Chinese-style chicken bouillon powder",
-  "expected": {
-    "item": "Chinese-style chicken bouillon powder",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chinese-style chicken bouillon powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chinese-style chicken bouillon powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

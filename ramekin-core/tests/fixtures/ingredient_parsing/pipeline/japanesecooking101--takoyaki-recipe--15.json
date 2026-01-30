@@ -1,8 +1,15 @@
 {
   "raw": "*Substitute octopus with sausage (cheese, ham, and etc.)",
-  "expected": {
-    "item": "*Substitute octopus with sausage (cheese, ham, and etc.)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "*Substitute octopus with sausage (cheese, ham, and etc.)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "*Substitute octopus with sausage (cheese, ham, and etc.)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

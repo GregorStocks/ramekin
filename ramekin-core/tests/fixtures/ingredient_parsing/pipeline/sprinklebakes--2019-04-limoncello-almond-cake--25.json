@@ -1,8 +1,15 @@
 {
   "raw": "Candy eggshells",
-  "expected": {
-    "item": "Candy eggshells",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Candy eggshells",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Candy eggshells",
+      "measurements": [],
+      "note": null
+    }
   }
 }

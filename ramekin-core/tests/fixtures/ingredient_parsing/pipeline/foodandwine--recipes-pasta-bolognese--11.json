@@ -1,17 +1,33 @@
 {
   "raw": "1 (28-ounce) can peeled Italian tomatoes, seeded and finely chopped, juices reserved",
-  "expected": {
-    "item": "peeled Italian tomatoes, seeded and finely chopped, juices reserved",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peeled Italian tomatoes, seeded and finely chopped, juices reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "peeled Italian tomatoes, seeded and finely chopped, juices reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

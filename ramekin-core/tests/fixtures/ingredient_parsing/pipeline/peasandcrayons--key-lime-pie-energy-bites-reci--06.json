@@ -1,13 +1,25 @@
 {
   "raw": "1/4-1/3 up lime juice ((approx. 2 limes))",
-  "expected": {
-    "item": "up lime juice (approx. 2 limes)",
-    "measurements": [
-      {
-        "amount": "1/4-1/3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "up lime juice (approx. 2 limes)",
+      "measurements": [
+        {
+          "amount": "1/4-1/3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "up lime juice (approx. 2 limes)",
+      "measurements": [
+        {
+          "amount": "1/4-1/3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

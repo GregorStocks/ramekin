@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon peeled, finely grated fresh ginger",
-  "expected": {
-    "item": "peeled",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "finely grated fresh ginger"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peeled",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated fresh ginger"
+    },
+    "enrich_metric_weights": {
+      "item": "peeled",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated fresh ginger"
+    }
   }
 }

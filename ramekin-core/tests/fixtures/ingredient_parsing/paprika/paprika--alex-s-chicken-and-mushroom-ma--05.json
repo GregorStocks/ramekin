@@ -1,13 +1,25 @@
 {
   "raw": "3/4 pound mushrooms, sliced thin, any variety you like",
-  "expected": {
-    "item": "mushrooms, sliced thin, any variety you like",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mushrooms, sliced thin, any variety you like",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mushrooms, sliced thin, any variety you like",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

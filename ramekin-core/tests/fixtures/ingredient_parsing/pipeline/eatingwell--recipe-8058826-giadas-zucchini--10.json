@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup fresh basil leaves, torn",
-  "expected": {
-    "item": "fresh basil leaves, torn",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh basil leaves, torn",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh basil leaves, torn",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

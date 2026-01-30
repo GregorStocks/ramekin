@@ -1,13 +1,25 @@
 {
   "raw": "1/2 c. pickled jalapeño peppers, chopped",
-  "expected": {
-    "item": "pickled jalapeño peppers",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pickled jalapeño peppers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "pickled jalapeño peppers",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

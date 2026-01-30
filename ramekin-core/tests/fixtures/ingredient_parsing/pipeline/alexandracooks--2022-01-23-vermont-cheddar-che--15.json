@@ -1,13 +1,25 @@
 {
   "raw": "dashes Worcestershire, see notes above",
-  "expected": {
-    "item": "Worcestershire, see notes above",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Worcestershire, see notes above",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Worcestershire, see notes above",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

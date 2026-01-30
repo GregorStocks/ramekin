@@ -1,8 +1,15 @@
 {
   "raw": "Chopped cilantro, for garnish, if desired",
-  "expected": {
-    "item": "Chopped cilantro, for garnish, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped cilantro, for garnish, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped cilantro, for garnish, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

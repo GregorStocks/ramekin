@@ -1,13 +1,25 @@
 {
   "raw": "4 tbsp red pickled ginger (benishoga)",
-  "expected": {
-    "item": "red pickled ginger (benishoga)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pickled ginger (benishoga)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red pickled ginger (benishoga)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

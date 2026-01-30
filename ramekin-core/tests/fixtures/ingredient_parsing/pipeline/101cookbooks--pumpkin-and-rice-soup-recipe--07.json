@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon fresh ginger juice, pressed from grated ginger",
-  "expected": {
-    "item": "fresh ginger juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "pressed from grated ginger"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh ginger juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "pressed from grated ginger"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh ginger juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "pressed from grated ginger"
+    }
   }
 }

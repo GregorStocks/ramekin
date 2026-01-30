@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon lemon zest and 1 tablespoon lemon juice, plus more juice to taste",
-  "expected": {
-    "item": "lemon zest and 1 tablespoon lemon juice",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more juice to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon zest and 1 tablespoon lemon juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more juice to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon zest and 1 tablespoon lemon juice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more juice to taste"
+    }
   }
 }

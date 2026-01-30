@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds skinless cod fillet, cut into 1 1/2-inch pieces",
-  "expected": {
-    "item": "skinless cod fillet, cut into 1 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless cod fillet, cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless cod fillet, cut into 1 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

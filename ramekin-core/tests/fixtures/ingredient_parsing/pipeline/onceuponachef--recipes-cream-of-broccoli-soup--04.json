@@ -1,13 +1,25 @@
 {
   "raw": "1¾ pounds broccoli, (stems cut into ½-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
-  "expected": {
-    "item": "broccoli, (stems cut into 1/2-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli, (stems cut into 1/2-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli, (stems cut into 1/2-in (13-cm) pieces/florets cut into 1-in (2.5-cm) pieces, separated)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

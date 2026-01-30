@@ -1,13 +1,25 @@
 {
   "raw": "2 large eggs + 1/4 cup water",
-  "expected": {
-    "item": "eggs + 1/4 cup water",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "eggs + 1/4 cup water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "eggs + 1/4 cup water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

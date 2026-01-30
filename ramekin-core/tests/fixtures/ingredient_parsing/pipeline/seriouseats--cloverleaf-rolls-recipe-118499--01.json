@@ -1,17 +1,33 @@
 {
   "raw": "420 g ( 3 ½ cups) bread flour",
-  "expected": {
-    "item": "bread flour",
-    "measurements": [
-      {
-        "amount": "420",
-        "unit": "g"
-      },
-      {
-        "amount": "3 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bread flour",
+      "measurements": [
+        {
+          "amount": "420",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bread flour",
+      "measurements": [
+        {
+          "amount": "420",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

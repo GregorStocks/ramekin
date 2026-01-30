@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tablespoon olive oil to brush bread (optional)",
-  "expected": {
-    "item": "olive oil to brush bread",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil to brush bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil to brush bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

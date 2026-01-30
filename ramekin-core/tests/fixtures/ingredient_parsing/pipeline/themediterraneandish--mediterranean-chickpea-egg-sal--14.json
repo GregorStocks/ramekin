@@ -1,13 +1,25 @@
 {
   "raw": "2  jalapeno peppers, (chopped (optional))",
-  "expected": {
-    "item": "jalapeno peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "chopped (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapeno peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (optional"
+    },
+    "parse_ingredients": {
+      "item": "jalapeno peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (optional"
+    }
   }
 }

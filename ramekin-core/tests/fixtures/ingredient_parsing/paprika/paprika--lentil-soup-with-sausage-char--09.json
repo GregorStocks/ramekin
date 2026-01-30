@@ -1,13 +1,25 @@
 {
   "raw": "1 cup brown lentils, sorted and rinsed",
-  "expected": {
-    "item": "brown lentils",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "sorted and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown lentils",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sorted and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "brown lentils",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sorted and rinsed"
+    }
   }
 }

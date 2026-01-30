@@ -1,13 +1,25 @@
 {
   "raw": "200 grams potato ((2 medium, boiled &amp;amp; grated))",
-  "expected": {
-    "item": "potato",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "2 medium, boiled & grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "potato",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "2 medium, boiled & grated"
+    },
+    "enrich_metric_weights": {
+      "item": "potato",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "2 medium, boiled & grated"
+    }
   }
 }

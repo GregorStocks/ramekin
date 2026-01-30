@@ -1,13 +1,25 @@
 {
   "raw": "5 cups confectioners&amp;#039; sugar, divided",
-  "expected": {
-    "item": "confectioners' sugar",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "confectioners' sugar",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "confectioners' sugar",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/8 tsp almond extract (- for raspberry version)",
-  "expected": {
-    "item": "almond extract (- for raspberry version)",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "almond extract (- for raspberry version)",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "almond extract (- for raspberry version)",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

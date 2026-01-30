@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 teaspoons whole milk (as needed)",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "as needed"
+    },
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "as needed"
+    }
   }
 }

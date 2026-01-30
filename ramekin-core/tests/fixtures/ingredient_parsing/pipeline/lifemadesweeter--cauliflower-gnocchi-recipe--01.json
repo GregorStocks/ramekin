@@ -1,17 +1,33 @@
 {
   "raw": "1 16-ounce package of cherry tomatoes  ((about 4 cups))",
-  "expected": {
-    "item": "of cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "16-ounce package"
-      },
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "of cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-ounce package"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "of cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "16-ounce package"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

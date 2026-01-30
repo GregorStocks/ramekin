@@ -1,21 +1,41 @@
 {
   "raw": "106g dark brown sugar (3 3/4 ounces; 1/2 cup)",
-  "expected": {
-    "item": "dark brown sugar",
-    "measurements": [
-      {
-        "amount": "106",
-        "unit": "g"
-      },
-      {
-        "amount": "3 3/4",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "106",
+          "unit": "g"
+        },
+        {
+          "amount": "3 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "106",
+          "unit": "g"
+        },
+        {
+          "amount": "3 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

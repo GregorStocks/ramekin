@@ -1,8 +1,15 @@
 {
   "raw": "fennel pollen",
-  "expected": {
-    "item": "fennel pollen",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fennel pollen",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fennel pollen",
+      "measurements": [],
+      "note": null
+    }
   }
 }

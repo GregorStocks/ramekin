@@ -1,13 +1,25 @@
 {
   "raw": "4 to 8  tender green lettuce leaves (washed and spun dry)",
-  "expected": {
-    "item": "tender green lettuce leaves",
-    "measurements": [
-      {
-        "amount": "4 to 8",
-        "unit": null
-      }
-    ],
-    "note": "washed and spun dry"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tender green lettuce leaves",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": null
+        }
+      ],
+      "note": "washed and spun dry"
+    },
+    "enrich_metric_weights": {
+      "item": "tender green lettuce leaves",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": null
+        }
+      ],
+      "note": "washed and spun dry"
+    }
   }
 }

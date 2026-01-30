@@ -1,13 +1,25 @@
 {
   "raw": "2 Tablespoons Montreal steak seasoning (divided)",
-  "expected": {
-    "item": "Montreal steak seasoning",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Montreal steak seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "Montreal steak seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

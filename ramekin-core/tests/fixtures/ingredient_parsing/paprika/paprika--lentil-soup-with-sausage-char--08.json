@@ -1,8 +1,15 @@
 {
   "raw": "A pinch of crushed red pepper flakes (optional)",
-  "expected": {
-    "item": "A pinch of crushed red pepper flakes",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "A pinch of crushed red pepper flakes",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "A pinch of crushed red pepper flakes",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

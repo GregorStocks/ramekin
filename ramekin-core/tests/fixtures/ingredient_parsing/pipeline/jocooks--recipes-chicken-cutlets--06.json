@@ -1,13 +1,25 @@
 {
   "raw": "2 cups breadcrumbs (preferably Panko)",
-  "expected": {
-    "item": "breadcrumbs (preferably Panko)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "breadcrumbs (preferably Panko)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "breadcrumbs (preferably Panko)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

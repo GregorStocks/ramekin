@@ -1,13 +1,25 @@
 {
   "raw": "1 cup heavy cream, chilled",
-  "expected": {
-    "item": "heavy cream",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "heavy cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

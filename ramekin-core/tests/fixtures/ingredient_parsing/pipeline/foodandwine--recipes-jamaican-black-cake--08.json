@@ -1,17 +1,33 @@
 {
   "raw": "2.5 cups dark brown sugar (1 pound)",
-  "expected": {
-    "item": "dark brown sugar",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

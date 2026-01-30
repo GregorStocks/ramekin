@@ -1,13 +1,25 @@
 {
   "raw": "2 cups miniature marshmallows (divided)",
-  "expected": {
-    "item": "miniature marshmallows",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "miniature marshmallows",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "miniature marshmallows",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

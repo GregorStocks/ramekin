@@ -1,17 +1,37 @@
 {
   "raw": "1 small bunch chives (about 1 ounce), roughly chopped",
-  "expected": {
-    "item": "bunch chives",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bunch chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "bunch chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

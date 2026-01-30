@@ -1,8 +1,15 @@
 {
   "raw": "Seasonings such as salt, pepper flakes, and dried oregano",
-  "expected": {
-    "item": "Seasonings such as salt, pepper flakes",
-    "measurements": [],
-    "note": "and dried oregano"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Seasonings such as salt, pepper flakes",
+      "measurements": [],
+      "note": "and dried oregano"
+    },
+    "enrich_metric_weights": {
+      "item": "Seasonings such as salt, pepper flakes",
+      "measurements": [],
+      "note": "and dried oregano"
+    }
   }
 }

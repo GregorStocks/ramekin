@@ -1,8 +1,15 @@
 {
   "raw": "Sliced green onions, optional",
-  "expected": {
-    "item": "Sliced green onions",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sliced green onions",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Sliced green onions",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

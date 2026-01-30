@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup toasted peanuts, coarsely chopped",
-  "expected": {
-    "item": "toasted peanuts",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted peanuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "toasted peanuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6  dried dates ((for decoration, optional))",
-  "expected": {
-    "item": "dried dates",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "for decoration, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried dates",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "for decoration, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "dried dates",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "for decoration, optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "soaking and cooking the chickpeas:",
-  "expected": {
-    "item": "soaking and cooking the chickpeas:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "soaking and cooking the chickpeas:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "soaking and cooking the chickpeas:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

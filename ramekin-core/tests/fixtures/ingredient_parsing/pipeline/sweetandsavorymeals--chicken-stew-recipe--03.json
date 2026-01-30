@@ -1,13 +1,25 @@
 {
   "raw": "2  medium carrots (cut into thick rounds)",
-  "expected": {
-    "item": "carrots (cut into thick rounds)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots (cut into thick rounds)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "carrots (cut into thick rounds)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

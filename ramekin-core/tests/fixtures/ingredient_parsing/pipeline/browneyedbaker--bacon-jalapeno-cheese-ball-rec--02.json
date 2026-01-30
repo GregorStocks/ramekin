@@ -1,13 +1,29 @@
 {
   "raw": "2 ounces Cheddar cheese (shredded (about ½ cup))",
-  "expected": {
-    "item": "Cheddar cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded (about 1/2 cup"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded (about 1/2 cup"
+    },
+    "parse_ingredients": {
+      "item": "Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded (about 1/2 cup"
+    }
   }
 }

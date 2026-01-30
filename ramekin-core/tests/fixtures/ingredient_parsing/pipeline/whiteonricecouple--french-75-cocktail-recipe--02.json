@@ -1,17 +1,37 @@
 {
   "raw": "1 1/2 oz. juice from 1/2 a lemon (, about 1/2 a lemon)",
-  "expected": {
-    "item": "juice from 1/2 a lemon",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "juice from 1/2 a lemon",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "juice from 1/2 a lemon",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Grated cheddar",
-  "expected": {
-    "item": "Grated cheddar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Grated cheddar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Grated cheddar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

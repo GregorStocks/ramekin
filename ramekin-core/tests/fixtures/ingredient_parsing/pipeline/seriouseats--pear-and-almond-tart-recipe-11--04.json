@@ -1,21 +1,41 @@
 {
   "raw": "100g granulated sugar (about 3 1/2 ounces; 1/2 cup)",
-  "expected": {
-    "item": "granulated sugar",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      },
-      {
-        "amount": "3 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

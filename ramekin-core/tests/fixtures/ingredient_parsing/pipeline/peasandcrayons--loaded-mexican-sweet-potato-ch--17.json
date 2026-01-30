@@ -1,8 +1,15 @@
 {
   "raw": "Feeling the heat? You can even add cayenne pepper too! ((I always do))",
-  "expected": {
-    "item": "Feeling the heat? You can even add cayenne pepper too! (I always do)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Feeling the heat? You can even add cayenne pepper too! (I always do)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Feeling the heat? You can even add cayenne pepper too! (I always do)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

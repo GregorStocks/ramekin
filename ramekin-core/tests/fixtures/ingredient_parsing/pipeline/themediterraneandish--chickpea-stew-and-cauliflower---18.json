@@ -1,8 +1,15 @@
 {
   "raw": "Toasted pine nuts (optional)",
-  "expected": {
-    "item": "Toasted pine nuts",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Toasted pine nuts",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Toasted pine nuts",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

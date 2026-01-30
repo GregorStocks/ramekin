@@ -1,8 +1,15 @@
 {
   "raw": "Banchan (Korean side dishes), for serving (optional)",
-  "expected": {
-    "item": "Banchan (Korean side dishes)",
-    "measurements": [],
-    "note": "for serving (optional)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Banchan (Korean side dishes)",
+      "measurements": [],
+      "note": "for serving (optional)"
+    },
+    "enrich_metric_weights": {
+      "item": "Banchan (Korean side dishes)",
+      "measurements": [],
+      "note": "for serving (optional)"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup drained sliced hot cherry peppers, plus ¼ cup brine",
-  "expected": {
-    "item": "drained sliced hot cherry peppers",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1/4 cup brine"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "drained sliced hot cherry peppers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1/4 cup brine"
+    },
+    "enrich_metric_weights": {
+      "item": "drained sliced hot cherry peppers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1/4 cup brine"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp gated lemon zest plus 1/2 tsp juice",
-  "expected": {
-    "item": "gated lemon zest",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus 1/2 tsp juice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gated lemon zest",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus 1/2 tsp juice"
+    },
+    "parse_ingredients": {
+      "item": "gated lemon zest",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus 1/2 tsp juice"
+    }
   }
 }

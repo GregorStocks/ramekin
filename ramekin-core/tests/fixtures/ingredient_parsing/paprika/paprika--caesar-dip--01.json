@@ -1,13 +1,25 @@
 {
   "raw": "4 anchovy fillets packed in oil, rinsed",
-  "expected": {
-    "item": "anchovy fillets packed in oil",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "anchovy fillets packed in oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "anchovy fillets packed in oil",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

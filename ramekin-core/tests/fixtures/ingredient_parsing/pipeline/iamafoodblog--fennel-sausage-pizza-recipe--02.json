@@ -1,8 +1,15 @@
 {
   "raw": "fennel sausage, or homemade pork and fennel meatballs",
-  "expected": {
-    "item": "fennel sausage, or homemade pork and fennel meatballs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fennel sausage, or homemade pork and fennel meatballs",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fennel sausage, or homemade pork and fennel meatballs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

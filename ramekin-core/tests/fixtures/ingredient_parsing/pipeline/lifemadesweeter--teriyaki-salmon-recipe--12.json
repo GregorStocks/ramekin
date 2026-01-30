@@ -1,8 +1,15 @@
 {
   "raw": "kosher or sea salt and freshly cracked black pepper (to taste)",
-  "expected": {
-    "item": "kosher or sea salt and freshly cracked black pepper",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher or sea salt and freshly cracked black pepper",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "kosher or sea salt and freshly cracked black pepper",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

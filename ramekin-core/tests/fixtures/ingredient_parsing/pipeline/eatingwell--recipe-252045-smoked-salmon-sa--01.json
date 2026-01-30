@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces small red potatoes, scrubbed and halved",
-  "expected": {
-    "item": "small red potatoes",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "scrubbed and halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "small red potatoes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "scrubbed and halved"
+    },
+    "parse_ingredients": {
+      "item": "small red potatoes",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "scrubbed and halved"
+    }
   }
 }

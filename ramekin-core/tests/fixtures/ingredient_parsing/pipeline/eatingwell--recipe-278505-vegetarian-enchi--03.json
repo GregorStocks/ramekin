@@ -1,13 +1,25 @@
 {
   "raw": "0.75 cup chopped poblano peppers",
-  "expected": {
-    "item": "chopped poblano peppers",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped poblano peppers",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped poblano peppers",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 pounds onions (sliced)",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

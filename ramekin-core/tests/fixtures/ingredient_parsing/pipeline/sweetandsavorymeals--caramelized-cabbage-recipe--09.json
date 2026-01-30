@@ -1,17 +1,33 @@
 {
   "raw": "1  medium head of green cabbage (cut into wedges 4 or 6 wedges)",
-  "expected": {
-    "item": "head of green cabbage",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "head of green cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "head of green cabbage",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

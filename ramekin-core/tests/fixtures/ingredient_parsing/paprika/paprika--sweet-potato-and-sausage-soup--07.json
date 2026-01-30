@@ -1,13 +1,25 @@
 {
   "raw": "6 cups low-salt chicken broth",
-  "expected": {
-    "item": "low-salt chicken broth",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "low-salt chicken broth",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "low-salt chicken broth",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Desiccated coconut, for serving (optional)",
-  "expected": {
-    "item": "Desiccated coconut, for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Desiccated coconut, for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Desiccated coconut, for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

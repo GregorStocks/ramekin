@@ -1,8 +1,15 @@
 {
   "raw": "Salmon:",
-  "expected": {
-    "item": "Salmon:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Salmon:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Salmon:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

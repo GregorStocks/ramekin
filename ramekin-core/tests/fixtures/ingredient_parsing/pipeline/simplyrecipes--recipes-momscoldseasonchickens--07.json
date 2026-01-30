@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp of chopped greens from a green onion (green part of the green onion) or chives",
-  "expected": {
-    "item": "chopped greens from a green onion (green part of the green onion) or chives",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped greens from a green onion (green part of the green onion) or chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped greens from a green onion (green part of the green onion) or chives",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

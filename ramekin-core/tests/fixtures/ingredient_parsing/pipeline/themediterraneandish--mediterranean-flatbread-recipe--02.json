@@ -1,8 +1,15 @@
 {
   "raw": "Cornmeal",
-  "expected": {
-    "item": "Cornmeal",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cornmeal",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cornmeal",
+      "measurements": [],
+      "note": null
+    }
   }
 }

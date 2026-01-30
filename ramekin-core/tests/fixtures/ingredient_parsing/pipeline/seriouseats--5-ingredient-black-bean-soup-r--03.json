@@ -1,17 +1,33 @@
 {
   "raw": "1 chipotle chile from 1 can of chipotles in adobo, finely chopped (1 tablespoon)",
-  "expected": {
-    "item": "chipotle chile from 1 can of chipotles in adobo",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chipotle chile from 1 can of chipotles in adobo",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "chipotle chile from 1 can of chipotles in adobo",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

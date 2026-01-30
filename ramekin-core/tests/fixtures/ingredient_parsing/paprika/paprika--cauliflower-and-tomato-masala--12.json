@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 cups tomato puree from a 28-ounce can",
-  "expected": {
-    "item": "tomato puree from a 28-ounce can",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tomato puree from a 28-ounce can",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tomato puree from a 28-ounce can",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

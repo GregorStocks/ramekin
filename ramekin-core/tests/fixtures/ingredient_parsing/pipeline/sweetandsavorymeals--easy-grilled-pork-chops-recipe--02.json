@@ -1,13 +1,25 @@
 {
   "raw": "1/2 gallon water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "gallon"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    }
   }
 }

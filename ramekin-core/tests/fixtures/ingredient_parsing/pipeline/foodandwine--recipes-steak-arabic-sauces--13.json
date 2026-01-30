@@ -1,17 +1,33 @@
 {
   "raw": "Two 1 1/2-inch-thick&nbsp;T-bone steaks (2 1/2&nbsp;pounds)",
-  "expected": {
-    "item": "1 1/2-inch-thick T-bone steaks",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 1/2-inch-thick T-bone steaks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1 1/2-inch-thick T-bone steaks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

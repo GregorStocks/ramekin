@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound spicy Italian sausage, cooked through, crumbled and drained",
-  "expected": {
-    "item": "spicy Italian sausage, cooked through",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "crumbled and drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "spicy Italian sausage, cooked through",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "crumbled and drained"
+    },
+    "parse_ingredients": {
+      "item": "spicy Italian sausage, cooked through",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "crumbled and drained"
+    }
   }
 }

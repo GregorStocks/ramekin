@@ -1,13 +1,29 @@
 {
   "raw": "16 oz whipped topping (thawed in the refrigerator)",
-  "expected": {
-    "item": "whipped topping",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed in the refrigerator"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whipped topping",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed in the refrigerator"
+    },
+    "enrich_metric_weights": {
+      "item": "whipped topping",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed in the refrigerator"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp garlic  (chopped (2 cloves))",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "chopped (2 cloves"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "chopped (2 cloves"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "chopped (2 cloves"
+    }
   }
 }

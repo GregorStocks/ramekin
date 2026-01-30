@@ -1,13 +1,25 @@
 {
   "raw": "1 lb sweet multi-colored mini bell pepper",
-  "expected": {
-    "item": "sweet multi-colored mini bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet multi-colored mini bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sweet multi-colored mini bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

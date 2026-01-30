@@ -1,13 +1,25 @@
 {
   "raw": "1       green jalapeno pepper, finely diced",
-  "expected": {
-    "item": "green jalapeno pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green jalapeno pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "green jalapeno pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

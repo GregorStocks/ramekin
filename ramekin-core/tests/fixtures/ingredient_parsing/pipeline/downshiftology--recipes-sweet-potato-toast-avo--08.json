@@ -1,8 +1,15 @@
 {
   "raw": "parsley (for garnishment)",
-  "expected": {
-    "item": "parsley",
-    "measurements": [],
-    "note": "for garnishment"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "for garnishment"
+    },
+    "parse_ingredients": {
+      "item": "parsley",
+      "measurements": [],
+      "note": "for garnishment"
+    }
   }
 }

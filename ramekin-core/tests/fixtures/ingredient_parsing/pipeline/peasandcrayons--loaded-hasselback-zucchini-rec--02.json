@@ -1,13 +1,29 @@
 {
   "raw": "6-8 oz cheese (choose your favorite - see below)",
-  "expected": {
-    "item": "cheese (choose your favorite - see below)",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheese (choose your favorite - see below)",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "oz"
+        },
+        {
+          "amount": "170-227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cheese (choose your favorite - see below)",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

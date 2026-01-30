@@ -1,13 +1,25 @@
 {
   "raw": "4  cans cannellini beans, (drained and rinsed)",
-  "expected": {
-    "item": "cannellini beans",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "can"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cannellini beans",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "can"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "cannellini beans",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "can"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 teaspoons (10 grams) salted or unsalted butter",
-  "expected": {
-    "item": "salted or unsalted butter",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted or unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salted or unsalted butter",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

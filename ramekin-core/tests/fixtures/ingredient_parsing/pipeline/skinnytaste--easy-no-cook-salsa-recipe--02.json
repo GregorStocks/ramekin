@@ -1,13 +1,25 @@
 {
   "raw": "2  small cloves peeled garlic",
-  "expected": {
-    "item": "cloves peeled garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cloves peeled garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cloves peeled garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

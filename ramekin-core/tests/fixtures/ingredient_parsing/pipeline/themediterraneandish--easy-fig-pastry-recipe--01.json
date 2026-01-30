@@ -1,13 +1,25 @@
 {
   "raw": "1 sheet of good store-bought puff pastry, thawed in fridge for 3 hours or so",
-  "expected": {
-    "item": "sheet of good store-bought puff pastry",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thawed in fridge for 3 hours or so"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sheet of good store-bought puff pastry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed in fridge for 3 hours or so"
+    },
+    "enrich_metric_weights": {
+      "item": "sheet of good store-bought puff pastry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed in fridge for 3 hours or so"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Splash of heavy cream (optional)",
-  "expected": {
-    "item": "Splash of heavy cream",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Splash of heavy cream",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Splash of heavy cream",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

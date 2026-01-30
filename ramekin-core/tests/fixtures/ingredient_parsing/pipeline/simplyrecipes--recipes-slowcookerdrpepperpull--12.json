@@ -1,13 +1,25 @@
 {
   "raw": "1/2 - 1 teaspoon chili flakes, depending on how spicy you like it",
-  "expected": {
-    "item": "chili flakes, depending on how spicy you like it",
-    "measurements": [
-      {
-        "amount": "1/2-1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chili flakes, depending on how spicy you like it",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chili flakes, depending on how spicy you like it",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

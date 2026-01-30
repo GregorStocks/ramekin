@@ -1,8 +1,15 @@
 {
   "raw": "additional sliced strawberries",
-  "expected": {
-    "item": "additional sliced strawberries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "additional sliced strawberries",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "additional sliced strawberries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

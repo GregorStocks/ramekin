@@ -1,13 +1,25 @@
 {
   "raw": "0.25 onion",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

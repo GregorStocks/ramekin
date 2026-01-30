@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (50g) brown sugar (lightly packed)",
-  "expected": {
-    "item": "brown sugar",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "lightly packed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "lightly packed"
+    },
+    "enrich_metric_weights": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "lightly packed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "24 slices pickled jalapeños",
-  "expected": {
-    "item": "pickled jalapeños",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pickled jalapeños",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pickled jalapeños",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

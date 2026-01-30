@@ -1,13 +1,25 @@
 {
   "raw": "6  sweet peppers (deseeded and cut into pieces)",
-  "expected": {
-    "item": "sweet peppers (deseeded and cut into pieces)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet peppers (deseeded and cut into pieces)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sweet peppers (deseeded and cut into pieces)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 lb/ 453 g shallots, peeled",
-  "expected": {
-    "item": "lb/ 453 g shallots",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lb/ 453 g shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled"
+    },
+    "enrich_metric_weights": {
+      "item": "lb/ 453 g shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

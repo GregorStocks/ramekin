@@ -1,8 +1,15 @@
 {
   "raw": "Fruit Purées",
-  "expected": {
-    "item": "Fruit Purées",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fruit Purées",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fruit Purées",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup okra (thinly sliced (or 1 tsp file powder), optional)",
-  "expected": {
-    "item": "okra , optional)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "thinly sliced (or 1 tsp file powder"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "okra , optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced (or 1 tsp file powder"
+    },
+    "parse_ingredients": {
+      "item": "okra , optional)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thinly sliced (or 1 tsp file powder"
+    }
   }
 }

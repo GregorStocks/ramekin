@@ -1,13 +1,25 @@
 {
   "raw": "90 grams carrots ((1 small carrot, julienned))",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "90",
-        "unit": "g"
-      }
-    ],
-    "note": "1 small carrot, julienned"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": "1 small carrot, julienned"
+    },
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        }
+      ],
+      "note": "1 small carrot, julienned"
+    }
   }
 }

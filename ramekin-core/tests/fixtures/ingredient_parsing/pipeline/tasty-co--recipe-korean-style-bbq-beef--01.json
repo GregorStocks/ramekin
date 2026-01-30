@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ lb ribeye steak, or any other well-marbled, tender cut",
-  "expected": {
-    "item": "ribeye steak, or any other well-marbled, tender cut",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ribeye steak, or any other well-marbled, tender cut",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ribeye steak, or any other well-marbled, tender cut",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

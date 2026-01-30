@@ -1,17 +1,37 @@
 {
   "raw": "1 (3oz) bar firecracker chocolate",
-  "expected": {
-    "item": "bar firecracker chocolate",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bar firecracker chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bar firecracker chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

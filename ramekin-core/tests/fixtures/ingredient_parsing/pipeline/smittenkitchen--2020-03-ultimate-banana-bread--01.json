@@ -1,21 +1,41 @@
 {
   "raw": "1/2 cup (4 ounces or 115 grams) unsalted butter, cut into chunks, plus more for pan",
-  "expected": {
-    "item": "unsalted butter, cut into chunks",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      }
-    ],
-    "note": "plus more for pan"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter, cut into chunks",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for pan"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter, cut into chunks",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for pan"
+    }
   }
 }

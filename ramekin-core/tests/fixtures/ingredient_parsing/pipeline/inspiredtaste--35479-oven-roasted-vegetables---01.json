@@ -1,13 +1,25 @@
 {
   "raw": "2 to 3 pounds hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
-  "expected": {
-    "item": "hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "hearty vegetables such as potatoes, carrots, winter squashes, beets, turnips, onion, fennel and broccoli stems",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

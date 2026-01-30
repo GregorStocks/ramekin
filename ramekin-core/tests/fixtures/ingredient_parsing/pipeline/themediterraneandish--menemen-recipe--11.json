@@ -1,8 +1,15 @@
 {
   "raw": "Crushed red pepper flakes, (optional if you like spicy)",
-  "expected": {
-    "item": "Crushed red pepper flakes",
-    "measurements": [],
-    "note": "optional if you like spicy"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crushed red pepper flakes",
+      "measurements": [],
+      "note": "optional if you like spicy"
+    },
+    "enrich_metric_weights": {
+      "item": "Crushed red pepper flakes",
+      "measurements": [],
+      "note": "optional if you like spicy"
+    }
   }
 }

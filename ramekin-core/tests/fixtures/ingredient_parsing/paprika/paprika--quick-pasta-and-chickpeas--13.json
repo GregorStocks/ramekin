@@ -1,8 +1,15 @@
 {
   "raw": "Salt and red pepper flakes",
-  "expected": {
-    "item": "Salt and red pepper flakes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Salt and red pepper flakes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Salt and red pepper flakes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

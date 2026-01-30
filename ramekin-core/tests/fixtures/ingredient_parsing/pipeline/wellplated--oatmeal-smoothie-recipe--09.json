@@ -1,8 +1,15 @@
 {
   "raw": "Ice (optional, add at the end if you want a thicker smoothie)",
-  "expected": {
-    "item": "Ice",
-    "measurements": [],
-    "note": "optional, add at the end if you want a thicker smoothie"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ice",
+      "measurements": [],
+      "note": "optional, add at the end if you want a thicker smoothie"
+    },
+    "enrich_metric_weights": {
+      "item": "Ice",
+      "measurements": [],
+      "note": "optional, add at the end if you want a thicker smoothie"
+    }
   }
 }

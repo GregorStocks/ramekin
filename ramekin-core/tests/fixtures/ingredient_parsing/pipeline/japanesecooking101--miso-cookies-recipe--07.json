@@ -1,8 +1,15 @@
 {
   "raw": "raw sugar",
-  "expected": {
-    "item": "raw sugar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raw sugar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "raw sugar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

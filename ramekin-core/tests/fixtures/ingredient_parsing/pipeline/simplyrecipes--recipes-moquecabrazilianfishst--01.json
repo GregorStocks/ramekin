@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
-  "expected": {
-    "item": "to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "to 2 pounds of fillets of firm white fish such as halibut, swordfish, or cod, rinsed in cold water, pin bones removed, cut into large portions",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

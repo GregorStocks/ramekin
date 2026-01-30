@@ -1,13 +1,25 @@
 {
   "raw": "2 cups elbow macaroni (uncooked)",
-  "expected": {
-    "item": "elbow macaroni",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "elbow macaroni",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "parse_ingredients": {
+      "item": "elbow macaroni",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

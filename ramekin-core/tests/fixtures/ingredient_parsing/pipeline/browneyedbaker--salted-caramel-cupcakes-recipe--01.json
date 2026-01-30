@@ -1,13 +1,25 @@
 {
   "raw": "½ cup plus 1 tablespoon Dutch-process cocoa powder",
-  "expected": {
-    "item": "½ cup plus 1 tablespoon Dutch-process cocoa powder",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon Dutch-process cocoa powder"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "½ cup plus 1 tablespoon Dutch-process cocoa powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon Dutch-process cocoa powder"
+    },
+    "enrich_metric_weights": {
+      "item": "½ cup plus 1 tablespoon Dutch-process cocoa powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon Dutch-process cocoa powder"
+    }
   }
 }

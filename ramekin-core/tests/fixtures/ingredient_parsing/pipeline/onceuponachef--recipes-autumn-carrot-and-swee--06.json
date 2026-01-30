@@ -1,13 +1,25 @@
 {
   "raw": "8 cups chicken broth, (best quality such as Swanson)",
-  "expected": {
-    "item": "chicken broth, (best quality such as Swanson)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken broth, (best quality such as Swanson)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken broth, (best quality such as Swanson)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

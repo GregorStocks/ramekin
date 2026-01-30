@@ -1,21 +1,41 @@
 {
   "raw": "1 cup finely grated Parmigiano-Reggiano (4 ounces; 112g), divided",
-  "expected": {
-    "item": "finely grated Parmigiano-Reggiano",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "112",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely grated Parmigiano-Reggiano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "112",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "finely grated Parmigiano-Reggiano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "112",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

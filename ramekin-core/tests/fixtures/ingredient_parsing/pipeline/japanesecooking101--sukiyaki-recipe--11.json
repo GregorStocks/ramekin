@@ -1,13 +1,25 @@
 {
   "raw": "1  package enoki mushrooms",
-  "expected": {
-    "item": "enoki mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "enoki mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "enoki mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

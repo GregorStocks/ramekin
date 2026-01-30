@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons mayonnaise (optional, see Note up top)",
-  "expected": {
-    "item": "mayonnaise",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional, see Note up top"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mayonnaise",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, see Note up top"
+    },
+    "enrich_metric_weights": {
+      "item": "mayonnaise",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, see Note up top"
+    }
   }
 }

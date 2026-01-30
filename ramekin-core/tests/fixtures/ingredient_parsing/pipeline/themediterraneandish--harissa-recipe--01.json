@@ -1,13 +1,25 @@
 {
   "raw": "7  Dried New Mexico Chiles or Guajillo Chiles,",
-  "expected": {
-    "item": "Dried New Mexico Chiles or Guajillo Chiles,",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dried New Mexico Chiles or Guajillo Chiles,",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Dried New Mexico Chiles or Guajillo Chiles,",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 lbs cherry tomatoes (or Roma tomatoes - ripe)",
-  "expected": {
-    "item": "cherry tomatoes (or Roma tomatoes - ripe)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cherry tomatoes (or Roma tomatoes - ripe)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cherry tomatoes (or Roma tomatoes - ripe)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

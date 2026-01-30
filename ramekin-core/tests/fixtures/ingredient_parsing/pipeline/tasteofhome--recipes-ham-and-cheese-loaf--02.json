@@ -1,13 +1,25 @@
 {
   "raw": "10 slices deli ham",
-  "expected": {
-    "item": "deli ham",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "deli ham",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "deli ham",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 (15 ounce) can no-salt-added chickpeas, rinsed",
-  "expected": {
-    "item": "no-salt-added chickpeas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "no-salt-added chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "no-salt-added chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

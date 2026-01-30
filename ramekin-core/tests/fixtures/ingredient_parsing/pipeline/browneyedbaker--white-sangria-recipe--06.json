@@ -1,13 +1,25 @@
 {
   "raw": "6 to 8  ice cubes",
-  "expected": {
-    "item": "ice cubes",
-    "measurements": [
-      {
-        "amount": "6 to 8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ice cubes",
+      "measurements": [
+        {
+          "amount": "6 to 8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ice cubes",
+      "measurements": [
+        {
+          "amount": "6 to 8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sanding sugar for rolling, optional",
-  "expected": {
-    "item": "Sanding sugar for rolling",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sanding sugar for rolling",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Sanding sugar for rolling",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

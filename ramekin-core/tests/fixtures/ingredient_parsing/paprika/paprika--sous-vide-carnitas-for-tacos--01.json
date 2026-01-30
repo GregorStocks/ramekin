@@ -1,17 +1,33 @@
 {
   "raw": "4 pounds (1.8kg) boneless pork shoulder, cut into 2-inch-thick slabs",
-  "expected": {
-    "item": "boneless pork shoulder, cut into 2-inch-thick slabs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      },
-      {
-        "amount": "1.8",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless pork shoulder, cut into 2-inch-thick slabs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1.8",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boneless pork shoulder, cut into 2-inch-thick slabs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1.8",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

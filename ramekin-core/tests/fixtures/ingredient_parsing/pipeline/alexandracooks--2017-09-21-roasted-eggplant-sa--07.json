@@ -1,17 +1,37 @@
 {
   "raw": "4&nbsp;ounces&nbsp;Parmigiano Reggiano, grated (about 1 cup)",
-  "expected": {
-    "item": "Parmigiano Reggiano",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parmigiano Reggiano",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "parse_ingredients": {
+      "item": "Parmigiano Reggiano",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

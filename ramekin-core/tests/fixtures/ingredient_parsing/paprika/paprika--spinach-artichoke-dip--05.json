@@ -1,17 +1,37 @@
 {
   "raw": "6 ounces Gouda cheese, shredded (1½ cups)",
-  "expected": {
-    "item": "Gouda cheese",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gouda cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "Gouda cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

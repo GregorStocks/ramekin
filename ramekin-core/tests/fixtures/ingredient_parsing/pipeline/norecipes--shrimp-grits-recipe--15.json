@@ -1,13 +1,25 @@
 {
   "raw": "65 grams red bell pepper ((1/2 red bell pepper, diced))",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "65",
-        "unit": "g"
-      }
-    ],
-    "note": "1/2 red bell pepper, diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": "1/2 red bell pepper, diced"
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": "1/2 red bell pepper, diced"
+    }
   }
 }

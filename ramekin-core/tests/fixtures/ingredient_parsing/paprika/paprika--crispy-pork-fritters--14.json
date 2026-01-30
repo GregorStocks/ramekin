@@ -1,8 +1,15 @@
 {
   "raw": "Cocktail sauce and whole-grain mustard, for serving",
-  "expected": {
-    "item": "Cocktail sauce and whole-grain mustard",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cocktail sauce and whole-grain mustard",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Cocktail sauce and whole-grain mustard",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

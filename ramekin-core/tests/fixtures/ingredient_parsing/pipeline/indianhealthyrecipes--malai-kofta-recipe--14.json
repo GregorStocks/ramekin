@@ -1,13 +1,25 @@
 {
   "raw": "15  cashew nuts",
-  "expected": {
-    "item": "cashew nuts",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cashew nuts",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cashew nuts",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

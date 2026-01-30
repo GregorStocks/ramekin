@@ -1,13 +1,25 @@
 {
   "raw": "½ jalapeño pepper, seeded, finely chopped",
-  "expected": {
-    "item": "jalapeño pepper, seeded",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeño pepper, seeded",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeño pepper, seeded",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

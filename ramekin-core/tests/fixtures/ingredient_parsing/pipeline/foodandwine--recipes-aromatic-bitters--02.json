@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon cardamom seeds, toasted",
-  "expected": {
-    "item": "cardamom seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cardamom seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "toasted"
+    },
+    "parse_ingredients": {
+      "item": "cardamom seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

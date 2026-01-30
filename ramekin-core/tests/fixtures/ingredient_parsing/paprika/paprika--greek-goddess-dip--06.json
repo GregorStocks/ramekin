@@ -1,13 +1,25 @@
 {
   "raw": "2 scallions, white and green parts, sliced",
-  "expected": {
-    "item": "scallions, white and green parts",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "scallions, white and green parts",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "scallions, white and green parts",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

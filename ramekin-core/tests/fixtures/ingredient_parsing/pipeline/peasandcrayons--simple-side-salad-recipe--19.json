@@ -1,13 +1,25 @@
 {
   "raw": "½ tsp garlic powder (or one super small clove garlic, minced)",
-  "expected": {
-    "item": "garlic powder",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or one super small clove garlic, minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or one super small clove garlic, minced"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or one super small clove garlic, minced"
+    }
   }
 }

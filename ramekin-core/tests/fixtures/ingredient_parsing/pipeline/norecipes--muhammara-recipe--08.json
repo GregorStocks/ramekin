@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon Shatta ((Syrian chili paste))",
-  "expected": {
-    "item": "Shatta (Syrian chili paste)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shatta (Syrian chili paste)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Shatta (Syrian chili paste)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

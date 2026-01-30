@@ -1,13 +1,25 @@
 {
   "raw": "&amp;#8531; cup halved and pitted Kalamata olives",
-  "expected": {
-    "item": "halved and pitted Kalamata olives",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "halved and pitted Kalamata olives",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "halved and pitted Kalamata olives",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Japanese or 3 Persian cucumbers",
-  "expected": {
-    "item": "Japanese or 3 Persian cucumbers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Japanese or 3 Persian cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Japanese or 3 Persian cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

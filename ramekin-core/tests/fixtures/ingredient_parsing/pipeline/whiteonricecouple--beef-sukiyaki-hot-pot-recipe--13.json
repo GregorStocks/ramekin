@@ -1,13 +1,25 @@
 {
   "raw": "2 cups Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
-  "expected": {
-    "item": "Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Shungiku (a type of chrysanthemum leaf), Spinach, or Arugula",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

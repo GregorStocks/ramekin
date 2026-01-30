@@ -1,13 +1,25 @@
 {
   "raw": "1  Can Sweetened Condensed Milk",
-  "expected": {
-    "item": "Sweetened Condensed Milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sweetened Condensed Milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sweetened Condensed Milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

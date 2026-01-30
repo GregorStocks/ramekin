@@ -1,8 +1,15 @@
 {
   "raw": "Multicolor nonpareils and yellow sprinkles",
-  "expected": {
-    "item": "Multicolor nonpareils and yellow sprinkles",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Multicolor nonpareils and yellow sprinkles",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Multicolor nonpareils and yellow sprinkles",
+      "measurements": [],
+      "note": null
+    }
   }
 }

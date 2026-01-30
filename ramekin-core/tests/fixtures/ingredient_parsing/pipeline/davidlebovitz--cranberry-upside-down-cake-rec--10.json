@@ -1,8 +1,15 @@
 {
   "raw": "grated zest of one lemon",
-  "expected": {
-    "item": "grated zest of one lemon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated zest of one lemon",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated zest of one lemon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

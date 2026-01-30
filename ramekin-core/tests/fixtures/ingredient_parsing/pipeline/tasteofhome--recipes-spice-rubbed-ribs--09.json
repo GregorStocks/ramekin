@@ -1,13 +1,25 @@
 {
   "raw": "10 pounds pork baby back ribs",
-  "expected": {
-    "item": "pork baby back ribs",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork baby back ribs",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pork baby back ribs",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

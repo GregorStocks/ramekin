@@ -1,8 +1,15 @@
 {
   "raw": "chopped pistachios (for garnish)",
-  "expected": {
-    "item": "chopped pistachios",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped pistachios",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "chopped pistachios",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

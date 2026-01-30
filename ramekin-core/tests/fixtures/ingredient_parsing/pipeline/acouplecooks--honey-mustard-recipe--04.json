@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons BBQ sauce (optional but recommended)",
-  "expected": {
-    "item": "BBQ sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional but recommended"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "BBQ sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but recommended"
+    },
+    "parse_ingredients": {
+      "item": "BBQ sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but recommended"
+    }
   }
 }

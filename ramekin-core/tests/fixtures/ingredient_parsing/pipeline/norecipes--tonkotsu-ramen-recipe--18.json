@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons fatback (finely minced (salted pork fat))",
-  "expected": {
-    "item": "fatback",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "finely minced (salted pork fat"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fatback",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely minced (salted pork fat"
+    },
+    "parse_ingredients": {
+      "item": "fatback",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "finely minced (salted pork fat"
+    }
   }
 }

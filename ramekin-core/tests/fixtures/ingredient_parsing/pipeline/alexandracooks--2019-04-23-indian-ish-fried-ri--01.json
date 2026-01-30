@@ -1,13 +1,25 @@
 {
   "raw": "3 cups cooked basmati rice or 1 cup dried basmati rice, rinsed",
-  "expected": {
-    "item": "cooked basmati rice or 1 cup dried basmati rice",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked basmati rice or 1 cup dried basmati rice",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "cooked basmati rice or 1 cup dried basmati rice",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

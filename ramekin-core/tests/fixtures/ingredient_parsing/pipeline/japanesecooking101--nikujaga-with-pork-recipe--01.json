@@ -1,13 +1,25 @@
 {
   "raw": "20  sugar snap peas (cooked)",
-  "expected": {
-    "item": "sugar snap peas",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": "cooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sugar snap peas",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "cooked"
+    },
+    "parse_ingredients": {
+      "item": "sugar snap peas",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "cooked"
+    }
   }
 }

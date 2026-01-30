@@ -1,17 +1,33 @@
 {
   "raw": "1 (1-pound) skirt steak, cut crosswise into 4 equal pieces and trimmed",
-  "expected": {
-    "item": "skirt steak",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "cut crosswise into 4 equal pieces and trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "skirt steak",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cut crosswise into 4 equal pieces and trimmed"
+    },
+    "parse_ingredients": {
+      "item": "skirt steak",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cut crosswise into 4 equal pieces and trimmed"
+    }
   }
 }

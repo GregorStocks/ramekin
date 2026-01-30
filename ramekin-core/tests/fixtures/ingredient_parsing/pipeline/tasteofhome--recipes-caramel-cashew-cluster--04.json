@@ -1,13 +1,25 @@
 {
   "raw": "28 caramels",
-  "expected": {
-    "item": "caramels",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "caramels",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "caramels",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

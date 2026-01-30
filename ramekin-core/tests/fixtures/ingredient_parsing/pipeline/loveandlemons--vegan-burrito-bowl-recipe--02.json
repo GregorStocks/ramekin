@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 chopped chipotle peppers from a can of chipotles in adobo",
-  "expected": {
-    "item": "chopped chipotle peppers from a can of chipotles in adobo",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped chipotle peppers from a can of chipotles in adobo",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped chipotle peppers from a can of chipotles in adobo",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

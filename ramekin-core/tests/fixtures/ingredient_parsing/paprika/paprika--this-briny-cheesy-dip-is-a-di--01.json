@@ -1,21 +1,41 @@
 {
   "raw": "2/3 cup (100 g) pitted Spanish Queen olives, drained and quartered lengthwise, plus 5 tablespoons (75 ml) brine from jar, divided",
-  "expected": {
-    "item": "pitted Spanish Queen olives, drained and quartered lengthwise",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "100",
-        "unit": "g"
-      },
-      {
-        "amount": "75",
-        "unit": "ml"
-      }
-    ],
-    "note": "plus 5 tablespoons brine from jar, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted Spanish Queen olives, drained and quartered lengthwise",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "75",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus 5 tablespoons brine from jar, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted Spanish Queen olives, drained and quartered lengthwise",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "75",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus 5 tablespoons brine from jar, divided"
+    }
   }
 }

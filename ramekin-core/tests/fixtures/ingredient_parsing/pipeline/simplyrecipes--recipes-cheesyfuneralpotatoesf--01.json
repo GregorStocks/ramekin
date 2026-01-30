@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 pounds Russet potatoes (about 3 large or 4 small potatoes)",
-  "expected": {
-    "item": "Russet potatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      },
-      {
-        "amount": "4",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Russet potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Russet potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

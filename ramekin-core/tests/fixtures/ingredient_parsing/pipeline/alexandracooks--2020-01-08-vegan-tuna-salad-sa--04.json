@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon Dijon or spicy brown mustard",
-  "expected": {
-    "item": "Dijon or spicy brown mustard",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dijon or spicy brown mustard",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Dijon or spicy brown mustard",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

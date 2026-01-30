@@ -1,8 +1,15 @@
 {
   "raw": "Homemade Dukkah,",
-  "expected": {
-    "item": "Homemade Dukkah,",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Homemade Dukkah,",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Homemade Dukkah,",
+      "measurements": [],
+      "note": null
+    }
   }
 }

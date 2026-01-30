@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
-  "expected": {
-    "item": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "¼ cup plus 2 tablespoons minced fresh basil (divided)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

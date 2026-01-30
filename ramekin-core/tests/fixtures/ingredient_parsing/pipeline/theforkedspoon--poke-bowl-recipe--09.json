@@ -1,13 +1,25 @@
 {
   "raw": "6 cups cooked rice (sushi rice, white rice, or brown rice)",
-  "expected": {
-    "item": "cooked rice (sushi rice, white rice, or brown rice)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked rice (sushi rice, white rice, or brown rice)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked rice (sushi rice, white rice, or brown rice)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup packed grated carrot (from 2 medium carrots)",
-  "expected": {
-    "item": "packed grated carrot (from 2 medium carrots)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed grated carrot (from 2 medium carrots)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed grated carrot (from 2 medium carrots)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup toasted nuts like pecan halves, walnuts or pistachios",
-  "expected": {
-    "item": "toasted nuts like pecan halves, walnuts or pistachios",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted nuts like pecan halves, walnuts or pistachios",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted nuts like pecan halves, walnuts or pistachios",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

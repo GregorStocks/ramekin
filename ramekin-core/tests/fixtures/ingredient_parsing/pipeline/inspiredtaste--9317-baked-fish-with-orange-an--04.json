@@ -1,13 +1,25 @@
 {
   "raw": "1 cup diced zucchini and yellow summer squash, 1/4-inch cubes",
-  "expected": {
-    "item": "diced zucchini and yellow summer squash, 1/4-inch cubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced zucchini and yellow summer squash, 1/4-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced zucchini and yellow summer squash, 1/4-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

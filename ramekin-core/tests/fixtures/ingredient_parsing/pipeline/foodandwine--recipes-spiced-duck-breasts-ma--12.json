@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup fresh mint leaves, coarsely chopped",
-  "expected": {
-    "item": "fresh mint leaves",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh mint leaves",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh mint leaves",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

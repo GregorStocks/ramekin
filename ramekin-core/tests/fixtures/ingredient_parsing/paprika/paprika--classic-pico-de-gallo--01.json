@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 pounds (680 g) ripe tomatoes, cut into 1/4- to 1/2-inch dice (about 3 cups); see notes",
-  "expected": {
-    "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see notes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "680",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see notes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ripe tomatoes, cut into 1/4- to 1/2-inch dice ; see notes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

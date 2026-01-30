@@ -1,13 +1,25 @@
 {
   "raw": "6 slices white cheddar&nbsp;or Monterey Jack cheese, cut in half",
-  "expected": {
-    "item": "white cheddar or Monterey Jack cheese, cut in half",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white cheddar or Monterey Jack cheese, cut in half",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "white cheddar or Monterey Jack cheese, cut in half",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

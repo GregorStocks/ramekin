@@ -1,8 +1,15 @@
 {
   "raw": "Sweet potato mash:",
-  "expected": {
-    "item": "Sweet potato mash:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sweet potato mash:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sweet potato mash:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

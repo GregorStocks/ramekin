@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces cheddar cheese (grated)",
-  "expected": {
-    "item": "cheddar cheese",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "parse_ingredients": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

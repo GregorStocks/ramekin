@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons arrowroot starch or 1 teaspoon corn starch",
-  "expected": {
-    "item": "arrowroot starch",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1 teaspoon corn starch"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "arrowroot starch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1 teaspoon corn starch"
+    },
+    "enrich_metric_weights": {
+      "item": "arrowroot starch",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1 teaspoon corn starch"
+    }
   }
 }

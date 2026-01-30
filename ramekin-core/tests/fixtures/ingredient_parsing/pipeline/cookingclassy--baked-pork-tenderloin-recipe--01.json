@@ -1,17 +1,33 @@
 {
   "raw": "2 (1 lb each) pork tenderloins*,",
-  "expected": {
-    "item": "pork tenderloins*,",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "lb each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork tenderloins*,",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pork tenderloins*,",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb each"
+        }
+      ],
+      "note": null
+    }
   }
 }

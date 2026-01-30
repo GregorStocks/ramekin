@@ -1,17 +1,33 @@
 {
   "raw": "1 1/4 cups (300 grams) water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "300",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "300",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

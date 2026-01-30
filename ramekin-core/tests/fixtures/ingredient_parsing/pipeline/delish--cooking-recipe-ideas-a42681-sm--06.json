@@ -1,17 +1,33 @@
 {
   "raw": "1/2 c. (1 stick)&nbsp;butter, softened",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "12 (6-inch) flour tortillas, warmed",
-  "expected": {
-    "item": "flour tortillas, warmed",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flour tortillas, warmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "flour tortillas, warmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

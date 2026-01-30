@@ -1,8 +1,15 @@
 {
   "raw": "Red pepper flakes,  (for serving)",
-  "expected": {
-    "item": "Red pepper flakes",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Red pepper flakes",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Red pepper flakes",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

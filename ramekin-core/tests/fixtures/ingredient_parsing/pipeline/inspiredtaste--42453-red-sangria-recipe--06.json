@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ cups sliced seasonal fruit (apple, pear, strawberries, peaches or a combination)",
-  "expected": {
-    "item": "sliced seasonal fruit",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "apple, pear, strawberries, peaches or a combination"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced seasonal fruit",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "apple, pear, strawberries, peaches or a combination"
+    },
+    "parse_ingredients": {
+      "item": "sliced seasonal fruit",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "apple, pear, strawberries, peaches or a combination"
+    }
   }
 }

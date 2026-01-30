@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds Roma tomatoes (cut in half horizontally)",
-  "expected": {
-    "item": "Roma tomatoes (cut in half horizontally)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roma tomatoes (cut in half horizontally)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Roma tomatoes (cut in half horizontally)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

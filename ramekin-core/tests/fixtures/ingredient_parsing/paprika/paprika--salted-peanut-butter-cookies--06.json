@@ -1,8 +1,15 @@
 {
   "raw": "Coarse-grained sea salt, to finish",
-  "expected": {
-    "item": "Coarse-grained sea salt, to finish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coarse-grained sea salt, to finish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Coarse-grained sea salt, to finish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "2 1/2 pounds (about 5 small-medium or 3 large) zucchini or other summer squash, trimmed",
-  "expected": {
-    "item": "zucchini or other summer squash",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "5",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini or other summer squash",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": "trimmed"
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini or other summer squash",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

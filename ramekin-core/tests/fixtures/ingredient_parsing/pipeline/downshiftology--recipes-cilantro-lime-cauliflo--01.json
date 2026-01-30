@@ -1,13 +1,25 @@
 {
   "raw": "1  head of cauliflower (washed)",
-  "expected": {
-    "item": "cauliflower",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "washed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cauliflower",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "washed"
+    },
+    "parse_ingredients": {
+      "item": "cauliflower",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "washed"
+    }
   }
 }

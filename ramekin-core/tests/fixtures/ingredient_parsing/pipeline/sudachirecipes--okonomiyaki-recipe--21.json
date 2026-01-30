@@ -1,8 +1,15 @@
 {
   "raw": "aonori (dried green seaweed powder) (to taste)",
-  "expected": {
-    "item": "aonori (to taste)",
-    "measurements": [],
-    "note": "dried green seaweed powder"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "aonori (to taste)",
+      "measurements": [],
+      "note": "dried green seaweed powder"
+    },
+    "parse_ingredients": {
+      "item": "aonori (to taste)",
+      "measurements": [],
+      "note": "dried green seaweed powder"
+    }
   }
 }

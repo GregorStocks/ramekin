@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup  extra-virgin olive oil, best quality such as Lucini",
-  "expected": {
-    "item": "extra-virgin olive oil, best quality such as Lucini",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil, best quality such as Lucini",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil, best quality such as Lucini",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

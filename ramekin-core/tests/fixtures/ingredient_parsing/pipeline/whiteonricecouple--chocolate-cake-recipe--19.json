@@ -1,17 +1,33 @@
 {
   "raw": "16 ounces Cream Cheese ((455g), room temp.)",
-  "expected": {
-    "item": "Cream Cheese , room temp.)",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      },
-      {
-        "amount": "455",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cream Cheese , room temp.)",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cream Cheese , room temp.)",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

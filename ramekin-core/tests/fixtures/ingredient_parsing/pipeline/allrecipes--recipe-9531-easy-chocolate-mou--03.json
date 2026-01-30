@@ -1,17 +1,37 @@
 {
   "raw": "1 (16 ounce) container frozen whipped topping, thawed",
-  "expected": {
-    "item": "container frozen whipped topping",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "container frozen whipped topping",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "thawed"
+    },
+    "enrich_metric_weights": {
+      "item": "container frozen whipped topping",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

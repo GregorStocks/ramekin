@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds firm, ripe peaches&amp;mdash;halved, pitted and cut into 1/2-inch wedges",
-  "expected": {
-    "item": "firm, ripe peaches-halved, pitted and cut into 1/2-inch wedges",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "firm, ripe peaches-halved, pitted and cut into 1/2-inch wedges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "firm, ripe peaches-halved, pitted and cut into 1/2-inch wedges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

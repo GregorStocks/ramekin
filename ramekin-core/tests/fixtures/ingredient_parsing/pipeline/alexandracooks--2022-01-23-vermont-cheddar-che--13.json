@@ -1,13 +1,25 @@
 {
   "raw": "4&nbsp;cups grated cheddar cheese, about 1 lb.",
-  "expected": {
-    "item": "grated cheddar cheese, about 1 lb.",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grated cheddar cheese, about 1 lb.",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "grated cheddar cheese, about 1 lb.",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,34 +1,88 @@
 //! CLI commands for ingredient parsing test management.
 //!
 //! Provides commands to generate and update ingredient parsing test fixtures.
+//! Test fixtures show output after each pipeline step (parse_ingredients, enrich_metric_weights).
 
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
-use ramekin_core::ingredient_parser::{parse_ingredient, Measurement};
+use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
+use ramekin_core::metric_weights::{add_metric_weight_alternative, EnrichmentStats};
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::fs::{self, File};
 use std::io::Read;
 use std::path::{Path, PathBuf};
 use zip::ZipArchive;
 
-/// A test case for ingredient parsing
+/// A test case for ingredient parsing (new format with step_outputs)
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TestCase {
     raw: String,
-    expected: ExpectedIngredient,
+    step_outputs: HashMap<String, StepOutput>,
 }
 
-/// Expected ingredient parsing result
+/// Output from a single step
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-struct ExpectedIngredient {
+struct StepOutput {
     item: String,
     measurements: Vec<Measurement>,
     note: Option<String>,
 }
 
+impl From<ParsedIngredient> for StepOutput {
+    fn from(ing: ParsedIngredient) -> Self {
+        Self {
+            item: ing.item,
+            measurements: ing.measurements,
+            note: ing.note,
+        }
+    }
+}
+
+impl From<StepOutput> for ParsedIngredient {
+    fn from(output: StepOutput) -> Self {
+        Self {
+            item: output.item,
+            measurements: output.measurements,
+            note: output.note,
+            raw: None,
+        }
+    }
+}
+
+/// Legacy test case format for migration
+#[derive(Debug, Clone, Deserialize)]
+struct LegacyTestCase {
+    raw: String,
+    #[allow(dead_code)]
+    expected: StepOutput,
+}
+
 /// Default path to the fixtures directory
 fn default_fixtures_dir() -> PathBuf {
     PathBuf::from("ramekin-core/tests/fixtures/ingredient_parsing")
+}
+
+/// Run all pipeline steps on a raw ingredient string
+fn run_pipeline(raw: &str) -> HashMap<String, StepOutput> {
+    let mut outputs = HashMap::new();
+
+    // Step 1: parse_ingredients
+    let parsed = parse_ingredient(raw);
+    outputs.insert(
+        "parse_ingredients".to_string(),
+        StepOutput::from(parsed.clone()),
+    );
+
+    // Step 2: enrich_metric_weights
+    let mut stats = EnrichmentStats::default();
+    let enriched = add_metric_weight_alternative(parsed, &mut stats);
+    outputs.insert(
+        "enrich_metric_weights".to_string(),
+        StepOutput::from(enriched),
+    );
+
+    outputs
 }
 
 /// Generate test fixtures from the latest pipeline run.
@@ -84,14 +138,10 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
                 continue;
             }
 
-            let test_case = TestCase {
-                raw: raw.clone(),
-                expected: ExpectedIngredient {
-                    item: ingredient.item.clone(),
-                    measurements: ingredient.measurements.clone(),
-                    note: ingredient.note.clone(),
-                },
-            };
+            // Run the full pipeline to get outputs for all steps
+            let step_outputs = run_pipeline(&raw);
+
+            let test_case = TestCase { raw, step_outputs };
 
             let filename = format!("{}--{}--{:02}.json", site, recipe_slug, idx + 1);
             let filepath = pipeline_dir.join(&filename);
@@ -116,14 +166,16 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
 
 /// Update all test fixtures to match current parser output.
 ///
-/// Runs the parser on each test case's `raw` input and updates
-/// the `expected` field to match the actual output.
+/// Runs the pipeline on each test case's `raw` input and updates
+/// the `step_outputs` field to match the actual output.
+/// Also migrates legacy format (expected) to new format (step_outputs).
 pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
         .unwrap_or_else(default_fixtures_dir);
 
     let mut updated = 0;
+    let mut migrated = 0;
     let mut unchanged = 0;
 
     // Process curated, pipeline, and paprika directories
@@ -139,18 +191,31 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
 
             if path.extension().map(|e| e == "json").unwrap_or(false) {
                 let content = fs::read_to_string(&path)?;
-                let mut test_case: TestCase = serde_json::from_str(&content)?;
 
-                // Run parser
-                let actual = parse_ingredient(&test_case.raw);
-                let actual_expected = ExpectedIngredient {
-                    item: actual.item,
-                    measurements: actual.measurements,
-                    note: actual.note,
-                };
+                // Try to parse as new format first
+                let (raw, old_outputs) =
+                    if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
+                        (test_case.raw, Some(test_case.step_outputs))
+                    } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
+                        // Migrate from legacy format
+                        migrated += 1;
+                        (legacy.raw, None)
+                    } else {
+                        println!("Skipping invalid file: {}", path.display());
+                        continue;
+                    };
 
-                if actual_expected != test_case.expected {
-                    test_case.expected = actual_expected;
+                // Run pipeline to get current outputs
+                let new_outputs = run_pipeline(&raw);
+
+                // Check if outputs changed
+                let changed = old_outputs.as_ref() != Some(&new_outputs);
+
+                if changed {
+                    let test_case = TestCase {
+                        raw,
+                        step_outputs: new_outputs,
+                    };
                     let json = serde_json::to_string_pretty(&test_case)?;
                     fs::write(&path, json)?;
                     updated += 1;
@@ -162,7 +227,10 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
         }
     }
 
-    println!("\nSummary: {} updated, {} unchanged", updated, unchanged);
+    println!(
+        "\nSummary: {} updated, {} migrated, {} unchanged",
+        updated, migrated, unchanged
+    );
 
     Ok(())
 }
@@ -230,14 +298,17 @@ fn extract_recipe_slug(url: &str) -> String {
 /// ParseIngredientsOutput structure from pipeline
 #[derive(Debug, Deserialize)]
 struct ParseIngredientsOutput {
-    ingredients: Vec<ParsedIngredient>,
+    ingredients: Vec<PipelineParsedIngredient>,
 }
 
 /// Parsed ingredient from pipeline output
 #[derive(Debug, Deserialize)]
-struct ParsedIngredient {
+struct PipelineParsedIngredient {
+    #[allow(dead_code)]
     item: String,
+    #[allow(dead_code)]
     measurements: Vec<Measurement>,
+    #[allow(dead_code)]
     note: Option<String>,
     raw: Option<String>,
 }
@@ -316,17 +387,10 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
                 continue;
             }
 
-            // Run the parser to get current output
-            let parsed = parse_ingredient(&raw);
+            // Run the full pipeline to get outputs for all steps
+            let step_outputs = run_pipeline(&raw);
 
-            let test_case = TestCase {
-                raw,
-                expected: ExpectedIngredient {
-                    item: parsed.item,
-                    measurements: parsed.measurements,
-                    note: parsed.note,
-                },
-            };
+            let test_case = TestCase { raw, step_outputs };
 
             let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
             let filepath = paprika_dir.join(&filename);

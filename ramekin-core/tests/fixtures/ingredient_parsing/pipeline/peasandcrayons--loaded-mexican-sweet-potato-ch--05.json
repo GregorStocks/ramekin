@@ -1,8 +1,15 @@
 {
   "raw": "Pickled or Sliced Jalapeño Peppers",
-  "expected": {
-    "item": "Pickled or Sliced Jalapeño Peppers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pickled or Sliced Jalapeño Peppers",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pickled or Sliced Jalapeño Peppers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

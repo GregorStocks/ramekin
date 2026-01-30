@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (225 g) unsalted butter, melted and cooled slightly",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": "melted and cooled slightly"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "melted and cooled slightly"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": "melted and cooled slightly"
+    }
   }
 }

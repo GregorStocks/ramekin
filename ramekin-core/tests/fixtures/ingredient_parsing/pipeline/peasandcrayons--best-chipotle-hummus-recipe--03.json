@@ -1,13 +1,25 @@
 {
   "raw": "2-3  chipotle peppers (packed in adobo sauce)",
-  "expected": {
-    "item": "chipotle peppers",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": null
-      }
-    ],
-    "note": "packed in adobo sauce"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chipotle peppers",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "packed in adobo sauce"
+    },
+    "enrich_metric_weights": {
+      "item": "chipotle peppers",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "packed in adobo sauce"
+    }
   }
 }

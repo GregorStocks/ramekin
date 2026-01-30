@@ -1,13 +1,25 @@
 {
   "raw": "8 to 12 Bibb lettuce leaves",
-  "expected": {
-    "item": "Bibb lettuce leaves",
-    "measurements": [
-      {
-        "amount": "8 to 12",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Bibb lettuce leaves",
+      "measurements": [
+        {
+          "amount": "8 to 12",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Bibb lettuce leaves",
+      "measurements": [
+        {
+          "amount": "8 to 12",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

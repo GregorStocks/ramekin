@@ -1,8 +1,15 @@
 {
   "raw": "Chicken:",
-  "expected": {
-    "item": "Chicken:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chicken:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chicken:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Dry mustard",
-  "expected": {
-    "item": "Dry mustard",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dry mustard",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dry mustard",
+      "measurements": [],
+      "note": null
+    }
   }
 }

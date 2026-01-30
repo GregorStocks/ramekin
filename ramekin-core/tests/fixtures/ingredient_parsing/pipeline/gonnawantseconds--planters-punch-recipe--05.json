@@ -1,8 +1,15 @@
 {
   "raw": "heavy splash sparkling water",
-  "expected": {
-    "item": "heavy splash sparkling water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "heavy splash sparkling water",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "heavy splash sparkling water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

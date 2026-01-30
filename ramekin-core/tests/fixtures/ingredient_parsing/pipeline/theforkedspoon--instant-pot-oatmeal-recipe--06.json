@@ -1,8 +1,15 @@
 {
   "raw": "Sweetener (honey, maple syrup, brown sugar)",
-  "expected": {
-    "item": "Sweetener (honey, maple syrup, brown sugar)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sweetener (honey, maple syrup, brown sugar)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sweetener (honey, maple syrup, brown sugar)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

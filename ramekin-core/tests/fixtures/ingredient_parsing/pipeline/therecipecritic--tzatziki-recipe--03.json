@@ -1,13 +1,25 @@
 {
   "raw": "2 ½ teaspoons minced garlic",
-  "expected": {
-    "item": "minced garlic",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced garlic",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced garlic",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

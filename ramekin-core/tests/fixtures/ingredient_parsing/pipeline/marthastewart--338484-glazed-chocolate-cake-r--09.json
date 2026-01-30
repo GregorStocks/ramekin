@@ -1,13 +1,25 @@
 {
   "raw": "0.5 cup sour cream",
-  "expected": {
-    "item": "sour cream",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sour cream",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sour cream",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

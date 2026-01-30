@@ -1,8 +1,15 @@
 {
   "raw": "Accompaniment: lemon wedges",
-  "expected": {
-    "item": "Accompaniment: lemon wedges",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Accompaniment: lemon wedges",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Accompaniment: lemon wedges",
+      "measurements": [],
+      "note": null
+    }
   }
 }

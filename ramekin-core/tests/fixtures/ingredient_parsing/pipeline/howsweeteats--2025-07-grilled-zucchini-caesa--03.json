@@ -1,13 +1,25 @@
 {
   "raw": "3 slices sourdough bread, (cut into cubes)",
-  "expected": {
-    "item": "sourdough bread, (cut into cubes)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sourdough bread, (cut into cubes)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sourdough bread, (cut into cubes)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "1 cup (120g) sliced or diced celery&nbsp;(2–3&nbsp;stalks)",
-  "expected": {
-    "item": "sliced or diced celery",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "g"
-      },
-      {
-        "amount": "2-3",
-        "unit": "stalk"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced or diced celery",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        },
+        {
+          "amount": "2-3",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced or diced celery",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        },
+        {
+          "amount": "2-3",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    }
   }
 }

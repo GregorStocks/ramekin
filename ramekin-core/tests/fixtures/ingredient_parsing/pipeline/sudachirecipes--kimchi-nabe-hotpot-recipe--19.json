@@ -1,13 +1,25 @@
 {
   "raw": "100 g green cabbage (or napa cabbage)",
-  "expected": {
-    "item": "green cabbage (or napa cabbage)",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green cabbage (or napa cabbage)",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "green cabbage (or napa cabbage)",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

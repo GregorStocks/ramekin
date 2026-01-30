@@ -1,13 +1,25 @@
 {
   "raw": "1 cup plus 2 tablespoons 2% milk",
-  "expected": {
-    "item": "1 cup plus 2 tablespoons 2% milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 2 tablespoons 2% milk"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1 cup plus 2 tablespoons 2% milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons 2% milk"
+    },
+    "parse_ingredients": {
+      "item": "1 cup plus 2 tablespoons 2% milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons 2% milk"
+    }
   }
 }

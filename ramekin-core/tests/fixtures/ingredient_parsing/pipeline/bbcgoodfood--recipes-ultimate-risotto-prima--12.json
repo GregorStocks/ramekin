@@ -1,13 +1,25 @@
 {
   "raw": "100g parmesan or vegetarian alternative, finely grated",
-  "expected": {
-    "item": "parmesan or vegetarian alternative",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parmesan or vegetarian alternative",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "finely grated"
+    },
+    "enrich_metric_weights": {
+      "item": "parmesan or vegetarian alternative",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

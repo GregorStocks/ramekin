@@ -1,8 +1,15 @@
 {
   "raw": "Desired toppings, such as sour cream, butter, chives, salt and pepper",
-  "expected": {
-    "item": "Desired toppings, such as sour cream, butter, chives, salt and pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Desired toppings, such as sour cream, butter, chives, salt and pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Desired toppings, such as sour cream, butter, chives, salt and pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

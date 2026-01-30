@@ -1,13 +1,25 @@
 {
   "raw": "2 14 1/2-ounce cans diced tomatoes",
-  "expected": {
-    "item": "14 1/2-ounce cans diced tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "14 1/2-ounce cans diced tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "14 1/2-ounce cans diced tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

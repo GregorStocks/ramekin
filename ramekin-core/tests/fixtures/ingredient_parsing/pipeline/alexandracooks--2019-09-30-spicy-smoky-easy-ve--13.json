@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
-  "expected": {
-    "item": "chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chipotles in adobo, minced, + 1 tablespoon of the adobo sauce",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

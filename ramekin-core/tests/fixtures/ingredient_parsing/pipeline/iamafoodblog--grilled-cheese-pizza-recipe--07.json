@@ -1,13 +1,25 @@
 {
   "raw": "1 grilled cheese, cut into small squares",
-  "expected": {
-    "item": "grilled cheese, cut into small squares",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grilled cheese, cut into small squares",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "grilled cheese, cut into small squares",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

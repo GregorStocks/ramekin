@@ -1,13 +1,25 @@
 {
   "raw": "240 grams beef tenderloin (sliced thinly)",
-  "expected": {
-    "item": "beef tenderloin",
-    "measurements": [
-      {
-        "amount": "240",
-        "unit": "g"
-      }
-    ],
-    "note": "sliced thinly"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef tenderloin",
+      "measurements": [
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced thinly"
+    },
+    "parse_ingredients": {
+      "item": "beef tenderloin",
+      "measurements": [
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced thinly"
+    }
   }
 }

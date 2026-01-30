@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup unsalted butter ((1/2 stick), at room temperature)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "1/2",
-        "unit": "stick"
-      }
-    ],
-    "note": "at room temperature)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "at room temperature)"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "at room temperature)"
+    }
   }
 }

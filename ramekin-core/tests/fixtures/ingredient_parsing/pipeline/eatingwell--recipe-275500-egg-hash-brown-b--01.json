@@ -1,13 +1,25 @@
 {
   "raw": "3 slices center-cut bacon, chopped",
-  "expected": {
-    "item": "center-cut bacon",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "slice"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "center-cut bacon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "center-cut bacon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

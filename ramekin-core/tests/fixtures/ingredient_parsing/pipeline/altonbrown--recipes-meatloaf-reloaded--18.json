@@ -1,13 +1,29 @@
 {
   "raw": "18 ounces sirloin roast, cut into 1 1/2-inch cubes and chilled",
-  "expected": {
-    "item": "sirloin roast",
-    "measurements": [
-      {
-        "amount": "18",
-        "unit": "oz"
-      }
-    ],
-    "note": "cut into 1 1/2-inch cubes and chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sirloin roast",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "oz"
+        }
+      ],
+      "note": "cut into 1 1/2-inch cubes and chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "sirloin roast",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "oz"
+        },
+        {
+          "amount": "510",
+          "unit": "g"
+        }
+      ],
+      "note": "cut into 1 1/2-inch cubes and chilled"
+    }
   }
 }

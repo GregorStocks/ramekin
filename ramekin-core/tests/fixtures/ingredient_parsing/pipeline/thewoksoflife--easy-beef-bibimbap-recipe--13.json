@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons gochujang ((Korean red pepper paste))",
-  "expected": {
-    "item": "gochujang (Korean red pepper paste)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gochujang (Korean red pepper paste)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "gochujang (Korean red pepper paste)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

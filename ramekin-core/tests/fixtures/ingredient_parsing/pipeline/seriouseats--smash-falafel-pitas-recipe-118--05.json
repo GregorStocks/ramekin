@@ -1,8 +1,15 @@
 {
   "raw": "Chopped fresh tomatoes Chopped fresh cucumbers&nbsp;",
-  "expected": {
-    "item": "Chopped fresh tomatoes Chopped fresh cucumbers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped fresh tomatoes Chopped fresh cucumbers",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped fresh tomatoes Chopped fresh cucumbers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

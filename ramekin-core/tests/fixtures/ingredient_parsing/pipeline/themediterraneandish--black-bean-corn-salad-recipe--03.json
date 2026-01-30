@@ -1,13 +1,25 @@
 {
   "raw": "1 3/4 cups cooked black beans or from a can, (rinsed if from can)",
-  "expected": {
-    "item": "cooked black beans or from a can",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed if from can"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked black beans or from a can",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed if from can"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked black beans or from a can",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed if from can"
+    }
   }
 }

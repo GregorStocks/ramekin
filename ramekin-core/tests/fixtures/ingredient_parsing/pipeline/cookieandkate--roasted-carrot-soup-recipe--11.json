@@ -1,13 +1,25 @@
 {
   "raw": "1 &amp;frac12; teaspoons lemon juice, to taste",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

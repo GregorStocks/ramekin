@@ -8,8 +8,9 @@ use chrono::Utc;
 use diesel::prelude::*;
 use ramekin_core::ai::{AiClient, CachingAiClient};
 use ramekin_core::pipeline::steps::{
-    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichNormalizeIngredientsStep, ExtractRecipeStep,
-    FetchImagesStepMeta, ParseIngredientsStep, SaveRecipeStepMeta,
+    EnrichAutoTagStep, EnrichGeneratePhotoStep, EnrichMetricWeightsStep,
+    EnrichNormalizeIngredientsStep, ExtractRecipeStep, FetchImagesStepMeta, ParseIngredientsStep,
+    SaveRecipeStepMeta,
 };
 use ramekin_core::pipeline::{PipelineStep, StepContext, StepOutputStore, StepRegistry};
 use ramekin_core::{
@@ -123,6 +124,7 @@ pub fn build_registry(
     registry.register(Box::new(ExtractRecipeStep));
     registry.register(Box::new(FetchImagesStep::new(pool.clone(), user_id)));
     registry.register(Box::new(ParseIngredientsStep));
+    registry.register(Box::new(EnrichMetricWeightsStep));
 
     // Use the appropriate SaveRecipeStep based on whether this is a rescrape
     let save_step = match existing_recipe_id {
@@ -687,7 +689,10 @@ async fn execute_step_with_tracing(
                     }
                 }
             }
-            "enrich_normalize_ingredients" | "enrich_auto_tag" | "enrich_generate_photo" => {
+            "enrich_metric_weights"
+            | "enrich_normalize_ingredients"
+            | "enrich_auto_tag"
+            | "enrich_generate_photo" => {
                 // Get recipe_id from save_recipe output
                 if let Some(save_output) = store.get_output("save_recipe") {
                     if let Some(recipe_id) = save_output.get("recipe_id").and_then(|v| v.as_str()) {

@@ -1,8 +1,15 @@
 {
   "raw": "raw tuna (sashimi grade)",
-  "expected": {
-    "item": "raw tuna (sashimi grade)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raw tuna (sashimi grade)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "raw tuna (sashimi grade)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

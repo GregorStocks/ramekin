@@ -1,13 +1,25 @@
 {
   "raw": "4 strips bacon, roughly chopped",
-  "expected": {
-    "item": "strips bacon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strips bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "strips bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

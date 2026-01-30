@@ -1,13 +1,25 @@
 {
   "raw": "¾ teaspoon pink salt or non-iodized salt ((or as needed))",
-  "expected": {
-    "item": "pink salt or non-iodized salt",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pink salt or non-iodized salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or as needed"
+    },
+    "parse_ingredients": {
+      "item": "pink salt or non-iodized salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or as needed"
+    }
   }
 }

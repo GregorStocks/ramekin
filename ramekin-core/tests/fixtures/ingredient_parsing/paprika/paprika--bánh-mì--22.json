@@ -1,8 +1,15 @@
 {
   "raw": "cilantro and/or mint if you like",
-  "expected": {
-    "item": "cilantro and/or mint if you like",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro and/or mint if you like",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro and/or mint if you like",
+      "measurements": [],
+      "note": null
+    }
   }
 }

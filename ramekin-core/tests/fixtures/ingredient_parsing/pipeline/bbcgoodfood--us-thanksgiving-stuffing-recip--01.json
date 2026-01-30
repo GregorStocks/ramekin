@@ -1,13 +1,25 @@
 {
   "raw": "1 stick plus 2 tbsp butter plus extra for the dish",
-  "expected": {
-    "item": "1 stick plus 2 tbsp butter plus extra for the dish",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "plus 2 tbsp butter plus extra for the dish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 stick plus 2 tbsp butter plus extra for the dish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus 2 tbsp butter plus extra for the dish"
+    },
+    "enrich_metric_weights": {
+      "item": "1 stick plus 2 tbsp butter plus extra for the dish",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus 2 tbsp butter plus extra for the dish"
+    }
   }
 }

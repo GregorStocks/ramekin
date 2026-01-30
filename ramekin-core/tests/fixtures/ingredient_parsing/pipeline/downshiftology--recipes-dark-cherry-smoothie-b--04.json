@@ -1,8 +1,15 @@
 {
   "raw": "whole cherries",
-  "expected": {
-    "item": "whole cherries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole cherries",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole cherries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

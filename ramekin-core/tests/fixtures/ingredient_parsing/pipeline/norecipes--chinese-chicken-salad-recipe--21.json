@@ -1,13 +1,25 @@
 {
   "raw": "50 grams carrot ((peeled and julienned))",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "peeled and julienned"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled and julienned"
+    },
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled and julienned"
+    }
   }
 }

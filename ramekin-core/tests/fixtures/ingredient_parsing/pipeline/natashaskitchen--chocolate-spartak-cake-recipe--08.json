@@ -1,13 +1,25 @@
 {
   "raw": "2  sticks (16 Tbsp butter, softened at room temp)",
-  "expected": {
-    "item": "2  sticks (16 Tbsp butter, softened at room temp)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "stick"
-      }
-    ],
-    "note": "16 Tbsp butter, softened at room temp"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "2  sticks (16 Tbsp butter, softened at room temp)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stick"
+        }
+      ],
+      "note": "16 Tbsp butter, softened at room temp"
+    },
+    "parse_ingredients": {
+      "item": "2  sticks (16 Tbsp butter, softened at room temp)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stick"
+        }
+      ],
+      "note": "16 Tbsp butter, softened at room temp"
+    }
   }
 }

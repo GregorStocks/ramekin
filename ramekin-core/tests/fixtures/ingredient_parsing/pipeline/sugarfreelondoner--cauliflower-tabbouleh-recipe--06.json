@@ -1,17 +1,33 @@
 {
   "raw": "2 tbsp / 20g red onion (finely diced)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 medium Yukon Gold potato (about 8 ounces), peeled and cut into 1-inch cubes",
-  "expected": {
-    "item": "Yukon Gold potato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "peeled and cut into 1-inch cubes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Yukon Gold potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "peeled and cut into 1-inch cubes"
+    },
+    "parse_ingredients": {
+      "item": "Yukon Gold potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "peeled and cut into 1-inch cubes"
+    }
   }
 }

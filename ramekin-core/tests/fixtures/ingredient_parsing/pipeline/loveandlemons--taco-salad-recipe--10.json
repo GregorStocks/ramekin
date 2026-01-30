@@ -1,8 +1,15 @@
 {
   "raw": "Cilantro Lime Dressing (the creamy avocado variation)",
-  "expected": {
-    "item": "Cilantro Lime Dressing (the creamy avocado variation)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cilantro Lime Dressing (the creamy avocado variation)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cilantro Lime Dressing (the creamy avocado variation)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

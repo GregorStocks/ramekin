@@ -1,13 +1,25 @@
 {
   "raw": "1 cup berry, optional",
-  "expected": {
-    "item": "berry",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "berry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "berry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

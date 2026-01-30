@@ -1,17 +1,33 @@
 {
   "raw": "1 pound (450 g) ground beef, pork, veal, or any combination",
-  "expected": {
-    "item": "ground beef, pork, veal, or any combination",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "450",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground beef, pork, veal, or any combination",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground beef, pork, veal, or any combination",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "450",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

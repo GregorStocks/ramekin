@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cups dried chickpeas (3/4 pound), soaked overnight and drained",
-  "expected": {
-    "item": "dried chickpeas",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "soaked overnight and drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried chickpeas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "soaked overnight and drained"
+    },
+    "parse_ingredients": {
+      "item": "dried chickpeas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "soaked overnight and drained"
+    }
   }
 }

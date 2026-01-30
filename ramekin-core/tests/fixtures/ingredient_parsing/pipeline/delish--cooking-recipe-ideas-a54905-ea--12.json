@@ -1,13 +1,25 @@
 {
   "raw": "1/4 c. chopped chives (plus more for garnish)",
-  "expected": {
-    "item": "chopped chives",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped chives",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "parse_ingredients": {
+      "item": "chopped chives",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

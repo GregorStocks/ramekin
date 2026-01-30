@@ -1,8 +1,15 @@
 {
   "raw": "avocado oil, (for frying)",
-  "expected": {
-    "item": "avocado oil, (for frying)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocado oil, (for frying)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "avocado oil, (for frying)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

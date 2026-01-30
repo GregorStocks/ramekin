@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups bocconcini (mozzarella balls) (about 9 ounces)",
-  "expected": {
-    "item": "bocconcini (mozzarella balls) (about 9 ounces)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bocconcini (mozzarella balls) (about 9 ounces)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bocconcini (mozzarella balls) (about 9 ounces)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

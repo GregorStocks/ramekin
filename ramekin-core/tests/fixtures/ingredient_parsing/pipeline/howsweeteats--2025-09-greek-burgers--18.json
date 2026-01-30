@@ -1,8 +1,15 @@
 {
   "raw": "crumbled or sliced feta, (for topping (as much as you want!))",
-  "expected": {
-    "item": "crumbled or sliced feta, (for topping (as much as you want!)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crumbled or sliced feta, (for topping (as much as you want!)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crumbled or sliced feta, (for topping (as much as you want!)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

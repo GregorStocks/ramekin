@@ -1,17 +1,37 @@
 {
   "raw": "1 (8 ounce) box chicken-flavored crackers",
-  "expected": {
-    "item": "chicken-flavored crackers",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken-flavored crackers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken-flavored crackers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

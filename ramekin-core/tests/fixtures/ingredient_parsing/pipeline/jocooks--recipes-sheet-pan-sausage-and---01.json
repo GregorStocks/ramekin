@@ -1,13 +1,25 @@
 {
   "raw": "2 cups baby potatoes (washed and patted dry)",
-  "expected": {
-    "item": "baby potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "washed and patted dry"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "washed and patted dry"
+    },
+    "parse_ingredients": {
+      "item": "baby potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "washed and patted dry"
+    }
   }
 }

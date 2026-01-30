@@ -1,13 +1,29 @@
 {
   "raw": "14.5 ounce crushed tomatoes (with liquid)",
-  "expected": {
-    "item": "crushed tomatoes (with liquid)",
-    "measurements": [
-      {
-        "amount": "14.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crushed tomatoes (with liquid)",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crushed tomatoes (with liquid)",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "411",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

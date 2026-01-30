@@ -1,8 +1,15 @@
 {
   "raw": "a handful of sprouts or pea shoots or delicate greens",
-  "expected": {
-    "item": "a handful of sprouts or pea shoots or delicate greens",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a handful of sprouts or pea shoots or delicate greens",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "a handful of sprouts or pea shoots or delicate greens",
+      "measurements": [],
+      "note": null
+    }
   }
 }

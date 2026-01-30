@@ -1,8 +1,15 @@
 {
   "raw": "soda water (optional)",
-  "expected": {
-    "item": "soda water",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soda water",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "soda water",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

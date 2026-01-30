@@ -1,13 +1,25 @@
 {
   "raw": "1 package spring roll wrappers (I like TYJ Spring Roll Pastry)",
-  "expected": {
-    "item": "spring roll wrappers (I like TYJ Spring Roll Pastry)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "spring roll wrappers (I like TYJ Spring Roll Pastry)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "spring roll wrappers (I like TYJ Spring Roll Pastry)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    }
   }
 }

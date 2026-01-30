@@ -1,13 +1,25 @@
 {
   "raw": "80 grams cheddar cheese ((~1 cup grated))",
-  "expected": {
-    "item": "cheddar cheese",
-    "measurements": [
-      {
-        "amount": "80",
-        "unit": "g"
-      }
-    ],
-    "note": "~1 cup grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup grated"
+    },
+    "enrich_metric_weights": {
+      "item": "cheddar cheese",
+      "measurements": [
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup grated"
+    }
   }
 }

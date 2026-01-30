@@ -1,8 +1,15 @@
 {
   "raw": "Minced fresh herbs such as parsley, dill, or chives, for serving",
-  "expected": {
-    "item": "Minced fresh herbs such as parsley, dill, or chives",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Minced fresh herbs such as parsley, dill, or chives",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Minced fresh herbs such as parsley, dill, or chives",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

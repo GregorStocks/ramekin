@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (50g) coarse cornmeal or polenta",
-  "expected": {
-    "item": "coarse cornmeal or polenta",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coarse cornmeal or polenta",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coarse cornmeal or polenta",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

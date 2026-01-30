@@ -1,8 +1,15 @@
 {
   "raw": "Drained and chopped pickled jalapeños, to taste (I used about 2 tablespoons)",
-  "expected": {
-    "item": "Drained and chopped pickled jalapeños",
-    "measurements": [],
-    "note": "to taste (I used about 2 tablespoons)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Drained and chopped pickled jalapeños",
+      "measurements": [],
+      "note": "to taste (I used about 2 tablespoons)"
+    },
+    "parse_ingredients": {
+      "item": "Drained and chopped pickled jalapeños",
+      "measurements": [],
+      "note": "to taste (I used about 2 tablespoons)"
+    }
   }
 }

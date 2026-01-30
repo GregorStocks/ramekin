@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon gochugaru or red-pepper flakes",
-  "expected": {
-    "item": "gochugaru or red-pepper flakes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "gochugaru or red-pepper flakes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "gochugaru or red-pepper flakes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

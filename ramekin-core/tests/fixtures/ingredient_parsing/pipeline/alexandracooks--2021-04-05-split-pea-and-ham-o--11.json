@@ -1,13 +1,25 @@
 {
   "raw": "8 to 10 cups water, plus more as needed",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "8 to 10",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "8 to 10",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "8 to 10",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

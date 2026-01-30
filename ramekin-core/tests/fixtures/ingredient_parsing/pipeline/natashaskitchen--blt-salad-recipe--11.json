@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 Tbsp milk (or add to desired consistency)",
-  "expected": {
-    "item": "milk (or add to desired consistency)",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk (or add to desired consistency)",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "milk (or add to desired consistency)",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

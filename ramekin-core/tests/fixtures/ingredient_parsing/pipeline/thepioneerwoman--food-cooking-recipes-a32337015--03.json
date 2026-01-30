@@ -1,13 +1,25 @@
 {
   "raw": "3 mini sweet peppers (in 2 different colors), thinly sliced",
-  "expected": {
-    "item": "mini sweet peppers (in 2 different colors)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mini sweet peppers (in 2 different colors)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "mini sweet peppers (in 2 different colors)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

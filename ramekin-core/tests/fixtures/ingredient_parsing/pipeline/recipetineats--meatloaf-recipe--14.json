@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp brown sugar (, lightly packed)",
-  "expected": {
-    "item": "brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "lightly packed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "lightly packed"
+    },
+    "enrich_metric_weights": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "lightly packed"
+    }
   }
 }

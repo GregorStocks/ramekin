@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tablespoons water (, as needed to thin out sauce)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "as needed to thin out sauce"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "as needed to thin out sauce"
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "as needed to thin out sauce"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 (11.5 ounce) package fudge stripe cookies",
-  "expected": {
-    "item": "fudge stripe cookies",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "11.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fudge stripe cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "11.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fudge stripe cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "11.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "326",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

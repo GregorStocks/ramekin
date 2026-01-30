@@ -1,13 +1,29 @@
 {
   "raw": "12 oz. mozzarella (fresh or smoked), cut into small cubes",
-  "expected": {
-    "item": "mozzarella , cut into small cubes",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "fresh or smoked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozzarella , cut into small cubes",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "fresh or smoked"
+    },
+    "enrich_metric_weights": {
+      "item": "mozzarella , cut into small cubes",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "fresh or smoked"
+    }
   }
 }

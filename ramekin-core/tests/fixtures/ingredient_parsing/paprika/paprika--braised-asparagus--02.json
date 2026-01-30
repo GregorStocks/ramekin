@@ -1,13 +1,25 @@
 {
   "raw": "1 pound asparagus, trimmed and peeled (if desired)",
-  "expected": {
-    "item": "asparagus",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed and peeled (if desired)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and peeled (if desired)"
+    },
+    "enrich_metric_weights": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and peeled (if desired)"
+    }
   }
 }

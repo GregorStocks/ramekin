@@ -1,13 +1,25 @@
 {
   "raw": "1 cup pitted dates (packed)",
-  "expected": {
-    "item": "pitted dates",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "packed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted dates",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted dates",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    }
   }
 }

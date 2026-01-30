@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup butter (melted and semi-cooled)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted and semi-cooled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted and semi-cooled"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted and semi-cooled"
+    }
   }
 }

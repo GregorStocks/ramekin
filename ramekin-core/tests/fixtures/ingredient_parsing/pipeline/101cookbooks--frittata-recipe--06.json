@@ -1,13 +1,25 @@
 {
   "raw": "2 pinches ground cumin",
-  "expected": {
-    "item": "ground cumin",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground cumin",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground cumin",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Edible gold leaf (optional)",
-  "expected": {
-    "item": "Edible gold leaf",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Edible gold leaf",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Edible gold leaf",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

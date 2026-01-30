@@ -1,13 +1,25 @@
 {
   "raw": "140 grams bamboo shoots ((julienned))",
-  "expected": {
-    "item": "bamboo shoots",
-    "measurements": [
-      {
-        "amount": "140",
-        "unit": "g"
-      }
-    ],
-    "note": "julienned"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bamboo shoots",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": "julienned"
+    },
+    "enrich_metric_weights": {
+      "item": "bamboo shoots",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": "julienned"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "tamago-yaki",
-  "expected": {
-    "item": "tamago-yaki",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tamago-yaki",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tamago-yaki",
+      "measurements": [],
+      "note": null
+    }
   }
 }

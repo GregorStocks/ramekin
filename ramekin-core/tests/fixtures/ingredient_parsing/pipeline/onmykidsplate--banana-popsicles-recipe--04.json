@@ -1,8 +1,15 @@
 {
   "raw": "water (for sprinkles)",
-  "expected": {
-    "item": "water (for sprinkles)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water (for sprinkles)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water (for sprinkles)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

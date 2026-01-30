@@ -1,8 +1,15 @@
 {
   "raw": "fajita seasoning (to taste)",
-  "expected": {
-    "item": "fajita seasoning",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fajita seasoning",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "fajita seasoning",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
-  "expected": {
-    "item": "instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "instant or kombu dashi (see Tip), vegetable or chicken broth, or water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

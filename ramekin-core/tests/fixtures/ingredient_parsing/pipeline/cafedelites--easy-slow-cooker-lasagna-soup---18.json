@@ -1,13 +1,25 @@
 {
   "raw": "8  large lasagna sheets (broken into bite size pieces)",
-  "expected": {
-    "item": "lasagna sheets (broken into bite size pieces)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lasagna sheets (broken into bite size pieces)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lasagna sheets (broken into bite size pieces)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

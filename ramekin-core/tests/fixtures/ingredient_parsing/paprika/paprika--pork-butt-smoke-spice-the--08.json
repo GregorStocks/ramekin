@@ -1,8 +1,15 @@
 {
   "raw": "Southern Sop",
-  "expected": {
-    "item": "Southern Sop",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Southern Sop",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Southern Sop",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 whole Cornish hens (about 1 1/2 lb each)",
-  "expected": {
-    "item": "whole Cornish hens",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "lb each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole Cornish hens",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole Cornish hens",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb each"
+        }
+      ],
+      "note": null
+    }
   }
 }

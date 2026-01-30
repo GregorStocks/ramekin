@@ -1,8 +1,15 @@
 {
   "raw": "mandarin oranges",
-  "expected": {
-    "item": "mandarin oranges",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mandarin oranges",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mandarin oranges",
+      "measurements": [],
+      "note": null
+    }
   }
 }

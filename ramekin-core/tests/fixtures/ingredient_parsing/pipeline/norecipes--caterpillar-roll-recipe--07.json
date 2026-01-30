@@ -1,13 +1,25 @@
 {
   "raw": "1  hot house cucumbers ((seeds removed with a spoon and julienned))",
-  "expected": {
-    "item": "hot house cucumbers",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeds removed with a spoon and julienned"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hot house cucumbers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeds removed with a spoon and julienned"
+    },
+    "parse_ingredients": {
+      "item": "hot house cucumbers",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeds removed with a spoon and julienned"
+    }
   }
 }

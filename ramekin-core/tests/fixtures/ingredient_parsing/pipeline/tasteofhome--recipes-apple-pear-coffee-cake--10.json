@@ -1,13 +1,25 @@
 {
   "raw": "1-1/4 cups chopped peeled apples",
-  "expected": {
-    "item": "chopped peeled apples",
-    "measurements": [
-      {
-        "amount": "1-1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped peeled apples",
+      "measurements": [
+        {
+          "amount": "1-1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped peeled apples",
+      "measurements": [
+        {
+          "amount": "1-1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

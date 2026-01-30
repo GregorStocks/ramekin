@@ -1,8 +1,15 @@
 {
   "raw": "Chili crisp (optional)",
-  "expected": {
-    "item": "Chili crisp",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chili crisp",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Chili crisp",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups fresh or frozen cherries (pitted and coarsely chopped)",
-  "expected": {
-    "item": "fresh or frozen cherries",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "pitted and coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh or frozen cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "pitted and coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh or frozen cherries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "pitted and coarsely chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 medium onion, chopped (I like red or yellow onion or shallot)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "chopped (I like red or yellow onion or shallot)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped (I like red or yellow onion or shallot)"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "chopped (I like red or yellow onion or shallot)"
+    }
   }
 }

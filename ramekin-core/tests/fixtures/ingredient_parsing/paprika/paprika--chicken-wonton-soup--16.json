@@ -1,8 +1,15 @@
 {
   "raw": "Soy sauce or salt, to taste",
-  "expected": {
-    "item": "Soy sauce or salt",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Soy sauce or salt",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Soy sauce or salt",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

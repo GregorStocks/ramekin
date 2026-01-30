@@ -1,17 +1,37 @@
 {
   "raw": "1 package (8.8 ounces) ready-to-serve long grain and wild rice",
-  "expected": {
-    "item": "ready-to-serve long grain and wild rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "8.8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ready-to-serve long grain and wild rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8.8",
+          "unit": "oz"
+        },
+        {
+          "amount": "249",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ready-to-serve long grain and wild rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "8.8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

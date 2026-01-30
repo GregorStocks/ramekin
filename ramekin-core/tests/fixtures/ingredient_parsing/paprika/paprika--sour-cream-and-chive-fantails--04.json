@@ -1,17 +1,33 @@
 {
   "raw": "2 1/2 teaspoons active dry or instant yeast (from a 1/4-ounce or 7-gram packet)",
-  "expected": {
-    "item": "active dry or instant yeast",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "7",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "active dry or instant yeast",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "active dry or instant yeast",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

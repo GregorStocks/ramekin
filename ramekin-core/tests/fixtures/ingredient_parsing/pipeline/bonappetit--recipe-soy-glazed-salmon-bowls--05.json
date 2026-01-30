@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp. Diamond Crystal or ½ tsp. Morton kosher salt, plus more",
-  "expected": {
-    "item": "Diamond Crystal or 1/2 tsp. Morton kosher salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Diamond Crystal or 1/2 tsp. Morton kosher salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more"
+    },
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal or 1/2 tsp. Morton kosher salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more"
+    }
   }
 }

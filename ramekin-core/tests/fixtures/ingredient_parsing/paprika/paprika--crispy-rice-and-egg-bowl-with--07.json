@@ -1,17 +1,37 @@
 {
   "raw": "8 ounces small (Persian-style, about 2) cucumbers, thinly sliced",
-  "expected": {
-    "item": "small cucumbers",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "small cucumbers",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "small cucumbers",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

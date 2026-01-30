@@ -1,13 +1,25 @@
 {
   "raw": "1/3 c. plus 1/4 cup olive oil, plus more for the pans",
-  "expected": {
-    "item": "plus 1/4 cup olive oil",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for the pans"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plus 1/4 cup olive oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for the pans"
+    },
+    "enrich_metric_weights": {
+      "item": "plus 1/4 cup olive oil",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for the pans"
+    }
   }
 }

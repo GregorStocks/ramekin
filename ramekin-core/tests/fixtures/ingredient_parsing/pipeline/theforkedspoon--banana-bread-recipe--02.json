@@ -1,17 +1,33 @@
 {
   "raw": "8 tablespoon butter ((1/2 cup))",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

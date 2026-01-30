@@ -1,13 +1,29 @@
 {
   "raw": "14.5 oz can whole tomatoes",
-  "expected": {
-    "item": "can whole tomatoes",
-    "measurements": [
-      {
-        "amount": "14.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can whole tomatoes",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "can whole tomatoes",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "411",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

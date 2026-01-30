@@ -1,17 +1,33 @@
 {
   "raw": "90g / 6 tbsp  salted butter (, cut into cubes (or unsalted + 1/4 tsp salt))",
-  "expected": {
-    "item": "salted butter (, cut into cubes (or unsalted + 1/4 tsp salt)",
-    "measurements": [
-      {
-        "amount": "90",
-        "unit": "g"
-      },
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter (, cut into cubes (or unsalted + 1/4 tsp salt)",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        },
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter (, cut into cubes (or unsalted + 1/4 tsp salt)",
+      "measurements": [
+        {
+          "amount": "90",
+          "unit": "g"
+        },
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

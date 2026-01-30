@@ -1,8 +1,15 @@
 {
   "raw": "half of a small red onion, very finely diced",
-  "expected": {
-    "item": "half of a small red onion",
-    "measurements": [],
-    "note": "very finely diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "half of a small red onion",
+      "measurements": [],
+      "note": "very finely diced"
+    },
+    "enrich_metric_weights": {
+      "item": "half of a small red onion",
+      "measurements": [],
+      "note": "very finely diced"
+    }
   }
 }

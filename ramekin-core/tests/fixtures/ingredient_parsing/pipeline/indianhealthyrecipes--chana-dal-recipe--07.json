@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon garlic  (minced/ grated (11 grams from 4 to 5 medium cloves))",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "minced/ grated (11 grams from 4 to 5 medium cloves"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced/ grated (11 grams from 4 to 5 medium cloves"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced/ grated (11 grams from 4 to 5 medium cloves"
+    }
   }
 }

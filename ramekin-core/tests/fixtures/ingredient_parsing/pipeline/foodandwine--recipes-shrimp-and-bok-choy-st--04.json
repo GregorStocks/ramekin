@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 teaspoons cornstarch dissolved in 1 tablespoon of water",
-  "expected": {
-    "item": "cornstarch dissolved in 1 tablespoon of water",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cornstarch dissolved in 1 tablespoon of water",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cornstarch dissolved in 1 tablespoon of water",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

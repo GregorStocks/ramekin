@@ -1,13 +1,25 @@
 {
   "raw": "1  bunch fresh sage leaves (about 6-8 leaves, whole)",
-  "expected": {
-    "item": "fresh sage leaves",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "about 6-8 leaves, whole"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh sage leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "about 6-8 leaves, whole"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh sage leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "about 6-8 leaves, whole"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 1/4 pounds (570 grams) zucchini, trimmed, coarsely grated",
-  "expected": {
-    "item": "zucchini, trimmed",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "lb"
-      },
-      {
-        "amount": "570",
-        "unit": "g"
-      }
-    ],
-    "note": "coarsely grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini, trimmed",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "570",
+          "unit": "g"
+        }
+      ],
+      "note": "coarsely grated"
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini, trimmed",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "570",
+          "unit": "g"
+        }
+      ],
+      "note": "coarsely grated"
+    }
   }
 }

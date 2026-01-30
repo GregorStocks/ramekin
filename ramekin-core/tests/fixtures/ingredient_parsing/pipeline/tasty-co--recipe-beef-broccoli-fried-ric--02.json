@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup soy sauce, plus 3 tablespoons, divided",
-  "expected": {
-    "item": "soy sauce",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 3 tablespoons, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 3 tablespoons, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 3 tablespoons, divided"
+    }
   }
 }

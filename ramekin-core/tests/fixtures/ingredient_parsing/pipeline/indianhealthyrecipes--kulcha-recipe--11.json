@@ -1,13 +1,25 @@
 {
   "raw": "200 grams paneer ((grated or crumbled))",
-  "expected": {
-    "item": "paneer",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "grated or crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "paneer",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "grated or crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "paneer",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "grated or crumbled"
+    }
   }
 }

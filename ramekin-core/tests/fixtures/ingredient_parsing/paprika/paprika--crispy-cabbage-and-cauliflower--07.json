@@ -1,8 +1,15 @@
 {
   "raw": "Dressing:",
-  "expected": {
-    "item": "Dressing:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dressing:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dressing:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

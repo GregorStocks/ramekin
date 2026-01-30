@@ -1,8 +1,15 @@
 {
   "raw": "sweet soy sauce and sriracha, if desired",
-  "expected": {
-    "item": "sweet soy sauce and sriracha, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet soy sauce and sriracha, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet soy sauce and sriracha, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

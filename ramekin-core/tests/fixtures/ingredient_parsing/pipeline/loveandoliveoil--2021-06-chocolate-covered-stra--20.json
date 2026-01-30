@@ -1,13 +1,29 @@
 {
   "raw": "8 oz 50-70% dark chocolate (very finely chopped)",
-  "expected": {
-    "item": "50-70% dark chocolate",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "very finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "50-70% dark chocolate",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "very finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "50-70% dark chocolate",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "very finely chopped"
+    }
   }
 }

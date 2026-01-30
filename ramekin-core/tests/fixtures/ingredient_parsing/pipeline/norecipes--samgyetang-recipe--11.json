@@ -1,8 +1,15 @@
 {
   "raw": "sea salt ((for serving))",
-  "expected": {
-    "item": "sea salt",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea salt",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "sea salt",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

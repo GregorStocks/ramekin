@@ -1,17 +1,37 @@
 {
   "raw": "5 ounces feta, crumbled (about 1 1/4 cups)",
-  "expected": {
-    "item": "feta",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      },
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "feta",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "feta",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

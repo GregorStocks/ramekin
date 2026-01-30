@@ -1,8 +1,15 @@
 {
   "raw": "Buttercream orbs (see blog post for details)",
-  "expected": {
-    "item": "Buttercream orbs (see blog post for details)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Buttercream orbs (see blog post for details)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Buttercream orbs (see blog post for details)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

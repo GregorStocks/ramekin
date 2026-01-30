@@ -1,13 +1,25 @@
 {
   "raw": "2 slices white sandwich bread, torn into 1-inch pieces",
-  "expected": {
-    "item": "white sandwich bread, torn into 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white sandwich bread, torn into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white sandwich bread, torn into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

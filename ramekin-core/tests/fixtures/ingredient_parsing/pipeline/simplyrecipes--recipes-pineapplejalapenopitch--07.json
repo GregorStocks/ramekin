@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup orange liqueur, such as Triple Sec",
-  "expected": {
-    "item": "orange liqueur, such as Triple Sec",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orange liqueur, such as Triple Sec",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "orange liqueur, such as Triple Sec",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

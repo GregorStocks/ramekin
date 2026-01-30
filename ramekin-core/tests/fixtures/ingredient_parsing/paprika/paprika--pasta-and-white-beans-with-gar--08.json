@@ -1,8 +1,15 @@
 {
   "raw": "Coarse or kosh salt",
-  "expected": {
-    "item": "Coarse or kosh salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coarse or kosh salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Coarse or kosh salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

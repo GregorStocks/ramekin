@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup teriyaki sauce (homemade or store-bought)",
-  "expected": {
-    "item": "teriyaki sauce (homemade or store-bought)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "teriyaki sauce (homemade or store-bought)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "teriyaki sauce (homemade or store-bought)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

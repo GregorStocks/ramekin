@@ -1,13 +1,25 @@
 {
   "raw": "4 rosemary sprigs (or more)",
-  "expected": {
-    "item": "rosemary sprigs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "or more"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "or more"
+    },
+    "parse_ingredients": {
+      "item": "rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "or more"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2½ cups long-grain white basmati rice (divided)",
-  "expected": {
-    "item": "long-grain white basmati rice",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "long-grain white basmati rice",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "long-grain white basmati rice",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

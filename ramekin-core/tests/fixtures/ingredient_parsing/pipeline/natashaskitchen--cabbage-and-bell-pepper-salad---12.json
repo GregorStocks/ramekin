@@ -1,13 +1,25 @@
 {
   "raw": "2  heaping Тbsp dill (fresh or frozen)",
-  "expected": {
-    "item": "Тbsp dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "heaping"
-      }
-    ],
-    "note": "fresh or frozen"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Тbsp dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping"
+        }
+      ],
+      "note": "fresh or frozen"
+    },
+    "enrich_metric_weights": {
+      "item": "Тbsp dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping"
+        }
+      ],
+      "note": "fresh or frozen"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  brick (8 oz. cream cheese, softened)",
-  "expected": {
-    "item": "brick",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "8 oz. cream cheese, softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brick",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "8 oz. cream cheese, softened"
+    },
+    "enrich_metric_weights": {
+      "item": "brick",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "8 oz. cream cheese, softened"
+    }
   }
 }

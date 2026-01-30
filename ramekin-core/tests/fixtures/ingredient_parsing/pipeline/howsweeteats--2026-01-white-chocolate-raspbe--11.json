@@ -1,8 +1,15 @@
 {
   "raw": "Mini white chocolate chips",
-  "expected": {
-    "item": "Mini white chocolate chips",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Mini white chocolate chips",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Mini white chocolate chips",
+      "measurements": [],
+      "note": null
+    }
   }
 }

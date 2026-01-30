@@ -1,13 +1,25 @@
 {
   "raw": "2  serrano chiles (seeds and stems removed, diced)",
-  "expected": {
-    "item": "serrano chiles",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "seeds and stems removed, diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serrano chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeds and stems removed, diced"
+    },
+    "enrich_metric_weights": {
+      "item": "serrano chiles",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeds and stems removed, diced"
+    }
   }
 }

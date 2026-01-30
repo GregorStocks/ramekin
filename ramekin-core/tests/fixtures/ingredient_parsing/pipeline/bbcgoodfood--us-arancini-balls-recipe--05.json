@@ -1,13 +1,25 @@
 {
   "raw": "1¾ cups risotto rice",
-  "expected": {
-    "item": "risotto rice",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "risotto rice",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "risotto rice",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

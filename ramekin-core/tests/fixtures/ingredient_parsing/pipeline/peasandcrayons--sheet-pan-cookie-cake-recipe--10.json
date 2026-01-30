@@ -1,13 +1,25 @@
 {
   "raw": "2 + ½ cups dark chocolate chips or bittersweet chocolate chips",
-  "expected": {
-    "item": "+ 1/2 cups dark chocolate chips or bittersweet chocolate chips",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ 1/2 cups dark chocolate chips or bittersweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "+ 1/2 cups dark chocolate chips or bittersweet chocolate chips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

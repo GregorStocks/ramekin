@@ -1,13 +1,25 @@
 {
   "raw": "2 heaping tablespoons grainy mustard",
-  "expected": {
-    "item": "grainy mustard",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "heaping tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grainy mustard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grainy mustard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

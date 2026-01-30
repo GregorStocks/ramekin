@@ -1,13 +1,25 @@
 {
   "raw": "One 14-ounce can or jar of chickpeas, drained and rinsed well (see notes)",
-  "expected": {
-    "item": "or jar of chickpeas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "14-ounce can"
-      }
-    ],
-    "note": "drained and rinsed well (see notes)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "or jar of chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "14-ounce can"
+        }
+      ],
+      "note": "drained and rinsed well (see notes)"
+    },
+    "enrich_metric_weights": {
+      "item": "or jar of chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "14-ounce can"
+        }
+      ],
+      "note": "drained and rinsed well (see notes)"
+    }
   }
 }

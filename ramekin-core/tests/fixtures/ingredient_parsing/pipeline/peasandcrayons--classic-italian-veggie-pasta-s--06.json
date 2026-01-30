@@ -1,8 +1,15 @@
 {
   "raw": "finely grated parmesan or feta cheese for topping ((choose your favorite))",
-  "expected": {
-    "item": "finely grated parmesan or feta cheese for topping (choose your favorite)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely grated parmesan or feta cheese for topping (choose your favorite)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely grated parmesan or feta cheese for topping (choose your favorite)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

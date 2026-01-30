@@ -1,8 +1,15 @@
 {
   "raw": "Sprinkling of turbinado sugar",
-  "expected": {
-    "item": "Sprinkling of turbinado sugar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sprinkling of turbinado sugar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sprinkling of turbinado sugar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

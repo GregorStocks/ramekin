@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons olive oil (more as needed)",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "more as needed"
+    }
   }
 }

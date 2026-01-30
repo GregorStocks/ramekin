@@ -1,13 +1,25 @@
 {
   "raw": "1 pound mixed meaty mushrooms, such as cremini and button, trimmed and sliced 1/4 inch thick",
-  "expected": {
-    "item": "mixed meaty mushrooms, such as cremini and button",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed and sliced 1/4 inch thick"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mixed meaty mushrooms, such as cremini and button",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced 1/4 inch thick"
+    },
+    "enrich_metric_weights": {
+      "item": "mixed meaty mushrooms, such as cremini and button",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced 1/4 inch thick"
+    }
   }
 }

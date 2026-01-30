@@ -1,13 +1,25 @@
 {
   "raw": "½  green pepper (cored and chopped (about ½ cup chopped green pepper))",
-  "expected": {
-    "item": "green pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "cored and chopped (about 1/2 cup chopped green pepper"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cored and chopped (about 1/2 cup chopped green pepper"
+    },
+    "enrich_metric_weights": {
+      "item": "green pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "cored and chopped (about 1/2 cup chopped green pepper"
+    }
   }
 }

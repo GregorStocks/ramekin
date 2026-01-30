@@ -1,8 +1,15 @@
 {
   "raw": "Toasted baguette slices",
-  "expected": {
-    "item": "Toasted baguette slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Toasted baguette slices",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Toasted baguette slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

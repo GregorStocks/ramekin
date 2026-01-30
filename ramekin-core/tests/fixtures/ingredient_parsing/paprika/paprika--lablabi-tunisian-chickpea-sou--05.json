@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups dried chickpeas, soaked overnight and drained",
-  "expected": {
-    "item": "dried chickpeas",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "soaked overnight and drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried chickpeas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "soaked overnight and drained"
+    },
+    "enrich_metric_weights": {
+      "item": "dried chickpeas",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "soaked overnight and drained"
+    }
   }
 }

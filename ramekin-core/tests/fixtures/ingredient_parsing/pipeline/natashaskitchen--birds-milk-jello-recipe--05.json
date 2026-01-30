@@ -1,13 +1,29 @@
 {
   "raw": "8 oz tub cool whip (refrigerated (should be fully thawed, not frozen))",
-  "expected": {
-    "item": "tub cool whip",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "refrigerated (should be fully thawed, not frozen"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tub cool whip",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "refrigerated (should be fully thawed, not frozen"
+    },
+    "parse_ingredients": {
+      "item": "tub cool whip",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "refrigerated (should be fully thawed, not frozen"
+    }
   }
 }

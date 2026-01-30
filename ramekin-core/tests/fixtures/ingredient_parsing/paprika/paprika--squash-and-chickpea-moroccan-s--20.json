@@ -1,8 +1,15 @@
 {
   "raw": "Hot sauce of your choice (for serving)",
-  "expected": {
-    "item": "Hot sauce of your choice",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Hot sauce of your choice",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Hot sauce of your choice",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

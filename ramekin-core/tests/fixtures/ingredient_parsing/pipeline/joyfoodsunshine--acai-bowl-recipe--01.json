@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces mixed berries ((frozen (about 2 ½ cups)))",
-  "expected": {
-    "item": "mixed berries",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "frozen (about 2 1/2 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mixed berries",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "frozen (about 2 1/2 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "mixed berries",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "frozen (about 2 1/2 cups"
+    }
   }
 }

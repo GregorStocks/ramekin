@@ -1,8 +1,15 @@
 {
   "raw": "Water",
-  "expected": {
-    "item": "Water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Water",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

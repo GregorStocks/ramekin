@@ -1,8 +1,15 @@
 {
   "raw": "Splash of oil, any kind",
-  "expected": {
-    "item": "Splash of oil, any kind",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Splash of oil, any kind",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Splash of oil, any kind",
+      "measurements": [],
+      "note": null
+    }
   }
 }

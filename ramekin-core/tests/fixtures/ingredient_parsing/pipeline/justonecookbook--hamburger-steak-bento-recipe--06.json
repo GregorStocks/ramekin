@@ -1,8 +1,15 @@
 {
   "raw": "frozen or canned corn ((cooked))",
-  "expected": {
-    "item": "frozen or canned corn",
-    "measurements": [],
-    "note": "cooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen or canned corn",
+      "measurements": [],
+      "note": "cooked"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen or canned corn",
+      "measurements": [],
+      "note": "cooked"
+    }
   }
 }

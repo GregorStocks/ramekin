@@ -1,13 +1,25 @@
 {
   "raw": "2 medium shallots, coarsely chopped",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

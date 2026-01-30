@@ -1,8 +1,15 @@
 {
   "raw": "cilantro, lettuce or sliced cucumber",
-  "expected": {
-    "item": "cilantro",
-    "measurements": [],
-    "note": "lettuce or sliced cucumber"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro",
+      "measurements": [],
+      "note": "lettuce or sliced cucumber"
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro",
+      "measurements": [],
+      "note": "lettuce or sliced cucumber"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 can corn",
-  "expected": {
-    "item": "corn",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "Pinch of red-pepper flakes (optional)",
-  "expected": {
-    "item": "red-pepper flakes",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red-pepper flakes",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "red-pepper flakes",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

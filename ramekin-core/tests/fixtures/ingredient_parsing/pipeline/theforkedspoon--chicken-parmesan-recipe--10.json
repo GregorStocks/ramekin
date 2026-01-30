@@ -1,13 +1,25 @@
 {
   "raw": "1½ teaspoon black pepper (divided 3 ways)",
-  "expected": {
-    "item": "black pepper",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided 3 ways"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided 3 ways"
+    },
+    "parse_ingredients": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided 3 ways"
+    }
   }
 }

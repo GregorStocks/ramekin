@@ -1,13 +1,25 @@
 {
   "raw": "1 cup unsalted butter, cut into 2-tablespoon pieces",
-  "expected": {
-    "item": "unsalted butter, cut into 2-tablespoon pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter, cut into 2-tablespoon pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter, cut into 2-tablespoon pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

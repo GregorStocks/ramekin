@@ -1,13 +1,25 @@
 {
   "raw": "1 stick unsalted butter, firm and slightly cold confectioners’ sugar, sifted",
-  "expected": {
-    "item": "unsalted butter, firm and slightly cold confectioners’ sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter, firm and slightly cold confectioners’ sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "sifted"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter, firm and slightly cold confectioners’ sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

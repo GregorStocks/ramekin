@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces of burrata or 1 cup fresh ricotta",
-  "expected": {
-    "item": "burrata",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "or 1 cup fresh ricotta"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "burrata",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "or 1 cup fresh ricotta"
+    },
+    "enrich_metric_weights": {
+      "item": "burrata",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "or 1 cup fresh ricotta"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 cloves garlic ((sliced))",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "clove"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "clove"
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "clove"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

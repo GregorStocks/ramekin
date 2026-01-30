@@ -1,13 +1,25 @@
 {
   "raw": "6-8 cups water for soaking",
-  "expected": {
-    "item": "water for soaking",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water for soaking",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water for soaking",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound lard or solid vegetable shortening, for frying",
-  "expected": {
-    "item": "lard or solid vegetable shortening, for frying",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lard or solid vegetable shortening, for frying",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lard or solid vegetable shortening, for frying",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

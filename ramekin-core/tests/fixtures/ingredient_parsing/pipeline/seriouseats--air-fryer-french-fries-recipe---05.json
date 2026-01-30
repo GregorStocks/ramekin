@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil cooking spray",
-  "expected": {
-    "item": "Olive oil cooking spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Olive oil cooking spray",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Olive oil cooking spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

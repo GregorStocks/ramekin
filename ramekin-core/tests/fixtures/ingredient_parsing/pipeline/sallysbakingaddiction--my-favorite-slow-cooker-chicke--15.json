@@ -1,17 +1,33 @@
 {
   "raw": "4 ounces (113g) full-fat or light brick-style cream cheese*, at room temperature",
-  "expected": {
-    "item": "full-fat or light brick-style cream cheese*",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "full-fat or light brick-style cream cheese*",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "full-fat or light brick-style cream cheese*",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 teaspoon Kashmiri red chili powder ((or paprika, adjust to heat preference))",
-  "expected": {
-    "item": "Kashmiri red chili powder (or paprika, adjust to heat preference)",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kashmiri red chili powder (or paprika, adjust to heat preference)",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Kashmiri red chili powder (or paprika, adjust to heat preference)",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

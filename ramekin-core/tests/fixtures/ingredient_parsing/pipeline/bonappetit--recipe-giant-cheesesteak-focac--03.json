@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup chopped oil-packed Calabrian chiles",
-  "expected": {
-    "item": "chopped oil-packed Calabrian chiles",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped oil-packed Calabrian chiles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped oil-packed Calabrian chiles",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

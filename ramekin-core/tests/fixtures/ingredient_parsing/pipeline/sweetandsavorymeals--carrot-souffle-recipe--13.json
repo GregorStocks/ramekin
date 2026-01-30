@@ -1,8 +1,15 @@
 {
   "raw": "cooking spray",
-  "expected": {
-    "item": "cooking spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooking spray",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooking spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

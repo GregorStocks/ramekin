@@ -1,17 +1,33 @@
 {
   "raw": "1 c. (215 g.)&amp;nbsp;packed dark brown sugar",
-  "expected": {
-    "item": "packed dark brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "215",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "215",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "215",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

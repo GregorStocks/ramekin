@@ -1,13 +1,25 @@
 {
   "raw": "3/4 Tbsp salt (to taste)",
-  "expected": {
-    "item": "salt",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

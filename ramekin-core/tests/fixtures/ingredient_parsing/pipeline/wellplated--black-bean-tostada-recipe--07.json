@@ -1,8 +1,15 @@
 {
   "raw": "Diced avocado",
-  "expected": {
-    "item": "Diced avocado",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Diced avocado",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Diced avocado",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
-  "expected": {
-    "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "a large hunk of bread, to yield 1.5 to 2 cups lightly packed fresh crumbs, see notes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

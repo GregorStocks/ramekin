@@ -1,13 +1,25 @@
 {
   "raw": "8  slices bacon, cut into ½-inch pieces",
-  "expected": {
-    "item": "bacon, cut into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon, cut into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

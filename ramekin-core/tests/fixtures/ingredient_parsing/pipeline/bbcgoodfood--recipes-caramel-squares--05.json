@@ -1,13 +1,25 @@
 {
   "raw": "140g unsalted butter cold and cut into cubes",
-  "expected": {
-    "item": "unsalted butter cold and cut into cubes",
-    "measurements": [
-      {
-        "amount": "140",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter cold and cut into cubes",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter cold and cut into cubes",
+      "measurements": [
+        {
+          "amount": "140",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

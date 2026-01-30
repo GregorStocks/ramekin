@@ -1,8 +1,15 @@
 {
   "raw": "Rice (optional)",
-  "expected": {
-    "item": "Rice",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Rice",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Rice",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  large chicken breast (cooked and shredded or chopped, about 1 1/2 cups)",
-  "expected": {
-    "item": "chicken breast",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "cooked and shredded or chopped, about 1 1/2 cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "cooked and shredded or chopped, about 1 1/2 cups"
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "cooked and shredded or chopped, about 1 1/2 cups"
+    }
   }
 }

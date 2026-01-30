@@ -1,8 +1,15 @@
 {
   "raw": "Lettuce, for topping",
-  "expected": {
-    "item": "Lettuce, for topping",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lettuce, for topping",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Lettuce, for topping",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 large carrots, diced small (about 1 cup carrots)",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced small"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced small"
+    }
   }
 }

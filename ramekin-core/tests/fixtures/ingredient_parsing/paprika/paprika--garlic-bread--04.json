@@ -1,13 +1,25 @@
 {
   "raw": "Pinches of red pepper flakes, to taste",
-  "expected": {
-    "item": "red pepper flakes",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper flakes",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

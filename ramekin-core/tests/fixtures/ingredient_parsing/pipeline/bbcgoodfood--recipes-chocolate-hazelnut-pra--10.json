@@ -1,8 +1,15 @@
 {
   "raw": "splash Frangelico liqueur or brandy",
-  "expected": {
-    "item": "splash Frangelico liqueur or brandy",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "splash Frangelico liqueur or brandy",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "splash Frangelico liqueur or brandy",
+      "measurements": [],
+      "note": null
+    }
   }
 }

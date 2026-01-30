@@ -1,13 +1,25 @@
 {
   "raw": "1/2 head iceberg lettuce, cut into 2 wedges",
-  "expected": {
-    "item": "iceberg lettuce, cut into 2 wedges",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "iceberg lettuce, cut into 2 wedges",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "iceberg lettuce, cut into 2 wedges",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

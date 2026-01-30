@@ -1,13 +1,25 @@
 {
   "raw": "1 baguette, halved lengthwise",
-  "expected": {
-    "item": "baguette",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "halved lengthwise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baguette",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved lengthwise"
+    },
+    "enrich_metric_weights": {
+      "item": "baguette",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved lengthwise"
+    }
   }
 }

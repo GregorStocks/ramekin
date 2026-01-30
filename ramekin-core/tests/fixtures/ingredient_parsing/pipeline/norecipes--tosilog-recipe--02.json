@@ -1,13 +1,25 @@
 {
   "raw": "160 grams Tocino",
-  "expected": {
-    "item": "Tocino",
-    "measurements": [
-      {
-        "amount": "160",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tocino",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tocino",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

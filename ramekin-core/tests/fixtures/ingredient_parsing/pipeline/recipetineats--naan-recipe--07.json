@@ -1,13 +1,25 @@
 {
   "raw": "1 3/4 cups bread flour (, or all-purpose/plain (Note 3))",
-  "expected": {
-    "item": "bread flour (, or all-purpose/plain (Note 3)",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bread flour (, or all-purpose/plain (Note 3)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bread flour (, or all-purpose/plain (Note 3)",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

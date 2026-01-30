@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon lime zest (finely grated )",
-  "expected": {
-    "item": "lime zest",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lime zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated"
+    },
+    "parse_ingredients": {
+      "item": "lime zest",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

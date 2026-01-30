@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch broccolini (rough ends trimmed off)",
-  "expected": {
-    "item": "broccolini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "rough ends trimmed off"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "broccolini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "rough ends trimmed off"
+    },
+    "parse_ingredients": {
+      "item": "broccolini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "rough ends trimmed off"
+    }
   }
 }

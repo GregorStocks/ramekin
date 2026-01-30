@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons unsalted butter, cut into tablespoons",
-  "expected": {
-    "item": "unsalted butter, cut into tablespoons",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter, cut into tablespoons",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter, cut into tablespoons",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

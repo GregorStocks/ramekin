@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha, gochujang or another hot sauce of your choice (to serve)",
-  "expected": {
-    "item": "Sriracha, gochujang or another hot sauce of your choice (to serve)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sriracha, gochujang or another hot sauce of your choice (to serve)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sriracha, gochujang or another hot sauce of your choice (to serve)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

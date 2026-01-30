@@ -1,13 +1,25 @@
 {
   "raw": "1 cup cilantro (roughly chopped (about a one large bunch))",
-  "expected": {
-    "item": "cilantro",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "roughly chopped (about a one large bunch"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped (about a one large bunch"
+    },
+    "enrich_metric_weights": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "roughly chopped (about a one large bunch"
+    }
   }
 }

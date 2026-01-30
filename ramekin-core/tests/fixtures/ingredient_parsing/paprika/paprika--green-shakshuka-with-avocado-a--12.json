@@ -1,8 +1,15 @@
 {
   "raw": "Chopped cilantro, for serving",
-  "expected": {
-    "item": "Chopped cilantro",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped cilantro",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped cilantro",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

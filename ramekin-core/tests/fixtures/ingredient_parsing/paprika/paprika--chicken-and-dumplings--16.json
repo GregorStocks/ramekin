@@ -1,8 +1,15 @@
 {
   "raw": "Dumplings:",
-  "expected": {
-    "item": "Dumplings:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dumplings:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dumplings:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

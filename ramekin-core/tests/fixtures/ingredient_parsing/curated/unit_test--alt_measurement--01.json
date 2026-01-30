@@ -1,11 +1,33 @@
 {
   "raw": "1 stick (113g) butter",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {"amount": "1", "unit": "stick"},
-      {"amount": "113", "unit": "g"}
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

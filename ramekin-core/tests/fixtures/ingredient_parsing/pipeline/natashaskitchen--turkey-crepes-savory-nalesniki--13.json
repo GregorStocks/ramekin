@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp salt and 1/4 tsp pepper",
-  "expected": {
-    "item": "salt and 1/4 tsp pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt and 1/4 tsp pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt and 1/4 tsp pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

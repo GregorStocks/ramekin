@@ -1,13 +1,25 @@
 {
   "raw": "1  cup  frozen mixed berries  ((strawberries, raspberries, blueberries))",
-  "expected": {
-    "item": "frozen mixed berries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "strawberries, raspberries, blueberries"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen mixed berries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "strawberries, raspberries, blueberries"
+    },
+    "parse_ingredients": {
+      "item": "frozen mixed berries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "strawberries, raspberries, blueberries"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup brined green olives (Aida recommended Cerignola)",
-  "expected": {
-    "item": "brined green olives (Aida recommended Cerignola)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brined green olives (Aida recommended Cerignola)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "brined green olives (Aida recommended Cerignola)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

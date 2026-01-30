@@ -1,13 +1,25 @@
 {
   "raw": "1-2  anchovies*",
-  "expected": {
-    "item": "anchovies*",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "anchovies*",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "anchovies*",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

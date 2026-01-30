@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup finely chopped fresh basil, plus more for garnish",
-  "expected": {
-    "item": "finely chopped fresh basil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely chopped fresh basil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "parse_ingredients": {
+      "item": "finely chopped fresh basil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

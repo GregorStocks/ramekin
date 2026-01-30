@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (2 sticks) unsalted butter, softened, plus more for pans",
-  "expected": {
-    "item": "unsalted butter, softened",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": "stick"
-      }
-    ],
-    "note": "plus more for pans"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter, softened",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus more for pans"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter, softened",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus more for pans"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 stick salted butter, melted",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

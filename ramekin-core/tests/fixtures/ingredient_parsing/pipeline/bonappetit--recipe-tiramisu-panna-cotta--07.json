@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp. Dutch-process cocoa powder, plus more for dusting",
-  "expected": {
-    "item": "Dutch-process cocoa powder",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for dusting"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Dutch-process cocoa powder",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for dusting"
+    },
+    "enrich_metric_weights": {
+      "item": "Dutch-process cocoa powder",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for dusting"
+    }
   }
 }

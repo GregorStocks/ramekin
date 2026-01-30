@@ -1,21 +1,41 @@
 {
   "raw": "1 (15-ounce) can chickpeas, drained or 1 ½ cups cooked chickpeas (250g)",
-  "expected": {
-    "item": "chickpeas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      },
-      {
-        "amount": "250",
-        "unit": "g"
-      }
-    ],
-    "note": "drained or 1 1/2 cups cooked chickpeas"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": "drained or 1 1/2 cups cooked chickpeas"
+    },
+    "enrich_metric_weights": {
+      "item": "chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": "drained or 1 1/2 cups cooked chickpeas"
+    }
   }
 }

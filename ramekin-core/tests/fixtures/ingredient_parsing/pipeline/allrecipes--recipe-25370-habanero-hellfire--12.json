@@ -1,13 +1,25 @@
 {
   "raw": "6 habanero peppers, seeded and chopped",
-  "expected": {
-    "item": "habanero peppers",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "seeded and chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "habanero peppers",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "habanero peppers",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped"
+    }
   }
 }

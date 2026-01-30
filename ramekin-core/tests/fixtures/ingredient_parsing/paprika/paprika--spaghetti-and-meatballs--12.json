@@ -1,13 +1,25 @@
 {
   "raw": "1 28-ounce can of crushed tomatoes",
-  "expected": {
-    "item": "of crushed tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "28-ounce can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "of crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "28-ounce can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "of crushed tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "28-ounce can"
+        }
+      ],
+      "note": null
+    }
   }
 }

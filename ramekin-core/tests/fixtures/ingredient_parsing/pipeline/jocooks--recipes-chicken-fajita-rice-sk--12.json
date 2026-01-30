@@ -1,13 +1,25 @@
 {
   "raw": "1 cup long-grain white rice (uncooked )",
-  "expected": {
-    "item": "long-grain white rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "long-grain white rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "parse_ingredients": {
+      "item": "long-grain white rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

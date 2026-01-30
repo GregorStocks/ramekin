@@ -1,8 +1,15 @@
 {
   "raw": "Chocolate Buttercream Frosting",
-  "expected": {
-    "item": "Chocolate Buttercream Frosting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chocolate Buttercream Frosting",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chocolate Buttercream Frosting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

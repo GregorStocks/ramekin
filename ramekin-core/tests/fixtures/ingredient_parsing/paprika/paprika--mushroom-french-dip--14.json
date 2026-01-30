@@ -1,21 +1,41 @@
 {
   "raw": "2 (7- to 8-inch long) store-bought or homemade French rolls or hoagie/sub rolls (about 6-ounces each), split lengthwise, but left attached on 1 side to create a hinge",
-  "expected": {
-    "item": "store-bought or homemade French rolls or hoagie/sub rolls , split lengthwise, but left attached on 1 side to create a hinge",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "7",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "store-bought or homemade French rolls or hoagie/sub rolls , split lengthwise, but left attached on 1 side to create a hinge",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "store-bought or homemade French rolls or hoagie/sub rolls , split lengthwise, but left attached on 1 side to create a hinge",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

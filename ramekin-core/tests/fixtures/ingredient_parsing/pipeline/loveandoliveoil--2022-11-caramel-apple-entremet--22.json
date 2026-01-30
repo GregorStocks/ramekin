@@ -1,13 +1,25 @@
 {
   "raw": "1  vanilla bean (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract—add at the end with the almond))",
-  "expected": {
-    "item": "vanilla bean (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla bean (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vanilla bean (split and seeds scraped out (or substitute 1 teaspoon vanilla bean paste or extract-add at the end with the almond)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

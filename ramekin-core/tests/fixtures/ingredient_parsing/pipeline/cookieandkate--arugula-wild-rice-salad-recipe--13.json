@@ -1,13 +1,25 @@
 {
   "raw": "&amp;frac14; teaspoon fine sea salt, to taste",
-  "expected": {
-    "item": "fine sea salt",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fine sea salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "fine sea salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

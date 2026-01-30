@@ -1,13 +1,25 @@
 {
   "raw": "1  green chili (slit or chopped (optional))",
-  "expected": {
-    "item": "green chili",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "slit or chopped (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green chili",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "slit or chopped (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "green chili",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "slit or chopped (optional"
+    }
   }
 }

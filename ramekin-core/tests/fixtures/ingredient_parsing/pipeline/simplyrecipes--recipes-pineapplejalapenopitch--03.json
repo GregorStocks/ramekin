@@ -1,8 +1,15 @@
 {
   "raw": "Fresh lime wedges, for rimming the glasses and garnish",
-  "expected": {
-    "item": "Fresh lime wedges, for rimming the glasses and garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh lime wedges, for rimming the glasses and garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh lime wedges, for rimming the glasses and garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

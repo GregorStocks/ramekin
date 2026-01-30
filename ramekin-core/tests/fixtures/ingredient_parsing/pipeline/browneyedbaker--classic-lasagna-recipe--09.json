@@ -1,13 +1,29 @@
 {
   "raw": "20 ounces mozzarella cheese (shredded (5 cups))",
-  "expected": {
-    "item": "mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded (5 cups"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded (5 cups"
+    },
+    "parse_ingredients": {
+      "item": "mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded (5 cups"
+    }
   }
 }

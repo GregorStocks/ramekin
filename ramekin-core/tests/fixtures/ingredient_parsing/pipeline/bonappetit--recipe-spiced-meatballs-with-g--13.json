@@ -1,13 +1,25 @@
 {
   "raw": "½ cup coarsely chopped salted roasted pistachios, plus more for",
-  "expected": {
-    "item": "coarsely chopped salted roasted pistachios",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarsely chopped salted roasted pistachios",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for"
+    },
+    "enrich_metric_weights": {
+      "item": "coarsely chopped salted roasted pistachios",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for"
+    }
   }
 }

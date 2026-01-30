@@ -1,17 +1,33 @@
 {
   "raw": "2 tablespoons (4g) finely chopped fresh dill",
-  "expected": {
-    "item": "finely chopped fresh dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "4",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "4",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "4",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

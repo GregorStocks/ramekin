@@ -1,13 +1,25 @@
 {
   "raw": "1 pound uncooked shrimp (large, prawns, peeled and deveined with tails on)",
-  "expected": {
-    "item": "uncooked shrimp",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "large, prawns, peeled and deveined with tails on"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "uncooked shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "large, prawns, peeled and deveined with tails on"
+    },
+    "parse_ingredients": {
+      "item": "uncooked shrimp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "large, prawns, peeled and deveined with tails on"
+    }
   }
 }

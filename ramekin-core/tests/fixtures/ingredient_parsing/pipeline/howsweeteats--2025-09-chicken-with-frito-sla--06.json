@@ -1,13 +1,29 @@
 {
   "raw": "10 ounces corn, (cooked if frozen (I use a steamfresh bag))",
-  "expected": {
-    "item": "corn",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked if frozen (I use a steamfresh bag"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked if frozen (I use a steamfresh bag"
+    },
+    "parse_ingredients": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked if frozen (I use a steamfresh bag"
+    }
   }
 }

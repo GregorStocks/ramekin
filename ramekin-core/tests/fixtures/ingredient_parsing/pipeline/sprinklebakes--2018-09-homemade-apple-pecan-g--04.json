@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 88g diced dried apples",
-  "expected": {
-    "item": "diced dried apples",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "88",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced dried apples",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "88",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "diced dried apples",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "88",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

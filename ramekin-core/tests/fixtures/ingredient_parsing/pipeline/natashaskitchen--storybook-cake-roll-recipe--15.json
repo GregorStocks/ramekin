@@ -1,13 +1,25 @@
 {
   "raw": "11  ×17 rimmed baking sheet lined with parchment paper",
-  "expected": {
-    "item": "×17 rimmed baking sheet lined with parchment paper",
-    "measurements": [
-      {
-        "amount": "11",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "×17 rimmed baking sheet lined with parchment paper",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "×17 rimmed baking sheet lined with parchment paper",
+      "measurements": [
+        {
+          "amount": "11",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

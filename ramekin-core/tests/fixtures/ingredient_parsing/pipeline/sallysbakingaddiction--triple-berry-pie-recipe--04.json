@@ -1,17 +1,33 @@
 {
   "raw": "1 and 1/2 cups (about 240g) fresh blackberries, divided",
-  "expected": {
-    "item": "fresh blackberries",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh blackberries",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "fresh blackberries",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

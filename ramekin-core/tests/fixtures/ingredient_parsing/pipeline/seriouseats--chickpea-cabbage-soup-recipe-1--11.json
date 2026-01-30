@@ -1,17 +1,33 @@
 {
   "raw": "8 cups (1.9 L) homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
-  "expected": {
-    "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      },
-      {
-        "amount": "1.9",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "homemade chicken stock or store-bought low-sodium chicken broth or vegetable broth (see notes)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "1.9",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Kimchi (optional, for serving)",
-  "expected": {
-    "item": "Kimchi",
-    "measurements": [],
-    "note": "optional, for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Kimchi",
+      "measurements": [],
+      "note": "optional, for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Kimchi",
+      "measurements": [],
+      "note": "optional, for serving"
+    }
   }
 }

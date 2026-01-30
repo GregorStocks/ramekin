@@ -1,13 +1,25 @@
 {
   "raw": "2-3  mushrooms thinly sliced",
-  "expected": {
-    "item": "mushrooms thinly sliced",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mushrooms thinly sliced",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mushrooms thinly sliced",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "8 skin-on, bone-in chicken thighs (about 3 pounds)",
-  "expected": {
-    "item": "skin-on, bone-in chicken thighs",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skin-on, bone-in chicken thighs",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skin-on, bone-in chicken thighs",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

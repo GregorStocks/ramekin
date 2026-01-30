@@ -1,17 +1,37 @@
 {
   "raw": "1 (4.5 ounce) can chopped green chiles",
-  "expected": {
-    "item": "chopped green chiles",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "4.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped green chiles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "4.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped green chiles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "4.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "128",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

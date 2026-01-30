@@ -1,21 +1,41 @@
 {
   "raw": "1 bunch thick asparagus (12-15 spears; about 1 pound), trimmed",
-  "expected": {
-    "item": "thick asparagus",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      },
-      {
-        "amount": "12-15",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thick asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "12-15",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    },
+    "enrich_metric_weights": {
+      "item": "thick asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "12-15",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed"
+    }
   }
 }

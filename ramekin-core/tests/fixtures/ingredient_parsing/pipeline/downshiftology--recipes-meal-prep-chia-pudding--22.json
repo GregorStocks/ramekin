@@ -1,8 +1,15 @@
 {
   "raw": "Cacao Nibs",
-  "expected": {
-    "item": "Cacao Nibs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cacao Nibs",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cacao Nibs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

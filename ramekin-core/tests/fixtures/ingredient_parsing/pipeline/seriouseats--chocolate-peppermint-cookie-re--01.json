@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 cups all-purpose flour (6 3/4 ounces; 191 g)",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "6 3/4",
-        "unit": "oz"
-      },
-      {
-        "amount": "191",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "6 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "191",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "6 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "191",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

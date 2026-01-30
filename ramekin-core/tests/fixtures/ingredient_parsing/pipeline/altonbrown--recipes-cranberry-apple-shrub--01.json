@@ -1,13 +1,25 @@
 {
   "raw": "1 medium Fuji apple, seeded and cubed",
-  "expected": {
-    "item": "Fuji apple",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "seeded and cubed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fuji apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "seeded and cubed"
+    },
+    "parse_ingredients": {
+      "item": "Fuji apple",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "seeded and cubed"
+    }
   }
 }

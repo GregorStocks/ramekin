@@ -1,8 +1,15 @@
 {
   "raw": "Cinnamon Sugar ((I use 1/4 teaspoon cinnamon for each tablespoon sugar))",
-  "expected": {
-    "item": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cinnamon Sugar (I use 1/4 teaspoon cinnamon for each tablespoon sugar)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

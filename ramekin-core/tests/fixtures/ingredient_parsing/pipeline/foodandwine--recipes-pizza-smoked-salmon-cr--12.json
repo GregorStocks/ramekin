@@ -1,17 +1,37 @@
 {
   "raw": "6 tablespoons black or golden caviar (3 ounces)",
-  "expected": {
-    "item": "black or golden caviar",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black or golden caviar",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "black or golden caviar",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

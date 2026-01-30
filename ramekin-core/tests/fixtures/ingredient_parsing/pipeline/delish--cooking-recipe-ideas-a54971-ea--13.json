@@ -1,8 +1,15 @@
 {
   "raw": "Shredded cheddar and tortilla chips, for serving",
-  "expected": {
-    "item": "Shredded cheddar and tortilla chips",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shredded cheddar and tortilla chips",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Shredded cheddar and tortilla chips",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

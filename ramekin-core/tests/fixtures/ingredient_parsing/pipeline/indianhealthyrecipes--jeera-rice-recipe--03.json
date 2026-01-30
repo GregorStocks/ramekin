@@ -1,13 +1,25 @@
 {
   "raw": "1  green chili  (slit and deseeded (optional))",
-  "expected": {
-    "item": "green chili",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "slit and deseeded (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green chili",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "slit and deseeded (optional"
+    },
+    "parse_ingredients": {
+      "item": "green chili",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "slit and deseeded (optional"
+    }
   }
 }

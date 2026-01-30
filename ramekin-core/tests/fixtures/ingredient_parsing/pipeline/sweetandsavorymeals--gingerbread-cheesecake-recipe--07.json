@@ -1,13 +1,29 @@
 {
   "raw": "32 ounces full fat cream cheese (4 packages at room temperature)",
-  "expected": {
-    "item": "full fat cream cheese",
-    "measurements": [
-      {
-        "amount": "32",
-        "unit": "oz"
-      }
-    ],
-    "note": "4 packages at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "full fat cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": "4 packages at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "full fat cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        }
+      ],
+      "note": "4 packages at room temperature"
+    }
   }
 }

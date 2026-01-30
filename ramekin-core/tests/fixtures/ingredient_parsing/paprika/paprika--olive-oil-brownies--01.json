@@ -1,17 +1,33 @@
 {
   "raw": "4 ounces (115 grams) unsweetened chocolate, chopped",
-  "expected": {
-    "item": "unsweetened chocolate",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsweetened chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "unsweetened chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

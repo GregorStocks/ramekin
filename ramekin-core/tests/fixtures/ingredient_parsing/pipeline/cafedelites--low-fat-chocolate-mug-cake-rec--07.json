@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
-  "expected": {
-    "item": "unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsweetened almond milk (or skim milk for an extra point. 2 1/2 tablespoons of milk if using 1 tablespoon cocoa powder.)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

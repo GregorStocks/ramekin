@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons raw or brown sugar, honey or agave nectar",
-  "expected": {
-    "item": "raw or brown sugar, honey or agave nectar",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raw or brown sugar, honey or agave nectar",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "raw or brown sugar, honey or agave nectar",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 (20-ounce) can pineapple tidbits (well-drained)",
-  "expected": {
-    "item": "pineapple tidbits",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": "well-drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pineapple tidbits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "well-drained"
+    },
+    "enrich_metric_weights": {
+      "item": "pineapple tidbits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": "well-drained"
+    }
   }
 }

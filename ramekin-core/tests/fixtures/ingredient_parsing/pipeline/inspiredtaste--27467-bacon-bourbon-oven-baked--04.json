@@ -1,13 +1,25 @@
 {
   "raw": "1/2 to 1 cup Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
-  "expected": {
-    "item": "Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
-    "measurements": [
-      {
-        "amount": "1/2 to 1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
+      "measurements": [
+        {
+          "amount": "1/2 to 1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Bacon Bourbon Barbecue Sauce or your favorite sauce, see our bacon barbecue sauce recipe",
+      "measurements": [
+        {
+          "amount": "1/2 to 1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

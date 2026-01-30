@@ -1,8 +1,15 @@
 {
   "raw": "For the Cauliflower Fritters",
-  "expected": {
-    "item": "For the Cauliflower Fritters",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "For the Cauliflower Fritters",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "For the Cauliflower Fritters",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup freshly squeezed orange juice (from the same orange)",
-  "expected": {
-    "item": "freshly squeezed orange juice (from the same orange)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly squeezed orange juice (from the same orange)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly squeezed orange juice (from the same orange)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

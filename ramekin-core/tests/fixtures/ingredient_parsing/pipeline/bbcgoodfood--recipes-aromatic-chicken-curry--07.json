@@ -1,13 +1,25 @@
 {
   "raw": "100g creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
-  "expected": {
-    "item": "creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "creamed coconut (we used 2x50g sachets Bart's creamed coconut)",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

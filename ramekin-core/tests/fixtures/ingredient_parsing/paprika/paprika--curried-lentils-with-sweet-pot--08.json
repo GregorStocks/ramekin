@@ -1,13 +1,25 @@
 {
   "raw": "4 to 5 cups vegetable broth as needed",
-  "expected": {
-    "item": "vegetable broth as needed",
-    "measurements": [
-      {
-        "amount": "4 to 5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vegetable broth as needed",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vegetable broth as needed",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

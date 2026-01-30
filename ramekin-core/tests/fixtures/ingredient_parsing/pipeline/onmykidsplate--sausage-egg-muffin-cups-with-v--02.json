@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup diced sausage (cooked, great for leftovers)",
-  "expected": {
-    "item": "diced sausage",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "cooked, great for leftovers"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced sausage",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cooked, great for leftovers"
+    },
+    "enrich_metric_weights": {
+      "item": "diced sausage",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cooked, great for leftovers"
+    }
   }
 }

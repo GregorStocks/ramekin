@@ -1,13 +1,25 @@
 {
   "raw": "1  medium/large sweet Vidalia or yellow onion (diced small)",
-  "expected": {
-    "item": "medium/large sweet Vidalia or yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced small"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium/large sweet Vidalia or yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced small"
+    },
+    "parse_ingredients": {
+      "item": "medium/large sweet Vidalia or yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced small"
+    }
   }
 }

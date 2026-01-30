@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup minced flat-leaf parsley leaves (10 g)",
-  "expected": {
-    "item": "minced flat-leaf parsley leaves",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced flat-leaf parsley leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced flat-leaf parsley leaves",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

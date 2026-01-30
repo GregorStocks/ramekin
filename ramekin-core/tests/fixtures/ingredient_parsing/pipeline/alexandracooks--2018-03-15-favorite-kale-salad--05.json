@@ -1,13 +1,25 @@
 {
   "raw": "1 cup white balsamic vinegar, my preference is Colavita",
-  "expected": {
-    "item": "white balsamic vinegar, my preference is Colavita",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white balsamic vinegar, my preference is Colavita",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white balsamic vinegar, my preference is Colavita",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

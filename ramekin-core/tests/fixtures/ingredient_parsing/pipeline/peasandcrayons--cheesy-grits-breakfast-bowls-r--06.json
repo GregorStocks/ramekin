@@ -1,13 +1,25 @@
 {
   "raw": "¾ cups sharp cheddar or gouda cheese (or extra to taste)",
-  "expected": {
-    "item": "sharp cheddar or gouda cheese",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or extra to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sharp cheddar or gouda cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or extra to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "sharp cheddar or gouda cheese",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or extra to taste"
+    }
   }
 }

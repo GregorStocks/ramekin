@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons Better than Bouillon - beef flavor",
-  "expected": {
-    "item": "Better than Bouillon - beef flavor",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Better than Bouillon - beef flavor",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Better than Bouillon - beef flavor",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

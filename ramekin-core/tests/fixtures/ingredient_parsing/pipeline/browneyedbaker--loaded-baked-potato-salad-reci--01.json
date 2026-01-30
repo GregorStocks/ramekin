@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds Russet potatoes (scrubbed and pricked all over with a fork or knife)",
-  "expected": {
-    "item": "Russet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "scrubbed and pricked all over with a fork or knife"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "scrubbed and pricked all over with a fork or knife"
+    },
+    "parse_ingredients": {
+      "item": "Russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "scrubbed and pricked all over with a fork or knife"
+    }
   }
 }

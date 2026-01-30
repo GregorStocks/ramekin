@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 pounds broccoli or 4 cups broccoli florets and stems, chopped small",
-  "expected": {
-    "item": "broccoli or 4 cups broccoli florets and stems",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli or 4 cups broccoli florets and stems",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli or 4 cups broccoli florets and stems",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

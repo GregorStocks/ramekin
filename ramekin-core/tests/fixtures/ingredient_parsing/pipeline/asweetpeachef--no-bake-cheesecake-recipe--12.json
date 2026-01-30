@@ -1,13 +1,25 @@
 {
   "raw": "2-3 tbsp water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

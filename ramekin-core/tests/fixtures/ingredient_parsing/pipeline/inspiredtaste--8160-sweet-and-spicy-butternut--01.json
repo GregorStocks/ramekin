@@ -1,13 +1,25 @@
 {
   "raw": "1 large butternut squash, peeled, seeded and cut into 1-inch cubes (about 3 pounds or 8 cups, cubed)",
-  "expected": {
-    "item": "butternut squash, peeled, seeded and cut into 1-inch cubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "about 3 pounds or 8 cups, cubed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butternut squash, peeled, seeded and cut into 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "about 3 pounds or 8 cups, cubed"
+    },
+    "parse_ingredients": {
+      "item": "butternut squash, peeled, seeded and cut into 1-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "about 3 pounds or 8 cups, cubed"
+    }
   }
 }

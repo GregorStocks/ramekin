@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons Mirin (optional - white wine or dry sherry can be substituted)",
-  "expected": {
-    "item": "Mirin",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional - white wine or dry sherry can be substituted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mirin",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional - white wine or dry sherry can be substituted"
+    },
+    "enrich_metric_weights": {
+      "item": "Mirin",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional - white wine or dry sherry can be substituted"
+    }
   }
 }

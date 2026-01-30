@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup pistachio flour (or very finely ground pistachios*)",
-  "expected": {
-    "item": "pistachio flour",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or very finely ground pistachios*"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pistachio flour",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or very finely ground pistachios*"
+    },
+    "enrich_metric_weights": {
+      "item": "pistachio flour",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or very finely ground pistachios*"
+    }
   }
 }

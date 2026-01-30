@@ -1,13 +1,25 @@
 {
   "raw": "2 cubes ice",
-  "expected": {
-    "item": "ice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cube"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cube"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cube"
+        }
+      ],
+      "note": null
+    }
   }
 }

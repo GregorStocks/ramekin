@@ -1,17 +1,33 @@
 {
   "raw": "3  large peaches (about 3 cups worth of slices)",
-  "expected": {
-    "item": "peaches",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "large"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

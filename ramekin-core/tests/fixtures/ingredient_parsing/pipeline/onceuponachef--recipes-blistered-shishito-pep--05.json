@@ -1,8 +1,15 @@
 {
   "raw": "Lemon wedges and/or dipping sauce,",
-  "expected": {
-    "item": "Lemon wedges and/or dipping sauce,",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lemon wedges and/or dipping sauce,",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Lemon wedges and/or dipping sauce,",
+      "measurements": [],
+      "note": null
+    }
   }
 }

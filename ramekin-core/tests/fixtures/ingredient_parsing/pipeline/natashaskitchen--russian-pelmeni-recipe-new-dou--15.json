@@ -1,8 +1,15 @@
 {
   "raw": "Melted butter (sour cream, vinegar, ketchup)",
-  "expected": {
-    "item": "Melted butter (sour cream, vinegar, ketchup)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Melted butter (sour cream, vinegar, ketchup)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Melted butter (sour cream, vinegar, ketchup)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

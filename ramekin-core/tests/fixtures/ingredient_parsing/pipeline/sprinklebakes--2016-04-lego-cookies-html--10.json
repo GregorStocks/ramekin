@@ -1,8 +1,15 @@
 {
   "raw": "Honey or corn syrup",
-  "expected": {
-    "item": "Honey or corn syrup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Honey or corn syrup",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Honey or corn syrup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

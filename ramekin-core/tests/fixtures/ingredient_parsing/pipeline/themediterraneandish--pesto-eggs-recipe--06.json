@@ -1,13 +1,25 @@
 {
   "raw": "2  pieces of toasted bread,  (optional )",
-  "expected": {
-    "item": "toasted bread",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "piece"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "toasted bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "piece"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "toasted bread",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "piece"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

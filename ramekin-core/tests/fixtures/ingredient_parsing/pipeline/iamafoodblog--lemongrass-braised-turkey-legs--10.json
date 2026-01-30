@@ -1,13 +1,25 @@
 {
   "raw": "2 stalks lemongrass, bruised",
-  "expected": {
-    "item": "lemongrass, bruised",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "stalk"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemongrass, bruised",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemongrass, bruised",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    }
   }
 }

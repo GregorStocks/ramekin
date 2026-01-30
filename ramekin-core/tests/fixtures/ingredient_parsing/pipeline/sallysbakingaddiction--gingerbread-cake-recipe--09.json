@@ -1,21 +1,41 @@
 {
   "raw": "1/2 cup (8 Tbsp; 113g) unsalted butter, softened to room temperature",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      }
-    ],
-    "note": "softened to room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "softened to room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "softened to room temperature"
+    }
   }
 }

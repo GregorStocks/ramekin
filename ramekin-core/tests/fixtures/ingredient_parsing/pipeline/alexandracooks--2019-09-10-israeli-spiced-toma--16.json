@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoon vinegar (white balsamic, red wine, white wine, champagne)",
-  "expected": {
-    "item": "vinegar (white balsamic, red wine, white wine, champagne)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vinegar (white balsamic, red wine, white wine, champagne)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vinegar (white balsamic, red wine, white wine, champagne)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

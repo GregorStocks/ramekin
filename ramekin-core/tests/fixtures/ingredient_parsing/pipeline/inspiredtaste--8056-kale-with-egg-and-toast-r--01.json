@@ -1,17 +1,33 @@
 {
   "raw": "1 bunch kale (about 1/2 pound)",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      },
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

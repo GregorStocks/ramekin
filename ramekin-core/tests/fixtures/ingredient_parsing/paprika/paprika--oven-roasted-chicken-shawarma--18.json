@@ -1,8 +1,15 @@
 {
   "raw": "Pita",
-  "expected": {
-    "item": "Pita",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pita",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pita",
+      "measurements": [],
+      "note": null
+    }
   }
 }

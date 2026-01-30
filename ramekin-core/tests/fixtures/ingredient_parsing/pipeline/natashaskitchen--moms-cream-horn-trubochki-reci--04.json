@@ -1,13 +1,29 @@
 {
   "raw": "4 oz cream cheese (softened at room temperature)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "softened at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "softened at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "softened at room temperature"
+    }
   }
 }

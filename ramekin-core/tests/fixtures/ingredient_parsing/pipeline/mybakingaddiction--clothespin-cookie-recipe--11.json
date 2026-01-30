@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ - 2 ½ tablespoons cream or milk",
-  "expected": {
-    "item": "- 2 1/2 tablespoons cream or milk",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "- 2 1/2 tablespoons cream or milk",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "- 2 1/2 tablespoons cream or milk",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

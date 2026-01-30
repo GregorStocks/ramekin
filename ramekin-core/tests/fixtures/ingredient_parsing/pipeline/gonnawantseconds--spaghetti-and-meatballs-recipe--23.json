@@ -1,13 +1,29 @@
 {
   "raw": "16 ounces spaghetti, (cooked per package instructions)",
-  "expected": {
-    "item": "spaghetti",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked per package instructions"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked per package instructions"
+    },
+    "parse_ingredients": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked per package instructions"
+    }
   }
 }

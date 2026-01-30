@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp Cooking Oil (or mild olive oil)",
-  "expected": {
-    "item": "Cooking Oil (or mild olive oil)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cooking Oil (or mild olive oil)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cooking Oil (or mild olive oil)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "for toppings: (green onions, cilantro, tortilla chips, jalapeños)",
-  "expected": {
-    "item": "for toppings: (green onions, cilantro, tortilla chips, jalapeños)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "for toppings: (green onions, cilantro, tortilla chips, jalapeños)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "for toppings: (green onions, cilantro, tortilla chips, jalapeños)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

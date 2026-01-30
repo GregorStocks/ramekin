@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds russet potatoes (washed and scrubbed)",
-  "expected": {
-    "item": "russet potatoes",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": "washed and scrubbed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed and scrubbed"
+    },
+    "enrich_metric_weights": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed and scrubbed"
+    }
   }
 }

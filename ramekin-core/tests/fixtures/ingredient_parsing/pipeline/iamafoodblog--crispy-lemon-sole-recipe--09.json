@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cucumber, peeled, de-seeded and sliced",
-  "expected": {
-    "item": "cucumber, peeled",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": null
-      }
-    ],
-    "note": "de-seeded and sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumber, peeled",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "de-seeded and sliced"
+    },
+    "parse_ingredients": {
+      "item": "cucumber, peeled",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "de-seeded and sliced"
+    }
   }
 }

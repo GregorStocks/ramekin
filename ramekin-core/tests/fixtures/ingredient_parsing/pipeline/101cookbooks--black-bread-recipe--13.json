@@ -1,8 +1,15 @@
 {
   "raw": "olive oil for kneading and oiling baking sheet",
-  "expected": {
-    "item": "olive oil for kneading and oiling baking sheet",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil for kneading and oiling baking sheet",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil for kneading and oiling baking sheet",
+      "measurements": [],
+      "note": null
+    }
   }
 }

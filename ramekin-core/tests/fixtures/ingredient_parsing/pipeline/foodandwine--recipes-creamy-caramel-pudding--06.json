@@ -1,8 +1,15 @@
 {
   "raw": "Nut brittle , for serving (optional)",
-  "expected": {
-    "item": "Nut brittle , for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Nut brittle , for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Nut brittle , for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

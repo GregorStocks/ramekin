@@ -1,8 +1,15 @@
 {
   "raw": "red pickled ginger (benishoga) (to garnish)",
-  "expected": {
-    "item": "red pickled ginger (benishoga) (to garnish)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red pickled ginger (benishoga) (to garnish)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "red pickled ginger (benishoga) (to garnish)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 carrots, finely grated (use a food processor or a grater)",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "finely grated (use a food processor or a grater)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "finely grated (use a food processor or a grater)"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "finely grated (use a food processor or a grater)"
+    }
   }
 }

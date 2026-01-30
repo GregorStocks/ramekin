@@ -1,13 +1,25 @@
 {
   "raw": "Six 1 1/4-pound lobsters",
-  "expected": {
-    "item": "1 1/4-pound lobsters",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1 1/4-pound lobsters",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "1 1/4-pound lobsters",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

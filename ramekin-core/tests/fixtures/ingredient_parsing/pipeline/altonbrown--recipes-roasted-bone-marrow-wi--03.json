@@ -1,17 +1,33 @@
 {
   "raw": "4 (6–7 inch) canoe-cut marrow bones, cleaned of any meat or fat on the exterior of the bone",
-  "expected": {
-    "item": "canoe-cut marrow bones",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "6-7",
-        "unit": null
-      }
-    ],
-    "note": "cleaned of any meat or fat on the exterior of the bone"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canoe-cut marrow bones",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "6-7",
+          "unit": null
+        }
+      ],
+      "note": "cleaned of any meat or fat on the exterior of the bone"
+    },
+    "parse_ingredients": {
+      "item": "canoe-cut marrow bones",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "6-7",
+          "unit": null
+        }
+      ],
+      "note": "cleaned of any meat or fat on the exterior of the bone"
+    }
   }
 }

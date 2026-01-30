@@ -1,13 +1,25 @@
 {
   "raw": "2 heads Garlic&nbsp; ((crushed or minced))",
-  "expected": {
-    "item": "Garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "head"
-      }
-    ],
-    "note": "crushed or minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": "crushed or minced"
+    },
+    "enrich_metric_weights": {
+      "item": "Garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": "crushed or minced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "sprigs of fresh thyme",
-  "expected": {
-    "item": "fresh thyme",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

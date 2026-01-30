@@ -1,8 +1,15 @@
 {
   "raw": "celery sticks",
-  "expected": {
-    "item": "celery sticks",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery sticks",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "celery sticks",
+      "measurements": [],
+      "note": null
+    }
   }
 }

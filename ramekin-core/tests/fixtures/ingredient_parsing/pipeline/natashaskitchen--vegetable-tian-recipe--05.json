@@ -1,13 +1,25 @@
 {
   "raw": "2-3  russet potatoes (depending on their size)",
-  "expected": {
-    "item": "russet potatoes (depending on their size)",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "russet potatoes (depending on their size)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "russet potatoes (depending on their size)",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

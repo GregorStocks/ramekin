@@ -1,13 +1,25 @@
 {
   "raw": "4 cups cooked chicken breast (chopped into small cubes and some shredded)",
-  "expected": {
-    "item": "cooked chicken breast",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped into small cubes and some shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked chicken breast",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped into small cubes and some shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked chicken breast",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped into small cubes and some shredded"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
-  "expected": {
-    "item": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      }
-    ],
-    "note": "14.5 Ounces Petite Diced Tomatoes, Including Juice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        }
+      ],
+      "note": "14.5 Ounces Petite Diced Tomatoes, Including Juice"
+    },
+    "parse_ingredients": {
+      "item": "2  Cans (14.5 Ounces Petite Diced Tomatoes, Including Juice)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        }
+      ],
+      "note": "14.5 Ounces Petite Diced Tomatoes, Including Juice"
+    }
   }
 }

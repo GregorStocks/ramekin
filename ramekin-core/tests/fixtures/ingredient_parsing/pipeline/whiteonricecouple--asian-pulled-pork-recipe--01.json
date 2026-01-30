@@ -1,8 +1,15 @@
 {
   "raw": "about 4  pounds boneless pork butt or pork shoulder",
-  "expected": {
-    "item": "about 4  pounds boneless pork butt or pork shoulder",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "about 4  pounds boneless pork butt or pork shoulder",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "about 4  pounds boneless pork butt or pork shoulder",
+      "measurements": [],
+      "note": null
+    }
   }
 }

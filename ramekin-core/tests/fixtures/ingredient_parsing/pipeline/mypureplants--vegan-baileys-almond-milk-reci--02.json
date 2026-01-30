@@ -1,17 +1,33 @@
 {
   "raw": "1 shot Espresso (1.35 fl oz)",
-  "expected": {
-    "item": "shot Espresso",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1.35",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shot Espresso",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1.35",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shot Espresso",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1.35",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

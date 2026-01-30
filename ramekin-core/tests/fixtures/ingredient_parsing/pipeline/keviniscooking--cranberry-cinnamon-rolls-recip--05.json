@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp grated ginger root (See Note 3 for substitutions)",
-  "expected": {
-    "item": "grated ginger root (See Note 3 for substitutions)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated ginger root (See Note 3 for substitutions)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated ginger root (See Note 3 for substitutions)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

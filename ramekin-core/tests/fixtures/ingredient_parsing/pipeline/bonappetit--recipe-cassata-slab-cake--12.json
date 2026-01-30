@@ -1,13 +1,25 @@
 {
   "raw": "2½ cups whole-milk fresh ricotta",
-  "expected": {
-    "item": "whole-milk fresh ricotta",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole-milk fresh ricotta",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole-milk fresh ricotta",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

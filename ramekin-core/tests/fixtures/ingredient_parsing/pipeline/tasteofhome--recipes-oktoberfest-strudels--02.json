@@ -1,17 +1,33 @@
 {
   "raw": "5 fully cooked bratwurst links (about 1-1/4 pounds), chopped",
-  "expected": {
-    "item": "fully cooked bratwurst links",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      },
-      {
-        "amount": "1-1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fully cooked bratwurst links",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "1-1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "fully cooked bratwurst links",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "1-1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

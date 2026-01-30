@@ -1,13 +1,29 @@
 {
   "raw": "6.8 ounce boxed instant coconut cream pudding",
-  "expected": {
-    "item": "boxed instant coconut cream pudding",
-    "measurements": [
-      {
-        "amount": "6.8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boxed instant coconut cream pudding",
+      "measurements": [
+        {
+          "amount": "6.8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boxed instant coconut cream pudding",
+      "measurements": [
+        {
+          "amount": "6.8",
+          "unit": "oz"
+        },
+        {
+          "amount": "193",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "oil, a drizzle",
-  "expected": {
-    "item": "oil, a drizzle",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oil, a drizzle",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "oil, a drizzle",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup uncooked wild rice blend, rinsed",
-  "expected": {
-    "item": "uncooked wild rice blend",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "uncooked wild rice blend",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "uncooked wild rice blend",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

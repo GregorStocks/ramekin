@@ -1,13 +1,25 @@
 {
   "raw": "1  red or green bell pepper or poblano pepper (diced)",
-  "expected": {
-    "item": "red or green bell pepper or poblano pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red or green bell pepper or poblano pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "red or green bell pepper or poblano pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

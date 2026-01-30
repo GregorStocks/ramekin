@@ -1,8 +1,15 @@
 {
   "raw": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions, chopped olives",
-  "expected": {
-    "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
-    "measurements": [],
-    "note": "chopped olives"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
+      "measurements": [],
+      "note": "chopped olives"
+    },
+    "enrich_metric_weights": {
+      "item": "to serve, any/all of the following: scallions, salted yogurt (regular on non-dairy), cilantro, red onions",
+      "measurements": [],
+      "note": "chopped olives"
+    }
   }
 }

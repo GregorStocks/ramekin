@@ -1,17 +1,37 @@
 {
   "raw": "1 1/2 sticks (6 ounces) unsalted butter",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "stick"
-      },
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

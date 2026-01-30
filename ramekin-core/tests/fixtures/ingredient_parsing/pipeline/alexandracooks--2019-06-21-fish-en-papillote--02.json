@@ -1,8 +1,15 @@
 {
   "raw": "about 16 leaves Swiss chard or Spinach, washed and dried",
-  "expected": {
-    "item": "about 16 leaves Swiss chard or Spinach",
-    "measurements": [],
-    "note": "washed and dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "about 16 leaves Swiss chard or Spinach",
+      "measurements": [],
+      "note": "washed and dried"
+    },
+    "enrich_metric_weights": {
+      "item": "about 16 leaves Swiss chard or Spinach",
+      "measurements": [],
+      "note": "washed and dried"
+    }
   }
 }

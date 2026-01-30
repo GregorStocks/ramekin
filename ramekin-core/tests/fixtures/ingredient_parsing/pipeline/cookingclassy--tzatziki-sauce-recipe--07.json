@@ -1,8 +1,15 @@
 {
   "raw": "Sea salt (or table salt, to taste and optionally black pepper)",
-  "expected": {
-    "item": "Sea salt",
-    "measurements": [],
-    "note": "or table salt, to taste and optionally black pepper"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sea salt",
+      "measurements": [],
+      "note": "or table salt, to taste and optionally black pepper"
+    },
+    "parse_ingredients": {
+      "item": "Sea salt",
+      "measurements": [],
+      "note": "or table salt, to taste and optionally black pepper"
+    }
   }
 }

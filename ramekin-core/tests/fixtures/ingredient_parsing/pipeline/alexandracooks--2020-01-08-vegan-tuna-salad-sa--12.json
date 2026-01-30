@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon roasted unsalted sunflower seeds or pumpkin seeds, optional",
-  "expected": {
-    "item": "roasted unsalted sunflower seeds or pumpkin seeds",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roasted unsalted sunflower seeds or pumpkin seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "roasted unsalted sunflower seeds or pumpkin seeds",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

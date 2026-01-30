@@ -1,13 +1,25 @@
 {
   "raw": "1  fresh papaya peeled (seeded and cubed)",
-  "expected": {
-    "item": "fresh papaya peeled",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh papaya peeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh papaya peeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and cubed"
+    }
   }
 }

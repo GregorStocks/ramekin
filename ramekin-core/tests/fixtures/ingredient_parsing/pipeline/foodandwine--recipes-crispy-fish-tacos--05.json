@@ -1,13 +1,29 @@
 {
   "raw": "2 ounces dried chiles de árbol or other chiles, stemmed, seeded, and cut into 1/4-inch pieces",
-  "expected": {
-    "item": "dried chiles de árbol or other chiles, stemmed, seeded, and cut into 1/4-inch pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried chiles de árbol or other chiles, stemmed, seeded, and cut into 1/4-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried chiles de árbol or other chiles, stemmed, seeded, and cut into 1/4-inch pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

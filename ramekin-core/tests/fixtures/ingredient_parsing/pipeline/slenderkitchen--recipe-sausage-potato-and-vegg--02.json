@@ -1,13 +1,25 @@
 {
   "raw": "1 lb red potatoes, diced (or other waxy potatoes)",
-  "expected": {
-    "item": "red potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "diced (or other waxy potatoes)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced (or other waxy potatoes)"
+    },
+    "enrich_metric_weights": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced (or other waxy potatoes)"
+    }
   }
 }

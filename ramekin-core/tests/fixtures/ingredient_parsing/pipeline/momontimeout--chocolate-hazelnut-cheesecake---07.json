@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
-  "expected": {
-    "item": "International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

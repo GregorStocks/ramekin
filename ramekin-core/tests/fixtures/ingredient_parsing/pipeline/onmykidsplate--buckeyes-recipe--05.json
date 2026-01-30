@@ -1,17 +1,37 @@
 {
   "raw": "3 cups chocolate chips (about 20 ounces)",
-  "expected": {
-    "item": "chocolate chips",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      },
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chocolate chips",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chocolate chips",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

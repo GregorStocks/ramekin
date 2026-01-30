@@ -1,13 +1,25 @@
 {
   "raw": "1 cup chilled buttermilk, plus 1-2 tablespoons more, if needed",
-  "expected": {
-    "item": "chilled buttermilk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1-2 tablespoons more, if needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chilled buttermilk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1-2 tablespoons more, if needed"
+    },
+    "parse_ingredients": {
+      "item": "chilled buttermilk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1-2 tablespoons more, if needed"
+    }
   }
 }

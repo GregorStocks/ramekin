@@ -1,8 +1,15 @@
 {
   "raw": "crushed tortilla chips",
-  "expected": {
-    "item": "crushed tortilla chips",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed tortilla chips",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crushed tortilla chips",
+      "measurements": [],
+      "note": null
+    }
   }
 }

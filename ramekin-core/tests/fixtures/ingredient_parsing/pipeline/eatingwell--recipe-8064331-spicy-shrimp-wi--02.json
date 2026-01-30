@@ -1,17 +1,33 @@
 {
   "raw": "1.5 pounds large peeled, deveined raw shrimp, tail-on (31-40 count)",
-  "expected": {
-    "item": "large peeled, deveined raw shrimp, tail-on",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      },
-      {
-        "amount": "31-40",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "large peeled, deveined raw shrimp, tail-on",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "31-40",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "large peeled, deveined raw shrimp, tail-on",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        },
+        {
+          "amount": "31-40",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

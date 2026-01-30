@@ -1,8 +1,15 @@
 {
   "raw": "Red pepper flakes (I’m using Aleppo, which is milder) or harissa",
-  "expected": {
-    "item": "Red pepper flakes (I’m using Aleppo, which is milder) or harissa",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Red pepper flakes (I’m using Aleppo, which is milder) or harissa",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Red pepper flakes (I’m using Aleppo, which is milder) or harissa",
+      "measurements": [],
+      "note": null
+    }
   }
 }

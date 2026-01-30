@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds assorted fresh mushrooms (sliced or chopped into bite-size pieces)",
-  "expected": {
-    "item": "assorted fresh mushrooms",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced or chopped into bite-size pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "assorted fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced or chopped into bite-size pieces"
+    },
+    "parse_ingredients": {
+      "item": "assorted fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced or chopped into bite-size pieces"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "20 ounce can crushed pineapple (drained)",
-  "expected": {
-    "item": "can crushed pineapple",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can crushed pineapple",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "can crushed pineapple",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

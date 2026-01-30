@@ -1,8 +1,15 @@
 {
   "raw": "Fresh cilantro (for serving)",
-  "expected": {
-    "item": "Fresh cilantro",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh cilantro",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh cilantro",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

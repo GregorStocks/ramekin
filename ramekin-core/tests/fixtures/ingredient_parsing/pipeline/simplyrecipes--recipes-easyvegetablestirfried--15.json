@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup thinly sliced scallions, white and light green parts, plus more for garnish",
-  "expected": {
-    "item": "thinly sliced scallions, white and light green parts",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thinly sliced scallions, white and light green parts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "thinly sliced scallions, white and light green parts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

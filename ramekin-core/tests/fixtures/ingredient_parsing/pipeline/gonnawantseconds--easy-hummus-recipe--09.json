@@ -1,8 +1,15 @@
 {
   "raw": "Sprinkle Sumac-Optional",
-  "expected": {
-    "item": "Sprinkle Sumac-Optional",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sprinkle Sumac-Optional",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sprinkle Sumac-Optional",
+      "measurements": [],
+      "note": null
+    }
   }
 }

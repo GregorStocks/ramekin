@@ -1,8 +1,15 @@
 {
   "raw": "herby summer sauce, (optional)",
-  "expected": {
-    "item": "herby summer sauce",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "herby summer sauce",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "herby summer sauce",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "4 medium sweet potatoes (about 12 ounces; 340g each), washed, scrubbed, and dried",
-  "expected": {
-    "item": "sweet potatoes , washed, scrubbed",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      },
-      {
-        "amount": "12",
-        "unit": "oz each"
-      },
-      {
-        "amount": "340",
-        "unit": "g each"
-      }
-    ],
-    "note": "and dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet potatoes , washed, scrubbed",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "12",
+          "unit": "oz each"
+        },
+        {
+          "amount": "340",
+          "unit": "g each"
+        }
+      ],
+      "note": "and dried"
+    },
+    "enrich_metric_weights": {
+      "item": "sweet potatoes , washed, scrubbed",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "12",
+          "unit": "oz each"
+        },
+        {
+          "amount": "340",
+          "unit": "g each"
+        }
+      ],
+      "note": "and dried"
+    }
   }
 }

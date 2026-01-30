@@ -1,13 +1,25 @@
 {
   "raw": "1/2 c. plus 2 tablespoons whole milk",
-  "expected": {
-    "item": "1/2 c. plus 2 tablespoons whole milk",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 2 tablespoons whole milk"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2 c. plus 2 tablespoons whole milk",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons whole milk"
+    },
+    "parse_ingredients": {
+      "item": "1/2 c. plus 2 tablespoons whole milk",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons whole milk"
+    }
   }
 }

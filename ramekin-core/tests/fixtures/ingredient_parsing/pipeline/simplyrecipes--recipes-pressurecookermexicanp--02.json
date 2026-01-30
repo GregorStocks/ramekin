@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon kosher salt (if using regular table salt, only use 2 teaspoons)",
-  "expected": {
-    "item": "kosher salt (if using regular table salt, only use 2 teaspoons)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kosher salt (if using regular table salt, only use 2 teaspoons)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kosher salt (if using regular table salt, only use 2 teaspoons)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

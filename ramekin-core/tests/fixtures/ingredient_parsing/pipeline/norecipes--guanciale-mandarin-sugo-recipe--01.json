@@ -1,13 +1,25 @@
 {
   "raw": "280 grams Guanciale",
-  "expected": {
-    "item": "Guanciale",
-    "measurements": [
-      {
-        "amount": "280",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Guanciale",
+      "measurements": [
+        {
+          "amount": "280",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Guanciale",
+      "measurements": [
+        {
+          "amount": "280",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

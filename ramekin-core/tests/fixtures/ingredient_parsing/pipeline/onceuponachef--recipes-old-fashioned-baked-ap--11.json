@@ -1,8 +1,15 @@
 {
   "raw": "Caramel sauce,  (for serving (optional))",
-  "expected": {
-    "item": "Caramel sauce",
-    "measurements": [],
-    "note": "for serving (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Caramel sauce",
+      "measurements": [],
+      "note": "for serving (optional"
+    },
+    "parse_ingredients": {
+      "item": "Caramel sauce",
+      "measurements": [],
+      "note": "for serving (optional"
+    }
   }
 }

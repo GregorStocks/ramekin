@@ -1,13 +1,25 @@
 {
   "raw": "1  tbsp Sukrin Gold (or sweetener of your choice)",
-  "expected": {
-    "item": "Sukrin Gold (or sweetener of your choice)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sukrin Gold (or sweetener of your choice)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sukrin Gold (or sweetener of your choice)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

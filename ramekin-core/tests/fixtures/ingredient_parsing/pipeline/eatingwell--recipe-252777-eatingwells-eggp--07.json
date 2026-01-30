@@ -1,17 +1,33 @@
 {
   "raw": "2 medium eggplants (about 2 pounds total), cut crosswise into &amp;frac14;-inch-thick slices",
-  "expected": {
-    "item": "eggplants , cut crosswise into 1/4-inch-thick slices",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      },
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "eggplants , cut crosswise into 1/4-inch-thick slices",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "eggplants , cut crosswise into 1/4-inch-thick slices",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        },
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 1/2 lbs 2 kg eggplant",
-  "expected": {
-    "item": "2 kg eggplant",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "2 kg eggplant",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "2 kg eggplant",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

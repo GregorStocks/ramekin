@@ -1,13 +1,29 @@
 {
   "raw": "2 ounces feta cheese, crumbled",
-  "expected": {
-    "item": "feta cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "feta cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "parse_ingredients": {
+      "item": "feta cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

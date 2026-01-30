@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup good quality cocoa powder, sifted",
-  "expected": {
-    "item": "good quality cocoa powder",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "good quality cocoa powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    },
+    "parse_ingredients": {
+      "item": "good quality cocoa powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

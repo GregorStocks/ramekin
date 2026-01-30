@@ -1,13 +1,29 @@
 {
   "raw": "5 ounces guanciale (or pancetta, diced)",
-  "expected": {
-    "item": "guanciale",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": "or pancetta, diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "guanciale",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "or pancetta, diced"
+    },
+    "parse_ingredients": {
+      "item": "guanciale",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": "or pancetta, diced"
+    }
   }
 }

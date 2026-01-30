@@ -1,17 +1,33 @@
 {
   "raw": "1 tablespoon (15 ml) mayonnaise",
-  "expected": {
-    "item": "mayonnaise",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "15",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mayonnaise",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mayonnaise",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "15",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

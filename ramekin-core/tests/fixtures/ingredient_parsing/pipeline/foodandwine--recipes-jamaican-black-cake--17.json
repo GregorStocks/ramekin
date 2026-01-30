@@ -1,13 +1,25 @@
 {
   "raw": "0.25 plus 1 tablespoon dark unsulfured molasses",
-  "expected": {
-    "item": "0.25 plus 1 tablespoon dark unsulfured molasses",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": null
-      }
-    ],
-    "note": "plus 1 tablespoon dark unsulfured molasses"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "0.25 plus 1 tablespoon dark unsulfured molasses",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 tablespoon dark unsulfured molasses"
+    },
+    "enrich_metric_weights": {
+      "item": "0.25 plus 1 tablespoon dark unsulfured molasses",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 tablespoon dark unsulfured molasses"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2-3 slices of old brioche",
-  "expected": {
-    "item": "old brioche",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "old brioche",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "old brioche",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

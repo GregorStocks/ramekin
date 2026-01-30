@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup cream cheese (softened (I use light))",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened (I use light"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened (I use light"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened (I use light"
+    }
   }
 }

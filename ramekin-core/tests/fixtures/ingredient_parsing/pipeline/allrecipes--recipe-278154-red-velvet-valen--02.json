@@ -1,13 +1,25 @@
 {
   "raw": "0.75 cup unsalted butter, softened",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 medium carrots, peeled into ribbons with a vegetable peeler",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "peeled into ribbons with a vegetable peeler"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled into ribbons with a vegetable peeler"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled into ribbons with a vegetable peeler"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces reduced-fat&nbsp;cream cheese",
-  "expected": {
-    "item": "reduced-fat cream cheese",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "reduced-fat cream cheese",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "reduced-fat cream cheese",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

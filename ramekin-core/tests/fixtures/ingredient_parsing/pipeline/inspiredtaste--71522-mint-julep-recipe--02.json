@@ -1,17 +1,37 @@
 {
   "raw": "1 ounce simple syrup, or more to taste (2 tablespoons)",
-  "expected": {
-    "item": "simple syrup",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "simple syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "or more to taste"
+    },
+    "parse_ingredients": {
+      "item": "simple syrup",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Chopped chives or other herbs (basil, parsley, etc.)",
-  "expected": {
-    "item": "Chopped chives or other herbs (basil, parsley, etc.)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chopped chives or other herbs (basil, parsley, etc.)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chopped chives or other herbs (basil, parsley, etc.)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

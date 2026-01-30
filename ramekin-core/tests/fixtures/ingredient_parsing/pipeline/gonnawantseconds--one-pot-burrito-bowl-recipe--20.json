@@ -1,8 +1,15 @@
 {
   "raw": "shredded lettuce or shredded cabbage",
-  "expected": {
-    "item": "shredded lettuce or shredded cabbage",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded lettuce or shredded cabbage",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded lettuce or shredded cabbage",
+      "measurements": [],
+      "note": null
+    }
   }
 }

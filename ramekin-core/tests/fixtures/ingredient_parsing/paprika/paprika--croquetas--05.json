@@ -1,21 +1,41 @@
 {
   "raw": "1/2 medium yellow onion (4 ounces; 113 g), finely minced",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "medium"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "113",
-        "unit": "g"
-      }
-    ],
-    "note": "finely minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "medium"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    }
   }
 }

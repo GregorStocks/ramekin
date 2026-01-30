@@ -1,13 +1,25 @@
 {
   "raw": "2 1/4 cups almond flour or very finely ground almonds  (sifted)",
-  "expected": {
-    "item": "almond flour or very finely ground almonds",
-    "measurements": [
-      {
-        "amount": "2 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "almond flour or very finely ground almonds",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    },
+    "enrich_metric_weights": {
+      "item": "almond flour or very finely ground almonds",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "8 large lemons, divided&amp;nbsp;",
-  "expected": {
-    "item": "lemons",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "large"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemons",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "lemons",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "large"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

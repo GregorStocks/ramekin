@@ -1,13 +1,25 @@
 {
   "raw": "6  medium russet potatoes (these need to be the same size)",
-  "expected": {
-    "item": "russet potatoes (these need to be the same size)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "russet potatoes (these need to be the same size)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "russet potatoes (these need to be the same size)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

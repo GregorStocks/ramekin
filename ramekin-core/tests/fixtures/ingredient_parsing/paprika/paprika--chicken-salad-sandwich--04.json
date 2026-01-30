@@ -1,13 +1,25 @@
 {
   "raw": "4 whole sprigs of tarragon plus 1 tablespoon minced fresh tarragon leaves, divided",
-  "expected": {
-    "item": "whole sprigs of tarragon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "plus 1 tablespoon minced fresh tarragon leaves, divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole sprigs of tarragon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 tablespoon minced fresh tarragon leaves, divided"
+    },
+    "parse_ingredients": {
+      "item": "whole sprigs of tarragon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "plus 1 tablespoon minced fresh tarragon leaves, divided"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 potatoes, peeled",
-  "expected": {
-    "item": "potatoes",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

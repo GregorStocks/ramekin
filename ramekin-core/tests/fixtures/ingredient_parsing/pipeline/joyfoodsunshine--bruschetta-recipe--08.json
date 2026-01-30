@@ -1,13 +1,25 @@
 {
   "raw": "1  loaf bread ((French, Italian, sour dough, etc.))",
-  "expected": {
-    "item": "loaf bread (French, Italian, sour dough, etc.)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "loaf bread (French, Italian, sour dough, etc.)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "loaf bread (French, Italian, sour dough, etc.)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

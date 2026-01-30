@@ -1,13 +1,25 @@
 {
   "raw": "4 cups water ((more to adjust, for porridge consistency))",
-  "expected": {
-    "item": "water (more to adjust, for porridge consistency)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water (more to adjust, for porridge consistency)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water (more to adjust, for porridge consistency)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

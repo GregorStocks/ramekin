@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon fresh thyme ((stems removed, leaves chopped))",
-  "expected": {
-    "item": "fresh thyme",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "stems removed, leaves chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "stems removed, leaves chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "stems removed, leaves chopped"
+    }
   }
 }

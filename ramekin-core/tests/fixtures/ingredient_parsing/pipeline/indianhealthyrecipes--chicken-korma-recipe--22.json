@@ -1,13 +1,25 @@
 {
   "raw": "1½ teaspoon coriander powder ((ground coriander))",
-  "expected": {
-    "item": "coriander powder",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "ground coriander"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coriander powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "ground coriander"
+    },
+    "enrich_metric_weights": {
+      "item": "coriander powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "ground coriander"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 Tablespoons coarse ground Coffee ((use a roast suitable for espresso, the grind the same as for a french press))",
-  "expected": {
-    "item": "coarse ground Coffee (use a roast suitable for espresso, the grind the same as for a french press)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarse ground Coffee (use a roast suitable for espresso, the grind the same as for a french press)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarse ground Coffee (use a roast suitable for espresso, the grind the same as for a french press)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

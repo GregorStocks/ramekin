@@ -1,8 +1,15 @@
 {
   "raw": "napa cabbage ((or lettuce, for lining steamer))",
-  "expected": {
-    "item": "napa cabbage (or lettuce, for lining steamer)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "napa cabbage (or lettuce, for lining steamer)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "napa cabbage (or lettuce, for lining steamer)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

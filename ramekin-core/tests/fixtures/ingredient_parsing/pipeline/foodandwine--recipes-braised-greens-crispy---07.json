@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds curly kale (about 4 bunches), stemmed and torn (about 32 loosely packed cups)",
-  "expected": {
-    "item": "curly kale , stemmed and torn",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "4",
-        "unit": "bunch"
-      }
-    ],
-    "note": "about 32 loosely packed cups"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "curly kale , stemmed and torn",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "bunch"
+        }
+      ],
+      "note": "about 32 loosely packed cups"
+    },
+    "enrich_metric_weights": {
+      "item": "curly kale , stemmed and torn",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "bunch"
+        }
+      ],
+      "note": "about 32 loosely packed cups"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "½ cup large carrot, peeled and minced",
-  "expected": {
-    "item": "large carrot",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "peeled and minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "large carrot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and minced"
+    },
+    "enrich_metric_weights": {
+      "item": "large carrot",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and minced"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Toppings: cinnamon (dried fruit, fresh fruit, nuts)",
-  "expected": {
-    "item": "Toppings: cinnamon",
-    "measurements": [],
-    "note": "dried fruit, fresh fruit, nuts"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Toppings: cinnamon",
+      "measurements": [],
+      "note": "dried fruit, fresh fruit, nuts"
+    },
+    "enrich_metric_weights": {
+      "item": "Toppings: cinnamon",
+      "measurements": [],
+      "note": "dried fruit, fresh fruit, nuts"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Cooked rice",
-  "expected": {
-    "item": "Cooked rice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cooked rice",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cooked rice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

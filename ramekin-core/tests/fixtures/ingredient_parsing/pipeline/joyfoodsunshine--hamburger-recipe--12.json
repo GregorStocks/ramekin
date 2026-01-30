@@ -1,8 +1,15 @@
 {
   "raw": "Homemade Hamburger buns",
-  "expected": {
-    "item": "Homemade Hamburger buns",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Homemade Hamburger buns",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Homemade Hamburger buns",
+      "measurements": [],
+      "note": null
+    }
   }
 }

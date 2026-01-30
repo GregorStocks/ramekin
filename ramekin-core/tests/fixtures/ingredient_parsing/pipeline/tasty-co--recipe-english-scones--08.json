@@ -1,8 +1,15 @@
 {
   "raw": "jam, as needed",
-  "expected": {
-    "item": "jam",
-    "measurements": [],
-    "note": "as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jam",
+      "measurements": [],
+      "note": "as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "jam",
+      "measurements": [],
+      "note": "as needed"
+    }
   }
 }

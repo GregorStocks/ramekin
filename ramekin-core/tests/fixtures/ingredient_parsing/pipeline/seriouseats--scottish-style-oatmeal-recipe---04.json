@@ -1,8 +1,15 @@
 {
   "raw": "Unsalted butter or cream, for serving (optional)",
-  "expected": {
-    "item": "Unsalted butter or cream, for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Unsalted butter or cream, for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Unsalted butter or cream, for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

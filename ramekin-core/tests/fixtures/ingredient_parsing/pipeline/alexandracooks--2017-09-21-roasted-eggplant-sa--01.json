@@ -1,17 +1,33 @@
 {
   "raw": "2 to 3&nbsp;small-ish eggplant (about 2 to 3 pounds)",
-  "expected": {
-    "item": "small-ish eggplant",
-    "measurements": [
-      {
-        "amount": "2 to 3",
-        "unit": null
-      },
-      {
-        "amount": "2 to 3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "small-ish eggplant",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": null
+        },
+        {
+          "amount": "2 to 3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "small-ish eggplant",
+      "measurements": [
+        {
+          "amount": "2 to 3",
+          "unit": null
+        },
+        {
+          "amount": "2 to 3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

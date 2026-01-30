@@ -1,13 +1,25 @@
 {
   "raw": "2 cups potatoes (peel &amp;amp; cube to ¾ inch (2 large) (or sweet potatoes))",
-  "expected": {
-    "item": "potatoes (peel & cube to 3/4 inch (2 large) (or sweet potatoes)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "potatoes (peel & cube to 3/4 inch (2 large) (or sweet potatoes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "potatoes (peel & cube to 3/4 inch (2 large) (or sweet potatoes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

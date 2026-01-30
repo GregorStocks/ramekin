@@ -1,8 +1,15 @@
 {
   "raw": "(optional) Simple Syrup (, to taste)",
-  "expected": {
-    "item": "Simple Syrup (, to taste)",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Simple Syrup (, to taste)",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Simple Syrup (, to taste)",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

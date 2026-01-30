@@ -1,13 +1,29 @@
 {
   "raw": "29 ounce diced tomatoes (two 14.5 cans, undrained)",
-  "expected": {
-    "item": "diced tomatoes",
-    "measurements": [
-      {
-        "amount": "29",
-        "unit": "oz"
-      }
-    ],
-    "note": "two 14.5 cans, undrained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced tomatoes",
+      "measurements": [
+        {
+          "amount": "29",
+          "unit": "oz"
+        }
+      ],
+      "note": "two 14.5 cans, undrained"
+    },
+    "enrich_metric_weights": {
+      "item": "diced tomatoes",
+      "measurements": [
+        {
+          "amount": "29",
+          "unit": "oz"
+        },
+        {
+          "amount": "822",
+          "unit": "g"
+        }
+      ],
+      "note": "two 14.5 cans, undrained"
+    }
   }
 }

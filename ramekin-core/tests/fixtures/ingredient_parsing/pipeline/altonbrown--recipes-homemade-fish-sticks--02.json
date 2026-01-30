@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups panko breadcrumbs, divided",
-  "expected": {
-    "item": "panko breadcrumbs",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "panko breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "panko breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "4 Tbsp (56g) butter, (at room temperature)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "56",
-        "unit": "g"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "56",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "56",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

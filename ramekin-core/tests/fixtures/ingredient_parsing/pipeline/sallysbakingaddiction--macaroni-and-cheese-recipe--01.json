@@ -1,13 +1,25 @@
 {
   "raw": "12 slices uncooked bacon",
-  "expected": {
-    "item": "uncooked bacon",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "uncooked bacon",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "uncooked bacon",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "zest from 2 regular limes or 4 key limes",
-  "expected": {
-    "item": "zest from 2 regular limes or 4 key limes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zest from 2 regular limes or 4 key limes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "zest from 2 regular limes or 4 key limes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

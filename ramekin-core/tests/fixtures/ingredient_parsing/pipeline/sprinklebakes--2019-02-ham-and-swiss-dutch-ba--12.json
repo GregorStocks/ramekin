@@ -1,8 +1,15 @@
 {
   "raw": "Cherry tomatoes",
-  "expected": {
-    "item": "Cherry tomatoes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cherry tomatoes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cherry tomatoes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

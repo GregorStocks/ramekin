@@ -1,8 +1,15 @@
 {
   "raw": "Fresh dill fronds, to taste",
-  "expected": {
-    "item": "Fresh dill fronds",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh dill fronds",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "Fresh dill fronds",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 bottle sparkling white wine, chilled",
-  "expected": {
-    "item": "sparkling white wine",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sparkling white wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        }
+      ],
+      "note": "chilled"
+    },
+    "parse_ingredients": {
+      "item": "sparkling white wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

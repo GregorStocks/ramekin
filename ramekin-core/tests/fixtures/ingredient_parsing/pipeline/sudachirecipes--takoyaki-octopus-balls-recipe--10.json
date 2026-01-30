@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
-  "expected": {
-    "item": "Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Japanese light soy sauce (usukuchi shoyu) (or regular Japanese soy sauce)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

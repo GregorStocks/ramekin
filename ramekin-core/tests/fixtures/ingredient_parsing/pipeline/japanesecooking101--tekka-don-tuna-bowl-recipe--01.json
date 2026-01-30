@@ -1,13 +1,25 @@
 {
   "raw": "1/2 lb sliced tuna, Sashimi grade",
-  "expected": {
-    "item": "sliced tuna, Sashimi grade",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced tuna, Sashimi grade",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced tuna, Sashimi grade",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

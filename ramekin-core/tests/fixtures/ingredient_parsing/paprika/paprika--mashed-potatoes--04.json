@@ -1,8 +1,15 @@
 {
   "raw": "Butter",
-  "expected": {
-    "item": "Butter",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Butter",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Butter",
+      "measurements": [],
+      "note": null
+    }
   }
 }

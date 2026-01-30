@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons Madras-style curry powder, preferably Sun brand",
-  "expected": {
-    "item": "Madras-style curry powder, preferably Sun brand",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Madras-style curry powder, preferably Sun brand",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Madras-style curry powder, preferably Sun brand",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

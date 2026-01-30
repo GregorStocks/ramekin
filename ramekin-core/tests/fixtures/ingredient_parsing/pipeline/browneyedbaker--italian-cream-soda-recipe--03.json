@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons Torani chocolate syrup (or flavor of your choice)",
-  "expected": {
-    "item": "Torani chocolate syrup (or flavor of your choice)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Torani chocolate syrup (or flavor of your choice)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Torani chocolate syrup (or flavor of your choice)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

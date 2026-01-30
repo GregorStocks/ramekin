@@ -1,8 +1,15 @@
 {
   "raw": "Lemon wedges (for serving)",
-  "expected": {
-    "item": "Lemon wedges",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lemon wedges",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Lemon wedges",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

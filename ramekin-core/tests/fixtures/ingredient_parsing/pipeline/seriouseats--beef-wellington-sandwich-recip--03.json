@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (60 ml) Dijon mustard",
-  "expected": {
-    "item": "Dijon mustard",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "60",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dijon mustard",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

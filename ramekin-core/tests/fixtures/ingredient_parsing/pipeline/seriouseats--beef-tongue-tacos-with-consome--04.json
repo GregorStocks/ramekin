@@ -1,21 +1,41 @@
 {
   "raw": "2 large celery sticks (3 1/2 ounces; 100 g), halved crosswise",
-  "expected": {
-    "item": "celery sticks",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "3 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "halved crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery sticks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "halved crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "celery sticks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "halved crosswise"
+    }
   }
 }

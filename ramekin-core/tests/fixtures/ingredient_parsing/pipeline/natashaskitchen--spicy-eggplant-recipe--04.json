@@ -1,13 +1,25 @@
 {
   "raw": "2-3  medium/large jalapenos (or to taste, seeded and minced)",
-  "expected": {
-    "item": "medium/large jalapenos",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": null
-      }
-    ],
-    "note": "or to taste, seeded and minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium/large jalapenos",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "or to taste, seeded and minced"
+    },
+    "parse_ingredients": {
+      "item": "medium/large jalapenos",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": null
+        }
+      ],
+      "note": "or to taste, seeded and minced"
+    }
   }
 }

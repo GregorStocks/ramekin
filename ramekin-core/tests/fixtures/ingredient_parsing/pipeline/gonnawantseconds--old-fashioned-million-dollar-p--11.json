@@ -1,13 +1,25 @@
 {
   "raw": "6-8  maraschino cherries",
-  "expected": {
-    "item": "maraschino cherries",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "maraschino cherries",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "maraschino cherries",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

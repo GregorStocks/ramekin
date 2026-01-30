@@ -1,17 +1,33 @@
 {
   "raw": "2 cups (480) homemade chicken stock or store-bought low-sodium chicken broth",
-  "expected": {
-    "item": "homemade chicken stock or store-bought low-sodium chicken broth",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "480",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "homemade chicken stock or store-bought low-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "480",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "homemade chicken stock or store-bought low-sodium chicken broth",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "480",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  corn tortillas (sliced into strips)",
-  "expected": {
-    "item": "corn tortillas",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "sliced into strips"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn tortillas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into strips"
+    },
+    "parse_ingredients": {
+      "item": "corn tortillas",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into strips"
+    }
   }
 }

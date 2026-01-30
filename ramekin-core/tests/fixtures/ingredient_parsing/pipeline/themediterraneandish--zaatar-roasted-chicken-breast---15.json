@@ -1,13 +1,25 @@
 {
   "raw": "1/2 large lemon, sliced",
-  "expected": {
-    "item": "lemon",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "large"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup plus 1 tablespoon unsalted sunflower kernels, divided",
-  "expected": {
-    "item": "1 cup plus 1 tablespoon unsalted sunflower kernels, divided",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon unsalted sunflower kernels, divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 cup plus 1 tablespoon unsalted sunflower kernels, divided",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon unsalted sunflower kernels, divided"
+    },
+    "enrich_metric_weights": {
+      "item": "1 cup plus 1 tablespoon unsalted sunflower kernels, divided",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon unsalted sunflower kernels, divided"
+    }
   }
 }

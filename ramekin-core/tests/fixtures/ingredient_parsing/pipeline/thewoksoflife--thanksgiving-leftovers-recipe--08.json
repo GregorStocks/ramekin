@@ -1,13 +1,25 @@
 {
   "raw": "1  egg ((beaten with 1 tablespoon water))",
-  "expected": {
-    "item": "egg",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "beaten with 1 tablespoon water"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten with 1 tablespoon water"
+    },
+    "enrich_metric_weights": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten with 1 tablespoon water"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 20- oz can Berry pie filling",
-  "expected": {
-    "item": "20- oz can Berry pie filling",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "20- oz can Berry pie filling",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "20- oz can Berry pie filling",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

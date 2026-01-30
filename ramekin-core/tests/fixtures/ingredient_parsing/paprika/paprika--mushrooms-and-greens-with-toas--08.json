@@ -1,8 +1,15 @@
 {
   "raw": "Coarse salt and freshly ground black pepper",
-  "expected": {
-    "item": "Coarse salt and freshly ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Coarse salt and freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Coarse salt and freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

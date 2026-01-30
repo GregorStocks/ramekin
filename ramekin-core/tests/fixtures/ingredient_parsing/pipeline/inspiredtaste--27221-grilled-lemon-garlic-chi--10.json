@@ -1,8 +1,15 @@
 {
   "raw": "Parmigiano-Reggiano or Grana Padano cheese for serving, optional",
-  "expected": {
-    "item": "Parmigiano-Reggiano or Grana Padano cheese for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Parmigiano-Reggiano or Grana Padano cheese for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Parmigiano-Reggiano or Grana Padano cheese for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

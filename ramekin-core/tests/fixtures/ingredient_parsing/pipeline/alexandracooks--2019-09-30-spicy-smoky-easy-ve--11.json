@@ -1,13 +1,25 @@
 {
   "raw": "1 cup bulgur or quinoa, see notes above",
-  "expected": {
-    "item": "bulgur or quinoa, see notes above",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bulgur or quinoa, see notes above",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bulgur or quinoa, see notes above",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

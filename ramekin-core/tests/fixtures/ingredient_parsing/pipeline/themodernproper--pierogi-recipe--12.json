@@ -1,8 +1,15 @@
 {
   "raw": "Cottage cheese, for serving (optional)",
-  "expected": {
-    "item": "Cottage cheese, for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cottage cheese, for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Cottage cheese, for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

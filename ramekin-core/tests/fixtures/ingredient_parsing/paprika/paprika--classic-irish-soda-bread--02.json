@@ -1,17 +1,33 @@
 {
   "raw": "3 cups (15 ounces/425 grams) bleached all-purpose flour, plus more for work surface",
-  "expected": {
-    "item": "bleached all-purpose flour",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": "plus more for work surface"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bleached all-purpose flour",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "plus more for work surface"
+    },
+    "parse_ingredients": {
+      "item": "bleached all-purpose flour",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "plus more for work surface"
+    }
   }
 }

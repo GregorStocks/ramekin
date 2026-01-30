@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup frozen chopped broccoli, thawed",
-  "expected": {
-    "item": "frozen chopped broccoli",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen chopped broccoli",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen chopped broccoli",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

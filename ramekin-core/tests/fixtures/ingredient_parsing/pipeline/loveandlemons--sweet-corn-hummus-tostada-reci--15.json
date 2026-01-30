@@ -1,8 +1,15 @@
 {
   "raw": "jalapeño slices, optional",
-  "expected": {
-    "item": "jalapeño slices",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeño slices",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeño slices",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

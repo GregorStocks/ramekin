@@ -1,8 +1,15 @@
 {
   "raw": "Ice cubes, for serving",
-  "expected": {
-    "item": "Ice cubes",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ice cubes",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Ice cubes",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

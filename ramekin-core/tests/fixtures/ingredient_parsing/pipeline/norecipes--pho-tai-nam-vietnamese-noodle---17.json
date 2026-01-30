@@ -1,8 +1,15 @@
 {
   "raw": "lime",
-  "expected": {
-    "item": "lime",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lime",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lime",
+      "measurements": [],
+      "note": null
+    }
   }
 }

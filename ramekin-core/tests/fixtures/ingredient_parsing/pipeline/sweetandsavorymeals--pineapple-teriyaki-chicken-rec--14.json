@@ -1,13 +1,25 @@
 {
   "raw": "3  green onions (diced)",
-  "expected": {
-    "item": "green onions",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "green onions",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

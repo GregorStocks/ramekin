@@ -1,8 +1,15 @@
 {
   "raw": "cooked rice and orange slices ((to serve))",
-  "expected": {
-    "item": "cooked rice and orange slices (to serve)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked rice and orange slices (to serve)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked rice and orange slices (to serve)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

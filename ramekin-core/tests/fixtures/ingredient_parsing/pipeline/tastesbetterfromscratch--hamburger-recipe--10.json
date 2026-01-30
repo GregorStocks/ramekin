@@ -1,13 +1,25 @@
 {
   "raw": "6 slices American cheese* (, or your favorite cheese)",
-  "expected": {
-    "item": "American cheese* (, or your favorite cheese)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "American cheese* (, or your favorite cheese)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "American cheese* (, or your favorite cheese)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

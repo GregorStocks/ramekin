@@ -1,13 +1,25 @@
 {
   "raw": "2 small bell peppers (seeded and diced)",
-  "expected": {
-    "item": "bell peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": "seeded and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "seeded and diced"
+    }
   }
 }

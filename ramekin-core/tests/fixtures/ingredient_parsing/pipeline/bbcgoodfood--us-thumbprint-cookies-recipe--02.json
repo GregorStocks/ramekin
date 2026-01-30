@@ -1,13 +1,25 @@
 {
   "raw": "⅔ cup powdered sugar plus about 2 tbsp for dusting",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus about 2 tbsp for dusting"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus about 2 tbsp for dusting"
+    },
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus about 2 tbsp for dusting"
+    }
   }
 }

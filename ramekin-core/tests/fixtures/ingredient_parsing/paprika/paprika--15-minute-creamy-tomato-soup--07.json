@@ -1,17 +1,33 @@
 {
   "raw": "2 (28-ounce) cans whole peeled tomatoes packed in juice",
-  "expected": {
-    "item": "whole peeled tomatoes packed in juice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole peeled tomatoes packed in juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole peeled tomatoes packed in juice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

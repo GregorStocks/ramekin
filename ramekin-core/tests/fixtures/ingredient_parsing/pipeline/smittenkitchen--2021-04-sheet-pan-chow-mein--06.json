@@ -1,8 +1,15 @@
 {
   "raw": "A 250-gram or 8.8-ounce package dried thin egg noodles",
-  "expected": {
-    "item": "A 250-gram or 8.8-ounce package dried thin egg noodles",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "A 250-gram or 8.8-ounce package dried thin egg noodles",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "A 250-gram or 8.8-ounce package dried thin egg noodles",
+      "measurements": [],
+      "note": null
+    }
   }
 }

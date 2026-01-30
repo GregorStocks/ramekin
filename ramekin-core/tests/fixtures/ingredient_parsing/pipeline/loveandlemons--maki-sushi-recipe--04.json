@@ -1,13 +1,25 @@
 {
   "raw": "½ cup chopped roasted carrots (about ¾ cup raw carrots)",
-  "expected": {
-    "item": "chopped roasted carrots",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "about 3/4 cup raw carrots"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped roasted carrots",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 3/4 cup raw carrots"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped roasted carrots",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 3/4 cup raw carrots"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
-  "expected": {
-    "item": "Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Slow-Cooker Pork Carnitas (or traditional Pork Carnitas)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

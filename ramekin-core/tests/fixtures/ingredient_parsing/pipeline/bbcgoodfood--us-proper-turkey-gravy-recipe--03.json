@@ -1,17 +1,33 @@
 {
   "raw": "5½ cups or 2.5 pints turkey or chicken broth",
-  "expected": {
-    "item": "turkey or chicken broth",
-    "measurements": [
-      {
-        "amount": "5 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2.5",
-        "unit": "pint"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "turkey or chicken broth",
+      "measurements": [
+        {
+          "amount": "5 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2.5",
+          "unit": "pint"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "turkey or chicken broth",
+      "measurements": [
+        {
+          "amount": "5 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2.5",
+          "unit": "pint"
+        }
+      ],
+      "note": null
+    }
   }
 }

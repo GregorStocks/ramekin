@@ -1,13 +1,25 @@
 {
   "raw": "21 sprigs fresh thyme, divided",
-  "expected": {
-    "item": "fresh thyme",
-    "measurements": [
-      {
-        "amount": "21",
-        "unit": "sprig"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "21",
+          "unit": "sprig"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme",
+      "measurements": [
+        {
+          "amount": "21",
+          "unit": "sprig"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

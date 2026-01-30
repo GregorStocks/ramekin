@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons minced garlic, divided",
-  "expected": {
-    "item": "minced garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "minced garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

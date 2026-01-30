@@ -1,13 +1,25 @@
 {
   "raw": "4       cloves",
-  "expected": {
-    "item": "4       cloves",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "clove"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "4       cloves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "4       cloves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "a splash of red wine or white wine vinegar",
-  "expected": {
-    "item": "a splash of red wine or white wine vinegar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a splash of red wine or white wine vinegar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a splash of red wine or white wine vinegar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

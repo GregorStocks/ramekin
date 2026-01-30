@@ -1,13 +1,25 @@
 {
   "raw": "4  scallions ((white part only, minced))",
-  "expected": {
-    "item": "scallions",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "white part only, minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "white part only, minced"
+    },
+    "enrich_metric_weights": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "white part only, minced"
+    }
   }
 }

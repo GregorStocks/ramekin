@@ -1,17 +1,33 @@
 {
   "raw": "1 (14.5-ounce) can whole peeled tomatoes, drained with juice reserved, crushed by hand to small pieces",
-  "expected": {
-    "item": "whole peeled tomatoes, drained with juice reserved",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "14.5",
-        "unit": null
-      }
-    ],
-    "note": "crushed by hand to small pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole peeled tomatoes, drained with juice reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14.5",
+          "unit": null
+        }
+      ],
+      "note": "crushed by hand to small pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "whole peeled tomatoes, drained with juice reserved",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "14.5",
+          "unit": null
+        }
+      ],
+      "note": "crushed by hand to small pieces"
+    }
   }
 }

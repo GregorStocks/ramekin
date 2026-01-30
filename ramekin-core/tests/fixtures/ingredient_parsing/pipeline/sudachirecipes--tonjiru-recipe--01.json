@@ -1,13 +1,25 @@
 {
   "raw": "200 g slab skinless pork belly (chilled)",
-  "expected": {
-    "item": "slab skinless pork belly",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "slab skinless pork belly",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "chilled"
+    },
+    "parse_ingredients": {
+      "item": "slab skinless pork belly",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

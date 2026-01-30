@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup plus 2 tablespoons all-purpose flour (80 g), plus 1 cup all-purpose flour (for dredging), divided",
-  "expected": {
-    "item": "plus 2 tablespoons all-purpose flour",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "80",
-        "unit": "g"
-      }
-    ],
-    "note": "plus 1 cup all-purpose flour (for dredging), divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plus 2 tablespoons all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 1 cup all-purpose flour (for dredging), divided"
+    },
+    "parse_ingredients": {
+      "item": "plus 2 tablespoons all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "80",
+          "unit": "g"
+        }
+      ],
+      "note": "plus 1 cup all-purpose flour (for dredging), divided"
+    }
   }
 }

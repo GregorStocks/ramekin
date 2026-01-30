@@ -1,8 +1,15 @@
 {
   "raw": "Lemon or lime wedges to serve",
-  "expected": {
-    "item": "Lemon or lime wedges to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lemon or lime wedges to serve",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Lemon or lime wedges to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

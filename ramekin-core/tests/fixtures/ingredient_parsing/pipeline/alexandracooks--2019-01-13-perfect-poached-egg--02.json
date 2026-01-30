@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 tablespoons vinegar, such as white wine, white balsamic, rice, or apple cider",
-  "expected": {
-    "item": "vinegar, such as white wine, white balsamic, rice, or apple cider",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vinegar, such as white wine, white balsamic, rice, or apple cider",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vinegar, such as white wine, white balsamic, rice, or apple cider",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

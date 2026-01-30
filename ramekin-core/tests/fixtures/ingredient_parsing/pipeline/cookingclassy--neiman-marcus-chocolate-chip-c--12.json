@@ -1,17 +1,37 @@
 {
   "raw": "1 (4 oz.)  milk chocolate bar,  (chopped)",
-  "expected": {
-    "item": "milk chocolate bar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk chocolate bar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "milk chocolate bar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

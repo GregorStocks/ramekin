@@ -1,8 +1,15 @@
 {
   "raw": "shredded cheddar cheese, (for topping)",
-  "expected": {
-    "item": "shredded cheddar cheese, (for topping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded cheddar cheese, (for topping)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shredded cheddar cheese, (for topping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

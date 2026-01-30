@@ -1,13 +1,29 @@
 {
   "raw": "¾ ounce sweet vermouth, preferably Carpano Antica formula",
-  "expected": {
-    "item": "sweet vermouth, preferably Carpano Antica formula",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet vermouth, preferably Carpano Antica formula",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet vermouth, preferably Carpano Antica formula",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "21",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

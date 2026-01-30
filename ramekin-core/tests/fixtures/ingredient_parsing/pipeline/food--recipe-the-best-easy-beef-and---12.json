@@ -1,8 +1,15 @@
 {
   "raw": "hot cooked rice, for serving",
-  "expected": {
-    "item": "hot cooked rice",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot cooked rice",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "hot cooked rice",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

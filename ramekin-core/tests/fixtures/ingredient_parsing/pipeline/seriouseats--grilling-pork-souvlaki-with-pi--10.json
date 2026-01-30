@@ -1,13 +1,25 @@
 {
   "raw": "1 English cucumber, peeled and grated",
-  "expected": {
-    "item": "English cucumber",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "English cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and grated"
+    },
+    "enrich_metric_weights": {
+      "item": "English cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and grated"
+    }
   }
 }

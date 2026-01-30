@@ -1,8 +1,15 @@
 {
   "raw": "Canola or olive oil cooking spray",
-  "expected": {
-    "item": "Canola or olive oil cooking spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Canola or olive oil cooking spray",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Canola or olive oil cooking spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

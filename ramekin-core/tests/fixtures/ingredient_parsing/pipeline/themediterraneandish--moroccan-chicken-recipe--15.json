@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup/ 47 g chopped dry apricots",
-  "expected": {
-    "item": "cup/ 47 g chopped dry apricots",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cup/ 47 g chopped dry apricots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cup/ 47 g chopped dry apricots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

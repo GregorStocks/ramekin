@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons cinnamon (ground)",
-  "expected": {
-    "item": "cinnamon",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "ground"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cinnamon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "ground"
+    },
+    "enrich_metric_weights": {
+      "item": "cinnamon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "ground"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "crushed red pepper, to taste",
-  "expected": {
-    "item": "crushed red pepper",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crushed red pepper",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "crushed red pepper",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

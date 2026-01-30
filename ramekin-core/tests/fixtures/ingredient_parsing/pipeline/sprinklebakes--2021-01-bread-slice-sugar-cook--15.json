@@ -1,8 +1,15 @@
 {
   "raw": "lemon starburst candies",
-  "expected": {
-    "item": "lemon starburst candies",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon starburst candies",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon starburst candies",
+      "measurements": [],
+      "note": null
+    }
   }
 }

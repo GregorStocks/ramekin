@@ -1,13 +1,25 @@
 {
   "raw": "1 to 1 1/2 cups cherry or grape tomatoes",
-  "expected": {
-    "item": "1/2 cups cherry or grape tomatoes",
-    "measurements": [
-      {
-        "amount": "1 to 1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1/2 cups cherry or grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1/2 cups cherry or grape tomatoes",
+      "measurements": [
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons vegetable oil (divided use)",
-  "expected": {
-    "item": "vegetable oil",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided use"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vegetable oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided use"
+    },
+    "parse_ingredients": {
+      "item": "vegetable oil",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided use"
+    }
   }
 }

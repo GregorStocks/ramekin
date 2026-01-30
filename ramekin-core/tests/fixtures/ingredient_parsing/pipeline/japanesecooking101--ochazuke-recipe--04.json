@@ -1,8 +1,15 @@
 {
   "raw": "Salmon Flakes",
-  "expected": {
-    "item": "Salmon Flakes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Salmon Flakes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Salmon Flakes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

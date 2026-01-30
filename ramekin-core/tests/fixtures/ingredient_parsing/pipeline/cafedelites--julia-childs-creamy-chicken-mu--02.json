@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon lemon juice (original recipe: 1/2 teaspoon)",
-  "expected": {
-    "item": "lemon juice (original recipe: 1/2 teaspoon)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice (original recipe: 1/2 teaspoon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lemon juice (original recipe: 1/2 teaspoon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup cake flour* (sifted)",
-  "expected": {
-    "item": "cake flour*",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cake flour*",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    },
+    "parse_ingredients": {
+      "item": "cake flour*",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

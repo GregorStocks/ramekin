@@ -1,8 +1,15 @@
 {
   "raw": "cooked Japanese white rice",
-  "expected": {
-    "item": "cooked Japanese white rice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked Japanese white rice",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooked Japanese white rice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "8 tablespoons extra-virgin olive oil, divided",
-  "expected": {
-    "item": "extra-virgin olive oil",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "extra-virgin olive oil",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

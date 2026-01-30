@@ -1,17 +1,33 @@
 {
   "raw": "5 Cornish game hens (20 to 24 ounces each)",
-  "expected": {
-    "item": "Cornish game hens",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      },
-      {
-        "amount": "20 to 24",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cornish game hens",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "20 to 24",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cornish game hens",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        },
+        {
+          "amount": "20 to 24",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

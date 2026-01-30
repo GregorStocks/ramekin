@@ -1,17 +1,33 @@
 {
   "raw": "1 tsp (about 2 g) sweet Spanish paprika",
-  "expected": {
-    "item": "sweet Spanish paprika",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      },
-      {
-        "amount": "2",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet Spanish paprika",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet Spanish paprika",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

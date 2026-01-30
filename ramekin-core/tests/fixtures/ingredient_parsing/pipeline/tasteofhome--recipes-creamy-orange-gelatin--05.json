@@ -1,17 +1,33 @@
 {
   "raw": "2 cans (11 ounces each) mandarin oranges, drained",
-  "expected": {
-    "item": "mandarin oranges",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "11",
-        "unit": "oz each"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mandarin oranges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "11",
+          "unit": "oz each"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "mandarin oranges",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "11",
+          "unit": "oz each"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

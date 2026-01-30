@@ -1,13 +1,29 @@
 {
   "raw": "7 ounces Ito Konnyaku noodles, shirataki, yam, or cellophane noodles (, cooked if needed, drained &amp;amp; rinsed)",
-  "expected": {
-    "item": "Ito Konnyaku noodles, shirataki, yam, or cellophane noodles",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked if needed, drained & rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Ito Konnyaku noodles, shirataki, yam, or cellophane noodles",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked if needed, drained & rinsed"
+    },
+    "parse_ingredients": {
+      "item": "Ito Konnyaku noodles, shirataki, yam, or cellophane noodles",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked if needed, drained & rinsed"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/4 small jicama ((cut into brunoise, 1/8\" cubes))",
-  "expected": {
-    "item": "jicama",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "small"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jicama",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "jicama",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "small"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

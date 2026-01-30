@@ -1,8 +1,15 @@
 {
   "raw": "salt and white pepper",
-  "expected": {
-    "item": "salt and white pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt and white pepper",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt and white pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tablespoons chopped pickled jalapeños",
-  "expected": {
-    "item": "chopped pickled jalapeños",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped pickled jalapeños",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped pickled jalapeños",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

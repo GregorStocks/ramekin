@@ -1,8 +1,15 @@
 {
   "raw": "Crème fraîche, for serving",
-  "expected": {
-    "item": "Crème fraîche",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crème fraîche",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Crème fraîche",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

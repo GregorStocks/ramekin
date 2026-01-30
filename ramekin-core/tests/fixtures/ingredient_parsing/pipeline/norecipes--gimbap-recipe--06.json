@@ -1,17 +1,33 @@
 {
   "raw": "200 grams canned tuna ((1 large can))",
-  "expected": {
-    "item": "canned tuna",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canned tuna",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "canned tuna",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

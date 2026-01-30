@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups light brown sugar (lightly packed)",
-  "expected": {
-    "item": "light brown sugar",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "lightly packed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly packed"
+    },
+    "enrich_metric_weights": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly packed"
+    }
   }
 }

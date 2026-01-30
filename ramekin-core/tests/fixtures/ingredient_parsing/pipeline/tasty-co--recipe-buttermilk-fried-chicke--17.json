@@ -1,8 +1,15 @@
 {
   "raw": "softened butter, for buns",
-  "expected": {
-    "item": "softened butter, for buns",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "softened butter, for buns",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "softened butter, for buns",
+      "measurements": [],
+      "note": null
+    }
   }
 }

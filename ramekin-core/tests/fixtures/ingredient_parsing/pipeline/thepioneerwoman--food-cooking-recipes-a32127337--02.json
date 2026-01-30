@@ -1,8 +1,15 @@
 {
   "raw": "White candy melts, melted",
-  "expected": {
-    "item": "White candy melts",
-    "measurements": [],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "White candy melts",
+      "measurements": [],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "White candy melts",
+      "measurements": [],
+      "note": "melted"
+    }
   }
 }

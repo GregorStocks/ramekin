@@ -1,13 +1,25 @@
 {
   "raw": "6  cloves ((lavang))",
-  "expected": {
-    "item": "(lavang)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "clove"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "(lavang)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "(lavang)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    }
   }
 }

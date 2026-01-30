@@ -1,13 +1,25 @@
 {
   "raw": "3/4 teaspoon table salt",
-  "expected": {
-    "item": "table salt",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "table salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "table salt",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

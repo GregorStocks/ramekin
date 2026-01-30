@@ -1,17 +1,33 @@
 {
   "raw": "4 tilapia fillets (6 ounces each)",
-  "expected": {
-    "item": "tilapia fillets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tilapia fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tilapia fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

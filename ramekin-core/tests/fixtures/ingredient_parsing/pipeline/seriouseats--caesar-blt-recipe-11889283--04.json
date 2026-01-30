@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons finely grated Parmigiano-Reggiano cheese, divided",
-  "expected": {
-    "item": "finely grated Parmigiano-Reggiano cheese",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely grated Parmigiano-Reggiano cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "finely grated Parmigiano-Reggiano cheese",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups peas ((fresh or frozen))",
-  "expected": {
-    "item": "peas",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "fresh or frozen"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peas",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "fresh or frozen"
+    },
+    "enrich_metric_weights": {
+      "item": "peas",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "fresh or frozen"
+    }
   }
 }

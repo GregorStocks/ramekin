@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 lbs. chicken breast (chopped into bite-size pieces)",
-  "expected": {
-    "item": "chicken breast",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "chopped into bite-size pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped into bite-size pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "chopped into bite-size pieces"
+    }
   }
 }

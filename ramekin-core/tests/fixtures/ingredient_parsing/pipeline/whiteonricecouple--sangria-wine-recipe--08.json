@@ -1,8 +1,15 @@
 {
   "raw": "(optional) extra slices of fruit for garnish",
-  "expected": {
-    "item": "extra slices of fruit for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra slices of fruit for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "extra slices of fruit for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

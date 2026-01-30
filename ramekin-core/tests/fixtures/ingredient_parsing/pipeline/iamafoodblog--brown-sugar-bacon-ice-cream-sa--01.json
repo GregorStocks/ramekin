@@ -1,13 +1,25 @@
 {
   "raw": "8 slices of bacon, chopped as finely as possible",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "slice"
-      }
-    ],
-    "note": "chopped as finely as possible"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped as finely as possible"
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped as finely as possible"
+    }
   }
 }

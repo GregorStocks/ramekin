@@ -1,8 +1,15 @@
 {
   "raw": "Cooked chickpeas",
-  "expected": {
-    "item": "Cooked chickpeas",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cooked chickpeas",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cooked chickpeas",
+      "measurements": [],
+      "note": null
+    }
   }
 }

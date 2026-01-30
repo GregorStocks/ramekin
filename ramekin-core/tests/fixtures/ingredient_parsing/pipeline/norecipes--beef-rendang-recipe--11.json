@@ -1,13 +1,25 @@
 {
   "raw": "4  kaffir lime leaves ((or 1 teaspoon Makrut lime zest))",
-  "expected": {
-    "item": "kaffir lime leaves (or 1 teaspoon Makrut lime zest)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kaffir lime leaves (or 1 teaspoon Makrut lime zest)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kaffir lime leaves (or 1 teaspoon Makrut lime zest)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

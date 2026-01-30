@@ -1,8 +1,15 @@
 {
   "raw": "iceberg lettuce",
-  "expected": {
-    "item": "iceberg lettuce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "iceberg lettuce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "iceberg lettuce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

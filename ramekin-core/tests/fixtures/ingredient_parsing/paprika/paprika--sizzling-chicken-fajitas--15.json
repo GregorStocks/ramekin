@@ -1,13 +1,25 @@
 {
   "raw": "1 large yellow or sweet onion, halved and sliced thin",
-  "expected": {
-    "item": "yellow or sweet onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "halved and sliced thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow or sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved and sliced thin"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow or sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved and sliced thin"
+    }
   }
 }

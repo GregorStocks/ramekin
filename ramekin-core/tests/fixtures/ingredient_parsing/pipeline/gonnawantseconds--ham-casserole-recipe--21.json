@@ -1,8 +1,15 @@
 {
   "raw": "sage leaves",
-  "expected": {
-    "item": "sage leaves",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sage leaves",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sage leaves",
+      "measurements": [],
+      "note": null
+    }
   }
 }

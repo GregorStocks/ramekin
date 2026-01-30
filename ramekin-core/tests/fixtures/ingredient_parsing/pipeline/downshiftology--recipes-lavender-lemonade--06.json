@@ -1,8 +1,15 @@
 {
   "raw": "lemon slices and fresh lavender flowers (for garnish)",
-  "expected": {
-    "item": "lemon slices and fresh lavender flowers",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon slices and fresh lavender flowers",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon slices and fresh lavender flowers",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Flaky sea salt, as need for serving",
-  "expected": {
-    "item": "Flaky sea salt",
-    "measurements": [],
-    "note": "as need for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Flaky sea salt",
+      "measurements": [],
+      "note": "as need for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Flaky sea salt",
+      "measurements": [],
+      "note": "as need for serving"
+    }
   }
 }

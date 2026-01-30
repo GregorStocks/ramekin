@@ -1,8 +1,15 @@
 {
   "raw": "condiments of choice (, pickles, burger sauce, ketchup, mustard )",
-  "expected": {
-    "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "condiments of choice (, pickles, burger sauce, ketchup, mustard",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "5 tablespoons brandy",
-  "expected": {
-    "item": "brandy",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brandy",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "brandy",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

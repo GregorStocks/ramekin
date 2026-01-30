@@ -1,13 +1,25 @@
 {
   "raw": "1 carrot, chopped small",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped small"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sliced sourdough or country bread, grilled or toasted",
-  "expected": {
-    "item": "Sliced sourdough or country bread",
-    "measurements": [],
-    "note": "grilled or toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sliced sourdough or country bread",
+      "measurements": [],
+      "note": "grilled or toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "Sliced sourdough or country bread",
+      "measurements": [],
+      "note": "grilled or toasted"
+    }
   }
 }

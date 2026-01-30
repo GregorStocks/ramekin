@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds cooked chicken (diced small)",
-  "expected": {
-    "item": "cooked chicken",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "diced small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked chicken",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced small"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked chicken",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced small"
+    }
   }
 }

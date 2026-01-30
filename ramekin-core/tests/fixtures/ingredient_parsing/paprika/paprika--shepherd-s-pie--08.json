@@ -1,8 +1,15 @@
 {
   "raw": "For the meat filling:",
-  "expected": {
-    "item": "For the meat filling:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For the meat filling:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For the meat filling:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

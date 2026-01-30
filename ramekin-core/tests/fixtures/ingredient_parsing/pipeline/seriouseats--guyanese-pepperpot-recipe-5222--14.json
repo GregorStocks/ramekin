@@ -1,17 +1,33 @@
 {
   "raw": "1/2 of a whole nutmeg (2g), grated",
-  "expected": {
-    "item": "of a whole nutmeg",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "g"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "of a whole nutmeg",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "enrich_metric_weights": {
+      "item": "of a whole nutmeg",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

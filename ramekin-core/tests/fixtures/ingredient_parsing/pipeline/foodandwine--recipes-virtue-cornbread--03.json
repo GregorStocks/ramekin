@@ -1,13 +1,25 @@
 {
   "raw": "0.75 cup fine yellow cornmeal",
-  "expected": {
-    "item": "fine yellow cornmeal",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fine yellow cornmeal",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fine yellow cornmeal",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

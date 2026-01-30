@@ -1,8 +1,15 @@
 {
   "raw": "Savory Greek Yogurt Dip",
-  "expected": {
-    "item": "Savory Greek Yogurt Dip",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Savory Greek Yogurt Dip",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Savory Greek Yogurt Dip",
+      "measurements": [],
+      "note": null
+    }
   }
 }

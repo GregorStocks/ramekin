@@ -1,13 +1,25 @@
 {
   "raw": "1 medium-size green bell pepper, chopped",
-  "expected": {
-    "item": "medium-size green bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "medium-size green bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "medium-size green bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

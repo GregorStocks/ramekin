@@ -1,8 +1,15 @@
 {
   "raw": "Buttercream frosting (optional but tasty)",
-  "expected": {
-    "item": "Buttercream frosting",
-    "measurements": [],
-    "note": "optional but tasty"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Buttercream frosting",
+      "measurements": [],
+      "note": "optional but tasty"
+    },
+    "enrich_metric_weights": {
+      "item": "Buttercream frosting",
+      "measurements": [],
+      "note": "optional but tasty"
+    }
   }
 }

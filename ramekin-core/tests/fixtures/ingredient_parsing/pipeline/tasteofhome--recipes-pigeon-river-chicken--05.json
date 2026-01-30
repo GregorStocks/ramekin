@@ -1,8 +1,15 @@
 {
   "raw": "COATING:",
-  "expected": {
-    "item": "COATING:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "COATING:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "COATING:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

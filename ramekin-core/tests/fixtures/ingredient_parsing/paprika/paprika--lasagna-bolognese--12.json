@@ -1,8 +1,15 @@
 {
   "raw": "Water as needed",
-  "expected": {
-    "item": "Water as needed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Water as needed",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Water as needed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

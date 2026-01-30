@@ -1,8 +1,15 @@
 {
   "raw": "For Par-Cooking and the Stir Fry:",
-  "expected": {
-    "item": "For Par-Cooking and the Stir Fry:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For Par-Cooking and the Stir Fry:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For Par-Cooking and the Stir Fry:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

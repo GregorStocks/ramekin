@@ -1,13 +1,25 @@
 {
   "raw": "1  shallot or 1/2 small yellow onion (diced)",
-  "expected": {
-    "item": "shallot or 1/2 small yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shallot or 1/2 small yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "shallot or 1/2 small yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

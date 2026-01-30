@@ -1,13 +1,25 @@
 {
   "raw": "Handful fresh basil leaves, torn into pieces",
-  "expected": {
-    "item": "fresh basil leaves, torn into pieces",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh basil leaves, torn into pieces",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh basil leaves, torn into pieces",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

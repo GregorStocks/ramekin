@@ -1,8 +1,15 @@
 {
   "raw": "prepared horseradish 1/4 cup",
-  "expected": {
-    "item": "prepared horseradish 1/4 cup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "prepared horseradish 1/4 cup",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "prepared horseradish 1/4 cup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

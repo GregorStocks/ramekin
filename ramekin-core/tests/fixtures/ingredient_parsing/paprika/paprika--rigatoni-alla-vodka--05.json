@@ -1,17 +1,33 @@
 {
   "raw": "1 large or 2 small shallots, minced",
-  "expected": {
-    "item": "shallots",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      },
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "shallots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        },
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

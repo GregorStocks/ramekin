@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. oyster mushrooms, roughly chopped",
-  "expected": {
-    "item": "oyster mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oyster mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "oyster mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

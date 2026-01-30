@@ -1,13 +1,25 @@
 {
   "raw": "1 cup cooked or canned chickpeas (drained and rinsed)",
-  "expected": {
-    "item": "cooked or canned chickpeas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked or canned chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "cooked or canned chickpeas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

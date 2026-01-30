@@ -1,8 +1,15 @@
 {
   "raw": "Feel free to mix and match different varieties of hummus and any veggies your heart desires!",
-  "expected": {
-    "item": "Feel free to mix and match different varieties of hummus and any veggies your heart desires!",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Feel free to mix and match different varieties of hummus and any veggies your heart desires!",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Feel free to mix and match different varieties of hummus and any veggies your heart desires!",
+      "measurements": [],
+      "note": null
+    }
   }
 }

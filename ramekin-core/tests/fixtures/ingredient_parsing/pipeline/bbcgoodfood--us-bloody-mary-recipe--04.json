@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp lemon juice plus 2 lemon slices to serve",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus 2 lemon slices to serve"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 2 lemon slices to serve"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 2 lemon slices to serve"
+    }
   }
 }

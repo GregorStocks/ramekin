@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch green onions or scallions (sliced)",
-  "expected": {
-    "item": "green onions or scallions",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions or scallions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions or scallions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

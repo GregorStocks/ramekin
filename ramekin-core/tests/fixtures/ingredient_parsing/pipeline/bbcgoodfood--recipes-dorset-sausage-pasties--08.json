@@ -1,8 +1,15 @@
 {
   "raw": "plain flour for dusting",
-  "expected": {
-    "item": "plain flour for dusting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plain flour for dusting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "plain flour for dusting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

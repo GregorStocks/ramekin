@@ -1,13 +1,25 @@
 {
   "raw": "2 medium chile peppers, such as poblano, New Mexico or Anaheim, diced",
-  "expected": {
-    "item": "chile peppers, such as poblano, New Mexico or Anaheim",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chile peppers, such as poblano, New Mexico or Anaheim",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "chile peppers, such as poblano, New Mexico or Anaheim",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

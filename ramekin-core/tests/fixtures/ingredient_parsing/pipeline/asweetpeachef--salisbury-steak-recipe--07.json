@@ -1,13 +1,25 @@
 {
   "raw": "1 lb cremini mushrooms,  (quartered (approx. 15 mushrooms))",
-  "expected": {
-    "item": "cremini mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "quartered (approx. 15 mushrooms"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered (approx. 15 mushrooms"
+    },
+    "enrich_metric_weights": {
+      "item": "cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered (approx. 15 mushrooms"
+    }
   }
 }

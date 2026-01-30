@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds sweet onions (thinly sliced)",
-  "expected": {
-    "item": "sweet onions",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet onions",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "sweet onions",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons cumin seeds, toasted and ground",
-  "expected": {
-    "item": "cumin seeds",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "toasted and ground"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cumin seeds",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "toasted and ground"
+    },
+    "parse_ingredients": {
+      "item": "cumin seeds",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "toasted and ground"
+    }
   }
 }

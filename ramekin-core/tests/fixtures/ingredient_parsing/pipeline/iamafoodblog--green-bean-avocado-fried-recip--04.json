@@ -1,13 +1,25 @@
 {
   "raw": "handful long beans or green beans, should be about 2 cups when sliced",
-  "expected": {
-    "item": "long beans or green beans",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": "should be about 2 cups when sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "long beans or green beans",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "should be about 2 cups when sliced"
+    },
+    "parse_ingredients": {
+      "item": "long beans or green beans",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "should be about 2 cups when sliced"
+    }
   }
 }

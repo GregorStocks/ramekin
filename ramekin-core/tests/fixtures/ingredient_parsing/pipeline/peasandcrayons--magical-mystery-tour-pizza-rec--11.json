@@ -1,8 +1,15 @@
 {
   "raw": "extra Pesto",
-  "expected": {
-    "item": "extra Pesto",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra Pesto",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "extra Pesto",
+      "measurements": [],
+      "note": null
+    }
   }
 }

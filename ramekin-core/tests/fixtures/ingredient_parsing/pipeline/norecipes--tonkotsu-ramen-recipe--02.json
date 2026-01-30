@@ -1,13 +1,25 @@
 {
   "raw": "1.5 pounds pork leg bone ((cut into several pieces))",
-  "expected": {
-    "item": "pork leg bone (cut into several pieces)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork leg bone (cut into several pieces)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pork leg bone (cut into several pieces)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

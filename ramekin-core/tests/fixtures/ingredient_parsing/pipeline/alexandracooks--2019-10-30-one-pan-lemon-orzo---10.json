@@ -1,8 +1,15 @@
 {
   "raw": "grated cheese, Parmesan or Fontina, see notes above",
-  "expected": {
-    "item": "grated cheese, Parmesan or Fontina, see notes above",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated cheese, Parmesan or Fontina, see notes above",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated cheese, Parmesan or Fontina, see notes above",
+      "measurements": [],
+      "note": null
+    }
   }
 }

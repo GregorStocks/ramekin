@@ -1,13 +1,29 @@
 {
   "raw": "48 ounces water",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "48",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "48",
+          "unit": "oz"
+        },
+        {
+          "amount": "1361",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "48",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

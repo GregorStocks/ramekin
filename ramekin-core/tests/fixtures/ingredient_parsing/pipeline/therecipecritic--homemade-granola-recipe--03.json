@@ -1,13 +1,25 @@
 {
   "raw": "1 cups shelled pumpkin seeds (pepitas)",
-  "expected": {
-    "item": "shelled pumpkin seeds (pepitas)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shelled pumpkin seeds (pepitas)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shelled pumpkin seeds (pepitas)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

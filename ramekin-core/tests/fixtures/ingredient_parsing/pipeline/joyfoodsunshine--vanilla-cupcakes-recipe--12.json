@@ -1,8 +1,15 @@
 {
   "raw": "homemade vanilla frosting",
-  "expected": {
-    "item": "homemade vanilla frosting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "homemade vanilla frosting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "homemade vanilla frosting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

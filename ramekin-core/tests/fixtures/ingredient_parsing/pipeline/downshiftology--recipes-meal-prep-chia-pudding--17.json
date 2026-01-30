@@ -1,8 +1,15 @@
 {
   "raw": "Cherries",
-  "expected": {
-    "item": "Cherries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cherries",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cherries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

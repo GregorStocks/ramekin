@@ -1,13 +1,25 @@
 {
   "raw": "1-2 tablespoons lemon juice (fresh squeezed)",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "fresh squeezed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh squeezed"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh squeezed"
+    }
   }
 }

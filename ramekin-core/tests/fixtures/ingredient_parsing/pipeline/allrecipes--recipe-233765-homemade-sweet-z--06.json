@@ -1,13 +1,25 @@
 {
   "raw": "2.25 cups vinegar",
-  "expected": {
-    "item": "vinegar",
-    "measurements": [
-      {
-        "amount": "2.25",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vinegar",
+      "measurements": [
+        {
+          "amount": "2.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vinegar",
+      "measurements": [
+        {
+          "amount": "2.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

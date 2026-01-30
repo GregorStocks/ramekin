@@ -1,13 +1,25 @@
 {
   "raw": "1 cup provolone (shredded)",
-  "expected": {
-    "item": "provolone",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "provolone",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "provolone",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded"
+    }
   }
 }

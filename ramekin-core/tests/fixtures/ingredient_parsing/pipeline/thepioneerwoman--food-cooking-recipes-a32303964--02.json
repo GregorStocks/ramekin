@@ -1,13 +1,25 @@
 {
   "raw": "1 c. cranberries&nbsp;(thawed if frozen)",
-  "expected": {
-    "item": "cranberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed if frozen"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cranberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed if frozen"
+    },
+    "enrich_metric_weights": {
+      "item": "cranberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed if frozen"
+    }
   }
 }

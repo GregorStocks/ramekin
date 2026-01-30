@@ -1,8 +1,15 @@
 {
   "raw": "leftover roasted chicken, shredded",
-  "expected": {
-    "item": "leftover roasted chicken",
-    "measurements": [],
-    "note": "shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "leftover roasted chicken",
+      "measurements": [],
+      "note": "shredded"
+    },
+    "parse_ingredients": {
+      "item": "leftover roasted chicken",
+      "measurements": [],
+      "note": "shredded"
+    }
   }
 }

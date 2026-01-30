@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups chopped Andes mints or Andes Crème de Menthe Baking Chips",
-  "expected": {
-    "item": "chopped Andes mints or Andes Crème de Menthe Baking Chips",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped Andes mints or Andes Crème de Menthe Baking Chips",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped Andes mints or Andes Crème de Menthe Baking Chips",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

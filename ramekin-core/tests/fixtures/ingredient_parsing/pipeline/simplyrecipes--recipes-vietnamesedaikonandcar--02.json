@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds of daikon radishes (about 2 large daikon), peeled",
-  "expected": {
-    "item": "daikon radishes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "daikon radishes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "daikon radishes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Rice or roti, for serving",
-  "expected": {
-    "item": "Rice or roti",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Rice or roti",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Rice or roti",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

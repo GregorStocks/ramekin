@@ -1,8 +1,15 @@
 {
   "raw": "Vegetable oil (or olive oil)",
-  "expected": {
-    "item": "Vegetable oil (or olive oil)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vegetable oil (or olive oil)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Vegetable oil (or olive oil)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6  large eggs (separate yolks from whites)",
-  "expected": {
-    "item": "eggs (separate yolks from whites)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "eggs (separate yolks from whites)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "eggs (separate yolks from whites)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

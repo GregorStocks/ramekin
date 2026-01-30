@@ -1,8 +1,15 @@
 {
   "raw": "gravy, (for serving)",
-  "expected": {
-    "item": "gravy",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gravy",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "gravy",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

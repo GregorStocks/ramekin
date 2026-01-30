@@ -1,13 +1,25 @@
 {
   "raw": "1 tart apple, peeled, seeded and coarsely chopped",
-  "expected": {
-    "item": "tart apple, peeled",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and coarsely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tart apple, peeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and coarsely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "tart apple, peeled",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and coarsely chopped"
+    }
   }
 }

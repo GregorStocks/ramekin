@@ -1,13 +1,29 @@
 {
   "raw": "4-5 oz goat cheese, room temperature",
-  "expected": {
-    "item": "goat cheese",
-    "measurements": [
-      {
-        "amount": "4-5",
-        "unit": "oz"
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "oz"
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "goat cheese",
+      "measurements": [
+        {
+          "amount": "4-5",
+          "unit": "oz"
+        },
+        {
+          "amount": "113-142",
+          "unit": "g"
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

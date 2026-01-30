@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces walnuts, toasted",
-  "expected": {
-    "item": "walnuts",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

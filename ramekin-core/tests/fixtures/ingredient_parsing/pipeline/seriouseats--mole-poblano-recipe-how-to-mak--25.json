@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons sugar, plus more to taste",
-  "expected": {
-    "item": "sugar",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more to taste"
+    },
+    "parse_ingredients": {
+      "item": "sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more to taste"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (60 ml) evaporated milk, plus more as needed",
-  "expected": {
-    "item": "evaporated milk",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "60",
-        "unit": "ml"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "evaporated milk",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "evaporated milk",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

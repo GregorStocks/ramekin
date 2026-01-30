@@ -1,13 +1,25 @@
 {
   "raw": "2 pound&nbsp; bacon (&nbsp;cooked until crisp, crumbled or chopped small)",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cooked until crisp, crumbled or chopped small"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked until crisp, crumbled or chopped small"
+    },
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked until crisp, crumbled or chopped small"
+    }
   }
 }

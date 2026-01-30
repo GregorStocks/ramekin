@@ -1,8 +1,15 @@
 {
   "raw": "Coarse sea salt for garnish",
-  "expected": {
-    "item": "Coarse sea salt for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coarse sea salt for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Coarse sea salt for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

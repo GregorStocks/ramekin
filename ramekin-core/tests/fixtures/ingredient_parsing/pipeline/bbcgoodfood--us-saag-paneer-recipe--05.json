@@ -1,13 +1,25 @@
 {
   "raw": "1 lb 2 oz spinach (fresh or frozen)",
-  "expected": {
-    "item": "2 oz spinach",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "fresh or frozen"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "2 oz spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or frozen"
+    },
+    "parse_ingredients": {
+      "item": "2 oz spinach",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or frozen"
+    }
   }
 }

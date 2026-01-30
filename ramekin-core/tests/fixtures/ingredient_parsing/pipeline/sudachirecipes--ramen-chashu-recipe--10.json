@@ -1,13 +1,25 @@
 {
   "raw": "150 ml Japanese soy sauce (koikuchi shoyu)",
-  "expected": {
-    "item": "Japanese soy sauce (koikuchi shoyu)",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Japanese soy sauce (koikuchi shoyu)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Japanese soy sauce (koikuchi shoyu)",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

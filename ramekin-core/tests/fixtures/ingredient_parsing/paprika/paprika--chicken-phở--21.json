@@ -1,8 +1,15 @@
 {
   "raw": "Crispy shallots, recipe follows",
-  "expected": {
-    "item": "Crispy shallots, recipe follows",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crispy shallots, recipe follows",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Crispy shallots, recipe follows",
+      "measurements": [],
+      "note": null
+    }
   }
 }

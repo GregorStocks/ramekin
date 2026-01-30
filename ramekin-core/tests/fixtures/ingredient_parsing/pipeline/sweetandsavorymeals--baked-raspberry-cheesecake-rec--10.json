@@ -1,13 +1,25 @@
 {
   "raw": "2 cups raspberries (fresh or frozen)",
-  "expected": {
-    "item": "raspberries",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "fresh or frozen"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raspberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "fresh or frozen"
+    },
+    "enrich_metric_weights": {
+      "item": "raspberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "fresh or frozen"
+    }
   }
 }

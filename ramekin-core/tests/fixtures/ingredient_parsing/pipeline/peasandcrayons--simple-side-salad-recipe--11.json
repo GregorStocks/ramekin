@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp Italian seasoning blend ((I love using Mrs. Dash’s salt-free blend))",
-  "expected": {
-    "item": "Italian seasoning blend (I love using Mrs. Dash’s salt-free blend)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Italian seasoning blend (I love using Mrs. Dash’s salt-free blend)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Italian seasoning blend (I love using Mrs. Dash’s salt-free blend)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

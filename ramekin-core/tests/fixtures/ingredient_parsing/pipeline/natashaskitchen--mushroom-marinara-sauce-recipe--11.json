@@ -1,13 +1,25 @@
 {
   "raw": "1 lb fresh mushrooms (rinsed, dried, sliced)",
-  "expected": {
-    "item": "fresh mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "rinsed, dried, sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "rinsed, dried, sliced"
+    },
+    "parse_ingredients": {
+      "item": "fresh mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "rinsed, dried, sliced"
+    }
   }
 }

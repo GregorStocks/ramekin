@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon lemon zest (from 1 lemon)",
-  "expected": {
-    "item": "lemon zest (from 1 lemon)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon zest (from 1 lemon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon zest (from 1 lemon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

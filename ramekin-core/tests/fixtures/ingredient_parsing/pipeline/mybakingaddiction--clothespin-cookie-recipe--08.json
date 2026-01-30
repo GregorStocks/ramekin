@@ -1,8 +1,15 @@
 {
   "raw": "Tiny pinch of fine sea salt",
-  "expected": {
-    "item": "Tiny pinch of fine sea salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tiny pinch of fine sea salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tiny pinch of fine sea salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds sweet potatoes, peeled and chopped (6 cups)",
-  "expected": {
-    "item": "sweet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": "peeled and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and chopped"
+    },
+    "parse_ingredients": {
+      "item": "sweet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": "peeled and chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon brown sugar (or brown sugar substitute - optional)",
-  "expected": {
-    "item": "brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or brown sugar substitute - optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or brown sugar substitute - optional"
+    },
+    "enrich_metric_weights": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or brown sugar substitute - optional"
+    }
   }
 }

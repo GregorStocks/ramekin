@@ -1,17 +1,33 @@
 {
   "raw": "1 boneless beef chuck-eye roast (about 4 pounds), trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
-  "expected": {
-    "item": "boneless beef chuck-eye roast , trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless beef chuck-eye roast , trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boneless beef chuck-eye roast , trimmed of excess fat, cut into 1 1/2-inch pieces (see note and step by step below)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

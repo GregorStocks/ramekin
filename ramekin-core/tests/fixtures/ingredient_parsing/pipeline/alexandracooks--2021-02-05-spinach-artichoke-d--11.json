@@ -1,8 +1,15 @@
 {
   "raw": "crackers, bread, chips, vegetables — whatever you like",
-  "expected": {
-    "item": "crackers, bread, chips, vegetables - whatever you like",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crackers, bread, chips, vegetables - whatever you like",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crackers, bread, chips, vegetables - whatever you like",
+      "measurements": [],
+      "note": null
+    }
   }
 }

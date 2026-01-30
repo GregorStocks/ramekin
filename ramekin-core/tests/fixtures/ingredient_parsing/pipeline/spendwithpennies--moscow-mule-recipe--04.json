@@ -1,13 +1,25 @@
 {
   "raw": "2 sprigs mint",
-  "expected": {
-    "item": "mint",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mint",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mint",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cups mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
-  "expected": {
-    "item": "mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mixed mushrooms (hen-of-the-woods, cremini, enoki, or oyster), cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

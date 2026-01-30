@@ -1,13 +1,25 @@
 {
   "raw": "1 cup finely shredded parmesan cheese, (divided)",
-  "expected": {
-    "item": "finely shredded parmesan cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely shredded parmesan cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "finely shredded parmesan cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

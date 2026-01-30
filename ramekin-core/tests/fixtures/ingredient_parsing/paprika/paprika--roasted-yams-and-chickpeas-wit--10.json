@@ -1,13 +1,25 @@
 {
   "raw": "2 scallions, both green and white parts, trimmed and thinly sliced, for garnish",
-  "expected": {
-    "item": "scallions, both green and white parts, trimmed and thinly sliced",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "scallions, both green and white parts, trimmed and thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "scallions, both green and white parts, trimmed and thinly sliced",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "for garnish"
+    }
   }
 }

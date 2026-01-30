@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp shiitake mushroom dashi (leftover from soaked shiitake)",
-  "expected": {
-    "item": "shiitake mushroom dashi (leftover from soaked shiitake)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shiitake mushroom dashi (leftover from soaked shiitake)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shiitake mushroom dashi (leftover from soaked shiitake)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

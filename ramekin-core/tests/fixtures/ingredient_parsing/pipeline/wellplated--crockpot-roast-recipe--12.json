@@ -1,13 +1,25 @@
 {
   "raw": "1 pound baby red potatoes (scrubbed and left whole)",
-  "expected": {
-    "item": "baby red potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "scrubbed and left whole"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "scrubbed and left whole"
+    },
+    "parse_ingredients": {
+      "item": "baby red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "scrubbed and left whole"
+    }
   }
 }

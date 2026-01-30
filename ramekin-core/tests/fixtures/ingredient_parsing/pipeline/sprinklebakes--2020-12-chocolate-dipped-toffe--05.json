@@ -1,13 +1,25 @@
 {
   "raw": "2-3 tablespoons red and green nonpareils",
-  "expected": {
-    "item": "red and green nonpareils",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red and green nonpareils",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red and green nonpareils",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

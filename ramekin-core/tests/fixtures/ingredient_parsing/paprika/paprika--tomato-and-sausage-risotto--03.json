@@ -1,13 +1,25 @@
 {
   "raw": "3/4 pound sweet or hot Italian sausage, casings removed",
-  "expected": {
-    "item": "sweet or hot Italian sausage, casings removed",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet or hot Italian sausage, casings removed",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet or hot Italian sausage, casings removed",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

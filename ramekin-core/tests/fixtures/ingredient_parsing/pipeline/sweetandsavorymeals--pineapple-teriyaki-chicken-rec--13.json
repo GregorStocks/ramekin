@@ -1,13 +1,25 @@
 {
   "raw": "1  red bell pepper (diced into 1 inch pieces)",
-  "expected": {
-    "item": "red bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "diced into 1 inch pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced into 1 inch pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "red bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "diced into 1 inch pieces"
+    }
   }
 }

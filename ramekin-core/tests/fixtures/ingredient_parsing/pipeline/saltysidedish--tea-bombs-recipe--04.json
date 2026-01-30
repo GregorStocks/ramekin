@@ -1,8 +1,15 @@
 {
   "raw": "semi-circle silicone mold",
-  "expected": {
-    "item": "semi-circle silicone mold",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "semi-circle silicone mold",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "semi-circle silicone mold",
+      "measurements": [],
+      "note": null
+    }
   }
 }

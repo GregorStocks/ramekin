@@ -1,13 +1,25 @@
 {
   "raw": "two small handfuls  basil leaves, roughly torn parmesan shavings and rocket, to serve",
-  "expected": {
-    "item": "handfuls  basil leaves, roughly torn parmesan shavings and rocket, to serve",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "handfuls  basil leaves, roughly torn parmesan shavings and rocket, to serve",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "handfuls  basil leaves, roughly torn parmesan shavings and rocket, to serve",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

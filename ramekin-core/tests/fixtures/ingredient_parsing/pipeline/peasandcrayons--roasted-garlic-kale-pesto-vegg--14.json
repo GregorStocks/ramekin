@@ -1,13 +1,29 @@
 {
   "raw": "2-4 oz cheese (I used mozzarella + parmesan)",
-  "expected": {
-    "item": "cheese (I used mozzarella + parmesan)",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cheese (I used mozzarella + parmesan)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cheese (I used mozzarella + parmesan)",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "oz"
+        },
+        {
+          "amount": "57-113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

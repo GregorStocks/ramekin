@@ -1,13 +1,25 @@
 {
   "raw": "1  white onion (peeled and roughly chopped)",
-  "expected": {
-    "item": "white onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and roughly chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and roughly chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "white onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and roughly chopped"
+    }
   }
 }

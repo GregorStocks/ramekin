@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup butter (1 stick)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

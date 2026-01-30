@@ -1,17 +1,33 @@
 {
   "raw": "4 tsp (20g)  white sugar",
-  "expected": {
-    "item": "white sugar",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tsp"
-      },
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tsp"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

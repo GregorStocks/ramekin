@@ -1,8 +1,15 @@
 {
   "raw": "optional: fresh rosemary or thyme, and flaky sea salt for garnish",
-  "expected": {
-    "item": "optional: fresh rosemary or thyme",
-    "measurements": [],
-    "note": "and flaky sea salt for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "optional: fresh rosemary or thyme",
+      "measurements": [],
+      "note": "and flaky sea salt for garnish"
+    },
+    "parse_ingredients": {
+      "item": "optional: fresh rosemary or thyme",
+      "measurements": [],
+      "note": "and flaky sea salt for garnish"
+    }
   }
 }

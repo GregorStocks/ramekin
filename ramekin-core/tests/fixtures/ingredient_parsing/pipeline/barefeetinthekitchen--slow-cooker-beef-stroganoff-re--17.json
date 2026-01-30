@@ -1,8 +1,15 @@
 {
   "raw": "fresh Italian parsley (for serving)",
-  "expected": {
-    "item": "fresh Italian parsley",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh Italian parsley",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh Italian parsley",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 Tablespoons balsamic vinegar ((or white whine vinegar, apple cider, etc.))",
-  "expected": {
-    "item": "balsamic vinegar (or white whine vinegar, apple cider, etc.)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "balsamic vinegar (or white whine vinegar, apple cider, etc.)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "balsamic vinegar (or white whine vinegar, apple cider, etc.)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

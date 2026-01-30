@@ -1,8 +1,15 @@
 {
   "raw": "(optional)  Powdered Sugar (, for dusting)",
-  "expected": {
-    "item": "Powdered Sugar (, for dusting)",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Powdered Sugar (, for dusting)",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Powdered Sugar (, for dusting)",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "diced or thinly sliced onion",
-  "expected": {
-    "item": "diced or thinly sliced onion",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced or thinly sliced onion",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "diced or thinly sliced onion",
+      "measurements": [],
+      "note": null
+    }
   }
 }

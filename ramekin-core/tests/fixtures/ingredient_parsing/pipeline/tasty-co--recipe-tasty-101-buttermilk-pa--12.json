@@ -1,8 +1,15 @@
 {
   "raw": "maple syrup, for serving",
-  "expected": {
-    "item": "maple syrup",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "maple syrup",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "maple syrup",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

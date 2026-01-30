@@ -1,8 +1,15 @@
 {
   "raw": "Very finely chopped pistachios (see notes)",
-  "expected": {
-    "item": "Very finely chopped pistachios (see notes)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Very finely chopped pistachios (see notes)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Very finely chopped pistachios (see notes)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

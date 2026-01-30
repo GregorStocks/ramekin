@@ -1,13 +1,25 @@
 {
   "raw": "8 drops caramel stevia",
-  "expected": {
-    "item": "caramel stevia",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "drop"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "caramel stevia",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "caramel stevia",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    }
   }
 }

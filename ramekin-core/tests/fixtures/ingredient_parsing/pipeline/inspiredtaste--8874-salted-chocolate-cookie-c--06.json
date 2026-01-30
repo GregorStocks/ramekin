@@ -1,8 +1,15 @@
 {
   "raw": "Course or flaky sea salt for topping cups",
-  "expected": {
-    "item": "Course or flaky sea salt for topping cups",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Course or flaky sea salt for topping cups",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Course or flaky sea salt for topping cups",
+      "measurements": [],
+      "note": null
+    }
   }
 }

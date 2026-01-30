@@ -1,13 +1,25 @@
 {
   "raw": "5  teabags Numi White Rose Tea",
-  "expected": {
-    "item": "teabags Numi White Rose Tea",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "teabags Numi White Rose Tea",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "teabags Numi White Rose Tea",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

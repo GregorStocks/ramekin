@@ -1,13 +1,29 @@
 {
   "raw": "8 oz cream cheese (softened (I used light))",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "softened (I used light"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "softened (I used light"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "softened (I used light"
+    }
   }
 }

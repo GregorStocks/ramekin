@@ -1,13 +1,25 @@
 {
   "raw": "2 TBSP half and half ((milk works too + extra if needed))",
-  "expected": {
-    "item": "half and half (milk works too + extra if needed)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "half and half (milk works too + extra if needed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "half and half (milk works too + extra if needed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

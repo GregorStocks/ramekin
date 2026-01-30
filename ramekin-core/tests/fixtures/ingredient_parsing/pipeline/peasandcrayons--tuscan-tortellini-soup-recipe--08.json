@@ -1,13 +1,25 @@
 {
   "raw": "2-3 TBSP butter",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "2-3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "2-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

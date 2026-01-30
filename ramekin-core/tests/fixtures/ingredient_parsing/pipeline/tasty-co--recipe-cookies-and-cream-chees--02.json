@@ -1,13 +1,25 @@
 {
   "raw": "8 tablespoons salted butter, room temperature",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "room temperature"
+    },
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

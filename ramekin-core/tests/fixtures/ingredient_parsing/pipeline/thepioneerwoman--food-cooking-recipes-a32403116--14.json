@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp. chopped fresh sage, plus more for topping",
-  "expected": {
-    "item": "chopped fresh sage",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for topping"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh sage",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for topping"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh sage",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for topping"
+    }
   }
 }

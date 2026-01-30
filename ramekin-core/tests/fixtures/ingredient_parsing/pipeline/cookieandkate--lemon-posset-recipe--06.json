@@ -1,8 +1,15 @@
 {
   "raw": "Optional garnishes: Fresh berries (blackberries, raspberries or blueberries), mint leaves, or crushed graham crackers or pistachios",
-  "expected": {
-    "item": "Optional garnishes: Fresh berries (blackberries, raspberries or blueberries), mint leaves",
-    "measurements": [],
-    "note": "or crushed graham crackers or pistachios"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional garnishes: Fresh berries (blackberries, raspberries or blueberries), mint leaves",
+      "measurements": [],
+      "note": "or crushed graham crackers or pistachios"
+    },
+    "enrich_metric_weights": {
+      "item": "Optional garnishes: Fresh berries (blackberries, raspberries or blueberries), mint leaves",
+      "measurements": [],
+      "note": "or crushed graham crackers or pistachios"
+    }
   }
 }

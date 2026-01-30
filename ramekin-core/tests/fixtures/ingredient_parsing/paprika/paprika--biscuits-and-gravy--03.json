@@ -1,21 +1,41 @@
 {
   "raw": "1 medium yellow onion (about 8 ounces; 227g), finely diced",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "227",
-        "unit": "g"
-      }
-    ],
-    "note": "finely diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "finely diced"
+    },
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "finely diced"
+    }
   }
 }

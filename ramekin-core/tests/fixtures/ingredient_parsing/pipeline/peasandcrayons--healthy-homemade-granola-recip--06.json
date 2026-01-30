@@ -1,13 +1,25 @@
 {
   "raw": "1.5 cup sliced almonds&nbsp;",
-  "expected": {
-    "item": "sliced almonds",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced almonds",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sliced almonds",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

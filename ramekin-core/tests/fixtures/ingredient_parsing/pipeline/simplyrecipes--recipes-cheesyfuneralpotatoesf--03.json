@@ -1,13 +1,25 @@
 {
   "raw": "1/2 large onion, finely chopped (about a cup)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "large"
-      }
-    ],
-    "note": "finely chopped (about a cup)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped (about a cup)"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "large"
+        }
+      ],
+      "note": "finely chopped (about a cup)"
+    }
   }
 }

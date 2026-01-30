@@ -1,13 +1,25 @@
 {
   "raw": "6 slices bacon, cooked and crumbled",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "slice"
-      }
-    ],
-    "note": "cooked and crumbled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "cooked and crumbled"
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "slice"
+        }
+      ],
+      "note": "cooked and crumbled"
+    }
   }
 }

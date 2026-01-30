@@ -1,17 +1,33 @@
 {
   "raw": "4 (8 ounce each) box cream cheese (at room temperature)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "box"
-      },
-      {
-        "amount": "8",
-        "unit": "oz each"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "box"
+        },
+        {
+          "amount": "8",
+          "unit": "oz each"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "box"
+        },
+        {
+          "amount": "8",
+          "unit": "oz each"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

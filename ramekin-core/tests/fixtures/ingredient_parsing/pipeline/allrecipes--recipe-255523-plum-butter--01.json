@@ -1,13 +1,25 @@
 {
   "raw": "4.5 pounds plums, pitted and diced",
-  "expected": {
-    "item": "plums",
-    "measurements": [
-      {
-        "amount": "4.5",
-        "unit": "lb"
-      }
-    ],
-    "note": "pitted and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plums",
+      "measurements": [
+        {
+          "amount": "4.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "pitted and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "plums",
+      "measurements": [
+        {
+          "amount": "4.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "pitted and diced"
+    }
   }
 }

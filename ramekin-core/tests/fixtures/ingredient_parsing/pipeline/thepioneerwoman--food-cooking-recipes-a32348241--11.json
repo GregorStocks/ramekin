@@ -1,8 +1,15 @@
 {
   "raw": "A few dashes of hot sauce",
-  "expected": {
-    "item": "A few dashes of hot sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "A few dashes of hot sauce",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "A few dashes of hot sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

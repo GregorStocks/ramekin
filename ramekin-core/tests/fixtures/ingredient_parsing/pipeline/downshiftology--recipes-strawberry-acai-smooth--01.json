@@ -1,13 +1,29 @@
 {
   "raw": "3.5 oz packet frozen acai",
-  "expected": {
-    "item": "packet frozen acai",
-    "measurements": [
-      {
-        "amount": "3.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packet frozen acai",
+      "measurements": [
+        {
+          "amount": "3.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packet frozen acai",
+      "measurements": [
+        {
+          "amount": "3.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "99",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

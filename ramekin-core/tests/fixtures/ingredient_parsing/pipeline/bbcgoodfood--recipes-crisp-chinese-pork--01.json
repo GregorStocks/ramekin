@@ -1,13 +1,25 @@
 {
   "raw": "1.3kg piece boned pork belly skin on and scored, ask the butcher for the thin end",
-  "expected": {
-    "item": "piece boned pork belly skin on and scored, ask the butcher for the thin end",
-    "measurements": [
-      {
-        "amount": "1.3",
-        "unit": "kg"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "piece boned pork belly skin on and scored, ask the butcher for the thin end",
+      "measurements": [
+        {
+          "amount": "1.3",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "piece boned pork belly skin on and scored, ask the butcher for the thin end",
+      "measurements": [
+        {
+          "amount": "1.3",
+          "unit": "kg"
+        }
+      ],
+      "note": null
+    }
   }
 }

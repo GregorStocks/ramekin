@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano (2 to 4)",
-  "expected": {
-    "item": "deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2 to 4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2 to 4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "deribbed, seeded, and roughly chopped fresh hot green chilies, such as serrano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2 to 4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

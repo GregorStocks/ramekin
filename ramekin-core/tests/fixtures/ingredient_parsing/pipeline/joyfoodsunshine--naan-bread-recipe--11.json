@@ -1,8 +1,15 @@
 {
   "raw": "Garlic salt for sprinkling",
-  "expected": {
-    "item": "Garlic salt for sprinkling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Garlic salt for sprinkling",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Garlic salt for sprinkling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

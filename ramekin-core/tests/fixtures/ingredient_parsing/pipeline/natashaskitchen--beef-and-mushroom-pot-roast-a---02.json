@@ -1,13 +1,25 @@
 {
   "raw": "2 cups 1/2 lb peeled and thick sliced or baby carrots",
-  "expected": {
-    "item": "1/2 lb peeled and thick sliced or baby carrots",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1/2 lb peeled and thick sliced or baby carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1/2 lb peeled and thick sliced or baby carrots",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

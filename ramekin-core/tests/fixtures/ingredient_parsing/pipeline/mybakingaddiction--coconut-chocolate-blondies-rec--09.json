@@ -1,8 +1,15 @@
 {
   "raw": "addtional coconut for sprinkling on the top of the bars",
-  "expected": {
-    "item": "addtional coconut for sprinkling on the top of the bars",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "addtional coconut for sprinkling on the top of the bars",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "addtional coconut for sprinkling on the top of the bars",
+      "measurements": [],
+      "note": null
+    }
   }
 }

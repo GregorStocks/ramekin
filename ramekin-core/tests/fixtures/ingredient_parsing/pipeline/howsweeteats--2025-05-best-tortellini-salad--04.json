@@ -1,13 +1,29 @@
 {
   "raw": "12 ounce jar roasted red peppers, (drained and chopped)",
-  "expected": {
-    "item": "jar roasted red peppers",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jar roasted red peppers",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and chopped"
+    },
+    "parse_ingredients": {
+      "item": "jar roasted red peppers",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and chopped"
+    }
   }
 }

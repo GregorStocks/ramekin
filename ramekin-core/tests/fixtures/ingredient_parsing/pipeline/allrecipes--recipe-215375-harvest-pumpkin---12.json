@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons butter OR margarine, softened",
-  "expected": {
-    "item": "butter OR margarine",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter OR margarine",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "butter OR margarine",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

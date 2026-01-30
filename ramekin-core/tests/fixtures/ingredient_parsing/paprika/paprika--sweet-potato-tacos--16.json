@@ -1,8 +1,15 @@
 {
   "raw": "hot sauce",
-  "expected": {
-    "item": "hot sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

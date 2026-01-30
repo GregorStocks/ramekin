@@ -1,8 +1,15 @@
 {
   "raw": "Paprika or fresh dill for garnishing",
-  "expected": {
-    "item": "Paprika or fresh dill for garnishing",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Paprika or fresh dill for garnishing",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Paprika or fresh dill for garnishing",
+      "measurements": [],
+      "note": null
+    }
   }
 }

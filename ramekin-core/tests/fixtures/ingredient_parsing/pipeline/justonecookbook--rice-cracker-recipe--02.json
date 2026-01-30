@@ -1,8 +1,15 @@
 {
   "raw": "neutral oil",
-  "expected": {
-    "item": "neutral oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "neutral oil",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "neutral oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

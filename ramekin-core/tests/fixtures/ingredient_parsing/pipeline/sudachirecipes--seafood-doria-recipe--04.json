@@ -1,13 +1,25 @@
 {
   "raw": "3  button mushrooms ( finely sliced)",
-  "expected": {
-    "item": "button mushrooms",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "finely sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "finely sliced"
+    },
+    "parse_ingredients": {
+      "item": "button mushrooms",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "finely sliced"
+    }
   }
 }

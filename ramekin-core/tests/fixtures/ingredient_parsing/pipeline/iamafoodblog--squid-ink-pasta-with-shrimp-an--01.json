@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces squid ink pasta or long pasta of choice",
-  "expected": {
-    "item": "squid ink pasta or long pasta of choice",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "squid ink pasta or long pasta of choice",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "squid ink pasta or long pasta of choice",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "ASSEMBLY:",
-  "expected": {
-    "item": "ASSEMBLY:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ASSEMBLY:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ASSEMBLY:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

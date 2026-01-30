@@ -1,17 +1,33 @@
 {
   "raw": "1 pound zucchini or other summer squash (about 2 small/medium), diced",
-  "expected": {
-    "item": "zucchini or other summer squash",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini or other summer squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "zucchini or other summer squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

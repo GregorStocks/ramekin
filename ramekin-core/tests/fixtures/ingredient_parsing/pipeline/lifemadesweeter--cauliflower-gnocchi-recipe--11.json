@@ -1,8 +1,15 @@
 {
   "raw": "lemon zest or lemon juice",
-  "expected": {
-    "item": "lemon zest or lemon juice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon zest or lemon juice",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon zest or lemon juice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

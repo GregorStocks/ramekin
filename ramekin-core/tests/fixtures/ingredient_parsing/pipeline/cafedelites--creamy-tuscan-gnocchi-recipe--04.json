@@ -1,13 +1,25 @@
 {
   "raw": "1 pound uncooked potato gnocchi (the dry packaged gnocchi - not fresh)",
-  "expected": {
-    "item": "uncooked potato gnocchi",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "the dry packaged gnocchi - not fresh"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "uncooked potato gnocchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "the dry packaged gnocchi - not fresh"
+    },
+    "enrich_metric_weights": {
+      "item": "uncooked potato gnocchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "the dry packaged gnocchi - not fresh"
+    }
   }
 }

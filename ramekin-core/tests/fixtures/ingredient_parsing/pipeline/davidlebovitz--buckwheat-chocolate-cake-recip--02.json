@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup (115g) unsalted butter (cubed)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

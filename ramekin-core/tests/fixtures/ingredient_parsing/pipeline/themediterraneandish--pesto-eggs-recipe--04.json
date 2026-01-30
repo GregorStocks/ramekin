@@ -1,13 +1,25 @@
 {
   "raw": "1  vine ripe tomato,  (sliced )",
-  "expected": {
-    "item": "vine ripe tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vine ripe tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "vine ripe tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

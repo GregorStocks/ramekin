@@ -1,13 +1,25 @@
 {
   "raw": "2 to 4 tablespoons kosher salt, plus 1 pinch for the topping",
-  "expected": {
-    "item": "kosher salt",
-    "measurements": [
-      {
-        "amount": "2 to 4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus 1 pinch for the topping"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": "2 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 pinch for the topping"
+    },
+    "enrich_metric_weights": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": "2 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 pinch for the topping"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cup Colby Jack cheese (freshly shredded, divided)",
-  "expected": {
-    "item": "Colby Jack cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "freshly shredded, divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Colby Jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "freshly shredded, divided"
+    },
+    "parse_ingredients": {
+      "item": "Colby Jack cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "freshly shredded, divided"
+    }
   }
 }

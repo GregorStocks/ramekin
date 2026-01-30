@@ -1,17 +1,33 @@
 {
   "raw": "100g (about 1/2 cup plus 2 tablespoons) whole-wheat flour",
-  "expected": {
-    "item": "whole-wheat flour",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole-wheat flour",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole-wheat flour",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

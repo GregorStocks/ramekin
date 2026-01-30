@@ -1,8 +1,15 @@
 {
   "raw": "coarse sea salt or flaky sea salt, for sprinkling on top",
-  "expected": {
-    "item": "coarse sea salt or flaky sea salt, for sprinkling on top",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarse sea salt or flaky sea salt, for sprinkling on top",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "coarse sea salt or flaky sea salt, for sprinkling on top",
+      "measurements": [],
+      "note": null
+    }
   }
 }

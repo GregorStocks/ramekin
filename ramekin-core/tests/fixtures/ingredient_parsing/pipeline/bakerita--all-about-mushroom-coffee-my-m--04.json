@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon cacao butter or healthy fat of choice, like coconut oil",
-  "expected": {
-    "item": "cacao butter or healthy fat of choice, like coconut oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cacao butter or healthy fat of choice, like coconut oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cacao butter or healthy fat of choice, like coconut oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

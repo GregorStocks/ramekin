@@ -1,17 +1,33 @@
 {
   "raw": "4 cups Confectioners Sugar ((455 g) )",
-  "expected": {
-    "item": "Confectioners Sugar",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      },
-      {
-        "amount": "455",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Confectioners Sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Confectioners Sugar",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

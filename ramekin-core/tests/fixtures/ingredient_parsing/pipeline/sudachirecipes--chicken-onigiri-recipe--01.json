@@ -1,13 +1,25 @@
 {
   "raw": "600 g cooked Japanese short-grain rice",
-  "expected": {
-    "item": "cooked Japanese short-grain rice",
-    "measurements": [
-      {
-        "amount": "600",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked Japanese short-grain rice",
+      "measurements": [
+        {
+          "amount": "600",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cooked Japanese short-grain rice",
+      "measurements": [
+        {
+          "amount": "600",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

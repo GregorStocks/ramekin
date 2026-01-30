@@ -1,13 +1,25 @@
 {
   "raw": "1 large beefsteak tomato, chopped",
-  "expected": {
-    "item": "beefsteak tomato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beefsteak tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "beefsteak tomato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

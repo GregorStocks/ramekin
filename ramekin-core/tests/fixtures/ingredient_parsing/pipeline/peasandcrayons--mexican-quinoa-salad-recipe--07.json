@@ -1,13 +1,25 @@
 {
   "raw": "1/2-1 cup finely chopped onion ((red or white))",
-  "expected": {
-    "item": "finely chopped onion (red or white)",
-    "measurements": [
-      {
-        "amount": "1/2-1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely chopped onion (red or white)",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely chopped onion (red or white)",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

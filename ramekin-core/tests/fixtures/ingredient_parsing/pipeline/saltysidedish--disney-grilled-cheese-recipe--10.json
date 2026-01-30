@@ -1,13 +1,25 @@
 {
   "raw": "4 slices Artisan bread (we used The Rustic Oven Artisan White Bread)",
-  "expected": {
-    "item": "Artisan bread (we used The Rustic Oven Artisan White Bread)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Artisan bread (we used The Rustic Oven Artisan White Bread)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Artisan bread (we used The Rustic Oven Artisan White Bread)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

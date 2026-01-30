@@ -1,8 +1,15 @@
 {
   "raw": "pickled chili peppers",
-  "expected": {
-    "item": "pickled chili peppers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pickled chili peppers",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pickled chili peppers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

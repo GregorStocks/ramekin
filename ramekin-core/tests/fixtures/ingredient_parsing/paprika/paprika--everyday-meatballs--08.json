@@ -1,13 +1,25 @@
 {
   "raw": "Pinches of red pepper flakes or few grinds of black pepper",
-  "expected": {
-    "item": "red pepper flakes or few grinds of black pepper",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red pepper flakes or few grinds of black pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red pepper flakes or few grinds of black pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

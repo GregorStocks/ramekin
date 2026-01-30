@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup Flat Leaf Parsley (Chopped)",
-  "expected": {
-    "item": "Flat Leaf Parsley",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "Chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Flat Leaf Parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped"
+    },
+    "parse_ingredients": {
+      "item": "Flat Leaf Parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "Chopped"
+    }
   }
 }

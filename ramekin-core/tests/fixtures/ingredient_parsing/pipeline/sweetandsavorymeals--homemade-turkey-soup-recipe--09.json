@@ -1,13 +1,25 @@
 {
   "raw": "8 cups turkey broth (or chicken broth)",
-  "expected": {
-    "item": "turkey broth (or chicken broth)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "turkey broth (or chicken broth)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "turkey broth (or chicken broth)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

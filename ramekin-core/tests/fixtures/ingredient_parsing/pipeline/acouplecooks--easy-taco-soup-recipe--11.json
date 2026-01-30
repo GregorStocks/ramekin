@@ -1,17 +1,33 @@
 {
   "raw": "1 quart (4 cups) vegetable broth",
-  "expected": {
-    "item": "vegetable broth",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "quart"
-      },
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "quart"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

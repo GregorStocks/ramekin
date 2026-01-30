@@ -1,13 +1,25 @@
 {
   "raw": "2  tins tomatoes (chopped (800g / 28 oz total))",
-  "expected": {
-    "item": "tins tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "chopped (800g / 28 oz total"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tins tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (800g / 28 oz total"
+    },
+    "enrich_metric_weights": {
+      "item": "tins tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "chopped (800g / 28 oz total"
+    }
   }
 }

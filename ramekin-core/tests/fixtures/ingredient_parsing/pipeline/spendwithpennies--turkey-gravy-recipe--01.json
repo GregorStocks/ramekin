@@ -1,13 +1,25 @@
 {
   "raw": "4 cups turkey broth ( or stock mixed with drippings)",
-  "expected": {
-    "item": "turkey broth",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or stock mixed with drippings"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "turkey broth",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or stock mixed with drippings"
+    },
+    "parse_ingredients": {
+      "item": "turkey broth",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or stock mixed with drippings"
+    }
   }
 }

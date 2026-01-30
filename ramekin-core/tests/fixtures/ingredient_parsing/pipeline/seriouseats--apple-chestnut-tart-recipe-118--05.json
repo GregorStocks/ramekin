@@ -1,17 +1,33 @@
 {
   "raw": "20 g (2 tablespoons) powdered sugar",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "g"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

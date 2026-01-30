@@ -1,17 +1,33 @@
 {
   "raw": "1 teaspoon (5 ml) lemon juice, plus lemon wedges for serving",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      },
-      {
-        "amount": "5",
-        "unit": "ml"
-      }
-    ],
-    "note": "plus lemon wedges for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus lemon wedges for serving"
+    },
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus lemon wedges for serving"
+    }
   }
 }

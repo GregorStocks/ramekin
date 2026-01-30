@@ -1,17 +1,37 @@
 {
   "raw": "0.5 cup shredded, cooked chicken thigh (about 1 1/2 oz.)",
-  "expected": {
-    "item": "shredded",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked chicken thigh"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked chicken thigh"
+    },
+    "enrich_metric_weights": {
+      "item": "shredded",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked chicken thigh"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "lime crema (optional)",
-  "expected": {
-    "item": "lime crema",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime crema",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "lime crema",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

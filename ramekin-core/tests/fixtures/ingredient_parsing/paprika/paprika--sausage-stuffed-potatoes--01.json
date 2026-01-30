@@ -1,13 +1,25 @@
 {
   "raw": "4 large russet potatoes, 3/4 pound each, scrubbed",
-  "expected": {
-    "item": "russet potatoes, 3/4 pound each",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "large"
-      }
-    ],
-    "note": "scrubbed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potatoes, 3/4 pound each",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": "scrubbed"
+    },
+    "parse_ingredients": {
+      "item": "russet potatoes, 3/4 pound each",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": "scrubbed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 heaping tablespoon tomato paste",
-  "expected": {
-    "item": "tomato paste",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "heaping tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tomato paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "heaping tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

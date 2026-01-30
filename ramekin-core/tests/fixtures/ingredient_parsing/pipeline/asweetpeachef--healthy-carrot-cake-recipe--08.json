@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup coconut oil (melted)",
-  "expected": {
-    "item": "coconut oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coconut oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "coconut oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "114 grams cheese curds",
-  "expected": {
-    "item": "cheese curds",
-    "measurements": [
-      {
-        "amount": "114",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cheese curds",
+      "measurements": [
+        {
+          "amount": "114",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cheese curds",
+      "measurements": [
+        {
+          "amount": "114",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

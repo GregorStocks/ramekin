@@ -1,13 +1,25 @@
 {
   "raw": "70 grams baby corn ((5 ears, sliced in half at an angle))",
-  "expected": {
-    "item": "baby corn",
-    "measurements": [
-      {
-        "amount": "70",
-        "unit": "g"
-      }
-    ],
-    "note": "5 ears, sliced in half at an angle"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby corn",
+      "measurements": [
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": "5 ears, sliced in half at an angle"
+    },
+    "enrich_metric_weights": {
+      "item": "baby corn",
+      "measurements": [
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": "5 ears, sliced in half at an angle"
+    }
   }
 }

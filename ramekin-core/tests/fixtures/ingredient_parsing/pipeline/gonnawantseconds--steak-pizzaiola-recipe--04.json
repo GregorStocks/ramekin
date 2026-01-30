@@ -1,8 +1,15 @@
 {
   "raw": "pepper",
-  "expected": {
-    "item": "pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

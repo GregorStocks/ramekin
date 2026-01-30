@@ -1,13 +1,25 @@
 {
   "raw": "1 cup pitted black olives (brine cured), chopped coarse",
-  "expected": {
-    "item": "pitted black olives (brine cured)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped coarse"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitted black olives (brine cured)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped coarse"
+    },
+    "enrich_metric_weights": {
+      "item": "pitted black olives (brine cured)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped coarse"
+    }
   }
 }

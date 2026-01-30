@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 lb Medium-sized zucchini or Middle Eastern zucchini, (about 8 or so zucchini, lightly peeled)",
-  "expected": {
-    "item": "Medium-sized zucchini or Middle Eastern zucchini",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "about 8 or so zucchini, lightly peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Medium-sized zucchini or Middle Eastern zucchini",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 8 or so zucchini, lightly peeled"
+    },
+    "parse_ingredients": {
+      "item": "Medium-sized zucchini or Middle Eastern zucchini",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 8 or so zucchini, lightly peeled"
+    }
   }
 }

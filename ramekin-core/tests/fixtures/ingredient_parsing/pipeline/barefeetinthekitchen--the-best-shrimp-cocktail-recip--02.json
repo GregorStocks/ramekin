@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds deveined ((shells removed and tails left on) jumbo shrimp (16-20 per pound))",
-  "expected": {
-    "item": "deveined (shells removed and tails left on) jumbo shrimp (16-20 per pound)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "deveined (shells removed and tails left on) jumbo shrimp (16-20 per pound)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "deveined (shells removed and tails left on) jumbo shrimp (16-20 per pound)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

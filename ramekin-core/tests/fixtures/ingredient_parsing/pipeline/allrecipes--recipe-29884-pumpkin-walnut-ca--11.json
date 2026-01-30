@@ -1,13 +1,25 @@
 {
   "raw": "0.875 cup margarine, softened",
-  "expected": {
-    "item": "margarine",
-    "measurements": [
-      {
-        "amount": "0.875",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "margarine",
+      "measurements": [
+        {
+          "amount": "0.875",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    },
+    "parse_ingredients": {
+      "item": "margarine",
+      "measurements": [
+        {
+          "amount": "0.875",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

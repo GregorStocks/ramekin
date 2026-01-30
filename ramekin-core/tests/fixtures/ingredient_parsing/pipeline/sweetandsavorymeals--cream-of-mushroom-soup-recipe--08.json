@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup red wine (or use more broth for an alcohol-free version)",
-  "expected": {
-    "item": "red wine (or use more broth for an alcohol-free version)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red wine (or use more broth for an alcohol-free version)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "red wine (or use more broth for an alcohol-free version)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "1/4 cup (50g) vegetable oil or 4 tablespoons (57g) butter, melted",
-  "expected": {
-    "item": "vegetable oil or 4 tablespoons butter",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "50",
-        "unit": "g"
-      },
-      {
-        "amount": "57",
-        "unit": "g"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable oil or 4 tablespoons butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable oil or 4 tablespoons butter",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

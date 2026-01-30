@@ -1,13 +1,25 @@
 {
   "raw": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
-  "expected": {
-    "item": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": "15 Ounces Hominy, Drained and Rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": "15 Ounces Hominy, Drained and Rinsed"
+    },
+    "parse_ingredients": {
+      "item": "1  Can (15 Ounces Hominy, Drained and Rinsed)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": "15 Ounces Hominy, Drained and Rinsed"
+    }
   }
 }

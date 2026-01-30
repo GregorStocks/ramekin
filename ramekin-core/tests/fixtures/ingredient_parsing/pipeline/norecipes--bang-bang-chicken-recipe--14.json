@@ -1,13 +1,25 @@
 {
   "raw": "460 grams chicken tenders",
-  "expected": {
-    "item": "chicken tenders",
-    "measurements": [
-      {
-        "amount": "460",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken tenders",
+      "measurements": [
+        {
+          "amount": "460",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken tenders",
+      "measurements": [
+        {
+          "amount": "460",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

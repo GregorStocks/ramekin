@@ -1,13 +1,25 @@
 {
   "raw": "1 cup salted butter, softened",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

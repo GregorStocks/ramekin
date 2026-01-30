@@ -1,17 +1,33 @@
 {
   "raw": "10 grams galangal ((about 1/2-inch slice, smashed))",
-  "expected": {
-    "item": "galangal",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "galangal",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "galangal",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

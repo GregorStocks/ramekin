@@ -1,17 +1,33 @@
 {
   "raw": "1 pinch coarse salt (pinch of salt)",
-  "expected": {
-    "item": "coarse salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "pinch"
-      },
-      {
-        "amount": null,
-        "unit": "pinch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coarse salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        },
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "coarse salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "pinch"
+        },
+        {
+          "amount": null,
+          "unit": "pinch"
+        }
+      ],
+      "note": null
+    }
   }
 }

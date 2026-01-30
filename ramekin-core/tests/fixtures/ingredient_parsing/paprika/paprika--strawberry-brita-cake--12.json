@@ -1,17 +1,33 @@
 {
   "raw": "1 pound (455 grams) fresh strawberries, halved or sliced",
-  "expected": {
-    "item": "fresh strawberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "455",
-        "unit": "g"
-      }
-    ],
-    "note": "halved or sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": "halved or sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "455",
+          "unit": "g"
+        }
+      ],
+      "note": "halved or sliced"
+    }
   }
 }

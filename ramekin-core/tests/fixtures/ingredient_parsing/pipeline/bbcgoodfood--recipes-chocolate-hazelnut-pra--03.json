@@ -1,13 +1,25 @@
 {
   "raw": "225g plain flour",
-  "expected": {
-    "item": "plain flour",
-    "measurements": [
-      {
-        "amount": "225",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plain flour",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "plain flour",
+      "measurements": [
+        {
+          "amount": "225",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

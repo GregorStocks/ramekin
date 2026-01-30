@@ -1,13 +1,25 @@
 {
   "raw": "&amp;frac12; teaspoon baking soda (if you&amp;#8217;re using canned chickpeas)",
-  "expected": {
-    "item": "baking soda (if you’re using canned chickpeas)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baking soda (if you’re using canned chickpeas)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baking soda (if you’re using canned chickpeas)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

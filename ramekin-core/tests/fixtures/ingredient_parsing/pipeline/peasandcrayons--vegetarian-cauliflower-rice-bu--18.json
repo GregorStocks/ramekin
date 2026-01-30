@@ -1,8 +1,15 @@
 {
   "raw": "salsa",
-  "expected": {
-    "item": "salsa",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salsa",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "salsa",
+      "measurements": [],
+      "note": null
+    }
   }
 }

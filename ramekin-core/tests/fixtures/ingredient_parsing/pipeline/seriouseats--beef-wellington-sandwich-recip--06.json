@@ -1,21 +1,41 @@
 {
   "raw": "1 small shallot (1 1/2 ounces; 45 g), thinly sliced crosswise",
-  "expected": {
-    "item": "shallot",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "45",
-        "unit": "g"
-      }
-    ],
-    "note": "thinly sliced crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "45",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "shallot",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "45",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced crosswise"
+    }
   }
 }

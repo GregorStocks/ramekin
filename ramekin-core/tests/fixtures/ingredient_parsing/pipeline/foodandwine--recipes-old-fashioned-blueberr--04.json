@@ -1,17 +1,37 @@
 {
   "raw": "1 1/2 sticks (6 ounces) cold unsalted butter, cut into small pieces",
-  "expected": {
-    "item": "cold unsalted butter, cut into small pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "stick"
-      },
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold unsalted butter, cut into small pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold unsalted butter, cut into small pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        },
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

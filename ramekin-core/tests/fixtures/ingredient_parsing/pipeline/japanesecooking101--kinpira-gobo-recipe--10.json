@@ -1,8 +1,15 @@
 {
   "raw": "Shichimi Togarashi (red hot pepper)",
-  "expected": {
-    "item": "Shichimi Togarashi (red hot pepper)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shichimi Togarashi (red hot pepper)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Shichimi Togarashi (red hot pepper)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

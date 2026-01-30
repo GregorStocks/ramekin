@@ -1,17 +1,37 @@
 {
   "raw": "1 (15.25 ounce) package lemon cake mix",
-  "expected": {
-    "item": "lemon cake mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "15.25",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "432",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lemon cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

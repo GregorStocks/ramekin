@@ -1,13 +1,25 @@
 {
   "raw": "12 grams lemongrass ((1 stalk, white-part finely minced))",
-  "expected": {
-    "item": "lemongrass",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "g"
-      }
-    ],
-    "note": "1 stalk, white-part finely minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemongrass",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": "1 stalk, white-part finely minced"
+    },
+    "enrich_metric_weights": {
+      "item": "lemongrass",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "g"
+        }
+      ],
+      "note": "1 stalk, white-part finely minced"
+    }
   }
 }

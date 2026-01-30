@@ -1,13 +1,29 @@
 {
   "raw": "1 ounce rye whiskey, preferably Rittenhouse",
-  "expected": {
-    "item": "rye whiskey, preferably Rittenhouse",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rye whiskey, preferably Rittenhouse",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "rye whiskey, preferably Rittenhouse",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

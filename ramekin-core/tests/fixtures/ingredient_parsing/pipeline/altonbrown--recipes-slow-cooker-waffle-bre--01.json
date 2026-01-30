@@ -1,13 +1,29 @@
 {
   "raw": "4 3/4 ounces all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "4 3/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "135",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 3/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

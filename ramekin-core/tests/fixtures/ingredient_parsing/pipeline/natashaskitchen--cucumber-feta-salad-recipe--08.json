@@ -1,13 +1,25 @@
 {
   "raw": "1/2- 1 tsp salt (or to taste)",
-  "expected": {
-    "item": "/2- 1 tsp salt",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "/2- 1 tsp salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "or to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "/2- 1 tsp salt",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

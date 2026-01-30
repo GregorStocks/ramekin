@@ -1,8 +1,15 @@
 {
   "raw": "eggs, as many as desired",
-  "expected": {
-    "item": "eggs, as many as desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs, as many as desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "eggs, as many as desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "shredded cheddar or pepper jack cheese",
-  "expected": {
-    "item": "shredded cheddar or pepper jack cheese",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded cheddar or pepper jack cheese",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded cheddar or pepper jack cheese",
+      "measurements": [],
+      "note": null
+    }
   }
 }

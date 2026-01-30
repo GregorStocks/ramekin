@@ -1,8 +1,15 @@
 {
   "raw": "a hearty drizzle of olive oil  ((I used a spicy chili oil one!))",
-  "expected": {
-    "item": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a hearty drizzle of olive oil  (I used a spicy chili oil one!)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

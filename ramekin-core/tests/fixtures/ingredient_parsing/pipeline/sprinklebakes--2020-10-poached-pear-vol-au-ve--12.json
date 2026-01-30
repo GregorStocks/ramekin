@@ -1,17 +1,33 @@
 {
   "raw": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
-  "expected": {
-    "item": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      },
-      {
-        "amount": "750",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "750",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1  bottle (750 ml white wine (or remaining spumante from pastry cream))",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "750",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon fresh thyme leaves, plus more for garnish",
-  "expected": {
-    "item": "fresh thyme leaves",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for garnish"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp. (or more) Cajun seasoning (or 1 tsp. salt-free Cajun seasoning plus 1 tsp. kosher salt)",
-  "expected": {
-    "item": "Cajun seasoning (or 1 tsp. salt-free Cajun seasoning",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or more"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cajun seasoning (or 1 tsp. salt-free Cajun seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more"
+    },
+    "enrich_metric_weights": {
+      "item": "Cajun seasoning (or 1 tsp. salt-free Cajun seasoning",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more"
+    }
   }
 }

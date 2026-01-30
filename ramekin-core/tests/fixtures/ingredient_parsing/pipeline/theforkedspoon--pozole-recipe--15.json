@@ -1,8 +1,15 @@
 {
   "raw": "Thinly shredded cabbage (highly recommended)",
-  "expected": {
-    "item": "Thinly shredded cabbage (highly recommended)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Thinly shredded cabbage (highly recommended)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Thinly shredded cabbage (highly recommended)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

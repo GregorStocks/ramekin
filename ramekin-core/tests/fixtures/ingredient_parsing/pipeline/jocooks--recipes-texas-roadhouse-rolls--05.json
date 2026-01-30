@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoon butter (unsalted, melted and slightly cooled)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "unsalted, melted and slightly cooled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, melted and slightly cooled"
+    },
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "unsalted, melted and slightly cooled"
+    }
   }
 }

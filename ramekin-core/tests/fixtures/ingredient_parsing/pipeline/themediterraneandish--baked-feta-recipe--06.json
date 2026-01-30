@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4  fresh thyme sprigs (optional)",
-  "expected": {
-    "item": "fresh thyme sprigs",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh thyme sprigs",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh thyme sprigs",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

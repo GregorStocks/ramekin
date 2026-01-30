@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons old-fashioned rolled oats (gluten-free, if needed)",
-  "expected": {
-    "item": "old-fashioned rolled oats (gluten-free, if needed)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "old-fashioned rolled oats (gluten-free, if needed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "old-fashioned rolled oats (gluten-free, if needed)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

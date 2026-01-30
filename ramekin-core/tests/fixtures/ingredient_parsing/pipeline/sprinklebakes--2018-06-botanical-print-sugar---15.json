@@ -1,8 +1,15 @@
 {
   "raw": "Brown gel food color",
-  "expected": {
-    "item": "Brown gel food color",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Brown gel food color",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Brown gel food color",
+      "measurements": [],
+      "note": null
+    }
   }
 }

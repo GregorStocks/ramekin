@@ -1,13 +1,25 @@
 {
   "raw": "2 very ripe tomatoes, halved crosswise",
-  "expected": {
-    "item": "very ripe tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "halved crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "very ripe tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "very ripe tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved crosswise"
+    }
   }
 }

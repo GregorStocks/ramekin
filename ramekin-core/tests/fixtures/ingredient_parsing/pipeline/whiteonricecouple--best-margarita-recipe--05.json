@@ -1,8 +1,15 @@
 {
   "raw": "a few dashes Orange Bitters (, optional)",
-  "expected": {
-    "item": "a few dashes Orange Bitters",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a few dashes Orange Bitters",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "a few dashes Orange Bitters",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

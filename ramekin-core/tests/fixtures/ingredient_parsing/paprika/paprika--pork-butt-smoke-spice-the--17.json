@@ -1,8 +1,15 @@
 {
   "raw": "Carolina Red",
-  "expected": {
-    "item": "Carolina Red",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Carolina Red",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Carolina Red",
+      "measurements": [],
+      "note": null
+    }
   }
 }

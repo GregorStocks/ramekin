@@ -1,8 +1,15 @@
 {
   "raw": "Crushed ice, for serving",
-  "expected": {
-    "item": "Crushed ice",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crushed ice",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Crushed ice",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

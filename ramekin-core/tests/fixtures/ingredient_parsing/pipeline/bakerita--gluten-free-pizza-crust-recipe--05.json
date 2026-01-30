@@ -1,13 +1,25 @@
 {
   "raw": "275g&nbsp;filtered water,&nbsp;room temperature",
-  "expected": {
-    "item": "filtered water",
-    "measurements": [
-      {
-        "amount": "275",
-        "unit": "g"
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "filtered water",
+      "measurements": [
+        {
+          "amount": "275",
+          "unit": "g"
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "filtered water",
+      "measurements": [
+        {
+          "amount": "275",
+          "unit": "g"
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

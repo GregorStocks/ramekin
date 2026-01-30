@@ -1,8 +1,15 @@
 {
   "raw": "Greek yogurt thinned with a little milk, and honey, to serve",
-  "expected": {
-    "item": "Greek yogurt thinned with a little milk, and honey, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Greek yogurt thinned with a little milk, and honey, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Greek yogurt thinned with a little milk, and honey, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

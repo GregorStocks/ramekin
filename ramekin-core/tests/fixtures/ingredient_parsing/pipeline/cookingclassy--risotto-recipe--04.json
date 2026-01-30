@@ -1,17 +1,37 @@
 {
   "raw": "2 cups (13.7 oz) Arborio rice",
-  "expected": {
-    "item": "Arborio rice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "13.7",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Arborio rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "13.7",
+          "unit": "oz"
+        },
+        {
+          "amount": "388",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Arborio rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "13.7",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

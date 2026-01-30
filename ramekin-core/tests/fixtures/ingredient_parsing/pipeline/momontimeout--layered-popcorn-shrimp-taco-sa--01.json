@@ -1,17 +1,37 @@
 {
   "raw": "30 oz Popcorn Shrimp (1 package)",
-  "expected": {
-    "item": "Popcorn Shrimp",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Popcorn Shrimp",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Popcorn Shrimp",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "850",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

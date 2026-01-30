@@ -1,17 +1,33 @@
 {
   "raw": "8 tablespoons (1 stick) unsalted butter, melted and cooled slightly",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": "melted and cooled slightly"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted and cooled slightly"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted and cooled slightly"
+    }
   }
 }

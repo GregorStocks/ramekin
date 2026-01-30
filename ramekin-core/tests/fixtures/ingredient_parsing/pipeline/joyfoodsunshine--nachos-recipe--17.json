@@ -1,13 +1,29 @@
 {
   "raw": "2.25 ounces can sliced black olives (drained and rinsed (about ½ cup))",
-  "expected": {
-    "item": "can sliced black olives",
-    "measurements": [
-      {
-        "amount": "2.25",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and rinsed (about 1/2 cup"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can sliced black olives",
+      "measurements": [
+        {
+          "amount": "2.25",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and rinsed (about 1/2 cup"
+    },
+    "enrich_metric_weights": {
+      "item": "can sliced black olives",
+      "measurements": [
+        {
+          "amount": "2.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "64",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed (about 1/2 cup"
+    }
   }
 }

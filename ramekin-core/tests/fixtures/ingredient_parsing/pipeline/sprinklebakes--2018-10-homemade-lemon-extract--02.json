@@ -1,13 +1,25 @@
 {
   "raw": "1.75 liter bottle vodka",
-  "expected": {
-    "item": "bottle vodka",
-    "measurements": [
-      {
-        "amount": "1.75",
-        "unit": "l"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bottle vodka",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bottle vodka",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "l"
+        }
+      ],
+      "note": null
+    }
   }
 }

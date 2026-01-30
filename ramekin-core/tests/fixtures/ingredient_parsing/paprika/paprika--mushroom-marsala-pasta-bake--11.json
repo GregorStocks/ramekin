@@ -1,17 +1,33 @@
 {
   "raw": "4 ounces (115 grams) mozzarella, cut into small cubes",
-  "expected": {
-    "item": "mozzarella, cut into small cubes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozzarella, cut into small cubes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mozzarella, cut into small cubes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Vegetable-oil nonstick cooking spray",
-  "expected": {
-    "item": "Vegetable-oil nonstick cooking spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Vegetable-oil nonstick cooking spray",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Vegetable-oil nonstick cooking spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

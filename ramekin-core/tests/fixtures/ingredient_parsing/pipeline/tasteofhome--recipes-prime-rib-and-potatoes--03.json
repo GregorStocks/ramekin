@@ -1,17 +1,33 @@
 {
   "raw": "1 bone-in beef rib roast (about 3 pounds and 2 ribs)",
-  "expected": {
-    "item": "bone-in beef rib roast",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bone-in beef rib roast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bone-in beef rib roast",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "For the Yorkshire Pudding Batter:",
-  "expected": {
-    "item": "For the Yorkshire Pudding Batter:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "For the Yorkshire Pudding Batter:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "For the Yorkshire Pudding Batter:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

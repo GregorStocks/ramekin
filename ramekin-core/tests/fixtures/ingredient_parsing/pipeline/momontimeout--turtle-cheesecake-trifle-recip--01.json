@@ -1,17 +1,37 @@
 {
   "raw": "32 oz Sara Lee Pound Cake (2 cakes - freezer section)",
-  "expected": {
-    "item": "Sara Lee Pound Cake",
-    "measurements": [
-      {
-        "amount": "32",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sara Lee Pound Cake",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sara Lee Pound Cake",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

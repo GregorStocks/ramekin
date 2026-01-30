@@ -1,8 +1,15 @@
 {
   "raw": "Pico de Gallo",
-  "expected": {
-    "item": "Pico de Gallo",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pico de Gallo",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pico de Gallo",
+      "measurements": [],
+      "note": null
+    }
   }
 }

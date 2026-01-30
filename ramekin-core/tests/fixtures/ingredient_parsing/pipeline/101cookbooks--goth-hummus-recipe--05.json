@@ -1,13 +1,25 @@
 {
   "raw": "1 cup black tahini, plus 1 tablespoon",
-  "expected": {
-    "item": "black tahini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black tahini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon"
+    },
+    "enrich_metric_weights": {
+      "item": "black tahini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon"
+    }
   }
 }

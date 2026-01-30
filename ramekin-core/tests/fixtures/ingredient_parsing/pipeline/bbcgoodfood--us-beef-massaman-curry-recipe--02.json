@@ -1,13 +1,25 @@
 {
   "raw": "13.66 fl oz can unsweetened coconut milk",
-  "expected": {
-    "item": "can unsweetened coconut milk",
-    "measurements": [
-      {
-        "amount": "13.66",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can unsweetened coconut milk",
+      "measurements": [
+        {
+          "amount": "13.66",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "can unsweetened coconut milk",
+      "measurements": [
+        {
+          "amount": "13.66",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

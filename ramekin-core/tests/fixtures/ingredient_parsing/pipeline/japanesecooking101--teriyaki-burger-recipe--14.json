@@ -1,8 +1,15 @@
 {
   "raw": "Japanese mayonnaise (optional)",
-  "expected": {
-    "item": "Japanese mayonnaise",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Japanese mayonnaise",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Japanese mayonnaise",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

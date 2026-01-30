@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup water (or more, depending on thickness)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or more, depending on thickness"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more, depending on thickness"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more, depending on thickness"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "0.125 teaspoon ground clove",
-  "expected": {
-    "item": "ground clove",
-    "measurements": [
-      {
-        "amount": "0.125",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground clove",
+      "measurements": [
+        {
+          "amount": "0.125",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground clove",
+      "measurements": [
+        {
+          "amount": "0.125",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

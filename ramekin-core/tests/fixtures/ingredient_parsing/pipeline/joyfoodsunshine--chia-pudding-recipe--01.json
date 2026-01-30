@@ -1,13 +1,25 @@
 {
   "raw": "1 cup milk ((almond milk, cashew milk, whole milk, coconut milk, etc.))",
-  "expected": {
-    "item": "milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "almond milk, cashew milk, whole milk, coconut milk, etc."
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "almond milk, cashew milk, whole milk, coconut milk, etc."
+    },
+    "enrich_metric_weights": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "almond milk, cashew milk, whole milk, coconut milk, etc."
+    }
   }
 }

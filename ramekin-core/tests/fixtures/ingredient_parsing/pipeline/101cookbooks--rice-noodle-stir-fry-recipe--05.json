@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces extra firm tofu, crumbled",
-  "expected": {
-    "item": "extra firm tofu",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "crumbled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra firm tofu",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "crumbled"
+    },
+    "parse_ingredients": {
+      "item": "extra firm tofu",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "crumbled"
+    }
   }
 }

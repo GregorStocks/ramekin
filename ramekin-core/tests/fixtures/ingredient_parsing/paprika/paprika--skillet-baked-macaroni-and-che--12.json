@@ -1,8 +1,15 @@
 {
   "raw": "A pinch or two of freshly grated nutmeg",
-  "expected": {
-    "item": "A pinch or two of freshly grated nutmeg",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "A pinch or two of freshly grated nutmeg",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "A pinch or two of freshly grated nutmeg",
+      "measurements": [],
+      "note": null
+    }
   }
 }

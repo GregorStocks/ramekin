@@ -1,13 +1,25 @@
 {
   "raw": "1 cup self raising flour (or plain, all-purpose flour)",
-  "expected": {
-    "item": "self raising flour (or plain, all-purpose flour)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "self raising flour (or plain, all-purpose flour)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "self raising flour (or plain, all-purpose flour)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

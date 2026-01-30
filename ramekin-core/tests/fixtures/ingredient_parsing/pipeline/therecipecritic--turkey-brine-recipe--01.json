@@ -1,13 +1,25 @@
 {
   "raw": "1 gallon warm water",
-  "expected": {
-    "item": "warm water",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "gallon"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "warm water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    }
   }
 }

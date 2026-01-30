@@ -1,13 +1,25 @@
 {
   "raw": "12  strawberries (halved)",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": null
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": "halved"
+    },
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": null
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Few sprigs of fresh dill (to your liking)",
-  "expected": {
-    "item": "Few sprigs of fresh dill (to your liking)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Few sprigs of fresh dill (to your liking)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Few sprigs of fresh dill (to your liking)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

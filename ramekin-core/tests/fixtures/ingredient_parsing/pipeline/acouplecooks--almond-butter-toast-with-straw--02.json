@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
-  "expected": {
-    "item": "Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Almond Butter (or any nut butter: peanut butter, cashew butter or nut butter)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

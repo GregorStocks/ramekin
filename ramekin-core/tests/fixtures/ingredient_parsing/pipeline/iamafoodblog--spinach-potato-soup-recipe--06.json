@@ -1,8 +1,15 @@
 {
   "raw": "salt and freshly ground pepper to taste",
-  "expected": {
-    "item": "salt and freshly ground pepper to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt and freshly ground pepper to taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salt and freshly ground pepper to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

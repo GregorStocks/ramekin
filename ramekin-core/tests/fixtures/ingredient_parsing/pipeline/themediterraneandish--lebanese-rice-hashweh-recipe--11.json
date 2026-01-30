@@ -1,13 +1,25 @@
 {
   "raw": "1/3 to 1/2 cup pine nuts, toasted",
-  "expected": {
-    "item": "pine nuts",
-    "measurements": [
-      {
-        "amount": "1/3 to 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pine nuts",
+      "measurements": [
+        {
+          "amount": "1/3 to 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "pine nuts",
+      "measurements": [
+        {
+          "amount": "1/3 to 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

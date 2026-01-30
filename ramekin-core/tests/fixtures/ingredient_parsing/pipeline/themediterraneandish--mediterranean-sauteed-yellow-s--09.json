@@ -1,8 +1,15 @@
 {
   "raw": "Pitted marinated olives, sliced (optional)",
-  "expected": {
-    "item": "Pitted marinated olives, sliced",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pitted marinated olives, sliced",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Pitted marinated olives, sliced",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

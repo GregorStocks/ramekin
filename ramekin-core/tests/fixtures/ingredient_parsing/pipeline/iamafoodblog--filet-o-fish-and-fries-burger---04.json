@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon Farmer’s Garden by Vlasic Bread & Butter Chips brine",
-  "expected": {
-    "item": "Farmer’s Garden by Vlasic Bread & Butter Chips brine",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Farmer’s Garden by Vlasic Bread & Butter Chips brine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Farmer’s Garden by Vlasic Bread & Butter Chips brine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

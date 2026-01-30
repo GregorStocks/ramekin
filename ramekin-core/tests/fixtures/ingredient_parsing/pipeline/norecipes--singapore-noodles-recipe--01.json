@@ -1,13 +1,25 @@
 {
   "raw": "160 grams rice vermicelli (dried (a.k.a. mai fun or bee hoon))",
-  "expected": {
-    "item": "rice vermicelli",
-    "measurements": [
-      {
-        "amount": "160",
-        "unit": "g"
-      }
-    ],
-    "note": "dried (a.k.a. mai fun or bee hoon"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "rice vermicelli",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": "dried (a.k.a. mai fun or bee hoon"
+    },
+    "enrich_metric_weights": {
+      "item": "rice vermicelli",
+      "measurements": [
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": "dried (a.k.a. mai fun or bee hoon"
+    }
   }
 }

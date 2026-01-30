@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 tbsp whisked egg (, at room temp (around 1/2 an egg, Note 2))",
-  "expected": {
-    "item": "whisked egg (, at room temp (around 1/2 an egg, Note 2)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whisked egg (, at room temp (around 1/2 an egg, Note 2)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whisked egg (, at room temp (around 1/2 an egg, Note 2)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

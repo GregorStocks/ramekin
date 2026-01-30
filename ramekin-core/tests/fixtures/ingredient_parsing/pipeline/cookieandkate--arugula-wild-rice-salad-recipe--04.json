@@ -1,13 +1,29 @@
 {
   "raw": "5 ounces arugula (about 5 packed cups)",
-  "expected": {
-    "item": "arugula",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": "about 5 packed cups"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "arugula",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "about 5 packed cups"
+    },
+    "parse_ingredients": {
+      "item": "arugula",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": "about 5 packed cups"
+    }
   }
 }

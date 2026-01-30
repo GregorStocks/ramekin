@@ -1,8 +1,15 @@
 {
   "raw": "Tomato-cucumber “relish” salad",
-  "expected": {
-    "item": "Tomato-cucumber “relish” salad",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tomato-cucumber “relish” salad",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Tomato-cucumber “relish” salad",
+      "measurements": [],
+      "note": null
+    }
   }
 }

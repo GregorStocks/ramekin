@@ -1,13 +1,25 @@
 {
   "raw": "3/4 pound green beans, tops and tails trimmed",
-  "expected": {
-    "item": "green beans",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "tops and tails trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "tops and tails trimmed"
+    },
+    "parse_ingredients": {
+      "item": "green beans",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "tops and tails trimmed"
+    }
   }
 }

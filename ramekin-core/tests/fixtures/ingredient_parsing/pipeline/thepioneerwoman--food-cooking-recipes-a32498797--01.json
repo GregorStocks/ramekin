@@ -1,8 +1,15 @@
 {
   "raw": "Salted butter, for the baking dish&nbsp;",
-  "expected": {
-    "item": "Salted butter, for the baking dish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Salted butter, for the baking dish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Salted butter, for the baking dish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup granulated sugar plus extra for the topping",
-  "expected": {
-    "item": "granulated sugar",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus extra for the topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus extra for the topping"
+    },
+    "parse_ingredients": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus extra for the topping"
+    }
   }
 }

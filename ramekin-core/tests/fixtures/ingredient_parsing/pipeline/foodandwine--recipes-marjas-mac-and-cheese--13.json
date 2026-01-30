@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces cold cream cheese (cut into 1/2-inch cubes)",
-  "expected": {
-    "item": "cold cream cheese (cut into 1/2-inch cubes)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cold cream cheese (cut into 1/2-inch cubes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cold cream cheese (cut into 1/2-inch cubes)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

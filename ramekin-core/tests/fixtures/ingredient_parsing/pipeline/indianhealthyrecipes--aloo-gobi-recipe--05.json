@@ -1,17 +1,33 @@
 {
   "raw": "½ tablespoon (½ inch)  ginger (peeled &amp;amp; minced or grated)",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "peeled & minced or grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "peeled & minced or grated"
+    },
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "peeled & minced or grated"
+    }
   }
 }

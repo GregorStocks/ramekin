@@ -1,8 +1,15 @@
 {
   "raw": "Sauce:",
-  "expected": {
-    "item": "Sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

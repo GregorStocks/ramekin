@@ -1,13 +1,25 @@
 {
   "raw": "1/3 c. pitted kalamata olives, chopped",
-  "expected": {
-    "item": "pitted kalamata olives",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pitted kalamata olives",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "pitted kalamata olives",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Nori (Roasted Seaweed, thinly cut)",
-  "expected": {
-    "item": "Nori",
-    "measurements": [],
-    "note": "Roasted Seaweed, thinly cut"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Nori",
+      "measurements": [],
+      "note": "Roasted Seaweed, thinly cut"
+    },
+    "enrich_metric_weights": {
+      "item": "Nori",
+      "measurements": [],
+      "note": "Roasted Seaweed, thinly cut"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "Two 15.5-ounce (439g) cans pinto beans, drained and rinsed",
-  "expected": {
-    "item": "pinto beans",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "15.5-ounce cans"
-      },
-      {
-        "amount": "439",
-        "unit": "g"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pinto beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15.5-ounce cans"
+        },
+        {
+          "amount": "439",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "pinto beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "15.5-ounce cans"
+        },
+        {
+          "amount": "439",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

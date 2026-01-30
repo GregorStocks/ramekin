@@ -1,17 +1,37 @@
 {
   "raw": "3 strips center-cut bacon (about 2 ounces), chopped",
-  "expected": {
-    "item": "strips center-cut bacon",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strips center-cut bacon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "strips center-cut bacon",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

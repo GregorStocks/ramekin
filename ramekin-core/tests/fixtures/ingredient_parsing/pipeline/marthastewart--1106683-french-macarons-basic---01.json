@@ -1,17 +1,33 @@
 {
   "raw": "0.667 cup sliced blanched almonds (71 grams)",
-  "expected": {
-    "item": "sliced blanched almonds",
-    "measurements": [
-      {
-        "amount": "0.667",
-        "unit": "cup"
-      },
-      {
-        "amount": "71",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sliced blanched almonds",
+      "measurements": [
+        {
+          "amount": "0.667",
+          "unit": "cup"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sliced blanched almonds",
+      "measurements": [
+        {
+          "amount": "0.667",
+          "unit": "cup"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

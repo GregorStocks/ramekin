@@ -1,13 +1,29 @@
 {
   "raw": "6 ounces slab bacon or thick-cut bacon slices",
-  "expected": {
-    "item": "slab bacon or thick-cut bacon slices",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "slab bacon or thick-cut bacon slices",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "slab bacon or thick-cut bacon slices",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

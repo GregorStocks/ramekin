@@ -1,17 +1,33 @@
 {
   "raw": "1 (9-inch) single crust homemade pie crust, our recipe makes enough for 2 single crust pies",
-  "expected": {
-    "item": "single crust homemade pie crust, our recipe makes enough for 2 single crust pies",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "9",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "single crust homemade pie crust, our recipe makes enough for 2 single crust pies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "single crust homemade pie crust, our recipe makes enough for 2 single crust pies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

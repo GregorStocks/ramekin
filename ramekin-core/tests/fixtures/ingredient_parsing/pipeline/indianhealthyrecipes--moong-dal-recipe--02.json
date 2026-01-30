@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup   onions/ shallots ((optional, 1 small fine chopped))",
-  "expected": {
-    "item": "onions/ shallots",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional, 1 small fine chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions/ shallots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, 1 small fine chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "onions/ shallots",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, 1 small fine chopped"
+    }
   }
 }

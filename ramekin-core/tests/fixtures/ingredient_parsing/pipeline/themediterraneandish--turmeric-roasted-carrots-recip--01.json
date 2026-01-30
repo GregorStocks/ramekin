@@ -1,13 +1,25 @@
 {
   "raw": "2 lb carrots (pealed and cut on the diagonal)",
-  "expected": {
-    "item": "carrots (pealed and cut on the diagonal)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots (pealed and cut on the diagonal)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "carrots (pealed and cut on the diagonal)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

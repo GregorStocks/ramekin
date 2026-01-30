@@ -1,13 +1,25 @@
 {
   "raw": "4  eggs (cooked, sunny-side-up)",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "cooked, sunny-side-up"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "cooked, sunny-side-up"
+    },
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "cooked, sunny-side-up"
+    }
   }
 }

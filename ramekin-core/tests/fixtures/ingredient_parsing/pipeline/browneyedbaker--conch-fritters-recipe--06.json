@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces conch (finely minced)",
-  "expected": {
-    "item": "conch",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "finely minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "conch",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "finely minced"
+    },
+    "parse_ingredients": {
+      "item": "conch",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "finely minced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 small carrot ((optional) (diced))",
-  "expected": {
-    "item": "carrot (diced)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrot (diced)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "carrot (diced)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

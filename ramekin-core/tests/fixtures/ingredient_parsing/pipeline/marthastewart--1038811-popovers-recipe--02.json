@@ -1,13 +1,25 @@
 {
   "raw": "1.5 cups whole milk, room temperature",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "cup"
-      }
-    ],
-    "note": "room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": "room temperature"
+    }
   }
 }

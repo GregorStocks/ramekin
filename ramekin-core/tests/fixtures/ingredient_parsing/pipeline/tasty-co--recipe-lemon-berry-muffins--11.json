@@ -1,8 +1,15 @@
 {
   "raw": "muffin tin, 6 cup, jumbo",
-  "expected": {
-    "item": "muffin tin, 6 cup, jumbo",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "muffin tin, 6 cup, jumbo",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "muffin tin, 6 cup, jumbo",
+      "measurements": [],
+      "note": null
+    }
   }
 }

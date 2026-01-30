@@ -1,8 +1,15 @@
 {
   "raw": "Grapeseed or canola oil (optional)",
-  "expected": {
-    "item": "Grapeseed or canola oil",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Grapeseed or canola oil",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Grapeseed or canola oil",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2/3 lb dried spaghetti",
-  "expected": {
-    "item": "dried spaghetti",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried spaghetti",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried spaghetti",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

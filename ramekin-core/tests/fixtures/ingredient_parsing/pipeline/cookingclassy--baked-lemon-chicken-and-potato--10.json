@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 lbs Yukon gold potatoes, (cut into 2/3-inch cubes)",
-  "expected": {
-    "item": "Yukon gold potatoes, (cut into 2/3-inch cubes)",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Yukon gold potatoes, (cut into 2/3-inch cubes)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Yukon gold potatoes, (cut into 2/3-inch cubes)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 slice ginger root (thick cut)",
-  "expected": {
-    "item": "ginger root (thick cut)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ginger root (thick cut)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ginger root (thick cut)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

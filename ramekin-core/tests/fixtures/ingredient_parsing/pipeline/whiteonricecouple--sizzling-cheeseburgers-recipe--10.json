@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2  Tablespoons  fish sauce (, (for more daring, savory depth, use 2 tablespoons))",
-  "expected": {
-    "item": "fish sauce",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "(for more daring, savory depth, use 2 tablespoons"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "(for more daring, savory depth, use 2 tablespoons"
+    },
+    "enrich_metric_weights": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "(for more daring, savory depth, use 2 tablespoons"
+    }
   }
 }

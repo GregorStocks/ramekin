@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons chopped fresh dill (optional)",
-  "expected": {
-    "item": "chopped fresh dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

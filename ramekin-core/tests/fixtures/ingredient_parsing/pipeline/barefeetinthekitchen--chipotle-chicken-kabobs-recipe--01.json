@@ -1,8 +1,15 @@
 {
   "raw": "Marinade Ingredients:",
-  "expected": {
-    "item": "Marinade Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Marinade Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Marinade Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

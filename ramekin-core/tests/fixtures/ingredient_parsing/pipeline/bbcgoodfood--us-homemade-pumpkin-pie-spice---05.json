@@ -1,8 +1,15 @@
 {
   "raw": "grating of nutmeg",
-  "expected": {
-    "item": "grating of nutmeg",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grating of nutmeg",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "grating of nutmeg",
+      "measurements": [],
+      "note": null
+    }
   }
 }

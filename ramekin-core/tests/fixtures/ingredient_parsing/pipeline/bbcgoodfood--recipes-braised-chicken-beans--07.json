@@ -1,13 +1,25 @@
 {
   "raw": "400g can flageolet bean rinsed and drained",
-  "expected": {
-    "item": "can flageolet bean rinsed and drained",
-    "measurements": [
-      {
-        "amount": "400",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can flageolet bean rinsed and drained",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "can flageolet bean rinsed and drained",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

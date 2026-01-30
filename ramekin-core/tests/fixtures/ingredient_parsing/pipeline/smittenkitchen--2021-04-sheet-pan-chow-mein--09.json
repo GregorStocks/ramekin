@@ -1,13 +1,25 @@
 {
   "raw": "1 medium shallot or 3 scallions, thinly sliced",
-  "expected": {
-    "item": "shallot or 3 scallions",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shallot or 3 scallions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "shallot or 3 scallions",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

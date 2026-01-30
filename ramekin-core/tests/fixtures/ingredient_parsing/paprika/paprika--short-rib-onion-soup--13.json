@@ -1,8 +1,15 @@
 {
   "raw": "SOUP",
-  "expected": {
-    "item": "SOUP",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "SOUP",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "SOUP",
+      "measurements": [],
+      "note": null
+    }
   }
 }

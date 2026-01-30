@@ -1,8 +1,15 @@
 {
   "raw": "Marinara sauce, for serving&amp;nbsp;",
-  "expected": {
-    "item": "Marinara sauce",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Marinara sauce",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Marinara sauce",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Vegetables:",
-  "expected": {
-    "item": "Vegetables:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vegetables:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Vegetables:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

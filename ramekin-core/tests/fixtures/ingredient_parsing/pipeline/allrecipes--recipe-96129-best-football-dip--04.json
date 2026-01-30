@@ -1,17 +1,33 @@
 {
   "raw": "1 (1 pound) loaf processed cheese food, sliced",
-  "expected": {
-    "item": "loaf processed cheese food",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loaf processed cheese food",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "loaf processed cheese food",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

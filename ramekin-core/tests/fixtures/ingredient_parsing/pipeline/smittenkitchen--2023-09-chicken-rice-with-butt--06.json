@@ -1,8 +1,15 @@
 {
   "raw": "Leaves stripped from a few sprigs of thyme",
-  "expected": {
-    "item": "Leaves stripped from a few sprigs of thyme",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Leaves stripped from a few sprigs of thyme",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Leaves stripped from a few sprigs of thyme",
+      "measurements": [],
+      "note": null
+    }
   }
 }

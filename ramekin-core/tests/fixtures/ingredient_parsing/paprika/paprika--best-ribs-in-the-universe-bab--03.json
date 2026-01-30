@@ -1,13 +1,25 @@
 {
   "raw": "1/8 cup brown sugar, dried",
-  "expected": {
-    "item": "brown sugar",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "cup"
-      }
-    ],
-    "note": "dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "cup"
+        }
+      ],
+      "note": "dried"
+    },
+    "enrich_metric_weights": {
+      "item": "brown sugar",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "cup"
+        }
+      ],
+      "note": "dried"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 7- ounce pepperoni stick (sliced)",
-  "expected": {
-    "item": "7- ounce pepperoni stick",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "7- ounce pepperoni stick",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "7- ounce pepperoni stick",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

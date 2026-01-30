@@ -1,13 +1,25 @@
 {
   "raw": "1/2 can spam",
-  "expected": {
-    "item": "spam",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "spam",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "spam",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    }
   }
 }

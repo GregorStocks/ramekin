@@ -1,13 +1,25 @@
 {
   "raw": "36 chocolate sandwich cookies",
-  "expected": {
-    "item": "chocolate sandwich cookies",
-    "measurements": [
-      {
-        "amount": "36",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chocolate sandwich cookies",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chocolate sandwich cookies",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

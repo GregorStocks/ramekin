@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup onion (finely chopped (1 very small, optional))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely chopped (1 very small, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped (1 very small, optional"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely chopped (1 very small, optional"
+    }
   }
 }

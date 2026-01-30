@@ -1,13 +1,25 @@
 {
   "raw": "4 red, yellow, or orange bell peppers",
-  "expected": {
-    "item": "red, yellow, or orange bell peppers",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red, yellow, or orange bell peppers",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red, yellow, or orange bell peppers",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

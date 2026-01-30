@@ -1,21 +1,41 @@
 {
   "raw": "2 tablespoons (0.5 ounces, 14 grams) caraway seeds (you can grind these if you want to avoid the crunch)",
-  "expected": {
-    "item": "caraway seeds (you can grind these if you want to avoid the crunch)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "0.5",
-        "unit": "oz"
-      },
-      {
-        "amount": "14",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "caraway seeds (you can grind these if you want to avoid the crunch)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "0.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "caraway seeds (you can grind these if you want to avoid the crunch)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "0.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

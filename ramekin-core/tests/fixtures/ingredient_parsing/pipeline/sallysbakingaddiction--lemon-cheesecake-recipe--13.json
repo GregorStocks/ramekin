@@ -1,8 +1,15 @@
 {
   "raw": "lemon slices and/or fresh berries",
-  "expected": {
-    "item": "lemon slices and/or fresh berries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon slices and/or fresh berries",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lemon slices and/or fresh berries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

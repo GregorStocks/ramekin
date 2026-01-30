@@ -1,8 +1,15 @@
 {
   "raw": "guacamole (or sliced avocado)",
-  "expected": {
-    "item": "guacamole",
-    "measurements": [],
-    "note": "or sliced avocado"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "guacamole",
+      "measurements": [],
+      "note": "or sliced avocado"
+    },
+    "parse_ingredients": {
+      "item": "guacamole",
+      "measurements": [],
+      "note": "or sliced avocado"
+    }
   }
 }

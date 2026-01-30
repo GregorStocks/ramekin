@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup vegetable, canola, or olive oil, divided, plus more as needed",
-  "expected": {
-    "item": "vegetable, canola, or olive oil, divided",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable, canola, or olive oil, divided",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable, canola, or olive oil, divided",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  beef bouillon cube (crushed)",
-  "expected": {
-    "item": "beef bouillon cube",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef bouillon cube",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    },
+    "enrich_metric_weights": {
+      "item": "beef bouillon cube",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

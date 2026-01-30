@@ -1,13 +1,25 @@
 {
   "raw": "Dash of cinnamon (up to 1/8 tsp)",
-  "expected": {
-    "item": "cinnamon (up to 1/8 tsp)",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cinnamon (up to 1/8 tsp)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cinnamon (up to 1/8 tsp)",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

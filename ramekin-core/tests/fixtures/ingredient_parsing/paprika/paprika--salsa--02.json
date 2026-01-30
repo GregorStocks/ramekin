@@ -1,13 +1,25 @@
 {
   "raw": "1/2 of a small or 1/4 of a large white onion",
-  "expected": {
-    "item": "of a small or 1/4 of a large white onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "of a small or 1/4 of a large white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "of a small or 1/4 of a large white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

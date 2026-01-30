@@ -1,17 +1,37 @@
 {
   "raw": "6  packets (.25 oz. each powdered gelatin)",
-  "expected": {
-    "item": "packets",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      },
-      {
-        "amount": ".25",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packets",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": ".25",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packets",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": ".25",
+          "unit": "oz"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "sprinkling thyme leaves",
-  "expected": {
-    "item": "sprinkling thyme leaves",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sprinkling thyme leaves",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sprinkling thyme leaves",
+      "measurements": [],
+      "note": null
+    }
   }
 }

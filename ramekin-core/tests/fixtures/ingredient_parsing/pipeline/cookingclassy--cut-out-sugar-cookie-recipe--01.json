@@ -1,17 +1,33 @@
 {
   "raw": "2 1/2 cups (354g) all-purpose flour ((scoop and level to measure))",
-  "expected": {
-    "item": "all-purpose flour (scoop and level to measure)",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "354",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour (scoop and level to measure)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "354",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour (scoop and level to measure)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "354",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

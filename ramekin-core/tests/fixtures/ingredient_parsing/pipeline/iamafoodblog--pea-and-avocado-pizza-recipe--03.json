@@ -1,13 +1,25 @@
 {
   "raw": "1 head roasted garlic",
-  "expected": {
-    "item": "roasted garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "roasted garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "roasted garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": null
+    }
   }
 }

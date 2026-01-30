@@ -1,8 +1,15 @@
 {
   "raw": "Corn tortilla chips, for serving (optional)",
-  "expected": {
-    "item": "Corn tortilla chips, for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Corn tortilla chips, for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Corn tortilla chips, for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon dark-roast coffee beans (espresso-ground )",
-  "expected": {
-    "item": "dark-roast coffee beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "espresso-ground"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark-roast coffee beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "espresso-ground"
+    },
+    "parse_ingredients": {
+      "item": "dark-roast coffee beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "espresso-ground"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound ball of mozzarella, sliced (this is a great place to use the really fresh stuff, if you can get it)",
-  "expected": {
-    "item": "ball of mozzarella, sliced",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "this is a great place to use the really fresh stuff, if you can get it"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ball of mozzarella, sliced",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "this is a great place to use the really fresh stuff, if you can get it"
+    },
+    "parse_ingredients": {
+      "item": "ball of mozzarella, sliced",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "this is a great place to use the really fresh stuff, if you can get it"
+    }
   }
 }

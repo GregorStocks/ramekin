@@ -1,8 +1,15 @@
 {
   "raw": "Pizza:",
-  "expected": {
-    "item": "Pizza:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pizza:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pizza:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

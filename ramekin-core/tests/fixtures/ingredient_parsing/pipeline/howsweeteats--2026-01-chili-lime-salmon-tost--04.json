@@ -1,13 +1,25 @@
 {
   "raw": "1  lime, (juiced and zest freshly grated)",
-  "expected": {
-    "item": "lime",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "juiced and zest freshly grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "juiced and zest freshly grated"
+    },
+    "enrich_metric_weights": {
+      "item": "lime",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "juiced and zest freshly grated"
+    }
   }
 }

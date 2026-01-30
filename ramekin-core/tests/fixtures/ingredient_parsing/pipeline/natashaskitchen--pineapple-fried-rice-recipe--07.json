@@ -1,13 +1,25 @@
 {
   "raw": "2 cups cooked white rice (cold (=1 cup uncooked white rice with 1 Tbsp butter &amp;amp; 1/4 tsp salt))",
-  "expected": {
-    "item": "cooked white rice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked white rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt"
+    },
+    "parse_ingredients": {
+      "item": "cooked white rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "cold (=1 cup uncooked white rice with 1 Tbsp butter & 1/4 tsp salt"
+    }
   }
 }

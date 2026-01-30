@@ -1,8 +1,15 @@
 {
   "raw": "Canola, safflower or peanut oil for frying",
-  "expected": {
-    "item": "Canola, safflower or peanut oil for frying",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Canola, safflower or peanut oil for frying",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Canola, safflower or peanut oil for frying",
+      "measurements": [],
+      "note": null
+    }
   }
 }

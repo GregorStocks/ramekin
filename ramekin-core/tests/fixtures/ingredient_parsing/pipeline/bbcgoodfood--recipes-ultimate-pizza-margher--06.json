@@ -1,13 +1,25 @@
 {
   "raw": "275ml tepid water",
-  "expected": {
-    "item": "tepid water",
-    "measurements": [
-      {
-        "amount": "275",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tepid water",
+      "measurements": [
+        {
+          "amount": "275",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tepid water",
+      "measurements": [
+        {
+          "amount": "275",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

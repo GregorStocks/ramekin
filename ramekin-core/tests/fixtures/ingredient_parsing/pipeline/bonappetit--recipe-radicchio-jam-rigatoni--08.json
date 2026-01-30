@@ -1,8 +1,15 @@
 {
   "raw": "end, cored, cut into 1\" pieces, divided",
-  "expected": {
-    "item": "end, cored, cut into 1\" pieces",
-    "measurements": [],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "end, cored, cut into 1\" pieces",
+      "measurements": [],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "end, cored, cut into 1\" pieces",
+      "measurements": [],
+      "note": "divided"
+    }
   }
 }

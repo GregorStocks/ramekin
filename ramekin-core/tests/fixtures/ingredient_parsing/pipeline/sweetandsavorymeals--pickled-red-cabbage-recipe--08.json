@@ -1,13 +1,25 @@
 {
   "raw": "1  red chili pepper (sliced and seeded)",
-  "expected": {
-    "item": "red chili pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced and seeded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced and seeded"
+    },
+    "enrich_metric_weights": {
+      "item": "red chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced and seeded"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons minced fresh chives, plus 1 teaspoon for garnish",
-  "expected": {
-    "item": "minced fresh chives",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus 1 teaspoon for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced fresh chives",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 teaspoon for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "minced fresh chives",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus 1 teaspoon for garnish"
+    }
   }
 }

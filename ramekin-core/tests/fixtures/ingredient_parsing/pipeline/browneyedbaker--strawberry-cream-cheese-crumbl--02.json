@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons powdered sugar (sifted)",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "sifted"
+    },
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

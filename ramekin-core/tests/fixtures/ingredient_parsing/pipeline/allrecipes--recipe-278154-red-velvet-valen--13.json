@@ -1,17 +1,37 @@
 {
   "raw": "4 (8 ounce) packages Neufchatel cheese, softened",
-  "expected": {
-    "item": "Neufchatel cheese",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "package"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Neufchatel cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "Neufchatel cheese",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "package"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

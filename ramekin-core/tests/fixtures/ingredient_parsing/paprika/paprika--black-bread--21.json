@@ -1,8 +1,15 @@
 {
   "raw": "Special equipment: Spice grinder (optional), instant-read thermometer",
-  "expected": {
-    "item": "Special equipment: Spice grinder , instant-read thermometer",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Special equipment: Spice grinder , instant-read thermometer",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Special equipment: Spice grinder , instant-read thermometer",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 plum tomatoes, diced",
-  "expected": {
-    "item": "plum tomatoes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "plum tomatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

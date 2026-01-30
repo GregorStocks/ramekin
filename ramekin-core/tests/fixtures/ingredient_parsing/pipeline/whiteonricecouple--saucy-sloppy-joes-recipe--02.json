@@ -1,13 +1,25 @@
 {
   "raw": "1 Tablespoon vegetable oil (, or preferred cooking oil)",
-  "expected": {
-    "item": "vegetable oil (, or preferred cooking oil)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable oil (, or preferred cooking oil)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable oil (, or preferred cooking oil)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 cups strawberries, halved",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "halved"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    },
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "halved"
+    }
   }
 }

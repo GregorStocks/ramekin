@@ -1,13 +1,25 @@
 {
   "raw": "1 cup Pecorino Romano cheese (freshly grated)",
-  "expected": {
-    "item": "Pecorino Romano cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "freshly grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pecorino Romano cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "freshly grated"
+    },
+    "enrich_metric_weights": {
+      "item": "Pecorino Romano cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "freshly grated"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 gallon Lime Sherbet",
-  "expected": {
-    "item": "Lime Sherbet",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "gallon"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Lime Sherbet",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Lime Sherbet",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    }
   }
 }

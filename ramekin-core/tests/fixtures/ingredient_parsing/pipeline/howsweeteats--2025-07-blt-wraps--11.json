@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons fresh dill or 2 teaspoons dried dill weed",
-  "expected": {
-    "item": "fresh dill",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 2 teaspoons dried dill weed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 2 teaspoons dried dill weed"
+    },
+    "parse_ingredients": {
+      "item": "fresh dill",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 2 teaspoons dried dill weed"
+    }
   }
 }

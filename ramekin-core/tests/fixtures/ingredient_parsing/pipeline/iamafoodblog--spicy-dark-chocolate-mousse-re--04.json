@@ -1,8 +1,15 @@
 {
   "raw": "a bowl of ice cubes with a bit of cold water",
-  "expected": {
-    "item": "a bowl of ice cubes with a bit of cold water",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "a bowl of ice cubes with a bit of cold water",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "a bowl of ice cubes with a bit of cold water",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 large ripe mango (, peeled and cut into small dice )",
-  "expected": {
-    "item": "ripe mango",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled and cut into small dice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ripe mango",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and cut into small dice"
+    },
+    "enrich_metric_weights": {
+      "item": "ripe mango",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and cut into small dice"
+    }
   }
 }

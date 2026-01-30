@@ -1,13 +1,25 @@
 {
   "raw": "1.75 cups sifted all-purpose flour",
-  "expected": {
-    "item": "sifted all-purpose flour",
-    "measurements": [
-      {
-        "amount": "1.75",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sifted all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sifted all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

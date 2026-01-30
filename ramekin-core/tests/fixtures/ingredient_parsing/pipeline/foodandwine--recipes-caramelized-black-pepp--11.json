@@ -1,13 +1,25 @@
 {
   "raw": "1 pound skinless, boneless chicken thighs, cut into 1-inch pieces",
-  "expected": {
-    "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "skinless, boneless chicken thighs, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

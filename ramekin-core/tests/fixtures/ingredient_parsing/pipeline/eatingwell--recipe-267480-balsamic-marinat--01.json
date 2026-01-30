@@ -1,17 +1,33 @@
 {
   "raw": "1 (5 to 6 pound) leg of lamb, boned, rolled and tied",
-  "expected": {
-    "item": "leg of lamb, boned, rolled and tied",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "5 to 6",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "leg of lamb, boned, rolled and tied",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "5 to 6",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "leg of lamb, boned, rolled and tied",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "5 to 6",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

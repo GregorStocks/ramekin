@@ -1,13 +1,25 @@
 {
   "raw": "12  large white eggs (room temp, uncooked with shell-on)",
-  "expected": {
-    "item": "white eggs",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "large"
-      }
-    ],
-    "note": "room temp, uncooked with shell-on"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white eggs",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "large"
+        }
+      ],
+      "note": "room temp, uncooked with shell-on"
+    },
+    "parse_ingredients": {
+      "item": "white eggs",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "large"
+        }
+      ],
+      "note": "room temp, uncooked with shell-on"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch kale (washed and dried)",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": "washed and dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "washed and dried"
+    },
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": "washed and dried"
+    }
   }
 }

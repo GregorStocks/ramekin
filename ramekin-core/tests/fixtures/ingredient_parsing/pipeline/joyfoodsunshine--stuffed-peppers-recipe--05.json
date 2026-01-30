@@ -1,13 +1,25 @@
 {
   "raw": "1 cup yellow onion (finely diced (about half of a medium onion))",
-  "expected": {
-    "item": "yellow onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely diced (about half of a medium onion"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced (about half of a medium onion"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced (about half of a medium onion"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  fried eggs (or 1 cup cubed baked tofu)",
-  "expected": {
-    "item": "fried eggs",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "or 1 cup cubed baked tofu"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fried eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 1 cup cubed baked tofu"
+    },
+    "parse_ingredients": {
+      "item": "fried eggs",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 1 cup cubed baked tofu"
+    }
   }
 }

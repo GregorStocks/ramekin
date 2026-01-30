@@ -1,8 +1,15 @@
 {
   "raw": "gel food coloring",
-  "expected": {
-    "item": "gel food coloring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "gel food coloring",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "gel food coloring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Food color pen",
-  "expected": {
-    "item": "Food color pen",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Food color pen",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Food color pen",
+      "measurements": [],
+      "note": null
+    }
   }
 }

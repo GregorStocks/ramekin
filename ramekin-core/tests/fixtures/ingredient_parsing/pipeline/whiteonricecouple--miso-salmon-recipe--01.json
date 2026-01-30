@@ -1,13 +1,29 @@
 {
   "raw": "12 oz. (two 6-oz./170g) salmon filets",
-  "expected": {
-    "item": "(two 6-oz./170g) salmon filets",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "(two 6-oz./170g) salmon filets",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "(two 6-oz./170g) salmon filets",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

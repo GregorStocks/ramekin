@@ -1,13 +1,25 @@
 {
   "raw": "½ teaspoon  smoked paprika (optional but recommended)",
-  "expected": {
-    "item": "smoked paprika",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional but recommended"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "smoked paprika",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but recommended"
+    },
+    "parse_ingredients": {
+      "item": "smoked paprika",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but recommended"
+    }
   }
 }

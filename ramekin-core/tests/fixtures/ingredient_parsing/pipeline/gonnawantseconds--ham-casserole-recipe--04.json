@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds  ham (about 4 1/2-5 cups cubed), (cut into 1/2 cubes)",
-  "expected": {
-    "item": "ham , (cut into 1/2 cubes)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "about 4 1/2-5 cups cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ham , (cut into 1/2 cubes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 1/2-5 cups cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "ham , (cut into 1/2 cubes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 1/2-5 cups cubed"
+    }
   }
 }

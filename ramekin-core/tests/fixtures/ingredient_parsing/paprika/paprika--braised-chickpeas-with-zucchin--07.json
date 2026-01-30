@@ -1,13 +1,25 @@
 {
   "raw": "1 pound summer squash or zucchini, quartered lengthwise, thinly sliced",
-  "expected": {
-    "item": "summer squash or zucchini, quartered lengthwise",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "summer squash or zucchini, quartered lengthwise",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "summer squash or zucchini, quartered lengthwise",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

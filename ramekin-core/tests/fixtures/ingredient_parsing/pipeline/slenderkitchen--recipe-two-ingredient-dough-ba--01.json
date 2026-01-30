@@ -1,13 +1,25 @@
 {
   "raw": "1.25 cups self rising flour",
-  "expected": {
-    "item": "self rising flour",
-    "measurements": [
-      {
-        "amount": "1.25",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "self rising flour",
+      "measurements": [
+        {
+          "amount": "1.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "self rising flour",
+      "measurements": [
+        {
+          "amount": "1.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

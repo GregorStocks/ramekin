@@ -1,13 +1,25 @@
 {
   "raw": "4 medium carrots, 2 halved crosswise and 2 peeled and cut into half-moons",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "2 halved crosswise and 2 peeled and cut into half-moons"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "2 halved crosswise and 2 peeled and cut into half-moons"
+    },
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "2 halved crosswise and 2 peeled and cut into half-moons"
+    }
   }
 }

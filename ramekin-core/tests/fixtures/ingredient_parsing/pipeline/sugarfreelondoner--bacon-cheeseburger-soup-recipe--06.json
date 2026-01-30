@@ -1,17 +1,33 @@
 {
   "raw": "1 cup tinned chopped tomatoes (240g)",
-  "expected": {
-    "item": "tinned chopped tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tinned chopped tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tinned chopped tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

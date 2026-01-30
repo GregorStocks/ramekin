@@ -1,8 +1,15 @@
 {
   "raw": "flour tortilla, or corn tortillas",
-  "expected": {
-    "item": "flour tortilla, or corn tortillas",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flour tortilla, or corn tortillas",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "flour tortilla, or corn tortillas",
+      "measurements": [],
+      "note": null
+    }
   }
 }

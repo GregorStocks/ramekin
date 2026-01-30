@@ -1,17 +1,33 @@
 {
   "raw": "2 cups (480 ml) store-bought low-sodium beef stock or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water",
-  "expected": {
-    "item": "store-bought low-sodium beef stock",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "480",
-        "unit": "ml"
-      }
-    ],
-    "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "store-bought low-sodium beef stock",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "480",
+          "unit": "ml"
+        }
+      ],
+      "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water"
+    },
+    "parse_ingredients": {
+      "item": "store-bought low-sodium beef stock",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "480",
+          "unit": "ml"
+        }
+      ],
+      "note": "or 2 teaspoons reduced-sodium jarred beef stock base such as Better Than Bouillon brand dissolved in 2 cups tap water"
+    }
   }
 }

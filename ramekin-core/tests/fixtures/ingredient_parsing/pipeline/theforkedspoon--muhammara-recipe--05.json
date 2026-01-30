@@ -1,13 +1,25 @@
 {
   "raw": "3/4 cup walnuts (lightly toasted)",
-  "expected": {
-    "item": "walnuts",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "lightly toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    },
+    "parse_ingredients": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2  lime (sliced into 4 wedges, plus more for serving)",
-  "expected": {
-    "item": "lime",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "sliced into 4 wedges, plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 4 wedges, plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "lime",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "sliced into 4 wedges, plus more for serving"
+    }
   }
 }

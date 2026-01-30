@@ -1,13 +1,25 @@
 {
   "raw": "4  sprigs fresh dill",
-  "expected": {
-    "item": "fresh dill",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh dill",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh dill",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

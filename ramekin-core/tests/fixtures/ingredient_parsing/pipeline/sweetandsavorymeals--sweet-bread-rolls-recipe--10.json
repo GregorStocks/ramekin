@@ -1,13 +1,25 @@
 {
   "raw": "1  egg (beaten for the egg wash)",
-  "expected": {
-    "item": "egg",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "beaten for the egg wash"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten for the egg wash"
+    },
+    "enrich_metric_weights": {
+      "item": "egg",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "beaten for the egg wash"
+    }
   }
 }

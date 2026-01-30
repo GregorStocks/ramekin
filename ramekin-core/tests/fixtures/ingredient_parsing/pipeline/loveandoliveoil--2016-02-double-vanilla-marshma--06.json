@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
-  "expected": {
-    "item": "vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vanilla bean paste (or substitute 1 more teaspoon vanilla extract)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

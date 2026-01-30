@@ -1,13 +1,25 @@
 {
   "raw": "½ - 1 teaspoon gochugaru",
-  "expected": {
-    "item": "gochugaru",
-    "measurements": [
-      {
-        "amount": "1/2-1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "gochugaru",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "gochugaru",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

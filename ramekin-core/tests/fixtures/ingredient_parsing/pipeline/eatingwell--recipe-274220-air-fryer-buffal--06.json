@@ -1,13 +1,25 @@
 {
   "raw": "0.5 cup Buffalo-style hot sauce (such as Frank's RedHot)",
-  "expected": {
-    "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Buffalo-style hot sauce (such as Frank's RedHot)",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

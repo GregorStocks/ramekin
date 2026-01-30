@@ -1,13 +1,25 @@
 {
   "raw": "0.5 cup reduced-fat plain strained (Greek-style) yogurt",
-  "expected": {
-    "item": "reduced-fat plain strained (Greek-style) yogurt",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "reduced-fat plain strained (Greek-style) yogurt",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "reduced-fat plain strained (Greek-style) yogurt",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

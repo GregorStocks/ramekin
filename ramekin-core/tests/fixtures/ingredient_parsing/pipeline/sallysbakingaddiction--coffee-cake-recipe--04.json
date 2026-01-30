@@ -1,17 +1,33 @@
 {
   "raw": "6 Tablespoons (85g) unsalted butter,&nbsp;cold and cubed",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "85",
-        "unit": "g"
-      }
-    ],
-    "note": "cold and cubed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "cold and cubed"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "cold and cubed"
+    }
   }
 }

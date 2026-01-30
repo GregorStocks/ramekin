@@ -1,8 +1,15 @@
 {
   "raw": "For the Stir-Fry Sauce:",
-  "expected": {
-    "item": "For the Stir-Fry Sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For the Stir-Fry Sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For the Stir-Fry Sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

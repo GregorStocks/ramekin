@@ -1,8 +1,15 @@
 {
   "raw": "Meatloaf:",
-  "expected": {
-    "item": "Meatloaf:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Meatloaf:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Meatloaf:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

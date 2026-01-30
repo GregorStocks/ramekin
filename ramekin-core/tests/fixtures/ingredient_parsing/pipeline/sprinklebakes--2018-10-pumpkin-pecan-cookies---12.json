@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 180g caramel bits or candy caramels (Kraft recommended)",
-  "expected": {
-    "item": "caramel bits or candy caramels (Kraft recommended)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "180",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "caramel bits or candy caramels (Kraft recommended)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "caramel bits or candy caramels (Kraft recommended)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

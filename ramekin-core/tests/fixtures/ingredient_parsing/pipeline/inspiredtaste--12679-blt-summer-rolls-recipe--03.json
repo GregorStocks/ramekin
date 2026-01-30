@@ -1,13 +1,25 @@
 {
   "raw": "2 cups packed shredded or baby lettuce leaves",
-  "expected": {
-    "item": "packed shredded or baby lettuce leaves",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packed shredded or baby lettuce leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packed shredded or baby lettuce leaves",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

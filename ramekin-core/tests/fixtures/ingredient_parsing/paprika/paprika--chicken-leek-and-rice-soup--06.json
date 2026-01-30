@@ -1,13 +1,25 @@
 {
   "raw": "4 cups chicken stock or broth, preferably homemade",
-  "expected": {
-    "item": "chicken stock or broth, preferably homemade",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken stock or broth, preferably homemade",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken stock or broth, preferably homemade",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

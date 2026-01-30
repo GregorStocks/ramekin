@@ -1,8 +1,15 @@
 {
   "raw": "Hollandaise:",
-  "expected": {
-    "item": "Hollandaise:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Hollandaise:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Hollandaise:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

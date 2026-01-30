@@ -1,13 +1,25 @@
 {
   "raw": "0.33 cup finely chopped celery",
-  "expected": {
-    "item": "finely chopped celery",
-    "measurements": [
-      {
-        "amount": "0.33",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely chopped celery",
+      "measurements": [
+        {
+          "amount": "0.33",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely chopped celery",
+      "measurements": [
+        {
+          "amount": "0.33",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

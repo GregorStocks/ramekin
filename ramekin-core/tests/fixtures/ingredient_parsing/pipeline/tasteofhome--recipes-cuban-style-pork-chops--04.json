@@ -1,17 +1,33 @@
 {
   "raw": "4 boneless pork loin chops (4 ounces each)",
-  "expected": {
-    "item": "boneless pork loin chops",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "4",
-        "unit": "oz each"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless pork loin chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless pork loin chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "4",
+          "unit": "oz each"
+        }
+      ],
+      "note": null
+    }
   }
 }

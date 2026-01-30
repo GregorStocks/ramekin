@@ -1,13 +1,25 @@
 {
   "raw": "1.5 to 2 pounds boneless, skinless chicken breasts",
-  "expected": {
-    "item": "boneless, skinless chicken breasts",
-    "measurements": [
-      {
-        "amount": "1.5 to 2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless, skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "1.5 to 2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless, skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "1.5 to 2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

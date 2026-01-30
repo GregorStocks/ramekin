@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp. grated lime zest, plus 1/2 cup lime juice, plus 12 thin lime slices, for garnish",
-  "expected": {
-    "item": "grated lime zest",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus 1/2 cup lime juice, plus 12 thin lime slices, for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "grated lime zest",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus 1/2 cup lime juice, plus 12 thin lime slices, for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "grated lime zest",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus 1/2 cup lime juice, plus 12 thin lime slices, for garnish"
+    }
   }
 }

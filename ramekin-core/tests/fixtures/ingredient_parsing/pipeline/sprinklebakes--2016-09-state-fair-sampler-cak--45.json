@@ -1,8 +1,15 @@
 {
   "raw": "Prepared funnel cake (see headnote)",
-  "expected": {
-    "item": "Prepared funnel cake (see headnote)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Prepared funnel cake (see headnote)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Prepared funnel cake (see headnote)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

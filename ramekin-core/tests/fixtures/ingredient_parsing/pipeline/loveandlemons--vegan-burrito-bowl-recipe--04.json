@@ -1,13 +1,25 @@
 {
   "raw": "1 cup cooked white, brown, or cilantro lime rice",
-  "expected": {
-    "item": "cooked white, brown, or cilantro lime rice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked white, brown, or cilantro lime rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cooked white, brown, or cilantro lime rice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

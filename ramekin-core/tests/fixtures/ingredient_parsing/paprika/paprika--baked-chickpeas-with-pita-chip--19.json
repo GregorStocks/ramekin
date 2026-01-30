@@ -1,8 +1,15 @@
 {
   "raw": "Lemon-tahini yogurt or plain yogurt",
-  "expected": {
-    "item": "Lemon-tahini yogurt or plain yogurt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lemon-tahini yogurt or plain yogurt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Lemon-tahini yogurt or plain yogurt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

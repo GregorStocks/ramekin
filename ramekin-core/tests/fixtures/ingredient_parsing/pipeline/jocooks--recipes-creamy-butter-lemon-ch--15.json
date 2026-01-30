@@ -1,8 +1,15 @@
 {
   "raw": "parmesan cheese (freshly grated)",
-  "expected": {
-    "item": "parmesan cheese",
-    "measurements": [],
-    "note": "freshly grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "parmesan cheese",
+      "measurements": [],
+      "note": "freshly grated"
+    },
+    "parse_ingredients": {
+      "item": "parmesan cheese",
+      "measurements": [],
+      "note": "freshly grated"
+    }
   }
 }

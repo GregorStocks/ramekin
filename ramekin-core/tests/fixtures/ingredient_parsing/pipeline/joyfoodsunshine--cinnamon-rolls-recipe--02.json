@@ -1,13 +1,25 @@
 {
   "raw": "½ cup + 1 Tablespoon  granulated sugar ((divided))",
-  "expected": {
-    "item": "+ 1 Tablespoon  granulated sugar",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ 1 Tablespoon  granulated sugar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "+ 1 Tablespoon  granulated sugar",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

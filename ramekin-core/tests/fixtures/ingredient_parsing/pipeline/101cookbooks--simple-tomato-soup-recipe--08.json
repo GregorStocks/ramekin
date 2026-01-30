@@ -1,17 +1,33 @@
 {
   "raw": "2  (28-ounce) cans whole tomatoes (pref. fire-roasted)",
-  "expected": {
-    "item": "whole tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "28",
-        "unit": null
-      }
-    ],
-    "note": "pref. fire-roasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": "pref. fire-roasted"
+    },
+    "enrich_metric_weights": {
+      "item": "whole tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "28",
+          "unit": null
+        }
+      ],
+      "note": "pref. fire-roasted"
+    }
   }
 }

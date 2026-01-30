@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (235 ml) heavy or whipping cream",
-  "expected": {
-    "item": "heavy or whipping cream",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "235",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "heavy or whipping cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "235",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "heavy or whipping cream",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "235",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "[no additional ingredients needed for this step]",
-  "expected": {
-    "item": "[no additional ingredients needed for this step]",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "[no additional ingredients needed for this step]",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "[no additional ingredients needed for this step]",
+      "measurements": [],
+      "note": null
+    }
   }
 }

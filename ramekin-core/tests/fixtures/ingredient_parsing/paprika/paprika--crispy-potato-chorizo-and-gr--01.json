@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice (see notes)",
-  "expected": {
-    "item": "russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice (see notes)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice (see notes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "russet or Yukon gold potatoes, cut into 3/4- to 1/2-inch dice (see notes)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon fresh parsley (minced, optional for serving)",
-  "expected": {
-    "item": "fresh parsley",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "minced, optional for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced, optional for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced, optional for serving"
+    }
   }
 }

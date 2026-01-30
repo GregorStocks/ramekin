@@ -1,13 +1,25 @@
 {
   "raw": "1 Tbsp minced parsley, (for garnish (optional))",
-  "expected": {
-    "item": "minced parsley",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "for garnish (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "minced parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "for garnish (optional"
+    }
   }
 }

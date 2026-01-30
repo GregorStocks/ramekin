@@ -1,8 +1,15 @@
 {
   "raw": "half an 8x8-inch sheet nori seaweed",
-  "expected": {
-    "item": "half an 8x8-inch sheet nori seaweed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "half an 8x8-inch sheet nori seaweed",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "half an 8x8-inch sheet nori seaweed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

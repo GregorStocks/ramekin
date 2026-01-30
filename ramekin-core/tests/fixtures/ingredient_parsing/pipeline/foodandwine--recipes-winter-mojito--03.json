@@ -1,17 +1,37 @@
 {
   "raw": "1.5 tablespoons Herb-Infused Simple Syrup (3/4 ounce) (see Note)",
-  "expected": {
-    "item": "Herb-Infused Simple Syrup (see Note)",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "3/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Herb-Infused Simple Syrup (see Note)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "3/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Herb-Infused Simple Syrup (see Note)",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "21",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

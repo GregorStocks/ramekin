@@ -1,13 +1,25 @@
 {
   "raw": "1  head of broccoli (florets trimmed off)",
-  "expected": {
-    "item": "broccoli",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "florets trimmed off"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "florets trimmed off"
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "florets trimmed off"
+    }
   }
 }

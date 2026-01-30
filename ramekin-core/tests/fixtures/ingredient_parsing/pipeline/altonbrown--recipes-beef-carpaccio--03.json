@@ -1,8 +1,15 @@
 {
   "raw": "Your favorite vinaigrette",
-  "expected": {
-    "item": "Your favorite vinaigrette",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Your favorite vinaigrette",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Your favorite vinaigrette",
+      "measurements": [],
+      "note": null
+    }
   }
 }

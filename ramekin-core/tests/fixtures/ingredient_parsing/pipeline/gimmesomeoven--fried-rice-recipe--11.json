@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons&nbsp;oyster sauce&nbsp;(optional)",
-  "expected": {
-    "item": "oyster sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oyster sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "oyster sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

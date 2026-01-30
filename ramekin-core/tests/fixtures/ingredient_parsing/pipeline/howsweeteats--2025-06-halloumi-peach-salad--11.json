@@ -1,13 +1,25 @@
 {
   "raw": "2  peaches, (pitted and sliced)",
-  "expected": {
-    "item": "peaches",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "pitted and sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "pitted and sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "peaches",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "pitted and sliced"
+    }
   }
 }

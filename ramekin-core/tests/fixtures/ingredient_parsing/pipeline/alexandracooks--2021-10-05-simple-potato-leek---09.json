@@ -1,13 +1,25 @@
 {
   "raw": "1.5 cups fresh bread crumbs",
-  "expected": {
-    "item": "fresh bread crumbs",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh bread crumbs",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh bread crumbs",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

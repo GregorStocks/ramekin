@@ -1,13 +1,25 @@
 {
   "raw": "1/4 teaspoon sea salt, plus more for salted caramel sauce, see tips",
-  "expected": {
-    "item": "sea salt",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for salted caramel sauce, see tips"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for salted caramel sauce, see tips"
+    },
+    "enrich_metric_weights": {
+      "item": "sea salt",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for salted caramel sauce, see tips"
+    }
   }
 }

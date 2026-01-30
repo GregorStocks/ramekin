@@ -1,17 +1,37 @@
 {
   "raw": "2 (15 ounce) cans no-salt-added pinto beans, rinsed",
-  "expected": {
-    "item": "no-salt-added pinto beans",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "no-salt-added pinto beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "rinsed"
+    },
+    "parse_ingredients": {
+      "item": "no-salt-added pinto beans",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "rinsed"
+    }
   }
 }

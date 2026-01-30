@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup chopped fresh cilantro, divided",
-  "expected": {
-    "item": "chopped fresh cilantro",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh cilantro",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh cilantro",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

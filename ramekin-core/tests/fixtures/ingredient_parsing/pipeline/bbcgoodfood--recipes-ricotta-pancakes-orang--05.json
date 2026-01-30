@@ -1,13 +1,25 @@
 {
   "raw": "200ml semi-skimmed milk",
-  "expected": {
-    "item": "semi-skimmed milk",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "semi-skimmed milk",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "semi-skimmed milk",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

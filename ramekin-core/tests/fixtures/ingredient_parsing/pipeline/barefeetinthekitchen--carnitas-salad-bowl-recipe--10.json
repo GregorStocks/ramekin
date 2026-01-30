@@ -1,13 +1,25 @@
 {
   "raw": "dash of freshly ground black pepper",
-  "expected": {
-    "item": "freshly ground black pepper",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly ground black pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "freshly ground black pepper",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

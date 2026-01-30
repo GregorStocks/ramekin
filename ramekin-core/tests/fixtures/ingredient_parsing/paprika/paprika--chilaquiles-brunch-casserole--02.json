@@ -1,13 +1,25 @@
 {
   "raw": "1 10 oz can red enchilada sauce",
-  "expected": {
-    "item": "red enchilada sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "10 oz can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red enchilada sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "10 oz can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "red enchilada sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "10 oz can"
+        }
+      ],
+      "note": null
+    }
   }
 }

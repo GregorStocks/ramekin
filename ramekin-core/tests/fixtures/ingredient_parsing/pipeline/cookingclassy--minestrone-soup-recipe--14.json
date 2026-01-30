@@ -1,17 +1,37 @@
 {
   "raw": "2 cups (2 oz) fresh spinach, (roughly chopped)",
-  "expected": {
-    "item": "fresh spinach",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": "oz"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        },
+        {
+          "amount": "57",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": "oz"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

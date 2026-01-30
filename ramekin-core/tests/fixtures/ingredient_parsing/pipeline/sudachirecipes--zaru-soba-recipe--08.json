@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp kizami nori (shredded nori) (optional)",
-  "expected": {
-    "item": "kizami nori (optional)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "shredded nori"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kizami nori (optional)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "shredded nori"
+    },
+    "enrich_metric_weights": {
+      "item": "kizami nori (optional)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "shredded nori"
+    }
   }
 }

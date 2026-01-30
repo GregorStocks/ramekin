@@ -1,8 +1,15 @@
 {
   "raw": "Chia seeds",
-  "expected": {
-    "item": "Chia seeds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chia seeds",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chia seeds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

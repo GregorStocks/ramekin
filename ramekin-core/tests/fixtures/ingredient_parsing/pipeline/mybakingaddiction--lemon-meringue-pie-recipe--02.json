@@ -1,13 +1,25 @@
 {
   "raw": "24 1.75-inch premade miniature tart shells",
-  "expected": {
-    "item": "1.75-inch premade miniature tart shells",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1.75-inch premade miniature tart shells",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1.75-inch premade miniature tart shells",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

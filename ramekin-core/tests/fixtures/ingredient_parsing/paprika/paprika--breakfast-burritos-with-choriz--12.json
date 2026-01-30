@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces Mexican-style chorizo sausage, casings removed",
-  "expected": {
-    "item": "Mexican-style chorizo sausage, casings removed",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mexican-style chorizo sausage, casings removed",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Mexican-style chorizo sausage, casings removed",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

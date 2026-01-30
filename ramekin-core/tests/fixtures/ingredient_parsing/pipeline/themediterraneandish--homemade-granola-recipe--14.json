@@ -1,13 +1,25 @@
 {
   "raw": "½ cup chopped Medjool dates ((about 6 dates, pitted and chopped) )",
-  "expected": {
-    "item": "chopped Medjool dates",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "about 6 dates, pitted and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped Medjool dates",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 6 dates, pitted and chopped"
+    },
+    "parse_ingredients": {
+      "item": "chopped Medjool dates",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 6 dates, pitted and chopped"
+    }
   }
 }

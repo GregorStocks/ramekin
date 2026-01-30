@@ -1,17 +1,33 @@
 {
   "raw": "36 (14.3oz/405g) regular Oreo cookies (not Double-Stuf)",
-  "expected": {
-    "item": "regular Oreo cookies (not Double-Stuf)",
-    "measurements": [
-      {
-        "amount": "36",
-        "unit": null
-      },
-      {
-        "amount": "14.3",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "regular Oreo cookies (not Double-Stuf)",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        },
+        {
+          "amount": "14.3",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "regular Oreo cookies (not Double-Stuf)",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        },
+        {
+          "amount": "14.3",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

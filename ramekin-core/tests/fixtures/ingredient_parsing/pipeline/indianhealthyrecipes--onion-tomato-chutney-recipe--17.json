@@ -1,13 +1,25 @@
 {
   "raw": "1 sprig  curry leaves ( (pat dry))",
-  "expected": {
-    "item": "curry leaves ( (pat dry)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "curry leaves ( (pat dry)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "curry leaves ( (pat dry)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "24  ladyfinger cookies, (7-ounce package)",
-  "expected": {
-    "item": "ladyfinger cookies",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": null
-      },
-      {
-        "amount": "7",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ladyfinger cookies",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ladyfinger cookies",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": null
+        },
+        {
+          "amount": "7",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
-  "expected": {
-    "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For serving: grated cheese, sour cream, finely shredded romaine lettuce, diced avocado, quick-pickled onions, (see notes above)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

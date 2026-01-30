@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup Roasted Peanuts ((65g) , roughly chopped)",
-  "expected": {
-    "item": "Roasted Peanuts",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "65",
-        "unit": "g"
-      }
-    ],
-    "note": "roughly chopped)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roasted Peanuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped)"
+    },
+    "enrich_metric_weights": {
+      "item": "Roasted Peanuts",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "65",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped)"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 teaspoon kosher salt (add more to taste)",
-  "expected": {
-    "item": "kosher salt",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "add more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "add more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "kosher salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "add more to taste"
+    }
   }
 }

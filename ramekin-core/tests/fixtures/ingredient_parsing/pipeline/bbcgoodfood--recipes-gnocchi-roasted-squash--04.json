@@ -1,13 +1,25 @@
 {
   "raw": "500g pack  gnocchi",
-  "expected": {
-    "item": "pack  gnocchi",
-    "measurements": [
-      {
-        "amount": "500",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pack  gnocchi",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pack  gnocchi",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

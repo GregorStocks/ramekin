@@ -1,8 +1,15 @@
 {
   "raw": "Cooked white or brown rice or quinoa, sliced cucumber, sliced",
-  "expected": {
-    "item": "Cooked white or brown rice or quinoa, sliced cucumber",
-    "measurements": [],
-    "note": "sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cooked white or brown rice or quinoa, sliced cucumber",
+      "measurements": [],
+      "note": "sliced"
+    },
+    "parse_ingredients": {
+      "item": "Cooked white or brown rice or quinoa, sliced cucumber",
+      "measurements": [],
+      "note": "sliced"
+    }
   }
 }

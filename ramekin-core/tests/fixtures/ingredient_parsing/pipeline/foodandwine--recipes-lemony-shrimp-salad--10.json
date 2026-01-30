@@ -1,13 +1,25 @@
 {
   "raw": "2 hearts of romaine, cut into 1-inch-wide ribbons",
-  "expected": {
-    "item": "hearts of romaine, cut into 1-inch-wide ribbons",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hearts of romaine, cut into 1-inch-wide ribbons",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hearts of romaine, cut into 1-inch-wide ribbons",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

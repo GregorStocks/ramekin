@@ -1,8 +1,15 @@
 {
   "raw": "Crackers (chips, or fresh French bread to serve)",
-  "expected": {
-    "item": "Crackers",
-    "measurements": [],
-    "note": "chips, or fresh French bread to serve"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crackers",
+      "measurements": [],
+      "note": "chips, or fresh French bread to serve"
+    },
+    "enrich_metric_weights": {
+      "item": "Crackers",
+      "measurements": [],
+      "note": "chips, or fresh French bread to serve"
+    }
   }
 }

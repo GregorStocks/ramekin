@@ -1,17 +1,37 @@
 {
   "raw": "24 oz (3 pkgs) cream cheese (softened)",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": "oz"
-      },
-      {
-        "amount": "3",
-        "unit": "package"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": "package"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": "package"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

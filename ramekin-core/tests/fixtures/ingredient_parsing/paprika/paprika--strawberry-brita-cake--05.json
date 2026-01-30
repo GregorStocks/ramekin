@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon vanilla extract or vanilla bean paste, divided",
-  "expected": {
-    "item": "vanilla extract or vanilla bean paste",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vanilla extract or vanilla bean paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "vanilla extract or vanilla bean paste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

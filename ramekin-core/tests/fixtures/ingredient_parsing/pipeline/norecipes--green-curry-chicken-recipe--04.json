@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons fish sauce ((to taste))",
-  "expected": {
-    "item": "fish sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "fish sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "to taste"
+    }
   }
 }

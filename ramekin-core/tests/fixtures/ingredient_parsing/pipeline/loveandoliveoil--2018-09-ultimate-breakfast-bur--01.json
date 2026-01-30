@@ -1,13 +1,25 @@
 {
   "raw": "5 slices bacon (cut crosswise into thin strips)",
-  "expected": {
-    "item": "bacon (cut crosswise into thin strips)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bacon (cut crosswise into thin strips)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bacon (cut crosswise into thin strips)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

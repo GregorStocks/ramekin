@@ -1,8 +1,15 @@
 {
   "raw": "figs and grapes",
-  "expected": {
-    "item": "figs and grapes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "figs and grapes",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "figs and grapes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

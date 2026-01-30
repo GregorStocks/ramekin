@@ -1,13 +1,25 @@
 {
   "raw": "2 cups shredded zucchini (drained and water squeezed out)",
-  "expected": {
-    "item": "shredded zucchini",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "drained and water squeezed out"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and water squeezed out"
+    },
+    "enrich_metric_weights": {
+      "item": "shredded zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "drained and water squeezed out"
+    }
   }
 }

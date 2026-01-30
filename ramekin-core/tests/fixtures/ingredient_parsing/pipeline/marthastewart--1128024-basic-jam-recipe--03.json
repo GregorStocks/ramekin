@@ -1,8 +1,15 @@
 {
   "raw": "Coarse salt",
-  "expected": {
-    "item": "Coarse salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coarse salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Coarse salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

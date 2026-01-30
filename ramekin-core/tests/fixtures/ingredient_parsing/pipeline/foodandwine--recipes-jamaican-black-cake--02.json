@@ -1,17 +1,37 @@
 {
   "raw": "0.75 cup raisins (8 ounces)",
-  "expected": {
-    "item": "raisins",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "cup"
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raisins",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "raisins",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "radishes (sliced)",
-  "expected": {
-    "item": "radishes",
-    "measurements": [],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "radishes",
+      "measurements": [],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "radishes",
+      "measurements": [],
+      "note": "sliced"
+    }
   }
 }

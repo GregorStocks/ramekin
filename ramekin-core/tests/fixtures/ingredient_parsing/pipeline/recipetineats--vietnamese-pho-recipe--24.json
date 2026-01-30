@@ -1,8 +1,15 @@
 {
   "raw": "Sriracha* ((for spiciness))",
-  "expected": {
-    "item": "Sriracha* (for spiciness)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sriracha* (for spiciness)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sriracha* (for spiciness)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

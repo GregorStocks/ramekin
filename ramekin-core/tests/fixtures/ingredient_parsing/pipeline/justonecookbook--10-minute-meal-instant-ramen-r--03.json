@@ -1,17 +1,33 @@
 {
   "raw": "500 ml water ((about 2 cups))",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "500",
-        "unit": "ml"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "500",
+          "unit": "ml"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

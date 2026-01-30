@@ -1,8 +1,15 @@
 {
   "raw": "carrots",
-  "expected": {
-    "item": "carrots",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [],
+      "note": null
+    }
   }
 }

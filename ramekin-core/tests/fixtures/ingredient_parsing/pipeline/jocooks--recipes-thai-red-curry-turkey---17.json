@@ -1,13 +1,25 @@
 {
   "raw": "5  kaffir lime leaves (fresh or dried)",
-  "expected": {
-    "item": "kaffir lime leaves",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": "fresh or dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kaffir lime leaves",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "fresh or dried"
+    },
+    "parse_ingredients": {
+      "item": "kaffir lime leaves",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": "fresh or dried"
+    }
   }
 }

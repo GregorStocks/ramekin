@@ -1,8 +1,15 @@
 {
   "raw": "INGREDIENT SECTION",
-  "expected": {
-    "item": "INGREDIENT SECTION",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "INGREDIENT SECTION",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "INGREDIENT SECTION",
+      "measurements": [],
+      "note": null
+    }
   }
 }

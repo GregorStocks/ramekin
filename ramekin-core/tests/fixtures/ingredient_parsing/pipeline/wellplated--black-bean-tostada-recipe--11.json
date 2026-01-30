@@ -1,8 +1,15 @@
 {
   "raw": "Sour cream (or plain Greek yogurt)",
-  "expected": {
-    "item": "Sour cream (or plain Greek yogurt)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sour cream (or plain Greek yogurt)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sour cream (or plain Greek yogurt)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

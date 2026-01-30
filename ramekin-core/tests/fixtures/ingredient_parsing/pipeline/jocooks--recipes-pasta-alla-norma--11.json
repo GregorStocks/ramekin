@@ -1,8 +1,15 @@
 {
   "raw": "fresh basil leaves (torn (for garnish))",
-  "expected": {
-    "item": "fresh basil leaves",
-    "measurements": [],
-    "note": "torn (for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh basil leaves",
+      "measurements": [],
+      "note": "torn (for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh basil leaves",
+      "measurements": [],
+      "note": "torn (for garnish"
+    }
   }
 }

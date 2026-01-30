@@ -1,13 +1,25 @@
 {
   "raw": "1 3/4 cups all-purpose flour ((plus more for pans))",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for pans"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for pans"
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for pans"
+    }
   }
 }

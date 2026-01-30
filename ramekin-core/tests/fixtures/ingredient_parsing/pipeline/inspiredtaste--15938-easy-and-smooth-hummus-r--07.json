@@ -1,8 +1,15 @@
 {
   "raw": "Salt to taste",
-  "expected": {
-    "item": "Salt to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Salt to taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Salt to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

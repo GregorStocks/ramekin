@@ -1,8 +1,15 @@
 {
   "raw": "Kosher or coarse sea salt, for sprinkling",
-  "expected": {
-    "item": "Kosher or coarse sea salt, for sprinkling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kosher or coarse sea salt, for sprinkling",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Kosher or coarse sea salt, for sprinkling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

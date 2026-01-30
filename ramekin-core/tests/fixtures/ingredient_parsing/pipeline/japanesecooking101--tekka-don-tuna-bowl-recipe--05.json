@@ -1,8 +1,15 @@
 {
   "raw": "Steamed Rice",
-  "expected": {
-    "item": "Steamed Rice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Steamed Rice",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Steamed Rice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

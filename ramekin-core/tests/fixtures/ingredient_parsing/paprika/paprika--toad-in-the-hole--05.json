@@ -1,21 +1,41 @@
 {
   "raw": "1/2 ounce water (15 g; 1 tablespoon)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "15",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

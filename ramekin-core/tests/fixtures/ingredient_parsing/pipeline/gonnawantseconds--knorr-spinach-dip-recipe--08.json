@@ -1,8 +1,15 @@
 {
   "raw": "sliced vegetables",
-  "expected": {
-    "item": "sliced vegetables",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced vegetables",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced vegetables",
+      "measurements": [],
+      "note": null
+    }
   }
 }

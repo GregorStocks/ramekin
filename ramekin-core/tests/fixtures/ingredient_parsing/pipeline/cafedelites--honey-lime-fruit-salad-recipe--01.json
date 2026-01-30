@@ -1,13 +1,25 @@
 {
   "raw": "1 pound strawberries (washed, hulled and sliced)",
-  "expected": {
-    "item": "strawberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "washed, hulled and sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed, hulled and sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "washed, hulled and sliced"
+    }
   }
 }

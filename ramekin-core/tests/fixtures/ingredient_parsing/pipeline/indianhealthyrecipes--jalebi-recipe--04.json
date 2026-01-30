@@ -1,13 +1,25 @@
 {
   "raw": "½  cup curd ((plain yogurt) (or water if fermenting batter) (120 ml))",
-  "expected": {
-    "item": "curd (plain yogurt) (or water if fermenting batter) (120 ml)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "curd (plain yogurt) (or water if fermenting batter) (120 ml)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "curd (plain yogurt) (or water if fermenting batter) (120 ml)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,25 +1,49 @@
 {
   "raw": "2 cups (310 g) diced (1/4-inch chunks) strawberries (3/4 pounds)",
-  "expected": {
-    "item": "diced strawberries",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "310",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "diced strawberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "310",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "diced strawberries",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "310",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces mozzarella cheese (shredded (about 1 cup), divided)",
-  "expected": {
-    "item": "mozzarella cheese , divided)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded (about 1 cup"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mozzarella cheese , divided)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded (about 1 cup"
+    },
+    "enrich_metric_weights": {
+      "item": "mozzarella cheese , divided)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded (about 1 cup"
+    }
   }
 }

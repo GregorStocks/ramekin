@@ -1,8 +1,15 @@
 {
   "raw": "celery",
-  "expected": {
-    "item": "celery",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "celery",
+      "measurements": [],
+      "note": null
+    }
   }
 }

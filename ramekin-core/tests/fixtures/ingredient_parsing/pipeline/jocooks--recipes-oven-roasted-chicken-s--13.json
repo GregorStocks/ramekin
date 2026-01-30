@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons parsley (fresh, for garnish)",
-  "expected": {
-    "item": "parsley",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "fresh, for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh, for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "fresh, for garnish"
+    }
   }
 }

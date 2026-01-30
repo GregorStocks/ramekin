@@ -1,17 +1,33 @@
 {
   "raw": "1 recipe Pastry Cream , at room temperature, about 68°F (20°C)",
-  "expected": {
-    "item": "recipe Pastry Cream , at room temperature, about 68°F",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "recipe Pastry Cream , at room temperature, about 68°F",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "recipe Pastry Cream , at room temperature, about 68°F",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

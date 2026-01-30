@@ -1,13 +1,25 @@
 {
   "raw": "1/2 lb. asparagus, ends trimmed",
-  "expected": {
-    "item": "asparagus",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "ends trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "ends trimmed"
+    },
+    "parse_ingredients": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "ends trimmed"
+    }
   }
 }

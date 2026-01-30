@@ -1,13 +1,25 @@
 {
   "raw": "0.75 cup shredded white Cheddar cheese",
-  "expected": {
-    "item": "shredded white Cheddar cheese",
-    "measurements": [
-      {
-        "amount": "0.75",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded white Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shredded white Cheddar cheese",
+      "measurements": [
+        {
+          "amount": "0.75",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  Tablespoon  minced jalapeno or serrano chili  (, or to personal taste )",
-  "expected": {
-    "item": "minced jalapeno or serrano chili  (, or to personal taste",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "minced jalapeno or serrano chili  (, or to personal taste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "minced jalapeno or serrano chili  (, or to personal taste",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

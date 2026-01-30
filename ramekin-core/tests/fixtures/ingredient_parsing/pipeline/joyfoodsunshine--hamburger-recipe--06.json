@@ -1,8 +1,15 @@
 {
   "raw": "Mustard",
-  "expected": {
-    "item": "Mustard",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Mustard",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Mustard",
+      "measurements": [],
+      "note": null
+    }
   }
 }

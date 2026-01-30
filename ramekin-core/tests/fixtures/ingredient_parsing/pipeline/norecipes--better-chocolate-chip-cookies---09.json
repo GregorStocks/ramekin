@@ -1,13 +1,25 @@
 {
   "raw": "100 grams unsweetened chocolate ((~1 cup, chopped))",
-  "expected": {
-    "item": "unsweetened chocolate",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "~1 cup, chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsweetened chocolate",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup, chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "unsweetened chocolate",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "~1 cup, chopped"
+    }
   }
 }

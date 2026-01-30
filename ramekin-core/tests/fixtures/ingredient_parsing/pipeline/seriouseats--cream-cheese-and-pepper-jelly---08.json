@@ -1,8 +1,15 @@
 {
   "raw": "Toasted white sesame seeds, for garnish (optional)",
-  "expected": {
-    "item": "Toasted white sesame seeds, for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Toasted white sesame seeds, for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Toasted white sesame seeds, for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

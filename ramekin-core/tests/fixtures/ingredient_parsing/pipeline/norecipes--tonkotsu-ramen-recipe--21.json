@@ -1,8 +1,15 @@
 {
   "raw": "sliced chashu",
-  "expected": {
-    "item": "sliced chashu",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced chashu",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced chashu",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces cream cheese (cut into 1\" cubes)",
-  "expected": {
-    "item": "cream cheese (cut into 1\" cubes)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese (cut into 1\" cubes)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese (cut into 1\" cubes)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

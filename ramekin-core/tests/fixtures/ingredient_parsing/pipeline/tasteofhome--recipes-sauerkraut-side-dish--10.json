@@ -1,8 +1,15 @@
 {
   "raw": "Additional brown sugar, optional",
-  "expected": {
-    "item": "Additional brown sugar",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Additional brown sugar",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Additional brown sugar",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

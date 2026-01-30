@@ -1,8 +1,15 @@
 {
   "raw": "Private Reserve or Early Harvest Greek extra virgin olive oil",
-  "expected": {
-    "item": "Private Reserve or Early Harvest Greek extra virgin olive oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Private Reserve or Early Harvest Greek extra virgin olive oil",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Private Reserve or Early Harvest Greek extra virgin olive oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

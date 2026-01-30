@@ -1,13 +1,25 @@
 {
   "raw": "2 o 3 cloves peeled garlic, optional",
-  "expected": {
-    "item": "o 3 cloves peeled garlic",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "o 3 cloves peeled garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "o 3 cloves peeled garlic",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

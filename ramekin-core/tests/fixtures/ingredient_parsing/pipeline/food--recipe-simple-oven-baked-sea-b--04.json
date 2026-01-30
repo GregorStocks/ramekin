@@ -1,13 +1,25 @@
 {
   "raw": "1   tablespoon    italian seasoning or 1   tablespoon    fresh parsley leaves",
-  "expected": {
-    "item": "italian seasoning",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1   tablespoon    fresh parsley leaves"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "italian seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1   tablespoon    fresh parsley leaves"
+    },
+    "enrich_metric_weights": {
+      "item": "italian seasoning",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1   tablespoon    fresh parsley leaves"
+    }
   }
 }

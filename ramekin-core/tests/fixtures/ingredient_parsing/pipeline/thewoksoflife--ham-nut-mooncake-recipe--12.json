@@ -1,13 +1,25 @@
 {
   "raw": "100 grams pecans ((toasted))",
-  "expected": {
-    "item": "pecans",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "toasted"
+    },
+    "parse_ingredients": {
+      "item": "pecans",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

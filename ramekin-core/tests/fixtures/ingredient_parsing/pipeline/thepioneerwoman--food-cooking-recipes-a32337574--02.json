@@ -1,17 +1,33 @@
 {
   "raw": "6  large skinless, boneless chicken breasts (about 4 1⁄2 pounds), cut into bite-size pieces",
-  "expected": {
-    "item": "skinless, boneless chicken breasts , cut into bite-size pieces",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "large"
-      },
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless, boneless chicken breasts , cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless, boneless chicken breasts , cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

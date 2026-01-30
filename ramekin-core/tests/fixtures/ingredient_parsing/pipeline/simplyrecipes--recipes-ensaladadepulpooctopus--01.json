@@ -1,13 +1,25 @@
 {
   "raw": "One 2 pound octopus, cleaned",
-  "expected": {
-    "item": "2 pound octopus",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "cleaned"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "2 pound octopus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cleaned"
+    },
+    "enrich_metric_weights": {
+      "item": "2 pound octopus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "cleaned"
+    }
   }
 }

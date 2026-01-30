@@ -1,8 +1,15 @@
 {
   "raw": "Chili Butter:",
-  "expected": {
-    "item": "Chili Butter:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chili Butter:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chili Butter:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

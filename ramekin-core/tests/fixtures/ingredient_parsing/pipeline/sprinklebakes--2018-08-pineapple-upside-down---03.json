@@ -1,17 +1,33 @@
 {
   "raw": "2 1/2 cups 319g all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "319",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "319",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "319",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

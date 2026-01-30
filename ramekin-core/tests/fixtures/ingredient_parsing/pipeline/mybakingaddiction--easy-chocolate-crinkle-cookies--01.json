@@ -1,17 +1,37 @@
 {
   "raw": "1 boz Devil’s Food Cake Mix (15.25 ounces)",
-  "expected": {
-    "item": "boz Devil’s Food Cake Mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "15.25",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boz Devil’s Food Cake Mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boz Devil’s Food Cake Mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "15.25",
+          "unit": "oz"
+        },
+        {
+          "amount": "432",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

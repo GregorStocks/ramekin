@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 serrano or jalapeño chiles, finely diced (seeds and membranes removed for a milder salsa)",
-  "expected": {
-    "item": "serrano or jalapeño chiles",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": null
-      }
-    ],
-    "note": "finely diced (seeds and membranes removed for a milder salsa)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "serrano or jalapeño chiles",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced (seeds and membranes removed for a milder salsa)"
+    },
+    "enrich_metric_weights": {
+      "item": "serrano or jalapeño chiles",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": null
+        }
+      ],
+      "note": "finely diced (seeds and membranes removed for a milder salsa)"
+    }
   }
 }

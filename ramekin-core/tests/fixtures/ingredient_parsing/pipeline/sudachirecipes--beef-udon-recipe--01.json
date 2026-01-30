@@ -1,13 +1,25 @@
 {
   "raw": "150 g thinly sliced beef (or thinly sliced pork)",
-  "expected": {
-    "item": "thinly sliced beef",
-    "measurements": [
-      {
-        "amount": "150",
-        "unit": "g"
-      }
-    ],
-    "note": "or thinly sliced pork"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thinly sliced beef",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": "or thinly sliced pork"
+    },
+    "parse_ingredients": {
+      "item": "thinly sliced beef",
+      "measurements": [
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": "or thinly sliced pork"
+    }
   }
 }

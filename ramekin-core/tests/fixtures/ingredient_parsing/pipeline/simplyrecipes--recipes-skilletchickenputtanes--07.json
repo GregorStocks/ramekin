@@ -1,17 +1,33 @@
 {
   "raw": "4 skinless, boneless chicken breasts (about 3 pounds)",
-  "expected": {
-    "item": "skinless, boneless chicken breasts",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless, boneless chicken breasts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless, boneless chicken breasts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

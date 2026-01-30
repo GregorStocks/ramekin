@@ -1,17 +1,33 @@
 {
   "raw": "3/4 cup (175 ml) milk, ideally whole but lowfat should work",
-  "expected": {
-    "item": "milk",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "175",
-        "unit": "ml"
-      }
-    ],
-    "note": "ideally whole but lowfat should work"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "175",
+          "unit": "ml"
+        }
+      ],
+      "note": "ideally whole but lowfat should work"
+    },
+    "parse_ingredients": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "175",
+          "unit": "ml"
+        }
+      ],
+      "note": "ideally whole but lowfat should work"
+    }
   }
 }

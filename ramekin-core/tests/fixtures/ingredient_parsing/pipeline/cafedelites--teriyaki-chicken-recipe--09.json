@@ -1,13 +1,25 @@
 {
   "raw": "1  green onion (sliced to garnish)",
-  "expected": {
-    "item": "green onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced to garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced to garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "green onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced to garnish"
+    }
   }
 }

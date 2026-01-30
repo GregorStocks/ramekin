@@ -1,8 +1,15 @@
 {
   "raw": "Vegetable oil (if finishing on the stovetop; optional)",
-  "expected": {
-    "item": "Vegetable oil",
-    "measurements": [],
-    "note": "if finishing on the stovetop; optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vegetable oil",
+      "measurements": [],
+      "note": "if finishing on the stovetop; optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Vegetable oil",
+      "measurements": [],
+      "note": "if finishing on the stovetop; optional"
+    }
   }
 }

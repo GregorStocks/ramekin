@@ -1,8 +1,15 @@
 {
   "raw": "double cream (cold) to serve",
-  "expected": {
-    "item": "double cream to serve",
-    "measurements": [],
-    "note": "cold"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "double cream to serve",
+      "measurements": [],
+      "note": "cold"
+    },
+    "parse_ingredients": {
+      "item": "double cream to serve",
+      "measurements": [],
+      "note": "cold"
+    }
   }
 }

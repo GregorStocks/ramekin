@@ -1,8 +1,15 @@
 {
   "raw": "Cooked rice , to serve (optional)",
-  "expected": {
-    "item": "Cooked rice , to serve",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cooked rice , to serve",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Cooked rice , to serve",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

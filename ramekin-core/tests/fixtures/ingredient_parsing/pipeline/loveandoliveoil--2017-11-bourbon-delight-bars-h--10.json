@@ -1,8 +1,15 @@
 {
   "raw": "chocolate sprinkles (for topping)",
-  "expected": {
-    "item": "chocolate sprinkles (for topping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chocolate sprinkles (for topping)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chocolate sprinkles (for topping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "16 fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
-  "expected": {
-    "item": "fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh corn tortillas, stacked in groups of 8 and cut into 6 wedges each",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

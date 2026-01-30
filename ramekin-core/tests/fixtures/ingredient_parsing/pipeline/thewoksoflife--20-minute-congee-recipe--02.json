@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces pork shoulder ((115g, julienned))",
-  "expected": {
-    "item": "pork shoulder",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "115g, julienned"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "115g, julienned"
+    },
+    "enrich_metric_weights": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "115g, julienned"
+    }
   }
 }

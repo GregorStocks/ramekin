@@ -1,17 +1,37 @@
 {
   "raw": "12 oz evaporated milk (1 can)",
-  "expected": {
-    "item": "evaporated milk",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "evaporated milk",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "evaporated milk",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

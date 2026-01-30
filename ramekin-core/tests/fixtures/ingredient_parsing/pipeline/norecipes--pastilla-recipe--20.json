@@ -1,8 +1,15 @@
 {
   "raw": "ground cinnamon (for dusting)",
-  "expected": {
-    "item": "ground cinnamon (for dusting)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground cinnamon (for dusting)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground cinnamon (for dusting)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

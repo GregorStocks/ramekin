@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons Shaoxing wine ((divided))",
-  "expected": {
-    "item": "Shaoxing wine",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shaoxing wine",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "Shaoxing wine",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

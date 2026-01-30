@@ -1,8 +1,15 @@
 {
   "raw": "Ham ends or trimmings (optional; see notes)",
-  "expected": {
-    "item": "Ham ends or trimmings",
-    "measurements": [],
-    "note": "optional; see notes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ham ends or trimmings",
+      "measurements": [],
+      "note": "optional; see notes"
+    },
+    "enrich_metric_weights": {
+      "item": "Ham ends or trimmings",
+      "measurements": [],
+      "note": "optional; see notes"
+    }
   }
 }

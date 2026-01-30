@@ -1,21 +1,41 @@
 {
   "raw": "2 tablespoons light brown sugar (5/8 ounce; 20g)",
-  "expected": {
-    "item": "light brown sugar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "5/8",
-        "unit": "oz"
-      },
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "5/8",
+          "unit": "oz"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "light brown sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "5/8",
+          "unit": "oz"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

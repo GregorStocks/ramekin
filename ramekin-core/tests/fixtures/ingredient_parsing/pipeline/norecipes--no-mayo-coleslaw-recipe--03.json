@@ -1,13 +1,25 @@
 {
   "raw": "100 grams carrot ((about 1/2 carrot, shredded))",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "about 1/2 carrot, shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "about 1/2 carrot, shredded"
+    },
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "about 1/2 carrot, shredded"
+    }
   }
 }

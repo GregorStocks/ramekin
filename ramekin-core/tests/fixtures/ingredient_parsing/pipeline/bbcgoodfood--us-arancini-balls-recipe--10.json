@@ -1,13 +1,29 @@
 {
   "raw": "5 oz fresh mozzarella cut into 18 small pieces",
-  "expected": {
-    "item": "fresh mozzarella cut into 18 small pieces",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh mozzarella cut into 18 small pieces",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh mozzarella cut into 18 small pieces",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

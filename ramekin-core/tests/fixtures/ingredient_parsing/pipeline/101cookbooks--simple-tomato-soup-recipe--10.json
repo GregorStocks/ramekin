@@ -1,8 +1,15 @@
 {
   "raw": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
-  "expected": {
-    "item": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "to serve: any of the following that sound good to you - cooked brown rice, lemon wedges, toasted almond slices, pan-fried paneer, fresh thyme or oregano, oregano drizzle, a poached egg",
+      "measurements": [],
+      "note": null
+    }
   }
 }

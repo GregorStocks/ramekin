@@ -1,13 +1,25 @@
 {
   "raw": "0.25 teaspoon white sugar",
-  "expected": {
-    "item": "white sugar",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "white sugar",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

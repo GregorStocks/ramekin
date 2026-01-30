@@ -1,8 +1,15 @@
 {
   "raw": "ice cream of your choice, slightly softened (I used vanilla)",
-  "expected": {
-    "item": "ice cream of your choice",
-    "measurements": [],
-    "note": "slightly softened (I used vanilla)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ice cream of your choice",
+      "measurements": [],
+      "note": "slightly softened (I used vanilla)"
+    },
+    "enrich_metric_weights": {
+      "item": "ice cream of your choice",
+      "measurements": [],
+      "note": "slightly softened (I used vanilla)"
+    }
   }
 }

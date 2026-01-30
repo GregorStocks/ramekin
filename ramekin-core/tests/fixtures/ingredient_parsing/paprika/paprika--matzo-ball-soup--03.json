@@ -1,13 +1,25 @@
 {
   "raw": "3 carrots, scrubbed and cut into big chunks",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "scrubbed and cut into big chunks"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "scrubbed and cut into big chunks"
+    },
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "scrubbed and cut into big chunks"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2.5 pounds cooked shrimp (peeled, deveined, and chopped into bite-size pieces)",
-  "expected": {
-    "item": "cooked shrimp",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled, deveined, and chopped into bite-size pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked shrimp",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined, and chopped into bite-size pieces"
+    },
+    "parse_ingredients": {
+      "item": "cooked shrimp",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled, deveined, and chopped into bite-size pieces"
+    }
   }
 }

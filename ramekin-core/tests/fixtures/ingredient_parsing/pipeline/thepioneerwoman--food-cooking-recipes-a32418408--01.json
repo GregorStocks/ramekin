@@ -1,13 +1,25 @@
 {
   "raw": "3 tbsp. salted butter, plus more as needed",
-  "expected": {
-    "item": "salted butter",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more as needed"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 small wheel brie cheese, sliced thinly",
-  "expected": {
-    "item": "wheel brie cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "sliced thinly"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "wheel brie cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "sliced thinly"
+    },
+    "parse_ingredients": {
+      "item": "wheel brie cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "sliced thinly"
+    }
   }
 }

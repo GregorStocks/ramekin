@@ -1,8 +1,15 @@
 {
   "raw": "Parchment paper to line cookie sheets",
-  "expected": {
-    "item": "Parchment paper to line cookie sheets",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Parchment paper to line cookie sheets",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Parchment paper to line cookie sheets",
+      "measurements": [],
+      "note": null
+    }
   }
 }

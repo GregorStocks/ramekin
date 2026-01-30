@@ -1,13 +1,25 @@
 {
   "raw": "3 1/2 cups Heavy Cream (, or more if needed)",
-  "expected": {
-    "item": "Heavy Cream",
-    "measurements": [
-      {
-        "amount": "3 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or more if needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Heavy Cream",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more if needed"
+    },
+    "enrich_metric_weights": {
+      "item": "Heavy Cream",
+      "measurements": [
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more if needed"
+    }
   }
 }

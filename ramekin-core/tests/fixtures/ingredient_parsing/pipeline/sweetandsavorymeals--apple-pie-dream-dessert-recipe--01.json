@@ -1,13 +1,29 @@
 {
   "raw": "3 ounces box lime flavored Jell-o (or pistachio Jell-o)",
-  "expected": {
-    "item": "box lime flavored Jell-o (or pistachio Jell-o)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "box lime flavored Jell-o (or pistachio Jell-o)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "box lime flavored Jell-o (or pistachio Jell-o)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

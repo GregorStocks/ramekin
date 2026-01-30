@@ -1,13 +1,25 @@
 {
   "raw": "4 cups sugar snap peas, cut into bite-size pieces",
-  "expected": {
-    "item": "sugar snap peas, cut into bite-size pieces",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar snap peas, cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sugar snap peas, cut into bite-size pieces",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

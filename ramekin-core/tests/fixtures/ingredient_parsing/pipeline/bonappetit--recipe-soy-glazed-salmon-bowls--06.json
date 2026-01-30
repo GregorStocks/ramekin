@@ -1,13 +1,29 @@
 {
   "raw": "12 oz. green beans, trimmed, halved crosswise",
-  "expected": {
-    "item": "green beans, trimmed",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "halved crosswise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green beans, trimmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "halved crosswise"
+    },
+    "enrich_metric_weights": {
+      "item": "green beans, trimmed",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "halved crosswise"
+    }
   }
 }

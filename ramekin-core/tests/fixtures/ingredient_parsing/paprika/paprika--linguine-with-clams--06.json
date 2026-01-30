@@ -1,13 +1,25 @@
 {
   "raw": "1 cup crisp, dry white wine, doesn’t have to be fancy",
-  "expected": {
-    "item": "crisp, dry white wine, doesn’t have to be fancy",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crisp, dry white wine, doesn’t have to be fancy",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crisp, dry white wine, doesn’t have to be fancy",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

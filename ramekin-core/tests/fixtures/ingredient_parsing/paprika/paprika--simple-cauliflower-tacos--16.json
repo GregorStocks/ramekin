@@ -1,8 +1,15 @@
 {
   "raw": "Hot sauce and/or pickled jalapeños",
-  "expected": {
-    "item": "Hot sauce and/or pickled jalapeños",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Hot sauce and/or pickled jalapeños",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Hot sauce and/or pickled jalapeños",
+      "measurements": [],
+      "note": null
+    }
   }
 }

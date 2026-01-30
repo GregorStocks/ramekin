@@ -1,8 +1,15 @@
 {
   "raw": "Diced red bell pepper (to garnish, optional)",
-  "expected": {
-    "item": "Diced red bell pepper",
-    "measurements": [],
-    "note": "to garnish, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Diced red bell pepper",
+      "measurements": [],
+      "note": "to garnish, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Diced red bell pepper",
+      "measurements": [],
+      "note": "to garnish, optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 teaspoons Thai red curry paste, try homemade red curry paste",
-  "expected": {
-    "item": "Thai red curry paste, try homemade red curry paste",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Thai red curry paste, try homemade red curry paste",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Thai red curry paste, try homemade red curry paste",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pound rotini pasta (cooked according to package directions)",
-  "expected": {
-    "item": "rotini pasta",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "cooked according to package directions"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rotini pasta",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked according to package directions"
+    },
+    "parse_ingredients": {
+      "item": "rotini pasta",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked according to package directions"
+    }
   }
 }

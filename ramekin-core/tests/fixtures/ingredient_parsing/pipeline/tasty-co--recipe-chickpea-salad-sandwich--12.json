@@ -1,8 +1,15 @@
 {
   "raw": "leafy green, for serving",
-  "expected": {
-    "item": "leafy green",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leafy green",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "leafy green",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

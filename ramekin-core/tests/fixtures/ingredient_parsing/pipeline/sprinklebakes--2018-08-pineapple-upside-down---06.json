@@ -1,17 +1,33 @@
 {
   "raw": "2 1/4 cups 550g dark brown sugar",
-  "expected": {
-    "item": "dark brown sugar",
-    "measurements": [
-      {
-        "amount": "2 1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "550",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "550",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dark brown sugar",
+      "measurements": [
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "550",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

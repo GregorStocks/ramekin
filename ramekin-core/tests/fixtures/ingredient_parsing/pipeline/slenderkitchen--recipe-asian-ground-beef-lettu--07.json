@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup low sodium soy sauce (or coconut aminos for Paleo/Whole30)",
-  "expected": {
-    "item": "low sodium soy sauce",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or coconut aminos for Paleo/Whole30"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "low sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or coconut aminos for Paleo/Whole30"
+    },
+    "parse_ingredients": {
+      "item": "low sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or coconut aminos for Paleo/Whole30"
+    }
   }
 }

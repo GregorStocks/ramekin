@@ -1,17 +1,33 @@
 {
   "raw": "2 ptns cooked Japanese short-grain rice (approx 150g per portion)",
-  "expected": {
-    "item": "ptns cooked Japanese short-grain rice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "150",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ptns cooked Japanese short-grain rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ptns cooked Japanese short-grain rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "150",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon dijon mustard ((yellow mustard works in a pinch too))",
-  "expected": {
-    "item": "dijon mustard (yellow mustard works in a pinch too)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dijon mustard (yellow mustard works in a pinch too)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dijon mustard (yellow mustard works in a pinch too)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

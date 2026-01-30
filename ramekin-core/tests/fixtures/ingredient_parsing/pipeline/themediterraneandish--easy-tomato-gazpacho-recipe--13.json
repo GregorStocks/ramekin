@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp  cayenne pepper, (optional if you like spicy)",
-  "expected": {
-    "item": "cayenne pepper",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional if you like spicy"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional if you like spicy"
+    },
+    "enrich_metric_weights": {
+      "item": "cayenne pepper",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional if you like spicy"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "18 grams galangal ((1-inch piece, finely chopped))",
-  "expected": {
-    "item": "galangal",
-    "measurements": [
-      {
-        "amount": "18",
-        "unit": "g"
-      }
-    ],
-    "note": "1-inch piece, finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "galangal",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "g"
+        }
+      ],
+      "note": "1-inch piece, finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "galangal",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "g"
+        }
+      ],
+      "note": "1-inch piece, finely chopped"
+    }
   }
 }

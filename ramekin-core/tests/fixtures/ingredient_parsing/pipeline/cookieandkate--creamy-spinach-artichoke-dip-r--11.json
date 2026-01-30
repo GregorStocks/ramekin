@@ -1,8 +1,15 @@
 {
   "raw": "Serving suggestions: Tortilla chips, toasted pita wedges or pita chips, crostini, strips of bell pepper, carrot or celery sticks&amp;#8230;",
-  "expected": {
-    "item": "Serving suggestions: Tortilla chips, toasted pita wedges or pita chips, crostini, strips of bell pepper, carrot or celery sticks…",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Serving suggestions: Tortilla chips, toasted pita wedges or pita chips, crostini, strips of bell pepper, carrot or celery sticks…",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Serving suggestions: Tortilla chips, toasted pita wedges or pita chips, crostini, strips of bell pepper, carrot or celery sticks…",
+      "measurements": [],
+      "note": null
+    }
   }
 }

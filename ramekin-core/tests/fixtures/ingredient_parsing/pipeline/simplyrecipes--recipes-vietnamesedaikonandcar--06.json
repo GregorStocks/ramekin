@@ -1,13 +1,25 @@
 {
   "raw": "2 cups warm water (warm enough to easily dissolve sugar",
-  "expected": {
-    "item": "warm water (warm enough to easily dissolve sugar",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "warm water (warm enough to easily dissolve sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "warm water (warm enough to easily dissolve sugar",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

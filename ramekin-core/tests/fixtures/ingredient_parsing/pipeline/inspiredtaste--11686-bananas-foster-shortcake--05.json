@@ -1,13 +1,25 @@
 {
   "raw": "4 bananas, peeled and sliced",
-  "expected": {
-    "item": "bananas",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "peeled and sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bananas",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced"
+    },
+    "parse_ingredients": {
+      "item": "bananas",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "peeled and sliced"
+    }
   }
 }

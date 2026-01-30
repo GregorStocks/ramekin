@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound cucumber, very thinly sliced",
-  "expected": {
-    "item": "cucumber",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "very thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "very thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "very thinly sliced"
+    }
   }
 }

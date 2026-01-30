@@ -1,13 +1,25 @@
 {
   "raw": "1  egg white (lightly beaten)",
-  "expected": {
-    "item": "egg white",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "lightly beaten"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg white",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten"
+    },
+    "enrich_metric_weights": {
+      "item": "egg white",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten"
+    }
   }
 }

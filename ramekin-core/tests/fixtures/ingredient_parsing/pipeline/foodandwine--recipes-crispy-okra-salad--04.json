@@ -1,13 +1,25 @@
 {
   "raw": "1 pound young okra — halved lengthwise and cut into long, thin strips",
-  "expected": {
-    "item": "young okra - halved lengthwise and cut into long, thin strips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "young okra - halved lengthwise and cut into long, thin strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "young okra - halved lengthwise and cut into long, thin strips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

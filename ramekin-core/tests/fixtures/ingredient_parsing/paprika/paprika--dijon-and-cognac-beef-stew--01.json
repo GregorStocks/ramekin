@@ -1,13 +1,25 @@
 {
   "raw": "1/4 pound salt pork, pancetta or bacon, diced",
-  "expected": {
-    "item": "salt pork, pancetta or bacon",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "lb"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salt pork, pancetta or bacon",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "salt pork, pancetta or bacon",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

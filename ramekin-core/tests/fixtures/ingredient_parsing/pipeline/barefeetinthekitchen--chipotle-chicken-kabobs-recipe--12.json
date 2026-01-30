@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
-  "expected": {
-    "item": "boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless skinless chicken (thighs and/or breasts, cut into 1 1/2\" pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

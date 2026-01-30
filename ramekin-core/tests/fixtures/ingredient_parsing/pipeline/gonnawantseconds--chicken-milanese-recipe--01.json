@@ -1,13 +1,25 @@
 {
   "raw": "4  chicken breast (thin-cut, boneless. skinless)",
-  "expected": {
-    "item": "chicken breast (thin-cut, boneless. skinless)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken breast (thin-cut, boneless. skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken breast (thin-cut, boneless. skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

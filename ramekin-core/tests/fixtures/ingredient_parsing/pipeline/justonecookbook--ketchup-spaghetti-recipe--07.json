@@ -1,21 +1,41 @@
 {
   "raw": "4  mushrooms ((2.5 oz, 70 g))",
-  "expected": {
-    "item": "mushrooms",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "2.5",
-        "unit": "oz"
-      },
-      {
-        "amount": "70",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mushrooms",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mushrooms",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

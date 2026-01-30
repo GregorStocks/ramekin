@@ -1,13 +1,25 @@
 {
   "raw": "1 garlic clove, finely grated",
-  "expected": {
-    "item": "garlic clove",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely grated"
+    },
+    "parse_ingredients": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

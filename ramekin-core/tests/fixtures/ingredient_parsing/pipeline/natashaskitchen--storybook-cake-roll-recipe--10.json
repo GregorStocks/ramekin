@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup sweetened condensed milk (uncooked - straight from the can)",
-  "expected": {
-    "item": "sweetened condensed milk",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked - straight from the can"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweetened condensed milk",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked - straight from the can"
+    },
+    "enrich_metric_weights": {
+      "item": "sweetened condensed milk",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked - straight from the can"
+    }
   }
 }

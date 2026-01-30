@@ -1,13 +1,29 @@
 {
   "raw": "2.5 oz. fresh spinach ((2 1/2 cups packed))",
-  "expected": {
-    "item": "fresh spinach",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "2 1/2 cups packed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": "2 1/2 cups packed"
+    },
+    "parse_ingredients": {
+      "item": "fresh spinach",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "2 1/2 cups packed"
+    }
   }
 }

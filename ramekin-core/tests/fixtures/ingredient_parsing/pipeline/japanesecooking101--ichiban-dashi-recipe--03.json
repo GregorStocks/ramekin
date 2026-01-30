@@ -1,13 +1,25 @@
 {
   "raw": "1 handful bonito flakes (Katsuobushi)",
-  "expected": {
-    "item": "bonito flakes (Katsuobushi)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bonito flakes (Katsuobushi)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bonito flakes (Katsuobushi)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp Chimayo chili powder ((See Note 2))",
-  "expected": {
-    "item": "Chimayo chili powder (See Note 2)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chimayo chili powder (See Note 2)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chimayo chili powder (See Note 2)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

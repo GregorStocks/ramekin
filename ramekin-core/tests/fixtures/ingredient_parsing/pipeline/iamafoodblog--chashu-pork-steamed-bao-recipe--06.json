@@ -1,8 +1,15 @@
 {
   "raw": "bao, as many as desired",
-  "expected": {
-    "item": "bao, as many as desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bao, as many as desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bao, as many as desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

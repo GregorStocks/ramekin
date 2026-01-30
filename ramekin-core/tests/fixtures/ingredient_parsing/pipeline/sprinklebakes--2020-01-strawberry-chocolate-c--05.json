@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup vegetable oil (I like peanut oil)",
-  "expected": {
-    "item": "vegetable oil (I like peanut oil)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable oil (I like peanut oil)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable oil (I like peanut oil)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "bean sprouts",
-  "expected": {
-    "item": "bean sprouts",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bean sprouts",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bean sprouts",
+      "measurements": [],
+      "note": null
+    }
   }
 }

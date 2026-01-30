@@ -1,13 +1,25 @@
 {
   "raw": "3-4 medium Shallots (, minced (@ 1/2 cup minced))",
-  "expected": {
-    "item": "Shallots",
-    "measurements": [
-      {
-        "amount": "3-4",
-        "unit": "medium"
-      }
-    ],
-    "note": "minced (@ 1/2 cup minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Shallots",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": "medium"
+        }
+      ],
+      "note": "minced (@ 1/2 cup minced"
+    },
+    "parse_ingredients": {
+      "item": "Shallots",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": "medium"
+        }
+      ],
+      "note": "minced (@ 1/2 cup minced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2-1 tsp ground turmeric",
-  "expected": {
-    "item": "ground turmeric",
-    "measurements": [
-      {
-        "amount": "1/2-1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground turmeric",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground turmeric",
+      "measurements": [
+        {
+          "amount": "1/2-1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

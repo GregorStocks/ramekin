@@ -1,8 +1,15 @@
 {
   "raw": "Brussels Sprouts and Bacon",
-  "expected": {
-    "item": "Brussels Sprouts and Bacon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Brussels Sprouts and Bacon",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Brussels Sprouts and Bacon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

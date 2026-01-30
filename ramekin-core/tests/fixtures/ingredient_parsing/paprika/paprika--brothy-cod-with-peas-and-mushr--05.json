@@ -1,17 +1,37 @@
 {
   "raw": "6 ounces fresh shiitake mushrooms, stemmed and sliced 1/4-inch thick (about 2 cups)",
-  "expected": {
-    "item": "fresh shiitake mushrooms",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "stemmed and sliced 1/4-inch thick"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "stemmed and sliced 1/4-inch thick"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh shiitake mushrooms",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "170",
+          "unit": "g"
+        }
+      ],
+      "note": "stemmed and sliced 1/4-inch thick"
+    }
   }
 }

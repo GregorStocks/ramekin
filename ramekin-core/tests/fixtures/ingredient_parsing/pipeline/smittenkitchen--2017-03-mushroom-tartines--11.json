@@ -1,13 +1,25 @@
 {
   "raw": "1 pound loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
-  "expected": {
-    "item": "loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "loaf of a hearty white or whole wheat sourdough bread, in 3/4-inch slices",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

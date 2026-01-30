@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup unsweetened cocoa powder (plus 2 tablespoons, plus extra for the pan)",
-  "expected": {
-    "item": "unsweetened cocoa powder (plus 2 tablespoons",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus extra for the pan)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsweetened cocoa powder (plus 2 tablespoons",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus extra for the pan)"
+    },
+    "parse_ingredients": {
+      "item": "unsweetened cocoa powder (plus 2 tablespoons",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus extra for the pan)"
+    }
   }
 }

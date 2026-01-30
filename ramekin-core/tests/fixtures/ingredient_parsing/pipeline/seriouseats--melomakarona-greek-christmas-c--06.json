@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (240 ml) fresh squeezed orange juice plus zest, from 2 – 3 medium oranges",
-  "expected": {
-    "item": "fresh squeezed orange juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "ml"
-      }
-    ],
-    "note": "plus zest, from 2 - 3 medium oranges"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh squeezed orange juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus zest, from 2 - 3 medium oranges"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh squeezed orange juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": "plus zest, from 2 - 3 medium oranges"
+    }
   }
 }

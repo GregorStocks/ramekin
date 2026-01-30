@@ -1,13 +1,25 @@
 {
   "raw": "250 g boneless pork chop (or beef/chicken)",
-  "expected": {
-    "item": "boneless pork chop (or beef/chicken)",
-    "measurements": [
-      {
-        "amount": "250",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless pork chop (or beef/chicken)",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless pork chop (or beef/chicken)",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

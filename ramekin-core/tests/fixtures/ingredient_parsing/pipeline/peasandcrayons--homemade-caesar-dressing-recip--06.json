@@ -1,13 +1,25 @@
 {
   "raw": "1 cup quality mayonnaise ((homemade or store bought))",
-  "expected": {
-    "item": "quality mayonnaise (homemade or store bought)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "quality mayonnaise (homemade or store bought)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "quality mayonnaise (homemade or store bought)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

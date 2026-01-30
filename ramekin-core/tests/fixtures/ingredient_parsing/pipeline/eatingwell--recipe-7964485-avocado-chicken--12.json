@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup whole-milk plain strained yogurt (such as Greek-style)",
-  "expected": {
-    "item": "whole-milk plain strained yogurt (such as Greek-style)",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole-milk plain strained yogurt (such as Greek-style)",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole-milk plain strained yogurt (such as Greek-style)",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

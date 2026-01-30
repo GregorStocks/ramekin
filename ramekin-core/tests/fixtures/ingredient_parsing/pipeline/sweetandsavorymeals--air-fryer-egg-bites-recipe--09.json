@@ -1,13 +1,25 @@
 {
   "raw": "1  scallion (green parts diced)",
-  "expected": {
-    "item": "scallion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "green parts diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "scallion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "green parts diced"
+    },
+    "enrich_metric_weights": {
+      "item": "scallion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "green parts diced"
+    }
   }
 }

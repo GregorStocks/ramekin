@@ -1,8 +1,15 @@
 {
   "raw": "Roasted Garlic",
-  "expected": {
-    "item": "Roasted Garlic",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Roasted Garlic",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Roasted Garlic",
+      "measurements": [],
+      "note": null
+    }
   }
 }

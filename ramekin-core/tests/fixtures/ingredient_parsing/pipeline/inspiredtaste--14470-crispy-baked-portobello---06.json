@@ -1,8 +1,15 @@
 {
   "raw": "Non-stick cooking spray",
-  "expected": {
-    "item": "Non-stick cooking spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Non-stick cooking spray",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Non-stick cooking spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

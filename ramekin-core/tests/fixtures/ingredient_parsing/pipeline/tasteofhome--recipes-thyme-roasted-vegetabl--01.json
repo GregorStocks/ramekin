@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds red potatoes, cubed (about 9 cups)",
-  "expected": {
-    "item": "red potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "9",
-        "unit": "cup"
-      }
-    ],
-    "note": "cubed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "9",
+          "unit": "cup"
+        }
+      ],
+      "note": "cubed"
+    },
+    "enrich_metric_weights": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "9",
+          "unit": "cup"
+        }
+      ],
+      "note": "cubed"
+    }
   }
 }

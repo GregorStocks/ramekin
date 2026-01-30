@@ -1,8 +1,15 @@
 {
   "raw": "Katsuobushi (dried bonito flakes)",
-  "expected": {
-    "item": "Katsuobushi",
-    "measurements": [],
-    "note": "dried bonito flakes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Katsuobushi",
+      "measurements": [],
+      "note": "dried bonito flakes"
+    },
+    "enrich_metric_weights": {
+      "item": "Katsuobushi",
+      "measurements": [],
+      "note": "dried bonito flakes"
+    }
   }
 }

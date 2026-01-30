@@ -1,13 +1,25 @@
 {
   "raw": "4 D’Italiano Brioche Buns, lightly toasted",
-  "expected": {
-    "item": "D’Italiano Brioche Buns",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "lightly toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "D’Italiano Brioche Buns",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "lightly toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "D’Italiano Brioche Buns",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "lightly toasted"
+    }
   }
 }

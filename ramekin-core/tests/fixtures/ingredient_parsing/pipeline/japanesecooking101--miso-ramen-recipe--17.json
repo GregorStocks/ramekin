@@ -1,8 +1,15 @@
 {
   "raw": "Yakibuta (roast pork)",
-  "expected": {
-    "item": "Yakibuta (roast pork)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Yakibuta (roast pork)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Yakibuta (roast pork)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

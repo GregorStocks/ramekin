@@ -1,13 +1,25 @@
 {
   "raw": "2  skinless boneless chicken breast fillets (halved horizontally to make four fillets)",
-  "expected": {
-    "item": "skinless boneless chicken breast fillets",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "halved horizontally to make four fillets"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless boneless chicken breast fillets",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved horizontally to make four fillets"
+    },
+    "enrich_metric_weights": {
+      "item": "skinless boneless chicken breast fillets",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "halved horizontally to make four fillets"
+    }
   }
 }

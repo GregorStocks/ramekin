@@ -1,21 +1,41 @@
 {
   "raw": "1 (6-ounce) bacon slab, cut into 1/2-inch cubes (about 1 1/4 cups)",
-  "expected": {
-    "item": "bacon slab, cut into 1/2-inch cubes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "6",
-        "unit": null
-      },
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon slab, cut into 1/2-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bacon slab, cut into 1/2-inch cubes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "6",
+          "unit": null
+        },
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons chopped fresh thyme, (plus more for serving (or ¾ teaspoon dried))",
-  "expected": {
-    "item": "chopped fresh thyme",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for serving (or 3/4 teaspoon dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh thyme",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for serving (or 3/4 teaspoon dried"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh thyme",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for serving (or 3/4 teaspoon dried"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "26 1/2  ounces   pomi brand chopped tomatoes (nothing works like this!)",
-  "expected": {
-    "item": "pomi brand chopped tomatoes (nothing works like this!)",
-    "measurements": [
-      {
-        "amount": "26 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pomi brand chopped tomatoes (nothing works like this!)",
+      "measurements": [
+        {
+          "amount": "26 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pomi brand chopped tomatoes (nothing works like this!)",
+      "measurements": [
+        {
+          "amount": "26 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "751",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

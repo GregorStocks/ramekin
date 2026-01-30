@@ -1,13 +1,25 @@
 {
   "raw": "1  small cauliflower, (cut into 1 ½-inch florets (3 cups florets))",
-  "expected": {
-    "item": "cauliflower, (cut into 1 1/2-inch florets (3 cups florets)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cauliflower, (cut into 1 1/2-inch florets (3 cups florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cauliflower, (cut into 1 1/2-inch florets (3 cups florets)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

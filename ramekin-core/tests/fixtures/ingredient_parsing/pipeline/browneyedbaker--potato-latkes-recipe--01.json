@@ -1,17 +1,33 @@
 {
   "raw": "3 pounds russet potatoes (about 5 large)",
-  "expected": {
-    "item": "russet potatoes",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      },
-      {
-        "amount": "5",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        },
+        {
+          "amount": "5",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        },
+        {
+          "amount": "5",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "½  onion (yellow or white, thinly sliced)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "yellow or white, thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "yellow or white, thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "yellow or white, thinly sliced"
+    }
   }
 }

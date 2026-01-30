@@ -1,13 +1,25 @@
 {
   "raw": "1.5 teaspoons freshly grated orange peel",
-  "expected": {
-    "item": "freshly grated orange peel",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "freshly grated orange peel",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "freshly grated orange peel",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 Thai chilies, diced, or &amp;frac12; teaspoon red pepper flakes",
-  "expected": {
-    "item": "Thai chilies, diced,",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "or 1/2 teaspoon red pepper flakes"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thai chilies, diced,",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 1/2 teaspoon red pepper flakes"
+    },
+    "enrich_metric_weights": {
+      "item": "Thai chilies, diced,",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "or 1/2 teaspoon red pepper flakes"
+    }
   }
 }

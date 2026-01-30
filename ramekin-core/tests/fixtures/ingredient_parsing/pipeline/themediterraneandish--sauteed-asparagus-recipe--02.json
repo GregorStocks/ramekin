@@ -1,13 +1,25 @@
 {
   "raw": "1 pound asparagus, (trimmed and sliced into 3-inch pieces)",
-  "expected": {
-    "item": "asparagus",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed and sliced into 3-inch pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced into 3-inch pieces"
+    },
+    "parse_ingredients": {
+      "item": "asparagus",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed and sliced into 3-inch pieces"
+    }
   }
 }

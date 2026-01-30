@@ -1,21 +1,41 @@
 {
   "raw": "85g cream cheese (3 ounces; 6 tablespoons), softened",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "85",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "oz"
-      },
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

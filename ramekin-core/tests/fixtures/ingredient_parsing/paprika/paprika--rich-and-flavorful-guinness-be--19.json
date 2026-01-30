@@ -1,8 +1,15 @@
 {
   "raw": "Minced flat-leaf parsley leaves and tender stems, for garnish",
-  "expected": {
-    "item": "Minced flat-leaf parsley leaves and tender stems",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Minced flat-leaf parsley leaves and tender stems",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Minced flat-leaf parsley leaves and tender stems",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

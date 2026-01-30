@@ -1,13 +1,25 @@
 {
   "raw": "1 cup corn (from a can/ frozen and thawed/ from the cob)",
-  "expected": {
-    "item": "corn",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "from a can/ frozen and thawed/ from the cob"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "from a can/ frozen and thawed/ from the cob"
+    },
+    "parse_ingredients": {
+      "item": "corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "from a can/ frozen and thawed/ from the cob"
+    }
   }
 }

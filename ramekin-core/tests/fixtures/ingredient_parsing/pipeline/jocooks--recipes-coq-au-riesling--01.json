@@ -1,13 +1,25 @@
 {
   "raw": "6  bone-in skin-on chicken thighs ( (or 4 whole chicken legs))",
-  "expected": {
-    "item": "bone-in skin-on chicken thighs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "(or 4 whole chicken legs"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bone-in skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "(or 4 whole chicken legs"
+    },
+    "parse_ingredients": {
+      "item": "bone-in skin-on chicken thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "(or 4 whole chicken legs"
+    }
   }
 }

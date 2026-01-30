@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup (60 grams) dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color – do not use all black cocoa).",
-  "expected": {
-    "item": "dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa).",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "60",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa).",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dark or dutch-processed cocoa powder (I used mostly Dutch processed, except 1 tablespoon black cocoa for color - do not use all black cocoa).",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "60",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

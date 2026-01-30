@@ -1,17 +1,37 @@
 {
   "raw": "1 0.87oz envelope brown gravy mix",
-  "expected": {
-    "item": "envelope brown gravy mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "0.87",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "envelope brown gravy mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "0.87",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "envelope brown gravy mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "0.87",
+          "unit": "oz"
+        },
+        {
+          "amount": "25",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

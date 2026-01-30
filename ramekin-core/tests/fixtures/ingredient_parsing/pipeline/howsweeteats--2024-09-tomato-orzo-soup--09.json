@@ -1,8 +1,15 @@
 {
   "raw": "parmesan cheese, (for sprinkling)",
-  "expected": {
-    "item": "parmesan cheese, (for sprinkling)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "parmesan cheese, (for sprinkling)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "parmesan cheese, (for sprinkling)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "8 cups (64 ounces) cold water",
-  "expected": {
-    "item": "cold water",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "cup"
-      },
-      {
-        "amount": "64",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold water",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "64",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold water",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "cup"
+        },
+        {
+          "amount": "64",
+          "unit": "oz"
+        },
+        {
+          "amount": "1814",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons sesame seeds or hemp seeds",
-  "expected": {
-    "item": "sesame seeds or hemp seeds",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sesame seeds or hemp seeds",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sesame seeds or hemp seeds",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

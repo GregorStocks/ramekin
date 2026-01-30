@@ -1,8 +1,15 @@
 {
   "raw": "Grape seed oil as needed",
-  "expected": {
-    "item": "Grape seed oil as needed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Grape seed oil as needed",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Grape seed oil as needed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Soy sauce or tamari (to serve)",
-  "expected": {
-    "item": "Soy sauce or tamari (to serve)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Soy sauce or tamari (to serve)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Soy sauce or tamari (to serve)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

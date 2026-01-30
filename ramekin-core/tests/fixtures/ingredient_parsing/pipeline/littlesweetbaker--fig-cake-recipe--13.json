@@ -1,13 +1,25 @@
 {
   "raw": "1 &amp;amp; 1/2 tsp vanilla extract",
-  "expected": {
-    "item": "& 1/2 tsp vanilla extract",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "& 1/2 tsp vanilla extract",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "& 1/2 tsp vanilla extract",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

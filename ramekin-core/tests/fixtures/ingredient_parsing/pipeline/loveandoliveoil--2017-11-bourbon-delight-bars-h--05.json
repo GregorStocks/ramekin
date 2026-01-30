@@ -1,17 +1,37 @@
 {
   "raw": "2 1/2 cups (10 ounces) vanilla wafer crumbs",
-  "expected": {
-    "item": "vanilla wafer crumbs",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vanilla wafer crumbs",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vanilla wafer crumbs",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

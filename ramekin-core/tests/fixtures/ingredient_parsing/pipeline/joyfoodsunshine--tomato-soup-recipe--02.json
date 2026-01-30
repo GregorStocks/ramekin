@@ -1,13 +1,25 @@
 {
   "raw": "½  onion ((diced, 1 cup))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "diced, 1 cup"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "diced, 1 cup"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "diced, 1 cup"
+    }
   }
 }

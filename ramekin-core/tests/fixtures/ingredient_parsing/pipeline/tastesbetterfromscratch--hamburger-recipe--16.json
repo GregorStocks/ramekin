@@ -1,8 +1,15 @@
 {
   "raw": "Condiments: ketchup, mustard, BBQ sauce, Thousand island dressing, Ranch dressing, or homemade Chick-fil A Sauce.",
-  "expected": {
-    "item": "Condiments: ketchup, mustard, BBQ sauce, Thousand island dressing, Ranch dressing, or homemade Chick-fil A Sauce.",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Condiments: ketchup, mustard, BBQ sauce, Thousand island dressing, Ranch dressing, or homemade Chick-fil A Sauce.",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Condiments: ketchup, mustard, BBQ sauce, Thousand island dressing, Ranch dressing, or homemade Chick-fil A Sauce.",
+      "measurements": [],
+      "note": null
+    }
   }
 }

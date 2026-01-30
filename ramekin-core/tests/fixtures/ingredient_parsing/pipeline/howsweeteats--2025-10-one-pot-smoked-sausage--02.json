@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces smoked turkey sausage, (sliced into rounds)",
-  "expected": {
-    "item": "smoked turkey sausage",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "sliced into rounds"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked turkey sausage",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "sliced into rounds"
+    },
+    "enrich_metric_weights": {
+      "item": "smoked turkey sausage",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced into rounds"
+    }
   }
 }

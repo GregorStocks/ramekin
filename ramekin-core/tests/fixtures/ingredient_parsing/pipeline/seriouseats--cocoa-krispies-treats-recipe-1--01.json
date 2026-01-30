@@ -1,21 +1,41 @@
 {
   "raw": "99 g Rice Krispies (3 1/2 ounces; 3 1/2 cups), see notes",
-  "expected": {
-    "item": "Rice Krispies , see notes",
-    "measurements": [
-      {
-        "amount": "99",
-        "unit": "g"
-      },
-      {
-        "amount": "3 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "3 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Rice Krispies , see notes",
+      "measurements": [
+        {
+          "amount": "99",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Rice Krispies , see notes",
+      "measurements": [
+        {
+          "amount": "99",
+          "unit": "g"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "3 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

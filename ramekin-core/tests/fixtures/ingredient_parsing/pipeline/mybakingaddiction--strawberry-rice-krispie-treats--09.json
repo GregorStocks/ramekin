@@ -1,8 +1,15 @@
 {
   "raw": "Fresh strawberries for garnish",
-  "expected": {
-    "item": "Fresh strawberries for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Fresh strawberries for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Fresh strawberries for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

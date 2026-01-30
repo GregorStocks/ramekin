@@ -1,13 +1,29 @@
 {
   "raw": "28 ounces cannellini beans, (drained and rinsed)",
-  "expected": {
-    "item": "cannellini beans",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cannellini beans",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "parse_ingredients": {
+      "item": "cannellini beans",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

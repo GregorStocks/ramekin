@@ -1,13 +1,25 @@
 {
   "raw": "1  youtiao ((Chinese fried dough stick))",
-  "expected": {
-    "item": "youtiao (Chinese fried dough stick)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "youtiao (Chinese fried dough stick)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "youtiao (Chinese fried dough stick)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

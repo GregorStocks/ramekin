@@ -1,17 +1,33 @@
 {
   "raw": "2 3/4 cups (345 grams) all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "2 3/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "345",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "345",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "2 3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "345",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

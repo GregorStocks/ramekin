@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds cooked chicken breast ((cubed or shredded) (4 Cups))",
-  "expected": {
-    "item": "cooked chicken breast",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": "cubed or shredded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked chicken breast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cubed or shredded"
+    },
+    "parse_ingredients": {
+      "item": "cooked chicken breast",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": "cubed or shredded"
+    }
   }
 }

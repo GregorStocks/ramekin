@@ -1,13 +1,25 @@
 {
   "raw": "1 sheet frozen puff pastry, thawed",
-  "expected": {
-    "item": "sheet frozen puff pastry",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "thawed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sheet frozen puff pastry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    },
+    "parse_ingredients": {
+      "item": "sheet frozen puff pastry",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "thawed"
+    }
   }
 }

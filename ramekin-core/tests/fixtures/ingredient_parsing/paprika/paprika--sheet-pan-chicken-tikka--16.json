@@ -1,17 +1,33 @@
 {
   "raw": "1 3/4 pounds (1 small or half a very large head) cauliflower, cut into 3/4-inch-wide florets",
-  "expected": {
-    "item": "cauliflower, cut into 3/4-inch-wide florets",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "lb"
-      },
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cauliflower, cut into 3/4-inch-wide florets",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cauliflower, cut into 3/4-inch-wide florets",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces semisweet dark chocolate, broken into 1/2-inch pieces",
-  "expected": {
-    "item": "semisweet dark chocolate, broken into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "semisweet dark chocolate, broken into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "semisweet dark chocolate, broken into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

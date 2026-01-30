@@ -1,8 +1,15 @@
 {
   "raw": "shredded cheddar",
-  "expected": {
-    "item": "shredded cheddar",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shredded cheddar",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shredded cheddar",
+      "measurements": [],
+      "note": null
+    }
   }
 }

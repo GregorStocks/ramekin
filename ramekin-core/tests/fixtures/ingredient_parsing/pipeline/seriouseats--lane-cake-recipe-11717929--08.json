@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cups (355 ml) whole milk, at room temperature",
-  "expected": {
-    "item": "whole milk",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "355",
-        "unit": "ml"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "355",
+          "unit": "ml"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "enrich_metric_weights": {
+      "item": "whole milk",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "355",
+          "unit": "ml"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

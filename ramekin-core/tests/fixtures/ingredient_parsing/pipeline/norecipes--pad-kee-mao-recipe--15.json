@@ -1,17 +1,33 @@
 {
   "raw": "30 grams carrot (( 8 thin slices))",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": "g"
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "g"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "g"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

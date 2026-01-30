@@ -1,8 +1,15 @@
 {
   "raw": "SALAD:",
-  "expected": {
-    "item": "SALAD:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "SALAD:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "SALAD:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

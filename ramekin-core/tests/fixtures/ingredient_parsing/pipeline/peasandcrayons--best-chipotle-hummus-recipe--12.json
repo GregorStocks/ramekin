@@ -1,8 +1,15 @@
 {
   "raw": "minced chipotle pepper (for the chipotle lovers out there!)",
-  "expected": {
-    "item": "minced chipotle pepper (for the chipotle lovers out there!)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced chipotle pepper (for the chipotle lovers out there!)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "minced chipotle pepper (for the chipotle lovers out there!)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

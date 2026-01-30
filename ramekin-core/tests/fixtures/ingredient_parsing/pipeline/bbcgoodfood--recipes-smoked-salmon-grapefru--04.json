@@ -1,13 +1,25 @@
 {
   "raw": "12 slices smoked salmon",
-  "expected": {
-    "item": "smoked salmon",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "slice"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "smoked salmon",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "smoked salmon",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "slice"
+        }
+      ],
+      "note": null
+    }
   }
 }

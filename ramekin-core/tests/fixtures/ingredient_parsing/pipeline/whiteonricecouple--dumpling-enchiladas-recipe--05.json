@@ -1,8 +1,15 @@
 {
   "raw": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp  (, optional Toppings )",
-  "expected": {
-    "item": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp",
-    "measurements": [],
-    "note": "optional Toppings"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp",
+      "measurements": [],
+      "note": "optional Toppings"
+    },
+    "enrich_metric_weights": {
+      "item": "Sliced green onion, chopped cilantro, jalapenos, guacamole, sour cream, chili crisp",
+      "measurements": [],
+      "note": "optional Toppings"
+    }
   }
 }

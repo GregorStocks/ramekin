@@ -1,8 +1,15 @@
 {
   "raw": "Powdered sugar or chocolate ganache",
-  "expected": {
-    "item": "Powdered sugar or chocolate ganache",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Powdered sugar or chocolate ganache",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Powdered sugar or chocolate ganache",
+      "measurements": [],
+      "note": null
+    }
   }
 }

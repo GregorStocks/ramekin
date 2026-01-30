@@ -1,13 +1,25 @@
 {
   "raw": "8-10 small flour tortillas (or corn tortillas, if preferred)",
-  "expected": {
-    "item": "flour tortillas (or corn tortillas, if preferred)",
-    "measurements": [
-      {
-        "amount": "8-10",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flour tortillas (or corn tortillas, if preferred)",
+      "measurements": [
+        {
+          "amount": "8-10",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "flour tortillas (or corn tortillas, if preferred)",
+      "measurements": [
+        {
+          "amount": "8-10",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

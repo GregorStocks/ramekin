@@ -1,21 +1,41 @@
 {
   "raw": "85 g Cocoa Krispies (3 ounces; 3 cups)",
-  "expected": {
-    "item": "Cocoa Krispies",
-    "measurements": [
-      {
-        "amount": "85",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "oz"
-      },
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cocoa Krispies",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cocoa Krispies",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

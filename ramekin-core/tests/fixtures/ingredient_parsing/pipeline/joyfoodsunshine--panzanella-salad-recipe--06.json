@@ -1,13 +1,25 @@
 {
   "raw": "1  bell pepper (red, yellow, orange, or green finely diced)",
-  "expected": {
-    "item": "bell pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "red, yellow, orange, or green finely diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "red, yellow, orange, or green finely diced"
+    },
+    "parse_ingredients": {
+      "item": "bell pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "red, yellow, orange, or green finely diced"
+    }
   }
 }

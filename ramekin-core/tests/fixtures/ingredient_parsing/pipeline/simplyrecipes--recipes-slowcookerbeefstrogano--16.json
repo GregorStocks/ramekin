@@ -1,13 +1,25 @@
 {
   "raw": "1 cup beef broth (optional, if needed)",
-  "expected": {
-    "item": "beef broth",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional, if needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beef broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, if needed"
+    },
+    "enrich_metric_weights": {
+      "item": "beef broth",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, if needed"
+    }
   }
 }

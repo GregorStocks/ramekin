@@ -1,17 +1,33 @@
 {
   "raw": "2 (10-ounce) bags Jet-Puffed mini marshmallows",
-  "expected": {
-    "item": "Jet-Puffed mini marshmallows",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "bag"
-      },
-      {
-        "amount": "10",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Jet-Puffed mini marshmallows",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bag"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Jet-Puffed mini marshmallows",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bag"
+        },
+        {
+          "amount": "10",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

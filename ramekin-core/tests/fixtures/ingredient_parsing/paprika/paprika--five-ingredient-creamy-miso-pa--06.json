@@ -1,8 +1,15 @@
 {
   "raw": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish (optional)",
-  "expected": {
-    "item": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Kizami nori, furikake or thinly sliced seaweed snacks, for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

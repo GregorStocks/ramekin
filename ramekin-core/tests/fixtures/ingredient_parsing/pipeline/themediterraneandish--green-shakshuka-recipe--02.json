@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces brussels sprouts. (trimmed and thinly sliced)",
-  "expected": {
-    "item": "brussels sprouts.",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "trimmed and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "brussels sprouts.",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "trimmed and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "brussels sprouts.",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and thinly sliced"
+    }
   }
 }

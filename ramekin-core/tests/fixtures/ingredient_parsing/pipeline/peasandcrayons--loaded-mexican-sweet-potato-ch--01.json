@@ -1,13 +1,29 @@
 {
   "raw": "20 oz crinkle-cut sweet potato fries",
-  "expected": {
-    "item": "crinkle-cut sweet potato fries",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crinkle-cut sweet potato fries",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "567",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crinkle-cut sweet potato fries",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

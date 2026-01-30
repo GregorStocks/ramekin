@@ -1,8 +1,15 @@
 {
   "raw": "Ground cinnamon, for serving",
-  "expected": {
-    "item": "Ground cinnamon",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ground cinnamon",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Ground cinnamon",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

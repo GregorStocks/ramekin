@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cup water, plus an additional tablespoon or two if needed (updated)",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus an additional tablespoon or two if needed (updated)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus an additional tablespoon or two if needed (updated)"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus an additional tablespoon or two if needed (updated)"
+    }
   }
 }

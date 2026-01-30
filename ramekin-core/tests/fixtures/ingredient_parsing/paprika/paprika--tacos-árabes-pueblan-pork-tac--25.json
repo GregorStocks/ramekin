@@ -1,8 +1,15 @@
 {
   "raw": "YOGURT SAUCE:",
-  "expected": {
-    "item": "YOGURT SAUCE:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "YOGURT SAUCE:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "YOGURT SAUCE:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

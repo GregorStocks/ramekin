@@ -1,13 +1,29 @@
 {
   "raw": "2 ½ ounces bourbon whiskey",
-  "expected": {
-    "item": "bourbon whiskey",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bourbon whiskey",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bourbon whiskey",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

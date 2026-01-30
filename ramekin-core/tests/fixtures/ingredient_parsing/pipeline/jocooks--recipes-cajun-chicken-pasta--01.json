@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces penne (2 cups, uncooked)",
-  "expected": {
-    "item": "penne",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "2 cups, uncooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "penne",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "2 cups, uncooked"
+    },
+    "parse_ingredients": {
+      "item": "penne",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "2 cups, uncooked"
+    }
   }
 }

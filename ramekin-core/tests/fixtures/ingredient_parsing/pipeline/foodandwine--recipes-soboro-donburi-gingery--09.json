@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoon beni shoga (Japanese pickled ginger) or 1 large tomato, sliced",
-  "expected": {
-    "item": "beni shoga (Japanese pickled ginger) or 1 large tomato",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "beni shoga (Japanese pickled ginger) or 1 large tomato",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "beni shoga (Japanese pickled ginger) or 1 large tomato",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "sliced"
+    }
   }
 }

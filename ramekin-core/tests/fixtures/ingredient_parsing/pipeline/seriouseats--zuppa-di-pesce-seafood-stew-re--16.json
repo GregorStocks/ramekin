@@ -1,17 +1,33 @@
 {
   "raw": "8 ounces (226 g) mussels, scrubbed and debearded",
-  "expected": {
-    "item": "mussels",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      },
-      {
-        "amount": "226",
-        "unit": "g"
-      }
-    ],
-    "note": "scrubbed and debearded"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mussels",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "scrubbed and debearded"
+    },
+    "parse_ingredients": {
+      "item": "mussels",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "scrubbed and debearded"
+    }
   }
 }

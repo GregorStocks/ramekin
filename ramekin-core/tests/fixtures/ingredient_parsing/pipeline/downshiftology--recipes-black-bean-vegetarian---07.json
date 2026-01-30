@@ -1,13 +1,25 @@
 {
   "raw": "1  zucchini (finely sliced)",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "finely sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely sliced"
+    },
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely sliced"
+    }
   }
 }

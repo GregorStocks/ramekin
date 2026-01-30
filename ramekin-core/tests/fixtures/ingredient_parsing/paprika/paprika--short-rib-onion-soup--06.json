@@ -1,13 +1,25 @@
 {
   "raw": "2 large yellow onions, or 1 large onion plus 1 large leek, chopped",
-  "expected": {
-    "item": "yellow onions, or 1 large onion",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": "plus 1 large leek, chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onions, or 1 large onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1 large leek, chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onions, or 1 large onion",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": "plus 1 large leek, chopped"
+    }
   }
 }

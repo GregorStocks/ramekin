@@ -1,17 +1,33 @@
 {
   "raw": "1 pound (454 g) dried Great Northern white beans or Cannellini white beans, picked off any debris and rinsed",
-  "expected": {
-    "item": "dried Great Northern white beans or Cannellini white beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "454",
-        "unit": "g"
-      }
-    ],
-    "note": "picked off any debris and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried Great Northern white beans or Cannellini white beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "picked off any debris and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "dried Great Northern white beans or Cannellini white beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "picked off any debris and rinsed"
+    }
   }
 }

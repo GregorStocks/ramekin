@@ -1,8 +1,15 @@
 {
   "raw": "Gather Your Ingredients",
-  "expected": {
-    "item": "Gather Your Ingredients",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Gather Your Ingredients",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Gather Your Ingredients",
+      "measurements": [],
+      "note": null
+    }
   }
 }

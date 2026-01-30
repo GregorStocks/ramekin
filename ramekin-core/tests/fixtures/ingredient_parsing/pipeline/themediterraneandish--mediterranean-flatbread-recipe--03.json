@@ -1,8 +1,15 @@
 {
   "raw": "Flour (any kind) for dusting",
-  "expected": {
-    "item": "Flour (any kind) for dusting",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Flour (any kind) for dusting",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Flour (any kind) for dusting",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Warm (pita bread)",
-  "expected": {
-    "item": "Warm (pita bread)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Warm (pita bread)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Warm (pita bread)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

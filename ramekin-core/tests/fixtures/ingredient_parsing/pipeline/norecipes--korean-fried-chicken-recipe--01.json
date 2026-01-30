@@ -1,13 +1,25 @@
 {
   "raw": "900 grams chicken wings ((wingtips and drumlets))",
-  "expected": {
-    "item": "chicken wings (wingtips and drumlets)",
-    "measurements": [
-      {
-        "amount": "900",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken wings (wingtips and drumlets)",
+      "measurements": [
+        {
+          "amount": "900",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken wings (wingtips and drumlets)",
+      "measurements": [
+        {
+          "amount": "900",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

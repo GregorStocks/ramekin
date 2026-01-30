@@ -1,13 +1,25 @@
 {
   "raw": "1  red pear (peeled, cored, and diced (about the size of cranberries))",
-  "expected": {
-    "item": "red pear",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled, cored, and diced (about the size of cranberries"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red pear",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored, and diced (about the size of cranberries"
+    },
+    "parse_ingredients": {
+      "item": "red pear",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled, cored, and diced (about the size of cranberries"
+    }
   }
 }

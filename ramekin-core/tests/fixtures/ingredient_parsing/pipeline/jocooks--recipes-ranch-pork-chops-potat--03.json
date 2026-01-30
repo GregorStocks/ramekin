@@ -1,13 +1,25 @@
 {
   "raw": "6  pork chops (either boneless or bone-in will work)",
-  "expected": {
-    "item": "pork chops (either boneless or bone-in will work)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork chops (either boneless or bone-in will work)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pork chops (either boneless or bone-in will work)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

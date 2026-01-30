@@ -1,8 +1,15 @@
 {
   "raw": "sliced limes",
-  "expected": {
-    "item": "sliced limes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced limes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sliced limes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
-  "expected": {
-    "item": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 2 tablespoons  ketchup or chili sauce"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons  ketchup or chili sauce"
+    },
+    "parse_ingredients": {
+      "item": "¼ cup plus 2 tablespoons  ketchup or chili sauce",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 2 tablespoons  ketchup or chili sauce"
+    }
   }
 }

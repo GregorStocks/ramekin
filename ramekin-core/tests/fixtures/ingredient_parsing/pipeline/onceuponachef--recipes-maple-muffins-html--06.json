@@ -1,17 +1,33 @@
 {
   "raw": "12 tablespoons (1½ sticks) unsalted butter, melted",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "stick"
-      }
-    ],
-    "note": "melted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "melted"
+    }
   }
 }

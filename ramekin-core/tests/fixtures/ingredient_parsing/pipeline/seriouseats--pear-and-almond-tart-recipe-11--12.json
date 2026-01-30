@@ -1,8 +1,15 @@
 {
   "raw": "Honey, for brushing (optional)",
-  "expected": {
-    "item": "Honey, for brushing",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Honey, for brushing",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Honey, for brushing",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

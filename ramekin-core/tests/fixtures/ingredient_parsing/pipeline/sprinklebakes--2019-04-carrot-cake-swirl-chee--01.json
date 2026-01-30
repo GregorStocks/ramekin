@@ -1,8 +1,15 @@
 {
   "raw": "Cake Ingredients",
-  "expected": {
-    "item": "Cake Ingredients",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cake Ingredients",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cake Ingredients",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4 pounds pork shoulder (trimmed of fat and cut into 2 inch pieces)",
-  "expected": {
-    "item": "pork shoulder",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": "lb"
-      }
-    ],
-    "note": "trimmed of fat and cut into 2 inch pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed of fat and cut into 2 inch pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "pork shoulder",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "lb"
+        }
+      ],
+      "note": "trimmed of fat and cut into 2 inch pieces"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Shaved red onion or thinly sliced radish",
-  "expected": {
-    "item": "Shaved red onion or thinly sliced radish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Shaved red onion or thinly sliced radish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Shaved red onion or thinly sliced radish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

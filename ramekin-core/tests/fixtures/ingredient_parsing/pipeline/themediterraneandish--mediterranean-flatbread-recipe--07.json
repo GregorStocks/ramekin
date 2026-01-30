@@ -1,17 +1,33 @@
 {
   "raw": "Large handful baby arugula (about 4 oz/113.4 g)",
-  "expected": {
-    "item": "handful baby arugula",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "large"
-      },
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "handful baby arugula",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "handful baby arugula",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

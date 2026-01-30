@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
-  "expected": {
-    "item": "chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken (skinless and boneless, I used both chicken breast and thighs, cut into cubes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

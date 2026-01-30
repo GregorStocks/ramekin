@@ -1,17 +1,37 @@
 {
   "raw": "½ cup bread crumbs (4.19 oz | 119 g )",
-  "expected": {
-    "item": "bread crumbs",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "4.19",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bread crumbs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "4.19",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bread crumbs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "4.19",
+          "unit": "oz"
+        },
+        {
+          "amount": "119",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

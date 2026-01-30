@@ -1,13 +1,29 @@
 {
   "raw": "1/4 oz. packet unflavored powdered gelatin",
-  "expected": {
-    "item": "packet unflavored powdered gelatin",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "packet unflavored powdered gelatin",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "packet unflavored powdered gelatin",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "7",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

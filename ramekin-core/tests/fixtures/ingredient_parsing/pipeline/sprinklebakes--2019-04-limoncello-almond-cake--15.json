@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup about 20 Sconza Lemoncello Chocolate Almonds, chopped",
-  "expected": {
-    "item": "about 20 Sconza Lemoncello Chocolate Almonds",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "about 20 Sconza Lemoncello Chocolate Almonds",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "about 20 Sconza Lemoncello Chocolate Almonds",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

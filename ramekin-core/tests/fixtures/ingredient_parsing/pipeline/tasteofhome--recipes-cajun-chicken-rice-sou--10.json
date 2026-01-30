@@ -1,17 +1,37 @@
 {
   "raw": "1 can (10 ounces) diced tomatoes and green chiles, drained",
-  "expected": {
-    "item": "diced tomatoes and green chiles",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced tomatoes and green chiles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "diced tomatoes and green chiles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

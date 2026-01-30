@@ -1,13 +1,25 @@
 {
   "raw": "6 cutlets Turkey drumsticks and thighs (washed and patted dry with paper towel)",
-  "expected": {
-    "item": "cutlets Turkey drumsticks and thighs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "washed and patted dry with paper towel"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cutlets Turkey drumsticks and thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "washed and patted dry with paper towel"
+    },
+    "parse_ingredients": {
+      "item": "cutlets Turkey drumsticks and thighs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "washed and patted dry with paper towel"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Red gel food coloring",
-  "expected": {
-    "item": "Red gel food coloring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Red gel food coloring",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Red gel food coloring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

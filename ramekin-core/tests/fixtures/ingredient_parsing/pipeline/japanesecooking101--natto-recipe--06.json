@@ -1,13 +1,25 @@
 {
   "raw": "3  Shiso leaves (thinly sliced, if you have them)",
-  "expected": {
-    "item": "Shiso leaves",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced, if you have them"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Shiso leaves",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced, if you have them"
+    },
+    "parse_ingredients": {
+      "item": "Shiso leaves",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced, if you have them"
+    }
   }
 }

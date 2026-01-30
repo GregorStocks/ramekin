@@ -1,13 +1,25 @@
 {
   "raw": "1/2 c. plus 1 tablespoon&nbsp;water",
-  "expected": {
-    "item": "1/2 c. plus 1 tablespoon&nbsp;water",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1 tablespoon water"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1/2 c. plus 1 tablespoon&nbsp;water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon water"
+    },
+    "parse_ingredients": {
+      "item": "1/2 c. plus 1 tablespoon&nbsp;water",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1 tablespoon water"
+    }
   }
 }

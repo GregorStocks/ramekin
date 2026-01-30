@@ -1,13 +1,25 @@
 {
   "raw": "1 box yellow cake mix",
-  "expected": {
-    "item": "yellow cake mix",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "yellow cake mix",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  cube butter (divided)",
-  "expected": {
-    "item": "butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cube"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cube"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cube"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

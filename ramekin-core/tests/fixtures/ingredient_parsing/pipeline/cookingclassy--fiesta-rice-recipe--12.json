@@ -1,13 +1,25 @@
 {
   "raw": "1 cup frozen corn, (thawed according to package instructions*)",
-  "expected": {
-    "item": "frozen corn",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed according to package instructions*"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed according to package instructions*"
+    },
+    "parse_ingredients": {
+      "item": "frozen corn",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed according to package instructions*"
+    }
   }
 }

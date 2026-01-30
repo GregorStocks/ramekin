@@ -1,13 +1,25 @@
 {
   "raw": "5 cups chilled seltzer",
-  "expected": {
-    "item": "chilled seltzer",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chilled seltzer",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chilled seltzer",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Fresh cilantro",
-  "expected": {
-    "item": "Fresh cilantro",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh cilantro",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Fresh cilantro",
+      "measurements": [],
+      "note": null
+    }
   }
 }

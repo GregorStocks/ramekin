@@ -1,17 +1,33 @@
 {
   "raw": "1½ lb. skinless, boneless chicken breasts (2–3) or chicken cutlets",
-  "expected": {
-    "item": "skinless, boneless chicken breasts or chicken cutlets",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless, boneless chicken breasts or chicken cutlets",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless, boneless chicken breasts or chicken cutlets",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

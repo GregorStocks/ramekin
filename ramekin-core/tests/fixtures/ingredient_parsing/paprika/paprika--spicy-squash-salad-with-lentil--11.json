@@ -1,13 +1,25 @@
 {
   "raw": "Roasted seeds (about 1/2 cup) from your butternut squash (optional; see note above)",
-  "expected": {
-    "item": "Roasted seeds from your butternut squash",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional; see note above"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Roasted seeds from your butternut squash",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional; see note above"
+    },
+    "enrich_metric_weights": {
+      "item": "Roasted seeds from your butternut squash",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional; see note above"
+    }
   }
 }

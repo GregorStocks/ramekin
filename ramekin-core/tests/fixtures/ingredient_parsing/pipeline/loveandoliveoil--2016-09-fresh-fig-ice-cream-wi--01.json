@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 pounds fresh figs, stems removed and chopped into 1/2-inch pieces (about 4 cups chopped)",
-  "expected": {
-    "item": "fresh figs, stems removed and chopped into 1/2-inch pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "about 4 cups chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh figs, stems removed and chopped into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 cups chopped"
+    },
+    "parse_ingredients": {
+      "item": "fresh figs, stems removed and chopped into 1/2-inch pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "about 4 cups chopped"
+    }
   }
 }

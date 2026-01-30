@@ -1,17 +1,33 @@
 {
   "raw": "2 teaspoons (10 ml) soy sauce",
-  "expected": {
-    "item": "soy sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "10",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "soy sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

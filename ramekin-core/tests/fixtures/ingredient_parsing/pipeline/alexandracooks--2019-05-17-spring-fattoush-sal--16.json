@@ -1,13 +1,25 @@
 {
   "raw": "4 radishes, optional, thinly sliced",
-  "expected": {
-    "item": "radishes, optional",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "radishes, optional",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "radishes, optional",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

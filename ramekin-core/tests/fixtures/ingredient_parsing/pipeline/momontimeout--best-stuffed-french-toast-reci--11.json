@@ -1,13 +1,25 @@
 {
   "raw": "1 cup fresh strawberries (sliced thin)",
-  "expected": {
-    "item": "fresh strawberries",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "sliced thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sliced thin"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh strawberries",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sliced thin"
+    }
   }
 }

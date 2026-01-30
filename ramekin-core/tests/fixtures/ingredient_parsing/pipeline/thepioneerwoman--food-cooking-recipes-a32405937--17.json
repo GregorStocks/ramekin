@@ -1,8 +1,15 @@
 {
   "raw": "Steamed green beans, for serving",
-  "expected": {
-    "item": "Steamed green beans",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Steamed green beans",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Steamed green beans",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

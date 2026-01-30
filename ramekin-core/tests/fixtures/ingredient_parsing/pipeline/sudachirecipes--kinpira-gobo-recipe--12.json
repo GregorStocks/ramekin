@@ -1,13 +1,25 @@
 {
   "raw": "½ tsp Chinese-style chicken bouillon powder (or plant-based alternative)",
-  "expected": {
-    "item": "Chinese-style chicken bouillon powder (or plant-based alternative)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chinese-style chicken bouillon powder (or plant-based alternative)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chinese-style chicken bouillon powder (or plant-based alternative)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

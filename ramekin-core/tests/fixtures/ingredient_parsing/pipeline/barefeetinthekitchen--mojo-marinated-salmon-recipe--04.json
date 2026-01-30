@@ -1,13 +1,25 @@
 {
   "raw": "1  handful fresh cilantro leaves (about 3 tablespoons finely chopped)",
-  "expected": {
-    "item": "fresh cilantro leaves",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "handful"
-      }
-    ],
-    "note": "about 3 tablespoons finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh cilantro leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "handful"
+        }
+      ],
+      "note": "about 3 tablespoons finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh cilantro leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "handful"
+        }
+      ],
+      "note": "about 3 tablespoons finely chopped"
+    }
   }
 }

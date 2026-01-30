@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 teaspoons (8ml) ground cinnamon",
-  "expected": {
-    "item": "ground cinnamon",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "8",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground cinnamon",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "8",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "ground cinnamon",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "8",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

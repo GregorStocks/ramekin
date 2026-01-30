@@ -1,8 +1,15 @@
 {
   "raw": "salad greens of your choice",
-  "expected": {
-    "item": "salad greens of your choice",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salad greens of your choice",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salad greens of your choice",
+      "measurements": [],
+      "note": null
+    }
   }
 }

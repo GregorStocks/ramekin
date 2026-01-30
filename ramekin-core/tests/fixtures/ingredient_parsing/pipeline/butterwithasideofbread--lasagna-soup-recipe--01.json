@@ -1,13 +1,29 @@
 {
   "raw": "24 ounce pasta sauce (any variety will do)",
-  "expected": {
-    "item": "pasta sauce (any variety will do)",
-    "measurements": [
-      {
-        "amount": "24",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pasta sauce (any variety will do)",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pasta sauce (any variety will do)",
+      "measurements": [
+        {
+          "amount": "24",
+          "unit": "oz"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

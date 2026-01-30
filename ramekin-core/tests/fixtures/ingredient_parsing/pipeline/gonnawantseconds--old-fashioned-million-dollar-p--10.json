@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons coconut (toasted )",
-  "expected": {
-    "item": "coconut",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "coconut",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "toasted"
+    },
+    "parse_ingredients": {
+      "item": "coconut",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

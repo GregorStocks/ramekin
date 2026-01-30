@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (215 grams) brown sugar, light or dark",
-  "expected": {
-    "item": "brown sugar, light or dark",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "215",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brown sugar, light or dark",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "215",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "brown sugar, light or dark",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "215",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

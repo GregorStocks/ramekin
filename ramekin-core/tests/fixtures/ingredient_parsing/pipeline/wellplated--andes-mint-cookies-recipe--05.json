@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon espresso powder (optional but delicious)",
-  "expected": {
-    "item": "espresso powder",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "optional but delicious"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "espresso powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but delicious"
+    },
+    "enrich_metric_weights": {
+      "item": "espresso powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "optional but delicious"
+    }
   }
 }

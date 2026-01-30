@@ -1,13 +1,25 @@
 {
   "raw": "4 to 5 large leeks, white and light green parts only",
-  "expected": {
-    "item": "leeks, white and light green parts only",
-    "measurements": [
-      {
-        "amount": "4 to 5",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "leeks, white and light green parts only",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "leeks, white and light green parts only",
+      "measurements": [
+        {
+          "amount": "4 to 5",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

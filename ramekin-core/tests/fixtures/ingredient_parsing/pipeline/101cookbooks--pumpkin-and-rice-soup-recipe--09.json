@@ -1,8 +1,15 @@
 {
   "raw": "toasted pumpkin seeds",
-  "expected": {
-    "item": "toasted pumpkin seeds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "toasted pumpkin seeds",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "toasted pumpkin seeds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

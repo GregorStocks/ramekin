@@ -1,13 +1,25 @@
 {
   "raw": "7 Tbsp Worcestershire sauce",
-  "expected": {
-    "item": "Worcestershire sauce",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Worcestershire sauce",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

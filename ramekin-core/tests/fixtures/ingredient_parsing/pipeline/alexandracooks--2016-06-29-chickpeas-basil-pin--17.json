@@ -1,8 +1,15 @@
 {
   "raw": "bread for serving",
-  "expected": {
-    "item": "bread for serving",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bread for serving",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "bread for serving",
+      "measurements": [],
+      "note": null
+    }
   }
 }

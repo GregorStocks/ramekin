@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds pickling cucumbers (about 8 to 10 medium), trimmed and thinly sliced",
-  "expected": {
-    "item": "pickling cucumbers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "8 to 10",
-        "unit": "medium"
-      }
-    ],
-    "note": "trimmed and thinly sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pickling cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8 to 10",
+          "unit": "medium"
+        }
+      ],
+      "note": "trimmed and thinly sliced"
+    },
+    "parse_ingredients": {
+      "item": "pickling cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8 to 10",
+          "unit": "medium"
+        }
+      ],
+      "note": "trimmed and thinly sliced"
+    }
   }
 }

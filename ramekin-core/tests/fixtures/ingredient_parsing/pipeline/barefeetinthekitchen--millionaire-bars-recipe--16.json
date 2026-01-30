@@ -1,8 +1,15 @@
 {
   "raw": "Optional: kosher (course sea salt, or Maldon salt (if you have it))",
-  "expected": {
-    "item": "Optional: kosher (course sea salt, or Maldon salt (if you have it)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Optional: kosher (course sea salt, or Maldon salt (if you have it)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Optional: kosher (course sea salt, or Maldon salt (if you have it)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

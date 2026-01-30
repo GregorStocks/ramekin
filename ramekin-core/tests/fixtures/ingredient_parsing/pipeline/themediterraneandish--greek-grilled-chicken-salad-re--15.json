@@ -1,13 +1,29 @@
 {
   "raw": "8 oz hearts of Romaine lettuce,  (chopped )",
-  "expected": {
-    "item": "hearts of Romaine lettuce",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hearts of Romaine lettuce",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "hearts of Romaine lettuce",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

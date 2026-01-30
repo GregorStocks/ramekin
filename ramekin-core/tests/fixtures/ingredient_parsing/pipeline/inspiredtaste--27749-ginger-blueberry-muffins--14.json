@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon milk; dairy and non-dairy both work",
-  "expected": {
-    "item": "milk; dairy and non-dairy both work",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "milk; dairy and non-dairy both work",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "milk; dairy and non-dairy both work",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 8-ounce bags baby bell peppers, halved and seeded",
-  "expected": {
-    "item": "baby bell peppers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "8-ounce bags"
-      }
-    ],
-    "note": "halved and seeded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "8-ounce bags"
+        }
+      ],
+      "note": "halved and seeded"
+    },
+    "enrich_metric_weights": {
+      "item": "baby bell peppers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "8-ounce bags"
+        }
+      ],
+      "note": "halved and seeded"
+    }
   }
 }

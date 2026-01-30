@@ -1,13 +1,25 @@
 {
   "raw": "3 cups shelled and skinned roasted peanuts",
-  "expected": {
-    "item": "shelled and skinned roasted peanuts",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "shelled and skinned roasted peanuts",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "shelled and skinned roasted peanuts",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

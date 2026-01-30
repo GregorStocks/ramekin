@@ -1,13 +1,25 @@
 {
   "raw": "1 2/3 cups dairy-free chocolate chips (or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets))",
-  "expected": {
-    "item": "dairy-free chocolate chips",
-    "measurements": [
-      {
-        "amount": "1 2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dairy-free chocolate chips",
+      "measurements": [
+        {
+          "amount": "1 2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets"
+    },
+    "parse_ingredients": {
+      "item": "dairy-free chocolate chips",
+      "measurements": [
+        {
+          "amount": "1 2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "or chopped chocolate (we like Hu’s Kitchen Gems or Lily’s Sweets"
+    }
   }
 }

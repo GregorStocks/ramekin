@@ -1,13 +1,25 @@
 {
   "raw": "1 bay leaf or a few sprigs of thyme (optional, and honestly, I rarely bother)",
-  "expected": {
-    "item": "bay leaf or a few sprigs of thyme",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "optional, and honestly, I rarely bother"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bay leaf or a few sprigs of thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional, and honestly, I rarely bother"
+    },
+    "enrich_metric_weights": {
+      "item": "bay leaf or a few sprigs of thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "optional, and honestly, I rarely bother"
+    }
   }
 }

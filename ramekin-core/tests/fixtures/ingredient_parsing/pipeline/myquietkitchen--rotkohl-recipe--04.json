@@ -1,13 +1,25 @@
 {
   "raw": "2 medium apples, cored and chopped (any firm/crisp variety, sweet or tart)",
-  "expected": {
-    "item": "apples, cored and chopped (any firm/crisp variety, sweet or tart)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "apples, cored and chopped (any firm/crisp variety, sweet or tart)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "apples, cored and chopped (any firm/crisp variety, sweet or tart)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

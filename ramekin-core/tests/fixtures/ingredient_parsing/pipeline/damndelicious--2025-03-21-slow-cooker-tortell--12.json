@@ -1,13 +1,25 @@
 {
   "raw": "1/2 bunch kale (stems removed and leaves chopped)",
-  "expected": {
-    "item": "kale",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "bunch"
-      }
-    ],
-    "note": "stems removed and leaves chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "stems removed and leaves chopped"
+    },
+    "parse_ingredients": {
+      "item": "kale",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "stems removed and leaves chopped"
+    }
   }
 }

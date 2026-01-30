@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 180g packed dark brown sugar",
-  "expected": {
-    "item": "packed dark brown sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "180",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "packed dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "packed dark brown sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "180",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

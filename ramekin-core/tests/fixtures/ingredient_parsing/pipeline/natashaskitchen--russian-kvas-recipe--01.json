@@ -1,17 +1,33 @@
 {
   "raw": "5 Liters or 5.28 Quarts (or 21 cups Warm Water)",
-  "expected": {
-    "item": "(or 21 cups Warm Water)",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "l"
-      },
-      {
-        "amount": "5.28",
-        "unit": "quart"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "(or 21 cups Warm Water)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "l"
+        },
+        {
+          "amount": "5.28",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "(or 21 cups Warm Water)",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "l"
+        },
+        {
+          "amount": "5.28",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    }
   }
 }

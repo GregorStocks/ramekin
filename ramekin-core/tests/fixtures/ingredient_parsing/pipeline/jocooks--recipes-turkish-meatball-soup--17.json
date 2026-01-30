@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup orzo (uncooked)",
-  "expected": {
-    "item": "orzo",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orzo",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "enrich_metric_weights": {
+      "item": "orzo",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Grated cheese, chopped cilantro, chopped scallion or onion, for garnish",
-  "expected": {
-    "item": "Grated cheese, chopped cilantro, chopped scallion or onion",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Grated cheese, chopped cilantro, chopped scallion or onion",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "Grated cheese, chopped cilantro, chopped scallion or onion",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

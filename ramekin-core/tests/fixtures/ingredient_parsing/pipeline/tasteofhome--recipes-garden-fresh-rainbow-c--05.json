@@ -1,17 +1,33 @@
 {
   "raw": "2 bunches rainbow Swiss chard, coarsely chopped (about 16 cups)",
-  "expected": {
-    "item": "rainbow Swiss chard",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "bunch"
-      },
-      {
-        "amount": "16",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rainbow Swiss chard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        },
+        {
+          "amount": "16",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "rainbow Swiss chard",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        },
+        {
+          "amount": "16",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped"
+    }
   }
 }

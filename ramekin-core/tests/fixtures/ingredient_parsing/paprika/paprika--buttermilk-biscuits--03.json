@@ -1,17 +1,33 @@
 {
   "raw": "284g all-purpose flour (2 1/4 cups), plus additional for dusting",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "284",
-        "unit": "g"
-      },
-      {
-        "amount": "2 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus additional for dusting"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "284",
+          "unit": "g"
+        },
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus additional for dusting"
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "284",
+          "unit": "g"
+        },
+        {
+          "amount": "2 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus additional for dusting"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "15 grams dried shrimp ((optional))",
-  "expected": {
-    "item": "dried shrimp",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "g"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried shrimp",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "dried shrimp",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

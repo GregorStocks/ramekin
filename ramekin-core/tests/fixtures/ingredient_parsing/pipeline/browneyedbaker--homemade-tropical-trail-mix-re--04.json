@@ -1,13 +1,25 @@
 {
   "raw": "1 cup dried banana chips (broken in half or quarters if large)",
-  "expected": {
-    "item": "dried banana chips (broken in half or quarters if large)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried banana chips (broken in half or quarters if large)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dried banana chips (broken in half or quarters if large)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

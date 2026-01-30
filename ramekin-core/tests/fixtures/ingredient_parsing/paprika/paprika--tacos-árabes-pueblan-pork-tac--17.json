@@ -1,8 +1,15 @@
 {
   "raw": "CHIPOTLE SAUCE:",
-  "expected": {
-    "item": "CHIPOTLE SAUCE:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "CHIPOTLE SAUCE:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "CHIPOTLE SAUCE:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

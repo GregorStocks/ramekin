@@ -1,13 +1,25 @@
 {
   "raw": "1/2  small serrano chile, seeded",
-  "expected": {
-    "item": "serrano chile, seeded",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "serrano chile, seeded",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "serrano chile, seeded",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

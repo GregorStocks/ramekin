@@ -1,8 +1,15 @@
 {
   "raw": "diced red onions",
-  "expected": {
-    "item": "diced red onions",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced red onions",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced red onions",
+      "measurements": [],
+      "note": null
+    }
   }
 }

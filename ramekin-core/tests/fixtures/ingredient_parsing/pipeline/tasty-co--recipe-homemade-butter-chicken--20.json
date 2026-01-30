@@ -1,8 +1,15 @@
 {
   "raw": "naan bread, for serving",
-  "expected": {
-    "item": "naan bread",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "naan bread",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "naan bread",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "English muffins, toast or tortillas",
-  "expected": {
-    "item": "English muffins, toast or tortillas",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "English muffins, toast or tortillas",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "English muffins, toast or tortillas",
+      "measurements": [],
+      "note": null
+    }
   }
 }

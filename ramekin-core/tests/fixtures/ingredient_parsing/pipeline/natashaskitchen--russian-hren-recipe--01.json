@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup of Extra Hot Cream-style Horseradish",
-  "expected": {
-    "item": "Extra Hot Cream-style Horseradish",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Extra Hot Cream-style Horseradish",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Extra Hot Cream-style Horseradish",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

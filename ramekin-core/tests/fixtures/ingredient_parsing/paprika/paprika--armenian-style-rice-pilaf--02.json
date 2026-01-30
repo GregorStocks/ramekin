@@ -1,17 +1,33 @@
 {
   "raw": "3 tablespoons (42 g) unsalted butter",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "42",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "42",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

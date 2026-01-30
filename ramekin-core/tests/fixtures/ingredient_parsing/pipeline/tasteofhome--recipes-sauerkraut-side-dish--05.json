@@ -1,13 +1,25 @@
 {
   "raw": "1 large potato, peeled and shredded",
-  "expected": {
-    "item": "potato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled and shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and shredded"
+    }
   }
 }

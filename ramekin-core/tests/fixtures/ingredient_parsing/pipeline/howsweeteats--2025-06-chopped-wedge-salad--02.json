@@ -1,13 +1,25 @@
 {
   "raw": "1  head iceberg lettuce, (chopped)",
-  "expected": {
-    "item": "iceberg lettuce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "head"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "iceberg lettuce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "iceberg lettuce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "head"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Crusty bread and coarse mustard, for serving",
-  "expected": {
-    "item": "Crusty bread and coarse mustard",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crusty bread and coarse mustard",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Crusty bread and coarse mustard",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

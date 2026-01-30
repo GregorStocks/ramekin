@@ -1,8 +1,15 @@
 {
   "raw": "Toasted slivered almonds (optional)",
-  "expected": {
-    "item": "Toasted slivered almonds",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Toasted slivered almonds",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Toasted slivered almonds",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "8 tablespoons (115 grams or 4 ounces) unsalted or salted butter (if salted, skip the salt below), cut into chunks",
-  "expected": {
-    "item": "unsalted or salted butter (if salted, skip the salt below), cut into chunks",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      },
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted or salted butter (if salted, skip the salt below), cut into chunks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted or salted butter (if salted, skip the salt below), cut into chunks",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        },
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 c. chopped candy, such as Sno-Caps, M&amp;amp;Ms, Reese's Pieces and/or Whoppers",
-  "expected": {
-    "item": "chopped candy, such as Sno-Caps, M&Ms, Reese's Pieces and/or Whoppers",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped candy, such as Sno-Caps, M&Ms, Reese's Pieces and/or Whoppers",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped candy, such as Sno-Caps, M&Ms, Reese's Pieces and/or Whoppers",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

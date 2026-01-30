@@ -1,13 +1,25 @@
 {
   "raw": "2 quarts water, filtered or good-tasting tap",
-  "expected": {
-    "item": "water, filtered or good-tasting tap",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "quart"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water, filtered or good-tasting tap",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "water, filtered or good-tasting tap",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    }
   }
 }

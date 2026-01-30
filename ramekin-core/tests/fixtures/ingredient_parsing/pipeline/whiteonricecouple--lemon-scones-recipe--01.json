@@ -1,13 +1,25 @@
 {
   "raw": "2 cups All-purpose Flour ((if measuring by volume - spoon and level the flour))",
-  "expected": {
-    "item": "All-purpose Flour (if measuring by volume - spoon and level the flour)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "All-purpose Flour (if measuring by volume - spoon and level the flour)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "All-purpose Flour (if measuring by volume - spoon and level the flour)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

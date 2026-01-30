@@ -1,13 +1,25 @@
 {
   "raw": "75 g carrot",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "75",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "75",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

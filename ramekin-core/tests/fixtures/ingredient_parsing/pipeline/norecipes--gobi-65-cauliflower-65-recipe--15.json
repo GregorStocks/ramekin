@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon kalonji seeds ((aka nigella ))",
-  "expected": {
-    "item": "kalonji seeds (aka nigella",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kalonji seeds (aka nigella",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kalonji seeds (aka nigella",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

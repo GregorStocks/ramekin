@@ -1,17 +1,33 @@
 {
   "raw": "5 (8-ounce) bottles clam juice",
-  "expected": {
-    "item": "clam juice",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "bottle"
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "clam juice",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "bottle"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "clam juice",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "bottle"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

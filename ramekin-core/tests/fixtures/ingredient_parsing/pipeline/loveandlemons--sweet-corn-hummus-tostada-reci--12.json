@@ -1,8 +1,15 @@
 {
   "raw": "Smoky Sweet Corn Hummus",
-  "expected": {
-    "item": "Smoky Sweet Corn Hummus",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Smoky Sweet Corn Hummus",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Smoky Sweet Corn Hummus",
+      "measurements": [],
+      "note": null
+    }
   }
 }

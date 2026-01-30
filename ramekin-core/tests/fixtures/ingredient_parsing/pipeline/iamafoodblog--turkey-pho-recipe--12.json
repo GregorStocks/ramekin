@@ -1,8 +1,15 @@
 {
   "raw": "pho noodles",
-  "expected": {
-    "item": "pho noodles",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pho noodles",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pho noodles",
+      "measurements": [],
+      "note": null
+    }
   }
 }

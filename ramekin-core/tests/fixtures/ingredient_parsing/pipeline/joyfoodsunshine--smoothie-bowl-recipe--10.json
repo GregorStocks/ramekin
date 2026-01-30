@@ -1,8 +1,15 @@
 {
   "raw": "Acai powder",
-  "expected": {
-    "item": "Acai powder",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Acai powder",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Acai powder",
+      "measurements": [],
+      "note": null
+    }
   }
 }

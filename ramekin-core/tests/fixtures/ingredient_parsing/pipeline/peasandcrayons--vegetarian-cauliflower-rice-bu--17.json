@@ -1,8 +1,15 @@
 {
   "raw": "sliced jalapeno peppers ((fresh or pickled))",
-  "expected": {
-    "item": "sliced jalapeno peppers",
-    "measurements": [],
-    "note": "fresh or pickled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sliced jalapeno peppers",
+      "measurements": [],
+      "note": "fresh or pickled"
+    },
+    "parse_ingredients": {
+      "item": "sliced jalapeno peppers",
+      "measurements": [],
+      "note": "fresh or pickled"
+    }
   }
 }

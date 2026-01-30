@@ -1,8 +1,15 @@
 {
   "raw": "TO SERVE:",
-  "expected": {
-    "item": "TO SERVE:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "TO SERVE:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "TO SERVE:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

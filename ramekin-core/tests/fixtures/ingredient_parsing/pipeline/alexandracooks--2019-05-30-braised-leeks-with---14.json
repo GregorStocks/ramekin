@@ -1,8 +1,15 @@
 {
   "raw": "flaky sea salt, such as Maldon, to taste",
-  "expected": {
-    "item": "flaky sea salt, such as Maldon",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flaky sea salt, such as Maldon",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "flaky sea salt, such as Maldon",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

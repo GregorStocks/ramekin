@@ -1,17 +1,37 @@
 {
   "raw": "12 cups baby spinach leaves (11 ounces)",
-  "expected": {
-    "item": "baby spinach leaves",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "cup"
-      },
-      {
-        "amount": "11",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "baby spinach leaves",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "cup"
+        },
+        {
+          "amount": "11",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "baby spinach leaves",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "cup"
+        },
+        {
+          "amount": "11",
+          "unit": "oz"
+        },
+        {
+          "amount": "312",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

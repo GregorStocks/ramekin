@@ -1,8 +1,15 @@
 {
   "raw": "Thinly sliced chives or green onions, for garnish (optional)",
-  "expected": {
-    "item": "Thinly sliced chives or green onions, for garnish",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thinly sliced chives or green onions, for garnish",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Thinly sliced chives or green onions, for garnish",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

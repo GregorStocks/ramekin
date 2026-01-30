@@ -1,17 +1,37 @@
 {
   "raw": "10 ounces frozen fruit ((about 2 ½ cups))",
-  "expected": {
-    "item": "frozen fruit",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      },
-      {
-        "amount": "2 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen fruit",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "frozen fruit",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 1/2 pounds chicken thighs (bone-in and skin on)",
-  "expected": {
-    "item": "chicken thighs (bone-in and skin on)",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken thighs (bone-in and skin on)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken thighs (bone-in and skin on)",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

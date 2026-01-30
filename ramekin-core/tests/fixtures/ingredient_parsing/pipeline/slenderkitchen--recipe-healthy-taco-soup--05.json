@@ -1,13 +1,29 @@
 {
   "raw": "14.5 oz. canned black beans, drained",
-  "expected": {
-    "item": "canned black beans",
-    "measurements": [
-      {
-        "amount": "14.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canned black beans",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "411",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "canned black beans",
+      "measurements": [
+        {
+          "amount": "14.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

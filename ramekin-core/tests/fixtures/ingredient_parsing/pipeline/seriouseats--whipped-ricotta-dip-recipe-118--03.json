@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 teaspoons (about 5 g) Diamond Crystal kosher salt, divided; for table salt, use half the amount by volume or same weight",
-  "expected": {
-    "item": "Diamond Crystal kosher salt, divided; for table salt, use half the amount by volume or same weight",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "5",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Diamond Crystal kosher salt, divided; for table salt, use half the amount by volume or same weight",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Diamond Crystal kosher salt, divided; for table salt, use half the amount by volume or same weight",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

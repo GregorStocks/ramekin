@@ -1,13 +1,25 @@
 {
   "raw": "⅓ cup redcurrant jelly (or raspberry jelly)",
-  "expected": {
-    "item": "redcurrant jelly (or raspberry jelly)",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "redcurrant jelly (or raspberry jelly)",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "redcurrant jelly (or raspberry jelly)",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

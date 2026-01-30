@@ -1,13 +1,25 @@
 {
   "raw": "1 to 2 tablespoons finely chopped cilantro",
-  "expected": {
-    "item": "finely chopped cilantro",
-    "measurements": [
-      {
-        "amount": "1 to 2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "finely chopped cilantro",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "finely chopped cilantro",
+      "measurements": [
+        {
+          "amount": "1 to 2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

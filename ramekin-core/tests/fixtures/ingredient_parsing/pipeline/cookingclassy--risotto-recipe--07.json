@@ -1,8 +1,15 @@
 {
   "raw": "Hot water, (as needed)",
-  "expected": {
-    "item": "Hot water",
-    "measurements": [],
-    "note": "as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Hot water",
+      "measurements": [],
+      "note": "as needed"
+    },
+    "parse_ingredients": {
+      "item": "Hot water",
+      "measurements": [],
+      "note": "as needed"
+    }
   }
 }

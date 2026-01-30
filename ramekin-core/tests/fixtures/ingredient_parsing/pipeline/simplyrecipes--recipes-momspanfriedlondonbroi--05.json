@@ -1,8 +1,15 @@
 {
   "raw": "Unsalted butter, softened to room temperature",
-  "expected": {
-    "item": "Unsalted butter",
-    "measurements": [],
-    "note": "softened to room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Unsalted butter",
+      "measurements": [],
+      "note": "softened to room temperature"
+    },
+    "parse_ingredients": {
+      "item": "Unsalted butter",
+      "measurements": [],
+      "note": "softened to room temperature"
+    }
   }
 }

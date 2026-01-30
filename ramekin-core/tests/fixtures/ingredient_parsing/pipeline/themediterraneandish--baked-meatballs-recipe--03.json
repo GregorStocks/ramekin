@@ -1,13 +1,25 @@
 {
   "raw": "6  baby bell peppers ((any color, cut into 1/4 inch thick batons))",
-  "expected": {
-    "item": "baby bell peppers (any color, cut into 1/4 inch thick batons)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby bell peppers (any color, cut into 1/4 inch thick batons)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baby bell peppers (any color, cut into 1/4 inch thick batons)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

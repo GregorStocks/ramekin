@@ -1,13 +1,25 @@
 {
   "raw": "1 12-ounce package jumbo pasta shells",
-  "expected": {
-    "item": "jumbo pasta shells",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "12-ounce package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jumbo pasta shells",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "jumbo pasta shells",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "12-ounce package"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 pound or 3 heaping cups frozen pineapple chunks",
-  "expected": {
-    "item": "frozen pineapple chunks",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "heaping cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "frozen pineapple chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "frozen pineapple chunks",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "heaping cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

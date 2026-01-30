@@ -1,13 +1,25 @@
 {
   "raw": "1  sugar pumpkin (halved from top to bottom, seeds and pulp removed)",
-  "expected": {
-    "item": "sugar pumpkin",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "halved from top to bottom, seeds and pulp removed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sugar pumpkin",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved from top to bottom, seeds and pulp removed"
+    },
+    "enrich_metric_weights": {
+      "item": "sugar pumpkin",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved from top to bottom, seeds and pulp removed"
+    }
   }
 }

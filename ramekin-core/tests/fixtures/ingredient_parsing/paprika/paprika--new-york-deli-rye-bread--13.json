@@ -1,8 +1,15 @@
 {
   "raw": "Dough and Baking",
-  "expected": {
-    "item": "Dough and Baking",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dough and Baking",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dough and Baking",
+      "measurements": [],
+      "note": null
+    }
   }
 }

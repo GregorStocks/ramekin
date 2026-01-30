@@ -1,8 +1,15 @@
 {
   "raw": "pepperocinis",
-  "expected": {
-    "item": "pepperocinis",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pepperocinis",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pepperocinis",
+      "measurements": [],
+      "note": null
+    }
   }
 }

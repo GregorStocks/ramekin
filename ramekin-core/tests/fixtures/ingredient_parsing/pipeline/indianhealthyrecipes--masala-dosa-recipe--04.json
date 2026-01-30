@@ -1,13 +1,25 @@
 {
   "raw": "½ cup idli rice  ((optional, can skip or substitute with raw rice) )",
-  "expected": {
-    "item": "idli rice",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional, can skip or substitute with raw rice"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "idli rice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, can skip or substitute with raw rice"
+    },
+    "parse_ingredients": {
+      "item": "idli rice",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional, can skip or substitute with raw rice"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "14  1.75 inch modeling chocolate strawberry decors",
-  "expected": {
-    "item": "1.75 inch modeling chocolate strawberry decors",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1.75 inch modeling chocolate strawberry decors",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "1.75 inch modeling chocolate strawberry decors",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

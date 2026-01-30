@@ -1,13 +1,25 @@
 {
   "raw": "1-2 cups black beans  ((canned or cooked from scratch))",
-  "expected": {
-    "item": "black beans",
-    "measurements": [
-      {
-        "amount": "1-2",
-        "unit": "cup"
-      }
-    ],
-    "note": "canned or cooked from scratch"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "cup"
+        }
+      ],
+      "note": "canned or cooked from scratch"
+    },
+    "enrich_metric_weights": {
+      "item": "black beans",
+      "measurements": [
+        {
+          "amount": "1-2",
+          "unit": "cup"
+        }
+      ],
+      "note": "canned or cooked from scratch"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "lime seltzer, (to top off the drink)",
-  "expected": {
-    "item": "lime seltzer, (to top off the drink)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime seltzer, (to top off the drink)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lime seltzer, (to top off the drink)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

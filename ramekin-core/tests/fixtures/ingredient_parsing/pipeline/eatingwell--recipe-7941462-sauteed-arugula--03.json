@@ -1,17 +1,33 @@
 {
   "raw": "3 (5-ounce) containers arugula",
-  "expected": {
-    "item": "containers arugula",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      },
-      {
-        "amount": "5",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "containers arugula",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "containers arugula",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        },
+        {
+          "amount": "5",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

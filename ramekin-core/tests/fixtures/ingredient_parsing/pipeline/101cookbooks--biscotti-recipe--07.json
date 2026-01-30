@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup / 20g fine cornmeal",
-  "expected": {
-    "item": "fine cornmeal",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "20",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fine cornmeal",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fine cornmeal",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "20",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

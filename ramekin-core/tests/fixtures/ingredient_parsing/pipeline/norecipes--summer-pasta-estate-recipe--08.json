@@ -1,8 +1,15 @@
 {
   "raw": "basil leaves ((to taste))",
-  "expected": {
-    "item": "basil leaves",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basil leaves",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "basil leaves",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

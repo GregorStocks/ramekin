@@ -1,8 +1,15 @@
 {
   "raw": "chili flakes",
-  "expected": {
-    "item": "chili flakes",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chili flakes",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chili flakes",
+      "measurements": [],
+      "note": null
+    }
   }
 }

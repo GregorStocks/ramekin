@@ -1,13 +1,25 @@
 {
   "raw": "1  red onion ((large, halved and thinly sliced (1/4-inch) ))",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "large, halved and thinly sliced (1/4-inch"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "large, halved and thinly sliced (1/4-inch"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "large, halved and thinly sliced (1/4-inch"
+    }
   }
 }

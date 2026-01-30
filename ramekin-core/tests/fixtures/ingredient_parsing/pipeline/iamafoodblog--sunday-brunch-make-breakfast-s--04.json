@@ -1,13 +1,25 @@
 {
   "raw": "1 cup shredded mozzarella, plus 1/2 cup to finish",
-  "expected": {
-    "item": "shredded mozzarella",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 1/2 cup to finish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded mozzarella",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1/2 cup to finish"
+    },
+    "parse_ingredients": {
+      "item": "shredded mozzarella",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 1/2 cup to finish"
+    }
   }
 }

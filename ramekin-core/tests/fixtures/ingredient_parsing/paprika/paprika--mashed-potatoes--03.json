@@ -1,8 +1,15 @@
 {
   "raw": "Cream",
-  "expected": {
-    "item": "Cream",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cream",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Cream",
+      "measurements": [],
+      "note": null
+    }
   }
 }

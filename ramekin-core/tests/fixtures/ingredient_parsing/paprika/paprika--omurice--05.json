@@ -1,13 +1,25 @@
 {
   "raw": "2 cups cooked medium-grain rice, preferably day-old or cooked a little dry",
-  "expected": {
-    "item": "cooked medium-grain rice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "preferably day-old or cooked a little dry"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cooked medium-grain rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "preferably day-old or cooked a little dry"
+    },
+    "parse_ingredients": {
+      "item": "cooked medium-grain rice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "preferably day-old or cooked a little dry"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "4 tablespoons (60 ml) milk, or more to thin",
-  "expected": {
-    "item": "milk",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "60",
-        "unit": "ml"
-      }
-    ],
-    "note": "or more to thin"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": "or more to thin"
+    },
+    "enrich_metric_weights": {
+      "item": "milk",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "60",
+          "unit": "ml"
+        }
+      ],
+      "note": "or more to thin"
+    }
   }
 }

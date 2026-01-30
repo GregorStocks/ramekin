@@ -1,8 +1,15 @@
 {
   "raw": "pickled onions, (for topping)",
-  "expected": {
-    "item": "pickled onions, (for topping)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pickled onions, (for topping)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pickled onions, (for topping)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

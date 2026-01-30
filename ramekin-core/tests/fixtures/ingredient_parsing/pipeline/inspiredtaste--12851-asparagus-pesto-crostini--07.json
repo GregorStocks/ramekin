@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons basil pesto, see our homemade pesto recipe",
-  "expected": {
-    "item": "basil pesto, see our homemade pesto recipe",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "basil pesto, see our homemade pesto recipe",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "basil pesto, see our homemade pesto recipe",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

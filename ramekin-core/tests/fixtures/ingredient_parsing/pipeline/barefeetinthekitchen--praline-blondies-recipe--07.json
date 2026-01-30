@@ -1,13 +1,25 @@
 {
   "raw": "1 cup all-purpose flour* (plus 1 tablespoon)",
-  "expected": {
-    "item": "all-purpose flour* (plus 1 tablespoon)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour* (plus 1 tablespoon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour* (plus 1 tablespoon)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

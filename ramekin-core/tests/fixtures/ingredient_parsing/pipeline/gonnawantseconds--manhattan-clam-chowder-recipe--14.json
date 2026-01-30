@@ -1,17 +1,33 @@
 {
   "raw": "6 (6.5-ounce) cans  minced clams (drained)",
-  "expected": {
-    "item": "minced clams",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "can"
-      },
-      {
-        "amount": "6.5",
-        "unit": null
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "minced clams",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "can"
+        },
+        {
+          "amount": "6.5",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "minced clams",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "can"
+        },
+        {
+          "amount": "6.5",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

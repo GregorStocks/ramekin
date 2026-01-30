@@ -1,17 +1,33 @@
 {
   "raw": "1 (1 1/2-inch) piece fresh ginger, peeled and finely chopped",
-  "expected": {
-    "item": "fresh ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "piece"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled and finely chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "piece"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and finely chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "piece"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled and finely chopped"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sprinkle of cinnamon",
-  "expected": {
-    "item": "Sprinkle of cinnamon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sprinkle of cinnamon",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sprinkle of cinnamon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

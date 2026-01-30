@@ -1,8 +1,15 @@
 {
   "raw": "Kosher or flaky sea salt and freshly ground black pepper",
-  "expected": {
-    "item": "Kosher or flaky sea salt and freshly ground black pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kosher or flaky sea salt and freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Kosher or flaky sea salt and freshly ground black pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

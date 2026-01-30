@@ -1,8 +1,15 @@
 {
   "raw": "peanut, crushed, optional",
-  "expected": {
-    "item": "peanut, crushed",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "peanut, crushed",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "peanut, crushed",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

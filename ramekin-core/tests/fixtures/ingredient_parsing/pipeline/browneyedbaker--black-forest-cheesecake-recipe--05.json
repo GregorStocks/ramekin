@@ -1,13 +1,29 @@
 {
   "raw": "32 ounce cream cheese, at room temperature",
-  "expected": {
-    "item": "cream cheese",
-    "measurements": [
-      {
-        "amount": "32",
-        "unit": "oz"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

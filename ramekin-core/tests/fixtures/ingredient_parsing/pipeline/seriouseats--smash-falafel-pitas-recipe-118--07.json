@@ -1,8 +1,15 @@
 {
   "raw": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon (optional)",
-  "expected": {
-    "item": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Pickled turnips and pickled mixed vegetables Tahini Sauce With Garlic and Lemon",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

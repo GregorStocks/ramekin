@@ -1,13 +1,25 @@
 {
   "raw": "2  drops Tabasco sauce",
-  "expected": {
-    "item": "Tabasco sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "drop"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tabasco sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tabasco sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Chicken filling ingredients:",
-  "expected": {
-    "item": "Chicken filling ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chicken filling ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chicken filling ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

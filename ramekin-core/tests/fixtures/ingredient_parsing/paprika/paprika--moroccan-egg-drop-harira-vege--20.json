@@ -1,8 +1,15 @@
 {
   "raw": "Cilantro leaves, for serving",
-  "expected": {
-    "item": "Cilantro leaves",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Cilantro leaves",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Cilantro leaves",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

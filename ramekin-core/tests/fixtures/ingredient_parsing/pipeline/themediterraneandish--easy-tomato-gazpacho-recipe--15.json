@@ -1,13 +1,25 @@
 {
   "raw": "Small handful fresh mint leaves, (torn or chopped)",
-  "expected": {
-    "item": "handful fresh mint leaves",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": "torn or chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "handful fresh mint leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "torn or chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "handful fresh mint leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "torn or chopped"
+    }
   }
 }

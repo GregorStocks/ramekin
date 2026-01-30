@@ -1,13 +1,25 @@
 {
   "raw": "1/2  yellow onion (cut into quarters)",
-  "expected": {
-    "item": "yellow onion (cut into quarters)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yellow onion (cut into quarters)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "yellow onion (cut into quarters)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

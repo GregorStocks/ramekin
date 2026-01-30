@@ -1,8 +1,15 @@
 {
   "raw": "fine grain sea salt",
-  "expected": {
-    "item": "fine grain sea salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fine grain sea salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fine grain sea salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

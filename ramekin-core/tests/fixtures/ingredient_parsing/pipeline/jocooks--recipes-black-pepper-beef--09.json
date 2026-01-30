@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons black pepper (coarsely ground)",
-  "expected": {
-    "item": "black pepper",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "coarsely ground"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "coarsely ground"
+    },
+    "enrich_metric_weights": {
+      "item": "black pepper",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "coarsely ground"
+    }
   }
 }

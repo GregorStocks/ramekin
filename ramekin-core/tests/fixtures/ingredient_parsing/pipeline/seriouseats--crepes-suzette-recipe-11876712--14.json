@@ -1,17 +1,33 @@
 {
   "raw": "3 tablespoons (45ml) orange liqueur, such as Cointreau or Grand Marnier",
-  "expected": {
-    "item": "orange liqueur, such as Cointreau or Grand Marnier",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "45",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orange liqueur, such as Cointreau or Grand Marnier",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "orange liqueur, such as Cointreau or Grand Marnier",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "45",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

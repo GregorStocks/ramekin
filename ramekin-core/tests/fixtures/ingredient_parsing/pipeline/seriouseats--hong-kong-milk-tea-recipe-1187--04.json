@@ -1,8 +1,15 @@
 {
   "raw": "Granulated sugar, to taste",
-  "expected": {
-    "item": "Granulated sugar",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Granulated sugar",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "Granulated sugar",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

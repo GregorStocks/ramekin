@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds inside skirt steak, cut into three equal pieces",
-  "expected": {
-    "item": "inside skirt steak, cut into three equal pieces",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "inside skirt steak, cut into three equal pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "inside skirt steak, cut into three equal pieces",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

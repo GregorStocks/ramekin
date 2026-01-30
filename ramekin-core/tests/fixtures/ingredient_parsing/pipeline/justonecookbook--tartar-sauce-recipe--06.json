@@ -1,13 +1,25 @@
 {
   "raw": "½  lemon ((more or less, according to your taste))",
-  "expected": {
-    "item": "lemon",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      }
-    ],
-    "note": "more or less, according to your taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lemon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "more or less, according to your taste"
+    },
+    "enrich_metric_weights": {
+      "item": "lemon",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        }
+      ],
+      "note": "more or less, according to your taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon ginger  ((peeled &amp;amp; fine chopped))",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "peeled & fine chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "peeled & fine chopped"
+    },
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "peeled & fine chopped"
+    }
   }
 }

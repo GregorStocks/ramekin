@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces dried pasta, such as ziti, penne, or rigatoni",
-  "expected": {
-    "item": "dried pasta, such as ziti, penne, or rigatoni",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried pasta, such as ziti, penne, or rigatoni",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried pasta, such as ziti, penne, or rigatoni",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

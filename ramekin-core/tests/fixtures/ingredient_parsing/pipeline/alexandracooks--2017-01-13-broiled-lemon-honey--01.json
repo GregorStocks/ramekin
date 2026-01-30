@@ -1,13 +1,25 @@
 {
   "raw": "4&nbsp;small oranges, a mix is nice (I&amp;#8217;ve been using Cara Cara and tangerines)",
-  "expected": {
-    "item": "oranges, a mix is nice (I’ve been using Cara Cara and tangerines)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "oranges, a mix is nice (I’ve been using Cara Cara and tangerines)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "oranges, a mix is nice (I’ve been using Cara Cara and tangerines)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "200 grams tomato ((cut into thin wedges, seeds removed))",
-  "expected": {
-    "item": "tomato (cut into thin wedges, seeds removed)",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomato (cut into thin wedges, seeds removed)",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tomato (cut into thin wedges, seeds removed)",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

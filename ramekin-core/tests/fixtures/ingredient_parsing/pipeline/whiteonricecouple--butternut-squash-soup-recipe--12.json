@@ -1,8 +1,15 @@
 {
   "raw": "chopped Italian parsley leaves (, for garnish)",
-  "expected": {
-    "item": "chopped Italian parsley leaves",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped Italian parsley leaves",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped Italian parsley leaves",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

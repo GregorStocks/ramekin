@@ -1,17 +1,33 @@
 {
   "raw": "10 tablespoons (130 grams) olive oil, mildly flavored",
-  "expected": {
-    "item": "olive oil, mildly flavored",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "130",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil, mildly flavored",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil, mildly flavored",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

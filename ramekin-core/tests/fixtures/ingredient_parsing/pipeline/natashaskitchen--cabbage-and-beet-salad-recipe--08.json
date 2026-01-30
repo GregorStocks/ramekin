@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbsp sea salt (best if it's not iodized)",
-  "expected": {
-    "item": "sea salt (best if it's not iodized)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sea salt (best if it's not iodized)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sea salt (best if it's not iodized)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "40  frozen meatballs",
-  "expected": {
-    "item": "frozen meatballs",
-    "measurements": [
-      {
-        "amount": "40",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen meatballs",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "frozen meatballs",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

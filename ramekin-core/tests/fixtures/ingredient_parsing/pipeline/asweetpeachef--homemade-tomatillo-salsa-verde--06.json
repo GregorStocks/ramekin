@@ -1,13 +1,25 @@
 {
   "raw": "2 tbsp lime juice (approx. 1 lime)",
-  "expected": {
-    "item": "lime juice (approx. 1 lime)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lime juice (approx. 1 lime)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lime juice (approx. 1 lime)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

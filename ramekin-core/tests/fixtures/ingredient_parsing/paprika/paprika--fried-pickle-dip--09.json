@@ -1,8 +1,15 @@
 {
   "raw": "Wavy dill pickle potato chips, for serving",
-  "expected": {
-    "item": "Wavy dill pickle potato chips",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Wavy dill pickle potato chips",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Wavy dill pickle potato chips",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

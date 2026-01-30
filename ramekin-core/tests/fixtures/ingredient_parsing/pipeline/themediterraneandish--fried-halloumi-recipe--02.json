@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
-  "expected": {
-    "item": "Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Halloumi cheese,  (pat dry and cut into 1/2-inch sticks)",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

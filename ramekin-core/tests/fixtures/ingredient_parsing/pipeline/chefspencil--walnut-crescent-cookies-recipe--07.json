@@ -1,13 +1,25 @@
 {
   "raw": "200-220 g flour",
-  "expected": {
-    "item": "flour",
-    "measurements": [
-      {
-        "amount": "200-220",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "200-220",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "flour",
+      "measurements": [
+        {
+          "amount": "200-220",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

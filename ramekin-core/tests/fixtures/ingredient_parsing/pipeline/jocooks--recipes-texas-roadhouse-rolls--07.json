@@ -1,13 +1,25 @@
 {
   "raw": "7  cups all-purpose flour (up to 8 cups)",
-  "expected": {
-    "item": "all-purpose flour (up to 8 cups)",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "all-purpose flour (up to 8 cups)",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "all-purpose flour (up to 8 cups)",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

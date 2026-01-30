@@ -1,13 +1,25 @@
 {
   "raw": "1 cup chocolate chips of choice (dark, milk or white)",
-  "expected": {
-    "item": "chocolate chips of choice (dark, milk or white)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chocolate chips of choice (dark, milk or white)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chocolate chips of choice (dark, milk or white)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "for cooking: butter or nonstick spray",
-  "expected": {
-    "item": "for cooking: butter or nonstick spray",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "for cooking: butter or nonstick spray",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "for cooking: butter or nonstick spray",
+      "measurements": [],
+      "note": null
+    }
   }
 }

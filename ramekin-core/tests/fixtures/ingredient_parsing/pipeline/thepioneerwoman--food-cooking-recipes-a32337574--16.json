@@ -1,8 +1,15 @@
 {
   "raw": "Hot sauce, to taste",
-  "expected": {
-    "item": "Hot sauce",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Hot sauce",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Hot sauce",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

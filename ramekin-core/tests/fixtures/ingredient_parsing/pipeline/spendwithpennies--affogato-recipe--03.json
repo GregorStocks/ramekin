@@ -1,13 +1,29 @@
 {
   "raw": "½ ounce Irish cream liquor (such as Bailey&amp;#39;s, or Frangelico, optional)",
-  "expected": {
-    "item": "Irish cream liquor",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": "such as Bailey's, or Frangelico, optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Irish cream liquor",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": "such as Bailey's, or Frangelico, optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Irish cream liquor",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": "such as Bailey's, or Frangelico, optional"
+    }
   }
 }

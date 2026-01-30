@@ -1,8 +1,15 @@
 {
   "raw": "-Ovenproof ramekins or custard cups",
-  "expected": {
-    "item": "-Ovenproof ramekins or custard cups",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "-Ovenproof ramekins or custard cups",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "-Ovenproof ramekins or custard cups",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 pounds salmon fillet (choose the thick belly cut)",
-  "expected": {
-    "item": "salmon fillet (choose the thick belly cut)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salmon fillet (choose the thick belly cut)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salmon fillet (choose the thick belly cut)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

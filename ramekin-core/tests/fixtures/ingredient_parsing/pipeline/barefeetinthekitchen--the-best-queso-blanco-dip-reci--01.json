@@ -1,13 +1,25 @@
 {
   "raw": "½ pound White American Cheese (roughly chopped into 1\" pieces)",
-  "expected": {
-    "item": "White American Cheese",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "roughly chopped into 1\" pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "White American Cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "roughly chopped into 1\" pieces"
+    },
+    "parse_ingredients": {
+      "item": "White American Cheese",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "roughly chopped into 1\" pieces"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup unsalted Butter ((115 g) , room temp.)",
-  "expected": {
-    "item": "unsalted Butter , room temp.)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "115",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted Butter , room temp.)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "unsalted Butter , room temp.)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "115",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

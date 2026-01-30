@@ -1,13 +1,25 @@
 {
   "raw": "¼  onion (grated on small holes)",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": null
-      }
-    ],
-    "note": "grated on small holes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "grated on small holes"
+    },
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "grated on small holes"
+    }
   }
 }

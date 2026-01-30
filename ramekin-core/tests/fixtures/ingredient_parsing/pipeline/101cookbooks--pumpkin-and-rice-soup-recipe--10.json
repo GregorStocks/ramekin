@@ -1,8 +1,15 @@
 {
   "raw": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
-  "expected": {
-    "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "other toppings: plain yogurt, toasted pepitas, lemon ginger rosemary butter* (and pulp)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

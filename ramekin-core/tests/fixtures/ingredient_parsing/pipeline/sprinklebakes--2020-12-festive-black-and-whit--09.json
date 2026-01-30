@@ -1,17 +1,33 @@
 {
   "raw": "4 1/2 cups 540g all-purpose flour",
-  "expected": {
-    "item": "all-purpose flour",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "540",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "540",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "all-purpose flour",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "540",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Sparkling mineral water, such as Topo Chico",
-  "expected": {
-    "item": "Sparkling mineral water, such as Topo Chico",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sparkling mineral water, such as Topo Chico",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sparkling mineral water, such as Topo Chico",
+      "measurements": [],
+      "note": null
+    }
   }
 }

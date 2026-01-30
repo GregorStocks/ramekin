@@ -1,13 +1,25 @@
 {
   "raw": "2  bunches thick asparagus spears, (bottom ends trimmed)",
-  "expected": {
-    "item": "thick asparagus spears",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "bunch"
-      }
-    ],
-    "note": "bottom ends trimmed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thick asparagus spears",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "bottom ends trimmed"
+    },
+    "parse_ingredients": {
+      "item": "thick asparagus spears",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "bunch"
+        }
+      ],
+      "note": "bottom ends trimmed"
+    }
   }
 }

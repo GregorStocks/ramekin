@@ -1,8 +1,15 @@
 {
   "raw": "High quality marinara sauce, Homemade Spaghetti Sauce, or Easy Marinara Sauce",
-  "expected": {
-    "item": "High quality marinara sauce, Homemade Spaghetti Sauce, or Easy Marinara Sauce",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "High quality marinara sauce, Homemade Spaghetti Sauce, or Easy Marinara Sauce",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "High quality marinara sauce, Homemade Spaghetti Sauce, or Easy Marinara Sauce",
+      "measurements": [],
+      "note": null
+    }
   }
 }

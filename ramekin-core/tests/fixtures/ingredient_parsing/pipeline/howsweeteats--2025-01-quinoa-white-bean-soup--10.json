@@ -1,13 +1,29 @@
 {
   "raw": "28 ounces fire roasted diced tomatoes",
-  "expected": {
-    "item": "fire roasted diced tomatoes",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fire roasted diced tomatoes",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fire roasted diced tomatoes",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

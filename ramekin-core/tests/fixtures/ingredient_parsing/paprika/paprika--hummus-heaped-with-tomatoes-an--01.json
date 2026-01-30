@@ -1,13 +1,25 @@
 {
   "raw": "4 large pitas, toasted, cut into wedges",
-  "expected": {
-    "item": "pitas, toasted, cut into wedges",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pitas, toasted, cut into wedges",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pitas, toasted, cut into wedges",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

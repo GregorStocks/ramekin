@@ -1,17 +1,33 @@
 {
   "raw": "1/2 pound walnut halves (about 2 cups)",
-  "expected": {
-    "item": "walnut halves",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "walnut halves",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "walnut halves",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

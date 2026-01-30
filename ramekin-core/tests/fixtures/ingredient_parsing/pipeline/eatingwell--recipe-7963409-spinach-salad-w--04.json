@@ -1,13 +1,25 @@
 {
   "raw": "4 strips bacon, cut into 1-inch pieces",
-  "expected": {
-    "item": "strips bacon, cut into 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "strips bacon, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "strips bacon, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

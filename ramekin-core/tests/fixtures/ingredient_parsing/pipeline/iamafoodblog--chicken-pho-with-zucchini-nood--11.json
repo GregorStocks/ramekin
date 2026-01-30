@@ -1,13 +1,25 @@
 {
   "raw": "1 small zucchini per person for zoodles* or pho noodles",
-  "expected": {
-    "item": "zucchini per person for zoodles* or pho noodles",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini per person for zoodles* or pho noodles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "zucchini per person for zoodles* or pho noodles",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

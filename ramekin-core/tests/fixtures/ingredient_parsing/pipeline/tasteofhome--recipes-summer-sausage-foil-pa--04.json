@@ -1,13 +1,25 @@
 {
   "raw": "1 large sweet onion, halved and sliced",
-  "expected": {
-    "item": "sweet onion",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "halved and sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved and sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "sweet onion",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "halved and sliced"
+    }
   }
 }

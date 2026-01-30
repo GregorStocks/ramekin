@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup pine nuts or walnuts, lightly toasted",
-  "expected": {
-    "item": "pine nuts or walnuts",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "lightly toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pine nuts or walnuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "pine nuts or walnuts",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "lightly toasted"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Orange slice and/or thyme sprig for garnish",
-  "expected": {
-    "item": "Orange slice and/or thyme sprig for garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Orange slice and/or thyme sprig for garnish",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Orange slice and/or thyme sprig for garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

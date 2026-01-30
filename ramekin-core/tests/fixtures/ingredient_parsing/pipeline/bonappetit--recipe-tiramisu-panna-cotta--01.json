@@ -1,13 +1,25 @@
 {
   "raw": "2 envelopes unflavored powdered gelatin (about 1 Tbsp. plus 2",
-  "expected": {
-    "item": "envelopes unflavored powdered gelatin (about 1 Tbsp.",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "plus 2"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "envelopes unflavored powdered gelatin (about 1 Tbsp.",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus 2"
+    },
+    "parse_ingredients": {
+      "item": "envelopes unflavored powdered gelatin (about 1 Tbsp.",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus 2"
+    }
   }
 }

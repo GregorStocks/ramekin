@@ -1,13 +1,25 @@
 {
   "raw": "3-4  regular sized Hershey bars for topping",
-  "expected": {
-    "item": "regular sized Hershey bars for topping",
-    "measurements": [
-      {
-        "amount": "3-4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "regular sized Hershey bars for topping",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "regular sized Hershey bars for topping",
+      "measurements": [
+        {
+          "amount": "3-4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

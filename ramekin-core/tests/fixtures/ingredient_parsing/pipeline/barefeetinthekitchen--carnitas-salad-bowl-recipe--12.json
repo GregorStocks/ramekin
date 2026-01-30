@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup corn chips or tortilla strips (optional)",
-  "expected": {
-    "item": "corn chips or tortilla strips",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "corn chips or tortilla strips",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "corn chips or tortilla strips",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

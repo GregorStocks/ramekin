@@ -1,8 +1,15 @@
 {
   "raw": "Maraschino cherries",
-  "expected": {
-    "item": "Maraschino cherries",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Maraschino cherries",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Maraschino cherries",
+      "measurements": [],
+      "note": null
+    }
   }
 }

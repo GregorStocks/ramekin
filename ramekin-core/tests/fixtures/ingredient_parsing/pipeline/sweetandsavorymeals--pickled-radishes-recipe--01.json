@@ -1,21 +1,41 @@
 {
   "raw": "15  radishes (small or medium)",
-  "expected": {
-    "item": "radishes",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": null
-      },
-      {
-        "amount": null,
-        "unit": "small"
-      },
-      {
-        "amount": null,
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "radishes",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": null,
+          "unit": "small"
+        },
+        {
+          "amount": null,
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "radishes",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        },
+        {
+          "amount": null,
+          "unit": "small"
+        },
+        {
+          "amount": null,
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

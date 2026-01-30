@@ -1,8 +1,15 @@
 {
   "raw": "Pasta:",
-  "expected": {
-    "item": "Pasta:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pasta:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pasta:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1.5 cups (295 g) cooked chickpeas or one 15-oz can chickpeas, drained and rinsed",
-  "expected": {
-    "item": "cooked chickpeas or one 15-oz can chickpeas",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "cup"
-      },
-      {
-        "amount": "295",
-        "unit": "g"
-      }
-    ],
-    "note": "drained and rinsed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked chickpeas or one 15-oz can chickpeas",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "295",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked chickpeas or one 15-oz can chickpeas",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "cup"
+        },
+        {
+          "amount": "295",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and rinsed"
+    }
   }
 }

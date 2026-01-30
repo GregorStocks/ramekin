@@ -1,8 +1,15 @@
 {
   "raw": "for topping: grated cheese, tortilla chips, sour cream, cilantro, green onions",
-  "expected": {
-    "item": "for topping: grated cheese, tortilla chips, sour cream, cilantro, green onions",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "for topping: grated cheese, tortilla chips, sour cream, cilantro, green onions",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "for topping: grated cheese, tortilla chips, sour cream, cilantro, green onions",
+      "measurements": [],
+      "note": null
+    }
   }
 }

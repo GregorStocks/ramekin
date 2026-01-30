@@ -1,13 +1,25 @@
 {
   "raw": "1 bottle prosecco or other sparkling wine",
-  "expected": {
-    "item": "prosecco or other sparkling wine",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "prosecco or other sparkling wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "prosecco or other sparkling wine",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 pound dry noodles (, cooked to package directions (about 2 heaping cups of cooked noodles))",
-  "expected": {
-    "item": "dry noodles",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "cooked to package directions (about 2 heaping cups of cooked noodles"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dry noodles",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked to package directions (about 2 heaping cups of cooked noodles"
+    },
+    "enrich_metric_weights": {
+      "item": "dry noodles",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "cooked to package directions (about 2 heaping cups of cooked noodles"
+    }
   }
 }

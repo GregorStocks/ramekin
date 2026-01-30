@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (240ml) dark&nbsp;corn syrup*",
-  "expected": {
-    "item": "dark corn syrup*",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "240",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dark corn syrup*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dark corn syrup*",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "240",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

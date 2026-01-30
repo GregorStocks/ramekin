@@ -1,13 +1,25 @@
 {
   "raw": "2  large egg yolks (reserve whites for frosting)",
-  "expected": {
-    "item": "egg yolks (reserve whites for frosting)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg yolks (reserve whites for frosting)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "egg yolks (reserve whites for frosting)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

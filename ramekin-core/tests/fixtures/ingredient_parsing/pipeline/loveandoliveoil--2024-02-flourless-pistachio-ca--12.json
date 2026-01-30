@@ -1,13 +1,29 @@
 {
   "raw": "1 oz 30-35% milk chocolate (finely chopped)",
-  "expected": {
-    "item": "30-35% milk chocolate",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "oz"
-      }
-    ],
-    "note": "finely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "30-35% milk chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "28",
+          "unit": "g"
+        }
+      ],
+      "note": "finely chopped"
+    },
+    "parse_ingredients": {
+      "item": "30-35% milk chocolate",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "oz"
+        }
+      ],
+      "note": "finely chopped"
+    }
   }
 }

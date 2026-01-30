@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoon butter (unsalted, for brushing over the finished rolls)",
-  "expected": {
-    "item": "butter (unsalted, for brushing over the finished rolls)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter (unsalted, for brushing over the finished rolls)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "butter (unsalted, for brushing over the finished rolls)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

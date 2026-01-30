@@ -1,8 +1,15 @@
 {
   "raw": "balsamic glaze",
-  "expected": {
-    "item": "balsamic glaze",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "balsamic glaze",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "balsamic glaze",
+      "measurements": [],
+      "note": null
+    }
   }
 }

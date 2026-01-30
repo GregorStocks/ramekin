@@ -1,17 +1,37 @@
 {
   "raw": "1 package (10 to 12 ounces) white baking chips, divided",
-  "expected": {
-    "item": "white baking chips",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "10 to 12",
-        "unit": "oz"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white baking chips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "10 to 12",
+          "unit": "oz"
+        },
+        {
+          "amount": "283 to 340",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "parse_ingredients": {
+      "item": "white baking chips",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "10 to 12",
+          "unit": "oz"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

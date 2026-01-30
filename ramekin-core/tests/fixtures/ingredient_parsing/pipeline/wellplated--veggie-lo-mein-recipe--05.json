@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons reduced sodium soy sauce (divided, plus additional to taste)",
-  "expected": {
-    "item": "reduced sodium soy sauce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "divided, plus additional to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "reduced sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided, plus additional to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "reduced sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "divided, plus additional to taste"
+    }
   }
 }

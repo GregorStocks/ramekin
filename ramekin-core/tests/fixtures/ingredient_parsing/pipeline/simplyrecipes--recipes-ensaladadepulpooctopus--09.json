@@ -1,13 +1,25 @@
 {
   "raw": "1 fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
-  "expected": {
-    "item": "fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "fresh jalapeno, seeded and minced (test for heat, if really hot, only use a small amount)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

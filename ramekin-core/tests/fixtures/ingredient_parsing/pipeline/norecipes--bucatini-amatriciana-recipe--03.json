@@ -1,13 +1,25 @@
 {
   "raw": "120 grams Guanciale ((sliced into matchsticks))",
-  "expected": {
-    "item": "Guanciale",
-    "measurements": [
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": "sliced into matchsticks"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Guanciale",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced into matchsticks"
+    },
+    "enrich_metric_weights": {
+      "item": "Guanciale",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced into matchsticks"
+    }
   }
 }

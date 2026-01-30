@@ -1,8 +1,15 @@
 {
   "raw": "Burritos",
-  "expected": {
-    "item": "Burritos",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Burritos",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Burritos",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "2.5 oz can sliced black olives (drained)",
-  "expected": {
-    "item": "can sliced black olives",
-    "measurements": [
-      {
-        "amount": "2.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can sliced black olives",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "can sliced black olives",
+      "measurements": [
+        {
+          "amount": "2.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "71",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon chopped fresh thyme or 1 teaspoon dried thyme leaves",
-  "expected": {
-    "item": "chopped fresh thyme",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1 teaspoon dried thyme leaves"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried thyme leaves"
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1 teaspoon dried thyme leaves"
+    }
   }
 }

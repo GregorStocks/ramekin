@@ -1,17 +1,37 @@
 {
   "raw": "4 ounces bacon, chopped (4 to 5 slices)",
-  "expected": {
-    "item": "bacon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      },
-      {
-        "amount": "4 to 5",
-        "unit": "slice"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "4 to 5",
+          "unit": "slice"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "bacon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "4 to 5",
+          "unit": "slice"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

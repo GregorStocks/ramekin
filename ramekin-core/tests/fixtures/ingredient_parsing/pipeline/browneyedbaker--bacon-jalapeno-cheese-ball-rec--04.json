@@ -1,13 +1,25 @@
 {
   "raw": "2  jalapeños (seeded and finely chopped, divided)",
-  "expected": {
-    "item": "jalapeños",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "seeded and finely chopped, divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "jalapeños",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped, divided"
+    },
+    "parse_ingredients": {
+      "item": "jalapeños",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "seeded and finely chopped, divided"
+    }
   }
 }

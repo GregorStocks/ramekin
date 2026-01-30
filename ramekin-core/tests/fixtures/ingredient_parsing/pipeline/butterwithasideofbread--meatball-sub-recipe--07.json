@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp oregano (dried)",
-  "expected": {
-    "item": "oregano",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "oregano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "dried"
+    },
+    "parse_ingredients": {
+      "item": "oregano",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "dried"
+    }
   }
 }

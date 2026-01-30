@@ -1,13 +1,25 @@
 {
   "raw": "2&nbsp; cups white whole wheat flour (or whole wheat pastry flour)",
-  "expected": {
-    "item": "white whole wheat flour",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or whole wheat pastry flour"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "white whole wheat flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or whole wheat pastry flour"
+    },
+    "enrich_metric_weights": {
+      "item": "white whole wheat flour",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or whole wheat pastry flour"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds ground beef, ideally coarse-ground",
-  "expected": {
-    "item": "ground beef",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": "ideally coarse-ground"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "ideally coarse-ground"
+    },
+    "parse_ingredients": {
+      "item": "ground beef",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": "ideally coarse-ground"
+    }
   }
 }

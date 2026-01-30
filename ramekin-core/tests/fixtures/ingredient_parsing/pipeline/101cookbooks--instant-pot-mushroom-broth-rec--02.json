@@ -1,17 +1,33 @@
 {
   "raw": "15 g / 1/2 cup dried porcini mushrooms",
-  "expected": {
-    "item": "dried porcini mushrooms",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "g"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried porcini mushrooms",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried porcini mushrooms",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

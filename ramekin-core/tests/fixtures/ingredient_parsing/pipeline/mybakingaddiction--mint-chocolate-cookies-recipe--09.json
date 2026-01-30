@@ -1,13 +1,25 @@
 {
   "raw": "36  chocolate mint wafer candies (such as Andes Mints)",
-  "expected": {
-    "item": "chocolate mint wafer candies (such as Andes Mints)",
-    "measurements": [
-      {
-        "amount": "36",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chocolate mint wafer candies (such as Andes Mints)",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chocolate mint wafer candies (such as Andes Mints)",
+      "measurements": [
+        {
+          "amount": "36",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

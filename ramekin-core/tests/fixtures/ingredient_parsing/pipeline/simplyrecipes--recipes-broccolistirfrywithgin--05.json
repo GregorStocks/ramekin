@@ -1,8 +1,15 @@
 {
   "raw": "Peanut oil or canola oil",
-  "expected": {
-    "item": "Peanut oil or canola oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Peanut oil or canola oil",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Peanut oil or canola oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

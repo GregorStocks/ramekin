@@ -1,8 +1,15 @@
 {
   "raw": "an oven-to-table baking dish and butter to smear it",
-  "expected": {
-    "item": "an oven-to-table baking dish and butter to smear it",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "an oven-to-table baking dish and butter to smear it",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "an oven-to-table baking dish and butter to smear it",
+      "measurements": [],
+      "note": null
+    }
   }
 }

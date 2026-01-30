@@ -1,13 +1,25 @@
 {
   "raw": "pieces, plus more for pan",
-  "expected": {
-    "item": "pieces, plus more for pan",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "piece"
-      }
-    ],
-    "note": "plus more for pan"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pieces, plus more for pan",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "piece"
+        }
+      ],
+      "note": "plus more for pan"
+    },
+    "parse_ingredients": {
+      "item": "pieces, plus more for pan",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "piece"
+        }
+      ],
+      "note": "plus more for pan"
+    }
   }
 }

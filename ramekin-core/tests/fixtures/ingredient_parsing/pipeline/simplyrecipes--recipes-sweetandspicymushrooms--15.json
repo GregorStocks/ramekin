@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups of snow peas or snap peas, de-stringed",
-  "expected": {
-    "item": "snow peas or snap peas, de-stringed",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "snow peas or snap peas, de-stringed",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "snow peas or snap peas, de-stringed",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

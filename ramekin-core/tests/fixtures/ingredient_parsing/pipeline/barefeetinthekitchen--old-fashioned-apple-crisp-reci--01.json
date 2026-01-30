@@ -1,13 +1,25 @@
 {
   "raw": "4  thinly sliced apples, about 6 cups worth",
-  "expected": {
-    "item": "thinly sliced apples, about 6 cups worth",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thinly sliced apples, about 6 cups worth",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thinly sliced apples, about 6 cups worth",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Ricotta",
-  "expected": {
-    "item": "Ricotta",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ricotta",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Ricotta",
+      "measurements": [],
+      "note": null
+    }
   }
 }

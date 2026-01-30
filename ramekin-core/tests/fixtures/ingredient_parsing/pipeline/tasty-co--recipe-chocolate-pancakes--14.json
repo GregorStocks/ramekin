@@ -1,8 +1,15 @@
 {
   "raw": "raspberry, for garnish",
-  "expected": {
-    "item": "raspberry",
-    "measurements": [],
-    "note": "for garnish"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "raspberry",
+      "measurements": [],
+      "note": "for garnish"
+    },
+    "parse_ingredients": {
+      "item": "raspberry",
+      "measurements": [],
+      "note": "for garnish"
+    }
   }
 }

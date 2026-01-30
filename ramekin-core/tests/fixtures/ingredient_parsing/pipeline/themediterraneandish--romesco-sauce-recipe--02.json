@@ -1,13 +1,29 @@
 {
   "raw": "14 oz canned fire-roasted tomatoes, (well drained)",
-  "expected": {
-    "item": "canned fire-roasted tomatoes",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "well drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "canned fire-roasted tomatoes",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "well drained"
+    },
+    "enrich_metric_weights": {
+      "item": "canned fire-roasted tomatoes",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "well drained"
+    }
   }
 }

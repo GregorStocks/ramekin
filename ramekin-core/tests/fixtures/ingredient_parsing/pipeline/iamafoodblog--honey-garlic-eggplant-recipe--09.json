@@ -1,8 +1,15 @@
 {
   "raw": "fluffy white rice or grain of choice, to serve",
-  "expected": {
-    "item": "fluffy white rice or grain of choice, to serve",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fluffy white rice or grain of choice, to serve",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fluffy white rice or grain of choice, to serve",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 cup mature sourdough starter (100% hydration)",
-  "expected": {
-    "item": "mature sourdough starter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "100",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mature sourdough starter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mature sourdough starter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

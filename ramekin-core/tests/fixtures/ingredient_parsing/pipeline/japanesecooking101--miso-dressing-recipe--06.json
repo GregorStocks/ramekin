@@ -1,8 +1,15 @@
 {
   "raw": "assorted boiled vegetables",
-  "expected": {
-    "item": "assorted boiled vegetables",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "assorted boiled vegetables",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "assorted boiled vegetables",
+      "measurements": [],
+      "note": null
+    }
   }
 }

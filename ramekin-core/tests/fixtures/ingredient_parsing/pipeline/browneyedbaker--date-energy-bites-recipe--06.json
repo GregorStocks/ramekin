@@ -1,13 +1,25 @@
 {
   "raw": "½ cup dried cranberries (or other dried berry of your choice)",
-  "expected": {
-    "item": "dried cranberries",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or other dried berry of your choice"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried cranberries",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or other dried berry of your choice"
+    },
+    "enrich_metric_weights": {
+      "item": "dried cranberries",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or other dried berry of your choice"
+    }
   }
 }

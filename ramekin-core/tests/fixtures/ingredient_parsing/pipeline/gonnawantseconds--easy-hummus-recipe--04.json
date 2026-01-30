@@ -1,13 +1,25 @@
 {
   "raw": "4 Cloves Galic (Peeled and Smashed)",
-  "expected": {
-    "item": "Galic",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "clove"
-      }
-    ],
-    "note": "Peeled and Smashed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Galic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "clove"
+        }
+      ],
+      "note": "Peeled and Smashed"
+    },
+    "parse_ingredients": {
+      "item": "Galic",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "clove"
+        }
+      ],
+      "note": "Peeled and Smashed"
+    }
   }
 }

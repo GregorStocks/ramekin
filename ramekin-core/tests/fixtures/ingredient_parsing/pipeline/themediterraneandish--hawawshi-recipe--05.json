@@ -1,13 +1,29 @@
 {
   "raw": "½ ounce fresh parsley (stems trimmed (cut most of the stem but leave some for extra flavor))",
-  "expected": {
-    "item": "fresh parsley",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "oz"
-      }
-    ],
-    "note": "stems trimmed (cut most of the stem but leave some for extra flavor"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "14",
+          "unit": "g"
+        }
+      ],
+      "note": "stems trimmed (cut most of the stem but leave some for extra flavor"
+    },
+    "parse_ingredients": {
+      "item": "fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "oz"
+        }
+      ],
+      "note": "stems trimmed (cut most of the stem but leave some for extra flavor"
+    }
   }
 }

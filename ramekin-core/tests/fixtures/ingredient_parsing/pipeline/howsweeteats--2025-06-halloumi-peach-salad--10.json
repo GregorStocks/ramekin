@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces halloumi cheese, (cold, sliced lengthwise)",
-  "expected": {
-    "item": "halloumi cheese",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "cold, sliced lengthwise"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "halloumi cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "cold, sliced lengthwise"
+    },
+    "parse_ingredients": {
+      "item": "halloumi cheese",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "cold, sliced lengthwise"
+    }
   }
 }

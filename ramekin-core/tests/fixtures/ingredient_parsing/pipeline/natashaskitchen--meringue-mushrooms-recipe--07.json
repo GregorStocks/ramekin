@@ -1,8 +1,15 @@
 {
   "raw": "Parchment Paper",
-  "expected": {
-    "item": "Parchment Paper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Parchment Paper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Parchment Paper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

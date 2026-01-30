@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup rice (uncooked)",
-  "expected": {
-    "item": "rice",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rice",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "parse_ingredients": {
+      "item": "rice",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

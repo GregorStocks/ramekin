@@ -1,17 +1,33 @@
 {
   "raw": "2 teaspoons (10 ml) orange blossom water (see notes)",
-  "expected": {
-    "item": "orange blossom water (see notes)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "10",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange blossom water (see notes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange blossom water (see notes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

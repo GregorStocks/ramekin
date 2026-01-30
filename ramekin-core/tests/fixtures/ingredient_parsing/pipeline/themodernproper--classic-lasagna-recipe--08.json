@@ -1,13 +1,25 @@
 {
   "raw": "¾ teaspoon freshly cracked black pepper, plus more to taste",
-  "expected": {
-    "item": "freshly cracked black pepper",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "freshly cracked black pepper",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "freshly cracked black pepper",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more to taste"
+    }
   }
 }

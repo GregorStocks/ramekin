@@ -1,13 +1,25 @@
 {
   "raw": "1  chipotle pepper (in adobo sauce)",
-  "expected": {
-    "item": "chipotle pepper (in adobo sauce)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chipotle pepper (in adobo sauce)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chipotle pepper (in adobo sauce)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

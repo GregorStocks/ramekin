@@ -1,13 +1,25 @@
 {
   "raw": "1 5-ounce package baby kale",
-  "expected": {
-    "item": "baby kale",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "5-ounce package"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "5-ounce package"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baby kale",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "5-ounce package"
+        }
+      ],
+      "note": null
+    }
   }
 }

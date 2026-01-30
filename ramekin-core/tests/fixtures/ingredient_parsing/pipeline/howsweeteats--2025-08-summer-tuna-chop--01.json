@@ -1,13 +1,29 @@
 {
   "raw": "5 ounces of tuna, (packed in water)",
-  "expected": {
-    "item": "tuna",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "oz"
-      }
-    ],
-    "note": "packed in water"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tuna",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        }
+      ],
+      "note": "packed in water"
+    },
+    "enrich_metric_weights": {
+      "item": "tuna",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "oz"
+        },
+        {
+          "amount": "142",
+          "unit": "g"
+        }
+      ],
+      "note": "packed in water"
+    }
   }
 }

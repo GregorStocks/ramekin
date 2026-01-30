@@ -1,8 +1,15 @@
 {
   "raw": "Diced Bell Peppers",
-  "expected": {
-    "item": "Diced Bell Peppers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Diced Bell Peppers",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Diced Bell Peppers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

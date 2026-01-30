@@ -1,21 +1,41 @@
 {
   "raw": "1/4&nbsp; cup unsweetened dried blueberries, raisins, currents, chopped dried figs, or dried cranberries (1 3/4 ounce; 50g)&nbsp;",
-  "expected": {
-    "item": "unsweetened dried blueberries, raisins, currents, chopped dried figs",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "1 3/4",
-        "unit": "oz"
-      },
-      {
-        "amount": "50",
-        "unit": "g"
-      }
-    ],
-    "note": "or dried cranberries"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsweetened dried blueberries, raisins, currents, chopped dried figs",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "or dried cranberries"
+    },
+    "parse_ingredients": {
+      "item": "unsweetened dried blueberries, raisins, currents, chopped dried figs",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": "or dried cranberries"
+    }
   }
 }

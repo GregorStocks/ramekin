@@ -1,13 +1,29 @@
 {
   "raw": "16 ounces Peanuts (roasted, unsalted)",
-  "expected": {
-    "item": "Peanuts",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "roasted, unsalted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Peanuts",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "roasted, unsalted"
+    },
+    "parse_ingredients": {
+      "item": "Peanuts",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "roasted, unsalted"
+    }
   }
 }

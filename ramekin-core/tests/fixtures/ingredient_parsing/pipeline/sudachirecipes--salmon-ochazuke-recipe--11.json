@@ -1,8 +1,15 @@
 {
   "raw": "wasabi paste (optional)",
-  "expected": {
-    "item": "wasabi paste",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "wasabi paste",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "wasabi paste",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

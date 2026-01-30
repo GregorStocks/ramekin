@@ -1,13 +1,25 @@
 {
   "raw": "3 pounds potatoes ((Yukon gold potatoes, russet potatoes, or red potatoes))",
-  "expected": {
-    "item": "potatoes (Yukon gold potatoes, russet potatoes, or red potatoes)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "potatoes (Yukon gold potatoes, russet potatoes, or red potatoes)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "potatoes (Yukon gold potatoes, russet potatoes, or red potatoes)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

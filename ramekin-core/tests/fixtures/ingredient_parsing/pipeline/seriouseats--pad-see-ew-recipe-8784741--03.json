@@ -1,21 +1,41 @@
 {
   "raw": "4 fresh red chiles, such as Holland, Fresno, or Cayenne (2 1/2 ounces; 70g), stemmed and thinly sliced crosswise (see notes)",
-  "expected": {
-    "item": "fresh red chiles, such as Holland, Fresno, or Cayenne",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "2 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "70",
-        "unit": "g"
-      }
-    ],
-    "note": "stemmed and thinly sliced crosswise (see notes)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh red chiles, such as Holland, Fresno, or Cayenne",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": "stemmed and thinly sliced crosswise (see notes)"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh red chiles, such as Holland, Fresno, or Cayenne",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "2 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "70",
+          "unit": "g"
+        }
+      ],
+      "note": "stemmed and thinly sliced crosswise (see notes)"
+    }
   }
 }

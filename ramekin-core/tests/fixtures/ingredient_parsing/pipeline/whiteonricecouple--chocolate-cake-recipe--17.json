@@ -1,17 +1,33 @@
 {
   "raw": "2 teaspoons Vanilla Extract ((10ml) )",
-  "expected": {
-    "item": "Vanilla Extract",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      },
-      {
-        "amount": "10",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Vanilla Extract",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Vanilla Extract",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        },
+        {
+          "amount": "10",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

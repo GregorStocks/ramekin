@@ -1,13 +1,25 @@
 {
   "raw": "1  green bell pepper (seeded, cut into 1 1/2 inch pieces)",
-  "expected": {
-    "item": "green bell pepper (seeded, cut into 1 1/2 inch pieces)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green bell pepper (seeded, cut into 1 1/2 inch pieces)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "green bell pepper (seeded, cut into 1 1/2 inch pieces)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

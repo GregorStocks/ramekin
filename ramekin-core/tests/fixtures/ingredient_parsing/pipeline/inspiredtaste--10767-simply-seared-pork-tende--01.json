@@ -1,13 +1,25 @@
 {
   "raw": "2 pork tenderloins, 1 to 1 ½-pound each",
-  "expected": {
-    "item": "pork tenderloins, 1 to 1 1/2-pound each",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pork tenderloins, 1 to 1 1/2-pound each",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pork tenderloins, 1 to 1 1/2-pound each",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

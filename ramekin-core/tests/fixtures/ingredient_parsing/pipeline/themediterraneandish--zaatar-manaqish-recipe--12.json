@@ -1,8 +1,15 @@
 {
   "raw": "Homemade labneh or feta cheese (omit if vegan)",
-  "expected": {
-    "item": "Homemade labneh or feta cheese (omit if vegan)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Homemade labneh or feta cheese (omit if vegan)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Homemade labneh or feta cheese (omit if vegan)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

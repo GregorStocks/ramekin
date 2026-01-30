@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups loosely packed fresh cilantro leaves and tender stems",
-  "expected": {
-    "item": "loosely packed fresh cilantro leaves and tender stems",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "loosely packed fresh cilantro leaves and tender stems",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "loosely packed fresh cilantro leaves and tender stems",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 cup (226g) unsalted butter, (cold, diced into tiny cubes)",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "226",
-        "unit": "g"
-      }
-    ],
-    "note": "cold, diced into tiny cubes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "cold, diced into tiny cubes"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "226",
+          "unit": "g"
+        }
+      ],
+      "note": "cold, diced into tiny cubes"
+    }
   }
 }

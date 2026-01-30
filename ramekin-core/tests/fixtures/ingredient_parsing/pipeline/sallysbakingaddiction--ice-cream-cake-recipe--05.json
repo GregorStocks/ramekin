@@ -1,17 +1,33 @@
 {
   "raw": "1.5 quarts (1.42L) strawberry ice cream, softened (or other flavor)",
-  "expected": {
-    "item": "strawberry ice cream",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "quart"
-      },
-      {
-        "amount": "1.42",
-        "unit": "l"
-      }
-    ],
-    "note": "softened (or other flavor)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "strawberry ice cream",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "quart"
+        },
+        {
+          "amount": "1.42",
+          "unit": "l"
+        }
+      ],
+      "note": "softened (or other flavor)"
+    },
+    "parse_ingredients": {
+      "item": "strawberry ice cream",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "quart"
+        },
+        {
+          "amount": "1.42",
+          "unit": "l"
+        }
+      ],
+      "note": "softened (or other flavor)"
+    }
   }
 }

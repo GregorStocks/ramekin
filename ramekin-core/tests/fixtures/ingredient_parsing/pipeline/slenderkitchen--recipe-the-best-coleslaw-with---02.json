@@ -1,13 +1,25 @@
 {
   "raw": "3 cups purple cabbage, finely shredded",
-  "expected": {
-    "item": "purple cabbage",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely shredded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "purple cabbage",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely shredded"
+    },
+    "enrich_metric_weights": {
+      "item": "purple cabbage",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely shredded"
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "1 + ⅔ cup Almond milk (13.5 fl oz)",
-  "expected": {
-    "item": "+ 2/3 cup Almond milk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "13.5",
-        "unit": "fl oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "+ 2/3 cup Almond milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "13.5",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "+ 2/3 cup Almond milk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "13.5",
+          "unit": "fl oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

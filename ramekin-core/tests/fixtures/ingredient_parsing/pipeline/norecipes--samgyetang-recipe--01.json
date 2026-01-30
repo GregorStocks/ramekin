@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup sticky rice ((also known as \"sweet rice\" or \"glutinous rice\"))",
-  "expected": {
-    "item": "sticky rice (also known as \"sweet rice\" or \"glutinous rice\")",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sticky rice (also known as \"sweet rice\" or \"glutinous rice\")",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sticky rice (also known as \"sweet rice\" or \"glutinous rice\")",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

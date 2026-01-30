@@ -1,13 +1,25 @@
 {
   "raw": "2-4 TBSP pepitas ((optional but so tasty!))",
-  "expected": {
-    "item": "pepitas",
-    "measurements": [
-      {
-        "amount": "2-4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional but so tasty!"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pepitas",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional but so tasty!"
+    },
+    "parse_ingredients": {
+      "item": "pepitas",
+      "measurements": [
+        {
+          "amount": "2-4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional but so tasty!"
+    }
   }
 }

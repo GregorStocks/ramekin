@@ -1,13 +1,25 @@
 {
   "raw": "1 cup frozen peas (or other vegetable add-in, see Note)",
-  "expected": {
-    "item": "frozen peas (or other vegetable add-in, see Note)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen peas (or other vegetable add-in, see Note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "frozen peas (or other vegetable add-in, see Note)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Homemade pizza dough",
-  "expected": {
-    "item": "Homemade pizza dough",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Homemade pizza dough",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Homemade pizza dough",
+      "measurements": [],
+      "note": null
+    }
   }
 }

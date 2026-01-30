@@ -1,17 +1,33 @@
 {
   "raw": "4  small boneless skinless chicken breasts (about 1 1/2 pounds)",
-  "expected": {
-    "item": "boneless skinless chicken breasts",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "small"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boneless skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "boneless skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

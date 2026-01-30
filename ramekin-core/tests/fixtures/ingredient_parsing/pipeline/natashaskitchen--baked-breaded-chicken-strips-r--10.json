@@ -1,13 +1,25 @@
 {
   "raw": "1/2 tsp poppy seeds (for effect, optional ;).)",
-  "expected": {
-    "item": "poppy seeds .)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "for effect, optional ;"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "poppy seeds .)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "for effect, optional ;"
+    },
+    "enrich_metric_weights": {
+      "item": "poppy seeds .)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "for effect, optional ;"
+    }
   }
 }

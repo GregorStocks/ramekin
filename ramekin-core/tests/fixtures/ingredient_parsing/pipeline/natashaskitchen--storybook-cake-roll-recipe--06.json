@@ -1,13 +1,25 @@
 {
   "raw": "3 Tbsp rum - I used Bacardi golden rum (optional, but adds great flavor)",
-  "expected": {
-    "item": "rum - I used Bacardi golden rum",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "optional, but adds great flavor"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rum - I used Bacardi golden rum",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, but adds great flavor"
+    },
+    "parse_ingredients": {
+      "item": "rum - I used Bacardi golden rum",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "optional, but adds great flavor"
+    }
   }
 }

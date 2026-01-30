@@ -1,17 +1,37 @@
 {
   "raw": "1 (12 ounce) bottle hard apple cider",
-  "expected": {
-    "item": "hard apple cider",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      },
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hard apple cider",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hard apple cider",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

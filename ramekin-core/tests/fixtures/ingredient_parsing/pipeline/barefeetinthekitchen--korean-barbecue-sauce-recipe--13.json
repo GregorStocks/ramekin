@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon Korean chili pepper powder or crushed red pepper flakes",
-  "expected": {
-    "item": "Korean chili pepper powder or crushed red pepper flakes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Korean chili pepper powder or crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Korean chili pepper powder or crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

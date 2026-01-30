@@ -1,13 +1,25 @@
 {
   "raw": "1 large cauliflower (2¼ pounds whole; 7 cups chopped)",
-  "expected": {
-    "item": "cauliflower",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "2 1/4 pounds whole; 7 cups chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cauliflower",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "2 1/4 pounds whole; 7 cups chopped"
+    },
+    "parse_ingredients": {
+      "item": "cauliflower",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "2 1/4 pounds whole; 7 cups chopped"
+    }
   }
 }

@@ -1,21 +1,41 @@
 {
   "raw": "1 1/2 pounds (680 grams, about 4) yukon gold potatoes, sliced 1/8-inch thick",
-  "expected": {
-    "item": "yukon gold potatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "lb"
-      },
-      {
-        "amount": "680",
-        "unit": "g"
-      },
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "sliced 1/8-inch thick"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "yukon gold potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/8-inch thick"
+    },
+    "enrich_metric_weights": {
+      "item": "yukon gold potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "lb"
+        },
+        {
+          "amount": "680",
+          "unit": "g"
+        },
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "sliced 1/8-inch thick"
+    }
   }
 }

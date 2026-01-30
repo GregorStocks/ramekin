@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons flavorless oil (or ¼ cup raw cashews, blended into the finished milk)",
-  "expected": {
-    "item": "flavorless oil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or 1/4 cup raw cashews, blended into the finished milk"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flavorless oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1/4 cup raw cashews, blended into the finished milk"
+    },
+    "parse_ingredients": {
+      "item": "flavorless oil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or 1/4 cup raw cashews, blended into the finished milk"
+    }
   }
 }

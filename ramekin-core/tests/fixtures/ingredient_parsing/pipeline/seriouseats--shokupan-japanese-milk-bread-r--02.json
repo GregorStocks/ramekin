@@ -1,17 +1,33 @@
 {
   "raw": "38g (3 tablespoons) granulated sugar",
-  "expected": {
-    "item": "granulated sugar",
-    "measurements": [
-      {
-        "amount": "38",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "38",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "granulated sugar",
+      "measurements": [
+        {
+          "amount": "38",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

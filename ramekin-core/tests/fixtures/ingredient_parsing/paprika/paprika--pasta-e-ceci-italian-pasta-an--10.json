@@ -1,13 +1,25 @@
 {
   "raw": "4 cups roughly chopped escarole, Tuscan kale or radicchio",
-  "expected": {
-    "item": "roughly chopped escarole, Tuscan kale or radicchio",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roughly chopped escarole, Tuscan kale or radicchio",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "roughly chopped escarole, Tuscan kale or radicchio",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

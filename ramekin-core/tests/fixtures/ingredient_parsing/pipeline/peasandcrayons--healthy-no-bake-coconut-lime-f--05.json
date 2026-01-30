@@ -1,13 +1,25 @@
 {
   "raw": "1-3 TBSP pure maple syrup (adjust to taste)",
-  "expected": {
-    "item": "pure maple syrup",
-    "measurements": [
-      {
-        "amount": "1-3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "adjust to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pure maple syrup",
+      "measurements": [
+        {
+          "amount": "1-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "adjust to taste"
+    },
+    "parse_ingredients": {
+      "item": "pure maple syrup",
+      "measurements": [
+        {
+          "amount": "1-3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "adjust to taste"
+    }
   }
 }

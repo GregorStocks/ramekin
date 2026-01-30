@@ -1,17 +1,33 @@
 {
   "raw": "1 (6 to 8 pound) piece center cut brisket",
-  "expected": {
-    "item": "center cut brisket",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "piece"
-      },
-      {
-        "amount": "6 to 8",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "center cut brisket",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "piece"
+        },
+        {
+          "amount": "6 to 8",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "center cut brisket",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "piece"
+        },
+        {
+          "amount": "6 to 8",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup Turkish tomato sauce (or regular tomato sauce)",
-  "expected": {
-    "item": "Turkish tomato sauce (or regular tomato sauce)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Turkish tomato sauce (or regular tomato sauce)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Turkish tomato sauce (or regular tomato sauce)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

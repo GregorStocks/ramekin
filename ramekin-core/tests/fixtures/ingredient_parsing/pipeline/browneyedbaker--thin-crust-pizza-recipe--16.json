@@ -1,8 +1,15 @@
 {
   "raw": "Pepperoni slices",
-  "expected": {
-    "item": "Pepperoni slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pepperoni slices",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pepperoni slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

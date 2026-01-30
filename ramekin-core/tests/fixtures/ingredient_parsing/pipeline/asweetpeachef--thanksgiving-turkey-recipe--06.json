@@ -1,13 +1,25 @@
 {
   "raw": "1  navel orange (unpeeled, cut into eighths)",
-  "expected": {
-    "item": "navel orange",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "unpeeled, cut into eighths"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "navel orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "unpeeled, cut into eighths"
+    },
+    "enrich_metric_weights": {
+      "item": "navel orange",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "unpeeled, cut into eighths"
+    }
   }
 }

@@ -1,17 +1,37 @@
 {
   "raw": "1 (16.3 ounce) can Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
-  "expected": {
-    "item": "Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "16.3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "16.3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pillsbury Grands Homestyle Buttermilk Reduced Fat Biscuits",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "16.3",
+          "unit": "oz"
+        },
+        {
+          "amount": "462",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

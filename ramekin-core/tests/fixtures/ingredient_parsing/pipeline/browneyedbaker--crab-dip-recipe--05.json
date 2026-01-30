@@ -1,13 +1,29 @@
 {
   "raw": "16 ounces lump crab meat (drained, if canned)",
-  "expected": {
-    "item": "lump crab meat",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained, if canned"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lump crab meat",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        },
+        {
+          "amount": "454",
+          "unit": "g"
+        }
+      ],
+      "note": "drained, if canned"
+    },
+    "parse_ingredients": {
+      "item": "lump crab meat",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained, if canned"
+    }
   }
 }

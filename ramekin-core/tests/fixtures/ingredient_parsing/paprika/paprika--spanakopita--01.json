@@ -1,21 +1,41 @@
 {
   "raw": "1 1/4 pounds (20 ounces or 565 grams) baby spinach [see Note about frozen], roughly chopped",
-  "expected": {
-    "item": "baby spinach [see Note about frozen]",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "lb"
-      },
-      {
-        "amount": "20",
-        "unit": "oz"
-      },
-      {
-        "amount": "565",
-        "unit": "g"
-      }
-    ],
-    "note": "roughly chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baby spinach [see Note about frozen]",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "565",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped"
+    },
+    "parse_ingredients": {
+      "item": "baby spinach [see Note about frozen]",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "lb"
+        },
+        {
+          "amount": "20",
+          "unit": "oz"
+        },
+        {
+          "amount": "565",
+          "unit": "g"
+        }
+      ],
+      "note": "roughly chopped"
+    }
   }
 }

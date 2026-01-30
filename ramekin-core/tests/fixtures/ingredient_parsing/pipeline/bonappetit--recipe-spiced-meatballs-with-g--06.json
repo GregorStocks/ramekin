@@ -1,13 +1,25 @@
 {
   "raw": "¾ cup crumbled feta, plus more for serving",
-  "expected": {
-    "item": "crumbled feta",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crumbled feta",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "parse_ingredients": {
+      "item": "crumbled feta",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

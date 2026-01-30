@@ -1,13 +1,25 @@
 {
   "raw": "1 cucumber, chopped",
-  "expected": {
-    "item": "cucumber",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    },
+    "parse_ingredients": {
+      "item": "cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

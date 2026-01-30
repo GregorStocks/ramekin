@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. hot Italian sausage, casings removed if needed",
-  "expected": {
-    "item": "hot Italian sausage, casings removed if needed",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot Italian sausage, casings removed if needed",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot Italian sausage, casings removed if needed",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

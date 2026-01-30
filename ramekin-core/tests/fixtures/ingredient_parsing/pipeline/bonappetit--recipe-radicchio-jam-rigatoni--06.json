@@ -1,8 +1,15 @@
 {
   "raw": "Extra-virgin olive oil (for pan and drizzling)",
-  "expected": {
-    "item": "Extra-virgin olive oil (for pan and drizzling)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Extra-virgin olive oil (for pan and drizzling)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Extra-virgin olive oil (for pan and drizzling)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

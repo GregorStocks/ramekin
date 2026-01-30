@@ -1,13 +1,25 @@
 {
   "raw": "2/3 cup GEVALIA Caramel Cold Brew Iced Coffee Concentrate, chilled",
-  "expected": {
-    "item": "GEVALIA Caramel Cold Brew Iced Coffee Concentrate",
-    "measurements": [
-      {
-        "amount": "2/3",
-        "unit": "cup"
-      }
-    ],
-    "note": "chilled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "GEVALIA Caramel Cold Brew Iced Coffee Concentrate",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    },
+    "parse_ingredients": {
+      "item": "GEVALIA Caramel Cold Brew Iced Coffee Concentrate",
+      "measurements": [
+        {
+          "amount": "2/3",
+          "unit": "cup"
+        }
+      ],
+      "note": "chilled"
+    }
   }
 }

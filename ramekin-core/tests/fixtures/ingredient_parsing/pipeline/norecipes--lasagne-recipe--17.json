@@ -1,13 +1,25 @@
 {
   "raw": "200 grams Mozzarella cheese ((grated))",
-  "expected": {
-    "item": "Mozzarella cheese",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    },
+    "parse_ingredients": {
+      "item": "Mozzarella cheese",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "grated"
+    }
   }
 }

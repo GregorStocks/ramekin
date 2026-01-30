@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. extra-jumbo shrimp, peeled and deveined, tails left on",
-  "expected": {
-    "item": "extra-jumbo shrimp, peeled and deveined, tails left on",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra-jumbo shrimp, peeled and deveined, tails left on",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "extra-jumbo shrimp, peeled and deveined, tails left on",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

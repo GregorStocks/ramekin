@@ -1,8 +1,15 @@
 {
   "raw": "Crumbs",
-  "expected": {
-    "item": "Crumbs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crumbs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Crumbs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

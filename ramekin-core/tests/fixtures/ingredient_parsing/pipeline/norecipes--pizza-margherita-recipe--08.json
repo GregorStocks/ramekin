@@ -1,13 +1,25 @@
 {
   "raw": "1 bunch basil ((leaves only))",
-  "expected": {
-    "item": "basil (leaves only)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basil (leaves only)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "basil (leaves only)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
-  "expected": {
-    "item": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "stick"
-      }
-    ],
-    "note": "plus 2 tablespoons cold salted butter, cut into pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus 2 tablespoons cold salted butter, cut into pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "1 1/2 sticks plus 2 tablespoons cold salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": "plus 2 tablespoons cold salted butter, cut into pieces"
+    }
   }
 }

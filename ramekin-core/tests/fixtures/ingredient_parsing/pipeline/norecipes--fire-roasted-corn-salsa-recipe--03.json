@@ -1,13 +1,25 @@
 {
   "raw": "1/4  red onion (small , minced)",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": null
-      }
-    ],
-    "note": "small , minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "small , minced"
+    },
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": null
+        }
+      ],
+      "note": "small , minced"
+    }
   }
 }

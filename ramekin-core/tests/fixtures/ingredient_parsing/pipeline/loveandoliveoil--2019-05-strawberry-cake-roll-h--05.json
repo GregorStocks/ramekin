@@ -1,8 +1,15 @@
 {
   "raw": "food coloring",
-  "expected": {
-    "item": "food coloring",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "food coloring",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "food coloring",
+      "measurements": [],
+      "note": null
+    }
   }
 }

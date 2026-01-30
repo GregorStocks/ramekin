@@ -1,13 +1,25 @@
 {
   "raw": "½ tablespoon ginger  (minced/grated (6 grams from ¾ inch root))",
-  "expected": {
-    "item": "ginger",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "minced/grated (6 grams from 3/4 inch root"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced/grated (6 grams from 3/4 inch root"
+    },
+    "enrich_metric_weights": {
+      "item": "ginger",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced/grated (6 grams from 3/4 inch root"
+    }
   }
 }

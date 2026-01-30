@@ -1,21 +1,41 @@
 {
   "raw": "28 g unsalted butter (1 ounce; 2 tablespoons), melted and cooled slightly, plus more for greasing",
-  "expected": {
-    "item": "unsalted butter , melted and cooled slightly",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": "g"
-      },
-      {
-        "amount": "1",
-        "unit": "oz"
-      },
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus more for greasing"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unsalted butter , melted and cooled slightly",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing"
+    },
+    "parse_ingredients": {
+      "item": "unsalted butter , melted and cooled slightly",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "g"
+        },
+        {
+          "amount": "1",
+          "unit": "oz"
+        },
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus more for greasing"
+    }
   }
 }

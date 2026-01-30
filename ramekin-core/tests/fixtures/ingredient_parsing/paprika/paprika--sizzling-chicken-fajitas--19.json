@@ -1,8 +1,15 @@
 {
   "raw": "Salsa (or pico de gallo)",
-  "expected": {
-    "item": "Salsa (or pico de gallo)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Salsa (or pico de gallo)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Salsa (or pico de gallo)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

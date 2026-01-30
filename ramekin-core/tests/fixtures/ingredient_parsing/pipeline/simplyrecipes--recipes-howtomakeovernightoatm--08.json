@@ -1,8 +1,15 @@
 {
   "raw": "Splash of milk, creme fraiche, or yogurt",
-  "expected": {
-    "item": "Splash of milk, creme fraiche, or yogurt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Splash of milk, creme fraiche, or yogurt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Splash of milk, creme fraiche, or yogurt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "Small handful fresh parsley leaves, minced",
-  "expected": {
-    "item": "handful fresh parsley leaves",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "handful fresh parsley leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "handful fresh parsley leaves",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

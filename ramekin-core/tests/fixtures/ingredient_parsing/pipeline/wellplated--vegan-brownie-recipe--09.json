@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup canola oil  (or melted, cooled coconut oil)",
-  "expected": {
-    "item": "canola oil",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or melted, cooled coconut oil"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "canola oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or melted, cooled coconut oil"
+    },
+    "enrich_metric_weights": {
+      "item": "canola oil",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or melted, cooled coconut oil"
+    }
   }
 }

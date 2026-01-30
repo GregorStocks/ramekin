@@ -1,13 +1,25 @@
 {
   "raw": "2 handfuls dried bonito flakes",
-  "expected": {
-    "item": "dried bonito flakes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "handful"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dried bonito flakes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dried bonito flakes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "handful"
+        }
+      ],
+      "note": null
+    }
   }
 }

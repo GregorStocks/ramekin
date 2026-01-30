@@ -1,13 +1,25 @@
 {
   "raw": "3 medium clementines (zested and fruit inside blended)",
-  "expected": {
-    "item": "clementines (zested and fruit inside blended)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "clementines (zested and fruit inside blended)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "clementines (zested and fruit inside blended)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

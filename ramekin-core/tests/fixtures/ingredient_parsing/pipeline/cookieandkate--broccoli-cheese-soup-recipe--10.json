@@ -1,13 +1,29 @@
 {
   "raw": "4 to 8 ounces grated sharp cheddar cheese, depending on your mood",
-  "expected": {
-    "item": "grated sharp cheddar cheese, depending on your mood",
-    "measurements": [
-      {
-        "amount": "4 to 8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grated sharp cheddar cheese, depending on your mood",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": "oz"
+        },
+        {
+          "amount": "113 to 227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grated sharp cheddar cheese, depending on your mood",
+      "measurements": [
+        {
+          "amount": "4 to 8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

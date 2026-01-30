@@ -1,8 +1,15 @@
 {
   "raw": "Chili-garlic paste, to taste",
-  "expected": {
-    "item": "Chili-garlic paste",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chili-garlic paste",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "Chili-garlic paste",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "10 tablespoons cold butter (cut into 1/2\" pieces)",
-  "expected": {
-    "item": "cold butter (cut into 1/2\" pieces)",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cold butter (cut into 1/2\" pieces)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cold butter (cut into 1/2\" pieces)",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "400g can chopped tomato",
-  "expected": {
-    "item": "can chopped tomato",
-    "measurements": [
-      {
-        "amount": "400",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "can chopped tomato",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "can chopped tomato",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Hot sesame oil",
-  "expected": {
-    "item": "Hot sesame oil",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Hot sesame oil",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Hot sesame oil",
+      "measurements": [],
+      "note": null
+    }
   }
 }

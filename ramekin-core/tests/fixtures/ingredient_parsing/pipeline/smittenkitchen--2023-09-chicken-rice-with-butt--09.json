@@ -1,13 +1,25 @@
 {
   "raw": "2 cups chicken broth and up to 1/4 cup more if needed (updated)",
-  "expected": {
-    "item": "chicken broth and up to 1/4 cup more if needed (updated)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken broth and up to 1/4 cup more if needed (updated)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chicken broth and up to 1/4 cup more if needed (updated)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

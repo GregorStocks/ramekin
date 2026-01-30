@@ -1,8 +1,15 @@
 {
   "raw": "a small bowl of water, to moisten fingers",
-  "expected": {
-    "item": "a small bowl of water, to moisten fingers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a small bowl of water, to moisten fingers",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a small bowl of water, to moisten fingers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

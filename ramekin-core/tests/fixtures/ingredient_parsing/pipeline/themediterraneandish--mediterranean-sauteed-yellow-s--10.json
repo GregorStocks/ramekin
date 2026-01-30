@@ -1,13 +1,25 @@
 {
   "raw": "Handful chopped fresh parsley (optional)",
-  "expected": {
-    "item": "chopped fresh parsley",
-    "measurements": [
-      {
-        "amount": null,
-        "unit": "handful"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": null,
+          "unit": "handful"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 medium kohlrabi (substitute celery if not available)",
-  "expected": {
-    "item": "kohlrabi (substitute celery if not available)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kohlrabi (substitute celery if not available)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kohlrabi (substitute celery if not available)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

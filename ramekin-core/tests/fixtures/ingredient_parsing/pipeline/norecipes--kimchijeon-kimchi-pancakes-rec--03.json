@@ -1,13 +1,25 @@
 {
   "raw": "1 cup kimchi ((juice squeezed out and chopped))",
-  "expected": {
-    "item": "kimchi",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "juice squeezed out and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kimchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "juice squeezed out and chopped"
+    },
+    "parse_ingredients": {
+      "item": "kimchi",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "juice squeezed out and chopped"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "0.333 cup lower-sodium soy sauce",
-  "expected": {
-    "item": "lower-sodium soy sauce",
-    "measurements": [
-      {
-        "amount": "0.333",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lower-sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "0.333",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lower-sodium soy sauce",
+      "measurements": [
+        {
+          "amount": "0.333",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

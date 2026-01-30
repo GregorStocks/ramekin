@@ -1,13 +1,25 @@
 {
   "raw": "1 serrano chile pepper, stemmed and chopped",
-  "expected": {
-    "item": "serrano chile pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "stemmed and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "serrano chile pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stemmed and chopped"
+    },
+    "parse_ingredients": {
+      "item": "serrano chile pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stemmed and chopped"
+    }
   }
 }

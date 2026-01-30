@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups warm water, 110-115ºF, plus 10 cups water for boiling",
-  "expected": {
-    "item": "warm water, 110-115ºF",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus 10 cups water for boiling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "warm water, 110-115ºF",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 10 cups water for boiling"
+    },
+    "enrich_metric_weights": {
+      "item": "warm water, 110-115ºF",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus 10 cups water for boiling"
+    }
   }
 }

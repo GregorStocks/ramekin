@@ -1,8 +1,15 @@
 {
   "raw": "White rice, for serving",
-  "expected": {
-    "item": "White rice",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "White rice",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "White rice",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

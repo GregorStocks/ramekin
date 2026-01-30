@@ -1,13 +1,25 @@
 {
   "raw": "2 sesame-seed or other hamburger buns, toasted",
-  "expected": {
-    "item": "sesame-seed or other hamburger buns",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "toasted"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sesame-seed or other hamburger buns",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "toasted"
+    },
+    "enrich_metric_weights": {
+      "item": "sesame-seed or other hamburger buns",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "toasted"
+    }
   }
 }

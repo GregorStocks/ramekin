@@ -1,13 +1,25 @@
 {
   "raw": "0.25 cup tart unsweetened cherry juice",
-  "expected": {
-    "item": "tart unsweetened cherry juice",
-    "measurements": [
-      {
-        "amount": "0.25",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tart unsweetened cherry juice",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tart unsweetened cherry juice",
+      "measurements": [
+        {
+          "amount": "0.25",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

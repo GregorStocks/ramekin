@@ -1,8 +1,15 @@
 {
   "raw": "Optional: Toasted coconut flakes and chopped almonds",
-  "expected": {
-    "item": "Optional: Toasted coconut flakes and chopped almonds",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Optional: Toasted coconut flakes and chopped almonds",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Optional: Toasted coconut flakes and chopped almonds",
+      "measurements": [],
+      "note": null
+    }
   }
 }

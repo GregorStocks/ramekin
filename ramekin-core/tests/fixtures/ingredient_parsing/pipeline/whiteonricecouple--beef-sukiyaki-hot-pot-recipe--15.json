@@ -1,8 +1,15 @@
 {
   "raw": "optional- 1 egg for each person (, beaten)",
-  "expected": {
-    "item": "optional- 1 egg for each person",
-    "measurements": [],
-    "note": "beaten"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "optional- 1 egg for each person",
+      "measurements": [],
+      "note": "beaten"
+    },
+    "enrich_metric_weights": {
+      "item": "optional- 1 egg for each person",
+      "measurements": [],
+      "note": "beaten"
+    }
   }
 }

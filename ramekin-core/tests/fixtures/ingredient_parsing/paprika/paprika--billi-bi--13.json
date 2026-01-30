@@ -1,13 +1,25 @@
 {
   "raw": "1 egg yolk, lightly beaten",
-  "expected": {
-    "item": "egg yolk",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "lightly beaten"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "egg yolk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten"
+    },
+    "parse_ingredients": {
+      "item": "egg yolk",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "lightly beaten"
+    }
   }
 }

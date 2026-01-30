@@ -1,13 +1,25 @@
 {
   "raw": "1 Tablespoon  chili crunch ( / chili crisp , or your choice of hot sauce )",
-  "expected": {
-    "item": "chili crunch ( / chili crisp , or your choice of hot sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chili crunch ( / chili crisp , or your choice of hot sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chili crunch ( / chili crisp , or your choice of hot sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

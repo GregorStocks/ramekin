@@ -5,6 +5,7 @@ pub mod fetch;
 pub mod http;
 pub mod image;
 pub mod ingredient_parser;
+pub mod metric_weights;
 pub mod pipeline;
 pub mod types;
 

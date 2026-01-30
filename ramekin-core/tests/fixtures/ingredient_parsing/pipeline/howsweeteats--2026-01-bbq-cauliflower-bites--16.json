@@ -1,8 +1,15 @@
 {
   "raw": "big pinch of kosher salt and pepper",
-  "expected": {
-    "item": "big pinch of kosher salt and pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "big pinch of kosher salt and pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "big pinch of kosher salt and pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 medium potatoes (peeled and cut in cubes)",
-  "expected": {
-    "item": "potatoes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "peeled and cut in cubes"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut in cubes"
+    },
+    "parse_ingredients": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut in cubes"
+    }
   }
 }

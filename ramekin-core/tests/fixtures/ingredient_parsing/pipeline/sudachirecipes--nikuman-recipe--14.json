@@ -1,13 +1,25 @@
 {
   "raw": "15 g boiled wood ear mushroom (diced)",
-  "expected": {
-    "item": "boiled wood ear mushroom",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": "g"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "boiled wood ear mushroom",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "diced"
+    },
+    "enrich_metric_weights": {
+      "item": "boiled wood ear mushroom",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": "g"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

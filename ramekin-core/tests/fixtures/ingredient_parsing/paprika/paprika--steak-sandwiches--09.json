@@ -1,8 +1,15 @@
 {
   "raw": "Olive oil, or a neutral high-heat oil such as grapeseed",
-  "expected": {
-    "item": "Olive oil, or a neutral high-heat oil such as grapeseed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Olive oil, or a neutral high-heat oil such as grapeseed",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Olive oil, or a neutral high-heat oil such as grapeseed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 to 6 dashes of orange bitters",
-  "expected": {
-    "item": "orange bitters",
-    "measurements": [
-      {
-        "amount": "4 to 6",
-        "unit": "dash"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange bitters",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange bitters",
+      "measurements": [
+        {
+          "amount": "4 to 6",
+          "unit": "dash"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Polenta, for serving (optional)",
-  "expected": {
-    "item": "Polenta, for serving",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Polenta, for serving",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Polenta, for serving",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

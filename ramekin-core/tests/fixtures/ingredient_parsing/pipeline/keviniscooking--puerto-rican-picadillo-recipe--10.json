@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 cups cooked potatoes (diced (See Note 2))",
-  "expected": {
-    "item": "cooked potatoes",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "diced (See Note 2"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced (See Note 2"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked potatoes",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "diced (See Note 2"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "vegetable oil ((for frying the aromatics))",
-  "expected": {
-    "item": "vegetable oil (for frying the aromatics)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "vegetable oil (for frying the aromatics)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "vegetable oil (for frying the aromatics)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

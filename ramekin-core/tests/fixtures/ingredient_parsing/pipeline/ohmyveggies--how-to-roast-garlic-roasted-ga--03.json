@@ -1,8 +1,15 @@
 {
   "raw": "about 1 tablespoon butter (softened)",
-  "expected": {
-    "item": "about 1 tablespoon butter",
-    "measurements": [],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "about 1 tablespoon butter",
+      "measurements": [],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "about 1 tablespoon butter",
+      "measurements": [],
+      "note": "softened"
+    }
   }
 }

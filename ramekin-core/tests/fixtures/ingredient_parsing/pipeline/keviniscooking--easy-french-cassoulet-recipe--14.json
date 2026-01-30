@@ -1,17 +1,33 @@
 {
   "raw": "1  bunch thyme (12 pieces, tied)",
-  "expected": {
-    "item": "thyme",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      },
-      {
-        "amount": "12",
-        "unit": "piece"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "12",
+          "unit": "piece"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        },
+        {
+          "amount": "12",
+          "unit": "piece"
+        }
+      ],
+      "note": null
+    }
   }
 }

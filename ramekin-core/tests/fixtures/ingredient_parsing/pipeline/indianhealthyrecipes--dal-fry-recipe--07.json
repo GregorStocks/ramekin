@@ -1,13 +1,25 @@
 {
   "raw": "1  dried red chilli (broken (optional))",
-  "expected": {
-    "item": "dried red chilli",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "broken (optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried red chilli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "broken (optional"
+    },
+    "parse_ingredients": {
+      "item": "dried red chilli",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "broken (optional"
+    }
   }
 }

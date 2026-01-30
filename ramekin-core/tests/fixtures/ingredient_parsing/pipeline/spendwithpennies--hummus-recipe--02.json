@@ -1,13 +1,25 @@
 {
   "raw": "2 ½ tablespoons tahini",
-  "expected": {
-    "item": "tahini",
-    "measurements": [
-      {
-        "amount": "2 1/2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "tahini",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "tahini",
+      "measurements": [
+        {
+          "amount": "2 1/2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "4 oz bittersweet chocolate, chopped into very small pieces",
-  "expected": {
-    "item": "bittersweet chocolate",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "chopped into very small pieces"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "chopped into very small pieces"
+    },
+    "enrich_metric_weights": {
+      "item": "bittersweet chocolate",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "chopped into very small pieces"
+    }
   }
 }

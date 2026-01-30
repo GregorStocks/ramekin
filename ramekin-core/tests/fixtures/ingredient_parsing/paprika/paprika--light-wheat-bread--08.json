@@ -1,17 +1,37 @@
 {
   "raw": "1 1/4 cups (10 oz.) water, at room temperature",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "85g red lentil",
-  "expected": {
-    "item": "red lentil",
-    "measurements": [
-      {
-        "amount": "85",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red lentil",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "red lentil",
+      "measurements": [
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

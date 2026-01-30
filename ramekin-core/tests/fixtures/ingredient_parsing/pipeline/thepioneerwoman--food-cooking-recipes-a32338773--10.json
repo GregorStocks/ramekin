@@ -1,13 +1,25 @@
 {
   "raw": "6 kaiser rolls or hamburger buns, split",
-  "expected": {
-    "item": "kaiser rolls or hamburger buns, split",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kaiser rolls or hamburger buns, split",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "kaiser rolls or hamburger buns, split",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

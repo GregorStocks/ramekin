@@ -1,17 +1,33 @@
 {
   "raw": "600 grams whole stewed tomatoes ((1 1/2 small cans))",
-  "expected": {
-    "item": "whole stewed tomatoes",
-    "measurements": [
-      {
-        "amount": "600",
-        "unit": "g"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole stewed tomatoes",
+      "measurements": [
+        {
+          "amount": "600",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whole stewed tomatoes",
+      "measurements": [
+        {
+          "amount": "600",
+          "unit": "g"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

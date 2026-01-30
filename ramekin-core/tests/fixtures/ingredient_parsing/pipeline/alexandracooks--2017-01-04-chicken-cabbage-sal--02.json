@@ -1,13 +1,25 @@
 {
   "raw": "1&nbsp;whole chicken, about 3 lbs",
-  "expected": {
-    "item": "whole chicken, about 3 lbs",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole chicken, about 3 lbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "whole chicken, about 3 lbs",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

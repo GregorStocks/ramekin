@@ -1,8 +1,15 @@
 {
   "raw": "Seasoned tomato slices",
-  "expected": {
-    "item": "Seasoned tomato slices",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Seasoned tomato slices",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Seasoned tomato slices",
+      "measurements": [],
+      "note": null
+    }
   }
 }

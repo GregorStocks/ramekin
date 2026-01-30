@@ -1,13 +1,25 @@
 {
   "raw": "1 13x9\" store-bought or homemade focaccia",
-  "expected": {
-    "item": "13x9\" store-bought or homemade focaccia",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "13x9\" store-bought or homemade focaccia",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "13x9\" store-bought or homemade focaccia",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

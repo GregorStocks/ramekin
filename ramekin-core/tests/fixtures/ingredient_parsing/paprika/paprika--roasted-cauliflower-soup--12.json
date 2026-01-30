@@ -1,8 +1,15 @@
 {
   "raw": "For the Curry Cream:",
-  "expected": {
-    "item": "For the Curry Cream:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "For the Curry Cream:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "For the Curry Cream:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

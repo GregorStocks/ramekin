@@ -1,13 +1,25 @@
 {
   "raw": "3  medium avocados, (halved, pitted and diced)",
-  "expected": {
-    "item": "avocados",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "medium"
-      }
-    ],
-    "note": "halved, pitted and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved, pitted and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "avocados",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved, pitted and diced"
+    }
   }
 }

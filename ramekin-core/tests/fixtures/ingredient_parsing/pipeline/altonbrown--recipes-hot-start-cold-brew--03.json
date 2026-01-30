@@ -1,13 +1,25 @@
 {
   "raw": "1 1/4 cups filtered water, heated to 200°F in an electric kettle",
-  "expected": {
-    "item": "filtered water, heated to 200°F in an electric kettle",
-    "measurements": [
-      {
-        "amount": "1 1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "filtered water, heated to 200°F in an electric kettle",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "filtered water, heated to 200°F in an electric kettle",
+      "measurements": [
+        {
+          "amount": "1 1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

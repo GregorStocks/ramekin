@@ -1,13 +1,25 @@
 {
   "raw": "1-1/2 pounds large red potatoes, quartered lengthwise",
-  "expected": {
-    "item": "large red potatoes",
-    "measurements": [
-      {
-        "amount": "1-1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": "quartered lengthwise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "large red potatoes",
+      "measurements": [
+        {
+          "amount": "1-1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered lengthwise"
+    },
+    "enrich_metric_weights": {
+      "item": "large red potatoes",
+      "measurements": [
+        {
+          "amount": "1-1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": "quartered lengthwise"
+    }
   }
 }

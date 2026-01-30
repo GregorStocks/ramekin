@@ -1,17 +1,33 @@
 {
   "raw": "1 3/4 cups/420 milliliters warm water (about 100 degrees)",
-  "expected": {
-    "item": "cups/420 milliliters warm water",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": null
-      },
-      {
-        "amount": "100",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cups/420 milliliters warm water",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": null
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cups/420 milliliters warm water",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": null
+        },
+        {
+          "amount": "100",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

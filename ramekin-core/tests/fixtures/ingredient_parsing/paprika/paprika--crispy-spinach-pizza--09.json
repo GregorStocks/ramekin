@@ -1,13 +1,29 @@
 {
   "raw": "8 to 9 ounces fresh spinach, larger stems removed",
-  "expected": {
-    "item": "fresh spinach, larger stems removed",
-    "measurements": [
-      {
-        "amount": "8 to 9",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh spinach, larger stems removed",
+      "measurements": [
+        {
+          "amount": "8 to 9",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh spinach, larger stems removed",
+      "measurements": [
+        {
+          "amount": "8 to 9",
+          "unit": "oz"
+        },
+        {
+          "amount": "227 to 255",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

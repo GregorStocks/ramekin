@@ -1,8 +1,15 @@
 {
   "raw": "Guacamole",
-  "expected": {
-    "item": "Guacamole",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Guacamole",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Guacamole",
+      "measurements": [],
+      "note": null
+    }
   }
 }

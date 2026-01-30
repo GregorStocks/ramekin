@@ -1,21 +1,41 @@
 {
   "raw": "1 cup (85 grams or 3 ounces) freshly grated parmesan",
-  "expected": {
-    "item": "freshly grated parmesan",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "85",
-        "unit": "g"
-      },
-      {
-        "amount": "3",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "freshly grated parmesan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "freshly grated parmesan",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        },
+        {
+          "amount": "3",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

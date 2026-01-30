@@ -1,13 +1,25 @@
 {
   "raw": "2 medium jalapeños, ribs and seeds removed, thinly sliced",
-  "expected": {
-    "item": "jalapeños, ribs and seeds removed",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "jalapeños, ribs and seeds removed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "jalapeños, ribs and seeds removed",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

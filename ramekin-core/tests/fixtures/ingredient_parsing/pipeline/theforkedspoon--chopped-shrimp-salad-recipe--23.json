@@ -1,8 +1,15 @@
 {
   "raw": "fresh lime juice (for serving)",
-  "expected": {
-    "item": "fresh lime juice",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh lime juice",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh lime juice",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

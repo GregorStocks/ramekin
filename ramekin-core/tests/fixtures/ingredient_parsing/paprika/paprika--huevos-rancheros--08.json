@@ -1,8 +1,15 @@
 {
   "raw": "Black beans",
-  "expected": {
-    "item": "Black beans",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Black beans",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Black beans",
+      "measurements": [],
+      "note": null
+    }
   }
 }

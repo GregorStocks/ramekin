@@ -1,13 +1,25 @@
 {
   "raw": "2 pounds parsnips (peeled and cut into 1-inch pieces)",
-  "expected": {
-    "item": "parsnips",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled and cut into 1-inch pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "parsnips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and cut into 1-inch pieces"
+    },
+    "parse_ingredients": {
+      "item": "parsnips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and cut into 1-inch pieces"
+    }
   }
 }

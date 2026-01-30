@@ -1,17 +1,33 @@
 {
   "raw": "⅓ cup lemon juice (2 lemons), plus extra for seasoning",
-  "expected": {
-    "item": "lemon juice",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "plus extra for seasoning"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus extra for seasoning"
+    },
+    "parse_ingredients": {
+      "item": "lemon juice",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "plus extra for seasoning"
+    }
   }
 }

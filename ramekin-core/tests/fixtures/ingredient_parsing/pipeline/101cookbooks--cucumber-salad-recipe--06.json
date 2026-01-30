@@ -1,13 +1,25 @@
 {
   "raw": "1  bunch scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
-  "expected": {
-    "item": "scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bunch"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "scallions, trimmed (including the root end and just 1/2 inch off the green tops), slice thinly on a sharp angle, soak in ice water for 20 minutes, drain well",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bunch"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon kosher salt (Diamond brand, use half for any other brand)",
-  "expected": {
-    "item": "kosher salt (Diamond brand, use half for any other brand)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kosher salt (Diamond brand, use half for any other brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "kosher salt (Diamond brand, use half for any other brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

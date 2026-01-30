@@ -1,8 +1,15 @@
 {
   "raw": "Fresh chopped parsley (for serving)",
-  "expected": {
-    "item": "Fresh chopped parsley",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Fresh chopped parsley",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "Fresh chopped parsley",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 parsnips, scrubbed and cut into big chunks",
-  "expected": {
-    "item": "parsnips",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "scrubbed and cut into big chunks"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "parsnips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "scrubbed and cut into big chunks"
+    },
+    "parse_ingredients": {
+      "item": "parsnips",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "scrubbed and cut into big chunks"
+    }
   }
 }

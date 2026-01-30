@@ -1,8 +1,15 @@
 {
   "raw": "Sliced or chopped avocado",
-  "expected": {
-    "item": "Sliced or chopped avocado",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Sliced or chopped avocado",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Sliced or chopped avocado",
+      "measurements": [],
+      "note": null
+    }
   }
 }

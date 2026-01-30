@@ -1,13 +1,25 @@
 {
   "raw": "1 pound fresh cremini mushrooms, sliced thin (see note)",
-  "expected": {
-    "item": "fresh cremini mushrooms",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced thin (see note)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced thin (see note)"
+    },
+    "parse_ingredients": {
+      "item": "fresh cremini mushrooms",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced thin (see note)"
+    }
   }
 }

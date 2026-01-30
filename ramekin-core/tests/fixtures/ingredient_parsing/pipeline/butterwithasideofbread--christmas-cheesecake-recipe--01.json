@@ -1,13 +1,25 @@
 {
   "raw": "18  mint oreo cookies (crushed)",
-  "expected": {
-    "item": "mint oreo cookies",
-    "measurements": [
-      {
-        "amount": "18",
-        "unit": null
-      }
-    ],
-    "note": "crushed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mint oreo cookies",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    },
+    "parse_ingredients": {
+      "item": "mint oreo cookies",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": null
+        }
+      ],
+      "note": "crushed"
+    }
   }
 }

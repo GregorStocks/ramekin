@@ -1,13 +1,25 @@
 {
   "raw": "6medium-sized vine tomatoes",
-  "expected": {
-    "item": "medium-sized vine tomatoes",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium-sized vine tomatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "medium-sized vine tomatoes",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2 cups chicken  (chopped and cooked )",
-  "expected": {
-    "item": "chicken",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "chopped and cooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chicken",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped and cooked"
+    },
+    "enrich_metric_weights": {
+      "item": "chicken",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "chopped and cooked"
+    }
   }
 }

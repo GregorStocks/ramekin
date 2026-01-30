@@ -1,13 +1,25 @@
 {
   "raw": "1 cup mayonnaise ( (preferably Best Foods/Hellmans brand))",
-  "expected": {
-    "item": "mayonnaise ( (preferably Best Foods/Hellmans brand)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "mayonnaise ( (preferably Best Foods/Hellmans brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "mayonnaise ( (preferably Best Foods/Hellmans brand)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

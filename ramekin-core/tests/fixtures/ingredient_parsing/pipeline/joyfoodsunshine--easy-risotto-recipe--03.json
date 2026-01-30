@@ -1,13 +1,25 @@
 {
   "raw": "½ cup onion (finely diced (about ½ small onion))",
-  "expected": {
-    "item": "onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely diced (about 1/2 small onion"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced (about 1/2 small onion"
+    },
+    "enrich_metric_weights": {
+      "item": "onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely diced (about 1/2 small onion"
+    }
   }
 }

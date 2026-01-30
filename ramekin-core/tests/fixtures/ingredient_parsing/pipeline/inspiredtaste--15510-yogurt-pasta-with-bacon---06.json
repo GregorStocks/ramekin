@@ -1,17 +1,37 @@
 {
   "raw": "3 ounces Parmigiano-Reggiano cheese, grated (about 3/4 cup), plus more for serving",
-  "expected": {
-    "item": "Parmigiano-Reggiano cheese, grated",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "oz"
-      },
-      {
-        "amount": "3/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Parmigiano-Reggiano cheese, grated",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Parmigiano-Reggiano cheese, grated",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "oz"
+        },
+        {
+          "amount": "3/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "85",
+          "unit": "g"
+        }
+      ],
+      "note": "plus more for serving"
+    }
   }
 }

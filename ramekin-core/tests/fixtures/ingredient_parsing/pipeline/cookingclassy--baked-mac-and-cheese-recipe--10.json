@@ -1,17 +1,37 @@
 {
   "raw": "2 cups (7.5 oz) Gruyere cheese, (shredded, divided (I like to use Murray&amp;#x27;s))",
-  "expected": {
-    "item": "Gruyere cheese",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "7.5",
-        "unit": "oz"
-      }
-    ],
-    "note": "shredded, divided (I like to use Murray's"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "7.5",
+          "unit": "oz"
+        }
+      ],
+      "note": "shredded, divided (I like to use Murray's"
+    },
+    "enrich_metric_weights": {
+      "item": "Gruyere cheese",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "7.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "213",
+          "unit": "g"
+        }
+      ],
+      "note": "shredded, divided (I like to use Murray's"
+    }
   }
 }

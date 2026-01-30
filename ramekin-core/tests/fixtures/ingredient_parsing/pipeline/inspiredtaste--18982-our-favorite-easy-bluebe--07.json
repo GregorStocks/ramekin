@@ -1,17 +1,33 @@
 {
   "raw": "1/3 cup (80ml) milk or non-dairy milk, use more as needed",
-  "expected": {
-    "item": "milk or non-dairy milk",
-    "measurements": [
-      {
-        "amount": "1/3",
-        "unit": "cup"
-      },
-      {
-        "amount": "80",
-        "unit": "ml"
-      }
-    ],
-    "note": "use more as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "milk or non-dairy milk",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "note": "use more as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "milk or non-dairy milk",
+      "measurements": [
+        {
+          "amount": "1/3",
+          "unit": "cup"
+        },
+        {
+          "amount": "80",
+          "unit": "ml"
+        }
+      ],
+      "note": "use more as needed"
+    }
   }
 }

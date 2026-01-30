@@ -1,13 +1,25 @@
 {
   "raw": "½  teaspoon Kashmiri red chili powder  ((or paprika optional) )",
-  "expected": {
-    "item": "Kashmiri red chili powder",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or paprika optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Kashmiri red chili powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or paprika optional"
+    },
+    "parse_ingredients": {
+      "item": "Kashmiri red chili powder",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or paprika optional"
+    }
   }
 }

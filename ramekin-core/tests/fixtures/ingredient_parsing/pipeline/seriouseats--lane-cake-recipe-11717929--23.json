@@ -1,21 +1,41 @@
 {
   "raw": "4 large egg whites (4 1/4 ounces; 120 g)",
-  "expected": {
-    "item": "egg whites",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "large"
-      },
-      {
-        "amount": "4 1/4",
-        "unit": "oz"
-      },
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        },
+        {
+          "amount": "4 1/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "egg whites",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "large"
+        },
+        {
+          "amount": "4 1/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

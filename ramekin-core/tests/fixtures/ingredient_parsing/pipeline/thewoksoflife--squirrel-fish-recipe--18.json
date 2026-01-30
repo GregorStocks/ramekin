@@ -1,13 +1,25 @@
 {
   "raw": "6 cups peanut oil or canola oil (for frying)",
-  "expected": {
-    "item": "peanut oil or canola oil (for frying)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "peanut oil or canola oil (for frying)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "peanut oil or canola oil (for frying)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 cloves garlic (finely chppped or minced)",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "clove"
-      }
-    ],
-    "note": "finely chppped or minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": "finely chppped or minced"
+    },
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "clove"
+        }
+      ],
+      "note": "finely chppped or minced"
+    }
   }
 }

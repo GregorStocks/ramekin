@@ -1,8 +1,15 @@
 {
   "raw": "Whole milk, as needed",
-  "expected": {
-    "item": "Whole milk",
-    "measurements": [],
-    "note": "as needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Whole milk",
+      "measurements": [],
+      "note": "as needed"
+    },
+    "parse_ingredients": {
+      "item": "Whole milk",
+      "measurements": [],
+      "note": "as needed"
+    }
   }
 }

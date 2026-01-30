@@ -1,13 +1,25 @@
 {
   "raw": "1 clove garlic, lightly crushed, but kept intact",
-  "expected": {
-    "item": "garlic, lightly crushed, but kept intact",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "clove"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic, lightly crushed, but kept intact",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garlic, lightly crushed, but kept intact",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": null
+    }
   }
 }

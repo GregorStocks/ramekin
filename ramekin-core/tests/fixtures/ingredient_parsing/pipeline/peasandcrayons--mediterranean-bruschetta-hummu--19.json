@@ -1,8 +1,15 @@
 {
   "raw": "sweet mini peppers",
-  "expected": {
-    "item": "sweet mini peppers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet mini peppers",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet mini peppers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

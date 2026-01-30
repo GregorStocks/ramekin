@@ -1,8 +1,15 @@
 {
   "raw": "blueberry, optional",
-  "expected": {
-    "item": "blueberry",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "blueberry",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "blueberry",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

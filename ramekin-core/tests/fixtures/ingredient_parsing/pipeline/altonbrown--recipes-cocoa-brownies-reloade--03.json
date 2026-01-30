@@ -1,13 +1,25 @@
 {
   "raw": "2 cups natural cocoa powder ((not Dutch-process))",
-  "expected": {
-    "item": "natural cocoa powder (not Dutch-process)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "natural cocoa powder (not Dutch-process)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "natural cocoa powder (not Dutch-process)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

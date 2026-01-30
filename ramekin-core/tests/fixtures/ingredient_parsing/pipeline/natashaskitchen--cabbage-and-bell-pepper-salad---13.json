@@ -1,13 +1,25 @@
 {
   "raw": "2  heaping Тbsp chopped fresh parsley (optional)",
-  "expected": {
-    "item": "Тbsp chopped fresh parsley",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "heaping"
-      }
-    ],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Тbsp chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping"
+        }
+      ],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Тbsp chopped fresh parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "heaping"
+        }
+      ],
+      "note": "optional"
+    }
   }
 }

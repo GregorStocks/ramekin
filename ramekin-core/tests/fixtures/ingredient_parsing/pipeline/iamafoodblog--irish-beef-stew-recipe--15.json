@@ -1,8 +1,15 @@
 {
   "raw": "mashed potatoes, if desired",
-  "expected": {
-    "item": "mashed potatoes, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "mashed potatoes, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "mashed potatoes, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

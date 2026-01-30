@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup Marcona almonds or toasted almond slices",
-  "expected": {
-    "item": "Marcona almonds or toasted almond slices",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Marcona almonds or toasted almond slices",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Marcona almonds or toasted almond slices",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

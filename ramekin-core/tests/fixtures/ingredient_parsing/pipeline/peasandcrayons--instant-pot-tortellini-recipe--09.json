@@ -1,13 +1,29 @@
 {
   "raw": "9 oz uncooked refrigerated tortellini (any variety; I used cheese filled)",
-  "expected": {
-    "item": "uncooked refrigerated tortellini (any variety; I used cheese filled)",
-    "measurements": [
-      {
-        "amount": "9",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "uncooked refrigerated tortellini (any variety; I used cheese filled)",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "uncooked refrigerated tortellini (any variety; I used cheese filled)",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "oz"
+        },
+        {
+          "amount": "255",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

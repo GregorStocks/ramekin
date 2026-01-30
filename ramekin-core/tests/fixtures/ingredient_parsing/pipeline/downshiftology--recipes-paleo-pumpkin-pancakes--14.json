@@ -1,8 +1,15 @@
 {
   "raw": "chopped pecans (to sprinkle on top)",
-  "expected": {
-    "item": "chopped pecans (to sprinkle on top)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped pecans (to sprinkle on top)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped pecans (to sprinkle on top)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

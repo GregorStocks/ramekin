@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup crushed tomatoes (pureed or slightly chunky)",
-  "expected": {
-    "item": "crushed tomatoes (pureed or slightly chunky)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed tomatoes (pureed or slightly chunky)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "crushed tomatoes (pureed or slightly chunky)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

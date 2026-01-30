@@ -1,17 +1,33 @@
 {
   "raw": "2  boneless, skinless chicken breasts (1 to 1¼ lbs/454 to 567 g)",
-  "expected": {
-    "item": "boneless, skinless chicken breasts",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      },
-      {
-        "amount": "1 to 1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless, skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless, skinless chicken breasts",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        },
+        {
+          "amount": "1 to 1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

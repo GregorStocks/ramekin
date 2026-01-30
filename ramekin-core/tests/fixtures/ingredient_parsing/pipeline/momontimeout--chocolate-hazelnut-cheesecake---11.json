@@ -1,13 +1,25 @@
 {
   "raw": "2 Tbls International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
-  "expected": {
-    "item": "Tbls International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Tbls International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Tbls International Delight Toasted Hazelnut Creamer Fat Free and Sugar Free creamer",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

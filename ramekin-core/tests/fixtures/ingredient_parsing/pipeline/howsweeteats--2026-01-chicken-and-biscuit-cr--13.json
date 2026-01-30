@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons cold butter, (cut into tiny pieces)",
-  "expected": {
-    "item": "cold butter, (cut into tiny pieces)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold butter, (cut into tiny pieces)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold butter, (cut into tiny pieces)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

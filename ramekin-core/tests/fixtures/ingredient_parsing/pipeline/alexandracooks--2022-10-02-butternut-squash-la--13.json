@@ -1,13 +1,29 @@
 {
   "raw": "8 ounces low-moisture, whole milk mozzarella, pulled into small pieces",
-  "expected": {
-    "item": "low-moisture, whole milk mozzarella, pulled into small pieces",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "low-moisture, whole milk mozzarella, pulled into small pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "low-moisture, whole milk mozzarella, pulled into small pieces",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

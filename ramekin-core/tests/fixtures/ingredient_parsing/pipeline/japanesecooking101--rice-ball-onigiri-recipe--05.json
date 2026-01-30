@@ -1,17 +1,33 @@
 {
   "raw": "4 sheets Nori (roasted seaweed) (small)",
-  "expected": {
-    "item": "sheets Nori",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": null,
-        "unit": "small"
-      }
-    ],
-    "note": "roasted seaweed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sheets Nori",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "roasted seaweed"
+    },
+    "enrich_metric_weights": {
+      "item": "sheets Nori",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": null,
+          "unit": "small"
+        }
+      ],
+      "note": "roasted seaweed"
+    }
   }
 }

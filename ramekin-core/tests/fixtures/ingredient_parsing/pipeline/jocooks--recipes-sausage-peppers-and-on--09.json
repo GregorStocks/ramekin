@@ -1,13 +1,25 @@
 {
   "raw": "4  hoagie rolls (split lenthwise)",
-  "expected": {
-    "item": "hoagie rolls (split lenthwise)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "hoagie rolls (split lenthwise)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "hoagie rolls (split lenthwise)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

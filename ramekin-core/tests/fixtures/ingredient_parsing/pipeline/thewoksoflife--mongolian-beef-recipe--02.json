@@ -1,13 +1,25 @@
 {
   "raw": "2 teaspoons neutral oil ((such as vegetable, canola, or avocado oil))",
-  "expected": {
-    "item": "neutral oil (such as vegetable, canola, or avocado oil)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "neutral oil (such as vegetable, canola, or avocado oil)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "neutral oil (such as vegetable, canola, or avocado oil)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

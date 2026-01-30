@@ -1,17 +1,33 @@
 {
   "raw": "1/2 cup (30g) breadcrumbs",
-  "expected": {
-    "item": "breadcrumbs",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "30",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "breadcrumbs",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "30",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

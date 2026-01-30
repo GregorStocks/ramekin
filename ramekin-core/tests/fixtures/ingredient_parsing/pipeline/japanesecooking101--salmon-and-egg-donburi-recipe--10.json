@@ -1,8 +1,15 @@
 {
   "raw": "green onions (thinly sliced)",
-  "expected": {
-    "item": "green onions",
-    "measurements": [],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "green onions",
+      "measurements": [],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "green onions",
+      "measurements": [],
+      "note": "thinly sliced"
+    }
   }
 }

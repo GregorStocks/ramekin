@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup chickpea flour (also known as garbanzo bean flour or besan flour)",
-  "expected": {
-    "item": "chickpea flour (also known as garbanzo bean flour or besan flour)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chickpea flour (also known as garbanzo bean flour or besan flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chickpea flour (also known as garbanzo bean flour or besan flour)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

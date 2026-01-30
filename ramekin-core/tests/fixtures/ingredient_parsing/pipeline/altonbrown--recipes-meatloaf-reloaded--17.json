@@ -1,13 +1,29 @@
 {
   "raw": "18 ounces chuck roast, trimmed of excess gristle and silver skin, cut into 1 1/2-inch cubes and chilled",
-  "expected": {
-    "item": "chuck roast, trimmed of excess gristle and silver skin",
-    "measurements": [
-      {
-        "amount": "18",
-        "unit": "oz"
-      }
-    ],
-    "note": "cut into 1 1/2-inch cubes and chilled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chuck roast, trimmed of excess gristle and silver skin",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "oz"
+        }
+      ],
+      "note": "cut into 1 1/2-inch cubes and chilled"
+    },
+    "enrich_metric_weights": {
+      "item": "chuck roast, trimmed of excess gristle and silver skin",
+      "measurements": [
+        {
+          "amount": "18",
+          "unit": "oz"
+        },
+        {
+          "amount": "510",
+          "unit": "g"
+        }
+      ],
+      "note": "cut into 1 1/2-inch cubes and chilled"
+    }
   }
 }

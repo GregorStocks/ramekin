@@ -1,8 +1,15 @@
 {
   "raw": "diced or thinly sliced bell pepper",
-  "expected": {
-    "item": "diced or thinly sliced bell pepper",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced or thinly sliced bell pepper",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced or thinly sliced bell pepper",
+      "measurements": [],
+      "note": null
+    }
   }
 }

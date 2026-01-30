@@ -1,8 +1,15 @@
 {
   "raw": "whipped cream",
-  "expected": {
-    "item": "whipped cream",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whipped cream",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "whipped cream",
+      "measurements": [],
+      "note": null
+    }
   }
 }

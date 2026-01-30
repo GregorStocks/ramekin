@@ -1,13 +1,25 @@
 {
   "raw": "1 large russet potato, peeled",
-  "expected": {
-    "item": "russet potato",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "russet potato",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

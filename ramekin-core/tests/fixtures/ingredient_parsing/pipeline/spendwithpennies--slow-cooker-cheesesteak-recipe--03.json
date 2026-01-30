@@ -1,13 +1,29 @@
 {
   "raw": "10.5 ounces beef broth (low sodium)",
-  "expected": {
-    "item": "beef broth (low sodium)",
-    "measurements": [
-      {
-        "amount": "10.5",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "beef broth (low sodium)",
+      "measurements": [
+        {
+          "amount": "10.5",
+          "unit": "oz"
+        },
+        {
+          "amount": "298",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "beef broth (low sodium)",
+      "measurements": [
+        {
+          "amount": "10.5",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

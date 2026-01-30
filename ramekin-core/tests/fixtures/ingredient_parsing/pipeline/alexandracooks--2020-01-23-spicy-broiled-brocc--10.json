@@ -1,8 +1,15 @@
 {
   "raw": "flaky sea salt, such as Maldon, for finishing, optional",
-  "expected": {
-    "item": "flaky sea salt, such as Maldon, for finishing",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "flaky sea salt, such as Maldon, for finishing",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "flaky sea salt, such as Maldon, for finishing",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

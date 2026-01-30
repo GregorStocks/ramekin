@@ -1,13 +1,25 @@
 {
   "raw": "1  roma tomato ((plum), seeded and chopped)",
-  "expected": {
-    "item": "roma tomato (plum)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "seeded and chopped)"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "roma tomato (plum)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped)"
+    },
+    "enrich_metric_weights": {
+      "item": "roma tomato (plum)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "seeded and chopped)"
+    }
   }
 }

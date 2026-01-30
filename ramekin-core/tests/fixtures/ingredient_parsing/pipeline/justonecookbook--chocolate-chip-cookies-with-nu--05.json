@@ -1,13 +1,25 @@
 {
   "raw": "½ tsp coarse sea salt ((plus more for sprinkling))",
-  "expected": {
-    "item": "coarse sea salt",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for sprinkling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "coarse sea salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for sprinkling"
+    },
+    "enrich_metric_weights": {
+      "item": "coarse sea salt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for sprinkling"
+    }
   }
 }

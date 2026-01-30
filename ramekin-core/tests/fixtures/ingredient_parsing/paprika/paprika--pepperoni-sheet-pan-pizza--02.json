@@ -1,8 +1,15 @@
 {
   "raw": "Dough:",
-  "expected": {
-    "item": "Dough:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Dough:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Dough:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

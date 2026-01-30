@@ -1,13 +1,25 @@
 {
   "raw": "2 cups low-fat Milk (, or more if needed)",
-  "expected": {
-    "item": "low-fat Milk",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or more if needed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "low-fat Milk",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more if needed"
+    },
+    "parse_ingredients": {
+      "item": "low-fat Milk",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or more if needed"
+    }
   }
 }

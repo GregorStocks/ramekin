@@ -1,13 +1,25 @@
 {
   "raw": "1  box (2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions)",
-  "expected": {
-    "item": "1  box (2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "box"
-      }
-    ],
-    "note": "2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1  box (2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": "2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions"
+    },
+    "enrich_metric_weights": {
+      "item": "1  box (2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "box"
+        }
+      ],
+      "note": "2 sheets Pepperidge Farm Puff Pastry, thawed according to package instructions"
+    }
   }
 }

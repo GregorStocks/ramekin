@@ -1,13 +1,25 @@
 {
   "raw": "2-1/2 teaspoons caraway seeds, divided",
-  "expected": {
-    "item": "caraway seeds",
-    "measurements": [
-      {
-        "amount": "2-1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "caraway seeds",
+      "measurements": [
+        {
+          "amount": "2-1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "caraway seeds",
+      "measurements": [
+        {
+          "amount": "2-1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "12 tbsp. reduced fat shredded cheddar cheese",
-  "expected": {
-    "item": "reduced fat shredded cheddar cheese",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "reduced fat shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "reduced fat shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

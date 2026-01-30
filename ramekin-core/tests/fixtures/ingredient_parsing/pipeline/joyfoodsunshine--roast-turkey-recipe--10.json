@@ -1,13 +1,25 @@
 {
   "raw": "1 gallon ice water",
-  "expected": {
-    "item": "ice water",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "gallon"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ice water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ice water",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "gallon"
+        }
+      ],
+      "note": null
+    }
   }
 }

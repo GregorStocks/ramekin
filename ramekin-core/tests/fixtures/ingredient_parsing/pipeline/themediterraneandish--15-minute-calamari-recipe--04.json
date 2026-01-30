@@ -1,13 +1,25 @@
 {
   "raw": "1.5 lb calamari, sliced into rings",
-  "expected": {
-    "item": "calamari",
-    "measurements": [
-      {
-        "amount": "1.5",
-        "unit": "lb"
-      }
-    ],
-    "note": "sliced into rings"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "calamari",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced into rings"
+    },
+    "enrich_metric_weights": {
+      "item": "calamari",
+      "measurements": [
+        {
+          "amount": "1.5",
+          "unit": "lb"
+        }
+      ],
+      "note": "sliced into rings"
+    }
   }
 }

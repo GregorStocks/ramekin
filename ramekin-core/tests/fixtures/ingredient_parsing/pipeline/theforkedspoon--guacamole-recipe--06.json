@@ -1,13 +1,25 @@
 {
   "raw": "1 clove fresh garlic (minced, optional)",
-  "expected": {
-    "item": "fresh garlic",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "clove"
-      }
-    ],
-    "note": "minced, optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "minced, optional"
+    },
+    "parse_ingredients": {
+      "item": "fresh garlic",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "clove"
+        }
+      ],
+      "note": "minced, optional"
+    }
   }
 }

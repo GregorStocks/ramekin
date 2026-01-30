@@ -1,8 +1,15 @@
 {
   "raw": "Warm cooked white rice for serving",
-  "expected": {
-    "item": "Warm cooked white rice for serving",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Warm cooked white rice for serving",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Warm cooked white rice for serving",
+      "measurements": [],
+      "note": null
+    }
   }
 }

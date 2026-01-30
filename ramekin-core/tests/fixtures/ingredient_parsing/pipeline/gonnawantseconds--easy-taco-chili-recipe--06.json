@@ -1,13 +1,25 @@
 {
   "raw": "1  Can (7 Ounces Diced Green Chilies)",
-  "expected": {
-    "item": "1  Can (7 Ounces Diced Green Chilies)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      }
-    ],
-    "note": "7 Ounces Diced Green Chilies"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1  Can (7 Ounces Diced Green Chilies)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": "7 Ounces Diced Green Chilies"
+    },
+    "enrich_metric_weights": {
+      "item": "1  Can (7 Ounces Diced Green Chilies)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        }
+      ],
+      "note": "7 Ounces Diced Green Chilies"
+    }
   }
 }

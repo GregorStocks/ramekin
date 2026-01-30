@@ -1,8 +1,15 @@
 {
   "raw": "seaweed strips, to garnish",
-  "expected": {
-    "item": "seaweed strips, to garnish",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "seaweed strips, to garnish",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "seaweed strips, to garnish",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Cornstarch, to prevent sticking",
-  "expected": {
-    "item": "Cornstarch, to prevent sticking",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cornstarch, to prevent sticking",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cornstarch, to prevent sticking",
+      "measurements": [],
+      "note": null
+    }
   }
 }

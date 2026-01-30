@@ -1,13 +1,25 @@
 {
   "raw": "40 small pickling cucumbers",
-  "expected": {
-    "item": "pickling cucumbers",
-    "measurements": [
-      {
-        "amount": "40",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pickling cucumbers",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pickling cucumbers",
+      "measurements": [
+        {
+          "amount": "40",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

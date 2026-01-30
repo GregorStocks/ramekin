@@ -1,13 +1,25 @@
 {
   "raw": "0.5 teaspoon ground pepper, divided",
-  "expected": {
-    "item": "ground pepper",
-    "measurements": [
-      {
-        "amount": "0.5",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground pepper",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "ground pepper",
+      "measurements": [
+        {
+          "amount": "0.5",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

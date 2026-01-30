@@ -1,8 +1,15 @@
 {
   "raw": "Canola, safflower, peanut or other high-heat oil, for deep-frying",
-  "expected": {
-    "item": "Canola, safflower, peanut or other high-heat oil, for deep-frying",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Canola, safflower, peanut or other high-heat oil, for deep-frying",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Canola, safflower, peanut or other high-heat oil, for deep-frying",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup medium white onion (sliced thin)",
-  "expected": {
-    "item": "medium white onion",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "sliced thin"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "medium white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sliced thin"
+    },
+    "parse_ingredients": {
+      "item": "medium white onion",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sliced thin"
+    }
   }
 }

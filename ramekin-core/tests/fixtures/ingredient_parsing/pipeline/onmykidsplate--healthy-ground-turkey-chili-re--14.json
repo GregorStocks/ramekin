@@ -1,13 +1,25 @@
 {
   "raw": "1 whole bay leaf (dried)",
-  "expected": {
-    "item": "whole bay leaf",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole bay leaf",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    },
+    "enrich_metric_weights": {
+      "item": "whole bay leaf",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "dried"
+    }
   }
 }

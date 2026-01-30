@@ -1,8 +1,15 @@
 {
   "raw": "fine sea salt (optional (to taste))",
-  "expected": {
-    "item": "fine sea salt",
-    "measurements": [],
-    "note": "optional (to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fine sea salt",
+      "measurements": [],
+      "note": "optional (to taste"
+    },
+    "parse_ingredients": {
+      "item": "fine sea salt",
+      "measurements": [],
+      "note": "optional (to taste"
+    }
   }
 }

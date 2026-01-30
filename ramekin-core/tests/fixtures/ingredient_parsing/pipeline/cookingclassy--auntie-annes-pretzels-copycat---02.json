@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 Tbsp active dry yeast ((2 packets))",
-  "expected": {
-    "item": "active dry yeast",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "active dry yeast",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "active dry yeast",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4-8 rosemary sprigs, lightly crushed",
-  "expected": {
-    "item": "rosemary sprigs",
-    "measurements": [
-      {
-        "amount": "4-8",
-        "unit": null
-      }
-    ],
-    "note": "lightly crushed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "4-8",
+          "unit": null
+        }
+      ],
+      "note": "lightly crushed"
+    },
+    "parse_ingredients": {
+      "item": "rosemary sprigs",
+      "measurements": [
+        {
+          "amount": "4-8",
+          "unit": null
+        }
+      ],
+      "note": "lightly crushed"
+    }
   }
 }

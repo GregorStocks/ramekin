@@ -1,13 +1,25 @@
 {
   "raw": "2 medium bell peppers (any color, cut into 1 inch pieces)",
-  "expected": {
-    "item": "bell peppers (any color, cut into 1 inch pieces)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bell peppers (any color, cut into 1 inch pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "bell peppers (any color, cut into 1 inch pieces)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

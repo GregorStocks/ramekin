@@ -1,13 +1,25 @@
 {
   "raw": "1 cup confectioners' sugar (sifted)",
-  "expected": {
-    "item": "confectioners' sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "confectioners' sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    },
+    "parse_ingredients": {
+      "item": "confectioners' sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "6 drops red food coloring",
-  "expected": {
-    "item": "red food coloring",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "drop"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red food coloring",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "red food coloring",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "drop"
+        }
+      ],
+      "note": null
+    }
   }
 }

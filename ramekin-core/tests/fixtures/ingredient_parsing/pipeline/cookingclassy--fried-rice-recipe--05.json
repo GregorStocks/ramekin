@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp sriracha, (or more to taste)",
-  "expected": {
-    "item": "sriracha",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sriracha",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "sriracha",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or more to taste"
+    }
   }
 }

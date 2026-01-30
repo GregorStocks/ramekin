@@ -1,8 +1,15 @@
 {
   "raw": "Chocolate syrup",
-  "expected": {
-    "item": "Chocolate syrup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chocolate syrup",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Chocolate syrup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

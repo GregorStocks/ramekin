@@ -1,8 +1,15 @@
 {
   "raw": "Mentsuyu",
-  "expected": {
-    "item": "Mentsuyu",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Mentsuyu",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Mentsuyu",
+      "measurements": [],
+      "note": null
+    }
   }
 }

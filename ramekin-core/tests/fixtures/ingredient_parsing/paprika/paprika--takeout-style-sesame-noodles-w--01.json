@@ -1,8 +1,15 @@
 {
   "raw": "Serves 4, generously, and up to double that if served as shown, with lots of cucumber, peanuts and herbs",
-  "expected": {
-    "item": "Serves 4, generously, and up to double that if served as shown, with lots of cucumber, peanuts and herbs",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Serves 4, generously, and up to double that if served as shown, with lots of cucumber, peanuts and herbs",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Serves 4, generously, and up to double that if served as shown, with lots of cucumber, peanuts and herbs",
+      "measurements": [],
+      "note": null
+    }
   }
 }

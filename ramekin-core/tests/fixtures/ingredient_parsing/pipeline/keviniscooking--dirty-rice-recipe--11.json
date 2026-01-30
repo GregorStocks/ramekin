@@ -1,13 +1,25 @@
 {
   "raw": "1 ½ cups basmati white rice ((uncooked))",
-  "expected": {
-    "item": "basmati white rice",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "basmati white rice",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "enrich_metric_weights": {
+      "item": "basmati white rice",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

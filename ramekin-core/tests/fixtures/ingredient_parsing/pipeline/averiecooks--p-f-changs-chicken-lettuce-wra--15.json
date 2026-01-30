@@ -1,8 +1,15 @@
 {
   "raw": "butter lettuce leaves (for serving)",
-  "expected": {
-    "item": "butter lettuce leaves",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "butter lettuce leaves",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "parse_ingredients": {
+      "item": "butter lettuce leaves",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

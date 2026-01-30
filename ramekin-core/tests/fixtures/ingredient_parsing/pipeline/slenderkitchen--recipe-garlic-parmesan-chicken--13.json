@@ -1,13 +1,29 @@
 {
   "raw": "14 oz canned fire roasted diced tomatoes, drained",
-  "expected": {
-    "item": "canned fire roasted diced tomatoes",
-    "measurements": [
-      {
-        "amount": "14",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canned fire roasted diced tomatoes",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        },
+        {
+          "amount": "397",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    },
+    "parse_ingredients": {
+      "item": "canned fire roasted diced tomatoes",
+      "measurements": [
+        {
+          "amount": "14",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

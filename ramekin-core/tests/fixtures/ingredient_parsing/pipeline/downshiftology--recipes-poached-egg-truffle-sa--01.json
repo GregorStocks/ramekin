@@ -1,13 +1,25 @@
 {
   "raw": "3  large zucchini",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "large"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1  garlic clove (pressed or grated)",
-  "expected": {
-    "item": "garlic clove",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "pressed or grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "pressed or grated"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "pressed or grated"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 lb Green beans (fresh or frozen (trim them or buy pre-trimmed if they are fresh))",
-  "expected": {
-    "item": "Green beans",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "fresh or frozen (trim them or buy pre-trimmed if they are fresh"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Green beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or frozen (trim them or buy pre-trimmed if they are fresh"
+    },
+    "enrich_metric_weights": {
+      "item": "Green beans",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "fresh or frozen (trim them or buy pre-trimmed if they are fresh"
+    }
   }
 }

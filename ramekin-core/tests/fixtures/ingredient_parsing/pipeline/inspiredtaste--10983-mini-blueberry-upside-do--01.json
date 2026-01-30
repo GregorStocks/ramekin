@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons unsalted butter, cut into 24 small pieces",
-  "expected": {
-    "item": "unsalted butter, cut into 24 small pieces",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter, cut into 24 small pieces",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter, cut into 24 small pieces",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

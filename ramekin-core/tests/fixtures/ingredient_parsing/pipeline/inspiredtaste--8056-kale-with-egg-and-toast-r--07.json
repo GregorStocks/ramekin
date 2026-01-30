@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4 cups chicken or stock",
-  "expected": {
-    "item": "chicken or stock",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken or stock",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken or stock",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

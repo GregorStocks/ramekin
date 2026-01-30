@@ -1,8 +1,15 @@
 {
   "raw": "Tahini Sauce With Garlic and Lemon (optional)",
-  "expected": {
-    "item": "Tahini Sauce With Garlic and Lemon",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Tahini Sauce With Garlic and Lemon",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Tahini Sauce With Garlic and Lemon",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

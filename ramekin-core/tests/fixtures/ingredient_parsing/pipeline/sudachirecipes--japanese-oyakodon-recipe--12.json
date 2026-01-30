@@ -1,8 +1,15 @@
 {
   "raw": "kizami nori (shredded nori) (optional garnish)",
-  "expected": {
-    "item": "kizami nori (optional garnish)",
-    "measurements": [],
-    "note": "shredded nori"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "kizami nori (optional garnish)",
+      "measurements": [],
+      "note": "shredded nori"
+    },
+    "enrich_metric_weights": {
+      "item": "kizami nori (optional garnish)",
+      "measurements": [],
+      "note": "shredded nori"
+    }
   }
 }

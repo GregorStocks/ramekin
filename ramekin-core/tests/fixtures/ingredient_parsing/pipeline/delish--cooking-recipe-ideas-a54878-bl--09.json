@@ -1,8 +1,15 @@
 {
   "raw": "Caramel, for drizzling",
-  "expected": {
-    "item": "Caramel, for drizzling",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Caramel, for drizzling",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Caramel, for drizzling",
+      "measurements": [],
+      "note": null
+    }
   }
 }

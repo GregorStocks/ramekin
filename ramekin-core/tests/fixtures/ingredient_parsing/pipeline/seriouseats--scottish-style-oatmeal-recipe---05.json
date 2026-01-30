@@ -1,8 +1,15 @@
 {
   "raw": "Flaky sea salt, for sprinkling (optional)",
-  "expected": {
-    "item": "Flaky sea salt, for sprinkling",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Flaky sea salt, for sprinkling",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "Flaky sea salt, for sprinkling",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

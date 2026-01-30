@@ -1,13 +1,25 @@
 {
   "raw": "1 pound spaghetti (uncooked)",
-  "expected": {
-    "item": "spaghetti",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "enrich_metric_weights": {
+      "item": "spaghetti",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

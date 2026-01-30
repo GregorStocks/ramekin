@@ -1,13 +1,29 @@
 {
   "raw": "30 ounces ricotta cheese",
-  "expected": {
-    "item": "ricotta cheese",
-    "measurements": [
-      {
-        "amount": "30",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ricotta cheese",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ricotta cheese",
+      "measurements": [
+        {
+          "amount": "30",
+          "unit": "oz"
+        },
+        {
+          "amount": "850",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

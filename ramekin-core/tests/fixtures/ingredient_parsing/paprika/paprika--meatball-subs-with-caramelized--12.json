@@ -1,13 +1,25 @@
 {
   "raw": "4 cups prepared tomato sauce (plus extra if you like a lot of extra sauce)",
-  "expected": {
-    "item": "prepared tomato sauce (plus extra if you like a lot of extra sauce)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "prepared tomato sauce (plus extra if you like a lot of extra sauce)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "prepared tomato sauce (plus extra if you like a lot of extra sauce)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

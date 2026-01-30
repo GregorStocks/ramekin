@@ -1,17 +1,33 @@
 {
   "raw": "1 &amp;amp; 1/4 cups (250g) granulated sugar (divided)",
-  "expected": {
-    "item": "& 1/4 cups granulated sugar",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      },
-      {
-        "amount": "250",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "& 1/4 cups granulated sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "& 1/4 cups granulated sugar",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "250",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

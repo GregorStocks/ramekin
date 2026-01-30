@@ -1,13 +1,25 @@
 {
   "raw": "1 large or 2 thin carrots, peeled",
-  "expected": {
-    "item": "or 2 thin carrots",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "or 2 thin carrots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    },
+    "parse_ingredients": {
+      "item": "or 2 thin carrots",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled"
+    }
   }
 }

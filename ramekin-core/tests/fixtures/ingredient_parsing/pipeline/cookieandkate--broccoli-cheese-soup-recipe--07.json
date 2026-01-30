@@ -1,21 +1,41 @@
 {
   "raw": "2 pounds broccoli with stalks (3 large or 4 medium)",
-  "expected": {
-    "item": "broccoli with stalks",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      },
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "broccoli with stalks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "broccoli with stalks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        },
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1   sprig    thyme",
-  "expected": {
-    "item": "thyme",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "sprig"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": null
+    }
   }
 }

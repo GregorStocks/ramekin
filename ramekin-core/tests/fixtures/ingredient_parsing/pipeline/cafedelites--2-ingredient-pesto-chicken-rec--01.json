@@ -1,13 +1,25 @@
 {
   "raw": "4  boneless chicken breast fillets (skinless)",
-  "expected": {
-    "item": "boneless chicken breast fillets (skinless)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "boneless chicken breast fillets (skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "boneless chicken breast fillets (skinless)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

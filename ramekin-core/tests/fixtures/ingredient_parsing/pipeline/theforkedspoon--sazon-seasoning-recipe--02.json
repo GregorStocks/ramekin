@@ -1,13 +1,25 @@
 {
   "raw": "1 tablespoon ground annatto (or achiote, see notes)",
-  "expected": {
-    "item": "ground annatto (or achiote, see notes)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "ground annatto (or achiote, see notes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "ground annatto (or achiote, see notes)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "1 3/4 oz raw shelled pistachios",
-  "expected": {
-    "item": "raw shelled pistachios",
-    "measurements": [
-      {
-        "amount": "1 3/4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "raw shelled pistachios",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "raw shelled pistachios",
+      "measurements": [
+        {
+          "amount": "1 3/4",
+          "unit": "oz"
+        },
+        {
+          "amount": "50",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

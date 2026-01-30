@@ -1,13 +1,25 @@
 {
   "raw": "3 hard or soft boiled eggs, thinly sliced or cut into wedges",
-  "expected": {
-    "item": "hard or soft boiled eggs",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced or cut into wedges"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hard or soft boiled eggs",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced or cut into wedges"
+    },
+    "enrich_metric_weights": {
+      "item": "hard or soft boiled eggs",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced or cut into wedges"
+    }
   }
 }

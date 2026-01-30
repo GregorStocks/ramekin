@@ -1,13 +1,25 @@
 {
   "raw": "1 stalk celery, cut into 1-inch pieces",
-  "expected": {
-    "item": "celery, cut into 1-inch pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stalk"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "celery, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "celery, cut into 1-inch pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stalk"
+        }
+      ],
+      "note": null
+    }
   }
 }

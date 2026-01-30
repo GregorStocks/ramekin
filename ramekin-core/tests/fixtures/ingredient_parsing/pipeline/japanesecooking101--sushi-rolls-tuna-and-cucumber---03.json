@@ -1,8 +1,15 @@
 {
   "raw": "Japanese cucumber (or Persian or English)",
-  "expected": {
-    "item": "Japanese cucumber (or Persian or English)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Japanese cucumber (or Persian or English)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Japanese cucumber (or Persian or English)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

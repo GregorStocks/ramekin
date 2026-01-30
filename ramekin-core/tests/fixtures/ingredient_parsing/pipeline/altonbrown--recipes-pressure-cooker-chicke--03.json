@@ -1,13 +1,25 @@
 {
   "raw": "4 stalks celery, 2 halved crosswise and 2 cut into half-moons, with the leaves reserved for garnish",
-  "expected": {
-    "item": "celery, 2 halved crosswise and 2 cut into half-moons",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "stalk"
-      }
-    ],
-    "note": "with the leaves reserved for garnish"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "celery, 2 halved crosswise and 2 cut into half-moons",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stalk"
+        }
+      ],
+      "note": "with the leaves reserved for garnish"
+    },
+    "enrich_metric_weights": {
+      "item": "celery, 2 halved crosswise and 2 cut into half-moons",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stalk"
+        }
+      ],
+      "note": "with the leaves reserved for garnish"
+    }
   }
 }

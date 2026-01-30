@@ -1,13 +1,25 @@
 {
   "raw": "200 grams Thai green eggplant ((trimmed and quartered))",
-  "expected": {
-    "item": "Thai green eggplant",
-    "measurements": [
-      {
-        "amount": "200",
-        "unit": "g"
-      }
-    ],
-    "note": "trimmed and quartered"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Thai green eggplant",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and quartered"
+    },
+    "enrich_metric_weights": {
+      "item": "Thai green eggplant",
+      "measurements": [
+        {
+          "amount": "200",
+          "unit": "g"
+        }
+      ],
+      "note": "trimmed and quartered"
+    }
   }
 }

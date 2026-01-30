@@ -1,8 +1,15 @@
 {
   "raw": "Roasted Red Peppers",
-  "expected": {
-    "item": "Roasted Red Peppers",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Roasted Red Peppers",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Roasted Red Peppers",
+      "measurements": [],
+      "note": null
+    }
   }
 }

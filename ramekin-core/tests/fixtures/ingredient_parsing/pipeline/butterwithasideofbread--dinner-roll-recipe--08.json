@@ -1,13 +1,25 @@
 {
   "raw": "1  egg whisked with 1 tsp water (for textured top)",
-  "expected": {
-    "item": "egg whisked with 1 tsp water (for textured top)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "egg whisked with 1 tsp water (for textured top)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "egg whisked with 1 tsp water (for textured top)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

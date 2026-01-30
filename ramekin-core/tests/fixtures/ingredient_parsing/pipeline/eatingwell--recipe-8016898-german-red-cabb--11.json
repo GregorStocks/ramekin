@@ -1,8 +1,15 @@
 {
   "raw": "Ground pepper to taste",
-  "expected": {
-    "item": "Ground pepper to taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Ground pepper to taste",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Ground pepper to taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

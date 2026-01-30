@@ -1,13 +1,25 @@
 {
   "raw": "120 g carrot",
-  "expected": {
-    "item": "carrot",
-    "measurements": [
-      {
-        "amount": "120",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "carrot",
+      "measurements": [
+        {
+          "amount": "120",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

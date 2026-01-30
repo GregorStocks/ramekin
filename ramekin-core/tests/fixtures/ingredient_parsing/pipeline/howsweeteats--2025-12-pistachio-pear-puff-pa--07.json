@@ -1,8 +1,15 @@
 {
   "raw": "hot honey, (for drizzling)",
-  "expected": {
-    "item": "hot honey, (for drizzling)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "hot honey, (for drizzling)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "hot honey, (for drizzling)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

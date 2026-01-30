@@ -1,17 +1,33 @@
 {
   "raw": "1 teaspoon Baking Powder ((5g) )",
-  "expected": {
-    "item": "Baking Powder",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      },
-      {
-        "amount": "5",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Baking Powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Baking Powder",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

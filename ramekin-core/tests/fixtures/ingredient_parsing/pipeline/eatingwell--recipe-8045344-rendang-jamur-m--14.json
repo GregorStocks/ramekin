@@ -1,13 +1,25 @@
 {
   "raw": "4 makrut lime leaves (see Notes; optional)",
-  "expected": {
-    "item": "makrut lime leaves",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "see Notes; optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "makrut lime leaves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "see Notes; optional"
+    },
+    "enrich_metric_weights": {
+      "item": "makrut lime leaves",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "see Notes; optional"
+    }
   }
 }

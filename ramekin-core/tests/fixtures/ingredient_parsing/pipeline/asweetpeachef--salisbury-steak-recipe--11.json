@@ -1,13 +1,25 @@
 {
   "raw": "1 lb. red potatoes,  (diced (approx. 1 lb))",
-  "expected": {
-    "item": "red potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "diced (approx. 1 lb"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced (approx. 1 lb"
+    },
+    "enrich_metric_weights": {
+      "item": "red potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "diced (approx. 1 lb"
+    }
   }
 }

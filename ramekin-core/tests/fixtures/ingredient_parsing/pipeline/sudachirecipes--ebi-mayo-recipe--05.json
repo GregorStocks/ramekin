@@ -1,13 +1,25 @@
 {
   "raw": "100 ml lager beer (or soda water, must be very cold)",
-  "expected": {
-    "item": "lager beer",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "ml"
-      }
-    ],
-    "note": "or soda water, must be very cold"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lager beer",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "note": "or soda water, must be very cold"
+    },
+    "enrich_metric_weights": {
+      "item": "lager beer",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "ml"
+        }
+      ],
+      "note": "or soda water, must be very cold"
+    }
   }
 }

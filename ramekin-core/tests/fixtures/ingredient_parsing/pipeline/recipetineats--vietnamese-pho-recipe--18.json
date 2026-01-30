@@ -1,8 +1,15 @@
 {
   "raw": "Beansprouts, handful",
-  "expected": {
-    "item": "Beansprouts, handful",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Beansprouts, handful",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Beansprouts, handful",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 acorn squash, halved and seeded",
-  "expected": {
-    "item": "acorn squash",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "halved and seeded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "acorn squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved and seeded"
+    },
+    "enrich_metric_weights": {
+      "item": "acorn squash",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "halved and seeded"
+    }
   }
 }

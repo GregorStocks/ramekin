@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp  olive oil (not extra virgin) plus extra for drizzling",
-  "expected": {
-    "item": "olive oil (not extra virgin)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus extra for drizzling"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "olive oil (not extra virgin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for drizzling"
+    },
+    "enrich_metric_weights": {
+      "item": "olive oil (not extra virgin)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for drizzling"
+    }
   }
 }

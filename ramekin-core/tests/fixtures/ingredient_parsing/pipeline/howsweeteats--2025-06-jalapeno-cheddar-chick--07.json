@@ -1,13 +1,25 @@
 {
   "raw": "3 tablespoons chopped fresh herbs, (like parsley or chives)",
-  "expected": {
-    "item": "chopped fresh herbs, (like parsley or chives)",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chopped fresh herbs, (like parsley or chives)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chopped fresh herbs, (like parsley or chives)",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

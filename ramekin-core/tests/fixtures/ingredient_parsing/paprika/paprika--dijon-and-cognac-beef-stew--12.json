@@ -1,13 +1,25 @@
 {
   "raw": "4 medium carrots, peeled and cut into half-moon slices",
-  "expected": {
-    "item": "carrots",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      }
-    ],
-    "note": "peeled and cut into half-moon slices"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut into half-moon slices"
+    },
+    "parse_ingredients": {
+      "item": "carrots",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        }
+      ],
+      "note": "peeled and cut into half-moon slices"
+    }
   }
 }

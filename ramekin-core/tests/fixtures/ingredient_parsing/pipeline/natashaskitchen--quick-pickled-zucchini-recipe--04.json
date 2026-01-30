@@ -1,13 +1,25 @@
 {
   "raw": "6-8  pepper corns",
-  "expected": {
-    "item": "pepper corns",
-    "measurements": [
-      {
-        "amount": "6-8",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pepper corns",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pepper corns",
+      "measurements": [
+        {
+          "amount": "6-8",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

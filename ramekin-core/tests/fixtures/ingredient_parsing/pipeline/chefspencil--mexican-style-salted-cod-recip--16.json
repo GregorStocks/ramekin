@@ -1,8 +1,15 @@
 {
   "raw": "dried oregano",
-  "expected": {
-    "item": "dried oregano",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried oregano",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dried oregano",
+      "measurements": [],
+      "note": null
+    }
   }
 }

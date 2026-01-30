@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don&amp;#39;t like yoghurt)",
-  "expected": {
-    "item": "vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don't like yoghurt)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don't like yoghurt)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "vanilla Greek yogurt (or plain or blueberry flavoured, or whipping cream if you don't like yoghurt)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup fresh or frozen green peas (no need to defrost)",
-  "expected": {
-    "item": "fresh or frozen green peas (no need to defrost)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh or frozen green peas (no need to defrost)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh or frozen green peas (no need to defrost)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 stick salted butter, cut into pieces",
-  "expected": {
-    "item": "salted butter, cut into pieces",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

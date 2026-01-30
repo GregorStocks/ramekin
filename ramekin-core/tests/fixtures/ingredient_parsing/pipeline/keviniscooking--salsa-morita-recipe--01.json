@@ -1,13 +1,25 @@
 {
   "raw": "1 lb tomatoes (cored)",
-  "expected": {
-    "item": "tomatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "cored"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cored"
+    },
+    "enrich_metric_weights": {
+      "item": "tomatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "cored"
+    }
   }
 }

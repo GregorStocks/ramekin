@@ -1,13 +1,25 @@
 {
   "raw": "1  orange, rind only, scraped clean of pith&nbsp;",
-  "expected": {
-    "item": "orange, rind only, scraped clean of pith",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "orange, rind only, scraped clean of pith",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "orange, rind only, scraped clean of pith",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

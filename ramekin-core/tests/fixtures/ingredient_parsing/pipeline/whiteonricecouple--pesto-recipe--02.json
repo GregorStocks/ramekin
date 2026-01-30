@@ -1,13 +1,25 @@
 {
   "raw": "2 cups (packed) fresh basil leaves (, or herb leaves of your choice)",
-  "expected": {
-    "item": "fresh basil leaves (, or herb leaves of your choice)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "packed"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh basil leaves (, or herb leaves of your choice)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    },
+    "parse_ingredients": {
+      "item": "fresh basil leaves (, or herb leaves of your choice)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "packed"
+    }
   }
 }

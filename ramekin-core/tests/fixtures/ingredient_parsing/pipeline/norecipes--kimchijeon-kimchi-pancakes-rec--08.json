@@ -1,13 +1,25 @@
 {
   "raw": "100 grams pork belly (thinly sliced and chopped)",
-  "expected": {
-    "item": "pork belly",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "thinly sliced and chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pork belly",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced and chopped"
+    },
+    "parse_ingredients": {
+      "item": "pork belly",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "thinly sliced and chopped"
+    }
   }
 }

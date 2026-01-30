@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
-  "expected": {
-    "item": "dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dry ranch salad dressing mix (such as Hidden Valley Ranch®)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

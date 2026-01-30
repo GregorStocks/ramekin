@@ -1,13 +1,25 @@
 {
   "raw": "6  Hamburger buns ((or 8-12 slider buns))",
-  "expected": {
-    "item": "Hamburger buns (or 8-12 slider buns)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Hamburger buns (or 8-12 slider buns)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Hamburger buns (or 8-12 slider buns)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

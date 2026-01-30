@@ -1,13 +1,25 @@
 {
   "raw": "6  eggs (large, room temperature)",
-  "expected": {
-    "item": "eggs",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "large, room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "large, room temperature"
+    },
+    "parse_ingredients": {
+      "item": "eggs",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "large, room temperature"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 pkg refrigerated pie crust (double crust, thawed for 15 mins)",
-  "expected": {
-    "item": "refrigerated pie crust",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      }
-    ],
-    "note": "double crust, thawed for 15 mins"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "refrigerated pie crust",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": "double crust, thawed for 15 mins"
+    },
+    "parse_ingredients": {
+      "item": "refrigerated pie crust",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        }
+      ],
+      "note": "double crust, thawed for 15 mins"
+    }
   }
 }

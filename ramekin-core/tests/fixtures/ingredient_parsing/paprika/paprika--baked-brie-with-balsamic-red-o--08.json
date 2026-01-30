@@ -1,8 +1,15 @@
 {
   "raw": "Balsamic onions:",
-  "expected": {
-    "item": "Balsamic onions:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Balsamic onions:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Balsamic onions:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

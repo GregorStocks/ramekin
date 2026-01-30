@@ -1,13 +1,25 @@
 {
   "raw": "¼ teaspoon crushed red pepper flakes, (plus more for topping)",
-  "expected": {
-    "item": "crushed red pepper flakes",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more for topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for topping"
+    },
+    "parse_ingredients": {
+      "item": "crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more for topping"
+    }
   }
 }

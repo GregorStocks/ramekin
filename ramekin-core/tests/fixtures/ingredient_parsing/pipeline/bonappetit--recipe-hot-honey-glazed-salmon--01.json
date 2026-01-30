@@ -1,13 +1,25 @@
 {
   "raw": "1 1½-lb. skin-on salmon fillet",
-  "expected": {
-    "item": "1 1/2-lb. skin-on salmon fillet",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "1 1/2-lb. skin-on salmon fillet",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "1 1/2-lb. skin-on salmon fillet",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

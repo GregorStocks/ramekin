@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons lemon juice ((save the rinds to zest))",
-  "expected": {
-    "item": "lemon juice (save the rinds to zest)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "lemon juice (save the rinds to zest)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "lemon juice (save the rinds to zest)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

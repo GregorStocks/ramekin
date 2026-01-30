@@ -1,8 +1,15 @@
 {
   "raw": "Blue cheese sauce:",
-  "expected": {
-    "item": "Blue cheese sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Blue cheese sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Blue cheese sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

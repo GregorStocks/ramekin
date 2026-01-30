@@ -1,13 +1,25 @@
 {
   "raw": "2  plant-based hot dogs / Tofu Pups",
-  "expected": {
-    "item": "plant-based hot dogs / Tofu Pups",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plant-based hot dogs / Tofu Pups",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "plant-based hot dogs / Tofu Pups",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

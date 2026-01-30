@@ -1,13 +1,25 @@
 {
   "raw": "1 teaspoon thyme (dry, 1 tbsp if using fresh)",
-  "expected": {
-    "item": "thyme",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "dry, 1 tbsp if using fresh"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "dry, 1 tbsp if using fresh"
+    },
+    "parse_ingredients": {
+      "item": "thyme",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "dry, 1 tbsp if using fresh"
+    }
   }
 }

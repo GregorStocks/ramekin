@@ -1,21 +1,41 @@
 {
   "raw": "700 g / 1.2 lb   skinless boneless chicken thighs ((5 to 6))",
-  "expected": {
-    "item": "skinless boneless chicken thighs",
-    "measurements": [
-      {
-        "amount": "700",
-        "unit": "g"
-      },
-      {
-        "amount": "5 to 6",
-        "unit": null
-      },
-      {
-        "amount": "1.2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "skinless boneless chicken thighs",
+      "measurements": [
+        {
+          "amount": "700",
+          "unit": "g"
+        },
+        {
+          "amount": "5 to 6",
+          "unit": null
+        },
+        {
+          "amount": "1.2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "skinless boneless chicken thighs",
+      "measurements": [
+        {
+          "amount": "700",
+          "unit": "g"
+        },
+        {
+          "amount": "5 to 6",
+          "unit": null
+        },
+        {
+          "amount": "1.2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 small cucumbers, diced",
-  "expected": {
-    "item": "cucumbers",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "small"
-      }
-    ],
-    "note": "diced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cucumbers",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": "diced"
+    },
+    "parse_ingredients": {
+      "item": "cucumbers",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "small"
+        }
+      ],
+      "note": "diced"
+    }
   }
 }

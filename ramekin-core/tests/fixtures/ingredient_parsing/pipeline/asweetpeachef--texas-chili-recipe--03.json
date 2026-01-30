@@ -1,13 +1,25 @@
 {
   "raw": "2 lbs grass-fed 90-10 ground beef",
-  "expected": {
-    "item": "grass-fed 90-10 ground beef",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "grass-fed 90-10 ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "grass-fed 90-10 ground beef",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

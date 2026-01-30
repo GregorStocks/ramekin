@@ -1,8 +1,15 @@
 {
   "raw": "Jim’s All-Night Brisket Rub",
-  "expected": {
-    "item": "Jim’s All-Night Brisket Rub",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Jim’s All-Night Brisket Rub",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Jim’s All-Night Brisket Rub",
+      "measurements": [],
+      "note": null
+    }
   }
 }

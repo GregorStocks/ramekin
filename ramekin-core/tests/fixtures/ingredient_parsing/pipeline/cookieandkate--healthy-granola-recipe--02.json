@@ -1,13 +1,25 @@
 {
   "raw": "1 &amp;frac12; cup raw nuts and/or seeds (I used 1 cup pecans and &amp;frac12; cup pepitas)",
-  "expected": {
-    "item": "raw nuts and/or seeds (I used 1 cup pecans and 1/2 cup pepitas)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "raw nuts and/or seeds (I used 1 cup pecans and 1/2 cup pepitas)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "raw nuts and/or seeds (I used 1 cup pecans and 1/2 cup pepitas)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

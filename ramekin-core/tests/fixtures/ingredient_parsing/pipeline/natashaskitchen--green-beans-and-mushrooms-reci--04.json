@@ -1,13 +1,29 @@
 {
   "raw": "8 oz fresh button mushrooms (cleaned and sliced)",
-  "expected": {
-    "item": "fresh button mushrooms",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "cleaned and sliced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fresh button mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "cleaned and sliced"
+    },
+    "parse_ingredients": {
+      "item": "fresh button mushrooms",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "cleaned and sliced"
+    }
   }
 }

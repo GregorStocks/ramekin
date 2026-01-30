@@ -1,13 +1,25 @@
 {
   "raw": "1  whole bunch parsley (stems removed (about 2 packed cups parsley leaves))",
-  "expected": {
-    "item": "whole bunch parsley",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "stems removed (about 2 packed cups parsley leaves"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "whole bunch parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stems removed (about 2 packed cups parsley leaves"
+    },
+    "parse_ingredients": {
+      "item": "whole bunch parsley",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "stems removed (about 2 packed cups parsley leaves"
+    }
   }
 }

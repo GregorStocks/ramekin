@@ -1,13 +1,25 @@
 {
   "raw": "2 lbs chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
-  "expected": {
-    "item": "chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken thighs (boneless and skinless - cut into 1-2 inch cubes)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "green peas (or edamame (precooked))",
-  "expected": {
-    "item": "green peas",
-    "measurements": [],
-    "note": "or edamame (precooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "green peas",
+      "measurements": [],
+      "note": "or edamame (precooked"
+    },
+    "parse_ingredients": {
+      "item": "green peas",
+      "measurements": [],
+      "note": "or edamame (precooked"
+    }
   }
 }

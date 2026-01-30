@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons cilantro (minced)",
-  "expected": {
-    "item": "cilantro",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced"
+    },
+    "parse_ingredients": {
+      "item": "cilantro",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces extra-firm tofu, drained and pat dry",
-  "expected": {
-    "item": "extra-firm tofu",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and pat dry"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra-firm tofu",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and pat dry"
+    },
+    "parse_ingredients": {
+      "item": "extra-firm tofu",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and pat dry"
+    }
   }
 }

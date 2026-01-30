@@ -1,13 +1,25 @@
 {
   "raw": "6  chlorella tablets, crushed in m+p (optional boost!)",
-  "expected": {
-    "item": "chlorella tablets, crushed in m+p",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": null
-      }
-    ],
-    "note": "optional boost!"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chlorella tablets, crushed in m+p",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "optional boost!"
+    },
+    "parse_ingredients": {
+      "item": "chlorella tablets, crushed in m+p",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": null
+        }
+      ],
+      "note": "optional boost!"
+    }
   }
 }

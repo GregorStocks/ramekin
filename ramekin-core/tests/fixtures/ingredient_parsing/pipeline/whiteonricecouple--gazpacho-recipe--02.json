@@ -1,13 +1,25 @@
 {
   "raw": "1  whole English cucumber (, peeled &amp;amp; sliced)",
-  "expected": {
-    "item": "whole English cucumber",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "peeled & sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole English cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled & sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "whole English cucumber",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "peeled & sliced"
+    }
   }
 }

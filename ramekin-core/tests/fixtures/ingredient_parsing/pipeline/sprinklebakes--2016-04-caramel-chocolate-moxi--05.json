@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cups 185g Lake Champlain unsweetened cocoa powder",
-  "expected": {
-    "item": "Lake Champlain unsweetened cocoa powder",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "185",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Lake Champlain unsweetened cocoa powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "185",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Lake Champlain unsweetened cocoa powder",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "185",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

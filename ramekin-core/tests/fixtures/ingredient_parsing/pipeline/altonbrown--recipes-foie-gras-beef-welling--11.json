@@ -1,8 +1,15 @@
 {
   "raw": "Flour for rolling out pastry",
-  "expected": {
-    "item": "Flour for rolling out pastry",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Flour for rolling out pastry",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Flour for rolling out pastry",
+      "measurements": [],
+      "note": null
+    }
   }
 }

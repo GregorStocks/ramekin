@@ -1,8 +1,15 @@
 {
   "raw": "salt as needed",
-  "expected": {
-    "item": "salt as needed",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "salt as needed",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "salt as needed",
+      "measurements": [],
+      "note": null
+    }
   }
 }

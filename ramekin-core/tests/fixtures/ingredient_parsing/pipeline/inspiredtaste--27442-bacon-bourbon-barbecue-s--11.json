@@ -1,13 +1,25 @@
 {
   "raw": "3/4 teaspoon sea salt or to taste",
-  "expected": {
-    "item": "sea salt or to taste",
-    "measurements": [
-      {
-        "amount": "3/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sea salt or to taste",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sea salt or to taste",
+      "measurements": [
+        {
+          "amount": "3/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

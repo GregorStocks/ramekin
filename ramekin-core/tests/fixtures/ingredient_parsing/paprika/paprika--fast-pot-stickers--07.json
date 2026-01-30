@@ -1,13 +1,25 @@
 {
   "raw": "48 dumpling wrappers",
-  "expected": {
-    "item": "dumpling wrappers",
-    "measurements": [
-      {
-        "amount": "48",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dumpling wrappers",
+      "measurements": [
+        {
+          "amount": "48",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dumpling wrappers",
+      "measurements": [
+        {
+          "amount": "48",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

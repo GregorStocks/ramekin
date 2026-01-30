@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 260g pumpkin pie filling",
-  "expected": {
-    "item": "pumpkin pie filling",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "260",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pumpkin pie filling",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "260",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pumpkin pie filling",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "260",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

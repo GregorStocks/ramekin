@@ -1,13 +1,25 @@
 {
   "raw": "1 tbsp olive oil plus extra for dressing",
-  "expected": {
-    "item": "olive oil",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "plus extra for dressing"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for dressing"
+    },
+    "parse_ingredients": {
+      "item": "olive oil",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "plus extra for dressing"
+    }
   }
 }

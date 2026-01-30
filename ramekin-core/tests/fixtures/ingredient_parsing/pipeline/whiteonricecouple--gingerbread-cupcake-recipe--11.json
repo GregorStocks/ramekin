@@ -1,17 +1,33 @@
 {
   "raw": "1 Tablespoon freshly grated Ginger (finely grated) ( or 1 teaspoon (5ml) ground Ginger Powder)",
-  "expected": {
-    "item": "freshly grated Ginger ground Ginger Powder)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "freshly grated Ginger ground Ginger Powder)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated"
+    },
+    "parse_ingredients": {
+      "item": "freshly grated Ginger ground Ginger Powder)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

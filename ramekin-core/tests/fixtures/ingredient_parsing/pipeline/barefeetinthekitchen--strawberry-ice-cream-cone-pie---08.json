@@ -1,8 +1,15 @@
 {
   "raw": "Crust Ingredients:",
-  "expected": {
-    "item": "Crust Ingredients:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Crust Ingredients:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Crust Ingredients:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

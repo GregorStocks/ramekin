@@ -1,13 +1,25 @@
 {
   "raw": "1/2 lb large shrimp (approx. 8-10 shrimp)",
-  "expected": {
-    "item": "large shrimp (approx. 8-10 shrimp)",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "large shrimp (approx. 8-10 shrimp)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "large shrimp (approx. 8-10 shrimp)",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

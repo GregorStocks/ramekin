@@ -1,17 +1,33 @@
 {
   "raw": "2 pounds (about 8) Persian or Japanese cucumbers, stripey peeled",
-  "expected": {
-    "item": "Persian or Japanese cucumbers",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "stripey peeled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Persian or Japanese cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "stripey peeled"
+    },
+    "enrich_metric_weights": {
+      "item": "Persian or Japanese cucumbers",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "stripey peeled"
+    }
   }
 }

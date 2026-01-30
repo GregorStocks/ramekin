@@ -1,13 +1,25 @@
 {
   "raw": "20 premade empanada wrappers",
-  "expected": {
-    "item": "premade empanada wrappers",
-    "measurements": [
-      {
-        "amount": "20",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "premade empanada wrappers",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "premade empanada wrappers",
+      "measurements": [
+        {
+          "amount": "20",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

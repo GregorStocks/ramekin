@@ -1,17 +1,33 @@
 {
   "raw": "4 1-inch-thick boneless&nbsp;pork loin chops (about 1&nbsp;3/4 pounds total)",
-  "expected": {
-    "item": "1-inch-thick boneless pork loin chops",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "1 3/4",
-        "unit": "lb"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "1-inch-thick boneless pork loin chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "1-inch-thick boneless pork loin chops",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "1 3/4",
+          "unit": "lb"
+        }
+      ],
+      "note": null
+    }
   }
 }

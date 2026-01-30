@@ -1,17 +1,33 @@
 {
   "raw": "½ cup (120 ml)  plain yogurt  ((curd, at room temperature))",
-  "expected": {
-    "item": "plain yogurt",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "120",
-        "unit": "ml"
-      }
-    ],
-    "note": "curd, at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "plain yogurt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": "curd, at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "plain yogurt",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "120",
+          "unit": "ml"
+        }
+      ],
+      "note": "curd, at room temperature"
+    }
   }
 }

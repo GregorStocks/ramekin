@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup brandy (, rum, grand mariner etc., or to taste)",
-  "expected": {
-    "item": "brandy",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "rum, grand mariner etc., or to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "brandy",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "rum, grand mariner etc., or to taste"
+    },
+    "parse_ingredients": {
+      "item": "brandy",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "rum, grand mariner etc., or to taste"
+    }
   }
 }

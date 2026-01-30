@@ -1,17 +1,33 @@
 {
   "raw": "2 cups / 475 ml water, ice cold",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "475",
-        "unit": "ml"
-      }
-    ],
-    "note": "ice cold"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "475",
+          "unit": "ml"
+        }
+      ],
+      "note": "ice cold"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "475",
+          "unit": "ml"
+        }
+      ],
+      "note": "ice cold"
+    }
   }
 }

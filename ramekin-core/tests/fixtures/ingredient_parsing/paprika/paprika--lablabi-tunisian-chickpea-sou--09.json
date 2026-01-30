@@ -1,17 +1,37 @@
 {
   "raw": "1/2 loaf hearty rustic bread (about 8 ounces)",
-  "expected": {
-    "item": "loaf hearty rustic bread",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": null
-      },
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "loaf hearty rustic bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "loaf hearty rustic bread",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": null
+        },
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

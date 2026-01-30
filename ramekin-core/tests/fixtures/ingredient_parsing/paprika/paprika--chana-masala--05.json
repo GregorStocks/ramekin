@@ -1,13 +1,25 @@
 {
   "raw": "1 fresh, hot green chili pepper, minced",
-  "expected": {
-    "item": "fresh, hot green chili pepper",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh, hot green chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh, hot green chili pepper",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

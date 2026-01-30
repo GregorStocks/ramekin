@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp fresh grated ginger ((or 1/2 tsp minced ginger) )",
-  "expected": {
-    "item": "fresh grated ginger",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1/2 tsp minced ginger"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh grated ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 tsp minced ginger"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh grated ginger",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1/2 tsp minced ginger"
+    }
   }
 }

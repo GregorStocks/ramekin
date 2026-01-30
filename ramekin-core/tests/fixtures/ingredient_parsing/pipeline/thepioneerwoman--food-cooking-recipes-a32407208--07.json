@@ -1,13 +1,25 @@
 {
   "raw": "4 1/2 tsp. Cajun seasoning, plus more to taste",
-  "expected": {
-    "item": "Cajun seasoning",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "plus more to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cajun seasoning",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more to taste"
+    },
+    "parse_ingredients": {
+      "item": "Cajun seasoning",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "plus more to taste"
+    }
   }
 }

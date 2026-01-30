@@ -1,13 +1,29 @@
 {
   "raw": "9 ounces dried whole wheat no-boil lasagna sheets",
-  "expected": {
-    "item": "dried whole wheat no-boil lasagna sheets",
-    "measurements": [
-      {
-        "amount": "9",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dried whole wheat no-boil lasagna sheets",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "oz"
+        },
+        {
+          "amount": "255",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "dried whole wheat no-boil lasagna sheets",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

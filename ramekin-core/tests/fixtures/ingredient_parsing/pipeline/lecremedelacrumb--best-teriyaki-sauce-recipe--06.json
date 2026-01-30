@@ -1,13 +1,25 @@
 {
   "raw": "¼ teaspoon crushed red pepper flakes (or 1-2 teaspoons sriracha sauce, to taste)",
-  "expected": {
-    "item": "crushed red pepper flakes",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 1-2 teaspoons sriracha sauce, to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1-2 teaspoons sriracha sauce, to taste"
+    },
+    "parse_ingredients": {
+      "item": "crushed red pepper flakes",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 1-2 teaspoons sriracha sauce, to taste"
+    }
   }
 }

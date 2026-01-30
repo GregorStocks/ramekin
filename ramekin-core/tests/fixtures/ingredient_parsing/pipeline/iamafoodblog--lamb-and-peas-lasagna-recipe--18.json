@@ -1,13 +1,25 @@
 {
   "raw": "15 no-bake lasagna noodles",
-  "expected": {
-    "item": "no-bake lasagna noodles",
-    "measurements": [
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "no-bake lasagna noodles",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "no-bake lasagna noodles",
+      "measurements": [
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

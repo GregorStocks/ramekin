@@ -1,8 +1,15 @@
 {
   "raw": "Red lettuce leaves",
-  "expected": {
-    "item": "Red lettuce leaves",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Red lettuce leaves",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Red lettuce leaves",
+      "measurements": [],
+      "note": null
+    }
   }
 }

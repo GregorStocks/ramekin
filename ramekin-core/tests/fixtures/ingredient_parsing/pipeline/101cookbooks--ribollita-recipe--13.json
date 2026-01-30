@@ -1,8 +1,15 @@
 {
   "raw": "lots of well-chopped oily black olives",
-  "expected": {
-    "item": "lots of well-chopped oily black olives",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "lots of well-chopped oily black olives",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "lots of well-chopped oily black olives",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "400 ml dashi stock",
-  "expected": {
-    "item": "dashi stock",
-    "measurements": [
-      {
-        "amount": "400",
-        "unit": "ml"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "dashi stock",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "dashi stock",
+      "measurements": [
+        {
+          "amount": "400",
+          "unit": "ml"
+        }
+      ],
+      "note": null
+    }
   }
 }

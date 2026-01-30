@@ -1,8 +1,15 @@
 {
   "raw": "SEMI-INSTANT PANCAKE MIX:",
-  "expected": {
-    "item": "SEMI-INSTANT PANCAKE MIX:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "SEMI-INSTANT PANCAKE MIX:",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "SEMI-INSTANT PANCAKE MIX:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

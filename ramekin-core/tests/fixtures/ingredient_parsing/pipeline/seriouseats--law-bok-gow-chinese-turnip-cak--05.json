@@ -1,13 +1,25 @@
 {
   "raw": "2 Chinese sausage, diced (see note)",
-  "expected": {
-    "item": "Chinese sausage",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "diced (see note)"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Chinese sausage",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced (see note)"
+    },
+    "parse_ingredients": {
+      "item": "Chinese sausage",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "diced (see note)"
+    }
   }
 }

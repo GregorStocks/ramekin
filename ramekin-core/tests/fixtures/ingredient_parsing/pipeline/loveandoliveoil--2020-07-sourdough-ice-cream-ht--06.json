@@ -1,13 +1,25 @@
 {
   "raw": "5  large egg yolks (at room temperature)",
-  "expected": {
-    "item": "egg yolks",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "large"
-      }
-    ],
-    "note": "at room temperature"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "egg yolks",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "large"
+        }
+      ],
+      "note": "at room temperature"
+    },
+    "parse_ingredients": {
+      "item": "egg yolks",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "large"
+        }
+      ],
+      "note": "at room temperature"
+    }
   }
 }

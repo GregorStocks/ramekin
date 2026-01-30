@@ -1,8 +1,15 @@
 {
   "raw": "a. 1lb ground beef, chicken, or turkey",
-  "expected": {
-    "item": "a. 1lb ground beef, chicken, or turkey",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a. 1lb ground beef, chicken, or turkey",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a. 1lb ground beef, chicken, or turkey",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "3 to 4 tablespoons unsalted butter (the higher amount is slightly more rich)",
-  "expected": {
-    "item": "unsalted butter (the higher amount is slightly more rich)",
-    "measurements": [
-      {
-        "amount": "3 to 4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter (the higher amount is slightly more rich)",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter (the higher amount is slightly more rich)",
+      "measurements": [
+        {
+          "amount": "3 to 4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

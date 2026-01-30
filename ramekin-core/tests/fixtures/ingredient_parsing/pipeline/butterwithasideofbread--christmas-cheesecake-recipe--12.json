@@ -1,8 +1,15 @@
 {
   "raw": "Assorted holiday candy and sprinkles",
-  "expected": {
-    "item": "Assorted holiday candy and sprinkles",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Assorted holiday candy and sprinkles",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Assorted holiday candy and sprinkles",
+      "measurements": [],
+      "note": null
+    }
   }
 }

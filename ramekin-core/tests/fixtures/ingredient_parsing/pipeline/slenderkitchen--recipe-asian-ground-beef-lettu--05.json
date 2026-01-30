@@ -1,13 +1,29 @@
 {
   "raw": "8 oz. canned water chestnuts, drained and diced",
-  "expected": {
-    "item": "canned water chestnuts",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained and diced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "canned water chestnuts",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained and diced"
+    },
+    "enrich_metric_weights": {
+      "item": "canned water chestnuts",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": "oz"
+        },
+        {
+          "amount": "227",
+          "unit": "g"
+        }
+      ],
+      "note": "drained and diced"
+    }
   }
 }

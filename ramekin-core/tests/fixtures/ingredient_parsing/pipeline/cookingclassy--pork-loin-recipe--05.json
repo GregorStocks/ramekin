@@ -1,13 +1,25 @@
 {
   "raw": "2 tsp chopped fresh rosemary ((or 3/4 tsp dried))",
-  "expected": {
-    "item": "chopped fresh rosemary",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or 3/4 tsp dried"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped fresh rosemary",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 3/4 tsp dried"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped fresh rosemary",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or 3/4 tsp dried"
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Finely chopped chives, for serving",
-  "expected": {
-    "item": "Finely chopped chives",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Finely chopped chives",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Finely chopped chives",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2  medium zucchini, sliced into 1/4-inch thick coins",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "medium"
-      }
-    ],
-    "note": "sliced into 1/4-inch thick coins"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 1/4-inch thick coins"
+    },
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "medium"
+        }
+      ],
+      "note": "sliced into 1/4-inch thick coins"
+    }
   }
 }

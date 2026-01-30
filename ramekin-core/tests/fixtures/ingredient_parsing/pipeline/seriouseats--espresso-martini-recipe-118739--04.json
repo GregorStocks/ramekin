@@ -1,8 +1,15 @@
 {
   "raw": "Very tiny pinch of kosher salt",
-  "expected": {
-    "item": "Very tiny pinch of kosher salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Very tiny pinch of kosher salt",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Very tiny pinch of kosher salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

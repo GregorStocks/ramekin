@@ -1,13 +1,25 @@
 {
   "raw": "4  fresh shiitake mushroom (thinly sliced)",
-  "expected": {
-    "item": "fresh shiitake mushroom",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh shiitake mushroom",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh shiitake mushroom",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thinly sliced"
+    }
   }
 }

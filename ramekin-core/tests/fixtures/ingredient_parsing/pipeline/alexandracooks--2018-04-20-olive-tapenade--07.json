@@ -1,13 +1,25 @@
 {
   "raw": "2 cups (about) parsley, divided roughly into two 1-cup portions",
-  "expected": {
-    "item": "(about) parsley",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "divided roughly into two 1-cup portions"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "(about) parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided roughly into two 1-cup portions"
+    },
+    "enrich_metric_weights": {
+      "item": "(about) parsley",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "divided roughly into two 1-cup portions"
+    }
   }
 }

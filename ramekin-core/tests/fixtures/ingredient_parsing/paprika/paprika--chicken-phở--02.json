@@ -1,13 +1,25 @@
 {
   "raw": "2 unpeeled yellow onions, quartered",
-  "expected": {
-    "item": "unpeeled yellow onions",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": "quartered"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "unpeeled yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    },
+    "parse_ingredients": {
+      "item": "unpeeled yellow onions",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": "quartered"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup walnuts (coarsely chopped (optional))",
-  "expected": {
-    "item": "walnuts",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "coarsely chopped (optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped (optional"
+    },
+    "enrich_metric_weights": {
+      "item": "walnuts",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "coarsely chopped (optional"
+    }
   }
 }

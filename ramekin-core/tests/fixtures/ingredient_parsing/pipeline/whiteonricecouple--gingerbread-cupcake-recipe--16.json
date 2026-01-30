@@ -1,8 +1,15 @@
 {
   "raw": "sprinkle of ground cinnamon (, for topping cupcakes)",
-  "expected": {
-    "item": "sprinkle of ground cinnamon (, for topping cupcakes)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "sprinkle of ground cinnamon (, for topping cupcakes)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "sprinkle of ground cinnamon (, for topping cupcakes)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

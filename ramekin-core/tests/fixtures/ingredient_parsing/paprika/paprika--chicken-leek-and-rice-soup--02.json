@@ -1,17 +1,33 @@
 {
   "raw": "2 large or 3 medium leeks, halved and thinly sliced",
-  "expected": {
-    "item": "leeks",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "3",
-        "unit": "medium"
-      }
-    ],
-    "note": "halved and thinly sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "leeks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved and thinly sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "leeks",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "3",
+          "unit": "medium"
+        }
+      ],
+      "note": "halved and thinly sliced"
+    }
   }
 }

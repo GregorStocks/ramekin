@@ -1,17 +1,33 @@
 {
   "raw": "1/4 cup (10 g) finely minced fresh parsley",
-  "expected": {
-    "item": "finely minced fresh parsley",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      },
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "finely minced fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "finely minced fresh parsley",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        },
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

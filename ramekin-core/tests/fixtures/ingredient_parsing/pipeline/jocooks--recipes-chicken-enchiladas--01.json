@@ -1,13 +1,25 @@
 {
   "raw": "3 cups cooked chicken (shredded, rotisserie chicken works great!)",
-  "expected": {
-    "item": "cooked chicken",
-    "measurements": [
-      {
-        "amount": "3",
-        "unit": "cup"
-      }
-    ],
-    "note": "shredded, rotisserie chicken works great!"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cooked chicken",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded, rotisserie chicken works great!"
+    },
+    "enrich_metric_weights": {
+      "item": "cooked chicken",
+      "measurements": [
+        {
+          "amount": "3",
+          "unit": "cup"
+        }
+      ],
+      "note": "shredded, rotisserie chicken works great!"
+    }
   }
 }

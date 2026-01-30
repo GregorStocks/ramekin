@@ -1,13 +1,29 @@
 {
   "raw": "4 oz | 110 g organic cornstarch or rice flour",
-  "expected": {
-    "item": "| 110 g organic cornstarch or rice flour",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "| 110 g organic cornstarch or rice flour",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "| 110 g organic cornstarch or rice flour",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

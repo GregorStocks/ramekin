@@ -1,13 +1,25 @@
 {
   "raw": "½ to 1 teaspoon sea salt ((depends on how salty your bacon is))",
-  "expected": {
-    "item": "sea salt (depends on how salty your bacon is)",
-    "measurements": [
-      {
-        "amount": "1/2 to 1",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sea salt (depends on how salty your bacon is)",
+      "measurements": [
+        {
+          "amount": "1/2 to 1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sea salt (depends on how salty your bacon is)",
+      "measurements": [
+        {
+          "amount": "1/2 to 1",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

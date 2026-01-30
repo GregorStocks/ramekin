@@ -1,8 +1,15 @@
 {
   "raw": "Potato chips, for serving",
-  "expected": {
-    "item": "Potato chips",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Potato chips",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Potato chips",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

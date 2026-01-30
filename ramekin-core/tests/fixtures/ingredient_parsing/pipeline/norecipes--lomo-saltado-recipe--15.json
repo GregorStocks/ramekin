@@ -1,13 +1,25 @@
 {
   "raw": "100 grams red onion ((sliced into wedges))",
-  "expected": {
-    "item": "red onion",
-    "measurements": [
-      {
-        "amount": "100",
-        "unit": "g"
-      }
-    ],
-    "note": "sliced into wedges"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced into wedges"
+    },
+    "parse_ingredients": {
+      "item": "red onion",
+      "measurements": [
+        {
+          "amount": "100",
+          "unit": "g"
+        }
+      ],
+      "note": "sliced into wedges"
+    }
   }
 }

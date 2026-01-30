@@ -1,13 +1,25 @@
 {
   "raw": "1-1/2 teaspoons steak seasoning, divided",
-  "expected": {
-    "item": "steak seasoning",
-    "measurements": [
-      {
-        "amount": "1-1/2",
-        "unit": "tsp"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "steak seasoning",
+      "measurements": [
+        {
+          "amount": "1-1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "steak seasoning",
+      "measurements": [
+        {
+          "amount": "1-1/2",
+          "unit": "tsp"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

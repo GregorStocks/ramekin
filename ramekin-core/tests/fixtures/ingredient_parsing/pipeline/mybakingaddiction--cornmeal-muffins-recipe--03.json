@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup of Truvia Baking Blend (see sugar substitution note below)",
-  "expected": {
-    "item": "Truvia Baking Blend (see sugar substitution note below)",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Truvia Baking Blend (see sugar substitution note below)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Truvia Baking Blend (see sugar substitution note below)",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

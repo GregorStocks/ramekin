@@ -1,13 +1,25 @@
 {
   "raw": "1/2 cup cherry tomatoes (about 3 ounces, halved)",
-  "expected": {
-    "item": "cherry tomatoes",
-    "measurements": [
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "about 3 ounces, halved"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 3 ounces, halved"
+    },
+    "parse_ingredients": {
+      "item": "cherry tomatoes",
+      "measurements": [
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "about 3 ounces, halved"
+    }
   }
 }

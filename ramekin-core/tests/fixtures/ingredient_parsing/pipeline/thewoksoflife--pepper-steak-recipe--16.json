@@ -1,13 +1,25 @@
 {
   "raw": "1/8 teaspoon white pepper ((or to taste))",
-  "expected": {
-    "item": "white pepper",
-    "measurements": [
-      {
-        "amount": "1/8",
-        "unit": "tsp"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "white pepper",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "parse_ingredients": {
+      "item": "white pepper",
+      "measurements": [
+        {
+          "amount": "1/8",
+          "unit": "tsp"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

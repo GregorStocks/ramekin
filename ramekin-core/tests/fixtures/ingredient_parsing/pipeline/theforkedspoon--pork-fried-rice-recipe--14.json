@@ -1,13 +1,25 @@
 {
   "raw": "6 tablespoons soy sauce (regular or low-sodium)",
-  "expected": {
-    "item": "soy sauce (regular or low-sodium)",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "soy sauce (regular or low-sodium)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "soy sauce (regular or low-sodium)",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

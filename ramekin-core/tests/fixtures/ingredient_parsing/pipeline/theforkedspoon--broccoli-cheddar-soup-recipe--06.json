@@ -1,13 +1,25 @@
 {
   "raw": "5 cloves garlic (minced)",
-  "expected": {
-    "item": "garlic",
-    "measurements": [
-      {
-        "amount": "5",
-        "unit": "clove"
-      }
-    ],
-    "note": "minced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "clove"
+        }
+      ],
+      "note": "minced"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic",
+      "measurements": [
+        {
+          "amount": "5",
+          "unit": "clove"
+        }
+      ],
+      "note": "minced"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "2   small    sweet peppers, of your choice  (green, red, or yellow)",
-  "expected": {
-    "item": "sweet peppers, of your choice  (green, red, or yellow)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "small"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "sweet peppers, of your choice  (green, red, or yellow)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "sweet peppers, of your choice  (green, red, or yellow)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "small"
+        }
+      ],
+      "note": null
+    }
   }
 }

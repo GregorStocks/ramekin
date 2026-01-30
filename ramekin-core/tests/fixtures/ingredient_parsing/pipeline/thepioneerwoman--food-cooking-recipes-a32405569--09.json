@@ -1,17 +1,33 @@
 {
   "raw": "2 lb. russet potatoes (about 3 large), peeled and chopped into 1-inch pieces",
-  "expected": {
-    "item": "russet potatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "lb"
-      },
-      {
-        "amount": "3",
-        "unit": "large"
-      }
-    ],
-    "note": "peeled and chopped into 1-inch pieces"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and chopped into 1-inch pieces"
+    },
+    "parse_ingredients": {
+      "item": "russet potatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "lb"
+        },
+        {
+          "amount": "3",
+          "unit": "large"
+        }
+      ],
+      "note": "peeled and chopped into 1-inch pieces"
+    }
   }
 }

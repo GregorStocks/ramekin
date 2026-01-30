@@ -1,17 +1,33 @@
 {
   "raw": "9 tablespoons (130 grams) unsalted butter, divided",
-  "expected": {
-    "item": "unsalted butter",
-    "measurements": [
-      {
-        "amount": "9",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "130",
-        "unit": "g"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "unsalted butter",
+      "measurements": [
+        {
+          "amount": "9",
+          "unit": "tbsp"
+        },
+        {
+          "amount": "130",
+          "unit": "g"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

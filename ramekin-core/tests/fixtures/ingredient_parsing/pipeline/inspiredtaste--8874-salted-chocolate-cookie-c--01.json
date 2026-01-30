@@ -1,17 +1,33 @@
 {
   "raw": "1 (16-ounce) package Pillsbury Simply Peanut Butter refrigerated cookies",
-  "expected": {
-    "item": "Pillsbury Simply Peanut Butter refrigerated cookies",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "16",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Pillsbury Simply Peanut Butter refrigerated cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Pillsbury Simply Peanut Butter refrigerated cookies",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

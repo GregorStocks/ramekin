@@ -1,8 +1,15 @@
 {
   "raw": "Crudités, potato chips, and/or crackers, for serving",
-  "expected": {
-    "item": "Crudités, potato chips, and/or crackers",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Crudités, potato chips, and/or crackers",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Crudités, potato chips, and/or crackers",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

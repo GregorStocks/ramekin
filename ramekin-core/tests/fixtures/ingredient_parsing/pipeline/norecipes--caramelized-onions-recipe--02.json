@@ -1,13 +1,25 @@
 {
   "raw": "16  onions (medium (peeled with just the tops trimmed off))",
-  "expected": {
-    "item": "onions",
-    "measurements": [
-      {
-        "amount": "16",
-        "unit": null
-      }
-    ],
-    "note": "medium (peeled with just the tops trimmed off"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": "medium (peeled with just the tops trimmed off"
+    },
+    "enrich_metric_weights": {
+      "item": "onions",
+      "measurements": [
+        {
+          "amount": "16",
+          "unit": null
+        }
+      ],
+      "note": "medium (peeled with just the tops trimmed off"
+    }
   }
 }

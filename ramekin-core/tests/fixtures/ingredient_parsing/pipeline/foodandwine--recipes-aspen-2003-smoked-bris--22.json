@@ -1,13 +1,25 @@
 {
   "raw": "1/4 cup honey, or to taste",
-  "expected": {
-    "item": "honey",
-    "measurements": [
-      {
-        "amount": "1/4",
-        "unit": "cup"
-      }
-    ],
-    "note": "or to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    },
+    "parse_ingredients": {
+      "item": "honey",
+      "measurements": [
+        {
+          "amount": "1/4",
+          "unit": "cup"
+        }
+      ],
+      "note": "or to taste"
+    }
   }
 }

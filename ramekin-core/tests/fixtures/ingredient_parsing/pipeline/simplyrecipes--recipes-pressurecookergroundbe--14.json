@@ -1,13 +1,25 @@
 {
   "raw": "1 cup shredded cheese, any favorite mix, to serve",
-  "expected": {
-    "item": "shredded cheese, any favorite mix, to serve",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded cheese, any favorite mix, to serve",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "shredded cheese, any favorite mix, to serve",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

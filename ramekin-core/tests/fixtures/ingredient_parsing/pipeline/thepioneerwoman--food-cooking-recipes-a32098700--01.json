@@ -1,13 +1,25 @@
 {
   "raw": "1 1/2 sticks cold salted butter, cut into pieces",
-  "expected": {
-    "item": "cold salted butter, cut into pieces",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "cold salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "cold salted butter, cut into pieces",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

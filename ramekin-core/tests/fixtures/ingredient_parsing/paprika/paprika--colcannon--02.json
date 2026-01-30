@@ -1,21 +1,41 @@
 {
   "raw": "4 medium scallions (1 1/2 ounces; 43 g total), white and green parts thinly sliced and divided",
-  "expected": {
-    "item": "scallions",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "medium"
-      },
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "43",
-        "unit": "g"
-      }
-    ],
-    "note": "white and green parts thinly sliced and divided"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": "white and green parts thinly sliced and divided"
+    },
+    "parse_ingredients": {
+      "item": "scallions",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "medium"
+        },
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": "white and green parts thinly sliced and divided"
+    }
   }
 }

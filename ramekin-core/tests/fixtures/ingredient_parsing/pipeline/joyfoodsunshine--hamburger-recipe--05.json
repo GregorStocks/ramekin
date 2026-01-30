@@ -1,8 +1,15 @@
 {
   "raw": "Ketchup",
-  "expected": {
-    "item": "Ketchup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Ketchup",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Ketchup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

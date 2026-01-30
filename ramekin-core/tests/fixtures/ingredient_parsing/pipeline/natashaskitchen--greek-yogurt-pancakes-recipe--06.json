@@ -1,8 +1,15 @@
 {
   "raw": "Coconut oil to saute (or light olive oil, or butter)",
-  "expected": {
-    "item": "Coconut oil to saute (or light olive oil, or butter)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Coconut oil to saute (or light olive oil, or butter)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Coconut oil to saute (or light olive oil, or butter)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

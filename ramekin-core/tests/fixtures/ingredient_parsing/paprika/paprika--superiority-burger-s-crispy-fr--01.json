@@ -1,17 +1,33 @@
 {
   "raw": "1 (14-ounce) package extra-firm tofu, drained",
-  "expected": {
-    "item": "extra-firm tofu",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "14",
-        "unit": null
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "extra-firm tofu",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "extra-firm tofu",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "14",
+          "unit": null
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

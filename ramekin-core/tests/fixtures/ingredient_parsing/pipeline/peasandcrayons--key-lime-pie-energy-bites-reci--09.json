@@ -1,8 +1,15 @@
 {
   "raw": "extra lime zest (if desired)",
-  "expected": {
-    "item": "extra lime zest (if desired)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "extra lime zest (if desired)",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "extra lime zest (if desired)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

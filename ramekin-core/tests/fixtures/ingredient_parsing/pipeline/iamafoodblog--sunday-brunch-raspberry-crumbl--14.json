@@ -1,13 +1,25 @@
 {
   "raw": "2 containers Stonyfield’s Petite-Creme Vive la Vanilla or yogurt of choice",
-  "expected": {
-    "item": "containers Stonyfield’s Petite-Creme Vive la Vanilla or yogurt of choice",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "containers Stonyfield’s Petite-Creme Vive la Vanilla or yogurt of choice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "containers Stonyfield’s Petite-Creme Vive la Vanilla or yogurt of choice",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Homemade or store-bought guacamole",
-  "expected": {
-    "item": "Homemade or store-bought guacamole",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Homemade or store-bought guacamole",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Homemade or store-bought guacamole",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Cooked American bacon",
-  "expected": {
-    "item": "Cooked American bacon",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Cooked American bacon",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Cooked American bacon",
+      "measurements": [],
+      "note": null
+    }
   }
 }

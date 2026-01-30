@@ -1,13 +1,25 @@
 {
   "raw": "4 tablespoons chicken stock, fish stock or dry white wine",
-  "expected": {
-    "item": "chicken stock, fish stock or dry white wine",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "tbsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "chicken stock, fish stock or dry white wine",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "chicken stock, fish stock or dry white wine",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "tbsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

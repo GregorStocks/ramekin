@@ -1,8 +1,15 @@
 {
   "raw": "Asparagus",
-  "expected": {
-    "item": "Asparagus",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Asparagus",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Asparagus",
+      "measurements": [],
+      "note": null
+    }
   }
 }

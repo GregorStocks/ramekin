@@ -1,8 +1,15 @@
 {
   "raw": "Minced white onion or pickled red onions",
-  "expected": {
-    "item": "Minced white onion or pickled red onions",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Minced white onion or pickled red onions",
+      "measurements": [],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Minced white onion or pickled red onions",
+      "measurements": [],
+      "note": null
+    }
   }
 }

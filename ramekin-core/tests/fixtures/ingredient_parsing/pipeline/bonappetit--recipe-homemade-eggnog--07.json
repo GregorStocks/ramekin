@@ -1,8 +1,15 @@
 {
   "raw": "Whole nutmeg and cinnamon stick (for serving)",
-  "expected": {
-    "item": "Whole nutmeg and cinnamon stick",
-    "measurements": [],
-    "note": "for serving"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Whole nutmeg and cinnamon stick",
+      "measurements": [],
+      "note": "for serving"
+    },
+    "enrich_metric_weights": {
+      "item": "Whole nutmeg and cinnamon stick",
+      "measurements": [],
+      "note": "for serving"
+    }
   }
 }

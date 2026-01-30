@@ -1,17 +1,33 @@
 {
   "raw": "250 g (2 cups) powdered sugar (sifted)",
-  "expected": {
-    "item": "powdered sugar",
-    "measurements": [
-      {
-        "amount": "250",
-        "unit": "g"
-      },
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "sifted"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    },
+    "parse_ingredients": {
+      "item": "powdered sugar",
+      "measurements": [
+        {
+          "amount": "250",
+          "unit": "g"
+        },
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "sifted"
+    }
   }
 }

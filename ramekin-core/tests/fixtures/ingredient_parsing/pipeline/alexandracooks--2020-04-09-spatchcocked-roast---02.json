@@ -1,13 +1,25 @@
 {
   "raw": "4 dates, pitted and coarsely chopped",
-  "expected": {
-    "item": "dates",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "pitted and coarsely chopped"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "dates",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "pitted and coarsely chopped"
+    },
+    "parse_ingredients": {
+      "item": "dates",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "pitted and coarsely chopped"
+    }
   }
 }

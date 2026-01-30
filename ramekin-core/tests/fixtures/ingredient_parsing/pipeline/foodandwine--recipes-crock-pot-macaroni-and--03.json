@@ -1,17 +1,37 @@
 {
   "raw": "1 1/2 ounces Parmigiano-Reggiano cheese, finely grated (1/2 cup)",
-  "expected": {
-    "item": "Parmigiano-Reggiano cheese",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "oz"
-      },
-      {
-        "amount": "1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "finely grated"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Parmigiano-Reggiano cheese",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "finely grated"
+    },
+    "enrich_metric_weights": {
+      "item": "Parmigiano-Reggiano cheese",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "oz"
+        },
+        {
+          "amount": "1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "43",
+          "unit": "g"
+        }
+      ],
+      "note": "finely grated"
+    }
   }
 }

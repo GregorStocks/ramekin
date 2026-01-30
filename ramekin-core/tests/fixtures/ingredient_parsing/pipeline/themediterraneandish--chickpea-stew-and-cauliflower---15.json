@@ -1,13 +1,25 @@
 {
   "raw": "1 28-oz can diced tomatoes with its juice",
-  "expected": {
-    "item": "diced tomatoes with its juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "28-oz can"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "diced tomatoes with its juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "28-oz can"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "diced tomatoes with its juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "28-oz can"
+        }
+      ],
+      "note": null
+    }
   }
 }

@@ -1,17 +1,33 @@
 {
   "raw": "2 cups (160 grams) rolled oats (I used quick-cooking for the least noticable texture)",
-  "expected": {
-    "item": "rolled oats (I used quick-cooking for the least noticable texture)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      },
-      {
-        "amount": "160",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "rolled oats (I used quick-cooking for the least noticable texture)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "rolled oats (I used quick-cooking for the least noticable texture)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        },
+        {
+          "amount": "160",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

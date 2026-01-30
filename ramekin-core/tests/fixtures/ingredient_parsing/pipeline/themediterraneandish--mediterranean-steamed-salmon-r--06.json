@@ -1,13 +1,25 @@
 {
   "raw": "1 tsp/ 1.67 g ground coriander",
-  "expected": {
-    "item": "tsp/ 1.67 g ground coriander",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "tsp/ 1.67 g ground coriander",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "tsp/ 1.67 g ground coriander",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

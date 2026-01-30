@@ -1,17 +1,33 @@
 {
   "raw": "2 (15-ounce)  cans fruit cocktail,  (drained with juice discarded)",
-  "expected": {
-    "item": "fruit cocktail",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": null
-      }
-    ],
-    "note": "drained with juice discarded"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fruit cocktail",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "drained with juice discarded"
+    },
+    "enrich_metric_weights": {
+      "item": "fruit cocktail",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": null
+        }
+      ],
+      "note": "drained with juice discarded"
+    }
   }
 }

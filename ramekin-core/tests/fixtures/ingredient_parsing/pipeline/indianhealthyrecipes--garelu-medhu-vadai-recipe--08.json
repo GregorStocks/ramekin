@@ -1,13 +1,25 @@
 {
   "raw": "1 sprig curry leaves ((chopped))",
-  "expected": {
-    "item": "curry leaves",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "sprig"
-      }
-    ],
-    "note": "chopped"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "curry leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": "chopped"
+    },
+    "enrich_metric_weights": {
+      "item": "curry leaves",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "sprig"
+        }
+      ],
+      "note": "chopped"
+    }
   }
 }

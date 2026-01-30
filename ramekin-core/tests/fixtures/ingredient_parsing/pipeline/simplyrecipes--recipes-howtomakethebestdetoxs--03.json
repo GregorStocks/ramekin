@@ -1,13 +1,25 @@
 {
   "raw": "1 small raw red beet, peeled and diced (grated for conventional blenders)",
-  "expected": {
-    "item": "raw red beet, peeled and diced",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "small"
-      }
-    ],
-    "note": "grated for conventional blenders"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "raw red beet, peeled and diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "grated for conventional blenders"
+    },
+    "parse_ingredients": {
+      "item": "raw red beet, peeled and diced",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "small"
+        }
+      ],
+      "note": "grated for conventional blenders"
+    }
   }
 }

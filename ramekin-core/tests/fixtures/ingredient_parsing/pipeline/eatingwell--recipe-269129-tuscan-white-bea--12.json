@@ -1,17 +1,37 @@
 {
   "raw": "1 (15 ounce) can no-salt-added diced tomatoes with basil, garlic &amp; oregano, drained",
-  "expected": {
-    "item": "no-salt-added diced tomatoes with basil, garlic & oregano",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "can"
-      },
-      {
-        "amount": "15",
-        "unit": "oz"
-      }
-    ],
-    "note": "drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "no-salt-added diced tomatoes with basil, garlic & oregano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        }
+      ],
+      "note": "drained"
+    },
+    "enrich_metric_weights": {
+      "item": "no-salt-added diced tomatoes with basil, garlic & oregano",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "can"
+        },
+        {
+          "amount": "15",
+          "unit": "oz"
+        },
+        {
+          "amount": "425",
+          "unit": "g"
+        }
+      ],
+      "note": "drained"
+    }
   }
 }

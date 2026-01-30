@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 200 grams granulated sugar + 1 tsp (5 grams)",
-  "expected": {
-    "item": "200 grams granulated sugar + 1 tsp",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "5",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "200 grams granulated sugar + 1 tsp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "200 grams granulated sugar + 1 tsp",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

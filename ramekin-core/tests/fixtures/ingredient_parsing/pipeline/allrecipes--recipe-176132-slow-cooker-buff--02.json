@@ -1,17 +1,33 @@
 {
   "raw": "1 (17.5 fluid ounce) bottle Buffalo wing sauce, divided",
-  "expected": {
-    "item": "Buffalo wing sauce",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "bottle"
-      },
-      {
-        "amount": "17.5",
-        "unit": "fl oz"
-      }
-    ],
-    "note": "divided"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Buffalo wing sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "17.5",
+          "unit": "fl oz"
+        }
+      ],
+      "note": "divided"
+    },
+    "enrich_metric_weights": {
+      "item": "Buffalo wing sauce",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "bottle"
+        },
+        {
+          "amount": "17.5",
+          "unit": "fl oz"
+        }
+      ],
+      "note": "divided"
+    }
   }
 }

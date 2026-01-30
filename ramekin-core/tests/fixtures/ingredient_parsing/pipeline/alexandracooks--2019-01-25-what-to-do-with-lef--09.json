@@ -1,8 +1,15 @@
 {
   "raw": "orange segments or diced apple or pear, optional",
-  "expected": {
-    "item": "orange segments or diced apple or pear",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange segments or diced apple or pear",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "orange segments or diced apple or pear",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

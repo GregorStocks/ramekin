@@ -1,8 +1,15 @@
 {
   "raw": "a sprig or two of fresh thyme",
-  "expected": {
-    "item": "a sprig or two of fresh thyme",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "a sprig or two of fresh thyme",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "a sprig or two of fresh thyme",
+      "measurements": [],
+      "note": null
+    }
   }
 }

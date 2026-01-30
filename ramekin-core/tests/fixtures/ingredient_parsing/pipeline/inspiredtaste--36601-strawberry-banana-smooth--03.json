@@ -1,17 +1,33 @@
 {
   "raw": "1 1/2 cups (185 grams) chopped zucchini (about half a medium zucchini)",
-  "expected": {
-    "item": "chopped zucchini (about half a medium zucchini)",
-    "measurements": [
-      {
-        "amount": "1 1/2",
-        "unit": "cup"
-      },
-      {
-        "amount": "185",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped zucchini (about half a medium zucchini)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "185",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "chopped zucchini (about half a medium zucchini)",
+      "measurements": [
+        {
+          "amount": "1 1/2",
+          "unit": "cup"
+        },
+        {
+          "amount": "185",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

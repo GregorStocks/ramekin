@@ -1,17 +1,33 @@
 {
   "raw": "1 teaspoon (5 g) baking soda",
-  "expected": {
-    "item": "baking soda",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "tsp"
-      },
-      {
-        "amount": "5",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "baking soda",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "baking soda",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "tsp"
+        },
+        {
+          "amount": "5",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

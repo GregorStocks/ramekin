@@ -1,17 +1,33 @@
 {
   "raw": ".7 grams garlic powder ((~1/4 teaspoon))",
-  "expected": {
-    "item": "garlic powder",
-    "measurements": [
-      {
-        "amount": ".7",
-        "unit": "g"
-      },
-      {
-        "amount": "1/4",
-        "unit": "tsp"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": ".7",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "garlic powder",
+      "measurements": [
+        {
+          "amount": ".7",
+          "unit": "g"
+        },
+        {
+          "amount": "1/4",
+          "unit": "tsp"
+        }
+      ],
+      "note": null
+    }
   }
 }

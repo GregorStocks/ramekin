@@ -1,17 +1,33 @@
 {
   "raw": "2 large zucchini, sliced length-wise (1/2-inch in thickness)",
-  "expected": {
-    "item": "zucchini",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "large"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "sliced length-wise"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced length-wise"
+    },
+    "enrich_metric_weights": {
+      "item": "zucchini",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "large"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "sliced length-wise"
+    }
   }
 }

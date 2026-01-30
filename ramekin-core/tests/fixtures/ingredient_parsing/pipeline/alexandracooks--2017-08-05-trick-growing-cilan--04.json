@@ -1,13 +1,25 @@
 {
   "raw": "1 garlic clove, finely grated or pounded with a pinch of salt",
-  "expected": {
-    "item": "garlic clove",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": "finely grated or pounded with a pinch of salt"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely grated or pounded with a pinch of salt"
+    },
+    "enrich_metric_weights": {
+      "item": "garlic clove",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": "finely grated or pounded with a pinch of salt"
+    }
   }
 }

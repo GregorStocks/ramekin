@@ -1,8 +1,15 @@
 {
   "raw": "bourbon, optional",
-  "expected": {
-    "item": "bourbon",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "bourbon",
+      "measurements": [],
+      "note": "optional"
+    },
+    "enrich_metric_weights": {
+      "item": "bourbon",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

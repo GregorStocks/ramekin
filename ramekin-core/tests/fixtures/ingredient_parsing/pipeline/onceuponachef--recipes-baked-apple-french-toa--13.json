@@ -1,8 +1,15 @@
 {
   "raw": "Confectioners' sugar and/or maple syrup",
-  "expected": {
-    "item": "Confectioners' sugar and/or maple syrup",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Confectioners' sugar and/or maple syrup",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Confectioners' sugar and/or maple syrup",
+      "measurements": [],
+      "note": null
+    }
   }
 }

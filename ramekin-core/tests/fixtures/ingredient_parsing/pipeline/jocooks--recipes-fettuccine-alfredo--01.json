@@ -1,13 +1,29 @@
 {
   "raw": "12 ounces fettuccine (uncooked)",
-  "expected": {
-    "item": "fettuccine",
-    "measurements": [
-      {
-        "amount": "12",
-        "unit": "oz"
-      }
-    ],
-    "note": "uncooked"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "fettuccine",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        },
+        {
+          "amount": "340",
+          "unit": "g"
+        }
+      ],
+      "note": "uncooked"
+    },
+    "parse_ingredients": {
+      "item": "fettuccine",
+      "measurements": [
+        {
+          "amount": "12",
+          "unit": "oz"
+        }
+      ],
+      "note": "uncooked"
+    }
   }
 }

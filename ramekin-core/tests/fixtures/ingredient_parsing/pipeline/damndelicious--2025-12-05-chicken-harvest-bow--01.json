@@ -1,13 +1,25 @@
 {
   "raw": "1 pound small sweet potatoes (halved lengthwise and sliced)",
-  "expected": {
-    "item": "small sweet potatoes",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "lb"
-      }
-    ],
-    "note": "halved lengthwise and sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "small sweet potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved lengthwise and sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "small sweet potatoes",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "lb"
+        }
+      ],
+      "note": "halved lengthwise and sliced"
+    }
   }
 }

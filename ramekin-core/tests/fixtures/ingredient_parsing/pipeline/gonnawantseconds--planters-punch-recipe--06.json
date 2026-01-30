@@ -1,8 +1,15 @@
 {
   "raw": "splash grenadine",
-  "expected": {
-    "item": "splash grenadine",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "splash grenadine",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "splash grenadine",
+      "measurements": [],
+      "note": null
+    }
   }
 }

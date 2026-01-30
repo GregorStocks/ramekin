@@ -1,13 +1,29 @@
 {
   "raw": "32 oz. 4 packages cream cheese, softened",
-  "expected": {
-    "item": "4 packages cream cheese",
-    "measurements": [
-      {
-        "amount": "32",
-        "unit": "oz"
-      }
-    ],
-    "note": "softened"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "4 packages cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        }
+      ],
+      "note": "softened"
+    },
+    "enrich_metric_weights": {
+      "item": "4 packages cream cheese",
+      "measurements": [
+        {
+          "amount": "32",
+          "unit": "oz"
+        },
+        {
+          "amount": "907",
+          "unit": "g"
+        }
+      ],
+      "note": "softened"
+    }
   }
 }

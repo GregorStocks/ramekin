@@ -1,8 +1,15 @@
 {
   "raw": "pimento",
-  "expected": {
-    "item": "pimento",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pimento",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pimento",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 orange, zest + 2 tablespoons of the juice",
-  "expected": {
-    "item": "orange, zest + 2 tablespoons of the juice",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "orange, zest + 2 tablespoons of the juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "orange, zest + 2 tablespoons of the juice",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

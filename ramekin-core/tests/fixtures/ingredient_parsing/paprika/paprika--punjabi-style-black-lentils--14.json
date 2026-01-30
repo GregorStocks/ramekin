@@ -1,13 +1,25 @@
 {
   "raw": "4 1/2 cups water, plus more to taste",
-  "expected": {
-    "item": "water",
-    "measurements": [
-      {
-        "amount": "4 1/2",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "water",
+      "measurements": [
+        {
+          "amount": "4 1/2",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more to taste"
+    }
   }
 }

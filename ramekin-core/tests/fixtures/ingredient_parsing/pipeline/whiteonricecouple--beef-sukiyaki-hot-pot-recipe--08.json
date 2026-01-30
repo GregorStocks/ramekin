@@ -1,13 +1,25 @@
 {
   "raw": "8  Napa Cabbage leaves (, sliced *see note 2 below)",
-  "expected": {
-    "item": "Napa Cabbage leaves",
-    "measurements": [
-      {
-        "amount": "8",
-        "unit": null
-      }
-    ],
-    "note": "sliced *see note 2 below"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Napa Cabbage leaves",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced *see note 2 below"
+    },
+    "enrich_metric_weights": {
+      "item": "Napa Cabbage leaves",
+      "measurements": [
+        {
+          "amount": "8",
+          "unit": null
+        }
+      ],
+      "note": "sliced *see note 2 below"
+    }
   }
 }

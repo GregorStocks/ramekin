@@ -1,8 +1,15 @@
 {
   "raw": "Ice water, as needed",
-  "expected": {
-    "item": "Ice water",
-    "measurements": [],
-    "note": "as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ice water",
+      "measurements": [],
+      "note": "as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "Ice water",
+      "measurements": [],
+      "note": "as needed"
+    }
   }
 }

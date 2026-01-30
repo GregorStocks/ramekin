@@ -1,13 +1,25 @@
 {
   "raw": "10 grams powdered gelatin",
-  "expected": {
-    "item": "powdered gelatin",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "powdered gelatin",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "powdered gelatin",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

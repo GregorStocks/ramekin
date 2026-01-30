@@ -1,13 +1,25 @@
 {
   "raw": "2 heads cos lettuce (washed and dried)",
-  "expected": {
-    "item": "cos lettuce",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "head"
-      }
-    ],
-    "note": "washed and dried"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cos lettuce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": "washed and dried"
+    },
+    "parse_ingredients": {
+      "item": "cos lettuce",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "head"
+        }
+      ],
+      "note": "washed and dried"
+    }
   }
 }

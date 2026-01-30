@@ -1,13 +1,29 @@
 {
   "raw": "10 oz can of chicken (well drained)",
-  "expected": {
-    "item": "can of chicken",
-    "measurements": [
-      {
-        "amount": "10",
-        "unit": "oz"
-      }
-    ],
-    "note": "well drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "can of chicken",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        }
+      ],
+      "note": "well drained"
+    },
+    "enrich_metric_weights": {
+      "item": "can of chicken",
+      "measurements": [
+        {
+          "amount": "10",
+          "unit": "oz"
+        },
+        {
+          "amount": "283",
+          "unit": "g"
+        }
+      ],
+      "note": "well drained"
+    }
   }
 }

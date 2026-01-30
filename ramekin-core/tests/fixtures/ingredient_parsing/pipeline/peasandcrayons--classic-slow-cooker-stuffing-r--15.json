@@ -1,13 +1,25 @@
 {
   "raw": "6 QT Slow Cooker",
-  "expected": {
-    "item": "Slow Cooker",
-    "measurements": [
-      {
-        "amount": "6",
-        "unit": "quart"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Slow Cooker",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Slow Cooker",
+      "measurements": [
+        {
+          "amount": "6",
+          "unit": "quart"
+        }
+      ],
+      "note": null
+    }
   }
 }

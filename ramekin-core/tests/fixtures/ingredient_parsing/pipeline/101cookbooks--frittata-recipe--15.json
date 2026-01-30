@@ -1,8 +1,15 @@
 {
   "raw": "couple pinches of salt",
-  "expected": {
-    "item": "couple pinches of salt",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "couple pinches of salt",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "couple pinches of salt",
+      "measurements": [],
+      "note": null
+    }
   }
 }

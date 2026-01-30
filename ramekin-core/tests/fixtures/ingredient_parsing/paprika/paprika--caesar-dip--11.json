@@ -1,8 +1,15 @@
 {
   "raw": "Chopped parsley for garnish, if desired",
-  "expected": {
-    "item": "Chopped parsley for garnish, if desired",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Chopped parsley for garnish, if desired",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Chopped parsley for garnish, if desired",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,8 +1,15 @@
 {
   "raw": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
-  "expected": {
-    "item": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Ground chile powder, to taste (I started with a 1/2 teaspoon, but I have to keep things weak for kids)",
+      "measurements": [],
+      "note": null
+    }
   }
 }

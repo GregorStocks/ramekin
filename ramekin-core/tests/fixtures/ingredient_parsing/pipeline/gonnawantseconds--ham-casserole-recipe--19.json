@@ -1,13 +1,25 @@
 {
   "raw": "1 cup frozen petites peas, (thawed and drained)",
-  "expected": {
-    "item": "frozen petites peas",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "thawed and drained"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "frozen petites peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed and drained"
+    },
+    "enrich_metric_weights": {
+      "item": "frozen petites peas",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "thawed and drained"
+    }
   }
 }

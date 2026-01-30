@@ -1,17 +1,33 @@
 {
   "raw": "1 cup 270g pumpkin puree (canned is fine)",
-  "expected": {
-    "item": "pumpkin puree (canned is fine)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      },
-      {
-        "amount": "270",
-        "unit": "g"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "pumpkin puree (canned is fine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "270",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "pumpkin puree (canned is fine)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        },
+        {
+          "amount": "270",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

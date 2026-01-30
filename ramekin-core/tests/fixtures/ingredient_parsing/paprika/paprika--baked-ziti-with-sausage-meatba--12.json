@@ -1,17 +1,37 @@
 {
   "raw": "7 ounces crème fraîche (about 1 scant cup)",
-  "expected": {
-    "item": "crème fraîche",
-    "measurements": [
-      {
-        "amount": "7",
-        "unit": "oz"
-      },
-      {
-        "amount": "1",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "crème fraîche",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "crème fraîche",
+      "measurements": [
+        {
+          "amount": "7",
+          "unit": "oz"
+        },
+        {
+          "amount": "1",
+          "unit": null
+        },
+        {
+          "amount": "198",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

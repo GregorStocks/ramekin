@@ -1,17 +1,37 @@
 {
   "raw": "4 (4-6 ounce) Mahi Mahi Fillets",
-  "expected": {
-    "item": "Mahi Mahi Fillets",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      },
-      {
-        "amount": "4-6",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Mahi Mahi Fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "4-6",
+          "unit": "oz"
+        },
+        {
+          "amount": "113-170",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "Mahi Mahi Fillets",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        },
+        {
+          "amount": "4-6",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    }
   }
 }

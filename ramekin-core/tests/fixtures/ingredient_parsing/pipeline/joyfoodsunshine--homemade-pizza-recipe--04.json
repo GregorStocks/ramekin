@@ -1,8 +1,15 @@
 {
   "raw": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
-  "expected": {
-    "item": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "pepperoni, sausage, olives, vegetables, pineapple, etc.",
+      "measurements": [],
+      "note": null
+    }
   }
 }

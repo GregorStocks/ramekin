@@ -1,8 +1,15 @@
 {
   "raw": "Oil (for deep frying as needed)",
-  "expected": {
-    "item": "Oil",
-    "measurements": [],
-    "note": "for deep frying as needed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Oil",
+      "measurements": [],
+      "note": "for deep frying as needed"
+    },
+    "enrich_metric_weights": {
+      "item": "Oil",
+      "measurements": [],
+      "note": "for deep frying as needed"
+    }
   }
 }

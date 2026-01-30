@@ -1,13 +1,25 @@
 {
   "raw": "4 sticks cinnamon",
-  "expected": {
-    "item": "cinnamon",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "stick"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "cinnamon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    },
+    "parse_ingredients": {
+      "item": "cinnamon",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "stick"
+        }
+      ],
+      "note": null
+    }
   }
 }

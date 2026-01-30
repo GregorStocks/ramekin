@@ -1,13 +1,25 @@
 {
   "raw": "1 cup shredded cheddar cheese (plus more for topping)",
-  "expected": {
-    "item": "shredded cheddar cheese",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": "plus more for topping"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    },
+    "parse_ingredients": {
+      "item": "shredded cheddar cheese",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": "plus more for topping"
+    }
   }
 }

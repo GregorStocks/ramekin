@@ -1,8 +1,15 @@
 {
   "raw": "fresh ground black pepper and salt (, to personal taste )",
-  "expected": {
-    "item": "fresh ground black pepper and salt (, to personal taste",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh ground black pepper and salt (, to personal taste",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "fresh ground black pepper and salt (, to personal taste",
+      "measurements": [],
+      "note": null
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "1 cup graham cracker crumbs ((See Note 1))",
-  "expected": {
-    "item": "graham cracker crumbs (See Note 1)",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "cup"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "graham cracker crumbs (See Note 1)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "graham cracker crumbs (See Note 1)",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "cup"
+        }
+      ],
+      "note": null
+    }
   }
 }

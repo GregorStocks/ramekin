@@ -1,8 +1,15 @@
 {
   "raw": "kewpie mayo, to taste",
-  "expected": {
-    "item": "kewpie mayo",
-    "measurements": [],
-    "note": "to taste"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "kewpie mayo",
+      "measurements": [],
+      "note": "to taste"
+    },
+    "parse_ingredients": {
+      "item": "kewpie mayo",
+      "measurements": [],
+      "note": "to taste"
+    }
   }
 }

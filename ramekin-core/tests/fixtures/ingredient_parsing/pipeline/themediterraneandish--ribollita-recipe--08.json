@@ -1,13 +1,29 @@
 {
   "raw": "28 oz canned whole San Marzano tomatoes ((or any whole canned tomatoes you like) )",
-  "expected": {
-    "item": "canned whole San Marzano tomatoes",
-    "measurements": [
-      {
-        "amount": "28",
-        "unit": "oz"
-      }
-    ],
-    "note": "or any whole canned tomatoes you like"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "canned whole San Marzano tomatoes",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        },
+        {
+          "amount": "794",
+          "unit": "g"
+        }
+      ],
+      "note": "or any whole canned tomatoes you like"
+    },
+    "parse_ingredients": {
+      "item": "canned whole San Marzano tomatoes",
+      "measurements": [
+        {
+          "amount": "28",
+          "unit": "oz"
+        }
+      ],
+      "note": "or any whole canned tomatoes you like"
+    }
   }
 }

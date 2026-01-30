@@ -1,13 +1,25 @@
 {
   "raw": "2 tablespoons fresh chopped basil (or more to taste)",
-  "expected": {
-    "item": "fresh chopped basil",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "tbsp"
-      }
-    ],
-    "note": "or more to taste"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "fresh chopped basil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    },
+    "enrich_metric_weights": {
+      "item": "fresh chopped basil",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "tbsp"
+        }
+      ],
+      "note": "or more to taste"
+    }
   }
 }

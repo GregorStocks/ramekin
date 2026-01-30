@@ -1,13 +1,29 @@
 {
   "raw": "4 ounces Italian sausage (, cooked and crumbled)",
-  "expected": {
-    "item": "Italian sausage",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": "cooked and crumbled"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Italian sausage",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": "cooked and crumbled"
+    },
+    "enrich_metric_weights": {
+      "item": "Italian sausage",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": "cooked and crumbled"
+    }
   }
 }

@@ -1,13 +1,25 @@
 {
   "raw": "4 lbs potatoes (peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best))",
-  "expected": {
-    "item": "potatoes",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "lb"
-      }
-    ],
-    "note": "peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best"
+    },
+    "enrich_metric_weights": {
+      "item": "potatoes",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "lb"
+        }
+      ],
+      "note": "peeled and chopped into 1” pieces (russets or Yukon gold potatoes work best"
+    }
   }
 }

@@ -1,13 +1,29 @@
 {
   "raw": "4 oz. St-Germain (elderflower liqueur)",
-  "expected": {
-    "item": "St-Germain (elderflower liqueur)",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": "oz"
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "St-Germain (elderflower liqueur)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "St-Germain (elderflower liqueur)",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": "oz"
+        },
+        {
+          "amount": "113",
+          "unit": "g"
+        }
+      ],
+      "note": null
+    }
   }
 }

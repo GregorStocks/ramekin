@@ -1,8 +1,15 @@
 {
   "raw": "Shredded cheese (optional)",
-  "expected": {
-    "item": "Shredded cheese",
-    "measurements": [],
-    "note": "optional"
+  "step_outputs": {
+    "enrich_metric_weights": {
+      "item": "Shredded cheese",
+      "measurements": [],
+      "note": "optional"
+    },
+    "parse_ingredients": {
+      "item": "Shredded cheese",
+      "measurements": [],
+      "note": "optional"
+    }
   }
 }

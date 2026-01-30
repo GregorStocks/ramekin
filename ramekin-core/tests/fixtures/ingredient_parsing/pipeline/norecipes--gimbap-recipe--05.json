@@ -1,13 +1,25 @@
 {
   "raw": "4 whole spinach ((thoroughly washed))",
-  "expected": {
-    "item": "whole spinach",
-    "measurements": [
-      {
-        "amount": "4",
-        "unit": null
-      }
-    ],
-    "note": "thoroughly washed"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "whole spinach",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thoroughly washed"
+    },
+    "enrich_metric_weights": {
+      "item": "whole spinach",
+      "measurements": [
+        {
+          "amount": "4",
+          "unit": null
+        }
+      ],
+      "note": "thoroughly washed"
+    }
   }
 }

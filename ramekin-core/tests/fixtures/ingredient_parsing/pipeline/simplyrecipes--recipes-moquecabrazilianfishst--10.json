@@ -1,13 +1,25 @@
 {
   "raw": "2 cups chopped (or sliced) tomatoes",
-  "expected": {
-    "item": "chopped tomatoes",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": "cup"
-      }
-    ],
-    "note": "or sliced"
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "chopped tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or sliced"
+    },
+    "enrich_metric_weights": {
+      "item": "chopped tomatoes",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": "cup"
+        }
+      ],
+      "note": "or sliced"
+    }
   }
 }

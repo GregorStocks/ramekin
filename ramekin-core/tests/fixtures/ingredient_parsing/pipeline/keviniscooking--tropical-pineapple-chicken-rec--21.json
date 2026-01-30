@@ -1,13 +1,25 @@
 {
   "raw": "2  Scotch Bonnet pepper ((See Note 3))",
-  "expected": {
-    "item": "Scotch Bonnet pepper (See Note 3)",
-    "measurements": [
-      {
-        "amount": "2",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "Scotch Bonnet pepper (See Note 3)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "Scotch Bonnet pepper (See Note 3)",
+      "measurements": [
+        {
+          "amount": "2",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }

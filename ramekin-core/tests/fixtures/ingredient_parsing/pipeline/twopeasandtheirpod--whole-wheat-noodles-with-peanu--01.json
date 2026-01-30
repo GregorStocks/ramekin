@@ -1,8 +1,15 @@
 {
   "raw": "For  Peanut Sauce:",
-  "expected": {
-    "item": "For  Peanut Sauce:",
-    "measurements": [],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "For  Peanut Sauce:",
+      "measurements": [],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "For  Peanut Sauce:",
+      "measurements": [],
+      "note": null
+    }
   }
 }

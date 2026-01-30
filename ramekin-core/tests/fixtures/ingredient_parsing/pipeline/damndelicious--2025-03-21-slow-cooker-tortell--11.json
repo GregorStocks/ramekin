@@ -1,17 +1,33 @@
 {
   "raw": "1 (9-ounce) package refrigerated three cheese tortellini",
-  "expected": {
-    "item": "refrigerated three cheese tortellini",
-    "measurements": [
-      {
-        "amount": "1",
-        "unit": "package"
-      },
-      {
-        "amount": "9",
-        "unit": null
-      }
-    ],
-    "note": null
+  "step_outputs": {
+    "parse_ingredients": {
+      "item": "refrigerated three cheese tortellini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    },
+    "enrich_metric_weights": {
+      "item": "refrigerated three cheese tortellini",
+      "measurements": [
+        {
+          "amount": "1",
+          "unit": "package"
+        },
+        {
+          "amount": "9",
+          "unit": null
+        }
+      ],
+      "note": null
+    }
   }
 }
