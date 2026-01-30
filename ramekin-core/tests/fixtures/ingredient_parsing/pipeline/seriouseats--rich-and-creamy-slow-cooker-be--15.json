@@ -1,16 +1,6 @@
 {
   "raw": "12-ounce package egg noodles",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "-ounce package egg noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "-ounce package egg noodles",
       "measurements": [

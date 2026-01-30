@@ -1,16 +1,6 @@
 {
   "raw": "2 pounds Russet potatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Russet potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Russet potatoes",
       "measurements": [

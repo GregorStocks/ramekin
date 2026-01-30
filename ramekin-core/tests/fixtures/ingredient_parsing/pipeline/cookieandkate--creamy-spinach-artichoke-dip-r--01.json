@@ -1,7 +1,7 @@
 {
   "raw": "8 ounces (about 1 cup) frozen spinach",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "frozen spinach",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "frozen spinach",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
         }
       ],
       "note": null

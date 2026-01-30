@@ -1,16 +1,6 @@
 {
   "raw": "2 Tbsp cold shortening",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold shortening",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold shortening",
       "measurements": [

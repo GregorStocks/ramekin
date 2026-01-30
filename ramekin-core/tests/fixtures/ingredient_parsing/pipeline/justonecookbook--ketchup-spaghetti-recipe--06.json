@@ -1,24 +1,6 @@
 {
   "raw": "¼–½  green bell pepper ((2.5 oz, 70 g))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "1/4-1/2",
-          "unit": null
-        },
-        {
-          "amount": "2.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green bell pepper",
       "measurements": [

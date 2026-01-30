@@ -1,16 +1,6 @@
 {
   "raw": "1 tsp sweet Spanish paprika&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet Spanish paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sweet Spanish paprika",
       "measurements": [

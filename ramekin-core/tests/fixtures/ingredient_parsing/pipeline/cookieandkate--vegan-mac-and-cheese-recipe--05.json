@@ -1,7 +1,7 @@
 {
   "raw": "1 cup peeled and grated russet potato (4 ounces, about 1 small or ½ medium potato), preferably organic",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "peeled and grated russet potato , preferably organic",
       "measurements": [
         {
@@ -23,28 +23,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "peeled and grated russet potato , preferably organic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "1/2",
-          "unit": "medium"
         }
       ],
       "note": null

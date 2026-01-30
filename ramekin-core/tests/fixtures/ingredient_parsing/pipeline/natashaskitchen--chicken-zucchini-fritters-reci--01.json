@@ -1,16 +1,6 @@
 {
   "raw": "2  zucchini (medium, about 1 1/4 lbs, grated (I used a green zucchini and a yellow squash))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "medium, about 1 1/4 lbs, grated (I used a green zucchini and a yellow squash"
-    },
     "parse_ingredients": {
       "item": "zucchini",
       "measurements": [

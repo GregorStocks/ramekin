@@ -1,7 +1,7 @@
 {
   "raw": "15.5 oz German Chocolate cake mix (1 box)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "German Chocolate cake mix",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "439",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "German Chocolate cake mix",
-      "measurements": [
-        {
-          "amount": "15.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "box"
         }
       ],
       "note": null

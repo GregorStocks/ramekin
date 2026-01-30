@@ -1,7 +1,7 @@
 {
   "raw": "1 cup (4 oz) finely shredded Gruyère, packed",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "finely shredded Gruyère",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "packed"
-    },
-    "parse_ingredients": {
-      "item": "finely shredded Gruyère",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "packed"

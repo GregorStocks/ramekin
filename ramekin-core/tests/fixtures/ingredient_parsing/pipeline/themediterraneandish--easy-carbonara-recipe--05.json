@@ -1,16 +1,6 @@
 {
   "raw": "2 tsp dried oregano, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried oregano",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "dried oregano",
       "measurements": [

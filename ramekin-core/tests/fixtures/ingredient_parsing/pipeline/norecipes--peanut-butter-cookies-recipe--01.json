@@ -1,20 +1,6 @@
 {
   "raw": "55 grams rolled oats ((~1/2 cup))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rolled oats",
-      "measurements": [
-        {
-          "amount": "55",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "rolled oats",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "6 hoagie rolls, split lengthwise",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hoagie rolls, split lengthwise",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hoagie rolls, split lengthwise",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 pounds boneless ribeye ((substitute boneless sirloin or beef tenderloin))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless ribeye (substitute boneless sirloin or beef tenderloin)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "boneless ribeye (substitute boneless sirloin or beef tenderloin)",
       "measurements": [

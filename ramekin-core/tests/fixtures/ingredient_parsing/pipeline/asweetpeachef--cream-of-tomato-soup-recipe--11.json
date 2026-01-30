@@ -1,20 +1,6 @@
 {
   "raw": "3/4 cup canned full-fat coconut milk  (can sub for unsweetened almond milk*)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "canned full-fat coconut milk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": null,
-          "unit": "can"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "canned full-fat coconut milk",
       "measurements": [

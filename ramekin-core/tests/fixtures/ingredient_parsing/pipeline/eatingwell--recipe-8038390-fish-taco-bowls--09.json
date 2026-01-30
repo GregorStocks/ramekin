@@ -1,16 +1,6 @@
 {
   "raw": "2 cups finely shredded green cabbage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely shredded green cabbage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely shredded green cabbage",
       "measurements": [

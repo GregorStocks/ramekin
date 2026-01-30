@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons snipped chives",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "snipped chives",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "snipped chives",
       "measurements": [

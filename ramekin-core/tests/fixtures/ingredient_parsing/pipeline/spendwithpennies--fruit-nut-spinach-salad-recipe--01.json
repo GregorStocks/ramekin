@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup pecans (toasted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pecans",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "pecans",
       "measurements": [

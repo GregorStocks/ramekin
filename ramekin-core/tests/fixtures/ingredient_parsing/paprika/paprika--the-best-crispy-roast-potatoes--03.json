@@ -1,20 +1,6 @@
 {
   "raw": "4 pounds (about 2 kg) russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        },
-        {
-          "amount": "2",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "russet or Yukon Gold potatoes, peeled and cut into quarters, sixths, or eighths, depending on size (see note)",
       "measurements": [

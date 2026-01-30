@@ -1,16 +1,6 @@
 {
   "raw": "1 large radish, very thinly sliced on a mandoline",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "radish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "very thinly sliced on a mandoline"
-    },
     "parse_ingredients": {
       "item": "radish",
       "measurements": [

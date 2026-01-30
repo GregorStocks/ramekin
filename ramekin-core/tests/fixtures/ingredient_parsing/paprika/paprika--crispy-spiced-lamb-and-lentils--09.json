@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups cooked brown or green lentils (from a scant 1 cup dried)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked brown or green lentils",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "from a scant 1 cup dried"
-    },
     "parse_ingredients": {
       "item": "cooked brown or green lentils",
       "measurements": [

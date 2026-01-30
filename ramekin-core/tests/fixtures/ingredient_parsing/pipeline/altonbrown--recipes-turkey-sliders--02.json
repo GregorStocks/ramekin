@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon finely chopped fresh flat-leaf parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped fresh flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely chopped fresh flat-leaf parsley",
       "measurements": [

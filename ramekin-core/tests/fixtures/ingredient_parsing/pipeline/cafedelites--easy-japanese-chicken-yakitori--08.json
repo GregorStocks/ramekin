@@ -1,7 +1,7 @@
 {
   "raw": "17 oz skinless and boneless chicken thigh fillets (diced into 1-inch cubes)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "skinless and boneless chicken thigh fillets",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "482",
           "unit": "g"
-        }
-      ],
-      "note": "diced into 1-inch cubes"
-    },
-    "parse_ingredients": {
-      "item": "skinless and boneless chicken thigh fillets",
-      "measurements": [
-        {
-          "amount": "17",
-          "unit": "oz"
         }
       ],
       "note": "diced into 1-inch cubes"

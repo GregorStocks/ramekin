@@ -1,7 +1,7 @@
 {
   "raw": "2 ounces grated Parmesan or Pecorino Romano cheese (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "grated Parmesan or Pecorino Romano cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "optional"
-    },
-    "parse_ingredients": {
-      "item": "grated Parmesan or Pecorino Romano cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
         }
       ],
       "note": "optional"

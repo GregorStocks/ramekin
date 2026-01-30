@@ -1,7 +1,7 @@
 {
   "raw": "2 (28 oz) cans San Marzano tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "San Marzano tomatoes",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "794",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "San Marzano tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "28",
-          "unit": "oz"
         }
       ],
       "note": null

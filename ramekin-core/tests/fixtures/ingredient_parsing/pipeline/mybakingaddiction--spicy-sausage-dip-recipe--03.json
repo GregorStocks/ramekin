@@ -1,7 +1,7 @@
 {
   "raw": "16 ounces cream cheese; room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cream cheese; room temperature",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "cream cheese; room temperature",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": null

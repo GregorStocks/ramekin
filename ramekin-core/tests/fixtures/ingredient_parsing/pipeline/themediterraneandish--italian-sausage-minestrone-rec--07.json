@@ -1,7 +1,7 @@
 {
   "raw": "12 oz frozen artichoke hearts, (thawed)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "frozen artichoke hearts",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "thawed"
-    },
-    "parse_ingredients": {
-      "item": "frozen artichoke hearts",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "thawed"

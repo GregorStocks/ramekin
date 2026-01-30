@@ -1,7 +1,7 @@
 {
   "raw": "1 cup (4 ounces / 90g) shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "shredded or crumbled cheese such as feta, cheddar, goat cheese, or gruyere",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": null

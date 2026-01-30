@@ -1,16 +1,6 @@
 {
   "raw": "8  ice cream sugar cones (broken into pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ice cream sugar cones (broken into pieces)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ice cream sugar cones (broken into pieces)",
       "measurements": [

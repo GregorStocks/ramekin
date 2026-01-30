@@ -1,16 +1,6 @@
 {
   "raw": "5 1/2 cups all-purpose flour, more for dusting",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour, more for dusting",
-      "measurements": [
-        {
-          "amount": "5 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour, more for dusting",
       "measurements": [

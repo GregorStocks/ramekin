@@ -1,16 +1,6 @@
 {
   "raw": "50g butter cubed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter cubed",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "butter cubed",
       "measurements": [

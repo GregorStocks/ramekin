@@ -1,16 +1,6 @@
 {
   "raw": "1 large golden beet, peeled and cut into wide matchsticks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "golden beet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and cut into wide matchsticks"
-    },
     "parse_ingredients": {
       "item": "golden beet",
       "measurements": [

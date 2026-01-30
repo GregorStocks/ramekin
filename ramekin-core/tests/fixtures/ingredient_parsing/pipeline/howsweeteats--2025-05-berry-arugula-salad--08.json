@@ -1,16 +1,6 @@
 {
   "raw": "½ cup black berries",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "black berries",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "black berries",
       "measurements": [

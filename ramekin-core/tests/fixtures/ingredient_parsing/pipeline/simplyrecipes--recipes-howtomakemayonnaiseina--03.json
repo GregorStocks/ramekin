@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon white or red wine vinegar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white or red wine vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white or red wine vinegar",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 (11-ounce) can  mandarin oranges,  (drained with juice discarded)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mandarin oranges",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "11",
-          "unit": null
-        }
-      ],
-      "note": "drained with juice discarded"
-    },
     "parse_ingredients": {
       "item": "mandarin oranges",
       "measurements": [

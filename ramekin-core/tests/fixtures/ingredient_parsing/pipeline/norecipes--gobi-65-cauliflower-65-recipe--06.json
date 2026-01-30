@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons chili flakes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chili flakes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chili flakes",
       "measurements": [

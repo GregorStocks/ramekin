@@ -1,16 +1,6 @@
 {
   "raw": "1  honeydew, cantaloupe, piel de sapo, or other musk melon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "honeydew, cantaloupe, piel de sapo, or other musk melon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "honeydew, cantaloupe, piel de sapo, or other musk melon",
       "measurements": [

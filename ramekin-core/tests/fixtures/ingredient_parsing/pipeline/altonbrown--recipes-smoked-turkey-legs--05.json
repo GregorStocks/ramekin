@@ -1,16 +1,6 @@
 {
   "raw": "6  turkey legs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "turkey legs",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "turkey legs",
       "measurements": [

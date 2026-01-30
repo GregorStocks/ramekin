@@ -1,16 +1,6 @@
 {
   "raw": "1 -2  chipotles in adobo sauce (canned)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "-2  chipotles in adobo sauce (canned)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "-2  chipotles in adobo sauce (canned)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup Pecorino Romano (grated, or Parmesan cheese)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Pecorino Romano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "grated, or Parmesan cheese"
-    },
     "parse_ingredients": {
       "item": "Pecorino Romano",
       "measurements": [

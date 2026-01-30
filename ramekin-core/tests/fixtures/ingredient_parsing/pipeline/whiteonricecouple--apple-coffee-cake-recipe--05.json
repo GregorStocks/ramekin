@@ -1,16 +1,6 @@
 {
   "raw": "6 Tablespoons cold Butter (, cut into small chunks)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold Butter (, cut into small chunks)",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold Butter (, cut into small chunks)",
       "measurements": [

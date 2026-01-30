@@ -1,16 +1,6 @@
 {
   "raw": "½ cup almond flour (sifted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "almond flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted"
-    },
     "parse_ingredients": {
       "item": "almond flour",
       "measurements": [

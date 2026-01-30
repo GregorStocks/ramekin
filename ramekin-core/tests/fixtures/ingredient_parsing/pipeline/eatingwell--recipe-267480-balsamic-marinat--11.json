@@ -1,16 +1,6 @@
 {
   "raw": "4 Fresh mint or basil leaves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Fresh mint or basil leaves",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Fresh mint or basil leaves",
       "measurements": [

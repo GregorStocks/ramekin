@@ -1,24 +1,6 @@
 {
   "raw": "1 cup (8 ounces or 225 grams) unsalted butter (see Note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter (see Note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsalted butter (see Note)",
       "measurements": [

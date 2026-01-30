@@ -1,16 +1,6 @@
 {
   "raw": "10 grams mint ((leaves only))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mint (leaves only)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mint (leaves only)",
       "measurements": [

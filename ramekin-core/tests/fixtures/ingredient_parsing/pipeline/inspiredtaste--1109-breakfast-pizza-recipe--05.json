@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup sliced plum tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced plum tomatoes",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced plum tomatoes",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "6 burrito-size flour tortillas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "burrito-size flour tortillas",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "burrito-size flour tortillas",
       "measurements": [

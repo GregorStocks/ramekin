@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup granulated Sugar In The Raw",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated Sugar In The Raw",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "granulated Sugar In The Raw",
       "measurements": [

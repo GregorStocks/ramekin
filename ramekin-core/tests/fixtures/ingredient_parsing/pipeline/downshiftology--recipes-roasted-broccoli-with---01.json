@@ -1,16 +1,6 @@
 {
   "raw": "1  head of broccoli",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "broccoli",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 tsp yeast",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yeast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "yeast",
       "measurements": [

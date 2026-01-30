@@ -1,16 +1,6 @@
 {
   "raw": "2½ pounds boneless pork butt roast",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless pork butt roast",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "boneless pork butt roast",
       "measurements": [

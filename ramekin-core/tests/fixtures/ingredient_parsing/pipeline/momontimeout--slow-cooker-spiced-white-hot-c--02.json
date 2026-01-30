@@ -1,16 +1,6 @@
 {
   "raw": "4 cups half and half",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "half and half",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "half and half",
       "measurements": [

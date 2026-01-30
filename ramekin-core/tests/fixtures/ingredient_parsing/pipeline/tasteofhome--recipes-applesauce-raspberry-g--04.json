@@ -1,16 +1,6 @@
 {
   "raw": "1-1/2 cups lemon-lime soda",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon-lime soda",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon-lime soda",
       "measurements": [

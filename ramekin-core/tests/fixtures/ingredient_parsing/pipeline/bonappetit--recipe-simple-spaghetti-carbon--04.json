@@ -1,16 +1,6 @@
 {
   "raw": "2 large eggs plus 3 large egg yolks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "plus 3 large egg yolks"
-    },
     "parse_ingredients": {
       "item": "eggs",
       "measurements": [

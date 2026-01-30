@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup extra-virgin olive oil, divided, plus extra for drizzling (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra-virgin olive oil, divided",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "extra-virgin olive oil, divided",
       "measurements": [

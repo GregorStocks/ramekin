@@ -1,7 +1,7 @@
 {
   "raw": "15.25 oz corn (1 can - drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "corn",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "432",
           "unit": "g"
-        }
-      ],
-      "note": "1 can - drained"
-    },
-    "parse_ingredients": {
-      "item": "corn",
-      "measurements": [
-        {
-          "amount": "15.25",
-          "unit": "oz"
         }
       ],
       "note": "1 can - drained"

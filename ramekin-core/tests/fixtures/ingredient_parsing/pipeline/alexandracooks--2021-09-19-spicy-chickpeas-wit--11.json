@@ -1,16 +1,6 @@
 {
   "raw": "1 cup water or vegetable stock (I always use water)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water or vegetable stock (I always use water)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water or vegetable stock (I always use water)",
       "measurements": [

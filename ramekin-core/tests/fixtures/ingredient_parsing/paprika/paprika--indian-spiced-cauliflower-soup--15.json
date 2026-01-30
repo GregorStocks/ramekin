@@ -1,16 +1,6 @@
 {
   "raw": "2 medium tomatoes, peeled and chopped or 1 1/2 cups canned chopped tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and chopped or 1 1/2 cups canned chopped tomatoes"
-    },
     "parse_ingredients": {
       "item": "tomatoes",
       "measurements": [

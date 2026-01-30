@@ -1,11 +1,6 @@
 {
   "raw": "juice of 1 orange or 1/2 cup orange juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "juice of 1 orange",
-      "measurements": [],
-      "note": "or 1/2 cup orange juice"
-    },
     "parse_ingredients": {
       "item": "juice of 1 orange",
       "measurements": [],

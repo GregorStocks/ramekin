@@ -1,20 +1,6 @@
 {
   "raw": "42 g (3/4 cup) unseasoned potato flakes, such as Bob's Red Mill",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unseasoned potato flakes, such as Bob's Red Mill",
-      "measurements": [
-        {
-          "amount": "42",
-          "unit": "g"
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unseasoned potato flakes, such as Bob's Red Mill",
       "measurements": [

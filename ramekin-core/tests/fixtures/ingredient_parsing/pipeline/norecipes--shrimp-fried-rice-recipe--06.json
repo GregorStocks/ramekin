@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons XO sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "XO sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "XO sauce",
       "measurements": [

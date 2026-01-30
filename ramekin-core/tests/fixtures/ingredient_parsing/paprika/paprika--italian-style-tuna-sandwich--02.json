@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup extra-virgin olive oil, plus more as needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed"
-    },
     "parse_ingredients": {
       "item": "extra-virgin olive oil",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "8 tablespoons unsalted butter (cut into 8 pieces and softened)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "cut into 8 pieces and softened"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

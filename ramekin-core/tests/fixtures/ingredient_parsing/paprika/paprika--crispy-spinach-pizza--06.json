@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces mozzarella, either torn into shreds, diced, or (as shown) in ciliegine",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "mozzarella, either torn into shreds, diced, or (as shown) in ciliegine",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "mozzarella, either torn into shreds, diced, or (as shown) in ciliegine",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": null

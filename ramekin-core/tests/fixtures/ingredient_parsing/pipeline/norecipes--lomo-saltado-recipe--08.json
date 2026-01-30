@@ -1,16 +1,6 @@
 {
   "raw": "290 grams potatoes ((cut into 1/2-inch thick strips))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "potatoes (cut into 1/2-inch thick strips)",
-      "measurements": [
-        {
-          "amount": "290",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "potatoes (cut into 1/2-inch thick strips)",
       "measurements": [

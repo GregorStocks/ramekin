@@ -1,16 +1,6 @@
 {
   "raw": "10   allspice berries (lightly crushed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "allspice berries",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "lightly crushed"
-    },
     "parse_ingredients": {
       "item": "allspice berries",
       "measurements": [

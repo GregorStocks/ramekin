@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 pounds fideos or angel hair pasta, broken into 3-inch lengths",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fideos or angel hair pasta, broken into 3-inch lengths",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fideos or angel hair pasta, broken into 3-inch lengths",
       "measurements": [

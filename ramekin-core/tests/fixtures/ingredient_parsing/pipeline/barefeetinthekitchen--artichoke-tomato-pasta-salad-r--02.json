@@ -1,16 +1,6 @@
 {
   "raw": "3 cups grape tomatoes (halved)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grape tomatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "grape tomatoes",
       "measurements": [

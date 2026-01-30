@@ -1,20 +1,6 @@
 {
   "raw": "4 pounds uncooked shell-on shrimp (31-40 per pound)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "uncooked shell-on shrimp",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "lb"
-        },
-        {
-          "amount": "31-40",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "uncooked shell-on shrimp",
       "measurements": [

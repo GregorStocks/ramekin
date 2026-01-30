@@ -1,16 +1,6 @@
 {
   "raw": "1 cup molasses",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "molasses",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "molasses",
       "measurements": [

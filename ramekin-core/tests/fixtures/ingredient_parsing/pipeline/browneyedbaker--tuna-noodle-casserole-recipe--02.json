@@ -1,7 +1,7 @@
 {
   "raw": "½ ounce sharp cheddar cheese (shredded)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "sharp cheddar cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "14",
           "unit": "g"
-        }
-      ],
-      "note": "shredded"
-    },
-    "parse_ingredients": {
-      "item": "sharp cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
         }
       ],
       "note": "shredded"

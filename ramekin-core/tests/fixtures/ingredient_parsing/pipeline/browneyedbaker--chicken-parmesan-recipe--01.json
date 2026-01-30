@@ -1,16 +1,6 @@
 {
   "raw": "1½ pounds chicken breasts (3 to 4 breasts, thin sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken breasts",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "3 to 4 breasts, thin sliced"
-    },
     "parse_ingredients": {
       "item": "chicken breasts",
       "measurements": [

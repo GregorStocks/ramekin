@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup raw almonds (I used whole almonds)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "raw almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "I used whole almonds"
-    },
     "parse_ingredients": {
       "item": "raw almonds",
       "measurements": [

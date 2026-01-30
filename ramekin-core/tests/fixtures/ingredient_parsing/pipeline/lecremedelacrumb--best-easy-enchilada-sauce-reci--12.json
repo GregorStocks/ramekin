@@ -1,16 +1,6 @@
 {
   "raw": "1  28 oz canned tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "28 oz canned tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "28 oz canned tomatoes",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 chipotle chile in adobo, chopped, plus 1 teaspoon sauce from the can",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chipotle chile in adobo, chopped",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "plus 1 teaspoon sauce from the can"
-    },
     "parse_ingredients": {
       "item": "chipotle chile in adobo, chopped",
       "measurements": [

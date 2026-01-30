@@ -1,16 +1,6 @@
 {
   "raw": "1¼ cup granulated sugar (plus more for rolling)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for rolling"
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

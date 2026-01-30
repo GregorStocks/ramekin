@@ -1,16 +1,6 @@
 {
   "raw": "handful cilantro",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cilantro",
       "measurements": [

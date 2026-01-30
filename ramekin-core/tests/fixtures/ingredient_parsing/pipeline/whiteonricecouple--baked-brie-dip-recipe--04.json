@@ -1,16 +1,6 @@
 {
   "raw": "1/2 teaspoon fresh thyme leaves ( or dried thyme )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh thyme leaves",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or dried thyme"
-    },
     "parse_ingredients": {
       "item": "fresh thyme leaves",
       "measurements": [

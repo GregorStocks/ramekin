@@ -1,16 +1,6 @@
 {
   "raw": "6 tablespoons unbleached all-purpose flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unbleached all-purpose flour",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unbleached all-purpose flour",
       "measurements": [

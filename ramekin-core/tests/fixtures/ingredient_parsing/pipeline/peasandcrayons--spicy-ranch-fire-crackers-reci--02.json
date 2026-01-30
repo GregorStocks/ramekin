@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup avocado oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocado oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "avocado oil",
       "measurements": [

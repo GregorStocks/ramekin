@@ -1,16 +1,6 @@
 {
   "raw": "2  oranges, (sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oranges",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "oranges",
       "measurements": [

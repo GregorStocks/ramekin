@@ -1,16 +1,6 @@
 {
   "raw": "350g piece  bacon with rind",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "piece  bacon with rind",
-      "measurements": [
-        {
-          "amount": "350",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "piece  bacon with rind",
       "measurements": [

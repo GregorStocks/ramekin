@@ -1,16 +1,6 @@
 {
   "raw": "1  head of romaine lettuce (washed and chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "romaine lettuce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "washed and chopped"
-    },
     "parse_ingredients": {
       "item": "romaine lettuce",
       "measurements": [

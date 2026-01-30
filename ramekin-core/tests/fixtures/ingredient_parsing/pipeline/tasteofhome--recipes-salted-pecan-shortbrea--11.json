@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup milk chocolate chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk chocolate chips",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "milk chocolate chips",
       "measurements": [

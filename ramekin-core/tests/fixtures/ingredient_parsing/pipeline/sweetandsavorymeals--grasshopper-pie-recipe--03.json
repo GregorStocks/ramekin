@@ -1,16 +1,6 @@
 {
   "raw": "2  boxes instant vanilla pudding mix 3.94 oz per box boxes ((you can also use cheesecake flavored pudding))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "instant vanilla pudding mix 3.94 oz per box boxes (you can also use cheesecake flavored pudding)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "box"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "instant vanilla pudding mix 3.94 oz per box boxes (you can also use cheesecake flavored pudding)",
       "measurements": [

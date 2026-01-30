@@ -1,16 +1,6 @@
 {
   "raw": "1  bunch scallions, (thinly sliced, light and dark green parts separated (divided))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "thinly sliced, light and dark green parts separated (divided"
-    },
     "parse_ingredients": {
       "item": "scallions",
       "measurements": [

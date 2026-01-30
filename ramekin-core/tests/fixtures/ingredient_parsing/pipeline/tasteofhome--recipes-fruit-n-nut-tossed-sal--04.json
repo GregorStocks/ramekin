@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup slivered almonds, toasted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "slivered almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "slivered almonds",
       "measurements": [

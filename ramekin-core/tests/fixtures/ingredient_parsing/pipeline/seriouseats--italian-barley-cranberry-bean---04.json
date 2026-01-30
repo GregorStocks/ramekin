@@ -1,20 +1,6 @@
 {
   "raw": "2 tablespoons (30 ml) extra-virgin olive oil, plus extra for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus extra for serving"
-    },
     "parse_ingredients": {
       "item": "extra-virgin olive oil",
       "measurements": [

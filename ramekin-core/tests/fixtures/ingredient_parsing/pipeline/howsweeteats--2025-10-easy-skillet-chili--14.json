@@ -1,16 +1,6 @@
 {
   "raw": "1  15-ounce can pinto beans, drained and rinsed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pinto beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "15-ounce can"
-        }
-      ],
-      "note": "drained and rinsed"
-    },
     "parse_ingredients": {
       "item": "pinto beans",
       "measurements": [

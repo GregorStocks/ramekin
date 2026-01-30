@@ -1,20 +1,6 @@
 {
   "raw": "2 (12-ounce) cans chunk tuna in water (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chunk tuna in water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "chunk tuna in water",
       "measurements": [

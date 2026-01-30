@@ -1,16 +1,6 @@
 {
   "raw": "340 grams fusilli ((cooked according to package directions))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fusilli",
-      "measurements": [
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": "cooked according to package directions"
-    },
     "parse_ingredients": {
       "item": "fusilli",
       "measurements": [

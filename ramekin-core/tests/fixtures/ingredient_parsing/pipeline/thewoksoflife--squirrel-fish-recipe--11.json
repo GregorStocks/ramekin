@@ -1,16 +1,6 @@
 {
   "raw": "1  whole freshwater bass, sea bass, or branzino ((about 1 1/2 to 2 pounds/680-900g; scaled, cleaned, and gutted))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole freshwater bass, sea bass, or branzino",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "about 1 1/2 to 2 pounds/680-900g; scaled, cleaned, and gutted"
-    },
     "parse_ingredients": {
       "item": "whole freshwater bass, sea bass, or branzino",
       "measurements": [

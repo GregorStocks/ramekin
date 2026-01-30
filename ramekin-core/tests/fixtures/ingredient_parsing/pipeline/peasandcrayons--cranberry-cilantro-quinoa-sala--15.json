@@ -1,16 +1,6 @@
 {
   "raw": "1  additional lime (sliced into wedges to garnish)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "additional lime",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced into wedges to garnish"
-    },
     "parse_ingredients": {
       "item": "additional lime",
       "measurements": [

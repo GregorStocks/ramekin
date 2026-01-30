@@ -1,16 +1,6 @@
 {
   "raw": "1.75 cups sugar, plus more if needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1.75",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more if needed"
-    },
     "parse_ingredients": {
       "item": "sugar",
       "measurements": [

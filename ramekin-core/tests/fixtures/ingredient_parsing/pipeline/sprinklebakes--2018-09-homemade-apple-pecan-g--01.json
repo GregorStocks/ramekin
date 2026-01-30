@@ -1,20 +1,6 @@
 {
   "raw": "3 1/4  300g old-fashioned rolled oats",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "old-fashioned rolled oats",
-      "measurements": [
-        {
-          "amount": "3 1/4",
-          "unit": null
-        },
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "old-fashioned rolled oats",
       "measurements": [

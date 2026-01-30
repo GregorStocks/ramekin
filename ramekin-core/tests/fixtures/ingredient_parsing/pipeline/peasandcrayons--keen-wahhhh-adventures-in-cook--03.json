@@ -1,16 +1,6 @@
 {
   "raw": "2-4 tsp low sodium soy sauce (add a little to start and extra to taste!)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "low sodium soy sauce",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "add a little to start and extra to taste!"
-    },
     "parse_ingredients": {
       "item": "low sodium soy sauce",
       "measurements": [

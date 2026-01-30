@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup plain whole-milk yogurt, not Greek-style",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "plain whole-milk yogurt, not Greek-style",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "plain whole-milk yogurt, not Greek-style",
       "measurements": [

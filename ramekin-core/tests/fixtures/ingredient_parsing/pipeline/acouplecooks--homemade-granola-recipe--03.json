@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup maple syrup (or honey)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "maple syrup (or honey)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "maple syrup (or honey)",
       "measurements": [

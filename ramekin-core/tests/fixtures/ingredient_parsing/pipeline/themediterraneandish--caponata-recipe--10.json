@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup pitted green olives (roughly chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pitted green olives",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    },
     "parse_ingredients": {
       "item": "pitted green olives",
       "measurements": [

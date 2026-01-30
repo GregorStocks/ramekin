@@ -1,16 +1,6 @@
 {
   "raw": "1 head fennel, thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fennel",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "fennel",
       "measurements": [

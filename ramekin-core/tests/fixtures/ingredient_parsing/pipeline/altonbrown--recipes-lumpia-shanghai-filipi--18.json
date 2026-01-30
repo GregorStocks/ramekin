@@ -1,16 +1,6 @@
 {
   "raw": "1 large clove garlic, finely minced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "clove garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "finely minced"
-    },
     "parse_ingredients": {
       "item": "clove garlic",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "2 ounces freeze dried raspberries, (2 bags, crushed and whole)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "freeze dried raspberries",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "2 bags, crushed and whole"
-    },
-    "parse_ingredients": {
-      "item": "freeze dried raspberries",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
         }
       ],
       "note": "2 bags, crushed and whole"

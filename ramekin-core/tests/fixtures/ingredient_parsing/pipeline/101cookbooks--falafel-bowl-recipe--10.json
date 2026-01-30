@@ -1,16 +1,6 @@
 {
   "raw": "3-4 green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber, cilantro) tossed with a splash of olive oil &amp;amp; squeeze of lemon / sliced avocado",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber",
-      "measurements": [
-        {
-          "amount": "3-4",
-          "unit": null
-        }
-      ],
-      "note": "cilantro) tossed with a splash of olive oil & squeeze of lemon / sliced avocado"
-    },
     "parse_ingredients": {
       "item": "green falafel / beet hummus / toasted pita wedges / roasted carrots / chop salad (kale, cucumber",
       "measurements": [

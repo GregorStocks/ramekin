@@ -1,16 +1,6 @@
 {
   "raw": "1/2&nbsp;teaspoon cumin seeds or ground cumin",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cumin seeds or ground cumin",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cumin seeds or ground cumin",
       "measurements": [

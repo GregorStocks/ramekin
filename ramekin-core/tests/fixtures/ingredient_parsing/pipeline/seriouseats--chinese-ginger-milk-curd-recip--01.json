@@ -1,28 +1,6 @@
 {
   "raw": "1 (5-inch) piece fresh ginger (about 2 3/4 ounces; 80 g), peeled and finely grated on a rasp grater, such as a Microplane",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh ginger , peeled and finely grated on a rasp grater, such as a Microplane",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "piece"
-        },
-        {
-          "amount": "5",
-          "unit": null
-        },
-        {
-          "amount": "2 3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh ginger , peeled and finely grated on a rasp grater, such as a Microplane",
       "measurements": [

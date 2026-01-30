@@ -1,16 +1,6 @@
 {
   "raw": "1 cup nonfat plain yogurt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "nonfat plain yogurt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "nonfat plain yogurt",
       "measurements": [

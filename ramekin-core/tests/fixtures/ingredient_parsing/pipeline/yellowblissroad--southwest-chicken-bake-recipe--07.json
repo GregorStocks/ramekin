@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons cilantro chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cilantro chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cilantro chopped",
       "measurements": [

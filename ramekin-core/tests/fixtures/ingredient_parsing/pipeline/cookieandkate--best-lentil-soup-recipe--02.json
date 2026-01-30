@@ -1,16 +1,6 @@
 {
   "raw": "1 medium yellow or white onion, chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yellow or white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "yellow or white onion",
       "measurements": [

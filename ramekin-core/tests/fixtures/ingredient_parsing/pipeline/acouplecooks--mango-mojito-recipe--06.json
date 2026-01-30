@@ -1,7 +1,7 @@
 {
   "raw": "2 to 4 ounces soda water",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "soda water",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "57 to 113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "soda water",
-      "measurements": [
-        {
-          "amount": "2 to 4",
-          "unit": "oz"
         }
       ],
       "note": null

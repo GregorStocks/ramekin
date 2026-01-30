@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups unsalted butter (cut into 1/2-inch cubes and chilled)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cut into 1/2-inch cubes and chilled"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

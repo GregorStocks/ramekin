@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup honey (or 1/2 cup agave syrup for vegan)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "honey (or 1/2 cup agave syrup for vegan)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "honey (or 1/2 cup agave syrup for vegan)",
       "measurements": [

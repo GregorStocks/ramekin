@@ -1,16 +1,6 @@
 {
   "raw": "2 quarts cold water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold water",
       "measurements": [

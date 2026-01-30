@@ -1,7 +1,7 @@
 {
   "raw": "2 (12 ounce) steaks, about 1-inch thick",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "steaks, about 1-inch thick",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "steaks, about 1-inch thick",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": null

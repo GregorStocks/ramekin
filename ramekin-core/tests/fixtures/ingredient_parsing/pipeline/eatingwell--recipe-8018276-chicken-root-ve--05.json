@@ -1,16 +1,6 @@
 {
   "raw": "1 cup diced root vegetables (such as butternut squash, parsnip or celeriac)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "diced root vegetables (such as butternut squash, parsnip or celeriac)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "diced root vegetables (such as butternut squash, parsnip or celeriac)",
       "measurements": [

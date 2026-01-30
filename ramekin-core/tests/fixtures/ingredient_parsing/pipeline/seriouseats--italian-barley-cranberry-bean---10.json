@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup minced flat-leaf parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "minced flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "minced flat-leaf parsley",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "pinch cayenne pepper (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cayenne pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "cayenne pepper",
       "measurements": [

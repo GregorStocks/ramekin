@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces Longhorn cheese, grated (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Longhorn cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "grated (see note)"
-    },
-    "parse_ingredients": {
-      "item": "Longhorn cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "grated (see note)"

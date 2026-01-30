@@ -1,16 +1,6 @@
 {
   "raw": "4 thick slices country bread, toasted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thick slices country bread",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "thick slices country bread",
       "measurements": [

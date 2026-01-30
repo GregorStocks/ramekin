@@ -1,16 +1,6 @@
 {
   "raw": "1 large sweet red pepper, cut into 1-inch chunks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet red pepper, cut into 1-inch chunks",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sweet red pepper, cut into 1-inch chunks",
       "measurements": [

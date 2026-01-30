@@ -1,16 +1,6 @@
 {
   "raw": "300 grams ground pork",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "300",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground pork",
       "measurements": [

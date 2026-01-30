@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon pumpkin pie spice, such as McCormick",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pumpkin pie spice, such as McCormick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pumpkin pie spice, such as McCormick",
       "measurements": [

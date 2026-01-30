@@ -1,20 +1,6 @@
 {
   "raw": "5 cups (1.2 L) homemade or store-bought low-sodium mushroom, vegetable, chicken, or beef broth, plus more as needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "homemade or store-bought low-sodium mushroom, vegetable, chicken, or beef broth",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.2",
-          "unit": "l"
-        }
-      ],
-      "note": "plus more as needed"
-    },
     "parse_ingredients": {
       "item": "homemade or store-bought low-sodium mushroom, vegetable, chicken, or beef broth",
       "measurements": [

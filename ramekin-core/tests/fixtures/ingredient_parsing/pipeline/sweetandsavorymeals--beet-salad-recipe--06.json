@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup pomegranate seeds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pomegranate seeds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pomegranate seeds",
       "measurements": [

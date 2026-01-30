@@ -1,16 +1,6 @@
 {
   "raw": "400 g konjac (konnyaku) (cut into bitesize pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "konjac (konnyaku) (cut into bitesize pieces)",
-      "measurements": [
-        {
-          "amount": "400",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "konjac (konnyaku) (cut into bitesize pieces)",
       "measurements": [

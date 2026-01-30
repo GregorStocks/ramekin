@@ -1,24 +1,6 @@
 {
   "raw": "85 g granulated sugar (3 ounces; 1/4 cup plus 3 tablespoons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "85",
-          "unit": "g"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

@@ -1,10 +1,12 @@
-//! ParseIngredients step - parses raw ingredient strings into structured data.
+//! ParseIngredients step - parses raw ingredient strings into structured data
+//! and enriches them with metric weight alternatives.
 
 use std::time::Instant;
 
 use async_trait::async_trait;
 
 use crate::ingredient_parser::parse_ingredients;
+use crate::metric_weights::{add_metric_weight_alternative, EnrichmentStats};
 use crate::pipeline::{PipelineStep, StepContext, StepMetadata, StepResult};
 use crate::types::{ParseIngredientsOutput, RawRecipe};
 
@@ -69,8 +71,15 @@ impl PipelineStep for ParseIngredientsStep {
         // Parse the ingredients blob into structured data
         let parsed = parse_ingredients(&raw_recipe.ingredients);
 
+        // Enrich with metric weight alternatives (oz → g)
+        let mut stats = EnrichmentStats::default();
+        let enriched: Vec<_> = parsed
+            .into_iter()
+            .map(|ing| add_metric_weight_alternative(ing, &mut stats))
+            .collect();
+
         let output = ParseIngredientsOutput {
-            ingredients: parsed,
+            ingredients: enriched,
         };
 
         StepResult {
@@ -79,7 +88,7 @@ impl PipelineStep for ParseIngredientsStep {
             output: serde_json::to_value(&output).unwrap_or_default(),
             error: None,
             duration_ms: start.elapsed().as_millis() as u64,
-            next_step: Some("enrich_metric_weights".to_string()),
+            next_step: Some("save_recipe".to_string()),
         }
     }
 }

@@ -1,16 +1,6 @@
 {
   "raw": "4 tablespoons olive oil, plus for pans",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "olive oil",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus for pans"
-    },
     "parse_ingredients": {
       "item": "olive oil",
       "measurements": [

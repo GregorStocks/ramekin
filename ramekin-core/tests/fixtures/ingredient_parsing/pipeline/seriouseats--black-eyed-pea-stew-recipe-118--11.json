@@ -1,24 +1,6 @@
 {
   "raw": "2 (15-ounce; 425 g each) cans black-eyed peas, drained and rinsed&nbsp;&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "black-eyed peas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        },
-        {
-          "amount": "425",
-          "unit": "g each"
-        }
-      ],
-      "note": "drained and rinsed"
-    },
     "parse_ingredients": {
       "item": "black-eyed peas",
       "measurements": [

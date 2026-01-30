@@ -1,16 +1,6 @@
 {
   "raw": "¾ cup whole milk ((room temperature))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "room temperature"
-    },
     "parse_ingredients": {
       "item": "whole milk",
       "measurements": [

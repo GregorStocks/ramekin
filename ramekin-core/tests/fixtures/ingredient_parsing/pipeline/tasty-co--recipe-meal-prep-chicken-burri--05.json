@@ -1,7 +1,7 @@
 {
   "raw": "16 oz medium chunky salsa, 1 jar",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "medium chunky salsa, 1 jar",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "medium chunky salsa, 1 jar",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": null

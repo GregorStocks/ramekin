@@ -1,16 +1,6 @@
 {
   "raw": "1  jalapeno (seeds and veins removed and finely minced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "jalapeno",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "seeds and veins removed and finely minced"
-    },
     "parse_ingredients": {
       "item": "jalapeno",
       "measurements": [

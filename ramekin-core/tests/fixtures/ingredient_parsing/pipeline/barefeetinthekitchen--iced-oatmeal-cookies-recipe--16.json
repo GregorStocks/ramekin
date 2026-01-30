@@ -1,16 +1,6 @@
 {
   "raw": "½ cup rolled oats (additional for GF version )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rolled oats (additional for GF version",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "rolled oats (additional for GF version",
       "measurements": [

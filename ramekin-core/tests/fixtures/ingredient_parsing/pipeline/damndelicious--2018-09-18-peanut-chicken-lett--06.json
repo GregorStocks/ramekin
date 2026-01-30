@@ -1,16 +1,6 @@
 {
   "raw": "1  shallot (diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    },
     "parse_ingredients": {
       "item": "shallot",
       "measurements": [

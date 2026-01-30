@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup vegetable oil (or olive oil,  plus extra for cooking)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegetable oil (or olive oil,",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus extra for cooking)"
-    },
     "parse_ingredients": {
       "item": "vegetable oil (or olive oil,",
       "measurements": [

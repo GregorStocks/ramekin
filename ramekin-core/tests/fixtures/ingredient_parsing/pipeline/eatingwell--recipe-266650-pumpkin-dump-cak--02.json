@@ -1,7 +1,7 @@
 {
   "raw": "1 (12 ounce) can low-fat evaporated milk",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "low-fat evaporated milk",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "low-fat evaporated milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": null

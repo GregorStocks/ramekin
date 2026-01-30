@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup cilantro (packed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "packed"
-    },
     "parse_ingredients": {
       "item": "cilantro",
       "measurements": [

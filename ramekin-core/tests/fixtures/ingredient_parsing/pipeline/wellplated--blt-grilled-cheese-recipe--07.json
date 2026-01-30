@@ -1,16 +1,6 @@
 {
   "raw": "4 slices good quality (sturdy whole wheat bread (I like sourdough))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "good quality",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": "sturdy whole wheat bread (I like sourdough"
-    },
     "parse_ingredients": {
       "item": "good quality",
       "measurements": [

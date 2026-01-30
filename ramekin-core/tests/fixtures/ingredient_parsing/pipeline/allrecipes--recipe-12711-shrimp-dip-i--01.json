@@ -1,7 +1,7 @@
 {
   "raw": "1 (10.75 ounce) can condensed cream of shrimp soup",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "condensed cream of shrimp soup",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "305",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "condensed cream of shrimp soup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "10.75",
-          "unit": "oz"
         }
       ],
       "note": null

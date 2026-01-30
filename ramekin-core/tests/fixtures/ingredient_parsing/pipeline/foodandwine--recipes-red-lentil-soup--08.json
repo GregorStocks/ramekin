@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 quarts vegetable stock or broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegetable stock or broth",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "vegetable stock or broth",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/4 pound sliced bacon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced bacon",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced bacon",
       "measurements": [

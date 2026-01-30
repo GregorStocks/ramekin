@@ -1,16 +1,6 @@
 {
   "raw": "3 1/2 pounds chicken parts with skin and bones",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken parts with skin and bones",
-      "measurements": [
-        {
-          "amount": "3 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken parts with skin and bones",
       "measurements": [

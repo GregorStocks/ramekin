@@ -1,16 +1,6 @@
 {
   "raw": "4 tbsp butter (margarine, or coconut oil, melted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "margarine, or coconut oil, melted"
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

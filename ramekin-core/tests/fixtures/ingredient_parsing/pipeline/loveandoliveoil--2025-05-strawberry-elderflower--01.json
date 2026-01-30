@@ -1,16 +1,6 @@
 {
   "raw": "1 lb fresh strawberries (hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh strawberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "hulled, coarsely chopped, and mashed (about 1 1/2 cups mashed"
-    },
     "parse_ingredients": {
       "item": "fresh strawberries",
       "measurements": [

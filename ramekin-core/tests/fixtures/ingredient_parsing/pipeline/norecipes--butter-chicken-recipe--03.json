@@ -1,16 +1,6 @@
 {
   "raw": "450 grams boneless skinless chicken thighs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless skinless chicken thighs",
-      "measurements": [
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "boneless skinless chicken thighs",
       "measurements": [

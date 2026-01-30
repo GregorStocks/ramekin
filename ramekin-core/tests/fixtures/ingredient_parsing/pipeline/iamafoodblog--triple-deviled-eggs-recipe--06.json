@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon ikura (big fish eggs)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ikura (big fish eggs)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ikura (big fish eggs)",
       "measurements": [

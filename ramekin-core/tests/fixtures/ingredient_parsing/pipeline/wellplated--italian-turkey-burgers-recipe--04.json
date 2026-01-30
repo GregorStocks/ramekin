@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons ground basil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground basil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground basil",
       "measurements": [

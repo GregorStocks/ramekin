@@ -1,24 +1,6 @@
 {
   "raw": "1 (12-oz) package frozen butternut squash or winter squash purée (about 1½ cups), thawed (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen butternut squash or winter squash purée",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed (see note)"
-    },
     "parse_ingredients": {
       "item": "frozen butternut squash or winter squash purée",
       "measurements": [

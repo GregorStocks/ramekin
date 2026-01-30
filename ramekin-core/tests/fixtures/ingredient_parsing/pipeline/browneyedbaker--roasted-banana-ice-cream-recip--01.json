@@ -1,16 +1,6 @@
 {
   "raw": "3  medium-sized ripe bananas (peeled)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "medium-sized ripe bananas",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "peeled"
-    },
     "parse_ingredients": {
       "item": "medium-sized ripe bananas",
       "measurements": [

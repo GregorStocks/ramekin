@@ -1,20 +1,6 @@
 {
   "raw": "2 tsp extract of your choice (2 to 3 tsp)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extract of your choice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "2 to 3",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "extract of your choice",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "19 ounces processed cheese food (such as Velveeta®), cubed",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "processed cheese food (such as Velveeta®)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "539",
           "unit": "g"
-        }
-      ],
-      "note": "cubed"
-    },
-    "parse_ingredients": {
-      "item": "processed cheese food (such as Velveeta®)",
-      "measurements": [
-        {
-          "amount": "19",
-          "unit": "oz"
         }
       ],
       "note": "cubed"

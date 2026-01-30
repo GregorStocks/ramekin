@@ -1,16 +1,6 @@
 {
   "raw": "6 tablespoons Asian fish sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Asian fish sauce",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Asian fish sauce",
       "measurements": [

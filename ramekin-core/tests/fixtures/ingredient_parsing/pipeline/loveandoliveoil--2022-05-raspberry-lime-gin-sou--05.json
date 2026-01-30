@@ -1,16 +1,6 @@
 {
   "raw": "dash cardamom bitters (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cardamom bitters",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "cardamom bitters",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "200g basmati rice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "basmati rice",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "basmati rice",
       "measurements": [

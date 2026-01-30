@@ -1,16 +1,6 @@
 {
   "raw": "1  banana (frozen)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "frozen"
-    },
     "parse_ingredients": {
       "item": "banana",
       "measurements": [

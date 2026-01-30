@@ -1,16 +1,6 @@
 {
   "raw": "Scant 1 cup warm water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "scant cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm water",
       "measurements": [

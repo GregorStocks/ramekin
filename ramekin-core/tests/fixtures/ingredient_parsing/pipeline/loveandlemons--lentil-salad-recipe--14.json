@@ -1,16 +1,6 @@
 {
   "raw": "4 cups spinach (finely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "spinach",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped"
-    },
     "parse_ingredients": {
       "item": "spinach",
       "measurements": [

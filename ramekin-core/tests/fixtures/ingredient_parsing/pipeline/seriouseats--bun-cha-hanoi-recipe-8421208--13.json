@@ -1,20 +1,6 @@
 {
   "raw": "2 scallions, white and green parts, thinly sliced (about 20g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "scallions, white and green parts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "scallions, white and green parts",
       "measurements": [

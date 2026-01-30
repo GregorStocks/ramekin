@@ -1,7 +1,7 @@
 {
   "raw": "1-2 oz fresh baby spinach ((1-2 cups chopped))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh baby spinach",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "28-57",
           "unit": "g"
-        }
-      ],
-      "note": "1-2 cups chopped"
-    },
-    "parse_ingredients": {
-      "item": "fresh baby spinach",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "oz"
         }
       ],
       "note": "1-2 cups chopped"

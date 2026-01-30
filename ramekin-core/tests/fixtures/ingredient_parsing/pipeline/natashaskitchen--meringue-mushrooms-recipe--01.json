@@ -1,16 +1,6 @@
 {
   "raw": "2  large egg whites (room temp (if you forgot, put them in warm water for 15 min))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg whites (room temp (if you forgot, put them in warm water for 15 min)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "egg whites (room temp (if you forgot, put them in warm water for 15 min)",
       "measurements": [

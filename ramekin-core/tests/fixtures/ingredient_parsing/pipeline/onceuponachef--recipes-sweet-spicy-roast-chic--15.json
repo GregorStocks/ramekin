@@ -1,16 +1,6 @@
 {
   "raw": "1 cup thinly sliced dried dates",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thinly sliced dried dates",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thinly sliced dried dates",
       "measurements": [

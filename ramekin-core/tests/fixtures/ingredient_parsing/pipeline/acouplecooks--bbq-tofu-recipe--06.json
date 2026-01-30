@@ -1,16 +1,6 @@
 {
   "raw": "1/2 tablespoon chili garlic sauce, if desired",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chili garlic sauce, if desired",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chili garlic sauce, if desired",
       "measurements": [

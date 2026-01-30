@@ -1,16 +1,6 @@
 {
   "raw": "1 baguette or 4 ciabatta rolls",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baguette or 4 ciabatta rolls",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baguette or 4 ciabatta rolls",
       "measurements": [

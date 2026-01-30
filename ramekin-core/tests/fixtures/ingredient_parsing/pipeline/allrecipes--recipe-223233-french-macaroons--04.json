@@ -1,16 +1,6 @@
 {
   "raw": "1.3333333730698 cups confectioners' sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "confectioners' sugar",
-      "measurements": [
-        {
-          "amount": "1.3333333730698",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "confectioners' sugar",
       "measurements": [

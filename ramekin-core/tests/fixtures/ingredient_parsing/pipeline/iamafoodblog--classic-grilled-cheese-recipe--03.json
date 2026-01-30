@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup shredded cheddar (I used a mix of sharp and white)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded cheddar (I used a mix of sharp and white)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded cheddar (I used a mix of sharp and white)",
       "measurements": [

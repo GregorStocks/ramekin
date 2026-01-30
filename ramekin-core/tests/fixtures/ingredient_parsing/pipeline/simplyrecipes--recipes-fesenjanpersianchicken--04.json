@@ -1,16 +1,6 @@
 {
   "raw": "5 tablespoons pomegranate molasses",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pomegranate molasses",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pomegranate molasses",
       "measurements": [

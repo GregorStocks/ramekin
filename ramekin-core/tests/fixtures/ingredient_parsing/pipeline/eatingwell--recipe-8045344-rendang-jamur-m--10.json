@@ -1,16 +1,6 @@
 {
   "raw": "1 pound oyster mushrooms, shredded into strips with your fingers",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oyster mushrooms",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "shredded into strips with your fingers"
-    },
     "parse_ingredients": {
       "item": "oyster mushrooms",
       "measurements": [

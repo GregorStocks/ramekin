@@ -1,11 +1,6 @@
 {
   "raw": "A few handfuls of arugula, frisée, or red mustard greens, carefully washed and dried",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "A few handfuls of arugula, frisée, or red mustard greens",
-      "measurements": [],
-      "note": "carefully washed and dried"
-    },
     "parse_ingredients": {
       "item": "A few handfuls of arugula, frisée, or red mustard greens",
       "measurements": [],

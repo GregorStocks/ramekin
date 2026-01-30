@@ -1,16 +1,6 @@
 {
   "raw": "1/2 leek, cleaned, trimmed and sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leek, cleaned",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "trimmed and sliced"
-    },
     "parse_ingredients": {
       "item": "leek, cleaned",
       "measurements": [

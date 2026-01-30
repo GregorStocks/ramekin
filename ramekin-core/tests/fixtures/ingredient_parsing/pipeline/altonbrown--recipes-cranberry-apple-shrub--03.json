@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups apple cider vinegar&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "apple cider vinegar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "apple cider vinegar",
       "measurements": [

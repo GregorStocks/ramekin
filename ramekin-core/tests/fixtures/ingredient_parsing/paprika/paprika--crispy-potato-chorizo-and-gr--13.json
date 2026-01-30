@@ -1,16 +1,6 @@
 {
   "raw": "1/2 small avocado diced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocado diced",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "avocado diced",
       "measurements": [

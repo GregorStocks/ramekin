@@ -1,11 +1,6 @@
 {
   "raw": "fruit (such as oranges, strawberries, and/or figs; for serving; optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fruit",
-      "measurements": [],
-      "note": "such as oranges, strawberries, and/or figs; for serving; optional"
-    },
     "parse_ingredients": {
       "item": "fruit",
       "measurements": [],

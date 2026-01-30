@@ -1,16 +1,6 @@
 {
   "raw": "1 red chilli",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red chilli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "red chilli",
       "measurements": [

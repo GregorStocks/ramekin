@@ -1,16 +1,6 @@
 {
   "raw": "&amp;frac12; teaspoon dry mustard powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry mustard powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dry mustard powder",
       "measurements": [

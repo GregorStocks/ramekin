@@ -1,20 +1,6 @@
 {
   "raw": "1  small onion (cut into ½-inch pieces, about ⅔ cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

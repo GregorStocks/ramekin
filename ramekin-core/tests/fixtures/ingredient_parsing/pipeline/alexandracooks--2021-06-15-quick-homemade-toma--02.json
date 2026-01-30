@@ -1,16 +1,6 @@
 {
   "raw": "2 cups finely chopped white or yellow onion",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped white or yellow onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely chopped white or yellow onion",
       "measurements": [

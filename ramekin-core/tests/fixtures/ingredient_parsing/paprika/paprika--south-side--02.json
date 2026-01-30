@@ -1,7 +1,7 @@
 {
   "raw": "¾ ounce rich (2:1) simple syrup",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "rich simple syrup",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "21",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "rich simple syrup",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": null
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "6 small radishes, cut into thin wedges",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "radishes, cut into thin wedges",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "radishes, cut into thin wedges",
       "measurements": [

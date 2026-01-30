@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup unsalted butter (melted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

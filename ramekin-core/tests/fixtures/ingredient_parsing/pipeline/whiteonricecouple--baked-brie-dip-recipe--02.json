@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces sun-dried tomatoes ( packed in oil, drained &amp;amp; chopped (@ 1/4 cup))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "sun-dried tomatoes",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "packed in oil, drained & chopped (@ 1/4 cup"
-    },
-    "parse_ingredients": {
-      "item": "sun-dried tomatoes",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "packed in oil, drained & chopped (@ 1/4 cup"

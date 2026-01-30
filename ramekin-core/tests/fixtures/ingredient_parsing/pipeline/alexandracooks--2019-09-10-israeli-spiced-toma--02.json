@@ -1,16 +1,6 @@
 {
   "raw": "1 or 2 small cucumbers",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cucumbers",
-      "measurements": [
-        {
-          "amount": "1 or 2",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cucumbers",
       "measurements": [

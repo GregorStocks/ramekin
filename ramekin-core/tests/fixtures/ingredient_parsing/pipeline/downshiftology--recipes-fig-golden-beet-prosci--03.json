@@ -1,16 +1,6 @@
 {
   "raw": "8 slices prosciutto",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "prosciutto",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "prosciutto",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "10 roma (plum) tomatoes - peeled, seeded and crushed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "roma (plum) tomatoes - peeled",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "seeded and crushed"
-    },
     "parse_ingredients": {
       "item": "roma (plum) tomatoes - peeled",
       "measurements": [

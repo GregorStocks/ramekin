@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup creamy peanut butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "creamy peanut butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "creamy peanut butter",
       "measurements": [

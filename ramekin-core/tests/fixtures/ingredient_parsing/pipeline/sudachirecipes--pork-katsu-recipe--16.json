@@ -1,16 +1,6 @@
 {
   "raw": "2 slices lemon (to garnish)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon (to garnish)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon (to garnish)",
       "measurements": [

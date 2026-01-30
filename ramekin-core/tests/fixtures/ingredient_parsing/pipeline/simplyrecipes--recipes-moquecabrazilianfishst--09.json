@@ -1,16 +1,6 @@
 {
   "raw": "1/2 yellow and 1/2 red bell pepper, seeded, de-stemmed, chopped (or sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yellow and 1/2 red bell pepper, seeded, de-stemmed, chopped",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "or sliced"
-    },
     "parse_ingredients": {
       "item": "yellow and 1/2 red bell pepper, seeded, de-stemmed, chopped",
       "measurements": [

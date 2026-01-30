@@ -1,16 +1,6 @@
 {
   "raw": "2  medium onions (cut into ¾-inch pieces (about 2 cups))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onions (cut into 3/4-inch pieces (about 2 cups)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "onions (cut into 3/4-inch pieces (about 2 cups)",
       "measurements": [

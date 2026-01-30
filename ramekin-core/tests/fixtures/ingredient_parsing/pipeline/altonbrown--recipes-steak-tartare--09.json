@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons small, brined capers, drained and unrinsed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "small, brined capers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "drained and unrinsed"
-    },
     "parse_ingredients": {
       "item": "small, brined capers",
       "measurements": [

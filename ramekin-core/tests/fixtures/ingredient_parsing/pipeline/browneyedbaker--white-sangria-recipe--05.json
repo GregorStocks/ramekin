@@ -1,16 +1,6 @@
 {
   "raw": "1  bottle white wine (Pinot Grigio or Chardonnay, preferably), chilled ((750-mL ))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white wine (Pinot Grigio or Chardonnay, preferably)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bottle"
-        }
-      ],
-      "note": "chilled (750-mL )"
-    },
     "parse_ingredients": {
       "item": "white wine (Pinot Grigio or Chardonnay, preferably)",
       "measurements": [

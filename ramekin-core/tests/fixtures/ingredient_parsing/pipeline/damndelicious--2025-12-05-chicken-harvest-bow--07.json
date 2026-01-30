@@ -1,7 +1,7 @@
 {
   "raw": "1 (8.8 ounce) package cooked brown and wild rice (such as Minute Brand)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cooked brown and wild rice (such as Minute Brand)",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "249",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "cooked brown and wild rice (such as Minute Brand)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8.8",
-          "unit": "oz"
         }
       ],
       "note": null

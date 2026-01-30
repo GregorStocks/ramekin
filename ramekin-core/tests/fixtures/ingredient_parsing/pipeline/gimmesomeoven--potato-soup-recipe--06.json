@@ -1,16 +1,6 @@
 {
   "raw": "2 cups chicken stock or vegetable stock",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken stock or vegetable stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken stock or vegetable stock",
       "measurements": [

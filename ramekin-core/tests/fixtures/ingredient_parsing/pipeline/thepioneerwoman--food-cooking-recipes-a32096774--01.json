@@ -1,7 +1,7 @@
 {
   "raw": "2 peaches (about 12 ounces), thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "peaches",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    },
-    "parse_ingredients": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "thinly sliced"

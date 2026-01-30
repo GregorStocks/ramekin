@@ -1,7 +1,7 @@
 {
   "raw": "2 ounces dried shiitake mushrooms (about 10 mushrooms)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "dried shiitake mushrooms",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "dried shiitake mushrooms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "10",
-          "unit": null
         }
       ],
       "note": null

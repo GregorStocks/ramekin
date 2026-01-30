@@ -1,20 +1,6 @@
 {
   "raw": "2 teaspoons (10 ml) canola oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "canola oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "canola oil",
       "measurements": [

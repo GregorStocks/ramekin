@@ -1,16 +1,6 @@
 {
   "raw": "1-2 cups broccoli (extra addition, cut into florets and steamed - optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "cup"
-        }
-      ],
-      "note": "extra addition, cut into florets and steamed - optional"
-    },
     "parse_ingredients": {
       "item": "broccoli",
       "measurements": [

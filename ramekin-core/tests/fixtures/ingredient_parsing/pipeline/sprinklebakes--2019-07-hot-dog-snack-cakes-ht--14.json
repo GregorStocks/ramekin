@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup ready-made buttercream tinted golden yellow",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ready-made buttercream tinted golden yellow",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ready-made buttercream tinted golden yellow",
       "measurements": [

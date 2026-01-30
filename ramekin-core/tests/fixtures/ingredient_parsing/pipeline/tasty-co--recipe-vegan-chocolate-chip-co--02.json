@@ -1,16 +1,6 @@
 {
   "raw": "¾ cup dark brown sugar, packed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dark brown sugar",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "packed"
-    },
     "parse_ingredients": {
       "item": "dark brown sugar",
       "measurements": [

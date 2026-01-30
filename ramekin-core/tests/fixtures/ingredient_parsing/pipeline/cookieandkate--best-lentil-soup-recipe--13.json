@@ -1,16 +1,6 @@
 {
   "raw": "Pinch of red pepper flakes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "red pepper flakes",
       "measurements": [

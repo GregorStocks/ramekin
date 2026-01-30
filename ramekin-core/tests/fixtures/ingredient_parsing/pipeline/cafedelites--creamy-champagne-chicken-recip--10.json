@@ -1,16 +1,6 @@
 {
   "raw": "1 pinch fresh parsley (to garnish)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh parsley (to garnish)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh parsley (to garnish)",
       "measurements": [

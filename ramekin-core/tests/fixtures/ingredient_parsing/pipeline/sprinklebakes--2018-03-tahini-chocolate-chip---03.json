@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup 100g granulated sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

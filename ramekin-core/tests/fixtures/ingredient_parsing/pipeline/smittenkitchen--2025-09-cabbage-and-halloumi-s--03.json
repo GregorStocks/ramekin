@@ -1,16 +1,6 @@
 {
   "raw": "1 large lemon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon",
       "measurements": [

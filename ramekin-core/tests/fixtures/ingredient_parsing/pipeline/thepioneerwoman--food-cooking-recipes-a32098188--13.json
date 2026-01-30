@@ -1,16 +1,6 @@
 {
   "raw": "2 tbsp. whole milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whole milk",
       "measurements": [

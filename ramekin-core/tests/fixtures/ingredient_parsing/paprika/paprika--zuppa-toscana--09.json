@@ -1,20 +1,6 @@
 {
   "raw": "10 cups (2.4 L) homemade chicken stock or store-bought low-sodium broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "homemade chicken stock or store-bought low-sodium broth",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "cup"
-        },
-        {
-          "amount": "2.4",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "homemade chicken stock or store-bought low-sodium broth",
       "measurements": [

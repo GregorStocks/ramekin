@@ -1,16 +1,6 @@
 {
   "raw": "1 bundle green onion, sliced, for garnish",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bundle green onion, sliced",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "for garnish"
-    },
     "parse_ingredients": {
       "item": "bundle green onion, sliced",
       "measurements": [

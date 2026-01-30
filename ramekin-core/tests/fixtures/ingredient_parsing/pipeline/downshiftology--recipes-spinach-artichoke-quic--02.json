@@ -1,16 +1,6 @@
 {
   "raw": "½ cup cassava flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cassava flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cassava flour",
       "measurements": [

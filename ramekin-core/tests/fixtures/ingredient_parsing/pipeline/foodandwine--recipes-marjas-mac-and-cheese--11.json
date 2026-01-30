@@ -1,7 +1,7 @@
 {
   "raw": "1.5 cups shredded sharp cheddar cheese (4 ounces)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "shredded sharp cheddar cheese",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "shredded sharp cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": null

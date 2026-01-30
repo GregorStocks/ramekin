@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons white balsamic vinegar (or other), plus more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white balsamic vinegar (or other)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more to taste"
-    },
     "parse_ingredients": {
       "item": "white balsamic vinegar (or other)",
       "measurements": [

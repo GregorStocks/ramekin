@@ -1,16 +1,6 @@
 {
   "raw": "1.5 cups cooked black beans, see notes above",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked black beans, see notes above",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cooked black beans, see notes above",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "5.5 lb. bone-in turkey breast (skin on)** ($19.25)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bone-in turkey breast (skin on)** ($19.25)",
-      "measurements": [
-        {
-          "amount": "5.5",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bone-in turkey breast (skin on)** ($19.25)",
       "measurements": [

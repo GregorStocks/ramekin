@@ -1,20 +1,6 @@
 {
   "raw": "3  (2-inch) pieces of kombu",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kombu",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "piece"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "kombu",
       "measurements": [

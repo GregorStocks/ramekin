@@ -1,16 +1,6 @@
 {
   "raw": "½ cup rice ((any kind or quinoa, steel cut oats, millets))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rice (any kind or quinoa, steel cut oats, millets)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "rice (any kind or quinoa, steel cut oats, millets)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon smoked paprika",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "smoked paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "smoked paprika",
       "measurements": [

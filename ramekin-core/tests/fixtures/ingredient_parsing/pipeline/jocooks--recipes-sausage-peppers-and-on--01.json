@@ -1,16 +1,6 @@
 {
   "raw": "1 pound Italian sausage links",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Italian sausage links",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Italian sausage links",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup cilantro, roughly chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    },
     "parse_ingredients": {
       "item": "cilantro",
       "measurements": [

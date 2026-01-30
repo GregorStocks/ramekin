@@ -1,16 +1,6 @@
 {
   "raw": "3 pounds sweet potatoes, about 5 large or 6 medium, peeled and cut into 1-inch cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet potatoes, about 5 large or 6 medium",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into 1-inch cubes"
-    },
     "parse_ingredients": {
       "item": "sweet potatoes, about 5 large or 6 medium",
       "measurements": [

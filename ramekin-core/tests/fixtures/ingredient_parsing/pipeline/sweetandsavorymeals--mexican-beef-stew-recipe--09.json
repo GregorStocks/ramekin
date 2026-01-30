@@ -1,16 +1,6 @@
 {
   "raw": "1  medium onion (cut into quarters)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion (cut into quarters)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "onion (cut into quarters)",
       "measurements": [

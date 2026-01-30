@@ -1,16 +1,6 @@
 {
   "raw": "1 bunch cilantro",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cilantro",
       "measurements": [

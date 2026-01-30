@@ -1,7 +1,7 @@
 {
   "raw": "2 1/2 cups (11.25 oz) unbleached high-gluten or bread flour",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "unbleached high-gluten or bread flour",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "319",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "unbleached high-gluten or bread flour",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "11.25",
-          "unit": "oz"
         }
       ],
       "note": null

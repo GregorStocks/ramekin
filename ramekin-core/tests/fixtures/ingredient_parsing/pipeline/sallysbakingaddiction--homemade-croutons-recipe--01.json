@@ -1,20 +1,6 @@
 {
   "raw": "12-ounce (340g) loaf of crusty bread",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "-ounce loaf of crusty bread",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        },
-        {
-          "amount": "340",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "-ounce loaf of crusty bread",
       "measurements": [

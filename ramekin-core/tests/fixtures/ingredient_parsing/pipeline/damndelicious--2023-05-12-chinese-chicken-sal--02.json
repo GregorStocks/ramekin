@@ -1,16 +1,6 @@
 {
   "raw": "4 cups shredded napa cabbage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded napa cabbage",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded napa cabbage",
       "measurements": [

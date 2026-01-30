@@ -1,16 +1,6 @@
 {
   "raw": "½ cup onion (finely diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely diced"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

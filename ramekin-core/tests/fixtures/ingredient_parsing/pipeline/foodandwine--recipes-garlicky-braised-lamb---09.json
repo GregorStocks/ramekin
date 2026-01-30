@@ -1,16 +1,6 @@
 {
   "raw": "1 large red bell pepper, cut into 1/4-inch strips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red bell pepper, cut into 1/4-inch strips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "red bell pepper, cut into 1/4-inch strips",
       "measurements": [

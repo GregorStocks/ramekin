@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces Salt pork, rinsed of excess salt (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Salt pork",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "rinsed of excess salt (see note)"
-    },
-    "parse_ingredients": {
-      "item": "Salt pork",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "rinsed of excess salt (see note)"

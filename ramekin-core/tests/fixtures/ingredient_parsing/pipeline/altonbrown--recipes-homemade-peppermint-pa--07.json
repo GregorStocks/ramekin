@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 pounds high-quality bittersweet (around 70% cocoa) chocolate, in couverture discs or finely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "high-quality bittersweet (around 70% cocoa) chocolate",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "in couverture discs or finely chopped"
-    },
     "parse_ingredients": {
       "item": "high-quality bittersweet (around 70% cocoa) chocolate",
       "measurements": [

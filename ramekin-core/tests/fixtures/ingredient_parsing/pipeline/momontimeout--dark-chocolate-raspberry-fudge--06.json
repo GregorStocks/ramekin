@@ -1,7 +1,7 @@
 {
   "raw": "12 oz white chocolate chips ((divided))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "white chocolate chips",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "divided"
-    },
-    "parse_ingredients": {
-      "item": "white chocolate chips",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "divided"

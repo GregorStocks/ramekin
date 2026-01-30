@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup Italian seasoned dry whole wheat bread crumbs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Italian seasoned dry whole wheat bread crumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Italian seasoned dry whole wheat bread crumbs",
       "measurements": [

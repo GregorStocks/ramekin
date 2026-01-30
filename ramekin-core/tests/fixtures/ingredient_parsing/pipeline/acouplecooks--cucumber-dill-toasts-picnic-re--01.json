@@ -1,16 +1,6 @@
 {
   "raw": "24 baguette slices or rye cocktail bread",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baguette slices or rye cocktail bread",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baguette slices or rye cocktail bread",
       "measurements": [

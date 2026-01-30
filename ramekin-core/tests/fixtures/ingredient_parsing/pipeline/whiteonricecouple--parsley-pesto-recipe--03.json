@@ -1,16 +1,6 @@
 {
   "raw": "2 Tablespoons Pine Nuts (, toasted *see head note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Pine Nuts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "toasted *see head note"
-    },
     "parse_ingredients": {
       "item": "Pine Nuts",
       "measurements": [

@@ -1,24 +1,6 @@
 {
   "raw": "2 1/2 ounces toasted and roughly chopped almonds (70 g; 1/2 cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "toasted and roughly chopped almonds",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "70",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "toasted and roughly chopped almonds",
       "measurements": [

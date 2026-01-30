@@ -1,16 +1,6 @@
 {
   "raw": "1/2 recipe the best basic guacamole",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "recipe the best basic guacamole",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "recipe the best basic guacamole",
       "measurements": [

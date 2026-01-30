@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp butter (or ghee)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter (or ghee)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "butter (or ghee)",
       "measurements": [

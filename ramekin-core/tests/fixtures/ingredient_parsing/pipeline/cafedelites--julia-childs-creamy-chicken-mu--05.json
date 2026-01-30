@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons reduced fat butter (original recipe: 5 tablespoons full fat)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "reduced fat butter (original recipe: 5 tablespoons full fat)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "reduced fat butter (original recipe: 5 tablespoons full fat)",
       "measurements": [

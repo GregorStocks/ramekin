@@ -1,16 +1,6 @@
 {
   "raw": "1  small green bell pepper (diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "diced"
-    },
     "parse_ingredients": {
       "item": "green bell pepper",
       "measurements": [

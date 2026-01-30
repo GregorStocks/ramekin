@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup dried porcini, chanterelle, or shiitake mushrooms (or a blend)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried porcini, chanterelle, or shiitake mushrooms (or a blend)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried porcini, chanterelle, or shiitake mushrooms (or a blend)",
       "measurements": [

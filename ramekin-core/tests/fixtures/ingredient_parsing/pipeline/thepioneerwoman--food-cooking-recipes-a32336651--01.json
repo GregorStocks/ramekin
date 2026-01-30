@@ -1,16 +1,6 @@
 {
   "raw": "1 lb. rotini or fusilli",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rotini or fusilli",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "rotini or fusilli",
       "measurements": [

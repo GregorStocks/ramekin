@@ -1,24 +1,6 @@
 {
   "raw": "8 chicken drumsticks (about 2 1/2 pounds; 1.1kg), patted dry with paper towels",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken drumsticks , patted dry with paper towels",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "1.1",
-          "unit": "kg"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken drumsticks , patted dry with paper towels",
       "measurements": [

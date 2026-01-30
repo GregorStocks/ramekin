@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups 274 grams dark or semisweet chocolate chips, melted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "274 grams dark or semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    },
     "parse_ingredients": {
       "item": "274 grams dark or semisweet chocolate chips",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 lb ziti noodles",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ziti noodles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ziti noodles",
       "measurements": [

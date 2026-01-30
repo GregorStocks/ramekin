@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup non-dairy milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "non-dairy milk",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "non-dairy milk",
       "measurements": [

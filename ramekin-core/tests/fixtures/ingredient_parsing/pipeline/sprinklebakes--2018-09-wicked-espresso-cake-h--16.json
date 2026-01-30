@@ -1,7 +1,7 @@
 {
   "raw": "1 cup 240ml/8 oz. whole milk, cold",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "whole milk",
       "measurements": [
         {
@@ -19,24 +19,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "cold"
-    },
-    "parse_ingredients": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "ml"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "cold"

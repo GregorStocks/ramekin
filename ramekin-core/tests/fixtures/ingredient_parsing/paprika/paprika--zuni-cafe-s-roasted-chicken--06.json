@@ -1,16 +1,6 @@
 {
   "raw": "Generous 8 ounces slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "generous oz"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "slightly stale open-crumbed, chewy, peasant-style bread (not sourdough)",
       "measurements": [

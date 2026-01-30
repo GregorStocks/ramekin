@@ -1,7 +1,7 @@
 {
   "raw": "¾ cup (3.5 oz)  unsalted shelled pistachios",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "unsalted shelled pistachios",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "99",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "unsalted shelled pistachios",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "3.5",
-          "unit": "oz"
         }
       ],
       "note": null

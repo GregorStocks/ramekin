@@ -1,24 +1,6 @@
 {
   "raw": "128 g all-purpose flour (4 1/2 ounces; 1 cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "128",
-          "unit": "g"
-        },
-        {
-          "amount": "4 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour",
       "measurements": [

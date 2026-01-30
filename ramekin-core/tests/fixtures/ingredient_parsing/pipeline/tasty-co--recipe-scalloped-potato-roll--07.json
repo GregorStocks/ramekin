@@ -1,7 +1,7 @@
 {
   "raw": "14 ½ oz diced tomato, 1 can, drained",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "diced tomato, 1 can",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "411",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "diced tomato, 1 can",
-      "measurements": [
-        {
-          "amount": "14 1/2",
-          "unit": "oz"
         }
       ],
       "note": "drained"

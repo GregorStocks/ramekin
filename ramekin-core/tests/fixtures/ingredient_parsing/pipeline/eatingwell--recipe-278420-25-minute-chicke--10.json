@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces Monterey Jack cheese, shredded (about 1 cup), divided",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Monterey Jack cheese, shredded",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "divided"
-    },
-    "parse_ingredients": {
-      "item": "Monterey Jack cheese, shredded",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
         }
       ],
       "note": "divided"

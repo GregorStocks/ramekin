@@ -1,16 +1,6 @@
 {
   "raw": "1 jalapeño, seeded and roughly chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "jalapeño",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "seeded and roughly chopped"
-    },
     "parse_ingredients": {
       "item": "jalapeño",
       "measurements": [

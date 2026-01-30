@@ -1,28 +1,6 @@
 {
   "raw": "6 oz avocado flesh (170g, 1 large/ 2 small avos, ¾ cup mashed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocado flesh",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "avocado flesh",
       "measurements": [

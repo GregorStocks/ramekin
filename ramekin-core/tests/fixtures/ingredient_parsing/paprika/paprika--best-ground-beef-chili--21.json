@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons cider vinegar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cider vinegar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cider vinegar",
       "measurements": [

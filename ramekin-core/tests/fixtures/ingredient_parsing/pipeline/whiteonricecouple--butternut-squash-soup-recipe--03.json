@@ -1,20 +1,6 @@
 {
   "raw": "8 ounces (225g) sliced mushrooms",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced mushrooms",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced mushrooms",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 cups chopped celery",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped celery",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped celery",
       "measurements": [

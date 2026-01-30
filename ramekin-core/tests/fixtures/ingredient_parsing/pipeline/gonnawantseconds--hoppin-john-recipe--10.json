@@ -1,16 +1,6 @@
 {
   "raw": "4 cups frozen black-eyed peas.  (thawed and drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen black-eyed peas.",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed and drained"
-    },
     "parse_ingredients": {
       "item": "frozen black-eyed peas.",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 Tbsp Grand Marnier",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Grand Marnier",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Grand Marnier",
       "measurements": [

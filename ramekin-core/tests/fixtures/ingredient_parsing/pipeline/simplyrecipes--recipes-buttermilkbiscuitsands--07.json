@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon melted butter (optional, to brush on top of biscuits after baking)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "melted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, to brush on top of biscuits after baking"
-    },
     "parse_ingredients": {
       "item": "melted butter",
       "measurements": [

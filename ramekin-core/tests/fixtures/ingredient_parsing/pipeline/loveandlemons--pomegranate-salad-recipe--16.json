@@ -1,16 +1,6 @@
 {
   "raw": "2 small kohlrabi bulbs, peeled and sliced paper thin (or 2 additional carrots)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kohlrabi bulbs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "peeled and sliced paper thin (or 2 additional carrots)"
-    },
     "parse_ingredients": {
       "item": "kohlrabi bulbs",
       "measurements": [

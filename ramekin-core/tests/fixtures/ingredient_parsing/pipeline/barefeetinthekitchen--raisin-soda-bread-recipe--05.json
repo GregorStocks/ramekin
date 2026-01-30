@@ -1,7 +1,7 @@
 {
   "raw": "16 ounces buttermilk, or 2 cups, divided (reserve 1/4 cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "buttermilk, or 2 cups",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": "divided (reserve 1/4 cup)"
-    },
-    "parse_ingredients": {
-      "item": "buttermilk, or 2 cups",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": "divided (reserve 1/4 cup)"

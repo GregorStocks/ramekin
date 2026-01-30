@@ -1,7 +1,7 @@
 {
   "raw": "½ bunch (1½ oz./43 g) fresh parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh parsley",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "43",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
         }
       ],
       "note": null

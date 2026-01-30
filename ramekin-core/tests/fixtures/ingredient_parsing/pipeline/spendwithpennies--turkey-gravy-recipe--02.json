@@ -1,16 +1,6 @@
 {
   "raw": "2-3 tablespoons fresh herbs (parsley, thyme, sage)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh herbs (parsley, thyme, sage)",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh herbs (parsley, thyme, sage)",
       "measurements": [

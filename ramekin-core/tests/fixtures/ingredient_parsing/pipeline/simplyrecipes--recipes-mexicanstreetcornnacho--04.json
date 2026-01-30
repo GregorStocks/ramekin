@@ -1,7 +1,7 @@
 {
   "raw": "14 ounce bag low salt tortilla chips",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "bag low salt tortilla chips",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "397",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "bag low salt tortilla chips",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
         }
       ],
       "note": null

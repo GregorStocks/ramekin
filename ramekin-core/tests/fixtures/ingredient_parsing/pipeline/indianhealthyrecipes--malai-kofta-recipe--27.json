@@ -1,16 +1,6 @@
 {
   "raw": "½ to ¾ teaspoon sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1/2 to 3/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sugar",
       "measurements": [

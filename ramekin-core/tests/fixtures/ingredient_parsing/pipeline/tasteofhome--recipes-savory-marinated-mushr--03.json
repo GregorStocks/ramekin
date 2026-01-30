@@ -1,16 +1,6 @@
 {
   "raw": "3 pounds small fresh mushrooms",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "small fresh mushrooms",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "small fresh mushrooms",
       "measurements": [

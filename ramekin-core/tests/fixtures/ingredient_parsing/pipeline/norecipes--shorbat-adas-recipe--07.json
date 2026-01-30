@@ -1,16 +1,6 @@
 {
   "raw": "3  dried limes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried limes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried limes",
       "measurements": [

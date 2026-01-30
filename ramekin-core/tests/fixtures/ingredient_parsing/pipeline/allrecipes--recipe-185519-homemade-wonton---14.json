@@ -1,16 +1,6 @@
 {
   "raw": "16 snow peas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "snow peas",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "snow peas",
       "measurements": [

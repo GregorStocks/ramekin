@@ -1,20 +1,6 @@
 {
   "raw": "One (16-ounce) package frozen sugar snap peas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen sugar snap peas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "frozen sugar snap peas",
       "measurements": [

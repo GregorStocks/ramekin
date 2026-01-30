@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup dried fruit like cranberries, cherries, apricots or raisins",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried fruit like cranberries, cherries, apricots or raisins",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried fruit like cranberries, cherries, apricots or raisins",
       "measurements": [

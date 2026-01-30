@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup rolled oats",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rolled oats",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "rolled oats",
       "measurements": [

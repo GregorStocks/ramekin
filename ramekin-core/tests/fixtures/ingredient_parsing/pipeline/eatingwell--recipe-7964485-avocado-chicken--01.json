@@ -1,16 +1,6 @@
 {
   "raw": "0.5 cup firmly packed fresh cilantro leaves and tender stems",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "firmly packed fresh cilantro leaves and tender stems",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "firmly packed fresh cilantro leaves and tender stems",
       "measurements": [

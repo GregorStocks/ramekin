@@ -1,7 +1,7 @@
 {
   "raw": "2/3 cup (1.6 oz) finely shredded Parmesan,  (plus more for serving )",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "finely shredded Parmesan",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "45",
           "unit": "g"
-        }
-      ],
-      "note": "plus more for serving"
-    },
-    "parse_ingredients": {
-      "item": "finely shredded Parmesan",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "1.6",
-          "unit": "oz"
         }
       ],
       "note": "plus more for serving"

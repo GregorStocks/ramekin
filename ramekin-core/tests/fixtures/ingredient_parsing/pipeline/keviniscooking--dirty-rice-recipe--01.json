@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp bacon fat ((or olive oil))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bacon fat (or olive oil)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bacon fat (or olive oil)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup zucchini (quartered lengthwise and sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "quartered lengthwise and sliced"
-    },
     "parse_ingredients": {
       "item": "zucchini",
       "measurements": [

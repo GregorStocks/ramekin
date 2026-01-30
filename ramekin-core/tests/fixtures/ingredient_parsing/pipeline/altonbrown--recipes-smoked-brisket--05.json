@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon freshly ground white peppercorn",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "freshly ground white peppercorn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "freshly ground white peppercorn",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "8 ounces chicken breast (cooked any way you'd like (see notes))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "chicken breast",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "cooked any way you'd like (see notes"
-    },
-    "parse_ingredients": {
-      "item": "chicken breast",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "cooked any way you'd like (see notes"

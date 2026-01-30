@@ -1,16 +1,6 @@
 {
   "raw": "1-1/2 to 2-1/2 cups shredded cheddar cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "to 2-1/2 cups shredded cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "to 2-1/2 cups shredded cheddar cheese",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 cup unsalted butter ((16 Tbsp))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "16",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon oregano (dried Mexican)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oregano",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "dried Mexican"
-    },
     "parse_ingredients": {
       "item": "oregano",
       "measurements": [

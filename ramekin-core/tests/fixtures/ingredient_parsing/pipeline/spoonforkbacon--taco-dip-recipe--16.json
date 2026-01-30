@@ -1,16 +1,6 @@
 {
   "raw": "2/3 cup shredded iceberg lettuce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded iceberg lettuce",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded iceberg lettuce",
       "measurements": [

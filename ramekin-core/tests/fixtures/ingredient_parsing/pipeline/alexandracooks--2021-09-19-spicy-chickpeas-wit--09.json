@@ -1,16 +1,6 @@
 {
   "raw": "3 cups cooked chickpeas or two 15-oz cans, drained and rinsed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked chickpeas or two 15-oz cans",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained and rinsed"
-    },
     "parse_ingredients": {
       "item": "cooked chickpeas or two 15-oz cans",
       "measurements": [

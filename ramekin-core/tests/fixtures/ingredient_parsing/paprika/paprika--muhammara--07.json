@@ -1,20 +1,6 @@
 {
   "raw": "1/4 cup (60 ml) pomegranate molasses (see notes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pomegranate molasses (see notes)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pomegranate molasses (see notes)",
       "measurements": [

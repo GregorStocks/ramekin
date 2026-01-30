@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup diced celery",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "diced celery",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "diced celery",
       "measurements": [

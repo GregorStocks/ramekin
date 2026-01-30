@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup sugar (optional but recommended)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional but recommended"
-    },
     "parse_ingredients": {
       "item": "sugar",
       "measurements": [

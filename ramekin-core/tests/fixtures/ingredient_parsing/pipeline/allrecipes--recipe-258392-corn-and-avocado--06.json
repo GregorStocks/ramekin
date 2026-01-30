@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons finely chopped onions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely chopped onions",
       "measurements": [

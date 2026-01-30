@@ -1,16 +1,6 @@
 {
   "raw": "1-2 tablespoons agave nectar, or sweetener of choice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "agave nectar, or sweetener of choice",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "agave nectar, or sweetener of choice",
       "measurements": [

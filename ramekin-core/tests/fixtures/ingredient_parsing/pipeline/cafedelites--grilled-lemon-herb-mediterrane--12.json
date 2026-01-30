@@ -1,16 +1,6 @@
 {
   "raw": "4 cups Romaine lettuce (or Cos lettuce leaves, washed and dried)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Romaine lettuce",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or Cos lettuce leaves, washed and dried"
-    },
     "parse_ingredients": {
       "item": "Romaine lettuce",
       "measurements": [

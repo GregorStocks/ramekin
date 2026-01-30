@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon saba* (see notes) or 2 tablespoons balsamic, I like white balsamic",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "saba* (see notes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 2 tablespoons balsamic, I like white balsamic"
-    },
     "parse_ingredients": {
       "item": "saba* (see notes)",
       "measurements": [

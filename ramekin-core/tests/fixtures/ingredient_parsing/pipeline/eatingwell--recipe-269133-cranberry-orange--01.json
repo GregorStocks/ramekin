@@ -1,20 +1,6 @@
 {
   "raw": "2 (2 quart) bottles chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "bottle"
-        },
-        {
-          "amount": "2",
-          "unit": "quart"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chilled cranberry juice (no-sugar-added but sweetened with fruit juice)",
       "measurements": [

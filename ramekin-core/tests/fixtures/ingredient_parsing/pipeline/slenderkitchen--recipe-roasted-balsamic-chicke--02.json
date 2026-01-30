@@ -1,16 +1,6 @@
 {
   "raw": "2 carrots, sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "carrots",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons taco seasoning",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "taco seasoning",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "taco seasoning",
       "measurements": [

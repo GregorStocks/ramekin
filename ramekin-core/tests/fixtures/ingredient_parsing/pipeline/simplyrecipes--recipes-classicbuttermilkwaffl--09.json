@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup melted butter for the waffle iron, optional",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "melted butter for the waffle iron",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "melted butter for the waffle iron",
       "measurements": [

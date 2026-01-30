@@ -1,24 +1,6 @@
 {
   "raw": "60g unsalted butter (2 ounces; 1/4 cup), cut into 1/2-inch cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter , cut into 1/2-inch cubes",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsalted butter , cut into 1/2-inch cubes",
       "measurements": [

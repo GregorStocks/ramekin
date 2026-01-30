@@ -1,16 +1,6 @@
 {
   "raw": "1 lb. mezzi rigatoni or penne",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mezzi rigatoni or penne",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mezzi rigatoni or penne",
       "measurements": [

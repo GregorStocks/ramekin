@@ -1,16 +1,6 @@
 {
   "raw": "2 cups Southern Hash Browns",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Southern Hash Browns",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Southern Hash Browns",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon kosher salt ((halve if using regular salt))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kosher salt (halve if using regular salt)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "kosher salt (halve if using regular salt)",
       "measurements": [

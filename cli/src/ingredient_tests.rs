@@ -63,24 +63,16 @@ fn default_fixtures_dir() -> PathBuf {
     PathBuf::from("ramekin-core/tests/fixtures/ingredient_parsing")
 }
 
-/// Run all pipeline steps on a raw ingredient string
+/// Run all pipeline steps on a raw ingredient string.
+/// The parse_ingredients step now includes metric weight enrichment.
 fn run_pipeline(raw: &str) -> HashMap<String, StepOutput> {
     let mut outputs = HashMap::new();
 
-    // Step 1: parse_ingredients
+    // parse_ingredients step (includes metric weight enrichment)
     let parsed = parse_ingredient(raw);
-    outputs.insert(
-        "parse_ingredients".to_string(),
-        StepOutput::from(parsed.clone()),
-    );
-
-    // Step 2: enrich_metric_weights
     let mut stats = EnrichmentStats::default();
     let enriched = add_metric_weight_alternative(parsed, &mut stats);
-    outputs.insert(
-        "enrich_metric_weights".to_string(),
-        StepOutput::from(enriched),
-    );
+    outputs.insert("parse_ingredients".to_string(), StepOutput::from(enriched));
 
     outputs
 }

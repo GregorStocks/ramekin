@@ -1,20 +1,6 @@
 {
   "raw": "195 g (1½ cups) all-purpose flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "195",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour",
       "measurements": [

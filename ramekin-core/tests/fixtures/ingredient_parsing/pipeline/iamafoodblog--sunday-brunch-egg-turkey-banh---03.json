@@ -1,16 +1,6 @@
 {
   "raw": "4-6 slices leftover roasted turkey",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leftover roasted turkey",
-      "measurements": [
-        {
-          "amount": "4-6",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leftover roasted turkey",
       "measurements": [

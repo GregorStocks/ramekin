@@ -1,28 +1,6 @@
 {
   "raw": "1 cup (225 grams) mashed ripe bananas (about 2 &amp;frac12; medium or 2 large bananas)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mashed ripe bananas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "medium"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mashed ripe bananas",
       "measurements": [

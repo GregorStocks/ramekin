@@ -1,16 +1,6 @@
 {
   "raw": "1  brown onion (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "brown onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "brown onion",
       "measurements": [

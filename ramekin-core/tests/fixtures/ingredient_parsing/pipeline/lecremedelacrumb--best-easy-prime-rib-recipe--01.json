@@ -1,16 +1,6 @@
 {
   "raw": "4 ½ lb boneless prime rib (at room temperature)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless prime rib",
-      "measurements": [
-        {
-          "amount": "4 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "at room temperature"
-    },
     "parse_ingredients": {
       "item": "boneless prime rib",
       "measurements": [

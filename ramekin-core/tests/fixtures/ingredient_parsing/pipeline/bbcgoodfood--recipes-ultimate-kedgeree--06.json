@@ -1,16 +1,6 @@
 {
   "raw": "½ full-fat  milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "full-fat  milk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "full-fat  milk",
       "measurements": [

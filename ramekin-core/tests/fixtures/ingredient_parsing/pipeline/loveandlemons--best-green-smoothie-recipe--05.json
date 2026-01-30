@@ -1,16 +1,6 @@
 {
   "raw": "2 ice cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ice cubes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ice cubes",
       "measurements": [

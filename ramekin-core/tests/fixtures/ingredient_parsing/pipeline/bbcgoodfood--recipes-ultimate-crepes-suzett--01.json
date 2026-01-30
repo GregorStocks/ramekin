@@ -1,16 +1,6 @@
 {
   "raw": "100g plain flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "plain flour",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "plain flour",
       "measurements": [

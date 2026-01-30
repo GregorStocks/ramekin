@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup 3 oz. dulce de leche",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "3 oz. dulce de leche",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "3 oz. dulce de leche",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 stalks Chinese celery with leaves, finely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Chinese celery with leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stalk"
-        }
-      ],
-      "note": "finely chopped"
-    },
     "parse_ingredients": {
       "item": "Chinese celery with leaves",
       "measurements": [

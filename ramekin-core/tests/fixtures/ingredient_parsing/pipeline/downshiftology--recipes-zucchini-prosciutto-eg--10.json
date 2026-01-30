@@ -1,16 +1,6 @@
 {
   "raw": "2  small zucchini (thinly sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "zucchini",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "zucchini",
       "measurements": [

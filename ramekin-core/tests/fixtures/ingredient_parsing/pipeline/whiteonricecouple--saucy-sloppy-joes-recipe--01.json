@@ -1,20 +1,6 @@
 {
   "raw": "2 pounds ground beef ((preferably a leaner meat, 85-93% lean))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        },
-        {
-          "amount": "85",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground beef",
       "measurements": [

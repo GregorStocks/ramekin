@@ -1,16 +1,6 @@
 {
   "raw": "1/2 c. heavy cream, warmed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heavy cream, warmed",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "heavy cream, warmed",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 heaping tablespoon finely minced shallot",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely minced shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "heaping tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely minced shallot",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1  banana (peeled and cut into large chunks)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "banana",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and cut into large chunks"
-    },
     "parse_ingredients": {
       "item": "banana",
       "measurements": [

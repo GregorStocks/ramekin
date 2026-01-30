@@ -1,16 +1,6 @@
 {
   "raw": "1 carrot, peeled and chopped fine",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and chopped fine"
-    },
     "parse_ingredients": {
       "item": "carrot",
       "measurements": [

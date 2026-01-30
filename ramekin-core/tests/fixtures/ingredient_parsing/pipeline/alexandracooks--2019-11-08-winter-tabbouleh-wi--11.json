@@ -1,16 +1,6 @@
 {
   "raw": "½ cup almonds, toasted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "almonds",
       "measurements": [

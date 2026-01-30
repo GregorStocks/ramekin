@@ -1,16 +1,6 @@
 {
   "raw": "3 tbsp  whey protein powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whey protein powder",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whey protein powder",
       "measurements": [

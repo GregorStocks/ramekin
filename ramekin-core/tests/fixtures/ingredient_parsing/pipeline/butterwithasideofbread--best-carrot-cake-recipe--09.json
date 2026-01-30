@@ -1,7 +1,7 @@
 {
   "raw": "8 oz can crushed pineapple (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "can crushed pineapple",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "can crushed pineapple",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "drained"

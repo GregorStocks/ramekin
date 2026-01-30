@@ -1,16 +1,6 @@
 {
   "raw": "1/2 bunch Chopped fresh parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Chopped fresh parsley",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1  bunch scallions (white and green parts, chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "white and green parts, chopped"
-    },
     "parse_ingredients": {
       "item": "scallions",
       "measurements": [

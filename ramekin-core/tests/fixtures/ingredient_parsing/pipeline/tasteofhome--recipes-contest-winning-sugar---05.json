@@ -1,16 +1,6 @@
 {
   "raw": "1 cup salted cashews",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salted cashews",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salted cashews",
       "measurements": [

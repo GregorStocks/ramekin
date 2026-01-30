@@ -1,16 +1,6 @@
 {
   "raw": "3 cups colored mini marshmallow",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "colored mini marshmallow",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "colored mini marshmallow",
       "measurements": [

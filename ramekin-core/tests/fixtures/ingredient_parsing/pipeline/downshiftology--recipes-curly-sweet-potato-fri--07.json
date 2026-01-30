@@ -1,16 +1,6 @@
 {
   "raw": "1  garlic clove, minced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic clove",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "minced"
-    },
     "parse_ingredients": {
       "item": "garlic clove",
       "measurements": [

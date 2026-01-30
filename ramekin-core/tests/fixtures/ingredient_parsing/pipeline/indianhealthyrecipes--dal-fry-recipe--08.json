@@ -1,16 +1,6 @@
 {
   "raw": "1 to 2  green chilies ((slit or chopped) (optional))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green chilies (optional)",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": "slit or chopped"
-    },
     "parse_ingredients": {
       "item": "green chilies (optional)",
       "measurements": [

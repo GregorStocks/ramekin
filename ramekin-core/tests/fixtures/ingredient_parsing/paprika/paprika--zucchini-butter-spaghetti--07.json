@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon red pepper flakes, or more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more to taste"
-    },
     "parse_ingredients": {
       "item": "red pepper flakes",
       "measurements": [

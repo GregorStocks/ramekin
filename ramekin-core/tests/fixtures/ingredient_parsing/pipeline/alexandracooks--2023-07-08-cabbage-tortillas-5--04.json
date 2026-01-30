@@ -1,7 +1,7 @@
 {
   "raw": "2.5 ounces grated Parmigiano Reggiano cheese, a scant 1 cup",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "grated Parmigiano Reggiano cheese, a scant 1 cup",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "71",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "grated Parmigiano Reggiano cheese, a scant 1 cup",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "oz"
         }
       ],
       "note": null

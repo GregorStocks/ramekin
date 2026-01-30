@@ -1,16 +1,6 @@
 {
   "raw": "80 grams green beans ((trimmed and cut into 1 1/2-inch pieces))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green beans",
-      "measurements": [
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed and cut into 1 1/2-inch pieces"
-    },
     "parse_ingredients": {
       "item": "green beans",
       "measurements": [

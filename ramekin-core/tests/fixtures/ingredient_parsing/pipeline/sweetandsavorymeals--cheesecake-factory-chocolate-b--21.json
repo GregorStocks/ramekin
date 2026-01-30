@@ -1,7 +1,7 @@
 {
   "raw": "16 ounces Belgian semisweet chocolate (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Belgian semisweet chocolate",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": "chopped"
-    },
-    "parse_ingredients": {
-      "item": "Belgian semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": "chopped"

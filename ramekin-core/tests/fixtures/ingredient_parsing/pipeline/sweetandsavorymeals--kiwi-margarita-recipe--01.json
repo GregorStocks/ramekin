@@ -1,16 +1,6 @@
 {
   "raw": "2 cups kiwi chunks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kiwi chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "kiwi chunks",
       "measurements": [

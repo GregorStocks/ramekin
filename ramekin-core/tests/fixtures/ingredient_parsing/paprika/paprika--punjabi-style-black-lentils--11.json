@@ -1,16 +1,6 @@
 {
   "raw": "1 cup finely chopped or pureed tomatoes, fresh or from a can",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped or pureed tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "fresh or from a can"
-    },
     "parse_ingredients": {
       "item": "finely chopped or pureed tomatoes",
       "measurements": [

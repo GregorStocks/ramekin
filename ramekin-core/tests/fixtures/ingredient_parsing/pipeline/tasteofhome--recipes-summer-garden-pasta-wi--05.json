@@ -1,16 +1,6 @@
 {
   "raw": "1 cup shredded Parmesan cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded Parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded Parmesan cheese",
       "measurements": [

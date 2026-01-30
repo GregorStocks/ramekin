@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup grated Parmigiano-Reggiano cheese (about 2 ounces), plus more for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "grated Parmigiano-Reggiano cheese",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "plus more for serving"
-    },
-    "parse_ingredients": {
-      "item": "grated Parmigiano-Reggiano cheese",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
         }
       ],
       "note": "plus more for serving"

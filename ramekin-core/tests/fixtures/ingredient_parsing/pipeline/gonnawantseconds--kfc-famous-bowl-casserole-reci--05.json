@@ -1,20 +1,6 @@
 {
   "raw": "1  (12-ounce) jar prepared chicken gravy",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "prepared chicken gravy",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "prepared chicken gravy",
       "measurements": [

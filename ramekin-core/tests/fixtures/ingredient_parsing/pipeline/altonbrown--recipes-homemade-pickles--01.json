@@ -1,16 +1,6 @@
 {
   "raw": "2 medium cucumbers, thinly sliced or cut into spears",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cucumbers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        }
-      ],
-      "note": "thinly sliced or cut into spears"
-    },
     "parse_ingredients": {
       "item": "cucumbers",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1  honeydew melon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "honeydew melon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "honeydew melon",
       "measurements": [

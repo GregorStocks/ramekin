@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons chopped pickled jalapeno peppers",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped pickled jalapeno peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped pickled jalapeno peppers",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 small parmesan rind (about 4-inches), (plus shredded parmesan for serving)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "parmesan rind",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "plus shredded parmesan for serving"
-    },
     "parse_ingredients": {
       "item": "parmesan rind",
       "measurements": [

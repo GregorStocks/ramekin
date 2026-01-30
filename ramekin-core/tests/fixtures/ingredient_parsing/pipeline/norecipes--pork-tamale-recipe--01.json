@@ -1,16 +1,6 @@
 {
   "raw": "1 large onion ((sliced crosswise into 3 rounds))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced crosswise into 3 rounds"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

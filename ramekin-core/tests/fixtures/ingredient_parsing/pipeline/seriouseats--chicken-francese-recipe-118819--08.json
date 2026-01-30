@@ -1,28 +1,6 @@
 {
   "raw": "2 tablespoons unsalted butter (28 g), plus 1 tablespoon chilled (1/2 ounce; 14 g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        },
-        {
-          "amount": "1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": "plus 1 tablespoon chilled"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

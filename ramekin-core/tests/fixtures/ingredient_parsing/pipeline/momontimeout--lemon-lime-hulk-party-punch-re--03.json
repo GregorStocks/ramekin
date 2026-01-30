@@ -1,16 +1,6 @@
 {
   "raw": "2 to 3  Fresh Limes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Fresh Limes",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Fresh Limes",
       "measurements": [

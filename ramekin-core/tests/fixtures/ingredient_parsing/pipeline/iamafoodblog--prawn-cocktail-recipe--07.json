@@ -1,16 +1,6 @@
 {
   "raw": "1/4 of head of iceberg lettuce, finely shredded",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "of head of iceberg lettuce",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": "finely shredded"
-    },
     "parse_ingredients": {
       "item": "of head of iceberg lettuce",
       "measurements": [

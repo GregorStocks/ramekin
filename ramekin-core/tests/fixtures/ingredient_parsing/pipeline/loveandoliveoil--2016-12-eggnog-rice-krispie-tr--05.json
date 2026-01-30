@@ -1,7 +1,7 @@
 {
   "raw": "8 cups (16 oz) mini marshmallows, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "mini marshmallows",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": "divided"
-    },
-    "parse_ingredients": {
-      "item": "mini marshmallows",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        },
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": "divided"

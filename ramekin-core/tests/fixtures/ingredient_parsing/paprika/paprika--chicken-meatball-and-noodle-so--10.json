@@ -1,16 +1,6 @@
 {
   "raw": "1 pound ground chicken, ideally a mix of dark and light meat",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground chicken, ideally a mix of dark and light meat",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground chicken, ideally a mix of dark and light meat",
       "measurements": [

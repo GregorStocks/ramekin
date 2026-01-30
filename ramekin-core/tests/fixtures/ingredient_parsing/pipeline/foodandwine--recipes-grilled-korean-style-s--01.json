@@ -1,20 +1,6 @@
 {
   "raw": "5 pound flanken-style (about 1/2-inch-thick) beef short ribs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "flanken-style beef short ribs",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "lb"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "flanken-style beef short ribs",
       "measurements": [

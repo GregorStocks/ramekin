@@ -1,16 +1,6 @@
 {
   "raw": "1 small cucumber, sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "cucumber",
       "measurements": [

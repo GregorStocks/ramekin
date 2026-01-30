@@ -1,16 +1,6 @@
 {
   "raw": "2 cups uncooked instant rice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "uncooked instant rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "uncooked instant rice",
       "measurements": [

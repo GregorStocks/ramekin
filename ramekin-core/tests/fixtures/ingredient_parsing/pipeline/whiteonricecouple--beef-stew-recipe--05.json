@@ -1,16 +1,6 @@
 {
   "raw": "4  carrots (, cut into bite sized pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrots (, cut into bite sized pieces)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "carrots (, cut into bite sized pieces)",
       "measurements": [

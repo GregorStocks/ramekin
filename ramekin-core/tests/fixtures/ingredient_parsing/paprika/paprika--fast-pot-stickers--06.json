@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup plus 2 tablespoons good soy sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1/2 cup plus 2 tablespoons good soy sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tablespoons good soy sauce"
-    },
     "parse_ingredients": {
       "item": "1/2 cup plus 2 tablespoons good soy sauce",
       "measurements": [

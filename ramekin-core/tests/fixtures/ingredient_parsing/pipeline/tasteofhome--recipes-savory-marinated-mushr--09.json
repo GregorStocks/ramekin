@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup sliced pimiento-stuffed olives",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced pimiento-stuffed olives",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced pimiento-stuffed olives",
       "measurements": [

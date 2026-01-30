@@ -1,24 +1,6 @@
 {
   "raw": "2 slightly heaped cups (about 18 ounces or 510 grams) (updated weight, see why) of mashed banana, from 4 extra-large or 5 medium-large bananas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "(updated weight, see why) of mashed banana, from 4 extra-large or 5 medium-large bananas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slightly heaped cup"
-        },
-        {
-          "amount": "18",
-          "unit": "oz"
-        },
-        {
-          "amount": "510",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "(updated weight, see why) of mashed banana, from 4 extra-large or 5 medium-large bananas",
       "measurements": [

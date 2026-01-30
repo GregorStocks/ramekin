@@ -1,16 +1,6 @@
 {
   "raw": "20 g ginger root (sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ginger root",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "g"
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "ginger root",
       "measurements": [

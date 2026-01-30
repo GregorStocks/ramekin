@@ -1,16 +1,6 @@
 {
   "raw": "10 branches fresh thyme ((or 2 teaspoons dried thyme))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "branches fresh thyme",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "or 2 teaspoons dried thyme"
-    },
     "parse_ingredients": {
       "item": "branches fresh thyme",
       "measurements": [

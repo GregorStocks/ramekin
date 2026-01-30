@@ -1,20 +1,6 @@
 {
   "raw": "3 scallions, finely chopped (about ¼ cup), plus a few more for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "scallions, finely chopped",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus a few more for serving"
-    },
     "parse_ingredients": {
       "item": "scallions, finely chopped",
       "measurements": [

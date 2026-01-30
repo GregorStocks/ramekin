@@ -1,16 +1,6 @@
 {
   "raw": "2 cups halved Brussels sprouts",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "halved Brussels sprouts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "halved Brussels sprouts",
       "measurements": [

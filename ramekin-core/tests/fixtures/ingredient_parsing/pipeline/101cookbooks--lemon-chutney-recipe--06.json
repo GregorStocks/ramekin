@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons chopped basil or mint",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped basil or mint",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped basil or mint",
       "measurements": [

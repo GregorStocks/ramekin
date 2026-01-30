@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup 50g Arrowhead Mills coconut flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Arrowhead Mills coconut flour",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Arrowhead Mills coconut flour",
       "measurements": [

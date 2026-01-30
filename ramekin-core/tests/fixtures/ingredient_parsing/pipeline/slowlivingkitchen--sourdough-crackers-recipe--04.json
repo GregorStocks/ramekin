@@ -1,16 +1,6 @@
 {
   "raw": "1 cup sourdough discard",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sourdough discard",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sourdough discard",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "6 to 8 cups kale, (curly green or tuscan is fine, chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kale",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": "cup"
-        }
-      ],
-      "note": "curly green or tuscan is fine, chopped"
-    },
     "parse_ingredients": {
       "item": "kale",
       "measurements": [

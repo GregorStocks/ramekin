@@ -1,20 +1,6 @@
 {
   "raw": "1 cup sour cream (227g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sour cream",
       "measurements": [

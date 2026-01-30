@@ -1,20 +1,6 @@
 {
   "raw": "1 (1-pound) center-cut salmon fillet, sliced crosswise into 6 strips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "center-cut salmon fillet",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced crosswise into 6 strips"
-    },
     "parse_ingredients": {
       "item": "center-cut salmon fillet",
       "measurements": [

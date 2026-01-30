@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 pounds mixed mushrooms, cleaned, trimmed and torn into bite size pieces (see suggestions above)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mixed mushrooms, cleaned",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and torn into bite size pieces (see suggestions above)"
-    },
     "parse_ingredients": {
       "item": "mixed mushrooms, cleaned",
       "measurements": [

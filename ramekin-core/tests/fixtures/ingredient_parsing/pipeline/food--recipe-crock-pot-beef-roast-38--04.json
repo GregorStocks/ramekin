@@ -1,16 +1,6 @@
 {
   "raw": "2 -3   lbs    boneless chuck roast",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "-3   lbs    boneless chuck roast",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "-3   lbs    boneless chuck roast",
       "measurements": [

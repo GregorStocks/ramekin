@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup chocolate jimmies (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chocolate jimmies",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "chocolate jimmies",
       "measurements": [

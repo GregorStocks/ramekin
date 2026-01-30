@@ -1,16 +1,6 @@
 {
   "raw": "1-2  ripe avocados",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ripe avocados",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ripe avocados",
       "measurements": [

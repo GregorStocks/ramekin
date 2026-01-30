@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup unsweetened cocoa powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsweetened cocoa powder",
       "measurements": [

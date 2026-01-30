@@ -1,16 +1,6 @@
 {
   "raw": "small splash of (thin) soy sauce, to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "splash of (thin) soy sauce",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": "to taste"
-    },
     "parse_ingredients": {
       "item": "splash of (thin) soy sauce",
       "measurements": [

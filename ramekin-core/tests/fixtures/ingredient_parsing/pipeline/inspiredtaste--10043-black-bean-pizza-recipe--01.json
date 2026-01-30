@@ -1,20 +1,6 @@
 {
   "raw": "1 (11-ounce) can Pillsbury refrigerated thin pizza crust",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Pillsbury refrigerated thin pizza crust",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "11",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Pillsbury refrigerated thin pizza crust",
       "measurements": [

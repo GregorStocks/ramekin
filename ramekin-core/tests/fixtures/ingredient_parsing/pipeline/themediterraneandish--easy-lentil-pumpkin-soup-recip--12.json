@@ -1,16 +1,6 @@
 {
   "raw": "2-3 tbsp gold raisins (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "gold raisins",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "gold raisins",
       "measurements": [

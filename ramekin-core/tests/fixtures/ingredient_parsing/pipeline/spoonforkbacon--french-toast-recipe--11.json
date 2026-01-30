@@ -1,20 +1,6 @@
 {
   "raw": "4 slices thick-cut Brioche bread ((1 1/2&amp;quot; thick))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thick-cut Brioche bread",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thick-cut Brioche bread",
       "measurements": [

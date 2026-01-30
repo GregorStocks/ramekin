@@ -1,16 +1,6 @@
 {
   "raw": "1 cup Dutch-processed cocoa powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Dutch-processed cocoa powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Dutch-processed cocoa powder",
       "measurements": [

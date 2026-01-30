@@ -1,16 +1,6 @@
 {
   "raw": "2  stalks celery (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "celery",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "stalk"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "celery",
       "measurements": [

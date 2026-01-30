@@ -1,16 +1,6 @@
 {
   "raw": "⅔ cup parmesan cheese, (plus more for topping)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "parmesan cheese",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for topping"
-    },
     "parse_ingredients": {
       "item": "parmesan cheese",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "2 tbsp chopped coriander ((8g))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped coriander",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped coriander",
       "measurements": [

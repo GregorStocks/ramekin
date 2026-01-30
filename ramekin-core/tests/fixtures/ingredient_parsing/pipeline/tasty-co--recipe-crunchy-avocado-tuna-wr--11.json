@@ -1,16 +1,6 @@
 {
   "raw": "4 whole wheat tortillas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole wheat tortillas",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whole wheat tortillas",
       "measurements": [

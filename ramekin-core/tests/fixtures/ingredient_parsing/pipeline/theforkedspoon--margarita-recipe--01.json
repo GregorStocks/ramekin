@@ -1,16 +1,6 @@
 {
   "raw": "2 fluid ounces Blanco tequila (or preferred spirit)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Blanco tequila (or preferred spirit)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Blanco tequila (or preferred spirit)",
       "measurements": [

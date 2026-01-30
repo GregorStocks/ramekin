@@ -1,16 +1,6 @@
 {
   "raw": "2 mini cucumbers, shredded",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mini cucumbers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "shredded"
-    },
     "parse_ingredients": {
       "item": "mini cucumbers",
       "measurements": [

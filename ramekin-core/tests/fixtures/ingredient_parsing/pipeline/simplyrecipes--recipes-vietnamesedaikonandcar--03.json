@@ -1,16 +1,6 @@
 {
   "raw": "1 cup plus 4 teaspoons of sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1 cup plus 4 teaspoons of sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 4 teaspoons of sugar"
-    },
     "parse_ingredients": {
       "item": "1 cup plus 4 teaspoons of sugar",
       "measurements": [

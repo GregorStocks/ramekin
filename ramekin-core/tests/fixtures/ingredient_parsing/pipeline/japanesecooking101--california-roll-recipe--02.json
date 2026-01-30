@@ -1,20 +1,6 @@
 {
   "raw": "2 sheets nori roasted seaweed (large, cut into halves)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sheets nori roasted seaweed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": null,
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sheets nori roasted seaweed",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup shredded mozzarella cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded mozzarella cheese",
       "measurements": [

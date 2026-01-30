@@ -1,20 +1,6 @@
 {
   "raw": "3/4 cup (180ml) whole milk, at room temperature (or nondairy)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole milk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "180",
-          "unit": "ml"
-        }
-      ],
-      "note": "at room temperature (or nondairy)"
-    },
     "parse_ingredients": {
       "item": "whole milk",
       "measurements": [

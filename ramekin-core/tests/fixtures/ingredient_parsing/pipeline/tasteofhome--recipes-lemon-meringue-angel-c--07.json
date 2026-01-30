@@ -1,7 +1,7 @@
 {
   "raw": "1 jar (10 ounces) lemon curd",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "lemon curd",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "lemon curd",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": null

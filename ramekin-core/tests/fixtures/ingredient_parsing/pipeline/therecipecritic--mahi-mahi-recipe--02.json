@@ -1,16 +1,6 @@
 {
   "raw": "4  mahi mahi fish filets",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mahi mahi fish filets",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mahi mahi fish filets",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "12 oz shishito peppers",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "shishito peppers",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "shishito peppers",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": null

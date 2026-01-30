@@ -1,16 +1,6 @@
 {
   "raw": "½ teaspoon ground black pepper (plus more to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground black pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    },
     "parse_ingredients": {
       "item": "ground black pepper",
       "measurements": [

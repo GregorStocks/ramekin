@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon instant espresso powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "instant espresso powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "instant espresso powder",
       "measurements": [

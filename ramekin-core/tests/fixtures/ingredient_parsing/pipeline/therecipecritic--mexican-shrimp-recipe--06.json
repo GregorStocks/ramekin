@@ -1,20 +1,6 @@
 {
   "raw": "1 (15-ounce) can corn (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "corn",
       "measurements": [

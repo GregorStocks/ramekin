@@ -1,7 +1,7 @@
 {
   "raw": "10 ounces cashews (roasted and salted (2 cups))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cashews",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": "roasted and salted (2 cups"
-    },
-    "parse_ingredients": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": "roasted and salted (2 cups"

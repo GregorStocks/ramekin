@@ -1,16 +1,6 @@
 {
   "raw": "2 small heads romaine lettuce, washed and torn into bite-size pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heads romaine lettuce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "small"
-        }
-      ],
-      "note": "washed and torn into bite-size pieces"
-    },
     "parse_ingredients": {
       "item": "heads romaine lettuce",
       "measurements": [

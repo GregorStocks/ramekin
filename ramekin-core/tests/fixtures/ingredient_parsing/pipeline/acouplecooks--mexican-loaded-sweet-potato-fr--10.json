@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon Mexican hot sauce (such as Cholula)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Mexican hot sauce (such as Cholula)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Mexican hot sauce (such as Cholula)",
       "measurements": [

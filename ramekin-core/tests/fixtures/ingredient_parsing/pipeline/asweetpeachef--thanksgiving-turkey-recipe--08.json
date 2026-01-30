@@ -1,16 +1,6 @@
 {
   "raw": "1  bunch fresh rosemary (about 6-8 stems, whole)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "about 6-8 stems, whole"
-    },
     "parse_ingredients": {
       "item": "fresh rosemary",
       "measurements": [

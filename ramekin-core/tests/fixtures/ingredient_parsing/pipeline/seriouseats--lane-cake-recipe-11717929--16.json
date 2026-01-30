@@ -1,24 +1,6 @@
 {
   "raw": "6 ounces finely shredded unsweetened coconut (170 g; 1 1/2 cups),&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely shredded unsweetened coconut ,",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "170",
-          "unit": "g"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely shredded unsweetened coconut ,",
       "measurements": [

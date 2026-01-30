@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup brown rice flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "brown rice flour",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "brown rice flour",
       "measurements": [

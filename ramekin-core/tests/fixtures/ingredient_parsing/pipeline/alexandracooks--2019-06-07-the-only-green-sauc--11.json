@@ -1,16 +1,6 @@
 {
   "raw": "good bread, sliced thickly",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bread",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "good"
-        }
-      ],
-      "note": "sliced thickly"
-    },
     "parse_ingredients": {
       "item": "bread",
       "measurements": [

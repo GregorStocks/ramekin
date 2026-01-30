@@ -1,20 +1,6 @@
 {
   "raw": "6 tablespoons (85 grams) unsalted butter, softened",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "softened"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

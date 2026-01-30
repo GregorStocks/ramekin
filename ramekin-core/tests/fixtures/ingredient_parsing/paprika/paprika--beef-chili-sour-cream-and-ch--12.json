@@ -1,16 +1,6 @@
 {
   "raw": "2 8-ounce cans tomato sauce or 2 cups fresh tomato sauce or tomato puree",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomato sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "8-ounce cans"
-        }
-      ],
-      "note": "or 2 cups fresh tomato sauce or tomato puree"
-    },
     "parse_ingredients": {
       "item": "tomato sauce",
       "measurements": [

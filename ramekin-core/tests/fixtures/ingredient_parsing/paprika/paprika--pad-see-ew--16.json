@@ -1,20 +1,6 @@
 {
   "raw": "1/2 teaspoon (2g) baking soda",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "2",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baking soda",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "6 (1-inch) slices Pumpernickel Loaf, cut into&nbsp;cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Pumpernickel Loaf, cut into cubes",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Pumpernickel Loaf, cut into cubes",
       "measurements": [

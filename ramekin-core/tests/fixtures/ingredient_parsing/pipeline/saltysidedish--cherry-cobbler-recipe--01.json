@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup butter (which is equal to 4 tablespoons butter)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter (which is equal to 4 tablespoons butter)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "butter (which is equal to 4 tablespoons butter)",
       "measurements": [

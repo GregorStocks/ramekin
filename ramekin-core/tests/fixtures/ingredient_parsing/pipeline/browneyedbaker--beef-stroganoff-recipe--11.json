@@ -1,7 +1,7 @@
 {
   "raw": "12 ounces egg noodles (cooked and drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "egg noodles",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "cooked and drained"
-    },
-    "parse_ingredients": {
-      "item": "egg noodles",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "cooked and drained"

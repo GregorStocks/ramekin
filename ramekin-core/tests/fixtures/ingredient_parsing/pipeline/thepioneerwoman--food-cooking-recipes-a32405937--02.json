@@ -1,16 +1,6 @@
 {
   "raw": "3 slices crusty Italian bread",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crusty Italian bread",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crusty Italian bread",
       "measurements": [

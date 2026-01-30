@@ -1,16 +1,6 @@
 {
   "raw": "6  soft-boiled egg",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soft-boiled egg",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "soft-boiled egg",
       "measurements": [

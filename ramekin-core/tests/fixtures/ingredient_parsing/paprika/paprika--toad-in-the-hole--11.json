@@ -1,24 +1,6 @@
 {
   "raw": "1/4 cup dry red wine (2 ounces; 60 g), such as Cabernet Sauvignon or Merlot",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry red wine , such as Cabernet Sauvignon or Merlot",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dry red wine , such as Cabernet Sauvignon or Merlot",
       "measurements": [

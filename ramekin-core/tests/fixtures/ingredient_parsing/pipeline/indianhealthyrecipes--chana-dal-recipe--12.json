@@ -1,16 +1,6 @@
 {
   "raw": "3  green cardamoms ( (or use ¼ tsp ground))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green cardamoms",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "(or use 1/4 tsp ground"
-    },
     "parse_ingredients": {
       "item": "green cardamoms",
       "measurements": [

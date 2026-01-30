@@ -1,11 +1,6 @@
 {
   "raw": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges, and/or thinly sliced scallions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges",
-      "measurements": [],
-      "note": "and/or thinly sliced scallions"
-    },
     "parse_ingredients": {
       "item": "To serve: Sour cream, pickled red onions, pickled jalapenos, grated cheddar, cornbread, fresh cilantro, lime wedges",
       "measurements": [],

@@ -1,16 +1,6 @@
 {
   "raw": "6 to 8 cups chopped romaine lettuce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped romaine lettuce",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped romaine lettuce",
       "measurements": [

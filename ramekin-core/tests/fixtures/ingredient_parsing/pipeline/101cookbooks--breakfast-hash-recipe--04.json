@@ -1,16 +1,6 @@
 {
   "raw": "1 - 2  cooked potatoes, cubed (see headnotes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked potatoes",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": "cubed (see headnotes)"
-    },
     "parse_ingredients": {
       "item": "cooked potatoes",
       "measurements": [

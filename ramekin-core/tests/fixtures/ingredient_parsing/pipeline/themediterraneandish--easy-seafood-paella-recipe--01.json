@@ -1,20 +1,6 @@
 {
   "raw": "4  small lobster tails, (6-12 oz each)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lobster tails",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "small"
-        },
-        {
-          "amount": "6-12",
-          "unit": "oz each"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lobster tails",
       "measurements": [

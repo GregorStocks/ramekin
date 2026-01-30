@@ -1,16 +1,6 @@
 {
   "raw": "5 g matcha powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "matcha powder",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "matcha powder",
       "measurements": [

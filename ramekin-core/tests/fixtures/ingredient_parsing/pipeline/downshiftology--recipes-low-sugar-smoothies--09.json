@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon hemp seeds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hemp seeds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hemp seeds",
       "measurements": [

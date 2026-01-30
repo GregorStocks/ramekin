@@ -1,16 +1,6 @@
 {
   "raw": "1 19-ounce can kidney beans, rinsed and drained",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kidney beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "19-ounce can"
-        }
-      ],
-      "note": "rinsed and drained"
-    },
     "parse_ingredients": {
       "item": "kidney beans",
       "measurements": [

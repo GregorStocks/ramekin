@@ -1,16 +1,6 @@
 {
   "raw": "5 large avocados (peeled, pitted, and mashed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocados",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled, pitted, and mashed"
-    },
     "parse_ingredients": {
       "item": "avocados",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup (120 grams) sour cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sour cream",
       "measurements": [

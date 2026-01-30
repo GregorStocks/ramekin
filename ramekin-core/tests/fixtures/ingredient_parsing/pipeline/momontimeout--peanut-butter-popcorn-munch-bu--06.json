@@ -1,16 +1,6 @@
 {
   "raw": "1 cup peanut butter M&amp;amp;M&amp;#x27;s",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "peanut butter M&M's",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "peanut butter M&M's",
       "measurements": [

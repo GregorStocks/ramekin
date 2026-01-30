@@ -1,16 +1,6 @@
 {
   "raw": "0.25 teaspoon ground nutmeg",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground nutmeg",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground nutmeg",
       "measurements": [

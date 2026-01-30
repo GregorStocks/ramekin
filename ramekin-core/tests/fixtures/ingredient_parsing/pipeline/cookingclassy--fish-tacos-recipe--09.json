@@ -1,16 +1,6 @@
 {
   "raw": "1 lb tilapia*, cod, or mahi mahi",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tilapia*, cod, or mahi mahi",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tilapia*, cod, or mahi mahi",
       "measurements": [

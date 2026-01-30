@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon Asian chili garlic sauce (or to taste (sriracha may be substituted))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Asian chili garlic sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste (sriracha may be substituted"
-    },
     "parse_ingredients": {
       "item": "Asian chili garlic sauce",
       "measurements": [

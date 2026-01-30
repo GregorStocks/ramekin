@@ -1,16 +1,6 @@
 {
   "raw": "1 cup walnuts",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "walnuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "walnuts",
       "measurements": [

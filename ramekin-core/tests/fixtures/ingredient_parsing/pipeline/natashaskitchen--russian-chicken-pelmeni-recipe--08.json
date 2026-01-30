@@ -1,16 +1,6 @@
 {
   "raw": "1 3/4 lb ground chicken thigh (leave the fat on if grinding it yourself)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground chicken thigh (leave the fat on if grinding it yourself)",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground chicken thigh (leave the fat on if grinding it yourself)",
       "measurements": [

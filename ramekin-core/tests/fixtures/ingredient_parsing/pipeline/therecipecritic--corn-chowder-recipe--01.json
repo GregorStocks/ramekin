@@ -1,16 +1,6 @@
 {
   "raw": "2 slices diced thick cut bacon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "diced thick cut bacon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "diced thick cut bacon",
       "measurements": [

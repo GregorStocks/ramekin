@@ -1,16 +1,6 @@
 {
   "raw": "1  green bell pepper (cored and cut into large chunks)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "cored and cut into large chunks"
-    },
     "parse_ingredients": {
       "item": "green bell pepper",
       "measurements": [

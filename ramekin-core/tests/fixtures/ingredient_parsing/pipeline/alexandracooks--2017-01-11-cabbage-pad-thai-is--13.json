@@ -1,16 +1,6 @@
 {
   "raw": "5&nbsp;cups thinly sliced cabbage (about half a small head)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thinly sliced cabbage (about half a small head)",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thinly sliced cabbage (about half a small head)",
       "measurements": [

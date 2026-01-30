@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon ground sichuan pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground sichuan pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground sichuan pepper",
       "measurements": [

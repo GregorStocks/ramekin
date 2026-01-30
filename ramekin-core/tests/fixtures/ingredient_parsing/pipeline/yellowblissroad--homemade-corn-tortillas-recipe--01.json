@@ -1,16 +1,6 @@
 {
   "raw": "2 cups Instant corn masa flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Instant corn masa flour",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Instant corn masa flour",
       "measurements": [

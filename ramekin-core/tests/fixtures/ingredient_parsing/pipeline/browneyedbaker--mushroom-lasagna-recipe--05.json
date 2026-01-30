@@ -1,7 +1,7 @@
 {
   "raw": "½ ounce dried porcini mushrooms (rinsed)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "dried porcini mushrooms",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "14",
           "unit": "g"
-        }
-      ],
-      "note": "rinsed"
-    },
-    "parse_ingredients": {
-      "item": "dried porcini mushrooms",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
         }
       ],
       "note": "rinsed"

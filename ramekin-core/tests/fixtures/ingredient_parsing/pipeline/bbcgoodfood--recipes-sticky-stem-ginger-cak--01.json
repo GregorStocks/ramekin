@@ -1,16 +1,6 @@
 {
   "raw": "225g self-raising flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "self-raising flour",
-      "measurements": [
-        {
-          "amount": "225",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "self-raising flour",
       "measurements": [

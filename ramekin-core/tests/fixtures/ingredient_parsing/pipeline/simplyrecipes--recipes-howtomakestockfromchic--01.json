@@ -1,16 +1,6 @@
 {
   "raw": "2 pounds of chicken feet",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken feet",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken feet",
       "measurements": [

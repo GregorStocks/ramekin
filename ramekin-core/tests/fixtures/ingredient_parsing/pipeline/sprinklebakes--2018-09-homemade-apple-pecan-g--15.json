@@ -1,20 +1,6 @@
 {
   "raw": "3/4 cup 80g dried white mulberries or golden raisins",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried white mulberries or golden raisins",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "80",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried white mulberries or golden raisins",
       "measurements": [

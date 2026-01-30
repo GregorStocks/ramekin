@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons sesame, grapeseed, or other high smoke-point oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sesame, grapeseed, or other high smoke-point oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sesame, grapeseed, or other high smoke-point oil",
       "measurements": [

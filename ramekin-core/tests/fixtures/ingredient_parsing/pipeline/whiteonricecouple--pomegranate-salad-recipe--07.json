@@ -1,16 +1,6 @@
 {
   "raw": "3 Tablespoons Olive oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Olive oil",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Olive oil",
       "measurements": [

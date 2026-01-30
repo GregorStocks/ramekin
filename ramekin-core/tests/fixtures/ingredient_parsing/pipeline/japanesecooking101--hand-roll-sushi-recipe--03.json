@@ -1,16 +1,6 @@
 {
   "raw": "2  cans tuna (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tuna",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "tuna",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "7  packets (.25 ounces each unflavored powdered gelatin)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "packets",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "7",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "packets",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": null
-        },
-        {
-          "amount": ".25",
-          "unit": "oz"
         }
       ],
       "note": null

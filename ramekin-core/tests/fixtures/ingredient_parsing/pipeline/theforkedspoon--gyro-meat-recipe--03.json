@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoon fresh lemon juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh lemon juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh lemon juice",
       "measurements": [

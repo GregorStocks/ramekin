@@ -1,16 +1,6 @@
 {
   "raw": "0.75 cup fresh blueberries",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh blueberries",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh blueberries",
       "measurements": [

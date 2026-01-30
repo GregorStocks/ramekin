@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces Monterey Jack cheese, coarsely grated (1 1/2 cups)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Monterey Jack cheese",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "coarsely grated"
-    },
-    "parse_ingredients": {
-      "item": "Monterey Jack cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
         }
       ],
       "note": "coarsely grated"

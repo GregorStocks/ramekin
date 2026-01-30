@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup cashews",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cashews",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 teaspoon fine grain salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fine grain salt",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fine grain salt",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces fresh-squeezed and strained lemon juice",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh-squeezed and strained lemon juice",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "fresh-squeezed and strained lemon juice",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "6 Tbsp. chilled unsalted butter, cut into pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chilled unsalted butter, cut into pieces",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chilled unsalted butter, cut into pieces",
       "measurements": [

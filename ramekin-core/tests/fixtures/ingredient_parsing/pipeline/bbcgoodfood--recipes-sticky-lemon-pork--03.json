@@ -1,16 +1,6 @@
 {
   "raw": "800g leg or shoulder pork diced into large chunks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leg or shoulder pork diced into large chunks",
-      "measurements": [
-        {
-          "amount": "800",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leg or shoulder pork diced into large chunks",
       "measurements": [

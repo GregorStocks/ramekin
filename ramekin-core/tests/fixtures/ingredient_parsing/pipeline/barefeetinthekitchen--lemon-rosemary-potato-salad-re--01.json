@@ -1,16 +1,6 @@
 {
   "raw": "3 pounds yukon gold potatoes (baked until fork tender, about 6 cups worth peeled and chopped small)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": "baked until fork tender, about 6 cups worth peeled and chopped small"
-    },
     "parse_ingredients": {
       "item": "yukon gold potatoes",
       "measurements": [

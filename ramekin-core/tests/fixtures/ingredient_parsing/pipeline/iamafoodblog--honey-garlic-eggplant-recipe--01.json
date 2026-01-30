@@ -1,16 +1,6 @@
 {
   "raw": "1 large Japanese eggplant",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Japanese eggplant",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Japanese eggplant",
       "measurements": [

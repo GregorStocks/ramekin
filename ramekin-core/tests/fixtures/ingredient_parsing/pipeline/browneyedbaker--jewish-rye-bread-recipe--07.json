@@ -1,16 +1,6 @@
 {
   "raw": "2½ tablespoons caraway seeds (optional, use more or less if you'd like)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "caraway seeds",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional, use more or less if you'd like"
-    },
     "parse_ingredients": {
       "item": "caraway seeds",
       "measurements": [

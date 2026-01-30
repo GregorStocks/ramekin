@@ -1,7 +1,7 @@
 {
   "raw": "1 jar (24 ounces) fire-roasted tomato and garlic pasta sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fire-roasted tomato and garlic pasta sauce",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "680",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "fire-roasted tomato and garlic pasta sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "24",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,20 +1,6 @@
 {
   "raw": "1 tablespoon (15 ml) aged sherry vinegar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "aged sherry vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "aged sherry vinegar",
       "measurements": [

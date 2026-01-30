@@ -1,16 +1,6 @@
 {
   "raw": "5 cups water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water",
       "measurements": [

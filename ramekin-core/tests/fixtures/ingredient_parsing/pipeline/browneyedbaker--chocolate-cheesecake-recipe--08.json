@@ -1,7 +1,7 @@
 {
   "raw": "10 ounces bittersweet chocolate (melted and cooled to lukewarm)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "bittersweet chocolate",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": "melted and cooled to lukewarm"
-    },
-    "parse_ingredients": {
-      "item": "bittersweet chocolate",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": "melted and cooled to lukewarm"

@@ -1,20 +1,6 @@
 {
   "raw": "4 cups (960 ml) cold water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "960",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold water",
       "measurements": [

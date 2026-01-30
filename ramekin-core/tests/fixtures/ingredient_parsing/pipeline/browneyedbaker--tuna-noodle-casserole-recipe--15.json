@@ -1,7 +1,7 @@
 {
   "raw": "10 ounces white mushrooms (sliced ¼-inch thick)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "white mushrooms",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": "sliced 1/4-inch thick"
-    },
-    "parse_ingredients": {
-      "item": "white mushrooms",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": "sliced 1/4-inch thick"

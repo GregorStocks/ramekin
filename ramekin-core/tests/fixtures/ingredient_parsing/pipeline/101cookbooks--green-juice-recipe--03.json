@@ -1,16 +1,6 @@
 {
   "raw": "1  head romaine",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "romaine",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "romaine",
       "measurements": [

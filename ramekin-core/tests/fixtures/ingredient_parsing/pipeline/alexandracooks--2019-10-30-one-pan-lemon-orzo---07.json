@@ -1,16 +1,6 @@
 {
   "raw": "12-oz marinated artichoke hearts, drained and roughly chopped, see notes above",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "-oz marinated artichoke hearts, drained and roughly chopped, see notes above",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "-oz marinated artichoke hearts, drained and roughly chopped, see notes above",
       "measurements": [

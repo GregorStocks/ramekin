@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup green olives, such as Picholine",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green olives, such as Picholine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green olives, such as Picholine",
       "measurements": [

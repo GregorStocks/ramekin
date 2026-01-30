@@ -1,16 +1,6 @@
 {
   "raw": "2 cups roasted (salted peanuts (whole))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "roasted",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "salted peanuts (whole"
-    },
     "parse_ingredients": {
       "item": "roasted",
       "measurements": [

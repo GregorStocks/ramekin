@@ -1,16 +1,6 @@
 {
   "raw": "¾ pound ripe tomatoes, at room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ripe tomatoes",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "at room temperature"
-    },
     "parse_ingredients": {
       "item": "ripe tomatoes",
       "measurements": [

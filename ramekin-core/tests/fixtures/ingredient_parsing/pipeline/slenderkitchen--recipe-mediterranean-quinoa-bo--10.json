@@ -1,16 +1,6 @@
 {
   "raw": "1 cup cherry tomatoes, chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "cherry tomatoes",
       "measurements": [

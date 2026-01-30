@@ -1,16 +1,6 @@
 {
   "raw": "3  kiwi fruits (peeled and sliced into half moons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kiwi fruits",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced into half moons"
-    },
     "parse_ingredients": {
       "item": "kiwi fruits",
       "measurements": [

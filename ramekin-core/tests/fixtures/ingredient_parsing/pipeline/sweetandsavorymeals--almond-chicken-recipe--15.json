@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons hoisin sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hoisin sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hoisin sauce",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "1 1/2 tablespoons (.75 oz.) granulated sugar or honey",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "granulated sugar or honey",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "21",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "granulated sugar or honey",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": ".75",
-          "unit": "oz"
         }
       ],
       "note": null

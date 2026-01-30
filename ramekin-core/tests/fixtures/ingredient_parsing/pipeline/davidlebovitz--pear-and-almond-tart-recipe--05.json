@@ -1,16 +1,6 @@
 {
   "raw": "1  large egg (plus one egg white, at room temperature)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "plus one egg white, at room temperature"
-    },
     "parse_ingredients": {
       "item": "egg",
       "measurements": [

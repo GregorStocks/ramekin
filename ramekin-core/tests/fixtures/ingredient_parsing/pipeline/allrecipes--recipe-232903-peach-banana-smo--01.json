@@ -1,7 +1,7 @@
 {
   "raw": "1 (15.25 ounce) can peaches",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "peaches",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "432",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15.25",
-          "unit": "oz"
         }
       ],
       "note": null

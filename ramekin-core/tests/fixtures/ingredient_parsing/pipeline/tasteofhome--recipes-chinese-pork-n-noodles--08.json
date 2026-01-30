@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup halved fresh snow peas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "halved fresh snow peas",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "halved fresh snow peas",
       "measurements": [

@@ -1,11 +1,6 @@
 {
   "raw": "Tortilla chips, sliced avocado, green onion, shredded cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Tortilla chips, sliced avocado, green onion",
-      "measurements": [],
-      "note": "shredded cheese"
-    },
     "parse_ingredients": {
       "item": "Tortilla chips, sliced avocado, green onion",
       "measurements": [],

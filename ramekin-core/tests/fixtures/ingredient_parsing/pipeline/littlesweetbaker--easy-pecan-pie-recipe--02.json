@@ -1,16 +1,6 @@
 {
   "raw": "2 Tbsp melted butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "melted butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "melted butter",
       "measurements": [

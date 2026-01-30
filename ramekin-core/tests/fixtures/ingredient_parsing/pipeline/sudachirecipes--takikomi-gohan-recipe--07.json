@@ -1,16 +1,6 @@
 {
   "raw": "3 small sheets fried tofu pouch (aburaage) (approx 12g each, thinly sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sheets fried tofu pouch (aburaage) (approx 12g each",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "small"
-        }
-      ],
-      "note": "thinly sliced)"
-    },
     "parse_ingredients": {
       "item": "sheets fried tofu pouch (aburaage) (approx 12g each",
       "measurements": [

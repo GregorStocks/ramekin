@@ -1,16 +1,6 @@
 {
   "raw": "4 slices provolone cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "provolone cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "provolone cheese",
       "measurements": [

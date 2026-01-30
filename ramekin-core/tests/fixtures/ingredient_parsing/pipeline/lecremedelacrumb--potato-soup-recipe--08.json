@@ -1,16 +1,6 @@
 {
   "raw": "½ teaspoon cracked black pepper (or 1/4 teaspoon ground black pepper)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cracked black pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1/4 teaspoon ground black pepper"
-    },
     "parse_ingredients": {
       "item": "cracked black pepper",
       "measurements": [

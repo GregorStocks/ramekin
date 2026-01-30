@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoon simple syrup (or granulated sugar or honey)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "simple syrup (or granulated sugar or honey)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "simple syrup (or granulated sugar or honey)",
       "measurements": [

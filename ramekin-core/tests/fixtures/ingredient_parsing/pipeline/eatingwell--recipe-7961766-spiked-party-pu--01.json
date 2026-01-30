@@ -1,16 +1,6 @@
 {
   "raw": "1 small lemon, halved and thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "halved and thinly sliced"
-    },
     "parse_ingredients": {
       "item": "lemon",
       "measurements": [

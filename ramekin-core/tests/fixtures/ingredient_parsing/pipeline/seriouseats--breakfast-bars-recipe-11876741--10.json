@@ -1,24 +1,6 @@
 {
   "raw": "1/4 cup (1 3/8 ounces; 40g) hemp seeds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hemp seeds",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "1 3/8",
-          "unit": "oz"
-        },
-        {
-          "amount": "40",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hemp seeds",
       "measurements": [

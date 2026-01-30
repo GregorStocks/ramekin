@@ -1,16 +1,6 @@
 {
   "raw": "2 cups milk (scalded and cooled to lukewarm)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk (scalded and cooled to lukewarm)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "milk (scalded and cooled to lukewarm)",
       "measurements": [

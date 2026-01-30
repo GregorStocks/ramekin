@@ -1,16 +1,6 @@
 {
   "raw": "2 lbs boneless leg of lamb or lamb shoulder (trimmed of excess fat, cut into 1 1/2\" pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless leg of lamb or lamb shoulder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed of excess fat, cut into 1 1/2\" pieces"
-    },
     "parse_ingredients": {
       "item": "boneless leg of lamb or lamb shoulder",
       "measurements": [

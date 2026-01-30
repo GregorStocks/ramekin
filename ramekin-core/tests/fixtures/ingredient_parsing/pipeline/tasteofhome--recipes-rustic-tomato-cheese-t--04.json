@@ -1,16 +1,6 @@
 {
   "raw": "1 cup thinly sliced sweet onion",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thinly sliced sweet onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thinly sliced sweet onion",
       "measurements": [

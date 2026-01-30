@@ -1,7 +1,7 @@
 {
   "raw": "1/2 ounce Simple Syrup (, or to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Simple Syrup",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "14",
           "unit": "g"
-        }
-      ],
-      "note": "or to taste"
-    },
-    "parse_ingredients": {
-      "item": "Simple Syrup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
         }
       ],
       "note": "or to taste"

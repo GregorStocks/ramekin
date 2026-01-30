@@ -1,16 +1,6 @@
 {
   "raw": "⅔ cup cold water (or cold broth)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or cold broth"
-    },
     "parse_ingredients": {
       "item": "cold water",
       "measurements": [

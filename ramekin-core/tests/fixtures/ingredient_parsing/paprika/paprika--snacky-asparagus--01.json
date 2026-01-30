@@ -1,16 +1,6 @@
 {
   "raw": "1 pound fresh asparagus, woody ends trimmed or snapped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh asparagus",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "woody ends trimmed or snapped"
-    },
     "parse_ingredients": {
       "item": "fresh asparagus",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "16 ounces cheese tortellini",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cheese tortellini",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "cheese tortellini",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": null

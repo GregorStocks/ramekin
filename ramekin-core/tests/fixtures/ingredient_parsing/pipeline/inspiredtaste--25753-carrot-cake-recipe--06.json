@@ -1,20 +1,6 @@
 {
   "raw": "1 cup granulated sugar (200g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

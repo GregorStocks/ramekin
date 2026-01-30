@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup unsalted butter (4 ounces), chilled and cut into 1/2-inch pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "chilled and cut into 1/2-inch pieces"
-    },
-    "parse_ingredients": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "chilled and cut into 1/2-inch pieces"

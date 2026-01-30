@@ -1,7 +1,7 @@
 {
   "raw": "2 ounces cream cheese (softened (1/4 cup))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cream cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "softened (1/4 cup"
-    },
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
         }
       ],
       "note": "softened (1/4 cup"

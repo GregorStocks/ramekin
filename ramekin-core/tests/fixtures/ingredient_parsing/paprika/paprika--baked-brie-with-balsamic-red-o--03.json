@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon fine sea or table salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fine sea or table salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fine sea or table salt",
       "measurements": [

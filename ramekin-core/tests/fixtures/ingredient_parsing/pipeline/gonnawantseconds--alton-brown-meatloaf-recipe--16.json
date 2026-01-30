@@ -1,16 +1,6 @@
 {
   "raw": "Dash hot sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot sauce",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hot sauce",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "0.33333334326744 cup walnut oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "walnut oil",
-      "measurements": [
-        {
-          "amount": "0.33333334326744",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "walnut oil",
       "measurements": [

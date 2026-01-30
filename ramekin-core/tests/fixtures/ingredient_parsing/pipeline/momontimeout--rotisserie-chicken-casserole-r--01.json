@@ -1,16 +1,6 @@
 {
   "raw": "3 cups diced rotisserie chicken  (or any other cooked chicken)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "diced rotisserie chicken",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "or any other cooked chicken"
-    },
     "parse_ingredients": {
       "item": "diced rotisserie chicken",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1  leek (cleaned, with white and light green parts diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leek",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "cleaned, with white and light green parts diced"
-    },
     "parse_ingredients": {
       "item": "leek",
       "measurements": [

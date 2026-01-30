@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons minced fresh cilantro",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "minced fresh cilantro",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "minced fresh cilantro",
       "measurements": [

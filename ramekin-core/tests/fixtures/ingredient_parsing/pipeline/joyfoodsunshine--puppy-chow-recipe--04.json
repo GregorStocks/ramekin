@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ cups powdered sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "powdered sugar",
       "measurements": [

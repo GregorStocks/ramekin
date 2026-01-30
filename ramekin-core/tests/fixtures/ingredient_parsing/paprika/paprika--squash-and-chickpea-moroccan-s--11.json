@@ -1,16 +1,6 @@
 {
   "raw": "2 cups cooked chickpeas, drained",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "cooked chickpeas",
       "measurements": [

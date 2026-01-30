@@ -1,16 +1,6 @@
 {
   "raw": "1 to 2 tablespoons avocado oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocado oil",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "avocado oil",
       "measurements": [

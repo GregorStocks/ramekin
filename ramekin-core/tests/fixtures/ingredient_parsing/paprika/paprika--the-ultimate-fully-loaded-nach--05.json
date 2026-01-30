@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup sliced pickled jalapenos",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced pickled jalapenos",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced pickled jalapenos",
       "measurements": [

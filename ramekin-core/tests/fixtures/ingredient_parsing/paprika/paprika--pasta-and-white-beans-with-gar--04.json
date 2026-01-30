@@ -1,16 +1,6 @@
 {
   "raw": "6 garlic cloves, 4 left whole, 2 finely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic cloves, 4 left whole",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "2 finely chopped"
-    },
     "parse_ingredients": {
       "item": "garlic cloves, 4 left whole",
       "measurements": [

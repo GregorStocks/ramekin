@@ -1,16 +1,6 @@
 {
   "raw": "1 pinch ground cinnamon, or to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground cinnamon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": "or to taste"
-    },
     "parse_ingredients": {
       "item": "ground cinnamon",
       "measurements": [

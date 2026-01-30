@@ -1,7 +1,7 @@
 {
   "raw": "6 ounces or 2 large portobello mushrooms, in generous 1/2-inch slices",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "portobello mushrooms, in generous 1/2-inch slices",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "portobello mushrooms, in generous 1/2-inch slices",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "large"
         }
       ],
       "note": null

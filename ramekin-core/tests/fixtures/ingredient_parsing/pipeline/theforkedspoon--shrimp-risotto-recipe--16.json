@@ -1,16 +1,6 @@
 {
   "raw": "2 cups arborio rice (do not wash)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "arborio rice (do not wash)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "arborio rice (do not wash)",
       "measurements": [

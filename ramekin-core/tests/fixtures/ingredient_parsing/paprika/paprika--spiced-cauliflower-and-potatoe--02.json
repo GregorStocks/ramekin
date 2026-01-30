@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 lb Yukon Gold potatoes, peeled and cut into 1/2-inch cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Yukon Gold potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into 1/2-inch cubes"
-    },
     "parse_ingredients": {
       "item": "Yukon Gold potatoes",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "2 tablespoons butter, chicken fat, or olive oil (28g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter, chicken fat, or olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "butter, chicken fat, or olive oil",
       "measurements": [

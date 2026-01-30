@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (85 grams) grated gruyere or comte cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grated gruyere or comte cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "grated gruyere or comte cheese",
       "measurements": [

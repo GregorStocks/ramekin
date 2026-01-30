@@ -1,16 +1,6 @@
 {
   "raw": "1/2 c. thinly sliced red onion&amp;nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thinly sliced red onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thinly sliced red onion",
       "measurements": [

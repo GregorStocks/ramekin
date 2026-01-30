@@ -1,16 +1,6 @@
 {
   "raw": "2 sprigs fresh sage leaves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh sage leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "sprig"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh sage leaves",
       "measurements": [

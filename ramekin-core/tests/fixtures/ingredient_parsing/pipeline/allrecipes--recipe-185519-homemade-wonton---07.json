@@ -1,16 +1,6 @@
 {
   "raw": "0.25 cup dry bread crumbs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry bread crumbs",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dry bread crumbs",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "11.5 oz. 1 package, 326 grams semisweet chocolate morsels",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "1 package, 326 grams semisweet chocolate morsels",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "326",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "1 package, 326 grams semisweet chocolate morsels",
-      "measurements": [
-        {
-          "amount": "11.5",
-          "unit": "oz"
         }
       ],
       "note": null

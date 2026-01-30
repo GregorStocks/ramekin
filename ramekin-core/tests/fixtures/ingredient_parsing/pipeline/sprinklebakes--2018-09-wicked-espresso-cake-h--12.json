@@ -1,7 +1,7 @@
 {
   "raw": "2 cups 480ml/16 oz. buttermilk",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "buttermilk",
       "measurements": [
         {
@@ -19,24 +19,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "480",
-          "unit": "ml"
-        },
-        {
-          "amount": "16",
-          "unit": "oz"
         }
       ],
       "note": null

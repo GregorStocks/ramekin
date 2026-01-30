@@ -1,16 +1,6 @@
 {
   "raw": "2/3 cup old-fashioned rolled oats",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "old-fashioned rolled oats",
-      "measurements": [
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "old-fashioned rolled oats",
       "measurements": [

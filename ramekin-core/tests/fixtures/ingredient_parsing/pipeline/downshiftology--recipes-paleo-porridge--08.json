@@ -1,16 +1,6 @@
 {
   "raw": "2  bananas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bananas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bananas",
       "measurements": [

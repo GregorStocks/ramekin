@@ -1,16 +1,6 @@
 {
   "raw": "1 pint cottage cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cottage cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cottage cheese",
       "measurements": [

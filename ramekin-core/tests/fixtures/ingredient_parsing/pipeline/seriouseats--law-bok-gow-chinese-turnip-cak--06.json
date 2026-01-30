@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup small dried shrimp, rinsed and patted dry (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "small dried shrimp",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "rinsed and patted dry (see note)"
-    },
     "parse_ingredients": {
       "item": "small dried shrimp",
       "measurements": [

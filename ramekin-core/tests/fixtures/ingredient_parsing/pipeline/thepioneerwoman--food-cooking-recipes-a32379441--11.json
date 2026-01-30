@@ -1,7 +1,7 @@
 {
   "raw": "6 oz. feta cheese, crumbled",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "feta cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    },
-    "parse_ingredients": {
-      "item": "feta cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": "crumbled"

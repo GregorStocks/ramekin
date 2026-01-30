@@ -1,7 +1,7 @@
 {
   "raw": "6 oz cream cheese (, cold (I recommend using Philadelphia brand in this recipe))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cream cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": "cold (I recommend using Philadelphia brand in this recipe"
-    },
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": "cold (I recommend using Philadelphia brand in this recipe"

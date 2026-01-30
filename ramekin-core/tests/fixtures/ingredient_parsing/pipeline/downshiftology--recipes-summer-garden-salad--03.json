@@ -1,16 +1,6 @@
 {
   "raw": "10  grapes (halved)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grapes",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "grapes",
       "measurements": [

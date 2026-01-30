@@ -1,16 +1,6 @@
 {
   "raw": "4  scallions, (thinly sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "scallions",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "scallions",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "6g (2 tablespoons) packed grated lemon zest plus 1 1/2 tablespoons fresh juice from 4 large lemons, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "packed grated lemon zest",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus 1 1/2 tablespoons fresh juice from 4 large lemons, divided"
-    },
     "parse_ingredients": {
       "item": "packed grated lemon zest",
       "measurements": [

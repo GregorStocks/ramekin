@@ -1,16 +1,6 @@
 {
   "raw": "1 pound dried cannellini or great northern beans",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried cannellini or great northern beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried cannellini or great northern beans",
       "measurements": [

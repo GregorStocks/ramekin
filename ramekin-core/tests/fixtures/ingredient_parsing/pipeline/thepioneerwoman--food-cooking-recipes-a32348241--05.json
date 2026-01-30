@@ -1,16 +1,6 @@
 {
   "raw": "8 radishes, diced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "radishes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "diced"
-    },
     "parse_ingredients": {
       "item": "radishes",
       "measurements": [

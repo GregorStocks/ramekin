@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup (125ml) whipping cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whipping cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whipping cream",
       "measurements": [

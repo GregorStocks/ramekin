@@ -1,20 +1,6 @@
 {
   "raw": "2 2/3 cups (630 ml) whole or lowfat milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole or lowfat milk",
-      "measurements": [
-        {
-          "amount": "2 2/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "630",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whole or lowfat milk",
       "measurements": [

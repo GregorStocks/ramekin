@@ -1,16 +1,6 @@
 {
   "raw": "7 to 8 tbsp quality Za'atar spice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "quality Za'atar spice",
-      "measurements": [
-        {
-          "amount": "7 to 8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "quality Za'atar spice",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 lime, for juicing, plus more for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lime, for juicing",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "plus more for serving"
-    },
     "parse_ingredients": {
       "item": "lime, for juicing",
       "measurements": [

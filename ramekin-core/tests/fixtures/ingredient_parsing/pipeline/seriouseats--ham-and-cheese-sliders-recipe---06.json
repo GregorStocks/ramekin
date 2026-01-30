@@ -1,7 +1,7 @@
 {
   "raw": "8 ounces thinly sliced deli ham (about 15 slices)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "thinly sliced deli ham",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "thinly sliced deli ham",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "15",
-          "unit": "slice"
         }
       ],
       "note": null

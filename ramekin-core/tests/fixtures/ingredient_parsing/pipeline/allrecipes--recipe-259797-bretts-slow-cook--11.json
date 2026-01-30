@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons minced fresh chives",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "minced fresh chives",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "minced fresh chives",
       "measurements": [

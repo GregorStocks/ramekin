@@ -1,16 +1,6 @@
 {
   "raw": "1 Tbsp unsalted butter (melted for wax paper)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted for wax paper"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

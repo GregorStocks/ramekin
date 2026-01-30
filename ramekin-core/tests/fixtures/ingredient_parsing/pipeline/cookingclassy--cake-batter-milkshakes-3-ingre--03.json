@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup vanilla or funfetti dry cake mix",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vanilla or funfetti dry cake mix",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "vanilla or funfetti dry cake mix",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon red wine vinegar, plus additional to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red wine vinegar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus additional to taste"
-    },
     "parse_ingredients": {
       "item": "red wine vinegar",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup corn kernels ((fresh or frozen &amp;amp; thawed))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "corn kernels",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "fresh or frozen & thawed"
-    },
     "parse_ingredients": {
       "item": "corn kernels",
       "measurements": [

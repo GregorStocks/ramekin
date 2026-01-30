@@ -1,16 +1,6 @@
 {
   "raw": "1 Tablespoon Peanut Oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Peanut Oil",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Peanut Oil",
       "measurements": [

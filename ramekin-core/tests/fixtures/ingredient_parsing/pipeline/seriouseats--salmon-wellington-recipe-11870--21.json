@@ -1,16 +1,6 @@
 {
   "raw": "1 egg, lightly beaten",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "lightly beaten"
-    },
     "parse_ingredients": {
       "item": "egg",
       "measurements": [

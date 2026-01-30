@@ -1,16 +1,6 @@
 {
   "raw": "3 cups shredded zucchini",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded zucchini",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded zucchini",
       "measurements": [

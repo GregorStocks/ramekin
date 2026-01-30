@@ -1,7 +1,7 @@
 {
   "raw": "1 ounce St. Germain liqueur",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "St. Germain liqueur",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "28",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "St. Germain liqueur",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
         }
       ],
       "note": null

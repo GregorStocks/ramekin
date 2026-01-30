@@ -1,7 +1,7 @@
 {
   "raw": "4 (8 oz) pkgs. cream cheese, (softened through or at room temperature (preferably Philadelphia))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cream cheese",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "softened through or at room temperature (preferably Philadelphia"
-    },
-    "parse_ingredients": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "softened through or at room temperature (preferably Philadelphia"

@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup reduced-fat sour cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "reduced-fat sour cream",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "reduced-fat sour cream",
       "measurements": [

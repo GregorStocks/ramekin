@@ -1,7 +1,7 @@
 {
   "raw": "1 package (6 ounces) long grain and wild rice mix",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "long grain and wild rice mix",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "long grain and wild rice mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup Greek yogurt (or natural plain yogurt)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Greek yogurt (or natural plain yogurt)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Greek yogurt (or natural plain yogurt)",
       "measurements": [

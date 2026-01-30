@@ -1,16 +1,6 @@
 {
   "raw": "3 large eggs, at room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "eggs",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "at room temperature"
-    },
     "parse_ingredients": {
       "item": "eggs",
       "measurements": [

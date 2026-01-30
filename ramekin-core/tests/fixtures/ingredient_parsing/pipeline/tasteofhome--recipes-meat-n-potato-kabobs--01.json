@@ -1,16 +1,6 @@
 {
   "raw": "1 pound beef top sirloin steak, cut into 1-inch cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef top sirloin steak, cut into 1-inch cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef top sirloin steak, cut into 1-inch cubes",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup dried fruit of choice ((dried cranberries, apricots, raisins, etc. - cut larger fruit into 1/2-inch pieces))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried fruit of choice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "dried cranberries, apricots, raisins, etc. - cut larger fruit into 1/2-inch pieces"
-    },
     "parse_ingredients": {
       "item": "dried fruit of choice",
       "measurements": [

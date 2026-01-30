@@ -1,16 +1,6 @@
 {
   "raw": "2 - 4 tablespoons miso paste (to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "miso paste",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    },
     "parse_ingredients": {
       "item": "miso paste",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "handful of baby spinach",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baby spinach",
       "measurements": [

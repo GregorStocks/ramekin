@@ -1,20 +1,6 @@
 {
   "raw": "200 ml white wine (approx ⅔ cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white wine",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "ml"
-        },
-        {
-          "amount": "2/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white wine",
       "measurements": [

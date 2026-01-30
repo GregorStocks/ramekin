@@ -1,24 +1,6 @@
 {
   "raw": "1 to 2  pie crusts (1 for a standard size quiche, 2 if making mini quiches)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pie crusts",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        },
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pie crusts",
       "measurements": [

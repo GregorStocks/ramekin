@@ -1,16 +1,6 @@
 {
   "raw": "2 tsp icing sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "icing sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "icing sugar",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup  miniature marshmallows (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "miniature marshmallows",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "miniature marshmallows",
       "measurements": [

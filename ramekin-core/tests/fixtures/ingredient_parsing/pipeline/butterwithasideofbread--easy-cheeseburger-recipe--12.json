@@ -1,16 +1,6 @@
 {
   "raw": "½ Tablespoon Cayenne Pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Cayenne Pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Cayenne Pepper",
       "measurements": [

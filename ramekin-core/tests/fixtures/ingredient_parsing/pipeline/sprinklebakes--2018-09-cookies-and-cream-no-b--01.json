@@ -1,16 +1,6 @@
 {
   "raw": "53  double cream-filled chocolate sandwich cookies (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "double cream-filled chocolate sandwich cookies",
-      "measurements": [
-        {
-          "amount": "53",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "double cream-filled chocolate sandwich cookies",
       "measurements": [

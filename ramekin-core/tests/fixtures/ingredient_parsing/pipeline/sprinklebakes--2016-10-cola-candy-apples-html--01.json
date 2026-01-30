@@ -1,16 +1,6 @@
 {
   "raw": "8-10  small apples",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "apples",
-      "measurements": [
-        {
-          "amount": "8-10",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "apples",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup yellow zucchini or cauliflower,1/2-inch pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yellow zucchini or cauliflower,1/2-inch pieces",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "yellow zucchini or cauliflower,1/2-inch pieces",
       "measurements": [

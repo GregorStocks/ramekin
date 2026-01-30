@@ -1,16 +1,6 @@
 {
   "raw": "70 g soy meat (mince style)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soy meat (mince style)",
-      "measurements": [
-        {
-          "amount": "70",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "soy meat (mince style)",
       "measurements": [

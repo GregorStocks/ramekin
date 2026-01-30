@@ -1,20 +1,6 @@
 {
   "raw": "1 (20-ounce) can  crushed pineapple (drained with 1/2 cup juice reserved)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crushed pineapple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "20",
-          "unit": null
-        }
-      ],
-      "note": "drained with 1/2 cup juice reserved"
-    },
     "parse_ingredients": {
       "item": "crushed pineapple",
       "measurements": [

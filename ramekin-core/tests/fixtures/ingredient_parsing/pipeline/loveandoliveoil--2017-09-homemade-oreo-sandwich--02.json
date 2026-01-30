@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup (3.5 ounces) granulated sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "99",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "3.5",
-          "unit": "oz"
         }
       ],
       "note": null

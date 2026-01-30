@@ -1,16 +1,6 @@
 {
   "raw": "1 Pinch Black Pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Black Pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Black Pepper",
       "measurements": [

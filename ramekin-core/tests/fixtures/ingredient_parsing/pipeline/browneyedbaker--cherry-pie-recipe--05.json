@@ -1,16 +1,6 @@
 {
   "raw": "7 tablespoons vegetable shortening",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegetable shortening",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "vegetable shortening",
       "measurements": [

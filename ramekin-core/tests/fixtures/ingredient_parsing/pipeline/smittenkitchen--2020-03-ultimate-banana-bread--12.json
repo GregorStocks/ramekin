@@ -1,20 +1,6 @@
 {
   "raw": "2 tablespoons (25 grams) raw or turbinado sugar (on top)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "raw or turbinado sugar (on top)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "raw or turbinado sugar (on top)",
       "measurements": [

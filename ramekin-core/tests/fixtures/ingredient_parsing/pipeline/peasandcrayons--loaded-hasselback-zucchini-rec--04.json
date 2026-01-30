@@ -1,16 +1,6 @@
 {
   "raw": "3 slices crumbled cooked bacon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crumbled cooked bacon",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crumbled cooked bacon",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "3  peaches (ripe white, sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "peaches",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "ripe white, sliced"
-    },
     "parse_ingredients": {
       "item": "peaches",
       "measurements": [

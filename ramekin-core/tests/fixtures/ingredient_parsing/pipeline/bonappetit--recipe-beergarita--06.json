@@ -1,16 +1,6 @@
 {
   "raw": "2 12-oz. bottles or cans Mexican beer (such as Corona)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "or cans Mexican beer (such as Corona)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "12-oz. bottles"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "or cans Mexican beer (such as Corona)",
       "measurements": [

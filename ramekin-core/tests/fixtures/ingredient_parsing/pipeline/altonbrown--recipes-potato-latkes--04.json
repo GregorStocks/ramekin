@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup schmaltz, plus more as needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "schmaltz",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more as needed"
-    },
     "parse_ingredients": {
       "item": "schmaltz",
       "measurements": [

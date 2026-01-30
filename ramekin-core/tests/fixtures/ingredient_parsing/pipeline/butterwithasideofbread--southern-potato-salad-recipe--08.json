@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon celery seed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "celery seed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "celery seed",
       "measurements": [

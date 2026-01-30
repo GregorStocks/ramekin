@@ -1,16 +1,6 @@
 {
   "raw": "2 cups shredded cheddar cheese blend (or your favorite blend)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded cheddar cheese blend (or your favorite blend)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded cheddar cheese blend (or your favorite blend)",
       "measurements": [

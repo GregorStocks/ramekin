@@ -1,16 +1,6 @@
 {
   "raw": "½ teaspoon kasuri methi (crushed (dried fenugreek leaves))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kasuri methi",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "crushed (dried fenugreek leaves"
-    },
     "parse_ingredients": {
       "item": "kasuri methi",
       "measurements": [

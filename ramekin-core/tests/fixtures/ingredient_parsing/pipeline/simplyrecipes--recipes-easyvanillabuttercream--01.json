@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (227g) unsalted butter, room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "227",
-          "unit": "g"
-        }
-      ],
-      "note": "room temperature"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

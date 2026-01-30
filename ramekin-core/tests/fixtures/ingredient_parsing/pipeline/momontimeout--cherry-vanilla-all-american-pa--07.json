@@ -1,7 +1,7 @@
 {
   "raw": "10 oz white vanilla candy coating (I used CandiQuik)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "white vanilla candy coating (I used CandiQuik)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "white vanilla candy coating (I used CandiQuik)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": null

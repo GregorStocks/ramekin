@@ -1,7 +1,7 @@
 {
   "raw": "1 cup (2.2 oz) finely shredded parmesan, (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "finely shredded parmesan",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "62",
           "unit": "g"
-        }
-      ],
-      "note": "divided"
-    },
-    "parse_ingredients": {
-      "item": "finely shredded parmesan",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "2.2",
-          "unit": "oz"
         }
       ],
       "note": "divided"

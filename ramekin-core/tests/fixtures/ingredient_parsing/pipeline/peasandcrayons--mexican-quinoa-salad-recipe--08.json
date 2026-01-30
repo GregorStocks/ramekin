@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup fresh chopped cilantro or scallions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh chopped cilantro or scallions",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh chopped cilantro or scallions",
       "measurements": [

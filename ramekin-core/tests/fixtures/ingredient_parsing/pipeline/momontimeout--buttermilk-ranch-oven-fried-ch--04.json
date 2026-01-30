@@ -1,7 +1,7 @@
 {
   "raw": "8.5 oz corn muffin mix",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "corn muffin mix",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "241",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "corn muffin mix",
-      "measurements": [
-        {
-          "amount": "8.5",
-          "unit": "oz"
         }
       ],
       "note": null

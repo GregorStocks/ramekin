@@ -1,20 +1,6 @@
 {
   "raw": "1 1/2 cups (355 grams) lukewarm water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lukewarm water",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "355",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lukewarm water",
       "measurements": [

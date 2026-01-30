@@ -1,16 +1,6 @@
 {
   "raw": "1½ cups low-sodium chicken broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "low-sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "low-sodium chicken broth",
       "measurements": [

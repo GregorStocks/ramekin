@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 pounds baking potatoes, peeled and cut into chunks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baking potatoes",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "peeled and cut into chunks"
-    },
     "parse_ingredients": {
       "item": "baking potatoes",
       "measurements": [

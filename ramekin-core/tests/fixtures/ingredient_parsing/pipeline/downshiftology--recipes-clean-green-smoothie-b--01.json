@@ -1,16 +1,6 @@
 {
   "raw": "2 cups of spinach ((or other leafy green))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "spinach (or other leafy green)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "spinach (or other leafy green)",
       "measurements": [

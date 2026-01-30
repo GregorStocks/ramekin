@@ -1,24 +1,6 @@
 {
   "raw": "2 g salt (1% of the rice quantity, approx ¼ tsp per 200g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

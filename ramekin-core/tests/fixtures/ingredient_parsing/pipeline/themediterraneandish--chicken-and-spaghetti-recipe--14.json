@@ -1,16 +1,6 @@
 {
   "raw": "2.5 lb grape or cherry tomatoes, halved (you can leave some whole)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grape or cherry tomatoes, halved",
-      "measurements": [
-        {
-          "amount": "2.5",
-          "unit": "lb"
-        }
-      ],
-      "note": "you can leave some whole"
-    },
     "parse_ingredients": {
       "item": "grape or cherry tomatoes, halved",
       "measurements": [

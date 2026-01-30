@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup butter (melted (1 stick))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted (1 stick"
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "generous pinch of salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "generous pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

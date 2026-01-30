@@ -1,16 +1,6 @@
 {
   "raw": "2  pears (halved, cored, and thinly sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pears",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "halved, cored, and thinly sliced"
-    },
     "parse_ingredients": {
       "item": "pears",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "3 cups fresh cherries or other fruit, pitted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh cherries or other fruit, pitted",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh cherries or other fruit, pitted",
       "measurements": [

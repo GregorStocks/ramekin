@@ -1,16 +1,6 @@
 {
   "raw": "1 cup Greek yogurt (full fat)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Greek yogurt (full fat)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Greek yogurt (full fat)",
       "measurements": [

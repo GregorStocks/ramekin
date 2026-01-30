@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup fresh chopped pineapple",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh chopped pineapple",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh chopped pineapple",
       "measurements": [

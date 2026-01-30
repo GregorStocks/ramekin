@@ -1,16 +1,6 @@
 {
   "raw": "3 cups reserved water from boiling the peppers",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "reserved water from boiling the peppers",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "reserved water from boiling the peppers",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 portions udon noodles",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "portions udon noodles",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "portions udon noodles",
       "measurements": [

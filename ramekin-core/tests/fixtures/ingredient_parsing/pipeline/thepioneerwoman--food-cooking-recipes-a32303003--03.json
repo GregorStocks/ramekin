@@ -1,16 +1,6 @@
 {
   "raw": "2 mint leaves, plus a sprig",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mint leaves",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "plus a sprig"
-    },
     "parse_ingredients": {
       "item": "mint leaves",
       "measurements": [

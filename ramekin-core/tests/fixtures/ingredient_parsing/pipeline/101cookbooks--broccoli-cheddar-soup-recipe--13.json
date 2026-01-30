@@ -1,16 +1,6 @@
 {
   "raw": "1 - 3 teaspoons whole grain mustard, to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole grain mustard",
-      "measurements": [
-        {
-          "amount": "1-3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "to taste"
-    },
     "parse_ingredients": {
       "item": "whole grain mustard",
       "measurements": [

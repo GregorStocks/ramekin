@@ -1,20 +1,6 @@
 {
   "raw": "1 teaspoon (5ml) Sugar (or 1/2 oz. simple syrup, or to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "5",
-          "unit": "ml"
-        }
-      ],
-      "note": "or 1/2 oz. simple syrup, or to taste"
-    },
     "parse_ingredients": {
       "item": "Sugar",
       "measurements": [

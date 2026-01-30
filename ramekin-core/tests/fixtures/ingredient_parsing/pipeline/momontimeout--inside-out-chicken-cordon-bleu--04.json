@@ -1,16 +1,6 @@
 {
   "raw": "1  chicken bouillon cube",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken bouillon cube",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken bouillon cube",
       "measurements": [

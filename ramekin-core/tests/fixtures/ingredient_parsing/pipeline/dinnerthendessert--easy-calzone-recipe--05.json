@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons red onions (, sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "red onions",
       "measurements": [

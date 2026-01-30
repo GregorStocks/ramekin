@@ -1,20 +1,6 @@
 {
   "raw": "100 ml beef drippings, lard, shortening, or vegetable oil (about 1/2 cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef drippings, lard, shortening, or vegetable oil",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "ml"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef drippings, lard, shortening, or vegetable oil",
       "measurements": [

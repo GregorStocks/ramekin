@@ -1,16 +1,6 @@
 {
   "raw": "4 cups beef broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef broth",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef broth",
       "measurements": [

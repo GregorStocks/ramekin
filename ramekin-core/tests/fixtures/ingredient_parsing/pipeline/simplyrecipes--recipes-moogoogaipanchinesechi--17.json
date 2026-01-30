@@ -1,7 +1,7 @@
 {
   "raw": "1/3 cup (4 ounces) canned water chestnuts, drained",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "canned water chestnuts",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "canned water chestnuts",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "drained"

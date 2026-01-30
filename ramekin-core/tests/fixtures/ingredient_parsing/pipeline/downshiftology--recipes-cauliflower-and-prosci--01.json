@@ -1,16 +1,6 @@
 {
   "raw": "1/2  head cauliflower",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cauliflower",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cauliflower",
       "measurements": [

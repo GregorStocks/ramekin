@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons butter, (melted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "melted"
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

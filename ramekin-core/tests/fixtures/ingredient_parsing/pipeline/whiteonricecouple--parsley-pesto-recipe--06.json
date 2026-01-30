@@ -1,16 +1,6 @@
 {
   "raw": "1/2 Tablespoon Sesame Oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Sesame Oil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Sesame Oil",
       "measurements": [

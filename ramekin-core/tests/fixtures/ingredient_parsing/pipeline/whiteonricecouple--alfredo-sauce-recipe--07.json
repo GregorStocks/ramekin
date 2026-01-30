@@ -1,16 +1,6 @@
 {
   "raw": "1 cup freshly grated Parmigiano-Reggiano ((or similar cheese))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "freshly grated Parmigiano-Reggiano (or similar cheese)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "freshly grated Parmigiano-Reggiano (or similar cheese)",
       "measurements": [

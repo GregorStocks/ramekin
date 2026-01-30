@@ -1,16 +1,6 @@
 {
   "raw": "1&nbsp;head cabbage, about 2.5 lbs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cabbage, about 2.5 lbs",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "head"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cabbage, about 2.5 lbs",
       "measurements": [

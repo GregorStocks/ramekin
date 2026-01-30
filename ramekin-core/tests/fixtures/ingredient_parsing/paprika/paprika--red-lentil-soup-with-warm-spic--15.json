@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ teaspoons dried mint, crumbled",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried mint",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "crumbled"
-    },
     "parse_ingredients": {
       "item": "dried mint",
       "measurements": [

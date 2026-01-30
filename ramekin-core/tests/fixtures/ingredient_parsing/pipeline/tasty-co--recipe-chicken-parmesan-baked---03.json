@@ -1,7 +1,7 @@
 {
   "raw": "25 oz tomato sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "tomato sauce",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "709",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "tomato sauce",
-      "measurements": [
-        {
-          "amount": "25",
-          "unit": "oz"
         }
       ],
       "note": null

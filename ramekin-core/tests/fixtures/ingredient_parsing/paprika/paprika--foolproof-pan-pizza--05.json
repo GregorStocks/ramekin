@@ -1,24 +1,6 @@
 {
   "raw": "8 g extra-virgin olive oil (0.25 ounces; about 2 teaspoons), plus more to coat pans and for drizzling",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra-virgin olive oil",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "g"
-        },
-        {
-          "amount": "0.25",
-          "unit": "oz"
-        },
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to coat pans and for drizzling"
-    },
     "parse_ingredients": {
       "item": "extra-virgin olive oil",
       "measurements": [

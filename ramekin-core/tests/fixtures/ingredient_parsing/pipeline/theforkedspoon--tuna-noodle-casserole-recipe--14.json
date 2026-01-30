@@ -1,7 +1,7 @@
 {
   "raw": "1¾ cups chicken broth ((14.5 ounce can))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "chicken broth",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "411",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "chicken broth",
-      "measurements": [
-        {
-          "amount": "1 3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "14.5",
-          "unit": "oz"
         }
       ],
       "note": null

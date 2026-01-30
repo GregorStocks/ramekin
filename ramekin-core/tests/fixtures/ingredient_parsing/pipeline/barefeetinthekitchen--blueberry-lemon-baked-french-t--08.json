@@ -1,16 +1,6 @@
 {
   "raw": "1  small loaf Challah (sliced into 1\" cubes, about 6 cups worth)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "loaf Challah",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "sliced into 1\" cubes, about 6 cups worth"
-    },
     "parse_ingredients": {
       "item": "loaf Challah",
       "measurements": [

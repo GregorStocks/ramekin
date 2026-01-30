@@ -1,7 +1,7 @@
 {
   "raw": "2 (6 ounce cans) tomato paste",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "tomato paste",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": null

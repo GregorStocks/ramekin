@@ -1,16 +1,6 @@
 {
   "raw": "1 avocado - peeled, pitted and diced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "avocado - peeled",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "pitted and diced"
-    },
     "parse_ingredients": {
       "item": "avocado - peeled",
       "measurements": [

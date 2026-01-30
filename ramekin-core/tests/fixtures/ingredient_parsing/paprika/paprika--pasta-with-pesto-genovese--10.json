@@ -1,16 +1,6 @@
 {
   "raw": "1lb dried pasta, any shape",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried pasta, any shape",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried pasta, any shape",
       "measurements": [

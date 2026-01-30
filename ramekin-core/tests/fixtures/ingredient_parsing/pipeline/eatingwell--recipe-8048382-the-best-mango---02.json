@@ -1,16 +1,6 @@
 {
   "raw": "2 cups frozen mango chunks, thawed slightly (see Tip)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen mango chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed slightly (see Tip)"
-    },
     "parse_ingredients": {
       "item": "frozen mango chunks",
       "measurements": [

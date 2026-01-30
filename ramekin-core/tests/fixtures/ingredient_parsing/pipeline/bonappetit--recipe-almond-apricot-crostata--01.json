@@ -1,16 +1,6 @@
 {
   "raw": "½ cup plus ⅓ cup sliced almonds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "½ cup plus ⅓ cup sliced almonds",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 1/3 cup sliced almonds"
-    },
     "parse_ingredients": {
       "item": "½ cup plus ⅓ cup sliced almonds",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "6 ounces extra-firm tofu, (crumbled)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "extra-firm tofu",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": "crumbled"
-    },
-    "parse_ingredients": {
-      "item": "extra-firm tofu",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": "crumbled"

@@ -1,16 +1,6 @@
 {
   "raw": "½ cup parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "parsley",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "parsley",
       "measurements": [

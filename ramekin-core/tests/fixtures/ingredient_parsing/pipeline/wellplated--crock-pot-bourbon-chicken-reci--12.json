@@ -1,16 +1,6 @@
 {
   "raw": "2 cups Prepared brown rice (for serving)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Prepared brown rice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "for serving"
-    },
     "parse_ingredients": {
       "item": "Prepared brown rice",
       "measurements": [

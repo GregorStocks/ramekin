@@ -1,24 +1,6 @@
 {
   "raw": "Seasonings: 1 bay leaf (6 black peppercorns, 6 allspice berries, 4 cloves)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Seasonings: 1 bay leaf",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "4",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Seasonings: 1 bay leaf",
       "measurements": [

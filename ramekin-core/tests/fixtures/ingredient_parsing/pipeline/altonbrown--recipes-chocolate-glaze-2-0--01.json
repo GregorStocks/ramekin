@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 cups semisweet chocolate chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "semisweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "semisweet chocolate chips",
       "measurements": [

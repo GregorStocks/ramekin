@@ -1,16 +1,6 @@
 {
   "raw": "0.25 teaspoon garlic powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic powder",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "garlic powder",
       "measurements": [

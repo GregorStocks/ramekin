@@ -1,16 +1,6 @@
 {
   "raw": "1 lb. loose sweet Italian sausage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "loose sweet Italian sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "loose sweet Italian sausage",
       "measurements": [

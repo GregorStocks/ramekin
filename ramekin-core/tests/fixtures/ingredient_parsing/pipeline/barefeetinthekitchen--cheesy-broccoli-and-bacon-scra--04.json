@@ -1,16 +1,6 @@
 {
   "raw": "1  strip of bacon (cooked and chopped small)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "strip of bacon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "cooked and chopped small"
-    },
     "parse_ingredients": {
       "item": "strip of bacon",
       "measurements": [

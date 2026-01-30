@@ -1,16 +1,6 @@
 {
   "raw": "½ cup chopped dried dates",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped dried dates",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped dried dates",
       "measurements": [

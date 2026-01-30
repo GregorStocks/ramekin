@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons chopped green pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped green pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped green pepper",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons extra virgin olive oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra virgin olive oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "extra virgin olive oil",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1.5kg / 3lb   beef brisket",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef brisket",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "kg"
-        },
-        {
-          "amount": "3",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef brisket",
       "measurements": [

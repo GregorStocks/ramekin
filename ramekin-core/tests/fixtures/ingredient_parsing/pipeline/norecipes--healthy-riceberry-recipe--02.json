@@ -1,20 +1,6 @@
 {
   "raw": "200 grams water (1 2/3 US cups)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        },
-        {
-          "amount": "1 2/3",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water",
       "measurements": [

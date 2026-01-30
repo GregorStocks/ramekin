@@ -1,16 +1,6 @@
 {
   "raw": "Dash pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pepper",
       "measurements": [

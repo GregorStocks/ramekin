@@ -1,7 +1,7 @@
 {
   "raw": "2 ounces crumbled blue cheese, or more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "crumbled blue cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "or more to taste"
-    },
-    "parse_ingredients": {
-      "item": "crumbled blue cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
         }
       ],
       "note": "or more to taste"

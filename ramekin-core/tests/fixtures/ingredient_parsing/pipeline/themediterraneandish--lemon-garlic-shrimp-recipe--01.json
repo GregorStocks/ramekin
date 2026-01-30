@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 tsp (between 2.5 and 3 g)&nbsp;ground coriander&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "(between 2.5 and 3 g) ground coriander",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "(between 2.5 and 3 g) ground coriander",
       "measurements": [

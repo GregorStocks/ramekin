@@ -1,16 +1,6 @@
 {
   "raw": "1 lb paneer cut into 1in cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "paneer cut into 1in cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "paneer cut into 1in cubes",
       "measurements": [

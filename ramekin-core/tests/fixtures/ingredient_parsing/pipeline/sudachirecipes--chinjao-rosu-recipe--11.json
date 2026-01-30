@@ -1,16 +1,6 @@
 {
   "raw": "2 tsp sake (or dry sherry, white wine)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sake (or dry sherry, white wine)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sake (or dry sherry, white wine)",
       "measurements": [

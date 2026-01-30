@@ -1,16 +1,6 @@
 {
   "raw": "10  snow peas (blanched and cut in half diagonally)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "snow peas",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "blanched and cut in half diagonally"
-    },
     "parse_ingredients": {
       "item": "snow peas",
       "measurements": [

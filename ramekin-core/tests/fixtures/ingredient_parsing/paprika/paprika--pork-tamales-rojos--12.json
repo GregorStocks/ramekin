@@ -1,16 +1,6 @@
 {
   "raw": "1 pound boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "boneless pork shoulder (Boston butt), fat trimmed, cut into 1-inch pieces",
       "measurements": [

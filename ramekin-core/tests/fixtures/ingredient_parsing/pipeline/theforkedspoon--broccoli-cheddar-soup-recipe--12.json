@@ -1,16 +1,6 @@
 {
   "raw": "1.5 tablespoon all-purpose flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 lb. ground pork, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground pork",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "ground pork",
       "measurements": [

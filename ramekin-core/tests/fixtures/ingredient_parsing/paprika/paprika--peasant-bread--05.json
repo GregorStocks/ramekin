@@ -1,20 +1,6 @@
 {
   "raw": "1 teaspoons (4 g) SAF Instant Yeast",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "SAF Instant Yeast",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": "4",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "SAF Instant Yeast",
       "measurements": [

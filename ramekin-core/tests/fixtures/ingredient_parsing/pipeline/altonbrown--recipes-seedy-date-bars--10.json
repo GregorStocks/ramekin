@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon flaxseed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "flaxseed",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "flaxseed",
       "measurements": [

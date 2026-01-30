@@ -1,7 +1,7 @@
 {
   "raw": "1 can (20 ounces) crushed pineapple, undrained",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "crushed pineapple",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "567",
           "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    },
-    "parse_ingredients": {
-      "item": "crushed pineapple",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "20",
-          "unit": "oz"
         }
       ],
       "note": "undrained"

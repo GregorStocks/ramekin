@@ -1,16 +1,6 @@
 {
   "raw": "2 1/3 cups Bisquick baking mix",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Bisquick baking mix",
-      "measurements": [
-        {
-          "amount": "2 1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Bisquick baking mix",
       "measurements": [

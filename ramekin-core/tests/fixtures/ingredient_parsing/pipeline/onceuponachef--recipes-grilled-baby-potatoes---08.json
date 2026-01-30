@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon chopped fresh Italian parsley, for garnish (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped fresh Italian parsley, for garnish",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "chopped fresh Italian parsley, for garnish",
       "measurements": [

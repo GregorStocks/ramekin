@@ -1,16 +1,6 @@
 {
   "raw": "1 pint cherry tomatoes (cut in half (you can sub in grape tomatoes))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cherry tomatoes (cut in half (you can sub in grape tomatoes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cherry tomatoes (cut in half (you can sub in grape tomatoes)",
       "measurements": [

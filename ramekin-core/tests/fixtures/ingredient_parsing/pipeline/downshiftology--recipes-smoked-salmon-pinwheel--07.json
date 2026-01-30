@@ -1,16 +1,6 @@
 {
   "raw": "3 tbsp chives (finely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chives",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely chopped"
-    },
     "parse_ingredients": {
       "item": "chives",
       "measurements": [

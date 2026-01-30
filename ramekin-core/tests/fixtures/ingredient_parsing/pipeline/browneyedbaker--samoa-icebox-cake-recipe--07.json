@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons caramel sauce (homemade or store-bought)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "caramel sauce (homemade or store-bought)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "caramel sauce (homemade or store-bought)",
       "measurements": [

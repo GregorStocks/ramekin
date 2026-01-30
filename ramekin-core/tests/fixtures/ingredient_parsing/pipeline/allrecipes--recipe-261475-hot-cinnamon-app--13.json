@@ -1,16 +1,6 @@
 {
   "raw": "10 small cinnamon sticks",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cinnamon sticks",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cinnamon sticks",
       "measurements": [

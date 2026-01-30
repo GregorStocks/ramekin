@@ -1,16 +1,6 @@
 {
   "raw": "1½ cup purple cabbage (shredded)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "purple cabbage",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    },
     "parse_ingredients": {
       "item": "purple cabbage",
       "measurements": [

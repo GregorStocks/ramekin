@@ -1,16 +1,6 @@
 {
   "raw": "Pinch of Salt (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "Salt",
       "measurements": [

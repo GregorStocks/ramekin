@@ -1,7 +1,7 @@
 {
   "raw": "6-8 ounces spring mix",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "spring mix",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170-227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "spring mix",
-      "measurements": [
-        {
-          "amount": "6-8",
-          "unit": "oz"
         }
       ],
       "note": null

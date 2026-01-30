@@ -1,16 +1,6 @@
 {
   "raw": "2-3  bunches dried Somen noodle",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried Somen noodle",
-      "measurements": [
-        {
-          "amount": "2-3",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried Somen noodle",
       "measurements": [

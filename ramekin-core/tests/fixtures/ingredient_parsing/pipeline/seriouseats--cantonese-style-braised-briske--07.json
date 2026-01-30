@@ -1,20 +1,6 @@
 {
   "raw": "1 (2-inch) piece cassia bark or cinnamon stick",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cassia bark or cinnamon stick",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "piece"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cassia bark or cinnamon stick",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 pound elbow macaroni",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "elbow macaroni",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "elbow macaroni",
       "measurements": [

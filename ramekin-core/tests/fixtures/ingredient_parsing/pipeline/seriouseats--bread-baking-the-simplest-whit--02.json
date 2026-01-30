@@ -1,20 +1,6 @@
 {
   "raw": "2 1/2 teaspoons (1 package) yeast",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yeast",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "yeast",
       "measurements": [

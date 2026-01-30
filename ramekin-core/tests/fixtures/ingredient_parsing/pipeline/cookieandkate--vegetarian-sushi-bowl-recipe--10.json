@@ -1,16 +1,6 @@
 {
   "raw": "2 large carrots, sliced into ribbons with a vegetable peeler",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced into ribbons with a vegetable peeler"
-    },
     "parse_ingredients": {
       "item": "carrots",
       "measurements": [

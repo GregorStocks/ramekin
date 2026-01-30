@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons fresh chives or 1 tablespoon dried chives",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh chives",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or 1 tablespoon dried chives"
-    },
     "parse_ingredients": {
       "item": "fresh chives",
       "measurements": [

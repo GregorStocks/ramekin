@@ -1,7 +1,7 @@
 {
   "raw": "30 ounce jar of your favorite marinara sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "jar of your favorite marinara sauce",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "850",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "jar of your favorite marinara sauce",
-      "measurements": [
-        {
-          "amount": "30",
-          "unit": "oz"
         }
       ],
       "note": null

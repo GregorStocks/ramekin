@@ -1,16 +1,6 @@
 {
   "raw": "8  potatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "potatoes",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "potatoes",
       "measurements": [

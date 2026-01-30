@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons poppyseeds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "poppyseeds",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "poppyseeds",
       "measurements": [

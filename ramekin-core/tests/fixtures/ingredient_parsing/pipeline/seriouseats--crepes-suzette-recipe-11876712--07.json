@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon orange sugar, see above",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "orange sugar, see above",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "orange sugar, see above",
       "measurements": [

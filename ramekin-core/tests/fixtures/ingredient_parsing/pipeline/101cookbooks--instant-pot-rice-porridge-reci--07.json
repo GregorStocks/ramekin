@@ -1,16 +1,6 @@
 {
   "raw": "(optional) 1/4 cup of other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "other quick-cooking grains: quinoa, millet, french lentils, Job's tears, etc.",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons milk ((skim, low fat or whole))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "skim, low fat or whole"
-    },
     "parse_ingredients": {
       "item": "milk",
       "measurements": [

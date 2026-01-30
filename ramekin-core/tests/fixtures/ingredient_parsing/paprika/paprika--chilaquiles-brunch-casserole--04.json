@@ -1,7 +1,7 @@
 {
   "raw": "2 cups (8 ounces) coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "coarsely grated shredded monterey jack or cheddar cheese (I used a mix)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": null

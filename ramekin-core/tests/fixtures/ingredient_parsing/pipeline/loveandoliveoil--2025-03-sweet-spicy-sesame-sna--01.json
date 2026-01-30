@@ -1,16 +1,6 @@
 {
   "raw": "2 cups corn chex cereal",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "corn chex cereal",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "corn chex cereal",
       "measurements": [

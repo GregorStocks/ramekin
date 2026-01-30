@@ -1,7 +1,7 @@
 {
   "raw": "1 (8 ounce) package shredded Cheddar cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "shredded Cheddar cheese",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "shredded Cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": null

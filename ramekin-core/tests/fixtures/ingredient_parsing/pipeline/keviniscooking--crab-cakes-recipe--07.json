@@ -1,16 +1,6 @@
 {
   "raw": "1 lb jumbo lump crabmeat",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "jumbo lump crabmeat",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "jumbo lump crabmeat",
       "measurements": [

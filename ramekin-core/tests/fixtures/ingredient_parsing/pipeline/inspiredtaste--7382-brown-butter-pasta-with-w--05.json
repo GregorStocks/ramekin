@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup walnut halves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "walnut halves",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "walnut halves",
       "measurements": [

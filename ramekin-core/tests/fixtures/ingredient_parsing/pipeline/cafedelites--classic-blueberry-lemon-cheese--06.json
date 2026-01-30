@@ -1,16 +1,6 @@
 {
   "raw": "2 cups plain flour (all purpose flour)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "plain flour (all purpose flour)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "plain flour (all purpose flour)",
       "measurements": [

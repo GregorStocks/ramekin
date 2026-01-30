@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup shoyu",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shoyu",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shoyu",
       "measurements": [

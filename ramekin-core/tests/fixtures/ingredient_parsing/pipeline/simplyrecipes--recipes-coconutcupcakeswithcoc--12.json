@@ -1,16 +1,6 @@
 {
   "raw": "1/2-1 cup of powdered sugar, sifted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "cup"
-        }
-      ],
-      "note": "sifted"
-    },
     "parse_ingredients": {
       "item": "powdered sugar",
       "measurements": [

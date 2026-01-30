@@ -1,16 +1,6 @@
 {
   "raw": "1.3 grams kaffir lime leaves ((4 leaves, finely chopped))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kaffir lime leaves",
-      "measurements": [
-        {
-          "amount": "1.3",
-          "unit": "g"
-        }
-      ],
-      "note": "4 leaves, finely chopped"
-    },
     "parse_ingredients": {
       "item": "kaffir lime leaves",
       "measurements": [

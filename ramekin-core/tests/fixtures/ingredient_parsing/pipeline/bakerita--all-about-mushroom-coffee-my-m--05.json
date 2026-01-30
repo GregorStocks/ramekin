@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon cacao powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cacao powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cacao powder",
       "measurements": [

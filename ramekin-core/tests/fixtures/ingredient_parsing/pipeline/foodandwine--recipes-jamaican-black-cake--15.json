@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon ground allspice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground allspice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground allspice",
       "measurements": [

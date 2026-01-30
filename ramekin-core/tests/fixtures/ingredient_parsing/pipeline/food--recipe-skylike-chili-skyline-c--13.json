@@ -1,16 +1,6 @@
 {
   "raw": "1/2  teaspoon    ground red pepper or 1/2  teaspoon    cayenne pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground red pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1/2  teaspoon    cayenne pepper"
-    },
     "parse_ingredients": {
       "item": "ground red pepper",
       "measurements": [

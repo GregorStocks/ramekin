@@ -1,7 +1,7 @@
 {
   "raw": "12 ounces fresh Mushrooms (, one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc...))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh Mushrooms",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc..."
-    },
-    "parse_ingredients": {
-      "item": "fresh Mushrooms",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "one or more of Shiitake, Enoki, Brown Mushrooms, Oyster, etc..."

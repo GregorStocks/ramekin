@@ -1,20 +1,6 @@
 {
   "raw": "½ teaspoon amchur  ((mango powder or sub with chaat masala or 2 tbsps lemon juice while serving))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "amchur",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "amchur",
       "measurements": [

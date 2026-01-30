@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup dairy-free milk of choice, I usually use a combination of unsweetened soy milk and oat milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dairy-free milk of choice, I usually use a combination of unsweetened soy milk and oat milk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dairy-free milk of choice, I usually use a combination of unsweetened soy milk and oat milk",
       "measurements": [

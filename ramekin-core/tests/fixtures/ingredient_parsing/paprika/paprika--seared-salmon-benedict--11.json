@@ -1,16 +1,6 @@
 {
   "raw": "6 tbsp unsalted butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

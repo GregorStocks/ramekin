@@ -1,16 +1,6 @@
 {
   "raw": "1- inch knob fresh ginger, peeled and grated",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "- inch knob fresh ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and grated"
-    },
     "parse_ingredients": {
       "item": "- inch knob fresh ginger",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 pound chicken thighs (boneless and skinless, cut into 1 inch cubes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken thighs (boneless and skinless, cut into 1 inch cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken thighs (boneless and skinless, cut into 1 inch cubes)",
       "measurements": [

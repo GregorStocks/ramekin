@@ -1,16 +1,6 @@
 {
   "raw": "½ cup roasted, salted pistachios",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "roasted, salted pistachios",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "roasted, salted pistachios",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 ½ cups (195g) all-purpose flour, spooned and leveled",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour, spooned and leveled",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "195",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour, spooned and leveled",
       "measurements": [

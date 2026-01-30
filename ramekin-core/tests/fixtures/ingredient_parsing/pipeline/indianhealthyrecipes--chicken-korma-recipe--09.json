@@ -1,16 +1,6 @@
 {
   "raw": "2  green cardamoms",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green cardamoms",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green cardamoms",
       "measurements": [

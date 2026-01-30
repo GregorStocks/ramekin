@@ -1,16 +1,6 @@
 {
   "raw": "1  large brown or white onion (peeled and sliced into half moons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "brown or white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and sliced into half moons"
-    },
     "parse_ingredients": {
       "item": "brown or white onion",
       "measurements": [

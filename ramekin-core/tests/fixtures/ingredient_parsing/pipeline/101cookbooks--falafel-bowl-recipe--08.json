@@ -1,16 +1,6 @@
 {
   "raw": "1/4  + teaspoon fine grain sea salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "+ teaspoon fine grain sea salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "+ teaspoon fine grain sea salt",
       "measurements": [

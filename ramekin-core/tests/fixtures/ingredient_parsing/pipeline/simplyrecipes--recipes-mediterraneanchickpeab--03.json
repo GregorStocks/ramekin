@@ -1,16 +1,6 @@
 {
   "raw": "Juice 1/2 to 1 lemon (1 to 2 tablespoons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Juice 1/2 to 1 lemon",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Juice 1/2 to 1 lemon",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2  green onions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green onions",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "4 leaves butter lettuce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leaves butter lettuce",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leaves butter lettuce",
       "measurements": [

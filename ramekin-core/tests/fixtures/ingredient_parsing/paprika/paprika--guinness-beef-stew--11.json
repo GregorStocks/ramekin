@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ tablespoons packed dark brown sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "packed dark brown sugar",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "packed dark brown sugar",
       "measurements": [

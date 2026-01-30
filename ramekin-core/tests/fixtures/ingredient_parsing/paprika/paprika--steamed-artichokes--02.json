@@ -1,16 +1,6 @@
 {
   "raw": "1 to 2 lemons, halved",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemons",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "lemons",
       "measurements": [

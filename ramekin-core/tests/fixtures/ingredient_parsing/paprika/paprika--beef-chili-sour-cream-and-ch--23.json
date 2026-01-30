@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons cold unsalted butter, cut into bits",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold unsalted butter, cut into bits",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold unsalted butter, cut into bits",
       "measurements": [

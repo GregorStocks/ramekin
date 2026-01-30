@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 fluid ounces cold brew coffee",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cold brew coffee",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "fl oz"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cold brew coffee",
       "measurements": [

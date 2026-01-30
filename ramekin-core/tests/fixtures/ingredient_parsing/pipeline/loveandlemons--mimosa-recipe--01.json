@@ -1,20 +1,6 @@
 {
   "raw": "1 (750 mL) bottle  Champagne, prosecco, or cava (chilled)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Champagne, prosecco, or cava",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bottle"
-        },
-        {
-          "amount": "750",
-          "unit": "ml"
-        }
-      ],
-      "note": "chilled"
-    },
     "parse_ingredients": {
       "item": "Champagne, prosecco, or cava",
       "measurements": [

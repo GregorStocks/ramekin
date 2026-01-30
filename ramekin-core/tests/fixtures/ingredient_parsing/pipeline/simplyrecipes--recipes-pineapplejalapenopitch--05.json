@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 cups aged tequila, such as reposado or&nbsp;añejo",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "aged tequila, such as reposado or añejo",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "aged tequila, such as reposado or añejo",
       "measurements": [

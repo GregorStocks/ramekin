@@ -1,16 +1,6 @@
 {
   "raw": "1/4 c. lemon juice (from about 2 lemons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon juice (from about 2 lemons)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon juice (from about 2 lemons)",
       "measurements": [

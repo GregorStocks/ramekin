@@ -1,7 +1,7 @@
 {
   "raw": "16 oz  Hershey's chocolate syrup ((1 1/2 cups))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Hershey's chocolate syrup",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "454",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "Hershey's chocolate syrup",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "oz"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
         }
       ],
       "note": null

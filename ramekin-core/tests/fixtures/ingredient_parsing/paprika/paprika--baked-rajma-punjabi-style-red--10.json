@@ -1,16 +1,6 @@
 {
   "raw": "1/2 teaspoon red chile powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red chile powder",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "red chile powder",
       "measurements": [

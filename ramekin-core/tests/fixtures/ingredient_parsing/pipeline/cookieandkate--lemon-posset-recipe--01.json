@@ -1,20 +1,6 @@
 {
   "raw": "1 pint (2 cups) heavy cream&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "heavy cream",
       "measurements": [

@@ -1,11 +1,6 @@
 {
   "raw": "A bowl of Fritos (I don’t consider this optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "A bowl of Fritos",
-      "measurements": [],
-      "note": "I don’t consider this optional"
-    },
     "parse_ingredients": {
       "item": "A bowl of Fritos",
       "measurements": [],

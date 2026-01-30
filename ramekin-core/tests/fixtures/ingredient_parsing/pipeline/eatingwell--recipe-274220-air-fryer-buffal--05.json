@@ -1,16 +1,6 @@
 {
   "raw": "3.5 to 4 pounds chicken wings, separated if necessary",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken wings, separated if necessary",
-      "measurements": [
-        {
-          "amount": "3.5 to 4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken wings, separated if necessary",
       "measurements": [

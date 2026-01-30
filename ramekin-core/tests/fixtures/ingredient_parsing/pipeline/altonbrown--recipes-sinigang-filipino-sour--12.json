@@ -1,7 +1,7 @@
 {
   "raw": "10 ounces daikon radish, peeled and thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "daikon radish",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": "peeled and thinly sliced"
-    },
-    "parse_ingredients": {
-      "item": "daikon radish",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": "peeled and thinly sliced"

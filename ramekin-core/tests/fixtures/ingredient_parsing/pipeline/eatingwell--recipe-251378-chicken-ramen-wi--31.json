@@ -1,16 +1,6 @@
 {
   "raw": "0.5 cup finely chopped fresh scallions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped fresh scallions",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely chopped fresh scallions",
       "measurements": [

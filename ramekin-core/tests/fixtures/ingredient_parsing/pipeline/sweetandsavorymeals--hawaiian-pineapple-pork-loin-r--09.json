@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup green onions (garnish)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green onions (garnish)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green onions (garnish)",
       "measurements": [

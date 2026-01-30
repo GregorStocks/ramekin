@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon ginger (fine grated)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ginger",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "fine grated"
-    },
     "parse_ingredients": {
       "item": "ginger",
       "measurements": [

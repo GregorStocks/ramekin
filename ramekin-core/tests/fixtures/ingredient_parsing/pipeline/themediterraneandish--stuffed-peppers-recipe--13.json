@@ -1,16 +1,6 @@
 {
   "raw": "6  bell peppers (any colors, tops removed and cored)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bell peppers",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "any colors, tops removed and cored"
-    },
     "parse_ingredients": {
       "item": "bell peppers",
       "measurements": [

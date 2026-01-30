@@ -1,16 +1,6 @@
 {
   "raw": "142ml carton  single cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carton  single cream",
-      "measurements": [
-        {
-          "amount": "142",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "carton  single cream",
       "measurements": [

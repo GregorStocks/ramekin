@@ -1,16 +1,6 @@
 {
   "raw": "1 pound andouille sausage (or smoked sausage, chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "andouille sausage",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "or smoked sausage, chopped"
-    },
     "parse_ingredients": {
       "item": "andouille sausage",
       "measurements": [

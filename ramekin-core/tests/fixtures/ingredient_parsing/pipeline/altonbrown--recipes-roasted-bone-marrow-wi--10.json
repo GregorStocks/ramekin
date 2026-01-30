@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons finely chopped lemon peel",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped lemon peel",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely chopped lemon peel",
       "measurements": [

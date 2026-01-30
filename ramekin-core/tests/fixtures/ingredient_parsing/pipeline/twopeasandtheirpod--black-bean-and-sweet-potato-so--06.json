@@ -1,7 +1,7 @@
 {
   "raw": "2  cans low sodium vegetable broth (15 oz. size)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "low sodium vegetable broth",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "425",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "low sodium vegetable broth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
         }
       ],
       "note": null

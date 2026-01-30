@@ -1,16 +1,6 @@
 {
   "raw": "1 cup Acini di pepe",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Acini di pepe",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Acini di pepe",
       "measurements": [

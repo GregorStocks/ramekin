@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon hot smoked paprika, plus more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot smoked paprika",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    },
     "parse_ingredients": {
       "item": "hot smoked paprika",
       "measurements": [

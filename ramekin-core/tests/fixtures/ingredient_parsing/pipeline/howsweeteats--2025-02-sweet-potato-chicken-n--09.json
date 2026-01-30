@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ cups cooked, shredded chicken",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded chicken"
-    },
     "parse_ingredients": {
       "item": "cooked",
       "measurements": [

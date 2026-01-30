@@ -1,20 +1,6 @@
 {
   "raw": "8 (6 inch) corn tortillas",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "corn tortillas",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "corn tortillas",
       "measurements": [

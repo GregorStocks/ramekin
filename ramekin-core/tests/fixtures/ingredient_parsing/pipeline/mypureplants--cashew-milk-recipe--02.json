@@ -1,16 +1,6 @@
 {
   "raw": "4 cup Fresh water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Fresh water",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Fresh water",
       "measurements": [

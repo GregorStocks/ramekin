@@ -1,16 +1,6 @@
 {
   "raw": "1 pound Velveeta, cubed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Velveeta",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "cubed"
-    },
     "parse_ingredients": {
       "item": "Velveeta",
       "measurements": [

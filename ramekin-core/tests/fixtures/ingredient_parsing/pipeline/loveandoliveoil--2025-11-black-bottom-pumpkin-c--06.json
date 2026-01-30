@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons chopped dark chocolate or chocolate chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped dark chocolate or chocolate chips",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped dark chocolate or chocolate chips",
       "measurements": [

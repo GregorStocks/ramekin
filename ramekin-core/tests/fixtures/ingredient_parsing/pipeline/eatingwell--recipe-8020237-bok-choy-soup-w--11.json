@@ -1,7 +1,7 @@
 {
   "raw": "12 ounces small peeled, deveined raw shrimp",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "small peeled",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "deveined raw shrimp"
-    },
-    "parse_ingredients": {
-      "item": "small peeled",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "deveined raw shrimp"

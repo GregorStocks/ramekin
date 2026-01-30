@@ -1,20 +1,6 @@
 {
   "raw": "1 lb ground beef ((80/20))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "80/20",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground beef",
       "measurements": [

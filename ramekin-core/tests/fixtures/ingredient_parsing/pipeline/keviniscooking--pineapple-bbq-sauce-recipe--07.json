@@ -1,7 +1,7 @@
 {
   "raw": "6 oz pineapple juice",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "pineapple juice",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "pineapple juice",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": null

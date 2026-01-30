@@ -1,16 +1,6 @@
 {
   "raw": "3 slices white bread (crust removed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white bread (crust removed)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white bread (crust removed)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "250 ml pork stock (from part 1)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pork stock (from part 1)",
-      "measurements": [
-        {
-          "amount": "250",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pork stock (from part 1)",
       "measurements": [

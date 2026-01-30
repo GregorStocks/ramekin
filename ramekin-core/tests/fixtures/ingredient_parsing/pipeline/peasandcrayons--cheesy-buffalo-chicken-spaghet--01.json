@@ -1,20 +1,6 @@
 {
   "raw": "2  medium spaghetti squash ((6-7 inches long))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "spaghetti squash",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "6-7",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "spaghetti squash",
       "measurements": [

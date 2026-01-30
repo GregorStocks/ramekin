@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons Franks Red Hot or other hot sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Franks Red Hot or other hot sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Franks Red Hot or other hot sauce",
       "measurements": [

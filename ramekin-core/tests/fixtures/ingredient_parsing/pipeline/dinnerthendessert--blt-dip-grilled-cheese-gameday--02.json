@@ -1,16 +1,6 @@
 {
   "raw": "12 slices buttermilk bread",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "buttermilk bread",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "buttermilk bread",
       "measurements": [

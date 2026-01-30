@@ -1,16 +1,6 @@
 {
   "raw": "3 cloves garlic, (minced (1 Tbsp))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "clove"
-        }
-      ],
-      "note": "minced (1 Tbsp"
-    },
     "parse_ingredients": {
       "item": "garlic",
       "measurements": [

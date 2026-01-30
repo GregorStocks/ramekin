@@ -1,16 +1,6 @@
 {
   "raw": "90 grams  Danmuji ((yellow pickled radish, cut into strips))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Danmuji (yellow pickled radish, cut into strips)",
-      "measurements": [
-        {
-          "amount": "90",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Danmuji (yellow pickled radish, cut into strips)",
       "measurements": [

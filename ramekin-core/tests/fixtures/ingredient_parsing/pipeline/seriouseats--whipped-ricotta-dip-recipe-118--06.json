@@ -1,20 +1,6 @@
 {
   "raw": "15 ounces (425 g) whole-milk ricotta cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole-milk ricotta cheese",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
-        },
-        {
-          "amount": "425",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whole-milk ricotta cheese",
       "measurements": [

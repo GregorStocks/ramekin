@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons dried sage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried sage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried sage",
       "measurements": [

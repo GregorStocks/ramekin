@@ -1,16 +1,6 @@
 {
   "raw": "2 ripe bananas, mashed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ripe bananas, mashed",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ripe bananas, mashed",
       "measurements": [

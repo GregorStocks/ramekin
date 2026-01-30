@@ -1,16 +1,6 @@
 {
   "raw": "Handful of mixed salad greens",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mixed salad greens",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mixed salad greens",
       "measurements": [

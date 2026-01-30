@@ -1,16 +1,6 @@
 {
   "raw": "2x 14 ounce cans black beans (drained and rinsed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "x 14 ounce cans black beans",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "drained and rinsed"
-    },
     "parse_ingredients": {
       "item": "x 14 ounce cans black beans",
       "measurements": [

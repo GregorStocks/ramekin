@@ -1,16 +1,6 @@
 {
   "raw": "1 to 3 teaspoons fresh lemon juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh lemon juice",
-      "measurements": [
-        {
-          "amount": "1 to 3",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh lemon juice",
       "measurements": [

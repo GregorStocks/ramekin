@@ -1,20 +1,6 @@
 {
   "raw": "¼ to ⅓ cup (60 to 80 ml)  heavy cream  ((cooking cream or whipping cream, more to garnish if you want))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heavy cream (cooking cream or whipping cream, more to garnish if you want)",
-      "measurements": [
-        {
-          "amount": "1/4 to 1/3",
-          "unit": "cup"
-        },
-        {
-          "amount": "60 to 80",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "heavy cream (cooking cream or whipping cream, more to garnish if you want)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1  roasted red pepper (chopped (you can use jarred))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "roasted red pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "chopped (you can use jarred"
-    },
     "parse_ingredients": {
       "item": "roasted red pepper",
       "measurements": [

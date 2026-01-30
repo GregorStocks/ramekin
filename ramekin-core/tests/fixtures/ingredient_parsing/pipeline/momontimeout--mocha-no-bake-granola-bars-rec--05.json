@@ -1,16 +1,6 @@
 {
   "raw": "2 tsp espresso powder (or finely ground coffee)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "espresso powder",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or finely ground coffee"
-    },
     "parse_ingredients": {
       "item": "espresso powder",
       "measurements": [

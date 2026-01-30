@@ -1,16 +1,6 @@
 {
   "raw": "8 slices sourdough bread (or bread of choice)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sourdough bread (or bread of choice)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sourdough bread (or bread of choice)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1.5 pounds Yukon gold potatoes,&nbsp;diced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Yukon gold potatoes",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "lb"
-        }
-      ],
-      "note": "diced"
-    },
     "parse_ingredients": {
       "item": "Yukon gold potatoes",
       "measurements": [

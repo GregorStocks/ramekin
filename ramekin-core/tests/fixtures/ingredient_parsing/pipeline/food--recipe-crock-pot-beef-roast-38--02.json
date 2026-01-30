@@ -1,16 +1,6 @@
 {
   "raw": "5       carrots, peeled and cut into 2-inch slices",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "peeled and cut into 2-inch slices"
-    },
     "parse_ingredients": {
       "item": "carrots",
       "measurements": [

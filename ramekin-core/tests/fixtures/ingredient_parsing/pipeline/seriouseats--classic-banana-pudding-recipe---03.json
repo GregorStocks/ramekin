@@ -1,24 +1,6 @@
 {
   "raw": "226g granulated sugar (8 ounces; 1 cup plus 2 tablespoons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "226",
-          "unit": "g"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

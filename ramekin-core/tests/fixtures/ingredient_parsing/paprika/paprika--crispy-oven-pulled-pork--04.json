@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 tablespoons sweet or smoked paprika",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet or smoked paprika",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sweet or smoked paprika",
       "measurements": [

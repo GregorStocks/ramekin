@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup (114g) unsalted butter (melted and lukewarm)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "114",
-          "unit": "g"
-        }
-      ],
-      "note": "melted and lukewarm"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

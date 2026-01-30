@@ -1,16 +1,6 @@
 {
   "raw": "2l strong-flavoured beef stock",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "strong-flavoured beef stock",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "strong-flavoured beef stock",
       "measurements": [

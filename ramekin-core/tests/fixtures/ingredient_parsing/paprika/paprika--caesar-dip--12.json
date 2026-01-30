@@ -1,11 +1,6 @@
 {
   "raw": "Fresh cut vegetables, romaine lettuce wedges, chips, or crackers for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
-      "measurements": [],
-      "note": "or crackers for serving"
-    },
     "parse_ingredients": {
       "item": "Fresh cut vegetables, romaine lettuce wedges, chips",
       "measurements": [],

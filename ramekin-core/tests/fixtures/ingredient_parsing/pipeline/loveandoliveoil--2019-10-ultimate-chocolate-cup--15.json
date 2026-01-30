@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup full fat sour cream, at room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "full fat sour cream",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "at room temperature"
-    },
     "parse_ingredients": {
       "item": "full fat sour cream",
       "measurements": [

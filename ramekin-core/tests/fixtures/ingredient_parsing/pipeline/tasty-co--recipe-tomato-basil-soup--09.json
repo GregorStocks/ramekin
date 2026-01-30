@@ -1,7 +1,7 @@
 {
   "raw": "56 oz canned crushed tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "canned crushed tomatoes",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "1588",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "canned crushed tomatoes",
-      "measurements": [
-        {
-          "amount": "56",
-          "unit": "oz"
         }
       ],
       "note": null

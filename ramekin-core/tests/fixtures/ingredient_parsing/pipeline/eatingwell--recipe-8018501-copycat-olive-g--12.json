@@ -1,16 +1,6 @@
 {
   "raw": "3 cups baby spinach, coarsely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely chopped"
-    },
     "parse_ingredients": {
       "item": "baby spinach",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup water (pasta cooking water, preferred)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water (pasta cooking water, preferred)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water (pasta cooking water, preferred)",
       "measurements": [

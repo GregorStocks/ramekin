@@ -1,16 +1,6 @@
 {
   "raw": "1 pound lean ground chicken, (I like to use 94% lean)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lean ground chicken, (I like to use 94% lean)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lean ground chicken, (I like to use 94% lean)",
       "measurements": [

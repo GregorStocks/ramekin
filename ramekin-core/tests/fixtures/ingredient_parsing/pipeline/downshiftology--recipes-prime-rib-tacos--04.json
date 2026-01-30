@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons salsa",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salsa",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salsa",
       "measurements": [

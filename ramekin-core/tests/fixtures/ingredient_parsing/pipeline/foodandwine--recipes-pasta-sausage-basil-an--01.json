@@ -1,16 +1,6 @@
 {
   "raw": "1 pound penne, rigatoni, or medium shells",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "penne, rigatoni, or medium shells",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "penne, rigatoni, or medium shells",
       "measurements": [

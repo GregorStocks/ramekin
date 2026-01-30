@@ -1,7 +1,7 @@
 {
   "raw": "1 (5 ounce) can cold evaporated milk",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cold evaporated milk",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "142",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "cold evaporated milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "5",
-          "unit": "oz"
         }
       ],
       "note": null

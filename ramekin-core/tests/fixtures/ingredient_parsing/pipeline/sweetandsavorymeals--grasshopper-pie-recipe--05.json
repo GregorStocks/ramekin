@@ -1,7 +1,7 @@
 {
   "raw": "8 oz container cool whip (thawed (or homemade whipped cream))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "container cool whip",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "thawed (or homemade whipped cream"
-    },
-    "parse_ingredients": {
-      "item": "container cool whip",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "thawed (or homemade whipped cream"

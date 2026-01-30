@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup ice cold water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ice cold water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ice cold water",
       "measurements": [

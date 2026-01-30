@@ -1,24 +1,6 @@
 {
   "raw": "5 medium cloves (25g) garlic, minced (2 tablespoons)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cloves garlic",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "medium"
-        },
-        {
-          "amount": "25",
-          "unit": "g"
-        },
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    },
     "parse_ingredients": {
       "item": "cloves garlic",
       "measurements": [

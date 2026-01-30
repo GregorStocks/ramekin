@@ -1,7 +1,7 @@
 {
   "raw": "15.5 oz can white beans ((drained and rinsed))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "can white beans",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "439",
           "unit": "g"
-        }
-      ],
-      "note": "drained and rinsed"
-    },
-    "parse_ingredients": {
-      "item": "can white beans",
-      "measurements": [
-        {
-          "amount": "15.5",
-          "unit": "oz"
         }
       ],
       "note": "drained and rinsed"

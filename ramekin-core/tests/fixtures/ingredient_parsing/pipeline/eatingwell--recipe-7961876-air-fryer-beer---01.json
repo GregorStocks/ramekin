@@ -1,16 +1,6 @@
 {
   "raw": "1.25 pounds skinless cod fillet, about 1 inch thick, cut into 8 portions",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "skinless cod fillet, about 1 inch thick, cut into 8 portions",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "skinless cod fillet, about 1 inch thick, cut into 8 portions",
       "measurements": [

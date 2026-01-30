@@ -1,16 +1,6 @@
 {
   "raw": "2 cups mango chunks (frozen)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mango chunks",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "frozen"
-    },
     "parse_ingredients": {
       "item": "mango chunks",
       "measurements": [

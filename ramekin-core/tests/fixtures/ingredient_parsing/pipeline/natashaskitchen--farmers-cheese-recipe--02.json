@@ -1,7 +1,7 @@
 {
   "raw": "35 oz large tub full fat Greek yogurt, room temp*",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "large tub full fat Greek yogurt, room temp*",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "992",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "large tub full fat Greek yogurt, room temp*",
-      "measurements": [
-        {
-          "amount": "35",
-          "unit": "oz"
         }
       ],
       "note": null

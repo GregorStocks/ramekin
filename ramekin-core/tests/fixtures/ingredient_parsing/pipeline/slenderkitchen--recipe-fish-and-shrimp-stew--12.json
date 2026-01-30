@@ -1,16 +1,6 @@
 {
   "raw": "1/2 tsp. basil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "basil",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "basil",
       "measurements": [

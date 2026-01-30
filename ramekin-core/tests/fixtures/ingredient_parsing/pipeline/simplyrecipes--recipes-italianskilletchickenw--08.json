@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons lemon juice, from about 1 lemon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon juice, from about 1 lemon",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon juice, from about 1 lemon",
       "measurements": [

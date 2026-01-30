@@ -1,20 +1,6 @@
 {
   "raw": "8 ounces (224g) dark chocolate, finely chopped*",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "224",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped*"
-    },
     "parse_ingredients": {
       "item": "dark chocolate",
       "measurements": [

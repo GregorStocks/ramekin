@@ -1,16 +1,6 @@
 {
   "raw": "2 Tablespoons oil (canola or vegetable) ((30 ml))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oil (canola or vegetable) (30 ml)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "oil (canola or vegetable) (30 ml)",
       "measurements": [

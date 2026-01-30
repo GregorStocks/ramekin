@@ -1,20 +1,6 @@
 {
   "raw": "209g (3/4 cup plus 2 tablespoons) whole milk, brought to a boil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole milk, brought to a boil",
-      "measurements": [
-        {
-          "amount": "209",
-          "unit": "g"
-        },
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "whole milk, brought to a boil",
       "measurements": [

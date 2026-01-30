@@ -1,16 +1,6 @@
 {
   "raw": "1 baguette, sliced 1/2-inch-thick on an angle",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baguette",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced 1/2-inch-thick on an angle"
-    },
     "parse_ingredients": {
       "item": "baguette",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 pound cremini mushroom, trimmed and halved if medium or quartered if large",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cremini mushroom",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "trimmed and halved if medium or quartered if large"
-    },
     "parse_ingredients": {
       "item": "cremini mushroom",
       "measurements": [

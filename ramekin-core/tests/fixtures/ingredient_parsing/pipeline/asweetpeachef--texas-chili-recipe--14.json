@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup Llano Estacado 1836 Red wine",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Llano Estacado 1836 Red wine",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Llano Estacado 1836 Red wine",
       "measurements": [

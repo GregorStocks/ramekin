@@ -1,16 +1,6 @@
 {
   "raw": "4 cups sharp cheddar cheese (shredded)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sharp cheddar cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": "shredded"
-    },
     "parse_ingredients": {
       "item": "sharp cheddar cheese",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/4&nbsp;teaspoon cayenne, plus more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cayenne",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "plus more to taste"
-    },
     "parse_ingredients": {
       "item": "cayenne",
       "measurements": [

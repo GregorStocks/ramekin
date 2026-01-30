@@ -1,16 +1,6 @@
 {
   "raw": "1½ cups  all purpose flour, spooned into measuring cup and leveled off",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all purpose flour, spooned into measuring cup and leveled off",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all purpose flour, spooned into measuring cup and leveled off",
       "measurements": [

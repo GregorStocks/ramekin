@@ -1,16 +1,6 @@
 {
   "raw": "9 tablespoons lime juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lime juice",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lime juice",
       "measurements": [

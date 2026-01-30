@@ -1,16 +1,6 @@
 {
   "raw": "500 g boneless chicken thigh (preferably skin-on)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless chicken thigh (preferably skin-on)",
-      "measurements": [
-        {
-          "amount": "500",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "boneless chicken thigh (preferably skin-on)",
       "measurements": [

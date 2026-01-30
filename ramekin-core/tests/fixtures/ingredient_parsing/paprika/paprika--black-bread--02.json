@@ -1,16 +1,6 @@
 {
   "raw": "Pinch of sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sugar",
       "measurements": [

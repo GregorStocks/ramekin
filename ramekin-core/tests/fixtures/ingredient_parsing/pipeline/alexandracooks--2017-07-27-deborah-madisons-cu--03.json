@@ -1,16 +1,6 @@
 {
   "raw": "1/2&nbsp;cup finely diced red or white onion, trimmings reserved",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely diced red or white onion, trimmings reserved",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "finely diced red or white onion, trimmings reserved",
       "measurements": [

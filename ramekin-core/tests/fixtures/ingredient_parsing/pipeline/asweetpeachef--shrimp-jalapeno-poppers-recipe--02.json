@@ -1,16 +1,6 @@
 {
   "raw": "1/2 lb thick look for nitrate-free, uncooked bacon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thick look for nitrate-free",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "uncooked bacon"
-    },
     "parse_ingredients": {
       "item": "thick look for nitrate-free",
       "measurements": [

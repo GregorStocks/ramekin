@@ -1,7 +1,7 @@
 {
   "raw": "2 large, thick carrots (12 ounces), in 1/4-inch slices",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "thick carrots , in 1/4-inch slices",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "thick carrots , in 1/4-inch slices",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": null

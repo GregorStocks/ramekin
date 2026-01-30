@@ -1,16 +1,6 @@
 {
   "raw": "1 lb ground lamb or beef (I used beef here), cold",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground lamb or beef (I used beef here)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "cold"
-    },
     "parse_ingredients": {
       "item": "ground lamb or beef (I used beef here)",
       "measurements": [

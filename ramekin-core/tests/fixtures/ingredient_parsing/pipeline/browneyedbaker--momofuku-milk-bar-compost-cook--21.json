@@ -1,16 +1,6 @@
 {
   "raw": "2½ teaspoons ground coffee",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground coffee",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground coffee",
       "measurements": [

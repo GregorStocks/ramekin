@@ -1,16 +1,6 @@
 {
   "raw": "1 large egg plus 1 yolk, whisked until uniform",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "plus 1 yolk, whisked until uniform"
-    },
     "parse_ingredients": {
       "item": "egg",
       "measurements": [

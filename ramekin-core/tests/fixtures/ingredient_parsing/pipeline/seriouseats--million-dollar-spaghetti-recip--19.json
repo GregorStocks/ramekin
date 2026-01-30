@@ -1,20 +1,6 @@
 {
   "raw": "1 ounce (28 g) Parmesan cheese, finely grated (about 1/4 cup packed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Parmesan cheese, finely grated",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
-        },
-        {
-          "amount": "28",
-          "unit": "g"
-        }
-      ],
-      "note": "about 1/4 cup packed"
-    },
     "parse_ingredients": {
       "item": "Parmesan cheese, finely grated",
       "measurements": [

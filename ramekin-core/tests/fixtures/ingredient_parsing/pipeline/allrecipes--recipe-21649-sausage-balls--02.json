@@ -1,16 +1,6 @@
 {
   "raw": "2 cups biscuit baking mix",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "biscuit baking mix",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "biscuit baking mix",
       "measurements": [

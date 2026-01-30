@@ -1,20 +1,6 @@
 {
   "raw": "1 9x13 Lemon Cake  (box cake mix, prepared according to package instructions)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "9x13 Lemon Cake",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": null,
-          "unit": "box"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "9x13 Lemon Cake",
       "measurements": [

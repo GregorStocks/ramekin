@@ -1,16 +1,6 @@
 {
   "raw": "2 8 oz tubs frozen whipped topping (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "8 oz tubs frozen whipped topping",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "8 oz tubs frozen whipped topping",
       "measurements": [

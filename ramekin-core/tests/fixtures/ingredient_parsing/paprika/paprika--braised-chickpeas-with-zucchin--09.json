@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup prepared or storebought basil pesto",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "prepared or storebought basil pesto",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "prepared or storebought basil pesto",
       "measurements": [

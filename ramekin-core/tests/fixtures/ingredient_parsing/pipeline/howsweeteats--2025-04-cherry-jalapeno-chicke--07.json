@@ -1,16 +1,6 @@
 {
   "raw": "1 cup dried tart cherries",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried tart cherries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried tart cherries",
       "measurements": [

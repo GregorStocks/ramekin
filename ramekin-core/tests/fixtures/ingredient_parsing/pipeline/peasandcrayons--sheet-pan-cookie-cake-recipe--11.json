@@ -1,16 +1,6 @@
 {
   "raw": "8 TBSP 1 stick butter, softened",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1 stick butter",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened"
-    },
     "parse_ingredients": {
       "item": "1 stick butter",
       "measurements": [

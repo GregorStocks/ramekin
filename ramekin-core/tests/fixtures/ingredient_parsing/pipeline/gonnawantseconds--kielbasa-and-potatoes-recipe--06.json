@@ -1,20 +1,6 @@
 {
   "raw": "2 (13.5-ounces each) packages  kielbasa or other smoked sausage,  (cut into ½-inch rounds)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kielbasa or other smoked sausage,  (cut into 1/2-inch rounds)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        },
-        {
-          "amount": "13.5",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "kielbasa or other smoked sausage,  (cut into 1/2-inch rounds)",
       "measurements": [

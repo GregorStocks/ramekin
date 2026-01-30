@@ -1,16 +1,6 @@
 {
   "raw": "1 16-ounce can chickpeas (or 2 cups homemade chickpeas )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chickpeas (or 2 cups homemade chickpeas",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "16-ounce can"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chickpeas (or 2 cups homemade chickpeas",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 pound loaf rustic bread, cut into 1-inch cubes (about 10 cups of cubes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "loaf rustic bread, cut into 1-inch cubes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "10",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "loaf rustic bread, cut into 1-inch cubes",
       "measurements": [

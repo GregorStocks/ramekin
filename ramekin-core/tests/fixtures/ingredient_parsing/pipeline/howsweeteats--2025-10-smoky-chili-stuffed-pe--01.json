@@ -1,16 +1,6 @@
 {
   "raw": "4  bell peppers (sliced in half and seeds removed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bell peppers",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "sliced in half and seeds removed"
-    },
     "parse_ingredients": {
       "item": "bell peppers",
       "measurements": [

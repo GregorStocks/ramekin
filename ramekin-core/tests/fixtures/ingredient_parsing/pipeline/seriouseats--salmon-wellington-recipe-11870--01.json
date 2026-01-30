@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup (120 ml) Crème fraîche or sour cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Crème fraîche or sour cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Crème fraîche or sour cream",
       "measurements": [

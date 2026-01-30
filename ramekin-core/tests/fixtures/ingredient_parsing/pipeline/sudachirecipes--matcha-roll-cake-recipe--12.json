@@ -1,16 +1,6 @@
 {
   "raw": "12  strawberries (half for filling, half for decorating)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "strawberries (half for filling, half for decorating)",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "strawberries (half for filling, half for decorating)",
       "measurements": [

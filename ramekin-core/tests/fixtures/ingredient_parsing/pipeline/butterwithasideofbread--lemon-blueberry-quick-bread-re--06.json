@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp baking powder",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baking powder",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baking powder",
       "measurements": [

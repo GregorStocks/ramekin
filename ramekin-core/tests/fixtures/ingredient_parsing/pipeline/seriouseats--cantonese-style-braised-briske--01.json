@@ -1,20 +1,6 @@
 {
   "raw": "3 cups (709 ml) water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "709",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water",
       "measurements": [

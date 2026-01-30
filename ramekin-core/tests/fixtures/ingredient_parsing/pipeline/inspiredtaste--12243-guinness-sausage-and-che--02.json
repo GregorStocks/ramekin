@@ -1,16 +1,6 @@
 {
   "raw": "6 bratwurst sausages",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bratwurst sausages",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bratwurst sausages",
       "measurements": [

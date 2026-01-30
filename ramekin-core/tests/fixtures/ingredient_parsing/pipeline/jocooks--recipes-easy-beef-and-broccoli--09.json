@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon Sriracha sauce (or to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Sriracha sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or to taste"
-    },
     "parse_ingredients": {
       "item": "Sriracha sauce",
       "measurements": [

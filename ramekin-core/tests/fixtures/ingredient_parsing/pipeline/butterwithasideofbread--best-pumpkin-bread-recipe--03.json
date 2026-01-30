@@ -1,16 +1,6 @@
 {
   "raw": "1 tsp cinnamon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cinnamon",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cinnamon",
       "measurements": [

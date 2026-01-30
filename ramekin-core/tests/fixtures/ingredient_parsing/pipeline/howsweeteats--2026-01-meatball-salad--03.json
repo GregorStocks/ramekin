@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup shaved parmesan cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shaved parmesan cheese",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shaved parmesan cheese",
       "measurements": [

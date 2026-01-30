@@ -1,16 +1,6 @@
 {
   "raw": "150 g carrot (roughly cut into bitesize pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot (roughly cut into bitesize pieces)",
-      "measurements": [
-        {
-          "amount": "150",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "carrot (roughly cut into bitesize pieces)",
       "measurements": [

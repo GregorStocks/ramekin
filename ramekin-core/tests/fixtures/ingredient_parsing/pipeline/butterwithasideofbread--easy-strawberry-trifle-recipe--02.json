@@ -1,16 +1,6 @@
 {
   "raw": "2  8 oz packages of cream cheese, softened",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "of cream cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "8 oz packages"
-        }
-      ],
-      "note": "softened"
-    },
     "parse_ingredients": {
       "item": "of cream cheese",
       "measurements": [

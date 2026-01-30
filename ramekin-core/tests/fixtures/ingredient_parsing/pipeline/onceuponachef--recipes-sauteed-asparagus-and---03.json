@@ -1,16 +1,6 @@
 {
   "raw": "1 bunch thin asparagus spears, ends trimmed, cut into 1½-inch pieces on a diagonal",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thin asparagus spears, ends trimmed, cut into 1 1/2-inch pieces on a diagonal",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thin asparagus spears, ends trimmed, cut into 1 1/2-inch pieces on a diagonal",
       "measurements": [

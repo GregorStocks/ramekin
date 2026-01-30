@@ -1,16 +1,6 @@
 {
   "raw": "3  ribs of celery ((finely diced))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ribs of celery",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "finely diced"
-    },
     "parse_ingredients": {
       "item": "ribs of celery",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "6 oz good quality dark chocolate (finely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "good quality dark chocolate",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    },
-    "parse_ingredients": {
-      "item": "good quality dark chocolate",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": "finely chopped"

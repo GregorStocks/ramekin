@@ -1,16 +1,6 @@
 {
   "raw": "1 cup extra sharp cheddar cheese (grated)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "extra sharp cheddar cheese",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "grated"
-    },
     "parse_ingredients": {
       "item": "extra sharp cheddar cheese",
       "measurements": [

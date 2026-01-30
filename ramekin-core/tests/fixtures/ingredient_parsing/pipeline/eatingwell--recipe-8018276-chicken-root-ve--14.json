@@ -1,16 +1,6 @@
 {
   "raw": "0.5 cup chopped fresh flat-leaf parsley",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped fresh flat-leaf parsley",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped fresh flat-leaf parsley",
       "measurements": [

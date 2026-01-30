@@ -1,20 +1,6 @@
 {
   "raw": "1 1/4 pounds (567 g) boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination),trimmed of excess fat and cut into 2- to 3-inch pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination)",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "lb"
-        },
-        {
-          "amount": "567",
-          "unit": "g"
-        }
-      ],
-      "note": "trimmed of excess fat and cut into 2- to 3-inch pieces"
-    },
     "parse_ingredients": {
       "item": "boneless lamb stew meat (lamb neck, leg, or shoulder, or a combination)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "Pinch of grated&nbsp;nutmeg",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grated nutmeg",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "grated nutmeg",
       "measurements": [

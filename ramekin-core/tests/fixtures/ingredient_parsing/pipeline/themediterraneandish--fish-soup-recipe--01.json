@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ teaspoon coriander",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "coriander",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "coriander",
       "measurements": [

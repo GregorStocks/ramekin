@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons powdered sugar (for sprinkling - optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "powdered sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "for sprinkling - optional"
-    },
     "parse_ingredients": {
       "item": "powdered sugar",
       "measurements": [

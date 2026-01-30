@@ -1,16 +1,6 @@
 {
   "raw": "1  small onion (chopped (60g))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "chopped (60g"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

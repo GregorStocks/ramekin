@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup sliced carrots",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced carrots",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sliced carrots",
       "measurements": [

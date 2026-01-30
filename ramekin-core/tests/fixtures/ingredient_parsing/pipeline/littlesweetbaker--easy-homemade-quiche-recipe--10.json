@@ -1,20 +1,6 @@
 {
   "raw": "1 &amp;amp; 1/3  cups (330ml) milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "& 1/3  cups milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "330",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "& 1/3  cups milk",
       "measurements": [

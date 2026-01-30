@@ -1,16 +1,6 @@
 {
   "raw": "1 pound 93%-lean ground turkey",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "93%-lean ground turkey",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "93%-lean ground turkey",
       "measurements": [

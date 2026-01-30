@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon hot sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hot sauce",
       "measurements": [

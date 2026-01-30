@@ -1,16 +1,6 @@
 {
   "raw": "1 cup 8 oz sour cream (\"light\" sour cream is ok)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "8 oz sour cream (\"light\" sour cream is ok)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "8 oz sour cream (\"light\" sour cream is ok)",
       "measurements": [

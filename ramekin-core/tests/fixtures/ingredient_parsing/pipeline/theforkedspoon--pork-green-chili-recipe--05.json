@@ -1,16 +1,6 @@
 {
   "raw": "2  Poblano peppers (seeded and diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Poblano peppers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "seeded and diced"
-    },
     "parse_ingredients": {
       "item": "Poblano peppers",
       "measurements": [

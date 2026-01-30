@@ -1,20 +1,6 @@
 {
   "raw": "1 and 1/2 cups (about 188g) fresh raspberries, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh raspberries",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "188",
-          "unit": "g"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "fresh raspberries",
       "measurements": [

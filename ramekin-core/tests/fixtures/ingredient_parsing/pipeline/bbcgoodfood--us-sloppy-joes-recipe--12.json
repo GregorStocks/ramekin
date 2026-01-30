@@ -1,16 +1,6 @@
 {
   "raw": "4  hamburger buns split",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hamburger buns split",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hamburger buns split",
       "measurements": [

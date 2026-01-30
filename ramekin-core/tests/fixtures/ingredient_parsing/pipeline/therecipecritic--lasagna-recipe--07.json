@@ -1,20 +1,6 @@
 {
   "raw": "1 (6-ounce) can tomato paste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tomato paste",
       "measurements": [

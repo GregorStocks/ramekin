@@ -1,16 +1,6 @@
 {
   "raw": "1 pint mixed cherry or grape tomatoes, sliced or cut into quarters",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mixed cherry or grape tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pint"
-        }
-      ],
-      "note": "sliced or cut into quarters"
-    },
     "parse_ingredients": {
       "item": "mixed cherry or grape tomatoes",
       "measurements": [

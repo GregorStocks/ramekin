@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon soy sauce or tamari",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soy sauce or tamari",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "soy sauce or tamari",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 medium onion, peeled and chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and chopped"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

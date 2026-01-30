@@ -1,16 +1,6 @@
 {
   "raw": "2 egg whites",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg whites",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "egg whites",
       "measurements": [

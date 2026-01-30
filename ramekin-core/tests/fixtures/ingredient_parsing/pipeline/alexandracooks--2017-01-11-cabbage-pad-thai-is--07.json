@@ -1,16 +1,6 @@
 {
   "raw": "1.5&nbsp;teaspoons cornstarch",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cornstarch",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cornstarch",
       "measurements": [

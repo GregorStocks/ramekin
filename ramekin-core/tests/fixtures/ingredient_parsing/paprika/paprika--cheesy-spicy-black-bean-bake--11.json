@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups grated Cheddar or Manchego cheese (from about a 6-ounce block)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "grated Cheddar or Manchego cheese (from about a 6-ounce block)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "grated Cheddar or Manchego cheese (from about a 6-ounce block)",
       "measurements": [

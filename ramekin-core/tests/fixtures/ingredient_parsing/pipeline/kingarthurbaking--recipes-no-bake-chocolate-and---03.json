@@ -1,16 +1,6 @@
 {
   "raw": "heaping 1/4 teaspoon table salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "heaping tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "table salt",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "2 cups (8.5 ounces) organic powdered sugar, sifted",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "organic powdered sugar",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "241",
           "unit": "g"
-        }
-      ],
-      "note": "sifted"
-    },
-    "parse_ingredients": {
-      "item": "organic powdered sugar",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "8.5",
-          "unit": "oz"
         }
       ],
       "note": "sifted"

@@ -1,16 +1,6 @@
 {
   "raw": "1  shallot (halved)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shallot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "shallot",
       "measurements": [

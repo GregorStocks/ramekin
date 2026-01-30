@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon pickled jalapeño slices (diced fine)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pickled jalapeño slices",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "diced fine"
-    },
     "parse_ingredients": {
       "item": "pickled jalapeño slices",
       "measurements": [

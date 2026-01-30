@@ -1,20 +1,6 @@
 {
   "raw": "1 (18-ounce) bag Rice Krispies",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Rice Krispies",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bag"
-        },
-        {
-          "amount": "18",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Rice Krispies",
       "measurements": [

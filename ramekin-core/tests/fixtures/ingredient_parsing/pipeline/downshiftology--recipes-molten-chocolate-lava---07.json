@@ -1,16 +1,6 @@
 {
   "raw": "2 1/2 tbsp cassava flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cassava flour",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cassava flour",
       "measurements": [

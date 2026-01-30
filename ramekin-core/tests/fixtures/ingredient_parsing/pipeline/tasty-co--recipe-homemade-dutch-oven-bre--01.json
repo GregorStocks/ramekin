@@ -1,20 +1,6 @@
 {
   "raw": "2 cups lukewarm water, between 90˚-110˚F (30˚-40˚C)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lukewarm water, between 90˚-110˚F",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "30",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lukewarm water, between 90˚-110˚F",
       "measurements": [

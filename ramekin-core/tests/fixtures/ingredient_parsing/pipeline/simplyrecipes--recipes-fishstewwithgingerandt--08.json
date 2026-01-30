@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon black pepper, or more to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "black pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or more to taste"
-    },
     "parse_ingredients": {
       "item": "black pepper",
       "measurements": [

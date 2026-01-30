@@ -1,20 +1,6 @@
 {
   "raw": "1 large onion, halved and cut from pole to pole into 1/8-inch-thick slices (about 2 cups)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved and cut from pole to pole into 1/8-inch-thick slices"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

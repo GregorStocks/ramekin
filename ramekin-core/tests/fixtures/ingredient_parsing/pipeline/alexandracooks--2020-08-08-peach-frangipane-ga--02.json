@@ -1,20 +1,6 @@
 {
   "raw": "1 tablespoon (14 g)&nbsp;sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "14",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sugar",
       "measurements": [

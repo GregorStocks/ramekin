@@ -1,16 +1,6 @@
 {
   "raw": "1.5 cups chopped yellow squash",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped yellow squash",
-      "measurements": [
-        {
-          "amount": "1.5",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped yellow squash",
       "measurements": [

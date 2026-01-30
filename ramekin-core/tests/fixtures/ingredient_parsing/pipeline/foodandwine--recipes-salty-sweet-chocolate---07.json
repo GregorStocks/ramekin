@@ -1,7 +1,7 @@
 {
   "raw": "6 ounces thin hard pretzels (4 cups), broken",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "thin hard pretzels , broken",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "thin hard pretzels , broken",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
         }
       ],
       "note": null

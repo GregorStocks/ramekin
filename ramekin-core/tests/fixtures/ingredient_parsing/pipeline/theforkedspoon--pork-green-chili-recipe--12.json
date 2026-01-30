@@ -1,7 +1,7 @@
 {
   "raw": "1 can (15.5 oz) cannellini beans (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cannellini beans",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "439",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "cannellini beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "15.5",
-          "unit": "oz"
         }
       ],
       "note": "drained"

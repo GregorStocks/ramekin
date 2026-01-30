@@ -1,16 +1,6 @@
 {
   "raw": "1 to 3 teaspoons ground chile powder (see Note; to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground chile powder",
-      "measurements": [
-        {
-          "amount": "1 to 3",
-          "unit": "tsp"
-        }
-      ],
-      "note": "see Note; to taste"
-    },
     "parse_ingredients": {
       "item": "ground chile powder",
       "measurements": [

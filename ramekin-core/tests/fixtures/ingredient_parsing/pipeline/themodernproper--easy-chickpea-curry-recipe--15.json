@@ -1,7 +1,7 @@
 {
   "raw": "2 (15 oz) cans chickpeas, drained and rinsed",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "chickpeas",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "425",
           "unit": "g"
-        }
-      ],
-      "note": "drained and rinsed"
-    },
-    "parse_ingredients": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": "oz"
         }
       ],
       "note": "drained and rinsed"

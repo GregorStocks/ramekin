@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 lbs salmon (cut into fillets)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salmon (cut into fillets)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salmon (cut into fillets)",
       "measurements": [

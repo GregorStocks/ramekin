@@ -1,16 +1,6 @@
 {
   "raw": "1  watermelon radish or 2 red radishes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "watermelon radish or 2 red radishes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "watermelon radish or 2 red radishes",
       "measurements": [

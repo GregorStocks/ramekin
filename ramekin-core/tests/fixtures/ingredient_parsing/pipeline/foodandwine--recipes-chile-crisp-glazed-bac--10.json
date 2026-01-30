@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup thinly sliced garlic",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "thinly sliced garlic",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "thinly sliced garlic",
       "measurements": [

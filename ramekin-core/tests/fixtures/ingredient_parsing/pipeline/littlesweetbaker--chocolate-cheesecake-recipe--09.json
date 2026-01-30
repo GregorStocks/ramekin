@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (180g) semi-sweet chocolate chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "semi-sweet chocolate chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "180",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "semi-sweet chocolate chips",
       "measurements": [

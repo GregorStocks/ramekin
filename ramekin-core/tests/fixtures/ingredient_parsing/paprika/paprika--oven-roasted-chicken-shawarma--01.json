@@ -1,16 +1,6 @@
 {
   "raw": "2 lemons, juiced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemons, juiced",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemons, juiced",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup prepared pizza sauce or pesto",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "prepared pizza sauce or pesto",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "prepared pizza sauce or pesto",
       "measurements": [

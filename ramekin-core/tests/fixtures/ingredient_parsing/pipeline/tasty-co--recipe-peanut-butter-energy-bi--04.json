@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup mini chocolate chips, plus more for rolling",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mini chocolate chips",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for rolling"
-    },
     "parse_ingredients": {
       "item": "mini chocolate chips",
       "measurements": [

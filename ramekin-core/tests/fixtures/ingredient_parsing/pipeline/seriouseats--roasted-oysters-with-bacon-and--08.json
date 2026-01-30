@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup (TK g) panko bread crumbs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "(TK g) panko bread crumbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "(TK g) panko bread crumbs",
       "measurements": [

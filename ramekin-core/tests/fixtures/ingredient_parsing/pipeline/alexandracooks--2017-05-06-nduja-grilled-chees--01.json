@@ -1,16 +1,6 @@
 {
   "raw": "4 tablespoons unsalted Wisconsin butter, softened",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted Wisconsin butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "softened"
-    },
     "parse_ingredients": {
       "item": "unsalted Wisconsin butter",
       "measurements": [

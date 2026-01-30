@@ -1,16 +1,6 @@
 {
   "raw": "2 cups of dry red wine (such as Burgundy)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry red wine (such as Burgundy)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dry red wine (such as Burgundy)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "3  basil leaves (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "basil leaves",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "basil leaves",
       "measurements": [

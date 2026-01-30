@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup shredded Fontina and white cheddar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded Fontina and white cheddar",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded Fontina and white cheddar",
       "measurements": [

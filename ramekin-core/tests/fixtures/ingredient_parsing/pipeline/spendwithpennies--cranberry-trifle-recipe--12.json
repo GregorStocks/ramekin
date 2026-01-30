@@ -1,7 +1,7 @@
 {
   "raw": "14.25 ounces white cake mix (1 box, baked, cooled and cubed)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "white cake mix",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "404",
           "unit": "g"
-        }
-      ],
-      "note": "1 box, baked, cooled and cubed"
-    },
-    "parse_ingredients": {
-      "item": "white cake mix",
-      "measurements": [
-        {
-          "amount": "14.25",
-          "unit": "oz"
         }
       ],
       "note": "1 box, baked, cooled and cubed"

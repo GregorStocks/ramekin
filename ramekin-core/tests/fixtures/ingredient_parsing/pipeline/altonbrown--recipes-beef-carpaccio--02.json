@@ -1,16 +1,6 @@
 {
   "raw": "4 handfuls  arugula or other mixed greens",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "arugula or other mixed greens",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "arugula or other mixed greens",
       "measurements": [

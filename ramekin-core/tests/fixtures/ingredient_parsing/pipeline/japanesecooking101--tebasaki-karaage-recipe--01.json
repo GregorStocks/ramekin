@@ -1,16 +1,6 @@
 {
   "raw": "12  chicken wings",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken wings",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken wings",
       "measurements": [

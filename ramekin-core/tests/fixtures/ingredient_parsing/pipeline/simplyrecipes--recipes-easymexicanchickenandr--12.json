@@ -1,16 +1,6 @@
 {
   "raw": "1 to 2 limes, quartered, for garnish",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "limes, quartered",
-      "measurements": [
-        {
-          "amount": "1 to 2",
-          "unit": null
-        }
-      ],
-      "note": "for garnish"
-    },
     "parse_ingredients": {
       "item": "limes, quartered",
       "measurements": [

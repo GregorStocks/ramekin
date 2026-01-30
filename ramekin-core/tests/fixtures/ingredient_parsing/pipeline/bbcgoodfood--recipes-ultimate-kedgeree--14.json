@@ -1,16 +1,6 @@
 {
   "raw": "50g butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

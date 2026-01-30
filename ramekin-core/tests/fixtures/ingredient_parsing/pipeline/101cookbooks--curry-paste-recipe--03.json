@@ -1,16 +1,6 @@
 {
   "raw": "10  large dried chiles (I used 5 California + 5 new Mexico chiles)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried chiles (I used 5 California + 5 new Mexico chiles)",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried chiles (I used 5 California + 5 new Mexico chiles)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 large white onion (peeled and cut into large chunks)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "peeled and cut into large chunks"
-    },
     "parse_ingredients": {
       "item": "white onion",
       "measurements": [

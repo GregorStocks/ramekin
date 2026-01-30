@@ -1,20 +1,6 @@
 {
   "raw": "½ cup sour cream (125g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sour cream",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sour cream",
       "measurements": [

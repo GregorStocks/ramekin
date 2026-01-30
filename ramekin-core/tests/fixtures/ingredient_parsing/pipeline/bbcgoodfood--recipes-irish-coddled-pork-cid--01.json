@@ -1,16 +1,6 @@
 {
   "raw": "small knob  butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "knob  butter",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "knob  butter",
       "measurements": [

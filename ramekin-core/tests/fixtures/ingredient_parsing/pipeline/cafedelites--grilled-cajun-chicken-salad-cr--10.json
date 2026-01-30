@@ -1,16 +1,6 @@
 {
   "raw": "1  lebanese cucumber (quartered)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lebanese cucumber",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "quartered"
-    },
     "parse_ingredients": {
       "item": "lebanese cucumber",
       "measurements": [

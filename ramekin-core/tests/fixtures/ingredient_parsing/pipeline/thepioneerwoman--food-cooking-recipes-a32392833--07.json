@@ -1,20 +1,6 @@
 {
   "raw": "3 limes (1/2 lime zested and 3 limes juiced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "limes",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": null
-        },
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "limes",
       "measurements": [

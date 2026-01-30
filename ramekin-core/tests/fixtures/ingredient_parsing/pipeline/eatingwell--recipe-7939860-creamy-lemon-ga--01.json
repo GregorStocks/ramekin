@@ -1,16 +1,6 @@
 {
   "raw": "1 large head garlic",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "head garlic",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "head garlic",
       "measurements": [

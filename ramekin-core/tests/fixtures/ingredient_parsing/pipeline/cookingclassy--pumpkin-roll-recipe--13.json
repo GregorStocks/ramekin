@@ -1,20 +1,6 @@
 {
   "raw": "6 Tbsp (85g) unsalted butter, (at room temperature)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "85",
-          "unit": "g"
-        }
-      ],
-      "note": "at room temperature"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp Japanese leek (naganegi) (or regular leek, white part, finely diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Japanese leek (naganegi) (or regular leek, white part",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "finely diced)"
-    },
     "parse_ingredients": {
       "item": "Japanese leek (naganegi) (or regular leek, white part",
       "measurements": [

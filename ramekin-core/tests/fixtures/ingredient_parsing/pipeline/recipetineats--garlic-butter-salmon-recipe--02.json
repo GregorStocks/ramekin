@@ -1,16 +1,6 @@
 {
   "raw": "1/2 tsp salt (, cooking / kosher)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt (, cooking / kosher)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt (, cooking / kosher)",
       "measurements": [

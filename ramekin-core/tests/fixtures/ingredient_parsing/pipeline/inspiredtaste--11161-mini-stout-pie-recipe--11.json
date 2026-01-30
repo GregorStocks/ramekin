@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup stout beer (we use Guinness)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "stout beer (we use Guinness)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "stout beer (we use Guinness)",
       "measurements": [

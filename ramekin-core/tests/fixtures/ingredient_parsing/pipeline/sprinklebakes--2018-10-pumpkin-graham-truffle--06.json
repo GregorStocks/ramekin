@@ -1,7 +1,7 @@
 {
   "raw": "1 oz. dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "28",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "dark chocolate fondant or 16 chocolate chews (Tootsie Rolls)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
         }
       ],
       "note": null

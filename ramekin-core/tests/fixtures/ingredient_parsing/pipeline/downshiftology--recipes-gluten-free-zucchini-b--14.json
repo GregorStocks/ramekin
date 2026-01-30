@@ -1,16 +1,6 @@
 {
   "raw": "1-2  balls of burrata",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "balls of burrata",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "balls of burrata",
       "measurements": [

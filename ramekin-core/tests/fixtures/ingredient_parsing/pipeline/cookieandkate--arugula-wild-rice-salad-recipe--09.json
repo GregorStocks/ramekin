@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons lemon juice (from 1 medium lemon), to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon juice (from 1 medium lemon)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "to taste"
-    },
     "parse_ingredients": {
       "item": "lemon juice (from 1 medium lemon)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "dash orange bitters",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "orange bitters",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "orange bitters",
       "measurements": [

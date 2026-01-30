@@ -1,16 +1,6 @@
 {
   "raw": "1  tub (8 oz, whipped topping, thawed)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tub",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "8 oz, whipped topping, thawed"
-    },
     "parse_ingredients": {
       "item": "tub",
       "measurements": [

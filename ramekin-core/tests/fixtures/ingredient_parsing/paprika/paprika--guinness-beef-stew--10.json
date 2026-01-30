@@ -1,16 +1,6 @@
 {
   "raw": "1 ¼ cups Guinness Draught",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Guinness Draught",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Guinness Draught",
       "measurements": [

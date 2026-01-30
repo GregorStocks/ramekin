@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (113g) cashews, whole and raw",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cashews",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "whole and raw"
-    },
     "parse_ingredients": {
       "item": "cashews",
       "measurements": [

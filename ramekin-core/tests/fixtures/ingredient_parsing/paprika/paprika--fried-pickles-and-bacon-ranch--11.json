@@ -1,20 +1,6 @@
 {
   "raw": "1 (16-ounce) jar dill pickle chips, drained (see notes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dill pickle chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": "drained (see notes)"
-    },
     "parse_ingredients": {
       "item": "dill pickle chips",
       "measurements": [

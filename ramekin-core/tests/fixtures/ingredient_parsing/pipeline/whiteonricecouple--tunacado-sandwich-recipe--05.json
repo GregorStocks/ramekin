@@ -1,16 +1,6 @@
 {
   "raw": "3 Tablespoons mayonnaise (, or to personal taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mayonnaise (, or to personal taste)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mayonnaise (, or to personal taste)",
       "measurements": [

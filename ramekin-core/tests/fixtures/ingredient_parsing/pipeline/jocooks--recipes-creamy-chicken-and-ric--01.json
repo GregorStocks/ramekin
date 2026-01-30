@@ -1,16 +1,6 @@
 {
   "raw": "1 pound chicken breasts (cut into small bite size cubes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken breasts (cut into small bite size cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken breasts (cut into small bite size cubes)",
       "measurements": [

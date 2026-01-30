@@ -1,20 +1,6 @@
 {
   "raw": "600g (4 cups)  bread flour or pizza flour ((or plain/all purpose) (Note 1))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bread flour or pizza flour (or plain/all purpose) (Note 1)",
-      "measurements": [
-        {
-          "amount": "600",
-          "unit": "g"
-        },
-        {
-          "amount": "4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bread flour or pizza flour (or plain/all purpose) (Note 1)",
       "measurements": [

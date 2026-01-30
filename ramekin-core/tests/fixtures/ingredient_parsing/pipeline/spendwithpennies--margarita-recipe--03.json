@@ -1,7 +1,7 @@
 {
   "raw": "1 ounce triple sec (or cointreau)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "triple sec (or cointreau)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "28",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "triple sec (or cointreau)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
         }
       ],
       "note": null

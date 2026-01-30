@@ -1,24 +1,6 @@
 {
   "raw": "1 cup (240g/ml) warm water (about 100–110°F (38°–43°C))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": null
-        },
-        {
-          "amount": "100",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm water",
       "measurements": [

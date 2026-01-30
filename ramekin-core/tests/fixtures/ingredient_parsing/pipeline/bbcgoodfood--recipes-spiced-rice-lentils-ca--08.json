@@ -1,16 +1,6 @@
 {
   "raw": "100g frozen pea",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen pea",
-      "measurements": [
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "frozen pea",
       "measurements": [

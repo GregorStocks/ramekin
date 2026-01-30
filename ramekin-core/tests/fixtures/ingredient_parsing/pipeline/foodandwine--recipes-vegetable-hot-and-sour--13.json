@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces&nbsp;firm tofu, drained and cut into 1/3-inch cubes",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "firm tofu",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "drained and cut into 1/3-inch cubes"
-    },
-    "parse_ingredients": {
-      "item": "firm tofu",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "drained and cut into 1/3-inch cubes"

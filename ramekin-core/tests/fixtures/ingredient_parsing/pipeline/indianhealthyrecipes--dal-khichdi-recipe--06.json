@@ -1,20 +1,6 @@
 {
   "raw": "1  green chili (slit or ½ tsp red chili powder)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green chili",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green chili",
       "measurements": [

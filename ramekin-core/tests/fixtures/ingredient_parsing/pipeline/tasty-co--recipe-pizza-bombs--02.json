@@ -1,7 +1,7 @@
 {
   "raw": "16 ½ oz can of biscuit dough, 1 can",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "can of biscuit dough, 1 can",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "468",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "can of biscuit dough, 1 can",
-      "measurements": [
-        {
-          "amount": "16 1/2",
-          "unit": "oz"
         }
       ],
       "note": null

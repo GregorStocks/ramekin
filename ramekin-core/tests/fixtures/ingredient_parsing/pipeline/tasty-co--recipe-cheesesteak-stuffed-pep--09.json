@@ -1,16 +1,6 @@
 {
   "raw": "3 large white onions, sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white onions",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "large"
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "white onions",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "6 pods green cardamom ((crushed))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pods green cardamom",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "crushed"
-    },
     "parse_ingredients": {
       "item": "pods green cardamom",
       "measurements": [

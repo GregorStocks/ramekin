@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup lemon juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon juice",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon juice",
       "measurements": [

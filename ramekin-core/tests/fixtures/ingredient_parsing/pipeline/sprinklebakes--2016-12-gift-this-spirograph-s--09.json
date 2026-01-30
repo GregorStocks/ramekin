@@ -1,20 +1,6 @@
 {
   "raw": "3 cups 380g all-purpose flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "380",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour",
       "measurements": [

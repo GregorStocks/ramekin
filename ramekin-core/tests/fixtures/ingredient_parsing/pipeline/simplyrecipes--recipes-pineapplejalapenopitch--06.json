@@ -1,16 +1,6 @@
 {
   "raw": "3 cups pineapple juice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pineapple juice",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pineapple juice",
       "measurements": [

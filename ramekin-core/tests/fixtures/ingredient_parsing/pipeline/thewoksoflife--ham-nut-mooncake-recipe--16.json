@@ -1,16 +1,6 @@
 {
   "raw": "200 grams sweet rice flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet rice flour",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sweet rice flour",
       "measurements": [

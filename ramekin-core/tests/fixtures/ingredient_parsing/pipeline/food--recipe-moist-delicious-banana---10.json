@@ -1,16 +1,6 @@
 {
   "raw": "1/2-1   cup   chopped pecans (optional) or 1/2-1   cup    walnuts (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped pecans or 1/2-1 cup walnuts (optional)",
-      "measurements": [
-        {
-          "amount": "1/2-1",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "chopped pecans or 1/2-1 cup walnuts (optional)",
       "measurements": [

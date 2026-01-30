@@ -1,16 +1,6 @@
 {
   "raw": "1 bunch radishes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "radishes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "radishes",
       "measurements": [

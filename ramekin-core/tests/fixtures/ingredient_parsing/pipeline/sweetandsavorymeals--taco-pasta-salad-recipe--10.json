@@ -1,16 +1,6 @@
 {
   "raw": "2 cups crushed Doritos",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crushed Doritos",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crushed Doritos",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1.25 cups chopped red cabbage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped red cabbage",
-      "measurements": [
-        {
-          "amount": "1.25",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped red cabbage",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup 106g brown sugar, packed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "brown sugar",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "106",
-          "unit": "g"
-        }
-      ],
-      "note": "packed"
-    },
     "parse_ingredients": {
       "item": "brown sugar",
       "measurements": [

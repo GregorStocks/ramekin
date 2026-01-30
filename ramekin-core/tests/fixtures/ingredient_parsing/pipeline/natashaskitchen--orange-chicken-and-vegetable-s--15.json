@@ -1,16 +1,6 @@
 {
   "raw": "2 Tbsp honey",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "honey",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "honey",
       "measurements": [

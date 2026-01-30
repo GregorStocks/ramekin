@@ -1,20 +1,6 @@
 {
   "raw": "1 tablespoon (15ml) 2:1 simple syrup (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "2:1 simple syrup (see note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "15",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "2:1 simple syrup (see note)",
       "measurements": [

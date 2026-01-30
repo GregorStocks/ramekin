@@ -1,20 +1,6 @@
 {
   "raw": "4 ounces (115 grams) dried pasta, such as macaroni or another small twisty shape",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried pasta, such as macaroni or another small twisty shape",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried pasta, such as macaroni or another small twisty shape",
       "measurements": [

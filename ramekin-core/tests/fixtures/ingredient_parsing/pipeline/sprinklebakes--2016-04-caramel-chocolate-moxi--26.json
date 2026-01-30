@@ -1,20 +1,6 @@
 {
   "raw": "1  package (50g Marich milk chocolate salted caramel popcorn)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1  package (50g Marich milk chocolate salted caramel popcorn)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "50",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "1  package (50g Marich milk chocolate salted caramel popcorn)",
       "measurements": [

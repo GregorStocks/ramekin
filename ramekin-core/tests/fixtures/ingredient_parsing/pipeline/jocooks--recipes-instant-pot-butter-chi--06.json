@@ -1,16 +1,6 @@
 {
   "raw": "3 teaspoons garam masala",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garam masala",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "garam masala",
       "measurements": [

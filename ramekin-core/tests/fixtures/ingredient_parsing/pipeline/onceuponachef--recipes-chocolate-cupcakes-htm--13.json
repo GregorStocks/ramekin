@@ -1,20 +1,6 @@
 {
   "raw": "20 tablespoons (2½&nbsp;sticks) unsalted butter, softened but still cool",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "20",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": "stick"
-        }
-      ],
-      "note": "softened but still cool"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

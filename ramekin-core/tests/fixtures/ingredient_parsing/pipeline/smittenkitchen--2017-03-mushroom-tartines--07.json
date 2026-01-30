@@ -1,20 +1,6 @@
 {
   "raw": "1 1/2 pounds (680 grams) fresh mushrooms (cremini, white or a mix of wild all work), thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh mushrooms (cremini, white or a mix of wild all work)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "680",
-          "unit": "g"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "fresh mushrooms (cremini, white or a mix of wild all work)",
       "measurements": [

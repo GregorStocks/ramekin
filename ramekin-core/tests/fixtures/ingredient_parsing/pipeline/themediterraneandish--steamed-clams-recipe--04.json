@@ -1,16 +1,6 @@
 {
   "raw": "½  red pepper (cored and chopped (about ½ cup chopped red pepper))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red pepper",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "cored and chopped (about 1/2 cup chopped red pepper"
-    },
     "parse_ingredients": {
       "item": "red pepper",
       "measurements": [

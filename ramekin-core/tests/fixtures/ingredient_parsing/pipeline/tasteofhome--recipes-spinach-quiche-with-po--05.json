@@ -1,7 +1,7 @@
 {
   "raw": "5 ounces frozen chopped spinach, thawed and squeezed dry (about 1/2 cup)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "frozen chopped spinach",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "142",
           "unit": "g"
-        }
-      ],
-      "note": "thawed and squeezed dry"
-    },
-    "parse_ingredients": {
-      "item": "frozen chopped spinach",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/2",
-          "unit": "cup"
         }
       ],
       "note": "thawed and squeezed dry"

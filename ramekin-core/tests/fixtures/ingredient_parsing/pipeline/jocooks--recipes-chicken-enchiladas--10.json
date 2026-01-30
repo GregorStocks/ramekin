@@ -1,16 +1,6 @@
 {
   "raw": "1 cup Mexican blend  (or cheddar cheese, shredded)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Mexican blend",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "or cheddar cheese, shredded"
-    },
     "parse_ingredients": {
       "item": "Mexican blend",
       "measurements": [

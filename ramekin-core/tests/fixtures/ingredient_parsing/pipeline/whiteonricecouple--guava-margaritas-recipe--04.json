@@ -1,7 +1,7 @@
 {
   "raw": "1/2 ounce Orange Liqueur ((triple sec, Grand Marnier, Cointreau, etc.))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "Orange Liqueur (triple sec, Grand Marnier, Cointreau, etc.)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "14",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "Orange Liqueur (triple sec, Grand Marnier, Cointreau, etc.)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,20 +1,6 @@
 {
   "raw": "1 large carrot, chopped (about 1 1/2 cups)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "carrot",
       "measurements": [

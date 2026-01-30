@@ -1,16 +1,6 @@
 {
   "raw": "2 liters water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "l"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water",
       "measurements": [

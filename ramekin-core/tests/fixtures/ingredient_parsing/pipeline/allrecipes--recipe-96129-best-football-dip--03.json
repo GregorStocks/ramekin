@@ -1,7 +1,7 @@
 {
   "raw": "1 (8 ounce) jar prepared salsa",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "prepared salsa",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "prepared salsa",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "jar"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": null

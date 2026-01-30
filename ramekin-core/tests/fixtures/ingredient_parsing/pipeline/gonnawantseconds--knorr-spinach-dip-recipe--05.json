@@ -1,7 +1,7 @@
 {
   "raw": "1 (8 ounces) can water chestnuts, (well-drained and coarsely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "water chestnuts",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "227",
           "unit": "g"
-        }
-      ],
-      "note": "well-drained and coarsely chopped"
-    },
-    "parse_ingredients": {
-      "item": "water chestnuts",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "8",
-          "unit": "oz"
         }
       ],
       "note": "well-drained and coarsely chopped"

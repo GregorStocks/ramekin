@@ -1,24 +1,6 @@
 {
   "raw": "1 medium carrot (4 ounces; 113g), peeled and finely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "113",
-          "unit": "g"
-        }
-      ],
-      "note": "peeled and finely chopped"
-    },
     "parse_ingredients": {
       "item": "carrot",
       "measurements": [

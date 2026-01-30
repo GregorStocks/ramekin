@@ -1,16 +1,6 @@
 {
   "raw": "4 tablespoon sesame seeds",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sesame seeds",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sesame seeds",
       "measurements": [

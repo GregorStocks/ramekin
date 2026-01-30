@@ -1,16 +1,6 @@
 {
   "raw": "6 to 8 cups baby arugula greens",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baby arugula greens",
-      "measurements": [
-        {
-          "amount": "6 to 8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baby arugula greens",
       "measurements": [

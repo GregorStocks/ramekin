@@ -1,16 +1,6 @@
 {
   "raw": "2 pounds chicken breasts (skinless and boneless, cut into bite size pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken breasts (skinless and boneless, cut into bite size pieces)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken breasts (skinless and boneless, cut into bite size pieces)",
       "measurements": [

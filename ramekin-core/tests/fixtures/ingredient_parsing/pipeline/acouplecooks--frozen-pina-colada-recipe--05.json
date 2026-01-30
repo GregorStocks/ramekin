@@ -1,16 +1,6 @@
 {
   "raw": "1/2 tablespoon maple syrup or simple syrup (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "maple syrup or simple syrup",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "maple syrup or simple syrup",
       "measurements": [

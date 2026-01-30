@@ -1,16 +1,6 @@
 {
   "raw": "40  chocolate kisses (or other similar candy, unwrapped (I prefer dark but milk chocolate works too))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chocolate kisses (or other similar candy, unwrapped (I prefer dark but milk chocolate works too)",
-      "measurements": [
-        {
-          "amount": "40",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chocolate kisses (or other similar candy, unwrapped (I prefer dark but milk chocolate works too)",
       "measurements": [

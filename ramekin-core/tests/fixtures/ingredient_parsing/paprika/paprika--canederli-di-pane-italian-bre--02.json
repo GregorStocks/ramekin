@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (237 ml) milk, plus more if needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "237",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus more if needed"
-    },
     "parse_ingredients": {
       "item": "milk",
       "measurements": [

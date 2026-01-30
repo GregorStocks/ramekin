@@ -1,20 +1,6 @@
 {
   "raw": "1 1/2 cups (355 ml) dry red wine, such as Pinot Noir&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry red wine, such as Pinot Noir",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "355",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dry red wine, such as Pinot Noir",
       "measurements": [

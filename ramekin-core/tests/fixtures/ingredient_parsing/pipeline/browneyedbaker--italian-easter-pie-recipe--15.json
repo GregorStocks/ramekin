@@ -1,7 +1,7 @@
 {
   "raw": "4 ounces provolone cheese (shredded (about 1 cup))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "provolone cheese",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "shredded (about 1 cup"
-    },
-    "parse_ingredients": {
-      "item": "provolone cheese",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "shredded (about 1 cup"

@@ -1,24 +1,6 @@
 {
   "raw": "1 cup slivered almonds (4 1/2 ounces; 130g) (see note)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "slivered almonds (see note)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "130",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "slivered almonds (see note)",
       "measurements": [

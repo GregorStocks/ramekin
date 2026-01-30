@@ -1,16 +1,6 @@
 {
   "raw": "1 box Betty Crocker® French vanilla cake mix",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Betty Crocker® French vanilla cake mix",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "box"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Betty Crocker® French vanilla cake mix",
       "measurements": [

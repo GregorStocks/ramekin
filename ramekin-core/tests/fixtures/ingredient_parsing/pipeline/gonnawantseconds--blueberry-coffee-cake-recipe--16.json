@@ -1,16 +1,6 @@
 {
   "raw": "1/2  cup  blueberries (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "blueberries",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "blueberries",
       "measurements": [

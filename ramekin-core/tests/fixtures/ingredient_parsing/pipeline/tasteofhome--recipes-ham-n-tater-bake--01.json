@@ -1,7 +1,7 @@
 {
   "raw": "1 package (28 ounces) frozen steak fries",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "frozen steak fries",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "794",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "frozen steak fries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "28",
-          "unit": "oz"
         }
       ],
       "note": null

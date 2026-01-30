@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup prepared guacamole (homemade or store-bought)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "prepared guacamole (homemade or store-bought)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "prepared guacamole (homemade or store-bought)",
       "measurements": [

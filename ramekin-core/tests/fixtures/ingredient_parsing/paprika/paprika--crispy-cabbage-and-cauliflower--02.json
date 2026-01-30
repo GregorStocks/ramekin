@@ -1,16 +1,6 @@
 {
   "raw": "1/2 pound savoy cabbage (from half a small head)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "savoy cabbage (from half a small head)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "savoy cabbage (from half a small head)",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "2 tablespoons (30 ml) dry sherry, vermouth, or white wine (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dry sherry, vermouth, or white wine",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "dry sherry, vermouth, or white wine",
       "measurements": [

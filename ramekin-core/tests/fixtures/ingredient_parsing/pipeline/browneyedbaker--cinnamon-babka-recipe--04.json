@@ -1,16 +1,6 @@
 {
   "raw": "⅛ teaspoon salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

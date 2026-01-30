@@ -1,16 +1,6 @@
 {
   "raw": "3 tbsp shelled pistachios",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shelled pistachios",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shelled pistachios",
       "measurements": [

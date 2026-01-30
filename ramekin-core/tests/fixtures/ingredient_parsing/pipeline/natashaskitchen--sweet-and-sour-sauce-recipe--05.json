@@ -1,16 +1,6 @@
 {
   "raw": "1 cup granulated sugar (for less sweet taste, reduce a few Tbsp)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "for less sweet taste, reduce a few Tbsp"
-    },
     "parse_ingredients": {
       "item": "granulated sugar",
       "measurements": [

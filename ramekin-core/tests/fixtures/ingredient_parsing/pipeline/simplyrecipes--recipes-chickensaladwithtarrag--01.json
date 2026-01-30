@@ -1,16 +1,6 @@
 {
   "raw": "2 cups finely chopped, cooked chicken meat",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "cooked chicken meat"
-    },
     "parse_ingredients": {
       "item": "finely chopped",
       "measurements": [

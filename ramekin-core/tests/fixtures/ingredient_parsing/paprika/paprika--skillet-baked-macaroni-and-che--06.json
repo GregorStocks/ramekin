@@ -1,24 +1,6 @@
 {
   "raw": "1 cup (4 ounces or 115 grams) coarsely grated gruyère, comte, jack, gouda, fontina, or raclette",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "coarsely grated gruyère, comte, jack, gouda, fontina, or raclette",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "115",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "coarsely grated gruyère, comte, jack, gouda, fontina, or raclette",
       "measurements": [

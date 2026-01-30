@@ -1,7 +1,7 @@
 {
   "raw": "½ ounce freshly squeezed lime juice",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "freshly squeezed lime juice",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "14",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "freshly squeezed lime juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "oz"
         }
       ],
       "note": null

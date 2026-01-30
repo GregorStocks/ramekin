@@ -1,11 +1,6 @@
 {
   "raw": "shredded cheese, for serving",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded cheese",
-      "measurements": [],
-      "note": "for serving"
-    },
     "parse_ingredients": {
       "item": "shredded cheese",
       "measurements": [],

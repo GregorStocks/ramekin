@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons capers, drained",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "capers",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "capers",
       "measurements": [

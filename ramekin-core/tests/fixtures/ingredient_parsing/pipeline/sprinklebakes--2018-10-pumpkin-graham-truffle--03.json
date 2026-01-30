@@ -1,7 +1,7 @@
 {
   "raw": "18 ounces white candy melts (or white chocolate)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "white candy melts (or white chocolate)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "510",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "white candy melts (or white chocolate)",
-      "measurements": [
-        {
-          "amount": "18",
-          "unit": "oz"
         }
       ],
       "note": null

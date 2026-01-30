@@ -1,16 +1,6 @@
 {
   "raw": "4  large sweet onions, (thinly sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet onions",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "large"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "sweet onions",
       "measurements": [

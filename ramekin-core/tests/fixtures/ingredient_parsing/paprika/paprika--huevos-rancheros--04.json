@@ -1,16 +1,6 @@
 {
   "raw": "1 Egg",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Egg",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "¼ to ½ teaspoon red chili powder ((adjust to taste))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red chili powder",
-      "measurements": [
-        {
-          "amount": "1/4 to 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "adjust to taste"
-    },
     "parse_ingredients": {
       "item": "red chili powder",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 tsp (optional) maple syrup or other sweetener",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "maple syrup or other sweetener",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "maple syrup or other sweetener",
       "measurements": [

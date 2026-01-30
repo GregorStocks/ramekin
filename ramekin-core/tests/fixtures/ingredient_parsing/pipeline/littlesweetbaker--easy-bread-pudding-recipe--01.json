@@ -1,20 +1,6 @@
 {
   "raw": "600 g (1 loaf) stale cinnamon raisin bread (cubed and omit the end pieces)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "stale cinnamon raisin bread",
-      "measurements": [
-        {
-          "amount": "600",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "cubed and omit the end pieces"
-    },
     "parse_ingredients": {
       "item": "stale cinnamon raisin bread",
       "measurements": [

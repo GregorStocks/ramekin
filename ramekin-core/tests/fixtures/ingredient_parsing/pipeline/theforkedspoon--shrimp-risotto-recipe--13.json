@@ -1,16 +1,6 @@
 {
   "raw": "8 cups homemade shrimp stock ((or low-sodium chicken stock, vegetable broth, or water))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "homemade shrimp stock (or low-sodium chicken stock, vegetable broth, or water)",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "homemade shrimp stock (or low-sodium chicken stock, vegetable broth, or water)",
       "measurements": [

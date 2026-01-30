@@ -1,16 +1,6 @@
 {
   "raw": "1 pinch paprika (Pinch of paprika or sumac for serving)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "paprika",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "pinch"
-        }
-      ],
-      "note": "Pinch of paprika or sumac for serving"
-    },
     "parse_ingredients": {
       "item": "paprika",
       "measurements": [

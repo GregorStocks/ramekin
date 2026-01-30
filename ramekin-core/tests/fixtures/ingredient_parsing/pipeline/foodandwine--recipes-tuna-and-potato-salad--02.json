@@ -1,16 +1,6 @@
 {
   "raw": "1 medium carrot, peeled and cut into 1/4-inch pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and cut into 1/4-inch pieces"
-    },
     "parse_ingredients": {
       "item": "carrot",
       "measurements": [

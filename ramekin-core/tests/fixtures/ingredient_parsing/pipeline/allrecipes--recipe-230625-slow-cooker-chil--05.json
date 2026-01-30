@@ -1,7 +1,7 @@
 {
   "raw": "1 (29 ounce) can pinto beans, undrained",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "pinto beans",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "822",
           "unit": "g"
-        }
-      ],
-      "note": "undrained"
-    },
-    "parse_ingredients": {
-      "item": "pinto beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "29",
-          "unit": "oz"
         }
       ],
       "note": "undrained"

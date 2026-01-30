@@ -1,16 +1,6 @@
 {
   "raw": "½ cup heavy whipping cream, hot",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heavy whipping cream, hot",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "heavy whipping cream, hot",
       "measurements": [

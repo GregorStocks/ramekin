@@ -1,16 +1,6 @@
 {
   "raw": "105 g unbleached all-purpose flour or bread flour  ((divided into 3 portions of 35g))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unbleached all-purpose flour or bread flour",
-      "measurements": [
-        {
-          "amount": "105",
-          "unit": "g"
-        }
-      ],
-      "note": "divided into 3 portions of 35g"
-    },
     "parse_ingredients": {
       "item": "unbleached all-purpose flour or bread flour",
       "measurements": [

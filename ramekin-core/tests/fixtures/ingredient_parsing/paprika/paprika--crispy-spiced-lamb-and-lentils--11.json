@@ -1,16 +1,6 @@
 {
   "raw": "Handful of tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tomatoes",
       "measurements": [

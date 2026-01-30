@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup pistachios, (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pistachios",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "pistachios",
       "measurements": [

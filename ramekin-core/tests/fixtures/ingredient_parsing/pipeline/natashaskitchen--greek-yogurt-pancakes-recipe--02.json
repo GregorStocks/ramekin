@@ -1,16 +1,6 @@
 {
   "raw": "4 Tbsp milk or to desired thickness",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk or to desired thickness",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "milk or to desired thickness",
       "measurements": [

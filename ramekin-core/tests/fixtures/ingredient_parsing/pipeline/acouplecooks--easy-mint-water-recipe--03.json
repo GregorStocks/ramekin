@@ -1,7 +1,7 @@
 {
   "raw": "7 cups (64 ounces) cold water",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "cold water",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "1814",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "cold water",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "cup"
-        },
-        {
-          "amount": "64",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "1 large egg [or two, according to commenters]",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg [or two, according to commenters]",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "egg [or two, according to commenters]",
       "measurements": [

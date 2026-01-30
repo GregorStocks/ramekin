@@ -1,16 +1,6 @@
 {
   "raw": "One 6-ounce can or jar solid white tuna in olive oil, preferably Spanish or Italian, drained and flaked",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "or jar solid white tuna in olive oil, preferably Spanish or Italian",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "6-ounce can"
-        }
-      ],
-      "note": "drained and flaked"
-    },
     "parse_ingredients": {
       "item": "or jar solid white tuna in olive oil, preferably Spanish or Italian",
       "measurements": [

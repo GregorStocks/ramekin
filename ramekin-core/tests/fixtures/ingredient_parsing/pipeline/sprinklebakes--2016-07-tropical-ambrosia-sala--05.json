@@ -1,7 +1,7 @@
 {
   "raw": "11 ounce can mandarin orange segments (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "can mandarin orange segments",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "312",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "can mandarin orange segments",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "oz"
         }
       ],
       "note": "drained"

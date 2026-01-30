@@ -1,20 +1,6 @@
 {
   "raw": "1/4 cup (24 g) Dutch process cocoa powder ((scoop and level to measure))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Dutch process cocoa powder (scoop and level to measure)",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "24",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Dutch process cocoa powder (scoop and level to measure)",
       "measurements": [

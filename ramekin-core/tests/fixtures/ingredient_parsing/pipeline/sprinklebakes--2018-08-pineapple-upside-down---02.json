@@ -1,20 +1,6 @@
 {
   "raw": "1 cup 125g stone ground cornmeal",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "stone ground cornmeal",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "stone ground cornmeal",
       "measurements": [

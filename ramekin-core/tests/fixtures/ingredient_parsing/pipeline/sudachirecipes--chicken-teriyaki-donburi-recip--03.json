@@ -1,16 +1,6 @@
 {
   "raw": "2 pinches salt and pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt and pepper",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt and pepper",
       "measurements": [

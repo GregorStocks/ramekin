@@ -1,16 +1,6 @@
 {
   "raw": "900 grams beef shanks (or shortribs (cut into large cubes))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef shanks (or shortribs (cut into large cubes)",
-      "measurements": [
-        {
-          "amount": "900",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef shanks (or shortribs (cut into large cubes)",
       "measurements": [

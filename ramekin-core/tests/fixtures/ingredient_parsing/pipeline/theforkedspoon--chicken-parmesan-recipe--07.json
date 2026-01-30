@@ -1,16 +1,6 @@
 {
   "raw": "6  fresh basil leaves (plus more to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh basil leaves",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": null
-        }
-      ],
-      "note": "plus more to taste"
-    },
     "parse_ingredients": {
       "item": "fresh basil leaves",
       "measurements": [

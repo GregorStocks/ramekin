@@ -1,16 +1,6 @@
 {
   "raw": "12- ounces frozen orange juice concentrate",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "- ounces frozen orange juice concentrate",
-      "measurements": [
-        {
-          "amount": "12",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "- ounces frozen orange juice concentrate",
       "measurements": [

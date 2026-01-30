@@ -1,16 +1,6 @@
 {
   "raw": "60 g cabbage",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cabbage",
-      "measurements": [
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cabbage",
       "measurements": [

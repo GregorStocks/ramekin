@@ -1,7 +1,7 @@
 {
   "raw": "14 oz low sodium chicken broth",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "low sodium chicken broth",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "397",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "low sodium chicken broth",
-      "measurements": [
-        {
-          "amount": "14",
-          "unit": "oz"
         }
       ],
       "note": null

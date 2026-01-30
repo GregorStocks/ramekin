@@ -1,16 +1,6 @@
 {
   "raw": "1 fresh chile pepper, chopped small (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh chile pepper, chopped small",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "fresh chile pepper, chopped small",
       "measurements": [

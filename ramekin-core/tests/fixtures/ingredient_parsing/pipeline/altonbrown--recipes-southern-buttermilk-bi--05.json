@@ -1,16 +1,6 @@
 {
   "raw": "1/3 cup leaf lard, chilled",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leaf lard",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "chilled"
-    },
     "parse_ingredients": {
       "item": "leaf lard",
       "measurements": [

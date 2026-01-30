@@ -1,16 +1,6 @@
 {
   "raw": "1¼ cups plus 2 tablespoons (or more) lard, melted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1¼ cups plus 2 tablespoons (or more) lard, melted",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or more"
-    },
     "parse_ingredients": {
       "item": "1¼ cups plus 2 tablespoons (or more) lard, melted",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "½ cup club soda",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "club soda",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "club soda",
       "measurements": [

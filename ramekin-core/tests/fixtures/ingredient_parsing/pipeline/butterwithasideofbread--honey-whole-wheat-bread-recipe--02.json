@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 cup very warm water (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "very warm water",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "very warm water",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "¾ cup unsalted butter, 1 1/2 sticks, cubed, room temperature",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter, 1 1/2 sticks, cubed",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "room temperature"
-    },
     "parse_ingredients": {
       "item": "unsalted butter, 1 1/2 sticks, cubed",
       "measurements": [

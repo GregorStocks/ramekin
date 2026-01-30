@@ -1,16 +1,6 @@
 {
   "raw": "2 to 3 cups queso blanco",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "queso blanco",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "queso blanco",
       "measurements": [

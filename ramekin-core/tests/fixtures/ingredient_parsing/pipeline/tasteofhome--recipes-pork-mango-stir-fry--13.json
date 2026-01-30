@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup lightly salted cashews, coarsely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lightly salted cashews",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "coarsely chopped"
-    },
     "parse_ingredients": {
       "item": "lightly salted cashews",
       "measurements": [

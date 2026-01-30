@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp crème fraîche",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crème fraîche",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crème fraîche",
       "measurements": [

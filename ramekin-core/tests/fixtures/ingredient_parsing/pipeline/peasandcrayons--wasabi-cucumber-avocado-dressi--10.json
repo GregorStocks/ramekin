@@ -1,16 +1,6 @@
 {
   "raw": "2-4 cups greens ((I used spring mix))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "greens (I used spring mix)",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "greens (I used spring mix)",
       "measurements": [

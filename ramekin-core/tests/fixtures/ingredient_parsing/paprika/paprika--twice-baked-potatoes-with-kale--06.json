@@ -1,16 +1,6 @@
 {
   "raw": "1 large leek",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leek",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leek",
       "measurements": [

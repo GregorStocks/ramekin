@@ -1,16 +1,6 @@
 {
   "raw": "1/4 to 1/2 head of cabbage, thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cabbage",
-      "measurements": [
-        {
-          "amount": "1/4 to 1/2",
-          "unit": "head"
-        }
-      ],
-      "note": "thinly sliced"
-    },
     "parse_ingredients": {
       "item": "cabbage",
       "measurements": [

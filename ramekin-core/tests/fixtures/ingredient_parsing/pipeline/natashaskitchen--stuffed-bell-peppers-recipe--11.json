@@ -1,16 +1,6 @@
 {
   "raw": "1 tsp salt for boiling water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt for boiling water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salt for boiling water",
       "measurements": [

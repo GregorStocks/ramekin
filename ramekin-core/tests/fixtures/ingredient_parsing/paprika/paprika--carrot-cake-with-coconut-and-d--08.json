@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 teaspoons kosher salt (Diamond brand; use 1 teaspoon of other brands)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kosher salt (Diamond brand; use 1 teaspoon of other brands)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "kosher salt (Diamond brand; use 1 teaspoon of other brands)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 pounds flank steak (sliced against the grain into thin ¼ inch thick slices)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "flank steak",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced against the grain into thin 1/4 inch thick slices"
-    },
     "parse_ingredients": {
       "item": "flank steak",
       "measurements": [

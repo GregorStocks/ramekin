@@ -1,16 +1,6 @@
 {
   "raw": "75 g semisweet chocolate (finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "semisweet chocolate",
-      "measurements": [
-        {
-          "amount": "75",
-          "unit": "g"
-        }
-      ],
-      "note": "finely chopped (I used a mix of 50g 60% dark chocolate and 25g 38% milk chocolate"
-    },
     "parse_ingredients": {
       "item": "semisweet chocolate",
       "measurements": [

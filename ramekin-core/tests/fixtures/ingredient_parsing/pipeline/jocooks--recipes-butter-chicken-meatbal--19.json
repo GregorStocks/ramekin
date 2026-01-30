@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon coriander (ground)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "coriander",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "ground"
-    },
     "parse_ingredients": {
       "item": "coriander",
       "measurements": [

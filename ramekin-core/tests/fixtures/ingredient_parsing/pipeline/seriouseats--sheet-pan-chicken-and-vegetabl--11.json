@@ -1,20 +1,6 @@
 {
   "raw": "1 large red Thai chile, finely chopped (about 1 teaspoon)&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red Thai chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "finely chopped"
-    },
     "parse_ingredients": {
       "item": "red Thai chile",
       "measurements": [

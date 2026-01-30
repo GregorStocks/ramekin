@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 teaspoons salt, or to taste (we wanted more)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or to taste (we wanted more)"
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon natural granulated sweetener (if white, raw or coconut sugar, and counting your calories, remember to add this in.)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "natural granulated sweetener",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "if white, raw or coconut sugar, and counting your calories, remember to add this in."
-    },
     "parse_ingredients": {
       "item": "natural granulated sweetener",
       "measurements": [

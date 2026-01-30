@@ -1,16 +1,6 @@
 {
   "raw": "1 bunch kale, (wash and torn from the stems, coarsely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kale",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "bunch"
-        }
-      ],
-      "note": "wash and torn from the stems, coarsely chopped"
-    },
     "parse_ingredients": {
       "item": "kale",
       "measurements": [

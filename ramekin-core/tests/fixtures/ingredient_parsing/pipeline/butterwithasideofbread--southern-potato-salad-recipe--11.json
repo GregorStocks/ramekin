@@ -1,16 +1,6 @@
 {
   "raw": "dash  paprika",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "paprika",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "dash"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "paprika",
       "measurements": [

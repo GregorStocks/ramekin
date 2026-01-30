@@ -1,16 +1,6 @@
 {
   "raw": "1  small onion (chopped (1 cup chopped onion))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": "chopped (1 cup chopped onion"
-    },
     "parse_ingredients": {
       "item": "onion",
       "measurements": [

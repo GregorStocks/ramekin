@@ -1,16 +1,6 @@
 {
   "raw": "1 Cup White Onion (Finely Chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "White Onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "Finely Chopped"
-    },
     "parse_ingredients": {
       "item": "White Onion",
       "measurements": [

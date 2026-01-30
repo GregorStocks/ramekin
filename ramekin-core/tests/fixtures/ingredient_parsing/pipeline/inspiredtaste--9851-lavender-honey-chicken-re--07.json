@@ -1,16 +1,6 @@
 {
   "raw": "½ cup pure honey",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pure honey",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pure honey",
       "measurements": [

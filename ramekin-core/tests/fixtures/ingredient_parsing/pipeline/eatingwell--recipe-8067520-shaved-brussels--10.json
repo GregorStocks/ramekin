@@ -1,16 +1,6 @@
 {
   "raw": "0.25 teaspoon salt, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "0.25",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

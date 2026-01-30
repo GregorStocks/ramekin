@@ -1,24 +1,6 @@
 {
   "raw": "1/2 cup (125ml) fresh lemon juice ((about 2 lemons))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh lemon juice",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "125",
-          "unit": "ml"
-        },
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh lemon juice",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 cup uncooked white rice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "uncooked white rice",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "uncooked white rice",
       "measurements": [

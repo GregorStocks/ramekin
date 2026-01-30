@@ -1,16 +1,6 @@
 {
   "raw": "½ cup cherry tomatoes (halved)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cherry tomatoes",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "cherry tomatoes",
       "measurements": [

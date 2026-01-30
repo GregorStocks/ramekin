@@ -1,16 +1,6 @@
 {
   "raw": "1 cup leafy greens, such as mesclun, baby kale, or spinach",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leafy greens, such as mesclun, baby kale, or spinach",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leafy greens, such as mesclun, baby kale, or spinach",
       "measurements": [

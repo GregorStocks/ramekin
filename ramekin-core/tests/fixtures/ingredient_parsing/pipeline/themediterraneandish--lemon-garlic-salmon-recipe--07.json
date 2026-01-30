@@ -1,16 +1,6 @@
 {
   "raw": "5  garlic cloves, (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "garlic cloves",
       "measurements": [

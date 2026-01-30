@@ -1,16 +1,6 @@
 {
   "raw": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "large"
-        }
-      ],
-      "note": "tart, firm apples, thinly sliced (tested with Granny Smith"
-    },
     "parse_ingredients": {
       "item": "5  large (tart, firm apples, thinly sliced (tested with Granny Smith))",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 (16-ounce) package cooked ham steak (or leftover holiday ham )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked ham steak (or leftover holiday ham",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "package"
-        },
-        {
-          "amount": "16",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cooked ham steak (or leftover holiday ham",
       "measurements": [

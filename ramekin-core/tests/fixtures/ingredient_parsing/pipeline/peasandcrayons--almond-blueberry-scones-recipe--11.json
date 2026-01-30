@@ -1,16 +1,6 @@
 {
   "raw": "1 cup blueberries (fresh or frozen)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "blueberries",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "fresh or frozen"
-    },
     "parse_ingredients": {
       "item": "blueberries",
       "measurements": [

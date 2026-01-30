@@ -1,16 +1,6 @@
 {
   "raw": "1/3 cup very finely ground walnuts (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "very finely ground walnuts",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "very finely ground walnuts",
       "measurements": [

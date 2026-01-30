@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons amaretto liqueur",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "amaretto liqueur",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "amaretto liqueur",
       "measurements": [

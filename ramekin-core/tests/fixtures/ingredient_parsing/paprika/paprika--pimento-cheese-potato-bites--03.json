@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup (2.75 ounces) finely chopped drained pimentos or roasted red peppers (from 1 4-ounce jar of pimentos)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "finely chopped drained pimentos or roasted red peppers (from 1 4-ounce jar of pimentos)",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "78",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "finely chopped drained pimentos or roasted red peppers (from 1 4-ounce jar of pimentos)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "2.75",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,20 +1,6 @@
 {
   "raw": "1 cup 190g crushed Mother’s Frosted Circus Animal Cookies",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crushed Mother’s Frosted Circus Animal Cookies",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "190",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crushed Mother’s Frosted Circus Animal Cookies",
       "measurements": [

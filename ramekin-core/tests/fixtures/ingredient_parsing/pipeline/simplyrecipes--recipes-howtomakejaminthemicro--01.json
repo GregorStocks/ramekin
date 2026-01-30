@@ -1,16 +1,6 @@
 {
   "raw": "2 to 3 cups berries or other diced fruit",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "berries or other diced fruit",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "berries or other diced fruit",
       "measurements": [

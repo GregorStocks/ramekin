@@ -1,16 +1,6 @@
 {
   "raw": "2 to 3  kale leaves, to taste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kale leaves",
-      "measurements": [
-        {
-          "amount": "2 to 3",
-          "unit": null
-        }
-      ],
-      "note": "to taste"
-    },
     "parse_ingredients": {
       "item": "kale leaves",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "16 cups spinach leaves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "spinach leaves",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "spinach leaves",
       "measurements": [

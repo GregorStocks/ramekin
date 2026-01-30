@@ -1,7 +1,7 @@
 {
   "raw": "20 to 24 ounces ground beef (90/10)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "ground beef",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "567 to 680",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "20 to 24",
-          "unit": "oz"
-        },
-        {
-          "amount": "90/10",
-          "unit": null
         }
       ],
       "note": null

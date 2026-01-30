@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup cooked rice (you can use any rice that you like)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cooked rice (you can use any rice that you like)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cooked rice (you can use any rice that you like)",
       "measurements": [

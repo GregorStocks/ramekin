@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons gochujang",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "gochujang",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "gochujang",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 Thai chile, very thinly sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Thai chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "very thinly sliced"
-    },
     "parse_ingredients": {
       "item": "Thai chile",
       "measurements": [

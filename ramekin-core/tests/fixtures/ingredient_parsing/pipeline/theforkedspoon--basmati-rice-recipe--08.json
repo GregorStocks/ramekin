@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon fresh mint (minced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh mint",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "minced"
-    },
     "parse_ingredients": {
       "item": "fresh mint",
       "measurements": [

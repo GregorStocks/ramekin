@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon minced fresh dill, optional",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "minced fresh dill",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "minced fresh dill",
       "measurements": [

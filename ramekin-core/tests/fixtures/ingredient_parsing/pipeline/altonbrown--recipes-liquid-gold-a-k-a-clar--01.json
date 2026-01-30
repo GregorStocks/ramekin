@@ -1,16 +1,6 @@
 {
   "raw": "1 pound high-quality butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "high-quality butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "high-quality butter",
       "measurements": [

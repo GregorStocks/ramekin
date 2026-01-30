@@ -1,16 +1,6 @@
 {
   "raw": "⅓ cup finely ground almond flour plus 2 tbsp",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely ground almond flour",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 tbsp"
-    },
     "parse_ingredients": {
       "item": "finely ground almond flour",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "2  medium heads of cabbage (4lb)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heads of cabbage",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "medium"
-        },
-        {
-          "amount": "4",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "heads of cabbage",
       "measurements": [

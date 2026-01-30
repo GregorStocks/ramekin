@@ -1,16 +1,6 @@
 {
   "raw": "10 drops green food coloring",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "green food coloring",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "drop"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "green food coloring",
       "measurements": [

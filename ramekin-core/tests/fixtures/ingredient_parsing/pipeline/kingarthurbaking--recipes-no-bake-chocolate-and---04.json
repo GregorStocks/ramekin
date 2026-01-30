@@ -1,20 +1,6 @@
 {
   "raw": "1/4 cup (37g) dates, chopped*",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dates",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "37",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped*"
-    },
     "parse_ingredients": {
       "item": "dates",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "0.75 cup unsweetened cocoa powder, plus more for pan",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsweetened cocoa powder",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for pan"
-    },
     "parse_ingredients": {
       "item": "unsweetened cocoa powder",
       "measurements": [

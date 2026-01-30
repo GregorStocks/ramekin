@@ -1,16 +1,6 @@
 {
   "raw": "1  egg + 1 teaspoon water, (beaten together for egg wash)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg + 1 teaspoon water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "beaten together for egg wash"
-    },
     "parse_ingredients": {
       "item": "egg + 1 teaspoon water",
       "measurements": [

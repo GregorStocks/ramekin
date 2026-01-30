@@ -1,7 +1,7 @@
 {
   "raw": "14.5 ounce diced tomatoes  (1 can)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "diced tomatoes",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "411",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "diced tomatoes",
-      "measurements": [
-        {
-          "amount": "14.5",
-          "unit": "oz"
-        },
-        {
-          "amount": "1",
-          "unit": "can"
         }
       ],
       "note": null

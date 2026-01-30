@@ -1,7 +1,7 @@
 {
   "raw": "1/2 cup (1 stick, 4 ounces, 8 tablespoons) butter",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "butter",
       "measurements": [
         {
@@ -23,28 +23,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "1",
-          "unit": "stick"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
-        },
-        {
-          "amount": "8",
-          "unit": "tbsp"
         }
       ],
       "note": null

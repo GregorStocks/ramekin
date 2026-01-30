@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon dried rosemary (or 1 sprig fresh)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried rosemary",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1 sprig fresh"
-    },
     "parse_ingredients": {
       "item": "dried rosemary",
       "measurements": [

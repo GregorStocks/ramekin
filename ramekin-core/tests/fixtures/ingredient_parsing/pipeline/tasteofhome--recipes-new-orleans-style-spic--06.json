@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons chili garlic sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chili garlic sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chili garlic sauce",
       "measurements": [

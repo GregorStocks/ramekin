@@ -1,16 +1,6 @@
 {
   "raw": "2 portions cooked Japanese short-grain rice (approx. 150 g per person)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "portions cooked Japanese short-grain rice (approx. 150 g per person)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "portions cooked Japanese short-grain rice (approx. 150 g per person)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup barbeque sauce (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "barbeque sauce",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "barbeque sauce",
       "measurements": [

@@ -1,28 +1,6 @@
 {
   "raw": "4 (6-inch) fresh pita (9 ounces, 256g total), see note",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh pita , see note",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        },
-        {
-          "amount": "6",
-          "unit": null
-        },
-        {
-          "amount": "9",
-          "unit": "oz"
-        },
-        {
-          "amount": "256",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh pita , see note",
       "measurements": [

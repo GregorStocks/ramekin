@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons Tabasco",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Tabasco",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Tabasco",
       "measurements": [

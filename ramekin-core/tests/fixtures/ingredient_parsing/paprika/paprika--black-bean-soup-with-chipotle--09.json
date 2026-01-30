@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon chopped chipotle chiles from a can (this gives it a solid kick, dial back if you are wary)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped chipotle chiles from a can (this gives it a solid kick, dial back if you are wary)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped chipotle chiles from a can (this gives it a solid kick, dial back if you are wary)",
       "measurements": [

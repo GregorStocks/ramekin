@@ -1,7 +1,7 @@
 {
   "raw": "11 ounces (11 cups) baby spinach, chopped coarse",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "baby spinach",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "312",
           "unit": "g"
-        }
-      ],
-      "note": "chopped coarse"
-    },
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "11",
-          "unit": "oz"
-        },
-        {
-          "amount": "11",
-          "unit": "cup"
         }
       ],
       "note": "chopped coarse"

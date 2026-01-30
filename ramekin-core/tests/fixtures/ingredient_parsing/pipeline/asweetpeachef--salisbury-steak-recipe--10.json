@@ -1,16 +1,6 @@
 {
   "raw": "11/2 tsp. red wine vinegar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red wine vinegar",
-      "measurements": [
-        {
-          "amount": "11/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "red wine vinegar",
       "measurements": [

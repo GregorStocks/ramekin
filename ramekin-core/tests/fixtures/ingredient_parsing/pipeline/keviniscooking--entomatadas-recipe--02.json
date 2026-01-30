@@ -1,16 +1,6 @@
 {
   "raw": "1/2  medium white onion",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white onion",
       "measurements": [

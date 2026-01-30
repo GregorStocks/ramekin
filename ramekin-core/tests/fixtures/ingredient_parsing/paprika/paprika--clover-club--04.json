@@ -1,7 +1,7 @@
 {
   "raw": "¾ ounce fresh squeezed lemon juice",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh squeezed lemon juice",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "21",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "fresh squeezed lemon juice",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
         }
       ],
       "note": null

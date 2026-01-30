@@ -1,7 +1,7 @@
 {
   "raw": "2 oz. fresh orange juice (, about 1/2 an orange)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "fresh orange juice",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "fresh orange juice",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "1/2",
-          "unit": null
         }
       ],
       "note": null

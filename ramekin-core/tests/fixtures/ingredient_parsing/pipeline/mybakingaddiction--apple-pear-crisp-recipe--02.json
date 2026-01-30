@@ -1,20 +1,6 @@
 {
   "raw": "4 cups peeled, cored, and thinly sliced pears  (about 5 large)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "peeled, cored",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "5",
-          "unit": "large"
-        }
-      ],
-      "note": "and thinly sliced pears"
-    },
     "parse_ingredients": {
       "item": "peeled, cored",
       "measurements": [

@@ -1,24 +1,6 @@
 {
   "raw": "8 ounces (225g) cream cheese ((1 package), softened)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cream cheese",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": "oz"
-        },
-        {
-          "amount": "225",
-          "unit": "g"
-        },
-        {
-          "amount": "1",
-          "unit": "package"
-        }
-      ],
-      "note": "softened)"
-    },
     "parse_ingredients": {
       "item": "cream cheese",
       "measurements": [

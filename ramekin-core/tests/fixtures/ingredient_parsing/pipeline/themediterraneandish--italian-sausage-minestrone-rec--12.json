@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup small pasta such as mini Farfalle or elbow macaroni",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "small pasta such as mini Farfalle or elbow macaroni",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "small pasta such as mini Farfalle or elbow macaroni",
       "measurements": [

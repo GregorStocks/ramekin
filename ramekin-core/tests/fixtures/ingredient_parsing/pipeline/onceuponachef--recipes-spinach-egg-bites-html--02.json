@@ -1,20 +1,6 @@
 {
   "raw": "1¼ cups  (4% milkfat) cottage cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "cottage cheese",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "cottage cheese",
       "measurements": [

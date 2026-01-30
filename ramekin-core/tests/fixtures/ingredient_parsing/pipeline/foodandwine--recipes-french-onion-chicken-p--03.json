@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons kosher salt, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "kosher salt",
       "measurements": [

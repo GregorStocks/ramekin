@@ -1,16 +1,6 @@
 {
   "raw": "4 cloves garlic, grated or minced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "clove"
-        }
-      ],
-      "note": "grated or minced"
-    },
     "parse_ingredients": {
       "item": "garlic",
       "measurements": [

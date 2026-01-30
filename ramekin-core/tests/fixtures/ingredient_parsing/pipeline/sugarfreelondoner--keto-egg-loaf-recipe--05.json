@@ -1,16 +1,6 @@
 {
   "raw": "2 tbsp  granulated sweetener  (or more, to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "granulated sweetener",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or more, to taste"
-    },
     "parse_ingredients": {
       "item": "granulated sweetener",
       "measurements": [

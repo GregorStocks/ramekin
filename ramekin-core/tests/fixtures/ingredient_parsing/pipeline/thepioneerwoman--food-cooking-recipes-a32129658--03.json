@@ -1,16 +1,6 @@
 {
   "raw": "45 brown M&amp;amp;Ms",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "brown M&Ms",
-      "measurements": [
-        {
-          "amount": "45",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "brown M&Ms",
       "measurements": [

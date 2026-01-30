@@ -1,20 +1,6 @@
 {
   "raw": "3 cups (360g) King Arthur Unbleached All-Purpose Flour",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "King Arthur Unbleached All-Purpose Flour",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        },
-        {
-          "amount": "360",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "King Arthur Unbleached All-Purpose Flour",
       "measurements": [

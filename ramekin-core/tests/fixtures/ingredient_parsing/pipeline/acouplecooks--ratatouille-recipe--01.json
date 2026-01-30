@@ -1,16 +1,6 @@
 {
   "raw": "1 medium eggplant, cut into 3/4” pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "eggplant, cut into 3/4” pieces",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "eggplant, cut into 3/4” pieces",
       "measurements": [

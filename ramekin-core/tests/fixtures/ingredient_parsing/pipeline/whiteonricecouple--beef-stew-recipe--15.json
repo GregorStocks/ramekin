@@ -1,16 +1,6 @@
 {
   "raw": "3 Tablespoons corn starch",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "corn starch",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "corn starch",
       "measurements": [

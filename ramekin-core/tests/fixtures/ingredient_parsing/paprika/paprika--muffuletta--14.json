@@ -1,16 +1,6 @@
 {
   "raw": "¼ pound soppresatta, thin-sliced (or other hard salami)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soppresatta",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "thin-sliced (or other hard salami)"
-    },
     "parse_ingredients": {
       "item": "soppresatta",
       "measurements": [

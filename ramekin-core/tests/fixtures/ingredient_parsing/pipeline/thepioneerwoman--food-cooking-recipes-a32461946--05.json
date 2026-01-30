@@ -1,16 +1,6 @@
 {
   "raw": "2 lb. small red bliss potatoes, halved",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "small red bliss potatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved"
-    },
     "parse_ingredients": {
       "item": "small red bliss potatoes",
       "measurements": [

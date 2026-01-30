@@ -1,24 +1,6 @@
 {
   "raw": "4 tablespoons unsalted butter (2 ounces; 56g), diced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "56",
-          "unit": "g"
-        }
-      ],
-      "note": "diced"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

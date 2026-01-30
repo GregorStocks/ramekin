@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup raw blanched almonds,  (toasted)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "raw blanched almonds",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "raw blanched almonds",
       "measurements": [

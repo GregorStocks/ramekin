@@ -1,16 +1,6 @@
 {
   "raw": "1 cup diced sweet onion ( (sometimes we like to add extra 1/2 cup for more flavor and texture))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "diced sweet onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": "(sometimes we like to add extra 1/2 cup for more flavor and texture"
-    },
     "parse_ingredients": {
       "item": "diced sweet onion",
       "measurements": [

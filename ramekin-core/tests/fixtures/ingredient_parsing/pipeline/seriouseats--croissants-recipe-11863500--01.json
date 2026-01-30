@@ -1,24 +1,6 @@
 {
   "raw": "752 g all-purpose flour (26 1/2 ounces; 5 3/4 cups plus 2 tablespoons), see notes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "all-purpose flour , see notes",
-      "measurements": [
-        {
-          "amount": "752",
-          "unit": "g"
-        },
-        {
-          "amount": "26 1/2",
-          "unit": "oz"
-        },
-        {
-          "amount": "5 3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "all-purpose flour , see notes",
       "measurements": [

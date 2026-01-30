@@ -1,7 +1,7 @@
 {
   "raw": "5 ounce canned water chestnuts, drained and minced",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "canned water chestnuts",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "142",
           "unit": "g"
-        }
-      ],
-      "note": "drained and minced"
-    },
-    "parse_ingredients": {
-      "item": "canned water chestnuts",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
         }
       ],
       "note": "drained and minced"

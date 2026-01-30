@@ -1,20 +1,6 @@
 {
   "raw": "1/4&nbsp;cup&nbsp;(60g) hot water",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot water",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hot water",
       "measurements": [

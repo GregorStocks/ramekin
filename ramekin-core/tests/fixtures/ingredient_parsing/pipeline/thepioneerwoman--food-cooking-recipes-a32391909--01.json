@@ -1,20 +1,6 @@
 {
   "raw": "1 skirt steak or flank steak (1 1/2 to 2 pounds)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "skirt steak or flank steak",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "1 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "skirt steak or flank steak",
       "measurements": [

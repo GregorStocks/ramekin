@@ -1,16 +1,6 @@
 {
   "raw": "1 cup tapioca starch",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tapioca starch",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tapioca starch",
       "measurements": [

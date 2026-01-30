@@ -1,16 +1,6 @@
 {
   "raw": "2 cups Monterey jack, cheddar, or mozzarella cheese, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Monterey jack, cheddar, or mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "Monterey jack, cheddar, or mozzarella cheese",
       "measurements": [

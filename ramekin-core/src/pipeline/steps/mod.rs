@@ -4,7 +4,6 @@
 
 mod enrich_auto_tag;
 mod enrich_generate_photo;
-mod enrich_metric_weights;
 mod enrich_normalize_ingredients;
 mod extract_recipe;
 mod fetch_html;
@@ -14,7 +13,6 @@ mod save_recipe;
 
 pub use enrich_auto_tag::EnrichAutoTagStep;
 pub use enrich_generate_photo::EnrichGeneratePhotoStep;
-pub use enrich_metric_weights::EnrichMetricWeightsStep;
 pub use enrich_normalize_ingredients::EnrichNormalizeIngredientsStep;
 pub use extract_recipe::ExtractRecipeStep;
 pub use fetch_html::FetchHtmlStep;

@@ -1,20 +1,6 @@
 {
   "raw": "1 leek, white and pale green parts only, thinly sliced, about 1 cup (100 grams)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leek, white and pale green parts only, thinly sliced, about 1 cup",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "100",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leek, white and pale green parts only, thinly sliced, about 1 cup",
       "measurements": [

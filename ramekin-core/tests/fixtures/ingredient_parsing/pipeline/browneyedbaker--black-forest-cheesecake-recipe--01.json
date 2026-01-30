@@ -1,16 +1,6 @@
 {
   "raw": "24  Oreo cookies (whole)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Oreo cookies",
-      "measurements": [
-        {
-          "amount": "24",
-          "unit": null
-        }
-      ],
-      "note": "whole"
-    },
     "parse_ingredients": {
       "item": "Oreo cookies",
       "measurements": [

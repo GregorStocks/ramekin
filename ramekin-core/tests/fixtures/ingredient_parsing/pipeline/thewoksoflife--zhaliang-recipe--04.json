@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons dark soy sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dark soy sauce",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dark soy sauce",
       "measurements": [

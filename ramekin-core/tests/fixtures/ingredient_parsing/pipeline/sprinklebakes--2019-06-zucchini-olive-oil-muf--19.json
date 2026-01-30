@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons milk or cream",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "milk or cream",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "milk or cream",
       "measurements": [

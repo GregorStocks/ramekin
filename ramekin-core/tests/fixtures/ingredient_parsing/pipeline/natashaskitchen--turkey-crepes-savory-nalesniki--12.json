@@ -1,16 +1,6 @@
 {
   "raw": "1  carrot (finely grated (or 4 tiny awkward ones from the garden))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely grated (or 4 tiny awkward ones from the garden"
-    },
     "parse_ingredients": {
       "item": "carrot",
       "measurements": [

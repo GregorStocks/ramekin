@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup chopped lettuce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped lettuce",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped lettuce",
       "measurements": [

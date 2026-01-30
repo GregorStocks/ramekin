@@ -1,16 +1,6 @@
 {
   "raw": "2  large Roma tomatoes (seeds and membranes removes, diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Roma tomatoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        }
-      ],
-      "note": "seeds and membranes removes, diced"
-    },
     "parse_ingredients": {
       "item": "Roma tomatoes",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup nuts like walnuts or pecans",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "nuts like walnuts or pecans",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "nuts like walnuts or pecans",
       "measurements": [

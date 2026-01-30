@@ -1,7 +1,7 @@
 {
   "raw": "10 oz beef (sliced very thinly)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "beef",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "283",
           "unit": "g"
-        }
-      ],
-      "note": "sliced very thinly"
-    },
-    "parse_ingredients": {
-      "item": "beef",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": "oz"
         }
       ],
       "note": "sliced very thinly"

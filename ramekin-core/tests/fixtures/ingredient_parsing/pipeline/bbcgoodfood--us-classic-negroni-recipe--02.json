@@ -1,16 +1,6 @@
 {
   "raw": "2 tbsp sweet vermouth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet vermouth",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sweet vermouth",
       "measurements": [

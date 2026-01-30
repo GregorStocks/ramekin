@@ -1,16 +1,6 @@
 {
   "raw": "8  strawberries trimmed (hulled, quartered)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "strawberries trimmed",
-      "measurements": [
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "hulled, quartered"
-    },
     "parse_ingredients": {
       "item": "strawberries trimmed",
       "measurements": [

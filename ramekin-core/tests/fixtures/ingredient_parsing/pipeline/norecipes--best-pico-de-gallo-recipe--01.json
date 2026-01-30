@@ -1,20 +1,6 @@
 {
   "raw": "570 grams tomatoes ((~5 small tomatoes))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomatoes",
-      "measurements": [
-        {
-          "amount": "570",
-          "unit": "g"
-        },
-        {
-          "amount": "5",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tomatoes",
       "measurements": [

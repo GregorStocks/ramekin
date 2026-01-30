@@ -1,16 +1,6 @@
 {
   "raw": "1/3 cup packed brown sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "packed brown sugar",
-      "measurements": [
-        {
-          "amount": "1/3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "packed brown sugar",
       "measurements": [

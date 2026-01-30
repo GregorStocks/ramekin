@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ pounds fingerling potatoes, unpeeled, halved lengthwise",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fingerling potatoes, unpeeled",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "lb"
-        }
-      ],
-      "note": "halved lengthwise"
-    },
     "parse_ingredients": {
       "item": "fingerling potatoes, unpeeled",
       "measurements": [

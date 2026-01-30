@@ -1,16 +1,6 @@
 {
   "raw": "½ teaspoon Italian herbs",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Italian herbs",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Italian herbs",
       "measurements": [

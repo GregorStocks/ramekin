@@ -1,16 +1,6 @@
 {
   "raw": "2 TBSP fresh chopped green onion (plus extra to taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh chopped green onion",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus extra to taste"
-    },
     "parse_ingredients": {
       "item": "fresh chopped green onion",
       "measurements": [

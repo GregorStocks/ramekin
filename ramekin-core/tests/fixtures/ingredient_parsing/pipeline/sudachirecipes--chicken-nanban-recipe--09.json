@@ -1,16 +1,6 @@
 {
   "raw": "1  hard boiled egg",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hard boiled egg",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hard boiled egg",
       "measurements": [

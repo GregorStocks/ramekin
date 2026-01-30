@@ -1,20 +1,6 @@
 {
   "raw": "1 cup (240ml) jam ( (we used our homemade strawberry peach jam, but use whichever flavor you&amp;#039;d like))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "jam",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "240",
-          "unit": "ml"
-        }
-      ],
-      "note": "(we used our homemade strawberry peach jam, but use whichever flavor you'd like"
-    },
     "parse_ingredients": {
       "item": "jam",
       "measurements": [

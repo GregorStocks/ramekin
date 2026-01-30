@@ -1,16 +1,6 @@
 {
   "raw": "1 small tomato ((cut into 1/4\" cubes))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomato (cut into 1/4\" cubes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tomato (cut into 1/4\" cubes)",
       "measurements": [

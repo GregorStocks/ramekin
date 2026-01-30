@@ -1,16 +1,6 @@
 {
   "raw": "1 sprigs fresh thyme ((stems removed and leaves minced))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh thyme",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "sprig"
-        }
-      ],
-      "note": "stems removed and leaves minced"
-    },
     "parse_ingredients": {
       "item": "fresh thyme",
       "measurements": [

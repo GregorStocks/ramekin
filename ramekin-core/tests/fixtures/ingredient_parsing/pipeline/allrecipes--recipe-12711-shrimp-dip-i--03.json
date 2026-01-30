@@ -1,7 +1,7 @@
 {
   "raw": "1 (4 ounce) can small shrimp, drained",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "small shrimp",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "drained"
-    },
-    "parse_ingredients": {
-      "item": "small shrimp",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "drained"

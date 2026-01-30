@@ -1,16 +1,6 @@
 {
   "raw": "1 giant carrot, or 2 regular sized carrots",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "giant carrot, or 2 regular sized carrots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "giant carrot, or 2 regular sized carrots",
       "measurements": [

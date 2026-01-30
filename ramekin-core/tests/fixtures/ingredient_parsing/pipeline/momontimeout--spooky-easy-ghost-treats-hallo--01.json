@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup butter (softened)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "softened"
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

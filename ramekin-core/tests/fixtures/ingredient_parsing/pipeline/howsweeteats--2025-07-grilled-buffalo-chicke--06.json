@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup chopped chives",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped chives",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped chives",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "1  can (14.5 oz tomato sauce)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "1  can (14.5 oz tomato sauce)",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "411",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "1  can (14.5 oz tomato sauce)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "14.5",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "2 cups raw almonds*",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "raw almonds*",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "raw almonds*",
       "measurements": [

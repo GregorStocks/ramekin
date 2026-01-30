@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup warm milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm milk",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm milk",
       "measurements": [

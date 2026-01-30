@@ -1,16 +1,6 @@
 {
   "raw": "1  large yellow onion, (chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "yellow onion",
       "measurements": [

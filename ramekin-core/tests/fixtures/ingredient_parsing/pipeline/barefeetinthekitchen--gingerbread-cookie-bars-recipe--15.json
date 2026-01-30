@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup butter (room temperature)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "room temperature"
-    },
     "parse_ingredients": {
       "item": "butter",
       "measurements": [

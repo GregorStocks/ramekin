@@ -1,16 +1,6 @@
 {
   "raw": "Small pinch of cayenne pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pinch of cayenne pepper",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "small"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pinch of cayenne pepper",
       "measurements": [

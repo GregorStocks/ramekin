@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup almond milk or cashew milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "almond milk or cashew milk",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "almond milk or cashew milk",
       "measurements": [

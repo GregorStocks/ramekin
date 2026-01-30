@@ -1,7 +1,7 @@
 {
   "raw": "1 can (3 ounces) crispy rice noodles",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "crispy rice noodles",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "85",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "crispy rice noodles",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "3",
-          "unit": "oz"
         }
       ],
       "note": null

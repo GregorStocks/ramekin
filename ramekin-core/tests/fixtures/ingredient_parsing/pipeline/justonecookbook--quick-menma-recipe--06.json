@@ -1,16 +1,6 @@
 {
   "raw": "¾ cup chicken stock/broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chicken stock/broth",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chicken stock/broth",
       "measurements": [

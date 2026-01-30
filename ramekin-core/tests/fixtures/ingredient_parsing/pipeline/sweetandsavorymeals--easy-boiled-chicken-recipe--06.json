@@ -1,16 +1,6 @@
 {
   "raw": "1/2  lemon (for stuffing the chicken)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon (for stuffing the chicken)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon (for stuffing the chicken)",
       "measurements": [

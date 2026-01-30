@@ -1,16 +1,6 @@
 {
   "raw": "1  large egg yolk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "egg yolk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "egg yolk",
       "measurements": [

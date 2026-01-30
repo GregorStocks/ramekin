@@ -1,16 +1,6 @@
 {
   "raw": "2  carrots (scrubbed and cut in half)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "carrots",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "scrubbed and cut in half"
-    },
     "parse_ingredients": {
       "item": "carrots",
       "measurements": [

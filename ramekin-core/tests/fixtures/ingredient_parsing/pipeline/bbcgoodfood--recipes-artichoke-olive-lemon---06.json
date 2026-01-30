@@ -1,16 +1,6 @@
 {
   "raw": "handful black olive",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "black olive",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "black olive",
       "measurements": [

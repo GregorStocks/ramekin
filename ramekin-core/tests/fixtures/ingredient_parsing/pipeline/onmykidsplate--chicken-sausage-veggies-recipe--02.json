@@ -1,16 +1,6 @@
 {
   "raw": "2 heads broccoli (approximately two cups chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "broccoli",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "head"
-        }
-      ],
-      "note": "approximately two cups chopped"
-    },
     "parse_ingredients": {
       "item": "broccoli",
       "measurements": [

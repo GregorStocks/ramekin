@@ -1,16 +1,6 @@
 {
   "raw": "1 big handful Kettle Brand Country Style Barbecue potato chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "big handful Kettle Brand Country Style Barbecue potato chips",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "big handful Kettle Brand Country Style Barbecue potato chips",
       "measurements": [

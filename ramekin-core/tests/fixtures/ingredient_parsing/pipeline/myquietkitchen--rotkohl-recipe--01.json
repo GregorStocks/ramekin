@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons vegan butter, optional",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegan butter",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "vegan butter",
       "measurements": [

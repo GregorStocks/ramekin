@@ -1,16 +1,6 @@
 {
   "raw": "6 slices bacon, chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "slice"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "bacon",
       "measurements": [

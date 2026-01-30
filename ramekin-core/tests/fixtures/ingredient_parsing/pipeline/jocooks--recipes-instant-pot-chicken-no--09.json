@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon oregano (fresh, chopped, 1 tsp if using dry)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oregano",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "fresh, chopped, 1 tsp if using dry"
-    },
     "parse_ingredients": {
       "item": "oregano",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1&nbsp;tablespoon&nbsp;Scotch Bonnet Pepper Sauce&nbsp;or finely chopped fresh&nbsp;Scotch bonnet chile",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Scotch Bonnet Pepper Sauce or finely chopped fresh Scotch bonnet chile",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Scotch Bonnet Pepper Sauce or finely chopped fresh Scotch bonnet chile",
       "measurements": [

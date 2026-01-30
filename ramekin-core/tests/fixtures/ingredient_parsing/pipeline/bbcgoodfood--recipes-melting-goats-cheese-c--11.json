@@ -1,16 +1,6 @@
 {
   "raw": "200g bag salad to serve",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bag salad to serve",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "bag salad to serve",
       "measurements": [

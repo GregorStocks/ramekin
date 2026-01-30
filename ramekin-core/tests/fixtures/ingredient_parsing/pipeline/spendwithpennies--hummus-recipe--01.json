@@ -1,7 +1,7 @@
 {
   "raw": "15 ounces canned chickpeas (also known as garbanzo beans, drained and rinsed)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "canned chickpeas",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "425",
           "unit": "g"
-        }
-      ],
-      "note": "also known as garbanzo beans, drained and rinsed"
-    },
-    "parse_ingredients": {
-      "item": "canned chickpeas",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
         }
       ],
       "note": "also known as garbanzo beans, drained and rinsed"

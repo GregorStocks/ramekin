@@ -1,16 +1,6 @@
 {
   "raw": "2 Bramley apples peeled, cored and quartered",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Bramley apples peeled",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "cored and quartered"
-    },
     "parse_ingredients": {
       "item": "Bramley apples peeled",
       "measurements": [

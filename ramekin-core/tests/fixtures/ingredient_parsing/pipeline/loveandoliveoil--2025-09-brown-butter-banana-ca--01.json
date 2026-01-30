@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup salted butter (ideally European style)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salted butter (ideally European style)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "salted butter (ideally European style)",
       "measurements": [

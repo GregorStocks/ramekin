@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon white pepper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white pepper",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white pepper",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup full-bodied dry red wine",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "full-bodied dry red wine",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "full-bodied dry red wine",
       "measurements": [

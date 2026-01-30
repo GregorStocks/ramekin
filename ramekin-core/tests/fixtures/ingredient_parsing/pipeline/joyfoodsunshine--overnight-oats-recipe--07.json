@@ -1,16 +1,6 @@
 {
   "raw": "pinch sea salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sea salt",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "pinch"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sea salt",
       "measurements": [

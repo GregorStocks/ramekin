@@ -1,16 +1,6 @@
 {
   "raw": "1/2 lemon (juice and zest)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon (juice and zest)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "lemon (juice and zest)",
       "measurements": [

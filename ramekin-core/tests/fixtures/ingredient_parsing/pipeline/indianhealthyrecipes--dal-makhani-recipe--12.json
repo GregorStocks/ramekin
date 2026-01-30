@@ -1,20 +1,6 @@
 {
   "raw": "2 cups (480 ml)  hot water ( (to add later))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot water ( (to add later)",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        },
-        {
-          "amount": "480",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hot water ( (to add later)",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "15 ounces canned red kidney beans (1 can, drained and rinsed)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "canned red kidney beans",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "425",
           "unit": "g"
-        }
-      ],
-      "note": "1 can, drained and rinsed"
-    },
-    "parse_ingredients": {
-      "item": "canned red kidney beans",
-      "measurements": [
-        {
-          "amount": "15",
-          "unit": "oz"
         }
       ],
       "note": "1 can, drained and rinsed"

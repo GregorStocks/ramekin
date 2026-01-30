@@ -1,20 +1,6 @@
 {
   "raw": "16  McVities digestive biscuits (about 250g)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "McVities digestive biscuits",
-      "measurements": [
-        {
-          "amount": "16",
-          "unit": null
-        },
-        {
-          "amount": "250",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "McVities digestive biscuits",
       "measurements": [

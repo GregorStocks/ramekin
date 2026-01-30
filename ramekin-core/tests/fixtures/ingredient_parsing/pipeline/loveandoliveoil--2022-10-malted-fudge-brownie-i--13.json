@@ -1,7 +1,7 @@
 {
   "raw": "2 oz dark chocolate (50-70%) (finely chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "dark chocolate",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "57",
           "unit": "g"
-        }
-      ],
-      "note": "finely chopped"
-    },
-    "parse_ingredients": {
-      "item": "dark chocolate",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "oz"
-        },
-        {
-          "amount": "50",
-          "unit": null
         }
       ],
       "note": "finely chopped"

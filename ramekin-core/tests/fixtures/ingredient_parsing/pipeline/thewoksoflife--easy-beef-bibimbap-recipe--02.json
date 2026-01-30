@@ -1,16 +1,6 @@
 {
   "raw": "1 1/2 cups mung bean sprouts",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mung bean sprouts",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mung bean sprouts",
       "measurements": [

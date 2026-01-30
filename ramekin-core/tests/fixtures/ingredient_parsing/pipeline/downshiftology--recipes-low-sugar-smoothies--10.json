@@ -1,16 +1,6 @@
 {
   "raw": "1/2  cup  blanched then frozen cauliflower  (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "blanched then frozen cauliflower",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "blanched then frozen cauliflower",
       "measurements": [

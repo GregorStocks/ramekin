@@ -1,20 +1,6 @@
 {
   "raw": "2 large sweet onions (such as Vidalia; about 1 lb.), quartered",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "large"
-        },
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "quartered"
-    },
     "parse_ingredients": {
       "item": "sweet onions",
       "measurements": [

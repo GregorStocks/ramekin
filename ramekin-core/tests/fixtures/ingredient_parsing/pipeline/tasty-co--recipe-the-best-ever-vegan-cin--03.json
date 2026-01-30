@@ -1,16 +1,6 @@
 {
   "raw": "½ cup vegan butter, melted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegan butter",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "melted"
-    },
     "parse_ingredients": {
       "item": "vegan butter",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 cups boiling water, plus extra water as needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "boiling water",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus extra water as needed"
-    },
     "parse_ingredients": {
       "item": "boiling water",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "1 (13.5 ounce) can coconut milk (see notes)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "coconut milk (see notes)",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "383",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "coconut milk (see notes)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "13.5",
-          "unit": "oz"
         }
       ],
       "note": null

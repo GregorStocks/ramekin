@@ -1,16 +1,6 @@
 {
   "raw": "1 pound aged extra-sharp cheddar, preferably Tillamook, shredded",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "aged extra-sharp cheddar, preferably Tillamook",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "shredded"
-    },
     "parse_ingredients": {
       "item": "aged extra-sharp cheddar, preferably Tillamook",
       "measurements": [

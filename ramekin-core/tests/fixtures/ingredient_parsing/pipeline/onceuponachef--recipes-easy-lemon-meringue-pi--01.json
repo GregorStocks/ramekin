@@ -1,16 +1,6 @@
 {
   "raw": "1½ cups graham cracker crumbs, from about 12 whole crackers",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "graham cracker crumbs",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "from about 12 whole crackers"
-    },
     "parse_ingredients": {
       "item": "graham cracker crumbs",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "2 1/2 Cups Whole Milk",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Whole Milk",
-      "measurements": [
-        {
-          "amount": "2 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Whole Milk",
       "measurements": [

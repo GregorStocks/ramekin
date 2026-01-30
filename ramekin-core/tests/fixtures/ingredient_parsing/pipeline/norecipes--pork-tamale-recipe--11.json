@@ -1,16 +1,6 @@
 {
   "raw": "5  cloves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "5  cloves",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "clove"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "5  cloves",
       "measurements": [

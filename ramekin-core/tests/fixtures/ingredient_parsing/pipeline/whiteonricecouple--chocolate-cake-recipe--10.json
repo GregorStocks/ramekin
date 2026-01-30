@@ -1,20 +1,6 @@
 {
   "raw": "2 teaspoons Baking Soda ((10g) )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Baking Soda",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "10",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Baking Soda",
       "measurements": [

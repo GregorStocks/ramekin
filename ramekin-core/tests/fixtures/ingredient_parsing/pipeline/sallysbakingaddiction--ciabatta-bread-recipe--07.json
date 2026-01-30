@@ -1,20 +1,6 @@
 {
   "raw": "1 and 1/2 teaspoons (8g) table salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "table salt",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "8",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "table salt",
       "measurements": [

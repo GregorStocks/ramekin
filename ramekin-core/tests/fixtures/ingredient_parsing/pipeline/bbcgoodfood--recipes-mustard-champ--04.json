@@ -1,16 +1,6 @@
 {
   "raw": "1-2 tbsp wholegrain mustard",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "wholegrain mustard",
-      "measurements": [
-        {
-          "amount": "1-2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "wholegrain mustard",
       "measurements": [

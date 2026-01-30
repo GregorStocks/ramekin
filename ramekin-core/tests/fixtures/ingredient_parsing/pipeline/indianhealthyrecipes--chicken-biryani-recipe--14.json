@@ -1,16 +1,6 @@
 {
   "raw": "¾ teaspoon shahi jeera ((caraway seeds) (substitute with cumin))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shahi jeera (substitute with cumin)",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "caraway seeds"
-    },
     "parse_ingredients": {
       "item": "shahi jeera (substitute with cumin)",
       "measurements": [

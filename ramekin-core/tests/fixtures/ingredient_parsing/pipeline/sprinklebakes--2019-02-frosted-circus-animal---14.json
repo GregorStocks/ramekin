@@ -1,16 +1,6 @@
 {
   "raw": "1 pound unsalted butter (cubed, at room temperature)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        }
-      ],
-      "note": "cubed, at room temperature"
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

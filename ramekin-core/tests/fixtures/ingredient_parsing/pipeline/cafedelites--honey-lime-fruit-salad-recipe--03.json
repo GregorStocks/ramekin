@@ -1,16 +1,6 @@
 {
   "raw": "2  mangoes (peeled and diced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mangoes",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and diced"
-    },
     "parse_ingredients": {
       "item": "mangoes",
       "measurements": [

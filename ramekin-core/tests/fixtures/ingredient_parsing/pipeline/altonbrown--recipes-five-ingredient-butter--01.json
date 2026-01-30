@@ -1,16 +1,6 @@
 {
   "raw": "4 sticks unsalted butter",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "stick"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "unsalted butter",
       "measurements": [

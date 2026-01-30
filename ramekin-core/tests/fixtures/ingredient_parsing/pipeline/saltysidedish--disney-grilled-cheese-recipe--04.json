@@ -1,7 +1,7 @@
 {
   "raw": "4  ounces (cream cheese, softened)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "4  ounces (cream cheese, softened)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "cream cheese, softened"
-    },
-    "parse_ingredients": {
-      "item": "4  ounces (cream cheese, softened)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "cream cheese, softened"

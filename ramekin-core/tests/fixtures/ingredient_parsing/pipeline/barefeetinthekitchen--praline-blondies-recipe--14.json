@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons potato starch",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "potato starch",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "potato starch",
       "measurements": [

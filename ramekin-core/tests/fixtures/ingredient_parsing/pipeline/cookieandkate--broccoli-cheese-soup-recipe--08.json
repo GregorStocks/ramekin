@@ -1,7 +1,7 @@
 {
   "raw": "1 large (about 12 ounces) russet potato, peeled and cut into 1 to 2-inch chunks",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "russet potato",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "340",
           "unit": "g"
-        }
-      ],
-      "note": "peeled and cut into 1 to 2-inch chunks"
-    },
-    "parse_ingredients": {
-      "item": "russet potato",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        },
-        {
-          "amount": "12",
-          "unit": "oz"
         }
       ],
       "note": "peeled and cut into 1 to 2-inch chunks"

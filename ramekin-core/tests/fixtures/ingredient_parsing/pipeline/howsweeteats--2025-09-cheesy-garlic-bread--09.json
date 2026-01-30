@@ -1,16 +1,6 @@
 {
   "raw": "1 ½ cups shredded provolone or mozzarella cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded provolone or mozzarella cheese",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded provolone or mozzarella cheese",
       "measurements": [

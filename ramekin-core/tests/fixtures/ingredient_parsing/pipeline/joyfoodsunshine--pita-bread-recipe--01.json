@@ -1,20 +1,6 @@
 {
   "raw": "1 cup warm water (105 degrees F)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "105",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm water",
       "measurements": [

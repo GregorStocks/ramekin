@@ -1,16 +1,6 @@
 {
   "raw": "2 teaspoons juice from 1 lemon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "juice from 1 lemon",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "juice from 1 lemon",
       "measurements": [

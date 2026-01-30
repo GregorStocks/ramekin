@@ -1,16 +1,6 @@
 {
   "raw": "½ cup Kalamata olives (roughly chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Kalamata olives",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "roughly chopped"
-    },
     "parse_ingredients": {
       "item": "Kalamata olives",
       "measurements": [

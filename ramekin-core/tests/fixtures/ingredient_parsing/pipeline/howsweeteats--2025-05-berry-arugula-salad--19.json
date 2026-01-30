@@ -1,16 +1,6 @@
 {
   "raw": "3 to 4 tablespoons crumbled goat cheese",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "crumbled goat cheese",
-      "measurements": [
-        {
-          "amount": "3 to 4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "crumbled goat cheese",
       "measurements": [

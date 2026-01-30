@@ -1,20 +1,6 @@
 {
   "raw": "1 (8-ounce) can sliced bamboo shoots (drained and cut into slivers)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sliced bamboo shoots",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "can"
-        },
-        {
-          "amount": "8",
-          "unit": null
-        }
-      ],
-      "note": "drained and cut into slivers"
-    },
     "parse_ingredients": {
       "item": "sliced bamboo shoots",
       "measurements": [

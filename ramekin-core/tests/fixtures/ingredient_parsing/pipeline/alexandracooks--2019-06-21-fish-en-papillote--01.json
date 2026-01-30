@@ -1,16 +1,6 @@
 {
   "raw": "4 18&amp;#215;13-inch (approximately) pieces parchment paper",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "18×13-inch pieces parchment paper",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": "approximately"
-    },
     "parse_ingredients": {
       "item": "18×13-inch pieces parchment paper",
       "measurements": [

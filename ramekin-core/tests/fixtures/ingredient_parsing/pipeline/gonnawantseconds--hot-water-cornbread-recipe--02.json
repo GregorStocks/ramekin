@@ -1,16 +1,6 @@
 {
   "raw": "2 cups self-rising plain yellow cornmeal",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "self-rising plain yellow cornmeal",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "self-rising plain yellow cornmeal",
       "measurements": [

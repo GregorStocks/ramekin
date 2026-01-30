@@ -1,16 +1,6 @@
 {
   "raw": "1  jalapeno (halved and seeded (leave some of the seed if you like heat))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "jalapeno",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "halved and seeded (leave some of the seed if you like heat"
-    },
     "parse_ingredients": {
       "item": "jalapeno",
       "measurements": [

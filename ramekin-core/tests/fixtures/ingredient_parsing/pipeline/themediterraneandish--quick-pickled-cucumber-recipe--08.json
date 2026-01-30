@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 lb Persian cucumbers or English cucumbers  (sliced into 1/2-inch rounds )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Persian cucumbers or English cucumbers",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "lb"
-        }
-      ],
-      "note": "sliced into 1/2-inch rounds"
-    },
     "parse_ingredients": {
       "item": "Persian cucumbers or English cucumbers",
       "measurements": [

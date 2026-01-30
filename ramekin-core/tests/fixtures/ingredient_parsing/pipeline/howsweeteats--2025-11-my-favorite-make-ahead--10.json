@@ -1,16 +1,6 @@
 {
   "raw": "4 to 6 cups turkey stock",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "turkey stock",
-      "measurements": [
-        {
-          "amount": "4 to 6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "turkey stock",
       "measurements": [

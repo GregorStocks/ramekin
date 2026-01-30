@@ -1,16 +1,6 @@
 {
   "raw": "6 tablespoons vegetable, canola, or grapeseed oil, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vegetable, canola, or grapeseed oil",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "vegetable, canola, or grapeseed oil",
       "measurements": [

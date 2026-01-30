@@ -1,24 +1,6 @@
 {
   "raw": "½ cup warm water ((120 ml, about 120 degrees F/49 degrees C))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm water",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "120",
-          "unit": "ml"
-        },
-        {
-          "amount": "120",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm water",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "7  large (or 10 medium garlic cloves, peeled and pressed/minced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "7  large (or 10 medium garlic cloves, peeled and pressed/minced)",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "large"
-        }
-      ],
-      "note": "or 10 medium garlic cloves, peeled and pressed/minced"
-    },
     "parse_ingredients": {
       "item": "7  large (or 10 medium garlic cloves, peeled and pressed/minced)",
       "measurements": [

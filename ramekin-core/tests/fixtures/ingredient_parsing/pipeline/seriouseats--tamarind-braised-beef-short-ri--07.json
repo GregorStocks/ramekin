@@ -1,20 +1,6 @@
 {
   "raw": "1 tablespoon (12 g) kosher salt, plus more for seasoning; for table salt, use half as much by volume",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "kosher salt",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        },
-        {
-          "amount": "12",
-          "unit": "g"
-        }
-      ],
-      "note": "plus more for seasoning; for table salt, use half as much by volume"
-    },
     "parse_ingredients": {
       "item": "kosher salt",
       "measurements": [

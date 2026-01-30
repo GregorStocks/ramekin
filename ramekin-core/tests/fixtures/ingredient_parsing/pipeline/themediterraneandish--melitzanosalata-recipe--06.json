@@ -1,16 +1,6 @@
 {
   "raw": "1/2 tsp each ground cumin and crushed red pepper flakes, more to your liking ( (optional) )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "each ground cumin and crushed red pepper flakes, more to your liking",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": "(optional"
-    },
     "parse_ingredients": {
       "item": "each ground cumin and crushed red pepper flakes, more to your liking",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "200 g Oriental spinach",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Oriental spinach",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Oriental spinach",
       "measurements": [

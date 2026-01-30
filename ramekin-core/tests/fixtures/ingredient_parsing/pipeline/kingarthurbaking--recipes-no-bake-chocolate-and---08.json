@@ -1,16 +1,6 @@
 {
   "raw": "about 1 tablespoon (9g) dates, chopped; for sprinkling*",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "about 1 tablespoon dates",
-      "measurements": [
-        {
-          "amount": "9",
-          "unit": "g"
-        }
-      ],
-      "note": "chopped; for sprinkling*"
-    },
     "parse_ingredients": {
       "item": "about 1 tablespoon dates",
       "measurements": [

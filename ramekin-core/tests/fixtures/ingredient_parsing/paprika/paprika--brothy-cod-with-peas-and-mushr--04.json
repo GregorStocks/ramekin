@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons minced fresh ginger",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "minced fresh ginger",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "minced fresh ginger",
       "measurements": [

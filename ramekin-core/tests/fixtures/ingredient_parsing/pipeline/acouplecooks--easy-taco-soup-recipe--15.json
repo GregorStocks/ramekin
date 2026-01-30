@@ -1,11 +1,6 @@
 {
   "raw": "Toppings: shredded cheese (optional), sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Toppings: shredded cheese , sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
-      "measurements": [],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "Toppings: shredded cheese , sour cream (or cashew cream), hot sauce, sliced avocado or pickled jalapenos (optional), crushed tortilla chips",
       "measurements": [],

@@ -1,7 +1,7 @@
 {
   "raw": "3 oz pitted Medjool dates ((see note))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "pitted Medjool dates (see note)",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "85",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "pitted Medjool dates (see note)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "3/4 cup water or vegetable broth",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "water or vegetable broth",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "water or vegetable broth",
       "measurements": [

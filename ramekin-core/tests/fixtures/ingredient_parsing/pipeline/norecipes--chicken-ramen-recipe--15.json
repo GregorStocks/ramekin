@@ -1,16 +1,6 @@
 {
   "raw": "4 portions ramen noodles ((boiled according to package directions))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "portions ramen noodles (boiled according to package directions)",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "portions ramen noodles (boiled according to package directions)",
       "measurements": [

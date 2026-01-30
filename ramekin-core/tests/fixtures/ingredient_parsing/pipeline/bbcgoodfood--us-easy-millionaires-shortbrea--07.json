@@ -1,7 +1,7 @@
 {
   "raw": "7 oz bittersweet or milk chocolate melts or bar broken into pieces",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "bittersweet or milk chocolate melts or bar broken into pieces",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "198",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "bittersweet or milk chocolate melts or bar broken into pieces",
-      "measurements": [
-        {
-          "amount": "7",
-          "unit": "oz"
         }
       ],
       "note": null

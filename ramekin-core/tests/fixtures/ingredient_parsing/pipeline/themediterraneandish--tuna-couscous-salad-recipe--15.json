@@ -1,16 +1,6 @@
 {
   "raw": "2 soft-boiled eggs, peeled and halved",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soft-boiled eggs",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "peeled and halved"
-    },
     "parse_ingredients": {
       "item": "soft-boiled eggs",
       "measurements": [

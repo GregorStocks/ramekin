@@ -1,16 +1,6 @@
 {
   "raw": "1 lime, sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lime",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "lime",
       "measurements": [

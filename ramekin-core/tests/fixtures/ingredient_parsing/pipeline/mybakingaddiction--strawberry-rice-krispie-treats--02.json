@@ -1,16 +1,6 @@
 {
   "raw": "2  packages Campfire® Mini-Marshmallows (10 ounces each, divided use)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Campfire® Mini-Marshmallows",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "package"
-        }
-      ],
-      "note": "10 ounces each, divided use"
-    },
     "parse_ingredients": {
       "item": "Campfire® Mini-Marshmallows",
       "measurements": [

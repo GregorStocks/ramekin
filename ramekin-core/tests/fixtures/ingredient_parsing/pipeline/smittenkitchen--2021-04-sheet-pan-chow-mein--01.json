@@ -1,16 +1,6 @@
 {
   "raw": "1 bell pepper (any color), finely sliced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bell pepper (any color)",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "finely sliced"
-    },
     "parse_ingredients": {
       "item": "bell pepper (any color)",
       "measurements": [

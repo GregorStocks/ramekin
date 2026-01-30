@@ -1,16 +1,6 @@
 {
   "raw": "1 beef stock cube",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "beef stock cube",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "beef stock cube",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "6 ounces strawberries, hulled and sliced (9 strawberries)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "strawberries, hulled and sliced",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "170",
           "unit": "g"
-        }
-      ],
-      "note": "9 strawberries"
-    },
-    "parse_ingredients": {
-      "item": "strawberries, hulled and sliced",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "oz"
         }
       ],
       "note": "9 strawberries"

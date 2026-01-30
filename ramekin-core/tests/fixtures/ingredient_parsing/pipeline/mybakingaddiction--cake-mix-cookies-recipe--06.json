@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup sprinkles or nonpareils",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sprinkles or nonpareils",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "sprinkles or nonpareils",
       "measurements": [

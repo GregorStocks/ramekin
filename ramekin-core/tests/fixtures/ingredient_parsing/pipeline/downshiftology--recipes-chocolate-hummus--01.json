@@ -1,20 +1,6 @@
 {
   "raw": "2 (15-ounce) cans chickpeas (drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chickpeas",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "can"
-        },
-        {
-          "amount": "15",
-          "unit": null
-        }
-      ],
-      "note": "drained"
-    },
     "parse_ingredients": {
       "item": "chickpeas",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 whole  mango (, peeled and sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole  mango",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "peeled and sliced"
-    },
     "parse_ingredients": {
       "item": "whole  mango",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "1   ounce    blanched almond, toasted almonds",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "blanched almond",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "28",
           "unit": "g"
-        }
-      ],
-      "note": "toasted almonds"
-    },
-    "parse_ingredients": {
-      "item": "blanched almond",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "oz"
         }
       ],
       "note": "toasted almonds"

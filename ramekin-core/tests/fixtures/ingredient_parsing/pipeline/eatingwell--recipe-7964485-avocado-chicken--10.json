@@ -1,16 +1,6 @@
 {
   "raw": "2 ripe avocados, halved and pitted, divided",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ripe avocados, halved and pitted",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "ripe avocados, halved and pitted",
       "measurements": [

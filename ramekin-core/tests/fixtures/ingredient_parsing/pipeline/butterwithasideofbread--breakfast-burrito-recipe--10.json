@@ -1,16 +1,6 @@
 {
   "raw": "10  ten inch flour tortillas (freshly cooked)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ten inch flour tortillas",
-      "measurements": [
-        {
-          "amount": "10",
-          "unit": null
-        }
-      ],
-      "note": "freshly cooked"
-    },
     "parse_ingredients": {
       "item": "ten inch flour tortillas",
       "measurements": [

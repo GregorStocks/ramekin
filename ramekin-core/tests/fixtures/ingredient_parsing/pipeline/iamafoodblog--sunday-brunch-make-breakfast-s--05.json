@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon freshly chopped dill",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "freshly chopped dill",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "freshly chopped dill",
       "measurements": [

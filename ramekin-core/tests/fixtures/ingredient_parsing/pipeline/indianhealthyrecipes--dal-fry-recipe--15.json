@@ -1,16 +1,6 @@
 {
   "raw": "¾ to 1 teaspoon salt  ((adjust to taste))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "salt",
-      "measurements": [
-        {
-          "amount": "3/4 to 1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "adjust to taste"
-    },
     "parse_ingredients": {
       "item": "salt",
       "measurements": [

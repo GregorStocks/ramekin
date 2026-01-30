@@ -1,16 +1,6 @@
 {
   "raw": "1/2  teaspoon    ground ginger",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground ginger",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground ginger",
       "measurements": [

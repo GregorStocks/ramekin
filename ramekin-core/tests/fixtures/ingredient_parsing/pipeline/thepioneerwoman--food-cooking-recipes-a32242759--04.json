@@ -1,16 +1,6 @@
 {
   "raw": "1 tbsp. finely chopped fresh chives, plus more for topping",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "finely chopped fresh chives",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "plus more for topping"
-    },
     "parse_ingredients": {
       "item": "finely chopped fresh chives",
       "measurements": [

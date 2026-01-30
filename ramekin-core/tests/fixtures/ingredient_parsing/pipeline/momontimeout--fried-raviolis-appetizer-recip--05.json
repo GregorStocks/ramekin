@@ -1,16 +1,6 @@
 {
   "raw": "10-14  fresh ravioli (store bought - not frozen, I used jumbo four-cheese)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh ravioli",
-      "measurements": [
-        {
-          "amount": "10-14",
-          "unit": null
-        }
-      ],
-      "note": "store bought - not frozen, I used jumbo four-cheese"
-    },
     "parse_ingredients": {
       "item": "fresh ravioli",
       "measurements": [

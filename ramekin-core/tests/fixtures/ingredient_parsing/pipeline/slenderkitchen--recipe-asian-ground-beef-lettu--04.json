@@ -1,16 +1,6 @@
 {
   "raw": "1.33 lbs 95% lean ground beef",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "95% lean ground beef",
-      "measurements": [
-        {
-          "amount": "1.33",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "95% lean ground beef",
       "measurements": [

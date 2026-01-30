@@ -8,16 +8,17 @@
 //! - `pipeline/` - Auto-generated from pipeline runs for regression testing
 //! - `paprika/` - Auto-generated from paprikarecipes file for regression testing
 //!
-//! Test format (new):
+//! Test format:
 //! ```json
 //! {
 //!   "raw": "8 oz butter",
 //!   "step_outputs": {
-//!     "parse_ingredients": { "item": "butter", "measurements": [...], "note": null },
-//!     "enrich_metric_weights": { "item": "butter", "measurements": [...], "note": null }
+//!     "parse_ingredients": { "item": "butter", "measurements": [...], "note": null }
 //!   }
 //! }
 //! ```
+//!
+//! The parse_ingredients step now includes metric weight enrichment (oz → g).
 
 use glob::glob;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
@@ -98,24 +99,16 @@ fn load_test_case(content: &str) -> Result<LoadedTestCase, serde_json::Error> {
     })
 }
 
-/// Run the full pipeline and return outputs for each step
+/// Run the full pipeline and return outputs for each step.
+/// The parse_ingredients step now includes metric weight enrichment.
 fn run_pipeline(raw: &str) -> HashMap<String, StepOutput> {
     let mut outputs = HashMap::new();
 
-    // Step 1: parse_ingredients
+    // parse_ingredients step (includes metric weight enrichment)
     let parsed = parse_ingredient(raw);
-    outputs.insert(
-        "parse_ingredients".to_string(),
-        StepOutput::from(parsed.clone()),
-    );
-
-    // Step 2: enrich_metric_weights
     let mut stats = EnrichmentStats::default();
     let enriched = add_metric_weight_alternative(parsed, &mut stats);
-    outputs.insert(
-        "enrich_metric_weights".to_string(),
-        StepOutput::from(enriched),
-    );
+    outputs.insert("parse_ingredients".to_string(), StepOutput::from(enriched));
 
     outputs
 }

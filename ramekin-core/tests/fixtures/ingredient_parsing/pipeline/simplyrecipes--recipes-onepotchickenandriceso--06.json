@@ -1,16 +1,6 @@
 {
   "raw": "2 cloves garlic, peeled but left whole",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "clove"
-        }
-      ],
-      "note": "peeled but left whole"
-    },
     "parse_ingredients": {
       "item": "garlic",
       "measurements": [

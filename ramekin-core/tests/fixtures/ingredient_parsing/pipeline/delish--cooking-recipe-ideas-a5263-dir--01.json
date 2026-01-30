@@ -1,20 +1,6 @@
 {
   "raw": "1 lb. (96% lean) ground beef",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ground beef",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "96",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ground beef",
       "measurements": [

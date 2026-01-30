@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon heavy cream, or more as needed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "heavy cream",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "or more as needed"
-    },
     "parse_ingredients": {
       "item": "heavy cream",
       "measurements": [

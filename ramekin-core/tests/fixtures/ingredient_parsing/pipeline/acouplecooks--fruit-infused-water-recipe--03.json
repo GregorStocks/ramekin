@@ -1,16 +1,6 @@
 {
   "raw": "1 handful mint or basil leaves",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mint or basil leaves",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mint or basil leaves",
       "measurements": [

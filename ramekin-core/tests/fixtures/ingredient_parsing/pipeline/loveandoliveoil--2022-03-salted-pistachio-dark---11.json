@@ -1,16 +1,6 @@
 {
   "raw": "1/4 teaspoon pistachio extract (optional)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pistachio extract",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "tsp"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "pistachio extract",
       "measurements": [

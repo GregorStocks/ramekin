@@ -1,7 +1,7 @@
 {
   "raw": "¾ cup  raspberry preserves ((8½ ounces))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "raspberry preserves",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "241",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "raspberry preserves",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        },
-        {
-          "amount": "8 1/2",
-          "unit": "oz"
         }
       ],
       "note": null

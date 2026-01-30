@@ -1,16 +1,6 @@
 {
   "raw": "scant ¾ cup superfine sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "superfine sugar",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "scant cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "superfine sugar",
       "measurements": [

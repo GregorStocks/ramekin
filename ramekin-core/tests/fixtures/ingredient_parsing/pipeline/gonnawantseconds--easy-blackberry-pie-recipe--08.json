@@ -1,20 +1,6 @@
 {
   "raw": "2 (9-inch)  refrigerated pie crusts",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "refrigerated pie crusts",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        },
-        {
-          "amount": "9",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "refrigerated pie crusts",
       "measurements": [

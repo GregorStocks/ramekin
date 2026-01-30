@@ -1,16 +1,6 @@
 {
   "raw": "2 Tablespoons hot water  (, this dissolves the sugar and makes sauce less salty )",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "hot water  (, this dissolves the sugar and makes sauce less salty",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "hot water  (, this dissolves the sugar and makes sauce less salty",
       "measurements": [

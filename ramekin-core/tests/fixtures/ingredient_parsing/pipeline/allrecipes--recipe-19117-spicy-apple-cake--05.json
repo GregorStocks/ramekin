@@ -1,16 +1,6 @@
 {
   "raw": "0.5 teaspoon baking soda",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "baking soda",
-      "measurements": [
-        {
-          "amount": "0.5",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "baking soda",
       "measurements": [

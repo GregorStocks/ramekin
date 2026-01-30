@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup frozen or canned corn, (thawed and drained)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen or canned corn",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "thawed and drained"
-    },
     "parse_ingredients": {
       "item": "frozen or canned corn",
       "measurements": [

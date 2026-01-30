@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup chopped fresh parsley, (plus more for topping)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped fresh parsley",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus more for topping"
-    },
     "parse_ingredients": {
       "item": "chopped fresh parsley",
       "measurements": [

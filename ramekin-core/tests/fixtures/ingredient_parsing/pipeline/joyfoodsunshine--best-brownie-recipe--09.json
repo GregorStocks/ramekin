@@ -1,16 +1,6 @@
 {
   "raw": "½ cup of mix-ins ((chocolate chips, nuts, etc. if desired))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mix-ins (chocolate chips, nuts, etc. if desired)",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mix-ins (chocolate chips, nuts, etc. if desired)",
       "measurements": [

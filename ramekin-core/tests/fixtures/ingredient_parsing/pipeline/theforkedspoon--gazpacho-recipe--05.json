@@ -1,16 +1,6 @@
 {
   "raw": "1  bell pepper (seeded and chopped)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bell pepper",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        }
-      ],
-      "note": "seeded and chopped"
-    },
     "parse_ingredients": {
       "item": "bell pepper",
       "measurements": [

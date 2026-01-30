@@ -1,16 +1,6 @@
 {
   "raw": "6 cups Rice Chex Cereal",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Rice Chex Cereal",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Rice Chex Cereal",
       "measurements": [

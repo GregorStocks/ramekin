@@ -1,16 +1,6 @@
 {
   "raw": "1 cup white sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "white sugar",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "white sugar",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "½ cup buttermilk (more or less to desired consistency)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "buttermilk",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": "more or less to desired consistency"
-    },
     "parse_ingredients": {
       "item": "buttermilk",
       "measurements": [

@@ -1,20 +1,6 @@
 {
   "raw": "1 medium lemon, cut into 1/8-inch rounds, plus 2 tablespoons (30 ml) fresh lemon juice from 1 lemon&nbsp;",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon, cut into 1/8-inch rounds",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "medium"
-        },
-        {
-          "amount": "30",
-          "unit": "ml"
-        }
-      ],
-      "note": "plus 2 tablespoons fresh lemon juice from 1 lemon"
-    },
     "parse_ingredients": {
       "item": "lemon, cut into 1/8-inch rounds",
       "measurements": [

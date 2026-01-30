@@ -1,16 +1,6 @@
 {
   "raw": "3 cups vanilla pudding (homemade or store bought) ($2.79)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vanilla pudding (homemade or store bought) ($2.79)",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "vanilla pudding (homemade or store bought) ($2.79)",
       "measurements": [

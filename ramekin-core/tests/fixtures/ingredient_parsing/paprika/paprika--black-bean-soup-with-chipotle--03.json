@@ -1,16 +1,6 @@
 {
   "raw": "2 medium-size red onions, chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "medium-size red onions",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "medium-size red onions",
       "measurements": [

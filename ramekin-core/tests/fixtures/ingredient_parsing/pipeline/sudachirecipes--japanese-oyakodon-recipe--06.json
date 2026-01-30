@@ -1,16 +1,6 @@
 {
   "raw": "3 tbsp mirin",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "mirin",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "mirin",
       "measurements": [

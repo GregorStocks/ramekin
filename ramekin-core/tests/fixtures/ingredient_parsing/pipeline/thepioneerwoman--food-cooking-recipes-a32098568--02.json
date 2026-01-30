@@ -1,16 +1,6 @@
 {
   "raw": "1 1/4 c. plus 2 teaspoons sugar",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "1 1/4 c. plus 2 teaspoons sugar",
-      "measurements": [
-        {
-          "amount": "1 1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "plus 2 teaspoons sugar"
-    },
     "parse_ingredients": {
       "item": "1 1/4 c. plus 2 teaspoons sugar",
       "measurements": [

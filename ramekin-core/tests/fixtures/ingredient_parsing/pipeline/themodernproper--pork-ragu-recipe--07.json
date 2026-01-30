@@ -1,16 +1,6 @@
 {
   "raw": "6 large garlic cloves, minced",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic cloves",
-      "measurements": [
-        {
-          "amount": "6",
-          "unit": "large"
-        }
-      ],
-      "note": "minced"
-    },
     "parse_ingredients": {
       "item": "garlic cloves",
       "measurements": [

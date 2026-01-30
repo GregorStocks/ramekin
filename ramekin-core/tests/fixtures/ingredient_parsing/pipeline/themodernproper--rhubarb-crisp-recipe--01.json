@@ -1,20 +1,6 @@
 {
   "raw": "5 cups chopped fresh rhubarb (2½ to 3 pounds)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped fresh rhubarb",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "cup"
-        },
-        {
-          "amount": "2 1/2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped fresh rhubarb",
       "measurements": [

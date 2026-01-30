@@ -1,20 +1,6 @@
 {
   "raw": "1 1/2 teaspoons (7 1/2 ml) fresh lemon juice (from 1 lemon)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh lemon juice (from 1 lemon)",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "tsp"
-        },
-        {
-          "amount": "7 1/2",
-          "unit": "ml"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fresh lemon juice (from 1 lemon)",
       "measurements": [

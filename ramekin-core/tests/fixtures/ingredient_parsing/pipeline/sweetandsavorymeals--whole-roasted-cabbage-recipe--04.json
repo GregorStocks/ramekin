@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons maple syrup",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "maple syrup",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "maple syrup",
       "measurements": [

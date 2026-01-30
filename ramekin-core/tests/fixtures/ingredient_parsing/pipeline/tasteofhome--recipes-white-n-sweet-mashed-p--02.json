@@ -1,20 +1,6 @@
 {
   "raw": "1-1/2 pounds sweet potatoes (about 4 medium), peeled and cubed",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "sweet potatoes",
-      "measurements": [
-        {
-          "amount": "1-1/2",
-          "unit": "lb"
-        },
-        {
-          "amount": "4",
-          "unit": "medium"
-        }
-      ],
-      "note": "peeled and cubed"
-    },
     "parse_ingredients": {
       "item": "sweet potatoes",
       "measurements": [

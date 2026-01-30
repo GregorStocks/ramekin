@@ -1,16 +1,6 @@
 {
   "raw": "2-4 tbsp. low sodium beef broth, (as needed, to thin)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "low sodium beef broth",
-      "measurements": [
-        {
-          "amount": "2-4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "as needed, to thin"
-    },
     "parse_ingredients": {
       "item": "low sodium beef broth",
       "measurements": [

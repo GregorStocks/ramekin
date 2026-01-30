@@ -1,16 +1,6 @@
 {
   "raw": "1 large bunch of cilantro, chopped with some set aside for garnish",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "bunch of cilantro",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "large"
-        }
-      ],
-      "note": "chopped with some set aside for garnish"
-    },
     "parse_ingredients": {
       "item": "bunch of cilantro",
       "measurements": [

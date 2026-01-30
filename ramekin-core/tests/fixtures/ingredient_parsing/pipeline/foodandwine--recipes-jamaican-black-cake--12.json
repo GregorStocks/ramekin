@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon pure almond extract",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "pure almond extract",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "pure almond extract",
       "measurements": [

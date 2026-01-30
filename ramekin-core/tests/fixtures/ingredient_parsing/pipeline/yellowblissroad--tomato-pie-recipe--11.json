@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup fresh basil leaves (sliced)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh basil leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "sliced"
-    },
     "parse_ingredients": {
       "item": "fresh basil leaves",
       "measurements": [

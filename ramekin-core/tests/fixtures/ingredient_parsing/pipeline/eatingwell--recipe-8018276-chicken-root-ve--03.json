@@ -1,16 +1,6 @@
 {
   "raw": "1 cup chopped unpeeled carrot",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped unpeeled carrot",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped unpeeled carrot",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1/8 tsp garlic powder (or 1 small garlic clove minced, if using within 3 days)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "garlic powder",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "or 1 small garlic clove minced, if using within 3 days"
-    },
     "parse_ingredients": {
       "item": "garlic powder",
       "measurements": [

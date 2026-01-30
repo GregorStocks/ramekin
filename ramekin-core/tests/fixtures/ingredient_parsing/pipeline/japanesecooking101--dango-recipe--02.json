@@ -1,16 +1,6 @@
 {
   "raw": "200 g Mochiko (#ad)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Mochiko (#ad)",
-      "measurements": [
-        {
-          "amount": "200",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Mochiko (#ad)",
       "measurements": [

@@ -1,16 +1,6 @@
 {
   "raw": "1 slice artisan bread or Homemade Bread",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "artisan bread or Homemade Bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "artisan bread or Homemade Bread",
       "measurements": [

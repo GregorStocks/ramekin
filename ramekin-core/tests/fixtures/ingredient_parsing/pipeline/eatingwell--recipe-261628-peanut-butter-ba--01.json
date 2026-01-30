@@ -1,16 +1,6 @@
 {
   "raw": "1 slice whole-wheat bread, toasted",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "whole-wheat bread",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "slice"
-        }
-      ],
-      "note": "toasted"
-    },
     "parse_ingredients": {
       "item": "whole-wheat bread",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "1 1/2 oz. sweet vermouth",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "sweet vermouth",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "43",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "sweet vermouth",
-      "measurements": [
-        {
-          "amount": "1 1/2",
-          "unit": "oz"
         }
       ],
       "note": null

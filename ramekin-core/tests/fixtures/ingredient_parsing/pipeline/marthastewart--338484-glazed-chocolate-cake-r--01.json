@@ -1,20 +1,6 @@
 {
   "raw": "0.75 cup (1 ½ sticks) unsalted butter, room temperature, plus more for pan",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "unsalted butter, room temperature",
-      "measurements": [
-        {
-          "amount": "0.75",
-          "unit": "cup"
-        },
-        {
-          "amount": "1 1/2",
-          "unit": "stick"
-        }
-      ],
-      "note": "plus more for pan"
-    },
     "parse_ingredients": {
       "item": "unsalted butter, room temperature",
       "measurements": [

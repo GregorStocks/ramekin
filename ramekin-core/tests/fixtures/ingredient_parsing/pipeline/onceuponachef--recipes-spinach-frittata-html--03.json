@@ -1,7 +1,7 @@
 {
   "raw": "5 oz baby spinach (about 5 packed cups)",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "baby spinach",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "142",
           "unit": "g"
-        }
-      ],
-      "note": "about 5 packed cups"
-    },
-    "parse_ingredients": {
-      "item": "baby spinach",
-      "measurements": [
-        {
-          "amount": "5",
-          "unit": "oz"
         }
       ],
       "note": "about 5 packed cups"

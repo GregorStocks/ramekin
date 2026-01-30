@@ -1,16 +1,6 @@
 {
   "raw": "12-20 pound turkey",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "turkey",
-      "measurements": [
-        {
-          "amount": "12-20",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "turkey",
       "measurements": [

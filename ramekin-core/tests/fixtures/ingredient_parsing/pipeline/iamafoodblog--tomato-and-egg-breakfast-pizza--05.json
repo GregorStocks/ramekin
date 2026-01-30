@@ -1,16 +1,6 @@
 {
   "raw": "1/2-3/4 cup shredded mozzarella",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "shredded mozzarella",
-      "measurements": [
-        {
-          "amount": "1/2-3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "shredded mozzarella",
       "measurements": [

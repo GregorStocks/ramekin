@@ -1,16 +1,6 @@
 {
   "raw": "¾ cup soy sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "soy sauce",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "soy sauce",
       "measurements": [

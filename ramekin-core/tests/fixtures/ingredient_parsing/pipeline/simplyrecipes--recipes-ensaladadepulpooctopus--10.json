@@ -1,16 +1,6 @@
 {
   "raw": "1/2 cup (loose) chopped fresh cilantro, including tender stems",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "(loose) chopped fresh cilantro, including tender stems",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "(loose) chopped fresh cilantro, including tender stems",
       "measurements": [

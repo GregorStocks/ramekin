@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons ghee",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ghee",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ghee",
       "measurements": [

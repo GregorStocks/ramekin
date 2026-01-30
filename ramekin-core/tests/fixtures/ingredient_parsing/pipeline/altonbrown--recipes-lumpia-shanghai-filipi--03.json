@@ -1,16 +1,6 @@
 {
   "raw": "1/2 small yellow onion, finely chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "yellow onion",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "small"
-        }
-      ],
-      "note": "finely chopped"
-    },
     "parse_ingredients": {
       "item": "yellow onion",
       "measurements": [

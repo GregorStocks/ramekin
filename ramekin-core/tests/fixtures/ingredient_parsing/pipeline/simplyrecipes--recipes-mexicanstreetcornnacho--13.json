@@ -1,16 +1,6 @@
 {
   "raw": "1/2 lime, sliced into wedges",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lime",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": null
-        }
-      ],
-      "note": "sliced into wedges"
-    },
     "parse_ingredients": {
       "item": "lime",
       "measurements": [

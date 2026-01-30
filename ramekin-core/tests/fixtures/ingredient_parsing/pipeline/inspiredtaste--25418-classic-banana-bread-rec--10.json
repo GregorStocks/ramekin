@@ -1,20 +1,6 @@
 {
   "raw": "1/2 cup (60g) walnuts, toasted and chopped, optional",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "walnuts, toasted and chopped",
-      "measurements": [
-        {
-          "amount": "1/2",
-          "unit": "cup"
-        },
-        {
-          "amount": "60",
-          "unit": "g"
-        }
-      ],
-      "note": "optional"
-    },
     "parse_ingredients": {
       "item": "walnuts, toasted and chopped",
       "measurements": [

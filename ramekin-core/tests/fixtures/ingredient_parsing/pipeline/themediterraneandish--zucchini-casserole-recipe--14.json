@@ -1,16 +1,6 @@
 {
   "raw": "Generous handful chopped fresh parsley for garnish",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chopped fresh parsley for garnish",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "generous handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chopped fresh parsley for garnish",
       "measurements": [

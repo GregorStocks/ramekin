@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon Homemade BBQ seasoning",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Homemade BBQ seasoning",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Homemade BBQ seasoning",
       "measurements": [

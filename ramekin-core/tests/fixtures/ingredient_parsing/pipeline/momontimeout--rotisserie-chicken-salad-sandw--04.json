@@ -1,16 +1,6 @@
 {
   "raw": "1/4 up light mayonnaise",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "up light mayonnaise",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "up light mayonnaise",
       "measurements": [

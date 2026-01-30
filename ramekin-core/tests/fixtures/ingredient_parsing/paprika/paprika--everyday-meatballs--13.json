@@ -1,16 +1,6 @@
 {
   "raw": "1 28-ounce can of tomato puree or crushed tomatoes",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "of tomato puree or crushed tomatoes",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "28-ounce can"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "of tomato puree or crushed tomatoes",
       "measurements": [

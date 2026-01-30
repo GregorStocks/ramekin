@@ -1,16 +1,6 @@
 {
   "raw": "handful of ice",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "ice",
-      "measurements": [
-        {
-          "amount": null,
-          "unit": "handful"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "ice",
       "measurements": [

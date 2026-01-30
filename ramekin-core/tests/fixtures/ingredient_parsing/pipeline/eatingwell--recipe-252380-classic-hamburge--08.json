@@ -1,16 +1,6 @@
 {
   "raw": "1 tablespoon Worcestershire sauce or steak sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Worcestershire sauce or steak sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Worcestershire sauce or steak sauce",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "¾ ounce rye, preferably Old Overholt",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "rye, preferably Old Overholt",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "21",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "rye, preferably Old Overholt",
-      "measurements": [
-        {
-          "amount": "3/4",
-          "unit": "oz"
         }
       ],
       "note": null

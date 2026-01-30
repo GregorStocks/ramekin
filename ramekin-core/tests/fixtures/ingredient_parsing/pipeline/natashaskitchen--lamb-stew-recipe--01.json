@@ -1,7 +1,7 @@
 {
   "raw": "4 oz bacon ((4 strips, chopped into 1/4\" strips))",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "bacon",
       "measurements": [
         {
@@ -11,16 +11,6 @@
         {
           "amount": "113",
           "unit": "g"
-        }
-      ],
-      "note": "4 strips, chopped into 1/4\" strips"
-    },
-    "parse_ingredients": {
-      "item": "bacon",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "oz"
         }
       ],
       "note": "4 strips, chopped into 1/4\" strips"

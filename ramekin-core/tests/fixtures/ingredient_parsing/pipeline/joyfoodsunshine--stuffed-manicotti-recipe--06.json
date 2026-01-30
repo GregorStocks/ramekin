@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup fresh basil ((finely chopped, measured before chopping))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh basil",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "finely chopped, measured before chopping"
-    },
     "parse_ingredients": {
       "item": "fresh basil",
       "measurements": [

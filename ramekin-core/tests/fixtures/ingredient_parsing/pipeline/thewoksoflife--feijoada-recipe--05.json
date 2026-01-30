@@ -1,20 +1,6 @@
 {
   "raw": "1 pound dried black beans ((450g, soaked in water overnight))",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "dried black beans",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "lb"
-        },
-        {
-          "amount": "450",
-          "unit": "g"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "dried black beans",
       "measurements": [

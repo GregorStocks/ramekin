@@ -1,7 +1,7 @@
 {
   "raw": "1 (13.8 ounce) roll Pillsbury Classic Pizza Crust or substitute 12 ounces homemade&nbsp;pizza dough",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "roll Pillsbury Classic Pizza Crust or substitute 12 ounces homemade pizza dough",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "391",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "roll Pillsbury Classic Pizza Crust or substitute 12 ounces homemade pizza dough",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": null
-        },
-        {
-          "amount": "13.8",
-          "unit": "oz"
         }
       ],
       "note": null

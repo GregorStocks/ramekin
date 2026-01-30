@@ -1,16 +1,6 @@
 {
   "raw": "1 cup frozen corn",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "frozen corn",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "frozen corn",
       "measurements": [

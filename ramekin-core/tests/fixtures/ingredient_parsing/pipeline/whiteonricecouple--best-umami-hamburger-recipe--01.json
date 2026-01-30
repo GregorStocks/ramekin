@@ -1,16 +1,6 @@
 {
   "raw": "2 lbs. Ground Beef",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Ground Beef",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "lb"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Ground Beef",
       "measurements": [

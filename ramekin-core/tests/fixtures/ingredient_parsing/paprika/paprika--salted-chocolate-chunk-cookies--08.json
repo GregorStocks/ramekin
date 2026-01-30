@@ -1,20 +1,6 @@
 {
   "raw": "Heaped 1/4 teaspoon (or, technically, 1/4 + 1/8 teaspoon) fine sea or table salt",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fine sea or table salt",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "heaped tsp"
-        },
-        {
-          "amount": "1/4",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "fine sea or table salt",
       "measurements": [

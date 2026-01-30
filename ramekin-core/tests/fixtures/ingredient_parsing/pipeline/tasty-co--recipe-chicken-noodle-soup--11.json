@@ -1,16 +1,6 @@
 {
   "raw": "2 leaves dried bay leaf",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "leaves dried bay leaf",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "leaves dried bay leaf",
       "measurements": [

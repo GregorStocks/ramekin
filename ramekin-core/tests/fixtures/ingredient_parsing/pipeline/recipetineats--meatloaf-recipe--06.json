@@ -1,16 +1,6 @@
 {
   "raw": "1 tsp Worcestershire Sauce",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "Worcestershire Sauce",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "Worcestershire Sauce",
       "measurements": [

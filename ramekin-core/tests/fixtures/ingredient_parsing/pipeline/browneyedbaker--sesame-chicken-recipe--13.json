@@ -1,20 +1,6 @@
 {
   "raw": "1 teaspoon chili paste (can substitute a couple pinches of red pepper flakes)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "chili paste",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        },
-        {
-          "amount": null,
-          "unit": "can"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "chili paste",
       "measurements": [

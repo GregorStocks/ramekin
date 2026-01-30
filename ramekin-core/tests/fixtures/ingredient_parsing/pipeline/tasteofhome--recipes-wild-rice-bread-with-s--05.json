@@ -1,20 +1,6 @@
 {
   "raw": "1 cup warm fat-free milk (110&amp;deg; to 115&amp;deg;)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "warm fat-free milk",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "cup"
-        },
-        {
-          "amount": "110",
-          "unit": null
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "warm fat-free milk",
       "measurements": [

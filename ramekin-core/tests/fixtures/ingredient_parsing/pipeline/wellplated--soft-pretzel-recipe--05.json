@@ -1,16 +1,6 @@
 {
   "raw": "2 to 2 3/4 cups white whole wheat flour (divided)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "3/4 cups white whole wheat flour",
-      "measurements": [
-        {
-          "amount": "2 to 2",
-          "unit": null
-        }
-      ],
-      "note": "divided"
-    },
     "parse_ingredients": {
       "item": "3/4 cups white whole wheat flour",
       "measurements": [

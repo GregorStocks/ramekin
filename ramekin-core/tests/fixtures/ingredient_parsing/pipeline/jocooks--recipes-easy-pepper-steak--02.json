@@ -1,16 +1,6 @@
 {
   "raw": "¼ cup rice vinegar (or less, if you don&amp;#039;t like the vinegar taste)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "rice vinegar",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "or less, if you don't like the vinegar taste"
-    },
     "parse_ingredients": {
       "item": "rice vinegar",
       "measurements": [

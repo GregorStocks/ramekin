@@ -1,16 +1,6 @@
 {
   "raw": "2 tablespoons oil such as avocado, grape seed or sunflower oil",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "oil such as avocado, grape seed or sunflower oil",
-      "measurements": [
-        {
-          "amount": "2",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "oil such as avocado, grape seed or sunflower oil",
       "measurements": [

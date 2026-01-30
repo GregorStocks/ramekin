@@ -1,16 +1,6 @@
 {
   "raw": "1/8 tsp red pepper flakes (adjust to taste or leave out)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "red pepper flakes",
-      "measurements": [
-        {
-          "amount": "1/8",
-          "unit": "tsp"
-        }
-      ],
-      "note": "adjust to taste or leave out"
-    },
     "parse_ingredients": {
       "item": "red pepper flakes",
       "measurements": [

@@ -1,7 +1,7 @@
 {
   "raw": "4 cups (32 oz) low-sodium beef broth",
   "step_outputs": {
-    "enrich_metric_weights": {
+    "parse_ingredients": {
       "item": "low-sodium beef broth",
       "measurements": [
         {
@@ -15,20 +15,6 @@
         {
           "amount": "907",
           "unit": "g"
-        }
-      ],
-      "note": null
-    },
-    "parse_ingredients": {
-      "item": "low-sodium beef broth",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "cup"
-        },
-        {
-          "amount": "32",
-          "unit": "oz"
         }
       ],
       "note": null

@@ -1,16 +1,6 @@
 {
   "raw": "3 tablespoons tomato paste",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "tomato paste",
-      "measurements": [
-        {
-          "amount": "3",
-          "unit": "tbsp"
-        }
-      ],
-      "note": null
-    },
     "parse_ingredients": {
       "item": "tomato paste",
       "measurements": [

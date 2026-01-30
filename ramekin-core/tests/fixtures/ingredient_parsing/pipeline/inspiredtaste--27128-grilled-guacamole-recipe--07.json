@@ -1,16 +1,6 @@
 {
   "raw": "1/4 cup fresh cilantro leaves, chopped",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "fresh cilantro leaves",
-      "measurements": [
-        {
-          "amount": "1/4",
-          "unit": "cup"
-        }
-      ],
-      "note": "chopped"
-    },
     "parse_ingredients": {
       "item": "fresh cilantro leaves",
       "measurements": [

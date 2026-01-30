@@ -1,16 +1,6 @@
 {
   "raw": "1 teaspoon lemon zest, finely grated from 1 lemon",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "lemon zest",
-      "measurements": [
-        {
-          "amount": "1",
-          "unit": "tsp"
-        }
-      ],
-      "note": "finely grated from 1 lemon"
-    },
     "parse_ingredients": {
       "item": "lemon zest",
       "measurements": [

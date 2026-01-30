@@ -1,16 +1,6 @@
 {
   "raw": "4 tablespoons vodka (cold)",
   "step_outputs": {
-    "enrich_metric_weights": {
-      "item": "vodka",
-      "measurements": [
-        {
-          "amount": "4",
-          "unit": "tbsp"
-        }
-      ],
-      "note": "cold"
-    },
     "parse_ingredients": {
       "item": "vodka",
       "measurements": [
