@@ -85,6 +85,8 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [ ] **Trailing semicolon in items** (~3 fixtures) - Semicolons used as separators stick to item names (e.g., `"item": "Parmesan cheese, grated;"`). Example from kingarthurbaking. Low impact.
 
+- [ ] **Comma-separated conditional quantities** (~2 fixtures in paprika) - Ingredient lines with multiple quantities for different use cases, like `"4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)"`. Currently only the first measurement is extracted; the second alternative ends up in the item field. This is tricky because the comma normally separates item from preparation notes, not alternatives. May need special handling for patterns where text after comma starts with a number+unit. Low fixture count but confusing output when it happens.
+
 ## Useful Commands
 
 ```bash
