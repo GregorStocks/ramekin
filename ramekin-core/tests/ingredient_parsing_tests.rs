@@ -1,15 +1,24 @@
-//! Golden file tests for ingredient parsing.
+//! Golden file tests for ingredient parsing pipeline.
 //!
-//! These tests verify that ingredient parsing produces expected results.
+//! These tests verify that the ingredient parsing pipeline produces expected results.
 //! Test cases are individual JSON files in `fixtures/ingredient_parsing/`.
 //!
 //! Directory structure:
 //! - `curated/` - Hand-picked test cases representing important scenarios
 //! - `pipeline/` - Auto-generated from pipeline runs for regression testing
 //! - `paprika/` - Auto-generated from paprikarecipes file for regression testing
+//!
+//! Test format:
+//! ```json
+//! {
+//!   "raw": "8 oz butter",
+//!   "expected": { "item": "butter", "measurements": [...], "note": null }
+//! }
+//! ```
 
 use glob::glob;
 use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
+use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use serde::Deserialize;
 use std::fs;
 use std::path::PathBuf;
@@ -19,19 +28,19 @@ use std::path::PathBuf;
 struct TestCase {
     /// Raw ingredient string to parse
     raw: String,
-    /// Expected parsing result
-    expected: ExpectedIngredient,
+    /// Expected output from parsing
+    expected: Expected,
 }
 
-/// Expected ingredient parsing result (matches ParsedIngredient but without `raw` field)
-#[derive(Debug, Deserialize, PartialEq)]
-struct ExpectedIngredient {
+/// Expected output from parsing
+#[derive(Debug, Deserialize, PartialEq, Clone)]
+struct Expected {
     item: String,
     measurements: Vec<Measurement>,
     note: Option<String>,
 }
 
-impl From<ParsedIngredient> for ExpectedIngredient {
+impl From<ParsedIngredient> for Expected {
     fn from(parsed: ParsedIngredient) -> Self {
         Self {
             item: parsed.item,
@@ -41,7 +50,16 @@ impl From<ParsedIngredient> for ExpectedIngredient {
     }
 }
 
-/// Load all test cases from both curated and bulk directories
+/// Run the ingredient parsing pipeline on a raw ingredient string.
+/// Includes metric weight conversion (oz → g).
+fn run_pipeline(raw: &str) -> Expected {
+    let parsed = parse_ingredient(raw);
+    let mut stats = MetricConversionStats::default();
+    let result = add_metric_weight_alternative(parsed, &mut stats);
+    Expected::from(result)
+}
+
+/// Load all test cases from curated, pipeline, and paprika directories
 fn load_test_cases() -> Vec<(String, TestCase)> {
     let fixtures_dir =
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests/fixtures/ingredient_parsing");
@@ -82,21 +100,29 @@ fn test_ingredient_parsing_golden_files() {
     let mut failures = Vec::new();
 
     for (name, case) in &cases {
-        let actual = parse_ingredient(&case.raw);
-        let actual_expected: ExpectedIngredient = actual.into();
+        let actual = run_pipeline(&case.raw);
 
-        if actual_expected != case.expected {
-            failures.push((name.clone(), case, actual_expected));
+        if actual != case.expected {
+            failures.push((
+                name.clone(),
+                case.raw.clone(),
+                case.expected.clone(),
+                actual,
+            ));
         }
     }
 
     if !failures.is_empty() {
-        let mut msg = format!("\n{} of {} tests failed:\n", failures.len(), cases.len());
+        let mut msg = format!(
+            "\n{} failures across {} tests:\n",
+            failures.len(),
+            cases.len()
+        );
 
-        for (name, case, actual) in &failures {
+        for (name, raw, expected, actual) in &failures {
             msg.push_str(&format!("\n=== {} ===\n", name));
-            msg.push_str(&format!("Input: {:?}\n", case.raw));
-            msg.push_str(&format!("Expected: {:#?}\n", case.expected));
+            msg.push_str(&format!("Input: {:?}\n", raw));
+            msg.push_str(&format!("Expected: {:#?}\n", expected));
             msg.push_str(&format!("Actual:   {:#?}\n", actual));
         }
 
@@ -134,25 +160,29 @@ fn test_ingredient_parsing_curated() {
     let mut failures = Vec::new();
 
     for (name, case) in &cases {
-        let actual = parse_ingredient(&case.raw);
-        let actual_expected: ExpectedIngredient = actual.into();
+        let actual = run_pipeline(&case.raw);
 
-        if actual_expected != case.expected {
-            failures.push((name.clone(), case, actual_expected));
+        if actual != case.expected {
+            failures.push((
+                name.clone(),
+                case.raw.clone(),
+                case.expected.clone(),
+                actual,
+            ));
         }
     }
 
     if !failures.is_empty() {
         let mut msg = format!(
-            "\n{} of {} curated tests failed:\n",
+            "\n{} failures across {} curated tests:\n",
             failures.len(),
             cases.len()
         );
 
-        for (name, case, actual) in &failures {
+        for (name, raw, expected, actual) in &failures {
             msg.push_str(&format!("\n=== {} ===\n", name));
-            msg.push_str(&format!("Input: {:?}\n", case.raw));
-            msg.push_str(&format!("Expected: {:#?}\n", case.expected));
+            msg.push_str(&format!("Input: {:?}\n", raw));
+            msg.push_str(&format!("Expected: {:#?}\n", expected));
             msg.push_str(&format!("Actual:   {:#?}\n", actual));
         }
 

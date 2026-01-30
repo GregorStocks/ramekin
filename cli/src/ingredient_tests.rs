@@ -4,7 +4,8 @@
 
 use anyhow::{Context, Result};
 use flate2::read::GzDecoder;
-use ramekin_core::ingredient_parser::{parse_ingredient, Measurement};
+use ramekin_core::ingredient_parser::{parse_ingredient, Measurement, ParsedIngredient};
+use ramekin_core::metric_weights::{add_metric_weight_alternative, MetricConversionStats};
 use serde::{Deserialize, Serialize};
 use std::fs::{self, File};
 use std::io::Read;
@@ -15,20 +16,39 @@ use zip::ZipArchive;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 struct TestCase {
     raw: String,
-    expected: ExpectedIngredient,
+    expected: Expected,
 }
 
-/// Expected ingredient parsing result
+/// Expected output from parsing
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
-struct ExpectedIngredient {
+struct Expected {
     item: String,
     measurements: Vec<Measurement>,
     note: Option<String>,
 }
 
+impl From<ParsedIngredient> for Expected {
+    fn from(ing: ParsedIngredient) -> Self {
+        Self {
+            item: ing.item,
+            measurements: ing.measurements,
+            note: ing.note,
+        }
+    }
+}
+
 /// Default path to the fixtures directory
 fn default_fixtures_dir() -> PathBuf {
     PathBuf::from("ramekin-core/tests/fixtures/ingredient_parsing")
+}
+
+/// Run the ingredient parsing pipeline on a raw ingredient string.
+/// Includes metric weight conversion (oz → g).
+fn run_pipeline(raw: &str) -> Expected {
+    let parsed = parse_ingredient(raw);
+    let mut stats = MetricConversionStats::default();
+    let result = add_metric_weight_alternative(parsed, &mut stats);
+    Expected::from(result)
 }
 
 /// Generate test fixtures from the latest pipeline run.
@@ -84,21 +104,17 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
                 continue;
             }
 
-            let test_case = TestCase {
-                raw: raw.clone(),
-                expected: ExpectedIngredient {
-                    item: ingredient.item.clone(),
-                    measurements: ingredient.measurements.clone(),
-                    note: ingredient.note.clone(),
-                },
-            };
+            // Run the pipeline to get expected output
+            let expected = run_pipeline(&raw);
+
+            let test_case = TestCase { raw, expected };
 
             let filename = format!("{}--{}--{:02}.json", site, recipe_slug, idx + 1);
             let filepath = pipeline_dir.join(&filename);
 
             // UPSERT: only write if file doesn't already exist
             if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)?;
+                let json = serde_json::to_string_pretty(&test_case)? + "\n";
                 fs::write(&filepath, json)?;
                 total_cases += 1;
             }
@@ -114,10 +130,19 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
     Ok(())
 }
 
+/// Legacy test case format with step_outputs (for migration)
+#[derive(Debug, Deserialize)]
+struct LegacyTestCase {
+    raw: String,
+    #[allow(dead_code)]
+    step_outputs: std::collections::HashMap<String, Expected>,
+}
+
 /// Update all test fixtures to match current parser output.
 ///
-/// Runs the parser on each test case's `raw` input and updates
+/// Runs the pipeline on each test case's `raw` input and updates
 /// the `expected` field to match the actual output.
+/// Also migrates from legacy step_outputs format to expected format.
 pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
     let fixtures_dir = fixtures_dir
         .map(PathBuf::from)
@@ -139,22 +164,32 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
 
             if path.extension().map(|e| e == "json").unwrap_or(false) {
                 let content = fs::read_to_string(&path)?;
-                let mut test_case: TestCase = serde_json::from_str(&content)?;
 
-                // Run parser
-                let actual = parse_ingredient(&test_case.raw);
-                let actual_expected = ExpectedIngredient {
-                    item: actual.item,
-                    measurements: actual.measurements,
-                    note: actual.note,
-                };
+                // Extract raw and old expected from either format
+                let (raw, old_expected) =
+                    if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
+                        (test_case.raw, Some(test_case.expected))
+                    } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
+                        (legacy.raw, None)
+                    } else {
+                        println!("Skipping invalid file: {}", path.display());
+                        continue;
+                    };
 
-                if actual_expected != test_case.expected {
-                    test_case.expected = actual_expected;
-                    let json = serde_json::to_string_pretty(&test_case)?;
+                // Run pipeline to get current expected output
+                let new_expected = run_pipeline(&raw);
+
+                // Only write if actual content changed (not just formatting)
+                let content_changed = old_expected.as_ref() != Some(&new_expected);
+
+                if content_changed {
+                    let updated_case = TestCase {
+                        raw,
+                        expected: new_expected,
+                    };
+                    let json = serde_json::to_string_pretty(&updated_case)? + "\n";
                     fs::write(&path, json)?;
                     updated += 1;
-                    println!("Updated: {}", path.display());
                 } else {
                     unchanged += 1;
                 }
@@ -230,14 +265,17 @@ fn extract_recipe_slug(url: &str) -> String {
 /// ParseIngredientsOutput structure from pipeline
 #[derive(Debug, Deserialize)]
 struct ParseIngredientsOutput {
-    ingredients: Vec<ParsedIngredient>,
+    ingredients: Vec<PipelineParsedIngredient>,
 }
 
 /// Parsed ingredient from pipeline output
 #[derive(Debug, Deserialize)]
-struct ParsedIngredient {
+struct PipelineParsedIngredient {
+    #[allow(dead_code)]
     item: String,
+    #[allow(dead_code)]
     measurements: Vec<Measurement>,
+    #[allow(dead_code)]
     note: Option<String>,
     raw: Option<String>,
 }
@@ -316,24 +354,17 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
                 continue;
             }
 
-            // Run the parser to get current output
-            let parsed = parse_ingredient(&raw);
+            // Run the pipeline to get expected output
+            let expected = run_pipeline(&raw);
 
-            let test_case = TestCase {
-                raw,
-                expected: ExpectedIngredient {
-                    item: parsed.item,
-                    measurements: parsed.measurements,
-                    note: parsed.note,
-                },
-            };
+            let test_case = TestCase { raw, expected };
 
             let filename = format!("paprika--{}--{:02}.json", recipe_slug, idx + 1);
             let filepath = paprika_dir.join(&filename);
 
             // UPSERT: only write if file doesn't already exist
             if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)?;
+                let json = serde_json::to_string_pretty(&test_case)? + "\n";
                 fs::write(&filepath, json)?;
                 total_cases += 1;
             }

@@ -3,8 +3,18 @@
   "expected": {
     "item": "onions",
     "measurements": [
-      {"amount": "2", "unit": "medium"},
-      {"amount": "8", "unit": "oz"}
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "oz"
+      },
+      {
+        "amount": "227",
+        "unit": "g"
+      }
     ],
     "note": null
   }
