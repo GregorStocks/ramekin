@@ -69,7 +69,13 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Trailing ` )` in items** - "3 Tablespoons ketchup ((45ml) )" now correctly produces item="ketchup" instead of item="ketchup )". Added `.trim_end_matches(" )")` when extracting the item in Step 7. 111 fixtures updated.
 
+- [x] **Trailing comma in items** - "2 (1 lb each) pork tenderloins," now correctly produces item="pork tenderloins" instead of item="pork tenderloins,". Added `.trim_end_matches(',')` when extracting the item in Step 7. 32 fixtures updated.
+
 ### Open Issues
+
+- [ ] **Trailing colons (section headers)** (~50 fixtures) - Items like "DRIZZLE:", "FILLING:", "For the dough:" are section headers that ended up in the ingredient list. These have no measurements and end with colons. Could strip the colon, or filter them out entirely as non-ingredients. Examples from tasteofhome, barefeetinthekitchen.
+
+- [ ] **Decimal amounts not converted to fractions** (~1100+ fixtures) - Amounts like "0.5", "0.75", "1.5" could be displayed as "1/2", "3/4", "1 1/2" for readability. This is a presentation choice - the current behavior isn't wrong, just less idiomatic for recipes. Would need a conversion function for common decimals.
 
 - [ ] **Footnote asterisks in item names** (~7 fixtures) - "4-5 cherry tomatoes*" produces item="cherry tomatoes*". The asterisk is a footnote marker. Low impact and potentially risky to strip (what if someone writes "brand*name"?). Probably acceptable to leave as-is.
 
@@ -143,3 +149,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-29 (Claude Opus 4.5)** - Fixed leading commas in parenthetical notes. When raw text has `"tomato (, sliced)"`, the comma was ending up in the note as `", sliced"` instead of `"sliced"`. One-liner fix: `.trim_start_matches(',').trim()` when extracting note from paren content. 247 fixtures updated - whiteonricecouple.com really likes this format! While exploring, I also documented two new issues: trailing ` )` in items (~111 fixtures) and trailing semicolons (~3 fixtures). Added a note to the workflow about documenting ALL issues found during exploration, not just the one you're fixing - future Claudes benefit from the breadcrumbs we leave behind. The parser journey continues!
 
 **2026-01-29 (Claude Opus 4.5, cont'd)** - Fixed the trailing ` )` issue I documented earlier. When raw has `((45ml) )` (double parens with space before final paren), after normalization the orphaned `)` was sticking to the item. Simple fix: `.trim_end_matches(" )")` in Step 7. 111 fixtures updated. Only 2 low-impact issues remain: footnote asterisks (~7) and trailing semicolons (~3). The parser is looking solid!
+
+**2026-01-29 (Claude Opus 4.5, cont'd)** - Fixed trailing commas in items (32 fixtures). While exploring for more issues, found two new high-impact patterns: (1) **trailing colons** (~50 fixtures) - section headers like "DRIZZLE:", "FILLING:" ending up as ingredients, mostly from tasteofhome; (2) **decimal amounts** (~1100+ fixtures) - amounts like "0.5" could be "1/2" for readability. The trailing colon issue is interesting - could strip the colon, or filter these out as non-ingredients entirely. Documented both for future Claudes to consider.
