@@ -380,7 +380,14 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
 
             // First check if this is a prep note (like "softened", "chopped", etc.)
             if is_prep_note(paren_content) && note.is_none() {
-                note = Some(paren_content.trim().to_string());
+                // Strip leading comma (e.g., from raw like "tomato (, sliced)")
+                note = Some(
+                    paren_content
+                        .trim()
+                        .trim_start_matches(',')
+                        .trim()
+                        .to_string(),
+                );
                 // Remove the parenthetical from remaining
                 // Also strip trailing comma before the parenthetical (e.g., "onion, (diced)")
                 let before = remaining[..start]
