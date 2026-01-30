@@ -67,13 +67,13 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Leading comma in parenthetical notes** - "1 large tomato (, sliced )" now correctly produces note="sliced" instead of note=", sliced". Added `.trim_start_matches(',').trim()` when extracting note from parenthetical content. 247 fixtures updated (mostly whiteonricecouple.com).
 
+- [x] **Trailing ` )` in items** - "3 Tablespoons ketchup ((45ml) )" now correctly produces item="ketchup" instead of item="ketchup )". Added `.trim_end_matches(" )")` when extracting the item in Step 7. 111 fixtures updated.
+
 ### Open Issues
 
 - [ ] **Footnote asterisks in item names** (~7 fixtures) - "4-5 cherry tomatoes*" produces item="cherry tomatoes*". The asterisk is a footnote marker. Low impact and potentially risky to strip (what if someone writes "brand*name"?). Probably acceptable to leave as-is.
 
 - [ ] **Concatenated ingredient lines** (unknown count) - "3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil" gets parsed as a single ingredient. This is an extraction bug upstream (ingredients should be on separate lines), not a parser bug. The parser can't reasonably split these without risking false positives.
-
-- [ ] **Trailing ` )` in items** (~111 fixtures) - When raw has `((45ml) )` pattern (note the space before final paren), after double-paren normalization and extraction, an orphaned `)` remains in the item (e.g., `"item": "ketchup )"`). Example: `"3 Tablespoons ketchup ((45ml) )"`. Fix would strip trailing ` )` from items.
 
 - [ ] **Trailing semicolon in items** (~3 fixtures) - Semicolons used as separators stick to item names (e.g., `"item": "Parmesan cheese, grated;"`). Example from kingarthurbaking. Low impact.
 
@@ -141,3 +141,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-28 (Claude Opus 4.5)** - Fixed the fresh/dried herb alternatives! The key insight: the existing Step 4.5 handles " or " at the START of remaining text (e.g., "or 3 cups pineapple"), but misses " or " in the MIDDLE (e.g., "fresh dill or 1 teaspoon dried dill"). Added Step 5.5 to search for " or " anywhere in remaining and, if followed by a valid measurement, split there - the text before " or " becomes the item, and the alternative goes into the note. This also fixes ingredient-level alternatives like "1/2 cup water or 1/2 cup beef broth". 112 fixtures updated. The "vanilla or chocolate ice cream" case is still safe because "chocolate ice cream" has no unit, so we don't split. Only two low-priority issues remain: footnote asterisks (7 fixtures) and concatenated lines (upstream bug).
 
 **2026-01-29 (Claude Opus 4.5)** - Fixed leading commas in parenthetical notes. When raw text has `"tomato (, sliced)"`, the comma was ending up in the note as `", sliced"` instead of `"sliced"`. One-liner fix: `.trim_start_matches(',').trim()` when extracting note from paren content. 247 fixtures updated - whiteonricecouple.com really likes this format! While exploring, I also documented two new issues: trailing ` )` in items (~111 fixtures) and trailing semicolons (~3 fixtures). Added a note to the workflow about documenting ALL issues found during exploration, not just the one you're fixing - future Claudes benefit from the breadcrumbs we leave behind. The parser journey continues!
+
+**2026-01-29 (Claude Opus 4.5, cont'd)** - Fixed the trailing ` )` issue I documented earlier. When raw has `((45ml) )` (double parens with space before final paren), after normalization the orphaned `)` was sticking to the item. Simple fix: `.trim_end_matches(" )")` in Step 7. 111 fixtures updated. Only 2 low-impact issues remain: footnote asterisks (~7) and trailing semicolons (~3). The parser is looking solid!
