@@ -71,9 +71,11 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 
 - [x] **Trailing comma in items** - "2 (1 lb each) pork tenderloins," now correctly produces item="pork tenderloins" instead of item="pork tenderloins,". Added `.trim_end_matches(',')` when extracting the item in Step 7. 32 fixtures updated.
 
+- [x] **Space before comma in items** - "4 scallions (about 2 ounces; 56 g), thinly sliced" now correctly produces item="scallions, thinly sliced" instead of item="scallions , thinly sliced". When parentheticals are extracted, they can leave a trailing space before the comma. Added `.replace(" ,", ",")` in Step 7. 156 fixtures updated (44 paprika + 112 pipeline).
+
 ### Open Issues
 
-- [ ] **Trailing colons (section headers)** (~50 fixtures) - Items like "DRIZZLE:", "FILLING:", "For the dough:" are section headers that ended up in the ingredient list. These have no measurements and end with colons. Could strip the colon, or filter them out entirely as non-ingredients. Examples from tasteofhome, barefeetinthekitchen.
+- [ ] **Trailing colons (section headers)** (~50 fixtures) - Items like "DRIZZLE:", "FILLING:", "For the dough:" are section headers that ended up in the ingredient list. These have no measurements and end with colons. Should be handled more principally by filtering them out as non-ingredients (or flagging them as section headers), rather than just stripping the colon. Examples from tasteofhome, barefeetinthekitchen.
 
 - [ ] **Decimal amounts not converted to fractions** (~1100+ fixtures) - Amounts like "0.5", "0.75", "1.5" could be displayed as "1/2", "3/4", "1 1/2" for readability. This is a presentation choice - the current behavior isn't wrong, just less idiomatic for recipes. Would need a conversion function for common decimals.
 
@@ -82,6 +84,8 @@ Issues are roughly ordered by potential impact. Update this list as you fix thin
 - [ ] **Concatenated ingredient lines** (unknown count) - "3/4 cup (180ml) milk 1/4 cup (60ml) vegetable oil" gets parsed as a single ingredient. This is an extraction bug upstream (ingredients should be on separate lines), not a parser bug. The parser can't reasonably split these without risking false positives.
 
 - [ ] **Trailing semicolon in items** (~3 fixtures) - Semicolons used as separators stick to item names (e.g., `"item": "Parmesan cheese, grated;"`). Example from kingarthurbaking. Low impact.
+
+- [ ] **Comma-separated conditional quantities** (~2 fixtures in paprika) - Ingredient lines with multiple quantities for different use cases, like `"4 cups vegetable broth (for dried but soaked chickpeas), 1 1/2 cups vegetable broth (for cooked chickpeas)"`. Currently only the first measurement is extracted; the second alternative ends up in the item field. This is tricky because the comma normally separates item from preparation notes, not alternatives. May need special handling for patterns where text after comma starts with a number+unit. Low fixture count but confusing output when it happens.
 
 ## Useful Commands
 
@@ -151,3 +155,5 @@ grep -r "pattern" ramekin-core/tests/fixtures/ingredient_parsing/pipeline/
 **2026-01-29 (Claude Opus 4.5, cont'd)** - Fixed the trailing ` )` issue I documented earlier. When raw has `((45ml) )` (double parens with space before final paren), after normalization the orphaned `)` was sticking to the item. Simple fix: `.trim_end_matches(" )")` in Step 7. 111 fixtures updated. Only 2 low-impact issues remain: footnote asterisks (~7) and trailing semicolons (~3). The parser is looking solid!
 
 **2026-01-29 (Claude Opus 4.5, cont'd)** - Fixed trailing commas in items (32 fixtures). While exploring for more issues, found two new high-impact patterns: (1) **trailing colons** (~50 fixtures) - section headers like "DRIZZLE:", "FILLING:" ending up as ingredients, mostly from tasteofhome; (2) **decimal amounts** (~1100+ fixtures) - amounts like "0.5" could be "1/2" for readability. The trailing colon issue is interesting - could strip the colon, or filter these out as non-ingredients entirely. Documented both for future Claudes to consider.
+
+**2026-01-30 (Claude Opus 4.5)** - Fixed the "space before comma" issue! When parentheticals like `(about 2 ounces; 56 g)` are extracted, they leave a trailing space before any following comma: `"scallions , thinly sliced"`. Simple fix: `.replace(" ,", ",")` in Step 7. 154 fixtures updated (44 paprika + 110 pipeline). Found this by focusing on the user's actual paprika imports rather than the pipeline - good reminder that impact is measured by what people actually use. Also discovered some other patterns during exploration: pipe-separated measurements (11 fixtures), leading parentheticals in items (21 fixtures), but the space-comma issue had the best "fixtures affected in paprika data" to "complexity" ratio. Future Claude: the trailing colon issue should probably be handled by filtering out section headers entirely rather than just stripping the colon - they're not real ingredients.

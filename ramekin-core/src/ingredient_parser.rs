@@ -762,6 +762,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     // Strip leading commas that can occur after units (e.g., "2 large, boneless chicken")
     // Strip trailing " )" that can occur from double-paren patterns like "((45ml) )"
     // Strip trailing commas (e.g., "pork tenderloins,")
+    // Normalize " ," to "," (space before comma from parenthetical extraction)
     let item = remaining
         .trim()
         .trim_start_matches(',')
@@ -770,6 +771,7 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
         .trim()
         .trim_end_matches(',')
         .trim()
+        .replace(" ,", ",")
         .to_string();
 
     // If we didn't extract anything useful, just use raw as item
