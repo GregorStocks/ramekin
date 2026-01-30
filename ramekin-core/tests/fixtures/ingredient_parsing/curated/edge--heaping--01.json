@@ -2,7 +2,12 @@
   "raw": "2 heaping tablespoons miso paste",
   "expected": {
     "item": "miso paste",
-    "measurements": [{"amount": "2", "unit": "heaping tablespoons"}],
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "heaping tbsp"
+      }
+    ],
     "note": null
   }
 }

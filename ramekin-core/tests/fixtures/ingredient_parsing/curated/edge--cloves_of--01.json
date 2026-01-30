@@ -2,7 +2,12 @@
   "raw": "2 cloves of garlic, minced",
   "expected": {
     "item": "garlic",
-    "measurements": [{"amount": "2", "unit": "cloves"}],
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "clove"
+      }
+    ],
     "note": "minced"
   }
 }

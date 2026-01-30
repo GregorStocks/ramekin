@@ -2,7 +2,12 @@
   "raw": "2 tablespoons butter, plus 1 tablespoon chilled",
   "expected": {
     "item": "butter",
-    "measurements": [{"amount": "2", "unit": "tablespoons"}],
+    "measurements": [
+      {
+        "amount": "2",
+        "unit": "tbsp"
+      }
+    ],
     "note": "plus 1 tablespoon chilled"
   }
 }

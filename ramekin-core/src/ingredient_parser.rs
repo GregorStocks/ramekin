@@ -2,6 +2,7 @@
 //!
 //! Parses raw ingredient strings (e.g., "2 cups flour, sifted") into structured data.
 
+use std::collections::HashMap;
 use std::sync::LazyLock;
 
 use serde::{Deserialize, Serialize};
@@ -135,6 +136,97 @@ const UNITS_RAW: &[&str] = &[
     "large",
     "xl",
 ];
+
+/// Map of unit variations to their canonical forms.
+/// Used by normalize_unit() to standardize units after parsing.
+static UNIT_CANONICAL_MAP: LazyLock<HashMap<&'static str, &'static str>> = LazyLock::new(|| {
+    let mut map = HashMap::new();
+
+    // Volume - small
+    map.insert("teaspoon", "tsp");
+    map.insert("teaspoons", "tsp");
+    map.insert("ts", "tsp");
+
+    map.insert("tablespoon", "tbsp");
+    map.insert("tablespoons", "tbsp");
+    map.insert("tbs", "tbsp");
+    map.insert("tb", "tbsp");
+
+    // Volume - cups
+    map.insert("cups", "cup");
+    map.insert("c", "cup");
+
+    // Volume - larger
+    map.insert("pints", "pint");
+    map.insert("pt", "pint");
+
+    map.insert("quarts", "quart");
+    map.insert("qt", "quart");
+
+    map.insert("gallons", "gallon");
+    map.insert("gal", "gallon");
+
+    map.insert("fluid ounce", "fl oz");
+    map.insert("fluid ounces", "fl oz");
+    map.insert("fl. oz", "fl oz");
+
+    // Volume - metric
+    map.insert("milliliter", "ml");
+    map.insert("milliliters", "ml");
+
+    map.insert("liter", "l");
+    map.insert("liters", "l");
+    map.insert("litre", "l");
+    map.insert("litres", "l");
+
+    // Weight - US
+    map.insert("ounce", "oz");
+    map.insert("ounces", "oz");
+
+    map.insert("pound", "lb");
+    map.insert("pounds", "lb");
+    map.insert("lbs", "lb");
+
+    // Weight - metric
+    map.insert("gram", "g");
+    map.insert("grams", "g");
+
+    map.insert("kilogram", "kg");
+    map.insert("kilograms", "kg");
+
+    map.insert("milligram", "mg");
+    map.insert("milligrams", "mg");
+
+    // Count/Container - normalize plurals to singular
+    map.insert("cloves", "clove");
+    map.insert("slices", "slice");
+    map.insert("pieces", "piece");
+    map.insert("pc", "piece");
+    map.insert("pcs", "piece");
+    map.insert("cans", "can");
+    map.insert("jars", "jar");
+    map.insert("bottles", "bottle");
+    map.insert("bags", "bag");
+    map.insert("boxes", "box");
+    map.insert("packages", "package");
+    map.insert("pkg", "package");
+    map.insert("pkgs", "package");
+    map.insert("sticks", "stick");
+    map.insert("bunches", "bunch");
+    map.insert("sprigs", "sprig");
+    map.insert("pinches", "pinch");
+    map.insert("dashes", "dash");
+    map.insert("drops", "drop");
+    map.insert("heads", "head");
+    map.insert("stalks", "stalk");
+    map.insert("handfuls", "handful");
+    map.insert("cubes", "cube");
+
+    // Size - normalize xl
+    map.insert("xl", "extra-large");
+
+    map
+});
 
 /// Measurement modifiers that appear before amounts or between amounts and units.
 /// These are stripped during parsing but preserved in the raw field.
@@ -659,6 +751,13 @@ pub fn parse_ingredient(raw: &str) -> ParsedIngredient {
     }
     measurements.extend(alt_measurements);
 
+    // Step 6.5: Normalize all measurement units to canonical forms
+    for m in &mut measurements {
+        if let Some(ref unit) = m.unit {
+            m.unit = Some(normalize_unit(unit));
+        }
+    }
+
     // Step 7: The remaining text is the ingredient item
     // Strip leading commas that can occur after units (e.g., "2 large, boneless chicken")
     // Strip trailing " )" that can occur from double-paren patterns like "((45ml) )"
@@ -1176,6 +1275,55 @@ fn is_prep_note(s: &str) -> bool {
     PREP_NOTES.iter().any(|note| s_lower.contains(note))
 }
 
+/// Normalize a unit string to its canonical form.
+///
+/// Handles:
+/// - Direct mappings: "cups" → "cup", "tablespoons" → "tbsp"
+/// - Modifiers: "heaping cups" → "heaping cup"
+/// - "each" suffix: "ounces each" → "oz each"
+///
+/// Returns the original unit if no normalization is needed.
+fn normalize_unit(unit: &str) -> String {
+    let unit = unit.trim();
+    if unit.is_empty() {
+        return unit.to_string();
+    }
+
+    // Check for "each" suffix first
+    let (base_unit, each_suffix) = if unit.to_lowercase().ends_with(" each") {
+        (&unit[..unit.len() - 5], " each")
+    } else {
+        (unit, "")
+    };
+
+    // Check if there's a modifier prefix (from MEASUREMENT_MODIFIERS)
+    let base_lower = base_unit.to_lowercase();
+    for &modifier in MEASUREMENT_MODIFIERS {
+        if base_lower.starts_with(modifier) {
+            let after_modifier = base_unit[modifier.len()..].trim();
+            if !after_modifier.is_empty() {
+                // Normalize the unit part after the modifier
+                let normalized_base = normalize_unit_base(after_modifier);
+                return format!("{} {}{}", modifier, normalized_base, each_suffix);
+            }
+        }
+    }
+
+    // No modifier, just normalize the base unit
+    let normalized = normalize_unit_base(base_unit);
+    format!("{}{}", normalized, each_suffix)
+}
+
+/// Normalize a base unit (without modifiers) using UNIT_CANONICAL_MAP.
+fn normalize_unit_base(unit: &str) -> String {
+    let unit_lower = unit.to_lowercase();
+    if let Some(&canonical) = UNIT_CANONICAL_MAP.get(unit_lower.as_str()) {
+        canonical.to_string()
+    } else {
+        unit.to_string()
+    }
+}
+
 /// Parse multiple ingredient lines (separated by newlines).
 pub fn parse_ingredients(blob: &str) -> Vec<ParsedIngredient> {
     blob.lines()
@@ -1194,7 +1342,7 @@ mod tests {
         assert_eq!(result.item, "flour");
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("2".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("cups".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]
@@ -1219,7 +1367,7 @@ mod tests {
         let result = parse_ingredient("1 1/2 cups water");
         assert_eq!(result.item, "water");
         assert_eq!(result.measurements[0].amount, Some("1 1/2".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("cups".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
     }
 
     #[test]
@@ -1281,7 +1429,7 @@ mod tests {
 
         let result = parse_ingredient("2 tablespoons butter");
         assert_eq!(result.item, "butter");
-        assert_eq!(result.measurements[0].unit, Some("tablespoons".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
     }
 
     #[test]
@@ -1330,7 +1478,7 @@ mod tests {
 
         // Alt measurement 1: 8 ounces each (trailing "each" applies to all)
         assert_eq!(result.measurements[1].amount, Some("8".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("ounces each".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("oz each".to_string()));
 
         // Alt measurement 2: 227 g each
         assert_eq!(result.measurements[2].amount, Some("227".to_string()));
@@ -1449,18 +1597,18 @@ mod tests {
         let result = parse_ingredient("1½ cups all-purpose flour");
         println!("{:#?}", result);
         assert_eq!(result.measurements[0].amount, Some("1 1/2".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("cups".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
 
         let result = parse_ingredient("2¾ cups sugar");
         println!("{:#?}", result);
         assert_eq!(result.measurements[0].amount, Some("2 3/4".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("cups".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("cup".to_string()));
 
         // Standalone fraction should still work
         let result = parse_ingredient("½ teaspoon salt");
         println!("{:#?}", result);
         assert_eq!(result.measurements[0].amount, Some("1/2".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("teaspoon".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tsp".to_string()));
     }
 
     #[test]
@@ -1477,7 +1625,7 @@ mod tests {
         let result = parse_ingredient("1&nbsp;tablespoon olive oil");
         println!("{:#?}", result);
         assert_eq!(result.measurements[0].amount, Some("1".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("tablespoon".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("tbsp".to_string()));
 
         let result = parse_ingredient("Chef&#39;s Choice Matcha");
         println!("{:#?}", result);
@@ -1536,9 +1684,9 @@ mod tests {
             parse_ingredient("1 pound cream cheese (2 8-ounce/227-gram packages), softened");
         println!("{:#?}", result);
         assert_eq!(result.item, "cream cheese");
-        // Primary should be "1 pound"
+        // Primary should be "1 pound" -> normalized to "lb"
         assert_eq!(result.measurements[0].amount, Some("1".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("pound".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
     }
 
     #[test]
@@ -1621,12 +1769,9 @@ mod tests {
         assert_eq!(result.item, "frozen pineapple chunks");
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[0].amount, Some("1".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("pound".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
         assert_eq!(result.measurements[1].amount, Some("3".to_string()));
-        assert_eq!(
-            result.measurements[1].unit,
-            Some("heaping cups".to_string())
-        );
+        assert_eq!(result.measurements[1].unit, Some("heaping cup".to_string()));
     }
 
     #[test]
@@ -1647,9 +1792,9 @@ mod tests {
         assert_eq!(result.item, "cheese");
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[0].amount, Some("8".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("ounces".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
         assert_eq!(result.measurements[1].amount, Some("225".to_string()));
-        assert_eq!(result.measurements[1].unit, Some("grams".to_string()));
+        assert_eq!(result.measurements[1].unit, Some("g".to_string()));
     }
 
     #[test]
@@ -1659,7 +1804,7 @@ mod tests {
         assert_eq!(result.item, "Tabasco sauce");
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("3 or 4".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("drops".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("drop".to_string()));
     }
 
     #[test]
@@ -1669,7 +1814,7 @@ mod tests {
         assert_eq!(result.item, "celery root");
         assert_eq!(result.measurements.len(), 2);
         assert_eq!(result.measurements[0].amount, Some("3.5".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("ounces".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("oz".to_string()));
         assert_eq!(result.measurements[1].amount, Some("100".to_string()));
         assert_eq!(result.measurements[1].unit, Some("g".to_string()));
         assert_eq!(result.note, Some("peeled".to_string()));
@@ -1723,6 +1868,6 @@ mod tests {
         assert_eq!(result.item, "80/20 ground beef");
         assert_eq!(result.measurements.len(), 1);
         assert_eq!(result.measurements[0].amount, Some("1".to_string()));
-        assert_eq!(result.measurements[0].unit, Some("pound".to_string()));
+        assert_eq!(result.measurements[0].unit, Some("lb".to_string()));
     }
 }

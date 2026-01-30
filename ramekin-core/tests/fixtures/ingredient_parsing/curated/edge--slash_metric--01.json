@@ -3,8 +3,14 @@
   "expected": {
     "item": "celery root",
     "measurements": [
-      {"amount": "3.5", "unit": "ounces"},
-      {"amount": "100", "unit": "g"}
+      {
+        "amount": "3.5",
+        "unit": "oz"
+      },
+      {
+        "amount": "100",
+        "unit": "g"
+      }
     ],
     "note": "peeled"
   }

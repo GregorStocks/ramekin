@@ -3,9 +3,18 @@
   "expected": {
     "item": "onions",
     "measurements": [
-      {"amount": "2", "unit": "medium"},
-      {"amount": "8", "unit": "ounces each"},
-      {"amount": "227", "unit": "g each"}
+      {
+        "amount": "2",
+        "unit": "medium"
+      },
+      {
+        "amount": "8",
+        "unit": "oz each"
+      },
+      {
+        "amount": "227",
+        "unit": "g each"
+      }
     ],
     "note": "finely chopped"
   }

@@ -2,7 +2,12 @@
   "raw": "6 ounces vanilla wafers ($1.43)",
   "expected": {
     "item": "vanilla wafers ($1.43)",
-    "measurements": [{"amount": "6", "unit": "ounces"}],
+    "measurements": [
+      {
+        "amount": "6",
+        "unit": "oz"
+      }
+    ],
     "note": null
   }
 }
