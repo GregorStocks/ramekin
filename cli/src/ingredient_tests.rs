@@ -114,7 +114,7 @@ pub fn generate_from_pipeline(runs_dir: &Path, fixtures_dir: Option<&Path>) -> R
 
             // UPSERT: only write if file doesn't already exist
             if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)?;
+                let json = serde_json::to_string_pretty(&test_case)? + "\n";
                 fs::write(&filepath, json)?;
                 total_cases += 1;
             }
@@ -149,7 +149,7 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
         .unwrap_or_else(default_fixtures_dir);
 
     let mut updated = 0;
-    let unchanged = 0;
+    let mut unchanged = 0;
 
     // Process curated, pipeline, and paprika directories
     for subdir in ["curated", "pipeline", "paprika"] {
@@ -178,14 +178,19 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
                 // Run pipeline to get current expected output
                 let new_expected = run_pipeline(&raw);
 
-                // Always write in new format
                 let updated_case = TestCase {
                     raw,
                     expected: new_expected,
                 };
-                let json = serde_json::to_string_pretty(&updated_case)?;
-                fs::write(&path, json)?;
-                updated += 1;
+                let json = serde_json::to_string_pretty(&updated_case)? + "\n";
+
+                // Only write if content changed
+                if json != content {
+                    fs::write(&path, json)?;
+                    updated += 1;
+                } else {
+                    unchanged += 1;
+                }
             }
         }
     }
@@ -357,7 +362,7 @@ pub fn generate_from_paprika(paprika_file: &Path, fixtures_dir: Option<&Path>) -
 
             // UPSERT: only write if file doesn't already exist
             if !filepath.exists() {
-                let json = serde_json::to_string_pretty(&test_case)?;
+                let json = serde_json::to_string_pretty(&test_case)? + "\n";
                 fs::write(&filepath, json)?;
                 total_cases += 1;
             }

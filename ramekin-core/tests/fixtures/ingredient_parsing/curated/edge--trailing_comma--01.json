@@ -3,8 +3,14 @@
   "expected": {
     "item": "pork tenderloins",
     "measurements": [
-      {"amount": "2", "unit": null},
-      {"amount": "1", "unit": "lb each"}
+      {
+        "amount": "2",
+        "unit": null
+      },
+      {
+        "amount": "1",
+        "unit": "lb each"
+      }
     ],
     "note": null
   }
