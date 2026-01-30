@@ -165,27 +165,29 @@ pub fn update_fixtures(fixtures_dir: Option<&Path>) -> Result<()> {
             if path.extension().map(|e| e == "json").unwrap_or(false) {
                 let content = fs::read_to_string(&path)?;
 
-                // Extract raw from either format
-                let raw = if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
-                    test_case.raw
-                } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
-                    legacy.raw
-                } else {
-                    println!("Skipping invalid file: {}", path.display());
-                    continue;
-                };
+                // Extract raw and old expected from either format
+                let (raw, old_expected) =
+                    if let Ok(test_case) = serde_json::from_str::<TestCase>(&content) {
+                        (test_case.raw, Some(test_case.expected))
+                    } else if let Ok(legacy) = serde_json::from_str::<LegacyTestCase>(&content) {
+                        (legacy.raw, None)
+                    } else {
+                        println!("Skipping invalid file: {}", path.display());
+                        continue;
+                    };
 
                 // Run pipeline to get current expected output
                 let new_expected = run_pipeline(&raw);
 
-                let updated_case = TestCase {
-                    raw,
-                    expected: new_expected,
-                };
-                let json = serde_json::to_string_pretty(&updated_case)? + "\n";
+                // Only write if actual content changed (not just formatting)
+                let content_changed = old_expected.as_ref() != Some(&new_expected);
 
-                // Only write if content changed
-                if json != content {
+                if content_changed {
+                    let updated_case = TestCase {
+                        raw,
+                        expected: new_expected,
+                    };
+                    let json = serde_json::to_string_pretty(&updated_case)? + "\n";
                     fs::write(&path, json)?;
                     updated += 1;
                 } else {

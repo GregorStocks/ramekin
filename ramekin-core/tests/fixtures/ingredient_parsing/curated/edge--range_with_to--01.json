@@ -2,12 +2,7 @@
   "raw": "1 to 4 medium Russet potatoes",
   "expected": {
     "item": "Russet potatoes",
-    "measurements": [
-      {
-        "amount": "1 to 4",
-        "unit": "medium"
-      }
-    ],
+    "measurements": [{"amount": "1 to 4", "unit": "medium"}],
     "note": null
   }
 }

@@ -3,14 +3,8 @@
   "expected": {
     "item": "ketchup",
     "measurements": [
-      {
-        "amount": "3",
-        "unit": "tbsp"
-      },
-      {
-        "amount": "45",
-        "unit": "ml"
-      }
+      {"amount": "3", "unit": "tbsp"},
+      {"amount": "45", "unit": "ml"}
     ],
     "note": null
   }
